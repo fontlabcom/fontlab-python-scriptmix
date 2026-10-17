@@ -181,7 +181,18 @@ Combined54native candidates pass453workflow/133preservation/305safety/
 201error controls plus6selection controls/Close54. Historical chooser receipts
 remain separate; this batch introduces no real clipboard or chooser operation.
 
-Reviewed integration, D17 tags and independent downloaded-tag R053 remain pending.
-Released scope stays49/130 until those gates pass. Full130migration, held7Names,
-69other stems, archive cleanup, additional tools/reporters/docs remain open.
-All originals are retained. No owner-site install or index publication is claimed.
+Reviewed integration and independent downloaded-tag R053 are complete:
+Appv0.2.13(15d400392863b2e2b288480637a0300229363323) and
+Scriptmixv1.0.9(a495bea38879732e76ce0d895e1dd3b444c72863).
+Fresh Appclone506tests and stable wheel/sdist189tests each pass; the Git-free
+79file Scriptmix download passes619tests/2explicit skips plus54original pairs.
+All69runtime files and54menus match the accepted candidate. Stable installed-wheel
+R053 repeats33workflows/10complete preservation/5paint/30opening/80stale/
+16painter/6selection/Close5,81current hashes and import restoration. Eleven of
+12images are byte-identical; the remaining A usage-list image was inspected and
+correct. All22older tags and protected annotated v0.2.0 dereference stay unchanged.
+Canonical reviewed code is promoted and pushed. Post-tag receipt metadata differs
+only in README/PLAN/TODO/WORK; no production changes or new native run are implied.
+Released scope is54/130;76remain(7heldNames+69unmigrated). All originals remain;
+full migration/archive cleanup/additional tools/reporters/docs stay open.
+No owner-site install, package-index publication or GitHub release object is claimed.

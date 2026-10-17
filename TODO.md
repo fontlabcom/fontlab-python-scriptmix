@@ -42,4 +42,4 @@ this_file: TODO.md
 - [x] Independently review the five complete read-only Components tools and built artifacts.
 - [x] Native-verify unchanged Components scenarios, full saved-font/workspace/history/master preservation, painting, opening/stale safety and actual Close.
 - [x] Regress prior49 tools on the same reviewed App artifact; keep full130 migration, held7Names, archive cleanup and broader docs goals open.
-- [ ] Complete reviewed Components integration/D17 tags and independent downloaded-tag R053; keep full130/archive/held7Names work open.
+- [x] Complete reviewed Components integration/D17 tags and independent downloaded-tag R053; keep full130/archive/held7Names work open.

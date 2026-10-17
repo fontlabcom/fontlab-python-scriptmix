@@ -1536,3 +1536,55 @@ worktree. No production/test/mapping/license bytes change. Prior source freezes,
 patches, review receipts and artifacts stay intact. Reviewed integration/D17tags/
 independent downloaded-tag R053 are pending. Native candidates54 versus released49;
 full130/archive/additional tools/reporters/docs and held7Names remain open.
+
+## Task3n release download acceptance and canonical promotion
+
+Appv0.2.13/tag+main15d400392863b2e2b288480637a0300229363323 and
+Scriptmixv1.0.9/tag+maina495bea38879732e76ce0d895e1dd3b444c72863 are published
+by gitnextver. All22older tag objects remain exact; annotated v0.2.0's peeled
+reference also stays exact (23old ref lines, not23distinct tags).
+Exact commands: `rtk proxy gitnextver -d .worktrees/rel-components-app` and
+`rtk proxy gitnextver -d .worktrees/rel-components-scriptmix`, exit0. App uses
+an isolated main worktree. Scriptmix main is in use in its canonical checkout,
+so the controller uses an isolated local clone with independent objects/main,
+sets origin back to GitHub and fast-forwards the reviewed commit there. Neither
+canonical branch was switched. Utility index v4->v2 conversion affects only
+these release indexes. Canonical promotion waits until downloaded-tag acceptance.
+
+Fresh GitHub Appv0.2.13 clone passes506tests13.43s; a build from that clone makes
+stable wheel941cc4600befa92ec5e3b98cc438638dca330fe2db9dc29909980bce9ae30eef
+and sdist657236eaeceb58d8d4bee012213068a6d14b53339254612cc3a2112fe66670c9.
+Both isolated installs pass189tests(0.26s/0.25s), actual version0.2.13/module paths,
+arm64Python3.11.14 and lazy components import without native host modules.
+All69runtime files equal candidate/source/wheel/sdist;75/120payload entries pass
+license/NOTICE/privacy. Independent79file Git-free Scriptmixv1.0.9 downloadSHA256
+2e029f89ed6ad33786c0e32772207f90476914a67a08289e603c428e6ccb6cc9
+passes619tests/2explicit skips0.98s;54original source/destination hashes and every
+menu byte match. git rev-parse correctly exits128 outside a Git parent.
+Fresh clone build/test commands use the same arm64UV_PYTHON/UV_LINK_MODE recipes
+above; the download test uses stable v0.2.13 wheel via ../issue111-app-v0.2.13-dist,
+SOURCE/PYTHONPATH unset, no unavailable original-source-root flag. Its54original
+pairs are independently audited by the controller. Installed command arrays:
+.local/issue111-components-stable-installed-tests-commands.json, all exit0.
+
+R053 native uses .local/issue111-components-r053-command.json with the stable
+installed wheel and freshly downloaded Scriptmix via the shared guarded runner,
+FL_RESTART=1/PYTHONDONTWRITEBYTECODE=1/PYTHONUNBUFFERED=1, exit0 on9784.
+It repeats33original workflow/10complete saved-font/workspace/history checks,
+5paint/30opening/80stale/16painter/6selection controls/Close5. All81exercised
+hashes match and imports restore. Eleven of12images match the retained candidate
+bytes; the remaining WhereUsed A image was directly inspected: seven ordered
+composites, Aacute selected, three masters and auto labels/status correct. No
+exact-image claim is made for that image. Prior eight direct visual inspections
+remain retained. Prior49regression applies to identical69runtime/49oldmenu bytes.
+
+Evidence: workspace verification/issue-101-ecosystem/evidence/issue111-release-v9/
+release-refs.json, installed-artifacts.json, fresh-artifact-tests.json,
+scriptmix-download.json, native-acceptance.json and native/summary.json.
+Canonical App issue-101-migration and Scriptmix main are fast-forwarded only to
+reviewed releases and pushed; no canonical branch switch or owner-site install.
+Current code is54released/130stems,76pending(7heldNames+69unmigrated); alloriginals
+remain. Whole archive cleanup, broader examples, package cleanup, new tools/
+canvas reporters, docs and final review remain open. This final receipt update
+changes README/PLAN/TODO/WORK only; source/test/menu/mapping/version/license bytes
+match stable tags. No redundant code/native suite is rerun for metadata.
