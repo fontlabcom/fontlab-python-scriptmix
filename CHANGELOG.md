@@ -37,3 +37,20 @@ pass on Python3.11. This is the first issue111 batch; broader work remains open.
   reject selection after a font switch or failed refresh. Preserve Add selection.
 - Retain originals and record hashes/provenance; add owned-data behavior tests.
 - Native acceptance remains pending for these five scripts.
+
+
+## Issue 111 task 2b — shared script dialog lifecycle (2026-10-17)
+
+Shared `fontlabapp.scripting` helpers handle guarded Python callbacks,
+identity-checked registry removal, explicit native close handling and deferred
+widget deletion. All eight Reports use them through `fly.ap.scripting`; CSV
+passes its owned chooser and Live Glyph Info its timer. No new dependencies.
+
+Controller acceptance passed on FontLab 9.0.9784 using the installed wheel:
+all eight original scenarios, 68 independent checks, and actual Close-button
+native destruction for every dialog. Registry cleanup and host import-state
+restoration pass. The old immutable source released its registry entry but
+remained native-live while a wrapper was retained; the new source destroys it.
+App 315 tests, Scriptmix 55 tests and 11 installed-helper tests pass; all 47
+production files match wheel bytes. Evidence: workspace ecosystem evidence,
+`issue111-lifecycle-v1/summary.json`. No owner site-packages install or new tag.

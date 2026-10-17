@@ -8,8 +8,6 @@ Double-click a block to select its glyphs in the Font window. Block ranges
 are embedded (planes 0 and 1). Nothing in the font changes.
 """
 
-import contextlib
-import sys
 import unicodedata
 from typing import Any
 
@@ -124,20 +122,8 @@ class Coverage(QtGui.QDialog):
         self.refresh()
 
     def _connect(self, signal: Any, slot: Any) -> None:
-        """Guard and retain a signal connection for deterministic teardown."""
-
-        def guarded(*args) -> None:
-            """Guarded."""
-            try:
-                slot(*args)
-            except Exception as error:  # noqa: BLE001 - PythonQt slots must contain all errors
-                self.slot_error = repr(error)
-                label = getattr(self, "status", None)
-                if label is not None:
-                    label.setText("Error: " + self.slot_error)
-
-        signal.connect(guarded)
-        self._connections.append((signal, guarded))
+        """Connect through the shared guarded native lifecycle."""
+        ap.scripting.connect_guarded(self, signal, slot)
 
     def refresh(self) -> None:
         """Rebuild the current snapshot and publish it only after display succeeds."""
@@ -216,26 +202,13 @@ class Coverage(QtGui.QDialog):
         )
 
     def closeEvent(self, event: Any) -> None:
-        """Disconnect owned signals and release this modeless window."""
-        for signal, slot in self._connections:
-            with contextlib.suppress(Exception):
-                signal.disconnect(slot)
-        self._connections = []
-        getattr(sys, "_fontlab_samples", {}).pop(KEY, None)
-        QtGui.QDialog.closeEvent(self, event)
+        """Release the owned report and its connections."""
+        ap.scripting.close_script_dialog(self, event, KEY)
 
 
 def main() -> Any:
-    """Replace the previous owned report window and show a modeless instance."""
-    windows = sys.__dict__.setdefault("_fontlab_samples", {})
-    old = windows.pop(KEY, None)
-    if old is not None:
-        old.close()
-    dialog = Coverage(fontlab.MainWindow())
-    windows[KEY] = dialog
-    dialog.show()
-    dialog.raise_()
-    return dialog
+    """Show the persistent modeless report."""
+    return ap.scripting.show_script_dialog(Coverage, KEY)
 
 
 if __name__ == "__main__":

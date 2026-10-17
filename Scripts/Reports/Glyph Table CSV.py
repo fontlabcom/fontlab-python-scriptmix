@@ -8,11 +8,9 @@ spreadsheet. Contours count everything drawn, components included, on the
 current master. Nothing in the font changes.
 """
 
-import contextlib
 import csv
 import io
 import pathlib
-import sys
 from typing import Any
 
 from fly import ap, qt
@@ -169,20 +167,8 @@ class GlyphTable(QtGui.QDialog):
         self.refresh()
 
     def _connect(self, signal: Any, slot: Any) -> None:
-        """Guard and retain a signal connection for deterministic teardown."""
-
-        def guarded(*args) -> None:
-            """Guarded."""
-            try:
-                slot(*args)
-            except Exception as error:  # noqa: BLE001 - PythonQt slots must contain all errors
-                self.slot_error = repr(error)
-                label = getattr(self, "status", None)
-                if label is not None:
-                    label.setText("Error: " + self.slot_error)
-
-        signal.connect(guarded)
-        self._connections.append((signal, guarded))
+        """Connect through the shared guarded native lifecycle."""
+        ap.scripting.connect_guarded(self, signal, slot)
 
     def refresh(self) -> None:
         """Rebuild the current snapshot and publish it only after display succeeds."""
@@ -284,30 +270,19 @@ class GlyphTable(QtGui.QDialog):
         return path
 
     def closeEvent(self, event: Any) -> None:
-        """Disconnect owned signals and release this modeless window."""
-        for signal, slot in self._connections:
-            with contextlib.suppress(Exception):
-                signal.disconnect(slot)
-        self._connections = []
-        if self.chooser is not None:
-            self.chooser.close()
-            self.chooser.deleteLater()
-            self.chooser = None
-        getattr(sys, "_fontlab_samples", {}).pop(KEY, None)
-        QtGui.QDialog.closeEvent(self, event)
+        """Release the owned report and its connections."""
+        ap.scripting.close_script_dialog(
+            self,
+            event,
+            KEY,
+            children=(self.chooser,) if self.chooser is not None else (),
+        )
+        self.chooser = None
 
 
 def main() -> Any:
-    """Replace the previous owned report window and show a modeless instance."""
-    windows = sys.__dict__.setdefault("_fontlab_samples", {})
-    old = windows.pop(KEY, None)
-    if old is not None:
-        old.close()
-    dialog = GlyphTable(fontlab.MainWindow())
-    windows[KEY] = dialog
-    dialog.show()
-    dialog.raise_()
-    return dialog
+    """Show the persistent modeless report."""
+    return ap.scripting.show_script_dialog(GlyphTable, KEY)
 
 
 if __name__ == "__main__":

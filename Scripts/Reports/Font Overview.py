@@ -9,8 +9,6 @@ master's vertical metrics and kerning pair count. Click Refresh after
 editing. Nothing in the font changes.
 """
 
-import contextlib
-import sys
 from collections.abc import Callable
 from typing import Any
 
@@ -156,22 +154,8 @@ class Overview(QtGui.QDialog):
         self.refresh()
 
     def _connect(self, signal: Any, slot: Callable[..., Any]) -> None:
-        """Retain a guarded signal connection for safe teardown and error reporting."""
-
-        def guarded(*args: Any) -> None:
-            """Report slot failures without letting exceptions escape into PythonQt."""
-            try:
-                slot(*args)
-            except (
-                Exception  # noqa: BLE001 - PythonQt must not receive escaping exceptions.
-            ) as error:  # an exception escaping a PythonQt slot can take FontLab down
-                self.slot_error = repr(error)
-                label = getattr(self, "status", None)
-                if label is not None:
-                    label.setText("Error: " + self.slot_error)
-
-        signal.connect(guarded)
-        self._connections.append((signal, guarded))
+        """Connect through the shared guarded native lifecycle."""
+        ap.scripting.connect_guarded(self, signal, slot)
 
     def card(self, index: int, label: str) -> None:
         """Build a dashboard card for one count in the overview grid."""
@@ -243,26 +227,13 @@ class Overview(QtGui.QDialog):
         )
 
     def closeEvent(self, event: Any) -> None:
-        """Disconnect owned signals and release the persistent dialog registry entry."""
-        for signal, slot in self._connections:
-            with contextlib.suppress(Exception):
-                signal.disconnect(slot)
-        self._connections = []
-        getattr(sys, "_fontlab_samples", {}).pop(KEY, None)
-        QtGui.QDialog.closeEvent(self, event)
+        """Release the owned report and its connections."""
+        ap.scripting.close_script_dialog(self, event, KEY)
 
 
 def main() -> Overview:
-    """Open one persistent modeless report; run this script from the Scripts menu."""
-    windows = sys.__dict__.setdefault("_fontlab_samples", {})
-    old = windows.pop(KEY, None)
-    if old is not None:
-        old.close()
-    dialog = Overview(fontlab.MainWindow())
-    windows[KEY] = dialog
-    dialog.show()
-    dialog.raise_()
-    return dialog
+    """Show the persistent modeless report."""
+    return ap.scripting.show_script_dialog(Overview, KEY)
 
 
 if __name__ == "__main__":

@@ -18,6 +18,8 @@ Glyphs can hide intentional whitespace. Select chosen rows, or leave rows
 unselected to select all results. Selection refuses results after changing the
 current font; rescan first. Reports read all masters without changing geometry.
 Closing a report disconnects its signals. Re-running replaces its old window.
+Close also destroys the native dialog after its event finishes. All eight
+reports share this lifecycle code through `fly.ap.scripting`.
 
 Sources remain in the examples archive until the full migration is reconciled.
 `migration.json` records Apache-2.0 provenance and hashes. All three reports passed

@@ -10,4 +10,4 @@ this_file: TODO.md
 - [ ] Reconcile the full archive cleanup, additional scripts/reporters and docs.
 
 - [x] Native-verify the five second-batch Reports scripts using original scenarios, screenshots and teardown receipts (42checks,9784).
-- [ ] Share repeated script dialog signal/registry/teardown code through Fontlabapp before other categories.
+- [x] Share repeated dialog lifecycle through Fontlabapp; all eight original scenarios and actual Close destruction pass on9784.

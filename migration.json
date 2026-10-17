@@ -3,56 +3,56 @@
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_empty_glyphs.py",
     "source_sha256": "bf8fe903b88aced87b32e968bce89d86f24c650c6b55c293c1bcadcdd982320b",
     "destination": "Scripts/Reports/Empty Glyphs.py",
-    "destination_sha256": "62211f8ce815dab1c208cafd4148d5e45fc2844f1da7ad0baba810a400e71807",
+    "destination_sha256": "24d24dc5af8d1e95870eb5134215f696a8fca90aa71e452c6cb2b04bed18c539",
     "license": "Apache-2.0"
   },
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_open_contours.py",
     "source_sha256": "3b558f6a22d17a4ecd1aac785d466928b57edee4062644f77c42781d1735bc3e",
     "destination": "Scripts/Reports/Open Contours.py",
-    "destination_sha256": "0aa062ce7fc216d6ccd50db0d5edc21c396e439fb12a48ea22235e3b3001083b",
+    "destination_sha256": "47f01b0930d1ad4464f09a717a5c8552d74415305fe7a07f98da2842065c6d29",
     "license": "Apache-2.0"
   },
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_font_overview.py",
     "source_sha256": "69ffb23a42cecae7cbbb29ad7718a85f312715d90379b9ac97eef7c17b952d69",
     "destination": "Scripts/Reports/Font Overview.py",
-    "destination_sha256": "8a4e95bbe0048648d9bdd0847443016e2e4735dcec2f01ac101a36a9a606a181",
+    "destination_sha256": "913c65036087cbca7e8fdb2ad1f0939dba7544f8afb4d5396fe98ed29e51c388",
     "license": "Apache-2.0"
   },
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_glyph_info_live.py",
     "source_sha256": "ed3342486a7ee476d7ca41251682d3a713f4a88661fa0fa285ac9e8da5e99543",
     "destination": "Scripts/Reports/Live Glyph Info.py",
-    "destination_sha256": "d924aa07e5028c543467c8b4f5e2d055fdb849f1174b7cd851a80d419882c253",
+    "destination_sha256": "d950a1a7e3f38b38405c51fadc968acc0dcf571fd8eba5db9adb3cce354f3b10",
     "license": "Apache-2.0"
   },
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_glyph_table_csv.py",
     "source_sha256": "9e3539ac9bfe579a22d3c0187c6c2c74ce661b35ebda9bac39870833c1ad7993",
     "destination": "Scripts/Reports/Glyph Table CSV.py",
-    "destination_sha256": "8ddacdd9d59ab621c489a1f9b9591d5c43a092877a3da7f99e12fdf1b5af9e3c",
+    "destination_sha256": "633627b3f2d375b2e67abf6cea0b0ae355178be4771c8a6a2380a45dd5fa8a16",
     "license": "Apache-2.0"
   },
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_label_statistics.py",
     "source_sha256": "a0b6bf699ea9f54ea79873205abde17697eb0402bdc7568ce682c1c8db25819d",
     "destination": "Scripts/Reports/Label Statistics.py",
-    "destination_sha256": "b7944b5810dd9b3ee0cbd66f88cd3005dac79f47b6ab02daba6c0e5f651a90f3",
+    "destination_sha256": "160b4c80d899c42329bd4fb5264e9e2aec54400f8e1b7e230611ff1f40e8c2f9",
     "license": "Apache-2.0"
   },
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_nodes_near_zones.py",
     "source_sha256": "cf86a42920f30e8258e67acb34c83154c688a84355681f9e06ec1138c2ef2613",
     "destination": "Scripts/Reports/Nodes Near Zones.py",
-    "destination_sha256": "21e3a58c94399ad7e01597e5ac20a54dfc3dc19cf941d41a9d351d042ebcb5e9",
+    "destination_sha256": "e5a80cd4148f4e58f55e0a6d1515dd3311fdcf646dd0d69673f46498ecf1217c",
     "license": "Apache-2.0"
   },
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_unicode_coverage.py",
     "source_sha256": "ace84203d35947bdf3a23eeb5eac7181ce5aa5f4c35defd4b462b6770b6853a1",
     "destination": "Scripts/Reports/Unicode Coverage.py",
-    "destination_sha256": "03dca03e847ee9368468ff39020d92e014e140a7f726281c128e29bd52f09f8e",
+    "destination_sha256": "abadcdc25b285677df5922c92c1ba2b60a1463e327f124fe45d7a473a0a245ab",
     "license": "Apache-2.0"
   }
 ]

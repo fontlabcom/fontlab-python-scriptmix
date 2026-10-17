@@ -62,3 +62,22 @@ success/no-font/scan/display paths, stale selection, Add and close teardown.
 Scoped Ruff initially exited 1; native slot guards were documented and fixture
 imports/unused doubles fixed; scoped check and format now exit 0. Final all-tests
 command and result are recorded in task-3b-report.md. Native runs not performed.
+
+
+## Issue 111 task 2b — shared script dialog lifecycle (2026-10-17)
+
+Shared `fontlabapp.scripting` helpers handle guarded Python callbacks,
+identity-checked registry removal, explicit native close handling and deferred
+widget deletion. All eight Reports use them through `fly.ap.scripting`; CSV
+passes its owned chooser and Live Glyph Info its timer. No new dependencies.
+
+Controller acceptance passed on FontLab 9.0.9784 using the installed wheel:
+all eight original scenarios, 68 independent checks, and actual Close-button
+native destruction for every dialog. Registry cleanup and host import-state
+restoration pass. The old immutable source released its registry entry but
+remained native-live while a wrapper was retained; the new source destroys it.
+App 315 tests, Scriptmix 55 tests and 11 installed-helper tests pass; all 47
+production files match wheel bytes. Evidence: workspace ecosystem evidence,
+`issue111-lifecycle-v1/summary.json`. No owner site-packages install or new tag.
+
+Verification: app `rtk proxy env PYTHONPATH=.worktrees/issue111-app/src fontlab-fontlabapp/.venv/bin/python -m pytest -q .worktrees/issue111-app/tests`: exit 0,315 passed13.01s; Scriptmix `rtk proxy uv run --python 3.11 --no-project --with pytest python -m pytest -q fontlab-python-scriptmix/tests`: exit0,55 passed0.10s. Scoped Ruff and both git diff --check exit0. Exact RED/GREEN and source hashes: `.superpowers/sdd/issue-111/task-2b-report.md` at workspace root.

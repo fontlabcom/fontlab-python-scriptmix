@@ -11,8 +11,10 @@ using the installed helper wheel. All-master tables, refresh, selection and
 signal teardown pass; screenshots reviewed. Source receipts remain in the
 workspace issue111-reports-v1 evidence directory.
 
-Next: share repeated script dialog lifecycle through Fontlabapp, then migrate
-the remaining categories. Retain archived sources until the complete source/destination
+The shared script dialog lifecycle passes all eight original scenarios and
+actual Close destruction on9784. Next: migrate the Font Info category, including
+its mutation workflows and native persistence/Undo acceptance. Retain archived
+sources until the complete source/destination
 mapping and final cleanup are reconciled. Additional scripts/reporters and docs
 remain in workspace verification/issue-111/PLAN.md.
 

@@ -10,7 +10,6 @@ selection. Nothing in the font changes.
 """
 
 import contextlib
-import sys
 import unicodedata
 from collections.abc import Callable
 from typing import Any
@@ -143,22 +142,8 @@ class EmptyGlyphs(QtGui.QDialog):
         self.rescan()
 
     def _connect(self, signal: Any, slot: Callable[..., Any]) -> None:
-        """Retain a guarded signal connection for safe teardown and error reporting."""
-
-        def guarded(*args: Any) -> None:
-            """Report slot failures without letting exceptions escape into PythonQt."""
-            try:
-                slot(*args)
-            except (
-                Exception  # noqa: BLE001 - PythonQt must not receive escaping exceptions.
-            ) as error:  # an exception escaping a PythonQt slot can take FontLab down
-                self.slot_error = repr(error)
-                label = getattr(self, "status", None)
-                if label is not None:
-                    label.setText("Error: " + self.slot_error)
-
-        signal.connect(guarded)
-        self._connections.append((signal, guarded))
+        """Connect through the shared guarded native lifecycle."""
+        ap.scripting.connect_guarded(self, signal, slot)
 
     def rescan(self) -> None:
         """Publish selectable rows only after the complete scan and display succeed.
@@ -232,26 +217,13 @@ class EmptyGlyphs(QtGui.QDialog):
         )
 
     def closeEvent(self, event: Any) -> None:
-        """Disconnect owned signals and release the persistent dialog registry entry."""
-        for signal, slot in self._connections:
-            with contextlib.suppress(Exception):
-                signal.disconnect(slot)
-        self._connections = []
-        getattr(sys, "_fontlab_samples", {}).pop(KEY, None)
-        QtGui.QDialog.closeEvent(self, event)
+        """Release the owned report and its connections."""
+        ap.scripting.close_script_dialog(self, event, KEY)
 
 
 def main() -> EmptyGlyphs:
-    """Open one persistent modeless report; run this script from the Scripts menu."""
-    windows = sys.__dict__.setdefault("_fontlab_samples", {})
-    old = windows.pop(KEY, None)
-    if old is not None:
-        old.close()
-    dialog = EmptyGlyphs(fontlab.MainWindow())
-    windows[KEY] = dialog
-    dialog.show()
-    dialog.raise_()
-    return dialog
+    """Show the persistent modeless report."""
+    return ap.scripting.show_script_dialog(EmptyGlyphs, KEY)
 
 
 if __name__ == "__main__":

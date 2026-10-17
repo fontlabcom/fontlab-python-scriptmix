@@ -26,11 +26,23 @@ def load(monkeypatch):
         state.selections.append(names)
         return names
 
-    helpers = NS(current_package=lambda: state.package, select_glyphs=select)
+    def close_dialog(dialog, event, key, **owned):
+        state.lifecycle = (dialog, event, key, owned)
+
+    helpers = NS(
+        connect_guarded=lambda *args: setattr(state, "connection", args),
+        close_script_dialog=close_dialog,
+        show_script_dialog=lambda *args: setattr(state, "shown", args),
+        current_package=lambda: state.package,
+        select_glyphs=select,
+    )
     monkeypatch.setitem(
         sys.modules,
         "fly",
-        NS(ap=NS(fontlab=native), qt=NS(QtCore=NS(), QtGui=NS(QDialog=object))),
+        NS(
+            ap=NS(fontlab=native, scripting=helpers),
+            qt=NS(QtCore=NS(), QtGui=NS(QDialog=object)),
+        ),
     )
     monkeypatch.setitem(sys.modules, "fly.ap.scripting", helpers)
 
@@ -211,3 +223,34 @@ def test_refresh_when_scan_or_display_fails_then_refuses_selection(
     assert state.selections == [], "Failed B refresh must never select old A names in B"
     assert obj.package_id is None and not display.enabled
     assert obj.rows == [] and display.rows == []
+
+
+@pytest.mark.parametrize(
+    "title,cls",
+    [
+        ("Empty Glyphs", "EmptyGlyphs"),
+        ("Open Contours", "OpenContours"),
+        ("Font Overview", "Overview"),
+        ("Glyph Table CSV", "GlyphTable"),
+        ("Live Glyph Info", "GlyphInfoLive"),
+        ("Label Statistics", "LabelStatistics"),
+        ("Nodes Near Zones", "NodesNearZones"),
+        ("Unicode Coverage", "Coverage"),
+    ],
+)
+def test_lifecycle_when_report_called_then_delegates_exact_objects(load, title, cls):
+    module, _native, state = load
+    mod = module(title)
+    dialog_type = getattr(mod, cls)
+    obj = dialog_type.__new__(dialog_type)
+    signal, slot = object(), object()
+    obj._connect(signal, slot)
+    assert state.connection == (obj, signal, slot), "Use shared guard unchanged"
+    sentinel = object()
+
+    def show(actual_type, key):
+        assert (actual_type, key) == (dialog_type, mod.KEY)
+        return sentinel
+
+    mod.ap.scripting.show_script_dialog = show
+    assert mod.main() is sentinel, "Return the actual shared dialog"

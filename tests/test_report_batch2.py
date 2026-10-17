@@ -273,22 +273,22 @@ def test_add_selection_when_same_font_then_preserves_prior_names(load, monkeypat
 def test_close_when_owned_signals_then_disconnects_and_stops_timer(
     load, title, cls, method
 ):
-    module, _native, _state = load
+    module, _native, state = load
     mod = module(title)
     obj = getattr(mod, cls).__new__(getattr(mod, cls))
-    calls = []
-    slot = lambda: None
-    obj._connections = [(NS(disconnect=lambda s: calls.append(s)), slot)]
-    obj.timer = NS(stop=lambda: calls.append("stop"))
-    obj.chooser = None
-    mod.QtGui = NS(QDialog=NS(closeEvent=lambda *a: None))
+    obj.timer = object()
+    obj.chooser = object() if title == "Glyph Table CSV" else None
+    chooser = obj.chooser
     obj.closeEvent(None)
-    assert slot in calls and obj._connections == [], (
-        "Every owned signal must disconnect"
-    )
-    assert ("stop" in calls) == (title == "Live Glyph Info"), (
-        "Live timer stops at close"
-    )
+    dialog, event, key, owned = state.lifecycle
+    assert (dialog, event, key) == (obj, None, mod.KEY), "Delegate this owned dialog"
+    expected = {}
+    if title == "Live Glyph Info":
+        expected["timers"] = (obj.timer,)
+    if title == "Glyph Table CSV":
+        expected["children"] = (chooser,)
+        assert obj.chooser is None, "Release the chooser reference"
+    assert owned == expected, "Pass only resources owned by this report"
 
 
 def test_zone_scan_when_transformed_oncurves_then_checks_all_masters(load):
