@@ -1,0 +1,23 @@
+[
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_empty_glyphs.py",
+    "source_sha256": "bf8fe903b88aced87b32e968bce89d86f24c650c6b55c293c1bcadcdd982320b",
+    "destination": "Scripts/Reports/Empty Glyphs.py",
+    "destination_sha256": "62211f8ce815dab1c208cafd4148d5e45fc2844f1da7ad0baba810a400e71807",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_open_contours.py",
+    "source_sha256": "3b558f6a22d17a4ecd1aac785d466928b57edee4062644f77c42781d1735bc3e",
+    "destination": "Scripts/Reports/Open Contours.py",
+    "destination_sha256": "0aa062ce7fc216d6ccd50db0d5edc21c396e439fb12a48ea22235e3b3001083b",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_font_overview.py",
+    "source_sha256": "69ffb23a42cecae7cbbb29ad7718a85f312715d90379b9ac97eef7c17b952d69",
+    "destination": "Scripts/Reports/Font Overview.py",
+    "destination_sha256": "8a4e95bbe0048648d9bdd0847443016e2e4735dcec2f01ac101a36a9a606a181",
+    "license": "Apache-2.0"
+  }
+]
