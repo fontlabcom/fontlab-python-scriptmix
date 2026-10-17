@@ -90,3 +90,21 @@ screenshots, complete saved-font/workspace/history invariance and actual Close p
 All41core tools pass336workflow/107preservation/123safety checks,80writer/error
 controls andClose41; separate15realchooser/export checks pass.
 No original is removed; full130stems/othercollections/cleanup/docs stay active.
+
+## Issue111 Masters native acceptance
+
+The four complete Masters tools pass source/fix reviews and installed-artifact
+native acceptance on FontLab9.0.9784:43original workflows,8complete saved-font/
+workspace/history checks,12real paint controls including axis coverage and
+six-event settling,24opening faults,43stale/positive safety and actualClose4/4.
+Fresh chart screenshots confirm the713endpoint clipping fix;67exercised source
+hashes match. Deliberate original post-launch seeds have exact new baselines.
+App480/actual-wheel Scriptmix413,163installed wheel/163sdist tests and63production
+file parity pass. All45menu mappings pass; prior41rows/menu bytes remain exact.
+Separate chooser8+7checks use fix1 artifacts; chooser/common sources are unchanged.
+The same fix2 wheel passes all41prior tools:336workflows/107preservation/
+123safety/80error controls/Close41, with106source hashes verified and imports restored.
+Combined45:379workflows/115preservation/166safety/116error controls/Close45.
+Reviewed integration and release remain next.
+Full Issue111/archive migration/cleanup/docs and held Names editors stay separate;
+no original removal, owner installation or release is implied by this milestone.

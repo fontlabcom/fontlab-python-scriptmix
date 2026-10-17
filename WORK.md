@@ -781,3 +781,207 @@ matchboth artifacts/installs;licenses/NOTICE/privacy audits pass. Exactrtkproxy
 commands/exitcodes/freezes/reviews in tools41-v2, proof-fix1-v1 andproof-choosers-v2
 workspaceevidence. Full130stems/othercollections/archivecleanup/newtools/reporters/
 docs stayactive; no originalremoved orowner-siteinstall. ControllerpreparesD12/D17.
+
+## Task3l — four complete read-only Masters reports, native pending
+
+Independent branches start at released App541a399/v0.2.10 and
+Scriptmix2b1ad75/v1.0.5. Held Names editors/canonical checkouts are untouched.
+Complete canonical originals and native scenario DRIVE/check interfaces were
+read/AST-studied without execution. All40archived copies and4scenario hashes
+are retained in the workspace freeze; only L2 differs, in palette alias/active
+color safety. The canonical color copying/inactive palette is preserved.
+
+Four menus retain every original control/default/KEY/class/global interface:
+Overview ordered locations/metrics/angles and explicit master double-click;
+Width Chart actual12series labelled lines; Glyph Weight Chart actual10groups,
+per-master bars/legend and units² table; Compatibility selected/whole-font tree,
+node patterns/own contours/anchor names/component order/auto/missing semantics
+and explicit failing-glyph selection. Shared reads/geometry load lazily through
+fly.ap; no flGlyph.fgGlyph getter, dependency or font/history write is added.
+Temporary italic-angle master reads restore in finally. Huge equal-value tick
+ranges use ULP-aware bounded generation to avoid a nonadvancing float loop.
+
+UI builds status/Close before any fallible bind, identity, selection, master or
+scan read. Failed scans clear results/native handles but retain a known numeric
+font binding; ordinary refresh cannot adopt another font. Explicit actions check
+master order/current master and exact displayed structures/metadata/axis labels.
+The existing Proof/Names shell owns signals/registry/deletion; ProofView owns
+painter containment/finally. All original native action connection expressions
+and constants match ASTs; all41previous menu bytes/manifest rows remain exact.
+Four source/destination mappings append, total45. README App190/Scriptmix200lines
+retain prior native acceptance while marking this source milestone pending.
+
+Fresh exact commands/results (exit0 unless stated):
+- App cwd `rtk proxy ./test.sh`: baseline441passed13.07s, later457passed12.84s
+  (default Python3.12.12). The canonical test.sh is unchanged.
+- Scriptmix cwd `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.10-dist/fontlab_fontlabapp-0.2.10-py3-none-any.whl SCRIPTMIX_APP_SOURCE=../issue111-masters-app/src/fontlabapp ./test.sh --original-source-root ../..`: baseline307passed0.56s; final382passed0.52s (Python3.11.16). This explicitly resolves the new App source while retaining the released wheel as dependency; it is not an installed-new-artifact claim.
+- App cwd `rtk proxy uv run --extra test python -m pytest -q tests/test_masters.py`:
+  initial RED3failed (missing helper and package lazy-native fallback); GREEN3,
+  expanded16passed0.02s. One expanded collection failed with NameError because
+  Ruff had removed a previously unused pytest import; restored before acceptance.
+- App cwd `rtk proxy env UV_PYTHON=cpython-3.11-macos-aarch64-none UV_PROJECT_ENVIRONMENT=.venv311 ./test.sh`:457passed13.17s, arm64CPython3.11.14. Only this task-created scratch environment was then removed; final environment is ignored .local/tests311.
+- App cwd `rtk proxy env UV_PYTHON=cpython-3.11-macos-aarch64-none UV_PROJECT_ENVIRONMENT=.local/tests311 ./test.sh`: final458passed12.70s (441prior+17new). Fresh subprocess confirms masters_api imports without fontlab/PythonQt/FL.
+- Workspace cwd `rtk proxy uvx ruff check .worktrees/issue111-masters-app/src/fontlabapp/scripting.py .worktrees/issue111-masters-app/src/fontlabapp/masters.py .worktrees/issue111-masters-app/src/fontlabapp/_masters_dialog.py .worktrees/issue111-masters-app/src/fontlabapp/_masters_views.py .worktrees/issue111-masters-app/tests/test_masters.py .worktrees/issue111-masters-scriptmix/Scripts/Masters .worktrees/issue111-masters-scriptmix/tests/test_masters.py .worktrees/issue111-masters-scriptmix/tests/test_portability.py .worktrees/issue111-masters-scriptmix/tests/conftest.py .worktrees/issue111-masters-scriptmix/tests/test_reports.py`: allchecks passed.
+- Workspace cwd `rtk proxy git -C .worktrees/issue111-masters-app diff --check`
+  and `rtk proxy git -C .worktrees/issue111-masters-scriptmix diff --check`:0each.
+
+Retained RED/attempts: missing-menu test run4failed307passed before implementation;
+first full native-shaped run364passed3failed (two assertions expected the word
+inactive while shared painter correctly reported "not active", and an AST
+literal audit mistakenly evaluated an imported METRICS alias). Assertions now
+compare the real message and literal defaults; no product behavior was waived.
+Intermediate Ruff reports flagged import order, original extracted extra
+parentheses, broad unavailable-axis catches, public helper aliases, mutable
+COLUMNS ClassVar, late-bound test loop, pairwise preference, unused test locals
+and explicit subprocess check; corrected. A relative rg call launched from App
+cwd used workspace-relative paths and reported missing files; the succeeding
+geometry tests in that shell still passed. The lean-ctx rules/binary are absent;
+rtk proxy was used throughout. No environment values/private assets were printed.
+
+Source checks cover original no-font constructors,6early failure stages/tool,
+persistent failed-panel Close, bound retries, switched/closed font refusal,
+structural/master/action staleness, whole-font scope, auto/missing layers, glyph
+limits, 0/None widths, nested counters, cubic12-step flattening, affine component
+area, pattern/order incompatibility, huge/negative/constant ticks, actual native-
+shaped line/bar commands, painter/create/inactive/end/report failures and recovery,
+signal/registry cleanup and pre-Masters dependency refusal. Final75new Scriptmix
+checks and17new App checks complement the complete prior suites.
+
+Wait, but: owned doubles and geometry calculations prove source contracts only.
+Independent frozen-source review, built wheel/sdist/privacy/license/byte audits,
+unchanged native scenarios with post-launch seed baselines, real charts/screenshots,
+complete font/workspace/history invariance, original explicit UI actions, safety
+controls and actual native QObject destruction remain controller gates. No native
+calls, owner-site installs, source promotion, commits, pushes, tags, releases,
+archive mutation/removal or child agents occurred. Full Issue111 stays active.
+
+## Task3l fix1 — independent review I1/I2/I3 and M1
+
+The independent review REQUEST CHANGES findings are reproduced and fixed.
+The original task-3l-freeze.json is preserved byte-for-byte; parent-retained
+26-file preimage is verified against that freeze. This round changes only the
+shared Masters dialog, Compatibility's captured source scope, their regression
+tests, affected manifest hash, README delimiter and bounded milestone logs.
+
+I1: every bound-font refresh now reads the actual current ordered master list
+and active master before scanning, uses that domain for the scan, and refuses
+publication if either changes during the scan. It never labels old-domain
+results with a newly read domain. Existing font identity guards remain.
+
+I2: Compatibility records the exact ordered scanned names and Whole/Selected
+scope. Whole-font selection preflight checks current full name/order membership
+before reading tracked signatures; insertions, deletions and reordering refuse
+the action without changing selection until a complete refresh. Selected scope
+retains its original captured names and permits unrelated added glyphs.
+
+I3: invalidation requests a chart update only when it actually clears nonempty
+master/series/group content. Repeated empty invalidations schedule no replacement
+paint. A deterministic queue driving the actual chart paintEvent with persistent
+switched/closed font, painter creation, draw or end faults drains within two
+frames for each chart; explicit refresh recovers and actual owned-double Close
+clears signals/callbacks. Native event-loop behavior remains parent-owned.
+
+M1: restore README's closing YAML delimiter on its own line and remove one
+redundant blank line. Frontmatter is exact and Scriptmix remains200lines;
+App remains190. All original UI controls/action-expression ASTs are unchanged.
+All45manifest pairs pass; prior41rows/menu bytes remain exact.
+
+Exact commands and observed output (all use rtk proxy):
+
+- Scriptmix cwd `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.10-dist/fontlab_fontlabapp-0.2.10-py3-none-any.whl SCRIPTMIX_APP_SOURCE=../issue111-masters-app/src/fontlabapp ./test.sh --original-source-root ../.. -k review`: RED exit1,16failed23passed360deselected0.24s; GREEN exit0,39passed360deselected0.12s. This selection includes existing tests whose names match review as well as17new regression cases.
+- App cwd `rtk proxy .local/tests311/bin/python -m pytest -q tests/test_masters.py -k review`: RED exit1,8failed17deselected0.04s (old master domain, absent ordered-membership read, repeated paint requests); GREEN exit0,8passed17deselected0.02s.
+- App cwd `rtk proxy .local/tests311/bin/python -m pytest -q tests/test_masters.py`: exit0,25passed0.04s onarm64Python3.11.14. This is the complete affected App suite, not a new whole-App count; prior whole-App458 remains historical source evidence.
+- Scriptmix cwd `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.10-dist/fontlab_fontlabapp-0.2.10-py3-none-any.whl SCRIPTMIX_APP_SOURCE=../issue111-masters-app/src/fontlabapp ./test.sh --original-source-root ../..`: exit0,399passed0.53s onPython3.11.16. Complete suite includes dependency portability, all45source/menu hashes, original constants/action ASTs and prior menus.
+- Workspace cwd `rtk proxy uvx ruff check --fix .worktrees/issue111-masters-app/src/fontlabapp/_masters_dialog.py .worktrees/issue111-masters-app/tests/test_masters.py .worktrees/issue111-masters-scriptmix/Scripts/Masters/'Compatibility Check.py' .worktrees/issue111-masters-scriptmix/tests/test_masters.py`: exit0,allchecks passed.
+- Workspace cwd `rtk proxy uvx ruff format .worktrees/issue111-masters-app/src/fontlabapp/_masters_dialog.py .worktrees/issue111-masters-app/tests/test_masters.py .worktrees/issue111-masters-scriptmix/Scripts/Masters/'Compatibility Check.py' .worktrees/issue111-masters-scriptmix/tests/test_masters.py`: exit0,3reformatted1unchanged. Final same-path `rtk proxy uvx ruff check` without --fix: exit0,allchecks passed.
+- Workspace cwd `rtk proxy git -C .worktrees/issue111-masters-app diff --check` and `rtk proxy git -C .worktrees/issue111-masters-scriptmix diff --check`: exit0each.
+- Workspace `rtk proxy python3 -` assertion check: both README first3lines equal `---`, `this_file: README.md`, `---`; App190/Scriptmix200lines, exit0. Final freeze re-reads all changed files,40original copies,4scenarios plus_vfj, original freeze and26preimage hashes and verifies prior41rows/menus and all45mappings.
+
+Wait, but: this fixes the source review findings only. A fresh independent
+fix review, built artifacts and every parent-owned native original/full-font/
+workspace/history/painting/initial-failure/Close gate are still required.
+No native call, artifact build/install, canonical/held Names change, dependency,
+commit/push/release/tag, original-source edit/removal or subagent occurred.
+The new handoff is task-3l-fix1-freeze.json; the original freeze stays unchanged.
+
+## Task3l fix2 — native chart endpoint clipping
+
+Controller native fix1 acceptance passed43original workflows,8complete-font/
+workspace/history controls,10paint,24opening,43safety andClose4, but its real
+recovered Width Chart screenshot exposed max713 above upper tick700. That
+retained failing screenshot is in workspace evidence
+`issue111-masters-fix1-v1/masters-paint-recovery/masters_width_chart-recovered.png`.
+Those pre-fix2 native passes do not establish visual acceptance for this change.
+The controller's WORK ruling authorizes correcting this inherited original defect:
+axis spacing may change; all chart/UI/12-step area algorithms remain intact.
+
+The only product change is nice_ticks' endpoint logic. Nice step selection,
+function signature, ULP guard, validation and bounded iteration remain exact.
+Include the first nice tick that reaches/exceeds high, correcting an occasionally
+rounded-up lower floor; ensure at least two distinct endpoints for constant
+axes. The actual native494..713 and499..713 ranges now produce
+[450,500,550,600,650,700,750], preserving step50. Bar range0..625 now reaches800
+with its original step200. No chart view, menu/control, area calculation,
+font/native/history access, dependency or source provenance mapping changed.
+
+Tests first, exact commands/output:
+
+- App cwd `rtk proxy .local/tests311/bin/python -m pytest -q tests/test_masters.py -k fix2`: RED exit1,11failed3passed25deselected0.05s; GREEN exit0,14passed25deselected0.01s. Tests cover native494/499..713, zero/positive/negative/mixed endpoints, constant0/+500/-500, constant +/-1e300, huge signed varying ranges and tiny finite ranges. All ticks remain finite, strictly ordered, bounded and cover both endpoints; exact nice-step outputs are asserted.
+- Scriptmix cwd `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.10-dist/fontlab_fontlabapp-0.2.10-py3-none-any.whl SCRIPTMIX_APP_SOURCE=../issue111-masters-app/src/fontlabapp ./test.sh --original-source-root ../.. -k fix2`: RED exit1,3failed10passed399deselected0.12s, actual native-shaped line drawing places max outside axis. Added the explicit0..625 bar ceiling case as well; GREEN exit0,14passed399deselected0.10s. Actual LineChart.drawEllipse centres and BarChart.drawRoundedRect data rectangles are checked against their drawn axis bounds for every plotted value, including constant/huge cases. The complete real draw methods execute; no substitute summary or painter-count-only oracle.
+- App cwd `rtk proxy .local/tests311/bin/python -m pytest -q tests/test_masters.py`: exit0,39passed0.05s, arm64Python3.11.14. This is the entire affected suite; no new whole-App run is claimed.
+- Scriptmix cwd `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.10-dist/fontlab_fontlabapp-0.2.10-py3-none-any.whl SCRIPTMIX_APP_SOURCE=../issue111-masters-app/src/fontlabapp ./test.sh --original-source-root ../..`: exit0,413passed0.62s, Python3.11.16. Complete menu/hash/original-source/constant/signal-AST/portability checks pass; all45menu bytes/mappings are unchanged from fix1 and prior41 remain exact.
+- Workspace cwd `rtk proxy uvx ruff check --fix .worktrees/issue111-masters-app/src/fontlabapp/masters.py .worktrees/issue111-masters-app/tests/test_masters.py .worktrees/issue111-masters-scriptmix/tests/test_masters.py`: exit0,allchecks passed. Same paths with `rtk proxy uvx ruff format`: exit0,2reformatted1unchanged. Final same-path Ruff without --fix: exit0,allchecks passed.
+- Workspace cwd `rtk proxy git -C .worktrees/issue111-masters-app diff --check` and `rtk proxy git -C .worktrees/issue111-masters-scriptmix diff --check`: exit0each.
+- Workspace `rtk proxy python3 -` scoped preimage diff confirms only nice_ticks docstring and endpoint logic changed in product code. Freeze verification re-reads all26fix1preimages,40original copies,4scenarios plus_vfj and both prior immutable freezes. README remains190/200lines with exact frontmatter.
+
+Wait, but: the retained native screenshot is proof that paint-no-exception
+controls alone were insufficient. This source correction still needs scoped
+independent review and parent-owned rebuilt artifacts, native reruns and actual
+screenshot inspection before acceptance. Existing overflowing-span refusals are
+unchanged; this is a bounded endpoint correction, not a numeric API redesign.
+No native/artifact/owner-site action, canonical/held Names/original edit, new
+menu, commit/push/release/tag or subagent occurred. Re-freeze is
+`task-3l-fix2-freeze.json`; task-3l-freeze.json and task-3l-fix1-freeze.json remain
+unchanged. Native and whole-issue completion remain pending.
+
+## Task3l native acceptance — integration/release pending
+
+Final fix2 installed-artifact acceptance passes on FontLab9.0.9784:
+43original workflow checks,8complete saved-font/workspace/history checks,
+12real paint controls including actual axis coverage and six-event settling,
+24opening faults,43stale/positive safety and actual Close destruction4/4.
+All67exercised source hashes match; imports/paths restore. Four fresh chart
+screenshots were inspected and the713upper-axis clipping is resolved. Original
+post-launch Overview/Compatibility seed baselines remain separately captured.
+
+The same fix2 wheel passes the entire prior41-tool native regression:
+336workflows,107preservation/history,123safety,80error controls andClose41/41;
+106source hashes verify, with imports/paths restored. Combined45native gates:
+379workflows,115preservation,166safety,116error controls andClose45/45.
+No results are inferred by adding unrun tools. These are native-verified candidate
+stems; the released count remains41until reviewed integration/release.
+
+Parent source App480 and actual-new-wheel Scriptmix413 tests pass; independently
+installed wheel/sdist each pass163targeted tests. All63production Python files
+match source/install/artifacts. All45menu mappings pass; prior41rows/menu bytes
+remain exact. Separate chooser checks8+7belong to fix1 artifacts; their chooser
+and common helper source is unchanged in fix2. They are not a new fix2 chooser run.
+The scoped fix2 source review approved the endpoint correction. Its deferred
+extreme-number endpoint observation is retained in the private review; this
+native acceptance covers practical font fixtures, not a numeric API redesign.
+
+Reviewed integration and release remain pending. Full130-stem Issue111/archive
+migration/cleanup/additional tools/docs and held7Names editors are unchanged and
+separate. No original source is removed and no owner environment install occurs.
+
+Acceptance documentation changes only README/PLAN/TODO/WORK/CHANGELOG in each
+repository. Existing failed attempts and historical pending statements remain
+chronological evidence; this entry records the accepted current four-tool state.
+README frontmatter/line counts, existing local links/code fences, complete63-file
+production hashes, all45menu/manifest hashes, the16non-document frozen payloads
+and diff whitespace were checked directly. Meaningful doc-only commands:
+`rtk proxy python3 -` (standard-library assertions retained in controller report),
+`rtk proxy git diff --check` from each repository. No code suite or native run
+was repeated for documentation. Frozen reports retain exact checks and hashes
+outside public distributions. No production/test/provenance/NOTICE/dependency,
+canonical/held Names, commit/push/promotion/tag/release or agent action occurred.

@@ -33,3 +33,17 @@ _proof_views.py preserves the three actual native painters, and _proof_dialog.py
 reuses owned dialog lifecycle with stale-font/failed-read/paint guards. Scriptmix
 retains original controls/classes/keys/globals and appends exact original/menu
 SHA-256 mappings. No source archive input was modified or removed.
+
+Masters report provenance
+=========================
+
+The four Masters tools adapt Apache-2.0 masters_overview.py,
+masters_width_chart.py, masters_glyph_weight_chart.py and
+masters_compatibility_check.py from retained fontlab-samples sources.
+App masters.py shares actual reads, twelve-step transformed contour areas,
+counter nesting and own-contour structural signatures; _masters_views.py
+retains original labelled lines/grouped bars. _masters_dialog.py extends the
+existing Proof/Names shell and paint boundary, with complete initial UI,
+source-bound actions and owned cleanup. Scriptmix retains every original
+control, class, key and native scenario interface; migration.json appends four
+exact source/destination SHA-256 pairs. Originals remain unchanged.

@@ -40,6 +40,9 @@ def resolve_app_sources(required_helpers=None):
         "proof",
         "_proof_dialog",
         "_proof_views",
+        "masters",
+        "_masters_dialog",
+        "_masters_views",
     )
     for name in required_helpers:
         assert (root / f"{name}.py").is_file(), f"Missing App helper: {root / name}"

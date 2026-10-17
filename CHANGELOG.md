@@ -4,6 +4,43 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — four read-only Masters reports (native accepted)
+
+Fix2: native screenshot inspection exposed an inherited tick endpoint defect.
+Shared nice_ticks now covers the native plotted range, including max713,
+while preserving nice steps and bounded generation. Complete original chart
+commands have axis-bounds regressions. Scoped source review and native screenshots pass.
+
+Fix1: refresh scans the actual ordered master domain and refuses mid-scan changes;
+Whole-font actions recheck complete ordered glyph membership; repeated failed
+chart invalidation schedules at most one clear repaint. New regressions retain
+explicit refresh recovery and captured Selected scope. README frontmatter fixed.
+Independent fix review and the four-tool native/artifact gates pass.
+
+- Add complete Overview, Width Chart, Glyph Weight Chart and Compatibility Check,
+  retaining original controls/defaults/keys/classes, labelled lines and bars,
+  structural tree, master-axis order, limits and native DRIVE interfaces.
+- Share original twelve-step transformed contour areas/counter nesting, missing
+  width/weight semantics and own-contour signatures through lazy App helpers.
+  Reuse existing owned panel/signal registry/paint containment, with visible
+  initial-read failures, exact source/master action guards and native-handle cleanup.
+- Bound tick generation for equal huge ranges so tiny floating increments cannot
+  loop forever; normal original chart ticks and numerical meaning remain.
+- Keep all41previous menu bytes and provenance rows exact, append four new pairs,
+  retain originals/dependencies and consolidate README within200lines.
+
+Installed-artifact acceptance on FontLab9.0.9784 passes43original workflows,
+8complete font/workspace/history checks,12real paint controls (axis coverage and
+six-event settling),24opening faults,43safety and actualClose4/4. Fresh charts
+confirm the clipping fix;67exercised hashes match. App480,actual-wheel Scriptmix413,
+163installed wheel/163sdist tests and63production-file parity pass. All45mappings
+pass with prior41rows/menu bytes exact. Separate chooser8+7checks use fix1
+artifacts with unchanged chooser/common source. Same-fix2-wheel regression of
+all41prior tools passes336workflows/107preservation/123safety/80error controls/Close41;
+106source hashes verify and imports restore. Combined45:379workflows/115preservation/
+166safety/116error controls/Close45. Reviewed integration and release remain pending.
+Full Issue111/archive cleanup and held7Names editors remain separate. No release/publication claim.
+
 ## v1.0.5 — 2026-10-17
 
 Native installed acceptance: all41core tools pass336workflow/107preservation,

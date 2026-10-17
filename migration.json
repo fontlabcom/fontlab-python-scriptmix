@@ -285,5 +285,33 @@
     "destination": "Scripts/Proof/Word Finder.py",
     "destination_sha256": "8f2004e41ad01387db42fd7ef4b234e22bc7ea9414719dc53560687c909634f8",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_overview.py",
+    "source_sha256": "91d8392b35f82758f7f85d9799d2aee1e666b781ea92799710d2dd733e1cba9f",
+    "destination": "Scripts/Masters/Overview.py",
+    "destination_sha256": "4e0de2e71ab69e3983debe74ca1a3e117e2cd545b8f989660e8864ec24f57bad",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_width_chart.py",
+    "source_sha256": "61fc783f152de37f625e1bd9b23815faf8526b57bd46fd650b9baa2e1413fb6d",
+    "destination": "Scripts/Masters/Width Chart.py",
+    "destination_sha256": "7c0d431651958c581bccfee5774fc9eec7efd138f81019aa8e1f21ab7b86ff41",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_glyph_weight_chart.py",
+    "source_sha256": "f397b4fb5d570bbd1bb5055caadbd3231ca7bf0beb8b4378a440e7a92de15ff9",
+    "destination": "Scripts/Masters/Glyph Weight Chart.py",
+    "destination_sha256": "065db5fbb8727be35506317f30d3c7c997928aa0ff3af1a89b4cf6ca7c29ca36",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_compatibility_check.py",
+    "source_sha256": "d39e4496e7bcf59a789b97d9fa88b9a637731e851999b4baa3bac5d937eb5c4f",
+    "destination": "Scripts/Masters/Compatibility Check.py",
+    "destination_sha256": "153b663e08561d54cf5d1de999553832a4ea15dab50c878157abcc73be3666b3",
+    "license": "Apache-2.0"
   }
 ]

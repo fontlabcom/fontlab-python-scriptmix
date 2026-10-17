@@ -27,3 +27,9 @@ this_file: TODO.md
 
 - [x] Independently review four Proof menus and shared App helpers at frozen bytes.
 - [x] Native-verify unchanged Proof scenario oracles, real outlines/controls/screenshots, complete saved-font/history invariance, stale/read/paint safety and actual Close from installed artifacts; keep clipboard excluded by D8.
+
+- [x] Independently review the four complete Masters menus/shared helpers and both scoped fixes at frozen bytes.
+- [x] Audit built Masters artifacts and native-verify all four original scenarios, complete font/workspace/history preservation, axis coverage/paint settling, opening/stale safety and actual Close; preserve original post-launch seed baselines.
+
+- [x] Regress all41prior tools on the same fix2 wheel; combined45native gates pass379workflows/115preservation/166safety/116error controls/Close45.
+- [ ] Complete reviewed integration and release for the four native-accepted Masters tools; keep full Issue111/archive/held7Names work separate.
