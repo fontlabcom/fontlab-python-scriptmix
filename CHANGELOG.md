@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — metrics and outline inspectors
+## v1.0.7 — 2026-10-18
 
 - Add complete Spacing String Preview, Width Table, Contour Order View and Node
   Statistics with original controls, defaults, class/key/helper interfaces and
