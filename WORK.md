@@ -1221,3 +1221,48 @@ A separate interpreter probe initially placed UV_LINK_MODE after uv's options
 and exited2 before Python started. Re-running with the assignment before uv
 exited0 and confirmed arm64/3.11.14. The source and standalone suite commands
 above already placed the variable correctly and both exited0.
+
+## Task3m final released-tag acceptance receipt
+
+Reviewed integration, D17 release tags and R053 acceptance are complete for App
+v0.2.12, 274ce60924f76f4129a8ae43f627659df2634618, and Scriptmix v1.0.8,
+dac2f1a81a75de735df4cce1caeb2484f6ab56cd. Canonical App issue-101-migration was
+fast-forwarded/pushed to the App tag; canonical Scriptmix main is restored clean
+at its tag after clean temporary release worktrees were removed. All 21 older
+tag objects are preserved. The failed immutable Scriptmix v1.0.7 distribution
+and its portability-fix history above remain unchanged; no tag was moved/removed.
+
+R053 fresh App clone passes 497 source tests; stable wheel/sdist each pass 180
+installed tests. All 66 runtime files match, and 72 wheel/116 sdist payload
+entries pass license/NOTICE/privacy checks. Stable wheel SHA256:
+723d6df5dcc95b859dd06df7eb7c47c4bd86fb291a958ed3eeb612f7c102784a.
+Stable sdist SHA256:
+fb0695971a166dfcebcf0e60b5d4483b00887913547c546da5aca2391b9f5a79.
+Scriptmix source passes 504 tests/1 skip with original audit. Fresh v1.0.8 download
+passes 503 tests/2 explicit skips in 0.70s; 73 files, all 49 original/destination
+pairs, privacy and safe-archive checks match. Download archive SHA256:
+4ecc7a2623407f9948b79cd1c6edfc1078da66b74d9f79e2aeccc9934052cbf7.
+
+Final native R053 exits0 on FontLab 9.0.9784 using the stable installed wheel and
+fresh Scriptmix download: 41 workflows, 8 complete font/workspace/history checks,
+10 paint, 24 opening, 59 safety and actual Close 4/4. All 70 current source hashes
+and import/path restoration match; all 15 images equal the prior visual receipt.
+The prior 45-tool full regression remains valid on identical 66 runtime bytes;
+combined 49 totals are 420 workflow/123 preservation/225 safety/150 error
+controls/Close 49. No fresh chooser check is claimed; historical 15 chooser
+receipts remain unchanged. Receipt authority in the workspace:
+verification/issue-101-ecosystem/evidence/issue111-release-v8/
+{native-acceptance.json,scriptmix-v1.0.8-download.json,scriptmix-v1.0.8-tests.json}.
+
+Released scope is now 49/130, with 81 pending (7 held Names + 74 unmigrated).
+All originals are retained; broader migration/archive cleanup/additional tools/
+reporters/docs goals remain open. This receipt supersedes historical pending
+integration/tag/R053 statements above, without rewriting failed attempts.
+No PyPI/GitHub release-object/site publication or owner-site install is claimed.
+
+This step changes only PLAN.md/TODO.md/WORK.md in each inspectors worktree.
+Post-tag metadata receipt review/commit/push is still parent-owned and pending;
+these six documentation changes have not been committed or pushed here. No broad
+suite or native call was rerun. `rtk proxy git diff --check` in both worktrees
+and `rtk proxy python3 -` scope/frontmatter/public-path assertions verify the
+exact six-file delta against immutable tags, with other files unchanged.

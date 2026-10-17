@@ -124,16 +124,29 @@ triangle seed has a fresh complete baseline/history before tool operations.
 All 70exercised hashes and import restoration match; seven inspected images and
 all 15 final image bytes agree with the retained original run.
 
-App 497 source, actual-wheel Scriptmix 501 passed, 1 skipped and180 installed tests each for
-wheel/sdist pass on arm64Python3.11.14. All 66 production files match;72 wheel and
-116 sdist entries pass license/NOTICE/privacy audits. All 49 source/destination pairs
-match and the previous 45 rows/menu bytes remain exact. The same wheel passes all 45
-prior tools:379 workflow/115 preservation/166 safety/116 error controls/Close 45;
-113exercised hashes and imports restore. Combined 49 native:420 workflow/
-123 preservation/225 safety/150 error controls/Close 49. No new chooser run occurred;
-historical 15 chooser receipts use unchanged relevant code.
+Fresh App v0.2.12 clone tests pass 497; stable wheel and sdist each pass 180
+installed tests on arm64 Python 3.11.14. All 66 runtime files match and the
+72/116 artifact payloads pass license/NOTICE/privacy checks. Scriptmix v1.0.8
+source passes 504 tests/1 explicit skip with all 49 original-source pairs audited;
+its fresh Git-free download passes 503 tests/2 explicit skips in 0.70s. The
+73-file archive passes safe-extraction, privacy and all 49 menu/pair hashes.
+The v1.0.7 test-portability failure and unchanged immutable tag remain in WORK.md.
 
-Reviewed integration, D17 release tags and independent downloaded-tag R053
-acceptance remain pending:49 native candidates versus45 released. Full 130-stem
-migration/archive cleanup/additional tools/docs and held 7 Names editors stay open.
-No original removal, owner-site install or package-index publication is claimed.
+R053 from the stable installed App wheel and fresh Scriptmix download again
+passes 41 original workflows, 8 complete font/workspace/history preservation,
+10 paint, 24 opening, 59 safety and Close 4/4 on FontLab 9.0.9784. All 70 current
+hashes and restored imports match; all 15 images match the prior visual receipt.
+The prior 45-tool regression remains valid on the identical 66 runtime bytes;
+combined 49 native totals are 420 workflow, 123 preservation, 225 safety,
+150 error controls and Close 49. Historical 15 chooser receipts remain separate;
+no new chooser run is claimed.
+
+Reviewed integration, D17 tags and independent downloaded-tag R053 acceptance
+are complete: App v0.2.12 (274ce60924f76f4129a8ae43f627659df2634618) and
+Scriptmix v1.0.8 (dac2f1a81a75de735df4cce1caeb2484f6ab56cd). All 21 older tags
+remain unchanged. Released scope is 49/130; 81 remain (7 held Names editors and
+74 unmigrated stems). All originals are retained. Full archive cleanup,
+additional tools/reporters/docs and the broader goal remain open. Post-tag
+receipt metadata review/commit/push is parent-owned and has not occurred in this
+step. No owner-site install, PyPI publication, GitHub release object or site
+publication is claimed.
