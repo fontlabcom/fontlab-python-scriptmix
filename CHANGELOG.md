@@ -4,6 +4,18 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## v1.0.0 — 2026-10-17
+
+First 20 practical tools: eight Reports, six Font Info panels and six Features
+panels. Install current Fontlabapp helpers and fly in FontLab 9's Python 3.11.
+The five editors pass complete preservation, Undo/Redo and saved-font reopening.
+All 20 tools pass 183 native workflow checks and native Close destruction.
+Host-free tests are portable: 113 pass from an isolated archive with the actual
+App v0.2.5 wheel; original-source auditing is explicit and fails closed.
+This release is a verified migration milestone. The remaining archive migration,
+additional tools/reporters and workspace-wide cleanup are still in progress.
+
+
 ## Unreleased
 
 - Five more complete Reports tools pass original native scenarios on9784:
