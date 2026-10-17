@@ -11,7 +11,14 @@ using the installed helper wheel. All-master tables, refresh, selection and
 signal teardown pass; screenshots reviewed. Source receipts remain in the
 workspace issue111-reports-v1 evidence directory.
 
-Next: migrate the other five practical report tools, then the remaining
-categories. Retain archived sources until the complete source/destination
+Next: share repeated script dialog lifecycle through Fontlabapp, then migrate
+the remaining categories. Retain archived sources until the complete source/destination
 mapping and final cleanup are reconciled. Additional scripts/reporters and docs
 remain in workspace verification/issue-111/PLAN.md.
+
+## Issue 111 second Reports batch
+
+Five additional reports pass original native scenarios on9784 with42independent
+checks, screenshot review and owned font/dialog cleanup; live timer stops. Full
+Scriptmix host-free suite47passes. The native driver restores its source paths
+and package modules after the run. Corpus/extra tools/docs/cleanup remain open.

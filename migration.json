@@ -19,5 +19,40 @@
     "destination": "Scripts/Reports/Font Overview.py",
     "destination_sha256": "8a4e95bbe0048648d9bdd0847443016e2e4735dcec2f01ac101a36a9a606a181",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_glyph_info_live.py",
+    "source_sha256": "ed3342486a7ee476d7ca41251682d3a713f4a88661fa0fa285ac9e8da5e99543",
+    "destination": "Scripts/Reports/Live Glyph Info.py",
+    "destination_sha256": "d924aa07e5028c543467c8b4f5e2d055fdb849f1174b7cd851a80d419882c253",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_glyph_table_csv.py",
+    "source_sha256": "9e3539ac9bfe579a22d3c0187c6c2c74ce661b35ebda9bac39870833c1ad7993",
+    "destination": "Scripts/Reports/Glyph Table CSV.py",
+    "destination_sha256": "8ddacdd9d59ab621c489a1f9b9591d5c43a092877a3da7f99e12fdf1b5af9e3c",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_label_statistics.py",
+    "source_sha256": "a0b6bf699ea9f54ea79873205abde17697eb0402bdc7568ce682c1c8db25819d",
+    "destination": "Scripts/Reports/Label Statistics.py",
+    "destination_sha256": "b7944b5810dd9b3ee0cbd66f88cd3005dac79f47b6ab02daba6c0e5f651a90f3",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_nodes_near_zones.py",
+    "source_sha256": "cf86a42920f30e8258e67acb34c83154c688a84355681f9e06ec1138c2ef2613",
+    "destination": "Scripts/Reports/Nodes Near Zones.py",
+    "destination_sha256": "21e3a58c94399ad7e01597e5ac20a54dfc3dc19cf941d41a9d351d042ebcb5e9",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_unicode_coverage.py",
+    "source_sha256": "ace84203d35947bdf3a23eeb5eac7181ce5aa5f4c35defd4b462b6770b6853a1",
+    "destination": "Scripts/Reports/Unicode Coverage.py",
+    "destination_sha256": "03dca03e847ee9368468ff39020d92e014e140a7f726281c128e29bd52f09f8e",
+    "license": "Apache-2.0"
   }
 ]

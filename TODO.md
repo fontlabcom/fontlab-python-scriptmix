@@ -8,3 +8,6 @@ this_file: TODO.md
 - [x] Review first batch and migration hashes before committing (6e1b247).
 - [ ] Migrate and verify the remaining practical reports and tools from issue 111.
 - [ ] Reconcile the full archive cleanup, additional scripts/reporters and docs.
+
+- [x] Native-verify the five second-batch Reports scripts using original scenarios, screenshots and teardown receipts (42checks,9784).
+- [ ] Share repeated script dialog signal/registry/teardown code through Fontlabapp before other categories.
