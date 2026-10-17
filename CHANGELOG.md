@@ -4,6 +4,16 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — seven Names editors (source only)
+
+- Preserve complete Batch Rename, Duplicate Unicodes, Glyph Notes, Glyph Tags,
+  Mark Color Palette, Suffix Tool and Unicode From Names controls and actions.
+- Share lazy App0.2.11 plans/reads/batch writes, complete snapshots, safe opening
+  reads, whole-batch preflight, no-op skips and honest partial/post-write errors.
+- Retain auto-layer rename refusals, plain component updates, original warnings
+  and explicit Reload/Rescan rebinding. Source-only tests; native/artifact gates
+  remain pending. Previous41menus/rows and archived originals stay unchanged.
+
 ## v1.0.5 — 2026-10-17
 
 Native installed acceptance: all41core tools pass336workflow/107preservation,

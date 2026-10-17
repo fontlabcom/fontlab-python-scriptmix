@@ -90,3 +90,15 @@ screenshots, complete saved-font/workspace/history invariance and actual Close p
 All41core tools pass336workflow/107preservation/123safety checks,80writer/error
 controls andClose41; separate15realchooser/export checks pass.
 No original is removed; full130stems/othercollections/cleanup/docs stay active.
+
+## Issue111 seven Names editors — source only
+
+Seven complete Names metadata editors share lazy forthcoming App0.2.11 plans,
+complete displayed-source snapshots, whole-batch preflight/history and owned
+signal/Close support. Every original control/default/KEY/class, auto-layer
+rename refusal and scenario is retained. Tests execute real constructors/actions,
+late invalid batches, no-op/stale/partial/post-write outcomes and recovery.
+Independent source review, installed/native original scenarios, exact complete-font
+predictions/firstUndo/Redo/reopen and actual Close remain pending. Previous41menus/
+rows and archived originals stay unchanged. Full130stems/othercollections/archive
+cleanup/newtools/reporters/docs remain open.

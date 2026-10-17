@@ -27,3 +27,6 @@ this_file: TODO.md
 
 - [x] Independently review four Proof menus and shared App helpers at frozen bytes.
 - [x] Native-verify unchanged Proof scenario oracles, real outlines/controls/screenshots, complete saved-font/history invariance, stale/read/paint safety and actual Close from installed artifacts; keep clipboard excluded by D8.
+
+- [ ] Independently review seven complete Names editors and forthcoming App0.2.11 helpers at frozen source bytes.
+- [ ] Verify installed Names artifacts with unchanged original scenarios, seeded baselines, exact full-font deltas/firstUndo/Redo/reopen, stale/error safety and native Close; keep clipboard/preferences excluded.

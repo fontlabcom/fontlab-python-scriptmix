@@ -33,3 +33,17 @@ _proof_views.py preserves the three actual native painters, and _proof_dialog.py
 reuses owned dialog lifecycle with stale-font/failed-read/paint guards. Scriptmix
 retains original controls/classes/keys/globals and appends exact original/menu
 SHA-256 mappings. No source archive input was modified or removed.
+
+Names metadata editor provenance
+===============================
+
+Seven menus and App names_edit.py, names_unicode.py, names_editor.py,
+names_batch.py and _names_edit_dialog.py adapt these Apache-2.0 fontlab-samples
+from the retained archive (_old/part4/fontlab-samples/samples/):
+names_batch_rename.py, names_duplicate_unicodes.py, names_glyph_notes.py,
+names_glyph_tags.py, names_mark_color_palette.py, names_suffix_tool.py and
+names_unicode_from_names.py. Shared calculations retain the embedded AGL data,
+exact naming rules and original warning interfaces; native access stays lazy.
+Scriptmix migration.json appends seven original/destination SHA-256 pairs.
+Every archived input and the previous41menu bytes/mapping rows stay unchanged.
+See LICENSE (Scriptmix) or LICENSE-APACHE-2.0 (App). Native acceptance is pending.

@@ -89,3 +89,19 @@ def test_pre_proof_helper_set_refused(monkeypatch, tmp_path, app_sources):
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="Missing App helper.*proof"):
         resolve_app_sources()
+
+
+def test_pre_names_editor_helper_set_refused(monkeypatch, tmp_path, app_sources):
+    """Stable App0.2.10 needs an explicit updated source tree for forthcoming Names."""
+    for path in app_sources.glob("*.py"):
+        if path.stem not in {
+            "names_edit",
+            "names_unicode",
+            "names_batch",
+            "names_editor",
+            "_names_edit_dialog",
+        }:
+            (tmp_path / path.name).write_text("# Previous helper\n")
+    monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
+    with pytest.raises(AssertionError, match="Missing App helper.*names_edit"):
+        resolve_app_sources()

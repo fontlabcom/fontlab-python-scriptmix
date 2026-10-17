@@ -781,3 +781,85 @@ matchboth artifacts/installs;licenses/NOTICE/privacy audits pass. Exactrtkproxy
 commands/exitcodes/freezes/reviews in tools41-v2, proof-fix1-v1 andproof-choosers-v2
 workspaceevidence. Full130stems/othercollections/archivecleanup/newtools/reporters/
 docs stayactive; no originalremoved orowner-siteinstall. ControllerpreparesD12/D17.
+
+## Task3k: seven complete Names editors — source-only handoff
+
+Bases: App541a399c4155c057e286b60af6b9bd992386a643 / Scriptmix
+2b1ad7599862631a13a536c57a5c26ecc73ffe5e. All work stays in the existing App
+issue111 worktree and Scriptmix feature branch; no canonical App edits or native
+calls. Seven original Names editors retain every control/default, KEY/class,
+scenario-facing method/alias, original auto-layer rename refusal/warning and
+34_connect expressions (loops retain their original connections). The shared
+Names shell/table/signals/Close helpers are reused through lazy fly.ap; pure
+plans, complete snapshots and bounded native writes are shared in App0.2.11
+helpers. No new dependency or Fontport/Glyport contract is introduced.
+
+Safe empty status/Close/control construction precedes the complete initial font,
+identity, selection, names, master and component scans. Explicit original Reload/
+Rescan actions may rebind. Ordinary callbacks retain the original identity and
+refuse closed/switched fonts before cached-wrapper access. Snapshots bind all
+names/masters/selection/classes, relevant complete values, layer roles/component refs
+and note/mark layer values. Notes bind the current editor and displayed entries;
+a newly seeded previously undisplayed note remains allowed, matching the original
+S-note scenario. A note-list double-click updates the baseline after its explicit
+selection change. Rename refresh updates auto links before planning.
+
+The entire batch preflights before checkpointing or writes. Empty/no-op/refused
+plans add no history. The existing before/after non-auto layer/glyph list is
+retained, adding plain component dependants for rename history. Native tags are
+QSet values, so snapshots canonicalize them and readback compares sets. Partial
+writes retain confirmed names/native cause and Undo guidance; completed writes
+retain their outcome across UpdateAll/scan failures or a post-write font switch.
+No native persistence/history claim follows from these owned host doubles.
+
+Baseline, fresh evidence and exact commands (all `rtk proxy`):
+- App cwd `.worktrees/issue111-app`, `./test.sh`:441passed13.68s exit0.
+- Scriptmix cwd, `env SCRIPTMIX_APP_REQUIREMENT=../.local/issue111-app-v0.2.10-dist/fontlab_fontlabapp-0.2.10-py3-none-any.whl ./test.sh`:307passed0.37s exit0.
+- RED: same Scriptmix requirement, `./test.sh tests/test_names_editors.py`:7failed/307passed0.34s exit1; all seven requested menu files absent.
+- App RED `./test.sh tests/test_names_batch.py`:collection error exit2 before helper existed; initial from-import fell through App's native alias resolver. Switched the test to explicit import_module, then implemented the helper.
+- Interim App `./test.sh` before class/signal self-review:480passed13.99s exit0 (441prior+39new).
+- Interim Scriptmix `env SCRIPTMIX_APP_REQUIREMENT=../.local/issue111-app-v0.2.10-dist/fontlab_fontlabapp-0.2.10-py3-none-any.whl SCRIPTMIX_APP_SOURCE=../.worktrees/issue111-app/src/fontlabapp ./test.sh --original-source-root ..`:490passed0.76s exit0 (307prior+182Names+1portability).
+- Interim plain portable run with the same explicit wheel/source override but no originals option:490passed, exit0 (elapsed in handoff report).
+- Workspace scoped `uvx ruff check` and `uvx ruff format --check` over all18changed/new Python files:exit0, allchecks passed/18already formatted.
+- `git -C fontlab-python-scriptmix diff --check` and `git -C .worktrees/issue111-app diff --check`:exit0 each.
+- 48strict source/destination mappings pass; previous41rows/menu hashes unchanged.
+  All7original signal AST expression lists match. Scriptmix README199lines.
+
+Failure attempts retained in task-3k-report.md: initial source lookup used the
+collection root instead of samples/; a later patch command used Scriptmix cwd
+for workspace-relative paths and changed nothing before correction. Intermediate
+new tests caught the note explicit-selection baseline and a test that incorrectly
+treated Duplicate's explicit Rescan as automatic refresh; fixed product/test
+respectively, no oracle waived. Initial Ruff flagged reexports/imports/blanket
+native catches/test-only unused bindings; corrected with explicit exports,
+intentional boundary annotations and scoped fixes. README length assertions206,
+then200failed until useful content was compacted to199. Final checks pass.
+
+Wait, but: source doubles cannot prove native firstUndo/Redo, component persistence,
+full-font deltas or actual native dialog destruction. Parent owns independent
+review, artifacts/privacy/license checks, unchanged original native oracles,
+post-seed baselines, full saved-font/history/Close gates, D12/D17/R053 and releases.
+All seven native acceptance/review tasks stay unchecked. No owner-site install,
+commit/push/tag, archive write/removal, clipboard/preferences mutation, native call
+or agent delegation occurred. Full130stems/othercollections/archive cleanup/
+additional tools/reporters/docs/finalreview remain open. Freeze/report live in
+workspace `.superpowers/sdd/issue-111/task-3k-{freeze.json,report.md}`.
+
+Final self-review also addressed explicit class-change staleness: App RED
+`rtk proxy ./test.sh tests/test_names_batch.py -k classes` failed1/39deselected
+(0.03s,exit1), then complete all-master group memberships/modes were bound using
+the existing native groups API. Three further RED population tests failed
+3/497deselected0.10s (exit1) because original tree/table/combo code left signals
+blocked on rendering errors. The shared standard-library context manager now
+restores each widget's previous signal-block state in finally; allthree recover.
+Original controls/actions/signals stay intact. These are additional recorded
+failures, not native proof or waived oracles.
+
+Final frozen-byte source verification, exit0 each:
+- App cwd `rtk proxy ./test.sh`:481passed13.95s (441prior+40new).
+- Scriptmix cwd `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../.local/issue111-app-v0.2.10-dist/fontlab_fontlabapp-0.2.10-py3-none-any.whl SCRIPTMIX_APP_SOURCE=../.worktrees/issue111-app/src/fontlabapp ./test.sh --original-source-root ..`:500passed0.82s (307prior+192Names+1portability).
+- Same explicit wheel/source command without originals option:500passed0.67s.
+- Scoped Ruff check/format-check:18files pass/alreadyformatted; both nested Git
+  diff checks and `rtk proxy sh -n fontlab-python-scriptmix/test.sh` pass.
+48 mappings, previous41rows/menu hashes and all7original signal-expression lists
+pass. Scriptmix README199lines. Native/installed/review/release tasks remain open.

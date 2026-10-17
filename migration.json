@@ -285,5 +285,54 @@
     "destination": "Scripts/Proof/Word Finder.py",
     "destination_sha256": "8f2004e41ad01387db42fd7ef4b234e22bc7ea9414719dc53560687c909634f8",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_batch_rename.py",
+    "source_sha256": "2180f5d021fb8c65465c8b2ba51d239d01b8e6170ed9f1bdd399080f0162ffe6",
+    "destination": "Scripts/Names/Batch Rename.py",
+    "destination_sha256": "fec380dd835792045d58592130dc6ea32609431b775e8616c0feffbed9a98f11",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_duplicate_unicodes.py",
+    "source_sha256": "b42ab5f9a4bead19a4a0a042d9fe9fcffbfadfe650da6551b4f9ea3819ba865e",
+    "destination": "Scripts/Names/Duplicate Unicodes.py",
+    "destination_sha256": "4ffe66fe1fe5cde16211e132035c00e06fd602a675a6b93c7ab5a4f6d3a6ea03",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_glyph_notes.py",
+    "source_sha256": "b577a3e8128ac943dad23a2ee65c401388464c69469ef3ea5464a5824b58d074",
+    "destination": "Scripts/Names/Glyph Notes.py",
+    "destination_sha256": "7e0ff23cee1ad2c20506b91abb546806fc0771f4a5213bfacd0ba4cb9cd3a3f0",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_glyph_tags.py",
+    "source_sha256": "1f0a7146ca1dbca8f3bd52bbf34d39f08b3b72bd3e9c88cbd9f1803056312274",
+    "destination": "Scripts/Names/Glyph Tags.py",
+    "destination_sha256": "d6d66c471792182541310e4d206ece18266b076e80aa79585938c2ed19b676ce",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_mark_color_palette.py",
+    "source_sha256": "7f029d7b32a6b2ea5cca1c7c80312cacb1a1468632c984f0332ead01cf690ab8",
+    "destination": "Scripts/Names/Mark Color Palette.py",
+    "destination_sha256": "a03587be311e7ad0c6aff2f1fecc23aa8e7f56bdebb26553d1ae7b61f3cab93a",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_suffix_tool.py",
+    "source_sha256": "ef7c1a71a97c40c1cadaf706df7e9f29097345318955989a01bc8abaf9e1c387",
+    "destination": "Scripts/Names/Suffix Tool.py",
+    "destination_sha256": "8daf36c402137120cfdb19ded0df4c27241cf0da41cf9c38a3f4797515c04405",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_unicode_from_names.py",
+    "source_sha256": "5f34b1655112f1d299d2b235b82fd3e947593a90845581bb1d3304de53dc1fb2",
+    "destination": "Scripts/Names/Unicode From Names.py",
+    "destination_sha256": "9543f840e2f04f17893cc94cc6ec6a477cd095cd71f4e1321cd5b2f35ec026c7",
+    "license": "Apache-2.0"
   }
 ]
