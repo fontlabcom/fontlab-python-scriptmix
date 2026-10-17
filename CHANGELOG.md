@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — test portability
+## v1.0.8 — 2026-10-18
 
 - Fix the prior-45-menu invariant test after commit and in Git-free downloads.
   It now checks a literal canonical digest of immutable v1.0.6 provenance,
