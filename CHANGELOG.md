@@ -4,12 +4,12 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — read-only Components
+## v1.0.9 — 2026-10-18 — read-only Components
 
 - Accept all five installed-wheel native workflows and prior49regression: combined54
   passes453workflow/133preservation/305safety/201error controls,6selection andClose54.
   Fix falsey-current fallback, retain exact empty Compatibility scope and safe painters.
-  Source/artifact/privacy checks pass; reviewed integration/D17tags/R053 remain pending.
+  Source/artifact/privacy checks pass; downloaded-tag R053 is recorded separately.
 
 - Fix the measured CountBadges empty-selection fallback for a valid falsey native
   CurrentGlyph. Resolve selected/current names with original is-not-None rules;
