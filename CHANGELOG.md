@@ -6,6 +6,11 @@ this_file: CHANGELOG.md
 
 ## v1.0.4 — 2026-10-17
 
+Native installed acceptance: all41core tools pass336workflow/107preservation,
+123safety,80writer/error controls andClose41; separate15chooser checks pass.
+All41hash mappings and60Appsource bytes pass. Full archive migration staysactive.
+
+
 Review fix: retain a completed batch's applied outcome, original cause and
 Undo/Refresh guidance across all later display/preview failures. Preflight and
 partial-write diagnostics stay distinct. Both selected editors reuse the shared
@@ -347,3 +352,24 @@ paths/scratch excluded. Public work-log recipes are portable; private exact
 receipts are retained separately. Evidence: workspace issue111-tools30-v1 and
 issue111-kerning-v1. Full issue111 and all remaining editors stay active; no
 archived input or owner environment installation is changed.
+
+## Unreleased — Issue111 Proof source milestone
+
+- Retain complete Glyph Grid, Text By Master, Waterfall and Word Finder tools,
+  sharing real transformed paths, exact advance-only runs, original word data,
+  filters and guarded owned UI through lazy App0.2.10 helpers.
+- Fit Grid's common scale to wide overhangs and tall accents/components; preserve
+  deliberate Reload font/selection adoption and refuse automatic stale refresh.
+- Clear failed previews, contain painter/callback/finalization errors and retain
+  original controls/keys/scenario globals. Copy has host-free coverage; native
+  clipboard remains excluded. Native/artifact acceptance is pending.
+
+### Task3j fix1 — contain all opening font reads
+
+- Build empty controls/status/Close before binding/id/selection/maps/characters/
+  master reads; diagnose early failures in a closable invalid panel.
+- Retry initial loads through existing guarded controls without adopting a
+  different known font. Preserve explicit Grid Reload adoption and Waterfall's
+  initial active-master choice with signal state restored in finally.
+- Add23actual constructor/recovery/failed-state Close/stale-binding regressions;
+  native/artifact reacceptance remains pending independent controller gates.

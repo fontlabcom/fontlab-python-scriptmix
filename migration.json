@@ -257,5 +257,33 @@
     "destination": "Scripts/Kerning/Pairs From Text.py",
     "destination_sha256": "813044df6b23eff64ee02a3e7fda6d3501002c55770578e04684e42eae105495",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/proof_glyph_grid.py",
+    "source_sha256": "983ee040cfee4eed511232ef7fa3a80f2247746cfe9650923f18f42ecf231403",
+    "destination": "Scripts/Proof/Glyph Grid.py",
+    "destination_sha256": "8e4dee95447fd6d09f24796a5d2d890e5285d5fcefcf535e8456af8926ed30e5",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/proof_text_by_master.py",
+    "source_sha256": "bf478dc6d23b3938b942211596cccf381769cc0330f8990c5c3f5416ab76fea9",
+    "destination": "Scripts/Proof/Text By Master.py",
+    "destination_sha256": "9fec00539d5cfbcbab6efb91a129ddb7690d72a649898923c66ccb95e889d8cf",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/proof_waterfall.py",
+    "source_sha256": "b5e8c5dd2c300386546ad940f3f9f0f8182a99e2a3b728867f0798473e3371df",
+    "destination": "Scripts/Proof/Waterfall.py",
+    "destination_sha256": "0174d79bfb4f89a952510f9ae567aff15c245cce4b824874a138dcf815eb154e",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/proof_word_finder.py",
+    "source_sha256": "b10497f22fdd82bb24d78a7795f07f5c9bb33502e6a9d9beb1eac63ead756ad2",
+    "destination": "Scripts/Proof/Word Finder.py",
+    "destination_sha256": "8f2004e41ad01387db42fd7ef4b234e22bc7ea9414719dc53560687c909634f8",
+    "license": "Apache-2.0"
   }
 ]

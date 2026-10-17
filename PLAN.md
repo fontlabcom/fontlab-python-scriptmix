@@ -77,3 +77,16 @@ seeded exception baseline, exact full-font deltas, one Undo/Redo, saved reopenin
 stale safety and actual native Close pass. All37tools pass301workflow/99preservation
 checks;94safety,32writer/12postwrite controls and15chooser checks pass.
 The complete archive migration, cleanup, additional tools/reporters/docs stay open.
+
+## Issue111 Proof source milestone
+
+Four complete Proof menus retain original controls, defaults, class/key/global
+interfaces and independent native scenarios. App shares actual transformed
+outline assembly, advance-only text, exact word filters, three painters and owned
+lifecycle. Automatic refresh/paint/Copy stays bound; Grid's explicit Reload adopts
+current font/selection. Source tests cover stale/read/paint failures and cleanup.
+Controller source/fix review, artifact audits, original native oracles,
+screenshots, complete saved-font/workspace/history invariance and actual Close pass.
+All41core tools pass336workflow/107preservation/123safety checks,80writer/error
+controls andClose41; separate15realchooser/export checks pass.
+No original is removed; full130stems/othercollections/cleanup/docs stay active.

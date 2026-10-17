@@ -24,3 +24,12 @@ App's kerning_selection.py shares exception precedence, word parsing, explicit/
 effective previews and ticked plans; the existing complete batch writer and
 owned dialog shell provide snapshot guards, Refresh and history. Scriptmix
 migration.json appends both source/destination hashes; originals are unchanged.
+
+Proof tools adapt the Apache-2.0 fontlab-samples proof_glyph_grid.py,
+proof_text_by_master.py, proof_waterfall.py and proof_word_finder.py from the
+same retained archive. App proof.py shares exact embedded words, Unicode/slash
+parsing, ordered sizes, advance-only runs and transformed outline assembly;
+_proof_views.py preserves the three actual native painters, and _proof_dialog.py
+reuses owned dialog lifecycle with stale-font/failed-read/paint guards. Scriptmix
+retains original controls/classes/keys/globals and appends exact original/menu
+SHA-256 mappings. No source archive input was modified or removed.
