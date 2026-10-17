@@ -4,6 +4,15 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## v1.0.2 — 2026-10-17
+
+Add Classes Browser, Compare Masters, Pair List Browser, Missing Pairs and Text
+Preview under Kerning. Require App0.2.7 helpers. All30tools pass247native workflows,
+50preservation/history,52safety,7actual-save-dialog checks and nativeClose.
+Host-free171tests and30provenance pairs pass. Remaining editors/archive migration,
+new tools/reporters and final cleanup remain open; original inputs stay retained.
+
+
 ## v1.0.1 — 2026-10-17
 
 Add Case Pairs, Character Info, Character Set Compare, Glyph Finder and Select by
