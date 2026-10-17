@@ -4,6 +4,22 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — selected Kerning editors
+
+Review fix: retain a completed batch's applied outcome, original cause and
+Undo/Refresh guidance across all later display/preview failures. Preflight and
+partial-write diagnostics stay distinct. Both selected editors reuse the shared
+preview-table builder while retaining exact headers and checkbox callbacks.
+
+Add complete Exceptions Finder and Pairs From Text menu workflows. Share original
+class precedence, word parsing, explicit/effective previews and ticked plans in
+lazy App0.2.9 helpers. Reuse complete snapshot-bound preflight/history writing,
+including zero/absence and native save/reopen range refusal; retain all controls,
+manual checkboxes, Refresh and owned Close. Failed reads clear pair/value previews.
+Append two exact provenance mappings without changing prior35. Host-free tests
+pass; all37native tools pass301workflow/99preservation checks,94safety,32writer
+and12postwrite controls,15chooser checks andClose37. Full archive migration
+and cleanup remain active.
 
 ## v1.0.3 — 2026-10-17
 

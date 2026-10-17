@@ -39,3 +39,9 @@ items/set/remove/scale and QBoxLayout insertion. Native acceptance is pending.
 Kerning batch preflight also follows FontLab's native load limit in
 Proteus/workspace2/ioengine.cpp: every final master must stay within +/-2*UPM.
 This is a persistence constraint, not a new dependency or Fontport API change.
+
+Exceptions Finder and Pairs From Text require forthcoming App0.2.9's
+kerning_selection helper plus the existing snapshot/batch/dialog helpers. They
+add no packages: word adjacency uses standard-library itertools.pairwise and
+preview reads reuse native FontLab effective kerning. Use a built wheel and an
+explicit updated source override during development; no index release is implied.

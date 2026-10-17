@@ -243,5 +243,19 @@
     "destination": "Scripts/Kerning/Remove Small Pairs.py",
     "destination_sha256": "de4b6244375ea09af774a8bd4effeaf7f67be65c2b15ad05a328c23048f269cd",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_exceptions_finder.py",
+    "source_sha256": "068c1072825fb72df7ed5cccd3b842144219632183abe0f0122346967057f3ac",
+    "destination": "Scripts/Kerning/Exceptions Finder.py",
+    "destination_sha256": "adfbdc13fe2f9e09f1a990c67c303a909bd313183d0922a45f82d1918ba7a5e6",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_pairs_from_text.py",
+    "source_sha256": "9929dcace05edd22dfbff2590ac7a913bd0d04cc03985ae7a396a67bb43ca03b",
+    "destination": "Scripts/Kerning/Pairs From Text.py",
+    "destination_sha256": "813044df6b23eff64ee02a3e7fda6d3501002c55770578e04684e42eae105495",
+    "license": "Apache-2.0"
   }
 ]

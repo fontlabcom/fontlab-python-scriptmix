@@ -66,3 +66,14 @@ and actual Close pass. All35tools together pass280workflow/85preservation checks
 82safety/32writer controls and7export-dialog checks. The host load limit is
 preflighted before mutation (fl#8522). Full archive cleanup remains gated on the
 complete migration; this bounded milestone does not finish Issue111.
+
+## Issue111 selected Kerning editors
+
+Exceptions Finder and Pairs From Text retain complete controls, manual ticks,
+class precedence, effective versus explicit values and current/all-master writes.
+Host-free source tests cover shared plans, stale/refused writes and owned
+checkbox/Close callbacks. Installed-artifact original scenarios,
+seeded exception baseline, exact full-font deltas, one Undo/Redo, saved reopening,
+stale safety and actual native Close pass. All37tools pass301workflow/99preservation
+checks;94safety,32writer/12postwrite controls and15chooser checks pass.
+The complete archive migration, cleanup, additional tools/reporters/docs stay open.
