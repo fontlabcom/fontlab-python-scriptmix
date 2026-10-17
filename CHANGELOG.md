@@ -5,7 +5,7 @@ this_file: CHANGELOG.md
 # Changelog
 
 
-## Unreleased — five complete Kerning editors
+## v1.0.3 — 2026-10-17
 
 Refuse changing batches whose final pairs on any master exceed twice the font's
 positive finite units per em: FontLab's load pipeline otherwise clamps them and
