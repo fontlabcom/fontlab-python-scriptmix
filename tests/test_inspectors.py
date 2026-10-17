@@ -339,19 +339,35 @@ def test_width_mixed_zero_missing_numeric_display_and_select_exactly_flagged(
     assert not dialog.rows and dialog.package is None
 
 
-def test_previous45_manifest_rows_and_menu_bytes_stay_exact():
-    import subprocess
+# Immutable Scriptmix v1.0.6: all 45 rows serialized with sorted keys and
+# separators=(",", ":"). Verify this literal from the tag, never from current rows.
+RELEASED_V1_0_6_MANIFEST_SHA256 = (
+    "58d98d7622a78373b989e61a21e9c947ee1354a17b69b96c042091840df749e2"
+)
 
-    old = json.loads(
-        subprocess.check_output(["git", "show", "HEAD:migration.json"], cwd=ROOT)
+
+def _assert_released45_invariant(rows: list[dict], root: Path) -> None:
+    """Verify immutable released provenance and menu bytes without requiring Git."""
+    assert len(rows) == 49, "Expected all 49 current migration rows"
+    released = rows[:45]
+    digest = hashlib.sha256(
+        json.dumps(released, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    assert digest == RELEASED_V1_0_6_MANIFEST_SHA256, (
+        "The immutable v1.0.6 manifest rows changed"
     )
-    now = json.loads((ROOT / "migration.json").read_text())
-    assert now[:45] == old and len(now) == 49
-    for row in old:
+    for row in released:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256((root / row["destination"]).read_bytes()).hexdigest()
             == row["destination_sha256"]
-        )
+        ), f"Changed released menu bytes: {row['destination']}"
+
+
+def test_previous45_manifest_rows_and_menu_bytes_stay_exact():
+    """Keep all prior release rows and menu bytes exact in checkouts or archives."""
+    _assert_released45_invariant(
+        json.loads((ROOT / "migration.json").read_text()), ROOT
+    )
 
 
 @pytest.mark.parametrize(
@@ -735,3 +751,24 @@ def test_final_master_domain_check_follows_all_snapshot_reads(
     dialog = getattr(inspectors.module(title), klass)()
     assert not dialog._snapshot_valid and dialog.package is None
     assert "Masters changed" in dialog.last_error
+
+
+@pytest.mark.parametrize("field", ["source_sha256", "destination_sha256"])
+def test_released45_fixed_manifest_rejects_changed_provenance(field):
+    """A changed prior row cannot redefine the released manifest baseline."""
+    rows = json.loads((ROOT / "migration.json").read_text())
+    rows[0][field] = "0" * 64
+    with pytest.raises(AssertionError, match="v1.0.6 manifest"):
+        _assert_released45_invariant(rows, ROOT)
+
+
+def test_released45_fixed_manifest_rejects_changed_menu_bytes(tmp_path):
+    """A correct manifest still rejects a changed released menu payload."""
+    rows = json.loads((ROOT / "migration.json").read_text())
+    for row in rows[:45]:
+        destination = tmp_path / row["destination"]
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes((ROOT / row["destination"]).read_bytes())
+    (tmp_path / rows[0]["destination"]).write_bytes(b"# changed menu\n")
+    with pytest.raises(AssertionError, match="released menu bytes"):
+        _assert_released45_invariant(rows, tmp_path)

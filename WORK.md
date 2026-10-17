@@ -1167,3 +1167,57 @@ verification receipts. Both relative forms were reproduced on arm64 Python 3.11:
 without source audit, 86 passed/2 skipped in 0.16s; with --original-source-root
 ../.., 87 passed/1 skipped in 0.17s (exit0 each). Only this log changed; no product,
 test, other documentation, native run or broad suite changed.
+
+## R053 test portability correction — new Scriptmix release required
+
+The released v1.0.7 test used mutable `git show HEAD:migration.json` as its
+45-row baseline. After integration HEAD contains 49 rows; Git-free downloads
+also lack repository metadata. The earlier precommit gate missed both acceptance
+surfaces. This is a standalone test-distribution defect: all 49 runtime menus
+and all 66 App production files remain unchanged. App v0.2.12 and Scriptmix
+v1.0.7 tags remain immutable; parent must release the correction as v1.0.8.
+
+The invariant now checks a literal canonical SHA-256 from immutable Scriptmix
+v1.0.6 (45 rows), the current total of 49, and each released destination hash.
+Canonical serialization is json.dumps(rows, sort_keys=True, separators=(",", ":"));
+SHA-256 is 58d98d7622a78373b989e61a21e9c947ee1354a17b69b96c042091840df749e2.
+An independent read of the immutable tag at adda1608e9212934927c625358a2e7d27ab2a3e1
+confirmed the row count and literal digest. The portable test itself never calls
+Git and never derives its expected baseline from current manifest data.
+Three new cases reject changed source provenance, changed destination provenance
+and changed menu bytes; they use existing pytest/tmp_path facilities.
+
+Commands from Scriptmix cwd, all wheel paths checkout-relative:
+`rtk proxy env -u SCRIPTMIX_APP_SOURCE SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.12-dist/fontlab_fontlabapp-0.2.12-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -k previous45_manifest -rs`
+Postcommit RED: 1 failed/501 deselected0.05s, exit1 (49-row HEAD versus45).
+Same environment with `-k released45_fixed_manifest -rs`: test-first RED3failed/
+502deselected0.08s, exit1 before the fixed assertion helper existed.
+Same environment with `-k 'previous45_manifest or released45_fixed_manifest' -rs`:
+GREEN4passed/501deselected0.08s, exit0.
+Same environment with `--original-source-root ../.. -rs`: full source504passed,
+1skipped0.60s, exit0. The skip is Spacing Preview's nonexistent selection read;
+all original-source fidelity checks are exercised. There are three more exercised
+cases than the prior501passed1skip suite. `rtk proxy uvx ruff check` passes;
+an initial `ruff format --check` requested one wrap, fixed before full verification.
+No broad App or native rerun, product/config/NOTICE/migration edit, owner install,
+commit/push/tag or subagent occurred. Exact private verification paths/receipts
+remain outside public source. Full Git-free-copy verification follows below.
+
+Fresh Git-free proof: all 73 nonignored public source files were copied into a
+new isolated scratch checkout, with no .git and no Git repository in its parent
+chain. The downloaded v1.0.7 original was not edited or reused as the test target.
+From that scratch cwd, the exact command was:
+`rtk proxy env -u SCRIPTMIX_APP_SOURCE SCRIPTMIX_APP_REQUIREMENT=../issue111-app-v0.2.12-dist/fontlab_fontlabapp-0.2.12-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -rs`
+Result: 503 passed, 2 skipped in 0.69s, exit0. Both skips are explicit: no spacing
+selection read, and no original-source-root supplied in the standalone copy.
+The new test source and all 49 menus match the source checkout exactly. Scoped
+Ruff/check+format and git diff --check pass. A full public-file privacy scan and
+fixed-tag hash audit verify only tests/test_inspectors.py, WORK.md and CHANGELOG.md
+changed; all 49 menus and all 66 App production files remain exact. No released
+tag or existing changelog history changed. Parent owns independent review and
+new Scriptmix v1.0.8 publication/download acceptance; this task made no release.
+
+A separate interpreter probe initially placed UV_LINK_MODE after uv's options
+and exited2 before Python started. Re-running with the assignment before uv
+exited0 and confirmed arm64/3.11.14. The source and standalone suite commands
+above already placed the variable correctly and both exited0.

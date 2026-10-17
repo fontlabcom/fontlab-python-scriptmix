@@ -4,6 +4,18 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — test portability
+
+- Fix the prior-45-menu invariant test after commit and in Git-free downloads.
+  It now checks a literal canonical digest of immutable v1.0.6 provenance,
+  all 49 current rows and the 45 released menu hashes without calling Git.
+- Add rejection tests for changed source/destination provenance and menu bytes.
+  Explicit arm64 Python 3.11 checks pass: source 504 tests/1 skip and a separate
+  Git-free standalone copy 503 tests/2 skips, both against the stable App v0.2.12 wheel.
+  No runtime helper, menu, migration or dependency changes. Keep v1.0.7 intact;
+  the corrected standalone test distribution requires a new release tag.
+
+
 ## v1.0.7 — 2026-10-18
 
 - Add complete Spacing String Preview, Width Table, Contour Order View and Node
