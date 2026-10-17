@@ -179,7 +179,7 @@ and deletes the owned dialog. Native original oracles/painting/Close and exact
 font/workspace/history pass; all41core tools pass336workflow/107preservation checks.
 Full Issue111 migration, archive cleanup, additional tools/reporters/docs stay open.
 
-## Masters reports (native accepted, integration pending)
+## Masters reports
 
 Masters contains Overview, Width Chart, Glyph Weight Chart and Compatibility Check.
 Overview shows ordered axis locations/metrics/angles, highlights differences and switches master on double-click.
@@ -195,5 +195,5 @@ All67exercised source hashes match; fresh chart screenshots confirm the713clippi
 App480/actual-wheel Scriptmix413 and163installed tests each for wheel/sdist pass; all63Appproduction files match.
 All45mappings pass; the prior41menu bytes/rows stay exact. Separate chooser8+7checks use fix1 artifacts with unchanged chooser/common source.
 Same-wheel all41prior tools pass; combined45:379workflows/115preservation/166safety/116error controls/Close45.
-Reviewed integration and release remain pending; no package-index claim.
+No package-index publication is implied.
 Full Issue111/archive cleanup and held7Names editors stay separate; original sources remain retained.
