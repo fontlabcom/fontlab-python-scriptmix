@@ -54,5 +54,47 @@
     "destination": "Scripts/Reports/Unicode Coverage.py",
     "destination_sha256": "abadcdc25b285677df5922c92c1ba2b60a1463e327f124fe45d7a473a0a245ab",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_glyph_order_tool.py",
+    "source_sha256": "516de6e60b7f163855062a6cb7561f9383d611e72c534fd26ba82dbea3e2bf2f",
+    "destination": "Scripts/Font Info/Glyph Order Preview and Export.py",
+    "destination_sha256": "491df26b75a450f54e81c9ea49643c3509e5e1e70ab49ea072fc4702e7125966",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_master_metrics_table.py",
+    "source_sha256": "1ef204ffb90ad88da181af66d60729bdc3e86cfb8c866cb8fbe2ddc44d006573",
+    "destination": "Scripts/Font Info/Master Metrics Table.py",
+    "destination_sha256": "4455e14f52b4db43cd372c2d5218af04e5f4afcf7c925f7f5a75de61402b8be1",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_names_editor.py",
+    "source_sha256": "f133a43c9a9d796401900b998060ceea276c4738539d216aea8810d32846e0aa",
+    "destination": "Scripts/Font Info/Names and Credits.py",
+    "destination_sha256": "22770ea8c13c0e5680a12f718a2d3d774139011938e33bd48a46808d3f3f2557",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_unicode_ranges.py",
+    "source_sha256": "d8ddb9048992be3e20ec1f5410070e0bfd2f8909d1625560bfe75ba932c8386b",
+    "destination": "Scripts/Font Info/Unicode Ranges and Codepages.py",
+    "destination_sha256": "e8fd9fab22d4aead8839c737d5a64fe0e8fd476aedc375728ee7e1de54b6cf14",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_version_bumper.py",
+    "source_sha256": "0a518b94388dd3923170691c1b09293b054e74c84c07a647bc9dad0cdf6d32bc",
+    "destination": "Scripts/Font Info/Bump Font Version.py",
+    "destination_sha256": "3f55b998e7650df88b8b470bdc756013fc94c2cb19447098e3088a2d2953b670",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_vertical_metrics_calculator.py",
+    "source_sha256": "fb5b32094fb5c242b06f56294f01e07eb50656341242a9911922a07bfd08e7d9",
+    "destination": "Scripts/Font Info/Calculate Vertical Metrics.py",
+    "destination_sha256": "496f21b000f65b652e6547cb00a74db9d24d0a23f924e14f2e967612240f4126",
+    "license": "Apache-2.0"
   }
 ]

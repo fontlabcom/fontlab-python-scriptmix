@@ -8,7 +8,7 @@ Small and useful scripts for FontLab
 ## Reports (issue 111 first batch)
 
 Copy the contents of `Scripts` into your FontLab Scripts menu folder. Keep the
-single `Reports` subfolder; FontLab supports one folder level. Use FontLab 9's
+category subfolders, such as `Reports` and `Font Info`; FontLab supports one folder level. Use FontLab 9's
 Python 3.11 with `fontlab-fly` and `fontlab-fontlabapp` (including `scripting`)
 available in its Python environment. No third-party UI package is needed.
 
@@ -45,3 +45,37 @@ All five retain the original interactions and Apache-2.0 provenance. Their
 original scenarios pass on FontLab9.0.9784:42independent checks, reviewed
 screenshots and owned font/dialog cleanup, including the live timer. Host-free
 tests for all eight reports pass on Python3.11 (47tests).
+
+## Font Info tools
+
+The Font Info menu includes Glyph Order Preview and Export, Master Metrics
+Table, Names and Credits, Unicode Ranges and Codepages, Bump Font Version and
+Calculate Vertical Metrics. All original controls, embedded Unicode data,
+assessment notices, export, previews and the metric diagram are retained.
+
+Names changes style on the original current master and credits font-wide.
+Master Metrics edits every displayed master. Version bump optionally appends a
+dated note to every master. Vertical Metrics defaults to hhea and Win; Typo is
+optional because it also moves FontLab's own ascender/descender lines. Its bounds
+are captured on open; reopen after outline changes. Glyph Order exports UTF-8
+text without reordering the font; Unicode coverage reports without editing it.
+
+Apply uses the last complete preview, refuses closed/switched fonts and changed
+source values, validates the entire plan before writes, preserves the active
+master and rolls back attempted fields on failure. Failed previews disable Apply.
+Names and current-master vertical metrics also refuse a master switch. No-op
+plans add no history. The shared metadata helper notifies only the package and
+its master container. Fontport's existing history protocol may add an extra
+no-op Undo checkpoint. All six pass their original native scenarios on FontLab
+9.0.9784. All four editors pass one-step Undo, Redo, saved metadata reopening and
+complete font-data preservation. Native tests also verify no-op history and
+switched-font refusal. Shared panels load lazily through Fontlabapp; each tool
+keeps its own controls and actions. Glyph Order uses an owned modeless save
+chooser and reports the exported count and filename.
+
+
+The six Font Info panels now share App's lazily loaded FontInfoDialog shell via
+fly.ap.scripting.font_info_dialog_type(). Existing controls/actions and the owned
+export chooser are unchanged. Native acceptance must be rerun on the refactored
+source bytes before their integration; earlier v4 receipts describe the prior
+source snapshot.

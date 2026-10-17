@@ -11,3 +11,5 @@ this_file: TODO.md
 
 - [x] Native-verify the five second-batch Reports scripts using original scenarios, screenshots and teardown receipts (42checks,9784).
 - [x] Share repeated dialog lifecycle through Fontlabapp; all eight original scenarios and actual Close destruction pass on9784.
+
+- [x] Native-verify all six Font Info tools, shared panels and full Undo/Redo/save/reopen for four mutators; verify no-op/stale-font safety and actual save choosers.
