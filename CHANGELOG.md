@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — four read-only Masters reports (native accepted)
+## v1.0.6 — 2026-10-17
 
 Fix2: native screenshot inspection exposed an inherited tick endpoint defect.
 Shared nice_ticks now covers the native plotted range, including max713,
@@ -38,8 +38,8 @@ pass with prior41rows/menu bytes exact. Separate chooser8+7checks use fix1
 artifacts with unchanged chooser/common source. Same-fix2-wheel regression of
 all41prior tools passes336workflows/107preservation/123safety/80error controls/Close41;
 106source hashes verify and imports restore. Combined45:379workflows/115preservation/
-166safety/116error controls/Close45. Reviewed integration and release remain pending.
-Full Issue111/archive cleanup and held7Names editors remain separate. No release/publication claim.
+166safety/116error controls/Close45.
+Full Issue111/archive cleanup and held7Names editors remain separate.
 
 ## v1.0.5 — 2026-10-17
 
