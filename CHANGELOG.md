@@ -187,3 +187,9 @@ prove shaping: test generated code in FontLab's Features panel.
 Full issue111 archive migration/cleanup, further practical and broader scripts,
 package cleanup, new reporters and docs/finalreview remain open. No original
 source removed, owner environment install, publication or release tag.
+
+## Issue 111: portable host-free checks
+
+Resolve actual App helper sources from an explicit installed dependency or source
+override. Distribution checks always cover 20 scripts; original-source hashes
+are an explicit fail-closed workspace audit. Document wheel-based uv testing.

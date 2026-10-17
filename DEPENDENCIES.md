@@ -6,7 +6,9 @@ this_file: DEPENDENCIES.md
 
 Runtime: FontLab 9 Python 3.11 native APIs and PythonQt, fontlab-fly aliases,
 fontlab-fontlabapp scripting helpers. No new third-party runtime dependencies.
-Tests: pytest, supplied temporarily by uv. Ruff is a development check only.
+Tests: pytest and an explicit current fontlab-fontlabapp requirement, supplied
+temporarily by uv via test.sh. A current wheel can be supplied before App 0.2.5
+is published; see README. Ruff is a development check only.
 
 Build Suffix Substitution and Feature Code Viewer use App's existing optional
 `fontedit` dependency

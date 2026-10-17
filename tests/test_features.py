@@ -29,7 +29,7 @@ from types import SimpleNamespace as NS
 
 
 @pytest.fixture
-def load(monkeypatch):
+def load(monkeypatch, app_sources):
     state = NS(
         package=None,
         names=[],
@@ -46,7 +46,7 @@ def load(monkeypatch):
     )
     spec = importlib.util.spec_from_file_location(
         "fontlabapp.scripting",
-        ROOT.parent / ".worktrees/issue111-app/src/fontlabapp/scripting.py",
+        app_sources / "scripting.py",
     )
     scripting = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, "fontlabapp.scripting", scripting)
@@ -84,7 +84,7 @@ def load(monkeypatch):
     for leaf in ("_font_info_dialog", "_features_dialog"):
         spec = importlib.util.spec_from_file_location(
             "fontlabapp." + leaf,
-            ROOT.parent / ".worktrees/issue111-app/src/fontlabapp" / (leaf + ".py"),
+            app_sources / (leaf + ".py"),
         )
         shared = importlib.util.module_from_spec(spec)
         monkeypatch.setitem(sys.modules, "fontlabapp." + leaf, shared)
@@ -93,7 +93,7 @@ def load(monkeypatch):
     monkeypatch.setitem(sys.modules, "fly.ap.scripting", scripting)
     spec = importlib.util.spec_from_file_location(
         "fly.ap.feature_code",
-        ROOT.parent / ".worktrees/issue111-app/src/fontlabapp/feature_code.py",
+        app_sources / "feature_code.py",
     )
     calculations = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, "fly.ap.feature_code", calculations)

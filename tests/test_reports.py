@@ -57,18 +57,36 @@ def load(monkeypatch):
     return module, native, state
 
 
-def test_manifest_when_sources_retained_then_hashes_and_menu_depth_match():
-    for entry in json.loads((ROOT / "migration.json").read_text()):
+def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
+    entries = json.loads((ROOT / "migration.json").read_text())
+    assert len(entries) == 20
+    destinations = [entry["destination"] for entry in entries]
+    assert len(set(destinations)) == 20
+    assert set(destinations) == {
+        str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
+    }
+    original_root = request.config.getoption("--original-source-root")
+    for entry in entries:
         target = ROOT / entry["destination"]
-        assert len(Path(entry["destination"]).parts) == 3
+        path = Path(entry["destination"])
+        assert path.parts[0] == "Scripts" and len(path.parts) == 3
+        assert path.parts[1] in {"Reports", "Font Info", "Features"}
+        assert path.suffix == ".py"
+        assert len(entry["source_sha256"]) == 64
+        assert set(entry["source_sha256"]) <= set("0123456789abcdef")
+        assert entry["source"].startswith("fontlab-python-examples/_old/")
+        assert ".." not in Path(entry["source"]).parts
         assert (
             hashlib.sha256(target.read_bytes()).hexdigest()
             == entry["destination_sha256"]
         )
-        assert (
-            hashlib.sha256((ROOT.parent / entry["source"]).read_bytes()).hexdigest()
-            == entry["source_sha256"]
-        )
+        if original_root is not None:
+            original = original_root / entry["source"]
+            assert original.is_file(), f"Missing requested original: {original}"
+            assert (
+                hashlib.sha256(original.read_bytes()).hexdigest()
+                == entry["source_sha256"]
+            ), f"Original hash mismatch: {original}"
         source = target.read_text()
         ast.parse(source, feature_version=(3, 11))
         assert "from fly.ap.scripting import" in source

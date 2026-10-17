@@ -102,3 +102,31 @@ reopening. All20migrated tools pass183workflow checks together on FontLab9.0.978
 Clipboard operations remain host-free tested; native checks inspect the actual
 suffix preview under the owner's clipboard exclusion.
 No export chooser is needed: these six originals provide Copy, not file export.
+
+## Host-free distribution checks
+
+Run with Python 3.11 through uv and an explicit current App requirement:
+
+```sh
+SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh
+# Once App 0.2.5 is published:
+SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.5' ./test.sh
+```
+
+The wheel is suitable for offline/development testing when pytest and its
+requirements are already cached by uv. Tests resolve installed App sources
+without importing FontLab/Qt binaries. For source development, optionally set
+`SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`; the explicit dependency is
+still required. Missing helper files fail the run.
+
+Every default run checks all 20 destination hashes, exact menu paths/depth,
+Python 3.11 syntax and provenance metadata. It does not audit absent originals.
+To additionally check every original source hash, provide the workspace root
+containing the manifest's `fontlab-python-examples` paths:
+
+```sh
+SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh --original-source-root /path/to/workspace
+```
+
+Missing or mismatched originals fail this requested audit. Original hashes and
+product script bytes are unchanged.

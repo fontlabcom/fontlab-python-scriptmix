@@ -258,3 +258,24 @@ prove shaping: test generated code in FontLab's Features panel.
 Full issue111 archive migration/cleanup, further practical and broader scripts,
 package cleanup, new reporters and docs/finalreview remain open. No original
 source removed, owner environment install, publication or release tag.
+
+## Task 3e: portability
+
+Baseline isolated archive reproduced RED: 6 passed / 3 App lookup errors (exit1).
+Removed private checkout defaults; installed App files resolve without native
+imports before module doubles. Added three dependency resolution regressions.
+Default checks retain 20 destination hashes, menu paths, syntax and provenance;
+--original-source-root explicitly enables all20 original hash checks.
+Product sources and migration.json remain unchanged. Exact verification commands
+and final isolated results are in workspace .superpowers/sdd/issue-111/task-3e-report.md.
+
+Verification (all commands prefixed `rtk proxy`):
+- `bash -c 'cd fontlab-python-scriptmix && SCRIPTMIX_APP_REQUIREMENT="$PWD/../.local/issue111-app-features-fix1-dist/fontlab_fontlabapp-0.2.1.dev75+g0f3f8962b.d20261017-py3-none-any.whl" ./test.sh --original-source-root ..'`: exit0,113passed;20source/destinationpairs.
+- Archived committed checkout outside workspace: same wheel with `./test.sh`,
+  exit0,113passed;20destinationhashes. No originals/siblings present.
+- Explicit missing-original and mismatched-original probes: each exit1,
+  1failed/112deselected (expected); no silent skip.
+- `uvx ruff check tests`, `git diff HEAD^ --check` and
+  `git diff 86a48ce --exit-code -- Scripts migration.json`: exit0.
+One initial Ruff run found two import-order issues; fixed and reran successfully.
+No native run: product bytes unchanged. No push/release or owner environment edit.

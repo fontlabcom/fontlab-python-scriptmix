@@ -27,7 +27,7 @@ def test_requested_tool_exists(title):
 
 
 @pytest.fixture
-def load(monkeypatch):
+def load(monkeypatch, app_sources):
     state = NS(package=None)
     native = NS()
     helpers = NS(
@@ -47,9 +47,7 @@ def load(monkeypatch):
     )
     monkeypatch.setitem(sys.modules, "fly.ap.scripting", helpers)
     # Exercise the actual shared panel methods against owned import doubles.
-    shared_path = (
-        ROOT.parent / ".worktrees/issue111-app/src/fontlabapp/_font_info_dialog.py"
-    )
+    shared_path = app_sources / "_font_info_dialog.py"
     qt = sys.modules["fly"].qt
     monkeypatch.setitem(sys.modules, "fontlabapp", NS(_native=lambda name: qt))
     monkeypatch.setitem(sys.modules, "fontlabapp.scripting", helpers)
