@@ -119,7 +119,7 @@ without importing FontLab/Qt binaries. For source development, optionally set
 `SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`; the explicit dependency is
 still required. Missing helper files fail the run.
 
-Every default run checks all 20 destination hashes, exact menu paths/depth,
+Every default run checks all 25 destination hashes, exact menu paths/depth,
 Python 3.11 syntax and provenance metadata. It does not audit absent originals.
 To additionally check every original source hash, provide the workspace root
 containing the manifest's `fontlab-python-examples` paths:
@@ -130,3 +130,24 @@ SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh --original-source-r
 
 Missing or mismatched originals fail this requested audit. Original hashes and
 product script bytes are unchanged.
+
+
+## Names inspection and selection tools
+
+Names contains Case Pairs, Character Info, Character Set Compare, Glyph Finder
+and Select by Mark. Keep counterparts, add mark groups, use language presets,
+search names/globs/Unicode and copy characters or missing sets. Character Info
+follows selection every 500 ms and paints the current master outline beside
+system text; closing stops the timer. No Pause control existed in this original.
+
+These five reuse App's lazy Names panel, table, guarded signals and selection
+helpers. Install the updated App helper build containing `names_dialog_type`;
+App 0.2.5 alone predates this batch. In development, use its wheel requirement
+plus `SCRIPTMIX_APP_SOURCE` pointing at the updated source directory. Complete
+refreshes bind actions to their original font; switched/closed fonts, missing
+names and failed refreshes refuse selection before clearing it. No font design
+or metadata edits occur. Originals remain untouched and all 25 provenance pairs
+are audited. All five pass their original native workflows, complete saved-font/history
+invariance and switched/closed selection refusals. Close destroys their native
+dialogs; the live specimen fits tall accents and side overhangs. All 25 tools pass
+216 native workflow checks together. Clipboard has host-free proof only.

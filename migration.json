@@ -138,5 +138,40 @@
     "destination": "Scripts/Features/Suffix Report.py",
     "destination_sha256": "388b4c2b68498b4ae23fec27affc6709adfe6cc6fa000251364a979b251e1128",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_case_pairs.py",
+    "source_sha256": "b7afe233095c7155806cf7f196f263fae1b17751a9bb8da06e38618dcc298a01",
+    "destination": "Scripts/Names/Case Pairs.py",
+    "destination_sha256": "ffdb7108bf39cb42219cf22e595b4a41c81f4813be14c5692635ce69cef8a226",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_character_info.py",
+    "source_sha256": "205679698769895a9b18ad06f792fe171be32038ef679fbe8b75f026b80885e1",
+    "destination": "Scripts/Names/Character Info.py",
+    "destination_sha256": "71a8250426b55d0f184ce581128315b623ca6ab441cb3f82079eacedd52598ae",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_charset_compare.py",
+    "source_sha256": "222c77aef210f87f2cb327707b2b98100ca5133a8b48cd80a40428c2d9e23036",
+    "destination": "Scripts/Names/Character Set Compare.py",
+    "destination_sha256": "a1c2b1426812516c1d731a38f315bd7cf9cf6414174ef70f4b0b3b7f5c10a1df",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_glyph_finder.py",
+    "source_sha256": "e5bb9a3fe49d1257e8fe92b523fc633668836504346180bf0804e3c7596448d9",
+    "destination": "Scripts/Names/Glyph Finder.py",
+    "destination_sha256": "0141062c32e45e4efb40810fee2b91030e73f3044bf00aae05bf48605cbcfce9",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_select_by_mark.py",
+    "source_sha256": "5f058a947558f279bb7ebccb7cc82cd57c73d3811770f73a379960241c1d3323",
+    "destination": "Scripts/Names/Select by Mark.py",
+    "destination_sha256": "c13b40e3808df4dbcdfc1142b8d524cd59e499194aa66c3782cbaade1149daf0",
+    "license": "Apache-2.0"
   }
 ]

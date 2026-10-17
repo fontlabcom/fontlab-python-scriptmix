@@ -16,3 +16,5 @@ this_file: TODO.md
 
 - [x] Native-verify all six Features tools, original scenario oracles and actual Close destruction.
 - [x] Prove Build Suffix Substitution's feature-only full VFJ delta, one Undo, Redo and saved reopen.
+
+- [x] Native-verify five Names tools, selection safety, outline proof and actual Close (tools25-v1).

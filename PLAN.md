@@ -40,3 +40,10 @@ Six complete feature tools pass native workflows, screenshots and Close.
 Build's complete feature-only VFJ delta, one Undo, Redo and saved reopen pass.
 All20tools pass183native workflow checks together. Continue the remaining
 categories; keep all source originals until full archive reconciliation.
+
+## Names source milestone
+
+Five Names tools pass original scenarios, native Close, inspected screenshots,
+complete font-data/history invariance and switched/closed selection refusals.
+The combined 25-tool run passes 216 workflow checks. Continue the remaining
+archive tools; clipboard stays native-excluded.

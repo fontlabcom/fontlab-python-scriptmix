@@ -279,3 +279,91 @@ Verification (all commands prefixed `rtk proxy`):
   `git diff 86a48ce --exit-code -- Scripts migration.json`: exit0.
 One initial Ruff run found two import-order issues; fixed and reran successfully.
 No native run: product bytes unchanged. No push/release or owner environment edit.
+
+## Issue 111 task 3f — Names sources frozen for native review
+
+Five new complete Names tools preserve the original registry/class/method
+interfaces, controls, language data, keyboard/row/copy actions and outline proof.
+Shared lazy App shell/table/font access, guarded signals and complete-refresh
+snapshots replace duplicated lifecycle/selection logic. Validate every requested
+name and original font identity before clearing selection; Keep/Add retained.
+Live Character Info refreshes even for same-name font/master changes and stops
+on Close; original has no Pause control. Painter errors and error hooks remain
+contained and painter ends in finally. No metadata/design/master writes.
+
+Test-first RED: five missing requested files, 113 existing tests passed (exit1).
+Intermediate runs exposed one test tuple-unpacking mistake, manifest20 awaiting
+update and a copied-fixture closure mistake; corrected. Final 35 new Scriptmix
+checks include actual action inputs, direct failed refreshes for all five tools,
+Unicode/case/charset/glob/mark calculations, stale/closed fonts, missing names,
+copy, transformed outline parts, timer teardown and failing painter/error hook.
+Two App Add-selection regressions added. Earlier App full run347 passed; final349.
+All original twenty manifest entries unchanged; append five, exact menu depth.
+No archived source writes, native calls, owner installs, commits or push.
+Native original workflows, screenshots, font invariance and actual destruction
+remain pending controller verification. Freeze report includes every changed and
+new file hash: workspace .superpowers/sdd/issue-111/task-3f-report.md.
+
+Verification from workspace root:
+
+```sh
+rtk proxy bash -c 'cd fontlab-python-scriptmix && SCRIPTMIX_APP_REQUIREMENT="$PWD/../.local/issue111-app-v0.2.5-dist/fontlab_fontlabapp-0.2.5-py3-none-any.whl" SCRIPTMIX_APP_SOURCE="$PWD/../.worktrees/issue111-app/src/fontlabapp" ./test.sh --original-source-root ..'
+# exit 0: 148 passed in 0.14s; all 25 source/destination pairs audited.
+rtk proxy bash -c 'cd .worktrees/issue111-app && ./test.sh -q'
+# exit 0: 349 passed in 12.91s.
+rtk proxy uvx ruff check fontlab-python-scriptmix/Scripts/Names fontlab-python-scriptmix/tests/test_names.py fontlab-python-scriptmix/tests/test_reports.py .worktrees/issue111-app/src/fontlabapp/scripting.py .worktrees/issue111-app/src/fontlabapp/_names_dialog.py .worktrees/issue111-app/tests/test_scripting.py
+# exit 0: All checks passed.
+rtk proxy git -C fontlab-python-scriptmix diff --check
+rtk proxy git -C .worktrees/issue111-app diff --check
+# each exit 0.
+```
+
+## Task 3f review fix 1 — complete Character Info proof fitting
+
+Controller reports all five original scenarios pass33checks on the initial
+native build with complete saved font/history invariance. Its Wacute screenshot
+revealed the left accent clipped: vertical fitting only used master metrics and
+horizontal centering only used advance. New actual Specimen.draw regressions
+reproduced RED (2failed/1passed/148deselected): tall accent y=-79 and overhang
+x=-17.2..319.2 escaped the padded left frame. Fit the union of actual transformed
+path bounds, advance, metric frame and baseline in both axes; reserve labels and
+retain system proof/painter containment. GREEN:3passed/148deselected. Native
+screenshot/geometry acceptance of this fix remains pending controller rerun.
+
+Corrected comparison-list Unicode describe docstring. Select by Mark's retained
+font_window_selection interface now thin-wraps shared exact-selection access,
+with no current-glyph fallback; the existing fallback helper uses that reader.
+App gains an exact-empty-selection regression. No other behavior changed.
+No native calls, owner installs, commits or pushes in this fix.
+
+Commands from workspace root (all exit0 unless noted):
+- `rtk proxy bash -c 'cd fontlab-python-scriptmix && SCRIPTMIX_APP_REQUIREMENT="$PWD/../.local/issue111-app-v0.2.5-dist/fontlab_fontlabapp-0.2.5-py3-none-any.whl" SCRIPTMIX_APP_SOURCE="$PWD/../.worktrees/issue111-app/src/fontlabapp" ./test.sh -k "fits_tall_accents or mark_selection_reader"'`: RED exit1,2failed/1passed; GREEN exit0,3passed.
+- Same environment and `./test.sh --original-source-root ..`:151passed (0.14s),25provenance pairs; original20unchanged.
+- `rtk proxy bash -c 'cd .worktrees/issue111-app && ./test.sh -q'`: full App results in freeze report.
+- `rtk proxy uvx ruff check fontlab-python-scriptmix/Scripts/Names fontlab-python-scriptmix/tests/test_names.py fontlab-python-scriptmix/tests/test_reports.py .worktrees/issue111-app/src/fontlabapp/scripting.py .worktrees/issue111-app/src/fontlabapp/_names_dialog.py .worktrees/issue111-app/tests/test_scripting.py`: All checks passed.
+- `rtk proxy git -C fontlab-python-scriptmix diff --check` and `rtk proxy git -C .worktrees/issue111-app diff --check`: each exit0.
+
+## 2026-10-17: Names native acceptance
+
+Independent source review and fix review pass. The corrected native Wacute
+screenshot shows the complete accent inside the outline frame; tall-accent and
+side-overhang geometry regressions pass. Original constant expressions, presets
+and signal callbacks match all five source tools. The shared shell supplies the
+per-script heading label and lifecycle.
+
+The installed App wheel passes the combined 25-tool run on FontLab 9.0.9784:
+216 original workflow checks, 40 full preservation/history checks, 12 editor
+safety checks, 32 switched/closed selection checks and actual Close destruction
+for all 25 dialogs. All owned fonts close and App/fly/Fontport imports restore.
+The Names checks compare every saved font/format field and dirty/Undo/master;
+owned workspace UI changes are recorded separately. The live timer stops.
+
+Fresh Python 3.11 checks: App 350, Scriptmix 151, installed App helpers 46.
+All 25 source/destination hashes pass; the prior 20 mappings are unchanged.
+Wheel 57 and sdist 95 entries contain 51 byte-identical source files, complete
+licenses and updated NOTICE; private paths and scratch payloads are excluded.
+Evidence: workspace issue111-tools25-v1, names-source-fidelity.json and the
+source/fix reviews. Clipboard and chooser timing have no new native claim.
+Full issue 111 remains active; no archived input is removed.
+
+Controller native command uses fl-native.sh --mutating --lane issue111-tools25, FL_RESTART=1, PYTHONDONTWRITEBYTECODE=1, installed final App wheel, all 25 manifest scripts and --verify-close --verify-safety --verify-names-safety. Exact argv/exit0: issue111-tools25-v1/native-command-receipt.json.

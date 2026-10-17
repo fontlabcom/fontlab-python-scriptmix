@@ -4,6 +4,14 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — Names inspection tools
+
+- Share lazy Names panel/table/lifecycle and complete-refresh selection guards.
+- Preserve five original tools, Unicode/language data, live outline proof,
+  copy, keyboard and row actions; keep/add selection validates all names first.
+- Retain all source originals; native verification of this batch is pending.
+
+
 ## v1.0.0 — 2026-10-17
 
 First 20 practical tools: eight Reports, six Font Info panels and six Features
@@ -205,3 +213,33 @@ source removed, owner environment install, publication or release tag.
 Resolve actual App helper sources from an explicit installed dependency or source
 override. Distribution checks always cover 20 scripts; original-source hashes
 are an explicit fail-closed workspace audit. Document wheel-based uv testing.
+
+## Issue 111 Names review fix 1
+
+Fit complete Character Info outlines including tall accents and side overhangs
+inside the padded proof area while keeping baseline/labels/system proof.
+Centralize exact Font window selection reads and correct character-list docs.
+Host-free geometry regression passes; native fix rerun remains pending.
+
+## 2026-10-17: Names native acceptance
+
+Independent source review and fix review pass. The corrected native Wacute
+screenshot shows the complete accent inside the outline frame; tall-accent and
+side-overhang geometry regressions pass. Original constant expressions, presets
+and signal callbacks match all five source tools. The shared shell supplies the
+per-script heading label and lifecycle.
+
+The installed App wheel passes the combined 25-tool run on FontLab 9.0.9784:
+216 original workflow checks, 40 full preservation/history checks, 12 editor
+safety checks, 32 switched/closed selection checks and actual Close destruction
+for all 25 dialogs. All owned fonts close and App/fly/Fontport imports restore.
+The Names checks compare every saved font/format field and dirty/Undo/master;
+owned workspace UI changes are recorded separately. The live timer stops.
+
+Fresh Python 3.11 checks: App 350, Scriptmix 151, installed App helpers 46.
+All 25 source/destination hashes pass; the prior 20 mappings are unchanged.
+Wheel 57 and sdist 95 entries contain 51 byte-identical source files, complete
+licenses and updated NOTICE; private paths and scratch payloads are excluded.
+Evidence: workspace issue111-tools25-v1, names-source-fidelity.json and the
+source/fix reviews. Clipboard and chooser timing have no new native claim.
+Full issue 111 remains active; no archived input is removed.
