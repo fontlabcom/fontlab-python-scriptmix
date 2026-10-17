@@ -6,6 +6,12 @@ this_file: PLAN.md
 
 Preserve full practical report behaviour while sharing safe native access.
 
-Pending: run the archived native scenarios against these migrated scripts in an
-owned FontLab session; verify modeless lifecycle, all-master tables, refresh,
-selection and signal teardown. Retain archived sources until that gate passes.
+First three reports pass their original native scenarios on FontLab 9.0.9784,
+using the installed helper wheel. All-master tables, refresh, selection and
+signal teardown pass; screenshots reviewed. Source receipts remain in the
+workspace issue111-reports-v1 evidence directory.
+
+Next: migrate the other five practical report tools, then the remaining
+categories. Retain archived sources until the complete source/destination
+mapping and final cleanup are reconciled. Additional scripts/reporters and docs
+remain in workspace verification/issue-111/PLAN.md.
