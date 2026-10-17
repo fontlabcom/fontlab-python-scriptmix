@@ -54,3 +54,15 @@ Five tools pass source/fix reviews, installed-wheel native workflows, real CSV
 chooser callbacks, complete saved-font/history invariance and actual Close.
 All 30 migrated tools pass 247 workflow checks together. The remaining kerning
 editors, archive categories and final issue 111 gates remain open.
+
+## Issue111 kerning editor source milestone
+
+Five complete source tools now share all-master plans, complete snapshot guards
+and one batch writer. Host-free tests cover preflight, zero/absence, one owned
+before/after history batch, numerical rules, invalid cells and stale panels.
+Source, wording and range-fix reviews pass. Installed-artifact native scenarios,
+exact complete-font deltas, one native Undo/Redo, saved reopen, stale-font safety
+and actual Close pass. All35tools together pass280workflow/85preservation checks,
+82safety/32writer controls and7export-dialog checks. The host load limit is
+preflighted before mutation (fl#8522). Full archive cleanup remains gated on the
+complete migration; this bounded milestone does not finish Issue111.

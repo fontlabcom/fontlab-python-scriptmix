@@ -8,3 +8,12 @@ SHA-256 mappings are recorded in migration.json. Native access and shared
 lifecycle adaptations live in fontlab-fontlabapp (see its NOTICE). Every original
 control is retained; error containment and complete-ink proof fitting are added.
 See LICENSE for the Apache License, Version 2.0. Original sources stay unchanged.
+
+Five additional Kerning editors adapt these Apache-2.0 sources from the same
+retained samples directory: kerning_copy_between_masters.py,
+kerning_pair_editor.py, kerning_scale_values.py, kerning_round_values.py and
+kerning_remove_small.py. All controls/actions and original interfaces are
+retained. Shared calculations, multi-master preflight/writing and common UI
+rendering now live in App. Snapshot refusal, explicit-zero insertion and Refresh
+recovery are added. The five original source/destination hashes are appended to
+migration.json without changing prior mappings. Native acceptance is pending.

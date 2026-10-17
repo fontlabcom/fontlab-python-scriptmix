@@ -27,3 +27,15 @@ Inspection uses FontLab's native named-master kerning items/groups and effective
 get(names), with existing PythonQt.QtGui and standard-library CSV only. Fontport's
 current-master UFO normalization/editor is not needed; no optional fontedit extra
 or foreign Qt package is loaded by this batch.
+
+The five Kerning editors use App0.2.8's lazy shared plans and all-master writer,
+existing FontLab/PythonQt.QtGui and the standard library. No new package or Qt
+binding is added. Fontport's existing writer is key-master/UFO-normalized; calling
+it once per master would split history, so App retains a small native @notation
+batch using its measured zero-seed/scale protocol and container checkpoints.
+Official local pyfontgate/fgkerning.cxx and QtGui stubs were consulted for native
+items/set/remove/scale and QBoxLayout insertion. Native acceptance is pending.
+
+Kerning batch preflight also follows FontLab's native load limit in
+Proteus/workspace2/ioengine.cpp: every final master must stay within +/-2*UPM.
+This is a persistence constraint, not a new dependency or Fontport API change.

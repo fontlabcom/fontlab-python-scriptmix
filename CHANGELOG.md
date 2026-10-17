@@ -4,6 +4,24 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+
+## Unreleased — five complete Kerning editors
+
+Refuse changing batches whose final pairs on any master exceed twice the font's
+positive finite units per em: FontLab's load pipeline otherwise clamps them and
+adds a mark. Signed32/history validation remains; no values are silently clamped.
+Valid corrections/deletions of existing extremes work; true no-op stays untouched.
+
+Add Copy Between Masters, Pair Editor, Scale Values, Round Values and Remove
+Small Pairs through shared lazy App plans, snapshots and native batch writing.
+Preflight all masters/classes/glyphs and whole-unit history before any mutation;
+retain explicit zero, unrelated pairs and active master. Failed reads/stale
+previews disable Apply and offer Refresh. Invalid cell text never enters the
+staged map; other valid edits remain. All35tools pass280native workflows,85
+preservation/history checks,82safety checks,32writer controls,7actual-export
+checks andClose35/35. Archived sources stay unchanged; full issue111 stays open.
+
+
 ## v1.0.2 — 2026-10-17
 
 Add Classes Browser, Compare Masters, Pair List Browser, Missing Pairs and Text

@@ -43,3 +43,19 @@ def test_pre_kerning_source_tree_refused(monkeypatch, tmp_path):
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="_kerning_dialog"):
         resolve_app_sources()
+
+
+def test_pre_editor_source_tree_refused(monkeypatch, tmp_path):
+    """The previous inspected-Kerning helper set cannot satisfy editor scripts."""
+    for name in (
+        "scripting",
+        "_font_info_dialog",
+        "_features_dialog",
+        "feature_code",
+        "_names_dialog",
+        "_kerning_dialog",
+    ):
+        (tmp_path / (name + ".py")).write_text("# Previous helper\n")
+    monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
+    with pytest.raises(AssertionError, match="kerning_edit"):
+        resolve_app_sources()

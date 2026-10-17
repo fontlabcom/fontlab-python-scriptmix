@@ -20,3 +20,5 @@ this_file: TODO.md
 - [x] Native-verify five Names tools, selection safety, outline proof and actual Close (tools25-v1).
 
 - [x] Review and native-verify the five read-only Kerning tools, actual chooser/proof/Close and saved-font/history invariance (tools30-v1).
+
+- [x] Review and native-verify five Kerning editors, complete saved deltas/Undo/Redo/reopen, snapshot safety, explicit-zero insertion and actual Close (tools35-v1).

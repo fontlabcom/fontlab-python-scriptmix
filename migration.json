@@ -208,5 +208,40 @@
     "destination": "Scripts/Kerning/Text Preview.py",
     "destination_sha256": "f2dc3bb04c60fbb5c21d7d097de570694ee5222fbaf99706beb53c16abd908e0",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_copy_between_masters.py",
+    "source_sha256": "6bef8dae54c1be82656a40b28f5cb694f08a34c6a5804110cac44f9996ffa512",
+    "destination": "Scripts/Kerning/Copy Between Masters.py",
+    "destination_sha256": "fb9bb91736945a3cf1fb968188bacbfdbe6ae49e0696872de126b69920c42861",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_pair_editor.py",
+    "source_sha256": "513ed4180b9137028cdddb0eca5a357bc92eef58f9b43053f38092ce828b786c",
+    "destination": "Scripts/Kerning/Pair Editor.py",
+    "destination_sha256": "2e31e1278e5de1606eea877ecbed5d6ee93e433440acd934f0de8cb762a66dfc",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_scale_values.py",
+    "source_sha256": "780d9bf0db0b7f8f89ed381125a708c299a77322ff0af9ef4fa4556ec3a5e4c8",
+    "destination": "Scripts/Kerning/Scale Values.py",
+    "destination_sha256": "6e0fd81379e5fe5a51da62cbb409dba08c7f8e0f7d972715b919e886d47ce7f6",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_round_values.py",
+    "source_sha256": "356fa81bbb3bbe11ab62c0d819675852a9197532adca2010f7a79c60f457ba86",
+    "destination": "Scripts/Kerning/Round Values.py",
+    "destination_sha256": "9aa3ef344a8bc61bdf1542b4900154e9afc15c0da4ad8c188d784eb0cd68ef5e",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_remove_small.py",
+    "source_sha256": "f72727c86f289fb7364d99091ba440649cf3aba023646c1e1bd571be55f7d64e",
+    "destination": "Scripts/Kerning/Remove Small Pairs.py",
+    "destination_sha256": "de4b6244375ea09af774a8bd4effeaf7f67be65c2b15ad05a328c23048f269cd",
+    "license": "Apache-2.0"
   }
 ]

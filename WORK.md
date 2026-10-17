@@ -481,3 +481,100 @@ issue111-kerning-v1. Full issue111 and all remaining editors stay active; no
 archived input or owner environment installation is changed.
 
 Native command through fl-native.sh --mutating --lane issue111-tools30 with FL_RESTART=1, PYTHONDONTWRITEBYTECODE=1 and installed App wheel runs all30 manifest scripts with --verify-close --verify-safety --verify-names-safety --verify-kerning-safety --verify-kerning-chooser. Exact argv/exit0 retained in issue111-tools30-v1/native-command-receipt.json.
+
+## 2026-10-17 Task3h: five complete Kerning editor sources
+
+Implemented Copy Between Masters, Pair Editor, Scale Values, Round Values and
+Remove Small Pairs, retaining original controls, source/target/mode choices,
+per-master cells, add/delete, zero options, preview ordering, counts and original
+KEY/class/method/registry interfaces. App owns shared pure plans and rounding,
+complete native pair/class/master snapshots, one all-master writer, lifecycle,
+Refresh recovery and Scale/Round rendering; Scriptmix enters through fly.ap.
+
+The writer stages every selected master before notification. It validates name
+structure/existence/class side, whole signed32 values, nonblank history label,
+original current font and exact scanned pairs/classes/masters. It preserves
+explicit zero versus absence using native seed/scale and restores all unrelated
+nonzero pairs in that master. Fractional source history on any master is refused;
+no-op adds no history. Only package/master/kerning containers enter the shared
+before/after checkpoint. Native writes/readback may be partial on failure and say
+so while retaining the after checkpoint. Failed/stale previews clear partial
+staging and disable Apply; invalid cells remove only their own invalid stage and
+leave other valid edits available. Rebuilding the editable table retains staged
+and invalid text. Failed refresh after a write cannot overwrite the error with
+success counts. Optional dependencies remain lazy and no package is added.
+
+Wait, but: checking changed master membership before the original-font guard
+would read a closed package. The final snapshot guard checks current font first.
+A post-write preview failure could also have hidden success or raised a None
+count error; explicit outcome feedback now separates it from successful refresh.
+These are owned-host/source checks only. Original scenarios, installed/native
+complete-font deltas, one real Undo/Redo, saved reopening and actual Close remain
+pending controller verification. No original source, owner install, commit or
+remote branch was changed. All35source/destination hashes pass; prior30unchanged.
+
+Portable verification recipes from the workspace root (private exact invocations
+and initial failures retained in the workspace task-3h-report.md):
+- `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl SCRIPTMIX_APP_SOURCE=/path/to/updated-app/src/fontlabapp fontlab-python-scriptmix/test.sh`: RED exit1,5missing-editor failures with171existing tests passing.
+- `(cd .worktrees/issue111-app && rtk proxy env UV_LINK_MODE=copy uv run --python 3.11 --extra test python -m pytest -q)`: final exit0,399passed in13.88s, including40new owned batch/planning tests.
+- `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl SCRIPTMIX_APP_SOURCE=/path/to/updated-app/src/fontlabapp fontlab-python-scriptmix/test.sh --original-source-root ..`: final exit0,215passed in0.24s,35provenance mappings and Python3.11syntax/menu checks.
+- `rtk proxy uvx ruff check <changed Python files>`: exit0,All checks passed.
+- `rtk proxy git -C fontlab-python-scriptmix diff --check` and `rtk proxy git -C .worktrees/issue111-app diff --check`: exit0.
+
+Forthcoming App0.2.8 helper guidance/resolver checks are explicit; use a current
+wheel plus source override until its artifacts exist. Native acceptance is
+unchecked in PLAN/TODO; full130-stem migration and other archive collections
+remain active, with all originals retained.
+
+## Task3h range fix — retain values across native reopening
+
+Controller's owned native persistence control found signed32 endpoints save but
+reopen clamped to +/-2*UPM with a mark. The native load pipeline in
+Proteus/workspace2/ioengine.cpp12898–12941 confirms it clamps all masters on load.
+Following the controller's recorded ruling, the shared writer now validates the
+ENTIRE final font's kerning against inclusive +/-2*current positive finite UPM,
+including masters not edited by the batch, before history/writes. It refuses
+clearly, never clamps. Valid correction/deletion of existing extreme pairs is
+allowed; no-op bypasses the new range check and stays untouched. Existing
+signed32 and fractional-history safety stays; Fontport is unchanged.
+
+Tests first:13range/UPM failures and7allowed/repair/no-op controls; real PairEditor
+Apply also reached history initialization before refusal. After the shared
+preflight,60owned App batch tests and the real Apply refusal pass. Final full
+suite counts and exact private receipts are in task-3h-report.md. No native
+calls, commits, agents or archive writes occurred. Controller owns focused native
+limits verification and the final combined35tool gate.
+
+Range-fix final Python3.11 suites:App419passed in13.73s;Scriptmix216passed in0.34s with all35provenance mappings; changed-file Ruff and both diff checks pass. Native acceptance remains with the controller.
+
+## Controller acceptance: five Kerning editors and full35 gate
+
+Source, wording and native range-fix reviews PASS. Native9784 original5 pass33
+workflow checks and35exact wholefont/oneUndo/Redo/reopen checks; switched/closed
+Apply safety30 and actualClose5 pass. Complete combined35gate passes280workflow,
+85preservation/history,82safety,32writer controls,7realexport-dialog checks and
+Close35/35. Ten composite notes are separate information, never assertions.
+All93exercisedsource/dependency hashes match; all56App sources matchinstalledwheel.
+
+App419source/60ownedbatch tests pass; installedwheel115 andinstalledsdist115pass
+with pytest sourcepath disabled. Scriptmix216tests pass againstthe actualfinal
+wheel, withall35source/destination hashes. Both distributionsretain licenses,
+NOTICE andprivatepath/scratch exclusions. Five native UI screenshots and final
+plain-language invalid-cell feedback inspected; controls/counts/actions visible.
+
+Richer native testing found a host save/reopen domain mismatch: signed32 endpoints
+persist in memory/history but load clamps beyond2UPM and addsmark1 (fl#8522).
+Final writer refuses a lossy finalbatch before anyhistory/write, neverclamps.
+Native controls prove inclusive +/-2UPM persistence, oneunitoutside refusal,
+existing/newzero, nonzero->zero, glyph/class/bothclass zeros, staleclass/pairs,
+fractionalhistory onuntouchedmaster and exact fullfont preservation. Known extra
+no-op history row remains permitted underD18; oneUndo restores allfontdata.
+
+Controller commands use rtk proxy: installed PYTHONPATH scratch roots and pytest
+-o pythonpath= over seven helpertest files (115passed,exit0,0.31s each); Scriptmix
+explicit SCRIPTMIX_APP_REQUIREMENT currentwheel test.sh --original-source-root
+workspace (216passed,exit0,0.27s). Exact native argv/exit0 and previous failures
+are retained privately in issue111-tools35-v1, kerning-edit-v1 and
+kerning-preflight-v2/v3/v4.
+No owner-site install, original input removal or Fontport contract change.
+Full130-stem/archive migration, additional tools/reporters/docs remain open.

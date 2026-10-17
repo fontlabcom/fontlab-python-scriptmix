@@ -109,8 +109,8 @@ Run with Python 3.11 through uv and an explicit current App requirement:
 
 ```sh
 SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh
-# If App 0.2.7 or newer is available from your package index:
-SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.7' ./test.sh
+# If App 0.2.8 or newer is available from your package index:
+SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.8' ./test.sh
 ```
 
 The wheel is suitable for offline/development testing when pytest and its
@@ -119,7 +119,7 @@ without importing FontLab/Qt binaries. For source development, optionally set
 `SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`; the explicit dependency is
 still required. Missing helper files fail the run.
 
-Every default run checks all 30 destination hashes, exact menu paths/depth,
+Every default run checks all 35 destination hashes, exact menu paths/depth,
 Python 3.11 syntax and provenance metadata. It does not audit absent originals.
 To additionally check every original source hash, provide the workspace root
 containing the manifest's `fontlab-python-examples` paths:
@@ -174,3 +174,22 @@ in the archive. All five pass native workflows, complete saved-font/history inva
 save-dialog export, live proof and Close destruction. All 30 tools together pass
 247 native workflow checks.
 Exceptions Finder and Pairs From Text remain later complete editing tools.
+
+## Kerning editors
+
+Copy Between Masters retains replace/missing/matching modes and checked targets.
+Pair Editor edits every master cell, adds either-side partners and deletes with
+blank cells; invalid text is ignored while other valid cells remain staged.
+Scale Values, Round Values and Remove Small Pairs retain current/all-master scope,
+zero options, sorted previews and exact original rounding rules.
+
+These tools require App0.2.8 helpers; use an updated tag-built wheel
+or an explicit current wheel plus the source override above. No package-index
+publication is implied. The shared writer validates every master before writes,
+uses one native history batch, preserves explicit zero/absence and refuses
+fractional source history and final values outside +/-2*positive finite UPM.
+Apply refuses changed pairs/classes/masters or a
+switched/closed font; Refresh recovers failed reads. Close shares owned cleanup.
+Allfive pass original native scenarios, complete saved-font deltas, firstUndo/Redo,
+reopen, safety andClose. All35tools pass280native workflows/85preservation checks.
+Host-free216tests and35provenance mappings pass. Full archive migration stays open.
