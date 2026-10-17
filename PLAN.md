@@ -30,6 +30,13 @@ and package modules after the run. Corpus/extra tools/docs/cleanup remain open.
 
 All six complete sources share the lazy Fontlabapp panel and bounded edit helper.
 Native original scenarios, Close, export choosers, screenshots, Undo/Redo and
-complete before/after VFJ save/reopen pass. Source tests83pass. Next: feature
-tools, then the remaining practical tools and broader examples. Archive cleanup
+complete before/after VFJ save/reopen pass. Next: the remaining practical tools
+and broader examples. Archive cleanup
 requires reconciliation of every original source and retained destination.
+
+## Feature migration acceptance
+
+Six complete feature tools pass native workflows, screenshots and Close.
+Build's complete feature-only VFJ delta, one Undo, Redo and saved reopen pass.
+All20tools pass183native workflow checks together. Continue the remaining
+categories; keep all source originals until full archive reconciliation.

@@ -96,5 +96,47 @@
     "destination": "Scripts/Font Info/Calculate Vertical Metrics.py",
     "destination_sha256": "496f21b000f65b652e6547cb00a74db9d24d0a23f924e14f2e967612240f4126",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_alternate_preview.py",
+    "source_sha256": "8005230d49193c541587f6eb78e2fdedebb379f17ef4b866d8d97ec79e7fc04a",
+    "destination": "Scripts/Features/Alternate Preview.py",
+    "destination_sha256": "ffb72d9561f925a7e2fdedd7973c74d12b9786983a25e5c2c0eb966ea96e233d",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_build_substitution.py",
+    "source_sha256": "23294f73a4936c77ad4c475e8900620c219d88f6d8df8467a6b1b21a695fc47f",
+    "destination": "Scripts/Features/Build Suffix Substitution.py",
+    "destination_sha256": "13e7bb721cad475e3893fb905abd1abba8be38b6b159422390e31cbe5613f49f",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_classes_browser.py",
+    "source_sha256": "75f08473ae0383b1c2c3d676ad80a90303e1cf214c6e4b898a7192b03d1733e5",
+    "destination": "Scripts/Features/Classes Browser.py",
+    "destination_sha256": "c2ee6f461021b20a639a7d4ef64f7c22e6dc34230b4eafa2e56d11e068e60584",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_code_viewer.py",
+    "source_sha256": "d2de9d47c51a49b74b5817c4e6ce580d6901b48bc51c3f5fcfd0eb3638b1de97",
+    "destination": "Scripts/Features/Feature Code Viewer.py",
+    "destination_sha256": "96df801f97d645706cb714d34c1324800f36354c0b460c22a929868434ab9301",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_ligature_finder.py",
+    "source_sha256": "9df82eb3fca73954df1010d0a20010fabc37ecf6a38171d6259938e4d3194b68",
+    "destination": "Scripts/Features/Ligature Finder.py",
+    "destination_sha256": "556e965cf21995a1220af8ab94355c599439fa04492cf88809b865bfa3711657",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_suffix_report.py",
+    "source_sha256": "1656007da6d4a57a2e921dc104bd2e8afe327e6d6baee9de99652538f342f190",
+    "destination": "Scripts/Features/Suffix Report.py",
+    "destination_sha256": "388b4c2b68498b4ae23fec27affc6709adfe6cc6fa000251364a979b251e1128",
+    "license": "Apache-2.0"
   }
 ]

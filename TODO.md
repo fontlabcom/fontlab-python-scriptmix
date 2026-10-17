@@ -13,3 +13,6 @@ this_file: TODO.md
 - [x] Share repeated dialog lifecycle through Fontlabapp; all eight original scenarios and actual Close destruction pass on9784.
 
 - [x] Native-verify all six Font Info tools, shared panels and full Undo/Redo/save/reopen for four mutators; verify no-op/stale-font safety and actual save choosers.
+
+- [x] Native-verify all six Features tools, original scenario oracles and actual Close destruction.
+- [x] Prove Build Suffix Substitution's feature-only full VFJ delta, one Undo, Redo and saved reopen.

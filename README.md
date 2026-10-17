@@ -76,6 +76,29 @@ chooser and reports the exported count and filename.
 
 The six Font Info panels now share App's lazily loaded FontInfoDialog shell via
 fly.ap.scripting.font_info_dialog_type(). Existing controls/actions and the owned
-export chooser are unchanged. Native acceptance must be rerun on the refactored
-source bytes before their integration; earlier v4 receipts describe the prior
-source snapshot.
+export chooser are unchanged. Native workflows, editor persistence and Close
+destruction pass on the current shared implementation.
+
+## Feature tools
+
+Features contains Alternate Preview, Build Suffix Substitution, Classes Browser,
+Feature Code Viewer, Ligature Finder and Suffix Report. They preserve the
+original master proof, filters, selection, literal search/highlights and Copy
+controls. Proof rows use one outline scale per master and wrap large families.
+
+Build previews actual suffix substitutions and appends them to the requested
+feature, retaining prefix, ordered unrelated features and classes. Apply binds
+to the original font, complete feature source and referenced glyphs. It uses
+Fontport's existing ordered writer and Undo safety checks through App, skips
+no-ops and reports unexpected native failures as possibly partial. Install
+App's optional `fontedit` dependency for Build and Feature Code Viewer; native
+`fontpr` must be available. The viewer reads exact stored prefix/ordered blocks,
+rather than native iterator values or synthesized class-prefix text.
+It does not compile features: test the result in FontLab's Features panel.
+
+These six tools pass their native scenarios and actual Close destruction.
+The builder passes complete feature-only saved deltas, one-step Undo, Redo and
+reopening. All20migrated tools pass183workflow checks together on FontLab9.0.9784.
+Clipboard operations remain host-free tested; native checks inspect the actual
+suffix preview under the owner's clipboard exclusion.
+No export chooser is needed: these six originals provide Copy, not file export.

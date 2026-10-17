@@ -139,3 +139,51 @@ workspace issue111-font-info-shared-v3 and issue111-font-info-footer-v1. App
 remain intact; full issue111 migration, cleanup, additional tools/reporters and
 documentation/final review are still pending. No release tag or owner-site
 install was performed.
+
+## Unreleased — six Features tools
+
+Migrate the six complete feature tools with original controls and Apache-2.0
+provenance. Reuse the App panel lifecycle and Fontport's ordered feature writer
+for actual suffix appends. Bind Apply to the complete source snapshot and glyph
+references; preserve unrelated source/order/prefix/classes, reject stale plans
+and contain proof painter errors. Native acceptance remains pending.
+
+Task3d review fixes: share host-free suffix/FEA calculations, document concrete
+row contracts, and load the Feature Code Viewer from exact ordered VFJ source
+instead of native index iteration/synthesized prefix. Native rerun pending.
+
+
+## Controller acceptance: six Features tools
+
+Initial task review required shared pure calculations and useful typing/docs.
+Native v1 additionally exposed blank feature bodies in the viewer. Fix1 review
+passes: host-free App feature_code calculations are shared through fly; viewer
+uses exact persisted prefix/ordered sources rather than raw native iteration.
+Genuine regressions and fixes are retained in workspace task-3d-report.md.
+
+Fresh Python3.11 source347App13.02s/110Scriptmix tests pass; installed helper,
+shared panel/writer and calculation tests43pass;50production files match wheel.
+20provenance source/destination pairs match. Wheel56entries and sdist94entries
+retain shared sources, licenses and NOTICE; ignored scratch/venv/archive payload
+is excluded. Fontport v1.0.2 source confirms the required ordered API exists.
+
+Native installed-wheel six-tool v2 passes30workflow checks,6Close destructions,
+and Build's six full feature-only/preservation/one-Undo/Redo/reopen checks.
+All20tool v2 additionally passes183workflow checks,30persistence checks across
+five editors,12no-op/preflight/stale-font safety checks andClose20/20. Actual
+App/Fontport source paths are asserted; App/fly/Fontport imports restore. Every
+owned font closes and no host crash occurs. Screenshots of all six reviewed:
+real alternate outlines, complete scrollable tables/source, working highlights.
+
+Evidence: workspace issue111-features-v2 and issue111-tools20-v2. Suffix clipboard
+scenario is explicitly adapted to actual preview under D8; clipboard remains
+native-unverified. All20-v1 reached20workflow/5editor-persistence passes then a
+cold native chooser hit FontLab's5sRPC deadline. This unchanged chooser already
+passes independently on the same Scriptmix source hash (footer-v1); all20-v2
+tests lifecycle/safety separately. Failure receipts retained; no performance
+claim or speculative source fix. Feature-source mutation does not compile or
+prove shaping: test generated code in FontLab's Features panel.
+
+Full issue111 archive migration/cleanup, further practical and broader scripts,
+package cleanup, new reporters and docs/finalreview remain open. No original
+source removed, owner environment install, publication or release tag.

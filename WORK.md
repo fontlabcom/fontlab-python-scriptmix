@@ -166,3 +166,95 @@ workspace issue111-font-info-shared-v3 and issue111-font-info-footer-v1. App
 remain intact; full issue111 migration, cleanup, additional tools/reporters and
 documentation/final review are still pending. No release tag or owner-site
 install was performed.
+
+## 2026-10-17 — Issue111 Features source checkpoint
+
+Six complete Features tools retain their original controls, proofs, Copy and
+search/filter interactions. Shared App FeaturesDialog extends the existing
+FontInfoDialog shell/lifecycle. Build uses App's lazy Fontport ordered feature
+writer, exact source/current-font/reference validation and existing native
+history safety checks. No source archive or prior14tool bytes changed.
+
+RED: `rtk proxy bash -c 'cd fontlab-python-scriptmix && ./test.sh'` exit1,
+6requested-file failures/83existing passes. Actual Fontport integration caught
+a missing LF in the generated final feature block (1failed5passed); fixed
+Build's preview, then6passed. Other failed setup/style attempts are retained in
+workspace `.superpowers/sdd/issue-111/task-3d-report.md`.
+
+Final `rtk proxy uv run --python 3.11 --no-project --with pytest python -m pytest
+-q fontlab-python-scriptmix/tests`: exit0,108passed. Final `rtk proxy env
+PYTHONPATH=.worktrees/issue111-app/src:fontlab-fontport/src
+fontlab-fontlabapp/.venv/bin/python -m pytest -q .worktrees/issue111-app/tests`:
+exit0,334passed,13.06s. Both final interpreters are Python3.11. Scoped Ruff
+check/format and both repository diff checks exit0;20manifest hash pairs pass.
+
+Wait, but: source tests cannot prove native Undo, source persistence or actual
+widget destruction. Those gates, original scenarios and screenshot review stay
+with the controller. No native runs, owner-site installs or commits were made.
+Production sources frozen with SHA256 in the task report. Full issue111 scope,
+archive cleanup and final docs/release work remain open.
+
+## Task3d round1 review fixes — 2026-10-17
+
+Extract duplicated suffix/FEA/name validation into host-free App feature_code,
+consumed through fly.ap by the current Build/Suffix/Ligature tools. Preserve the
+original helper import surfaces and alternate-name pair ordering. Add concrete
+calculation row types and docs for class exclusion, suffix counts, recipe Ready
+limits and exact feature source order.
+
+Fix the measured Feature Code Viewer native boundary: native iteration returned
+positions and raw prefix synthesized classes. It now displays the complete exact
+read_feature_blocks snapshot, preserving prefix text and ordered source blocks.
+A genuine new RED calls the actual viewer.setup against iterator[0,1]/blank
+get_feature and synthetic prefix doubles; it failed on the incorrect sources
+before the fix, then passed on exact independent blocks. No native execution or
+blind performance optimization was performed in this round.
+
+Commands: `rtk proxy uv run --python 3.11 --no-project --with pytest python -m
+pytest -q fontlab-python-scriptmix/tests/test_features.py -k viewer_uses`: exit1,
+1failed25deselected (RED). Final full Scriptmix command without the selection:
+exit0,110passed0.11s. `rtk proxy env
+PYTHONPATH=.worktrees/issue111-app/src:fontlab-fontport/src
+fontlab-fontlabapp/.venv/bin/python -m pytest -q .worktrees/issue111-app/tests`:
+exit0,347passed13.06s. Direct shared-helper tests account for13new App checks;
+shared identity and actual viewer boundary add2Scriptmix tests. A pre-freeze run
+had109passes/1expected stale-manifest failure; refreshed only Features hashes.
+Scoped Ruff check/format pass;20source/destination hash pairs verify. Updated
+production hashes are in the workspace task3d report. Native acceptance of these
+revised bytes remains the controller's task.
+
+
+## Controller acceptance: six Features tools
+
+Initial task review required shared pure calculations and useful typing/docs.
+Native v1 additionally exposed blank feature bodies in the viewer. Fix1 review
+passes: host-free App feature_code calculations are shared through fly; viewer
+uses exact persisted prefix/ordered sources rather than raw native iteration.
+Genuine regressions and fixes are retained in workspace task-3d-report.md.
+
+Fresh Python3.11 source347App13.02s/110Scriptmix tests pass; installed helper,
+shared panel/writer and calculation tests43pass;50production files match wheel.
+20provenance source/destination pairs match. Wheel56entries and sdist94entries
+retain shared sources, licenses and NOTICE; ignored scratch/venv/archive payload
+is excluded. Fontport v1.0.2 source confirms the required ordered API exists.
+
+Native installed-wheel six-tool v2 passes30workflow checks,6Close destructions,
+and Build's six full feature-only/preservation/one-Undo/Redo/reopen checks.
+All20tool v2 additionally passes183workflow checks,30persistence checks across
+five editors,12no-op/preflight/stale-font safety checks andClose20/20. Actual
+App/Fontport source paths are asserted; App/fly/Fontport imports restore. Every
+owned font closes and no host crash occurs. Screenshots of all six reviewed:
+real alternate outlines, complete scrollable tables/source, working highlights.
+
+Evidence: workspace issue111-features-v2 and issue111-tools20-v2. Suffix clipboard
+scenario is explicitly adapted to actual preview under D8; clipboard remains
+native-unverified. All20-v1 reached20workflow/5editor-persistence passes then a
+cold native chooser hit FontLab's5sRPC deadline. This unchanged chooser already
+passes independently on the same Scriptmix source hash (footer-v1); all20-v2
+tests lifecycle/safety separately. Failure receipts retained; no performance
+claim or speculative source fix. Feature-source mutation does not compile or
+prove shaping: test generated code in FontLab's Features panel.
+
+Full issue111 archive migration/cleanup, further practical and broader scripts,
+package cleanup, new reporters and docs/finalreview remain open. No original
+source removed, owner environment install, publication or release tag.
