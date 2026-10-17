@@ -243,3 +243,10 @@ licenses and updated NOTICE; private paths and scratch payloads are excluded.
 Evidence: workspace issue111-tools25-v1, names-source-fidelity.json and the
 source/fix reviews. Clipboard and chooser timing have no new native claim.
 Full issue 111 remains active; no archived input is removed.
+
+## Issue 111 Names dependency guidance fix 2
+
+Require App0.2.6 in test-runner guidance and document tag-built wheels separately
+from package-index availability. Refuse resolved helper trees missing the Names
+panel. The installed final-wheel suite passes151tests with25provenance pairs;
+product scripts and manifest are unchanged.

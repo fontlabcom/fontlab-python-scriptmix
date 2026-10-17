@@ -25,7 +25,13 @@ def resolve_app_sources():
         if override
         else Path(distribution("fontlab-fontlabapp").locate_file("fontlabapp"))
     )
-    for name in ("scripting", "_font_info_dialog", "_features_dialog", "feature_code"):
+    for name in (
+        "scripting",
+        "_font_info_dialog",
+        "_features_dialog",
+        "feature_code",
+        "_names_dialog",
+    ):
         assert (root / f"{name}.py").is_file(), f"Missing App helper: {root / name}"
     return root
 

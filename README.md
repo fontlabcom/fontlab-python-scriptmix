@@ -109,8 +109,8 @@ Run with Python 3.11 through uv and an explicit current App requirement:
 
 ```sh
 SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh
-# Once App 0.2.5 is published:
-SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.5' ./test.sh
+# If App 0.2.6 or newer is available from your package index:
+SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.6' ./test.sh
 ```
 
 The wheel is suitable for offline/development testing when pytest and its
@@ -141,9 +141,11 @@ follows selection every 500 ms and paints the current master outline beside
 system text; closing stops the timer. No Pause control existed in this original.
 
 These five reuse App's lazy Names panel, table, guarded signals and selection
-helpers. Install the updated App helper build containing `names_dialog_type`;
-App 0.2.5 alone predates this batch. In development, use its wheel requirement
-plus `SCRIPTMIX_APP_SOURCE` pointing at the updated source directory. Complete
+helpers. Use Fontlabapp 0.2.6 or newer; the `v0.2.6` tag includes
+`names_dialog_type`. Supply a wheel built from that tag to the test runner;
+package-index availability is separate. For source development, use a current
+wheel requirement plus `SCRIPTMIX_APP_SOURCE` pointing at the updated source
+directory. Complete
 refreshes bind actions to their original font; switched/closed fonts, missing
 names and failed refreshes refuse selection before clearing it. No font design
 or metadata edits occur. Originals remain untouched and all 25 provenance pairs

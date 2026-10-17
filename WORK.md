@@ -367,3 +367,23 @@ source/fix reviews. Clipboard and chooser timing have no new native claim.
 Full issue 111 remains active; no archived input is removed.
 
 Controller native command uses fl-native.sh --mutating --lane issue111-tools25, FL_RESTART=1, PYTHONDONTWRITEBYTECODE=1, installed final App wheel, all 25 manifest scripts and --verify-close --verify-safety --verify-names-safety. Exact argv/exit0: issue111-tools25-v1/native-command-receipt.json.
+
+## Task 3f dependency guidance fix 2
+
+Align runner/README minimum guidance with App0.2.6, which contains the Names
+helpers. Explain tag-built wheels without claiming package-index availability.
+The shared source resolver now requires _names_dialog.py alongside the existing
+four helpers. Scripts, migration and App bytes remain unchanged from the
+controller-verified freeze. No native calls, commits, pushes or installs.
+
+Missing-helper regression: a temporary source tree containing only the four old
+helpers was accepted before the fix (probe exit1, expected RED); after adding the
+Names check the same probe exits0 and reports "Missing Names helper refused
+explicitly." No new test-file scope or dependency was introduced.
+
+Exact verification commands from workspace root:
+- `rtk proxy uv run --no-project --python 3.11 --with pytest python /tmp/issue111-missing-names-check.py fontlab-python-scriptmix/tests/conftest.py`: RED exit1 (incomplete helpers accepted); GREEN exit0.
+- `rtk proxy bash -c 'cd fontlab-python-scriptmix && env -u SCRIPTMIX_APP_SOURCE SCRIPTMIX_APP_REQUIREMENT="$PWD/../.local/issue111-app-names-fix1-dist/fontlab_fontlabapp-0.2.6.dev0+g8e4463d52.d20261017-py3-none-any.whl" ./test.sh --original-source-root ..'`: exit0,151passed in0.14s;25source/destinationhashes, installed final wheel only (no source override).
+- `rtk proxy uvx ruff check fontlab-python-scriptmix/tests/conftest.py`: exit0,All checks passed.
+- `rtk proxy git -C fontlab-python-scriptmix diff --check`: exit0.
+- `rtk proxy git -C fontlab-python-scriptmix diff --exit-code HEAD -- Scripts migration.json`: exit0; native product bytes unchanged.
