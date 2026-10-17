@@ -4,6 +4,35 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — read-only Components
+
+- Accept all five installed-wheel native workflows and prior49regression: combined54
+  passes453workflow/133preservation/305safety/201error controls,6selection andClose54.
+  Fix falsey-current fallback, retain exact empty Compatibility scope and safe painters.
+  Source/artifact/privacy checks pass; reviewed integration/D17tags/R053 remain pending.
+
+- Fix the measured CountBadges empty-selection fallback for a valid falsey native
+  CurrentGlyph. Resolve selected/current names with original is-not-None rules;
+  keep Compatibility's exact selection and prior Proof/scripting helpers unchanged.
+  Source proof: App506, Scriptmix620/1skip, Git-free619/2skips; fix2artifact/native
+  confirmation remains parent-owned and pending.
+
+- Fix source-review F1: Compatibility's selected scope keeps empty selection;
+  CountBadges alone retains its original current-glyph fallback.
+- Fix source-review F2: reuse ProofView painter activation/finalization containment,
+  exact None success and explicit owned fallback cleanup/Close release. Source-only
+  regression proof: App505, Scriptmix618/1skip, Git-free617/2skips; native/artifact
+  re-review remains pending. Prior49menus and mappings stay exact.
+
+- Add five complete L1 component inspectors, preserving original UI, ordering,
+  selection, simulation, pure CSV oracle and complete native badge drawings.
+- Share lazy calculations and existing owned Proof/Names lifecycle; guard exact
+  font/master/membership/source drift, opening/paint errors and Close cleanup.
+- Append five mappings (54 total) and immutable Git-free prior49 provenance/menu
+  byte checks; preserve the prior45 invariant and all original sources.
+- Source tests only; independent review, artifacts, native preservation/painting/
+  safety/Close and prior49 regression remain pending. No release is claimed.
+
 ## v1.0.8 — 2026-10-18
 
 - Fix the prior-45-menu invariant test after commit and in Git-free downloads.

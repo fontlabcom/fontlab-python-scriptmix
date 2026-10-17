@@ -38,3 +38,8 @@ this_file: TODO.md
 - [x] Audit inspector artifacts and run all four unchanged native scenarios, complete preservation, exact post-seed Node baseline, actual painting/screenshots, safety and Close.
 - [x] Regress the prior 45 tools on the same inspector wheel; combined 49 native passes420 workflow/123 preservation/225 safety/150 error controls/Close 49.
 - [x] Complete reviewed integration, D17 tags and independent downloaded-tag R053 acceptance: App v0.2.12 / Scriptmix v1.0.8; 49/130 released, 81 pending (7 held Names + 74 unmigrated). All originals remain; full archive/additional-tools/reporters/docs work stays open.
+
+- [x] Independently review the five complete read-only Components tools and built artifacts.
+- [x] Native-verify unchanged Components scenarios, full saved-font/workspace/history/master preservation, painting, opening/stale safety and actual Close.
+- [x] Regress prior49 tools on the same reviewed App artifact; keep full130 migration, held7Names, archive cleanup and broader docs goals open.
+- [ ] Complete reviewed Components integration/D17 tags and independent downloaded-tag R053; keep full130/archive/held7Names work open.

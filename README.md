@@ -8,37 +8,23 @@ Small and useful scripts for FontLab
 
 Copy the contents of `Scripts` into your FontLab Scripts menu folder. Keep the category subfolders, such as `Reports` and `Font Info`; FontLab supports one folder level. Use FontLab 9's Python 3.11 with `fontlab-fly` and `fontlab-fontlabapp` (including `scripting`) available in its Python environment. No third-party UI package is needed.
 
-Open a font, then run Empty Glyphs, Open Contours or Font Overview from Reports.
-The dialogs are modeless: edit the font and Rescan/Refresh when needed. Empty Glyphs can hide intentional whitespace. Select chosen rows, or leave rows
-unselected to select all results. Selection refuses results after changing the
-current font; rescan first. Reports read all masters without changing geometry.
-Closing a report disconnects its signals. Re-running replaces its old window. Close also destroys the native dialog after its event finishes. All eight
-reports share this lifecycle code through `fly.ap.scripting`.
+Open a font, then run Empty Glyphs, Open Contours or Font Overview from Reports. The dialogs are modeless: edit the font and Rescan/Refresh when needed. Empty Glyphs can hide intentional whitespace. Select chosen rows, or leave rows unselected to select all results. Selection refuses results after changing the current font; rescan first. Reports read all masters without changing geometry. Closing a report disconnects its signals. Re-running replaces its old window. Close also destroys the native dialog after its event finishes. All eight reports share this lifecycle code through `fly.ap.scripting`.
 
-Sources stay archived until full reconciliation; `migration.json` records exact
-Apache-2.0 provenance/hashes and WORK.md retains native acceptance receipts.
+Sources stay archived until full reconciliation; `migration.json` records exact Apache-2.0 provenance/hashes and WORK.md retains native acceptance receipts.
 
-A failed scan or table refresh invalidates selection until a complete rescan
-succeeds. Partial results are cleared; explicit selection calls also refuse them.
+A failed scan or table refresh invalidates selection until a complete rescan succeeds. Partial results are cleared; explicit selection calls also refuse them.
 
 ## Reports: second migration batch
 
-Live Glyph Info follows the selected glyph twice a second, with per-master metrics, outline/component/anchor counts and Pause. Glyph Table CSV offers all
-or selected glyphs, sortable widths/counts, Copy CSV and a modeless UTF-8 CSV save chooser. Label Statistics shows mark colours and suffix groups; Add to
-selection preserves the current selection. Nodes Near Zones checks transformed
-on-curve nodes across masters with selection scope and a 1–30 unit tolerance. Unicode Coverage includes untouched-block filtering, progress bars and block
-selection. Explicit selection is bound to the font that supplied the rows.
+Live Glyph Info follows the selected glyph twice a second, with per-master metrics, outline/component/anchor counts and Pause. Glyph Table CSV offers all or selected glyphs, sortable widths/counts, Copy CSV and a modeless UTF-8 CSV save chooser. Label Statistics shows mark colours and suffix groups; Add to selection preserves the current selection. Nodes Near Zones checks transformed on-curve nodes across masters with selection scope and a 1–30 unit tolerance. Unicode Coverage includes untouched-block filtering, progress bars and block selection. Explicit selection is bound to the font that supplied the rows.
 
 All five retain the original interactions and pass their original native scenarios, including the live timer and owned Close, on FontLab9.0.9784.
 
 ## Font Info tools
 
-The Font Info menu includes Glyph Order Preview and Export, Master Metrics Table, Names and Credits, Unicode Ranges and Codepages, Bump Font Version and
-Calculate Vertical Metrics. All original controls, embedded Unicode data, assessment notices, export, previews and the metric diagram are retained.
+The Font Info menu includes Glyph Order Preview and Export, Master Metrics Table, Names and Credits, Unicode Ranges and Codepages, Bump Font Version and Calculate Vertical Metrics. All original controls, embedded Unicode data, assessment notices, export, previews and the metric diagram are retained.
 
-Names changes style on the original current master and credits font-wide. Master Metrics edits every displayed master. Version bump optionally appends a
-dated note to every master. Vertical Metrics defaults to hhea and Win; Typo is
-optional because it also moves FontLab's own ascender/descender lines. Its bounds
+Names changes style on the original current master and credits font-wide. Master Metrics edits every displayed master. Version bump optionally appends a dated note to every master. Vertical Metrics defaults to hhea and Win; Typo is optional because it also moves FontLab's own ascender/descender lines. Its bounds
 are captured on open; reopen after outline changes. Glyph Order exports UTF-8
 text without reordering the font; Unicode coverage reports without editing it.
 
@@ -92,7 +78,7 @@ Cached uv requirements permit offline wheel tests. Sources resolve without nativ
 binaries; development may set `SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`
 alongside the explicit dependency. Missing helpers fail the run.
 
-Every default run checks all 49 destination hashes, exact menu paths/depth,
+Every default run checks all 54 destination hashes, exact menu paths/depth,
 Python 3.11 syntax and provenance metadata. It does not audit absent originals.
 To additionally check every original source hash, provide the workspace root
 containing the manifest's `fontlab-python-examples` paths:
@@ -198,3 +184,16 @@ Metrics and outline inspectors: Spacing String Preview, Width Table, Contour Ord
 Installed-wheel FontLab 9.0.9784 acceptance passes41 original workflows/8 complete saved font/design/classes/metadata/workspace/history/master checks/10 paint/24 opening/59 safety/Close 4;70 source hashes match and imports restore; Node has its exact fresh post-seed baseline. Seven images were inspected; all 15 final images are byte-identical to retained v1.
 App 497 source and actual-wheel Scriptmix 501 passed, 1 skipped;180 installed tests each for wheel/sdist pass on arm64Python3.11.14. All 66 production files and49 mappings match; previous 45 menus/rows stay exact and72 wheel/116 sdist entries pass license/NOTICE/privacy audits.
 Same-wheel prior 45regression passes379 workflow/115 preservation/166 safety/116 error controls/Close 45,113 source hashes and import restoration; combined 49 native:420/123/225/150/Close 49. Historical 15 chooser receipts use unchanged code; no fresh chooser run is claimed. Use an App wheel built from the current checkout; `SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none ./test.sh` selects the host architecture. Full 130-stem/archive/held 7 Names work stays open; no original removal or index publication.
+
+## Read-only Components (native acceptance)
+
+Compatibility compares ordered component lists across masters and selects mismatches.
+Count Badges draws placed outlines with own contour/component/auto counts per master.
+Missing Bases groups missing glyphs/layers and unnamed bases; its simulated scan is retained.
+Report preserves every composite layer, offsets, current/all-master filtering and Copy CSV.
+Where Used indexes all masters in font order, with search, row selection and Select all.
+Use a current App wheel with lazy components helpers; actions reject changed source/font/master/membership and Close releases signals/paths.
+FontLab9.0.9784 passes33original workflows/10complete font/workspace/history checks,5paint/30opening/80stale/16painter/6selection controls/Close5;81hashes and restored imports match. Eight images were inspected; valid falsey-current A retains its badge fallback.
+App506source tests, actual-wheel Scriptmix620/1skip, Git-free619/2skips and189installed tests each for wheel/sdist pass;69runtime files and54source pairs match, prior49menus/rows exact. License/NOTICE/privacy audits pass75/120payload entries; clipboard tests use a fake only.
+Same-wheel prior49passes420workflow/123preservation/225safety/150error controls/Close49; combined54native:453/133/305/201plus6selection/Close54. Historical chooser receipts remain separate.
+Released scope stays49/130 pending reviewed integration/D17tags/downloaded-tag R053; held7Names and69other stems remain. All originals are retained; full migration/archive cleanup/additional tools/reporters/docs stay open.

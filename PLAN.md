@@ -150,3 +150,38 @@ additional tools/reporters/docs and the broader goal remain open. Post-tag
 receipt metadata review/commit/push is parent-owned and has not occurred in this
 step. No owner-site install, PyPI publication, GitHub release object or site
 publication is claimed.
+
+## Issue111 read-only Components native acceptance
+
+The five complete L1-only inspectors preserve all original controls, per-master
+component ordering/counts, placed outlines, missing-base simulation, offsets,
+CSV filtering and exact usage/selection interfaces. Initial review F1/F2 and
+native-measured fix2 are resolved: Compatibility retains empty Font-window scope;
+Count Badges accepts a valid falsey CurrentGlyph using the original explicit
+None rule, and shared ProofView contains inactive/failed/throwing painter ends.
+Prior Proof/scripting helper bytes remain unchanged.
+
+Installed-wheel FontLab9.0.9784 acceptance passes33original workflow checks,
+10complete saved-font/design/classes/metadata/workspace/history/master checks,
+5paint/30opening/80stale/16native painter-boundary/6selection controls andClose5.
+All81exercised hashes match; imports restore. Eight images were inspected,
+including the complete eight-glyph/three-row badge canvas and falsey-A fallback.
+The unchanged Report workflow is split at its CSV checkpoint into two bounded
+calls; every original statement/order/check remains, without extending deadlines.
+All failed original/fix1 attempts remain in controller evidence.
+
+Fresh sourceApp506tests, actual-wheel Scriptmix620/1explicit skip, independent
+79file Git-free copy619/2explicit skips and installed wheel/sdist189tests each
+pass on arm64Python3.11.14. All69runtime files match both installed artifacts;
+75wheel/120sdist payload entries pass license/NOTICE/privacy audits. All54source
+pairs pass, with immutable49previous rows and menu bytes unchanged.
+Same-wheel prior49regression passes420workflow/123preservation/225safety/
+150error controls/Close49;120current hashes and import restoration match.
+Combined54native candidates pass453workflow/133preservation/305safety/
+201error controls plus6selection controls/Close54. Historical chooser receipts
+remain separate; this batch introduces no real clipboard or chooser operation.
+
+Reviewed integration, D17 tags and independent downloaded-tag R053 remain pending.
+Released scope stays49/130 until those gates pass. Full130migration, held7Names,
+69other stems, archive cleanup, additional tools/reporters/docs remain open.
+All originals are retained. No owner-site install or index publication is claimed.

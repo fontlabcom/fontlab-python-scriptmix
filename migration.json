@@ -341,5 +341,40 @@
     "destination": "Scripts/Outlines/Node Statistics.py",
     "destination_sha256": "1de5f0156457f5f11cea026651af0c5053b76826cf290acb30171f9673626990",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_compatibility.py",
+    "source_sha256": "fa3a00b93e110f7c3205cdc4e6135258d0a0765555629c2970392c9374bef887",
+    "destination": "Scripts/Components/Compatibility.py",
+    "destination_sha256": "df701b5ebd9fc0605bf8553d40b8f29a0fc00f904e5bdce43a06d34be37feb0e",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_count_badges.py",
+    "source_sha256": "e442337cfbf93e6ef05a42f130fc32d7114ce4f6ed0a883a6fc848f77eba6257",
+    "destination": "Scripts/Components/Count Badges.py",
+    "destination_sha256": "95b91a9c3a0d2ff12b5bb7a30bcc59117404d6d9217078d1f6b475ade96c985e",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_missing_bases.py",
+    "source_sha256": "27bb6fc8a98c46582bd6a55dce97f8d2bb9902de230c3bfa1617b5531ebc1674",
+    "destination": "Scripts/Components/Missing Bases.py",
+    "destination_sha256": "a6ab4aa6160b8cf9ac2d5bd851b47dbe07399f59f8f429c5b30e40cbd4a0fe4c",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_report.py",
+    "source_sha256": "32426f97bf2bc4eccfc4406b8a0d02cba2b7a0cd19d6e73421f45bc5d80c8871",
+    "destination": "Scripts/Components/Report.py",
+    "destination_sha256": "5326d70f69898f1272e0946451a06ce56c45ebde017be55b0fa64bea768c09dc",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_where_used.py",
+    "source_sha256": "8a7983f919bd8074a2ccaf502dee0704aa51188dc3cdabcfc18b75c47b035180",
+    "destination": "Scripts/Components/Where Used.py",
+    "destination_sha256": "4f5fc5877419a7ac391ebc527040b0c68687af40b3bb5c8f2cf93ee002848ccf",
+    "license": "Apache-2.0"
   }
 ]

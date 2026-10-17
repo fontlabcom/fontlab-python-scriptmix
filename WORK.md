@@ -1266,3 +1266,273 @@ these six documentation changes have not been committed or pushed here. No broad
 suite or native call was rerun. `rtk proxy git diff --check` in both worktrees
 and `rtk proxy python3 -` scope/frontmatter/public-path assertions verify the
 exact six-file delta against immutable tags, with other files unchanged.
+
+## Task3n read-only Components — source implementation (native pending)
+
+Adapted all five complete L1 originals: Compatibility, Count Badges, Missing Bases,
+Report and Where Used. Original controls/defaults/title/key/classes/helpers and
+full rows/cards/tree/CSV remain. App shares lazy native calculations, actual placed
+Proof paths and the existing owned Proof/Names lifecycle. Every source read begins
+after status/Close exist. Guards retain exact ordered membership/current master/
+ordered masters and plain source values; selection/open/copy/paint refuse drift.
+MissingBases retains its exists predicate across guarded simulated selection and
+clears it on failure/Close. BadgeGrid success remains exactly error=None; painters
+end in finally, failed/empty invalidations settle, and owned signals disconnect.
+Report csv_text remains a pure oracle; Copy CSV is tested with a fake clipboard.
+All five original calculation aliases remain injectable after controls exist.
+
+All prior49 manifest rows/menu bytes remain exact. Five source/destination pairs
+append (54 source tools); the Git-free invariant uses the independent literal
+v1.0.8 digest 5e5cc9b782a4ad26bd38ef7e803bdd3cd1d37e11a0c920d60738bc8a2840e111,
+plus all49 immutable destination hashes. The immutable first45 assertion stays.
+The one-level Components category is added to the existing path whitelist;
+all54original-source hashes pass the requested audit. sample-copies.json confirms
+one retained original per new stem; its complete denominator remains130 (not106).
+Only scripting.py changes among the66prior App runtime files; three helpers are
+added, and the remaining65production files stay byte-exact. No dependency changed.
+README remains within200lines. App WORK's carried Task3m navigation correction
+now names Scriptmix WORK.md:1171-1224 instead of saying the history is above.
+
+Test-first RED: App components import missing, collection exit2; Scriptmix five
+menu-existence tests and total54 invariant fail6/exit1. Initial harness calls from
+the workspace root found no ./test.sh (exit127); they were reissued from the
+assigned repository cwd. A generator path invoked from App cwd failed before
+editing; the correctly rooted rerun applied it. These are harness errors, not
+product results. Iteration REDs caught missing category whitelist (full suite
+605pass/1fail/1skip), generated duplicate helpers/exports and test-double control,
+selection-set and signal-blocking mismatches. Direct review caught Ruff removing
+public helper aliases; explicit exports and a host-free availability/delegation
+test now prevent that gap. Scoped Ruff initially rejected duplicate helpers,
+unused names and native-boundary exception style; those findings were corrected.
+No historical failure or immutable tag was rewritten.
+
+Final affected suites: App tests/test_components.py contributes8passing cases;
+Scriptmix -k components passes107/505deselected (0.27s), exit0.
+Full App:505passed12.94s, exit0. Full Scriptmix:611passed1explicit skip0.84s,
+exit0, including all54original/destination pairs. Final separate Git-free copy:
+610passed2explicit skips0.77s, exit0, no .git in its parent chain. It uses a copied
+current App source override with the stablev0.2.12wheel requirement; this proves
+source portability, not a newly built/installed App artifact. The skips remain
+explicit: Spacing Preview has no selection read; standalone additionally lacks
+--original-source-root. No tests are silently discarded.
+
+Fresh checks: scoped Ruff check/format-check (14files), both git diff --check,
+Python3.11syntax/header checks, exact prior49menus and all5source-copy/scenario
+hashes pass. Native API references: retained FontLab getContours/findLayer/
+componentGlyph stubs and PythonQt QTransform.pyi method declarations; existing
+native-verified Proof/Masters geometry/lifecycle is reused. The archived Qt5.15
+web page was inaccessible; current official Qt QTransform documentation confirms
+the same matrix accessor signatures, not a claim about a Qt6runtime.
+
+Source implementation is ready for parent review. Native/artifact/source review,
+strong complete-font/workspace/history/master preservation, screenshots, actual
+Close and prior49native regression are parent-owned and pending. No native call,
+artifact build, owner-site install, canonical edit, commit/push/tag, original edit/
+execution/removal or subagent occurred. Released scope stays49/130; this batch's
+five sources await native acceptance. Seven held Names and69other stems remain
+outside this batch; full archive/cleanup/additional-tools/reporters/docs stay open.
+
+Exact Scriptmix cwd commands (relative paths):
+- `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.12-dist/fontlab_fontlabapp-0.2.12-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -k 'component_menu_exists or immutable_released49' -rs` (test-first6fail/exit1).
+- `rtk proxy env SCRIPTMIX_APP_SOURCE=../issue111-components-app/src/fontlabapp SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.12-dist/fontlab_fontlabapp-0.2.12-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -k components -x` (final107pass/exit0).
+- Same environment with `./test.sh --original-source-root ../.. -rs` (fullRED605pass/1fail/1skip/exit1 before Components whitelist; GREEN606pass1skip; final611pass1skip0.84s/exit0).
+- `rtk proxy git diff --check` (exit0).
+
+From a separate Git-free scratch cwd, with copied App helpers/wheel one level up:
+`rtk proxy env SCRIPTMIX_APP_SOURCE=../app-src SCRIPTMIX_APP_REQUIREMENT=../fontlab_fontlabapp-0.2.12-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -rs`
+Final610pass2explicit skips0.77s, exit0. Source and standalone current production/
+menu/test bytes match; no installed-artifact proof is implied by a source override.
+
+Exact workspace-relative quality commands, exit0 after corrections:
+`rtk proxy uvx ruff check .worktrees/issue111-components-app/src/fontlabapp/{components,_components_dialog,_components_views,scripting}.py .worktrees/issue111-components-app/tests/test_components.py .worktrees/issue111-components-scriptmix/Scripts/Components .worktrees/issue111-components-scriptmix/tests/{test_components,test_reports,test_inspectors,conftest}.py`
+Same file arguments with `rtk proxy uvx ruff format --check` pass14files. Initial
+`--fix`/`--unsafe-fixes` passes were followed by explicit public-alias restoration,
+review and fresh affected/full tests; no prior49menu was formatted or edited.
+
+## Task3n fix1 — independent review F1/F2 only (source, native pending)
+
+F1: Compatibility now exports names_font_window_selection as selected_names.
+Its Selected glyphs scope stays empty when no Font-window glyph is selected,
+even when CurrentGlyph is O. CountBadges keeps its original separate fallback.
+No existing selection helper/runtime/menu is changed.
+
+F2: BadgeGrid subclasses the existing ProofView painter boundary, delegates its
+original complete paint method through draw(), and maps successful paint_error
+back to the original public error=None. Inactive painters, false end() and
+raising end() now diagnose and invalidate after native finalization, without
+escaping paintEvent. A tiny explicitly authorized _components_dialog.py wiring
+sets/clears failure_cleanup independently of the replaceable diagnostic hook,
+as existing Inspector views do; callback failure cannot retain valid paths or
+snapshot. Close releases all three hooks. Persistent empty failures settle.
+No old runtime boundary was modified. Only the two requested new sources plus
+that bounded F2 lifecycle wiring and owned component tests change as product.
+
+Test-first new regression RED:5failed/1passed/612deselected0.10s, exit1,
+reproducing F1 and all3F2native-terminal cases plus failing error-hook cleanup.
+After fixes, the same selection gives6passed0.07s, exit0. One additional secondary
+cleanup-exception case brings the full new component suite to114passed/
+505deselected0.25s, exit0. The independent review's unchanged four-case probe
+also passes4/0.01s/exit0. One existing newly owned component assertion changes
+from its old bespoke RuntimeError string to ProofView's standard repr diagnostic;
+exactNone success and the original .paint method remain explicitly tested.
+Native-shaped fixture reloads ProofView after its richer QWidget replacement,
+so tests execute the actual inherited boundary. No prior49menus/manifest or
+older test modules change in this round.
+
+Full App505passed12.94s, exit0. Full Scriptmix618passed1explicit skip0.89s,
+exit0, auditing all54original pairs with `--original-source-root ../..`. Separate
+Git-free source-override copy617passed2explicit skips0.99s, exit0; no .git in
+its parent chain. All source tests use explicit arm64Python3.11. Scriptmix uses
+the stablev0.2.12wheel requirement plus the current assigned App source override;
+this is source proof, not a new built/installed artifact. The inherited explicit
+skips remain unchanged. Scoped Ruff check/format-check4files and both
+repositories' git diff --check pass; initial import-wrap I001 was corrected.
+
+Exact relative commands, all final exit0:
+App cwd:
+`rtk proxy env UV_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -q`
+Scriptmix cwd, this environment:
+`rtk proxy env SCRIPTMIX_APP_SOURCE=../issue111-components-app/src/fontlabapp SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.12-dist/fontlab_fontlabapp-0.2.12-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh`
+with `-k 'empty_selection_stays_empty or terminal_failures or error_hook_failure or shared_painter_success' --tb=short` (RED5fail1pass; GREEN6pass),
+then `-k components -rs` (114pass), and `--original-source-root ../.. -rs` (618pass1skip).
+Independent unchanged reviewer probe from Scriptmix cwd:
+`rtk proxy env PYTHONPATH=tests SCRIPTMIX_APP_SOURCE=../issue111-components-app/src/fontlabapp PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_LINK_MODE=copy uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with ../../.local/issue111-app-v0.2.12-dist/fontlab_fontlabapp-0.2.12-py3-none-any.whl python -m pytest -q /tmp/issue111-task3n-review/test_review_doubts.py --tb=short`
+Standalone scratch cwd:
+`rtk proxy env SCRIPTMIX_APP_SOURCE=../app-src SCRIPTMIX_APP_REQUIREMENT=../fontlab_fontlabapp-0.2.12-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -rs`
+Workspace quality command:
+`rtk proxy uvx ruff check .worktrees/issue111-components-app/src/fontlabapp/{components,_components_views,_components_dialog}.py .worktrees/issue111-components-scriptmix/tests/test_components.py`
+Same arguments with `rtk proxy uvx ruff format --check`; each repository also
+runs `rtk proxy git diff --check`.
+
+Initial task3n freeze/report/patches stay unchanged. Separate fix1 freeze/report
+records exact deltas against the parent's reviewed preimage. Parent owns scoped
+re-review, fresh fix1 artifacts, all native preservation/painting/Close gates and
+prior49regression. No artifact/native/canonical/original/owner-site/commit/push/
+tag/README/PLAN/TODO changes or subagents occurred in this fix round.
+
+Final fix1 status-diagnosis assertions additionally confirm terminal failures
+show Error: and a throwing diagnostic hook still sets last_error/status. Fresh
+full Scriptmix618passed1skip0.86s and final Git-free617passed2skips0.98s, exit0.
+These supersede the earlier0.89s/0.99s timings for the final test bytes only.
+
+## Task3n fix2 — measured CountBadges falsey-current fallback (source only)
+
+Parent nativev2 found a valid CurrentGlyph named A with isNull=False but bool=False,
+a present Font-window font and an empty selection. Compatibility correctly kept
+its selected scope empty; CountBadges incorrectly displayed zero glyphs because
+the reused Proof->scripting selector used truthiness for CurrentGlyph. Native
+receipt: verification/issue-101-ecosystem/evidence/issue111-components-v2/components-empty-selection/report.json.
+
+A component-specific selected_glyphs now reads the existing exact Font-window
+selection, falls back using glyph is not None and resolves/filter names with the
+original package.findName/is-not-None semantics. CountBadges retains valid falsey
+current/resolved wrappers; None stays empty; actual selection wins in font order.
+Compatibility's F1 exact-selection helper stays unchanged. Proof/scripting and
+all prior runtime/menu/manifest bytes stay unchanged from reviewed fix1.
+
+Test-first App RED initially lacked a legacy FL fixture and failed before its
+assertion (exit1); corrected native-shaped mocks then reproduce [] instead of
+[falseyA],1failed8deselected0.02s/exit1. UI RED reproduces no CountBadges glyphs
+instead of A,1failed1passed619deselected0.07s/exit1. CoreGREEN9passed0.02s/exit0;
+componentUIGREEN116passed505deselected0.30s/exit0. The actual UI test verifies A's
+both-master counts, painted A card, error=None and unchanged empty font selection,
+plus Compatibility's empty selected scope. Other coverage retains CurrentNone,
+normal actual selection and filtering unresolved package.findName results. The
+owned selection-fault test now patches this component selector's actual selection
+read instead of the no-longer-used Proof alias. No older test module changes.
+
+Fresh full suites, explicit arm64Python3.11, exit0:
+App506passed12.91s; Scriptmix620passed1explicit skip0.90s with all54original pairs
+audited; standalone Git-free619passed2explicit skips1.01s, no.gitparent. Scriptmix
+uses the stablev0.2.12wheel requirement plus current assigned App source override;
+the standalone copies current helper sources. These are source checks, not new
+built/installed artifact or native proof. Inherited skips remain explicit.
+Ruff check/format-check3files and both git diff --check pass; two initial lint
+findings (newly used export's redundant noqa and unused test name) were fixed.
+
+Exact App cwd commands:
+`rtk proxy env UV_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -q tests/test_components.py -k selected_glyphs --tb=short` (RED1fail thenGREENin full affected suite).
+Same environment with `./test.sh -q tests/test_components.py` (9pass),
+and `./test.sh -q` (506pass).
+Exact Scriptmix cwd environment/command:
+`rtk proxy env SCRIPTMIX_APP_SOURCE=../issue111-components-app/src/fontlabapp SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.12-dist/fontlab_fontlabapp-0.2.12-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh`
+with `-k 'badges_falsey_current or badges_none_current' --tb=short` (RED1fail1pass),
+then `-k components --tb=short` (116pass), and `--original-source-root ../.. -rs`
+(620pass1skip). Standalone scratch cwd:
+`rtk proxy env SCRIPTMIX_APP_SOURCE=../app-src SCRIPTMIX_APP_REQUIREMENT=../fontlab_fontlabapp-0.2.12-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -rs`
+(619pass2skips). Workspace quality:
+`rtk proxy uvx ruff check .worktrees/issue111-components-app/src/fontlabapp/components.py .worktrees/issue111-components-app/tests/test_components.py .worktrees/issue111-components-scriptmix/tests/test_components.py`
+Same file arguments with `rtk proxy uvx ruff format --check`; each repository also
+runs `rtk proxy git diff --check`.
+
+Initial/fix1 freezes/reports/patches/artifacts stay unchanged. Separate fix2 receipt
+freezes exact deltas against the parent's fix1preimage. Source scope only:
+components.py, owned componenttests and scoped WORK/CHANGELOG. No other source,
+menu, shared old helper, README/PLAN/TODO/dependency, artifact/native/rootverification/
+canonical/original/owner-site changes, commits/push/tags or subagents. Parent owns
+new fix2artifacts, scoped re-review and native confirmation. Earlier combined
+Report deadline handling was parent harness work and required no product change.
+
+Parent source inspection confirms expected FontGate boolean semantics:
+CurrentGlyph returns pyfgGlyph (python_gate.cpp:295-313); its sequence length
+counts first-workShape contours (fgglyph.cxx:290-298). A named valid glyph may
+therefore be falsey. This fix restores the original explicitNone contract; it
+is not a newly discovered PythonQt validity defect. CurrentGlyph's internal
+fgGlyph(true) path remains subject to the known fl#8525 preservation concern;
+no broad API change/upstream issue is part of this fix. Prior shared Proof
+truthiness behavior is outside this round and remains for parent final cleanup.
+
+## Task3n controller acceptance receipts
+
+Source/fix reviews and installed-artifact native gates pass; integration and
+release remain pending. Evidence paths below are relative to the workspace:
+verification/issue-101-ecosystem/evidence/issue111-components-v3/summary.json and
+issue111-core49-components-v1/summary.json; source review copies are retained in
+issue111-components-source-review. Nativev1/v2failed attempts remain unchanged.
+The direct controller fix2 review preserves earlier independent F1/F2 approval.
+
+New5:33workflow/10complete preservation,5paint/30opening/80stale/16painter/
+6selection/Close5 pass on9784. Actual CurrentGlyph A tests false but is non-None;
+Compatibility scope stays empty and CountBadges paints A without selecting it.
+All81exercised hashes match; imports restore; eight images inspected. The full
+badge recovery image includes all8glyphs/3rows and all3masters. Report's original
+DRIVE exceeds the3.5s per-call boundary when aggregated; the controller retains
+every original statement/order/check across two bounded calls at the CSV checkpoint.
+No product workaround, timeout extension or normalized preservation is used.
+Prior49:420workflow/123preservation/225safety/150error controls/Close49 pass,
+120current hashes and imports restore. Combined54:453workflow/133preservation/
+305safety/201error controls plus6selection/Close54. Historical15chooser receipts
+remain separate, not a fresh run. Full saved design/classes/metadata/workspace/
+history/master identities remain checked; only original intended selection changes.
+
+Fresh App506passed12.97s; wheel/sdist189passed0.26s each; actual-wheel Scriptmix
+620passed1explicit skip0.84s with all54original pairs audited; Git-free79filecopy
+619passed2explicit skips0.93s, gitprobe128. Both SOURCE/PYTHONPATH overrides are
+unset for actual-wheel checks. Controller118passed0.18s. All69runtime bytes equal
+source/wheel/sdist, prior65runtime exact plus unchanged scripting prefix/newaliases,
+immutable49menu/manifest baseline exact. Wheel75/sdist120files pass license/NOTICE/
+privacy; all209publicsource files pass privacy, bothREADME<=200lines.
+Candidate wheelSHA256 edaaa3debb54283d3e2b18f037bafd2f90b454a5564f7b56b8033d0f46cf08fb;
+sdist00e05efa29bb27dfb608900bf078f52f8c3899e69d3d9f6c859b17e763ec6e3a.
+
+Exact root commands (exit0):
+`rtk proxy env UV_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy uv build --out-dir ../../.local/issue111-app-components-fix2-dist`
+from the App worktree; `rtk proxy python3 .local/issue111-audit-components-fix2-artifacts.py`.
+Each install uses `rtk proxy env UV_LINK_MODE=copy uv pip install --python .worktrees/issue111-components-app/.venv/bin/python --no-deps --target .local/issue111-app-components-fix2-{wheel,sdist}`
+and its corresponding built artifact. Installed test argument arrays are retained
+in .local/issue111-components-fix2-installed-tests-commands.json.
+App `rtk proxy env UV_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -q`.
+Scriptmix `rtk proxy env -u SCRIPTMIX_APP_SOURCE -u PYTHONPATH SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-components-fix2-dist/fontlab_fontlabapp-0.2.13.dev1+g41f2a8391.d20261017-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh --original-source-root ../.. -rs`.
+Git-free copy uses the same wheel via ../issue111-app-components-fix2-dist, omits
+the unavailable --original-source-root and reports both skips explicitly.
+Controller `rtk proxy uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -m pytest -q verification/issue-111 --tb=short`.
+Both native calls use `rtk proxy env FL_RESTART=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1`
+and the exact retained command arrays .local/issue111-components-v3-command.json
+and .local/issue111-core49-components-command-fix2.json through fl-native.sh.
+Both exit0; no crash. Dedicated owned-fixture sessions only; no owner-site installs.
+
+Docs-only acceptance update changes README/PLAN/TODO/WORK/CHANGELOG in each
+worktree. No production/test/mapping/license bytes change. Prior source freezes,
+patches, review receipts and artifacts stay intact. Reviewed integration/D17tags/
+independent downloaded-tag R053 are pending. Native candidates54 versus released49;
+full130/archive/additional tools/reporters/docs and held7Names remain open.

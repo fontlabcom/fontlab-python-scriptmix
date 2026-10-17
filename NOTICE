@@ -61,3 +61,17 @@ _inspectors_views.py retains the complete original spacing and contour diagrams
 on the existing safe painter boundary. _inspectors_dialog.py reuses the owned
 Masters/Proof/Names lifecycle and selection guards. Scriptmix migration.json
 retains exact original/menu SHA-256 pairs; all originals remain unchanged.
+
+Read-only Components provenance
+==============================
+
+Five complete inspectors adapt Apache-2.0 components_compatibility.py,
+components_count_badges.py, components_missing_bases.py, components_report.py and
+components_where_used.py from fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/.
+App components.py shares ordered component/count/offset/missing/reverse-index
+reads, plain source snapshots and existing native-verified placed outline paths.
+_components_dialog.py extends existing Proof/Names binding, signal and Close
+lifecycle; _components_views.py retains the complete original badge-card painter.
+Scriptmix retains original controls/class/key/helper/scenario interfaces and
+appends exact source/destination hashes to migration.json. Originals remain
+unchanged. Source tests pass; native/artifact acceptance is pending.
