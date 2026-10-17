@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — Issue111 Proof source milestone
+## v1.0.5 — 2026-10-17
 
 Native installed acceptance: all41core tools pass336workflow/107preservation,
 123safety,80writer/error controls andClose41; separate15chooser checks pass.
