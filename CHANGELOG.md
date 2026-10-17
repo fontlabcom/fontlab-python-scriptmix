@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — selected Kerning editors
+## v1.0.4 — 2026-10-17
 
 Review fix: retain a completed batch's applied outcome, original cause and
 Undo/Refresh guidance across all later display/preview failures. Preflight and
