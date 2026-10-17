@@ -985,3 +985,22 @@ and diff whitespace were checked directly. Meaningful doc-only commands:
 was repeated for documentation. Frozen reports retain exact checks and hashes
 outside public distributions. No production/test/provenance/NOTICE/dependency,
 canonical/held Names, commit/push/promotion/tag/release or agent action occurred.
+
+## Verified Masters tag receipt — 2026-10-18
+
+Reviewed App source5bb14a5/README92657b1 and Scriptmixdd04bf0/README97b0f11
+integrated through temporary main worktrees. D17 gitnextver created Appv0.2.11
+(e84fb157318cfc0f2fb27f4fe67251c703237119) and Scriptmixv1.0.6
+(adda1608e9212934927c625358a2e7d27ab2a3e1); all earlier tag IDs remain exact.
+Canonical/main/Masters refs agreed at the tag checkpoint. Held Names source is
+retained on its separate branch and is excluded from these releases.
+
+Independent fresh tag downloads pass App480source tests, Scriptmix413standalone
+tests with the newly built stable wheel and163wheel/163sdist installed tests.
+Both package metadata versions are0.2.11;63production files match native bytes,
+45menu mappings and license/NOTICE/privacy audits pass. The downloaded release
+wheel passes all four original Masters workflows again inside FontLab9784:
+43workflow/8preservation/12paint/24opening/43safety and actualClose4, with67source
+hashes and import restoration verified. Native recovered chart screenshot inspected.
+No owner-site install, original removal, PyPI or GitHub release-object claim.
+This post-tag PLAN/TODO/WORK receipt changes no product byte or existing tag.

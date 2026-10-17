@@ -105,6 +105,8 @@ Separate chooser8+7checks use fix1 artifacts; chooser/common sources are unchang
 The same fix2 wheel passes all41prior tools:336workflows/107preservation/
 123safety/80error controls/Close41, with106source hashes verified and imports restored.
 Combined45:379workflows/115preservation/166safety/116error controls/Close45.
-Reviewed integration and release remain next.
+Reviewed integration and D17 tags Appv0.2.11/Scriptmixv1.0.6 are complete.
+Fresh tags pass App480/Scriptmix413/installed163+163 and all four Masters
+native gates again;63production files and45menu mappings match.
 Full Issue111/archive migration/cleanup/docs and held Names editors stay separate;
-no original removal, owner installation or release is implied by this milestone.
+no original removal, owner-site installation or package-index publication is claimed.

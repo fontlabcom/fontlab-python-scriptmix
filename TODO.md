@@ -32,4 +32,4 @@ this_file: TODO.md
 - [x] Audit built Masters artifacts and native-verify all four original scenarios, complete font/workspace/history preservation, axis coverage/paint settling, opening/stale safety and actual Close; preserve original post-launch seed baselines.
 
 - [x] Regress all41prior tools on the same fix2 wheel; combined45native gates pass379workflows/115preservation/166safety/116error controls/Close45.
-- [ ] Complete reviewed integration and release for the four native-accepted Masters tools; keep full Issue111/archive/held7Names work separate.
+- [x] Complete reviewed integration and independent downloaded-tag acceptance for Masters (Appv0.2.11/Scriptmixv1.0.6); keep full Issue111/archive/held7Names work separate.
