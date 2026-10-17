@@ -187,7 +187,7 @@ Apply refuses changed pairs/classes/masters or a
 switched/closed font; Refresh recovers failed reads. Close shares owned cleanup.
 Allfive pass original native scenarios, complete saved-font deltas, firstUndo/Redo,
 reopen, safety andClose. All35tools pass280native workflows/85preservation checks.
-The two additional editors need forthcoming App0.2.9 helpers (tag-built wheel or
+The two additional editors need App0.2.9 helpers (tag-built wheel or
 explicit current wheel plus updated source override); index availability is separate.
 Exceptions Finder lists broader class overrides, offers Tick redundant/Untick all
 and removes exactly ticked rows. Pairs From Text resolves characters and /name
