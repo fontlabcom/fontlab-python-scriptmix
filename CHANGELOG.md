@@ -4,6 +4,16 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## v1.0.1 — 2026-10-17
+
+Add Case Pairs, Character Info, Character Set Compare, Glyph Finder and Select by
+Mark. The live outline specimen fits tall accents and side overhangs. Require
+App 0.2.6 helpers; tests accept an explicit tag-built wheel without assuming index
+publication. All 25 tools pass 216 native workflows, 40 preservation/history checks,
+44 safety checks and native Close destruction. Host-free tests: 151 passed.
+The full archive migration, new scripts/reporters and final cleanup remain open.
+
+
 ## Unreleased — Names inspection tools
 
 - Share lazy Names panel/table/lifecycle and complete-refresh selection guards.
