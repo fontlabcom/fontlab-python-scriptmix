@@ -99,3 +99,13 @@ def test_pre_masters_helper_set_refused(monkeypatch, tmp_path, app_sources):
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="Missing App helper.*masters"):
         resolve_app_sources()
+
+
+def test_pre_inspector_helper_set_refused(monkeypatch, tmp_path, app_sources):
+    """Released Masters helpers cannot silently satisfy the inspector menus."""
+    for path in app_sources.glob("*.py"):
+        if path.stem not in {"inspectors", "_inspectors_dialog", "_inspectors_views"}:
+            (tmp_path / path.name).write_text("# Previous helper\n")
+    monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
+    with pytest.raises(AssertionError, match="Missing App helper.*inspectors"):
+        resolve_app_sources()

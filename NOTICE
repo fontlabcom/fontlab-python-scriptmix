@@ -47,3 +47,17 @@ existing Proof/Names shell and paint boundary, with complete initial UI,
 source-bound actions and owned cleanup. Scriptmix retains every original
 control, class, key and native scenario interface; migration.json appends four
 exact source/destination SHA-256 pairs. Originals remain unchanged.
+
+Metrics and outline inspector provenance
+=======================================
+
+The four read-only tools adapt Apache-2.0 metrics_spacing_string_preview.py,
+metrics_width_table.py, outlines_contour_order_view.py and
+outlines_node_statistics.py from the retained fontlab-samples archive.
+App inspectors.py preserves original parsing, missing/zero/auto rules, rounded
+width progressions, raw node-polygon winding and contour/node statistics; actual
+transformed paths and repeated reads reuse accepted Proof/Masters helpers.
+_inspectors_views.py retains the complete original spacing and contour diagrams
+on the existing safe painter boundary. _inspectors_dialog.py reuses the owned
+Masters/Proof/Names lifecycle and selection guards. Scriptmix migration.json
+retains exact original/menu SHA-256 pairs; all originals remain unchanged.

@@ -33,3 +33,8 @@ this_file: TODO.md
 
 - [x] Regress all41prior tools on the same fix2 wheel; combined45native gates pass379workflows/115preservation/166safety/116error controls/Close45.
 - [x] Complete reviewed integration and independent downloaded-tag acceptance for Masters (Appv0.2.11/Scriptmixv1.0.6); keep full Issue111/archive/held7Names work separate.
+
+- [x] Independently review the four inspector menus/shared helpers and address M1 with explicit skip reporting.
+- [x] Audit inspector artifacts and run all four unchanged native scenarios, complete preservation, exact post-seed Node baseline, actual painting/screenshots, safety and Close.
+- [x] Regress all 45 released tools on the same inspector wheel; combined 49 native passes420 workflow/123 preservation/225 safety/150 error controls/Close 49.
+- [ ] Complete reviewed integration, D17 release tags and independent downloaded-tag R053 acceptance;49 native candidates versus45 released. Retain all originals and full 130-stem denominator.

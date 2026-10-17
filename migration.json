@@ -313,5 +313,33 @@
     "destination": "Scripts/Masters/Compatibility Check.py",
     "destination_sha256": "153b663e08561d54cf5d1de999553832a4ea15dab50c878157abcc73be3666b3",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/metrics_spacing_string_preview.py",
+    "source_sha256": "8715a780c4d9c03cedabec2cf2c73ca367dc85b89eb3b2ad77761d4e886699f9",
+    "destination": "Scripts/Metrics/Spacing String Preview.py",
+    "destination_sha256": "69965386fcaf31c39db85123ff29118d16e4aa4cd3237ba52dc5be4c98220894",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/metrics_width_table.py",
+    "source_sha256": "cc57d3317590e8701a8f12d8ba4e9817357435361c81486f3bb7b2dcfc6d2177",
+    "destination": "Scripts/Metrics/Width Table.py",
+    "destination_sha256": "c0f364ff9cfdc644f1f3b1741364b0946979d06034ba6d918c2f91f36b41d4e5",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/outlines_contour_order_view.py",
+    "source_sha256": "b366af45f9cfdc1ed3adc45e9fdc9982ad0bdbbe2d21e4c45893f995367fda9c",
+    "destination": "Scripts/Outlines/Contour Order View.py",
+    "destination_sha256": "18bb4a44aa9a93fe31d96752495b96d98b215b4b4dbabbf28206337ecc98eecc",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/outlines_node_statistics.py",
+    "source_sha256": "933c4948d63b6af180dc8e93ec26400bcae33ad9e4945aee7749d12150b5f6cd",
+    "destination": "Scripts/Outlines/Node Statistics.py",
+    "destination_sha256": "1de5f0156457f5f11cea026651af0c5053b76826cf290acb30171f9673626990",
+    "license": "Apache-2.0"
   }
 ]

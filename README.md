@@ -6,9 +6,7 @@ this_file: README.md
 Small and useful scripts for FontLab
 ## Installation and Reports
 
-Copy the contents of `Scripts` into your FontLab Scripts menu folder. Keep the
-category subfolders, such as `Reports` and `Font Info`; FontLab supports one folder level. Use FontLab 9's
-Python 3.11 with `fontlab-fly` and `fontlab-fontlabapp` (including `scripting`) available in its Python environment. No third-party UI package is needed.
+Copy the contents of `Scripts` into your FontLab Scripts menu folder. Keep the category subfolders, such as `Reports` and `Font Info`; FontLab supports one folder level. Use FontLab 9's Python 3.11 with `fontlab-fly` and `fontlab-fontlabapp` (including `scripting`) available in its Python environment. No third-party UI package is needed.
 
 Open a font, then run Empty Glyphs, Open Contours or Font Overview from Reports.
 The dialogs are modeless: edit the font and Rescan/Refresh when needed. Empty Glyphs can hide intentional whitespace. Select chosen rows, or leave rows
@@ -94,7 +92,7 @@ Cached uv requirements permit offline wheel tests. Sources resolve without nativ
 binaries; development may set `SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`
 alongside the explicit dependency. Missing helpers fail the run.
 
-Every default run checks all 45 destination hashes, exact menu paths/depth,
+Every default run checks all 49 destination hashes, exact menu paths/depth,
 Python 3.11 syntax and provenance metadata. It does not audit absent originals.
 To additionally check every original source hash, provide the workspace root
 containing the manifest's `fontlab-python-examples` paths:
@@ -193,7 +191,10 @@ Native acceptance on FontLab9.0.9784 passes43original workflows,8complete font/w
 12realpaint controls (axis coverage/six-event settling),24opening faults,43safety and actualClose4/4.
 All67exercised source hashes match; fresh chart screenshots confirm the713clipping fix. Font design/history is preserved.
 App480/actual-wheel Scriptmix413 and163installed tests each for wheel/sdist pass; all63Appproduction files match.
-All45mappings pass; the prior41menu bytes/rows stay exact. Separate chooser8+7checks use fix1 artifacts with unchanged chooser/common source.
-Same-wheel all41prior tools pass; combined45:379workflows/115preservation/166safety/116error controls/Close45.
-No package-index publication is implied.
-Full Issue111/archive cleanup and held7Names editors stay separate; original sources remain retained.
+All45mappings pass; the prior41menu bytes/rows stay exact. Separate chooser8+7checks use fix1 artifacts with unchanged chooser/common source. Same-wheel all41prior tools pass; combined45:379workflows/115preservation/166safety/116error controls/Close45.
+No package-index publication is implied. Full Issue111/archive cleanup and held7Names editors stay separate; original sources remain retained.
+
+Metrics and outline inspectors: Spacing String Preview, Width Table, Contour Order View and Node Statistics retain complete controls, raw winding/counts, actual outlines/advances, all masters and exact flagged selection; lazy `inspectors_api()`/dialog/views share lifecycle, snapshots and painter containment.
+Installed-wheel FontLab 9.0.9784 acceptance passes41 original workflows/8 complete saved font/design/classes/metadata/workspace/history/master checks/10 paint/24 opening/59 safety/Close 4;70 source hashes match and imports restore; Node has its exact fresh post-seed baseline. Seven images were inspected; all 15 final images are byte-identical to retained v1.
+App 497 source and actual-wheel Scriptmix 501 passed, 1 skipped;180 installed tests each for wheel/sdist pass on arm64Python3.11.14. All 66 production files and49 mappings match; previous 45 menus/rows stay exact and72 wheel/116 sdist entries pass license/NOTICE/privacy audits.
+Same-wheel prior 45regression passes379 workflow/115 preservation/166 safety/116 error controls/Close 45,113 source hashes and import restoration; combined 49 native:420/123/225/150/Close 49. Historical 15 chooser receipts use unchanged code; no fresh chooser run is claimed. Use an App wheel built from the current checkout; `SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none ./test.sh` selects the host architecture. Full 130-stem/archive/held 7 Names work stays open; no original removal or index publication.

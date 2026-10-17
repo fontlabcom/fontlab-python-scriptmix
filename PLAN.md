@@ -110,3 +110,30 @@ Fresh tags pass App480/Scriptmix413/installed163+163 and all four Masters
 native gates again;63production files and45menu mappings match.
 Full Issue111/archive migration/cleanup/docs and held Names editors stay separate;
 no original removal, owner-site installation or package-index publication is claimed.
+
+## Issue111 metrics and outline inspector acceptance
+
+Spacing String Preview, Width Table, Contour Order View and Node Statistics
+retain complete original controls/interfaces, actual outlines/advances, raw
+node-polygon winding, contour/node counts and exact flagged selection. Source
+review approves production; the M1 test-reporting correction uses explicit skips.
+Installed-wheel native acceptance on FontLab 9.0.9784 passes41 original workflows,
+8 complete saved-font/design/classes/metadata/workspace/history/master preservation
+checks,10 paint,24 opening,59 safety and actualClose 4/4. The unchanged Node post-launch
+triangle seed has a fresh complete baseline/history before tool operations.
+All 70exercised hashes and import restoration match; seven inspected images and
+all 15 final image bytes agree with the retained original run.
+
+App 497 source, actual-wheel Scriptmix 501 passed, 1 skipped and180 installed tests each for
+wheel/sdist pass on arm64Python3.11.14. All 66 production files match;72 wheel and
+116 sdist entries pass license/NOTICE/privacy audits. All 49 source/destination pairs
+match and the previous 45 rows/menu bytes remain exact. The same wheel passes all 45
+prior tools:379 workflow/115 preservation/166 safety/116 error controls/Close 45;
+113exercised hashes and imports restore. Combined 49 native:420 workflow/
+123 preservation/225 safety/150 error controls/Close 49. No new chooser run occurred;
+historical 15 chooser receipts use unchanged relevant code.
+
+Reviewed integration, D17 release tags and independent downloaded-tag R053
+acceptance remain pending:49 native candidates versus45 released. Full 130-stem
+migration/archive cleanup/additional tools/docs and held 7 Names editors stay open.
+No original removal, owner-site install or package-index publication is claimed.

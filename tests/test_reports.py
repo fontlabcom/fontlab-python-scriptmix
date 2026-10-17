@@ -59,9 +59,9 @@ def load(monkeypatch):
 
 def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
     entries = json.loads((ROOT / "migration.json").read_text())
-    assert len(entries) == 45
+    assert len(entries) == 49
     destinations = [entry["destination"] for entry in entries]
-    assert len(set(destinations)) == 45
+    assert len(set(destinations)) == 49
     assert set(destinations) == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }
@@ -78,6 +78,8 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
             "Kerning",
             "Proof",
             "Masters",
+            "Metrics",
+            "Outlines",
         }
         assert path.suffix == ".py"
         assert len(entry["source_sha256"]) == 64

@@ -4,6 +4,29 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — metrics and outline inspectors
+
+- Add complete Spacing String Preview, Width Table, Contour Order View and Node
+  Statistics with original controls, defaults, class/key/helper interfaces and
+  exact native scenario data. No original source is changed or removed.
+- Reuse lazy App helpers, existing Proof/Names/Masters lifecycle, actual transformed
+  outlines, raw node-polygon winding and contour/node counts. Preserve zero,
+  missing and auto values and numeric width sorting.
+- Guard initial scans, exact source/current-master/ordered-master domain and
+  Whole-font membership. Failed reads/paints clear results and handles, retain
+  Close and diagnosis, drain repaint queues and allow explicit same-font recovery.
+- Append four provenance pairs (49 total); previous 45 menus/rows remain exact.
+  Source/fix review, installed-wheel native acceptance and artifact audits pass:
+  41 original workflows,8 complete preservation,10 paint,24 opening,59 safety,
+  actualClose 4;70 source hashes and imports match. Node uses its fresh post-seed baseline.
+- App 497/actual-wheel Scriptmix 501 passed, 1 skipped and180 installed tests each for wheel/sdist
+  pass;66 production files,72 wheel/116 sdist entries and license/NOTICE/privacy match.
+- Same-wheel45 prior-tool regression passes379 workflow/115 preservation/166 safety/
+  116 error controls/Close 45,113hashes and import restoration. Combined 49 native:
+  420 workflow/123 preservation/225 safety/150 error controls/Close 49. Historical 15 chooser
+  receipts are retained; no new chooser run occurred. Full 130/archive/held 7 Names stay open.
+
+
 ## v1.0.6 — 2026-10-17
 
 Fix2: native screenshot inspection exposed an inherited tick endpoint defect.

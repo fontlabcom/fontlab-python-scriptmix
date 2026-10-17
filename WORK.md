@@ -1004,3 +1004,166 @@ wheel passes all four original Masters workflows again inside FontLab9784:
 hashes and import restoration verified. Native recovered chart screenshot inspected.
 No owner-site install, original removal, PyPI or GitHub release-object claim.
 This post-tag PLAN/TODO/WORK receipt changes no product byte or existing tag.
+
+## Task3m — metrics and outline inspector source, native pending
+
+Four complete original inspectors are implemented only on the independent
+issue-111-inspectors worktrees: Spacing String Preview, Width Table, Contour
+Order View and Node Statistics. All40archived copies were read/AST-compared;
+only the four L2 copies differ, in older palette alias/active-theme handling.
+Original calculations, raw node-polygon winding, starts/order, counts, missing/
+zero/auto rules, controls/defaults/title/key/classes/helper aliases are retained.
+The canonical4originals,4scenarios plus _vfj helper and full130-stem source-copy
+manifest are frozen by hash in the workspace handoff; none was executed/edited.
+
+Shared inspector calculations reuse accepted Proof paths and Masters native
+geometry/selection. Existing owned Proof/Names/Masters shell and safe painter
+boundary provide complete controls/status/Close before reads, bounded complete
+master-domain scans, exact source/master guards, ordered Whole-font membership,
+failed-read/paint invalidation, visible diagnosis and disconnect-before-delete.
+Spacing preserves original paint_error=None success. Plain transformed raw-node/
+closure snapshots avoid assuming native QPainterPath equality. Width actions
+also reject fractional raw advance changes hidden by rounded display values.
+Report-hook failures still clear values and leave a visible diagnosis; persistent
+empty invalidation drains its repaint queue. No new dependency/framework.
+
+All45released menu bytes and provenance rows remain exact;4pairs append,total49.
+The existing63Appproduction files remain exact except the lazy additions at the
+end of scripting.py;3new modules bring production to66. Prior tests are retained;
+manifest assertions extend45to49and two Title Case categories. Scriptmix test.sh
+adds SCRIPTMIX_PYTHON (default3.11) for explicit host-architecture verification.
+README remains<=200lines and retains prior factual acceptance/install recipes.
+Native/artifact/review gates are pending. Node's original post-launch seed remains
+in the unchanged original scenario; parent owns its fresh post-seed full baseline.
+No canonical/held Names/old originals/root verification, owner install, FontLab
+session, commit/push/tag/release or subagent action was performed by this task.
+
+Meaningful exact commands and results (workspace cwd unless stated):
+- App cwd: `rtk proxy uv run --extra test --python cpython-3.11-macos-aarch64-none python -m pytest -q`: baseline480passed13.31s,exit0.
+- Scriptmix cwd: `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../issue111-inspectors-app SCRIPTMIX_APP_SOURCE=../issue111-inspectors-app/src/fontlabapp UV_PYTHON=cpython-3.11-macos-aarch64-none ./test.sh --original-source-root ../..`: baseline413passed0.79s,exit0. That baseline script hardcoded3.11; final runs below explicitly select arm64.
+- App cwd: `rtk proxy uv run --extra test --python cpython-3.11-macos-aarch64-none python -m pytest -q tests/test_inspectors.py`: initial RED missing helper/native fallback collection exit2; first8passed0.01s; expanded17tests retained.
+- Scriptmix cwd: `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../issue111-inspectors-app SCRIPTMIX_APP_SOURCE=../issue111-inspectors-app/src/fontlabapp UV_PYTHON=cpython-3.11-macos-aarch64-none ./test.sh tests/test_inspectors.py`: RED4missingmenus/413priorpasses,exit1. Native-shaped expansion first10failures/43passes exposed shared flagged-method/list collision and missing double Qt roles/clear; fixed without reducing expected behavior. Intermediate2failures/79passes were a twice-reversed master fault and incomplete painter-font double; corrected injection/double. Direct UI review restored class ACTION/default widths/defaultClose; exact assertions added.
+- App cwd: `rtk proxy env UV_PYTHON=cpython-3.11-macos-aarch64-none ./test.sh -q`: final497passed (480prior+17new),exit0; final elapsed in workspace report.
+- Scriptmix cwd: `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../issue111-inspectors-app SCRIPTMIX_APP_SOURCE=../issue111-inspectors-app/src/fontlabapp SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none ./test.sh --original-source-root ../..`: final502passed (413prior+89new),exit0. All49original/destination pairs audited. One preceding run497passed/1failed honestly caught a stale new-menu hash after source edits; regenerated only4newdestination hashes, then full pass.
+- App cwd: `rtk proxy uv run --extra test --python cpython-3.11-macos-aarch64-none python -c 'import platform,sys; print(platform.machine(), platform.python_version(), sys.executable)'`: arm64/3.11.14,exit0.
+- Scriptmix cwd: `rtk proxy uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with ../issue111-inspectors-app python -c 'import platform,sys; print(platform.machine(), platform.python_version(), sys.executable)'`: arm64/3.11.14,exit0.
+- Workspace scoped `rtk proxy uvx ruff check` and `rtk proxy uvx ruff format --check`: pass, exact file arguments retained in task-3m-report.md. Initial lint correctly found public alias/import ordering/unused test fixture issues; exports restored explicitly and final lint passes.
+- Each worktree: `rtk proxy git diff --check`: exit0.
+
+Other retained attempts: initial Qt5officialdoc URLs were inaccessible; official
+Qt6QPainter/end and table-item/setData references were read only for common
+semantics. Exact native metrics/bounds/width/node-count/closed declarations were
+confirmed in local Proteus/pygate sources; no new/guessed overload is introduced.
+First source lookup omitted the Proteus path and returned rg errors, corrected.
+Several exploratory commands used workspace instead of repository cwd (missing
+pytest/test.sh/report path); corrected to explicit workdirs, with no file damage.
+One parser test expected a space after /token delimiters; corrected to the exact
+original delimiter behavior rather than changing production. Intermediate Ruff
+reports and manifest mismatch were followed by full fresh passing checks.
+
+Next: parent independent source review, wheel/sdist/install/privacy/license
+checks, unchanged4native scenarios, complete font/design/classes/metadata/
+workspace/dirty-history/master preservation, Node post-seed baseline, actual
+painting/screenshots/Close, all45regression and reviewed promotion. Source tests
+and test doubles are not native acceptance. Full130-stem goal remains active.
+
+Final boundary RED: Scriptmix `./test.sh -k final_master_domain` under the exact arm64 environment above failed4/498deselected (exit1), exposing master-domain changes during final source-cache reads after the inherited master check. The inspector adapter retains the shared scan and adds a final binding/domain/Whole-font check after all snapshot reads; no released helper is changed. Final full result recorded in the handoff.
+
+Final frozen-source verification: App497passed12.84s, Scriptmix502passed0.67s on explicit arm64CPython3.11.14, exit0 each. Scoped Ruff/check+format13files and both git diff --check exit0. Late4domain-boundary RED tests are GREEN. Only SPDX test comments were added after the final runtime suites; syntax/lint/format/source hashes were rechecked. Native/artifact/review acceptance remains pending.
+
+## Task3m Minor fix1 — explicit unexercised-case skips
+
+Source review approved the production source with no Important/Critical issue.
+The one Minor reporting fix changes exactly two early-return test paths to
+pytest.skip: Spacing Preview has no selection read, and fidelity auditing needs
+--original-source-root. No product/README/NOTICE/other test changed. The initial
+report was copied byte-for-byte to task-3m-report-initial.md before appending;
+initial source freeze7d1c84a84fbea619e4531bb44810a1e40ca92c238dbb7c1371cc96d555a7601a
+is retained unchanged. task-3m-fix1-freeze.json records the separate test/doc delta.
+
+Focused exact commands from Scriptmix cwd (both exit0, explicit arm64CPython3.11):
+`rtk proxy env -u SCRIPTMIX_APP_SOURCE uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with '../../.local/issue111-app-inspectors-dist/fontlab_fontlabapp-0.2.12.dev1+g8cd9044cc.d20261017-py3-none-any.whl' python -m pytest -q tests/test_inspectors.py -rs`
+Result86passed,2skipped0.19s: the selection-fault noncase and unavailable source
+fidelity evidence are explicitly skipped.
+`rtk proxy env -u SCRIPTMIX_APP_SOURCE uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with '../../.local/issue111-app-inspectors-dist/fontlab_fontlabapp-0.2.12.dev1+g8cd9044cc.d20261017-py3-none-any.whl' python -m pytest -q tests/test_inspectors.py -rs --original-source-root ../..`
+Result87passed,1skipped0.20s: original fidelity is exercised, only the selection
+noncase skips. These are88collected inspector cases; prior502full-suite passes
+historically included the unexercised selection noncase as a pass. No fullApp or
+fullScriptmix suite was rerun for this two-line test-only change; production
+approved bytes and the parent's concurrent native/artifact work remain untouched.
+
+`rtk proxy uvx ruff check tests/test_inspectors.py` and
+`rtk proxy uvx ruff format --check tests/test_inspectors.py`: exit0 each.
+`rtk proxy git diff --check`: exit0. Because the new testfile is untracked against
+its branch base, a direct full-byte comparison to the reviewed retained preimage
+verified that exactly the two skip substitutions changed. Standard-library audit
+verifies all66production files, previous45menus/rows,49original pairs and all
+other frozen source bytes remain exact. No commits/pushes/native calls occurred.
+
+## Task3m accepted native/artifact evidence — documentation finalization
+
+Production source review APPROVE has no Important/Critical findings. M1 is
+addressed by explicit pytest.skip reporting; frozen fix1 test bytes stay exact.
+Controller native v3 passes all four unchanged original scenarios on the same
+installed wheel:41 workflow,8 complete saved-font/design/classes/metadata/workspace/
+history/master preservation checks,10actual paint,24 opening faults,59 safety and
+actualClose 4/4. All 70 current source hashes and import/path restoration match.
+The original Node DRIVE[0] triangle/notification remains exact; controller captures
+its fresh full preservation/history baseline before refresh/selection/Whole-font
+operations. Seven images were visually inspected; all 15 final image bytes are
+identical to retained v1. Evidence: workspace verification/issue-101-ecosystem/
+evidence/issue111-inspectors-v3/{summary.json,visual-inspection.json}.
+
+Retained v1/v2 failures were controller fixture errors (quarter-width assertion
+and native nodes property), not product edits/failures. The native Width control
+requested655.25 and observed655; final668 uses the supported+13change. Fractional
+raw-width staleness is exercised by the unit regression only: no claim is made
+that the host retained quarter-unit precision. No native oracle or unrelated
+complete saved-field/workspace/history check was waived.
+
+Artifact audit matches all 66 production files,72 wheel/116 sdist entries and required
+licenses/NOTICE/private-path exclusions. Exact original/destination49pairs and
+previous 45menu bytes/rows match. The approved wheel SHA256 is
+1a26a3e60719b1cc3fcb78ddef2cf292fde02316455aa66595865f45291e4a09;
+sdist SHA256 fe17a4151e86781a70764ea2f6a861c981061cd1f5ccc97a08077c5281f7404c.
+Installed wheel180 tests and sdist180 tests pass; App source497 tests and actual-wheel
+Scriptmix AFTER M1 full 501 passed, 1 skipped0.63s pass on arm64Python3.11.14. Controller83
+tests pass. The earlier source502-pass total remains chronological evidence of a
+pre-M1 unexercised selection case counted as pass, not the current exercised count.
+
+Same-wheel prior 45regression exits0:379 workflow/115 preservation/166 safety/
+116 error controls/Close 45;113 current source hashes and all import/path restoration
+match. Evidence: workspace verification/issue-101-ecosystem/evidence/
+issue111-core45-inspectors-v1/summary.json. Combined 49 native candidates pass
+420 workflow/123 preservation/225 safety/150 error controls/Close 49. No new chooser
+run occurred in this batch; historical 15 chooser receipts with unchanged relevant
+code remain separate, not fresh chooser evidence.
+
+This step changes only README/PLAN/TODO/WORK/CHANGELOG in each worktree and appends
+the workspace handoff report. Both README files retain correct frontmatter and
+200 lines, all earlier acceptance/install facts and release-neutral current-wheel
+guidance. Four-tool native/artifact/source and prior 45regression TODOs are complete.
+Reviewed integration/D17tags/independent downloaded-tag R053 remain pending:
+49 native candidates versus45 released. Full 130-stem migration/archive cleanup/
+additional tools/reporters/docs and held 7 Names remain open. No original removal,
+owner installation, package-index publication or tag/release is claimed.
+
+Documentation checks: `rtk proxy git diff --check` in both worktrees exits0.
+Workspace `rtk proxy python3 -` standard-library audits verify the exact ten-file
+doc-only delta against fix1, all 66 production files, unchanged tests/migration/
+NOTICE/dependency/version data, all 49pairs,40archived originals/scenarios and
+70+113exercised hashes, README<=200/frontmatter/links/code fences, and retention
+of the initial/fix1/review freezes. Exact receipts are in the acceptance-docs
+report/freeze. No code suite or native call was repeated for docs; the controller
+results above are the previously completed acceptance evidence. Artifact metadata
+predates this doc-only update; production bytes remain identical, and parent owns
+reviewed integration/tag/download acceptance. No commit/push/subagent occurred.
+
+## Publication privacy correction — Task3m
+
+The two published wheel commands above now use checkout-relative paths to the
+same approved wheel. Exact initial absolute invocations remain in private
+verification receipts. Both relative forms were reproduced on arm64 Python 3.11:
+without source audit, 86 passed/2 skipped in 0.16s; with --original-source-root
+../.., 87 passed/1 skipped in 0.17s (exit0 each). Only this log changed; no product,
+test, other documentation, native run or broad suite changed.
