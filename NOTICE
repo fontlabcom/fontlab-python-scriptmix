@@ -1,0 +1,10 @@
+this_file: NOTICE
+
+The Kerning category adapts five Apache-2.0 fontlab-samples scripts retained in
+fontlab-python-examples/_old/part4/fontlab-samples/samples/:
+kerning_classes_browser.py, kerning_compare_masters.py, kerning_list_browser.py,
+kerning_missing_pairs.py and kerning_text_preview.py. Source and destination
+SHA-256 mappings are recorded in migration.json. Native access and shared
+lifecycle adaptations live in fontlab-fontlabapp (see its NOTICE). Every original
+control is retained; error containment and complete-ink proof fitting are added.
+See LICENSE for the Apache License, Version 2.0. Original sources stay unchanged.

@@ -47,3 +47,10 @@ Five Names tools pass original scenarios, native Close, inspected screenshots,
 complete font-data/history invariance and switched/closed selection refusals.
 The combined 25-tool run passes 216 workflow checks. Continue the remaining
 archive tools; clipboard stays native-excluded.
+
+## Issue 111 read-only kerning batch
+
+Five tools pass source/fix reviews, installed-wheel native workflows, real CSV
+chooser callbacks, complete saved-font/history invariance and actual Close.
+All 30 migrated tools pass 247 workflow checks together. The remaining kerning
+editors, archive categories and final issue 111 gates remain open.

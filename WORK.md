@@ -387,3 +387,97 @@ Exact verification commands from workspace root:
 - `rtk proxy uvx ruff check fontlab-python-scriptmix/tests/conftest.py`: exit0,All checks passed.
 - `rtk proxy git -C fontlab-python-scriptmix diff --check`: exit0.
 - `rtk proxy git -C fontlab-python-scriptmix diff --exit-code HEAD -- Scripts migration.json`: exit0; native product bytes unchanged.
+
+## 2026-10-17 Task3g: complete read-only Kerning source implementation
+
+Implemented five complete originals: Classes Browser, Compare Masters, Pair List
+Browser, Missing Pairs and Text Preview. All original controls, KEY/registry and
+class/method interfaces remain. Shared lazy KerningDialog reuses the Names shell,
+exact guarded callbacks, selection validation and close lifecycle. Named-master
+explicit items/groups retain @names, class sides, fractions and explicit zero.
+Native effective get(names) supplies kerning precedence, rather than adding a
+second calculator. Fontport's existing reader targets the current master and
+UFO-normalized group names; its editor and optional dependency are unnecessary
+for these inspectors. Native pyfontgate/fgkerning.cxx lines627-634 and675-702
+confirm explicit items versus effective get(names). Local QtGui stubs consulted.
+
+Every outgoing action validates the complete snapshot's font; unknown names
+fail before clearing selection. Failed native/table/proof work clears partial
+rows, classes and paths and disables selection/Copy/export. Pair List exports
+actual shown numeric-sort order through an owned modeless chooser; wrapping
+status reports count and basename. Proof materializes actual transformed
+outlines before publication and fits all ink, tall accents and overhangs with
+native pen positions; painter construction/draw/end and failing error hooks
+are contained. No native calls, owner installs, commits, pushes or original
+archive writes occurred. Exceptions Finder and Pairs From Text stay editors in
+later full-scope work. App minimum guidance targets forthcoming0.2.7 without an
+index-publication claim. Portable tests use explicit0.2.6wheel plus source override.
+
+Wait, but: an arbitrary long proof could still overflow when fixed label gaps
+exceeded the whole canvas. The fitting helper now bounds label space too;
+200-row overflow and tall/side-overhang checks retain every glyph. Painter-end
+errors now invalidate the proof just as drawing errors do. These are host-free
+receipts only, not native acceptance.
+
+Verification recipes from workspace root (portable placeholders; exact private receipts retained in the workspace task-3g report):
+- `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl SCRIPTMIX_APP_SOURCE=/path/to/updated-app/src/fontlabapp fontlab-python-scriptmix/test.sh tests/test_kerning.py`: RED exit1,5missing-filefailures/151pass.
+- Intermediate full suite: exit1,164pass/2fail (new category missing from test set and installed-only portability probe required a helper absent from supplied0.2.6wheel). Added Kerning category and explicit resolver helper subset for the installed baseline probe; default/source checks still fail closed on missing Kerning helper.
+- `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl SCRIPTMIX_APP_SOURCE=/path/to/updated-app/src/fontlabapp fontlab-python-scriptmix/test.sh --original-source-root ..`: GREEN exit0,171passed in0.15s;30source/destinationmappings. Prior25exactly unchanged (compared to HEAD JSON).
+- `(cd .worktrees/issue111-app && rtk proxy env UV_LINK_MODE=copy uv run --python 3.11 --extra test python -m pytest -q)`: exit0,359passed in13.71s (original350plus9new).
+- `rtk proxy uvx ruff check fontlab-python-scriptmix/Scripts/Kerning fontlab-python-scriptmix/tests/test_kerning.py fontlab-python-scriptmix/tests/test_reports.py fontlab-python-scriptmix/tests/test_portability.py fontlab-python-scriptmix/tests/conftest.py .worktrees/issue111-app/src/fontlabapp/scripting.py .worktrees/issue111-app/src/fontlabapp/_kerning_dialog.py .worktrees/issue111-app/tests/test_kerning_scripting.py`: exit0.
+- `rtk proxy git -C fontlab-python-scriptmix diff --check` and `rtk proxy git -C .worktrees/issue111-app diff --check`: each exit0.
+
+Native original scenarios, actual chooser/Close, full saved-font/history invariance
+and installed-wheel proof await controller verification. Source report/freeze:
+workspace .superpowers/sdd/issue-111/task-3g-report.md and task-3g-freeze.json.
+
+## Task3g fix1: concrete types, precise docstrings and portable receipts
+
+Typed Missing Pairs coverage inputs and Cartesian-product outputs concretely;
+kept the native FontLab package wrapper Any. Explained zero-valued coverage,
+side-specific classes and input ordering, and clarified Text Preview's empty
+state. Product behavior is unchanged: AST comparison against the before-fix1
+snapshot passes after removing only type annotations/docstrings. All52App source
+modules remain byte-identical to the frozen native wheel. Refreshed only the two
+script destination hashes; all prior25mappings remain exactly unchanged.
+
+Replaced personal home paths in the new public WORK command recipes with clearly
+labelled portable placeholders. Exact original receipts remain in the private
+workspace task-3g report. Both public Markdown trees have no personal home paths.
+
+Verification from workspace root:
+- `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl SCRIPTMIX_APP_SOURCE=/path/to/updated-app/src/fontlabapp fontlab-python-scriptmix/test.sh --original-source-root ..`: exit0,171passed in0.15s; exact private invocation in task-3g-report.md.
+- `rtk proxy uvx ruff check 'fontlab-python-scriptmix/Scripts/Kerning/Missing Pairs.py' 'fontlab-python-scriptmix/Scripts/Kerning/Text Preview.py'`: exit0.
+- Both repository `rtk proxy git -C <repository> diff --check` commands: exit0.
+- Before-fix1 behavior AST,52module wheel-byte comparison and public-doc path audit: exit0.
+
+Controller reports native5acceptance:31workflow,10fullfont/history,7chooser/CSV,
+8staleclass-selection and Close5/5, with5screenshots inspected. This worker made
+no native calls, commits, pushes, owner installs or App source changes. Fix1 adds
+no new behavior requiring another native run; controller decides integration.
+
+## 2026-10-17: Kerning native acceptance
+
+Source and scoped fix reviews approve. Five kerning tools pass 31 independent
+native workflow checks, ten complete saved-font/history checks, eight stale
+class-selection checks, seven actual chooser/export checks and Close 5/5.
+Screenshots show real wrapped accented outlines, native kerning positions,
+master flags, class members, coverage and a concise export footer. Original
+constant expressions and signal callbacks match all five originals.
+
+The combined 30-tool run on FontLab 9.0.9784 passes 247 workflows, 50 complete
+font/preservation/history checks, 52 safety checks, seven actual save-dialog
+checks and native destruction of every dialog. Five informational composite
+notes are retained separately from test counts. Clipboard invocation/check is
+explicitly excluded under D8; Copy remains host-free tested. Exact exported CSV
+UTF-8/CRLF bytes match independently read MCP values in native table order.
+
+Python 3.11: App359 and Scriptmix171 tests pass; installed App helpers55 pass.
+All30 source/destination mappings pass; the prior25 are unchanged. Wheel58 and
+sdist97 entries contain52 exact source matches, licenses and NOTICE, with private
+paths/scratch excluded. Public work-log recipes are portable; private exact
+receipts are retained separately. Evidence: workspace issue111-tools30-v1 and
+issue111-kerning-v1. Full issue111 and all remaining editors stay active; no
+archived input or owner environment installation is changed.
+
+Native command through fl-native.sh --mutating --lane issue111-tools30 with FL_RESTART=1, PYTHONDONTWRITEBYTECODE=1 and installed App wheel runs all30 manifest scripts with --verify-close --verify-safety --verify-names-safety --verify-kerning-safety --verify-kerning-chooser. Exact argv/exit0 retained in issue111-tools30-v1/native-command-receipt.json.

@@ -109,8 +109,8 @@ Run with Python 3.11 through uv and an explicit current App requirement:
 
 ```sh
 SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh
-# If App 0.2.6 or newer is available from your package index:
-SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.6' ./test.sh
+# If App 0.2.7 or newer is available from your package index:
+SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.7' ./test.sh
 ```
 
 The wheel is suitable for offline/development testing when pytest and its
@@ -119,7 +119,7 @@ without importing FontLab/Qt binaries. For source development, optionally set
 `SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`; the explicit dependency is
 still required. Missing helper files fail the run.
 
-Every default run checks all 25 destination hashes, exact menu paths/depth,
+Every default run checks all 30 destination hashes, exact menu paths/depth,
 Python 3.11 syntax and provenance metadata. It does not audit absent originals.
 To additionally check every original source hash, provide the workspace root
 containing the manifest's `fontlab-python-examples` paths:
@@ -153,3 +153,24 @@ are audited. All five pass their original native workflows, complete saved-font/
 invariance and switched/closed selection refusals. Close destroys their native
 dialogs; the live specimen fits tall accents and side overhangs. All 25 tools pass
 216 native workflow checks together. Clipboard has host-free proof only.
+
+## Read-only Kerning tools
+
+Kerning contains Classes Browser, Compare Masters, Pair List Browser, Missing
+Pairs and Text Preview. Browse class members and all-master values, flag missing,
+sign-changing or jumping pairs, filter exact sides with `=T`, sort numerically,
+and export the actual shown order to UTF-8 CSV through an owned modeless chooser.
+Missing Pairs expands characters, names and @classes and retains Copy list.
+Text Preview draws actual transformed outlines and advances with native effective
+kerning, master/size controls, Kerning and Show values. Oversized proof fits its
+complete ink, including accents and overhangs. No font data is written.
+
+Use App 0.2.7 helpers from the tagged source or a built wheel. Package-index
+availability is separate. During
+source development set both the explicit current wheel requirement and
+SCRIPTMIX_APP_SOURCE to the updated App source directory. Tests cover all 30
+provenance mappings; prior 25 mappings are unchanged. All original files remain
+in the archive. All five pass native workflows, complete saved-font/history invariance, actual
+save-dialog export, live proof and Close destruction. All 30 tools together pass
+247 native workflow checks.
+Exceptions Finder and Pairs From Text remain later complete editing tools.

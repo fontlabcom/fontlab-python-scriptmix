@@ -260,3 +260,47 @@ Require App0.2.6 in test-runner guidance and document tag-built wheels separatel
 from package-index availability. Refuse resolved helper trees missing the Names
 panel. The installed final-wheel suite passes151tests with25provenance pairs;
 product scripts and manifest are unchanged.
+
+## Issue 111 read-only kerning implementation (native acceptance pending)
+
+Add Classes Browser, Compare Masters, Pair List Browser, Missing Pairs and Text
+Preview with every original control and original registry/class interfaces.
+Share the lazy panel shell, guarded callbacks, validated selection, all-master
+explicit pair/class reads and effective native kerning layout through App.
+Preserve explicit zero versus missing pairs, numeric sorting and shown-order
+UTF-8 CSV. The owned modeless chooser reports pair count and basename in a
+wrapping status label. Proof fits complete transformed ink with actual advances
+and native class fallback; paint and cleanup failures are contained. Invalid
+or switched-font snapshots refuse selection, export and Copy. These five are
+read-only; Exceptions Finder and Pairs From Text remain later editor work.
+No native acceptance, publication or archive-removal claim in this milestone.
+
+## Issue 111 Kerning review polish
+
+Clarify Missing Pairs data types/coverage and Text Preview empty-state docs without
+changing behavior. Make the new public work-log commands portable and retain exact
+private receipts separately. App source remains identical to the native-tested wheel.
+
+## 2026-10-17: Kerning native acceptance
+
+Source and scoped fix reviews approve. Five kerning tools pass 31 independent
+native workflow checks, ten complete saved-font/history checks, eight stale
+class-selection checks, seven actual chooser/export checks and Close 5/5.
+Screenshots show real wrapped accented outlines, native kerning positions,
+master flags, class members, coverage and a concise export footer. Original
+constant expressions and signal callbacks match all five originals.
+
+The combined 30-tool run on FontLab 9.0.9784 passes 247 workflows, 50 complete
+font/preservation/history checks, 52 safety checks, seven actual save-dialog
+checks and native destruction of every dialog. Five informational composite
+notes are retained separately from test counts. Clipboard invocation/check is
+explicitly excluded under D8; Copy remains host-free tested. Exact exported CSV
+UTF-8/CRLF bytes match independently read MCP values in native table order.
+
+Python 3.11: App359 and Scriptmix171 tests pass; installed App helpers55 pass.
+All30 source/destination mappings pass; the prior25 are unchanged. Wheel58 and
+sdist97 entries contain52 exact source matches, licenses and NOTICE, with private
+paths/scratch excluded. Public work-log recipes are portable; private exact
+receipts are retained separately. Evidence: workspace issue111-tools30-v1 and
+issue111-kerning-v1. Full issue111 and all remaining editors stay active; no
+archived input or owner environment installation is changed.

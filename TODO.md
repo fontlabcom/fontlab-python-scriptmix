@@ -18,3 +18,5 @@ this_file: TODO.md
 - [x] Prove Build Suffix Substitution's feature-only full VFJ delta, one Undo, Redo and saved reopen.
 
 - [x] Native-verify five Names tools, selection safety, outline proof and actual Close (tools25-v1).
+
+- [x] Review and native-verify the five read-only Kerning tools, actual chooser/proof/Close and saved-font/history invariance (tools30-v1).
