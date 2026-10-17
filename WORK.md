@@ -578,3 +578,87 @@ are retained privately in issue111-tools35-v1, kerning-edit-v1 and
 kerning-preflight-v2/v3/v4.
 No owner-site install, original input removal or Fontport contract change.
 Full130-stem/archive migration, additional tools/reporters/docs remain open.
+
+## Issue111 Task3i selected Kerning editors — source milestone
+
+Exceptions Finder retains all-master/current scope, first broader class-pair
+precedence, redundant/manual checkboxes, Untick all and Remove ticked. Pairs From
+Text retains word/slash-token parsing, reading-order unique adjacency, effective
+versus explicit previews, manual checkboxes and Add/Set for selected masters.
+Shared lazy App0.2.9 plans reuse the complete snapshot-bound writer and owned
+panel. No new dependency or Fontport change. Complete-master final range,
+zero/absence, fractional-history and stale guards stay centralized. Read errors
+propagate instead of being shown as an absent zero.
+
+Tests first: two missing tools RED with216existing passes (exit1). Eight new App
+checks cover precedence/zero/manual deletions, parsing and native effective reads,
+Add/Set, empty selection/no-history, late invalid preflight and honest partial
+native-write failure. New real menu-method tests exercise stale font/pairs/classes/
+masters, actual checkbox state through shared guarded callbacks, failed preview,
+post-write read errors and inherited owned Close. One RED caught list-pair previews
+surviving shared invalidation; it now clears both pair lists and value maps.
+A second test setup correction used AVA (the prior AV pair was explicitly zero
+and correctly bypassed effective reads) and supplies the normal subtitle control.
+
+Final portable commands (exact private argv/receipts in workspace task-3i-report):
+- App checkout: `rtk proxy .venv/bin/python -m pytest -q`: exit0,427passed13.52s.
+- Scriptmix checkout: `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl SCRIPTMIX_APP_SOURCE=/path/to/updated-app/src/fontlabapp ./test.sh --original-source-root /path/to/workspace`: exit0,238passed0.27s.
+- `rtk proxy uvx ruff check <changed Python files>`: exit0, all checks passed.
+- `rtk proxy git -C <App checkout> diff --check` and the Scriptmix equivalent: exit0.
+All37exact source/destination hashes pass; prior35rows/menu bytes are unchanged.
+Original TITLE/KEY/MODES constants and all signal callbacks match AST comparisons.
+Scriptmix README198lines, dependency/helper guidance forthcoming0.2.9, no index
+publication claim. Official local pyflpackage.cpp833/838 declarations and existing
+scripting native get semantics were inspected; no new Qt API was introduced.
+
+Wait, but: host doubles prove source contracts only. Installed native original
+scenarios, seeded Exceptions baseline, full-font deltas, one native Undo/Redo,
+saved reopening, safety, real controls/screenshots and native Close are controller
+acceptance work and remain unchecked. Full130stems/othercollections/archive
+cleanup, additional tools/reporters/docs stay active. No native calls, owner
+installs, archive writes, agents, commits or pushes occurred in this task.
+
+## Task3i review fix1 — completed writes and shared tables
+
+P2: the shared seven-editor Apply boundary now retains a known successful write
+across every later exception, including UpdateAll, post-write tick collection and
+refresh. The message reports that kerning was applied, keeps the original cause
+and offers Undo/Refresh. It resets the write marker before preflight so an earlier
+success cannot relabel a new refusal; partial-writer diagnostics stay unchanged.
+Staging/results clear and Apply disables before the guarded callback reports it.
+P3: both selected editors reuse the existing shared table builder; exact headers,
+manual checkbox callbacks and Exceptions240minimum remain. Prior35menus unchanged.
+
+Tests first: five genuine failure-injection REDs through actual inherited guarded
+callbacks, with two preflight/partial-error controls passing. The seven focused
+cases then pass after the shared fix. Original26frozenfiles and initial report
+were verified and copied to the workspace task-3i-before-fix1 directory before
+edits. Native/artifact reacceptance stays controller-owned; full results and
+snapshot delta are retained in task-3i-report/fix1-freeze. No native call, owner
+install, archive edit, commit or push occurred.
+
+Fix1 final direct verification uses the same portable full-suite commands above:
+App427passed13.82s, Scriptmix245passed0.34s with all37provenance hashes; changed
+Python Ruff and both diff checks exit0. Seven new guarded-callback controls pass;
+original constants/callbacks and prior35mapping/menu bytes remain unchanged.
+Native acceptance of these changed bytes remains pending controller rerun.
+
+## Controller Task3i acceptance
+
+Source/fix1 reviews SPEC PASS/QUALITY APPROVED. Installed final wheel native
+combined37 gate:301original workflow checks,99complete preservation/history,
+94safety (12FontInfo+32Names+8classes+42editor staleApply),32writer controls,
+12post-write failure controls,15realchooser/export checks andClose37/37pass.
+96source/dependency hashes match;importsrestored,ownedfontsclosed. Both selected
+editors retain originalnativeoracles and14exactfullfont/firstUndo/Redo/reopen
+checks. Owned UpdateAll failure injection proves honest completed outcome and
+exactUndo/Redo;nativefunctionrestored in finally. Earlier chooser timeout retained
+in tools37-v1, boundedcalls pass in tools37-v2, no waivedoracles.
+
+App427source/123installedwheel/123installedsdist tests andScriptmix245against
+actualwheel withno sourceoverride pass;37provenance hashes pass.57App sourcefiles
+match both artifacts;licenses/NOTICE/privacy checks pass. Exact rtk proxy argv,
+exitcodes,freezes/reviews andsnapshots retained in issue111-tools37-v2 and
+kerning-remaining-fix1-v1 workspaceevidence. Bothnative tickedscreenshots checked.
+Full130stems/othercollections/archivecleanup/newtools/reporters/docs stayactive.
+No owner-siteinstall ororiginalinput removal. Controller prepares D12/D17 release.

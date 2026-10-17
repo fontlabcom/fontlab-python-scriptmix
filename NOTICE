@@ -17,3 +17,10 @@ retained. Shared calculations, multi-master preflight/writing and common UI
 rendering now live in App. Snapshot refusal, explicit-zero insertion and Refresh
 recovery are added. The five original source/destination hashes are appended to
 migration.json without changing prior mappings. Native acceptance is pending.
+
+Selected Kerning editors adapt Apache-2.0 kerning_exceptions_finder.py and
+kerning_pairs_from_text.py from the same retained fontlab-samples archive.
+App's kerning_selection.py shares exception precedence, word parsing, explicit/
+effective previews and ticked plans; the existing complete batch writer and
+owned dialog shell provide snapshot guards, Refresh and history. Scriptmix
+migration.json appends both source/destination hashes; originals are unchanged.

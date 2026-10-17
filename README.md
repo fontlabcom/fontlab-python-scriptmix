@@ -74,11 +74,6 @@ keeps its own controls and actions. Glyph Order uses an owned modeless save
 chooser and reports the exported count and filename.
 
 
-The six Font Info panels now share App's lazily loaded FontInfoDialog shell via
-fly.ap.scripting.font_info_dialog_type(). Existing controls/actions and the owned
-export chooser are unchanged. Native workflows, editor persistence and Close
-destruction pass on the current shared implementation.
-
 ## Feature tools
 
 Features contains Alternate Preview, Build Suffix Substitution, Classes Browser,
@@ -109,8 +104,8 @@ Run with Python 3.11 through uv and an explicit current App requirement:
 
 ```sh
 SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh
-# If App 0.2.8 or newer is available from your package index:
-SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.8' ./test.sh
+# If App 0.2.9 or newer is available from your package index:
+SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.9' ./test.sh
 ```
 
 The wheel is suitable for offline/development testing when pytest and its
@@ -119,7 +114,7 @@ without importing FontLab/Qt binaries. For source development, optionally set
 `SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`; the explicit dependency is
 still required. Missing helper files fail the run.
 
-Every default run checks all 35 destination hashes, exact menu paths/depth,
+Every default run checks all 37 destination hashes, exact menu paths/depth,
 Python 3.11 syntax and provenance metadata. It does not audit absent originals.
 To additionally check every original source hash, provide the workspace root
 containing the manifest's `fontlab-python-examples` paths:
@@ -173,7 +168,7 @@ provenance mappings; prior 25 mappings are unchanged. All original files remain
 in the archive. All five pass native workflows, complete saved-font/history invariance, actual
 save-dialog export, live proof and Close destruction. All 30 tools together pass
 247 native workflow checks.
-Exceptions Finder and Pairs From Text remain later complete editing tools.
+Exceptions Finder and Pairs From Text are complete editing tools described below.
 
 ## Kerning editors
 
@@ -192,4 +187,12 @@ Apply refuses changed pairs/classes/masters or a
 switched/closed font; Refresh recovers failed reads. Close shares owned cleanup.
 Allfive pass original native scenarios, complete saved-font deltas, firstUndo/Redo,
 reopen, safety andClose. All35tools pass280native workflows/85preservation checks.
-Host-free216tests and35provenance mappings pass. Full archive migration stays open.
+The two additional editors need App0.2.9 helpers (tag-built wheel or
+explicit current wheel plus updated source override); index availability is separate.
+Exceptions Finder lists broader class overrides, offers Tick redundant/Untick all
+and removes exactly ticked rows. Pairs From Text resolves characters and /name
+words into unique adjacent pairs; Set/Add uses displayed effective kerning on
+current/all masters, marking explicit glyph values versus inherited class values.
+Both pass native controls, full-font Undo/Redo/reopen andClose. All37tools pass
+301workflow/99preservation/94safety checks; all37mappings pass. Full archive
+migration, cleanup, additional tools/reporters and docs remain open.
