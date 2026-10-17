@@ -4,6 +4,31 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — Issue111 Proof source milestone
+
+Native installed acceptance: all41core tools pass336workflow/107preservation,
+123safety,80writer/error controls andClose41; separate15chooser checks pass.
+All41hash mappings and60Appsource bytes pass. Full archive migration staysactive.
+
+- Retain complete Glyph Grid, Text By Master, Waterfall and Word Finder tools,
+  sharing real transformed paths, exact advance-only runs, original word data,
+  filters and guarded owned UI through lazy App0.2.10 helpers.
+- Fit Grid's common scale to wide overhangs and tall accents/components; preserve
+  deliberate Reload font/selection adoption and refuse automatic stale refresh.
+- Clear failed previews, contain painter/callback/finalization errors and retain
+  original controls/keys/scenario globals. Copy has host-free coverage; native
+  clipboard remains excluded. Installed native/artifact acceptance passes.
+
+### Task3j fix1 — contain all opening font reads
+
+- Build empty controls/status/Close before binding/id/selection/maps/characters/
+  master reads; diagnose early failures in a closable invalid panel.
+- Retry initial loads through existing guarded controls without adopting a
+  different known font. Preserve explicit Grid Reload adoption and Waterfall's
+  initial active-master choice with signal state restored in finally.
+- Add23actual constructor/recovery/failed-state Close/stale-binding regressions;
+  independent source review and installed native/artifact reacceptance pass.
+
 ## v1.0.4 — 2026-10-17
 
 Review fix: retain a completed batch's applied outcome, original cause and

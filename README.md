@@ -5,7 +5,7 @@ this_file: README.md
 # fontlab-python-scriptmix
 Small and useful scripts for FontLab
 
-## Reports (issue 111 first batch)
+## Installation and Reports
 
 Copy the contents of `Scripts` into your FontLab Scripts menu folder. Keep the
 category subfolders, such as `Reports` and `Font Info`; FontLab supports one folder level. Use FontLab 9's
@@ -21,11 +21,8 @@ Closing a report disconnects its signals. Re-running replaces its old window.
 Close also destroys the native dialog after its event finishes. All eight
 reports share this lifecycle code through `fly.ap.scripting`.
 
-Sources remain in the examples archive until the full migration is reconciled.
-`migration.json` records Apache-2.0 provenance and hashes. All three reports passed
-their original native scenarios in FontLab 9.0.9784 with the installed helper
-wheel: 26 independent checks, screenshot review and owned-window/font cleanup.
-Run `./test.sh` for the host-free tests.
+Sources stay archived until full reconciliation. `migration.json` records
+Apache-2.0 provenance and exact hashes. See WORK.md for native acceptance receipts.
 
 A failed scan or table refresh invalidates selection until a complete rescan
 succeeds. Partial results are cleared; explicit selection calls also refuse them.
@@ -41,10 +38,8 @@ on-curve nodes across masters with selection scope and a 1–30 unit tolerance.
 Unicode Coverage includes untouched-block filtering, progress bars and block
 selection. Explicit selection is bound to the font that supplied the rows.
 
-All five retain the original interactions and Apache-2.0 provenance. Their
-original scenarios pass on FontLab9.0.9784:42independent checks, reviewed
-screenshots and owned font/dialog cleanup, including the live timer. Host-free
-tests for all eight reports pass on Python3.11 (47tests).
+All five retain the original interactions and pass their original native
+scenarios, including the live timer and owned Close, on FontLab9.0.9784.
 
 ## Font Info tools
 
@@ -73,7 +68,6 @@ switched-font refusal. Shared panels load lazily through Fontlabapp; each tool
 keeps its own controls and actions. Glyph Order uses an owned modeless save
 chooser and reports the exported count and filename.
 
-
 ## Feature tools
 
 Features contains Alternate Preview, Build Suffix Substitution, Classes Browser,
@@ -101,11 +95,11 @@ No export chooser is needed: these six originals provide Copy, not file export.
 ## Host-free distribution checks
 
 Run with Python 3.11 through uv and an explicit current App requirement:
-
 ```sh
 SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh
-# If App 0.2.9 or newer is available from your package index:
-SCRIPTMIX_APP_REQUIREMENT='fontlab-fontlabapp>=0.2.9' ./test.sh
+# Proof needs App0.2.10 helpers; build the current checkout:
+uv build /path/to/app --out-dir /path/to/dist
+SCRIPTMIX_APP_REQUIREMENT=/path/to/dist/current-app.whl ./test.sh
 ```
 
 The wheel is suitable for offline/development testing when pytest and its
@@ -114,7 +108,7 @@ without importing FontLab/Qt binaries. For source development, optionally set
 `SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`; the explicit dependency is
 still required. Missing helper files fail the run.
 
-Every default run checks all 37 destination hashes, exact menu paths/depth,
+Every default run checks all 41 destination hashes, exact menu paths/depth,
 Python 3.11 syntax and provenance metadata. It does not audit absent originals.
 To additionally check every original source hash, provide the workspace root
 containing the manifest's `fontlab-python-examples` paths:
@@ -126,7 +120,6 @@ SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh --original-source-r
 Missing or mismatched originals fail this requested audit. Original hashes and
 product script bytes are unchanged.
 
-
 ## Names inspection and selection tools
 
 Names contains Case Pairs, Character Info, Character Set Compare, Glyph Finder
@@ -135,19 +128,11 @@ search names/globs/Unicode and copy characters or missing sets. Character Info
 follows selection every 500 ms and paints the current master outline beside
 system text; closing stops the timer. No Pause control existed in this original.
 
-These five reuse App's lazy Names panel, table, guarded signals and selection
-helpers. Use Fontlabapp 0.2.6 or newer; the `v0.2.6` tag includes
-`names_dialog_type`. Supply a wheel built from that tag to the test runner;
-package-index availability is separate. For source development, use a current
-wheel requirement plus `SCRIPTMIX_APP_SOURCE` pointing at the updated source
-directory. Complete
-refreshes bind actions to their original font; switched/closed fonts, missing
-names and failed refreshes refuse selection before clearing it. No font design
-or metadata edits occur. Originals remain untouched and all 25 provenance pairs
-are audited. All five pass their original native workflows, complete saved-font/history
-invariance and switched/closed selection refusals. Close destroys their native
-dialogs; the live specimen fits tall accents and side overhangs. All 25 tools pass
-216 native workflow checks together. Clipboard has host-free proof only.
+These five use App0.2.6's lazy panel, tables, signals and selection helpers.
+Complete refreshes bind actions to their original font. Switched/closed fonts,
+missing names and failed scans refuse selection before clearing it. Native
+workflows, full saved-font/history invariance and owned Close pass. The live
+specimen fits tall accents/overhangs; clipboard has host-free proof only.
 
 ## Read-only Kerning tools
 
@@ -160,15 +145,9 @@ Text Preview draws actual transformed outlines and advances with native effectiv
 kerning, master/size controls, Kerning and Show values. Oversized proof fits its
 complete ink, including accents and overhangs. No font data is written.
 
-Use App 0.2.7 helpers from the tagged source or a built wheel. Package-index
-availability is separate. During
-source development set both the explicit current wheel requirement and
-SCRIPTMIX_APP_SOURCE to the updated App source directory. Tests cover all 30
-provenance mappings; prior 25 mappings are unchanged. All original files remain
-in the archive. All five pass native workflows, complete saved-font/history invariance, actual
-save-dialog export, live proof and Close destruction. All 30 tools together pass
-247 native workflow checks.
-Exceptions Finder and Pairs From Text are complete editing tools described below.
+These require App0.2.7 helpers. Native workflows, complete saved-font/history
+invariance, actual save-dialog export, live proof and Close destruction pass.
+Exceptions Finder and Pairs From Text are editing tools described below.
 
 ## Kerning editors
 
@@ -186,7 +165,7 @@ fractional source history and final values outside +/-2*positive finite UPM.
 Apply refuses changed pairs/classes/masters or a
 switched/closed font; Refresh recovers failed reads. Close shares owned cleanup.
 Allfive pass original native scenarios, complete saved-font deltas, firstUndo/Redo,
-reopen, safety andClose. All35tools pass280native workflows/85preservation checks.
+reopen, safety andClose (receipts in WORK.md).
 The two additional editors need App0.2.9 helpers (tag-built wheel or
 explicit current wheel plus updated source override); index availability is separate.
 Exceptions Finder lists broader class overrides, offers Tick redundant/Untick all
@@ -196,3 +175,24 @@ current/all masters, marking explicit glyph values versus inherited class values
 Both pass native controls, full-font Undo/Redo/reopen andClose. All37tools pass
 301workflow/99preservation/94safety checks; all37mappings pass. Full archive
 migration, cleanup, additional tools/reporters and docs remain open.
+
+## Proof tools (source milestone)
+
+Glyph Grid compares selected glyphs in font order on every master, with one
+scale fitted to full outline/component bounds, a zoom slider and Reload selection.
+Reload deliberately adopts the current font/selection; zoom stays bound to the
+original font. Text By Master preserves per-master advance-only widths, editable
+text and size/scroll controls. Waterfall keeps the selected master, ordered sizes
+(4–400px), /name tokens and red missing-glyph boxes. Neither text tool adds kerning.
+Word Finder retains the exact English/Latin list, case/length/required/allowed
+letter filters and Copy words. Native clipboard calls remain excluded by D8.
+
+Proof needs App0.2.10: use a wheel built from the current checkout,
+or the explicit wheel plus `SCRIPTMIX_APP_SOURCE` development recipe above.
+Helper detection rejects earlier wheels without those sources; no registry
+publication is claimed. Ordinary refresh/paint/Copy refuses a closed or switched
+font and clears incomplete results. Opening native reads start after status/Close
+exist; failed initial scans stay empty, diagnosed and closable. Close clears view hooks
+and deletes the owned dialog. Native original oracles/painting/Close and exact
+font/workspace/history pass; all41core tools pass336workflow/107preservation checks.
+Full Issue111 migration, archive cleanup, additional tools/reporters/docs stay open.

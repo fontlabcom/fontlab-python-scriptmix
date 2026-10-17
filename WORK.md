@@ -662,3 +662,122 @@ exitcodes,freezes/reviews andsnapshots retained in issue111-tools37-v2 and
 kerning-remaining-fix1-v1 workspaceevidence. Bothnative tickedscreenshots checked.
 Full130stems/othercollections/archivecleanup/newtools/reporters/docs stayactive.
 No owner-siteinstall ororiginalinput removal. Controller prepares D12/D17 release.
+
+## Task3j — four Proof tools, source milestone
+
+Glyph Grid, Text By Master, Waterfall and Word Finder retain all original
+controls, defaults, classes, keys, registry entries and scenario-accessed globals.
+App shares actual transformed outline assembly, advance-only text, exact original
+English/Latin words and filters, three native painters, scroll/footer composition,
+complete-scan guards and existing owned dialog lifecycle. Grid fits one scale to
+all full bounds; deliberate Reload adopts current font/selection. Automatic
+refresh/paint/Copy refuses switched/closed fonts before cached-wrapper access.
+Paint create/draw/hook/end errors clear incomplete results; inactive devices and
+false end() results are diagnosed. Copy is host-free tested only (D8).
+
+Tests first: App baseline427pass14.11s; Scriptmix baseline245pass0.28s.
+Four missing menus produce RED4fail/245pass; later inactive-painter/false-end
+controls produce RED2fail/282deselected before their minimum guard fix.
+Final direct source verification, all exit0:
+- App cwd: `rtk proxy ./test.sh`:441passed13.92s (14new shared-helper cases).
+- Scriptmix cwd: `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../.local/issue111-app-v0.2.9-dist/fontlab_fontlabapp-0.2.9-py3-none-any.whl SCRIPTMIX_APP_SOURCE=../.worktrees/issue111-app/src/fontlabapp ./test.sh --original-source-root ..`:284passed0.32s (245baseline +39new).
+- Workspace cwd: `rtk proxy uvx ruff check .worktrees/issue111-app/src/fontlabapp/proof.py .worktrees/issue111-app/src/fontlabapp/_proof_views.py .worktrees/issue111-app/src/fontlabapp/_proof_dialog.py .worktrees/issue111-app/tests/test_proof.py fontlab-python-scriptmix/Scripts/Proof fontlab-python-scriptmix/tests/test_proof.py fontlab-python-scriptmix/tests/conftest.py fontlab-python-scriptmix/tests/test_reports.py fontlab-python-scriptmix/tests/test_portability.py`:allchecks passed.
+- Workspace cwd: `rtk proxy git -C fontlab-python-scriptmix diff --check` and
+  `rtk proxy git -C .worktrees/issue111-app diff --check`:exit0 each.
+All41provenance hashes pass; prior37rows/menu bytes unchanged. Original signal
+connection expressions are AST-identical; strict audit checks exact original
+constants/embedded words. README197lines; helpers require forthcoming App0.2.10
+or explicit current source override/current built wheel; no index claim.
+
+Attempts retained: initial focused run36pass/1test-double failure (base Widget.text
+was mistaken for a text control), corrected by checking setText; next focused
+42pass/1opening-failure fixture failure (default text had no encoded characters,
+so injected findName was never reached), corrected to inject glyph_run. First
+App test launch from workspace root failed because no root test.sh exists; one
+later edit/format/wc batch used Scriptmix cwd with workspace-relative paths and
+failed before writes, then ran correctly from workspace. Initial Ruff failures
+were native-boundary BLE001 comments, unused descender/import sorting/export
+annotations; all corrected. lean-ctx binary and rules file are absent; rtk proxy
+was used. No failing product behavior is being waived.
+
+Wait, but: owned doubles and external Qt mathematical paths prove source
+contracts only. Source review, built wheel/sdist/license/privacy/byte audits,
+unchanged native original scenarios and exact path bounds, real screenshots and
+controls, complete saved-font/history invariance, stale/read/paint safety and
+actual native Close remain controller gates. No native runs, owner installs,
+canonical App edits, commits/pushes, archive writes/removal or child agents.
+Full130stems/othercollections/cleanup/reporters/docs remain open. Detailed exact
+commands and all changed/untracked hashes are in the workspace Task3j report
+and freeze; no source promotion is authorized by host doubles alone.
+
+## Task3j fix1 — R1 initial native-read containment
+
+The independent review correctly found that earlier initial_refresh covered
+late proof scans only: package/current/id, selection/maps/characters and master
+reads could escape before a closable panel existed. All29frozen files and the
+original report/freeze were hash-verified and snapshotted before edits under the
+workspace task-3j-before-fix1 directory; original task-3j-freeze.json is unchanged.
+
+Proof constructors now build safe empty state and complete status/Close/controls
+before any font read. The existing snapshot wrapper includes the whole initial
+source load: bind current/id, read per-tool state, recheck identity, then scan.
+Failed early reads discard incomplete caches, leave an invalid empty diagnosed
+panel and preserve any known bound id for guarded retry. A binding failure before
+an id is obtained has no identity to retain. Grid explicit Reload intentionally
+resets initial binding so it can adopt current font/selection or no font.
+Waterfall publishes original master choices/active-master default with signals
+blocked and previous block state restored in finally; no signal recursion or
+native active-master change is introduced. Defaults, aliases, every original
+_connect expression, prior37menu bytes/mapping rows and native oracles remain.
+
+Tests first: actual constructor/main RED15fail/284deselected0.31s, covering
+current-package and id for allfourtools plus selection/maps/characters/master
+list/active-master errors. Each injected read asserts that Close/status already
+exist. Those15then pass with guarded retry, registry publication and Close.
+Four additional cases close directly while the initial read still fails; four
+prove automatic retry refuses a different known font while Grid Reload can
+explicitly adopt it. Focused final23pass/284deselected0.09s.
+
+Fresh full source checks, exit0 each:
+- App cwd `rtk proxy ./test.sh`:441passed13.61s.
+- Scriptmix cwd `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=../.local/issue111-app-v0.2.9-dist/fontlab_fontlabapp-0.2.9-py3-none-any.whl SCRIPTMIX_APP_SOURCE=../.worktrees/issue111-app/src/fontlabapp ./test.sh --original-source-root ..`:307passed0.43s (284old +23new).
+- Workspace cwd `rtk proxy uvx ruff check .worktrees/issue111-app/src/fontlabapp/proof.py .worktrees/issue111-app/src/fontlabapp/_proof_views.py .worktrees/issue111-app/src/fontlabapp/_proof_dialog.py .worktrees/issue111-app/tests/test_proof.py fontlab-python-scriptmix/Scripts/Proof fontlab-python-scriptmix/tests/test_proof.py fontlab-python-scriptmix/tests/conftest.py fontlab-python-scriptmix/tests/test_reports.py fontlab-python-scriptmix/tests/test_portability.py`:allchecks passed.
+- `rtk proxy git -C fontlab-python-scriptmix diff --check` and
+  `rtk proxy git -C .worktrees/issue111-app diff --check`:exit0 each.
+All41mapping pairs pass strict originals audit; prior37rows/menu bytes unchanged;
+allfour original signal action expressions remain AST-identical. Initial lint
+flagged the new test-only class tracking list (RUF012); ClassVar annotation and
+proper docstring placement corrected it before final lint. No product failures
+waived. New fix1 freeze records every file/status/hash and explicit old/new delta.
+
+Wait, but: these results prove the bounded source fix only. Parent reported that
+pre-fix native four-tool originals/full-font/stale/paint/Close checks passed,
+and that a broader41tool run later hit an unrelated chooser deadline. Neither
+is native evidence for these changed bytes. Parent owns scoped review, rebuilt
+artifacts and native reacceptance. No native calls, commits/pushes, owner installs,
+archive writes/removal, canonical App edits, Fontport/Glyport changes or agents.
+Full Issue111 remains active; no native/promotion TODO is ticked by this fix.
+
+## Controller Task3j acceptance
+
+Source/fix1 reviews SPEC PASS/QUALITY APPROVED. Final installed-wheel core41
+gate passes336original workflow checks,107complete preservation/history,123safety
+(94prior+29Proof),32writer/12postwrite/12paint/24opening errorcontrols andClose41/41.
+All103exercised source/dependency hashes match;importsrestored,ownedfontsclosed.
+Separate fresh same-wheel realchooser/export gate15checks passes. Earlier full41
+andfocusedchooser calls hit5s native deadline; splitting launch/mode/open into
+separate bounded calls retains everyoracle andpasses. Thosefailures remainretained.
+
+Proof4 originaloracles pass35checks,8strictcompletefont/workspace/history,29stale/
+explicitReload,12realpaintfail/recovery and24nativeearlyopening controls. Native
+function injections alwaysrestore functions/aliases; eight diagnosedinvalidvisible
+panels close with actualQObjectdestruction/registryrelease andfont/historyexact.
+All15Gridcells, transformedAacute, fullampersandlastrow, textweights/widths and
+missingglyphboxes visuallyinspected. Clipboard remainsnative-excludedD8.
+
+App441source/137installedwheel/137installedsdist tests andScriptmix307against
+actualwheel withno sourceoverride pass;41provenance hashes pass.60Appsourcefiles
+matchboth artifacts/installs;licenses/NOTICE/privacy audits pass. Exactrtkproxy
+commands/exitcodes/freezes/reviews in tools41-v2, proof-fix1-v1 andproof-choosers-v2
+workspaceevidence. Full130stems/othercollections/archivecleanup/newtools/reporters/
+docs stayactive; no originalremoved orowner-siteinstall. ControllerpreparesD12/D17.

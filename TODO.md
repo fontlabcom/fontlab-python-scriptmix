@@ -24,3 +24,6 @@ this_file: TODO.md
 - [x] Review and native-verify five Kerning editors, complete saved deltas/Undo/Redo/reopen, snapshot safety, explicit-zero insertion and actual Close (tools35-v1).
 
 - [x] Review and native-verify the two selected Kerning editors, exact complete-font deltas/Undo/Redo/reopen, manual checkboxes, no-op/stale safety and actual Close.
+
+- [x] Independently review four Proof menus and shared App helpers at frozen bytes.
+- [x] Native-verify unchanged Proof scenario oracles, real outlines/controls/screenshots, complete saved-font/history invariance, stale/read/paint safety and actual Close from installed artifacts; keep clipboard excluded by D8.

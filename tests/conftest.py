@@ -37,6 +37,9 @@ def resolve_app_sources(required_helpers=None):
         "_kerning_edit_dialog",
         "_kerning_value_dialog",
         "kerning_selection",
+        "proof",
+        "_proof_dialog",
+        "_proof_views",
     )
     for name in required_helpers:
         assert (root / f"{name}.py").is_file(), f"Missing App helper: {root / name}"

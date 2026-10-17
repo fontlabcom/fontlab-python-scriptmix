@@ -79,3 +79,13 @@ def test_pre_selected_editor_helper_set_refused(monkeypatch, tmp_path):
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="kerning_selection"):
         resolve_app_sources()
+
+
+def test_pre_proof_helper_set_refused(monkeypatch, tmp_path, app_sources):
+    """App0.2.9 cannot silently satisfy forthcoming Proof helpers."""
+    for path in app_sources.glob("*.py"):
+        if path.stem not in {"proof", "_proof_dialog", "_proof_views"}:
+            (tmp_path / path.name).write_text("# Previous helper\n")
+    monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
+    with pytest.raises(AssertionError, match="Missing App helper.*proof"):
+        resolve_app_sources()

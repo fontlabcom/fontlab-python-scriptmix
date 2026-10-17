@@ -45,3 +45,14 @@ kerning_selection helper plus the existing snapshot/batch/dialog helpers. They
 add no packages: word adjacency uses standard-library itertools.pairwise and
 preview reads reuse native FontLab effective kerning. Use a built wheel and an
 explicit updated source override during development; no index release is implied.
+
+Proof tools require forthcoming App0.2.10's lazy proof_api/proof_dialog_type/
+proof_view_types/proof_snapshot_refresh helpers. No package or framework is added:
+existing FontLab/PythonQt supplies actual QPainterPath/QTransform/QPainter, and
+existing fly.ap/scripting provides ordered names/selection and owned lifecycle.
+Pure filters and text calculations use the standard library. Current source
+or a current built wheel is needed; no registry publication is claimed. Official
+local pyflshape.cpp path getters and QtGui stubs were checked. Qt's QPainter.end
+and QPainterPath.addPath documentation supports the existing painter lifetime
+and compound-path model; Qt5 native acceptance remains separate from Qt6
+mathematical path tests in the external test environment.
