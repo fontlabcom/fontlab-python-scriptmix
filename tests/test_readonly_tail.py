@@ -295,8 +295,8 @@ def test_readonly_tail_complete_menu_exists(path):
 
 def test_readonly_tail_prior57_manifest_and_every_menu_byte_remain_immutable():
     rows = json.loads((ROOT / "migration.json").read_text())
-    assert len(rows) == 59, (
-        "Retain all 57 released tools and both complete new mappings"
+    assert len(rows) == 60, (
+        "Retain all 59 released tools and the complete new mapping"
     )
     assert (
         hashlib.sha256(

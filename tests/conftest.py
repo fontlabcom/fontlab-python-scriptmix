@@ -56,6 +56,7 @@ def resolve_app_sources(required_helpers=None):
         "interpolation",
         "_review_dialog",
         "_interpolation_view",
+        "node_coordinates",
     )
     for name in required_helpers:
         assert (root / f"{name}.py").is_file(), f"Missing App helper: {root / name}"

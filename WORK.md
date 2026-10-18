@@ -1871,3 +1871,55 @@ Post-tag README/PLAN/TODO/WORK/NOTICE metadata is reviewed before canonical
 promotion. Released59/130;71pending(7heldNames+64unmigrated). All original/archive
 inputs remain and whole migration/additionaltools/actualglyphcanvasreporters/docs
 stay open. No owner documents/preferences/Output/clipboard/site install changed.
+
+2026-10-18 Task3q: isolated live-nodes worktrees from reviewed59 release.
+Native active-context calibration passes: valid H/E are falsey; cache initially
+null while active A exists. Use CurrentGlyph is-not-None. App baseline533pass
+12.96s; first8new core tests RED missing module, then8pass0.01s. Menu tests
+first exposed a test contour.nodes double recreating nodes; make it persistent
+as native nodes are. Nine real-slot UI tests pass0.15s with owned timer/clipboard.
+Full source/artifact/native acceptance still pending; no new release or installs.
+
+
+Task3q nativeoriginalv1 exit0:7unchanged workflow checks,2complete font/format/
+workspace/history/master checks,Close1,80sourcehashes/restored imports. Both PNGs
+inspected; values H76,158,520; firstdistance82.0 and next477.2. Nativev2full
+controls exit1:17positive controls include realtimer,geometry+13/staleCopy, falsey
+E focus, emptyselection,read/render/clipboard failure+recovery, openingbinding/
+data faults andrealdestruction/fullpreservation. Switchcontrols failed because
+MCPset_active_font doesnotchange actualactiveGlyphwindow; return/controlhistory
+checks correctlyfailed. Mastercontrol was also tightened to choose a different
+master, not just the last list item. Nativev3 exit1 retainedassertionwhen attempted
+notifyGlyphDoubleClick activation also stayed in oldactivefont. No crash/product
+change or weakened oracle. Independentcalibration plum/cosm provesMCP toolreports
+successbut activecurrentpackage staysold after switching; C++ endpoint onlysets
+workspacecachedcurrent/activepackage, whileactiveview overridesread. Native
+Window>Windows action routing now undercalibration before v4. Earlier receipts
+retained; no newrelease/canonicalpromotion/originalremoval.
+
+Task3q correction: nativev1/v2 source hash count is81, not80. Switchcontextv2 calibration exits1 with AttributeError: MainWindow C++ slot doUpdateWindowsMenu is not exposed as a Python attribute. Native menuWindows popup/hide signal path under calibration; no product/runtime change or owner state touched. All owned fonts closed in finally.
+
+Task3q source/fidelity gates:8newcore tests; App541pass12.98s; Scriptmixfull716pass1skip1.06s before five more boundary tests, then14newUI pass0.09s. Actual-wheel Git-free88files720pass2explicit skips1.22s, originalpairs60separate/sourcecovered. Installedwheel224pass0.28s/sdist224pass0.29s actualtargets, nohostimports. Fourcore AST bodies exact exceptannotations/docstrings; prior76runtime exact exceptscripting append,59manifest/menuimmutable. Switchcontextv3 familyName attribute absent (it belongs packageinfo); title_name verifiedbinding fixesmatch. v4 calibration showsnativefontWindowactivationworks, but reopeningGlyphcanrevertcontext; v5 fontWindow-only route passes4actualfont-ID switches209/3/209/3. Boundarycontrols nowprepare eachboundH first, pauseownedtimeronlytoisolate intentional switch/closebetweenpolls, then restartandrequireexpiry; survivorfullsnapshot beforetimerrestart. Earlierfailedcalibrationsretained.
+
+Task3q v4fullnative exit1: original7/preservation2/Close1 stillpass;23of24additionalcontrols pass, including verifiedactualfontswitch/return/closure andcomplete survivorfont/workspace/history. Onlychangedmastercontrol fails: reopeningE resetsmasterRegular after a silentpackage.setMaster. Earlierloosemasterpredicatehadpassed; tightenedpredicatecorrectlyrejects it. Primarypyflglyph activeLayer setter + inspector layeractivation sequence inspected; controller nowsetsownedE.activeLayer, setMaster(target,True), notifyLayerActivated, requiresdistincttargetafterevents, thenrestoresownedlayer/master beforefullpreservation. No productchange. UpstreamMCPactivationdefect filed https://github.com/Fontlab/fl/issues/8526 afterexistingissue search; nativeWindowmenu4switch calibrationv5 passes. OriginalNone/clipboard/Closeoraclesunweakened. Final77runtimeartifactwheelbc28583326f3a7821851317b3152c099266ba656cb4726e2816aaaeaf3a576ea/sdist73ae63826df5dc7485c9d8e065f433bbd18613c7e2460da01f7915f8412b1539 audit83/132entries. Finalinstalled224+224pass0.29/0.28s; actualfinalwheelScriptmix721pass1skip1.08s; Gitfree720+2skips1.22s. Prior59fullsamefinalwheel regression RUNNING. Allfailureevidenceretained.
+
+
+Task3q v5 exit1: all realmaster/fontboundary controls pass, but exact preservation
+catches one E/Light shape.active false-to-true field from the test's own native
+layeractivation. No field is masked. Controller captures/restores those actual
+shape.active flags, then v6 exits0:7original workflows/2complete preservation/
+24additional timer/focus/Copy/open/read/render/clipboard/recovery/switch/close/
+full-survivor checks andactualClose1.81hashes andpaths/modules restoration match.
+E/Light actualx88/396,y0/32;distance309.7/angle5.9deg independentlymatchesVFJ.
+Originaltwoimages exactv1;newH/Eimages inspected,remainingtwoHshots equivalence
+checked separately. Before/aftercompletefont/workspacebyteparsedobjects exact;
+dirty/Undo/master unchanged. No nativefontwrites byproduct or realclipboarduse.
+Prior59samefinalwheel exits0:483workflows/143preservation/407safety/294errors,
+22selection/layout/Close59;153hashes/restorationpass. Combined60=490workflows/
+145preservation plus24newcontrols andClose60. Everyoldermenu/mappingbyteexact.
+App541source12.94s;224installed perwheel/sdist0.29/0.28s; actualfinalwheel
+Scriptmix721pass1skip1.08s;88fileGitfree720pass2skips0.99s;root179pass0.21s,
+scopedRuffpass;77runtime83/132payloadslicence/privacy. FourcoreASTbodiesexact.
+UpstreamMCPactivation#8526filed;all failednativev2-v5/calibrationsretained.
+Reviewed source accepted for feature integration; D17/downloadedtagR053pending.
+Still59/130released;alloriginals/archives/held7Names/broadergoalretained.

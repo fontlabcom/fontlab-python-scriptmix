@@ -4,6 +4,12 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — live Node Coordinates
+
+- Port complete selected-node coordinate/pair tables,400ms polling and Copy.
+  Follow active glyph/master edits with guarded font binding and owned cleanup.
+  Source/artifact/native/prior59 gates pass; release/R053 pending. Preserve all59released tools.
+
 ## v1.0.11 — 2026-10-18 — read-only glyph reviews
 
 - Fix original native feature iteration: use fgOTLayout.keys() tags, not its

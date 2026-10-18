@@ -104,3 +104,14 @@ controls, diagram and public helper interfaces remain. Shared lifecycle/painter
 boundaries come from existing App helpers. migration.json retains original and
 menu SHA-256 pairs. All inputs remain; reviewed Appv0.2.15/Scriptmixv1.0.11
 artifact/native and independent downloaded-tag acceptance are recorded in WORK.md.
+
+Live Node Coordinates provenance
+================================
+
+Node Coordinates Panel adapts Apache-2.0 outlines_node_coordinates_panel.py
+from retained fontlab-samples-L1. Nine original copies match; L2 only removes
+palette protections. App node_coordinates.py retains complete own-node order,
+consecutive measurements and formatting. CurrentGlyph resolves actual active
+context with explicit None checks. Shared Names heading/lifecycle and Masters
+tables supply the UI; timer/Copy guards clear incomplete or stale values.
+Original sources remain. Artifact/native/release acceptance is tracked in WORK.md.

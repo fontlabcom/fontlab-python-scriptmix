@@ -411,5 +411,12 @@
     "destination": "Scripts/Masters/Interpolation Preview.py",
     "destination_sha256": "5dd93fe326c901cd7588cb9cf3d5a4f197ed0ffcae8d162efca767299f87d7cf",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/outlines_node_coordinates_panel.py",
+    "source_sha256": "34ca1fb6722bb13a808b713ae1b78741f0a08da77313dbca358ec53b020b6082",
+    "destination": "Scripts/Outlines/Node Coordinates Panel.py",
+    "destination_sha256": "0139a8931e61151070974b2b03926e793fc603d946b829ec89bb671f4400ad38",
+    "license": "Apache-2.0"
   }
 ]

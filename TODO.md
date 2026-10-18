@@ -52,3 +52,5 @@ this_file: TODO.md
 - [x] Audit source/Git-free suites, wheel/sdist/installed artifacts and privacy/licenses for both complete reviews.
 - [x] Native-verify both original scenarios, real panels/painting, complete preservation, source/domain/error/Close boundaries; regress prior57.
 - [x] Complete reviewed D12/D17 release and independent downloaded-tag R053 before counting59released.
+
+- [ ] Review complete live Node Coordinates source and original fidelity; verify installed/native timer, Copy, failure/lifecycle and prior59 gates before release/R053.

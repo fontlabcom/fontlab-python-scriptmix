@@ -419,3 +419,9 @@ Post-tag README/PLAN/TODO/WORK/NOTICE metadata is reviewed before canonical
 promotion. Released59/130;71pending(7heldNames+64unmigrated). All original/archive
 inputs remain and whole migration/additionaltools/actualglyphcanvasreporters/docs
 stay open. No owner documents/preferences/Output/clipboard/site install changed.
+
+## Issue111 live Node Coordinates
+
+Preserve the complete L1 timer/coordinate/pair/Copy behavior on shared owned
+lifecycle. Bind font identity, follow actual glyph/master/node edits, clear failed
+reads and recheck Copy. Source/artifact/native/prior59 gates pass; D17/release/R053 remain pending.
