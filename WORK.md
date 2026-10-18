@@ -2089,3 +2089,20 @@ appended after an option ended argparse's --scripts list; corrected command puts
 it before --verify-live-nodes. No scenario/mutation occurred in that failed run.
 Full command retained .local/issue111-core61-guides-command.json. Feature commits,
 release and downloaded-tag R053 remain pending. Canonical61/130; fullgoalACTIVE.
+
+Task3t COMPLETE/released: reviewed Appv0.2.18/Scriptmixv1.0.14 pass independent
+fresh download/build/install/native R053. Stable27original/21complete history/
+persistence/167additional controls/Close3,92hashes/restored imports and14exact
+inspected images. Prior61identical-runtime regression passes495workflows/147
+preservation/790controls/Close61; combined64=522/168/957/Close64. FreshApp562tests,
+installed245eachwheel/sdist; downloadedGit-freeScriptmix744+1explicit skip and
+all64originalsource/destination pairs pass. Stable83runtime/89wheel/141sdist
+license/privacy audits pass; no runtime difference from candidate. Source freeze
+fb69ce9089000ffbcc925c7a2e9de94d52569e979b375a9bdd4974c5d6d94508 covers245publicfiles.
+D17 commands `rtk proxy gitnextver -d .worktrees/rel-guides-app` and
+`rtk proxy gitnextver -d .worktrees/rel-guides-scriptmix` exit0; all33olderremote
+refs unchanged. R053 repeats exact v5 command with out=issue111-release-v14/native,
+app-src=.local/issue111-app-v0.2.18-wheel andscriptmix-src=.local/issue111-scriptmix-v1.0.14,exit0.
+Posttag updates onlyREADME/PLAN/TODO/WORK/NOTICE. No runtime/menu/test/manifest delta.
+Released64/130;66pending=held7Names+59unmigrated. Alloriginals retained; broader
+examples/archive/cleanup/newtools/realcanvasreporters/docs and fullgoal ACTIVE.

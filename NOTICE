@@ -136,5 +136,6 @@ Font Guides Panel, Grid Generator and Metric Reference Lines adapt Apache-2.0
 fontlab-samples sources. Eight copies of each match central; L2 only removes
 text contrast styling. The complete guide controls and grid painter are retained
 on shared owned UI/painter boundaries. Native-history safeguards refuse entire
-unsafe batches before notification. All originals remain; acceptance is pending
-in WORK.md.
+unsafe batches before notification. All originals remain. Reviewed Appv0.2.18/
+Scriptmixv1.0.14 pass source/artifact/native/prior61 and independent downloaded-tag
+acceptance, recorded in WORK.md.
