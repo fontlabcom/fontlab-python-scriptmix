@@ -516,8 +516,11 @@ receipts are retained separately. Evidence: workspace issue111-tools30-v1 and
 issue111-kerning-v1. Full issue111 and all remaining editors stay active; no
 archived input or owner environment installation is changed.
 
-## Unreleased guide panels
+## v1.0.14 — 2026-10-18 — complete guide panels
 
-- Add complete source candidates for Font Guides Panel, Grid Generator and Metric
+- Add complete Font Guides Panel, Grid Generator and Metric
   Reference Lines on the shared owned UI. Refuse unsafe automatic dependants
-  before history; safe H/zero backend controls pass. UI/artifact/release gates pending.
+  before history. Safe edits restore complete fonts and prior Undo state.
+  Native27original/21persistence/167controls/Close3 pass; all61prior tools pass
+  on the same installed runtime. Artifact/source acceptance reviewed; fresh-tag
+  acceptance follows release. Retain every original and the full Issue111 scope.
