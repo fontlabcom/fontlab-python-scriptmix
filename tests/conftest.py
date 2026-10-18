@@ -59,6 +59,10 @@ def resolve_app_sources(required_helpers=None):
         "node_coordinates",
         "master_switcher",
         "_switcher_dialog",
+        "guides",
+        "_guides_sources",
+        "_guides_dialog",
+        "_guides_views",
     )
     for name in required_helpers:
         assert (root / f"{name}.py").is_file(), f"Missing App helper: {root / name}"

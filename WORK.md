@@ -2017,3 +2017,75 @@ reviewer agent claimed. Reviewed D12 canonical integration follows these gates.
 Released61/130;69pending=held7Names+62unmigrated, including RoundAdvances held at
 full-font history fl#8512. All originals/archives remain; no owner-site install.
 Broader examples/archive/package cleanup/newtools/canvasreporters/docs stay open.
+
+Task3t guide UI source candidate: complete Font Guides Panel, Grid Generator and
+Metric Reference Lines retain all original controls and H-selected native drives.
+Shared Masters shell supplies late font binding/status/Close; common guide-row
+formatting and bounded unit spins remove repeated UI code. GridPreview keeps
+original draw/set_content bodies on existing ProofView painter containment.
+Sourceguards include selection, masters, rawguide coordinates, metricvalues,
+geometry and all control options. Automatic dependant previews remain complete;
+entire unsafe batches disable Apply and the backend independently refuses them.
+App561tests12.99s; Scriptmix743tests1skip1.07s including9newactual constructor/
+controls/backend/no-op/stale/immutable61 checks pass. Original61rows/menus frozen;
+new3candidate rows bring manifest64, not releasedcount64. NamedGuides category
+added to the explicit menu-depth validator after its expected RED. BaseQt-shaped
+combo lacked addItems; added only to the scoped owned fake. An initial UI generator
+f-string expression used an invalid escaped quote and failed before any writes;
+corrected persistent generator. Missing helper/view load failures retained.
+RootGUIDESpersistence predictor5tests andactualrunner capture/cleanup4tests first
+RED thenGREEN. It predicts every newguide record and preserves all other fields,
+including unknown fields/workspace. ExacttargetHdate is captured independently
+through native QDateTime.toUTC before Apply; no date fields are stripped. Compiled
+getter verified pyflglyph.h157/cpp359; official Qt5.15 QDateTime docs consulted.
+Nativeoriginal3/fullsavedreopen acceptance and extraGUI controls/artifacts/prior61/
+review/release/R053 still pending. Current released61/130; wholegoal remainsactive.
+
+Task3t history correction measured: protocolv2 UpdateAll-before-final-notify
+mutates40unrelatedauto dates andfailsRedo; retained, rejected. Explicitlystamp
+onlyeditedH inUTC beforefinalnotify instead passesexactfullfontUndo/Redo plus
+dirtyNone/UndoFalse restoration, deliberately crossing1.1s. Productnowinitializes
+eachnativeobjectvia checkInitHistoryState(0), constructsallguidesbeforemutation,
+stampsonlyeditedglyphs inUTC andrecordsonefinalnamedhistory step in finally,
+so appendfailurestilloffersnativeUndo. No manualdate rollback/normalization.
+15coretests updated RED/GREEN; another partial-append/error test makes16focused.
+NativeGUIv3 onfix1wheelpasses27unchangedoriginalchecks,21complete persistence
+checks (7each),Close3,92sourcehashes/restoredimports. Fullsavedpayloads exactly
+predictguides; oneUndo restoreswholefont/workspace/nativecleanstate andnoextra
+Undostep, Redoexact, fullreopenpasses. Actualtargetdateverifiedinsideindependent
+clockwindowaroundrealAppwriter; Python-owned functionwrapperrestored, nativeQt
+classes untouched andoriginalDRIVE/checkunchanged. Wrapperclosure/globalreuse
+regression firstREDthenGREEN; rootclock/nativeoracle11focusedtests pass.
+Initialv1/v2 originaltwo-notify failures andallprotocol variants retained.
+First3previewimages inspected: completeFontGuides/H-grid/metricbaseline outputs.
+FurtherUIcontrols stillrequired. Newstale-selectiontestcatchesfont-guide label
+leftvisibleafterinvalidation; narrowfixclearslabel/context andneutralpreviewframe.
+Nativefix1artifacts nowpre-fix foronlythislastcleanup; newartifact gate required.
+Canonicalreleased61/130 unchanged; fullgoalACTIVE.
+
+Task3t candidate fix3 gate (2026-10-18): native v4 passed original27,
+complete-persistence21, opening18/safety90/painter16 controls, Close3 and92hashes.
+Further actual-control v5 adds43positive controls: two selectedglyphs H/zero,
+vertical/current, H/current andV/all grids, five metric levels with differing
+per-master fixture values, emptyselection-of-metrics no-op and prior owned guide
+history/title restoration. Full167additional controls pass; original27/complete21/
+Close3/92hashes and restored imports/paths pass. All14v5images inspected directly.
+Original painter draw AST exact; five pure/read helpers exact after annotation/
+docstring removal. Metric reader retains computation with lazy native lookup.
+All64source/destination hashes pass; prior61menus/rows and79runtime files exact,
+except append-only facade. Public151App/94Scriptmix files pass3.11syntax/privacy.
+Fix3 wheel60b1f775f3dc27a7f5ef2c7e211fc812f1942b1c59510150943bbefb07e7eb95,
+sdistc759a236cde8efb540d5dff4717e3de75b2cc5ddd0a7fada06ea66b6f321168f:
+83runtime bytes exact,89/141payload licence/privacy pass. Installed245tests each
+wheel/sdist0.30s; sourceApp56213.05s; actual-wheel Scriptmix744+1explicit skip1.06s,
+Git-free744+1skip1.33s, root2000.25s. Ruff scopedallpass.
+Commands: App cwd `rtk proxy uv run --extra test --python cpython-3.11-macos-aarch64-none python -m pytest -q` exit0. Earlier `rtk proxy uvx hatch run test` exit1 (no configured test alias); no passing tests claimed for that command.
+Root `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -m pytest -q verification/issue-111` exit0.
+Artifact build `rtk proxy uv build --out-dir <isolated-fix3-dist>` exit0;
+audit/install commands retained in .local receipts. Native exact command:
+`rtk proxy env FL_RESTART=1 verification/issue-104/fl-native.sh --mutating --lane issue111-guides -- uv run --quiet --project fontlab-remopy python verification/issue-111/run_reports.py verification/issue-101-ecosystem/evidence/issue111-guides-v5 --app-src .local/issue111-app-guides-fix3-wheel --scriptmix-src .worktrees/issue111-guides-scriptmix --verify-guides --verify-close --scripts guides_font_guides_panel.py guides_grid_generator.py guides_metric_lines.py` exit0.
+Prior61same-runtime regression running. First wrapper command exit2: filename
+appended after an option ended argparse's --scripts list; corrected command puts
+it before --verify-live-nodes. No scenario/mutation occurred in that failed run.
+Full command retained .local/issue111-core61-guides-command.json. Feature commits,
+release and downloaded-tag R053 remain pending. Canonical61/130; fullgoalACTIVE.

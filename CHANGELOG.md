@@ -515,3 +515,9 @@ paths/scratch excluded. Public work-log recipes are portable; private exact
 receipts are retained separately. Evidence: workspace issue111-tools30-v1 and
 issue111-kerning-v1. Full issue111 and all remaining editors stay active; no
 archived input or owner environment installation is changed.
+
+## Unreleased guide panels
+
+- Add complete source candidates for Font Guides Panel, Grid Generator and Metric
+  Reference Lines on the shared owned UI. Refuse unsafe automatic dependants
+  before history; safe H/zero backend controls pass. UI/artifact/release gates pending.

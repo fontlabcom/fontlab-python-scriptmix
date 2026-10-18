@@ -425,5 +425,26 @@
     "destination": "Scripts/Masters/Master Switcher.py",
     "destination_sha256": "4c5acdf64eb680f6351902fcc8d5864e8e656496c3cc2d7b952fe87cc936c6a4",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_font_guides_panel.py",
+    "source_sha256": "cd2c67cc3ffda766ffaa196f03e4eed752bb995b957946ec91def24d239ecb0f",
+    "destination": "Scripts/Guides/Font Guides Panel.py",
+    "destination_sha256": "2b4c83307984466415679bc85c1066330f40d34e55cb8f9d783ef01069cca0f1",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_grid_generator.py",
+    "source_sha256": "ad2b5bfa02bee6dabcc4c11827574dba71bcdd67d7c3443c6b1ee9709d3e0038",
+    "destination": "Scripts/Guides/Grid Generator.py",
+    "destination_sha256": "864193a2310c73340875bd73fe77cbaf6f155c76244cdefad21348ee5c2bd67b",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_metric_lines.py",
+    "source_sha256": "24c60ef99fa26bc4018ed0652b00b0c5419e922f7ff0e8d651a3b2283349e8d9",
+    "destination": "Scripts/Guides/Metric Reference Lines.py",
+    "destination_sha256": "f00869cacb362cc66aa6b4111f4b58633f4371516afa1aea7ceddf63e595ea9a",
+    "license": "Apache-2.0"
   }
 ]

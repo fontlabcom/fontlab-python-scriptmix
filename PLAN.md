@@ -434,3 +434,10 @@ Preserve original master/location buttons, axis order, first9shortcuts and
 explicit package-master action. Reuse guarded owned Masters shell; require
 complete source/artifact/native/prior60/D17/fresh-tag R053. These gates pass with
 Appv0.2.17/Scriptmixv1.0.13. Released61/130; remaining69 and broader scope stay open.
+
+## Issue111 complete guide panels
+
+Retain Font Guides Panel, Grid Generator and Metric Reference Lines completely;
+require artifact/native saved geometry/fullfont Undo/Redo/reopen, actual source/
+selection/paint/lifecycle/refusal controls, prior61 regression and reviewed D17/
+fresh-tag R053. Sourcecandidate only; released61/130 remains unchanged.

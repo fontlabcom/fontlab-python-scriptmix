@@ -56,3 +56,5 @@ this_file: TODO.md
 - [x] Review complete live Node Coordinates source and original fidelity; verify installed/native timer, Copy, failure/lifecycle and prior59 gates before release/R053. Completed with Appv0.2.16/Scriptmixv1.0.12 downloaded-tag R053.
 
 - [x] Review/native-verify complete compact Master Switcher, exact font/workspace/history restoration, buttons/shortcuts/faults/Close and prior60; Appv0.2.17/Scriptmixv1.0.13 D17/downloaded-tag R053 pass.
+
+- [ ] Verify complete three guide panels, artifacts, native fullfont history/reopen and fault/source/lifecycle controls, prior61, reviewed release and fresh-tag R053.
