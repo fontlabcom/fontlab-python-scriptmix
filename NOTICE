@@ -91,3 +91,15 @@ diagrams. Scriptmix keeps every original control/class/key/helper/scenario
 interface and appends exact original/menu SHA-256 pairs. All originals remain;
 reviewed Appv0.2.14/Scriptmixv1.0.10 artifact/native and independent downloaded-tag
 acceptance are recorded in WORK.md.
+
+Read-only glyph review provenance
+=================================
+
+Select Unreferenced Glyphs adapts Apache-2.0 cleanup_unused_glyphs_report.py
+from retained fontlab-samples-C4; four original copies are byte-identical.
+Interpolation Preview adapts Apache-2.0 masters_interpolation_preview.py from
+retained fontlab-samples-L1, retaining the defensive QColor/palette fixes.
+Nine copies match L1; L2 only removes those protections. Complete calculations,
+controls, diagram and public helper interfaces remain. Shared lifecycle/painter
+boundaries come from existing App helpers. migration.json retains original and
+menu SHA-256 pairs. All inputs remain; native/artifact acceptance is pending.

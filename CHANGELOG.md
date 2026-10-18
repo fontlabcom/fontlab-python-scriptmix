@@ -4,6 +4,19 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — read-only glyph reviews accepted candidate
+
+- Fix original native feature iteration: use fgOTLayout.keys() tags, not its
+  sequence code values; eliminate392false candidates and retain exact395Rafi
+  list/selection. New native-shaped tests and unchanged original oracle pass.
+- Accept combined59native:483workflow/143preservation/407safety/294error plus
+  22selection/layout andClose59; retain all originals and the full130scope.
+
+- Add complete Select Unreferenced Glyphs and Interpolation Preview source tools.
+  Preserve candidate/reference rules, all controls and full interpolation painting.
+- Reuse guarded lifecycle, source snapshots and safe painters; retain previous57
+  menus/rows exactly. Source/artifact/native/prior57 pass; release/R053 pending.
+
 ## v1.0.10 — 2026-10-18 — read-only Anchors
 
 - Add complete Anchor Cloud, Anchor Compatibility and Mark Attachment Preview

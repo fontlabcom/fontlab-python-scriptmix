@@ -284,3 +284,102 @@ Post-tag README/PLAN/TODO/WORK/NOTICE receipt delta is reviewed separately befor
 canonical promotion. Released57/130;73remain(7heldNames+66unmigrated). All original
 and archive inputs remain; whole migration/additionaltools/reporters/docs stay open.
 No owner's site-packages or user documents were changed.
+
+## Issue111 Task3p read-only reviews — source work in progress
+
+Retain Select Unreferenced Glyphs from the byte-identical C4 family and
+Interpolation Preview from the L1 family with the defensive palette fixes.
+Keep every original candidate rule, helper/result interface and diagram/control.
+Use the established Anchors/Components/Proof lifecycle through narrow review
+subclass overrides. Four new helper/view modules and six appended lazy aliases
+leave all prior runtime bytes intact except the scripting facade suffix.
+No new dependency is introduced. All57prior manifest rows/menu bytes stay exact;
+two source mappings bring the candidate total to59, while57/130remain released.
+
+Unreferenced-glyph reads reuse verified FontGate encodings instead of unsafe
+flGlyph.fgGlyph. Source snapshots retain features, class flags/records, ordered
+Unicode values, all-layer component references and recipes. Missing glyphs and
+encoding-order races fail closed. Included FEA files still refuse the scan.
+Interpolation retains complete placed endpoint contours, node flags, unrounded
+blend, all controls, compatibility messages, quadratic/cubic paths and full
+original dashed endpoint/mixed-outline/on-curve-dot painter. Bound choices are
+populated only after all controls/status/Close exist. Cached result corruption,
+stale font/master/membership/reference/geometry and blocked option changes refuse
+publication/actions. Published invalidation requires reopen; native acceptance is
+still pending, including actual screenshot review and complete preservation.
+
+TDD: missing modules first fail collection, then20core cases pass0.01s. An extra
+RED restored the original current-glyph fallback after Font-window read errors.
+The first missing-module import accidentally invoked the package's native
+__getattr__; tests use explicit import_module thereafter. SourceApp532pass12.97s.
+Two missing menu tests first RED; initial UI fixtures first lack new modules, then
+NoFocus; add the native-shaped constant. Core helpers plus real menus now pass23
+scoped UI cases0.10s: no-font/late choices/Close, ten actual-slot stale cases,
+initial scan faults, full painter/failure, corrupted cached results and blocked
+slider paint. Painter fixtures first lacked path drawing; add real-shaped path
+operations/bounds and pen methods. A mistaken attempt to assign read-only rect
+was removed. The original generic slider double emitted while blocked; a scoped
+slider now honors native blockSignals behavior. These are fixture corrections,
+not native host or product bug claims. Ruff preserves public helper re-exports.
+
+Exact prefixes: `rtk proxy env UV_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -q` in the App worktree;
+`rtk proxy env SCRIPTMIX_APP_SOURCE=../issue111-readonly-tail-app/src/fontlabapp SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.14-dist/fontlab_fontlabapp-0.2.14-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh` in Scriptmix,
+with `-k readonly_tail --tb=short` or `--original-source-root ../.. -rs`.
+Earlier full Scriptmix source state703passed1skip1.17s; the final source suite
+must be repeated after subsequent cases/formatting. New59mapping invariant first
+RED57!=59, then append only the two exact source/menu SHA pairs. Keep literal
+45/49/54controls and add independent57digest; only previous current-count checks
+advance to59. Standalone Git-free/review/artifact/native2/prior57/release/R053 are
+pending. No new commit, canonical promotion, owner install or original removal.
+
+Whole130migration,7heldNames,64otherunmigrated stems and full archives/newtools/
+actual glyph-canvas reporters/docs remain open. Live Node Coordinates follows in
+its own batch with real timer/lifecycle evidence and fake clipboard only.
+
+## Issue111 read-only glyph reviews: accepted candidate — 2026-10-18
+
+Direct source review and the native fix1 gates pass for both complete tools.
+The unchanged Rafi oracle caught an original-sample bug: fgOTLayout iteration
+returns feature code, while get_feature expects tags. The initial787candidates
+included392referenced glyphs; the independent original/VFJ and native saved
+baseline both predict395. Correct the reader to iterate explicit keys(). The
+native-shaped regression first fails, then passes; retain an explicit SIM118
+exception because this native object is not a Python dict. C++ source:
+pyfontgate/fgotlayout.cxx114-122,223-233,245-260. No FontLab host defect is claimed.
+All original sources/scenarios stay unchanged; no candidate/oracle weakening.
+
+Installed fix1 wheel on FontLab9.0.9784:10original workflow checks,4complete
+font/design/classes/metadata/workspace/history/master checks,5paint,12opening,
+39stale,16painter-boundary,6selection/default-layout andClose2 pass. All86current
+source hashes match and module/path restoration passes. Rafi's actual list and
+selection are exactly395; O50/O25 numerical oracles and a80 render pass. The
+real falsey current E and empty Font-window selection preserve whole-font cleanup
+scope and E-only interpolation. Native probes change actual owned feature source,
+node x22to35 and advance554to567; stale results refuse and settle. A scratch VFJ
+adds an unencoded H copy through ordinary file loading, avoiding native fgGlyph
+insertion. Original/archive inputs are never overwritten. All seven images were
+inspected, directly or as exact copies of inspected v2 images.
+
+Same-wheel prior57:473workflow/139preservation/368safety/261error plus16selection
+andClose57,145matching hashes/restored imports. Combined59 native:
+483workflow/143preservation/407safety/294error plus22selection/layout/Close59.
+App533source tests pass13.00s; actual fix1wheel Scriptmix707pass1skip1.01s with
+all59originalpairs; standalone86fileGit-free actual-wheel706pass2skips1.16s.
+Both installed wheel/sdist pass216tests0.27s each on arm64Python3.11.14 with
+host-free helper imports from their actual targets. All76runtime bytes match;
+82wheel/130sdist entries pass licences/NOTICE/privacy. Previous72runtime remains
+71exact files plus the unchanged scripting facade prefix; previous57menus/rows
+and literal45/49/54/57invariants stay exact. No dependency was added.
+
+Wheelb4ac3d262cefbd95519829e89ca133e32788214b0c8b8e0f60894c8a3efb0654;
+sdist5172a0f824b6ec8373a1665f274e15a8a91f21495c79169eb63dff56c8f55cde.
+Rootcontroller176tests0.21s and scoped Ruff pass. Five enabled-failed controls
+first RED, then fail actual aggregation correctly. Owned fixture no-overwrite,
+original routing/full-workspace, mutation/instrumentation and selection negatives
+are exercised. No real clipboard, owner documents/preferences/Output or live
+site-packages are changed. Current published scope57/130;59native candidates
+await reviewed integration/D17 and independent downloaded-tag R053. Held7Names,
+64otherunmigrated stems, archives/newtools/actualcanvasreporters/docs stay open.
+Evidence: workspace issue111-readonly-tail-v1 failure, v2 correction, v3 full
+controls and issue111-core57-reviews-v1, under the standard verification evidence
+folder. The initial failed native trial and pre-fix artifacts are retained.

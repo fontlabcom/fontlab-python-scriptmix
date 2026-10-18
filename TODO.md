@@ -47,3 +47,8 @@ this_file: TODO.md
 - [x] Review three complete Anchors menus/shared helpers and built artifacts.
 - [x] Native-verify original Anchors scenarios, exact post-seed Compatibility preservation, full source/workspace/history safety, real painting and Close.
 - [x] Regress prior54 tools on the same artifact; complete reviewed integration/D17tags/downloaded-tag R053 before counting57released.
+
+- [x] Review complete unreferenced/interpolation source and fault boundaries; preserve original interfaces and previous57menus.
+- [x] Audit source/Git-free suites, wheel/sdist/installed artifacts and privacy/licenses for both complete reviews.
+- [x] Native-verify both original scenarios, real panels/painting, complete preservation, source/domain/error/Close boundaries; regress prior57.
+- [ ] Complete reviewed D12/D17 release and independent downloaded-tag R053 before counting59released.

@@ -397,5 +397,19 @@
     "destination": "Scripts/Anchors/Mark Attachment Preview.py",
     "destination_sha256": "c1ac89a5f9a85b873001e5e5dd7faaad21278183afb7d07fc88b1cdd063ef30e",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-C4/samples/cleanup_unused_glyphs_report.py",
+    "source_sha256": "a2d640ec1a01d13a1a2332d75b5eefd748bc1b1047140856edecddccedf919c7",
+    "destination": "Scripts/Cleanup/Select Unreferenced Glyphs.py",
+    "destination_sha256": "a5e8d7e44df8719de8e0ac3d10f0b28d04b277e141a9594339c5abf1d921cdbb",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/masters_interpolation_preview.py",
+    "source_sha256": "5018a343e9da00ba9abaf422a8805861e7d772e24a0e00eeee6a8c7d970182c9",
+    "destination": "Scripts/Masters/Interpolation Preview.py",
+    "destination_sha256": "5dd93fe326c901cd7588cb9cf3d5a4f197ed0ffcae8d162efca767299f87d7cf",
+    "license": "Apache-2.0"
   }
 ]
