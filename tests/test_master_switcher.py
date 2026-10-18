@@ -204,7 +204,7 @@ def test_opening_native_read_fault_keeps_diagnosed_closable_panel(
 
 def test_all_released60_rows_and_menu_bytes_remain_immutable():
     rows = json.loads((ROOT / "migration.json").read_text())
-    assert len(rows) == 69
+    assert len(rows) == 68
     assert (
         hashlib.sha256(
             json.dumps(rows[:60], sort_keys=True, separators=(",", ":")).encode()

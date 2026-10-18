@@ -4,9 +4,6 @@ this_file: TODO.md
 
 # Pending work
 
-- [ ] Promote the reviewed Italic Angle candidate through D12/D17 and verify
-  downloaded release assets and native controls before accepting69/130 migrations.
-
 - [x] Verify first three reports in FontLab with owned fixtures (26 checks).
 - [x] Review first batch and migration hashes before committing (6e1b247).
 - [ ] Migrate and verify the remaining practical reports and tools from issue 111.

@@ -136,7 +136,7 @@ def test_all64_released_rows_and_menus_remain_immutable():
 
     root = Path(__file__).parents[1]
     rows = json.loads((root / "migration.json").read_text())
-    assert len(rows) == 69
+    assert len(rows) == 68
     assert (
         hashlib.sha256(
             json.dumps(rows[:64], sort_keys=True, separators=(",", ":")).encode()

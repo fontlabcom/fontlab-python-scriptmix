@@ -2,23 +2,6 @@
 this_file: CHANGELOG.md
 ---
 
-## v1.0.19 — 2026-10-18 — complete Italic Angle editor
-
-Add Masters > Italic Angle, requiring fontlab-fontlabapp0.2.24 or newer. All69
-original workflows, complete-font/history preservation and actual Close pass.
-Retain the original68migration records,70existing menus and archived originals.
-Independent downloaded-tag native acceptance follows this release; broader
-example migration, archive cleanup and documentation remain open.
-
-## Unreleased — complete Italic Angle candidate
-
-Add Masters > Italic Angle through the shared App editor. Retain ordered master
-spins, original ranges/precision, staged gauge, pending counts and helper/class
-interfaces. The candidate manifest has69rows; the preceding68rows and70existing
-menu payloads remain unchanged. Released scope remains68/130 until final gates.
-Known unsafe native blueScale history refuses changing batches before writes
-(fl#8531); no-op batches and the original safe multi-master workflow remain.
-
 ## v1.0.18 — 2026-10-18 — two additional foreground reporters
 
 Add Sidebearing Direction Marker and Duplicate Anchor Rings, requiring

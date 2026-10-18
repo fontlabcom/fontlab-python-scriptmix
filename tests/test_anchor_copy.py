@@ -20,7 +20,7 @@ def test_all67_released_rows_and_menus_remain_byte_exact():
     import json
 
     rows = json.loads((ROOT / "migration.json").read_text())
-    assert len(rows) == 69
+    assert len(rows) == 68
     digest = hashlib.sha256(
         json.dumps(rows[:67], sort_keys=True, separators=(",", ":")).encode()
     ).hexdigest()

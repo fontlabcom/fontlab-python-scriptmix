@@ -59,9 +59,9 @@ def load(monkeypatch):
 
 def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
     entries = json.loads((ROOT / "migration.json").read_text())
-    assert len(entries) == 69
+    assert len(entries) == 68
     destinations = [entry["destination"] for entry in entries]
-    assert len(set(destinations)) == 69
+    assert len(set(destinations)) == 68
     additional = json.loads((ROOT / "additional-tools.json").read_text())
     extra_destinations = {entry["destination"] for entry in additional}
     assert len(extra_destinations) == len(additional) == 2

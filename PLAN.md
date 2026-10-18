@@ -4,13 +4,6 @@ this_file: PLAN.md
 
 # Report migration plan
 
-## Issue111 italic-angle candidate
-
-The complete69thcandidate menu and shared App runtime pass the full69native
-regression and installed precision/refusal/fault controls. Source/provenance,
-licenses and prior-menu bytes are retained. D12/D17 and fresh downloaded-tag
-native acceptance remain before69/130 is released; broader migration stays open.
-
 Preserve full practical report behaviour while sharing safe native access.
 
 First three reports pass their original native scenarios on FontLab 9.0.9784,

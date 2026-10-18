@@ -2423,28 +2423,3 @@ The current additional-tools records reference the complete release receipts.
 Released sample count stays 68/130, plus two additional foreground adaptations.
 All other issue111 work remains open. Durable issue111-reporters-release-v1
 records exact D17 commands/results, source freeze and asset hashes.
-
-## 2026-10-18 — complete Italic Angle candidate
-
-Adds Scripts/Masters/Italic Angle.py through fly.ap's shared App editor, retaining
-the original helpers, table, staging, per-master gauge, Apply and Close. App owns
-the exact source checks, native history boundary, contained painting and teardown.
-Migration metadata now has69candidate rows; all first68rows and70existing menu
-bytes are unchanged. Released acceptance remains68/130 until release gates pass.
-
-Final-wheel consumer D20 passes793tests/1historicalskip, with100%statement and
-branch coverage for the entire new menu. All69original source digests match.
-Installed candidate native regression passes558original workflow checks,
-204preservation/history checks and69actual Close controls. The new scenario's
-complete-font oracle verifies only its two intended angle changes, one Undo,
-Redo and saved reopen. Wide25-master gauge labels are readable at all scroll
-positions; the initial unavailable Qt method and prior failures remain retained.
-
-The native blueScale precision guard refuses unsafe fonts before history;
-Fontlab/fl#8531 and #8532 track the underlying host defects. Final installed
-fault/refusal controls and D12/D17/downloaded-tag gates remain pending. No new
-dependency or live user-site write. Exact commands, exit codes and durable
-issue111-master-angle evidence live in the enclosing workspace WORK.md.
-
-Wait, but:69candidate manifest rows are not69released migrations. Keep the
-released denominator unchanged until the complete artifact and native gates pass.

@@ -227,7 +227,7 @@ def test_all_prior61_rows_and_menu_bytes_remain_immutable():
     import json
 
     rows = json.loads((ROOT / "migration.json").read_text())
-    assert len(rows) == 69
+    assert len(rows) == 68
     assert (
         hashlib.sha256(
             json.dumps(rows[:61], sort_keys=True, separators=(",", ":")).encode()

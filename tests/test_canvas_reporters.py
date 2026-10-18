@@ -60,13 +60,11 @@ def test_prior68_migration_rows_and_payloads_are_unchanged():
     import json
 
     path = ROOT / "migration.json"
-    rows = json.loads(path.read_text())
-    assert len(rows) == 69
     assert (
-        hashlib.sha256((json.dumps(rows[:68], indent=2) + "\n").encode()).hexdigest()
+        hashlib.sha256(path.read_bytes()).hexdigest()
         == "ef87bc7a69eef091a3061dfed5fee748631edca8576b6fdf0c2ebf9a99cff415"
     )
-    for row in rows:
+    for row in json.loads(path.read_text()):
         assert (
             hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
             == row["destination_sha256"]
