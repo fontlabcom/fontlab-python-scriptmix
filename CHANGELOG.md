@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — read-only glyph reviews accepted candidate
+## v1.0.11 — 2026-10-18 — read-only glyph reviews
 
 - Fix original native feature iteration: use fgOTLayout.keys() tags, not its
   sequence code values; eliminate392false candidates and retain exact395Rafi
