@@ -22,11 +22,21 @@
       "issue111-rsb-live-text-native-v1/report.json": "4949265a3a321fb1d70881e502cb108fe376c2612eb0129c28a2ede1107ba27e",
       "issue111-reporter-menus-native-v1/report.json": "c117edcd44fe1f4b6777bfe863cda0956ded2011e4cb0602c5fdb68e7df63afe"
     },
-    "release_gate": "native and complete prior68 passed; reviewed D17 and downloaded-tag R053 pending",
+    "release_gate": "passed: App v0.2.23 and Scriptmix v1.0.18; downloaded-tag native and asset verification",
     "regression_evidence": {
       "issue111-reporters-datefix-all68-v1/summary.json": "cf92e74c44736a8d09f5e7b0c5cae46012aa2c79133964bc6dec06b11f02116c",
       "issue111-writer-date-boundary-v1/report.json": "b6f1d8a386ed61285bfb61af1891ec5a9a92ea0b2cafff205610f587ad46a467",
       "issue111-reporters-datefix-menus-v1/report.json": "456e017a6e2dd99769b6ed74033225282ae9970497173a78a0546573da0965e7"
+    },
+    "release_versions": {
+      "app": "0.2.23",
+      "scriptmix": "1.0.18"
+    },
+    "release_evidence": {
+      "issue111-reporters-release-v1/summary.json": "ed753b15174486ff40777664b8a2c8ba3619d98df1bfae9a24188a8e8c959e90",
+      "issue111-reporters-release-v1/release-receipt.json": "468648db11d43c0d6f188539a62cad066ff9b1edeca1f90d4f86d6a551eef696",
+      "issue111-reporters-r053-date-v1/report.json": "7eb135d2070774a52cc7ef6029f514361d98e591f9ba7bb1e0df878c858883f1",
+      "issue111-reporters-r053-menus-v1/report.json": "7cf4685697d14cfbdce1e8cf14431f27bcab8e3d6cb8b4404627274ef38e99f9"
     }
   },
   {
@@ -53,11 +63,21 @@
       "issue111-rings-destruction-native-v1/report.json": "b0fc03418b47801f492ea59c19452256a825ae92bb6a8a1113bf64f4d5087344",
       "issue111-reporter-menus-native-v1/report.json": "c117edcd44fe1f4b6777bfe863cda0956ded2011e4cb0602c5fdb68e7df63afe"
     },
-    "release_gate": "native and complete prior68 passed; reviewed D17 and downloaded-tag R053 pending",
+    "release_gate": "passed: App v0.2.23 and Scriptmix v1.0.18; downloaded-tag native and asset verification",
     "regression_evidence": {
       "issue111-reporters-datefix-all68-v1/summary.json": "cf92e74c44736a8d09f5e7b0c5cae46012aa2c79133964bc6dec06b11f02116c",
       "issue111-writer-date-boundary-v1/report.json": "b6f1d8a386ed61285bfb61af1891ec5a9a92ea0b2cafff205610f587ad46a467",
       "issue111-reporters-datefix-menus-v1/report.json": "456e017a6e2dd99769b6ed74033225282ae9970497173a78a0546573da0965e7"
+    },
+    "release_versions": {
+      "app": "0.2.23",
+      "scriptmix": "1.0.18"
+    },
+    "release_evidence": {
+      "issue111-reporters-release-v1/summary.json": "ed753b15174486ff40777664b8a2c8ba3619d98df1bfae9a24188a8e8c959e90",
+      "issue111-reporters-release-v1/release-receipt.json": "468648db11d43c0d6f188539a62cad066ff9b1edeca1f90d4f86d6a551eef696",
+      "issue111-reporters-r053-date-v1/report.json": "7eb135d2070774a52cc7ef6029f514361d98e591f9ba7bb1e0df878c858883f1",
+      "issue111-reporters-r053-menus-v1/report.json": "7cf4685697d14cfbdce1e8cf14431f27bcab8e3d6cb8b4404627274ef38e99f9"
     }
   }
 ]

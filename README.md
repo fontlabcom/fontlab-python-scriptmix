@@ -5,10 +5,10 @@ this_file: README.md
 # fontlab-python-scriptmix
 Small and useful scripts for FontLab
 
-## Canvas reporters (candidate)
+## Canvas reporters
 
 Reporters contains Sidebearing Direction Marker and Duplicate Anchor Rings.
-Use the matching App candidate wheel; the released App0.2.22 lacks these tools.
+Requires fontlab-fontlabapp 0.2.23 or newer and fontlab-fly.
 Open a Glyph window, run either script, then choose direction or handle size.
 Disable or Close removes its overlay. Reopen after switching font, master or
 Glyph window. Both panels can stay open together and change no font data.
@@ -17,7 +17,7 @@ These are foreground adaptations across tools. Direction and handle size are
 explicit; Glyphs background ordering and automatic tool suppression are absent.
 Native geometry, pixels, clipping, lifecycle and preservation checks pass.
 The complete prior68 regression passes after the measured guide-date correction.
-Release and downloaded-tag verification remain pending.
+App v0.2.23 and Scriptmix v1.0.18 pass downloaded-tag native and asset verification.
 `additional-tools.json` records their independent provenance and evidence.
 They do not increase the130sample migration denominator or its68accepted rows.
 

@@ -2409,3 +2409,17 @@ dependency or live-user install. Exact full68 runner argv is retained at
 workspace `.local/issue111-reporters-datefix-all68-command.json`, exit0.
 Actual menu command from workspace:
 `rtk proxy env FL_RESTART=1 verification/issue-104/fl-native.sh --mutating --lane issue111-reporters-datefix-menus -- uv run --quiet --project fontlab-remopy python .local/issue111-reporters-datefix-menus-native.py`,exit0.
+
+Release accepted: App v0.2.23 (570400a) / Scriptmix v1.0.18 (fca5571).
+Fresh remote tags match all 93 runtime modules, all 70 menus and unchanged
+68-row migration manifest. App 742 and actual stable-wheel Scriptmix 775 tests
+pass (one historical skip). Native fresh-tag six forced date-boundary cases and
+both actual menus pass; all four panel images match inspected candidates.
+Published release assets independently download with identical hashes; all 42
+prior tag refs remain unchanged. Final menu ZIP contains 70 menus and 5 public
+license/provenance/readme files, exactly matching tracked source. An initial
+ZIP attempt rejected untracked test bytecode and remains privately retained.
+The current additional-tools records reference the complete release receipts.
+Released sample count stays 68/130, plus two additional foreground adaptations.
+All other issue111 work remains open. Durable issue111-reporters-release-v1
+records exact D17 commands/results, source freeze and asset hashes.
