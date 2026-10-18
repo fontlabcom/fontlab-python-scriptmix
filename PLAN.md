@@ -424,4 +424,6 @@ stay open. No owner documents/preferences/Output/clipboard/site install changed.
 
 Preserve the complete L1 timer/coordinate/pair/Copy behavior on shared owned
 lifecycle. Bind font identity, follow actual glyph/master/node edits, clear failed
-reads and recheck Copy. Source/artifact/native/prior59 gates pass; D17/release/R053 remain pending.
+reads and recheck Copy. Source/artifact/native/prior59/D17 and independent downloaded-tag R053 pass.
+Released60/130 with Appv0.2.16/Scriptmixv1.0.12; full archive/held7Names/additional
+tools/reporters/docs remain open.

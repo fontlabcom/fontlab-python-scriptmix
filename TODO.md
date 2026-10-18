@@ -53,4 +53,4 @@ this_file: TODO.md
 - [x] Native-verify both original scenarios, real panels/painting, complete preservation, source/domain/error/Close boundaries; regress prior57.
 - [x] Complete reviewed D12/D17 release and independent downloaded-tag R053 before counting59released.
 
-- [ ] Review complete live Node Coordinates source and original fidelity; verify installed/native timer, Copy, failure/lifecycle and prior59 gates before release/R053.
+- [x] Review complete live Node Coordinates source and original fidelity; verify installed/native timer, Copy, failure/lifecycle and prior59 gates before release/R053. Completed with Appv0.2.16/Scriptmixv1.0.12 downloaded-tag R053.

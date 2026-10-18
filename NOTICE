@@ -114,4 +114,5 @@ palette protections. App node_coordinates.py retains complete own-node order,
 consecutive measurements and formatting. CurrentGlyph resolves actual active
 context with explicit None checks. Shared Names heading/lifecycle and Masters
 tables supply the UI; timer/Copy guards clear incomplete or stale values.
-Original sources remain. Artifact/native/release acceptance is tracked in WORK.md.
+Original sources remain. Reviewed Appv0.2.16/Scriptmixv1.0.12 pass artifact/native
+and independent downloaded-tag acceptance; receipts are recorded in WORK.md.
