@@ -446,5 +446,26 @@
     "destination": "Scripts/Guides/Metric Reference Lines.py",
     "destination_sha256": "f00869cacb362cc66aa6b4111f4b58633f4371516afa1aea7ceddf63e595ea9a",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_clear.py",
+    "source_sha256": "d33764e9267ba08c946d525d028d3d83e0e3cad3a2af4338c2373118ce4efce2",
+    "destination": "Scripts/Guides/Clear Glyph Guides.py",
+    "destination_sha256": "2c6c25ef6f839560347d7ca8989eb94cb1eb60ef857a051f4ee1e0bdd1f764f1",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_copy_between_masters.py",
+    "source_sha256": "967d72c8b3cf5e38e3d5e475c773dbf66fb08db55e3c6958d07ced203d4f8e5a",
+    "destination": "Scripts/Guides/Copy Guides Between Masters.py",
+    "destination_sha256": "218123089612d8496dddef4da8c7f2bfb31858d3ebe1793b3b17409135810f26",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_list_editor.py",
+    "source_sha256": "39ef5746559d858caa6970dc6c1500f681c562f5059d22bcf9056d7ad2e40df0",
+    "destination": "Scripts/Guides/Guide List Editor.py",
+    "destination_sha256": "fdf1c8c18c9675a8895305d80a78435bb2f8b0681d97b4a4e531c5cf9222d984",
+    "license": "Apache-2.0"
   }
 ]

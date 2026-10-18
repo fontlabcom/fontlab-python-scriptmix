@@ -524,3 +524,10 @@ archived input or owner environment installation is changed.
   Native27original/21persistence/167controls/Close3 pass; all61prior tools pass
   on the same installed runtime. Artifact/source acceptance reviewed; fresh-tag
   acceptance follows release. Retain every original and the full Issue111 scope.
+
+## Unreleased guide rewrite editors
+
+- Add complete source candidates for Clear Glyph Guides, Copy Guides Between
+  Masters and Guide List Editor. Preserve retained native guide properties/hints,
+  preconstruct whole batches and refuse unsafe dependencies/nonfinite cells.
+  Core native21/unit18 and widget11/source suites pass; artifact/GUI/release gates pending.

@@ -63,6 +63,10 @@ def resolve_app_sources(required_helpers=None):
         "_guides_sources",
         "_guides_dialog",
         "_guides_views",
+        "guide_records",
+        "guide_rewrite",
+        "_guide_rewrite_dialog",
+        "_guide_editor_dialog",
     )
     for name in required_helpers:
         assert (root / f"{name}.py").is_file(), f"Missing App helper: {root / name}"

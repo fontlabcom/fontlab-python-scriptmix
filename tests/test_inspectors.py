@@ -348,7 +348,7 @@ RELEASED_V1_0_6_MANIFEST_SHA256 = (
 
 def _assert_released45_invariant(rows: list[dict], root: Path) -> None:
     """Verify immutable released provenance and menu bytes without requiring Git."""
-    assert len(rows) == 64, "Expected all 64 current migration rows"
+    assert len(rows) == 67, "Expected all 67 current migration rows"
     released = rows[:45]
     digest = hashlib.sha256(
         json.dumps(released, sort_keys=True, separators=(",", ":")).encode()

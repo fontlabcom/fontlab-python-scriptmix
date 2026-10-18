@@ -442,3 +442,11 @@ require artifact/native saved geometry/fullfont Undo/Redo/reopen, actual source/
 selection/paint/lifecycle/refusal controls, prior61 regression and reviewed D17/
 fresh-tag R053. All gates pass with Appv0.2.18/Scriptmixv1.0.14, including downloaded-tag R053.
 Released64/130;66pending and the full broader scope remain open.
+
+## Issue111 complete guide rewrite editors
+
+Retain all three original editor interfaces, complete native guide properties
+and hints, source/selection/master refusal, wholefont oneUndo/Redo/reopen from
+postseed baselines, originalGUI oracles and Close. Require artifact/installed
+checks, prior64 regression, reviewed release and independent fresh-tag R053.
+Source stage only; released64/130 and all wider tasks remain unchanged.

@@ -2106,3 +2106,70 @@ app-src=.local/issue111-app-v0.2.18-wheel andscriptmix-src=.local/issue111-scrip
 Posttag updates onlyREADME/PLAN/TODO/WORK/NOTICE. No runtime/menu/test/manifest delta.
 Released64/130;66pending=held7Names+59unmigrated. Alloriginals retained; broader
 examples/archive/cleanup/newtools/realcanvasreporters/docs and fullgoal ACTIVE.
+
+Task3u guide rewrite source stage: isolated issue-111-guides-rewrite worktrees
+based on reviewed4f14ab5/2e0ba8a. BaselineApp56213.50s andScriptmix744+1explicit
+skip1.34s pass. C++pyfllayer.h178 binds2boolremoveGuides; nativefllayer.h701
+thirdvector defaultsTrue, bodyfllayer.cpp6312-6333 explicitlyretains hints.
+Reviewedoriginal guide copies/filter/merge/scaling core passes21native controls
+on clean reopens of ownedPlum: exactentirefont applied/UTCstamp/no-op/oneUndo/
+nativecleanstate/Redo/reopen forclear,listedit,copy. Nativecolour/tags onretained
+andtargetguides preserved; hints/allotherfields exact. NewactualAppsourcebackend
+also passes same21controls and restores original module/path maps (backend-v1).
+Appguide_records/guide_rewrite preconstructall native clones/newguides before
+anymutation, reusemeasuredhistoryprotocol, refuseentireunsafe targetbatch and
+nonfiniteeditedcells.18focusedtests pass0.02s; firstREDmissingmoduleexit2,
+secondcollectionfailurefrompackage__getattr__ corrected by explicitsubmodule
+import. Original Anydirection label retained. Full panels/artifacts/sourcefidelity/
+originalnativeGUI/postseedbaselines/lifecycle/prior64/release/R053 remainpending.
+Exactnativecommands `rtk proxy env FL_RESTART=1 verification/issue-104/fl-native.sh --mutating --lane issue111-guides-rewrite -- uv run --quiet --project fontlab-remopy python .local/issue111-guides-rewrite-carrier.py` and samewithbackend-carrier.py exit0.
+Core `rtk proxy uv run --extra test --python cpython-3.11-macos-aarch64-none python -m pytest -q tests/test_guide_rewrite.py` exit0.
+Currentreleased64/130; no67claim ororiginalremoval. FullgoalACTIVE.
+
+Task3u source panels nowcomplete: Clear Glyph Guides keeps direction/name/scope
+and detailed removal rows; Copy retains source/target checkboxes, merge/replace,
+width scaling and complete add/remove previews; List retains firstselectedglyph,
+editablecoordinates/angle/name/current-allmasters/Add/Delete/Revert and onebatchApply.
+Dynamicmastercheckboxes bindafterstatus/Close; rowactions andparsedmasterlabels
+checkcompletefont/selection/source beforewrites.18Appcore and11actualwidgets tests
+pass; fullApp58012.95s, sourceScriptmix755+1skip1.37s. FirstGUItests RED7missing
+helpererrors+manifestcountfailure; ownedAlignTop double/nameimport corrected.
+New67candidate rows preserve released64 digest2685650af3e45013fd9c63a0718fc64c8b13c16f80f65b11cbd65c21893e5f1c.
+Newpostseedfullfontoracle capturesbaselineAFTERunchangedoriginalseedingcode,
+includespriorUndo title andindependentUTCwriteclock;4focusedcontroller tests pass.
+Source/artifact/nativeGUI/lifecycle/refusal/prior64/release/R053 stillpending.
+Released64/130 unchanged; broaderfullgoalACTIVE.
+
+Task3u nativeGUIv1 exit0:19unchanged originalworkflow/21completepostseedfont/
+workspace/history-title/Undo/Redo/reopen checks/Close3;96hashes/restoredpaths and
+modules.9originalscreenshots inspected. Source review then caught missing advance
+widths in Copy's snapshot (oldguide source reads geometry=False): newtestfirstRED
+wroteusingstalescaleratio. NarrowRewriteDialog.source_values adds plain source/
+targetwidths without changing83oldruntime files.12widgettests nowpass0.05s.
+Fix1artifactsv2 nativepasses19/21/114opening-source-context-refusal controls/
+Close3,includingactualtargetwidthchange, unsafeA/mixedbatch andstaleAdd/Delete.
+Nativev3 adds36positivecontrols: two-glyph all-master verticalfilter, explicit
+replace/unscaled andmerge/scaled angledguides withindependentsix-digitvectors,
+all-masterListAdd/Delete/Revert preservingonlyfirstselectedH andretainedcolour/
+tags/rawgeometry/hints. All150controls pass;13images inspected (9exactv1+4new).
+Original19/complete21/Close3/96hashes/restoration pass unchanged. Additionalnative
+badlaterrow nan/inf/nonnumeric/unknownmaster controls are prepared, not yet run.
+Prior64samefix1-runtime regression running via .local/issue111-core64-guides-rewrite-command.json; noparallelFontLab runs. First64originals not yetfinalsharedgate.
+Fix1wheel e20c96a0f3378c7879832c360aa3343407e8a405242afd497b8a256fdeab0878,
+sdist a481d3d7dd06139209f1e673723735941682e84c22cb9fe6a9444fe4e2872a29:
+87runtimebytes exact,93wheel/146sdistpayloadlicense/privacy pass. Current580App
+12.71s,263installedwheel0.28s/sdist0.31s, installed-wheel GitfreeScriptmix756+1
+explicit skip1.56s and67originalpairs pass. Root208tests0.25s. Public156App/98
+Scriptmixfiles3.11/privacy pass; README200each. Sourcefidelity direction/matches/
+scaled ASTexact, prior64menus/rows and83oldruntimeexactexceptappendedfacades.
+Initialsourcecopysteamlookup mixedsame-name native scenarios withsamplecopies;
+correctedseparateinventory: each8centralidenticalmenus+1C2palette-onlyvariant,
+8same-nameoriginalscenariosseparately. No inputchanged. Sourcefidelity andimage
+receipts retained. Fullnativeinvalidrow/control gate, prior64, directfreeze,
+release andfreshdownloaded-tag R053 remainpending. Canonicalreleased64/130;
+alloriginals andfullbroadergoalremainACTIVE.
+
+Task3u prior64same-fix1-runtime regression exit0:522original/168complete
+preservation/957additional controls/Close64;178hashes/restoredimports pass.
+Final4invalid-laterrow controls running as nativev4; v3all150controls pass.
+No productruntime changes afterwidthsnapshotfix; finalsourcefreeze includesdocs.
