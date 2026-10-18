@@ -33,9 +33,19 @@ def load(monkeypatch, app_sources):
         "Current Names helper required; set SCRIPTMIX_APP_SOURCE or install the updated App wheel"
     )
     state = NS(package=NS(id=7), glyphs=[], selected=set(), clears=0)
+    frame = NS(inherits=lambda name: name == "YFrameWindow")
+    tab = NS(inherits=lambda name: name == "QTabWidget", parentWidget=lambda: frame)
+    stack = NS(inherits=lambda name: name == "QStackedWidget", parentWidget=lambda: tab)
+    state.font_panel = NS(
+        inherits=lambda name: name == "FontWindow", parentWidget=lambda: stack
+    )
     native = NS(
         CurrentFont=lambda: NS(glyphs=state.glyphs),
-        flWorkspace=NS(instance=lambda: NS(currentPackage=state.package)),
+        flWorkspace=NS(
+            instance=lambda: NS(
+                currentPackage=state.package, activeFontPanel=state.font_panel
+            )
+        ),
         UpdateAll=lambda: None,
     )
 
@@ -82,6 +92,19 @@ def load(monkeypatch, app_sources):
         return result
 
     return module, state, scripting, shared
+
+
+def test_actual_selection_when_glyph_window_active_then_refuses_before_writers(load):
+    _, state, scripting, _ = load
+    state.package.isNull = False
+    state.glyphs = [NS(name="A"), NS(name="a")]
+    state.selected = {0}
+    state.font_panel = None
+    with pytest.raises(ValueError, match="Font window"):
+        scripting.select_glyphs(["a"], package_id=7)
+    assert state.clears == 0 and state.selected == {0}, (
+        "Glyph-window context must preserve selection"
+    )
 
 
 def test_case_counterparts_use_unicode_first_suffix_fallback_and_single_character(load):

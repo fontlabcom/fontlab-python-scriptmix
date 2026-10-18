@@ -4,6 +4,12 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — selection context test fixtures
+
+- Model the verified regular Font-window ancestry in the two shared host-free
+  fixtures. Exercise actual App selection refusal with an active Glyph window.
+- Keep all68Scriptmix menus, runtime modules and migration records byte-exact.
+
 ## v1.0.17 — 2026-10-18 — anchor-copy refusal layout
 
 - Fit the owned dialog when a refusal explanation appears; keep a short footer

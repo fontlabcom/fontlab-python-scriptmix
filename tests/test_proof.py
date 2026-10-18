@@ -166,8 +166,18 @@ class Painter:
 def load(monkeypatch, app_sources):
     monkeypatch.setattr(Widget, "instances", [])
     state = NS(package=None, glyphs=[], selected=set(), fallback=None, copied=[])
+    frame = NS(inherits=lambda name: name == "YFrameWindow")
+    tab = NS(inherits=lambda name: name == "QTabWidget", parentWidget=lambda: frame)
+    stack = NS(inherits=lambda name: name == "QStackedWidget", parentWidget=lambda: tab)
+    state.font_panel = NS(
+        inherits=lambda name: name == "FontWindow", parentWidget=lambda: stack
+    )
     native = NS(
-        flWorkspace=NS(instance=lambda: NS(currentPackage=state.package)),
+        flWorkspace=NS(
+            instance=lambda: NS(
+                currentPackage=state.package, activeFontPanel=state.font_panel
+            )
+        ),
         CurrentFont=lambda: NS(glyphs=state.glyphs) if state.package else None,
         CurrentGlyph=lambda: state.fallback,
         MainWindow=lambda: None,

@@ -2310,3 +2310,49 @@ and189hashes pass. Combined68=552workflow/196preservation/1252controls/Close68.
 Posttag change restricted to README/PLAN/TODO/WORK/NOTICE; no runtime/menu/test/
 manifest delta. Released68/130,62pending=7heldNames+55unmigrated. All originals
 and the entire wider goal remain open. No PyPI/GitHub-release-object claim.
+
+## 2026-10-18 A6 verified selection context fixtures
+
+Base9316e02; isolated issue-111-selection-context branch. Only shared test_names
+and test_proof fixture ancestry changed, plus one real shared-helper Glyph-window
+refusal test in test_names. Model the controller-measured activeFontPanel:
+FontWindow→QStackedWidget→QTabWidget→YFrameWindow. Preserve all pre-existing test
+assertions. No guard mock, native Qt class patch, production/menu/manifest edit.
+
+Initial actual guarded-App-wheel run754pass/16fail/1skip because both old fixtures
+lacked activeFontPanel. Updating test_names alone left15failures from test_proof;
+controller then authorized that second shared fixture. Full final suite771passes,
+1historical explicit skip,1.83s; no failures waived. App618tests pass separately.
+SHA-verified combined coverage includes complete451-statement/122-branch App
+scripting.py,97%rounded, above80%; no exclusions. The installed guard module is
+byte-identical to App candidate9bbaffa4430847f36b1ba633e7742bdb12a4558ac08cc789e0301292329212de.
+
+Exact command here, exit0:
+
+```
+rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 COVERAGE_FILE=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.local/issue111-models-selection-scriptmix-final.coverage uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with coverage --with /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.local/issue111-models-selection-artifacts/fontlab_fontlabapp-0.2.22.dev2+g0f4e0a470.d20261018-py3-none-any.whl python -m coverage run --branch --include=*/fontlabapp/scripting.py -m pytest -q tests --original-source-root /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting
+rtk proxy uvx ruff check tests/test_names.py tests/test_proof.py
+rtk proxy git diff --check
+```
+
+From App candidate: `rtk proxy uv run --with coverage python
+/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.local/issue111-models-selection-combine.py`
+exits0 after source/installed SHA check and reports whole-module coverage.
+Receipt `.local/issue111-models-selection-combined-coverage.json` at workspace
+root. Native positive/negative selection, preservation, review and integration
+remain controller gates. No canonical changes/commits/pushes/releases occurred.
+
+Guard-v1 native positive control exposed transient PythonQt parent-wrapper id
+reuse. App candidate now retains ancestor wrappers during traversal; Scriptmix
+fixtures/menus/runtime stayed unchanged for the correction. Fresh corrected
+actual-wheel full suite771passes1skip1.87s. New AppsourceSHA
+05f734e4e7c8c9d7fc1a1039cb89632c6290478f3ee9f6bc2d21360bd39cca7b;
+combined whole-module coverage96.5458%, no exclusions. Correction report at
+workspace `.local/issue111-selection-guard-fix-report.md`; native-v2 pending.
+
+Controller native-v2 now passes five positive/refusal/preservation checks.
+All68existing original scenarios plus actual Close destruction/registry cleanup
+pass on the same installed guard bytes, runner exit0 in101seconds with no crash.
+Durable receipts: issue111-selection-guard-v2 and
+issue111-selection-guard-all68-v1 under workspace verification/issue-101-ecosystem/
+evidence. These test-fixture changes do not alter any menu/runtime/original.
