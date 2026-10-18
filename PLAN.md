@@ -459,3 +459,10 @@ Installed candidate passes original/fullfont/history/reopen/native controls.
 Retain guards for measured automatic-dependent Undo and origin Redo defects.
 Require final artifact/native/prior67 review, D17 and fresh-tag R053 before release.
 Other8anchor editors and all broader issue111 work remain pending.
+
+Copy Anchors closure: Appv0.2.21/Scriptmixv1.0.17 downloaded-tag R053 and all
+artifact/native/visual/prior67 gates pass. All14images compare to the inspected
+fixed candidate, with four cursor-only blink differences. Earlier numerical-pass
+v0.2.20/v1.0.16 tags remain intact but were withheld from canonical promotion
+after visual rejection. Released68/130; other8Anchor editors and all broader
+issue111 goals remain open.

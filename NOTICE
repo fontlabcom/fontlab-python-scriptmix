@@ -161,3 +161,8 @@ preconstructed writes and measured native-history safeguards. Existing pins
 retain native style; new pins use FontLab name-derived appearance defaults.
 The original source and independent L1 scenario remain retained. Candidate
 acceptance and the pending release/fresh-tag gates are recorded in WORK.md.
+
+Copy Anchors acceptance update: reviewed Appv0.2.21/Scriptmixv1.0.17 pass all
+source/artifact/native/prior67 and downloaded-tag R053 gates, including settled
+refusal-layout geometry. Earlier candidate tags are retained with their failed
+visual receipt. No original source is removed. See WORK.md for exact evidence.

@@ -2291,3 +2291,22 @@ retain identical geometry/text, with two2x31cursorblink differences only.
 SourceApp59712.95s, actual-wheelScriptmix770+1skip1.23s andcontroller2140.28s
 pass. Only the new copy-dialog module changes runtime after the prior67 run;
 all87previousruntime and all67menus remainexact. Newtags/R053 still pending.
+
+Task3v final acceptance: replacement Appv0.2.21 (e85aa126b98268bafa21ed71a2e5f73eb94a78f6)
+and Scriptmixv1.0.17 (03d761a2c74a0a0c81ba32a17ca5d14302dd6f02) downloaded
+and independently built/installed. NativeR05311original/7completefont-history-
+Undo-Redo-reopen/133controls/Close1,93hashes andimport/path restoration pass.
+All14images match inspected fixed candidate except four2x31caret rectangles;
+all3blocker geometry assertions pass. FreshApp59713.14s; GitfreeScriptmix770+1
+explicit skip1.65s/all68sourcepairs; installedwheel/sdist280each0.65s; controller
+2140.28s. Sourcefreeze1a41b64e7da0a4353e768a238d12688b05f7f88b76cad607c2b71facb643010c.
+Stablewheel498083df1cf22a1c0559e30b934aa167a005a31fcd59c58abcd1e579a004efee,
+sdistc209167a797b63c35c399a37cacff14229df66a07778db99a1baca7405a0d455.
+D17 exactcommands `rtk proxy gitnextver -d .worktrees/rel-anchor-copy-app` and
+`rtk proxy gitnextver -d .worktrees/rel-anchor-copy-scriptmix` exit0. All39older
+remote tagrefs remain unchanged, including the rejected visual candidates and
+protectedv0.2.0.89production/68menus; prior67same-runtime541/189/1119/Close67
+and189hashes pass. Combined68=552workflow/196preservation/1252controls/Close68.
+Posttag change restricted to README/PLAN/TODO/WORK/NOTICE; no runtime/menu/test/
+manifest delta. Released68/130,62pending=7heldNames+55unmigrated. All originals
+and the entire wider goal remain open. No PyPI/GitHub-release-object claim.
