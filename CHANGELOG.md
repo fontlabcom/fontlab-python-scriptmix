@@ -4,6 +4,20 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## Unreleased — read-only Anchors accepted candidate
+
+- Add complete Anchor Cloud, Anchor Compatibility and Mark Attachment Preview
+  source tools with shared raw anchor snapshots and existing owned lifecycle/
+  geometry/painter boundaries. Preserve original controls and all54prior mappings.
+- Reject stale data without rejecting intended selector changes; retain exact
+  None paint diagnostics, explicit current-glyph fallback and complete cleanup.
+  Source/artifact/native/prior54 gates pass; integration/release/R053 pending.
+- Fix late-binding tree columns after native image review: expose every master
+  and missing-anchor cell, with source and native width/count regression checks.
+- Accept combined57 native:473workflow/139preservation/368safety/261error plus
+  16selection/layout andClose57. Preserve previous54menus and all original inputs.
+- Correct the carried Components NOTICE status to its verified release receipts.
+
 ## v1.0.9 — 2026-10-18 — read-only Components
 
 - Accept all five installed-wheel native workflows and prior49regression: combined54

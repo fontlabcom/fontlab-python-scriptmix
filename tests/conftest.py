@@ -49,6 +49,9 @@ def resolve_app_sources(required_helpers=None):
         "components",
         "_components_dialog",
         "_components_views",
+        "anchors",
+        "_anchors_dialog",
+        "_anchors_views",
     )
     for name in required_helpers:
         assert (root / f"{name}.py").is_file(), f"Missing App helper: {root / name}"

@@ -74,4 +74,19 @@ _components_dialog.py extends existing Proof/Names binding, signal and Close
 lifecycle; _components_views.py retains the complete original badge-card painter.
 Scriptmix retains original controls/class/key/helper/scenario interfaces and
 appends exact source/destination hashes to migration.json. Originals remain
-unchanged. Source tests pass; native/artifact acceptance is pending.
+unchanged. Reviewed Appv0.2.13/Scriptmixv1.0.9 native/artifact acceptance is
+recorded in WORK.md.
+
+Read-only Anchors provenance
+===========================
+
+Anchor Cloud, Anchor Compatibility and Mark Attachment Preview adapt the
+Apache-2.0 anchors_cloud_view.py, anchors_compatibility_report.py and
+anchors_mark_attachment_preview.py from retained fontlab-samples-L1 sources.
+App anchors.py preserves original frequency/order, auto-layer exclusions, raw
+anchor snapshots and rounded attachment arithmetic. Existing Components/Proof
+helpers supply placed outlines, source guards, owned lifecycle and the exact
+None-error painter adapter. _anchors_views.py retains both complete original
+diagrams. Scriptmix keeps every original control/class/key/helper/scenario
+interface and appends exact original/menu SHA-256 pairs. All originals remain;
+new anchor artifact/native acceptance is pending.

@@ -376,5 +376,26 @@
     "destination": "Scripts/Components/Where Used.py",
     "destination_sha256": "4f5fc5877419a7ac391ebc527040b0c68687af40b3bb5c8f2cf93ee002848ccf",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/anchors_cloud_view.py",
+    "source_sha256": "5885402147ffe2572bf075aab5d990ced876acc195002fe8ca5933caf7d2cd56",
+    "destination": "Scripts/Anchors/Cloud View.py",
+    "destination_sha256": "a041af1b904b6c7184ab858d7558bec99f9f0e3643c6edcc8c74e8bcebad45ad",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/anchors_compatibility_report.py",
+    "source_sha256": "430e803dac504a7f7e81348d4ca0080fb29d0b0fe41e3554d55f97f47275bd61",
+    "destination": "Scripts/Anchors/Compatibility Report.py",
+    "destination_sha256": "35038e202e171e0301a981249d9846f1327e9fad8aa80c727f4254baa3a8edc8",
+    "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/anchors_mark_attachment_preview.py",
+    "source_sha256": "1aecb69d2abebbfc64d16cff871d6e33edce6e52120376a5674cbe6a401f8896",
+    "destination": "Scripts/Anchors/Mark Attachment Preview.py",
+    "destination_sha256": "c1ac89a5f9a85b873001e5e5dd7faaad21278183afb7d07fc88b1cdd063ef30e",
+    "license": "Apache-2.0"
   }
 ]

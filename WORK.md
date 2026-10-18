@@ -1588,3 +1588,112 @@ remain. Whole archive cleanup, broader examples, package cleanup, new tools/
 canvas reporters, docs and final review remain open. This final receipt update
 changes README/PLAN/TODO/WORK only; source/test/menu/mapping/version/license bytes
 match stable tags. No redundant code/native suite is rerun for metadata.
+
+## Task3o source implementation — read-only Anchors, acceptance pending
+
+Independent worktrees issue111-anchors-app and issue111-anchors-scriptmix are on
+issue-111-anchors, bases Appae1f3ca93da19b1cf69fce3807f4bfcf2d64dbf8 and
+Scriptmixe8c626510bc7772c5aa46dfd24db93a156272518. Baseline source App506passed
+13.46s; actual stable-wheel Scriptmix620passed1explicit skip1.01s with54original
+pairs audited. All originals/scenarios were read without executing old scripts.
+Three L1-only sources are mapped into Scripts/Anchors with full source/destination
+hashes. AnchorDuplicates is an editor and remains for a later complete editor batch.
+Original AnchorCompatibility DRIVE adds a probe anchor H/Light after launch;
+controller must retain that setup, then capture an exact fresh complete baseline
+before rescan/selection. No seed waiver or mutation acceptance is claimed here.
+
+New shared anchors.py keeps original frequency sorting/duplicates, rounded cloud
+points, auto-layer None versus missing master semantics, base/mark classification,
+family order and offset arithmetic. It reuses component/Proof native access and
+placed paths. Raw anchor snapshots retain sub-rounding drift; geometry snapshots
+cover only the displayed names and retain the previous domain during a selector
+change. _anchors_dialog.py extends existing Components/Proof/Names binding/signals/
+Close; _anchors_views.py preserves both full original painters and delegates the
+existing BadgeGrid/ProofView exact-None terminal boundary without modifying it.
+All three complete original menus retain controls/defaults/public helpers/classes/
+keys and test interfaces, with late binding after status/Close construction.
+
+TDD: missing anchors API collectionRED(exit2), then5coreGREEN0.01s; sixth test now
+covers falsey CurrentGlyph/None/actual selection for Mark Preview. Menus/57row
+invariant firstRED4fail18pass(exit1). UI first stopped on missing imported pytest
+masters fixture (test infrastructure, corrected), then proper missing helperRED.
+Initial native-shaped stubs lacked addItems/findText/tree data/UserRole/transform/
+zero-argument QRectF; these test-only gaps were filled in the owned anchor fixture.
+Two genuine selector failures then showed old display data was checked against
+new controls; fixed by freezing original result options, validating the previous
+source first and refusing unrefreshed blocked-signal changes before paint.
+Basic no-font/UI6pass; expanded59anchor menu/UI/fault/safety cases pass0.18s.
+Full source snapshot before final typing/format pass: App512passed12.94s and
+Scriptmix680passed1skip1.05s with57original pairs. These use stablev0.2.13 wheel
+plus current App source override, not a new built artifact or native proof.
+Final exact-byte suites, source review, standalone and artifact/native gates pending.
+
+Coverage includes18actual-slot stale font/closure/master/order/membership/raw-anchor
+refusals,21initial read faults with working Close, eight inactive/false/throwing end
+and throwing diagnostic hook cases with painter ending/settling, explicit falsey
+fallback versus Compatibility exact empty scope, blocked UI choices and outline
+advance drift. Prior54 manifest prefix is independently literal-locked at
+930fa7266be5d8e3a830355caf3e7296e3002dc3cec5267a824406e5c3acf07e;
+every prior menu byte is checked. Only total-count assertions and Anchors category
+are updated in previous tests; previous45/49 digest controls remain unchanged.
+NOTICE's carried Components pending wording is corrected to the released v0.2.13/
+v1.0.9 acceptance, and complete new anchor provenance is appended.
+
+Exact App command prefix: `rtk proxy env UV_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh -q`, focused `tests/test_anchors.py --tb=short`.
+Exact Scriptmix command prefix: `rtk proxy env SCRIPTMIX_APP_SOURCE=../issue111-anchors-app/src/fontlabapp SCRIPTMIX_APP_REQUIREMENT=../../.local/issue111-app-v0.2.13-dist/fontlab_fontlabapp-0.2.13-py3-none-any.whl SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none UV_LINK_MODE=copy ./test.sh`
+with `-k 'anchor_no_font or anchor_complete_original' --tb=short`, then
+`-k 'anchor_' --tb=short`, full `--original-source-root ../.. -rs`.
+Scoped Ruff check initially caught export aliases/import order; an explicit public
+re-export noqa replaces redundant aliases rejected by PLC0414. Check/format then
+pass for new helpers/tests/menus. No prior runtime formatting is performed.
+No new dependency or API beyond verified original/Components/Proof native calls.
+This source milestone does not commit, publish, change canonical code, remove
+originals or install into the owner's FontLab. Full130goal remains open.
+
+Wait, but the first59 source cases did not exercise a second selector action after
+stale failure or Compatibility's recovered selected scope. New tests first show
+2RED selector retries silently republishing changed source and1RED explicit
+rescan adopting a new Font-window selection instead of its original scope. Fix:
+Cloud/Mark require reopening after a previously published display is invalidated;
+Compatibility alone may explicitly rescan, retaining its original plain selected
+scope across invalidation. Initial read retries remain bound to the original font;
+Close releases the captured selection domain. No extra generic state framework
+or previous runtime change. Focused62UI/menu/fault/stale cases pass0.16s. Source
+review caught these before any artifact/native acceptance; failed evidence retained.
+
+Final source-byte suites: App512passed13.02s, Scriptmix683passed1explicit skip1.01s withall57originalpairs, sourceoverrideonly. Finalstandalone83fileGit-freecopy682passed2explicit skips(seeparentretainedreceipt), sourceoverrideonly. Earlier679/2copyretainedaspre-three-fix-tests snapshot. Controller132passed0.15s,14neworiginal-anchor-adapter tests retainallstatements/oracles andexactpostseedbaseline, refusewrongmarkers/boundarychanges. Bothoriginalpaintbodies areAST-identicalafterannotations/docstrings. No new native/artifactacceptance claimed.
+
+Task3o nativev2 exit0: original3 20workflow/6fullpreservation, paint10/open18/stale63/painter32/selection9/Close3,80current hashes/restored imports. Direct image review REJECTS Compatibility layout: late binding left2 columns, hiding3masters. Test-first new column case RED2!=4, fix1 moves dynamic headers/count/resize modes into guarded refresh; all other product bytes remain exact. Actual-wheel Scriptmix684pass1skip1.24s/all57pairs;83-file Git-free explicit-originals684pass1skip1.21s; rootcontroller157pass0.19s including REDthenGREEN visible-column negative control. New native probe will measure actual headers/positive widths/independent A-anchor counts and retain full-panel image; original DRIVE/check unchanged. App wheel/runtime unchanged, prior54 regression running against same artifact; nativev3 pending. Earlier direct review missed this UI defect; no release/promotion claimed.
+
+## Issue111 read-only Anchors candidate acceptance — 2026-10-18
+
+Direct controller review and native fix1 re-run pass. Initial native v1 failed
+only the owned E activation setup; flPackage.activateGlyph does not select an
+editor. The documented owned editor signal fixes the fixture. Native v2 passed
+data checks but screenshot review rejected hidden master columns. A test-first
+menu fix configures the columns after font binding; both old attempts remain
+retained. The final image shows every master and missing cell. No original
+scenario expression, App runtime or previous 54 menus changed for this fix.
+
+Installed candidate wheel on FontLab9.0.9784 passes all three original scenarios:
+20workflow,6complete font/design/classes/metadata/workspace/history/master checks,
+10paint,18opening,63stale,32painter-boundary,10selection/layout controls andClose3.
+All80exercised hashes match and import paths/modules restore. Compatibility's
+owned H/Light probe has its exact post-seed baseline. Valid falsey current E,
+empty selected scope, independent anchor arithmetic, visible master widths/counts
+and H's missing-family display are load-bearing. Eleven existing images match
+v2 exactly; corrected Compatibility images were inspected. Clipboard excluded.
+
+Same-wheel prior54 passes453workflow/133preservation/305safety/201error plus
+6selection/Close54,135matching hashes and restored imports. Combined57 native:
+473workflow/139preservation/368safety/261error plus16selection/layout/Close57.
+SourceApp512; actual-wheel Scriptmix684/1skip, all57originalpairs; standalone
+83-file Git-free with explicit originals684/1skip. Installed wheel/sdist195each;
+72runtime files match,78wheel/124sdist entries pass licence/NOTICE/privacy audit.
+Controller157pass; scoped Ruff passes. Every previous54manifest row/menu hash is
+unchanged. Exact commands and failed RED cases are retained in parent evidence.
+
+Release and independent downloaded-tag R053 remain pending. Released54/130;
+57native candidates, held7Names and66other unmigrated stems remain separate.
+All original/archive inputs and broader cleanup/newtools/reporters/docs stay open.
+No owner-site install, package-index publication or GitHub release object claimed.

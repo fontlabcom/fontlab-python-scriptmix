@@ -196,3 +196,56 @@ only in README/PLAN/TODO/WORK; no production changes or new native run are impli
 Released scope is54/130;76remain(7heldNames+69unmigrated). All originals remain;
 full migration/archive cleanup/additional tools/reporters/docs stay open.
 No owner-site install, package-index publication or GitHub release object is claimed.
+
+## Issue111 read-only Anchors source milestone
+
+Cloud View, Compatibility Report and Mark Attachment Preview retain complete
+original controls, helper/class/key interfaces, rounded frequency/coordinate/
+auto-layer/attachment rules and both full native painters. Anchor-specific state
+extends the existing Components/Proof/Names lifecycle. Native-verified component
+geometry and None-error paint adapter are reused without changes to prior runtime.
+Raw anchor values and frozen displayed geometry scopes reject stale data; cached
+result options are checked before selectors scan their new intended display.
+Compatibility alone retains its explicit anchor rescan. No-font and read failures
+leave complete diagnosed closable panels; terminal painter faults clear callbacks
+and settle empty updates. Source status only: artifact/source review, original
+native scenarios, full post-seed Compatibility preservation, painting/safety/Close,
+prior54 regression and release/R053 remain pending. Released54/130 versus57source
+candidates; held7Names and66other unmigrated stems remain outside this batch.
+All originals/fullarchive/newtools/reporters/docs remain in scope.
+
+Cloud/Mark require reopening after a published source is invalidated. Only
+Compatibility retains explicit rescan recovery, with its original selected scope.
+
+## Issue111 read-only Anchors acceptance gates
+
+Direct controller review and native fix1 re-run pass. Initial native v1 failed
+only the owned E activation setup; flPackage.activateGlyph does not select an
+editor. The documented owned editor signal fixes the fixture. Native v2 passed
+data checks but screenshot review rejected hidden master columns. A test-first
+menu fix configures the columns after font binding; both old attempts remain
+retained. The final image shows every master and missing cell. No original
+scenario expression, App runtime or previous 54 menus changed for this fix.
+
+Installed candidate wheel on FontLab9.0.9784 passes all three original scenarios:
+20workflow,6complete font/design/classes/metadata/workspace/history/master checks,
+10paint,18opening,63stale,32painter-boundary,10selection/layout controls andClose3.
+All80exercised hashes match and import paths/modules restore. Compatibility's
+owned H/Light probe has its exact post-seed baseline. Valid falsey current E,
+empty selected scope, independent anchor arithmetic, visible master widths/counts
+and H's missing-family display are load-bearing. Eleven existing images match
+v2 exactly; corrected Compatibility images were inspected. Clipboard excluded.
+
+Same-wheel prior54 passes453workflow/133preservation/305safety/201error plus
+6selection/Close54,135matching hashes and restored imports. Combined57 native:
+473workflow/139preservation/368safety/261error plus16selection/layout/Close57.
+SourceApp512; actual-wheel Scriptmix684/1skip, all57originalpairs; standalone
+83-file Git-free with explicit originals684/1skip. Installed wheel/sdist195each;
+72runtime files match,78wheel/124sdist entries pass licence/NOTICE/privacy audit.
+Controller157pass; scoped Ruff passes. Every previous54manifest row/menu hash is
+unchanged. Exact commands and failed RED cases are retained in parent evidence.
+
+Release and independent downloaded-tag R053 remain pending. Released54/130;
+57native candidates, held7Names and66other unmigrated stems remain separate.
+All original/archive inputs and broader cleanup/newtools/reporters/docs stay open.
+No owner-site install, package-index publication or GitHub release object claimed.

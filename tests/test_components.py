@@ -76,7 +76,7 @@ def test_complete_component_menu_exists(title, klass):
 
 
 def assert_released49(root, rows):
-    assert len(rows) == 54, "All 54 source/destination pairs are required"
+    assert len(rows) == 57, "All 57 source/destination pairs are required"
     digest = hashlib.sha256(
         json.dumps(rows[:49], sort_keys=True, separators=(",", ":")).encode()
     ).hexdigest()
