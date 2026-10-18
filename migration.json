@@ -474,5 +474,12 @@
     "destination": "Scripts/Anchors/Copy Anchors From Glyph.py",
     "destination_sha256": "d99143550bef5989a5f7e13e0a87ddc25a7ce39076b0bacfaa6b19de97167ded",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_italic_angle.py",
+    "source_sha256": "a128519cb0930bf4f8cc0bb818472faa47ca7b70a473f5a4a37975dc4f92a36f",
+    "destination": "Scripts/Masters/Italic Angle.py",
+    "destination_sha256": "aa528b09a27e0ae6044dedbef4b07017e1589983ba740d457833bf386c1a8423",
+    "license": "Apache-2.0"
   }
 ]

@@ -182,6 +182,8 @@ Full Issue111 migration, archive cleanup, additional tools/reporters/docs stay o
 
 ## Masters reports
 
+The unreleased Italic Angle candidate retains all master spins, slant previews, pending counts and Apply/Close on the shared App editor. It requires the matching candidate App; final artifact/regression/release gates remain pending in WORK.md. Released scope stays68/130.
+
 Masters contains Overview, Width Chart, Glyph Weight Chart and Compatibility Check.
 Overview shows ordered axis locations/metrics/angles, highlights differences and switches master on double-click.
 Width Chart retains12labelled glyph lines; Weight Chart retains10groups, per-master bars/legend and a units² table.
