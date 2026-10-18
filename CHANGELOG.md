@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — read-only Anchors accepted candidate
+## v1.0.10 — 2026-10-18 — read-only Anchors
 
 - Add complete Anchor Cloud, Anchor Compatibility and Mark Attachment Preview
   source tools with shared raw anchor snapshots and existing owned lifecycle/
