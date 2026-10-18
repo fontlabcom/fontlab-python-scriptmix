@@ -451,3 +451,11 @@ postseed baselines, originalGUI oracles and Close. Require artifact/installed
 checks, prior64 regression, reviewed release and independent fresh-tag R053.
 All gates pass with Appv0.2.19/Scriptmixv1.0.15 and downloaded-tag R053.
 Released67/130;63pending and all wider tasks remain open.
+
+## Issue111 Copy Anchors From Glyph
+
+Preserve complete L1 source completion/merge-replace/width/current-all workflow.
+Installed candidate passes original/fullfont/history/reopen/native controls.
+Retain guards for measured automatic-dependent Undo and origin Redo defects.
+Require final artifact/native/prior67 review, D17 and fresh-tag R053 before release.
+Other8anchor editors and all broader issue111 work remain pending.

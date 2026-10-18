@@ -2190,3 +2190,80 @@ unchanged. R053 repeats v4 exactnativecommand with out=issue111-release-v15/nati
 app-src=.local/issue111-app-v0.2.19-wheel and scriptmix-src=.local/issue111-scriptmix-v1.0.15,exit0.
 OnlyREADME/PLAN/TODO/WORK/NOTICE change after immutabletags. Released67/130;
 63pending=held7Names+56unmigrated. Alloriginals and fullbroadergoalremainACTIVE.
+
+Task3v Anchor9 source-only/calibration stage: clean isolated issue-111-anchor-editors
+worktrees at reviewed2c8027f/40e0a3e. BaselineApp58013.08s andScriptmix756+1explicit
+skip1.38s pass. Sourcecopies and originalscenarios live underL1 (notcentral);
+rebuild_checks marks auto-composite deltas informational, notacceptance. Original
+warnings do notwaive wholefontUndo. Actualbound anchorpoint isflPinPoint.point;
+newpin boolproperty isanchor, notheader-styleisAnchor (pyflpinpoint.cpp114/117).
+CodeGraph existsroot+Cpp; usecodegraphbeforefurther source searches (CLIavailable).
+Nativehistoryv1 firstHcontrol passesall6checks; minimalA.topx+17 leaves14residues
+in7automaticcomposites afteroneUndo, despiteclean nativehistorystate. Reopen/Redo
+exact. Carrierstoppedbeforelowercasea becauseMacfilesystemaliasesA/a folders;
+failedv1 retained. v2 usesu0041/u0061 filenames: H andh passall6; A,a,n,o fail
+completeUndo with14/14/3/13residues, Redo/reopenexact/nativehistorystateclean.
+v2 thenStopIteration onm(noexistingtopanchor); thisneedscreationcalibration,
+notclassification aswriterbug. v3separatelychecksCosmItalic.o. Allrunsownedfonts,
+per-objectcheckInitHistoryState(0), onefinalnotify, targetUTCstamp; noautolayer
+notification/manualrollback/fieldmasking. ActualAresidues includeAacute/Agrave
+Regular topanchor298->315 andAbreve/Acircumflex/Adieresis/Aring/Atilde accent
+xOffsets+17 plus7shiftedlastModifieddates. Allreceipts andfailedattemptsretained.
+Verifiedexistingupstreamfl#8512 OPEN via ghissueview/search; evidencecommentpending
+source-specific investigation/finalcalibration. NoAnchorproductcode/menus changed.
+Currentreleased67/130 unchanged; fullgoalACTIVE.
+
+Task3v calibration completion: CosmItalic.o minimalpointedit leaves19residues after
+Undo(v3), nativehistoryclean. Addednewm.top pin(v4) applies/Undoexact butRedo and
+reopeninferappearance5 fromomitteddefault0. Sourceflpinpoint.cpp110-125/349-354
+confirmsname-derivedappearance andflpinpoint.h17-30 values (Up5/Down6/Left7/Right8/
+Circle1); publicC++detectAppearanceisnotPython-bound. Explicitappearance5 onnewtop
+(v5) makesall6completefont/history/Redo/reopenchecks pass without changingexisting
+pins. Thisiscreationstabilization, not a waiver/masking ofsavedfields.
+Nativefulloriginaln->h/m, all3mastercopy core nowpasses8strictchecks atcorrected
+history/explicitnewappearance:18anchors/6layers, onlyexpectedtargets/dates, no-op,
+oneUndoentirefont/nativecleanstate, Redo/reopenexact. Source n/allotherfields kept.
+Thus CopyfromGlyph has an independentlysafe originalscope; other8Anchor editors
+stillrequireunsafe-scopehandling. NoAnchorproduction implementationcounted yet.
+Updated matchingexistingfl#8512with minimalA+17 realanchor/componentUndo residues,
+cleanflaghazard, controls andsourceinvestigationdirection:
+https://github.com/Fontlab/fl/issues/8512#issuecomment-6245891526 . No privatepaths/assets.
+Current67/130released;63pending. FullgoalACTIVE; nineAnchororiginals retained.
+
+Task3v Copy Anchors candidate: original source n -> h/m all3masters now passes
+11unchanged L1 checks and7complete font/workspace/history-title/Undo/Redo/reopen
+checks on installed fix2 wheel (native9784). Native v5 controls130/130:
+6opening+56source/context/refusal/lifecycle+68positive across8cases, Close1;
+93hashed sources and import/path restoration. Source/default/width/mode/empty/
+self/prior-history behavior retained. Existing automatic dependants refused whole
+batch before mutation (fl#8512); existing-point moves to origin refused because
+minimal h.bottom282,0 ->0,0 Undo passes butRedo restores282,0 (new fl#8527).
+Original arithmetic remains visible, including zero-source fallback and negative
+source widths; newly created native pin appearance stabilized using verified
+C++ name defaults. Native v3 fractional fault injection changed no native point
+(strong rounding), so two stale-point controls were invalid; v4 uses+17 with
+actual-change assertion and all53source controls pass. v4 positive zero-target
+case found the real originRedo defect; both failed runs retained, not waived.
+Core17tests pass; actual-widget14tests and controller23tests pass. Fresh prior67
+regression active. Candidate not released or canonically promoted; count remains
+67/130. Originals remain. FullgoalACTIVE.
+Commands: `rtk proxy ./test.sh -q` (App591,12.84s,exit0 before6additional tests);
+`rtk proxy env SCRIPTMIX_APP_REQUIREMENT=<fix1-wheel> SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none ./test.sh --original-source-root <workspace>`
+(760+1explicit skip,1.33s,exit0 before10additional widget tests).
+`rtk proxy env FL_RESTART=1 verification/issue-104/fl-native.sh --mutating --lane issue111-anchor-copy-v5 -- uv run --quiet --project fontlab-remopy python verification/issue-111/run_reports.py verification/issue-101-ecosystem/evidence/issue111-anchor-copy-v5 --app-src .local/issue111-app-anchor-copy-fix2-wheel/lib/python3.11/site-packages --scriptmix-src .worktrees/issue111-anchor-editors-scriptmix --verify-anchor-copy --verify-close --scripts anchors_copy_from_glyph.py` exit0.
+`rtk proxy python3 .local/issue111-run-core67-anchor-copy.py` active; exact argv
+retained in .local/issue111-core67-anchor-copy-command.json.
+
+Task3v final candidate checks: App597 (12.82s), Gitfree Scriptmix770+1explicit
+skip (1.52s) with all68original-source hashes checked, installed wheel/sdist
+280each (0.32s), root controller214 (0.26s), focused Ruff and Git whitespace
+checks pass. All11native screenshots inspected. Prior67 installed-runtime
+regression passes all scripts, full preservation and native controls; exact
+receipt is anchor-copy-prior67-acceptance.json. All87prior runtime files remain
+exact except appended lazy scripting facades; all67prior menu/manifest rows
+remain byte-exact. Candidate production89files. Native default-origin Redo
+defect is filed and verified OPEN as fl#8527; existing point moves to origin
+refuse before history and remain visible in preview. Release and independently
+downloaded-tag R053 remain pending; current released count67/130 unchanged.
+Exact commands/outputs: issue111-anchor-copy-installed-artifacts.json and
+issue111-core67-anchor-copy-command.json in local retained command evidence.

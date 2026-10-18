@@ -267,7 +267,7 @@ def test_cached_row_tampering_is_refused_before_copy(nodes):
 
 def test_every_released59_mapping_and_menu_remains_byte_exact():
     rows = json.loads((ROOT / "migration.json").read_text())
-    assert len(rows) == 67
+    assert len(rows) == 68
     assert (
         hashlib.sha256(
             json.dumps(rows[:59], sort_keys=True, separators=(",", ":")).encode()

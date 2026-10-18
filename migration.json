@@ -467,5 +467,12 @@
     "destination": "Scripts/Guides/Guide List Editor.py",
     "destination_sha256": "fdf1c8c18c9675a8895305d80a78435bb2f8b0681d97b4a4e531c5cf9222d984",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/anchors_copy_from_glyph.py",
+    "source_sha256": "5a75bff7b933ab4f65d694d1e3c780e5a75cec3b52ec0875e038f308475da747",
+    "destination": "Scripts/Anchors/Copy Anchors From Glyph.py",
+    "destination_sha256": "d99143550bef5989a5f7e13e0a87ddc25a7ce39076b0bacfaa6b19de97167ded",
+    "license": "Apache-2.0"
   }
 ]

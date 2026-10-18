@@ -150,3 +150,14 @@ Native guide copies preserve retained geometry, colour and tags; hints remain.
 Shared preflight refuses unsafe automatic dependants before any batch mutation.
 All originals remain. Reviewed Appv0.2.19/Scriptmixv1.0.15 pass source/artifact/
 native/prior64 and independent downloaded-tag acceptance, recorded in WORK.md.
+
+Copy Anchors From Glyph provenance
+=================================
+
+Adapted from the retained Apache-2.0 fontlab-samples-L1 anchor-copy source.
+Preserves complete source completion, merge/replace, width scaling and master
+controls. Shared App support adds late native binding, raw source guards,
+preconstructed writes and measured native-history safeguards. Existing pins
+retain native style; new pins use FontLab name-derived appearance defaults.
+The original source and independent L1 scenario remain retained. Candidate
+acceptance and the pending release/fresh-tag gates are recorded in WORK.md.
