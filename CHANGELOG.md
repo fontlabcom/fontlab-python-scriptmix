@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## v1.0.18 — 2026-10-18 — two additional foreground reporters
+
+Add Sidebearing Direction Marker and Duplicate Anchor Rings, requiring
+fontlab-fontlabapp0.2.23 or newer. Retain the original68migration rows; the two
+additional tools have separate provenance/native evidence and do not change
+the130sample denominator. Downloaded-tag verification follows this release.
+
 ## Unreleased: additional foreground reporter candidates
 
 - Add Sidebearing Direction Marker and Duplicate Anchor Rings through App's
