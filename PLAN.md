@@ -249,3 +249,38 @@ Release and independent downloaded-tag R053 remain pending. Released54/130;
 57native candidates, held7Names and66other unmigrated stems remain separate.
 All original/archive inputs and broader cleanup/newtools/reporters/docs stay open.
 No owner-site install, package-index publication or GitHub release object claimed.
+
+## Issue111 Anchors release and independent acceptance — 2026-10-18
+
+Reviewed main releases Appv0.2.14 (4f240f67cce47a91b200587fffde3c49f42cb9f2)
+and Scriptmixv1.0.10 (9aad183619a7e36379fa29b326ca1821cf2aae52) are published.
+Exact commands: `rtk proxy gitnextver -d .worktrees/rel-anchors-app` and
+`rtk proxy gitnextver -d .worktrees/rel-anchors-scriptmix`, both exit0. Only the
+reviewed release CHANGELOG was dirty; App used an isolated main worktree and
+Scriptmix an independent main clone to preserve the owner's live checkout.
+All24older distinct tags and the protected annotated v0.2.0 dereference remain
+unchanged (25tag refs). No package-index or GitHub release object is claimed.
+
+Independent fresh GitHub App clone:512tests pass13.34s; stable built wheel and
+sdist:195installed tests each pass0.26s on arm64Python3.11.14, host-free imports
+from actual targets. Wheel075983f6dcf7b79ef2274e5252a5f6afc149cbe58457b763d110e5f2fbf5e68e;
+sdistdabc95cd0dfc5fc61bed6c87ad3891297d71f34a6a4ee178823f710cfcde1a75.
+All72runtime bytes and57menus match the accepted candidate;78wheel/124sdist
+entries pass licence/NOTICE/privacy checks. Fresh83fileGit-free Scriptmix archive
+SHA64d35e4ea1702fde0235d841b2404453f1529ff139f4f80f1a9339ce418c4746:
+683tests pass2explicit skips1.13s; all57original pairs audited separately.
+
+Stable-wheel/downloaded-menu R053 on FontLab9.0.9784 repeats20workflows,
+6complete preservation,10paint,18opening,63stale,32painter,10selection/layout
+controls andClose3. All80current hashes match; paths/modules restore. All14
+screenshots are byte-identical to the accepted candidate images. Corrected
+Compatibility master columns/missing cells and nondefault falsey E/H outcomes
+remain load-bearing. Same-byte prior54 already passes; combined57 native totals
+473workflow/139preservation/368safety/261error plus16selection/layout/Close57.
+No further native run is implied by the receipt-only metadata update.
+
+Evidence: workspace verification/issue-101-ecosystem/evidence/issue111-release-v10.
+Post-tag README/PLAN/TODO/WORK/NOTICE receipt delta is reviewed separately before
+canonical promotion. Released57/130;73remain(7heldNames+66unmigrated). All original
+and archive inputs remain; whole migration/additionaltools/reporters/docs stay open.
+No owner's site-packages or user documents were changed.

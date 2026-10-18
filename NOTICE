@@ -89,4 +89,5 @@ helpers supply placed outlines, source guards, owned lifecycle and the exact
 None-error painter adapter. _anchors_views.py retains both complete original
 diagrams. Scriptmix keeps every original control/class/key/helper/scenario
 interface and appends exact original/menu SHA-256 pairs. All originals remain;
-new anchor artifact/native acceptance is pending.
+reviewed Appv0.2.14/Scriptmixv1.0.10 artifact/native and independent downloaded-tag
+acceptance are recorded in WORK.md.
