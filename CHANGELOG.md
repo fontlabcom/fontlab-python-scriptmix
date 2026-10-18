@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## v1.0.19 — 2026-10-18 — complete Italic Angle editor
+
+Add Masters > Italic Angle, requiring fontlab-fontlabapp0.2.24 or newer. All69
+original workflows, complete-font/history preservation and actual Close pass.
+Retain the original68migration records,70existing menus and archived originals.
+Independent downloaded-tag native acceptance follows this release; broader
+example migration, archive cleanup and documentation remain open.
+
 ## Unreleased — complete Italic Angle candidate
 
 Add Masters > Italic Angle through the shared App editor. Retain ordered master
