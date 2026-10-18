@@ -4,6 +4,14 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## v1.0.17 — 2026-10-18 — anchor-copy refusal layout
+
+- Fit the owned dialog when a refusal explanation appears; keep a short footer
+  status. The anchor preview, explanation and Close controls remain separated.
+- Retain the preceding tags unchanged: their numerical acceptance passed, but
+  the visual gate rejected overlapping refusal text before canonical promotion.
+  New native geometry checks and independent fresh-tag acceptance are required.
+
 ## v1.0.16 — 2026-10-18 — Copy Anchors From Glyph
 
 - Retain full L1 source completion, merge/replace, width scaling and master scope.
