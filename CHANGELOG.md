@@ -4,11 +4,11 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — live Node Coordinates
+## v1.0.12 — 2026-10-18 — live Node Coordinates
 
 - Port complete selected-node coordinate/pair tables,400ms polling and Copy.
   Follow active glyph/master edits with guarded font binding and owned cleanup.
-  Source/artifact/native/prior59 gates pass; release/R053 pending. Preserve all59released tools.
+  Accept490combined native workflows/145preservation checks andClose60; retain24new timer/Copy/fault/font-boundary controls. Independent downloaded-tag R053 pending.
 
 ## v1.0.11 — 2026-10-18 — read-only glyph reviews
 
