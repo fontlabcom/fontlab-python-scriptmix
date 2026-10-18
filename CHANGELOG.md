@@ -21,6 +21,14 @@ the130sample denominator. Downloaded-tag verification follows this release.
 
 # Changelog
 
+## v1.0.20 — 2026-10-18 — two additional read-only tools
+
+Add Kerning > Persistence Audit and Reports > Compare Open Font Revisions,
+requiring fontlab-fontlabapp0.2.25 or newer. All68original menus and the two
+released reporters remain exact. Native result/lifecycle and full prior68 gates
+pass; independent downloaded-tag acceptance follows release. Preserve the held
+Italic Angle prerelease and its assets separately from this accepted runtime.
+
 ## Unreleased — selection context test fixtures
 
 - Model the verified regular Font-window ancestry in the two shared host-free
