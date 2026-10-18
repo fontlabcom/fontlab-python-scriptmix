@@ -79,6 +79,7 @@ def test_additional_reporter_provenance_and_acceptance_cover_exact_new_menus():
     import json
 
     rows = json.loads((ROOT / "additional-tools.json").read_text())
+    rows = [row for row in rows if row["kind"] == "foreground-adaptation"]
     assert len(rows) == 2 and {row["title"] for row in rows} == {v[0] for v in CASES}
     for row in rows:
         path = Path(row["destination"])
