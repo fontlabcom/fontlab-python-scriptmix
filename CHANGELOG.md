@@ -4,13 +4,13 @@ this_file: CHANGELOG.md
 
 # Changelog
 
-## Unreleased — compact Master Switcher
+## v1.0.13 — 2026-10-18 — compact Master Switcher
 
 - Add original ordered master/location buttons, exclusive current emphasis and
   first9shortcuts on the guarded owned Masters shell. Preserve all60released tools.
   Native original5/preservation2/additional43 pass on3/25masters, including
   actual key events and lifecycle/fault controls. Prior60same-runtime regression
-  passes. Reviewed D17/fresh-tag acceptance remain.
+  passes. Source and candidate acceptance reviewed; fresh-tag acceptance follows release.
   Preserve package-master semantics; no editor-layer switching claim.
 
 ## v1.0.12 — 2026-10-18 — live Node Coordinates
