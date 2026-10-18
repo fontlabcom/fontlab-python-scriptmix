@@ -35,6 +35,9 @@ def test_all67_released_rows_and_menus_remain_byte_exact():
 @pytest.fixture
 def copying(guides, monkeypatch, app_sources):  # noqa: F811
     base = guides
+    base.qt.QtGui.QDialog.adjustSize = lambda self: setattr(
+        self, "layout_adjustments", getattr(self, "layout_adjustments", 0) + 1
+    )
 
     class Form(base.qt.QtGui.QGridLayout):
         def addRow(self, *values):
@@ -205,4 +208,5 @@ def test_origin_move_stays_visible_in_preview_but_refuses_copy(copying):
     d = copying.menu().CopyAnchors()
     d.source.setText("n")
     assert d.table.rowCount and d.pending_origins
-    assert not d.apply_button.enabled and "Redo" in d.status.text
+    assert not d.apply_button.enabled and "Copy unavailable" in d.status.text
+    assert "Redo" in d.rebuild_label.text and d.layout_adjustments > 0

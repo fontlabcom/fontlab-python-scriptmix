@@ -2267,3 +2267,27 @@ refuse before history and remain visible in preview. Release and independently
 downloaded-tag R053 remain pending; current released count67/130 unchanged.
 Exact commands/outputs: issue111-anchor-copy-installed-artifacts.json and
 issue111-core67-anchor-copy-command.json in local retained command evidence.
+
+Task3v fresh-tag visual rejection retained: Appv0.2.20 e3782103 / Scriptmixv1.0.16
+5128865c pass numerical R05311/7/130/Close1,93hashes/restoration, freshApp597,
+GitfreeScriptmix770+1skip and280installed perwheel/sdist. However settled blocker
+layout overlaps: tablebottom426,labeltop415. These tags remain unchanged; they
+are not canonically promoted or counted as released. Candidate visual acceptance
+was premature for the three newly captured refusal shots. Corrected owned
+dialog adjustSize()+single explanation/short footer measures426<439..470<483
+for origin/unsafeA/mixed, actualscreenshots inspected. New automatic native
+geometry controls enforce these gaps; complete installed fix validation running.
+Replacement release must use newAppv0.2.21/Scriptmixv1.0.17, then freshR053.
+Source/runtime of all67prior tools remains byte-exact; same-runtime prior67
+regression remains valid because only the isolated new copy-dialog module changed.
+`rtk proxy env FL_RESTART=1 verification/issue-104/fl-native.sh --mutating --lane issue111-anchor-layoutfix -- uv run --quiet --project fontlab-remopy python .local/issue111-anchor-copy-layoutfix-probe.py` exit0.
+Freshsource/publicartifact/native numerical checks and bothfailedvisualcandidate
+receipts are retained under issue111-release-v16. Count67/130, fullgoalACTIVE.
+
+Task3v layout correction accepted at installed candidate: all11original checks,
+7fullfont/history/Undo/Redo/reopen and133controls pass, including all3settled
+non-overlap geometry assertions. All14screenshots inspected; normal previews
+retain identical geometry/text, with two2x31cursorblink differences only.
+SourceApp59712.95s, actual-wheelScriptmix770+1skip1.23s andcontroller2140.28s
+pass. Only the new copy-dialog module changes runtime after the prior67 run;
+all87previousruntime and all67menus remainexact. Newtags/R053 still pending.
