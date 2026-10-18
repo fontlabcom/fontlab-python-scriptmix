@@ -4,6 +4,17 @@ this_file: CHANGELOG.md
 
 # Changelog
 
+## v1.0.16 — 2026-10-18 — Copy Anchors From Glyph
+
+- Retain full L1 source completion, merge/replace, width scaling and master scope.
+  Preconstruct native values, preserve existing pins and stabilize new appearance.
+  Bind raw coordinates, widths, expressions, selection and every option.
+- Refuse automatic dependants before mutation (fl#8512), and existing-anchor
+  origin moves that native Redo cannot restore (fl#8527). Keep original previews.
+  Installed candidate passes11original/7complete persistence/130native controls
+  and Close. Prior67 regression, App597, Scriptmix770+1skip and280installed
+  tests per wheel/sdist pass. Downloaded-tag R053 follows release.
+
 ## v1.0.13 — 2026-10-18 — compact Master Switcher
 
 - Add original ordered master/location buttons, exclusive current emphasis and
