@@ -59,4 +59,4 @@ this_file: TODO.md
 
 - [x] Verify complete three guide panels, artifacts, native fullfont history/reopen and fault/source/lifecycle controls, prior61, reviewed release and fresh-tag R053. Appv0.2.18/Scriptmixv1.0.14 pass.
 
-- [ ] Verify complete three guide rewrite editors, full saved history/reopen from postseed baselines, lifecycle/refusal/controls, prior64 and reviewed release/fresh-tag R053.
+- [x] Verify complete three guide rewrite editors, full saved history/reopen from postseed baselines, lifecycle/refusal/controls, prior64 and reviewed release/fresh-tag R053. Appv0.2.19/Scriptmixv1.0.15 pass.

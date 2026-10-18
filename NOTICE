@@ -148,4 +148,5 @@ retained Apache-2.0 fontlab-samples sources. Complete filters, target controls,
 width scaling and editable rows are retained on the owned guide lifecycle.
 Native guide copies preserve retained geometry, colour and tags; hints remain.
 Shared preflight refuses unsafe automatic dependants before any batch mutation.
-All originals remain; full acceptance is pending in WORK.md.
+All originals remain. Reviewed Appv0.2.19/Scriptmixv1.0.15 pass source/artifact/
+native/prior64 and independent downloaded-tag acceptance, recorded in WORK.md.

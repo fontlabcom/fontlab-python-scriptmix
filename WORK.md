@@ -2173,3 +2173,20 @@ Task3u prior64same-fix1-runtime regression exit0:522original/168complete
 preservation/957additional controls/Close64;178hashes/restoredimports pass.
 Final4invalid-laterrow controls running as nativev4; v3all150controls pass.
 No productruntime changes afterwidthsnapshotfix; finalsourcefreeze includesdocs.
+
+Task3u COMPLETE/released: reviewed Appv0.2.19/Scriptmixv1.0.15 freshdownload/
+build/install/native R053 passes19original/21completepostseedfont/history-title/
+Undo/Redo/reopen/162additionalcontrols/Close3,96hashes/restoredimports and13exact
+inspectedimages. Invalidlaterrow nan/inf/nonnumeric/unknownmaster refusals allpass
+with completefont/history unchanged. Prior64identical-runtime regression passes
+522workflow/168preservation/957controls/Close64;combined67=541/189/1119/Close67.
+FreshApp58013.44s;263installedwheel0.30s/sdist0.31s; downloadedGitfreeScriptmix756+
+1explicit skip1.45s andall67separateoriginalpairs pass. 87runtime/93wheel/146sdist
+licence/privacy pass; no runtime/menu/manifest difference from reviewedcandidate.
+Sourcefreeze254files7ad9e0d9ba003a4a823e4a8042a6ec7b9748c87d23b8d7024540d4006704fb3d.
+D17 `rtk proxy gitnextver -d .worktrees/rel-guides-rewrite-app` and
+`rtk proxy gitnextver -d .worktrees/rel-guides-rewrite-scriptmix` exit0;35oldertagrefs
+unchanged. R053 repeats v4 exactnativecommand with out=issue111-release-v15/native,
+app-src=.local/issue111-app-v0.2.19-wheel and scriptmix-src=.local/issue111-scriptmix-v1.0.15,exit0.
+OnlyREADME/PLAN/TODO/WORK/NOTICE change after immutabletags. Released67/130;
+63pending=held7Names+56unmigrated. Alloriginals and fullbroadergoalremainACTIVE.
