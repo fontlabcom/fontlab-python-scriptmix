@@ -116,3 +116,15 @@ context with explicit None checks. Shared Names heading/lifecycle and Masters
 tables supply the UI; timer/Copy guards clear incomplete or stale values.
 Original sources remain. Reviewed Appv0.2.16/Scriptmixv1.0.12 pass artifact/native
 and independent downloaded-tag acceptance; receipts are recorded in WORK.md.
+
+Compact Master Switcher provenance
+=================================
+
+Master Switcher adapts Apache-2.0 masters_switcher_palette.py from retained
+fontlab-samples sources. Nine copies match central; L2 removes palette safeguards.
+Original location formatting and existing master_order calculation are retained.
+MastersDialog supplies owned theme/binding/refresh/Close; added guards verify the
+actual master choices and visible labels before an explicit target switch.
+Three columns retain the three-master row while wrapping larger master sets.
+All originals remain. Source/artifact/native/prior60 candidate checks pass; reviewed release and
+fresh-tag acceptance remain pending in WORK.md.

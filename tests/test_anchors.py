@@ -73,7 +73,7 @@ def test_complete_anchor_menu_exists(title, klass):
 
 def test_immutable_prior54_manifest_and_menu_hashes():
     rows = json.loads((ROOT / "migration.json").read_text())
-    assert len(rows) == 60
+    assert len(rows) == 61
     assert (
         hashlib.sha256(
             json.dumps(rows[:54], sort_keys=True, separators=(",", ":")).encode()

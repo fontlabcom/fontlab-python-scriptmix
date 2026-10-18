@@ -427,3 +427,9 @@ lifecycle. Bind font identity, follow actual glyph/master/node edits, clear fail
 reads and recheck Copy. Source/artifact/native/prior59/D17 and independent downloaded-tag R053 pass.
 Released60/130 with Appv0.2.16/Scriptmixv1.0.12; full archive/held7Names/additional
 tools/reporters/docs remain open.
+
+## Issue111 compact Master Switcher
+
+Preserve original master/location buttons, axis order, first9shortcuts and
+explicit package-master action. Reuse guarded owned Masters shell; require
+complete source/artifact/native/prior60/D17/fresh-tag R053 before counting61.

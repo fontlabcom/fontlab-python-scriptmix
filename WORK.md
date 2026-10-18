@@ -1945,3 +1945,53 @@ no independentagent review claimed. D12 canonicalpromotion is authorized after
 these gates; finalremote refs are retained in workspace issue111-release-v12.
 Released60/130;70pending(held7Names+63unmigrated). Alloriginals/archivesremain;
 noownersiteinstall or realclipboard; fullIssue111 remains ACTIVE.
+
+Task3s 2026-10-18: isolated compactMasterSwitcher source starts from reviewed60.
+App541/actualstablewheelScriptmix721+1skip baselines pass. Newcore5tests RED
+missing module then5pass0.01s;11UIcontrols pass before new61stmanifest row.
+Fixture tuple-return assumption corrected; no product fault hidden. New source
+reuses MastersDialog with narrow master-label guards and late owned buttons.
+Original font-master semantics calibrated; editor-layer switching not claimed.
+Full source/artifact/native/prior60/release gates pending; all originals retained.
+
+Task3s native candidate verification (2026-10-18): complete Master Switcher passes
+5 unchanged original checks, 2 complete preservation checks and43 additional
+native controls on FontLab9.0.9784. Plum3/Club25 buttons retain exact labels,
+exclusive checked/bold current state, visible three-column layout, real native
+Ctrl+number key events (macOS Command mapping), outside-current-master navigation,
+unknown-target refusal, replacement, no-font diagnosis, source/label/order faults,
+actual font switch/closure and Close destruction. All font/workspace/history
+snapshots restore exactly. Native v2 failed only the harness binding injection:
+it patched scripting.current_package after Proof had captured its import, calls0.
+v3 patches _proof_dialog.current_package; all43 controls pass. Earlier receipts
+retained.82 source hashes and module/path restoration pass. Four PNGs inspected:
+three unique images; the opening and Plum buttons are byte-identical. The Club
+panel is875x664logical pixels with all25full labels and nine rows visible.
+App546source tests12.76s; wheel229focused0.33s/sdist2290.29s; actual-wheel
+Scriptmix734+1explicit skip1.03s; Git-free90files733+2explicit skips1.37s;
+controller183tests0.29s; scoped Ruff passes. Initial local test commands lacked
+installed distribution metadata (and first used the wrong source env name), then
+were rerun with actual isolated wheel/Python3.11arm64; no test weakened.
+Original location_label/master_order ASTs match after removing annotations and
+docstrings, including nested helper docstrings. The first overly literal audit
+retained nested annotations and failed, corrected without changing product bytes.
+All60old rows/menu bytes and77old runtime files remain exact except appended
+scripting facade.79runtime wheel85/sdist135payload licence/privacy pass.235public
+files and README200lines each pass privacy/Python3.11syntax audit. No new dependency,
+owner site install or original/archive removal. Prior60same-wheel full native
+regression is running; review/D17/fresh-tag R053 remain pending. Current released
+scope60/130. Round Advances stays held at strict full-font history gate fl#8512.
+
+Task3s final candidate review: prior60 same-production-byte native regression
+exits0:490workflow/145complete preservation/747additional checks/Close60,
+158source hashes and module/path restoration pass. New Master Switcher candidate
+adds5original/2preservation/43controls/Close1, so combined61=495workflows and147
+complete preservation checks. Final candidate wheel/sdist audits pass79runtime
+and85/135payload files; wheel a7790ab15e2d85d3d037660f0c5d8503105d15a9ee6b1433fcb2a08b1470edb3,
+sdist c206ea67c54736dbda1d1dd9389fb4294a4d47f4e0db0b82d0e1a15fc5d14871.
+229installed tests each pass0.28/0.27s. Direct source review, exact original AST
+comparison, lifecycle/source/identity guards, actual key events and three unique
+rendered images pass; no independent reviewer agent claimed. All prior runtime
+bytes/menus preserved except append-only facade. No new dependency or owner-site
+install. Reviewed feature integration is accepted; D17 and independent downloaded
+tag R053 remain required before counting61released. Earlier failed receipts stay.

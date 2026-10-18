@@ -418,5 +418,12 @@
     "destination": "Scripts/Outlines/Node Coordinates Panel.py",
     "destination_sha256": "0139a8931e61151070974b2b03926e793fc603d946b829ec89bb671f4400ad38",
     "license": "Apache-2.0"
+  },
+  {
+    "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_switcher_palette.py",
+    "source_sha256": "bc538294e8998a8d45640e928a54b4ce6ae38c846921647d64ce3267b752c07b",
+    "destination": "Scripts/Masters/Master Switcher.py",
+    "destination_sha256": "4c5acdf64eb680f6351902fcc8d5864e8e656496c3cc2d7b952fe87cc936c6a4",
+    "license": "Apache-2.0"
   }
 ]
