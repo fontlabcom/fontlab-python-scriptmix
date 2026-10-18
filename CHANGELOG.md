@@ -576,3 +576,11 @@ archived input or owner environment installation is changed.
   regression pass. Current580App/756Scriptmix/263installed per artifact pass.
   Source/artifact/native acceptance reviewed; independent fresh-tag R053 follows
   release. Retain every original and the full Issue111 scope.
+
+## Unreleased: two additional read-only tools
+
+Add Kerning Persistence Audit and Compare Open Font Revisions as thin fly.ap
+menus backed by shared Fontlabapp implementations. Include source/identity guards,
+local result details and owned callback teardown. Preserve the68 original menus
+and the two released reporter records. Native candidate checks are retained;
+isolated artifact/regression/release acceptance remains pending.

@@ -79,5 +79,49 @@
       "issue111-reporters-r053-date-v1/report.json": "7eb135d2070774a52cc7ef6029f514361d98e591f9ba7bb1e0df878c858883f1",
       "issue111-reporters-r053-menus-v1/report.json": "7cf4685697d14cfbdce1e8cf14431f27bcab8e3d6cb8b4404627274ef38e99f9"
     }
+  },
+  {
+    "title": "Kerning Persistence Audit",
+    "key": "kerning_persistence_audit",
+    "destination": "Scripts/Kerning/Persistence Audit.py",
+    "destination_sha256": "9c7aa64aab52cefe218a42fb1abed349861bb8b0beef910b898868caea3ba629",
+    "kind": "original-read-only-tool",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "scope": "Read explicit kerning, including zero, against the measured two-UPM native load limit.",
+    "native_acceptance": "passed: isolated Z3 candidate wheel",
+    "release_gate": "candidate source/artifact/native/prior68/review passed; D17 and downloaded-tag R053 pending",
+    "verification_ledger": "verification/issue-111/extra-tools.json",
+    "native_evidence": {
+      "issue111-Z3-revision-lifetime-native-v1/report.json": "273ff5a36d4873163245196af256f1515b02d46739f1a156017abd8fb075b18c",
+      "issue111-Z3-boundaries-native-v1/report.json": "687d4d135bbeaecf9c6136359f5b25bf678c764ce7a123c06cf88c889f124fe8",
+      "issue111-Z3-stale-native-v2/report.json": "f808143725bc5491eab5799608e747b964244a3cb68e9d73d63865c3e289dd62",
+      "issue111-Z3-presence-native-v1/report.json": "6252de225843830d858081eb6dfcd2964de53f1f65edf768b0abc3821914f940"
+    },
+    "regression_evidence": {
+      "issue111-Z3-prior68-v1/summary.json": "54f8708ea14f92cdfdbd89b90a2c8116096ae67690c043743be4d2996bf1d375"
+    }
+  },
+  {
+    "title": "Compare Open Font Revisions",
+    "key": "compare_open_font_revisions",
+    "destination": "Scripts/Reports/Compare Open Font Revisions.py",
+    "destination_sha256": "33efba2b81e38c7e4c5e5d4a892bed9dbd557f304be7b85ab2a02451e81d6fdb",
+    "kind": "original-read-only-tool",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "scope": "Compare explicit font/master glyph fields; raw node flags include selection. No semantic font equality claim.",
+    "native_acceptance": "passed: isolated Z3 candidate wheel",
+    "release_gate": "candidate source/artifact/native/prior68/review passed; D17 and downloaded-tag R053 pending",
+    "verification_ledger": "verification/issue-111/extra-tools.json",
+    "native_evidence": {
+      "issue111-Z3-revision-lifetime-native-v1/report.json": "273ff5a36d4873163245196af256f1515b02d46739f1a156017abd8fb075b18c",
+      "issue111-Z3-boundaries-native-v1/report.json": "687d4d135bbeaecf9c6136359f5b25bf678c764ce7a123c06cf88c889f124fe8",
+      "issue111-Z3-stale-native-v2/report.json": "f808143725bc5491eab5799608e747b964244a3cb68e9d73d63865c3e289dd62",
+      "issue111-Z3-presence-native-v1/report.json": "6252de225843830d858081eb6dfcd2964de53f1f65edf768b0abc3821914f940"
+    },
+    "regression_evidence": {
+      "issue111-Z3-prior68-v1/summary.json": "54f8708ea14f92cdfdbd89b90a2c8116096ae67690c043743be4d2996bf1d375"
+    }
   }
 ]

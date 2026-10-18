@@ -4,6 +4,7 @@
 from pathlib import Path
 
 import pytest
+from conftest import original_source
 
 ROOT = Path(__file__).parents[1]
 TOOLS = [
@@ -438,7 +439,7 @@ def test_original_defaults_signal_expressions_and_previous_menus_unchanged(reque
         return
     for title, klass in TOOLS:
         row = next(r for r in now if r["destination"] == f"Scripts/Masters/{title}.py")
-        before = ast.parse((source_root / row["source"]).read_text())
+        before = ast.parse(original_source(source_root, row["source"]).read_text())
         after = ast.parse((ROOT / row["destination"]).read_text())
         constants = lambda tree: {
             n.targets[0].id: ast.literal_eval(n.value)

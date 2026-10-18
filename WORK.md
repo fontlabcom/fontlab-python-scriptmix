@@ -2423,3 +2423,40 @@ The current additional-tools records reference the complete release receipts.
 Released sample count stays 68/130, plus two additional foreground adaptations.
 All other issue111 work remains open. Durable issue111-reporters-release-v1
 records exact D17 commands/results, source freeze and asset hashes.
+
+## Z3 isolated read-only source slice — 2026-10-18
+
+Created issue-111-readonly-release at exact reviewed main1d0086d. Copied only the
+two new menu leaves and their focused consumer tests. Reconstructed additional
+records and two manifest/reporter test hunks; original68 migration/menu payloads
+and two reporter records remain exact. Candidate Z2 receipts are identified as
+candidate evidence; isolated-artifact/native/regression/release gates stay pending.
+Root owns verification and final evidence. No new dependency or live install.
+
+Final isolated source consumer suite787passed/2optional skipped on arm64Python3.11.
+Installed App candidate wheel 7f5221ab242686c893097409ef0d895938d26ff7f8c6ba0a7aed92b58947549d;
+both whole new menus100percent statement/branch/aggregate coverage. Original68
+menu bytes, migration.json and two reporter records exact to reviewed1d0086d.
+Four actual-native isolated-wheel controls pass68checkinstances. Prior68 running;
+release and downloaded-tag gates remain pending. No global rescue baseline change.
+Commands: root issue111-Z3-scriptmix-{scope,coverage,coverage-result}.json and
+issue111-Z3-isolated-consumers.log; coverage run full suite exit0 and metric
+validator exit0. Focused Ruff and git diff --check exit0.
+
+Historical source audit correction: explicit --original-source-root initially
+failed because authorized D24 removal made _old absent. A small test-only
+original_source resolver now follows preserved rescued paths; exact source hashes
+and original constants/interfaces remain enforced. No migration body/hash or
+production module changed. Full actual-wheel consumers now788passed/1optional
+skip including all source audits (previous default787/2skip retained). Initial
+RED missing-path and final GREEN receipts retained; Ruff5testfiles/diffcheck pass.
+
+Controller same-wheel full prior68 regression passes552original workflows,
+196complete persistence checks, Close68 and44loadedApp modules. All owned fonts
+close and import state restores exactly.211screenshots present;197exact to prior
+P checkpoint and14different regions reviewed (owned paths, refresh clocks, native
+focus/emphasis only). All five App modules and two menu modules pass standard
+fixed-baseline quality gates after full867App/788consumer tests,1optional skip.
+No rescue/global baseline advance. The normal main revert commits restore exact
+last-accepted trees while preserving held angle tags/assets/source. Isolated
+source/artifact/native/review gates pass; version/tag/push/R053 remain.

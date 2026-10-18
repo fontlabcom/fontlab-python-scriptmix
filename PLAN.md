@@ -466,3 +466,13 @@ fixed candidate, with four cursor-only blink differences. Earlier numerical-pass
 v0.2.20/v1.0.16 tags remain intact but were withheld from canonical promotion
 after visual rejection. Released68/130; other8Anchor editors and all broader
 issue111 goals remain open.
+
+## Isolated read-only milestone
+
+Base only on reviewed main1d0086d. Add the two additional read-only menu leaves,
+consumer contracts and separate metadata records. Preserve all68 original sample
+rows, menu bytes and the two released reporter entries. Require full consumer
+tests, entire changed-module coverage at80percent, installed App artifact native
+controls and prior68 regression, payload review, D12/D17 and downloaded-tag R053.
+Do not promote neighboring held editor/archive candidates. All broader work stays
+open; canonical Contours rename and rescue state remain preserved separately.
