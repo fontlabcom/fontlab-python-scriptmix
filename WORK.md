@@ -1995,3 +1995,25 @@ rendered images pass; no independent reviewer agent claimed. All prior runtime
 bytes/menus preserved except append-only facade. No new dependency or owner-site
 install. Reviewed feature integration is accepted; D17 and independent downloaded
 tag R053 remain required before counting61released. Earlier failed receipts stay.
+
+Task3s release acceptance (2026-10-18): authorized gitnextver releases Appv0.2.17
+and Scriptmixv1.0.13 exit0. Fresh GitHub clone/download, build and isolated arm64
+Python3.11.14 installs pass: App546tests13.43s, wheel229/sdist229tests0.27s each,
+Git-free90file Scriptmix733pass2explicit skips1.39s, all61original source/menu
+pairs separately verified. Stable79runtime/61menus exactly match native candidate;
+wheel85/sdist135payloads pass licence/privacy. WheelSHAe160ad037d5abe72a458e7cfcc49bc12e5be9fac4c7f917bb03fe57321b94f8a;
+sdistSHA5f6f3040d3eeac52f9a9ae9c876f7bcdbd28939d2de1d5cc5b4b3da6864f95cc;
+Scriptmix archiveSHA dc3debb52b8324c69a88e13ab27f805c1e042e34a7fc4a9c745944a7914c5771.
+Independent downloaded-tag native R053 exits0:5original/2complete preservation/
+43controls/Close1,82source hashes and module/path restoration. All four images
+freshly inspected (three unique): same geometry and labels; file/pixel comparison
+fails only inside selected bold text. Cause not established; no image equality
+claim. The initial exact-image assertion failure and comparison are retained.
+Source freeze122b1d57282a1c5bb03c078186d8d5f894eca5ae11f8ceea23b12d9103178b55;
+prior60same-runtime native passes490workflow/145preservation/747additional checks
+and Close60. Combined61=495workflow/147preservation; previous60control checks747
+plus43newcontrols. Direct source/artifact/native review performed; no independent
+reviewer agent claimed. Reviewed D12 canonical integration follows these gates.
+Released61/130;69pending=held7Names+62unmigrated, including RoundAdvances held at
+full-font history fl#8512. All originals/archives remain; no owner-site install.
+Broader examples/archive/package cleanup/newtools/canvasreporters/docs stay open.
