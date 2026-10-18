@@ -102,4 +102,5 @@ retained fontlab-samples-L1, retaining the defensive QColor/palette fixes.
 Nine copies match L1; L2 only removes those protections. Complete calculations,
 controls, diagram and public helper interfaces remain. Shared lifecycle/painter
 boundaries come from existing App helpers. migration.json retains original and
-menu SHA-256 pairs. All inputs remain; native/artifact acceptance is pending.
+menu SHA-256 pairs. All inputs remain; reviewed Appv0.2.15/Scriptmixv1.0.11
+artifact/native and independent downloaded-tag acceptance are recorded in WORK.md.

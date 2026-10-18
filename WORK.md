@@ -1835,3 +1835,39 @@ await reviewed integration/D17 and independent downloaded-tag R053. Held7Names,
 Evidence: workspace issue111-readonly-tail-v1 failure, v2 correction, v3 full
 controls and issue111-core57-reviews-v1, under the standard verification evidence
 folder. The initial failed native trial and pre-fix artifacts are retained.
+
+## Issue111 glyph reviews release and independent acceptance — 2026-10-18
+
+Published Appv0.2.15 (f819f3f72ecaa06428b2b60e4785f5699a58e568) and
+Scriptmixv1.0.11 (de5473904637daca77b14d8eff60665f7fcf22ee) pass R053.
+Exact commands `rtk proxy gitnextver -d .worktrees/rel-reviews-app` and
+`rtk proxy gitnextver -d .worktrees/rel-reviews-scriptmix` exit0. Only reviewed
+release CHANGELOG files were dirty in isolated main checkouts. All26older
+distinct tags, including protected v0.2.0 and its annotated dereference, remain
+unchanged (27older tag refs). No package-index or GitHub release object claimed.
+
+Fresh GitHub App clone533tests pass13.40s; actual installed wheel and sdist
+216tests each pass0.27s on arm64Python3.11.14. Host-free helpers import from actual
+targets and distribution metadata reports0.2.15. Stable wheel
+e53ee6962585b201059b1a0f2055c05c7c9e7da8769bc914d7e9c8024c01bdc8;
+sdistd20fd72aee45036b76c2f17b1d28c8e7feeb3dc6b3daf0fa706d56c6bb42c98b.
+All76runtime bytes and59menus equal the accepted candidate;82wheel/130sdist
+entries pass licences/NOTICE/privacy. Fresh86fileGit-free Scriptmix download
+SHAcfcb7cb8c078be9e49e06ad680a47c0410170399bfd8431dee0edc6641dec13c:
+706tests pass2explicit skips1.20s, all59original pairs audited separately.
+
+Stable-wheel/downloaded-menu native acceptance on FontLab9.0.9784 repeats
+10original workflows/4complete preservation/5paint/12opening/39stale/16painter/
+6selection-layout/Close2,86matching current hashes and module/path restoration.
+All7images exactly match the reviewed candidate. Correct Rafi395candidate list
+and selection, O50/O25 and actual a80/E rendering, real falsey-current E and
+owned feature/node/advance drift remain load-bearing. Same-byte prior57passed;
+combined59native483workflow/143preservation/407safety/294error plus22selection/
+layout andClose59. The old native787candidate failure and pre-fix artifacts stay
+retained. No further native run is implied by post-tag receipt metadata changes.
+
+Evidence: workspace verification/issue-101-ecosystem/evidence/issue111-release-v11.
+Post-tag README/PLAN/TODO/WORK/NOTICE metadata is reviewed before canonical
+promotion. Released59/130;71pending(7heldNames+64unmigrated). All original/archive
+inputs remain and whole migration/additionaltools/actualglyphcanvasreporters/docs
+stay open. No owner documents/preferences/Output/clipboard/site install changed.
