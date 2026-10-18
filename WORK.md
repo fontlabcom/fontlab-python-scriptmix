@@ -2,6 +2,34 @@
 this_file: WORK.md
 ---
 
+## 2026-10-18: Two additional foreground reporter candidates
+
+Added only two thin lazy Reporters menu scripts, separate additional-tools.json,
+scoped routing/provenance tests and documentation. Original migration.json SHA
+ef87bc7a69eef091a3061dfed5fee748631edca8576b6fdf0c2ebf9a99cff415 and all68
+payload hashes stay exact. Universe check is the strict disjoint union of68
+original migrations plus2additional reporters. Separate tests require exact
+menu hashes, Apache provenance, actual native evidence hashes and explicit
+foreground scope; neither reporter enters130sample denominator.
+
+Tests-first missing-menu2failures then3passes; new metadata absent/pending
+failures retained. After actual controller native acceptance of both complete
+menus and their feature controls, native records became passed with receipt
+hashes, while release_gate explicitly stays held. Actual installed App brushfix
+wheel full suite775pass/1historicalskip, original-source audit intact. Formal
+project D20 two-module gate100%statements+branches; source scope/receipt at
+root .local/issue111-quality-repair-fontlab-python-scriptmix-1grw_mp8.
+Root gate first refused this new production route, then a minimal dispatch
+branch and3tests-first regressions were added; root18tests pass. No hook bypass.
+
+Native both-menu/no-font/peerClose/completefont/history/import controls pass at
+issue111-reporter-menus-native-v1. RSB/R1 native geometry, pixels, clipping,
+context and destruction are hashed in additional-tools.json. Combined prior68
+run has all68workflow andClose checks pass, but fails one Guide Clear Redo
+modification-date leaf across a UTC second; failure retained, no normalization
+or passing retry. Controller is investigating before promotion/release. No
+canonical changes, commits, tags, original removals or release count increase.
+
 # Issue 111 first batch
 
 ## Controller acceptance: second Reports batch
@@ -2356,3 +2384,28 @@ pass on the same installed guard bytes, runner exit0 in101seconds with no crash.
 Durable receipts: issue111-selection-guard-v2 and
 issue111-selection-guard-all68-v1 under workspace verification/issue-101-ecosystem/
 evidence. These test-fixture changes do not alter any menu/runtime/original.
+
+## 2026-10-18 — additional foreground reporter acceptance
+
+The separately tracked two reporter menus pass actual native simultaneous
+painting, peer ownership, Close and no-font diagnostics on the final date-fixed
+App artifact. All earlier geometry/pixel/clipping/context/lifecycle evidence
+remains byte-applicable; reporter runtime is unchanged from independent review.
+The shared App Guide Clear Redo date defect is deterministically reproduced,
+filed as fl8529 and corrected in three forward writers. Seventy-two forced
+boundary checks pass without post-Undo/Redo writes or date filtering.
+
+Complete same-artifact prior68 regression passes552originalworkflow checks,
+196preservation/history checks, all68Close and extended safety/painter/opening/
+source/refusal controls. No failures waived; original failed date receipts stay.
+The three new common regression receipts are SHA-recorded in additional-tools.
+All68migration rows/menu payloads remain unchanged; additional reporters do not
+increase the130sample denominator. D17/release/downloaded-tag R053 is pending.
+
+FullApp742, actual-wheelScriptmix775/1historicalskip, extractedApp740/2sibling-only
+skips, controller281/18subtests pass. All9App changed modules exceed80%statement/
+branch/aggregate,97.10%total; two complete new menus have100%coverage. No new
+dependency or live-user install. Exact full68 runner argv is retained at
+workspace `.local/issue111-reporters-datefix-all68-command.json`, exit0.
+Actual menu command from workspace:
+`rtk proxy env FL_RESTART=1 verification/issue-104/fl-native.sh --mutating --lane issue111-reporters-datefix-menus -- uv run --quiet --project fontlab-remopy python .local/issue111-reporters-datefix-menus-native.py`,exit0.

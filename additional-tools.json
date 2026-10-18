@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Sidebearing Direction Marker",
+    "key": "canvas_right_sidebearing_line",
+    "destination": "Scripts/Reporters/Sidebearing Direction Marker.py",
+    "destination_sha256": "629c3fbdb1e07eaa07d9425833431973470404bcd93389e82e41f6db56b3daf9",
+    "kind": "foreground-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/akufadhl/RSBline",
+    "source_sha256": "5c3c7acb0b10f06857e69b47d58d4aaf9fbefc56c91e595e5c8d97d17c564ee5",
+    "license": "Apache-2.0",
+    "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "scope": "Foreground across tools; explicit LTR/RTL. No Glyphs text-tool gating or background ordering.",
+    "native_acceptance": "passed",
+    "native_evidence": {
+      "issue111-rsb-native-v7/report.json": "a97b3530521eca5bb62b5b4c6303b717ba9ea7ffc21bfc240fe537771dbac1aa",
+      "issue111-rsb-native-v7/pixel-oracle.json": "c56b5ed22cdbe8db0b71679af76f4a3effaeabdffaadfd6b1102526908c47012",
+      "issue111-rsb-matrix-native-v4/report.json": "7c3c11d05075b3a93c83a7d7ab41cefdfc3e838dfe6c6e43e4c6269e7e87e0fa",
+      "issue111-rsb-context-native-v2/report.json": "beab39823676714035e88df6dd54bf0fa18b4c1c6767d33135b747adb8feeb71",
+      "issue111-rsb-context-native-v2/pixel-clip-oracle.json": "250b92ba66135a91664b2c99c71b69c3ec3a343e620871f83d88167357fe36f2",
+      "issue111-rsb-destruction-native-v3/report.json": "7a11e788263e74a61366cb1ed64b2675a1ee019d5633442a13ba732c7959acfc",
+      "issue111-rsb-live-text-native-v1/report.json": "4949265a3a321fb1d70881e502cb108fe376c2612eb0129c28a2ede1107ba27e",
+      "issue111-reporter-menus-native-v1/report.json": "c117edcd44fe1f4b6777bfe863cda0956ded2011e4cb0602c5fdb68e7df63afe"
+    },
+    "release_gate": "native and complete prior68 passed; reviewed D17 and downloaded-tag R053 pending",
+    "regression_evidence": {
+      "issue111-reporters-datefix-all68-v1/summary.json": "cf92e74c44736a8d09f5e7b0c5cae46012aa2c79133964bc6dec06b11f02116c",
+      "issue111-writer-date-boundary-v1/report.json": "b6f1d8a386ed61285bfb61af1891ec5a9a92ea0b2cafff205610f587ad46a467",
+      "issue111-reporters-datefix-menus-v1/report.json": "456e017a6e2dd99769b6ed74033225282ae9970497173a78a0546573da0965e7"
+    }
+  },
+  {
+    "title": "Duplicate Anchor Rings",
+    "key": "canvas_duplicate_anchor_rings",
+    "destination": "Scripts/Reporters/Duplicate Anchor Rings.py",
+    "destination_sha256": "54ef3ff781a4469741fb2f3e049a14bfec048d23c12919e43c508bce4ba24e7f",
+    "kind": "foreground-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/mekkablue/ShowAnchorsWithDuplicateCoordinates",
+    "source_sha256": "912ac0c1918b4bc16caab357e3111b2dd3c9ac1ae39d4bdec47fcc1c0fdefa71",
+    "license": "Apache-2.0",
+    "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "scope": "Foreground across tools; explicit5/8/12handle size. No Glyphs text/hand-tool suppression or background ordering.",
+    "native_acceptance": "passed",
+    "native_evidence": {
+      "issue111-rings-native-v3/report.json": "342b3a155f2ea9891223d2ee6e8bb21f775f8ae0398dc2cfcfc5f20cf0391618",
+      "issue111-rings-native-v3/fixture-qualification.json": "7dca1ef703c0761e512a7042dac957951a0cb3145caf6aab55e5d68145a0959a",
+      "issue111-rings-native-v3/pixel-single/pixel-oracle.json": "d1584721f3449dd0ca1b4fd12f378fe8ae48889e681c40ee43e1e5bc4674091a",
+      "issue111-rings-lifecycle-native-v2/report.json": "a0149672f307d365e23da803061da5f14807c71d19408f3f4a78328391aa7084",
+      "issue111-rings-context-native-v1/report.json": "98fc9f77db08d3146c23611dae24db16f6b2ee4bb08fe95638c51297e556e85f",
+      "issue111-rings-clip-native-v1/report.json": "72f40bc3da9da167425106579f6694a8cd260f8ac2c97c49cccca920257d1d5c",
+      "issue111-rings-clip-native-v1/pixel-clip-oracle.json": "e199ecea4e880f74f3d8116d029bb226adbbac9dec045c0ae0365a3107986ba0",
+      "issue111-rings-destruction-native-v1/report.json": "b0fc03418b47801f492ea59c19452256a825ae92bb6a8a1113bf64f4d5087344",
+      "issue111-reporter-menus-native-v1/report.json": "c117edcd44fe1f4b6777bfe863cda0956ded2011e4cb0602c5fdb68e7df63afe"
+    },
+    "release_gate": "native and complete prior68 passed; reviewed D17 and downloaded-tag R053 pending",
+    "regression_evidence": {
+      "issue111-reporters-datefix-all68-v1/summary.json": "cf92e74c44736a8d09f5e7b0c5cae46012aa2c79133964bc6dec06b11f02116c",
+      "issue111-writer-date-boundary-v1/report.json": "b6f1d8a386ed61285bfb61af1891ec5a9a92ea0b2cafff205610f587ad46a467",
+      "issue111-reporters-datefix-menus-v1/report.json": "456e017a6e2dd99769b6ed74033225282ae9970497173a78a0546573da0965e7"
+    }
+  }
+]

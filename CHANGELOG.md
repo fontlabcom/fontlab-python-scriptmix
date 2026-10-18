@@ -2,6 +2,16 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased: additional foreground reporter candidates
+
+- Add Sidebearing Direction Marker and Duplicate Anchor Rings through App's
+  shared owned lifecycle. Retain explicit direction/handle and foreground scope.
+- Track their exact provenance/native evidence separately from68/130sample
+  migrations. Full775tests/1historicalskip and two-menu100%coverage pass.
+- The prior68 regression passes after the shared App date correction:552original
+  checks,196preservation/history and Close68, with extended safety/fault controls.
+  Release/downloaded-tag verification remains pending;68/130 stays unchanged.
+
 # Changelog
 
 ## Unreleased — selection context test fixtures

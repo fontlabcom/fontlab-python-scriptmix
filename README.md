@@ -4,6 +4,23 @@ this_file: README.md
 
 # fontlab-python-scriptmix
 Small and useful scripts for FontLab
+
+## Canvas reporters (candidate)
+
+Reporters contains Sidebearing Direction Marker and Duplicate Anchor Rings.
+Use the matching App candidate wheel; the released App0.2.22 lacks these tools.
+Open a Glyph window, run either script, then choose direction or handle size.
+Disable or Close removes its overlay. Reopen after switching font, master or
+Glyph window. Both panels can stay open together and change no font data.
+
+These are foreground adaptations across tools. Direction and handle size are
+explicit; Glyphs background ordering and automatic tool suppression are absent.
+Native geometry, pixels, clipping, lifecycle and preservation checks pass.
+The complete prior68 regression passes after the measured guide-date correction.
+Release and downloaded-tag verification remain pending.
+`additional-tools.json` records their independent provenance and evidence.
+They do not increase the130sample migration denominator or its68accepted rows.
+
 ## Installation and Reports
 
 Copy the contents of `Scripts` into your FontLab Scripts menu folder. Keep the category subfolders, such as `Reports` and `Font Info`; FontLab supports one folder level. Use FontLab 9's Python 3.11 with `fontlab-fly` and `fontlab-fontlabapp` (including `scripting`) available in its Python environment. No third-party UI package is needed.

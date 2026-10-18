@@ -62,7 +62,11 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
     assert len(entries) == 68
     destinations = [entry["destination"] for entry in entries]
     assert len(set(destinations)) == 68
-    assert set(destinations) == {
+    additional = json.loads((ROOT / "additional-tools.json").read_text())
+    extra_destinations = {entry["destination"] for entry in additional}
+    assert len(extra_destinations) == len(additional) == 2
+    assert set(destinations).isdisjoint(extra_destinations)
+    assert set(destinations) | extra_destinations == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }
     original_root = request.config.getoption("--original-source-root")
