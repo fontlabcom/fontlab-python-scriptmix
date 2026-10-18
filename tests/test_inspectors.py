@@ -5,6 +5,7 @@
 from pathlib import Path
 
 import pytest
+from conftest import original_source
 
 ROOT = Path(__file__).parents[1]
 TOOLS = [
@@ -668,7 +669,7 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
         row = next(
             r for r in rows if r["destination"] == f"Scripts/{category}/{title}.py"
         )
-        before = ast.parse((root / row["source"]).read_text())
+        before = ast.parse(original_source(root, row["source"]).read_text())
         after = ast.parse((ROOT / row["destination"]).read_text())
         constants = lambda t: {
             n.targets[0].id: ast.literal_eval(n.value)

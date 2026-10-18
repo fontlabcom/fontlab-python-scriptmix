@@ -10,6 +10,7 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
+from conftest import original_source
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -64,7 +65,12 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
     assert len(set(destinations)) == 68
     additional = json.loads((ROOT / "additional-tools.json").read_text())
     extra_destinations = {entry["destination"] for entry in additional}
-    assert len(extra_destinations) == len(additional) == 2
+    assert len(extra_destinations) == len(additional) == 4
+    for entry in additional:
+        target = ROOT / entry["destination"]
+        assert hashlib.sha256(target.read_bytes()).hexdigest() == entry["destination_sha256"]
+        assert entry["counted_in_130_sample_migration"] is False
+        assert len(Path(entry["destination"]).parts) == 3
     assert set(destinations).isdisjoint(extra_destinations)
     assert set(destinations) | extra_destinations == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
@@ -99,7 +105,7 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
             == entry["destination_sha256"]
         )
         if original_root is not None:
-            original = original_root / entry["source"]
+            original = original_source(original_root, entry["source"])
             assert original.is_file(), f"Missing requested original: {original}"
             assert (
                 hashlib.sha256(original.read_bytes()).hexdigest()

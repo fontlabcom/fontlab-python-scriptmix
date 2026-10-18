@@ -8,6 +8,14 @@ from pathlib import Path
 import pytest
 
 
+def original_source(root: Path, relative: str) -> Path:
+    """Read preserved originals after the authorized archive relocation."""
+    current = root / relative
+    if current.is_file():
+        return current
+    return root / relative.replace("/_old/", "/rescued/", 1)
+
+
 def pytest_addoption(parser):
     parser.addoption(
         "--original-source-root",
