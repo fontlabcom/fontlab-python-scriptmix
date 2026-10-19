@@ -2595,3 +2595,31 @@ Final integrated0.2.30dev1 closure:App1278/2generated skips,Glyport2917/6
 initial+5distribution checks(close3fixture skips),Fontport4489/2existing
 skips,Lessons179,Scriptmix809/1existing skip perwheel/sdist. Source1280pass.
 Actual commands/results are retained in H4/integrated-v2/*.json and logs.
+
+
+## Issue120 I1 — Recipe Dumper selected layers
+
+Use shared App selection capture for ordered Font/Glyph-window occurrences,
+including repeated slots and each explicit layer. Read components twice and
+fence final selection/context under one deadline. Keep exact pure formatter
+AST and119other App runtime files. Update only current UI scope strings and
+practical menu provenance/docs. No native/canonical/live/reference changes.
+
+Commands run (all exit0 unless the retained failure logs state otherwise):
+- App source: `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src COVERAGE_FILE=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/recipe-selected-i1/.coverage /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/angularizzle-workflow-h4/integrated-v2/wheel-env/bin/python -m coverage run --branch --source=fontlabapp -m pytest -q`
+- Normal install: `rtk proxy /opt/homebrew/bin/python3.11 /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/recipe-selected-i1/install.py`
+- Installed suites: `rtk proxy /opt/homebrew/bin/python3.11 /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/recipe-selected-i1/verify.py`
+- Payload: `rtk proxy /opt/homebrew/bin/python3.11 /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/recipe-selected-i1/audit.py`
+
+Source1289pass; normal installed App1287/2generated skips, Glyport2917/6initial
+plus5distribution checks(close3fixture skips), Fontport4489/2existing skips,
+Lessons179,Scriptmix809/1existing skip perwheel/sdist.121exactruntimepairs,
+76typed one-level menus,69original source hashes,license/privacy/pipchecks pass.
+Whole core/dialog100%statement+branch; sharedselection100%/96.875%.
+40focusedcases and an inspected Qt6offscreen panel pass outsideFontLab.
+Retain tests-first/late-selection-fence/fixture-import failed attempts.
+
+Wait, but: native getters may initialize caches/reflection/dependencies.
+No explicit writer is not complete preservation proof. Native9787selection/
+order/focus/mixedlayers/Close/complete preservation and final-artifact prior68
+regression remain open. Source/native acceptance flags stayfalse.

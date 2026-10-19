@@ -1,20 +1,21 @@
 # this_file: Scripts/Components/Dump Component Recipes.py
 # SPDX-License-Identifier: Apache-2.0 AND MIT
-"""Dump ordered recipes for selected component glyphs on the active master.
+"""Dump ordered recipes for selected component glyphs in Font/Glyph windows.
 
-Select glyphs in the Font window, then run this Components command. The modeless
+Select glyphs or editor layer occurrences, then run this command. The modeless
 read-only report gives one `base+base=glyph` line per layer with components.
-Component order, repeated bases and mixed contour/component layers are retained.
+Selected-layer order, repeated occurrences/bases and mixed layers are retained.
 The source format omits positions, transforms and own contours; the text is a
 composition aid, not a complete geometry export or a guaranteed import recipe.
 
 Use Refresh after changing the font, master or selection. Empty/missing/stale
 sources and deadline overruns give a clear diagnosis; partial rows are cleared.
-Close releases this owned panel. No font, selection, preferences, clipboard or
-Output content is changed. Requires the matching App candidate and fontlab-fly
+Close releases this owned panel. The report calls no font, selection, history,
+preferences, clipboard or Output writers. Requires matching App and fontlab-fly
 in FontLab9 Python3.11. Adapted from Simon Cozens' MIT Recipe Dumper; see NOTICE.
-Native acceptance and original editor-tab/repeated/multi-master selected-layer
-semantics remain pending. This candidate uses Font-window active-master input.
+The shared reader retains each editor slot’s explicit layer choice. Font-window
+selection uses the current master. Actual FontLab behavior and complete native
+preservation remain pending acceptance.
 """
 
 

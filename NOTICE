@@ -261,3 +261,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+Recipe Dumper selected-layer update: the current candidate reads ordered
+Font/Glyph-window occurrences, including repeats and per-slot layer choices.
+Font-window selection uses the current master. Native9787focus/selection and
+complete preservation remain pending. Earlier Font-window-only descriptions
+record the preceding bounded adapter. Original MIT attribution remains above.

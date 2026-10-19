@@ -222,14 +222,14 @@ Anchors: Cloud View, Compatibility Report and Mark Attachment Preview retain ful
 ## Component recipe report candidate
 
 Components > Dump Component Recipes prints ordered `base+base=glyph` lines in
-a modeless read-only panel. Select glyphs in the Font window; Refresh reads
-the active master again. Component repeats and mixed layers are retained. The
+a modeless read-only panel. Select glyphs or editor layer occurrences; Refresh
+reads the same actual selected-layer source. Component repeats and mixed layers are retained. The
 original format excludes own contours, positions and transforms. No font data
 or owner Output content changes. Requires the matching App/Fly candidate.
-Native acceptance and original editor-tab/repeated/multi-master selected-layer
-semantics remain pending. This tool does not increment the130sample numerator.
+Editor-tab repeats and per-slot layer choices are retained by the current
+adapter. Native qualification remains pending; the130sample numerator stays unchanged.
 
-This bounded report requires the native document view to remain a Font window.
+The native document view must remain a supported Font or Glyph window.
 Actual modeless-focus/Refresh behavior still needs FontLab9787acceptance; Qt
 focus alone does not identify the source document.
 
@@ -244,3 +244,10 @@ Batch Process follows selected occurrences in order, including repeats.
 Requires the matching App/Fly candidate. Native acceptance remains pending;
 unsupported hints, automatic dependants and ambiguous ownership are diagnosed
 before edits. A late native failure disables edits and retains recovery data.
+
+
+Recipe Dumper selected-layer update: the current candidate reads ordered
+Font/Glyph-window occurrences, including repeats and per-slot layer choices.
+Font-window selection uses the current master. Native9787focus/selection and
+complete preservation remain pending. Earlier Font-window-only descriptions
+record the preceding bounded adapter. Original MIT attribution remains above.

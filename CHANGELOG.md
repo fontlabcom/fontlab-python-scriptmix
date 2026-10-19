@@ -617,3 +617,11 @@ Angularizzle remains an explicitly unfinished named priority requirement.
   recovery state after late native failures. Native acceptance remains pending.
 - Restore actual overwritten target paths on Cancel, repairing the original
   cross-layer restoration defect. Closing keeps Process results.
+
+
+## Unreleased — Recipe Dumper selected-layer adapter
+
+Read actual ordered Font/Glyph-window layers through App’s shared selection
+provider, retaining repeated editor slots and their layer choices. Compare
+component reads and fence final selection/context before publishing. Native
+qualification and complete font preservation remain pending.
