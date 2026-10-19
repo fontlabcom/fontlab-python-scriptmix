@@ -585,3 +585,13 @@ archived input or owner environment installation is changed.
   regression pass. Current580App/756Scriptmix/263installed per artifact pass.
   Source/artifact/native acceptance reviewed; independent fresh-tag R053 follows
   release. Retain every original and the full Issue111 scope.
+
+
+## Unreleased — issue120 tabular width report
+
+Add a practical Apache-2.0 Pedro Arilla tabular-width report through shared App
+and Fly. Compare actual selected active-master advances exactly; retain original
+row statuses, counts and time heading. Use a modeless read-only snapshot with
+Refresh and owned Close; diagnose empty, missing or changed sources. Preserve
+owner Output content. Source/consumer/artifact checks pass; native acceptance
+and release remain pending. This is additional to the130sample inventory.

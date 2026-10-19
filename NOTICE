@@ -175,3 +175,17 @@ masters_italic_angle.py through shared App helpers, preserving the original
 controls, helper/class names, slant gauge and independent native scenario.
 The exact source/destination pair is recorded in migration.json. Original
 sources remain retained. This candidate does not claim broader archive cleanup.
+
+
+Tabular width checker adaptation
+===============================
+
+Pedro Arilla, glyphs-scripts/Testing/Tabular width checker.py, Apache-2.0.
+Source SHA-256: 6556dd53ce9f45cfb770b1744077ba26ab230805cd65eaf4dca518c2a3313f44
+License SHA-256: ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37
+https://github.com/pedroarilla/glyphs-scripts
+The App tabular_width and _tabular_width_dialog modules and Scriptmix
+Scripts/Metrics/Check Tabular Widths.py preserve exact comparison, row statuses,
+same/different totals and time heading. Native font-order selection defines the
+reference. The modeless report preserves owner Output content. Native acceptance
+is pending; no release or 130-sample acceptance increment is claimed.

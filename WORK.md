@@ -2448,3 +2448,54 @@ issue111-master-angle evidence live in the enclosing workspace WORK.md.
 
 Wait, but:69candidate manifest rows are not69released migrations. Keep the
 released denominator unchanged until the complete artifact and native gates pass.
+
+
+## 2026-10-19 — issue120 tabular width report candidate
+
+Adapt Pedro Arilla's Apache-2.0 Tabular width checker as a complete practical
+read-only report. Actual native font-order selected glyphs on the active master
+are compared exactly against the first selected glyph. No current-glyph fallback,
+rounding, metrics-key interpretation, Auto substitution, font mutation or Output
+clearing. Preserve per-glyph statuses, same/different totals and time heading.
+Shared App capture compares two full source reads and final font/master/selection.
+The nonmodal report supports complete Refresh or clear diagnosis, owned Close,
+repeat launch and direct/parent destruction cleanup. Provenance hashes are in
+NOTICE and Scriptmix additional-tools.json. Native acceptance stays pending and
+the130sample numerator is unchanged.
+
+Tests-first: core import and menu-route tests failed before implementation.
+After implementation23core/UI tests and1menu test pass. Full App suite979passes;
+full Scriptmix806passes/2existing skips against the built App wheel. Combined
+App+consumer coverage meets80% per whole changed production module: pure core
+100%; dialog98.39%statements/87.5%branches/97.14%aggregate; scripting97.21%
+statements/93.75%branches/96.51%aggregate. Menu100%statements/branches.
+Independent wheel/sdist installs each pass125tests (23new tests+102existing
+qtsafe/revision cases). Native execution was not requested for this lane.
+
+Exact commands (exit0 unless noted):
+- `rtk proxy /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-fontlabapp/.venv/bin/python -m pytest -q tests/test_tabular_width.py tests/test_tabular_width_dialog.py`:23passed.
+- `rtk proxy env PYTHONPATH=/Volumes/Falstaff4T/RomeoData2/cache/uv/archive-v0/1lomx0QfzFbRM9Ex/lib/python3.11/site-packages /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-fontlabapp/.venv/bin/python -m pytest -q tests --cov=fontlabapp.tabular_width --cov=fontlabapp._tabular_width_dialog --cov=fontlabapp.scripting --cov-branch --cov-report=json:../../verification/issue-120/tabular-port/app-coverage.json --cov-report=term-missing`:979passed.
+- `rtk proxy env SCRIPTMIX_APP_REQUIREMENT=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/tabular-port/dist/fontlab_fontlabapp-0.1.0-py3-none-any.whl ./test.sh`:806passed,2skips.
+- `rtk proxy uv build .worktrees/issue120-tabular-app --out-dir verification/issue-120/tabular-port/dist`:wheel+sdist built; local fallback0.1.0 is an unreleased candidate version, not publication.
+
+Failures retained in this session: initial missing module/menu; a shell-written
+conditional string lost quotes and was corrected; initial coverage invocation
+lacked pytest-cov; uv resolver could not find unpublished fontlab-fontport;
+uv runtime with inherited parent-only deps failed8child-process tests (971pass);
+using the existing fully provisioned venv executable fixed all8. Consumer
+portability needed actual installed distribution metadata before source override;
+with the independent wheel target it passes. Cached coverage's x86_64 C tracer
+is incompatible with arm64, so coverage used its supported Python tracer.
+Initial Scriptmix expected4additional tools; the new explicit fifth pending row
+required updating that one inventory assertion. No prior migration row changed.
+Ruff formatting/checks pass for new source/tests; no canonical checkout, native
+font, owner environment installation, tag, commit or publication changed.
+
+
+## 2026-10-19 — controller source review
+
+Reviewed typed lazy Fly menu, source/license identity and pending-native manifest.
+Matching App feature commit70aa791 contains carrier/deadline guards and retained
+callback fix; full995App tests and independently installed artifacts pass. Native
+acceptance remains pending. Feature commit preserves this distinction and does
+not add the tool to the accepted original130sample count.

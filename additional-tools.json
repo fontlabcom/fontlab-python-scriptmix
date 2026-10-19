@@ -145,5 +145,20 @@
       "issue111-Z3-r053-presence-native-v1/report.json": "fe7e19f86ee86094871749be0881957afa0bbe920d51fc22c3979bc52e9fa0f6",
       "issue111-Z3-r053-prior68-v2/summary.json": "462c8b0ef9bb8fce96a730b9397f1e33c930f8f6489e2f2709c067c18805b873"
     }
+  },
+  {
+    "title": "Check Tabular Widths",
+    "key": "check_tabular_widths",
+    "destination": "Scripts/Metrics/Check Tabular Widths.py",
+    "destination_sha256": "335334b268d2e6b84121da3a687c72f7949de8ec854351e9b59150a936809afa",
+    "kind": "practical-report-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source": "Testing/Tabular width checker.py",
+    "source_sha256": "6556dd53ce9f45cfb770b1744077ba26ab230805cd65eaf4dca518c2a3313f44",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "native_acceptance": "pending",
+    "scope": "Exact advances of actual selected layers on active master; first native font-order selection is reference. Read-only modeless report; original row statuses, counts and time heading. No Output clearing."
   }
 ]
