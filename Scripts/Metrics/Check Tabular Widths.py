@@ -1,17 +1,18 @@
 # this_file: Scripts/Metrics/Check Tabular Widths.py
 # SPDX-License-Identifier: Apache-2.0
-"""Check exact selected-glyph advances against the first selected glyph.
+"""Check exact selected-layer advances against the first selected occurrence.
 
-Open a font and select glyphs in the Font window. Run this Metrics menu entry.
-The first selected glyph in native font order supplies the reference; every
-selected glyph is checked on the active master. Fractional values remain exact.
+Select glyphs in a Font window or layer occurrences in a Glyph window. Run
+this Metrics command. The first occurrence supplies the reference. Editor
+repeats retain their own layer choices; Font-window rows use the current master.
+Fractional values remain exact.
 Metrics keys and Auto do not override the actual advances. The report shows
-one result per glyph, same/different totals and the original time heading.
+one result per selected-layer occurrence, same/different totals and time heading.
 
 Use Refresh after changing selection, master or widths. Close removes the
-owned modeless panel. No selection, font data, preferences or Output content is
-changed. Empty selection and stale or missing sources produce a diagnosis.
-Requires the matching fontlab-fontlabapp candidate and fontlab-fly in FontLab9
+owned modeless panel. The report calls no font, selection, history, preferences
+or Output writers. Empty/stale/missing sources produce a complete diagnosis.
+Requires the reviewed App>=0.2.33.dev0 candidate and fontlab-fly in FontLab9
 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Tabular width checker; see
 additional-tools.json and NOTICE. Native acceptance is pending.
 """

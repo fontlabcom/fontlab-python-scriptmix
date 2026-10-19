@@ -150,7 +150,7 @@
     "title": "Check Tabular Widths",
     "key": "check_tabular_widths",
     "destination": "Scripts/Metrics/Check Tabular Widths.py",
-    "destination_sha256": "335334b268d2e6b84121da3a687c72f7949de8ec854351e9b59150a936809afa",
+    "destination_sha256": "699d492d34d2b039342ac28bf9c25c19bc120096c885eed2a6b53a025684f619",
     "kind": "practical-report-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -159,7 +159,8 @@
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "native_acceptance": "pending",
-    "scope": "Exact advances of actual selected layers on active master; first native font-order selection is reference. Read-only modeless report; original row statuses, counts and time heading. No Output clearing."
+    "scope": "Exact advances of actual ordered Font/Glyph-window selected layers, including repeated editor occurrences and per-slot layer choices. First occurrence supplies the reference. Modeless report retains counts/time; native getter/order/preservation qualification remains pending.",
+    "original_scope_acceptance": "pending: native Font/Glyph-window order/focus/mixed-layer and complete preservation"
   },
   {
     "title": "Dump Component Recipes",

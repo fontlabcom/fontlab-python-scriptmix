@@ -251,3 +251,12 @@ Font/Glyph-window occurrences, including repeats and per-slot layer choices.
 Font-window selection uses the current master. Native9787focus/selection and
 complete preservation remain pending. Earlier Font-window-only descriptions
 record the preceding bounded adapter. Original MIT attribution remains above.
+
+
+Tabular Width Checker now reads ordered Font/Glyph-window selected layers,
+including repeated editor slots and their layer choices. Font-window rows use
+the current master. Exact widths, first-occurrence reference and original
+counts/time heading remain. Native9787order/focus/preservation is pending.
+Earlier Font-window-only descriptions record the preceding adapter.
+
+The selected-layer Width Checker requires the reviewed unpublished App>=0.2.33.dev0 candidate; older adapters read only Font-window rows.

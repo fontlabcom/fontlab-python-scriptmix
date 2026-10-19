@@ -625,3 +625,11 @@ Read actual ordered Font/Glyph-window layers through App’s shared selection
 provider, retaining repeated editor slots and their layer choices. Compare
 component reads and fence final selection/context before publishing. Native
 qualification and complete font preservation remain pending.
+
+
+## Unreleased — Tabular Width Checker selected layers
+
+Use the shared Font/Glyph-window selection reader. Preserve editor repeats and
+each slot’s layer choice; compare exact actual advances against the first
+occurrence. Fence source/selection/context under one deadline before reporting.
+Native selected-layer order/focus/preservation qualification remains pending.

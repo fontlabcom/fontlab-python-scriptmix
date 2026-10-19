@@ -2623,3 +2623,37 @@ Wait, but: native getters may initialize caches/reflection/dependencies.
 No explicit writer is not complete preservation proof. Native9787selection/
 order/focus/mixedlayers/Close/complete preservation and final-artifact prior68
 regression remain open. Source/native acceptance flags stayfalse.
+
+
+## Issue120 K1 — Tabular Width Checker selected layers
+
+Read actual ordered Font/Glyph selected-layer occurrences through shared App
+selection. Keep repeats/per-slot layers, first-occurrence reference and exact
+advances; fence final selection/context. Pure compare/render AST and all119
+otherApp runtimefiles remain unchanged. UIchanges onlysource description.
+No explicit fontwriters/nativecalls/canonical/live/reference modifications.
+
+Exact commands (exit0) and cwd:
+- `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src COVERAGE_FILE=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/width-selected-k1/.coverage /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/owned-dialog-exec-j1/wheel-env/bin/python -m coverage run --branch --source=fontlabapp -m pytest -q` (cwd /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.worktrees/issue120-width-selected-app).
+- `rtk proxy /opt/homebrew/bin/python3.11 /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/width-selected-k1/install.py` (cwd /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting).
+- `rtk proxy /opt/homebrew/bin/python3.11 /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/width-selected-k1/verify.py` (cwd /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting).
+- `rtk proxy /opt/homebrew/bin/python3.11 /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/width-selected-k1/audit.py` (cwd /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting).
+
+Source1303pass;normalwheel/sdistApp1301/2generated skips,Glyport2925/6initial
+plus5distchecks(close3fixture skips),Fontport4489/2existing skips,ownedLessons/
+sharedreports197,Scriptmix809/1existing skip perpair.121exact source/archive/
+wheel/two-install runtimepairs,76menus/69original hashes,licenses/privacy/
+pipchecks pass. Wholecore100%stmt/branch,dialog98.387%/87.5%,selection100%/
+96.875%.39focused tests and actual inspected Qt6offscreen screenshot pass.
+
+Retained failures: oldadapter tests-first refusal, underspecified switched-font
+fake corrected to nativeinterface, stale H2auditbase corrected to J1, and the
+first archived179consumer cases with163pass/16fixture errors (oldimportpatch
+boundary). D3inputs untouched. Newconsumer copies7unchangedD3files pluscurrent
+owned Appsdistwidth/selected-layer/shared-reader fixtures;197pass. Keep hashes/
+failed logs/commands inK1evidence; no source scenario or native gate waived.
+
+Wait, but: getters may initialize native caches/reflection/dependencies.
+Native9787order/focus/mixedlayers/Close/complete preservation, affected/prior68
+finalartifact regression and original/release acceptance remain pending.
+NewApp0.2.33dev0 isunpublished. See K1report and durable K1evidence.
