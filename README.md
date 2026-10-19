@@ -232,3 +232,15 @@ semantics remain pending. This tool does not increment the130sample numerator.
 This bounded report requires the native document view to remain a Font window.
 Actual modeless-focus/Refresh behavior still needs FontLab9787acceptance; Qt
 focus alone does not identify the source document.
+
+
+## Angularizzle workflow candidate
+
+Contours > Angularizzle offers Min plane (80), Keep detail, Process and Cancel.
+Single Process previews the opening selected layer on its glyph’s first master;
+repeat Process starts from the same opening paths. Cancel restores the actual
+target’s opening paths while retaining the colour mark; Close keeps results.
+Batch Process follows selected occurrences in order, including repeats.
+Requires the matching App/Fly candidate. Native acceptance remains pending;
+unsupported hints, automatic dependants and ambiguous ownership are diagnosed
+before edits. A late native failure disables edits and retains recovery data.

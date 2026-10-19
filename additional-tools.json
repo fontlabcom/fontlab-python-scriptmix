@@ -176,5 +176,22 @@
     "native_acceptance": "pending",
     "original_scope_acceptance": "pending: editor-tab, repeated and multi-master selected-layer adapter",
     "scope": "Pure format preserves all supplied layer/component order and duplicates. Current native adapter reads actual Font-window selection on active master; no current-glyph fallback, transforms or offset synthesis."
+  },
+  {
+    "title": "Angularizzle",
+    "key": "angularizzle",
+    "destination": "Scripts/Contours/Angularizzle.py",
+    "destination_sha256": "207a1e6279026b105f5f767be9772dabada23e2bec4d3f52eea03b03b4f1c9ae",
+    "kind": "practical-workflow-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/NaN-xyz/GlyphsApp-Scripts",
+    "source": "Angularizzle/Angularizzle.py",
+    "source_sha256": "082f0317e4e92ebc962d5b581fe6f99d789eeb35d521f6d3c1e4e8081806125a",
+    "license": "MIT AND Apache-2.0",
+    "license_sha256": "062528e2d467ae13f8fc4bc35476c960431b435ae11cb54a1eab725e2f7be3c1",
+    "license_note": "Root LICENSE is MIT; upstream README declares Apache-2.0. Preserve both notices.",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: native qualification and unsupported hinted/generated/collapsed/ambiguous inputs",
+    "scope": "Ordered selected layers, original controls/defaults, repeat preview and first-master targets. Cancel repairs wrong-layer restoration; Close keeps edits. Whole-plan refusals and poisoned-writer recovery are explicit."
   }
 ]

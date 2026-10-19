@@ -2551,3 +2551,47 @@ Final D1verification, all exit0:
 - From/tmp: `rtk proxy /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/priority-recipe/wheel-env/bin/python -I /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/priority-recipe/probe.py /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/priority-recipe/review-installed-tests`:148pass; identical sdist-env:148pass. Probe targets review-full-suite/fontlab_fontlabapp-0.2.26.dev1/tests:1076pass/2delivery-specific generated-capture skips in each environment.
 - Wholechangedmodules: core/UI/menu100%statements andbranches; entire scripting97.33%statements/94.20%branches/96.68%aggregate. All109runtime files exactlymatch source/wheel/sdist/both installs. Both distributions retain complete MITNOTICE and contain no privateowner paths or WORK/scratch/cache payloads.
 - Offscreen installed screenshot generated and inspected; this is not native FontLab evidence. Actual9787Font-window versus modeless-focus behavior, original selectedLayers editor/repeated/multi-master contexts, complete-font preservation and native lifecycle remain pending. Angularizzle remains an explicit unfinished named requirement.
+
+
+## Issue120 Angularizzle workflow candidate, 2026-10-20
+
+Added ordered native selection records, original modeless controls/defaults,
+single repeated Process/batch semantics, bound first-master targets, settings
+and explicit Cancel restoration of the actual overwritten target. Native
+backend stages detached own-shape replacements, preserves component handles,
+transforms/raw flags/notes, fences sources/dependencies and retains poisoned
+recovery state on late failures. Unsupported inputs refuse whole plans.
+No native calls, canonical/live edits or release occurred.
+
+Exact root commands (exit0 unless stated):
+- `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src <G1-wheel-env>/bin/python -m pytest -q -W error tests/test_angularizzle_dialog.py`:11passed.
+- `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src COVERAGE_FILE=<H4>/.coverage-integrated <G1-wheel-env>/bin/python -m coverage run --branch --source=fontlabapp -m pytest -q`:1280passed.
+- `rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin SETUPTOOLS_SCM_PRETEND_VERSION=0.2.30.dev1 uv build --out-dir <H4>/artifacts-v2`:wheel/sdist built.
+- `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/angularizzle-workflow-h4/integrated-v2/install.py`: two normal fresh arm64 Python3.11 dependency closures/pipchecks pass. Exact nested argv in install-commands.json.
+- `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/angularizzle-workflow-h4/integrated-v2/verify.py`: exact child argv/results retained in wheel/sdist-test-commands.json.
+- `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/angularizzle-workflow-h4/audit.py`:121exact source/archive/wheel/two-install runtime pairs,76one-level typed/hash-bound menus,licenses/privacy pass.
+- `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 SCRIPTMIX_APP_REQUIREMENT=<H4>/artifacts-v1/fontlab_fontlabapp-0.2.30.dev0-py3-none-any.whl <H4>/wheel-env/bin/python -m pytest -q -rs tests --original-source-root <workspace>` (Scriptmix cwd):809passed/1existing skip. First run honestly failed the extra-menu manifest (807passed/2skips); added only the new pending-provenance entry and updated expected additional count6→7, preserving all69migration rows.
+
+Here <H4> is verification/issue-120/angularizzle-workflow-h4; <G1-wheel-env>
+is verification/issue-120/app-dfg/wheel-env under the workspace. All source
+logs, scoped lint, exact artifact/install commands/hashes and failed attempts
+are retained at H4. Initial0.2.30dev0 candidate is retained independently;
+final0.2.30dev1 also contains exact reviewed H2qt_dialogs API for the paired
+new Glyport requirement, rather than satisfying that version without the API.
+
+Qt5 documentation was consulted directly before UI/settings implementation:
+https://doc.qt.io/archives/qt-5.15/qdialog.html
+https://doc.qt.io/archives/qt-5.15/qsettings.html
+Native field/ownership bindings were checked against retained official C++
+source excerpts in angularizzle-native-h3/native-source-index.json.
+
+Wait, but: source/double/Qt6 tests cannot establish FontLab9787 behavior.
+TCP127.0.0.1:47400 still refuses a socket-only connection (errno61); no
+protocol bytes/native Python calls. Native original interactions, complete
+font/Undo/Redo/saved-reopen, selection/UI/settings, unsupported-source scope,
+prior68 final-artifact regression and full issue completion remain open.
+
+Final integrated0.2.30dev1 closure:App1278/2generated skips,Glyport2917/6
+initial+5distribution checks(close3fixture skips),Fontport4489/2existing
+skips,Lessons179,Scriptmix809/1existing skip perwheel/sdist. Source1280pass.
+Actual commands/results are retained in H4/integrated-v2/*.json and logs.

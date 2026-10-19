@@ -607,3 +607,13 @@ source/carrier/deadline guards. The owned modeless report supports Refresh,
 clear failure diagnosis and Close. Original editor-tab/repeated/multi-master
 selection and native acceptance remain open; the130sample count is unchanged.
 Angularizzle remains an explicitly unfinished named priority requirement.
+
+
+## Unreleased — Angularizzle workflow candidate
+
+- Add the original Min plane/Keep detail/Process/Cancel workflow with ordered
+  repeated selections, first-master targets, saved defaults and bound previews.
+- Refuse stale or unsupported source plans before history; retain diagnosed
+  recovery state after late native failures. Native acceptance remains pending.
+- Restore actual overwritten target paths on Cancel, repairing the original
+  cross-layer restoration defect. Closing keeps Process results.
