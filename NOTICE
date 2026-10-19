@@ -189,3 +189,43 @@ Scripts/Metrics/Check Tabular Widths.py preserve exact comparison, row statuses,
 same/different totals and time heading. Native font-order selection defines the
 reference. The modeless report preserves owner Output content. Native acceptance
 is pending; no release or 130-sample acceptance increment is claimed.
+
+
+Component recipe report provenance
+=================================
+
+Behavior adapted from Simon Cozens, GlyphsScripts/Recipe Dumper.py.
+https://github.com/simoncozens/GlyphsScripts
+Source SHA-256: 500126d3fcc965c0a93991be4253fce7ed33f56eb3513b202ba8a1049e2e7edd
+MIT license SHA-256: 6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5
+
+The adaptation preserves ordered layer/component records, repeated component
+names, mixed layers and original base+base=target output. Native Font-window
+active-master selection is a bounded candidate; original editor-tab/repeated/
+multi-master layer selection and native acceptance remain pending. Original
+source resources and reference bodies are not redistributed or executed.
+New host adapter/UI code also uses the workspace Apache-2.0 terms.
+
+Complete upstream MIT notice:
+
+MIT License
+
+Copyright (c) 2017 Simon Cozens
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

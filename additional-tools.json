@@ -160,5 +160,21 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "native_acceptance": "pending",
     "scope": "Exact advances of actual selected layers on active master; first native font-order selection is reference. Read-only modeless report; original row statuses, counts and time heading. No Output clearing."
+  },
+  {
+    "title": "Dump Component Recipes",
+    "key": "component_recipes",
+    "destination": "Scripts/Components/Dump Component Recipes.py",
+    "destination_sha256": "ccec4cd0320b38e09bb67f0afda503edbbcce4a9384d23b027640033944c1e9a",
+    "kind": "bounded-practical-report-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source": "Recipe Dumper.py",
+    "source_sha256": "500126d3fcc965c0a93991be4253fce7ed33f56eb3513b202ba8a1049e2e7edd",
+    "license": "MIT",
+    "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: editor-tab, repeated and multi-master selected-layer adapter",
+    "scope": "Pure format preserves all supplied layer/component order and duplicates. Current native adapter reads actual Font-window selection on active master; no current-glyph fallback, transforms or offset synthesis."
   }
 ]

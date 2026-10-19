@@ -2499,3 +2499,55 @@ Matching App feature commit70aa791 contains carrier/deadline guards and retained
 callback fix; full995App tests and independently installed artifacts pass. Native
 acceptance remains pending. Feature commit preserves this distinction and does
 not add the tool to the accepted original130sample count.
+
+
+## 2026-10-19 — D1 licensed component recipe candidate
+
+Start from reviewed App1acdd1b/Scriptmixff78a60 in isolated worktrees; no dirty
+canonical overlay. Angularizzle is Apache-2.0, but full original preview/Cancel,
+first-layer versus selected-layer, persistent settings and batch behavior need
+complete geometry/history work. Its full contract and next actions remain in
+docs/maestro/issue120/D1-priority-port.md, rather than a reduced geometry-only
+substitute. Implement Simon Cozens' MIT Recipe Dumper behavior instead: ordered
+component lines, duplicate layer/base preservation, mixed layers and original
+terminal newlines. Source/license hashes and complete MIT terms are in NOTICE.
+Native input is explicitly the Font-window active-master selection surface.
+Original editor-tab/repeated/multi-master layer selection is not complete.
+
+Shared App core/UI and lazy factory plus Scriptmix lazy typed menu; no mutations,
+clipboard action, dependency addition or external source execution. Preserve
+all actual selected rows or clear failure with two complete source reads,
+carrier binding, source identity checks and a shared2s cooperative deadline.
+Native C++ calls cannot be preempted. UI has complete Refresh/Close diagnosis,
+owned signal teardown and inert retained callbacks after native destruction.
+
+Tests first failed for the absent module/menu; explicit source-newline oracle
+then failed5cases before preserving terminal print newlines. Initial full baseline
+1045pass/1skip/1failure used the provisioned interpreter without source PYTHONPATH;
+its cold-import child found the old installed App instead of the reviewed source.
+The prescribed PYTHONPATH=src fixes that environment problem; no test was removed.
+Exact final commands/results, normal install argv arrays, complete artifact audit
+and full changed-module coverage are in verification/issue-120/priority-recipe
+and the D1report. App source/consumer plus independently installed wheel/sdist
+checks are host-free. All native outcomes and source selection-adapter scope
+remain pending. No canonical/live installation, commit, push or release.
+
+Final document-view fence correction: require App's existing registered Font
+window context before and after capture. The checker reads native activeFontPanel,
+not QApplication.activeWindow; the report itself may hold Qt focus. Owned Qt
+tests explicitly activate the report, retain a separate fake native Font-window
+document, and successfully Refresh; changing that document carrier to the
+Glyph-window state rejects/clears the report. This proves control flow only.
+Official MainWindow source clears activeFontPanel for Glyph windows and sets
+it for Font windows; actual9787modeless-focus interactions remain a native gate.
+The original1073source/144focused/full-artifact receipts are preserved under
+priority-recipe/pre-window-fence. No claims of original editor selection support.
+
+Final D1verification, all exit0:
+- Appsource: `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.worktrees/issue120-priority-recipe-app/src:/Volumes/Falstaff4T/RomeoData2/cache/uv/archive-v0/1lomx0QfzFbRM9Ex/lib/python3.11/site-packages COVERAGE_FILE=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/priority-recipe/review.coverage /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-fontlabapp/.venv/bin/python -m pytest -p pytest_cov -q tests --cov=fontlabapp.component_recipes --cov=fontlabapp._component_recipes_dialog --cov=fontlabapp.scripting --cov-branch --cov-report=json:../../verification/issue-120/priority-recipe/review-app-coverage.json --cov-report=term-missing`:1077passed/1optional skip.
+- Consumers: `rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.worktrees/issue120-priority-recipe-app/src SCRIPTMIX_APP_SOURCE=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.worktrees/issue120-priority-recipe-app/src/fontlabapp COVERAGE_FILE=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/priority-recipe/review.coverage /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/priority-recipe/wheel-env/bin/python -m pytest -q tests -p no:cacheprovider --cov=fontlabapp.component_recipes --cov=fontlabapp._component_recipes_dialog --cov=fontlabapp.scripting --cov=Scripts --cov-append --cov-branch --cov-report=json:../../verification/issue-120/priority-recipe/review-combined-coverage.json --cov-report=term-missing`:807passed/2existing skips.
+- Build: `rtk proxy env SETUPTOOLS_SCM_PRETEND_VERSION=0.2.26.dev1 uv build .worktrees/issue120-priority-recipe-app --out-dir verification/issue-120/priority-recipe/review-dist`:wheel/sdist.
+- Normal complete install commands are exactargv arrays in priority-recipe/{wheel,sdist}-review-install-command.json, matching logs; no --no-deps or editable dependency. Both uv pip checks35packages pass.
+- From/tmp: `rtk proxy /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/priority-recipe/wheel-env/bin/python -I /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/priority-recipe/probe.py /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/priority-recipe/review-installed-tests`:148pass; identical sdist-env:148pass. Probe targets review-full-suite/fontlab_fontlabapp-0.2.26.dev1/tests:1076pass/2delivery-specific generated-capture skips in each environment.
+- Wholechangedmodules: core/UI/menu100%statements andbranches; entire scripting97.33%statements/94.20%branches/96.68%aggregate. All109runtime files exactlymatch source/wheel/sdist/both installs. Both distributions retain complete MITNOTICE and contain no privateowner paths or WORK/scratch/cache payloads.
+- Offscreen installed screenshot generated and inspected; this is not native FontLab evidence. Actual9787Font-window versus modeless-focus behavior, original selectedLayers editor/repeated/multi-master contexts, complete-font preservation and native lifecycle remain pending. Angularizzle remains an explicit unfinished named requirement.

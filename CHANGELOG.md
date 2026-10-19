@@ -595,3 +595,15 @@ row statuses, counts and time heading. Use a modeless read-only snapshot with
 Refresh and owned Close; diagnose empty, missing or changed sources. Preserve
 owner Output content. Source/consumer/artifact checks pass; native acceptance
 and release remain pending. This is additional to the130sample inventory.
+
+
+## Unreleased — component recipe report candidate
+
+Adapt Simon Cozens' MIT Recipe Dumper into shared App logic and a typed lazy
+Fly menu. Preserve ordered/duplicate layer and component records, mixed layers
+and original line endings; do not synthesize offsets or transforms. Native
+capture currently binds Font-window selection on the active master, with stale
+source/carrier/deadline guards. The owned modeless report supports Refresh,
+clear failure diagnosis and Close. Original editor-tab/repeated/multi-master
+selection and native acceptance remain open; the130sample count is unchanged.
+Angularizzle remains an explicitly unfinished named priority requirement.
