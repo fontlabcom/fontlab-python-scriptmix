@@ -194,5 +194,21 @@
     "native_acceptance": "pending",
     "original_scope_acceptance": "pending: native qualification and unsupported hinted/generated/collapsed/ambiguous inputs",
     "scope": "Ordered selected layers, original controls/defaults, repeat preview and first-master targets. Cancel repairs wrong-layer restoration; Close keeps edits. Whole-plan refusals and poisoned-writer recovery are explicit."
+  },
+  {
+    "title": "Point Counter",
+    "key": "point_counter",
+    "destination": "Scripts/Reports/Point Counter.py",
+    "destination_sha256": "6b39fa3438092faf1644e9efde81d32fd7be7392cb59902f518d746d627c4616",
+    "kind": "practical-all-layer-report-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source": "Bug fixing/Point Counter.py",
+    "source_sha256": "fd0dd22423a8e2772513436bec48692bcb41989bab06b98b779e37c64f3ea819",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: native foreground-layer mapping/order, selection/focus and complete preservation",
+    "scope": "All stored foreground layers for every selected occurrence, repeated groups and original two-previous-row marker. Correct quadratic on-curve omission; owned text report replaces Output clearing. Components are not decomposed."
   }
 ]

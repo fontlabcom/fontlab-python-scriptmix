@@ -260,3 +260,10 @@ counts/time heading remain. Native9787order/focus/preservation is pending.
 Earlier Font-window-only descriptions record the preceding adapter.
 
 The selected-layer Width Checker requires the reviewed unpublished App>=0.2.33.dev0 candidate; older adapters read only Font-window rows.
+
+
+Point Counter (Issue120 candidate) reports all foreground layers per selected
+glyph occurrence, including repeated groups and auxiliary/empty rows. Quadratic
+on-curves count as curves. Masks/service records and decomposed components are
+excluded. The owned text panel has Refresh/Close and normal text selection/copy;
+Output is preserved. App>=0.2.35.dev1; native qualification remains pending.

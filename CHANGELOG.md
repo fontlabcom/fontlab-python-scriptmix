@@ -633,3 +633,9 @@ Use the shared Font/Glyph-window selection reader. Preserve editor repeats and
 each slot’s layer choice; compare exact actual advances against the first
 occurrence. Fence source/selection/context under one deadline before reporting.
 Native selected-layer order/focus/preservation qualification remains pending.
+
+
+## Issue120 M1 candidate
+
+- Add licensed Slobzheninov Point Counter with complete foreground-layer/repeated-selection reports and explicit quadratic counting repair. Native acceptance remains pending.
+- Expose the report through a typed Fly menu; original69 migration records remain unchanged.

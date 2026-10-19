@@ -275,3 +275,19 @@ including repeated editor slots and their layer choices. Font-window rows use
 the current master. Exact widths, first-occurrence reference and original
 counts/time heading remain. Native9787order/focus/preservation is pending.
 Earlier Font-window-only descriptions record the preceding adapter.
+
+
+Slobzheninov Point Counter
+========================
+point_counts.py, point_counts_native.py and the Point Counter menu/report adapt
+Bug fixing/Point Counter.py, https://github.com/slobzheninov/Glyphs-Scripts .
+Copyright 2020 Alex Slobzheninov (upstream README). Apache-2.0; complete terms
+are retained in LICENSE-APACHE-2.0.
+Source SHA256:fd0dd22423a8e2772513436bec48692bcb41989bab06b98b779e37c64f3ea819
+License SHA256:bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec
+Changes: typed immutable reports, native selected occurrences and foreground
+layers, two-read/context/deadline guards, and an owned Refresh/Close text panel
+instead of clearing owner Output. Count quadratic on-curves as curves (source
+omits them). Preserve repeated groups, empty rows, source text and the previous
+two-row mismatch marker. Components stay undecomposed. Foreground-role mapping,
+getter preservation and native lifecycle acceptance remain pending.

@@ -2657,3 +2657,25 @@ Wait, but: getters may initialize native caches/reflection/dependencies.
 Native9787order/focus/mixedlayers/Close/complete preservation, affected/prior68
 finalartifact regression and original/release acceptance remain pending.
 NewApp0.2.33dev0 isunpublished. See K1report and durable K1evidence.
+
+
+M1 Point Counter candidate: source contract and Apache-2.0 provenance reviewed.
+Test-first pure formatter red (missing module) retained; initial22 formatter/
+existing panels and26 native-shaped/new-panel checks pass. Native unavailable;
+no host execution or whole original acceptance claimed. Full verification next.
+
+
+M1 verification (2026-10-20):
+- Test-first missing-module failure: verification/issue-120/point-counter-m1/red.log.
+- `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=src COVERAGE_FILE=<M1>/source-v3.coverage <L1>/review-v2/wheel-env/bin/python -m coverage run --branch --source=fontlabapp -m pytest -q`: exit0,1383 passed. Whole changed modules: six100/100; scripting81.13%statement/87.68%branch.
+- `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=<App>/src <L1>/review-v2/wheel-env/bin/python -m pytest -q <App>/tests`: exit0,1383 passed (source-final.log).
+- `rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin uvx ruff check <six changed report modules> <four new test files>` from this App checkout: exit0. Root-run Ruff used a different import configuration; local final check passes.
+- `rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin SETUPTOOLS_SCM_PRETEND_VERSION=0.2.35.dev1 uv build --out-dir <M1>/artifacts-v2`: exit0; earlier dev0/artifacts-v1 retained before test import whitespace correction.
+- `rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin /opt/homebrew/bin/python3.11 <M1>/review-v2/install.py`: exit0; fresh normal arm64Python3.11wheel/source installs and pipchecks. Exact argv in install-commands.json.
+- `rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin /opt/homebrew/bin/python3.11 <M1>/review-v2/verify.py`: exit0; each install App1381/2capture-fixture skips, Glyport2925/6known skips, Fontport4489/2known skips+63existing warnings, Lessons197. Exact argv/exitcodes retained per-suite.
+- `rtk proxy /opt/homebrew/bin/python3.11 <M1>/review-v2/audit.py`: exit0;126exact runtime pairs,77menus, source/archive/install/license/privacy checks.119prior App runtime files unchanged.
+- Full Scriptmix command: `rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 <M1>/review-v2/wheel-env/bin/python -m pytest -q -rs tests --original-source-root <workspace>` from paired Scriptmix: exit0,810passed/1existingSpacingPreviewselection skip.
+- Extra Glyport distribution checks:5passed exit0; closes three distribution fixture skips. Normal installed Fly factory resolves the shared App function in both installs. Qt6owned preview inspected; no native claim.
+- Failed attempts retained: wrong relative write paths during editing (no owner writes); initial Ruff boundary/import diagnostics; review-v1 selected an older Glyport due to a copied harness path mismatch (5failures each install). review-v2 fixes only artifact selection, fresh installs/tests pass; no product fallback or weakened tests.
+- Socket-only native check2026-10-19T23:28:15UTC refused errno61; no protocol bytes or hostPython. Original/native acceptance remains false; no live installs, merge, release or oldtag changes.
+M1=<workspace>/verification/issue-120/point-counter-m1; L1=<workspace>/verification/issue-120/instance-names-l1.
