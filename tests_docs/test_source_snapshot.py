@@ -1,4 +1,4 @@
-# this_file: src_docs/tests/test_source_snapshot.py
+# this_file: tests_docs/test_source_snapshot.py
 """Parentheses in source names must not disappear through codeinclude's grammar."""
 
 import hashlib
@@ -9,7 +9,7 @@ from pathlib import Path
 import pytest
 from codeinclude.plugin import RE_SNIPPET
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 
 
 @pytest.mark.parametrize(

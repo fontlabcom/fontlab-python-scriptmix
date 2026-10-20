@@ -71,3 +71,8 @@ for each selected occurrence. It reports ordered paths/node types and anchor/
 component name sets in an owned Refresh/Close panel. Source label/suppression
 bugs are repaired. The source checks do not certify export compatibility; native
 qualification remains pending. Requires reviewed unpublished App>=0.2.51.dev0.
+
+
+Documentation-only SDK tests are in `tests_docs`; run them with
+`uv run --locked python -m pytest -q tests_docs`. Runtime and lesson suites
+remain separate Python3.11 processes, both required by the workspace push gate.

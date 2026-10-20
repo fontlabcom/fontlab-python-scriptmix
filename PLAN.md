@@ -516,3 +516,6 @@ issue120 Tasksets1/2, package/docs/native/distribution/release gate.
 
 - [x] Build current source documentation and verify rendered source plus local browser behavior.
 - [ ] Complete whole-branch review, original native acceptance and every remaining publication/distribution gate before promotion.
+
+- [x] Z7: include locked SDK tests in full source gates and retain all current runtime/lesson suites.
+- [ ] Complete native, full branch/integration/distribution and publication gates before promotion.

@@ -2825,3 +2825,10 @@ A source-backed catalogue documents all158 current menu scripts without importin
 Full maintained suite:1,070 passed/1 existing skip. Locked docs suite:9 passed. src_docs/build.py has96.77% statement and87.50% branch coverage, zero exclusions. Strict offline build and all158 rendered-source comparisons pass. Sixteen accessibility views pass.
 
 Wait, but: local source/build/browser checks are not native FontLab execution or whole issue120 acceptance. D25 native connectivity, complete branch/routes/archive/distribution/release and publication gates remain open. No canonical checkout, live install or remote site changed. Exact commands, retained failed attempts and receipts are in the parent workspace verification/issue-120/docs-z5/.
+
+
+## Issue120 documentation quality Z7
+
+Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All1070runtime/root tests pass with1existing skip, plus4SDK tests. The fixed coverage scope now includes the complete src_docs production root and all prior Scripts; the accepted baseline commit is unchanged.
+
+These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.

@@ -75,3 +75,10 @@ via Fly. No required reverse package edge or third-party implementation is added
 ## Issue120 current documentation Z5
 
 No runtime dependency added. Locked ProperDocs/MaterialX and codeinclude are documentation-only. Plugin grammar regressions run under src_docs/tests in the docs environment.
+
+
+## Issue120 documentation quality Z7
+
+Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All1070runtime/root tests pass with1existing skip, plus4SDK tests. The fixed coverage scope now includes the complete src_docs production root and all prior Scripts; the accepted baseline commit is unchanged.
+
+These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.
