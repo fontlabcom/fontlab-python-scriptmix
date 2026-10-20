@@ -429,3 +429,21 @@ fresh-tab symbols. Preserve both complete groups; explain overlapping membership
 and count distinct total, sort proof groups deterministically and remove empty-
 section orphan slashes. Original bodies/resources are neither run nor distributed.
 Native behavior and full preservation qualification remain pending.
+
+Pedro Arilla contour selection adaptations
+=========================================
+
+Copyright 2018–2022 Pedro Arilla. Apache-2.0; complete terms in LICENSE.
+https://github.com/pedroarilla/glyphs-scripts
+Independent FontLab adaptation; original source bodies are not distributed.
+LICENSE.txt: ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37
+Paths/Select partial path.py: 082e445b23e6085ace77ebc30ecb4025dc0210185d1646b854129630158dc444
+Paths/Select paths.py: d6814436e871cc1e80668d31bb3b15428107d5fd6cbdd3976d74643b3a3a2840
+Paths/Select small paths.py: fe88203e787c5a5e9ada86c16b25e4f9da0a1afe29391a197b26b67fa8a15c20
+README.md: 238d8ebe63284fff91c98f89d2ad1ab9b1b795c2225837bb9aff6a499b006918
+Changes: first-selected-layer immutable plans; stored-order node expansion and
+cross-contour toggles; finite numeric modeless input; analytic unsigned FontTools
+area (can differ from Glyphs flattening); explicit stale-source checks and
+best-effort flag rollback. Mixed non-node clearing requires a single displayed
+glyph and supported native visual kinds. No Output clearing or geometry Undo.
+Native workflows, complete selection transport and preservation remain pending.

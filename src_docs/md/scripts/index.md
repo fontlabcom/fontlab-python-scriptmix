@@ -28,6 +28,9 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Contour Order View](contours/contour-order-view.md)
 - [Node Coordinates Panel](contours/node-coordinates-panel.md)
 - [Node Statistics](contours/node-statistics.md)
+- [Select Contours](contours/select-contours.md)
+- [Select Partial Contours](contours/select-partial-contours.md)
+- [Select Small Contours](contours/select-small-contours.md)
 
 ## Features
 

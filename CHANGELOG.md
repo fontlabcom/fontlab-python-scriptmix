@@ -744,3 +744,29 @@ statements or imports. The glyph annotation is quoted and uses the existing
 Fly-backed fontlab alias. Record the two exact source edits in menu-revisions.json;
 current menu hashes and exact historical release bytes remain independently
 verifiable. Historical migration rows and original-source hashes are unchanged.
+
+## 2026-10-21 — three contour tools in the curated menu candidate
+
+Add only the reviewed Select Contours, Select Small Contours and Select Partial
+Contours facades and their exact independent Pedro Arilla provenance. The
+curated source menu grows from99to102; its original99files remain byte-exact and
+all61archived dispatchers remain excluded. Preserve menu_layout.current_rows,
+owner-compatible manifest representations and every existing frontend notice.
+Native acceptance and the full retained Issue120 requirements remain pending.
+
+
+## N51 — combine reviewed contour menus and anchor typing
+
+Combine source-reviewed and independently pushed N39 contour menus with N48
+anchor helper annotations/docstrings. Retain the exact 99 N48 menu bytes and add
+exactly 3 N39 menus, with their existing attribution and pending-native scope.
+The source union introduces no additional runtime edits. The original 127 active
+origins remain retained; all sample/archive backlogs and native gates stay open.
+
+Full installed App0.2.73/Fly source checks pass 982 tests/one explicit skip plus
+10 documentation SDK tests. The unchanged quality gate reports 94.95% aggregate
+changed-production coverage above all configured 80% floors. A private owner
+overlay rehearsal retains the raw manifest, 13 literal files and 2 bounded historical/
+current-view test adapters plus 7 merged owner docs; it repeats 982/1 + 10 tests and
+the strict offline build. Canonical application and native acceptance remain
+controller-owned and pending. Exact receipts live outside the public tree.

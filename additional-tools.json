@@ -580,5 +580,56 @@
       "Tab groups use intended deterministic sorted names rather than unsorted set iteration.",
       "Explicit named symbols avoid empty-section orphan slashes and Unicode/slash substitution."
     ]
+  },
+  {
+    "title": "Select Contours",
+    "key": "select_contours",
+    "destination": "Scripts/Contours/Select Contours.py",
+    "destination_sha256": "87496bb17833845dedfc18cf21d207181c59623060a7ed54d51a73a43bdea530",
+    "kind": "independent-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source_path": "Paths/Select paths.py",
+    "source_sha256": "d6814436e871cc1e80668d31bb3b15428107d5fd6cbdd3976d74643b3a3a2840",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "copyright": "2018\u20132022 Pedro Arilla",
+    "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
+    "native_acceptance": "pending",
+    "release_gate": "pending: controller review and owned native workflows"
+  },
+  {
+    "title": "Select Small Contours",
+    "key": "select_small_contours",
+    "destination": "Scripts/Contours/Select Small Contours.py",
+    "destination_sha256": "4a59b50d2a4486e7a584cd4d092c8bedb2d4a7acdc0d76596b96562da61780f2",
+    "kind": "independent-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source_path": "Paths/Select small paths.py",
+    "source_sha256": "fe88203e787c5a5e9ada86c16b25e4f9da0a1afe29391a197b26b67fa8a15c20",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "copyright": "2018\u20132022 Pedro Arilla",
+    "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
+    "native_acceptance": "pending",
+    "release_gate": "pending: controller review and owned native workflows"
+  },
+  {
+    "title": "Select Partial Contours",
+    "key": "select_partial_contours",
+    "destination": "Scripts/Contours/Select Partial Contours.py",
+    "destination_sha256": "92922efdc4b4d9cb9641a3f8a9c6477c26f348eac5a026952a231f54c80b6362",
+    "kind": "independent-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source_path": "Paths/Select partial path.py",
+    "source_sha256": "082e445b23e6085ace77ebc30ecb4025dc0210185d1646b854129630158dc444",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "copyright": "2018\u20132022 Pedro Arilla",
+    "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
+    "native_acceptance": "pending",
+    "release_gate": "pending: controller review and owned native workflows"
   }
 ]

@@ -3051,3 +3051,74 @@ fixture shadowing suppressions on the actual parameter lines.
 No canonical edit, native action, live installation, source push, release or
 publication occurred. Source review and later acceptance remain separate.
 Private receipt directory: verification/issue-120/anchor-menu-polish-z29.
+
+## 2026-10-21 — N39 private curated contour menu integration
+
+Private branch from1201c8af09880144dcbff20ea3b0ca09453fbc20 adds only the three
+reviewed contour facades from35d9c54cd59eb715f782b58cb16aa0e26a8ec0ad. Preserve
+all99existing menu bytes, the69sample manifest and move overlay, current_rows
+helper/owner-compatible tests and all frontend notice payloads. Append only the
+three additional-tool rows and exact Pedro notice section; regenerate catalog
+from102current menus without restoring61archive dispatchers.
+
+Tests first: new count/curation contract fails against the99menu baseline;
+already-current owner-route preservation passes. Baseline full runtime960pass/
+1historical skip. Initial candidate964pass/1skip plus one expected old99count
+assertion failure; update only that count to102and additional30to33. Complete
+docs suite10passes using the unchanged locked Python3.12 SDK environment.
+Initial installedApp0.2.71 checks are preparatory; the requested combined
+App0.2.73 artifact check remains pending. No canonical write, source-original
+execution, native call, live installation or push. Exact commands/results and
+retained failures are in external contour-menu-integration-z29 receipts.
+
+Final source integration checks:965runtime tests pass/1historical skip;10docs
+tests pass. Both independent normal installs of the N38 App0.2.73 wheel and
+source archive pass965/1against the full curated102-menu tree, pip consistency,
+installed origins/all218App runtime hashes and all3actual menu/public/adapter/UI
+flows on owned fakes/external Qt6. Whole new menus and unchanged current_rows
+helper achieve100%statement/branch with zero exclusions in both lanes. The
+existing99menu bodies,30additional rows, frontend notice payloads, owner helper/
+tests, migration manifest and move overlay remain byte-exact. Native0, no push,
+no canonical or live installation. Commands: `rtk proxy /opt/homebrew/bin/python3.11
+verification/issue-120/contour-menu-integration-z29/audit.py` exit0; the same
+Python command with `check_installed.py` exit0 runs all14recorded commands in
+installed-commands.json. Locked `uv run --locked python -m pytest -q tests_docs`
+exit0; full runtime/coverage argv, cwd, logs and failures are retained externally.
+
+Strict offline local documentation build also exits0: all3newmenu routes render
+their actual source, and all26manifest-referenced full notice payloads remain
+byte-exact from source to built output. complete_transitive_inventory and
+publication_qualified remain false. This build neither publishes nor accepts
+whole-site/browser/native gates. Exact command: `rtk proxy bash -c` running
+explicit arm64Python3.12 with owned docs-env and `bash build.sh --offline`;
+full log and built-page/notice hashes are retained in built-docs.json.
+
+The first final Git-archive check caught an inherited new-notice filename typo:
+Scriptmix has complete Apache terms in LICENSE, not LICENSE-APACHE-2.0. Correct
+only the new Pedro notice reference and add a meaningful full-terms/path test.
+All other appended notice bytes remain source-equivalent; old notice prefix and
+all frontend payloads stay exact. Retain the initial archive check failure. Final
+installed checks below include this correction; no runtime/menu body changes.
+
+After the notice-reference correction, both final installed App0.2.73 lanes
+pass966runtime tests/1historical skip; all10docs tests pass. Whole three menus
+and unchanged owner-compatible helper retain100%statement/branch coverage with
+zero exclusions. Final corrected archive inspection includes the existing full
+Apache LICENSE, rather than inventing or duplicating a licence file.
+
+
+## N51 — combine reviewed contour menus and anchor typing
+
+Combine source-reviewed and independently pushed N39 contour menus with N48
+anchor helper annotations/docstrings. Retain the exact 99 N48 menu bytes and add
+exactly 3 N39 menus, with their existing attribution and pending-native scope.
+The source union introduces no additional runtime edits. The original 127 active
+origins remain retained; all sample/archive backlogs and native gates stay open.
+
+Full installed App0.2.73/Fly source checks pass 982 tests/one explicit skip plus
+10 documentation SDK tests. The unchanged quality gate reports 94.95% aggregate
+changed-production coverage above all configured 80% floors. A private owner
+overlay rehearsal retains the raw manifest, 13 literal files and 2 bounded historical/
+current-view test adapters plus 7 merged owner docs; it repeats 982/1 + 10 tests and
+the strict offline build. Canonical application and native acceptance remain
+controller-owned and pending. Exact receipts live outside the public tree.

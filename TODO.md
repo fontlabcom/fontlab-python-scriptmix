@@ -102,3 +102,8 @@ this_file: TODO.md
 - [x] Curate 99 active practical menus and retain the full 61-tool unported backlog.
 - [ ] Complete native acceptance for new candidates and all retained migration,
   package and documentation requirements before whole Issue120 acceptance.
+
+- [x] N39: prepare only the three reviewed contour menus in a curated102-tool private source candidate.
+- [x] N39: verify both final combined App0.2.73 installed artifacts against all102menus and exact runtime payloads.
+- [ ] N39: obtain root source review and preserve owner changes during canonical integration.
+- [ ] N39: complete native contour-selection transport/dialog/history/preservation acceptance through the existing dedicated-session gate.
