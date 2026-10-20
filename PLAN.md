@@ -504,3 +504,9 @@ per-symbol layer resolution and fresh-tab content. Verify source/read/lazy-impor
 cache/selection/activation/font/history/dirty/save/reopen preservation, repeats,
 partial UI failures, report lifecycle and shared palette changes in PythonQt.
 Retain all other issue120 source/package/docs/native/release gates.
+
+Z4: qualify installed complete Why You Not Compatible? across selected occurrences,
+all foreground masters/auxiliaries, cubic/quadratic/open/closed/empty paths, ordered
+node indexes and name sets; include repeated Refresh/errors/completion and whole
+font/read/cache/history/dirty/save/reopen preservation. Retain every original
+issue120 Tasksets1/2, package/docs/native/distribution/release gate.

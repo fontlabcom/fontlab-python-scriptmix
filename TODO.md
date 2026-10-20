@@ -81,3 +81,6 @@ this_file: TODO.md
 - [ ] Native-qualify both complete Z2 extrema workflows and shared palette repair:
   actual role/order/bounds/exact-layer tabs, source/read/full-font/history/dirty/
   saved/reopened state, failure/repetition/report lifecycle and theme changes.
+
+- [ ] Z4: native-qualify installed complete layer-compatibility report and all
+  original source/topology/read/UI/full-font/history/cache/reopen contracts.

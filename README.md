@@ -65,3 +65,9 @@ PythonQt/settings/tab and full native preservation qualification remains pending
 Proof > Tallest and Shortest scans the current master. Highest & Lowest Glyphs
 scans foreground masters/auxiliaries and opens exact-layer winners with an owned
 coordinate panel. Both are source/artifact candidates awaiting native acceptance.
+
+Reports > Why You Not Compatible checks every adjacent foreground-layer pair
+for each selected occurrence. It reports ordered paths/node types and anchor/
+component name sets in an owned Refresh/Close panel. Source label/suppression
+bugs are repaired. The source checks do not certify export compatibility; native
+qualification remains pending. Requires reviewed unpublished App>=0.2.51.dev0.

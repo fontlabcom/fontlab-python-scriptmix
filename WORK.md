@@ -2784,3 +2784,35 @@ cache/full-font/history/dirty/persistence remain unqualified. No original/native
 acceptance or release follows from source, Qt6 or fake-backend controls. Exact
 commands, failures, normal install audits and receipts live in workspace
 verification/issue-120/layer-extrema-z2/.
+
+
+Issue120 Z4: complete Why You Not Compatible? report candidate compares every
+adjacent foreground-layer pair for each selected occurrence: ordered path/node
+counts/types plus anchor/component name sets. Keep repeated groups, master-first/
+auxiliary order and source messages; fix foreign first-glyph labels and global
+path suppression, and sort displayed name sets. Owned Refresh/Close replaces
+Output writes. These source checks are not an export-compatibility certificate.
+Actual native topology/order/read/cache/font/history/reopen acceptance is pending.
+
+
+Z4 complete Why You Not Compatible? source/artifact candidate:63newApp controls,
+2005App full source;3newScriptmix controls,1065passed/1existing skip. All4newApp
+modules and the menu100%statements/branches with zero exclusions. Full original
+adjacent-layer path/node/name-set checks, repeats, master/auxiliary order, native
+node mapping/indexes, whole observed-state fences, modeless Refresh/Close and all
+six terminal routes pass owned controls. Source label/global-path-suppression bugs
+and nondeterministic set display are explicitly repaired. Both ordinary App0.2.51
+dev0 wheel/source environments pass App2003/2,Glyport2985/3,Fontport4489/2 with63
+knownwarnings,Lessons197,Scriptmix1065/1 and real Fly cold imports.472runtime/resource
+pairs and640contained source files match; all160previousApp/115Glyport payloads,
+667prior menus/11zone originals/global7247ledger preserved. New provenance-bound
+additional report yields668menus; no original130-sample denominator increase.
+Native role/order/topology/node-index/read/cache/full-font/history/dirty/reopen/UI
+qualification remains open under D25 (TCPerrno61,zero native calls). N1's separate
+three-stage Report Compatibility,8554/8555/fullV1 writer and all issue120 original
+Tasksets1/2/package/docs/native/release gates remain open; no live/canonical/release
+or acceptance promotion, goalactive/98%unproved.
+
+Exact rtk command/exit receipts and retained failures: workspace verification/issue-120/layer-compatibility-z4/command-receipts.json; ordinary install/per-suite argv/env/exit and origin/PID stamps in review-v1. Source, coverage, modeless Qt6 renders and archive audits pass; native acceptance is separate.
+
+Wait, but: source/double/Qt6/normal-artifact controls do not attest the compiled FontLab layer/node mapping or getter/cache/font/history/reopen preservation. No native/menu/release acceptance follows from these candidate checks.

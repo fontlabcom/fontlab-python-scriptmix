@@ -664,3 +664,12 @@ per-symbol layer tabs. Stable ties/repeated winners/zero/large coordinates are
 preserved; missing layers are never created. All-layer coordinate results use an
 owned panel with Run Again and survive a diagnosed tab failure. Shared NamesDialog
 subtitle colour now follows palette changes. Native qualification remains pending.
+
+
+Issue120 Z4: complete Why You Not Compatible? report candidate compares every
+adjacent foreground-layer pair for each selected occurrence: ordered path/node
+counts/types plus anchor/component name sets. Keep repeated groups, master-first/
+auxiliary order and source messages; fix foreign first-glyph labels and global
+path suppression, and sort displayed name sets. Owned Refresh/Close replaces
+Output writes. These source checks are not an export-compatibility certificate.
+Actual native topology/order/read/cache/font/history/reopen acceptance is pending.

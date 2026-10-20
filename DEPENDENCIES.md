@@ -66,3 +66,7 @@ Its Apache-2.0 source attribution is retained in NOTICE/additional-tools.json.
 
 Z2 extrema menus require Fly and the reviewed unpublished App>=0.2.49.dev0
 candidate. MIT/Apache source attribution and hashes are in NOTICE/provenance.
+
+Z4 adds no dependency: stdlib immutable records plus existing native selection
+and owned snapshot dialog. Scriptmix requires unpublished reviewed App>=0.2.51.dev0
+via Fly. No required reverse package edge or third-party implementation is added.

@@ -514,5 +514,27 @@
     "native_acceptance": "pending",
     "original_scope_acceptance": "pending: exact source scope/order/foreground mapping/bounds/winning-layer tab and full native preservation",
     "scope": "Complete all layer extrema, raw finite coordinates, stable ties, empty bounds/repeated winners, fresh explicit glyph/layer tabs; owned numerical panel, Run Again and completion"
+  },
+  {
+    "title": "Why You Not Compatible?",
+    "key": "layer_compatibility",
+    "destination": "Scripts/Reports/Why You Not Compatible.py",
+    "destination_sha256": "8f2222b91f234a9c093b6b14949a91b19356128ff663fae93797427854add950",
+    "kind": "practical-layer-compatibility-workflow-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source": "Why You Not Compatible.py",
+    "source_sha256": "1234a335d2284ad38773e7b9bb4cb3310f90f50e618ac2b8ef4fa96656757a5c",
+    "license": "MIT",
+    "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: native role/order/topology/node-index/name-set mapping, all selected occurrences and full read/font/history/cache/reopen preservation",
+    "scope": "each selected-layer occurrence including repeated glyphs; all ordered foreground layers: masters first then auxiliaries; adjacent path counts, ordered path/node counts and exact node types; anchor and component NAME SETS; ignore position/transform/order/multiplicity as source does; complete original diagnoses in owned modeless Refresh/Close text panel",
+    "source_repairs": [
+      "own glyph layer labels instead of first selected glyph labels",
+      "every adjacent pair checks paths even after earlier independent differences",
+      "deterministic sorted anchor/component set display instead of hash iteration",
+      "empty/missing/stale/unsupported reads diagnose whole call instead of prefix or unbound name"
+    ]
   }
 ]

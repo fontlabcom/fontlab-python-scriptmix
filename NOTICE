@@ -397,3 +397,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Why You Not Compatible? provenance
+==================================
+
+Behavior adapted from Simon Cozens/GlyphsScripts, Why You Not Compatible.py.
+Source SHA256: 1234a335d2284ad38773e7b9bb4cb3310f90f50e618ac2b8ef4fa96656757a5c
+MIT licence SHA256: 6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5
+Copyright (c) 2017 Simon Cozens. The complete MIT licence retained above for
+Recipe Dumper and Tallest And Shortest applies to this adaptation too.
+Original bytes are neither executed nor distributed. Own-glyph labels, complete
+adjacent-pair checking and deterministic name-set text repair source defects.
+The owned modeless report replaces direct Output writes; native acceptance is pending.
