@@ -3014,3 +3014,44 @@ unknown routes and simultaneous old/new identities are refused. A private full
 rehearsal with the literal owner manifest and all 13 owner test files passes
 960 tests/one explicit skip, including original-source audits. No canonical
 file was changed by this clean feature integration.
+
+## 2026-10-21 — N39 private curated contour menu integration
+
+Private branch from1201c8af09880144dcbff20ea3b0ca09453fbc20 adds only the three
+reviewed contour facades from35d9c54cd59eb715f782b58cb16aa0e26a8ec0ad. Preserve
+all99existing menu bytes, the69sample manifest and move overlay, current_rows
+helper/owner-compatible tests and all frontend notice payloads. Append only the
+three additional-tool rows and exact Pedro notice section; regenerate catalog
+from102current menus without restoring61archive dispatchers.
+
+Tests first: new count/curation contract fails against the99menu baseline;
+already-current owner-route preservation passes. Baseline full runtime960pass/
+1historical skip. Initial candidate964pass/1skip plus one expected old99count
+assertion failure; update only that count to102and additional30to33. Complete
+docs suite10passes using the unchanged locked Python3.12 SDK environment.
+Initial installedApp0.2.71 checks are preparatory; the requested combined
+App0.2.73 artifact check remains pending. No canonical write, source-original
+execution, native call, live installation or push. Exact commands/results and
+retained failures are in external contour-menu-integration-z29 receipts.
+
+Final source integration checks:965runtime tests pass/1historical skip;10docs
+tests pass. Both independent normal installs of the N38 App0.2.73 wheel and
+source archive pass965/1against the full curated102-menu tree, pip consistency,
+installed origins/all218App runtime hashes and all3actual menu/public/adapter/UI
+flows on owned fakes/external Qt6. Whole new menus and unchanged current_rows
+helper achieve100%statement/branch with zero exclusions in both lanes. The
+existing99menu bodies,30additional rows, frontend notice payloads, owner helper/
+tests, migration manifest and move overlay remain byte-exact. Native0, no push,
+no canonical or live installation. Commands: `rtk proxy /opt/homebrew/bin/python3.11
+verification/issue-120/contour-menu-integration-z29/audit.py` exit0; the same
+Python command with `check_installed.py` exit0 runs all14recorded commands in
+installed-commands.json. Locked `uv run --locked python -m pytest -q tests_docs`
+exit0; full runtime/coverage argv, cwd, logs and failures are retained externally.
+
+Strict offline local documentation build also exits0: all3newmenu routes render
+their actual source, and all26manifest-referenced full notice payloads remain
+byte-exact from source to built output. complete_transitive_inventory and
+publication_qualified remain false. This build neither publishes nor accepts
+whole-site/browser/native gates. Exact command: `rtk proxy bash -c` running
+explicit arm64Python3.12 with owned docs-env and `bash build.sh --offline`;
+full log and built-page/notice hashes are retained in built-docs.json.

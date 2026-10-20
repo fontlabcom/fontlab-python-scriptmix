@@ -734,3 +734,12 @@ candidates, the original 130-sample migration and the broader scope remain open.
 Known already-current migration rows now resolve idempotently through the same
 reviewed move overlay as historical rows. Preserve manifest bytes and source
 metadata. Unknown or ambiguous routes and changed hashes/bodies are refused.
+
+## 2026-10-21 — three contour tools in the curated menu candidate
+
+Add only the reviewed Select Contours, Select Small Contours and Select Partial
+Contours facades and their exact independent Pedro Arilla provenance. The
+curated source menu grows from99to102; its original99files remain byte-exact and
+all61archived dispatchers remain excluded. Preserve menu_layout.current_rows,
+owner-compatible manifest representations and every existing frontend notice.
+Native acceptance and the full retained Issue120 requirements remain pending.

@@ -545,3 +545,12 @@ Complete the full transitive asset/component inventory, Wordcut dictionary/modul
 99 practical tools remain active;61 unfinished archived identities stay in the
 visible porting backlog with unchanged sources/hashes. Complete native candidate
 acceptance and the full retained Issue120 scope through their existing gates.
+
+## N39 — contour menu integration candidate
+
+The curated private source candidate contains102tools:69sample adaptations and
+33additional tools. Three contour facades are byte-exact to reviewed35d9c54.
+Retain current_rows and both manifest representations without rewriting metadata.
+Final installed combined App0.2.73 wheel/source-archive checks pass. Root review
+and canonical integration remain before delivery; native acceptance/publication
+remain separate gates.

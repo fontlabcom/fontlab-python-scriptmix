@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 99 practical tools in one-level Title Case
-categories: 69 sample adaptations and 30 additional tools. Twenty-six additions
+The curated `Scripts` folder contains 102 practical tools in one-level Title Case
+categories: 69 sample adaptations and 33 additional tools. Twenty-nine additions
 are reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -82,3 +82,14 @@ Reports and Proof > Bracket Layers and Components scan the whole font, all foreg
 
 Build local documentation with `./build.sh --offline`. Generated output lives
 in `.build/site/`; the authored `docs/PRE-INTEGRATION-GUIDE.md` is preserved.
+
+## Contour selection candidates
+
+Contours adds Select Contours, Select Small Contours and Select Partial Contours
+through the reviewed App contour_selection API (App>=0.2.71.dev0; small selection
+also requires the existing fontui extra). Full and partial selection preserve
+non-node selections; partial toggles carry across contour boundaries. Small uses
+strict unsigned analytic area and a source-bound numeric prompt. Analytic curve
+area can differ from Glyphs flattening. Native acceptance remains pending; mixed
+non-node clearing currently requires one displayed glyph and supported visual
+item kinds. These three additional tools do not change the130-sample denominator.
