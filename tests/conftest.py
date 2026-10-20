@@ -77,6 +77,7 @@ def resolve_app_sources(required_helpers=None):
         "_guide_editor_dialog",
         "anchor_copy",
         "_anchor_copy_dialog",
+        "script_completion",
     )
     for name in required_helpers:
         assert (root / f"{name}.py").is_file(), f"Missing App helper: {root / name}"
@@ -85,4 +86,17 @@ def resolve_app_sources(required_helpers=None):
 
 @pytest.fixture(scope="session")
 def app_sources():
-    return resolve_app_sources()
+    """Load the real host-free completion helper before replacing package namespaces."""
+    import importlib
+    import importlib.util
+    import sys
+
+    root = resolve_app_sources()
+    importlib.import_module("fontlabapp")
+    name = "fontlabapp.script_completion"
+    spec = importlib.util.spec_from_file_location(name, root / "script_completion.py")
+    module = importlib.util.module_from_spec(spec)
+    with pytest.MonkeyPatch.context() as patch:
+        patch.setitem(sys.modules, name, module)
+        spec.loader.exec_module(module)
+        yield root

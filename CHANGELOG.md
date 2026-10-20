@@ -648,3 +648,7 @@ Issue120 R1 candidate: seven complete random-proof generation/tab workflows; pre
 Issue120 T1 candidate: eight selected-glyph context proofs with exact order/repeats/contexts/blank lines, explicit native named symbols and a fresh-tab writer fence. Native qualification pending.
 
 Issue120 W1 integration candidate: 93 practical and 61 preserved-source menu facades consolidated without copying/executing archive bodies. Native and distribution acceptance remain pending.
+
+Issue120 Y2: verify current App completion hooks with accurate dialog-signal
+doubles and real host-free helper loading; four actual Proof completion controls.
+All practical/archive menus and provenance unchanged; no new native acceptance.

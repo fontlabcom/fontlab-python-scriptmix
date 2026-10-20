@@ -71,3 +71,6 @@ this_file: TODO.md
 - [x] Verify the combined source layout, immutable release provenance and all existing tests.
 - [ ] Review feature-branch integration without changing canonical checkouts or live installs.
 - [ ] Qualify pending archived workflows in native FontLab before any acceptance or cleanup claim.
+
+- [x] Y2: actual Proof standard-completion controls with reviewed shared App helper.
+- [ ] Y2: installed native completion/source/font/history preservation.

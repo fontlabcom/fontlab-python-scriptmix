@@ -2734,3 +2734,14 @@ W1 verified source integration (2026-10-20): 1048 passed, 1 existing Spacing Pre
 - Scope is source layout plus host-free routing. Native workflows, font/history preservation, UI/Close, complete migration, canonical merge, release/tag and publication remain gated. Full exact commands/logs and per-menu hashes are retained in parent verification/issue-120/menu-integration-w1/.
 
 W1 pre-push initially refused three moved facades below80%branch coverage (75%,76.67%,77.27%). Added actual __main__ launch/no-font/Close ownership checks using the existing first-party native-shaped doubles; no runtime changes or exclusions. Targeted inspector/live-node suite:exit0. Full existing hook is rerun with the same threshold; failure receipt retained in parent evidence.
+
+Issue120 Y2: current App helper adds standard dialog completion ownership. Updated
+Qt-shaped doubles to expose real finished/destroyed signals; session fixture
+loads the real host-free helper before namespace isolation. Portability checks
+retain their previous error ordering. Four actual Proof menu completion controls
+run full existing source/painter/registry teardown. Full1055tests pass/1existing
+SpacingPreview skip. No menu, migration/provenance, archived body or license byte
+changed. Verification uses unpublished reviewed App0.2.43.dev0; native acceptance
+remains separate. Exact parent commands/logs in shared-panel-lifecycle-y2/.
+
+Y2 both normal App wheel/sdist0.2.43.dev0 installs: full1055passed/1existing skip, host-free Fly completion import passed. Source package-style coverage collection also1055/1 with no collection warning. Menus unchanged; parent cohort retains exact commands.

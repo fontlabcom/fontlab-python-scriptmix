@@ -12,6 +12,21 @@ TITLES = ["Glyph Grid", "Text By Master", "Waterfall", "Word Finder"]
 
 
 @pytest.mark.parametrize("title", TITLES)
+def test_actual_proof_completion_runs_existing_full_cleanup(load, monkeypatch, title):
+    monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
+    module = load.module(title)
+    dialog = module.main()
+    dialog.finished.emit()
+    assert dialog.deleted and not dialog._connections, (
+        "Completion must run the full owned Close path"
+    )
+    assert dialog.package is None and dialog._bound_id is None, (
+        "Release captured source bindings"
+    )
+    assert not sys._fontlab_samples, "Remove only the completed owner"
+
+
+@pytest.mark.parametrize("title", TITLES)
 def test_requested_proof_menu_exists(title):
     assert (ROOT / "Scripts/Proof" / (title + ".py")).is_file(), (
         "Complete Proof menu missing"
@@ -53,7 +68,14 @@ class Widget:
             pointSizeF=lambda: 12, setPointSizeF=lambda n: None, setBold=lambda b: None
         )
         self.palette = NS(color=lambda role: Color(), setColor=lambda *a: None)
-        for name in ["clicked", "textChanged", "valueChanged", "currentIndexChanged"]:
+        for name in [
+            "clicked",
+            "textChanged",
+            "valueChanged",
+            "currentIndexChanged",
+            "finished",
+            "destroyed",
+        ]:
             setattr(self, name, Signal())
 
     def __getattr__(self, name):
@@ -621,7 +643,9 @@ def test_original_embedded_words_and_public_defaults_match_strict_sources(
     ):
         source = original_source(
             source_root,
-            "fontlab-python-examples/_old/part4/fontlab-samples/samples/" + stem + ".py",
+            "fontlab-python-examples/_old/part4/fontlab-samples/samples/"
+            + stem
+            + ".py",
         )
         tree = ast.parse(source.read_text())
         module = load.module(title)

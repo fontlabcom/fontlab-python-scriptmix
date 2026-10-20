@@ -482,3 +482,7 @@ Issue120 T1: eight context-proof workflow candidates verified offline. Next qual
 - [x] Verify the combined source layout, immutable release provenance and all existing tests.
 - [ ] Review feature-branch integration without changing canonical checkouts or live installs.
 - [ ] Qualify pending archived workflows in native FontLab before any acceptance or cleanup claim.
+
+- [x] Y2: validate current App completion helper and original Proof teardown
+  through accurate native-shaped doubles; all menu/provenance bytes retained.
+- [ ] Y2: qualify installed native PythonQt completion and complete preservation.
