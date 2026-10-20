@@ -720,3 +720,7 @@ Preserve exact upstream notice bytes through Git filters, fresh checkout and arc
   and caller environment. Keep every notice/filter/checkout/archive assertion.
 - Preserve all upstream notice payloads and existing attributes/manifests.
   Source-only correction awaits fresh independent review; no new commit/push.
+
+## 2026-10-20 — contour selection candidate (native pending)
+
+Independent Pedro Arilla adaptations add Select Contours, Select Small Contours and Select Partial Contours through shared App immutable plans and lazy selection-only transport. Preserve original path/node order, offcurve inclusion, cross-contour toggles and strict unsigned analytic area. Owned input UI diagnoses invalid/nonfinite/stale sources without clearing selection. Full original/native acceptance, including mixed selection transport outside a single displayed glyph, remains open. Apache attribution and complete terms retained.

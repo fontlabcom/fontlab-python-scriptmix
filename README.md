@@ -81,3 +81,9 @@ Reports and Proof > Bracket Layers and Components scan the whole font, all foreg
 
 Build local documentation with `./build.sh --offline`. Generated output lives
 in `.build/site/`; the authored `docs/PRE-INTEGRATION-GUIDE.md` is preserved.
+
+Three Contours candidates adapt Pedro Arilla: Select Contours expands touched
+paths; Select Partial Contours carries the original toggle across paths; Select
+Small Contours asks for a strict unsigned area threshold. Require App0.2.71.dev0
+and Fly; small selection also needs App fontui. Mixed non-node clearing currently
+requires one displayed glyph and supported visual kinds. Native acceptance pending.
