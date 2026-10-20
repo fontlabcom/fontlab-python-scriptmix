@@ -306,3 +306,24 @@ reader, source/deadline fences and an owned Refresh/Close report instead of
 clearing Output. Reject the source's misleading empty-domain success report.
 Native schema, metric mapping/order and complete preservation qualification
 remain pending. No exported/automatically derived metric claim.
+
+
+Pedro Arilla random proof scripts
+================================
+random_proof.py, random_proof_words.json and the seven Random Proof menus adapt
+Random/Random 123.py and Random/{lowercase,Title,UPPERCASE} {non-text,words}.py
+from https://github.com/pedroarilla/glyphs-scripts . Source credits Pedro Arilla.
+Apache-2.0; full terms retained in LICENSE-APACHE-2.0.
+License SHA256:ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37
+Random/Random 123.py SHA256:9d014b11d4ba70487c26980b55270b61a33e41fc808cea3f1f5f050a57f989a4
+Random/Random lowercase non-text.py SHA256:650f3a8698238d5c233c5ddbc4480ad12ebfffad9530e9ff553c2a6b7f95774d
+Random/Random Title non-text.py SHA256:4aa509831baa1955d59b684082499ac068ee3afbc4d90dc328318303677223a2
+Random/Random UPPERCASE non-text.py SHA256:8fcdb9f5cee991ea7929ab2c11e7b2755f157a68348e0608fa29258bdd575ef2
+Random/Random lowercase words.py SHA256:1fb400ece636df93f3f8737d4f2da96951316351b3c8db133c4723addfdada40
+Random/Random Title words.py SHA256:961a4df1780d6f30676c7064e6c313ddf5da3005065bcc1f7f929901dd500203
+Random/Random UPPERCASE words.py SHA256:c54795c526aa5a3452d3aa805afac5cae6266c5603bd9e499fd2b773a7212f3c
+Changes: shared typed generation, exact literal word data in one JSON resource,
+explicit current-font lookup instead of undefined Font, and native literal-text Glyph tab
+through Fly/App. Preserve every draw, case transform and whitespace. Output
+clearing/status removed to preserve the user's Output. Native workflow and
+complete data/history preservation qualification remain pending.
