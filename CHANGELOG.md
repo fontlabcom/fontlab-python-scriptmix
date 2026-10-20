@@ -685,3 +685,18 @@ A source-backed catalogue documents all158 current menu scripts without importin
 Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All1070runtime/root tests pass with1existing skip, plus4SDK tests. The fixed coverage scope now includes the complete src_docs production root and all prior Scripts; the accepted baseline commit is unchanged.
 
 These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.
+
+
+## Issue120 Z9 — bracket-layer report and proof candidates
+
+Both Reset Type Studio source workflows now scan the complete current font's
+foreground layer names and transitive component dependencies. Shared App core,
+full-source observations and report/tab routes preserve both original groups.
+The report explains overlap and counts a distinct total; the proof sorts names
+and uses explicit glyph symbols, avoiding orphan slashes. Apache attribution
+and the full licence are retained. Source originals are never executed.
+
+Owned Qt6 controls and host-shaped boundary tests are offline evidence only.
+Native PythonQt, dependency/cache/read preservation, complete saved-font/history
+and actual symbol/layer mapping remain pending under D25. No native acceptance,
+canonical merge, live install, tag, release or site publication is claimed.

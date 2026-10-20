@@ -1,5 +1,6 @@
 # Proof
 
+- [Bracket Layers and Components](bracket-layers-and-components.md)
 - [Glyph Grid](glyph-grid.md)
 - [Glyphs Between Lining Figures](glyphs-between-lining-figures.md)
 - [Glyphs Between Lowercase](glyphs-between-lowercase.md)

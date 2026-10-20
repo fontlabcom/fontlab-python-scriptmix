@@ -93,3 +93,5 @@ this_file: TODO.md
 
 - [x] Z7: include locked SDK tests in full source gates and retain all current runtime/lesson suites.
 - [ ] Complete native, full branch/integration/distribution and publication gates before promotion.
+
+- [ ] Z9: qualify both complete bracket-layer workflows in native FontLab, including full-font/history/cache preservation and actual modeless/tab controls.

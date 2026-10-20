@@ -2832,3 +2832,79 @@ Wait, but: local source/build/browser checks are not native FontLab execution or
 Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All1070runtime/root tests pass with1existing skip, plus4SDK tests. The fixed coverage scope now includes the complete src_docs production root and all prior Scripts; the accepted baseline commit is unchanged.
 
 These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.
+
+
+## Issue120 Z9 — bracket-layer report and proof candidates
+
+Both Reset Type Studio source workflows now scan the complete current font's
+foreground layer names and transitive component dependencies. Shared App core,
+full-source observations and report/tab routes preserve both original groups.
+The report explains overlap and counts a distinct total; the proof sorts names
+and uses explicit glyph symbols, avoiding orphan slashes. Apache attribution
+and the full licence are retained. Source originals are never executed.
+
+Owned Qt6 controls and host-shaped boundary tests are offline evidence only.
+Native PythonQt, dependency/cache/read preservation, complete saved-font/history
+and actual symbol/layer mapping remain pending under D25. No native acceptance,
+canonical merge, live install, tag, release or site publication is claimed.
+
+
+## Z9 final source and independent artifact verification — 2026-10-20
+
+App full source:2105passed;72new bracket controls. Four complete new production
+modules:100%statements/branches,zero exclusions. Scriptmix1074passed/1existing
+skip;4locked documentation SDK tests. All169App runtime files and477combined
+App/Glyport/Fontport/Lessons resources match normal wheel/source installs.
+Each final install passes App2103/2generated-shim skips, Glyport2997/3existing
+skips, Fontport4489/2existing skips and63warnings, Lessons197 and Scriptmix1074/1.
+Both new menus have100%whole-module statement/branch coverage. Retained first
+red tests, cold from-import failure, integration fixture correction, scope/root
+invocation errors, stale fixed28manifest assertion and audit quoting correction.
+No original was executed. All165previous App runtime files,668previous menus,
+11zone originals,7247disposition ledger,1111owner source hashes and3canonical
+Git statuses are unchanged. NativeTCPerrno61; no host call/fence/restart/install.
+Evidence: workspace verification/issue-120/bracket-layers-z9/. Final normal
+candidate is App0.2.53.dev0 in app-artifacts-v3/review-v3. No98%claim.
+
+Commands below ran from the workspace root, all exit0. Nested consumer scripts
+retain exact argv/environments and individual exits in their JSON receipts.
+
+```sh
+rtk proxy env PYTHONPATH="/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/.worktrees/issue120-bracket-layers-app/src" PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 QT_QPA_PLATFORM=offscreen COVERAGE_FILE="/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/bracket-layers-z9/.coverage-complete" verification/issue-120/shared-key-events-z8/review-v3/wheel-env/bin/python -m coverage run --branch --source=fontlabapp.bracket_layers,fontlabapp._bracket_snapshot,fontlabapp._bracket_layers_native,fontlabapp._bracket_layers_dialog -m pytest -q .worktrees/issue120-bracket-layers-app/tests
+```
+exit=0; log=verification/issue-120/bracket-layers-z9/app-full-complete.log
+
+```sh
+rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin SETUPTOOLS_SCM_PRETEND_VERSION=0.2.53.dev0 /Users/adam/.local/bin/uv build --directory .worktrees/issue120-bracket-layers-app --out-dir "/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/verification/issue-120/bracket-layers-z9/app-artifacts-v3"
+```
+exit=0; log=verification/issue-120/bracket-layers-z9/app-build-complete.log
+
+```sh
+rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin /opt/homebrew/bin/python3.11 verification/issue-120/bracket-layers-z9/review-v3/install.py
+```
+exit=0; log=verification/issue-120/bracket-layers-z9/install-complete.log
+
+```sh
+rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin /opt/homebrew/bin/python3.11 verification/issue-120/bracket-layers-z9/review-v3/verify.py
+```
+exit=0; log=verification/issue-120/bracket-layers-z9/installed-full-complete.log
+
+```sh
+rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin /opt/homebrew/bin/python3.11 verification/issue-120/bracket-layers-z9/installed_consumers_final.py
+```
+exit=0; log=verification/issue-120/bracket-layers-z9/installed-consumers-complete.log
+
+```sh
+rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin /opt/homebrew/bin/python3.11 verification/issue-120/bracket-layers-z9/review-v3/closure_audit.py
+```
+exit=0; log=verification/issue-120/bracket-layers-z9/closure-audit-complete.log
+
+```sh
+rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin /opt/homebrew/bin/python3.11 verification/issue-120/bracket-layers-z9/review-v3/audit.py
+```
+exit=0; log=verification/issue-120/bracket-layers-z9/artifact-audit-complete.log
+
+```sh
+rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/bracket-layers-z9/preservation_audit.py
+```
+exit=0; log=verification/issue-120/bracket-layers-z9/preservation-final.log

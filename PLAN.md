@@ -519,3 +519,18 @@ issue120 Tasksets1/2, package/docs/native/distribution/release gate.
 
 - [x] Z7: include locked SDK tests in full source gates and retain all current runtime/lesson suites.
 - [ ] Complete native, full branch/integration/distribution and publication gates before promotion.
+
+
+## Issue120 Z9 — bracket-layer report and proof candidates
+
+Both Reset Type Studio source workflows now scan the complete current font's
+foreground layer names and transitive component dependencies. Shared App core,
+full-source observations and report/tab routes preserve both original groups.
+The report explains overlap and counts a distinct total; the proof sorts names
+and uses explicit glyph symbols, avoiding orphan slashes. Apache attribution
+and the full licence are retained. Source originals are never executed.
+
+Owned Qt6 controls and host-shaped boundary tests are offline evidence only.
+Native PythonQt, dependency/cache/read preservation, complete saved-font/history
+and actual symbol/layer mapping remain pending under D25. No native acceptance,
+canonical merge, live install, tag, release or site publication is claimed.

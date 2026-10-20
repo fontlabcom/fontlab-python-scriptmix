@@ -536,5 +536,49 @@
       "deterministic sorted anchor/component set display instead of hash iteration",
       "empty/missing/stale/unsupported reads diagnose whole call instead of prefix or unbound name"
     ]
+  },
+  {
+    "title": "Bracket Layers and Components",
+    "key": "bracket_layers_report",
+    "destination": "Scripts/Reports/Bracket Layers and Components.py",
+    "destination_sha256": "753021613df469fd482079b38ed02f69f0563305e9ebeae15e9619f0d26f7f1f",
+    "kind": "practical-bracket-layers-workflow-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
+    "source": "Bracket Layers/Report Glyphs containing BL.py",
+    "source_sha256": "bc5712fa1ff4e185613eb1533e1f2ab36be41b6bed2eca0f8841e57e4beecf90",
+    "license": "Apache-2.0",
+    "license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
+    "license_declaration": "README.md lines104-111",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: native foreground/dependency mapping, complete source font/history/cache preservation and report/tab UI",
+    "scope": "Both original full-font workflows: report and mixed literal/named proof tab. All foreground layers, direct components and transitive dependants; no selected-glyph subset.",
+    "source_repairs": [
+      "Report total uses the union, with explicit overlap diagnostic; both original groups retained.",
+      "Tab groups use intended deterministic sorted names rather than unsorted set iteration.",
+      "Explicit named symbols avoid empty-section orphan slashes and Unicode/slash substitution."
+    ]
+  },
+  {
+    "title": "Bracket Layers and Components",
+    "key": "bracket_layers_tab",
+    "destination": "Scripts/Proof/Bracket Layers and Components.py",
+    "destination_sha256": "89f7e715c0782c3ce4d123b8a9d8c43c20519a2571070cbb1d8af3453b148682",
+    "kind": "practical-bracket-layers-workflow-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
+    "source": "Bracket Layers/New Tab with Glyphs containing BL.py",
+    "source_sha256": "7f1788a0302d1df3640775b9b1ad1b5ac600a1412b47afae94556b732e5578c8",
+    "license": "Apache-2.0",
+    "license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
+    "license_declaration": "README.md lines104-111",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: native foreground/dependency mapping, complete source font/history/cache preservation and report/tab UI",
+    "scope": "Both original full-font workflows: report and mixed literal/named proof tab. All foreground layers, direct components and transitive dependants; no selected-glyph subset.",
+    "source_repairs": [
+      "Report total uses the union, with explicit overlap diagnostic; both original groups retained.",
+      "Tab groups use intended deterministic sorted names rather than unsorted set iteration.",
+      "Explicit named symbols avoid empty-section orphan slashes and Unicode/slash substitution."
+    ]
   }
 ]

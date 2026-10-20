@@ -76,3 +76,5 @@ qualification remains pending. Requires reviewed unpublished App>=0.2.51.dev0.
 Documentation-only SDK tests are in `tests_docs`; run them with
 `uv run --locked python -m pytest -q tests_docs`. Runtime and lesson suites
 remain separate Python3.11 processes, both required by the workspace push gate.
+
+Reports and Proof > Bracket Layers and Components scan the whole font, all foreground layer names and transitive component users. The report counts distinct glyphs while retaining overlapping groups; the proof opens deterministic named symbols in the captured master. Requires reviewed unpublished App>=0.2.53.dev0; native qualification remains pending.

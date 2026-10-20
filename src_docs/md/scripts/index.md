@@ -159,6 +159,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Proof
 
+- [Bracket Layers and Components](proof/bracket-layers-and-components.md)
 - [Glyph Grid](proof/glyph-grid.md)
 - [Glyphs Between Lining Figures](proof/glyphs-between-lining-figures.md)
 - [Glyphs Between Lowercase](proof/glyphs-between-lowercase.md)
@@ -189,6 +190,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Reports
 
+- [Bracket Layers and Components](reports/bracket-layers-and-components.md)
 - [Compare Open Font Revisions](reports/compare-open-font-revisions.md)
 - [Empty Glyphs](reports/empty-glyphs.md)
 - [Font Overview](reports/font-overview.md)

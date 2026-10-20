@@ -409,3 +409,23 @@ Recipe Dumper and Tallest And Shortest applies to this adaptation too.
 Original bytes are neither executed nor distributed. Own-glyph labels, complete
 adjacent-pair checking and deterministic name-set text repair source defects.
 The owned modeless report replaces direct Output writes; native acceptance is pending.
+
+
+Bracket-layer report and proof
+=============================
+
+Copyright2025 Fernando Díaz & Reset Type Studio.
+Adapted from Reset-Type-Studio/Glyphs-Scripts, licensed Apache-2.0 by README.md
+lines104-111 (SHA256:b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d).
+Complete terms retained in LICENSE-APACHE-2.0.
+https://github.com/Reset-Type-Studio/Glyphs-Scripts
+Bracket Layers/Report Glyphs containing BL.py:
+bc5712fa1ff4e185613eb1533e1f2ab36be41b6bed2eca0f8841e57e4beecf90
+Bracket Layers/New Tab with Glyphs containing BL.py:
+7f1788a0302d1df3640775b9b1ad1b5ac600a1412b47afae94556b732e5578c8
+Changes: shared Python3.11 full-font graph, immutable observations and bounded
+source/context fences; owned read-only Refresh/Close report and explicit named
+fresh-tab symbols. Preserve both complete groups; explain overlapping membership
+and count distinct total, sort proof groups deterministically and remove empty-
+section orphan slashes. Original bodies/resources are neither run nor distributed.
+Native behavior and full preservation qualification remain pending.

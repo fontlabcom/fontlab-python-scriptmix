@@ -1,5 +1,6 @@
 # Reports
 
+- [Bracket Layers and Components](bracket-layers-and-components.md)
 - [Compare Open Font Revisions](compare-open-font-revisions.md)
 - [Empty Glyphs](empty-glyphs.md)
 - [Font Overview](font-overview.md)

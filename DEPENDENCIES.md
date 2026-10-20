@@ -82,3 +82,5 @@ No runtime dependency added. Locked ProperDocs/MaterialX and codeinclude are doc
 Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All1070runtime/root tests pass with1existing skip, plus4SDK tests. The fixed coverage scope now includes the complete src_docs production root and all prior Scripts; the accepted baseline commit is unchanged.
 
 These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.
+
+Z9 bracket-layer workflows add no runtime dependency: stdlib graph traversal, existing shared App report/tab controls and FontLab native APIs. Menus require the reviewed unpublished App>=0.2.53.dev0. Apache-2.0 source attribution is in NOTICE.
