@@ -60,3 +60,6 @@ mathematical path tests in the external test environment.
 W1 adds no runtime dependency. Pending archived launchers need the exact local/private
 rescued snapshot identified by rescue-index.json. FONTLAB_PRESERVED_ROOT is a test-only
 byte-audit input; the snapshot is not included in public artifacts.
+
+Text Filter uses Fly and the reviewed unpublished App>=0.2.48.dev0 candidate.
+Its Apache-2.0 source attribution is retained in NOTICE/additional-tools.json.

@@ -466,5 +466,21 @@
     "native_acceptance": "pending",
     "original_scope_acceptance": "pending: native named-symbol/order/source-binding and complete font/history preservation",
     "scope": "Complete source context and blank-line behavior, actual ordered selected-layer names and repeats; explicit native named symbols in a fresh verified target tab. Native qualification pending."
+  },
+  {
+    "title": "Text Filter",
+    "key": "text_filter",
+    "destination": "Scripts/Proof/Text Filter.py",
+    "destination_sha256": "1f173d1fa967446c300fc7873bc9e3e1c7107c063f78925f5d4f03e32aa262a2",
+    "kind": "practical-text-filter-workflow-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source": "Testing/Text Filter.py",
+    "source_sha256": "44e0ac6f376518937449bd92470683ffc45ed059e8ddeafb3d4c0518188c4d46",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: actual PythonQt, dedicated tool settings, complete original-font tab and font/history preservation",
+    "scope": "Complete source regex class/input/output/charset, autosave/reopen, Reset, optional new tab, modeless resizing and complete Close/destruction ownership."
   }
 ]

@@ -74,3 +74,6 @@ this_file: TODO.md
 
 - [x] Y2: actual Proof standard-completion controls with reviewed shared App helper.
 - [ ] Y2: installed native completion/source/font/history preservation.
+
+- [ ] Native-qualify the complete Z1 Text Filter workflow, dedicated settings,
+  source-bound literal text tabs, UI completion and whole-font preservation.

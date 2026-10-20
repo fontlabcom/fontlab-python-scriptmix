@@ -348,3 +348,14 @@ source fences, and named native symbols sent only to a verified new target tab.
 Keep original order, repeats, contexts, current-master behavior, empty-selection
 results and blank lines. Output clearing/status removed to preserve user Output.
 Native content, missing names and complete preservation qualification pending.
+
+Text Filter / Text Simplifier
+=============================
+
+Adapted from Slobzheninov/Glyphs-Scripts, Testing/Text Filter.py, licensed under
+the Apache License, Version2.0 (see LICENSE-APACHE-2.0). Upstream project:
+https://github.com/slobzheninov/Glyphs-Scripts . Modified for Python3.11/FontLab:
+shared App filtering and owned Qt controls, dedicated tool settings, complete
+Reset and original-font proof-tab routing through Fly. The source body and
+resources are not distributed. Original SHA256:
+44e0ac6f376518937449bd92470683ffc45ed059e8ddeafb3d4c0518188c4d46

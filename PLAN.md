@@ -486,3 +486,12 @@ Issue120 T1: eight context-proof workflow candidates verified offline. Next qual
 - [x] Y2: validate current App completion helper and original Proof teardown
   through accurate native-shaped doubles; all menu/provenance bytes retained.
 - [ ] Y2: qualify installed native PythonQt completion and complete preservation.
+
+## Issue120 Z1 Text Filter
+
+Qualify the complete Text Simplifier and new Proof/Text Filter menu in installed
+FontLab: source regex defaults/ranges/escapes/errors, text persistence/selective
+Reset, owned window geometry, original-font proof tab including missing/empty
+text, switched/closed font refusal, repeats/errors/Close/destruction, complete
+font/history/dirty-state preservation and saved/reopened fonts. No acceptance
+or cleanup/release promotion follows from Qt6/source/artifact controls alone.

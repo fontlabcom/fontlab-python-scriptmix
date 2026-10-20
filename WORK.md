@@ -2745,3 +2745,19 @@ changed. Verification uses unpublished reviewed App0.2.43.dev0; native acceptanc
 remains separate. Exact parent commands/logs in shared-panel-lifecycle-y2/.
 
 Y2 both normal App wheel/sdist0.2.43.dev0 installs: full1055passed/1existing skip, host-free Fly completion import passed. Source package-style coverage collection also1055/1 with no collection warning. Menus unchanged; parent cohort retains exact commands.
+
+## 2026-10-20 — Issue120 Z1 Text Filter candidate
+
+The entire Apache-2.0 source workflow is adapted into shared App plus one lazy
+Fly menu. Pure source regex character-class semantics/defaults remain intact.
+Autosave uses a dedicated tool namespace; Reset removes only output/character
+keys and retains input. Owned Qt6 temporary-INI controls cover real panels,
+reopen/geometry, errors/reentrancy/late results and all completion routes.
+App1856passed/35new controls; Scriptmix1058passed/one existing selection-read skip.
+All4new App modules and the menu pass whole-module80%statement/branch thresholds
+with zero exclusions. Light/dark owned renders were visually inspected.
+
+Wait, but: Qt6 and fake tab callbacks do not prove PythonQt or native settings/
+tab/font/history behavior. Dedicated native acceptance and all issue120 gates
+remain open. Exact commands, failures, hashes and distribution/consumer results
+are retained in workspace verification/issue-120/text-filter-z1/.

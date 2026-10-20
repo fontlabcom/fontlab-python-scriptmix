@@ -652,3 +652,8 @@ Issue120 W1 integration candidate: 93 practical and 61 preserved-source menu fac
 Issue120 Y2: verify current App completion hooks with accurate dialog-signal
 doubles and real host-free helper loading; four actual Proof completion controls.
 All practical/archive menus and provenance unchanged; no new native acceptance.
+
+Issue120 Z1: complete Text Simplifier candidate with regex-class filtering,
+input/read-only output/character fields, autosave/reopen, selective Reset,
+original-font optional proof tab, resizing/geometry and owned completion.
+Native PythonQt/settings/tab/whole-font-history qualification remains pending.
