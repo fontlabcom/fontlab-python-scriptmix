@@ -10,7 +10,8 @@ Open a fresh proof of the first selected glyph's left and right group peers.
 
 Select a glyph in a Font or Glyph window and run this command. The first proof
 row contains that first selected glyph. Labelled L: and R: rows contain all other
-members of each corresponding visual-side kerning group, in font order. Current
+members of each corresponding visual-side kerning group, in font order. No selected layer or later selected parent is resolved. Only sides present on the
+current glyph are queried for peers. Current
 master class membership is used independently on each side. The current glyph
 is excluded by identity; unencoded peers and repeated names stay explicit.
 
@@ -25,7 +26,7 @@ the existing tab. No font data, selection, preferences, history or Output is edi
 
 Independent implementation of Reza Bohloul's Same Kerning Groups.py workflow.
 The inspected source has no licence declaration; its body is not redistributed.
-See NOTICE and additional-tools.json. Requires Fly and App0.2.79.dev0.
+See NOTICE and additional-tools.json. Requires Fly and App0.2.82.dev0.
 Native tab/cursor/workspace and complete font/cache preservation remain pending.
 
 Run **Kerning > Same Kerning Groups** from FontLab's Scripts menu.
@@ -35,5 +36,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/eab14e9a8b62427b929de77ad0e4199515c762f4061d4a32203657ddc9112582.py)
+[Python source](../../../../.build/menu-sources/bbcde4e727fd0e25cfce8c194796b8cc49b37f8f419698d4533a72e3af8e7d2a.py)
 <!--/codeinclude-->

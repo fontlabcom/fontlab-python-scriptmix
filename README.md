@@ -104,6 +104,6 @@ report panel. Actual FontLab preservation/lifecycle acceptance remains pending.
 Run **Kerning > Same Kerning Groups** with a selected glyph. The first selected
 glyph begins a fresh proof; separate L:/R: rows show every other same-group peer
 in font order, including unencoded names. Empty/singleton groups receive the
-original no-peers diagnosis. Requires Fly and App0.2.79.dev0. Native fresh-tab
+original no-peers diagnosis. Requires Fly and App0.2.82.dev0. Native fresh-tab
 and full preservation acceptance remain pending; the130-sample denominator is
 unchanged. Reza Bohloul is credited, and no unlicensed source body is distributed.

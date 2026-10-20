@@ -4,7 +4,8 @@
 
 Select a glyph in a Font or Glyph window and run this command. The first proof
 row contains that first selected glyph. Labelled L: and R: rows contain all other
-members of each corresponding visual-side kerning group, in font order. Current
+members of each corresponding visual-side kerning group, in font order. No selected layer or later selected parent is resolved. Only sides present on the
+current glyph are queried for peers. Current
 master class membership is used independently on each side. The current glyph
 is excluded by identity; unencoded peers and repeated names stay explicit.
 
@@ -19,7 +20,7 @@ the existing tab. No font data, selection, preferences, history or Output is edi
 
 Independent implementation of Reza Bohloul's Same Kerning Groups.py workflow.
 The inspected source has no licence declaration; its body is not redistributed.
-See NOTICE and additional-tools.json. Requires Fly and App0.2.79.dev0.
+See NOTICE and additional-tools.json. Requires Fly and App0.2.82.dev0.
 Native tab/cursor/workspace and complete font/cache preservation remain pending.
 """
 

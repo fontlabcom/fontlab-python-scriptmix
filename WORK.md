@@ -3149,3 +3149,6 @@ UI lifetime, independent review and release remain pending.
 ## N68 source work
 
 Tests first: retained missing-module failure, then29 meaningful planner/native/capture/symbol/owned-diagnosis cases pass. Whole new modules100statement/100branch,zeroexclusions. Commands/results and final artifact receipts live in verification/issue-120/kerning-group-proof-z31/. No corpus execution, native/canonical/live write or push.
+
+
+N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
