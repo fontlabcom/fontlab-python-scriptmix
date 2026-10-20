@@ -4,13 +4,13 @@ this_file: README.md
 
 # FontLab practical scripts
 
-This integration candidate combines 94 practical menu facades and 61
+This integration candidate combines 96 practical menu facades and 61
 preserved-source launchers. All entries use one category folder beneath
 `Scripts`. Each archived launcher is explicitly marked native compatibility
 pending. Counts describe source layout, not accepted native workflows.
 
 Copy the practical `Scripts` entries into FontLab 9's Scripts folder. Use
-Python 3.11, Fly and the reviewed App 0.2.48.dev0 candidate. This is an
+Python 3.11, Fly and the reviewed App 0.2.49.dev0 candidate. This is an
 unpublished prerequisite; use its reviewed artifact. Do not change a live
 FontLab environment as part of automated setup or test runs.
 
@@ -61,3 +61,7 @@ Proof > Text Filter opens the full modeless Text Simplifier. Input/output and
 regex character-class fields persist in a dedicated tool namespace. Reset keeps
 input. Optional New Tab stays bound to the font captured on launch. Actual
 PythonQt/settings/tab and full native preservation qualification remains pending.
+
+Proof > Tallest and Shortest scans the current master. Highest & Lowest Glyphs
+scans foreground masters/auxiliaries and opens exact-layer winners with an owned
+coordinate panel. Both are source/artifact candidates awaiting native acceptance.

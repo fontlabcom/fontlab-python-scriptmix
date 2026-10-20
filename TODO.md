@@ -77,3 +77,7 @@ this_file: TODO.md
 
 - [ ] Native-qualify the complete Z1 Text Filter workflow, dedicated settings,
   source-bound literal text tabs, UI completion and whole-font preservation.
+
+- [ ] Native-qualify both complete Z2 extrema workflows and shared palette repair:
+  actual role/order/bounds/exact-layer tabs, source/read/full-font/history/dirty/
+  saved/reopened state, failure/repetition/report lifecycle and theme changes.

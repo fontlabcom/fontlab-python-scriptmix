@@ -657,3 +657,10 @@ Issue120 Z1: complete Text Simplifier candidate with regex-class filtering,
 input/read-only output/character fields, autosave/reopen, selective Reset,
 original-font optional proof tab, resizing/geometry and owned completion.
 Native PythonQt/settings/tab/whole-font-history qualification remains pending.
+
+Issue120 Z2: complete selected-master Tallest and Shortest and all-foreground
+Highest & Lowest Glyphs candidates share exact extrema/native capture and new
+per-symbol layer tabs. Stable ties/repeated winners/zero/large coordinates are
+preserved; missing layers are never created. All-layer coordinate results use an
+owned panel with Run Again and survive a diagnosed tab failure. Shared NamesDialog
+subtitle colour now follows palette changes. Native qualification remains pending.

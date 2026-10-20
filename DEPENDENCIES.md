@@ -63,3 +63,6 @@ byte-audit input; the snapshot is not included in public artifacts.
 
 Text Filter uses Fly and the reviewed unpublished App>=0.2.48.dev0 candidate.
 Its Apache-2.0 source attribution is retained in NOTICE/additional-tools.json.
+
+Z2 extrema menus require Fly and the reviewed unpublished App>=0.2.49.dev0
+candidate. MIT/Apache source attribution and hashes are in NOTICE/provenance.

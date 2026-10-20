@@ -495,3 +495,12 @@ Reset, owned window geometry, original-font proof tab including missing/empty
 text, switched/closed font refusal, repeats/errors/Close/destruction, complete
 font/history/dirty-state preservation and saved/reopened fonts. No acceptance
 or cleanup/release promotion follows from Qt6/source/artifact controls alone.
+
+## Issue120 Z2 layer extrema candidates
+
+Qualify installed complete selected-master/all-foreground bounds and source order,
+empty/composite/auxiliary/mixed-master/unencoded/repeated winners, exact native
+per-symbol layer resolution and fresh-tab content. Verify source/read/lazy-import/
+cache/selection/activation/font/history/dirty/save/reopen preservation, repeats,
+partial UI failures, report lifecycle and shared palette changes in PythonQt.
+Retain all other issue120 source/package/docs/native/release gates.

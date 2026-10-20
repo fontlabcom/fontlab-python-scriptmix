@@ -2761,3 +2761,26 @@ Wait, but: Qt6 and fake tab callbacks do not prove PythonQt or native settings/
 tab/font/history behavior. Dedicated native acceptance and all issue120 gates
 remain open. Exact commands, failures, hashes and distribution/consumer results
 are retained in workspace verification/issue-120/text-filter-z1/.
+
+## 2026-10-20 — Issue120 Z2 complete layer-extrema candidates
+
+App1923passed/67new controls; Scriptmix1062passed/one existing selection-read skip,
+4new controls. All6wholechanged App modules plus2new menus pass80%statement and
+branch coverage with zero exclusions; the complete App/Scriptmix caller coverage
+is combined for shared NamesDialog (96.61%statement/85.71%branch). Other5App modules
+and both menus are100/100. The complete source scopes are read/captured twice and
+recaptured before exact-layer tab construction. Existing named-tab mechanics are
+shared; no parallel native tab writer is introduced.
+
+Read-only pinned Glyphs wrapper2.5 confirms master-first/ordinary-auxiliary order.
+Native SDK symbol/layer/bounds/role contracts are hash-bound. Original scripts
+were only read statically; source zero/sentinel/global defects are explicit.
+An owned failing colour test exposed stale shared subtitle CSS after a palette
+change; explicit base-event delegation and palette refresh pass light/dark/back.
+Owned compact result and Text Filter renders were inspected.
+
+Wait, but: actual PythonQt roles/bounds/per-symbol resolution/lazy-import/read/
+cache/full-font/history/dirty/persistence remain unqualified. No original/native
+acceptance or release follows from source, Qt6 or fake-backend controls. Exact
+commands, failures, normal install audits and receipts live in workspace
+verification/issue-120/layer-extrema-z2/.

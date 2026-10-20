@@ -482,5 +482,37 @@
     "native_acceptance": "pending",
     "original_scope_acceptance": "pending: actual PythonQt, dedicated tool settings, complete original-font tab and font/history preservation",
     "scope": "Complete source regex class/input/output/charset, autosave/reopen, Reset, optional new tab, modeless resizing and complete Close/destruction ownership."
+  },
+  {
+    "title": "Tallest and Shortest",
+    "key": "layer_extrema_current",
+    "destination": "Scripts/Proof/Tallest and Shortest.py",
+    "destination_sha256": "29a5b33d138ffc11389693ca2b3f410fce27ad91ab055d3fbb27be03c999688c",
+    "kind": "practical-layer-extrema-workflow-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source": "Tallest And Shortest.py",
+    "source_sha256": "00719459ee2c987046ae14cf04aafce2e18bfdffee0689e7bc2e250bf1e2f26b",
+    "license": "MIT",
+    "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: exact source scope/order/foreground mapping/bounds/winning-layer tab and full native preservation",
+    "scope": "Complete current layer extrema, raw finite coordinates, stable ties, empty bounds/repeated winners, fresh explicit glyph/layer tabs; selected-master source binding"
+  },
+  {
+    "title": "Highest & Lowest Glyphs",
+    "key": "layer_extrema_all",
+    "destination": "Scripts/Proof/Highest & Lowest Glyphs.py",
+    "destination_sha256": "1f1b20d908dcae98f9ba6bfb10ebfc1ac19dfdbed26bafb6ba3c8651d6a075bc",
+    "kind": "practical-layer-extrema-workflow-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source": "Testing/Highest & Lowest Glyphs.py",
+    "source_sha256": "1356cc33cdb9fa8ef4676fffe376558c9ce72647ae94dfd0fa075bcc5c9999f4",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: exact source scope/order/foreground mapping/bounds/winning-layer tab and full native preservation",
+    "scope": "Complete all layer extrema, raw finite coordinates, stable ties, empty bounds/repeated winners, fresh explicit glyph/layer tabs; owned numerical panel, Run Again and completion"
   }
 ]
