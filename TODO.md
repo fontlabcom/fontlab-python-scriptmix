@@ -95,3 +95,5 @@ this_file: TODO.md
 - [ ] Complete native, full branch/integration/distribution and publication gates before promotion.
 
 - [ ] Z9: qualify both complete bracket-layer workflows in native FontLab, including full-font/history/cache preservation and actual modeless/tab controls.
+
+- [ ] Z24: complete transitive frontend provenance/notices/source availability and full publication qualification; named-component notices alone do not close this gate.

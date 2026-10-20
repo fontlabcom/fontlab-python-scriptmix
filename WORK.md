@@ -2908,3 +2908,11 @@ exit=0; log=verification/issue-120/bracket-layers-z9/artifact-audit-complete.log
 rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/bracket-layers-z9/preservation_audit.py
 ```
 exit=0; log=verification/issue-120/bracket-layers-z9/preservation-final.log
+
+## Issue120 Z24 — frontend notice candidate
+
+Three baseline suites pass. Tests first reject absent notice artifacts; the authored full-text SHA/link/provenance checks then pass. Notice/provenance pages retain 23 named component groups (24 where print-site is shipped). No runtime assets, source producers, original examples or archive bytes change. Complete transitive closure, Wordcut embedded modules/dictionary, TinySegmenter, Clipboard leaf notices, CSS data SVGs and full publication qualification remain open. Exact commands and failed attempts are retained in the parent workspace at verification/issue-120/frontend-notices-z24. Strict-build, full-suite, browser/privacy and preservation acceptance follow this candidate. Wait, but: a named-component notice batch does not prove the complete transitive inventory or a published site.
+
+Z24 preservation found that the previous docs output path cleaned the authored integration guide in the isolated worktree. Restored the exact tracked guide, retained the earlier generated output in private evidence, and changed output to `.build/site/`. A tests-first regression rejects overlapping authored/output directories. No canonical source was changed. Fresh strict-build/preservation evidence is required below.
+
+Z24 fresh local acceptance: locked strict build passes; served-browser checks verify all26 named full-text bodies and manifest against source, with four desktop/mobile and light/dark views. Documentation tests pass (7); all original menu and guide bytes remain exact. All-byte privacy checks pass with the existing repository-specific text profile. Complete transitive inventory/publication remains false. The real source-branch pre-push gate records the full baseline coverage/test outcome in parent-workspace evidence.

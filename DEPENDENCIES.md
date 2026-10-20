@@ -84,3 +84,7 @@ Documentation SDK tests now live under tests_docs and run in the locked document
 These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.
 
 Z9 bracket-layer workflows add no runtime dependency: stdlib graph traversal, existing shared App report/tab controls and FontLab native APIs. Menus require the reviewed unpublished App>=0.2.53.dev0. Apache-2.0 source attribution is in NOTICE.
+
+## Issue120 Z24 frontend notices
+
+No build/runtime dependency changes. Existing locked ProperDocs/MaterialX/plugin versions remain. Browser notice texts record pinned npm/publisher sources and the captured shared-theme/font responses; the full transitive review remains open.

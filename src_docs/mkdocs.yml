@@ -5,7 +5,7 @@ site_url: https://fontlabcom.github.io/fontlab-python-scriptmix/
 repo_url: https://github.com/fontlabcom/fontlab-python-scriptmix
 edit_uri: edit/main/src_docs/md/
 docs_dir: md
-site_dir: ../docs
+site_dir: ../.build/site
 use_directory_urls: false
 theme:
   name: materialx

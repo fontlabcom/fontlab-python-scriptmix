@@ -700,3 +700,9 @@ Owned Qt6 controls and host-shaped boundary tests are offline evidence only.
 Native PythonQt, dependency/cache/read preservation, complete saved-font/history
 and actual symbol/layer mapping remain pending under D25. No native acceptance,
 canonical merge, live install, tag, release or site publication is claimed.
+
+## Issue120 Z24 — browser notices
+
+Add source-bound full texts and provenance for named frontend components, including transitive JavaScript dependencies, icons, shared theme inputs and external font responses. Keep the full transitive/publication review explicitly open; runtime assets and retained archives are unchanged.
+
+Z24 preservation found that the previous docs output path cleaned the authored integration guide in the isolated worktree. Restored the exact tracked guide, retained the earlier generated output in private evidence, and changed output to `.build/site/`. A tests-first regression rejects overlapping authored/output directories. No canonical source was changed. Fresh strict-build/preservation evidence is required below.

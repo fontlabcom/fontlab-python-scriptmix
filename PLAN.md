@@ -534,3 +534,7 @@ Owned Qt6 controls and host-shaped boundary tests are offline evidence only.
 Native PythonQt, dependency/cache/read preservation, complete saved-font/history
 and actual symbol/layer mapping remain pending under D25. No native acceptance,
 canonical merge, live install, tag, release or site publication is claimed.
+
+## Issue120 Z24 frontend notices
+
+Complete the full transitive asset/component inventory, Wordcut dictionary/modules and source-availability proof, TinySegmenter/Clipboard leaf notices, CSS data SVGs, external response variants and whole-site publication gates. Retain all original native, runtime, corpus and release requirements.

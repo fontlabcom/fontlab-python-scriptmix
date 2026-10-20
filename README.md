@@ -78,3 +78,6 @@ Documentation-only SDK tests are in `tests_docs`; run them with
 remain separate Python3.11 processes, both required by the workspace push gate.
 
 Reports and Proof > Bracket Layers and Components scan the whole font, all foreground layer names and transitive component users. The report counts distinct glyphs while retaining overlapping groups; the proof opens deterministic named symbols in the captured master. Requires reviewed unpublished App>=0.2.53.dev0; native qualification remains pending.
+
+Build local documentation with `./build.sh --offline`. Generated output lives
+in `.build/site/`; the authored `docs/PRE-INTEGRATION-GUIDE.md` is preserved.

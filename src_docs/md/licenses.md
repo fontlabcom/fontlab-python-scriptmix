@@ -17,3 +17,6 @@ The theme uses [MaterialX](https://jaywhj.github.io/mkdocs-materialx/) and the
 The [build dependency notes](plugins.md) record plugin use and compatibility.
 
 [Apache License 2.0: full text](licenses/apache-2.0.txt).
+
+The [browser asset notices](frontend-notices.md) retain full texts and source
+provenance for named frontend components. Their transitive review remains open.
