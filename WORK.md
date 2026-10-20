@@ -3055,3 +3055,16 @@ publication_qualified remain false. This build neither publishes nor accepts
 whole-site/browser/native gates. Exact command: `rtk proxy bash -c` running
 explicit arm64Python3.12 with owned docs-env and `bash build.sh --offline`;
 full log and built-page/notice hashes are retained in built-docs.json.
+
+The first final Git-archive check caught an inherited new-notice filename typo:
+Scriptmix has complete Apache terms in LICENSE, not LICENSE-APACHE-2.0. Correct
+only the new Pedro notice reference and add a meaningful full-terms/path test.
+All other appended notice bytes remain source-equivalent; old notice prefix and
+all frontend payloads stay exact. Retain the initial archive check failure. Final
+installed checks below include this correction; no runtime/menu body changes.
+
+After the notice-reference correction, both final installed App0.2.73 lanes
+pass966runtime tests/1historical skip; all10docs tests pass. Whole three menus
+and unchanged owner-compatible helper retain100%statement/branch coverage with
+zero exclusions. Final corrected archive inspection includes the existing full
+Apache LICENSE, rather than inventing or duplicating a licence file.

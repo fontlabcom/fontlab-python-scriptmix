@@ -51,3 +51,15 @@ def test_current_rows_accepts_already_current_owner_routes_without_rewriting(tmp
     owner = (tmp_path / "migration.json").read_bytes()
     assert current_rows(tmp_path) == resolved
     assert (tmp_path / "migration.json").read_bytes() == owner
+
+
+def test_contour_notice_points_to_existing_complete_apache_terms():
+    notice = (
+        (ROOT / "NOTICE")
+        .read_text()
+        .split("Pedro Arilla contour selection adaptations", 1)[1]
+    )
+    assert "complete terms in LICENSE." in notice
+    terms = (ROOT / "LICENSE").read_text()
+    assert "Apache License" in terms and "Version 2.0, January 2004" in terms
+    assert "END OF TERMS AND CONDITIONS" in terms
