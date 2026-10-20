@@ -1,0 +1,22 @@
+{
+  "this_file": "menu-revisions.json",
+  "revisions": [
+    {
+      "destination": "Scripts/Anchors/Copy Anchors From Glyph.py",
+      "historical_sha256": "d99143550bef5989a5f7e13e0a87ddc25a7ce39076b0bacfaa6b19de97167ded",
+      "current_sha256": "046dbf5a680c87aa722a527da700231dcdf126d0c4a4c95e4d24f21259397f89",
+      "source_sha256": "5a75bff7b933ab4f65d694d1e3c780e5a75cec3b52ec0875e038f308475da747",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "def fmt(point) -> str:\n",
+          "current": "def fmt(point: tuple[int, int] | None) -> str:\n    \"\"\"Format a rounded anchor pair, or label an anchor removal.\"\"\"\n"
+        },
+        {
+          "historical": "    def source_glyph(self):\n",
+          "current": "    def source_glyph(self) -> \"fontlab.flGlyph | None\":\n        \"\"\"Return the named native glyph, or None without a source font or name.\"\"\"\n"
+        }
+      ]
+    }
+  ]
+}

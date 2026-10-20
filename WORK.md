@@ -3014,3 +3014,40 @@ unknown routes and simultaneous old/new identities are refused. A private full
 rehearsal with the literal owner manifest and all 13 owner test files passes
 960 tests/one explicit skip, including original-source audits. No canonical
 file was changed by this clean feature integration.
+
+
+## N48 — bounded anchor-menu polish
+
+N45 identified missing fmt(point) typing/docstring and source_glyph return typing/
+docstring in Scripts/Anchors/Copy Anchors From Glyph.py. Actual App anchor_points
+rounds both coordinates to integers; plan retains integer pairs. The existing
+Fly-backed fontlab alias supplies the quoted flGlyph-or-None return annotation,
+without an additional native type lookup or import. Runtime bodies are unchanged.
+
+Annotation/docstring bytes change the destination digest. The minimal optional
+menu-revisions.json overlay records the exact two edits and old/current/source
+hashes. current_rows exposes current bytes; released_bytes verifies source
+identity and current bytes, reverses only the recorded edits and rechecks the
+historical digest. It supports historical/current destination hashes while
+leaving migration.json and all original-source hashes unchanged. Existing
+historical/current Contours route handling and all prior 68 frozen checks remain.
+
+Tests-first typing check failed before the edit. Focused anchor/runtime/layout
+checks pass 44 tests. Full source checks against the actual App0.2.73.dev0 wheel
+without a source override pass 976 tests/one explicit skip, including the original
+source audit. Thirty focused controls measure 100% statements, branches and aggregate
+coverage of the full menu_layout helper. Tests prove executable AST identity and
+reject source/hash/body/edit/duplicate/unknown revision changes. A private control
+with the literal owner canonical manifest produces the same 69 routes without
+rewriting its bytes. All 98 other current menus remain byte-exact; 99 menus compile
+under Python3.11. The complete 127 original active origins remain in scope.
+
+Retained setup failures: the first focused run omitted the imported fixture's
+three dependencies; the first coverage command omitted the App distribution.
+Both were corrected and rerun; neither changed product code or expectations.
+Scoped Ruff checks pass after formatting only the new tests and placing pytest
+fixture shadowing suppressions on the actual parameter lines.
+
+No canonical edit, native action, live installation, source push, release or
+publication occurred. Source review and later acceptance remain separate.
+Private receipt directory: verification/issue-120/anchor-menu-polish-z29.

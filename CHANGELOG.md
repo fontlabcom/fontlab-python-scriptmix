@@ -734,3 +734,13 @@ candidates, the original 130-sample migration and the broader scope remain open.
 Known already-current migration rows now resolve idempotently through the same
 reviewed move overlay as historical rows. Preserve manifest bytes and source
 metadata. Unknown or ambiguous routes and changed hashes/bodies are refused.
+
+
+## N48 — anchor-copy helper typing
+
+Declare the existing rounded integer-point and optional native-glyph types in
+Copy Anchors From Glyph. Add short purpose docstrings without changing executable
+statements or imports. The glyph annotation is quoted and uses the existing
+Fly-backed fontlab alias. Record the two exact source edits in menu-revisions.json;
+current menu hashes and exact historical release bytes remain independently
+verifiable. Historical migration rows and original-source hashes are unchanged.

@@ -35,7 +35,27 @@ def released_bytes(root: Path, row: dict) -> bytes:
         else None
     )
     if move is None:
-        return (root / row["destination"]).read_bytes()
+        raw = (root / row["destination"]).read_bytes()
+        revision = _revisions(root).get(row["destination"])
+        if revision is None:
+            return raw
+        if (
+            row["source_sha256"] != revision["source_sha256"]
+            or row["destination_sha256"] not in {
+                revision["historical_sha256"], revision["current_sha256"]
+            }
+            or hashlib.sha256(raw).hexdigest() != revision["current_sha256"]
+        ):
+            raise ValueError("Menu revision differs from its source or destination provenance.")
+        historical = raw
+        for edit in reversed(revision["edits"]):
+            current, previous = edit["current"].encode(), edit["historical"].encode()
+            if historical.count(current) != 1:
+                raise ValueError("Menu revision edit is absent or ambiguous.")
+            historical = historical.replace(current, previous, 1)
+        if hashlib.sha256(historical).hexdigest() != revision["historical_sha256"]:
+            raise ValueError("Menu revision changed more than its recorded edits.")
+        return historical if row["destination_sha256"] == revision["historical_sha256"] else raw
     raw = (root / move["destination"]).read_bytes()
     if (
         row["destination_sha256"] != move["original_sha256"]
@@ -49,6 +69,16 @@ def released_bytes(root: Path, row: dict) -> bytes:
     if hashlib.sha256(original).hexdigest() != move["original_sha256"]:
         raise ValueError("Moved menu changed more than its reviewed header.")
     return original
+
+
+def _revisions(root: Path) -> dict[str, dict]:
+    """Read the optional exact edit ledger without rewriting historical rows."""
+    path = root / "menu-revisions.json"
+    rows = json.loads(path.read_text())["revisions"] if path.is_file() else []
+    result = {row["destination"]: row for row in rows}
+    if len(result) != len(rows):
+        raise ValueError("Duplicate menu revision.")
+    return result
 
 
 def current_rows(root: Path) -> list[dict]:
@@ -86,4 +116,11 @@ def current_rows(root: Path) -> list[dict]:
                     "destination_sha256": move["destination_sha256"],
                 }
             )
+    revisions = _revisions(root)
+    if not revisions.keys() <= {row["destination"] for row in result}:
+        raise ValueError("Menu revision has no known migration identity.")
+    for row in result:
+        if row["destination"] in revisions:
+            released_bytes(root, row)
+            row["destination_sha256"] = revisions[row["destination"]]["current_sha256"]
     return result

@@ -27,7 +27,8 @@ _api = anchor_copy_api()
 layer_of, anchor_points, plan = _api.layer_of, _api.anchor_points, _api.plan
 
 
-def fmt(point) -> str:
+def fmt(point: tuple[int, int] | None) -> str:
+    """Format a rounded anchor pair, or label an anchor removal."""
     return "removed" if point is None else f"{point[0]}, {point[1]}"
 
 
@@ -82,7 +83,8 @@ class CopyAnchors(anchor_copy_dialog_type()):
         self._connect(self.scale.toggled, lambda *a: self.refresh())
         self._connect(self.scope.currentIndexChanged, lambda *a: self.refresh())
 
-    def source_glyph(self):
+    def source_glyph(self) -> "fontlab.flGlyph | None":
+        """Return the named native glyph, or None without a source font or name."""
         name = self.source.text.strip()
         return self.package.findName(name) if self.package and name else None
 
