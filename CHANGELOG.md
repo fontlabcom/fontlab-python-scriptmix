@@ -778,3 +778,8 @@ overlay rehearsal retains the raw manifest, 13 literal files and 2 bounded histo
 current-view test adapters plus 7 merged owner docs; it repeats 982/1 + 10 tests and
 the strict offline build. Canonical application and native acceptance remain
 controller-owned and pending. Exact receipts live outside the public tree.
+
+## Unreleased — complete reporting pair candidate
+Add first-master node compatibility counts/first differences and own-path SVG
+commands with shared Refresh/Close panels. Fix original false-compatible cases;
+retain unconditional Z policy and refuse unsupported whole reports. Native pending.

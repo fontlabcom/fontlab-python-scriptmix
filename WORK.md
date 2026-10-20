@@ -3144,3 +3144,25 @@ loader failure; ordinary registry missing first-party dependencies resolved by
 retained reviewed wheels; test helper/preserved-original path setup corrections.
 No original third-party body was executed. Native/session/history/cache/reopen,
 UI lifetime, independent review and release remain pending.
+
+## Issue120 N63 report pair candidate
+Tests first: missing modules failed collection;35 model/native-shaped checks pass.
+Full Reset master-node report and Simon SVG own-path command dump retain original
+contracts with explicit false-compatible repairs and unsupported-segment refusal.
+Private candidate only. Full installed wheel and independently built sdist each:
+App3564pass; Scriptmix985pass/1existing skip; docs10pass.65 focused source controls.
+Each of five whole new modules exceeds80%statements/80%branches, zero exclusions.
+N67 repairs retained: masters-only findLayer reader never reads auxiliaries,
+anchors or component base names; SVG rejects projective transforms wholesale.
+Exact commands: `rtk proxy /opt/homebrew/bin/python3 verification/issue-120/report-pair-z30/build_install.py`
+(exit0 ordinary archives/normal dependency resolution from local wheels+cache);
+`rtk proxy /opt/homebrew/bin/python3 verification/issue-120/report-pair-z30/run_suites.py`
+(exit0 full suites, whole-module coverage and dependency checks);
+`rtk proxy /opt/homebrew/bin/python3 verification/issue-120/report-pair-z30/verify_artifacts.py`
+(exit0 exact225runtime files in both archives/both installations;220previous files unchanged).
+App.77 final document/annotation rewrap preserves all tested runtime behavior;
+final exact artifacts are reinstalled and full suites rerun before freeze.
+Receipts include master-domain/projective red→green controls, independent
+reviewer regressions, exact source/licence provenance, docs10pass, Ruff/diff checks.
+Native getter/cache/history/reopen/UI qualification, review and publication remain pending.
+No native/live/canonical/push/publication actions.

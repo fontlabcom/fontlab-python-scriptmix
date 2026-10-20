@@ -554,3 +554,5 @@ Retain current_rows and both manifest representations without rewriting metadata
 Final installed combined App0.2.73 wheel/source-archive checks pass. Root review
 and canonical integration remain before delivery; native acceptance/publication
 remain separate gates.
+
+- [ ] Review N63 complete report pair, then qualify installed native getter preservation and owned panel lifetime before promotion/publication.

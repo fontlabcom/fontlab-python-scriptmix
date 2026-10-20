@@ -454,3 +454,10 @@ Cozens. MIT licence: the complete Simon Cozens MIT terms retained above apply.
 Modified for a FontLab all-glyph snapshot, XML escaping and owned Refresh/Close
 panel. Category policy remains Glyport's GSGlyph.category implementation.
 Native qualification pending.
+
+Issue120 reporting pair adaptations
+- Fernando Díaz & Reset Type Studio, Copyright 2025, Paths/Compatibility Check.py,
+  Apache-2.0 as declared in upstream README.md License section. Full Apache terms
+  are retained in LICENSE-APACHE-2.0 (App) / LICENSE (Scriptmix).
+- Simon Cozens, Dump to SVG.py, MIT; existing Simon Cozens MIT terms above apply.
+  Preserve own-path command scope and unconditional Z; native qualification pending.

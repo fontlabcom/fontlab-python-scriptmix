@@ -648,5 +648,41 @@
     "native_acceptance": "pending",
     "release_gate": "pending native preservation/lifecycle and reviewed artifact gates",
     "app_minimum": "0.2.74.dev0"
+  },
+  {
+    "title": "Master Node Compatibility Report",
+    "key": "master_node_report",
+    "destination": "Scripts/Reports/Master Node Compatibility Report.py",
+    "destination_sha256": "69b3a139639f7b40fc87b06d68a86ab8351a6b43f383fa2f91fc98dd93ba3147",
+    "kind": "original-workflow-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
+    "source": "Paths/Compatibility Check.py",
+    "source_sha256": "f7aed35a6a64d601124fe933ad72b04192fdc5e97a898d7a02d5a53cc2506420",
+    "license": "Apache-2.0",
+    "license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
+    "license_source": "README.md",
+    "scope": "Selected unique glyphs, every master versus first, full path/oncurve/line/curve+qcurve/handle/point counters and first node mismatch. Fix equal-count type mismatches and trailing missing reference paths.",
+    "native_acceptance": "pending",
+    "release_gate": "pending controller review, owned native preservation/lifecycle and artifact gates",
+    "app_minimum": "0.2.77.dev0"
+  },
+  {
+    "title": "Dump to SVG Path Commands",
+    "key": "svg_path_commands",
+    "destination": "Scripts/Reports/Dump to Svg Path Commands.py",
+    "destination_sha256": "be2066e63cdf0a8ceb58f8ca251b8bcf643ecee821423b7dfbb27fb9376da535",
+    "kind": "original-workflow-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source": "Dump to SVG.py",
+    "source_sha256": "c94229a19becf671b56295cc61bb2154a43d5bb77455cc76aacecde4a0746975",
+    "license": "MIT",
+    "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "license_source": "LICENSE",
+    "scope": "First selected layer own paths only; ordered M/L/C operands, unconditional Z and blank line after every open/closed/empty contour. Unsupported/quadratic segments refuse the whole report; not a complete SVG/component export. Own affine shape transforms are applied; projective transforms refuse the whole report.",
+    "native_acceptance": "pending",
+    "release_gate": "pending controller review, owned native preservation/lifecycle and artifact gates",
+    "app_minimum": "0.2.77.dev0"
   }
 ]

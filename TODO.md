@@ -107,3 +107,5 @@ this_file: TODO.md
 - [x] N39: verify both final combined App0.2.73 installed artifacts against all102menus and exact runtime payloads.
 - [ ] N39: obtain root source review and preserve owner changes during canonical integration.
 - [ ] N39: complete native contour-selection transport/dialog/history/preservation acceptance through the existing dedicated-session gate.
+
+- [ ] Review N63 complete report pair, then qualify installed native getter preservation and owned panel lifetime before promotion/publication.
