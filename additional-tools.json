@@ -580,5 +580,22 @@
       "Tab groups use intended deterministic sorted names rather than unsorted set iteration.",
       "Explicit named symbols avoid empty-section orphan slashes and Unicode/slash substitution."
     ]
+  },
+  {
+    "title": "Categories to XML Lib Key",
+    "key": "category_xml",
+    "destination": "Scripts/Reports/Categories to XML Lib Key.py",
+    "destination_sha256": "ded9427081ebc8919ad7aa4dc315a118b6cc0c8d701cbcd34d44e689cee086f3",
+    "kind": "original-workflow-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source": "Categories to XML lib key.py",
+    "source_sha256": "9b66520bbf9f4356d4af0d2434a54701128f5f6b5ff293e502c172c80eb389aa",
+    "license": "MIT",
+    "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "scope": "Every glyph in font order; existing Glyport GSGlyph.category Mark versus base; complete selectable XML lib fragment with Refresh/Close. XML escaping adaptation.",
+    "native_acceptance": "pending",
+    "release_gate": "pending native preservation/lifecycle and reviewed artifact gates",
+    "app_minimum": "0.2.74.dev0"
   }
 ]

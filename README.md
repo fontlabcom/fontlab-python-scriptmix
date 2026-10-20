@@ -82,3 +82,7 @@ Reports and Proof > Bracket Layers and Components scan the whole font, all foreg
 
 Build local documentation with `./build.sh --offline`. Generated output lives
 in `.build/site/`; the authored `docs/PRE-INTEGRATION-GUIDE.md` is preserved.
+
+`Categories to XML Lib Key` is a source candidate for a complete ordered UFO lib
+fragment using Glyport category metadata. Refresh/Close reuse the shared owned
+report panel. Actual FontLab preservation/lifecycle acceptance remains pending.

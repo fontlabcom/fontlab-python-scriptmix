@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — Categories to XML Lib Key candidate
+
+Add Simon Cozens' complete ordered Mark/base UFO lib fragment workflow using
+the existing Glyport category policy through Fly and a shared read-only App
+snapshot panel. Escape XML glyph names; reject observed source changes and
+incomplete captures. Source/artifact controls are tracked separately from pending
+native preservation, lifecycle and release acceptance.
+
 ## Unreleased — complete Italic Angle candidate
 
 Add Masters > Italic Angle through the shared App editor. Retain ordered master

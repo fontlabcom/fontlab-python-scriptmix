@@ -429,3 +429,10 @@ fresh-tab symbols. Preserve both complete groups; explain overlapping membership
 and count distinct total, sort proof groups deterministically and remove empty-
 section orphan slashes. Original bodies/resources are neither run nor distributed.
 Native behavior and full preservation qualification remain pending.
+
+Categories to XML Lib Key (issue120 candidate): behavior adapted from Simon
+Cozens/GlyphsScripts/Categories to XML lib key.py. Copyright (c) 2017 Simon
+Cozens. MIT licence: the complete Simon Cozens MIT terms retained above apply.
+Modified for a FontLab all-glyph snapshot, XML escaping and owned Refresh/Close
+panel. Category policy remains Glyport's GSGlyph.category implementation.
+Native qualification pending.

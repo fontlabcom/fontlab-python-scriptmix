@@ -3014,3 +3014,25 @@ unknown routes and simultaneous old/new identities are refused. A private full
 rehearsal with the literal owner manifest and all 13 owner test files passes
 960 tests/one explicit skip, including original-source audits. No canonical
 file was changed by this clean feature integration.
+
+## 2026-10-21 — Categories XML candidate (N43/Z29)
+
+Isolated candidate only, based on App a02013a / Scriptmix1201c8a. Complete Simon
+Cozens source workflow retained: every glyph, source order, Mark versus base,
+empty dictionary and selectable lib XML. Fly imports existing Glyport category
+policy; no GDEF substitution, package dependency change or owner/live write.
+Fresh commands/results and artifact receipts are retained in workspace
+verification/issue-120/next-practical-family-z29/. Native acceptance pending.
+
+Fresh exact verification recipes (workspace root; retained command arrays and
+exit codes in `next-practical-family-z29/{build-install-final,final-commands}.json`):
+- `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/next-practical-family-z29/build_install_final.py`: exit0; final ordinary wheel/sdist and both normal reinstalls.
+- `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/next-practical-family-z29/run_final.py`: exit0; each installed App suite2996pass; each Scriptmix suite960pass2existing skips; actual installed category-policy/Fly identity checks; dependency consistency.
+- `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/next-practical-family-z29/verify_artifacts.py`: exit0;211runtimefiles equal source/both archives/both installed copies, exact NOTICE/licences and original AST Mark/base/all-glyph oracle.
+- Targeted `rtk proxy uvx ruff check ...`: exit0; both feature `git diff --check`: exit0. Whole new App modules64statements/14branches100/100, zero exclusions.
+Failures retained separately: initial missing module before implementation; one
+incorrect reversal fixture corrected to an observed name change; bare Git Xcode
+loader failure; ordinary registry missing first-party dependencies resolved by
+retained reviewed wheels; test helper/preserved-original path setup corrections.
+No original third-party body was executed. Native/session/history/cache/reopen,
+UI lifetime, independent review and release remain pending.
