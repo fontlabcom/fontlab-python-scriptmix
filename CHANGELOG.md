@@ -706,3 +706,7 @@ canonical merge, live install, tag, release or site publication is claimed.
 Add source-bound full texts and provenance for named frontend components, including transitive JavaScript dependencies, icons, shared theme inputs and external font responses. Keep the full transitive/publication review explicitly open; runtime assets and retained archives are unchanged.
 
 Z24 preservation found that the previous docs output path cleaned the authored integration guide in the isolated worktree. Restored the exact tracked guide, retained the earlier generated output in private evidence, and changed output to `.build/site/`. A tests-first regression rejects overlapping authored/output directories. No canonical source was changed. Fresh strict-build/preservation evidence is required below.
+
+## Issue120 Z26
+
+Preserve exact upstream notice bytes through Git filters, fresh checkout and archives; add a CRLF distribution regression. Source manifests and pending publication scope remain unchanged.
