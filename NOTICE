@@ -454,3 +454,13 @@ Cozens. MIT licence: the complete Simon Cozens MIT terms retained above apply.
 Modified for a FontLab all-glyph snapshot, XML escaping and owned Refresh/Close
 panel. Category policy remains Glyport's GSGlyph.category implementation.
 Native qualification pending.
+
+
+Reza Bohloul — Same Kerning Groups (independent implementation)
+-----------------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: Kerning/Same Kerning Groups.py
+Original SHA-256: fc2e6b144d53388b7105498f9debf55edf2c65986c3f559683b106623fbb9544
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. This independently written
+implementation is Apache-2.0; complete terms are in LICENSE.

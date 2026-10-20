@@ -3144,3 +3144,8 @@ loader failure; ordinary registry missing first-party dependencies resolved by
 retained reviewed wheels; test helper/preserved-original path setup corrections.
 No original third-party body was executed. Native/session/history/cache/reopen,
 UI lifetime, independent review and release remain pending.
+
+
+## N68 source work
+
+Tests first: retained missing-module failure, then29 meaningful planner/native/capture/symbol/owned-diagnosis cases pass. Whole new modules100statement/100branch,zeroexclusions. Commands/results and final artifact receipts live in verification/issue-120/kerning-group-proof-z31/. No corpus execution, native/canonical/live write or push.

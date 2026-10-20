@@ -778,3 +778,8 @@ overlay rehearsal retains the raw manifest, 13 literal files and 2 bounded histo
 current-view test adapters plus 7 merged owner docs; it repeats 982/1 + 10 tests and
 the strict offline build. Canonical application and native acceptance remain
 controller-owned and pending. Exact receipts live outside the public tree.
+
+
+## N68 Same Kerning Groups proof candidate
+
+Implement the complete first-selected-glyph left/right peer proof, independent class maps, font order, explicit named peers, literal labels and original empty/singleton diagnosis. Native acceptance pending.

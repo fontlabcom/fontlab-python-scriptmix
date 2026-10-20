@@ -593,7 +593,7 @@
     "source_sha256": "d6814436e871cc1e80668d31bb3b15428107d5fd6cbdd3976d74643b3a3a2840",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018–2022 Pedro Arilla",
+    "copyright": "2018\u20132022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -610,7 +610,7 @@
     "source_sha256": "fe88203e787c5a5e9ada86c16b25e4f9da0a1afe29391a197b26b67fa8a15c20",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018–2022 Pedro Arilla",
+    "copyright": "2018\u20132022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -627,7 +627,7 @@
     "source_sha256": "082e445b23e6085ace77ebc30ecb4025dc0210185d1646b854129630158dc444",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018–2022 Pedro Arilla",
+    "copyright": "2018\u20132022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -648,5 +648,24 @@
     "native_acceptance": "pending",
     "release_gate": "pending native preservation/lifecycle and reviewed artifact gates",
     "app_minimum": "0.2.74.dev0"
+  },
+  {
+    "title": "Same Kerning Groups",
+    "key": "same_kerning_groups",
+    "destination": "Scripts/Kerning/Same Kerning Groups.py",
+    "destination_sha256": "eab14e9a8b62427b929de77ad0e4199515c762f4061d4a32203657ddc9112582",
+    "kind": "independent-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Kerning/Same Kerning Groups.py",
+    "source_sha256": "fc2e6b144d53388b7105498f9debf55edf2c65986c3f559683b106623fbb9544",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "source_attribution": "Reza Bohloul",
+    "license": "Apache-2.0",
+    "scope": "First selected glyph; independent visual left/right group peers in font order, excluding current identity. Literal labels/separators and explicit named peer symbols in a fresh tab; source empty/singleton diagnosis. Distinct overlapping side classes are diagnosed before tab creation; nonkerning classes are filtered.",
+    "native_acceptance": "pending",
+    "release_gate": "pending owned native fresh-tab/cursor/workspace and full font/cache/history preservation",
+    "app_minimum": "0.2.79.dev0"
   }
 ]

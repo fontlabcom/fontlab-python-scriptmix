@@ -554,3 +554,8 @@ Retain current_rows and both manifest representations without rewriting metadata
 Final installed combined App0.2.73 wheel/source-archive checks pass. Root review
 and canonical integration remain before delivery; native acceptance/publication
 remain separate gates.
+
+
+## N68 native acceptance
+
+Qualify the installed complete peer proof, named/unencoded symbols, literal labels, first-selected order, fresh-tab/cursor/source activation, owned diagnoses and complete font/cache/history/dirty/save/reopen preservation.
