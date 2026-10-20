@@ -21,7 +21,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 33 and len(actual) == 102
+    assert len(rows) == 69 and len(extra) == 34 and len(actual) == 103
     for relative in actual:
         path = ROOT / relative
         assert len(Path(relative).parts) == 3, relative

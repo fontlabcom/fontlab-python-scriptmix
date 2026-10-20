@@ -93,3 +93,7 @@ strict unsigned analytic area and a source-bound numeric prompt. Analytic curve
 area can differ from Glyphs flattening. Native acceptance remains pending; mixed
 non-node clearing currently requires one displayed glyph and supported visual
 item kinds. These three additional tools do not change the130-sample denominator.
+
+`Categories to XML Lib Key` is a source candidate for a complete ordered UFO lib
+fragment using Glyport category metadata. Refresh/Close reuse the shared owned
+report panel. Actual FontLab preservation/lifecycle acceptance remains pending.

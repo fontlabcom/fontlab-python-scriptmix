@@ -133,6 +133,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 ## Reports
 
 - [Bracket Layers and Components](reports/bracket-layers-and-components.md)
+- [Categories to XML Lib Key](reports/categories-to-xml-lib-key.md)
 - [Compare Open Font Revisions](reports/compare-open-font-revisions.md)
 - [Empty Glyphs](reports/empty-glyphs.md)
 - [Font Overview](reports/font-overview.md)

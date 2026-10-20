@@ -447,3 +447,10 @@ area (can differ from Glyphs flattening); explicit stale-source checks and
 best-effort flag rollback. Mixed non-node clearing requires a single displayed
 glyph and supported native visual kinds. No Output clearing or geometry Undo.
 Native workflows, complete selection transport and preservation remain pending.
+
+Categories to XML Lib Key (issue120 candidate): behavior adapted from Simon
+Cozens/GlyphsScripts/Categories to XML lib key.py. Copyright (c) 2017 Simon
+Cozens. MIT licence: the complete Simon Cozens MIT terms retained above apply.
+Modified for a FontLab all-glyph snapshot, XML escaping and owned Refresh/Close
+panel. Category policy remains Glyport's GSGlyph.category implementation.
+Native qualification pending.
