@@ -1,0 +1,10 @@
+nav:
+- index.md
+- install.md
+- use.md
+- Scripts: scripts
+- tags.md
+- topics.md
+- contribute.md
+- plugins.md
+- licenses.md

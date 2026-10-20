@@ -2816,3 +2816,12 @@ or acceptance promotion, goalactive/98%unproved.
 Exact rtk command/exit receipts and retained failures: workspace verification/issue-120/layer-compatibility-z4/command-receipts.json; ordinary install/per-suite argv/env/exit and origin/PID stamps in review-v1. Source, coverage, modeless Qt6 renders and archive audits pass; native acceptance is separate.
 
 Wait, but: source/double/Qt6/normal-artifact controls do not attest the compiled FontLab layer/node mapping or getter/cache/font/history/reopen preservation. No native/menu/release acceptance follows from these candidate checks.
+
+
+## Issue120 current documentation Z5
+
+A source-backed catalogue documents all158 current menu scripts without importing them. Hash-named build snapshots retain complete sources even when filenames contain parentheses, accents or apostrophes. Runtime menu bytes are unchanged.
+
+Full maintained suite:1,070 passed/1 existing skip. Locked docs suite:9 passed. src_docs/build.py has96.77% statement and87.50% branch coverage, zero exclusions. Strict offline build and all158 rendered-source comparisons pass. Sixteen accessibility views pass.
+
+Wait, but: local source/build/browser checks are not native FontLab execution or whole issue120 acceptance. D25 native connectivity, complete branch/routes/archive/distribution/release and publication gates remain open. No canonical checkout, live install or remote site changed. Exact commands, retained failed attempts and receipts are in the parent workspace verification/issue-120/docs-z5/.

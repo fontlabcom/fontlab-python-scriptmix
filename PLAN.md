@@ -510,3 +510,9 @@ all foreground masters/auxiliaries, cubic/quadratic/open/closed/empty paths, ord
 node indexes and name sets; include repeated Refresh/errors/completion and whole
 font/read/cache/history/dirty/save/reopen preservation. Retain every original
 issue120 Tasksets1/2, package/docs/native/distribution/release gate.
+
+
+## Issue120 current documentation Z5
+
+- [x] Build current source documentation and verify rendered source plus local browser behavior.
+- [ ] Complete whole-branch review, original native acceptance and every remaining publication/distribution gate before promotion.

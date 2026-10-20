@@ -1,0 +1,15 @@
+# Names
+
+- [Batch Glyph Notes](batch-glyph-notes.md)
+- [Batch Rename](batch-rename.md)
+- [Case Pairs](case-pairs.md)
+- [Character Info](character-info.md)
+- [Character Set Compare](character-set-compare.md)
+- [Duplicate Unicodes](duplicate-unicodes.md)
+- [Glyph Finder](glyph-finder.md)
+- [Glyph Notes](glyph-notes.md)
+- [Glyph Tags](glyph-tags.md)
+- [Mark Color Palette](mark-color-palette.md)
+- [Select by Mark](select-by-mark.md)
+- [Suffix Tool](suffix-tool.md)
+- [Unicode From Names](unicode-from-names.md)

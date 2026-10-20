@@ -70,3 +70,8 @@ candidate. MIT/Apache source attribution and hashes are in NOTICE/provenance.
 Z4 adds no dependency: stdlib immutable records plus existing native selection
 and owned snapshot dialog. Scriptmix requires unpublished reviewed App>=0.2.51.dev0
 via Fly. No required reverse package edge or third-party implementation is added.
+
+
+## Issue120 current documentation Z5
+
+No runtime dependency added. Locked ProperDocs/MaterialX and codeinclude are documentation-only. Plugin grammar regressions run under src_docs/tests in the docs environment.

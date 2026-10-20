@@ -84,3 +84,9 @@ this_file: TODO.md
 
 - [ ] Z4: native-qualify installed complete layer-compatibility report and all
   original source/topology/read/UI/full-font/history/cache/reopen contracts.
+
+
+## Issue120 current documentation Z5
+
+- [x] Verify current source documentation locally (Z5 evidence).
+- [ ] Review and qualify the complete documentation branch and pending native/publication gates.

@@ -673,3 +673,8 @@ auxiliary order and source messages; fix foreign first-glyph labels and global
 path suppression, and sort displayed name sets. Owned Refresh/Close replaces
 Output writes. These source checks are not an export-compatibility certificate.
 Actual native topology/order/read/cache/font/history/reopen acceptance is pending.
+
+
+## Issue120 current documentation Z5
+
+A source-backed catalogue documents all158 current menu scripts without importing them. Hash-named build snapshots retain complete sources even when filenames contain parentheses, accents or apostrophes. Runtime menu bytes are unchanged.
