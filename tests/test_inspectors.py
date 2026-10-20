@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Complete original metrics and outline menu acceptance with native-shaped doubles."""
 
+import runpy
 from pathlib import Path
 
 import pytest
@@ -15,6 +16,20 @@ TOOLS = [
     ("Contours", "Contour Order View", "ContourOrder"),
     ("Contours", "Node Statistics", "NodeStatistics"),
 ]
+
+
+@pytest.mark.parametrize("title", ["Contour Order View", "Node Statistics"])
+def test_moved_menu_main_guard_opens_owned_panel_and_close_releases_it(
+    inspectors, monkeypatch, title
+):
+    monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
+    namespace = runpy.run_path(
+        str(ROOT / "Scripts" / "Contours" / (title + ".py")), run_name="__main__"
+    )
+    dialog = sys._fontlab_samples[namespace["KEY"]]
+    assert "Open a font" in dialog.subtitle.text, "Launch must retain the no-font diagnosis"
+    dialog.close_button.clicked.emit()
+    assert dialog.deleted and not sys._fontlab_samples, "Close must release the owned panel"
 
 
 @pytest.mark.parametrize("category,title,klass", TOOLS)

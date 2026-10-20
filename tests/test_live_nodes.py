@@ -5,6 +5,7 @@
 import hashlib
 import importlib.util
 import json
+import runpy
 import sys
 from pathlib import Path
 from types import SimpleNamespace as NS
@@ -15,6 +16,19 @@ from test_anchors import anchors, components, masters  # noqa: F401
 from test_proof import Signal
 
 ROOT = Path(__file__).parents[1]
+
+
+def test_moved_node_menu_main_guard_opens_owned_panel_and_close_releases_it(
+    nodes, monkeypatch
+):
+    monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
+    namespace = runpy.run_path(
+        str(ROOT / "Scripts/Contours/Node Coordinates Panel.py"), run_name="__main__"
+    )
+    dialog = sys._fontlab_samples[namespace["KEY"]]
+    assert not dialog.timer.active, "A no-font launch must leave polling stopped"
+    dialog.close_button.clicked.emit()
+    assert dialog.deleted and not sys._fontlab_samples, "Close must release panel and timer"
 
 
 @pytest.fixture
