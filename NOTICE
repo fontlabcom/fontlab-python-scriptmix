@@ -461,3 +461,13 @@ Issue120 reporting pair adaptations
   are retained in LICENSE-APACHE-2.0 (App) / LICENSE (Scriptmix).
 - Simon Cozens, Dump to SVG.py, MIT; existing Simon Cozens MIT terms above apply.
   Preserve own-path command scope and unconditional Z; native qualification pending.
+
+
+Reza Bohloul — Same Kerning Groups (independent implementation)
+-----------------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: Kerning/Same Kerning Groups.py
+Original SHA-256: fc2e6b144d53388b7105498f9debf55edf2c65986c3f559683b106623fbb9544
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. This independently written
+implementation is Apache-2.0; complete terms are in LICENSE.

@@ -783,3 +783,11 @@ controller-owned and pending. Exact receipts live outside the public tree.
 Add first-master node compatibility counts/first differences and own-path SVG
 commands with shared Refresh/Close panels. Fix original false-compatible cases;
 retain unconditional Z policy and refuse unsupported whole reports. Native pending.
+
+
+## N68 Same Kerning Groups proof candidate
+
+Implement the complete first-selected-glyph left/right peer proof, independent class maps, font order, explicit named peers, literal labels and original empty/singleton diagnosis. Native acceptance pending.
+
+
+N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.

@@ -684,5 +684,24 @@
     "native_acceptance": "pending",
     "release_gate": "pending controller review, owned native preservation/lifecycle and artifact gates",
     "app_minimum": "0.2.77.dev0"
+  },
+  {
+    "title": "Same Kerning Groups",
+    "key": "same_kerning_groups",
+    "destination": "Scripts/Kerning/Same Kerning Groups.py",
+    "destination_sha256": "bbcde4e727fd0e25cfce8c194796b8cc49b37f8f419698d4533a72e3af8e7d2a",
+    "kind": "independent-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Kerning/Same Kerning Groups.py",
+    "source_sha256": "fc2e6b144d53388b7105498f9debf55edf2c65986c3f559683b106623fbb9544",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "source_attribution": "Reza Bohloul",
+    "license": "Apache-2.0",
+    "scope": "First selected glyph; independent visual left/right group peers in font order, excluding current identity. Literal labels/separators and explicit named peer symbols in a fresh tab; source empty/singleton diagnosis. Distinct overlapping side classes are diagnosed before tab creation; nonkerning classes are filtered. Read first selected parent only, no selected layers; peer sides queried only when current has that side, no-group branch skips peers.",
+    "native_acceptance": "pending",
+    "release_gate": "pending owned native fresh-tab/cursor/workspace and full font/cache/history preservation",
+    "app_minimum": "0.2.82.dev0"
   }
 ]

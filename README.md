@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 105 practical tools in one-level Title Case
-categories: 69 sample adaptations and 36 additional tools. Additional adaptations
+The curated `Scripts` folder contains 106 practical tools in one-level Title Case
+categories: 69 sample adaptations and 37 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -97,3 +97,13 @@ item kinds. These three additional tools do not change the130-sample denominator
 `Categories to XML Lib Key` is a source candidate for a complete ordered UFO lib
 fragment using Glyport category metadata. Refresh/Close reuse the shared owned
 report panel. Actual FontLab preservation/lifecycle acceptance remains pending.
+
+
+## Same kerning groups
+
+Run **Kerning > Same Kerning Groups** with a selected glyph. The first selected
+glyph begins a fresh proof; separate L:/R: rows show every other same-group peer
+in font order, including unencoded names. Empty/singleton groups receive the
+original no-peers diagnosis. Requires Fly and App0.2.82.dev0. Native fresh-tab
+and full preservation acceptance remain pending; the130-sample denominator is
+unchanged. Reza Bohloul is credited, and no unlicensed source body is distributed.

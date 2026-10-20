@@ -72,6 +72,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Persistence Audit](kerning/persistence-audit.md)
 - [Remove Small Pairs](kerning/remove-small-pairs.md)
 - [Round Values](kerning/round-values.md)
+- [Same Kerning Groups](kerning/same-kerning-groups.md)
 - [Scale Values](kerning/scale-values.md)
 - [Text Preview](kerning/text-preview.md)
 

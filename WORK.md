@@ -3166,3 +3166,19 @@ Receipts include master-domain/projective red→green controls, independent
 reviewer regressions, exact source/licence provenance, docs10pass, Ruff/diff checks.
 Native getter/cache/history/reopen/UI qualification, review and publication remain pending.
 No native/live/canonical/push/publication actions.
+
+
+## N68 source work
+
+Tests first: retained missing-module failure, then29 meaningful planner/native/capture/symbol/owned-diagnosis cases pass. Whole new modules100statement/100branch,zeroexclusions. Commands/results and final artifact receipts live in verification/issue-120/kerning-group-proof-z31/. No corpus execution, native/canonical/live write or push.
+
+
+N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
+
+## N84 combined integration candidate (2026-10-21)
+
+Private union preserves all229 App.80 runtime/resource bytes and105 prior menu bytes, adding only the reviewed repaired.82 three-module Same Kerning Groups workflow and its exact tests/menu/provenance. README reflow preserves every word and owner warnings; count-only assertions honestly become106 menus/37 additions. No original source is executed or redistributed.
+
+Both normal App.84 wheel/sdist installed graphs pass App3667, Glyport3182/1skip, Fontport4489/2skips, Examples550, Scriptmix988/1skip, Lessons199 and Fly17. Every144 whole original-baseline changed module passes80% statements/branches with zero exclusions (99.1484% statements/97.1705% branches). Both lanes pass12 public first-reader/group/symbol/Fly controls,1600 row-oracle cases and2048 ordered peers, plus8 existing simultaneous real Qt5 lifecycle controls. Strict local source-backed docs and10 SDK tests pass. Evidence: workspace verification/issue-120/kerning-proof-integration-z33/{consumer-results.json,whole-scope-results.json,artifact-verification.json,public-controls.json,cross-family-commands.json,docs-tests.json}.
+
+Exact rtk proxy commands and exit0 results are retained in those receipts and build-install.json. A first docs build selected global properdocs via PATH and failed its missing categories plugin; the corrected locked SDK bin PATH passed without source edits. No native calls, live installation, canonical edits, push, release or publication were performed. Source/artifact verification does not qualify full native fresh-tab/font/history/cache/save/reopen behavior.

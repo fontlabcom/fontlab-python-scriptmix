@@ -11,5 +11,6 @@
 - [Persistence Audit](persistence-audit.md)
 - [Remove Small Pairs](remove-small-pairs.md)
 - [Round Values](round-values.md)
+- [Same Kerning Groups](same-kerning-groups.md)
 - [Scale Values](scale-values.md)
 - [Text Preview](text-preview.md)

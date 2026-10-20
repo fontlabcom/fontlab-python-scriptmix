@@ -109,3 +109,11 @@ this_file: TODO.md
 - [ ] N39: complete native contour-selection transport/dialog/history/preservation acceptance through the existing dedicated-session gate.
 
 - [ ] Review N63 complete report pair, then qualify installed native getter preservation and owned panel lifetime before promotion/publication.
+
+
+## N68
+
+- [ ] Qualify owned installed native group proof and full preservation. Keep all original Issue120 gates and the130-sample denominator open.
+
+
+N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.

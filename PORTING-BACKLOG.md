@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 105 practical tools: 69 sample adaptations and 36
+The active menu contains 106 practical tools: 69 sample adaptations and 37
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 

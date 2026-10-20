@@ -556,3 +556,11 @@ and canonical integration remain before delivery; native acceptance/publication
 remain separate gates.
 
 - [ ] Review N63 complete report pair, then qualify installed native getter preservation and owned panel lifetime before promotion/publication.
+
+
+## N68 native acceptance
+
+Qualify the installed complete peer proof, named/unencoded symbols, literal labels, first-selected order, fresh-tab/cursor/source activation, owned diagnoses and complete font/cache/history/dirty/save/reopen preservation.
+
+
+N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
