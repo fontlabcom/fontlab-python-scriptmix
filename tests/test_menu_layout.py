@@ -90,3 +90,35 @@ def test_unmoved_and_old_release_snapshots_require_no_overlay(tmp_path):
     (tmp_path / "menu-moves.json").write_text('{"moves":[]}')
     (tmp_path / "migration.json").write_text(json.dumps([row]))
     assert current_rows(tmp_path) == [row]
+
+
+def test_current_manifest_representation_retains_exact_routes_and_owner_bytes(tmp_path):
+    old, new, original, move, path = fixture(tmp_path)
+    expected = current_rows(tmp_path)
+    assert expected[0]["destination"] == move["destination"]
+    (tmp_path / "migration.json").write_text(json.dumps(expected))
+    owner_manifest = (tmp_path / "migration.json").read_bytes()
+    assert current_rows(tmp_path) == expected
+    assert current_rows(tmp_path) == expected, "Already current routes must be idempotent"
+    assert (tmp_path / "migration.json").read_bytes() == owner_manifest
+    assert expected[0]["source_sha256"] == original["source_sha256"]
+    assert path.read_bytes() == new
+    assert released_bytes(tmp_path, original) == old
+
+
+@pytest.mark.parametrize("failure", ["current_hash", "body", "unknown_route", "both_routes"])
+def test_current_manifest_representation_rejects_unknown_or_changed_routes(tmp_path, failure):
+    old, new, original, move, path = fixture(tmp_path)
+    current = current_rows(tmp_path)[0]
+    rows = [current]
+    if failure == "current_hash":
+        current["destination_sha256"] = "0" * 64
+    if failure == "body":
+        path.write_bytes(new.replace(b"value=1", b"value=2"))
+    if failure == "unknown_route":
+        current["destination"] = "Scripts/Unknown/One.py"
+    if failure == "both_routes":
+        rows.append(original)
+    (tmp_path / "migration.json").write_text(json.dumps(rows))
+    with pytest.raises(ValueError):
+        current_rows(tmp_path)

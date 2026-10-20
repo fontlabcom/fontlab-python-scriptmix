@@ -3003,3 +3003,14 @@ source files match the actual canonical menus byte-for-byte; reviewed notices,
 provenance and historical menu manifest remain unchanged. Exact commands, exit
 codes, public-path comparisons and gate receipts are retained privately by the
 controller.
+
+
+The controller reviewed and approved the bounded menu-layout compatibility fix.
+`current_rows` accepts either historical destination keys or their already-current
+known replacements, with the same verified move/body hashes. It never rewrites
+the manifest or waives source metadata. Fourteen focused tests give the entire
+helper 100% statement/branch/aggregate coverage; wrong hashes, changed bodies,
+unknown routes and simultaneous old/new identities are refused. A private full
+rehearsal with the literal owner manifest and all 13 owner test files passes
+960 tests/one explicit skip, including original-source audits. No canonical
+file was changed by this clean feature integration.

@@ -729,3 +729,8 @@ dispatchers from active Scripts; preserve every unfinished tool and source hash
 in the visible porting backlog. Prevent stale sibling bytecode in active menus.
 Regenerate the catalogue from actual menu sources. Native acceptance for new
 candidates, the original 130-sample migration and the broader scope remain open.
+
+
+Known already-current migration rows now resolve idempotently through the same
+reviewed move overlay as historical rows. Preserve manifest bytes and source
+metadata. Unknown or ambiguous routes and changed hashes/bodies are refused.

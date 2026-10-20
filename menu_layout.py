@@ -52,18 +52,33 @@ def released_bytes(root: Path, row: dict) -> bytes:
 
 
 def current_rows(root: Path) -> list[dict]:
-    """Return actual current destinations; never mutate historical migration rows."""
+    """Resolve historical or already-current routes without rewriting the manifest."""
     rows = json.loads((root / "migration.json").read_text())
     moves = _moves(root)
-    if not moves.keys() <= {row["destination"] for row in rows}:
-        raise ValueError("Menu move has no historical migration identity.")
+    destinations = {move["destination"]: move for move in moves.values()}
+    represented = {row["destination"] for row in rows}
+    for original, move in moves.items():
+        if len({original, move["destination"]} & represented) != 1:
+            raise ValueError("Menu move needs one known migration identity.")
     result = []
     for row in rows:
         move = moves.get(row["destination"])
+        current = destinations.get(row["destination"])
+        if current is not None and move is None:
+            if row["destination_sha256"] != current["destination_sha256"]:
+                raise ValueError("Current menu hash differs from its reviewed provenance.")
+            move = current
+            historical = {
+                **row,
+                "destination": move["original"],
+                "destination_sha256": move["original_sha256"],
+            }
+        else:
+            historical = row
         if move is None:
             result.append(dict(row))
         else:
-            released_bytes(root, row)
+            released_bytes(root, historical)
             result.append(
                 {
                     **row,
