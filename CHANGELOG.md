@@ -720,3 +720,12 @@ Preserve exact upstream notice bytes through Git filters, fresh checkout and arc
   and caller environment. Keep every notice/filter/checkout/archive assertion.
 - Preserve all upstream notice payloads and existing attributes/manifests.
   Source-only correction awaits fresh independent review; no new commit/push.
+
+
+## 2026-10-20 — curated active menu
+
+Keep 99 practical tools in one-level Title Case menus. Retire 61 archive
+dispatchers from active Scripts; preserve every unfinished tool and source hash
+in the visible porting backlog. Prevent stale sibling bytecode in active menus.
+Regenerate the catalogue from actual menu sources. Native acceptance for new
+candidates, the original 130-sample migration and the broader scope remain open.

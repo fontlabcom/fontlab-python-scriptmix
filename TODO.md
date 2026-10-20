@@ -97,3 +97,8 @@ this_file: TODO.md
 - [ ] Z9: qualify both complete bracket-layer workflows in native FontLab, including full-font/history/cache preservation and actual modeless/tab controls.
 
 - [ ] Z24: complete transitive frontend provenance/notices/source availability and full publication qualification; named-component notices alone do not close this gate.
+
+
+- [x] Curate 99 active practical menus and retain the full 61-tool unported backlog.
+- [ ] Complete native acceptance for new candidates and all retained migration,
+  package and documentation requirements before whole Issue120 acceptance.

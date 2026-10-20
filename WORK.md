@@ -2498,7 +2498,7 @@ Reviewed typed lazy Fly menu, source/license identity and pending-native manifes
 Matching App feature commit70aa791 contains carrier/deadline guards and retained
 callback fix; full995App tests and independently installed artifacts pass. Native
 acceptance remains pending. Feature commit preserves this distinction and does
-not add the tool to the accepted original130sample count.
+not add the tool to the accepted original 130-sample count.
 
 
 ## 2026-10-19 — D1 licensed component recipe candidate
@@ -2974,3 +2974,32 @@ print-site plugin; rerun with each repository's existing locked docs environment
 passes. No dependency or configuration change. Exact nested argv/exits and
 failed attempts remain in the parent verification receipts. Independent review
 and later actual-hook before/after index/config/origin preservation are pending.
+
+
+## 2026-10-20 — reviewed canonical menu cleanup
+
+Apply the independently reviewed curated-menu delta on reviewed 0dea177.
+The 99 practical menu bytes, additional-tool provenance and all frontend notices
+remain exact. Remove 61 archive dispatcher sources and their generated catalogue
+pages; retain their original hash ledger and visible unfinished backlog.
+Legacy sibling bytecode is excluded by a regression contract; the clean branch
+never tracks it. All original source/resource bodies remain in the private/local
+preserved root and are excluded from this public commit.
+
+Keep reviewed migration.json and its explicit menu-moves overlay unchanged.
+Canonical owner manifest/history/resolver edits are retained separately for the
+controller overlay; they are not copied into this clean source commit.
+
+Verification uses Python3.11, actual canonical Fly/App APIs and the existing
+private source root. Native acceptance, owner-site installs, tags/releases and
+site publication remain outside this scoped source delivery.
+
+Full clean-feature verification passes 955 tests with one explicit skip, including
+the requested original-source hash audit. The actual workspace coverage gate
+repeats all 955 runtime tests and 10 documentation SDK tests, and passes 96.05%
+aggregate coverage against the existing reviewed milestone baseline. Every
+scoped production module exceeds the configured 80% threshold. The 99 practical
+source files match the actual canonical menus byte-for-byte; reviewed notices,
+provenance and historical menu manifest remain unchanged. Exact commands, exit
+codes, public-path comparisons and gate receipts are retained privately by the
+controller.

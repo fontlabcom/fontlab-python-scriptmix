@@ -4,29 +4,30 @@ this_file: README.md
 
 # FontLab practical scripts
 
-This integration candidate combines 96 practical menu facades and 61
-preserved-source launchers. All entries use one category folder beneath
-`Scripts`. Each archived launcher is explicitly marked native compatibility
-pending. Counts describe source layout, not accepted native workflows.
+The curated `Scripts` folder contains 99 practical tools in one-level Title Case
+categories: 69 sample adaptations and 30 additional tools. Twenty-six additions
+are reviewed source candidates with pending native acceptance. Use Python3.11,
+fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
+layout, not accepted native workflows.
 
-Copy the practical `Scripts` entries into FontLab 9's Scripts folder. Use
-Python 3.11, Fly and the reviewed App 0.2.49.dev0 candidate. This is an
-unpublished prerequisite; use its reviewed artifact. Do not change a live
-FontLab environment as part of automated setup or test runs.
+Copy the practical `Scripts` entries into FontLab9's Scripts folder after
+provisioning those dependencies. Automated tests do not change a live FontLab
+environment.
 
-## Preserved-source launchers
+## Unfinished ports and preserved sources
 
-Archived launchers additionally need the exact private/local `rescued` tree
-beside `Scripts`, as recorded in `rescue-index.json`. Those bodies are retained
-outside this feature branch and are not copied into public commits, packages
-or documentation. A fresh checkout alone cannot run these pending entries.
-Their purpose, source SHA and compatibility limit are stated in each launcher.
-No archived body was executed during integration or verification.
+The 61 legacy archive launchers are outside the active menu. Their original
+sources remain byte-exact in the existing private/local `rescued` tree. The
+complete [porting backlog](PORTING-BACKLOG.md) lists each unfinished tool;
+`rescue-index.json` retains historical menu paths, source paths and hashes.
+Retiring a dispatcher does not complete its port. The original 130-sample
+migration and the wider Issue120 scope remain open.
 
-For an offline hash audit, set `FONTLAB_PRESERVED_ROOT` to the existing checkout
-that contains the matching `rescued` tree. Tests read its bytes only; simulated
-dispatch targets remain in this checkout. Missing/mismatched source data fails
-the audit. Providing this path does not authorize executing original bodies.
+Original bodies are not copied into public commits, packages or documentation.
+For an offline source-byte audit, set `FONTLAB_PRESERVED_ROOT` to the existing
+checkout containing its matching `rescued` tree. Tests read those bytes only;
+missing or mismatched originals fail the requested audit. No archived body is
+executed during source integration or verification.
 
 ## Integration and acceptance
 

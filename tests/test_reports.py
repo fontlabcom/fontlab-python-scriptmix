@@ -77,7 +77,7 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
     archive = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     archive_destinations = {row["menu"] for row in archive}
     assert not ((set(destinations) | extra_destinations) & archive_destinations)
-    assert set(destinations) | extra_destinations | archive_destinations == {
+    assert set(destinations) | extra_destinations == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }
     original_root = request.config.getoption("--original-source-root")

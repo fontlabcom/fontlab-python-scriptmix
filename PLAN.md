@@ -538,3 +538,10 @@ canonical merge, live install, tag, release or site publication is claimed.
 ## Issue120 Z24 frontend notices
 
 Complete the full transitive asset/component inventory, Wordcut dictionary/modules and source-availability proof, TinySegmenter/Clipboard leaf notices, CSS data SVGs, external response variants and whole-site publication gates. Retain all original native, runtime, corpus and release requirements.
+
+
+## Curated active menu source milestone
+
+99 practical tools remain active;61 unfinished archived identities stay in the
+visible porting backlog with unchanged sources/hashes. Complete native candidate
+acceptance and the full retained Issue120 scope through their existing gates.

@@ -4,65 +4,30 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Anchors
 
-- [Center Horizontally](anchors/center-horizontally.md)
 - [Cloud View](anchors/cloud-view.md)
 - [Compatibility Report](anchors/compatibility-report.md)
 - [Copy Anchors From Glyph](anchors/copy-anchors-from-glyph.md)
-- [Delete By Name](anchors/delete-by-name.md)
-- [Duplicates Finder](anchors/duplicates-finder.md)
 - [Mark Attachment Preview](anchors/mark-attachment-preview.md)
-- [Mirror Across Masters](anchors/mirror-across-masters.md)
-- [Place From Bounds](anchors/place-from-bounds.md)
-- [Rename Bulk](anchors/rename-bulk.md)
-- [Round To Grid](anchors/round-to-grid.md)
-- [Snap To Metrics](anchors/snap-to-metrics.md)
 
 ## Cleanup
 
-- [Empty Layers](cleanup/empty-layers.md)
 - [Select Unreferenced Glyphs](cleanup/select-unreferenced-glyphs.md)
 
 ## Components
 
-- [Align By Anchor](components/align-by-anchor.md)
-- [Build From Recipes](components/build-from-recipes.md)
 - [Compatibility](components/compatibility.md)
-- [Copy Offsets Between Masters](components/copy-offsets-between-masters.md)
 - [Count Badges](components/count-badges.md)
-- [Decompose](components/decompose.md)
 - [Dump Component Recipes](components/dump-component-recipes.md)
 - [Missing Bases](components/missing-bases.md)
-- [Nested Finder](components/nested-finder.md)
-- [Replace Reference](components/replace-reference.md)
 - [Report](components/report.md)
-- [Unlock Lock](components/unlock-lock.md)
 - [Where Used](components/where-used.md)
 
 ## Contours
 
-- [Add Extremes](contours/add-extremes.md)
 - [Angularizzle](contours/angularizzle.md)
-- [Autohint Selected Layers](contours/autohint-selected-layers.md)
 - [Contour Order View](contours/contour-order-view.md)
-- [Correct Contour Direction](contours/correct-contour-direction.md)
-- [Delete Duplicate Contours](contours/delete-duplicate-contours.md)
-- [Delete Small Contours](contours/delete-small-contours.md)
-- [Fix Zero Handles](contours/fix-zero-handles.md)
 - [Node Coordinates Panel](contours/node-coordinates-panel.md)
 - [Node Statistics](contours/node-statistics.md)
-- [Optimize Start Points](contours/optimize-start-points.md)
-- [Outline Effect](contours/outline-effect.md)
-- [Placeholder Glyphs](contours/placeholder-glyphs.md)
-- [Remove Overlap](contours/remove-overlap.md)
-- [Remove PostScript Hints](contours/remove-postscript-hints.md)
-- [Round Coordinates](contours/round-coordinates.md)
-- [Shadow Copy](contours/shadow-copy.md)
-- [Slant](contours/slant.md)
-- [Small Caps From Capitals](contours/small-caps-from-capitals.md)
-- [Straighten Short Curves](contours/straighten-short-curves.md)
-- [Superior & Inferior Figures](contours/superior-inferior-figures.md)
-- [Tabular Figure Copies](contours/tabular-figure-copies.md)
-- [Transform](contours/transform.md)
 
 ## Features
 
@@ -90,7 +55,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Grid Generator](guides/grid-generator.md)
 - [Guide List Editor](guides/guide-list-editor.md)
 - [Metric Reference Lines](guides/metric-reference-lines.md)
-- [Suggest Zones From Overshoots](guides/suggest-zones-from-overshoots.md)
 
 ## Kerning
 
@@ -110,52 +74,27 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Masters
 
-- [Back Up Master Layers](masters/back-up-master-layers.md)
 - [Compatibility Check](masters/compatibility-check.md)
-- [Copy Layer Between Masters](masters/copy-layer-between-masters.md)
-- [Copy Outline To Mask](masters/copy-outline-to-mask.md)
 - [Glyph Weight Chart](masters/glyph-weight-chart.md)
 - [Interpolation Preview](masters/interpolation-preview.md)
 - [Italic Angle](masters/italic-angle.md)
-- [Layer Cleanup](masters/layer-cleanup.md)
 - [Master Switcher](masters/master-switcher.md)
 - [Overview](masters/overview.md)
-- [Restore Backup Layer](masters/restore-backup-layer.md)
-- [Sync Sidebearings](masters/sync-sidebearings.md)
 - [Width Chart](masters/width-chart.md)
 
 ## Metrics
 
-- [Alignment Zones](metrics/alignment-zones.md)
-- [Centre In Advance](metrics/centre-in-advance.md)
 - [Check Tabular Widths](metrics/check-tabular-widths.md)
-- [Copy Metrics From Reference](metrics/copy-metrics-from-reference.md)
-- [Equalize Sidebearings](metrics/equalize-sidebearings.md)
-- [Italic Sidebearings](metrics/italic-sidebearings.md)
-- [Round Advances](metrics/round-advances.md)
-- [Scale Advances](metrics/scale-advances.md)
-- [Sidebearings Tuner](metrics/sidebearings-tuner.md)
 - [Spacing String Preview](metrics/spacing-string-preview.md)
-- [Tabular Width](metrics/tabular-width.md)
-- [Vertical Metrics](metrics/vertical-metrics.md)
 - [Width Table](metrics/width-table.md)
-- [Zero-Width Marks](metrics/zero-width-marks.md)
 
 ## Names
 
-- [Batch Glyph Notes](names/batch-glyph-notes.md)
-- [Batch Rename](names/batch-rename.md)
 - [Case Pairs](names/case-pairs.md)
 - [Character Info](names/character-info.md)
 - [Character Set Compare](names/character-set-compare.md)
-- [Duplicate Unicodes](names/duplicate-unicodes.md)
 - [Glyph Finder](names/glyph-finder.md)
-- [Glyph Notes](names/glyph-notes.md)
-- [Glyph Tags](names/glyph-tags.md)
-- [Mark Color Palette](names/mark-color-palette.md)
 - [Select by Mark](names/select-by-mark.md)
-- [Suffix Tool](names/suffix-tool.md)
-- [Unicode From Names](names/unicode-from-names.md)
 
 ## Proof
 
