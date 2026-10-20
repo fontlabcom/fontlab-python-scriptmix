@@ -473,3 +473,5 @@ fixed candidate, with four cursor-only blink differences. Earlier numerical-pass
 v0.2.20/v1.0.16 tags remain intact but were withheld from canonical promotion
 after visual rejection. Released68/130; other8Anchor editors and all broader
 issue111 goals remain open.
+
+Issue120 T1: eight context-proof workflow candidates verified offline. Next qualify final installed named-symbol tab rendering, source-current-master mapping, missing names/unencoded names, selected-layer order/repeats/empty domains and complete font/history/dirty preservation in dedicated owned FontLab. Retain all source/package/refactor/docs gates.

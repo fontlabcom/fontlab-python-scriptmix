@@ -644,3 +644,5 @@ Native selected-layer order/focus/preservation qualification remains pending.
 Issue120 Q1 candidate: add all-open-font/all-master Vertical Metrics Reporter, eight exact stored values, unset/zero distinction, complete-source fences and owned Refresh/Close text panel. Native acceptance pending.
 
 Issue120 R1 candidate: seven complete random-proof generation/tab workflows; preserve all4,991dictionary entries, draw order, casing and whitespace. Explicit current-font repair; native acceptance pending.
+
+Issue120 T1 candidate: eight selected-glyph context proofs with exact order/repeats/contexts/blank lines, explicit native named symbols and a fresh-tab writer fence. Native qualification pending.

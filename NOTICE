@@ -327,3 +327,24 @@ explicit current-font lookup instead of undefined Font, and native literal-text 
 through Fly/App. Preserve every draw, case transform and whitespace. Output
 clearing/status removed to preserve the user's Output. Native workflow and
 complete data/history preservation qualification remain pending.
+
+
+Pedro Arilla selected-glyph context proofs
+=========================================
+context_proofs.py and eight Proof menus adapt the Glyphs between scripts from
+https://github.com/pedroarilla/glyphs-scripts . Source credits Pedro Arilla.
+Apache-2.0; complete terms retained in LICENSE-APACHE-2.0.
+License SHA256:ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37
+Glyphs between/Glyphs between lowercase.py SHA256:bc188daa1f6942893bea903bff5771500ae60afb091f0ce6ea3dedb5bd6f3ac0
+Glyphs between/Glyphs between UPPERCASE.py SHA256:84ab0fa1b3f23fe383353fe716e55ca1a86873cbfe2af44c38db5f9d50a81e41
+Glyphs between/Glyphs between figures_lining.py SHA256:f1710f49eea4f8c7dd1679fadba44b7bd72f6c8d15cedfa39c6ead95f708fe77
+Glyphs between/Glyphs between figures_old.py SHA256:f650332c064710b6e82d64b7fa0c8b9eda9e47b302411f6f9f0c22903ddf2594
+Glyphs between/Glyphs surrounded by H.py SHA256:1e30198199ca8e9998e413de0abebf80e27c176636d423f360721a054c6a431b
+Glyphs between/Glyphs surrounded by I.py SHA256:c73df32e26b5c370e0bef8bf18ddfb4d45e91028b482d8f4477c263614eadb0e
+Glyphs between/Glyphs surrounded by HHOHH.py SHA256:ad4e98cf1629b3c4be432d1ce6541fa354dbc3ce28536dee858f0837ad12f9d9
+Glyphs between/Glyphs surrounded by nnonn.py SHA256:bc192f96c06f4b598e739b729405c3d933e2dcc0dd73e89b3409d625ef5708b4
+Changes: shared typed named-glyph rows, bounded actual selected-layer capture,
+source fences, and named native symbols sent only to a verified new target tab.
+Keep original order, repeats, contexts, current-master behavior, empty-selection
+results and blank lines. Output clearing/status removed to preserve user Output.
+Native content, missing names and complete preservation qualification pending.

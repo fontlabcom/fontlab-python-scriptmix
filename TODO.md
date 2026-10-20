@@ -65,3 +65,5 @@ this_file: TODO.md
 - [x] Verify complete three guide rewrite editors, full saved history/reopen from postseed baselines, lifecycle/refusal/controls, prior64 and reviewed release/fresh-tag R053. Appv0.2.19/Scriptmixv1.0.15 pass.
 
 - [x] Issue111 Copy Anchors: final artifact/direct review, prior67 regression, reviewed D17 and downloaded-tag R053 pass with Appv0.2.21/Scriptmixv1.0.17.
+
+- [ ] Issue120 T1: native-qualify all eight context-proof menus, named symbols/current master, repeats/blank lines/empty selection, fresh-tab ownership and complete font/history preservation.
