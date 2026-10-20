@@ -2679,3 +2679,19 @@ M1 verification (2026-10-20):
 - Failed attempts retained: wrong relative write paths during editing (no owner writes); initial Ruff boundary/import diagnostics; review-v1 selected an older Glyport due to a copied harness path mismatch (5failures each install). review-v2 fixes only artifact selection, fresh installs/tests pass; no product fallback or weakened tests.
 - Socket-only native check2026-10-19T23:28:15UTC refused errno61; no protocol bytes or hostPython. Original/native acceptance remains false; no live installs, merge, release or oldtag changes.
 M1=<workspace>/verification/issue-120/point-counter-m1; L1=<workspace>/verification/issue-120/instance-names-l1.
+
+
+Issue120 Q1: source-first all-master native metric mapping reviewed against mcptools_fonts.cpp and flpackage.cpp. Added immutable report, fontpr metadata reader and lazy owned panel/menu. Source original/no-font correction and provenance retained. Verification commands/results recorded below after execution; native acceptance remains pending.
+
+Q1 verification (2026-10-20), exit0 unless noted; exact child argv and logs in
+<workspace>/verification/issue-120/vertical-metrics-q1/:
+- rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=<App>/src COVERAGE_FILE=<evidence>/.coverage <P2wheel-env>/bin/python -m coverage run --branch --source=fontlabapp -m pytest -q <App>/tests:1438passed.
+- rtk proxy uvx ruff check <three new production modules> <three new tests> tests/test_scripting_lazy_panels.py:pass.
+- rtk proxy env SETUPTOOLS_SCM_PRETEND_VERSION=0.2.37.dev0 uv build --out-dir <evidence>/app-artifacts-v1:pass.
+- rtk proxy python3.11 <evidence>/review-v1/install.py, verify.py, audit.py, closure_audit.py, extra_checks.py:all exit0; two normal arm64Python3.11 installations; each App1436/2existing fixture skips, Glyport2970/6known skips, Fontport4489/2known skips+63knownwarnings, Lessons197. Five distribution checks close three Glyport skips.
+- rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 <P2wheel-env>/bin/python -m pytest -q -rs tests --original-source-root <workspace> (Scriptmix):811passed/1existing SpacingPreview selection-read skip.
+- Whole new modules100%statement/branch; whole scripting81.24/87.68. No exclusions.
+- 438four-package archive/runtime/two-install pairs;130App payloads;78hashed one-level menus (69original+9additional). License/privacy checks pass.126prior App payloads unchanged and old scripting AST exact.
+- Owned installed Fly/Qt6 preview and lazy factory pass;99licensed VFJ files parsed as JSON only (no fonts loaded or reference scripts executed).
+- Socket-only00:47:41UTC localhost47400refused errno61; zero protocol/hostPython. D25pending; no live install/preferences/owner-state/fence changes.
+Initial red missing modules and lint failures retained. Native mapping/schema/order/getter and complete preservation/Close acceptance remain pending. No canonical merge, release or publication.

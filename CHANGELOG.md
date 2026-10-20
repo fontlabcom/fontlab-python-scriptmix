@@ -639,3 +639,6 @@ Native selected-layer order/focus/preservation qualification remains pending.
 
 - Add licensed Slobzheninov Point Counter with complete foreground-layer/repeated-selection reports and explicit quadratic counting repair. Native acceptance remains pending.
 - Expose the report through a typed Fly menu; original69 migration records remain unchanged.
+
+
+Issue120 Q1 candidate: add all-open-font/all-master Vertical Metrics Reporter, eight exact stored values, unset/zero distinction, complete-source fences and owned Refresh/Close text panel. Native acceptance pending.

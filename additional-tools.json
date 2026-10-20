@@ -210,5 +210,21 @@
     "native_acceptance": "pending",
     "original_scope_acceptance": "pending: native foreground-layer mapping/order, selection/focus and complete preservation",
     "scope": "All stored foreground layers for every selected occurrence, repeated groups and original two-previous-row marker. Correct quadratic on-curve omission; owned text report replaces Output clearing. Components are not decomposed."
+  },
+  {
+    "title": "Vertical Metrics Reporter",
+    "key": "vertical_metrics_reporter",
+    "destination": "Scripts/Reports/Vertical Metrics Reporter.py",
+    "destination_sha256": "e05b572099f4e3edfca70dbbe731d911fdad843c1e72bc7f40278011fb8f742b",
+    "kind": "practical-all-master-report-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source": "Testing/Vertical metrics reporter.py",
+    "source_sha256": "56c26ee9f72196129214ee6d030140ffe48d7fadee9d985f1c2e144763af8b22",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: native schema/master mapping, order and complete preservation",
+    "scope": "Every open font/master; eight stored native metrics, unset versus zero, exact values and all mismatch rows. Owned Refresh/Close panel replaces Output clearing. No export-derived metric claim."
   }
 ]
