@@ -554,3 +554,8 @@ Retain current_rows and both manifest representations without rewriting metadata
 Final installed combined App0.2.73 wheel/source-archive checks pass. Root review
 and canonical integration remain before delivery; native acceptance/publication
 remain separate gates.
+
+
+## N55 acceptance
+
+Qualify the final installed colour-selection action in an owned native session: filtered chart order, multiple initial hues, empty selection, combined Font views, wrong window and full font/history/cache preservation.

@@ -97,6 +97,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Character Info](names/character-info.md)
 - [Character Set Compare](names/character-set-compare.md)
 - [Glyph Finder](names/glyph-finder.md)
+- [Select Different Mark Colours](names/select-different-mark-colours.md)
 - [Select by Mark](names/select-by-mark.md)
 
 ## Proof

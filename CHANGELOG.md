@@ -778,3 +778,8 @@ overlay rehearsal retains the raw manifest, 13 literal files and 2 bounded histo
 current-view test adapters plus 7 merged owner docs; it repeats 982/1 + 10 tests and
 the strict offline build. Canonical application and native acceptance remain
 controller-owned and pending. Exact receipts live outside the public tree.
+
+
+## N55 original colour-selection candidate
+
+Add the complete Pedro additive different-colour Font-window selection workflow. Preserve initial colours and selection; delegate filtered cell mapping to native GID lookup. Native acceptance pending.

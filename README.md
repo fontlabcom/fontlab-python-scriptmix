@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 102 practical tools in one-level Title Case
-categories: 69 sample adaptations and 33 additional tools. Twenty-nine additions
+The curated `Scripts` folder contains 104 practical tools in one-level Title Case
+categories: 69 sample adaptations and 35 additional tools. Thirty-one additions
 are reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -97,3 +97,13 @@ item kinds. These three additional tools do not change the130-sample denominator
 `Categories to XML Lib Key` is a source candidate for a complete ordered UFO lib
 fragment using Glyport category metadata. Refresh/Close reuse the shared owned
 report panel. Actual FontLab preservation/lifecycle acceptance remains pending.
+
+
+## Select different mark colours
+
+Run **Names > Select Different Mark Colours** with the Font window active.
+Keep the initial selection and add displayed glyphs whose native hue is absent
+from that selection. The current Font-window filter stays in place. No initial
+selection means no change. App0.2.75.dev0 and Fly are required. This independent
+Pedro adaptation retains the original additive action; native filtered/combined
+window and full preservation acceptance remain pending.

@@ -648,5 +648,24 @@
     "native_acceptance": "pending",
     "release_gate": "pending native preservation/lifecycle and reviewed artifact gates",
     "app_minimum": "0.2.74.dev0"
+  },
+  {
+    "title": "Select Different Mark Colours",
+    "key": "select_different_mark_colours",
+    "destination": "Scripts/Names/Select Different Mark Colours.py",
+    "destination_sha256": "ba91bdca5cac1da02f583e06bd070c6c9b302b0aead23fcd23b2b6e16ea42a1d",
+    "kind": "original-workflow-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source_path": "Labels/Select different colour.py",
+    "source_sha256": "cd7e0618b70cc82ef6b0e8b67f575fd12a4f4660070bab49bd01f3cbccad852c",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "copyright": "2018–2022 Pedro Arilla",
+    "original_basis": "Select Different Color by Rainer Erich Scheichelbauer (mekkablue)",
+    "scope": "Add current Font-window displayed glyphs outside the initial selected native mark-hue set. Keep initial selections; empty selection is unchanged; current filtered model controls native GID mapping.",
+    "native_acceptance": "pending",
+    "release_gate": "pending root review, installed native filtered/combined-window selection and preservation",
+    "app_minimum": "0.2.75.dev0"
   }
 ]

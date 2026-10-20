@@ -454,3 +454,14 @@ Cozens. MIT licence: the complete Simon Cozens MIT terms retained above apply.
 Modified for a FontLab all-glyph snapshot, XML escaping and owned Refresh/Close
 panel. Category policy remains Glyport's GSGlyph.category implementation.
 Native qualification pending.
+
+
+Pedro Arilla — Select different colour (independent adaptation)
+-----------------------------------------------------------
+Copyright 2018–2022 Pedro Arilla. Apache License 2.0.
+Based on Select Different Color by Rainer Erich Scheichelbauer (mekkablue).
+Source: https://github.com/pedroarilla/glyphs-scripts
+Original: Labels/Select different colour.py
+Original SHA-256: cd7e0618b70cc82ef6b0e8b67f575fd12a4f4660070bab49bd01f3cbccad852c
+The original body is not copied into this package.
+Complete Apache terms: LICENSE.
