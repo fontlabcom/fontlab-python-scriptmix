@@ -1,6 +1,6 @@
-# this_file: Scripts/Outlines/Contour Order View.py
+# this_file: Scripts/Contours/Contour Order View.py
 # SPDX-License-Identifier: Apache-2.0
-# FLM: Outlines · Contour Order View
+# FLM: Contours · Contour Order View
 """Show every master of a glyph side by side with numbered contours, start points and directions.
 
 Each contour carries its index at the start node, a dot on the start node and an arrow along

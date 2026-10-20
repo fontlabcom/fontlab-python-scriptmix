@@ -1,6 +1,6 @@
-# this_file: Scripts/Outlines/Node Statistics.py
+# this_file: Scripts/Contours/Node Statistics.py
 # SPDX-License-Identifier: Apache-2.0
-# FLM: Outlines · Node Statistics
+# FLM: Contours · Node Statistics
 """Contours and nodes per glyph and master in one table, with incompatible glyphs flagged.
 
 Each cell reads "contours / nodes" for a master; a glyph is flagged when its masters differ,

@@ -475,3 +475,10 @@ after visual rejection. Released68/130; other8Anchor editors and all broader
 issue111 goals remain open.
 
 Issue120 T1: eight context-proof workflow candidates verified offline. Next qualify final installed named-symbol tab rendering, source-current-master mapping, missing names/unencoded names, selected-layer order/repeats/empty domains and complete font/history/dirty preservation in dedicated owned FontLab. Retain all source/package/refactor/docs gates.
+
+
+## Issue120 menu integration W1
+
+- [x] Verify the combined source layout, immutable release provenance and all existing tests.
+- [ ] Review feature-branch integration without changing canonical checkouts or live installs.
+- [ ] Qualify pending archived workflows in native FontLab before any acceptance or cleanup claim.

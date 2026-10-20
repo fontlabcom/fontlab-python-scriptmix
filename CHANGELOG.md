@@ -646,3 +646,5 @@ Issue120 Q1 candidate: add all-open-font/all-master Vertical Metrics Reporter, e
 Issue120 R1 candidate: seven complete random-proof generation/tab workflows; preserve all4,991dictionary entries, draw order, casing and whitespace. Explicit current-font repair; native acceptance pending.
 
 Issue120 T1 candidate: eight selected-glyph context proofs with exact order/repeats/contexts/blank lines, explicit native named symbols and a fresh-tab writer fence. Native qualification pending.
+
+Issue120 W1 integration candidate: 93 practical and 61 preserved-source menu facades consolidated without copying/executing archive bodies. Native and distribution acceptance remain pending.

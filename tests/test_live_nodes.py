@@ -10,6 +10,7 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
+from menu_layout import released_bytes
 from test_anchors import anchors, components, masters  # noqa: F401
 from test_proof import Signal
 
@@ -42,7 +43,7 @@ def nodes(anchors, monkeypatch, app_sources):  # noqa: F811
     monkeypatch.setitem(sys.modules, "fontlabapp.node_coordinates", api)
     spec.loader.exec_module(api)
     spec = importlib.util.spec_from_file_location(
-        "live_nodes", ROOT / "Scripts/Outlines/Node Coordinates Panel.py"
+        "live_nodes", ROOT / "Scripts/Contours/Node Coordinates Panel.py"
     )
     menu = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(menu)
@@ -276,6 +277,6 @@ def test_every_released59_mapping_and_menu_remains_byte_exact():
     )
     for row in rows[:59]:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         ), row["destination"]

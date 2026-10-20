@@ -10,6 +10,7 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
+from menu_layout import released_bytes
 from test_anchors import AnchorRect, anchors, components, masters  # noqa: F401
 from test_proof import Widget
 
@@ -306,6 +307,6 @@ def test_readonly_tail_prior57_manifest_and_every_menu_byte_remain_immutable():
     )
     for row in rows[:57]:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         ), row["destination"]

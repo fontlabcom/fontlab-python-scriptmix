@@ -56,3 +56,7 @@ local pyflshape.cpp path getters and QtGui stubs were checked. Qt's QPainter.end
 and QPainterPath.addPath documentation supports the existing painter lifetime
 and compound-path model; Qt5 native acceptance remains separate from Qt6
 mathematical path tests in the external test environment.
+
+W1 adds no runtime dependency. Pending archived launchers need the exact local/private
+rescued snapshot identified by rescue-index.json. FONTLAB_PRESERVED_ROOT is a test-only
+byte-audit input; the snapshot is not included in public artifacts.

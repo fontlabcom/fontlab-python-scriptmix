@@ -1,0 +1,269 @@
+---
+this_file: docs/PRE-INTEGRATION-GUIDE.md
+---
+
+# fontlab-python-scriptmix
+Small and useful scripts for FontLab
+
+## Canvas reporters
+
+Reporters contains Sidebearing Direction Marker and Duplicate Anchor Rings.
+Requires fontlab-fontlabapp 0.2.23 or newer and fontlab-fly.
+Open a Glyph window, run either script, then choose direction or handle size.
+Disable or Close removes its overlay. Reopen after switching font, master or
+Glyph window. Both panels can stay open together and change no font data.
+
+These are foreground adaptations across tools. Direction and handle size are
+explicit; Glyphs background ordering and automatic tool suppression are absent.
+Native geometry, pixels, clipping, lifecycle and preservation checks pass.
+The complete prior68 regression passes after the measured guide-date correction.
+App v0.2.23 and Scriptmix v1.0.18 pass downloaded-tag native and asset verification.
+`additional-tools.json` records their independent provenance and evidence.
+They do not increase the130sample migration denominator or its68accepted rows.
+
+## Installation and Reports
+
+Copy the contents of `Scripts` into your FontLab Scripts menu folder. Keep the category subfolders, such as `Reports` and `Font Info`; FontLab supports one folder level. Use FontLab 9's Python 3.11 with `fontlab-fly` and `fontlab-fontlabapp` (including `scripting`) available in its Python environment. No third-party UI package is needed.
+
+Open a font, then run Empty Glyphs, Open Contours or Font Overview from Reports. The dialogs are modeless: edit the font and Rescan/Refresh when needed. Empty Glyphs can hide intentional whitespace. Select chosen rows, or leave rows unselected to select all results. Selection refuses results after changing the current font; rescan first. Reports read all masters without changing geometry. Closing a report disconnects its signals. Re-running replaces its old window. Close also destroys the native dialog after its event finishes. All eight reports share this lifecycle code through `fly.ap.scripting`.
+
+Sources stay archived until full reconciliation; `migration.json` records exact Apache-2.0 provenance/hashes and WORK.md retains native acceptance receipts.
+
+A failed scan or table refresh invalidates selection until a complete rescan succeeds. Partial results are cleared; explicit selection calls also refuse them.
+
+## Reports: second migration batch
+
+Live Glyph Info follows the selected glyph twice a second, with per-master metrics, outline/component/anchor counts and Pause. Glyph Table CSV offers all or selected glyphs, sortable widths/counts, Copy CSV and a modeless UTF-8 CSV save chooser. Label Statistics shows mark colours and suffix groups; Add to selection preserves the current selection. Nodes Near Zones checks transformed on-curve nodes across masters with selection scope and a 1–30 unit tolerance. Unicode Coverage includes untouched-block filtering, progress bars and block selection. Explicit selection is bound to the font that supplied the rows.
+
+All five retain the original interactions and pass their original native scenarios, including the live timer and owned Close, on FontLab9.0.9784.
+
+## Font Info tools
+
+The Font Info menu includes Glyph Order Preview and Export, Master Metrics Table, Names and Credits, Unicode Ranges and Codepages, Bump Font Version and Calculate Vertical Metrics. All original controls, embedded Unicode data, assessment notices, export, previews and the metric diagram are retained.
+
+Names changes style on the original current master and credits font-wide. Master Metrics edits every displayed master. Version bump optionally appends a dated note to every master. Vertical Metrics defaults to hhea and Win; Typo is optional because it also moves FontLab's own ascender/descender lines. Its bounds
+are captured on open; reopen after outline changes. Glyph Order exports UTF-8
+text without reordering the font; Unicode coverage reports without editing it.
+
+Apply uses the last complete preview, refuses closed/switched fonts and changed
+source values, validates the entire plan before writes, preserves the active
+master and rolls back attempted fields on failure. Failed previews disable Apply.
+Names and current-master vertical metrics also refuse a master switch. No-op plans add no history. The shared metadata helper notifies only the package and
+its master container. Fontport's existing history protocol may add an extra
+no-op Undo checkpoint. All six pass their original native scenarios on FontLab
+9.0.9784. All four editors pass one-step Undo, Redo, saved metadata reopening and
+complete font-data preservation. Native tests also verify no-op history and
+switched-font refusal. Shared panels load lazily through Fontlabapp; each tool
+keeps its own controls and actions. Glyph Order uses an owned modeless save
+chooser and reports the exported count and filename.
+
+## Feature tools
+
+Features contains Alternate Preview, Build Suffix Substitution, Classes Browser,
+Feature Code Viewer, Ligature Finder and Suffix Report. They preserve the
+original master proof, filters, selection, literal search/highlights and Copy
+controls. Proof rows use one outline scale per master and wrap large families.
+
+Build previews actual suffix substitutions and appends them to the requested
+feature, retaining prefix, ordered unrelated features and classes. Apply binds
+to the original font, complete feature source and referenced glyphs. It uses
+Fontport's existing ordered writer and Undo safety checks through App, skips
+no-ops and reports unexpected native failures as possibly partial. Install
+App's optional `fontedit` dependency for Build and Feature Code Viewer; native
+`fontpr` must be available. The viewer reads exact stored prefix/ordered blocks,
+rather than native iterator values or synthesized class-prefix text.
+It does not compile features: test the result in FontLab's Features panel.
+
+These six tools pass their native scenarios and actual Close destruction.
+The builder passes complete feature-only saved deltas, one-step Undo, Redo and
+reopening. All20migrated tools pass183workflow checks together on FontLab9.0.9784.
+Clipboard operations remain host-free tested; native checks inspect the actual
+suffix preview under the owner's clipboard exclusion.
+No export chooser is needed: these six originals provide Copy, not file export.
+
+## Host-free distribution checks
+
+Run with Python 3.11 through uv and an explicit current App requirement:
+```sh
+SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh
+# Proof needs App0.2.10 helpers; build the current checkout:
+uv build /path/to/app --out-dir /path/to/dist
+SCRIPTMIX_APP_REQUIREMENT=/path/to/dist/current-app.whl ./test.sh
+```
+
+Cached uv requirements permit offline wheel tests. Sources resolve without native
+binaries; development may set `SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`
+alongside the explicit dependency. Missing helpers fail the run.
+
+Every default run checks all 54 destination hashes, exact menu paths/depth,
+Python 3.11 syntax and provenance metadata. It does not audit absent originals.
+To additionally check every original source hash, provide the workspace root
+containing the manifest's `fontlab-python-examples` paths:
+
+```sh
+SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh --original-source-root /path/to/workspace
+```
+
+Missing or mismatched originals fail this requested audit. Original hashes and
+product script bytes are unchanged.
+
+## Names inspection and selection tools
+
+Names contains Case Pairs, Character Info, Character Set Compare, Glyph Finder
+and Select by Mark. Keep counterparts, add mark groups, use language presets,
+search names/globs/Unicode and copy characters or missing sets. Character Info
+follows selection every 500 ms and paints the current master outline beside
+system text; closing stops the timer. No Pause control existed in this original.
+
+These five use App0.2.6's lazy panel, tables, signals and selection helpers.
+Complete refreshes bind actions to their original font. Switched/closed fonts,
+missing names and failed scans refuse selection before clearing it. Native
+workflows, full saved-font/history invariance and owned Close pass. The live
+specimen fits tall accents/overhangs; clipboard has host-free proof only.
+
+## Read-only Kerning tools
+
+Kerning contains Classes Browser, Compare Masters, Pair List Browser, Missing
+Pairs and Text Preview. Browse class members and all-master values, flag missing,
+sign-changing or jumping pairs, filter exact sides with `=T`, sort numerically,
+and export the actual shown order to UTF-8 CSV through an owned modeless chooser.
+Missing Pairs expands characters, names and @classes and retains Copy list.
+Text Preview draws actual transformed outlines and advances with native effective
+kerning, master/size controls, Kerning and Show values. Oversized proof fits its
+complete ink, including accents and overhangs. No font data is written.
+
+These require App0.2.7 helpers. Native workflows, complete saved-font/history
+invariance, actual save-dialog export, live proof and Close destruction pass.
+Exceptions Finder and Pairs From Text are editing tools described below.
+
+## Kerning editors
+
+Copy Between Masters retains replace/missing/matching modes and checked targets.
+Pair Editor edits every master cell, adds either-side partners and deletes with
+blank cells; invalid text is ignored while other valid cells remain staged.
+Scale Values, Round Values and Remove Small Pairs retain current/all-master scope,
+zero options, sorted previews and exact original rounding rules.
+
+These tools require App0.2.8 helpers from a tag/current built wheel or the
+source override above; index publication is separate. The writer validates every master,
+uses one native history batch, preserves explicit zero/absence and refuses
+fractional source history and final values outside +/-2*positive finite UPM.
+Apply refuses changed pairs/classes/masters or a
+switched/closed font; Refresh recovers failed reads. Close shares owned cleanup.
+Allfive pass original native scenarios, complete saved-font deltas, firstUndo/Redo,
+reopen, safety andClose (receipts in WORK.md).
+The two additional editors need App0.2.9 helpers from that same wheel/source recipe.
+Exceptions Finder lists broader class overrides, offers Tick redundant/Untick all
+and removes exactly ticked rows. Pairs From Text resolves characters and /name
+words into unique adjacent pairs; Set/Add uses displayed effective kerning on
+current/all masters, marking explicit glyph values versus inherited class values.
+Both pass native controls, full-font Undo/Redo/reopen andClose. All37tools pass
+301workflow/99preservation/94safety checks; all37mappings pass. Full archive
+migration, cleanup, additional tools/reporters and docs remain open.
+
+## Proof tools (source milestone)
+
+Glyph Grid compares selected glyphs in font order on every master, with one
+scale fitted to full outline/component bounds, a zoom slider and Reload selection.
+Reload deliberately adopts the current font/selection; zoom stays bound to the
+original font. Text By Master preserves per-master advance-only widths, editable
+text and size/scroll controls. Waterfall keeps the selected master, ordered sizes
+(4–400px), /name tokens and red missing-glyph boxes. Neither text tool adds kerning.
+Word Finder retains the exact English/Latin list, case/length/required/allowed
+letter filters and Copy words. Native clipboard calls remain excluded by D8.
+
+Proof needs App0.2.10 from that wheel/source recipe; missing helpers fail.
+Ordinary refresh/paint/Copy refuses a closed or switched
+font and clears incomplete results. Opening native reads start after status/Close
+exist; failed initial scans stay empty, diagnosed and closable. Close clears view hooks
+and deletes the owned dialog. Native original oracles/painting/Close and exact
+font/workspace/history pass; all41core tools pass336workflow/107preservation checks.
+Full Issue111 migration, archive cleanup, additional tools/reporters/docs stay open.
+
+## Masters reports
+
+The unreleased Italic Angle candidate retains all master spins, slant previews, pending counts and Apply/Close on the shared App editor. It requires the matching candidate App; final artifact/regression/release gates remain pending in WORK.md. Released scope stays68/130.
+
+Masters contains Overview, Width Chart, Glyph Weight Chart and Compatibility Check.
+Overview shows ordered axis locations/metrics/angles, highlights differences and switches master on double-click.
+Width Chart retains12labelled glyph lines; Weight Chart retains10groups, per-master bars/legend and a units² table.
+Area uses12-step curves, counter nesting and transformed components; overlaps count twice. Missing widths are absent, missing weight layers0.
+Compatibility retains selected/whole-font scope, expandable structural counts, anchor names/component order, auto notices and Select ✗ Glyphs.
+
+Use an App wheel built from the current checkout, or that wheel with its updated source override; earlier wheels lack these helpers.
+All four stay bound to their original font. Failed reads stay visibly diagnosed and closable; changed source/master domains or Whole-font membership refuse actions.
+Native acceptance on FontLab9.0.9784 passes43original workflows,8complete font/workspace/history checks,
+12realpaint controls (axis coverage/six-event settling),24opening faults,43safety and actualClose4/4.
+All67exercised source hashes match; fresh chart screenshots confirm the713clipping fix. Font design/history is preserved.
+App480/actual-wheel Scriptmix413 and163installed tests each for wheel/sdist pass; all63Appproduction files match.
+All45mappings pass; the prior41menu bytes/rows stay exact. Separate chooser8+7checks use fix1 artifacts with unchanged chooser/common source. Same-wheel all41prior tools pass; combined45:379workflows/115preservation/166safety/116error controls/Close45.
+No package-index publication is implied. Full Issue111/archive cleanup and held7Names editors stay separate; original sources remain retained.
+
+Metrics and outline inspectors: Spacing String Preview, Width Table, Contour Order View and Node Statistics retain complete controls, raw winding/counts, actual outlines/advances, all masters and exact flagged selection; lazy `inspectors_api()`/dialog/views share lifecycle, snapshots and painter containment.
+Installed-wheel FontLab 9.0.9784 acceptance passes41 original workflows/8 complete saved font/design/classes/metadata/workspace/history/master checks/10 paint/24 opening/59 safety/Close 4;70 source hashes match and imports restore; Node has its exact fresh post-seed baseline. Seven images were inspected; all 15 final images are byte-identical to retained v1.
+App 497 source and actual-wheel Scriptmix 501 passed, 1 skipped;180 installed tests each for wheel/sdist pass on arm64Python3.11.14. All 66 production files and49 mappings match; previous 45 menus/rows stay exact and72 wheel/116 sdist entries pass license/NOTICE/privacy audits.
+Same-wheel prior 45regression passes379 workflow/115 preservation/166 safety/116 error controls/Close 45,113 source hashes and import restoration; combined 49 native:420/123/225/150/Close 49. Historical 15 chooser receipts use unchanged code; no fresh chooser run is claimed. Use an App wheel built from the current checkout; `SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none ./test.sh` selects the host architecture. Full 130-stem/archive/held 7 Names work stays open; no original removal or index publication.
+
+## Read-only Components (native acceptance)
+
+Compatibility compares ordered component lists across masters and selects mismatches.
+Count Badges draws placed outlines with own contour/component/auto counts per master.
+Missing Bases groups missing glyphs/layers and unnamed bases; its simulated scan is retained.
+Report preserves every composite layer, offsets, current/all-master filtering and Copy CSV.
+Where Used indexes all masters in font order, with search, row selection and Select all.
+Use a current App wheel with lazy components helpers; actions reject changed source/font/master/membership and Close releases signals/paths.
+FontLab9.0.9784 passes33original workflows/10complete font/workspace/history checks,5paint/30opening/80stale/16painter/6selection controls/Close5;81hashes and restored imports match. Eight images were inspected; valid falsey-current A retains its badge fallback.
+App506source tests, actual-wheel Scriptmix620/1skip, Git-free619/2skips and189installed tests each for wheel/sdist pass;69runtime files and54source pairs match, prior49menus/rows exact. License/NOTICE/privacy audits pass75/120payload entries; clipboard tests use a fake only.
+Same-wheel prior49passes420workflow/123preservation/225safety/150error controls/Close49; combined54native:453/133/305/201plus6selection/Close54. Historical chooser receipts remain separate.
+Reviewed Appv0.2.13/Scriptmixv1.0.9 releases pass independent downloaded-tag/native acceptance;54/130released,76pending(held7Names+69other stems). All originals remain; full migration/archive cleanup/additional tools/reporters/docs stay open.
+Anchors: Cloud View, Compatibility Report and Mark Attachment Preview retain full controls, real outlines, all-master anchor clouds/families/offsets and visible mismatch columns. FontLab9.0.9784 passes20original workflows/6complete preservation/10paint/18opening/63stale/32painter/10selection-layout/Close3;80hashes/import restoration pass. Same-wheel prior54passes; combined57native473workflow/139preservation/368safety/261error plus16selection-layout/Close57. App512/actual-wheel Scriptmix684+1skip/all57pairs;195installed tests per wheel/sdist,72runtime and78/124payload license/privacy pass. Reviewed Appv0.2.14/Scriptmixv1.0.10 pass independent downloaded-tag R053; all14images match. Released57/130;73pending(held7Names+66unmigrated). All originals and broader cleanup/reporters/docs remain in scope. Read-only glyph reviews: Select Unreferenced Glyphs preserves all reference rules and fixes native feature-tag iteration (exact395Rafi list/selection); Interpolation Preview draws full blended nodes/paths. FontLab9.0.9784 passes10workflows/4complete preservation/5paint/12opening/39stale/16painter/6selection-layout/Close2;86hashes/restored imports. Prior57same-wheel passes; combined59native483workflow/143preservation/407safety/294error plus22selection-layout/Close59. App533/actual-wheel Scriptmix707+1skip/all59pairs/Git-free706+2skips/216installed per wheel-sdist;76runtime82-130payload licence/privacy pass. Reviewed Appv0.2.15/Scriptmixv1.0.11 pass independent downloaded-tag R053; all7images match. Released59/130;71pending(held7Names+64unmigrated). All originals/archive/reporters/docs remain in scope. Live Node Coordinates: open a glyph, run Outlines > Node Coordinates Panel and select nodes; both tables follow edits every400ms. Copy exports displayed coordinates as tab-separated lines; no font edits. Font switch/close stops polling until reopen; failed reads clear tables. Requires the current App node_coordinates helper. Reviewed Appv0.2.16/Scriptmixv1.0.12 pass independent downloaded-tag R053:7original/2complete preservation/24native controls/Close1,81hashes and6exact inspected images; prior59same-production-byte regression passes. App541/installed224each/Git-free Scriptmix720+2explicit skips/all60source pairs pass. Released60/130;70pending(held7Names+63unmigrated); originals/archive/reporters/docs remain in scope. Master Switcher: Masters > Master Switcher shows ordered master/location buttons, current bold/check state and the first nine shortcuts. Three columns fit larger fonts. It sets the font package master; editor-layer switching is not claimed. Reviewed Appv0.2.17/Scriptmixv1.0.13 pass fresh downloaded-tag R053:5original/2complete preservation/43controls/Close1,82hashes/restored imports. All four screenshots freshly inspected; selected-bold text pixels differ from candidate, while geometry and labels match. App546/installed229each/Git-free733+2explicit skips/all61source pairs pass; prior60same-runtime regression passes. Released61/130;69pending(held7Names+62unmigrated). All originals/archive/reporters/docs remain in scope. Guides > Font Guides Panel, Grid Generator and Metric Reference Lines retain all original glyph-guide controls and the actual grid outline preview. Use current/all masters; Font Guides Panel lists font-wide names but writes glyph guides only. Automatic dependants are refused before history because FontLab cannot restore their dates. Safe edits use one Undo step; stale source clears the panel. Reviewed Appv0.2.18/Scriptmixv1.0.14 downloaded-tag native acceptance passes27original/21complete persistence/167additional controls/Close3, including two glyphs, differing master metrics, prior Undo history and no-ops. All14screenshots inspected;83runtime/64source pairs and245installed tests per wheel/sdist pass. All14release images match the inspected candidate. Prior61same-runtime regression passes; combined64:522workflows/168preservation/957controls/Close64. Released64/130;66pending(held7Names+59unmigrated). All originals and broader examples/archive/cleanup/newtools/reporters/docs remain in scope. Guide rewrite editors: Clear Glyph Guides retains direction/name/current-all filters; Copy Guides Between Masters retains explicit targets, merge/replace and width-scaled angled guides; Guide List Editor retains first-glyph editable rows and Add/Delete/Revert. Requires Appv0.2.19. Retained native guide properties and hints survive; nonfinite cells, unknown masters, unsafe automatic dependants and stale scale widths refuse whole writes. Reviewed Appv0.2.19/Scriptmixv1.0.15 downloaded-tag acceptance passes19original/21complete persistence/162controls/Close3,96hashes/restoredimports and13exact inspected images. Prior64same-runtime regression passes; combined67:541workflow/189preservation/1119controls/Close67. Released67/130;63pending(held7Names+56unmigrated). All originals and broader examples/archive/cleanup/newtools/actual canvasreporters/docs remain in scope. Copy Anchors From Glyph retains full L1 source completion, merge/replace, width scaling and current/all-master controls. Reviewed Appv0.2.21/Scriptmixv1.0.17 pass fresh downloaded-tag R053:11original/7complete font-history-reopen/133controls/Close1,93hashes/restoredimports. All14images match inspected candidate geometry/content; four cursor blinks differ. Refusals for automatic dependants and existing-anchor origin moves precede mutation (fl#8512/fl#8527); explanations fit above a short footer. Earlier v0.2.20/v1.0.16 tags remain intact after numerical success but visual rejection. App597, GitfreeScriptmix770+1explicit skip/all68pairs and280installed tests per wheel/sdist pass;89runtime/95wheel/149sdist payload licence/privacy pass. Prior67same-runtime regression passes; combined68=552workflows/196preservation/1252controls/Close68. Released68/130;62pending(7heldNames+55unmigrated). All originals and broader examples/archive/cleanup/newtools/actual canvasreporters/docs remain in scope.
+
+
+## Component recipe report candidate
+
+Components > Dump Component Recipes prints ordered `base+base=glyph` lines in
+a modeless read-only panel. Select glyphs or editor layer occurrences; Refresh
+reads the same actual selected-layer source. Component repeats and mixed layers are retained. The
+original format excludes own contours, positions and transforms. No font data
+or owner Output content changes. Requires the matching App/Fly candidate.
+Editor-tab repeats and per-slot layer choices are retained by the current
+adapter. Native qualification remains pending; the130sample numerator stays unchanged.
+
+The native document view must remain a supported Font or Glyph window.
+Actual modeless-focus/Refresh behavior still needs FontLab9787acceptance; Qt
+focus alone does not identify the source document.
+
+
+## Angularizzle workflow candidate
+
+Contours > Angularizzle offers Min plane (80), Keep detail, Process and Cancel.
+Single Process previews the opening selected layer on its glyph’s first master;
+repeat Process starts from the same opening paths. Cancel restores the actual
+target’s opening paths while retaining the colour mark; Close keeps results.
+Batch Process follows selected occurrences in order, including repeats.
+Requires the matching App/Fly candidate. Native acceptance remains pending;
+unsupported hints, automatic dependants and ambiguous ownership are diagnosed
+before edits. A late native failure disables edits and retains recovery data.
+
+
+Recipe Dumper selected-layer update: the current candidate reads ordered
+Font/Glyph-window occurrences, including repeats and per-slot layer choices.
+Font-window selection uses the current master. Native9787focus/selection and
+complete preservation remain pending. Earlier Font-window-only descriptions
+record the preceding bounded adapter. Original MIT attribution remains above.
+
+
+Tabular Width Checker now reads ordered Font/Glyph-window selected layers,
+including repeated editor slots and their layer choices. Font-window rows use
+the current master. Exact widths, first-occurrence reference and original
+counts/time heading remain. Native9787order/focus/preservation is pending.
+Earlier Font-window-only descriptions record the preceding adapter.
+
+The selected-layer Width Checker requires the reviewed unpublished App>=0.2.33.dev0 candidate; older adapters read only Font-window rows.
+
+
+Point Counter (Issue120 candidate) reports all foreground layers per selected
+glyph occurrence, including repeated groups and auxiliary/empty rows. Quadratic
+on-curves count as curves. Masks/service records and decomposed components are
+excluded. The owned text panel has Refresh/Close and normal text selection/copy;
+Output is preserved. App>=0.2.35.dev1; native qualification remains pending.

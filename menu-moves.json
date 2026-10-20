@@ -1,0 +1,30 @@
+{
+  "this_file": "menu-moves.json",
+  "policy": "Historical migration rows stay immutable; these path-only moves retain exact released bodies.",
+  "moves": [
+    {
+      "original": "Scripts/Outlines/Contour Order View.py",
+      "destination": "Scripts/Contours/Contour Order View.py",
+      "original_sha256": "18bb4a44aa9a93fe31d96752495b96d98b215b4b4dbabbf28206337ecc98eecc",
+      "destination_sha256": "ca39b81fa0a200b048ce1a18ec888717a8b4fb4ed8cab59d4bfc470e3b2739d4",
+      "original_header": "# this_file: Scripts/Outlines/Contour Order View.py\n# SPDX-License-Identifier: Apache-2.0\n# FLM: Outlines \u00b7 Contour Order View\n",
+      "destination_header": "# this_file: Scripts/Contours/Contour Order View.py\n# SPDX-License-Identifier: Apache-2.0\n# FLM: Contours \u00b7 Contour Order View\n"
+    },
+    {
+      "original": "Scripts/Outlines/Node Coordinates Panel.py",
+      "destination": "Scripts/Contours/Node Coordinates Panel.py",
+      "original_sha256": "0139a8931e61151070974b2b03926e793fc603d946b829ec89bb671f4400ad38",
+      "destination_sha256": "4dc0d75c5aa4c73dce01988302edd14bb91b148b6bd84a7ec629701a0f262b63",
+      "original_header": "# this_file: Scripts/Outlines/Node Coordinates Panel.py\n# SPDX-License-Identifier: Apache-2.0\n\"\"\"Follow selected nodes as you edit; inspect coordinates, offsets and distances.\n",
+      "destination_header": "# this_file: Scripts/Contours/Node Coordinates Panel.py\n# SPDX-License-Identifier: Apache-2.0\n\"\"\"Follow selected nodes as you edit; inspect coordinates, offsets and distances.\n"
+    },
+    {
+      "original": "Scripts/Outlines/Node Statistics.py",
+      "destination": "Scripts/Contours/Node Statistics.py",
+      "original_sha256": "1de5f0156457f5f11cea026651af0c5053b76826cf290acb30171f9673626990",
+      "destination_sha256": "7eff97dfbb7b7c2ea5e080dd3e413be96987aaf8cd64ae2961372252ba28b8ca",
+      "original_header": "# this_file: Scripts/Outlines/Node Statistics.py\n# SPDX-License-Identifier: Apache-2.0\n# FLM: Outlines \u00b7 Node Statistics\n",
+      "destination_header": "# this_file: Scripts/Contours/Node Statistics.py\n# SPDX-License-Identifier: Apache-2.0\n# FLM: Contours \u00b7 Node Statistics\n"
+    }
+  ]
+}

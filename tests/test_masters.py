@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pytest
 from conftest import original_source
+from menu_layout import released_bytes
 
 ROOT = Path(__file__).parents[1]
 TOOLS = [
@@ -431,7 +432,7 @@ def test_original_defaults_signal_expressions_and_previous_menus_unchanged(reque
     )
     for row in old:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         )
     source_root = request.config.getoption("--original-source-root")

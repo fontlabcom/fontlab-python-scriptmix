@@ -10,6 +10,7 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
+from menu_layout import released_bytes
 from test_components import (  # noqa: F401
     ComponentItem,
     ComponentWidget,
@@ -82,7 +83,7 @@ def test_immutable_prior54_manifest_and_menu_hashes():
     )
     for row in rows[:54]:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         ), row["destination"]
 

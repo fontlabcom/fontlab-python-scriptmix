@@ -1,4 +1,4 @@
-# this_file: Scripts/Outlines/Node Coordinates Panel.py
+# this_file: Scripts/Contours/Node Coordinates Panel.py
 # SPDX-License-Identifier: Apache-2.0
 """Follow selected nodes as you edit; inspect coordinates, offsets and distances.
 

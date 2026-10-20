@@ -8,6 +8,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
+from menu_layout import released_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 CASES = (
@@ -68,7 +69,7 @@ def test_prior68_migration_rows_and_payloads_are_unchanged():
     )
     for row in rows:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         )
 

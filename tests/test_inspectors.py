@@ -6,13 +6,14 @@ from pathlib import Path
 
 import pytest
 from conftest import original_source
+from menu_layout import current_rows, released_bytes
 
 ROOT = Path(__file__).parents[1]
 TOOLS = [
     ("Metrics", "Spacing String Preview", "SpacingPreview"),
     ("Metrics", "Width Table", "WidthTable"),
-    ("Outlines", "Contour Order View", "ContourOrder"),
-    ("Outlines", "Node Statistics", "NodeStatistics"),
+    ("Contours", "Contour Order View", "ContourOrder"),
+    ("Contours", "Node Statistics", "NodeStatistics"),
 ]
 
 
@@ -359,7 +360,7 @@ def _assert_released45_invariant(rows: list[dict], root: Path) -> None:
     )
     for row in released:
         assert (
-            hashlib.sha256((root / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(root, row)).hexdigest()
             == row["destination_sha256"]
         ), f"Changed released menu bytes: {row['destination']}"
 
@@ -664,7 +665,7 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
     root = request.config.getoption("--original-source-root")
     if root is None:
         pytest.skip("Original source audit requires --original-source-root")
-    rows = json.loads((ROOT / "migration.json").read_text())
+    rows = current_rows(ROOT)
     for category, title, klass in TOOLS:
         row = next(
             r for r in rows if r["destination"] == f"Scripts/{category}/{title}.py"
@@ -769,7 +770,7 @@ def test_released45_fixed_manifest_rejects_changed_menu_bytes(tmp_path):
     for row in rows[:45]:
         destination = tmp_path / row["destination"]
         destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_bytes((ROOT / row["destination"]).read_bytes())
+        destination.write_bytes(released_bytes(ROOT, row))
     (tmp_path / rows[0]["destination"]).write_bytes(b"# changed menu\n")
     with pytest.raises(AssertionError, match="released menu bytes"):
         _assert_released45_invariant(rows, tmp_path)

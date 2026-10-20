@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 import pytest
+from menu_layout import released_bytes
 
 ROOT = Path(__file__).parents[1]
 TOOLS = [
@@ -83,7 +84,7 @@ def assert_released49(root, rows):
     assert digest == RELEASED49_DIGEST, "Released v1.0.8 manifest changed"
     for destination, expected in RELEASED49_BYTES.items():
         assert (
-            hashlib.sha256((root / destination).read_bytes()).hexdigest() == expected
+            hashlib.sha256(released_bytes(root, {"destination": destination, "destination_sha256": expected})).hexdigest() == expected
         ), destination
 
 
@@ -516,10 +517,10 @@ def test_released49_rejects_changed_provenance(field):
 
 def test_released49_rejects_changed_menu_bytes(tmp_path):
     rows = json.loads((ROOT / "migration.json").read_text())
-    for destination in RELEASED49_BYTES:
+    for destination, expected in RELEASED49_BYTES.items():
         target = tmp_path / destination
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes((ROOT / destination).read_bytes())
+        target.write_bytes(released_bytes(ROOT, {"destination": destination, "destination_sha256": expected}))
     (tmp_path / rows[48]["destination"]).write_bytes(b"changed")
     with pytest.raises(AssertionError):
         assert_released49(tmp_path, rows)

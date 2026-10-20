@@ -7,6 +7,7 @@ from copy import deepcopy
 from types import SimpleNamespace as NS
 
 import pytest
+from menu_layout import released_bytes
 from test_components import components  # noqa: F401
 from test_guides import guides  # noqa: F401
 from test_masters import masters  # noqa: F401
@@ -145,7 +146,7 @@ def test_all64_released_rows_and_menus_remain_immutable():
     )
     for row in rows[:64]:
         assert (
-            hashlib.sha256((root / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(root, row)).hexdigest()
             == row["destination_sha256"]
         )
 

@@ -11,6 +11,7 @@ from types import SimpleNamespace as NS
 
 import pytest
 from conftest import original_source
+from menu_layout import current_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -59,7 +60,7 @@ def load(monkeypatch):
 
 
 def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
-    entries = json.loads((ROOT / "migration.json").read_text())
+    entries = current_rows(ROOT)
     assert len(entries) == 69
     destinations = [entry["destination"] for entry in entries]
     assert len(set(destinations)) == 69
@@ -73,7 +74,10 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
         )
         assert entry["counted_in_130_sample_migration"] is False
     assert set(destinations).isdisjoint(extra_destinations)
-    assert set(destinations) | extra_destinations == {
+    archive = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
+    archive_destinations = {row["menu"] for row in archive}
+    assert not ((set(destinations) | extra_destinations) & archive_destinations)
+    assert set(destinations) | extra_destinations | archive_destinations == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }
     original_root = request.config.getoption("--original-source-root")
@@ -91,6 +95,7 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
             "Masters",
             "Metrics",
             "Outlines",
+            "Contours",
             "Components",
             "Anchors",
             "Cleanup",
