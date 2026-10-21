@@ -1,6 +1,6 @@
 # Complete cross-font reports
 
-Open at least two fonts and make the intended reference current. **Report Composite Differences** compares only the first other open font, with each font's selected named master. Component base names stay in their stored order, including repetitions. Different common glyphs use `name;source bases;target bases;` rows. Missing glyphs stay in reference order; only case-sensitive `.sc` and `.pcap` endings are excluded.
+Make the intended reference font current. The composite report needs another font; the glyph-set report preserves the original successful empty output when no other font is open. **Report Composite Differences** compares only the first other open font, with each font's selected named master. Component base names stay in their stored order, including repetitions. Different common glyphs use `name;source bases;target bases;` rows. Missing glyphs stay in reference order; only case-sensitive `.sc` and `.pcap` endings are excluded.
 
 **Report Glyph Set Differences** compares every other open font in open-font order. Each raw filepath heading is followed by target-order Extra rows, then reference-order Missing rows. An unsaved empty native filepath maps to the original `None` heading. No chooser changes the reference or target policy.
 

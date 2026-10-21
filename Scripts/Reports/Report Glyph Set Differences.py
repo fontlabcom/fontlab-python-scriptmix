@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT AND Apache-2.0
 """Report Glyph Set Differences using the current font as the original reference.
 
-Open two or more fonts. Every other open font is compared. Raw filepath headings, target-order extra glyphs and reference-order missing glyphs are preserved.
+Open a current reference font; with no other open font the report is empty. Every other open font is compared. Raw filepath headings, target-order extra glyphs and reference-order missing glyphs are preserved.
 Refresh repeats the complete original scan; select/copy report text normally.
 Close releases only this owned nonmodal report. No font/master activation,
 selection/history/preferences/Output/clipboard writer is called. Full native

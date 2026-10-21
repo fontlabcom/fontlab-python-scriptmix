@@ -8,7 +8,7 @@ categories: ["Reports"]
 
 Report Glyph Set Differences using the current font as the original reference.
 
-Open two or more fonts. Every other open font is compared. Raw filepath headings, target-order extra glyphs and reference-order missing glyphs are preserved.
+Open a current reference font; with no other open font the report is empty. Every other open font is compared. Raw filepath headings, target-order extra glyphs and reference-order missing glyphs are preserved.
 Refresh repeats the complete original scan; select/copy report text normally.
 Close releases only this owned nonmodal report. No font/master activation,
 selection/history/preferences/Output/clipboard writer is called. Full native
@@ -23,5 +23,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/404a9732d0a4385c1183a64bdbe3ae3040e7c7f2e99531c70f962755e5165f39.py)
+[Python source](../../../../.build/menu-sources/8f0cee856f041cea1350786d2a473a7eda70b921cab179ff0d20d7fb3acc5094.py)
 <!--/codeinclude-->

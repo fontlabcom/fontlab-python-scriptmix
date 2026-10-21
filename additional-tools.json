@@ -1036,7 +1036,7 @@
     "title": "Report Glyph Set Differences",
     "key": "glyph_set_differences",
     "destination": "Scripts/Reports/Report Glyph Set Differences.py",
-    "destination_sha256": "404a9732d0a4385c1183a64bdbe3ae3040e7c7f2e99531c70f962755e5165f39",
+    "destination_sha256": "8f0cee856f041cea1350786d2a473a7eda70b921cab179ff0d20d7fb3acc5094",
     "kind": "independent-original-read-only-workflow",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/jenskutilek/Glyphs-Scripts",
