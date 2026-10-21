@@ -622,3 +622,16 @@ Dangerous Offcurves: retain native source-engine, getter preservation and exact-
 N162: independently review final combined .122/.37 source/artifact tuple and retain complete native PythonQt/NUL and font/UI/history/reopen qualification separately.
 
 - [ ] Qualify complete Duplicate Unicodes .121 editor/writer on owned FontLab fonts: original controls, Apply/Undo/Redo/dirty/notes/cache/full-font/save/reopen.
+
+
+
+N185: complete ordinary archives, current seven consumers and unchanged original per-module80statement/80branch zero-exclusion gates; independent review before source delivery and full native font/history/reopen qualification.
+
+N185 ordinary source/artifact/consumer/original-scope gates passed. Next: independent frozen review, then separately guarded native full-font/history/save/reopen calibration. This does not qualify the native domain.
+
+
+## N201 complete kerning donor
+
+Independently review the complete typed Symmetry/Cutoff .137 donor, then integrate separately reviewed newer candidates and qualify native complete authored-font/history/reopen acceptance.
+
+N214: qualify the complete integrated .141 ordinary artifacts in FontLab, including typed Cutoff/Symmetry setters/history/diagnostics, original378 pair sequence and master filters, numeric caller lifetimes and font-dependent Character Map usable viewport. Preserve every existing whole-font/session/NUL hold; no native-completion claim from ordinary tests.

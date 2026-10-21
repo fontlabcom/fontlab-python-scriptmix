@@ -38,6 +38,13 @@ the130sample denominator. Downloaded-tag verification follows this release.
 
 # Changelog
 
+## .141 reviewed-source integration candidate
+
+Combine complete typed Symmetry/Cutoff with the current numeric workflows and
+the basic Character Map initial viewport. Preserve every prior runtime/menu and
+all original filters, pair order, type identities and existing native holds.
+Source/artifact evidence does not qualify native/font-history behavior.
+
 ## Unreleased — selection context test fixtures
 
 - Model the verified regular Font-window ancestry in the two shared host-free
@@ -890,3 +897,15 @@ N162 combined source candidate: The combined App0.2.122.dev0 source candidate ad
 ## Duplicate Unicodes .121 candidate
 
 Complete whole-font checkbox cleanup editor through shared App/Fly, preserving primary-owner defaults and ordered surviving assignments. Adds stale/preflight/partial-write handling and single final history notification; original native getter/UpdateAll paths are not used. Native qualification remains pending.
+
+
+
+N185 private source candidate: complete all-master Kerning Cutoff action retains inclusive[-250,100], explicit pair kinds and per-master counts; repairs earlier-master-only notification with the qualified batch writer. Native qualification pending.
+
+
+N193 test compatibility: the owned kerning fixture exposes the resolved package search path instead of preventing genuine shared helper imports. All menu bodies and runtime requirements unchanged.
+
+
+## Unreleased .137 — Complete typed kerning symmetry
+
+Add the complete Science Gothic 28-target/378-comparison Symmetry writer with lossless explicit glyph/group identities, sequential class aliases and zero deletion. Preserve original # and case-sensitive Ctr master exclusion. Cutoff retains its distinct all-native-master policy. Native qualification pending.

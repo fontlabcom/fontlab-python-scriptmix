@@ -553,3 +553,22 @@ facade preserve complete scan, keeper, checkbox, Rescan, removal and Close flow.
 Unsafe getter/UpdateAll/double-notification behavior is replaced by font-owned
 Unicode records, precise preflight, one final history batch and partial errors.
 Native FontLab/history/full-font/reopen qualification remains pending.
+
+
+N185 — Science Gothic Kerning Cutoff
+Independent implementation of Vassil Kateliev and Karandash Type Foundry (2025),
+SG-Font-Kerning-Cutoff.py v1.1, retained PythonQt Science Gothic reference.
+Original SHA256 b77e6799e748121e751f63ad01e8c0d5da881a71c4378684c92d45626636f8d5.
+No licence is declared in the inspected source tree. No original body is copied,
+executed or distributed; Apache-2.0 applies only to this new implementation.
+All-master explicit-pair inclusive[-250,100] action; repair final-master-only
+notification through the existing complete snapshot-bound kerning batch writer.
+Native full-font/history/save/reopen qualification remains pending.
+
+Kerning Symmetry: independent behavior implementation of Vassil Kateliev /
+Karandash Type Foundry (2025), Science Gothic,
+https://github.com/googlefonts/science-gothic ,
+scripts/FontLab/sg-toolbox/SG-Font-Kerning-Symmetry.py.
+Original SHA-256 6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c.
+No licence declared in the inspected original tree; original body is neither
+copied nor redistributed. New independent implementation: Apache-2.0.

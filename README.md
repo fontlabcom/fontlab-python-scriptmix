@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 111 practical tools in one-level Title Case
-categories: 69 sample adaptations and 42 additional tools. Additional adaptations
+The curated `Scripts` folder contains 114 practical tools in one-level Title Case
+categories: 69 sample adaptations and 45 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -130,3 +130,7 @@ Dangerous Offcurves scans the entire font and opens exact matching layers plus c
 The combined App0.2.122.dev0 source candidate adds Reports > Point Counter (Master Layers) and Dangerous Offcurves, preserving all prior109menus and both complete original workflows. Dangerous Offcurves uses explicitly adapted ascending fontTools curve-time intersection order; opaque Glyphs engine equivalence remains unproved. Literal text is checked before publication; a lossy literal NUL is refused and remains a native host hold. Source/artifact verification does not complete native/font-history preservation acceptance.
 
 `Duplicate Unicodes` scans the whole current font, groups shared codepoints and lets you keep or remove each assignment. Rescan resets primary-owner defaults; Remove ticked preserves all remaining Unicode order. Close all Glyph editors and activate the Font window before Apply. Unsafe automatic dependants, pending updates and stale previews refuse before history; partial failures diagnose Undo. Actual FontLab history/reopen acceptance remains pending.
+
+Kerning > Kerning Cutoff applies inclusive[-250,100] to every explicit pair on every master. Requires App>=0.2.132.dev0. Reports counts without clearing Output; one shared history batch covers any changed master. Fractional/stale native history is refused. Independent source implementation; final native qualification pending.
+
+Kerning > Symmetry applies the complete original seven named and21 Unicode targets on non-# / non-Ctr masters, retaining native typed glyph/group identities and sequential alias effects. Requires App>=0.2.137.dev0 via Fly; full-font native qualification pending.

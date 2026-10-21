@@ -47,7 +47,12 @@ def load(monkeypatch, app_sources):
     )
     qt = NS(QtCore=NS(Qt=NS(DisplayRole=0)), QtGui=NS(QDialog=object, QWidget=object))
     modules = {"fontlab": native, "PythonQt": qt, "FL": NS(fl=fl)}
-    monkeypatch.setitem(sys.modules, "fontlabapp", NS(_native=modules.__getitem__))
+    package = importlib.util.module_from_spec(
+        importlib.util.spec_from_loader("fontlabapp", loader=None, is_package=True)
+    )
+    package._native = modules.__getitem__
+    package.__path__ = [str(app_sources)]
+    monkeypatch.setitem(sys.modules, "fontlabapp", package)
     for name in ("scripting", "_names_dialog", "_kerning_dialog"):
         spec = importlib.util.spec_from_file_location(
             "fontlabapp." + name, app_sources / (name + ".py")

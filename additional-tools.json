@@ -805,5 +805,41 @@
     "native_acceptance": "pending",
     "app_minimum": "0.2.121.dev0",
     "scope": "Whole font numeric duplicates, primary/fontorder keeper, expanded editable checkbox tree, Rescan/Remove ticked/Close, exact surviving Unicode order. Actual font-owned code setters with two-pass stale fences, Font-window/pending-update/auto-dependant/native-dedup preflight and one final history batch; explicit partial failures, no UpdateAll/fgGlyph getter. Full Undo/Redo/dirty/font/cache/reopen native qualification pending. Inactive open Glyph editors refuse too, through App GC-protected known-class inspection; native qualification remains pending."
+  },
+  {
+    "title": "Kerning Cutoff",
+    "key": "kerning_cutoff",
+    "destination": "Scripts/Kerning/Kerning Cutoff.py",
+    "destination_sha256": "6f0ca16a2cdf2822fce5298f9d53d7f574e73ee934e76909deb3b4a600758d37",
+    "kind": "independent-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/googlefonts/science-gothic",
+    "source_path": "scripts/FontLab/sg-toolbox/SG-Font-Kerning-Cutoff.py",
+    "source_sha256": "b77e6799e748121e751f63ad01e8c0d5da881a71c4378684c92d45626636f8d5",
+    "source_license": "not declared in inspected source tree",
+    "source_attribution": "Vassil Kateliev and Karandash Type Foundry (2025)",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Every master and every explicit pair kind; inclusive[-250,100], per-master counts and one snapshot-bound batch. Earlier-master-only notification defect repaired. Shared fractional-history and persistence guards retained.",
+    "native_acceptance": "pending",
+    "release_gate": "pending independent review and owned full-font/history/save/reopen qualification",
+    "app_minimum": "0.2.132.dev0"
+  },
+  {
+    "title": "Symmetry",
+    "key": "kerning-symmetry",
+    "destination": "Scripts/Kerning/Symmetry.py",
+    "destination_sha256": "2bc3e7cc5c4294aaf0b90ff6ee81ef886abada90d93ff85fc1409362ccbdffd9",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/googlefonts/science-gothic",
+    "source_path": "scripts/FontLab/sg-toolbox/SG-Font-Kerning-Symmetry.py",
+    "source_sha256": "6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Complete seven smallcaps plus 21 Unicode targets; all 378 pair comparisons/reversals in source order on every original non-# / non-Ctr master. Original first-side classes, sequential aliases, zero deletion and ties-even fives. One complete shared history batch and owned full diagnostics; ordered stale-source refusal.",
+    "app_minimum": "0.2.137.dev0",
+    "native_acceptance": "pending"
   }
 ]
