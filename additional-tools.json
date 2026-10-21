@@ -804,7 +804,7 @@
     "source_license_sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
     "source_body_redistributed": false,
     "license": "Apache-2.0",
-    "app_minimum": "0.2.140.dev0",
+    "app_minimum": "0.2.144.dev0",
     "native_acceptance": "pending",
     "scope": "Complete two-font and master/layer selectors, four Refresh controls, all/selected glyphs, all/specific anchors, absolute/relative/italic coordinates, literal overwrite/incoming/destination collision modes and suffix; actual destination single-history writer. Selected source explicitly matches active Font-window carrier; duplicate basenames bind IDs. Full owned native two-font/history/rawflags/reopen qualification remains required."
   }
