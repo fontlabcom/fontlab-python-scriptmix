@@ -3379,3 +3379,10 @@ F1selection RED and readonly IME REDs retained. Literal helper byte-exact to .10
 report-local IME ignores all preedit/commit. New report PythonQt/native probe pending.
 Exact commands/exits/archives/receipts: verification/issue-120/point-counter-repair-z43.
 No native/canonical/push/user-store/clipboard changes. Independent review required.
+
+Final environment caveat: three addition-only pytest_cov assertion-rewrite .pyc
+files appeared in the shared wheel dependency root. Original dependency bytes
+are unchanged; the sdist root is exact. Attribution is not proven. ROOT directed
+keeping the shared outputs and sealing this explicit environment-only discrepancy
+without deleting files or repeating suites solely for cache additions. See
+dependency-drift.json. Source/artifact gates pass; independent/native review pending.
