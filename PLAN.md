@@ -620,3 +620,8 @@ Dangerous Offcurves: retain native source-engine, getter preservation and exact-
 
 
 N162: independently review final combined .122/.37 source/artifact tuple and retain complete native PythonQt/NUL and font/UI/history/reopen qualification separately.
+
+
+N185: complete ordinary archives, current seven consumers and unchanged original per-module80statement/80branch zero-exclusion gates; independent review before source delivery and full native font/history/reopen qualification.
+
+N185 ordinary source/artifact/consumer/original-scope gates passed. Next: independent frozen review, then separately guarded native full-font/history/save/reopen calibration. This does not qualify the native domain.

@@ -543,3 +543,14 @@ Independent FontLab implementation; original body is not redistributed.
 The complete four finite-probe policy is retained. Ascending fontTools curve-t
 ordering adapts unspecified Glyphs ordering; exact engine equivalence and native
 font-read/tab preservation remain unqualified. No original bug-fix claim.
+
+
+N185 — Science Gothic Kerning Cutoff
+Independent implementation of Vassil Kateliev and Karandash Type Foundry (2025),
+SG-Font-Kerning-Cutoff.py v1.1, retained PythonQt Science Gothic reference.
+Original SHA256 b77e6799e748121e751f63ad01e8c0d5da881a71c4378684c92d45626636f8d5.
+No licence is declared in the inspected source tree. No original body is copied,
+executed or distributed; Apache-2.0 applies only to this new implementation.
+All-master explicit-pair inclusive[-250,100] action; repair final-master-only
+notification through the existing complete snapshot-bound kerning batch writer.
+Native full-font/history/save/reopen qualification remains pending.

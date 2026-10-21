@@ -66,6 +66,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Compare Masters](kerning/compare-masters.md)
 - [Copy Between Masters](kerning/copy-between-masters.md)
 - [Exceptions Finder](kerning/exceptions-finder.md)
+- [Kerning Cutoff](kerning/kerning-cutoff.md)
 - [Missing Pairs](kerning/missing-pairs.md)
 - [Pair Editor](kerning/pair-editor.md)
 - [Pair List Browser](kerning/pair-list-browser.md)

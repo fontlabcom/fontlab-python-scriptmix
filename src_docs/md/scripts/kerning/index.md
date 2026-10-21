@@ -4,6 +4,7 @@
 - [Compare Masters](compare-masters.md)
 - [Copy Between Masters](copy-between-masters.md)
 - [Exceptions Finder](exceptions-finder.md)
+- [Kerning Cutoff](kerning-cutoff.md)
 - [Missing Pairs](missing-pairs.md)
 - [Pair Editor](pair-editor.md)
 - [Pair List Browser](pair-list-browser.md)

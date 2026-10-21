@@ -129,3 +129,6 @@ N68 repair round1 (.82): preserve first selected parent only, without layer or l
 
 
 - [ ] N162: qualify final combined native workflows and literal NUL host hold; source/artifact integration does not complete original scope.
+
+
+- [ ] N185: final ordinary artifact/consumer/original-scope gates and independent review; native full-font/history/save/reopen remains pending.

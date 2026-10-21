@@ -3410,3 +3410,8 @@ hits before restoring only valid exact source endpoints; interior roots survive.
 
 
 N162: form exact independently reviewed .116 editable-choice and revised .118 Point Counter plus independently accepted complete .120 Dangerous Offcurves union on .115; test ordinary .122/.37 archives, all current consumers and original whole-module floors. No native/canonical/push. Private command/evidence: verification/issue-120/reviewed-union-z45.
+
+
+N185: implement complete independent Science Gothic Kerning Cutoff all-master writer, tests-first strict-boundary/kind/original oracle and earlier-master-only history controls. Verification/evidence: verification/issue-120/kerning-cutoff-z47; transient output uses owned external TMPDIR and read-only dependencies. Native pending.
+
+N185 final commands: `rtk proxy /opt/homebrew/bin/python3.11 -B verification/issue-120/kerning-cutoff-z47/{build_install,run_consumers,docs,audit_artifacts,coverage_report,rendered_docs}.py` (coverage under installed arm64Python3.11) all exit0. Both7consumer graphs13,960passed/3existing skips; App4484, GL3212/1, Fontport4490/1, Examples562, Scriptmix996/1, Lessons199, Fly17. Original whole189App/24GL/70Examples/47SM modules all statement AND branch>=80%,zero exclusions; new core100/100. Docs15SDK/strictbuild,112rendered source blocks/routes/privacy, ordinary source/archive/two-install277runtime bytes and all276prior bytes exact. Read-only17,278whole dependency files exact. No native/canonical/push/liveinstall; independent review/native qualification pending.
