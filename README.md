@@ -136,3 +136,5 @@ Kerning > Kerning Cutoff applies inclusive[-250,100] to every explicit pair on e
 Kerning > Symmetry applies the complete original seven named and21 Unicode targets on non-# / non-Ctr masters, retaining native typed glyph/group identities and sequential alias effects. Requires App>=0.2.137.dev0 via Fly; full-font native qualification pending.
 
 Anchors > Copy Anchors Between Fonts retains the complete TypeRig two-font writer, with source-bound selection and exact master/anchor/collision alternatives. Full native font history/reopen acceptance remains pending.
+
+Proof adds Hoefler Lowercase, Hoefler Uppercase, KernKing and KernSym. All five original texts and native slash-name/Unicode semantics remain complete; KernKing opens two tabs in order. Requires App0.2.149.dev0; full native preservation qualification is pending.

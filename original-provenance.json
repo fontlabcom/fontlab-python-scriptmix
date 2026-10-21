@@ -1,0 +1,74 @@
+{
+  "task": "N236",
+  "sources": [
+    {
+      "mode": "hoefler-lowercase",
+      "source": "reference-glyphs-plugins/pedroarilla--glyphs-scripts/Kerning/Hoefler Lowercase.py",
+      "sha256": "fb4c261c58395e4e7a2bf847324793e25adb05e19b6b628d04f64af84e5fddf6",
+      "texts": [
+        {
+          "name": "text",
+          "sha256": "20aa5f420ae61a4ab18c4a6cba81871db6a53f0c7786cc04e3de699c172eda0c",
+          "characters": 2296,
+          "newlines": 2
+        }
+      ]
+    },
+    {
+      "mode": "hoefler-uppercase",
+      "source": "reference-glyphs-plugins/pedroarilla--glyphs-scripts/Kerning/Hoefler Uppercase.py",
+      "sha256": "974e766b7ce3de73f05cd2b88e2ebf74dffd9372b3ffa3ed4e9c3d0f1de0641c",
+      "texts": [
+        {
+          "name": "text",
+          "sha256": "54d4c7c3ec6d0700af6ae265de9a181fd01b03ffdb10bec2cc65603fb8455ff8",
+          "characters": 1673,
+          "newlines": 2
+        }
+      ]
+    },
+    {
+      "mode": "kernking",
+      "source": "reference-glyphs-plugins/pedroarilla--glyphs-scripts/Kerning/KernKing.py",
+      "sha256": "eb57f380919efb42c5cd7d88eb321da0ed5b08d3b43717b309b9187b15a5b857",
+      "texts": [
+        {
+          "name": "lc_lc",
+          "sha256": "383c5749dfa776f773b6e8c62b33bac68adf2beec623d5dd92e48d69350a4853",
+          "characters": 1897,
+          "newlines": 3
+        },
+        {
+          "name": "UC_lc",
+          "sha256": "80257cceb710af86ee65adceb26b516f77fccb61f9f7446bac1786c920ffd047",
+          "characters": 2113,
+          "newlines": 3
+        }
+      ]
+    },
+    {
+      "mode": "kernsym",
+      "source": "reference-glyphs-plugins/pedroarilla--glyphs-scripts/Kerning/KernSym.py",
+      "sha256": "b9bdc90cfbb887724b53159e00614b78b75ca68c97c7eca2697af087b159df95",
+      "texts": [
+        {
+          "name": "text",
+          "sha256": "2727482ae2f352ce86c25ddd205781d6baced3e69345a6e752a1e5505c93033c",
+          "characters": 2803,
+          "newlines": 47
+        }
+      ]
+    }
+  ],
+  "license": {
+    "path": "reference-glyphs-plugins/pedroarilla--glyphs-scripts/LICENSE.txt",
+    "sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "spdx": "Apache-2.0"
+  },
+  "resources": {
+    "path": "src/fontlabapp/kerning_proof_texts.json",
+    "sha256": "34728e49955ca6901aba4ec575da66b400290da25e3228c9f3e43739665f4afa"
+  },
+  "original_execution": false,
+  "original_body_copied": false
+}
