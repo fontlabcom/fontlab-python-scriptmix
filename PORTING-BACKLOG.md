@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 154 practical tools: 69 sample adaptations and 85
+The active menu contains 161 practical tools: 69 sample adaptations and 92
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -37,13 +37,13 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Names/Batch Glyph Notes.py | `rescued/samples/utility_batch_glyph_notes.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Names/Glyph Notes.py | `rescued/samples/names_glyph_notes.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Names/Unicode From Names.py | `rescued/samples/names_unicode_from_names.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Components/Build From Recipes.py | `rescued/samples/components_build_from_recipes.py` | Unported; native verification pending |
-| Components/Align By Anchor.py | `rescued/samples/components_align_by_anchor.py` | Unported; native verification pending |
-| Components/Decompose.py | `rescued/samples/components_decompose.py` | Unported; native verification pending |
-| Components/Replace Reference.py | `rescued/samples/components_replace_reference.py` | Unported; native verification pending |
-| Components/Copy Offsets Between Masters.py | `rescued/samples/components_copy_offsets_between_masters.py` | Unported; native verification pending |
-| Components/Unlock Lock.py | `rescued/samples/components_unlock_lock.py` | Unported; native verification pending |
-| Components/Nested Finder.py | `rescued/samples/components_nested_finder.py` | Unported; native verification pending |
+| Components/Build From Recipes.py | `rescued/samples/components_build_from_recipes.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Components/Align By Anchor.py | `rescued/samples/components_align_by_anchor.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Components/Decompose.py | `rescued/samples/components_decompose.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Components/Replace Reference.py | `rescued/samples/components_replace_reference.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Components/Copy Offsets Between Masters.py | `rescued/samples/components_copy_offsets_between_masters.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Components/Unlock Lock.py | `rescued/samples/components_unlock_lock.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Components/Nested Finder.py | `rescued/samples/components_nested_finder.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Cleanup/Empty Layers.py | `rescued/samples/cleanup_empty_layers.py` | Unported; native verification pending |
 | Guides/Suggest Zones From Overshoots.py | `rescued/samples/zones_from_glyphs.py` | Unported; native verification pending |
 | Contours/Round Coordinates.py | `rescued/samples/outlines_round_coordinates.py` | Unported; native verification pending |

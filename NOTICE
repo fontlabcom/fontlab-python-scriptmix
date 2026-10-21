@@ -1059,3 +1059,17 @@ are reused under that licence; the panels, refusals and write path are new.
 Source and destination SHA-256 values are in additional-tools.json and
 rescue-index.json. The original files stay unchanged. Native FontLab acceptance
 is pending.
+
+Components writers from the author's own samples
+================================================
+
+Components/Build From Recipes, Align By Anchor, Decompose, Replace Reference,
+Copy Offsets Between Masters, Unlock Lock and Nested Finder adapt the author's
+own FontLab samples (Apache-2.0), kept under rescued/samples/ as
+components_build_from_recipes.py, components_align_by_anchor.py,
+components_decompose.py, components_replace_reference.py,
+components_copy_offsets_between_masters.py, components_unlock_lock.py and
+components_nested_finder.py. The recipe syntax, controls and parts of the
+arithmetic are reused under that licence; the panels, refusals and write path
+are new. Source and destination SHA-256 values are in additional-tools.json
+and rescue-index.json. The original files stay unchanged.
