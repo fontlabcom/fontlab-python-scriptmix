@@ -1002,11 +1002,12 @@ def test_apply_when_font_ignores_writes_then_error_names_gap_after_history(
     world.glyph("a", anchors={"Light": [("top", 203, 698)]})
     panel, _ = panel_of("Round To Grid")
     world.ignore_writes = True
-    with pytest.raises(RuntimeError, match=r"did not store 1 change.*a/top.*Undo"):
+    with pytest.raises(
+        RuntimeError,
+        match=r"did not store 1 change.*a/top.*Check those layers before you save\.$",
+    ):
         panel.apply()
-    assert len(world.notifications()) == 1, (
-        "partial writes stay recoverable through Edit > Undo"
-    )
+    assert len(world.notifications()) == 1, "the partial write is one Undo step"
     assert world.events[-1] == ("stamp", "a")
 
 

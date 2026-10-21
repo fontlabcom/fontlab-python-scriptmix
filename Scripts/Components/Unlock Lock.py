@@ -83,7 +83,7 @@ def element_name(element: Any) -> str:
 
 def explicit_locks(package: Any, name: str) -> dict[str, Entries]:
     """{layer name: element entries} from FontLab's stored glyph data."""
-    data = data_tool("get_glyph", font_id=int(package.id), glyph_name=name)
+    data = data_tool("get_glyph", font_id=scripting.font_id(package), glyph_name=name)
     data = data.get("glyph", data) if isinstance(data, dict) else {}
     found: dict[str, Entries] = {}
     for layer in data.get("layers", None) or []:

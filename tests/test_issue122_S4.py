@@ -634,6 +634,7 @@ class World:
         self.build_errors: dict[tuple[str, str], Any] = {}
         self.package = NS(
             id=7,
+            fgId=70,  # the fontpr font_id; differs from the flPackage id
             isNull=False,
             masters=self.masters,
             master=self.master,
@@ -1636,7 +1637,7 @@ def test_lock_states_when_data_matches_then_own_flags_else_unknown(
     layer = world.layer("Aacute")
     layer.shapes[1]._locked = True
     stored = ns["explicit_locks"](world.package, "Aacute")
-    assert world.calls[-1] == ("get_glyph", {"font_id": 7, "glyph_name": "Aacute"})
+    assert world.calls[-1] == ("get_glyph", {"font_id": 70, "glyph_name": "Aacute"})
     assert ns["lock_states"](layer, stored["Light"]) == [False, True]
     swapped = [("acute", False), ("A", True)]
     assert ns["lock_states"](layer, swapped) == [None, None], "names must match"
@@ -1725,7 +1726,7 @@ def test_build_panel_when_checked_then_dry_run_with_package_id_and_options(
         (
             "build_glyph",
             {
-                "font_id": 7,
+                "font_id": 70,
                 "glyph_name": "Aacute.alt",
                 "recipe": "=A+acute@acute[_acute]",
                 "layer_name": "Light",

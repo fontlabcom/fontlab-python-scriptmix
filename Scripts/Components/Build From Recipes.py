@@ -149,7 +149,7 @@ def build(
     auto layer there rebuilds every default-recipe auto layer in the font.
     """
     arguments = {
-        "font_id": int(package.id),
+        "font_id": scripting.font_id(package),  # fontpr finds fonts by fgId
         "glyph_name": line.target,
         "recipe": line.recipe,
         "layer_name": master,
