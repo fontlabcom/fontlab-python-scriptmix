@@ -49,6 +49,10 @@ this_file: WORK.md
   copied back with `rsync -a` (no delete) and `diff -r` identical.
 - Docs commit d977c66: `mix-archive.sh d977c66` 3706 passed, 0 failed, 1 skipped,
   EXIT=0.
+- Hash commit 6397d89: the third-party table gains a Source SHA-256 column (118
+  identities, each recomputed from the source file and matched to the fragments); 16
+  wave-3 NOTICE sections point to it. `mix-archive.sh 6397d89` 3706 passed, 0 failed,
+  1 skipped, EXIT=0.
 - Scope: offline tests only. No FontLab, Remopy or fl-native.sh call. Native acceptance
   of all 73 new tools is pending.
 
