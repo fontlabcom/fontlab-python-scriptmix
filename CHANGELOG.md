@@ -909,3 +909,5 @@ N193 test compatibility: the owned kerning fixture exposes the resolved package 
 ## Unreleased .137 — Complete typed kerning symmetry
 
 Add the complete Science Gothic 28-target/378-comparison Symmetry writer with lossless explicit glyph/group identities, sequential class aliases and zero deletion. Preserve original # and case-sensitive Ctr master exclusion. Cutoff retains its distinct all-native-master policy. Native qualification pending.
+
+N226: private .145 coherent union on reviewed .141; complete admitted CopyAnchors/shared scalar-style reader .144 and TextHolder/literal helper .139revision3 retained. Fresh artifacts/full consumer/Qt/whole-original coverage verification pending; full native qualification remains separate. No host/canonical/live install writes.

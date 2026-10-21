@@ -3444,3 +3444,5 @@ N201 final environment qualification:13 new wheel fallback packaging.pyc paths a
 ## N214 — complete .141 reviewed integration
 
 Integrate the entire independently reviewed typed Symmetry/Cutoff foundation and accepted Character Map initial viewport on exact .136. Preserve all newer numeric/IME/Find Files/Duplicate Unicodes workflows and every prior menu. Typed IDs, original378 ordered comparisons and distinct master filters remain exact donor bytes; viewport row count is font-dependent (Helvetica six, ambient Qt5 five, both full A row). Full ordinary source/archive/current seven-consumer/original-baseline whole80/80 zero-exclusion checks are retained in verification/issue-120/complete-union-z51. Native, canonical, live installation and push remain root-owned and unperformed here.
+
+N226: private .145 coherent union on reviewed .141; complete admitted CopyAnchors/shared scalar-style reader .144 and TextHolder/literal helper .139revision3 retained. Fresh artifacts/full consumer/Qt/whole-original coverage verification pending; full native qualification remains separate. No host/canonical/live install writes.

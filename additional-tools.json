@@ -841,5 +841,23 @@
     "scope": "Complete seven smallcaps plus 21 Unicode targets; all 378 pair comparisons/reversals in source order on every original non-# / non-Ctr master. Original first-side classes, sequential aliases, zero deletion and ties-even fives. One complete shared history batch and owned full diagnostics; ordered stale-source refusal.",
     "app_minimum": "0.2.137.dev0",
     "native_acceptance": "pending"
+  },
+  {
+    "title": "Copy Anchors Between Fonts",
+    "key": "crossfont_anchors",
+    "destination": "Scripts/Anchors/Copy Anchors Between Fonts.py",
+    "destination_sha256": "40e5a29d8b1b55225a6a4f90e09077b85c046d689ea36114c202e30b4951a3fb",
+    "kind": "independent-complete-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/kateliev/TypeRig",
+    "source_path": "Scripts/TypeRig Tools/TR-CopyAnchors.py",
+    "source_sha256": "60e2fd0c872276538d8d21a443a06e9a0282ada5b8a90b96c81da8e52bf19cdf",
+    "source_license": "MPL-2.0",
+    "source_license_sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "app_minimum": "0.2.144.dev0",
+    "native_acceptance": "pending",
+    "scope": "Complete two-font and master/layer selectors, four Refresh controls, all/selected glyphs, all/specific anchors, absolute/relative/italic coordinates, literal overwrite/incoming/destination collision modes and suffix; actual destination single-history writer. Selected source explicitly matches active Font-window carrier; duplicate basenames bind IDs. Full owned native two-font/history/rawflags/reopen qualification remains required."
   }
 ]
