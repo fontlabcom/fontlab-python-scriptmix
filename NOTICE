@@ -1221,3 +1221,24 @@ Original SHA-256: 2740f6b923cb12c7068b120b42eac5d419c030c975b6f54905a76cb173fa73
 No licence declaration was found in the inspected source tree. No original
 body is copied, executed or redistributed. The equivalent native command
 is FontLab Element > Anchored, with matching operations.
+
+Font Info tool after Alex Slobzheninov
+======================================
+
+Independent rewrite of a script by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, Copyright 2020 Alex Slobzheninov (upstream
+README), Apache License 2.0 (https://github.com/slobzheninov/Glyphs-Scripts):
+
+- Font Info/Paste Glyph Order Encoding: Font Info/glyphOrder - Paste.py. The
+  FontLab tool saves the ordered names as an encoding file.
+
+The same repository's App/Export To All Formats.py and Font Info/Demo
+Instance Generator.py, Set Vertical Metrics.py, Preferred Names - Clean.py
+and Preferred Names - Set.py, and Reza Bohloul's
+RezaBohloul/RezaBohloul Export/Export To All Formats Light.py and Export To
+All Formats with Options.py (no licence declared,
+https://github.com/RezaBohloul/RezaBohloul), are covered by FontLab and by
+existing tools or have no counterpart here; see PORTING-BACKLOG.md.
+
+No source code was copied; the script reproduces the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.

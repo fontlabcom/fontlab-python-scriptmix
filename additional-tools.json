@@ -2202,5 +2202,23 @@
     "native_acceptance": "pending",
     "release_gate": "pending owned native interpolation, panel, complete font preservation, Undo, Redo and save-reopen verification",
     "app_minimum": "0.2.150.dev0"
+  },
+  {
+    "title": "Paste Glyph Order Encoding",
+    "key": "paste_glyph_order_encoding",
+    "destination": "Scripts/Font Info/Paste Glyph Order Encoding.py",
+    "destination_sha256": "03e63717933994dd78a196d5eeae2452d8643aead9e1ee65f399adead8d71d83",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source_path": "Font Info/glyphOrder - Paste.py",
+    "source_sha256": "3bac57f51eaf1304626a61cbdeba0127282642fa9743b8f3286866efe0371509",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "copyright": "Copyright 2020 Alex Slobzheninov",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Modeless insertion of pasted current-font glyph names before the initially selected glyph. Unknown names are reported and repetitions removed. Unsupported names, including non-ASCII names, receive named kept rows and are omitted while supported rows save. Each capture receives a fresh deadline. Saving checks the live font order through a names-only capture, so clearing selection after preview does not prevent saving. Header ID is -1 and its name is the file stem. Existing files and stored glyph indices remain unchanged. Import through File > Import > Encoding; use the encoding chooser's Refresh button as needed."
   }
 ]

@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 195 practical tools: 69 sample adaptations and 126
+The active menu contains 196 practical tools: 69 sample adaptations and 127
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -112,3 +112,11 @@ identity has one row. Source hashes of the ported sources are in
 | `RezaBohloul/RezaBohloul/Edit/Magic Remover.py` | Ported | Utilities/Magic Remover.py | Compatible-layer preview and named kept reasons; no licence declared upstream |
 | `RezaBohloul/RezaBohloul/component/Toggle automatic alignment.py` | Duplicate of | — | FontLab: Element > Anchored, with matching operations; no licence declared upstream |
 | `RezaBohloul/RezaBohloul/Glyph/Set Intermediate Layer.py` | Ported | Masters/Set Intermediate Layer.py | Creates and interpolates intermediate layers over selected glyphs; no licence declared upstream |
+| `RezaBohloul/RezaBohloul/Export/Export To All Formats Light.py` | Duplicate of | — | FontLab: File > Export Font As, with export profiles; no licence declared upstream |
+| `RezaBohloul/RezaBohloul/Export/Export To All Formats with Options.py` | Duplicate of | — | FontLab: File > Export Font As, with export profiles; no licence declared upstream |
+| `slobzheninov/Glyphs-Scripts/App/Export To All Formats.py` | Duplicate of | — | FontLab: File > Export Font As, with export profiles; Glyphs-only instance settings are not reproduced |
+| `slobzheninov/Glyphs-Scripts/Font Info/Demo Instance Generator.py` | Duplicate of | Font Info/Trial Font Maker.py | Trial Font Maker uses a name prefix and keeps the compiled liga feature |
+| `slobzheninov/Glyphs-Scripts/Font Info/Preferred Names - Clean.py` | Retired | — | Set instance names in FontLab: File > Font Info > Instances |
+| `slobzheninov/Glyphs-Scripts/Font Info/Preferred Names - Set.py` | Retired | — | Set instance names in FontLab: File > Font Info > Instances |
+| `slobzheninov/Glyphs-Scripts/Font Info/Set Vertical Metrics.py` | Retired | — | Its calculation differs from Font Info/Calculate Vertical Metrics.py; set Use Typo Metrics in FontLab: File > Font Info |
+| `slobzheninov/Glyphs-Scripts/Font Info/glyphOrder - Paste.py` | Ported | Font Info/Paste Glyph Order Encoding.py | Saves the ordered names as an encoding file |
