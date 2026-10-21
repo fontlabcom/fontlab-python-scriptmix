@@ -24,18 +24,26 @@ How to use: select glyphs in the Font window. Choose the current master or all
 masters. Enter the percentage. Check the table. Press Apply. The panel stays
 open. Press "Use selection" to read the Font window selection again.
 
-Safety: one Apply is one Undo step. Auto layers are listed and never edited.
-Layers with a metrics link or expression are listed and skipped. A base of
-auto glyphs is refused, because FontLab rebuilds the auto glyphs and may lose
-their anchors and locks (FontLab issue 8512). Tick "Edit bases of auto glyphs
-anyway" to go on. After the write the script reads advance and outline back
-and reports any mismatch. It does not call UpdateAll (FontLab issue 8537).
-Native Undo/Redo/reopen of in-place moves is pending.
+Safety: one Apply is one Undo step. Auto layers are listed and never edited. A
+glyph that owns an auto layer is listed and skipped as a whole. Layers with a
+metrics link or expression are listed and skipped. A base of auto glyphs is
+refused, because FontLab rebuilds the auto glyphs and may lose their anchors
+and locks (FontLab issue 8512). This includes a base that reaches an auto
+glyph through other composites. Tick "Edit bases of auto glyphs anyway" to go
+on. Apply is refused while FontLab has pending glyph updates. After the write
+the script reads advance and outline back and reports any mismatch. A failure
+after the write started says so and asks you to use Edit > Undo. It does not
+call UpdateAll (FontLab issue 8537). Native Undo/Redo/reopen of in-place moves
+is pending.
+
+Shared parts: the panel, the plan model, the one-step write and the read-back
+come from the App module fly.ap.metrics_panel. This script holds its own
+maths, its planner and its controls.
 
 Benefit: open or tighten the spacing of many glyphs in one step. The
 balance of each glyph is kept.
 
-Credit: independent rewrite of the author's own rescued FontLab sample
+Credit: adapted from the author's own rescued FontLab sample
 metrics_scale_advances.py (Apache-2.0).
 
 Run **Metrics > Scale Advances** from FontLab's Scripts menu.
@@ -45,5 +53,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/bbef3d5a5b321fdf22170c692ec5f0a87bca753a3384d2a53a27c4e2481b4c56.py)
+[Python source](../../../../.build/menu-sources/bbc62f225a328d671e13c5ef7ec52f689e49628fbdc7f159227b6050bbeb9561.py)
 <!--/codeinclude-->

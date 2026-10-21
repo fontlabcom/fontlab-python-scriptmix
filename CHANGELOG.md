@@ -9,6 +9,14 @@ this_file: CHANGELOG.md
   they used were removed. `menu-revisions.json` records the exact import edits,
   so the released bytes stay verifiable. `test.sh` accepts
   `SCRIPTMIX_EXTRA_REQUIREMENTS` (space-separated) to supply Fontport.
+- Metrics: the six advance editors use the App panel, plan model and one-step
+  write (`fly.ap.metrics_panel`, `fly.ap.history`); each script keeps only its
+  maths, planner and controls (122 to 218 lines, was 657 to 750). Changed
+  behaviour: a glyph that owns an auto layer is skipped as a whole; bases of
+  auto glyphs are also found through other composites; Apply is refused while
+  native glyph updates are pending (the earlier entry said Metrics had no such
+  check, which is no longer true); a failure after the write started reports
+  "use Edit > Undo"; the status says "N layers skipped (auto)".
 
 ## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
 

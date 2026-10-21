@@ -1,22 +1,24 @@
-# this_file: tests/test_issue122_s1.py
+# this_file: tests/test_issue122_S1.py
 # SPDX-License-Identifier: Apache-2.0
-"""Issue 122 batch S1: six Metrics scripts, tested against owned fakes.
+"""Six Metrics scripts, tested against owned fakes and the real App helpers.
 
-The fakes replace the whole `fly` package, FontLab layers and Qt widgets. They prove
-the planning arithmetic, the refusal paths and the Undo shape (one notified list,
-no auto layers). They do not prove native FontLab behaviour.
+The fakes replace FontLab layers, the `fontlab` module and Qt widgets. The real
+installed App modules (`fly.ap.metrics_panel`, `fly.ap.history`) run over them,
+reached as `fly.ap.<module>` like inside FontLab. The tests prove the planning
+arithmetic, the refusal paths and the Undo shape (one notified list, no auto
+layers). They do not prove native FontLab behaviour.
 """
 
 import ast
 import importlib
 import importlib.util
 import inspect
-import os
 import sys
 from pathlib import Path
 from types import ModuleType
 
 import pytest
+from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
 METRICS = ROOT / "Scripts/Metrics"
@@ -486,10 +488,11 @@ class World:
         self.closed = []
         self.shown = []
         self.font_names = []
+        self.updates = []  # Queued native glyph updates (flGlyph.updatedFgGlyphs).
 
 
 @pytest.fixture
-def world(monkeypatch):
+def world(monkeypatch, real_app):
     state = World()
     LOG.clear()
     fly = ModuleType("fly")
@@ -506,6 +509,8 @@ def world(monkeypatch):
 
     items.notifyChangesApplied = notify
     fontlab.flItems = lambda: items
+    fontlab.flGlyph = ModuleType("flGlyph")
+    fontlab.flGlyph.updatedFgGlyphs = lambda: list(state.updates)
     font_api = ModuleType("FL")
     font_api.fl = ModuleType("fl")
     ap.fontlab, ap.FL = fontlab, font_api
@@ -559,6 +564,23 @@ def world(monkeypatch):
         "fly.ap.script_completion": completion,
     }.items():
         monkeypatch.setitem(sys.modules, name, module)
+    state.app = real_app(
+        qt=qt,
+        fontlab=fontlab,
+        scripting={
+            name: getattr(scripting, name)
+            for name in (
+                "current_package",
+                "names_selected_names",
+                "names_font_glyphs",
+                "connect_guarded",
+                "close_script_dialog",
+                "show_script_dialog",
+            )
+        },
+        completion=completion.install,
+        modules=["history", "metrics_panel"],
+    )
     return state
 
 
@@ -831,7 +853,7 @@ def edited(world, name, glyphs, configure=None, **kwargs):
 
 
 def check_one_undo(world, title, layers, glyphs):
-    """Exact order: init each, stamp, edit each, stamp, ONE notify, stamp."""
+    """Exact order: init each, edit each, stamp, ONE notify, stamp (history.commit)."""
     assert len(world.history) == 1, "exactly one notification"
     ((name, items),) = world.history
     assert name == title
@@ -841,7 +863,6 @@ def check_one_undo(world, title, layers, glyphs):
     expected = (
         [("init", "layer")] * len(layers)
         + [("init", "glyph")] * len(glyphs)
-        + stamps
         + edits
         + stamps
         + [("notify", title)]
@@ -871,13 +892,30 @@ def test_round_advances_when_applied_then_rsb_absorbs_and_one_undo(world):
     changed = [n.findLayer("Light"), n.findLayer("Bold")]
     check_one_undo(world, "Round Advances", changed, [n])
     assert auto not in world.history[0][1], "auto layers never enter the Undo list"
+    assert [e.note for e in panel.entries if e.glyph is o] == [
+        "auto layer (skipped)",
+        "glyph has auto layers (skipped)",
+    ], "a glyph that owns an auto layer is skipped as a whole"
     assert panel.last_result == {
         "layers": 2,
         "glyphs": 1,
-        "auto_skipped": 1,
+        "auto_skipped": 2,
         "mismatches": [],
     }
     assert "Changed 2 layers in 1 glyphs" in panel.status.text
+    assert "2 layers skipped (auto)" in panel.status.text, panel.status.text
+
+
+def test_round_advances_when_glyph_owns_auto_layer_then_its_manual_layers_stay(world):
+    auto = Layer(101, rect(5, 95), auto=True)
+    manual = Layer(126, rect(10, 120))
+    o = Glyph("o", {"Light": auto, "Bold": manual})
+    n = two_master_glyph("n", (101, 10, 90), (126, 12, 108))
+    _, panel = edited(world, "Round Advances", [n, o], lambda m, p: p.scope.pick(1))
+    assert manual.advanceWidth == 126, "the geometry policy skips auto owners whole"
+    assert manual.edit_log == [], "no native call on the skipped layer"
+    assert o not in world.history[0][1], "an auto owner is never notified"
+    assert n.findLayer("Bold").advanceWidth == 130
 
 
 def test_round_advances_when_all_glyphs_source_then_uses_font_list(world):
@@ -1098,6 +1136,7 @@ def test_main_when_called_then_opens_one_keyed_panel(world, name):
 
 def test_commit_when_edit_raises_then_after_notification_still_sent(world):
     module = load("Scale Advances")
+    shared, history = world.app["metrics_panel"], world.app["history"]
     layer = Layer(100, rect(10, 90))
 
     def broken(*args):
@@ -1105,16 +1144,21 @@ def test_commit_when_edit_raises_then_after_notification_still_sent(world):
 
     layer.applyTransform = broken
     glyph = Glyph("n", {"Light": layer})
-    entries = module.survey([glyph], ["Light"], module.scale_planner(120.0))
-    with pytest.raises(RuntimeError):
-        module.commit("Scale Advances", entries)
+    world.package = Package([glyph], ("Light",))
+    world.font_names = ["n"]
+    entries = shared.survey([glyph], ["Light"], module.scale_planner(120.0))
+    facts = history.scan_auto_facts(world.package)
+    with pytest.raises(history.PartialWriteError, match="use Edit > Undo") as caught:
+        shared.commit("Scale Advances", entries, facts=facts)
+    assert "boom" in str(caught.value), caught.value
     assert len(world.history) == 1, "the notification still runs after a failed edit"
     assert glyph.lastModified == STAMP, "the glyph is stamped after the failed edit"
 
 
 def test_unit_when_half_then_rounds_up_unlike_python_round(world):
     module = load("Scale Advances")
-    assert [module.unit(v) for v in (0.5, 1.5, 2.5, -0.5, -1.5)] == [1, 2, 3, 0, -1]
+    unit = module.metrics_panel.unit
+    assert [unit(v) for v in (0.5, 1.5, 2.5, -0.5, -1.5)] == [1, 2, 3, 0, -1]
 
 
 def test_panel_when_native_read_fails_then_error_shown_and_apply_off(world):
@@ -1135,60 +1179,25 @@ def test_panel_when_native_read_fails_then_error_shown_and_apply_off(world):
     assert panel.status.text.startswith("Error: RuntimeError")
 
 
-# ---------------------------------------------------------------- review round 1
-APP_SRC = Path(
-    os.environ.get(
-        "SCRIPTMIX_APP_SRC",
-        "/Volumes/Falstaff4T/fontlab-scripting-data/issue122/fontlab-fontlabapp/src",
-    )
-)
-FLY_SRC = Path(
-    os.environ.get(
-        "SCRIPTMIX_FLY_SRC",
-        "/Volumes/Falstaff4T/fontlab-scripting-data/issue122/fontlab-fly/src",
-    )
-)
+# ---------------------------------------------------------------- real App names
+def test_real_app_names_when_imported_from_installed_app_then_all_exist():
+    """No fakes: the real Fly aliases give every App name that the scripts use."""
+    used = app_names_used([METRICS / f"{name}.py" for name in NAMES])
+    assert {"fly.ap.scripting", "fly.ap.metrics_panel"} <= set(used), used
+    assert {"panel_type", "make_plan", "Planner", "LayerPlan"} <= used[
+        "fly.ap.metrics_panel"
+    ]
+    check_real_app_names(used)
 
 
-def imported_fly_names() -> dict[str, set[str]]:
-    """Every `from fly.ap... import name` in the six scripts."""
-    found: dict[str, set[str]] = {}
+def test_scripts_when_loaded_then_panel_base_is_the_shared_app_class(world):
     for name in NAMES:
-        tree = ast.parse((METRICS / f"{name}.py").read_text())
-        for node in ast.walk(tree):
-            if isinstance(node, ast.ImportFrom) and (node.module or "").startswith(
-                "fly.ap"
-            ):
-                found.setdefault(node.module, set()).update(a.name for a in node.names)
-    return found
-
-
-def test_real_app_names_when_imported_from_app_source_then_all_exist(monkeypatch):
-    """No fakes: import the real fly and fontlabapp from the worktree sources."""
-    assert (APP_SRC / "fontlabapp/scripting.py").is_file(), APP_SRC
-    assert (FLY_SRC / "fly/__init__.py").is_file(), FLY_SRC
-    roots = {"fly", "fontlabapp"}
-    saved = {k: v for k, v in sys.modules.items() if k.split(".")[0] in roots}
-    for key in saved:
-        del sys.modules[key]
-    monkeypatch.syspath_prepend(str(APP_SRC))
-    monkeypatch.syspath_prepend(str(FLY_SRC))
-    try:
-        fly = importlib.import_module("fly")
-        assert fly.ALIASES["ap"] == "fontlabapp"
-        used = imported_fly_names()
-        assert {"fly.ap.scripting", "fly.ap.script_completion"} <= set(used), used
-        for module_name, wanted in used.items():
-            module = importlib.import_module(module_name)
-            assert str(APP_SRC) in str(module.__file__), (module_name, module.__file__)
-            for attribute in wanted:
-                assert callable(getattr(module, attribute)), (
-                    f"{module_name}.{attribute}"
-                )
-    finally:
-        for key in [k for k in sys.modules if k.split(".")[0] in roots]:
-            del sys.modules[key]
-        sys.modules.update(saved)
+        module = load(name)
+        assert module.metrics_panel is world.app["metrics_panel"], name
+        assert module.MetricsPanel is module.metrics_panel.panel_type(), name
+        assert getattr(module, CLASS[name]).__mro__[1] is module.MetricsPanel, name
+        for moved in ("survey", "commit", "auto_dependants", "make_table"):
+            assert moved not in vars(module), f"{name} still defines {moved}"
 
 
 def auto_pair(base_name, auto_name):
@@ -1268,7 +1277,47 @@ def test_apply_when_cache_update_fails_then_error_shown_and_history_still_notifi
     panel.percent.setValue(110.0)
     panel.apply_button.press()
     assert len(world.history) == 1, "the notification still runs"
-    assert "Error: RuntimeError" in panel.status.text, panel.status.text
+    assert "Error: PartialWriteError" in panel.status.text, panel.status.text
+    assert "use Edit > Undo" in panel.status.text, panel.status.text
+
+
+def test_apply_when_native_updates_pending_then_refused_before_history(world):
+    n = two_master_glyph("n", (101, 10, 90), (101, 10, 90))
+    _, panel = open_panel(world, "Round Advances", [n])
+    world.updates = [17]
+    panel.apply_button.press()
+    assert world.history == [] and LOG == [], "refused before any history call"
+    assert n.findLayer("Light").advanceWidth == 101
+    assert panel.status.text == (
+        "Native glyph updates are pending; finish the current edit first."
+    ), panel.status.text
+
+
+def test_panel_when_base_reaches_auto_glyph_through_composite_then_refused(world):
+    """n -> manual nbar -> auto nbaracute: the base is found through the chain."""
+    n = two_master_glyph("n", (101, 10, 90), (101, 10, 90))
+    bar = Layer(100, [])
+    bar_shape = Shape(bar)
+    bar_shape.isComponent = True
+    bar_shape.shapeData = ModuleType("shapeData")
+    bar_shape.shapeData.componentGlyph = "n"
+    bar.shapes = [bar_shape]
+    acute = Layer(100, [], auto=True)
+    acute_shape = Shape(acute)
+    acute_shape.isComponent = True
+    acute_shape.shapeData = ModuleType("shapeData")
+    acute_shape.shapeData.componentGlyph = "nbar"
+    acute.shapes = [acute_shape]
+    world.package = Package(
+        [n, Glyph("nbar", {"Light": bar}), Glyph("nbaracute", {"Light": acute})]
+    )
+    world.selection = ["n"]
+    world.font_names = ["n", "nbar", "nbaracute"]
+    panel = load("Round Advances").RoundAdvances(None)
+    assert panel.status.text.startswith("Refused."), panel.status.text
+    assert "FontLab rebuilds auto glyphs nbaracute" in panel.status.text
+    panel.apply()
+    assert world.history == [] and n.findLayer("Light").advanceWidth == 101
 
 
 @pytest.mark.parametrize("field", ["metricsLeft", "metricsRight", "metricsWidth"])

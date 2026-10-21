@@ -90,6 +90,22 @@ this_file: WORK.md
     (App still has the `[fontui]` extra). T5 was skipped, so the three poller scripts
     need no change.
   - Lint: `uvx ruff check --target-version py311` on the two Feature scripts: clean.
+- Metrics (step 2, six scripts onto `fly.ap.metrics_panel` / `fly.ap.history`):
+  - Test harness: new `real_app` fixture (tests/conftest.py) imports the real installed
+    App modules over the FontLab/Qt fakes (registered as `PythonQt`/`fontlab`) and
+    aliases them as `fly.ap.<module>`; `fontlabapp.*` is restored after each test.
+    `app_names_used` + `check_real_app_names` replace the hard-coded App/Fly paths
+    (installed App or `SCRIPTMIX_APP_SOURCE`; Fly from PYTHONPATH).
+  - RED: new and updated `tests/test_issue122_S1.py` on a `git archive HEAD` tree
+    (`/Volumes/Falstaff4T/fontlab-scripting-data/tmp/t16mix-red-s1`) with the old
+    scripts: 12 S1 failures (shared panel identity, real names, auto owner skipped
+    whole, transitive base, pending updates, PartialWriteError text, Undo order,
+    `metrics_panel.unit`). Same run in the worktree before the scripts changed:
+    EXIT=1, 7 failed, 1569 passed, 1 skipped.
+  - GREEN: focused mix.sh copy, full suite: EXIT=0, 1579 passed, 1 skipped (after
+    `destination_sha256` was recomputed for the six rows).
+  - Lint: `uvx ruff check --target-version py311` and `uvx ruff format` on the six
+    scripts: clean (the scripts were already ruff-formatted).
 
 ## 2026-10-18: Two additional foreground reporter candidates
 
