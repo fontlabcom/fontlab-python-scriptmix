@@ -566,3 +566,48 @@ Qualify the installed complete peer proof, named/unencoded symbols, literal labe
 N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
 
 N119 retains full duplicate-anchor writer scope. Complete original source/GUI/model/action, native one-Undo/full-font/history/dirty/reopen and artifact/consumer gates are separate; only verified source/artifact work can be recorded complete.
+
+
+N97 Text Holder candidate (.91): full editable/resizable floating window; literal
+Find first/highlight; UTF16-correct selected-or-whole replacement; Save stays
+open, Save & Close, Ignore & Close; owned-path UTF8 persistence and window size.
+Source/licence disposition retained; no original body is copied or executed.
+No native calls or user-store validation. Native acceptance remains pending.
+
+N97 geometry repair: preserve initial content500×400 separately from source
+NS frame min500×400/max1200×800. Persist decorated frame sizes, restore client
+sizes by measured chrome and map literal Cocoa origin(0,500) through complete
+primary logical screen geometry/current frame height after first show; no
+availableGeometry, DPR scaling or silent clamp. Prior .91 commits/artifacts
+are retained in attempt2; no immutable final .91 freeze existed before repair.
+27 focused actualQt5 controls pass; independent geometry controls pass bothQt5
+andQt6. Native qualification remains pending on root final combined .92.
+
+N97 final source fidelity: use normal Qt.Window with stays-on-top and explicit
+title/system/close/minmax hints, matching original Vanilla Window/NSWindow
+role rather than Tool/NSPanel hide-on-deactivation behavior. Preserve literal
+button ampersands, full frame constraints, Cocoa origin and saved frame sizes.
+Producer28 actualQt5 controls and independent32controls perQt5/Qt6 pass;
+ordinary final .91 artifacts and full declared147/42 gates are bound separately.
+Native acceptance remains pending on root combined .92, never claimed for .91.
+
+N97 literal-Unicode repair revision4: frozen8433...candidate retained as failed
+source attempt after independent NBSP/LS/PS Find/Save counterexamples. Added
+text_holder_editor with undo-aware native block separator provenance; literal
+block.text reads preserve NBSP/LS and distinguish PS/LF. Controlled text ingress,
+local mime copy/paste, native Return, IME, selection merge and Undo/Redo preserve
+literal text; original disk universal-newline read remains unchanged. Four
+owned modules; complete App milestone scope grows148, Scriptmix stays42, no
+sample denominator changes. Qt5/Qt6 focused51controls each pass at this stage.
+Native acceptance remains pending on root combined.96 onto.94; .92 prep is
+historical and .91 remains a private source candidate, never native acceptance.
+
+N97 ownership repair revision5: independent pinned PythonQt virtual-return source
+identified an ownerless Python-QMimeData lifetime seam (host binary equivalence
+unproven). The copy factory now returns the explicit nativebase Qt-owned object;
+its lazy source fragment is materialized before clear/setText, preventing a
+later default MIME read from overwriting the literal payload. Constructor-route
+tripwire is RED on revision4 source/GREEN now.52producer Qt5/Qt6 controls pass.
+Revision4 ordinary archives eef6ac94.../305df303... and full148/42 gates remain
+retained as a prior source attempt, with no immutable candidate promotion.
+Fresh revision5 ordinary artifacts/full unchanged gates bind this repair.

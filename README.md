@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 108 practical tools in one-level Title Case
-categories: 69 sample adaptations and 37 additional tools. Additional adaptations
+The curated `Scripts` folder contains 109 practical tools in one-level Title Case
+categories: 69 sample adaptations and 40 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -114,3 +114,8 @@ associated named master. Shared selectable Refresh/Close report; native
 acceptance pending. Full original contract, source fixes and MIT terms: NOTICE.
 
 Anchors > Duplicates Finder is the complete native-pending source candidate for whole-font/opening-selection, all-master duplicate removal. Coincidence remains opt-in and automatic layers are kept. Identity-preserving Fix uses one final notification; failed attempts are diagnosed for Undo. Native full-font/history/reopen acceptance remains open. Historical rescue rows remain intact; the additional-tools row records this candidate without increasing the accepted130-tool numerator.
+
+
+Text Holder provides a complete editable persistent proof-text scratchpad,
+with Find, selected-or-whole replacement and distinct Save/Close controls.
+Requires App0.2.100.dev0; native qualification pending. See [Text Holder](docs/text-holder.md).

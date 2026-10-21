@@ -3211,3 +3211,154 @@ acceptance remains pending. Original source contracts and historical records ret
 ## N119 — duplicate-anchor workflow
 
 Private .98-based source candidate, reserved App0.2.102.dev0. Tests-first model/native/GUI RED receipts and subsequent passing controls are retained at verification/issue-120/anchor-duplicates-z37. Baseline App4037 passed; full source/installed/gate results are recorded there before freeze. Historical rescue originals/ledger and every prior menu remain. Native acceptance, real one-Undo/full-font/history/dirty/save/reopen remain open; no immediate exact append rollback is claimed. Exact commands and exit codes are in the evidence command JSON/logs.
+
+
+N97 Text Holder candidate (.91): full editable/resizable floating window; literal
+Find first/highlight; UTF16-correct selected-or-whole replacement; Save stays
+open, Save & Close, Ignore & Close; owned-path UTF8 persistence and window size.
+Source/licence disposition retained; no original body is copied or executed.
+No native calls or user-store validation. Native acceptance remains pending.
+
+N97 direct verification recipes (exit0 unless marked retained RED):
+- rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/check_artifacts.py
+  Ordinary .91 wheel+sdist, one owned arm64 Py3.11 env: each App3691;
+  Scriptmix990/1skip; pipcheck/origin/all235runtime bytes/notices/licences;
+  actual menu→installed Fly→App→Qt controls with injected owned temporary store.
+- rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/whole_gates.py
+  Unchanged accepted baseline scopes147App/42Scriptmix; full source App suite,
+  installed App consumer suite and SDK docs under complete zero-exclusion scope.
+- rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/check_docs.py
+  SDK/docs15 and strict107-menu catalogue pass (attempt1 receipts; unchanged
+  Scriptmix/menu bytes after the App-only literal-ampersand label correction).
+- FONTLABAPP_TEST_QT5=1 QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+  PYTHONDONTWRITEBYTECODE=1 rtk proxy verification/issue-120/glyph-completion-z20/qt5-v8-env/bin/python
+  -I -B verification/issue-120/text-holder-z34/installed_qt5.py
+  ActualQt5.15.19 installed final payload:24controls and actual public menu pass.
+Initial missing-module, receiver-disconnect and old-artifact label-layout failures
+remain retained; the first non-discriminating macOS mnemonic-only control also
+remains visible. NativeFontLab qualification remains pending; tests write only
+owned temporary stores. No default user store, canonical edit or native call.
+
+N97 geometry repair: preserve initial content500×400 separately from source
+NS frame min500×400/max1200×800. Persist decorated frame sizes, restore client
+sizes by measured chrome and map literal Cocoa origin(0,500) through complete
+primary logical screen geometry/current frame height after first show; no
+availableGeometry, DPR scaling or silent clamp. Prior .91 commits/artifacts
+are retained in attempt2; no immutable final .91 freeze existed before repair.
+27 focused actualQt5 controls pass; independent geometry controls pass bothQt5
+andQt6. Native qualification remains pending on root final combined .92.
+
+N97 final source fidelity: use normal Qt.Window with stays-on-top and explicit
+title/system/close/minmax hints, matching original Vanilla Window/NSWindow
+role rather than Tool/NSPanel hide-on-deactivation behavior. Preserve literal
+button ampersands, full frame constraints, Cocoa origin and saved frame sizes.
+Producer28 actualQt5 controls and independent32controls perQt5/Qt6 pass;
+ordinary final .91 artifacts and full declared147/42 gates are bound separately.
+Native acceptance remains pending on root combined .92, never claimed for .91.
+
+N97 final ordinary source/artifact gates (exit0):
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/check_artifacts.py`
+(wheel and sdist:3695 App passed;990 Scriptmix passed/1skip each;235runtime
+files exact; actual installed Fly/Qt6 menu workflow; owned temporary stores).
+`FONTLABAPP_TEST_QT5=1 QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 rtk proxy verification/issue-120/glyph-completion-z20/qt5-v8-env/bin/python -I -B verification/issue-120/text-holder-z34/installed_qt5.py`
+(28producer controls+actual installed Fly workflow,Qt5.15.19).
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/whole_gates.py`
+(complete147App/42Scriptmix modules; unchanged80statement/80branch floors,
+zero exclusions; full3695/990+1skip suites and15docs tests).
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/check_docs.py`
+(15docs tests+strict107-menu catalogue). Final commit scopes re-derived by
+unchanged milestone machinery against the exact measured source hashes.
+No canonical/live/native/store writes or push; root qualifies combined.92.
+
+N97 literal-Unicode repair revision4: frozen8433...candidate retained as failed
+source attempt after independent NBSP/LS/PS Find/Save counterexamples. Added
+text_holder_editor with undo-aware native block separator provenance; literal
+block.text reads preserve NBSP/LS and distinguish PS/LF. Controlled text ingress,
+local mime copy/paste, native Return, IME, selection merge and Undo/Redo preserve
+literal text; original disk universal-newline read remains unchanged. Four
+owned modules; complete App milestone scope grows148, Scriptmix stays42, no
+sample denominator changes. Qt5/Qt6 focused51controls each pass at this stage.
+Native acceptance remains pending on root combined.96 onto.94; .92 prep is
+historical and .91 remains a private source candidate, never native acceptance.
+
+N97 revision4 final verification (all exit0):
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/revision4/check_artifacts.py`
+(each ordinary wheel/sdist:3718App passed,990Scriptmix passed/1existing skip;
+236runtime source/hash/licences exact; public installedFly→actualQt6 menu
+checks include literal mixedLF/NBSP/LS/PS Find/replacement/Save/reopen).
+`FONTLABAPP_TEST_QT5=1 QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 rtk proxy verification/issue-120/glyph-completion-z20/qt5-v8-env/bin/python -I -B verification/issue-120/text-holder-z34/revision4/installed_qt5.py`
+(51producer controls + actual installedFly/menu workflow onQt5.15.19).
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/revision4/whole_gates.py`
+(full148App/42Scriptmix scope, unchanged80statement/80branch perfile floors,
+zeroexclusions, full3718/990+1skip suites and15docs tests).
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/revision4/check_docs.py`
+(15docs tests + strict107-menu catalogue). Fournewmodules100statement/100branch
+in each archive. Independent50Qt5+50Qt6 source controls pass; finalartifact seal
+is separate. Prior failed8433...freeze and all oldartifacts remain preserved.
+No native/canonical/live/originalscript/store writes or push; root final.96
+acceptance remains pending. Complete scopes re-derived after finalcommit must
+retain the identical full measured source inventories before finalfreeze.
+
+N97 ownership repair revision5: independent pinned PythonQt virtual-return source
+identified an ownerless Python-QMimeData lifetime seam (host binary equivalence
+unproven). The copy factory now returns the explicit nativebase Qt-owned object;
+its lazy source fragment is materialized before clear/setText, preventing a
+later default MIME read from overwriting the literal payload. Constructor-route
+tripwire is RED on revision4 source/GREEN now.52producer Qt5/Qt6 controls pass.
+Revision4 ordinary archives eef6ac94.../305df303... and full148/42 gates remain
+retained as a prior source attempt, with no immutable candidate promotion.
+Fresh revision5 ordinary artifacts/full unchanged gates bind this repair.
+
+N97 final literal/MIME revision5 verification (all exit0):
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/revision5/check_artifacts.py`
+(each ordinary wheel/sdist3719App passed;990Scriptmix passed/1existing skip;
+236runtime source/licence hashes exact; installedpublicFly/Qt6 literal menu).
+`FONTLABAPP_TEST_QT5=1 QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 rtk proxy verification/issue-120/glyph-completion-z20/qt5-v8-env/bin/python -I -B verification/issue-120/text-holder-z34/revision5/installed_qt5.py`
+(52producer controls and realinstalledFly workflow, Qt5.15.19).
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/revision5/whole_gates.py`
+(full148App/42Scriptmix modules; unchanged perfile80statement/80branch andzero
+exclusions; full3719App/990Scriptmix+1skip suites and15docs tests).
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/revision5/check_docs.py`
+(15docs tests+strict107-menu catalogue). Fournewmodules each100statement and
+100branch coverage inbothordinary archives. Independent51controls eachQt5/Qt6
+source pass, including MIME constructortripwire/lazyfragment plainformat proof.
+Final unchanged scopes re-derived after commit bind every measuredsourcehash.
+Old8433...freeze and revision4archives/fullgates remain retained; no original
+execution or bodycopy. No push/canonical/live/userstore/native writes. Root's
+latest sequencing makes final TextHoldernative target.100 atop.98; older.92/
+.96 preparation references are historical, private source version stays.91.
+Actual PythonQt virtual return/lifetime, userwindow/screens/frame and full
+native lifecycle remain unqualified until root-owned finalartifact acceptance.
+
+
+N117 complete reviewed Text Holder .100 integration atop sealed .98. Four exact
+reviewed literal editor modules; original Unicode/geometry/save/window workflow
+retained. One explicitly authorized report-pair module two-string product-copy
+exception; every other prior runtime/menu byte preserved. Native pending.
+
+N117 final integration verification (all exit0):
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/build_install.py`
+(ordinary .100 wheel/sdist; two App-only roots, immutable dependency fallback).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/run_consumers.py`
+(each archive:4089App,3182Glyport/1skip,4490Fontport/1skip,559Examples,
+991Scriptmix/1skip,199Lessons,17Fly:13527passed/3existing skips).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/docs.py`
+(full Scriptmix/Examples docs tests and strict builds in owned writable roots).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/coverage_report.py`
+(167App/68Examples/43Scriptmix whole modules from unchanged original baselines;
+every module80statement AND80branch, zeroexclusions, both archive lanes).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/audit_artifacts.py`
+(255App payload,37Examples/108Scriptmix menus;250priorruntime bytes exact,
+1root-authorized two-string report-pair exception,4reviewedTextHolder modules
+and tests exact; notices/licences/privacy/RECORD/fullsourceclosure PASS).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/full_pipchecks.py`
+(both full installed dependency graphs pass after matching pip tooling).
+Each TEXT_HOLDER_LANE=wheel|sdist runs installed run_text_holder_controls.py
+with corresponding .100 env (Qt6) and readonly qt5-v8-env (FONTLABAPP_TEST_QT5=1):
+52producer controls plus actual public Fly/menu Unicode/geometry/save workflow
+PASS in all4lanes. All stores temporary-owned, no systemclipboard writes.
+Bounded inherited root .91revision5 PythonQt builtin_qt_slot MIME dispatch/GC/
+destruction proof PASS, exact4module source inherited; full .100nativeworkflow
+remains pending. No native/canonical/live/sourcecorpus writes, push or release.
+Final WORK-only commits preserve every measured runtime hash and unchanged
+whole-scope machinery rebinds final heads without repeating unchanged suites.

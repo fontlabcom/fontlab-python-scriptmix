@@ -151,3 +151,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Unicode Coverage](reports/unicode-coverage.md)
 - [Vertical Metrics Reporter](reports/vertical-metrics-reporter.md)
 - [Why You Not Compatible](reports/why-you-not-compatible.md)
+
+## Utilities
+
+- [Text Holder](utilities/text-holder.md)

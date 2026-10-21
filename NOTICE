@@ -514,3 +514,13 @@ N119 Anchors/Duplicates Finder adapts the complete Apache-2.0 rescued sample
 anchors_duplicates_finder.py, SHA2567cda723f2e4499930aa49d701bb1dd1cca703bc92de44e5ec2a18876ff130f71.
 The original body and historical rescue ledger remain unchanged. Native
 one-Undo/full-font/history/dirty/save/reopen acceptance remains pending.
+
+
+Reza Bohloul — Text Holder (independent implementation)
+----------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: Window/Text holder.py
+Original SHA-256: 182c1c2486d79729632ea08ddc45c4c3aab8ccb19508ddb0276498a43c8c1410
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. This independently written
+implementation is Apache-2.0; complete terms are in LICENSE.
