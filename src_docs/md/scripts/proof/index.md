@@ -22,6 +22,8 @@
 - [Random Title Words](random-title-words.md)
 - [Random Uppercase Nontext](random-uppercase-nontext.md)
 - [Random Uppercase Words](random-uppercase-words.md)
+- [Real English Text](real-english-text.md)
+- [Real Spanish Text](real-spanish-text.md)
 - [Tallest and Shortest](tallest-and-shortest.md)
 - [Text By Master](text-by-master.md)
 - [Text Filter](text-filter.md)

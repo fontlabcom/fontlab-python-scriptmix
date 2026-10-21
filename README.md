@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 167 practical tools in one-level Title Case
-categories: 69 sample adaptations and 98 additional tools. Additional adaptations
+The curated `Scripts` folder contains 240 practical tools in one-level Title Case
+categories: 69 sample adaptations and 171 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -32,10 +32,27 @@ sync sidebearings and delete empty layers. Build From Recipes uses FontLab's
 own builder; every other edit is recorded as one Undo step, and auto layers
 are never notified.
 
+Contours gains 19 more tools adapted from the author's own samples: round
+coordinates, remove overlap, add extremes, correct direction, straighten short
+curves, optimize start points, delete small and duplicate contours, fix zero
+handles, transform and slant; and placeholder, shadow, tabular-figure,
+outline-effect, superior/inferior and small-cap generators, autohint and
+remove PostScript hints. Each change is recorded as one Undo step; each new
+glyph is recorded as its own Undo step.
+
+54 more tools are independent FontLab rewrites of the behaviour of Glyphs
+scripts by Pedro Arilla, Reset Type Studio, Reza Bohloul, Alex Slobzheninov,
+Resistenza Type, Luke Prowse and Simon Cozens, in Anchors, Cleaning,
+Components, Contours, Features, Font Info, Kerning, Masters, Names, Proof and
+Utilities. No source code is copied. The
+[porting backlog](PORTING-BACKLOG.md) lists every source with its disposition:
+ported, covered by a FontLab command or an existing tool, or without a FontLab
+counterpart. Trial Font Maker needs the public fontTools package.
+
 ## Unfinished ports and preserved sources
 
-The 61 legacy archive launchers are outside the active menu; 38 of them return
-as new ports listed in `additional-tools.json`, and 23 stay unported. Their original
+The 61 legacy archive launchers are outside the active menu; 57 of them return
+as new ports listed in `additional-tools.json`, and 4 stay unported. Their original
 sources remain byte-exact in the existing private/local `rescued` tree. The
 complete [porting backlog](PORTING-BACKLOG.md) lists each unfinished tool;
 `rescue-index.json` retains historical menu paths, source paths and hashes.

@@ -14,6 +14,42 @@ this_file: WORK.md
 - Notes: SCRIPTMIX_APP_REQUIREMENT is the App worktree path (uv builds it; needs the generic pretend-version override only to satisfy later floors, kept for consistency). Canonical sources were read only.
 - Scope: offline tests only. This is not native FontLab proof.
 
+## Issue 122 Task 2 integration wave 3: T14i, S6, S7, G2-G18 (2026-10-22)
+
+- Commits on `issue-122` (base e87c2e3): fc7ea07 T14i fgId fix (Build From Recipes,
+  Unlock Lock, S4/S5 tests, 2 hashes); 7e9973b S6 (11 Contours writers); f787153 S7
+  (8 Contours generators/hint tools, re-review m2 wording); f851c59 G3; 3c616e1 G4;
+  05e17b9 G5; 6d62323 G6; 44ab5db G7; e74b1d7 G8; 89d70a6 G9; 5af9f4a G10; a0c34cc G11;
+  e17a9eb G12; 731ce48 G13; 0f2391f G14; d882a44 G15; f0ff8f4 G16; 9107e10 G17;
+  7651097 G18; fa00b53 G2 (ledger "Batch G2: approved" present when reached); then this
+  docs commit (README, CHANGELOG, WORK, generated `src_docs/md/scripts`). Each batch
+  commit carries its rows, NOTICE section, PORTING-BACKLOG statuses or dispositions and
+  shared count edits, so every commit passes alone. Counts 98/167 -> 171/240; reused
+  own-sample rows 37 -> 56; rescued launchers with a port 38 -> 57 (4 unported).
+- Peers: App worktree `fontlab-fontlabapp` 2937e3a (clean; built fresh as 0.2.150.dev0
+  by env.sh), Fly worktree `fontlab-fly`. All new rows carry app_minimum 0.2.150.dev0.
+- Test-local fix: `tests/test_issue122_G3.py` real-App test used the sibling App source
+  override (`syspath_prepend` + `SCRIPTMIX_APP_SOURCE`) and failed on the clean export
+  (1 failed). Changed to the G1 form (installed App, ruling G2 I5); amended into f851c59.
+- `uvx ruff check --no-cache --target-version py311` on every committed batch's scripts
+  and test file: EXIT=0 for each batch. (`tests/test_reports.py` has a pre-existing I001
+  import-order finding; not changed.)
+- Clean-export runs, `sh verification/issue-122/sdd/cmd/mix-archive.sh <sha>` from the
+  workspace root, all 0 failed, 1 skipped, EXIT=0: fc7ea07 1936; 7e9973b 2212 (+276);
+  f787153 2377 (+165); f851c59 2410 (+33; the first G3 commit 29df550 had 1 failed, see
+  above); 3c616e1 2466 (+56); 05e17b9 2530 (+64); 6d62323 2574 (+44); 44ab5db 2651
+  (+77); e74b1d7 2682 (+31); 89d70a6 2769 (+87); 5af9f4a 2810 (+41); a0c34cc 2892 (+82);
+  e17a9eb 3016 (+124); 731ce48 3122 (+106); 0f2391f 3223 (+101); d882a44 3299 (+76);
+  f0ff8f4 3415 (+116); 9107e10 3478 (+63); 7651097 3568 (+90); fa00b53 3706 (+138).
+  Every growth equals the batch's own test count.
+- `sh verification/issue-122/sdd/cmd/fly.sh`: 17 passed, EXIT=0.
+- Docs: `git archive fa00b53` into
+  `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-w3-docs/fa00b53`, `./build.sh
+  --offline` there: EXIT=0, 0 warnings, 257 catalogue pages; `src_docs/md/scripts`
+  copied back with `rsync -a` (no delete) and `diff -r` identical.
+- Scope: offline tests only. No FontLab, Remopy or fl-native.sh call. Native acceptance
+  of all 73 new tools is pending.
+
 ## Issue 122 Task 2 integration wave 2: Metrics, Components, Masters, Cleanup (2026-10-21)
 
 - Commits on `issue-122` (base 6786f2e): c397d89 Metrics (4 tools), d8e279a Components

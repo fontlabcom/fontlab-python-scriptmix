@@ -2,6 +2,48 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — 2026-10-22 — Contours tools and Glyphs-script rewrites
+
+Add 73 tools; the active menu grows from 167 to 240 (171 additional tools).
+57 of the 61 former archive launchers now have a port.
+
+- Contours, from the author's own samples: Round Coordinates, Remove Overlap,
+  Add Extremes, Correct Contour Direction, Straighten Short Curves, Optimize
+  Start Points, Delete Small Contours, Fix Zero Handles, Delete Duplicate
+  Contours, Transform and Slant, on the shared App outline panel and geometry
+  history. Each change is recorded as one Undo step and read back. Direction
+  follows same-shape nesting; open contours and reversed duplicates are kept.
+- Contours generators and hint tools, from the author's own samples:
+  Placeholder Glyphs, Shadow Copy, Tabular Figure Copies, Outline Effect,
+  Superior & Inferior Figures, Small Caps From Capitals, Autohint Selected
+  Layers and Remove PostScript Hints. Each Apply is recorded as one Undo step;
+  each new glyph is recorded as its own Undo step, and the outlines as one
+  more. Generators do not copy anchors.
+- Independent rewrites of Glyphs scripts; no source code is copied:
+  - after Pedro Arilla: Real English Text, Real Spanish Text, Delete Stickers,
+    Start From Scratch, Decompose Serif Components, Make Lower Unicase, Set
+    Default Figures, Retract Handles and Simplify Selected Nodes;
+  - after Reset Type Studio: Smart Slant, Node Duplicator, Decompose Named
+    Components, Set Component Locations and Trial Font Maker;
+  - after Reza Bohloul: Magic Remover and Set Intermediate Layer;
+  - after Alex Slobzheninov: Paste Glyph Order Encoding, Align And
+    Distribute, Rotate Selection, Reflect Horizontally, Reflect Vertically,
+    Overlap Nodes, Selection Layer Navigator, Delete Kerning Pair From All
+    Masters, Kern To Max, Steal Kerning From Next Pair, Generate Random
+    Alternates Feature, Reorder Shapes and Show All Layers;
+  - after Resistenza Type: Master Twins, Deliver Glyphs and Style Linker;
+  - after Luke Prowse: Master Text Comparison and Common Glyphs;
+  - after Simon Cozens: seven Anchors tools, eight Contours tools, Kerning
+    Energy Report, Unbundle Punctuation Kerning, Sansomatic, Myanmar Medial
+    Ra Maker and Nastaliq Connection Editor.
+- PORTING-BACKLOG.md has a new table with every third-party source and its
+  disposition: ported, covered by a FontLab command or an existing tool, or
+  without a FontLab counterpart.
+- Build From Recipes and Unlock Lock address fonts by their FontGate id.
+- Autohint Selected Layers and Remove PostScript Hints attribute the TrueType
+  and guideline statements to FontLab's source.
+- Trial Font Maker needs the public fontTools package (DEPENDENCIES.md).
+
 ## Unreleased — 2026-10-21 — Metrics, Components, Masters and Cleanup tools
 
 Add 17 tools adapted from the author's own samples; the active menu grows from

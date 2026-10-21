@@ -11,5 +11,6 @@
 - [Glyph Tags](glyph-tags.md)
 - [Mark Color Palette](mark-color-palette.md)
 - [Select by Mark](select-by-mark.md)
+- [Style Linker](style-linker.md)
 - [Suffix Tool](suffix-tool.md)
 - [Unicode From Names](unicode-from-names.md)
