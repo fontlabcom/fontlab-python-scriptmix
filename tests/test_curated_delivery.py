@@ -21,7 +21,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 92 and len(actual) == 161
+    assert len(rows) == 69 and len(extra) == 98 and len(actual) == 167
     for relative in actual:
         path = ROOT / relative
         assert len(Path(relative).parts) == 3, relative
@@ -61,13 +61,14 @@ def test_reused_bodies_when_listed_then_only_the_authors_own_apache_samples():
     rows = json.loads((ROOT / "additional-tools.json").read_text())
     reused = [row for row in rows if row.get("source_body_redistributed") is True]
     families = sorted({row["destination"].split("/")[1] for row in reused})
-    assert families == ["Anchors", "Components", "Metrics", "Names"], families
-    assert len(reused) == 31, [row["destination"] for row in reused]
+    assert families == ["Anchors", "Cleanup", "Components", "Masters", "Metrics", "Names"], families
+    assert len(reused) == 37, [row["destination"] for row in reused]
     for row in reused:
         assert row["license"] == "Apache-2.0", row["destination"]
         assert row["source_path"].startswith("rescued/samples/"), row["destination"]
         assert "Independent rewrite" not in row["scope"], row["destination"]
-    masters = [row for row in rows if row["destination"].startswith("Scripts/Masters/")]
+    masters = [row for row in rows if row["destination"].startswith("Scripts/Masters/")
+               and not row["source_path"].startswith("rescued/samples/")]
     assert masters and all(row["source_body_redistributed"] is False for row in masters)
     readme = " ".join((ROOT / "README.md").read_text().split())
     assert "Third-party and Glyphs-corpus original bodies are not copied" in readme
@@ -94,9 +95,11 @@ NEW_TOOLS = {
                 "Round To Grid", "Delete By Name", "Mirror Across Masters"],
     "Masters": ["Display Next Layer", "Display Previous Layer", "Duplicate Current Layer",
                 "Use Layer As Master", "Transform Background", "Selection To All Backgrounds",
-                "Select Different Colour"],
+                "Select Different Colour", "Copy Outline To Mask", "Copy Layer Between Masters",
+                "Restore Backup Layer", "Layer Cleanup", "Sync Sidebearings"],
     "Components": ["Build From Recipes", "Align By Anchor", "Decompose", "Replace Reference",
                    "Copy Offsets Between Masters", "Unlock Lock", "Nested Finder"],
+    "Cleanup": ["Empty Layers"],
 }
 
 
@@ -104,7 +107,7 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     rows = {row["destination"]: row for row in json.loads((ROOT / "additional-tools.json").read_text())}
     wanted = [f"Scripts/{folder}/{name}.py" for folder, names in NEW_TOOLS.items() for name in names]
     wanted.append("Scripts/Contours/Raise Ascender.py")
-    assert len(wanted) == 39
+    assert len(wanted) == 45
     floors = {path: rows[path]["app_minimum"] for path in wanted}
     assert set(floors.values()) == {"0.2.150.dev0"}, floors
 

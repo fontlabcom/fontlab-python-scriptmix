@@ -1073,3 +1073,16 @@ components_nested_finder.py. The recipe syntax, controls and parts of the
 arithmetic are reused under that licence; the panels, refusals and write path
 are new. Source and destination SHA-256 values are in additional-tools.json
 and rescue-index.json. The original files stay unchanged.
+
+Layer and master tools from the author's own samples
+====================================================
+
+Masters/Copy Outline To Mask, Copy Layer Between Masters, Restore Backup
+Layer, Layer Cleanup and Sync Sidebearings, and Cleanup/Empty Layers adapt the
+author's own FontLab samples (Apache-2.0), kept under rescued/samples/ as
+masters_copy_to_mask.py, masters_copy_layer.py, masters_restore_backup.py,
+masters_layer_cleanup.py, masters_sync_metrics.py and cleanup_empty_layers.py.
+Controls, names and parts of the layer rules are reused under that licence;
+the panels, refusals and write path are new. Source and destination SHA-256
+values are in additional-tools.json and rescue-index.json. The original files
+stay unchanged.

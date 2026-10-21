@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 161 practical tools: 69 sample adaptations and 92
+The active menu contains 167 practical tools: 69 sample adaptations and 98
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -44,8 +44,8 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Components/Copy Offsets Between Masters.py | `rescued/samples/components_copy_offsets_between_masters.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Components/Unlock Lock.py | `rescued/samples/components_unlock_lock.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Components/Nested Finder.py | `rescued/samples/components_nested_finder.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Cleanup/Empty Layers.py | `rescued/samples/cleanup_empty_layers.py` | Unported; native verification pending |
-| Guides/Suggest Zones From Overshoots.py | `rescued/samples/zones_from_glyphs.py` | Unported; native verification pending |
+| Cleanup/Empty Layers.py | `rescued/samples/cleanup_empty_layers.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Guides/Suggest Zones From Overshoots.py | `rescued/samples/zones_from_glyphs.py` | Unported; held until the App has a qualified native zone writer (suggest rule in fontlabapp.alignment_zones) |
 | Contours/Round Coordinates.py | `rescued/samples/outlines_round_coordinates.py` | Unported; native verification pending |
 | Contours/Autohint Selected Layers.py | `rescued/samples/hints_autohint.py` | Unported; native verification pending |
 | Contours/Placeholder Glyphs.py | `rescued/samples/generate_placeholder_glyphs.py` | Unported; native verification pending |
@@ -65,12 +65,12 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Contours/Slant.py | `rescued/samples/outlines_slant.py` | Unported; native verification pending |
 | Contours/Small Caps From Capitals.py | `rescued/samples/generate_small_caps.py` | Unported; native verification pending |
 | Contours/Delete Duplicate Contours.py | `rescued/samples/outlines_delete_duplicate_contours.py` | Unported; native verification pending |
-| Masters/Copy Outline To Mask.py | `rescued/samples/masters_copy_to_mask.py` | Unported; native verification pending |
-| Masters/Layer Cleanup.py | `rescued/samples/masters_layer_cleanup.py` | Unported; native verification pending |
-| Masters/Sync Sidebearings.py | `rescued/samples/masters_sync_metrics.py` | Unported; native verification pending |
-| Masters/Restore Backup Layer.py | `rescued/samples/masters_restore_backup.py` | Unported; native verification pending |
-| Masters/Copy Layer Between Masters.py | `rescued/samples/masters_copy_layer.py` | Unported; native verification pending |
-| Masters/Back Up Master Layers.py | `rescued/samples/masters_backup_layer.py` | Unported; native verification pending |
+| Masters/Copy Outline To Mask.py | `rescued/samples/masters_copy_to_mask.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Masters/Layer Cleanup.py | `rescued/samples/masters_layer_cleanup.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Masters/Sync Sidebearings.py | `rescued/samples/masters_sync_metrics.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Masters/Restore Backup Layer.py | `rescued/samples/masters_restore_backup.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Masters/Copy Layer Between Masters.py | `rescued/samples/masters_copy_layer.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Masters/Back Up Master Layers.py | `rescued/samples/masters_backup_layer.py` | Unported; duplicate of Masters/Duplicate Current Layer.py (current-master scope); all-masters scope not in the menu |
 | Anchors/Rename Bulk.py | `rescued/samples/anchors_rename_bulk.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Anchors/Center Horizontally.py | `rescued/samples/anchors_center_horizontally.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Anchors/Place From Bounds.py | `rescued/samples/anchors_place_from_bounds.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
