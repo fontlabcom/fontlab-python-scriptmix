@@ -1326,3 +1326,22 @@ action.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Kerning and Contours tools after Simon Cozens
+=============================================
+
+Independent rewrites of scripts by Simon Cozens, simoncozens/GlyphsScripts,
+copyright 2017 Simon Cozens, MIT License
+(https://github.com/simoncozens/GlyphsScripts). The FontLab scripts are
+also MIT:
+
+- Kerning/Kerning Energy Report: Kern Optimizer.py.
+- Kerning/Unbundle Punctuation Kerning: Unbundle Punctuation Kerning.py.
+- Contours/Sansomatic: Sansomatic.py.
+
+Autokern.py is covered by FontLab's Pairs panel > Autokern selected pairs
+(Neural mode), LightSpace.py by Font > Metrics > Autospace, and Cadence
+Grid.py by Guides/Grid Generator.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.

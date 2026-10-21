@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 216 practical tools: 69 sample adaptations and 147
+The active menu contains 219 practical tools: 69 sample adaptations and 150
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -146,3 +146,9 @@ identity has one row. Source hashes of the ported sources are in
 | `simoncozens/GlyphsScripts/Make bottom-left node first.py` | Duplicate of | Contours/Optimize Start Points.py | Puts Y before X and can match a reference master |
 | `simoncozens/GlyphsScripts/Round Everything.py` | Duplicate of | Contours/Round Coordinates.py | Also Anchors/Round To Grid.py and Metrics/Round Advances.py |
 | `simoncozens/GlyphsScripts/glyphmonkey.py` | Retired | — | Helper module with no menu action |
+| `simoncozens/GlyphsScripts/Autokern.py` | Duplicate of | — | FontLab: Pairs panel > Autokern selected pairs, Neural mode |
+| `simoncozens/GlyphsScripts/Kern Optimizer.py` | Ported | Kerning/Kerning Energy Report.py | Read-only kerning energy and spacing-bias report |
+| `simoncozens/GlyphsScripts/Unbundle Punctuation Kerning.py` | Ported | Kerning/Unbundle Punctuation Kerning.py | Writes selected punctuation exceptions across chosen masters; classes and overrides stay |
+| `simoncozens/GlyphsScripts/LightSpace.py` | Duplicate of | — | FontLab: Font > Metrics > Autospace |
+| `simoncozens/GlyphsScripts/Sansomatic.py` | Ported | Contours/Sansomatic.py | Fourteen geometric capitals in empty selected layers |
+| `simoncozens/GlyphsScripts/Cadence Grid.py` | Duplicate of | Guides/Grid Generator.py | Regular vertical glyph guides with preview and master scope |
