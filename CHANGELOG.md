@@ -813,3 +813,7 @@ source fixed-coordinate equality and finite bounds prove the hit. All four
 probes, strict0.05 predicate, traversal, owned result and real-layer tab workflow
 remain. Ascending curve-time ordering stays an explicit adaptation; Glyphs
 engine equivalence and complete FontLab native acceptance remain pending.
+
+N160 retained first .120 artifacts as a failed attempt: an outside exact endpoint
+can round onto a finite probe even with overlapping hulls. Drop numerical t0/t1
+hits before restoring only valid exact source endpoints; interior roots survive.

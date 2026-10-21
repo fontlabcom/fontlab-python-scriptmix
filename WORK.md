@@ -3224,3 +3224,7 @@ boundary controls exit1 (12 failures/49passes retained); repaired full original
 model/reader/actualQt5 + independent controls exit0 (101passes). Final ordinary
 archives, complete seven consumers and original whole-module gates are required
 before this repair is sealed; evidence dangerous-offcurves-repair-z44.
+
+N160 retained first .120 artifacts as a failed attempt: an outside exact endpoint
+can round onto a finite probe even with overlapping hulls. Drop numerical t0/t1
+hits before restoring only valid exact source endpoints; interior roots survive.
