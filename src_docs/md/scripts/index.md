@@ -98,6 +98,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Case Pairs](names/case-pairs.md)
 - [Character Info](names/character-info.md)
 - [Character Set Compare](names/character-set-compare.md)
+- [Duplicate Unicodes](names/duplicate-unicodes.md)
 - [Glyph Finder](names/glyph-finder.md)
 - [Select by Mark](names/select-by-mark.md)
 

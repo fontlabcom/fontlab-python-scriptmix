@@ -760,7 +760,7 @@
     "title": "Duplicate Unicodes",
     "key": "names_duplicate_unicodes",
     "destination": "Scripts/Names/Duplicate Unicodes.py",
-    "destination_sha256": "fdcd2d777141a7cfb44a0452e02884c920617471f04ffc5ed6c38fe332d59444",
+    "destination_sha256": "f3cc72fd0ef9c96f20827b81a39de686584c7af0749bc5d6fefc5f24427af0a4",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Names/Duplicate Unicodes.py",
@@ -770,6 +770,6 @@
     "source_body_redistributed": false,
     "native_acceptance": "pending",
     "app_minimum": "0.2.121.dev0",
-    "scope": "Whole font numeric duplicates, primary/fontorder keeper, expanded editable checkbox tree, Rescan/Remove ticked/Close, exact surviving Unicode order. Actual font-owned code setters with two-pass stale fences, Font-window/pending-update/auto-dependant/native-dedup preflight and one final history batch; explicit partial failures, no UpdateAll/fgGlyph getter. Full Undo/Redo/dirty/font/cache/reopen native qualification pending."
+    "scope": "Whole font numeric duplicates, primary/fontorder keeper, expanded editable checkbox tree, Rescan/Remove ticked/Close, exact surviving Unicode order. Actual font-owned code setters with two-pass stale fences, Font-window/pending-update/auto-dependant/native-dedup preflight and one final history batch; explicit partial failures, no UpdateAll/fgGlyph getter. Full Undo/Redo/dirty/font/cache/reopen native qualification pending. Inactive open Glyph editors refuse too, through App GC-protected known-class inspection; native qualification remains pending."
   }
 ]

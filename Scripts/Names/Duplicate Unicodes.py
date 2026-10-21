@@ -7,7 +7,7 @@ as keeper. Untick any row to keep its code, or tick the keeper too. Rescan reset
 the preview; Remove ticked writes only the checked assignments and refreshes.
 Requires Fly and App0.2.121.dev0. No glyph geometry or selection is edited.
 
-Activate the Font window before applying. Changed sources, pending native glyph
+Close all Glyph editors and activate the Font window before applying. Changed sources, pending native glyph
 updates, automatic targets/dependants or surviving repeated-code lists that the
 native setter would collapse refuse before history. One final history batch is
 used; a partial failure diagnoses Edit > Undo. Full native history/font/reopen

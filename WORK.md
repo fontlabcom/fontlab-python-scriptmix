@@ -3364,3 +3364,5 @@ Final WORK-only commits preserve every measured runtime hash and unchanged
 whole-scope machinery rebinds final heads without repeating unchanged suites.
 
 N161 .121 private candidate from reviewed .106. Read complete original and local FontGate/FontLab C++ bindings plus official Qt5 tree docs before implementation. Tests-first RED retained; model/native/UI full workflow initially41 controls, full archive/gates pending. Evidence and TMPDIR are on /Volumes/Falstaff4T/fontlab-scripting-verification/duplicate-unicodes-z45 (verification path is a symlink); no native/canonical/push/live install.
+
+N161 open-editor refinement: active Font window does not exclude inactive Glyph editors (existing fl#8514 Unicode setter hold). Added pre-history allWidgets/inherits class check through existing App GC-protected qt_list, no ApplicationUI/preferences initialization. RED retained; whole valid manual-font cleanup still works. All transient data TMPDIR external. First ordinary archive/consumer/Qt round retained; final guard revision rebuilt separately.

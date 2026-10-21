@@ -120,4 +120,4 @@ Text Holder provides a complete editable persistent proof-text scratchpad,
 with Find, selected-or-whole replacement and distinct Save/Close controls.
 Requires App0.2.100.dev0; native qualification pending. See [Text Holder](docs/text-holder.md).
 
-`Duplicate Unicodes` scans the whole current font, groups shared codepoints and lets you keep or remove each assignment. Rescan resets primary-owner defaults; Remove ticked preserves all remaining Unicode order. Activate the Font window before Apply. Unsafe automatic dependants, pending updates and stale previews refuse before history; partial failures diagnose Undo. Actual FontLab history/reopen acceptance remains pending.
+`Duplicate Unicodes` scans the whole current font, groups shared codepoints and lets you keep or remove each assignment. Rescan resets primary-owner defaults; Remove ticked preserves all remaining Unicode order. Close all Glyph editors and activate the Font window before Apply. Unsafe automatic dependants, pending updates and stale previews refuse before history; partial failures diagnose Undo. Actual FontLab history/reopen acceptance remains pending.
