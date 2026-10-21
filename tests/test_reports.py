@@ -66,7 +66,7 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
     assert len(set(destinations)) == 69
     additional = json.loads((ROOT / "additional-tools.json").read_text())
     extra_destinations = {entry["destination"] for entry in additional}
-    assert len(extra_destinations) == len(additional) == 157
+    assert len(extra_destinations) == len(additional) == 158
     for entry in additional:
         assert (
             hashlib.sha256((ROOT / entry["destination"]).read_bytes()).hexdigest()

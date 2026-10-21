@@ -1403,3 +1403,23 @@ G2 Harmonize.py is covered by FontLab's Contour > Harmonize.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Masters layer navigator after Alex Slobzheninov
+===============================================
+
+Independent rewrite of scripts by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, copyright 2020 Alex Slobzheninov, Apache
+License 2.0 (https://github.com/slobzheninov/Glyphs-Scripts):
+
+- Masters/Selection Layer Navigator: App/Next Layer in Selection.py,
+  Previous Layer in Selection.py, Toggle Axis 1.py, Toggle Axis 2.py, Toggle
+  Axis 3.py, Toggle Axis 4.py, Toggle Italic.py and ToggleAxis.py, combined
+  in one tool.
+
+App/Fit Zoom.py, DarkMode.py and Floating Macro Panel.py are covered by
+FontLab: View > Zoom (Fit Content on Screen, Fit Selection, Fit Text on
+Screen), Preferences > Glyph window > Dark preview, and Window > Panels >
+Python.
+
+No source code was copied; the script reproduces the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.

@@ -2826,5 +2826,23 @@
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Move the first eligible adjacent corner onto each selected tip, make it sharp and align its next handle using that layer's associated master italic angle. Auxiliary layers resolve by FontLab master naming rules; layers without an associated master are refused. Handle x is truncated in glyph space. Conflicting targets and scaled or rotated selected shapes are refused. Selected-layer or all-master scope includes a preview. Each action is recorded as one Undo step."
+  },
+  {
+    "title": "Selection Layer Navigator",
+    "key": "masters_selection_layer_navigator",
+    "destination": "Scripts/Masters/Selection Layer Navigator.py",
+    "destination_sha256": "7c8856746e61d3edfa35930f2d6a433bff35b068897d2b7e626067cfbb48ea20",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source_path": "App/ToggleAxis.py",
+    "source_sha256": "15acd39efb73e888fae5bc49ab3185597b6c7669bcc2c05306582b06dc28861f",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "copyright": "2020 Alex Slobzheninov",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Also covers App/Next Layer in Selection.py, Previous Layer in Selection.py, Toggle Axis 1.py through Toggle Axis 4.py and Toggle Italic.py. Non-modal Previous/Next navigator. Layer order skips locked layers and synchronizes selected Glyph-window slots by the first usable reference's target name. Unusable references produce named kept rows while later slots continue. Axis mode cycles complete native locations with other coordinates fixed; Font-window mode cycles the current font master. Explicit slots stay explicit; default-follow slots continue to follow the glyph's active layer. Editor navigation retains the package master. No geometry or history notifications."
   }
 ]

@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 226 practical tools: 69 sample adaptations and 157
+The active menu contains 227 practical tools: 69 sample adaptations and 158
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -177,3 +177,14 @@ identity has one row. Source hashes of the ported sources are in
 | `slobzheninov/Glyphs-Scripts/Reflect/Reflect Vertically.py` | Ported | Contours/Reflect Vertically.py | Preview over several masters or selected layers |
 | `slobzheninov/Glyphs-Scripts/Overlap nodes.py` | Ported | Contours/Overlap Nodes.py | Coincident terminal nodes; each layer uses its own master's italic angle |
 | `slobzheninov/Glyphs-Scripts/G2 Harmonize.py` | Duplicate of | — | FontLab: Contour > Harmonize |
+| `slobzheninov/Glyphs-Scripts/App/Next Layer in Selection.py` | Ported | Masters/Selection Layer Navigator.py | Shared layer name across the selected slots |
+| `slobzheninov/Glyphs-Scripts/App/Previous Layer in Selection.py` | Ported | Masters/Selection Layer Navigator.py | Reverse order, with wrap-around |
+| `slobzheninov/Glyphs-Scripts/App/Toggle Axis 1.py` | Ported | Masters/Selection Layer Navigator.py | First font axis; other coordinates stay fixed |
+| `slobzheninov/Glyphs-Scripts/App/Toggle Axis 2.py` | Ported | Masters/Selection Layer Navigator.py | Second font axis |
+| `slobzheninov/Glyphs-Scripts/App/Toggle Axis 3.py` | Ported | Masters/Selection Layer Navigator.py | Third font axis |
+| `slobzheninov/Glyphs-Scripts/App/Toggle Axis 4.py` | Ported | Masters/Selection Layer Navigator.py | Fourth font axis |
+| `slobzheninov/Glyphs-Scripts/App/Toggle Italic.py` | Ported | Masters/Selection Layer Navigator.py | First axis tagged ital or slnt |
+| `slobzheninov/Glyphs-Scripts/App/ToggleAxis.py` | Ported | Masters/Selection Layer Navigator.py | Coordinate order, intermediate layers and Font-window master cycling |
+| `slobzheninov/Glyphs-Scripts/App/Fit Zoom.py` | Duplicate of | — | FontLab: View > Zoom > Fit Content on Screen (Ctrl+0), Fit Selection, Fit Text on Screen |
+| `slobzheninov/Glyphs-Scripts/App/DarkMode.py` | Duplicate of | — | FontLab: Preferences > Glyph window > Dark preview |
+| `slobzheninov/Glyphs-Scripts/App/Floating Macro Panel.py` | Duplicate of | — | FontLab: Window > Panels > Python |
