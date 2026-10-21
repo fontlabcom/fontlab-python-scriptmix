@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 199 practical tools: 69 sample adaptations and 130
+The active menu contains 201 practical tools: 69 sample adaptations and 132
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -124,3 +124,5 @@ identity has one row. Source hashes of the ported sources are in
 | `rsztype/Scripts/Postino.py` | Ported | Masters/Deliver Glyphs.py | Master-name pairing with visible fallbacks; components, hints and categories are not transferred |
 | `rsztype/Scripts/ShortNames.py` | Retired | — | FontLab generates instance PostScript names and file names; set PostScript names per master |
 | `rsztype/Scripts/StyleLinker.py` | Ported | Names/Style Linker.py | Whole-word base matching across width groups, with a preview |
+| `NaN-xyz/GlyphsApp-Scripts/MasterBlaster/MasterBlaster.py` | Ported | Masters/Master Text Comparison.py | Word groups and file presets with exact per-slot master layers |
+| `NaN-xyz/GlyphsApp-Scripts/CommonGlyphs.py` | Ported | Masters/Common Glyphs.py | Exact-name proof set shared by every open font |

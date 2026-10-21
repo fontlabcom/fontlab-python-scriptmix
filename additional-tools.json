@@ -2274,5 +2274,43 @@
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Non-modal exportable-instance preview with whole-word Bold, Italic and Oblique matching across width groups. Lists missing typographic style names and other kept rows. Copies only explicit base Style Groups; automatic base groups are kept because per-instance tfn is not exposed by the Python API. Native autoSLV/autoSGN and multi-instance controls remain available in Font Info. Checks the bound fgId and preview values before assignment. Uses the Font Info notification list [package, package.mastersContainer()] before assignment and again afterwards, followed by UpdateAll. Native instance values retain family names and hidden properties; setter failures restore original values and report the Undo hint."
+  },
+  {
+    "title": "Master Text Comparison",
+    "key": "masters_text_comparison",
+    "destination": "Scripts/Masters/Master Text Comparison.py",
+    "destination_sha256": "71df63167f60cefd2de6c6b3e363f2175b63ba1dceffb6945cb9ff2a52e3c260",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/NaN-xyz/GlyphsApp-Scripts",
+    "source_path": "MasterBlaster/MasterBlaster.py",
+    "source_sha256": "b219c5444601227337fbd471640081223cd96a22e61c6ad9519ea78d75c9ec95",
+    "license": "MIT AND Apache-2.0",
+    "license_sha256": "062528e2d467ae13f8fc4bc35476c960431b435ae11cb54a1eab725e2f7be3c1",
+    "license_note": "Root LICENSE is MIT; upstream README declares Apache-2.0. Preserve both notices.",
+    "copyright": "2019 LukeProwse",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Over FontLab's Glyph-window multi-master text views and Text By Master, this adds comma-separated word groups and file presets with exact per-slot layers. Non-modal panel uses proof.font_maps with first-encoded-name-wins lookup. Preflight checks all requested layers. One call to the public named_tab.open_layer_rows opens one tab: side by side puts each word group on one row with a space between master copies; stacked puts each word/master on one row, with blank group separators. Preset paths remain in the panel until Close; UTF-8 BOM and newline normalization are reported."
+  },
+  {
+    "title": "Common Glyphs",
+    "key": "masters_common_glyphs",
+    "destination": "Scripts/Masters/Common Glyphs.py",
+    "destination_sha256": "ed5a35144920f6dfe8d819d77bd2ca8d02818eb4d48d379d3a82d09ae06f4a0b",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/NaN-xyz/GlyphsApp-Scripts",
+    "source_path": "CommonGlyphs.py",
+    "source_sha256": "2999152e462f69df47a3da73bdf469b10ea4de92ccb01bfc20ef01c97fc648ac",
+    "license": "MIT AND Apache-2.0",
+    "license_sha256": "062528e2d467ae13f8fc4bc35476c960431b435ae11cb54a1eab725e2f7be3c1",
+    "license_note": "Root LICENSE is MIT; upstream README declares Apache-2.0. Preserve both notices.",
+    "copyright": "2019 LukeProwse",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Over FontLab's Glyph-window multi-master text views and Text By Master, this adds an exact-name proof set shared by every open font, with per-font encodings. Map AllFonts fonts to registered packages through FontGate IDs and read canonical font.glyphs lists twice. Publish sorted shared names, slash proof text, current-font encoded characters and complete per-font Unicode assignments in the shared report panel. Refuse changed registrations, invalid records and expired scans. Use stored FontLab names in place of Glyphs production-name conversion. The optional source label-colour action is omitted."
   }
 ]

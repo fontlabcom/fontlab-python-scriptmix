@@ -1260,3 +1260,18 @@ master.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Masters proof tools after Luke Prowse
+=====================================
+
+Independent rewrites of scripts by Luke Prowse (LukeProwse),
+NaN-xyz/GlyphsApp-Scripts, copyright 2019
+(https://github.com/NaN-xyz/GlyphsApp-Scripts). The root LICENSE declares
+MIT and the README declares Apache-2.0; both notices are preserved:
+
+- Masters/Master Text Comparison: MasterBlaster/MasterBlaster.py.
+- Masters/Common Glyphs: CommonGlyphs.py.
+
+No source code or preset text was copied; the scripts reproduce the
+behaviour for FontLab. Source and licence SHA-256 values are in
+additional-tools.json.
