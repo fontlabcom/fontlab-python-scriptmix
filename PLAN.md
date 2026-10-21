@@ -625,3 +625,8 @@ N162: independently review final combined .122/.37 source/artifact tuple and ret
 N185: complete ordinary archives, current seven consumers and unchanged original per-module80statement/80branch zero-exclusion gates; independent review before source delivery and full native font/history/reopen qualification.
 
 N185 ordinary source/artifact/consumer/original-scope gates passed. Next: independent frozen review, then separately guarded native full-font/history/save/reopen calibration. This does not qualify the native domain.
+
+
+## N201 complete kerning donor
+
+Independently review the complete typed Symmetry/Cutoff .137 donor, then integrate separately reviewed newer candidates and qualify native complete authored-font/history/reopen acceptance.

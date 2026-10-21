@@ -554,3 +554,11 @@ executed or distributed; Apache-2.0 applies only to this new implementation.
 All-master explicit-pair inclusive[-250,100] action; repair final-master-only
 notification through the existing complete snapshot-bound kerning batch writer.
 Native full-font/history/save/reopen qualification remains pending.
+
+Kerning Symmetry: independent behavior implementation of Vassil Kateliev /
+Karandash Type Foundry (2025), Science Gothic,
+https://github.com/googlefonts/science-gothic ,
+scripts/FontLab/sg-toolbox/SG-Font-Kerning-Symmetry.py.
+Original SHA-256 6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c.
+No licence declared in the inspected original tree; original body is neither
+copied nor redistributed. New independent implementation: Apache-2.0.

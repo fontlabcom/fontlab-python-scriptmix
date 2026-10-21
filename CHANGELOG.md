@@ -892,3 +892,8 @@ N185 private source candidate: complete all-master Kerning Cutoff action retains
 
 
 N193 test compatibility: the owned kerning fixture exposes the resolved package search path instead of preventing genuine shared helper imports. All menu bodies and runtime requirements unchanged.
+
+
+## Unreleased .137 — Complete typed kerning symmetry
+
+Add the complete Science Gothic 28-target/378-comparison Symmetry writer with lossless explicit glyph/group identities, sequential class aliases and zero deletion. Preserve original # and case-sensitive Ctr master exclusion. Cutoff retains its distinct all-native-master policy. Native qualification pending.

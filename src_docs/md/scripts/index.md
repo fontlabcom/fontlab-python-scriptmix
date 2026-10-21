@@ -76,6 +76,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Round Values](kerning/round-values.md)
 - [Same Kerning Groups](kerning/same-kerning-groups.md)
 - [Scale Values](kerning/scale-values.md)
+- [Symmetry](kerning/symmetry.md)
 - [Text Preview](kerning/text-preview.md)
 
 ## Masters

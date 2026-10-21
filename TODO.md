@@ -132,3 +132,6 @@ N68 repair round1 (.82): preserve first selected parent only, without layer or l
 
 
 - [ ] N185: final ordinary artifact/consumer/original-scope gates and independent review; native full-font/history/save/reopen remains pending.
+
+
+- [ ] Independently review .137 complete typed Symmetry/Cutoff source and archives; final integrated native full-font oneUndo/Redo/reopen remains pending.
