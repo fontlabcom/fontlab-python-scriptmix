@@ -710,6 +710,11 @@ no new behavior requiring another native run; controller decides integration.
   `test_reports` manifest). The run regenerated the seven Anchors catalogue pages
   (`src_docs/md/scripts/anchors/*.md`); index pages changed only by the other lanes'
   scripts were not staged.
+- Clean export (the proof without the other lanes' files): App worktree clean at
+  8bd2299, `touch` of its `pyproject.toml`, then
+  `sh verification/issue-122/sdd/cmd/mix-archive.sh a48f977 8d21675`:
+  a48f977 **exit 0, 1611 passed, 1 skipped**; base 8d21675 exit 0, 1610 passed,
+  1 skipped. No failure in either tree.
 - Offline tests only; not native FontLab proof.
 
 ## 2026-10-17: Kerning native acceptance
