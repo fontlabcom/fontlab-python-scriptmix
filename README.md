@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 106 practical tools in one-level Title Case
-categories: 69 sample adaptations and 37 additional tools. Additional adaptations
+The curated `Scripts` folder contains 108 practical tools in one-level Title Case
+categories: 69 sample adaptations and 39 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -112,3 +112,7 @@ Close But No Cigar reports near angles, stem lengths and all six node-position
 checks for every selected glyph occurrence, using each first layer and its
 associated named master. Shared selectable Refresh/Close report; native
 acceptance pending. Full original contract, source fixes and MIT terms: NOTICE.
+
+Text Holder provides a complete editable persistent proof-text scratchpad,
+with Find, selected-or-whole replacement and distinct Save/Close controls.
+Requires App0.2.100.dev0; native qualification pending. See [Text Holder](docs/text-holder.md).

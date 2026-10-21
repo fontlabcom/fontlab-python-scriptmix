@@ -593,7 +593,7 @@
     "source_sha256": "d6814436e871cc1e80668d31bb3b15428107d5fd6cbdd3976d74643b3a3a2840",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018–2022 Pedro Arilla",
+    "copyright": "2018\u20132022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -610,7 +610,7 @@
     "source_sha256": "fe88203e787c5a5e9ada86c16b25e4f9da0a1afe29391a197b26b67fa8a15c20",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018–2022 Pedro Arilla",
+    "copyright": "2018\u20132022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -627,7 +627,7 @@
     "source_sha256": "082e445b23e6085ace77ebc30ecb4025dc0210185d1646b854129630158dc444",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018–2022 Pedro Arilla",
+    "copyright": "2018\u20132022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -720,6 +720,24 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "source_body_redistributed": false,
     "native_acceptance": "pending",
-    "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict ±2 angle/position, ±5% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
+    "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict \u00b12 angle/position, \u00b15% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
+  },
+  {
+    "title": "Text Holder",
+    "key": "text_holder",
+    "destination": "Scripts/Utilities/Text Holder.py",
+    "destination_sha256": "4bbbc23fb20866db01576bd7e64bad212d9e9b9171a3d14c3d747e1e5b13352c",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Window/Text holder.py",
+    "source_sha256": "182c1c2486d79729632ea08ddc45c4c3aab8ccb19508ddb0276498a43c8c1410",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Resizable floating text editor, Find first/highlight, selected-or-whole literal replacement, Save, Save & Close, Ignore & Close and persistent UTF8 content recovery. Qt UTF16 selection conversion; no font editing.",
+    "native_acceptance": "pending",
+    "release_gate": "pending independent review and owned FontLab/PythonQt lifecycle/storage qualification",
+    "app_minimum": "0.2.100.dev0"
   }
 ]
