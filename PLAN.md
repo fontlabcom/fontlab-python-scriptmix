@@ -587,3 +587,24 @@ button ampersands, full frame constraints, Cocoa origin and saved frame sizes.
 Producer28 actualQt5 controls and independent32controls perQt5/Qt6 pass;
 ordinary final .91 artifacts and full declared147/42 gates are bound separately.
 Native acceptance remains pending on root combined .92, never claimed for .91.
+
+N97 literal-Unicode repair revision4: frozen8433...candidate retained as failed
+source attempt after independent NBSP/LS/PS Find/Save counterexamples. Added
+text_holder_editor with undo-aware native block separator provenance; literal
+block.text reads preserve NBSP/LS and distinguish PS/LF. Controlled text ingress,
+local mime copy/paste, native Return, IME, selection merge and Undo/Redo preserve
+literal text; original disk universal-newline read remains unchanged. Four
+owned modules; complete App milestone scope grows148, Scriptmix stays42, no
+sample denominator changes. Qt5/Qt6 focused51controls each pass at this stage.
+Native acceptance remains pending on root combined.96 onto.94; .92 prep is
+historical and .91 remains a private source candidate, never native acceptance.
+
+N97 ownership repair revision5: independent pinned PythonQt virtual-return source
+identified an ownerless Python-QMimeData lifetime seam (host binary equivalence
+unproven). The copy factory now returns the explicit nativebase Qt-owned object;
+its lazy source fragment is materialized before clear/setText, preventing a
+later default MIME read from overwriting the literal payload. Constructor-route
+tripwire is RED on revision4 source/GREEN now.52producer Qt5/Qt6 controls pass.
+Revision4 ordinary archives eef6ac94.../305df303... and full148/42 gates remain
+retained as a prior source attempt, with no immutable candidate promotion.
+Fresh revision5 ordinary artifacts/full unchanged gates bind this repair.

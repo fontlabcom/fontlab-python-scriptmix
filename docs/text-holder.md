@@ -56,4 +56,11 @@ The window retains the original normal NSWindow role while floating above
 normal windows: Qt.Window with WindowStaysOnTopHint, title/system/close and
 minimize/maximize hints. It is not a Qt.Tool/NSPanel that hides on deactivation.
 Actual native minimization, app deactivation and reactivation remain part of the
-root-owned combined .92 qualification. No native result is claimed here.
+root-owned combined .96 qualification. No native result is claimed here.
+
+Literal NBSP, Unicode line separator(U+2028) and paragraph separator(U+2029)
+remain distinct from space and ordinary LF during editing, Find, replacement,
+Save and recovery. Undo/Redo, typing, input-method commits and text paste/copy preserve
+these literal characters as well.
+As in the original Python open(...,'r'), disk loading translates CRLF and lone
+CR to LF; this is separate from preserving literal text authored in the editor.
