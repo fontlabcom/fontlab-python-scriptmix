@@ -6,3 +6,4 @@
 - [Grid Generator](grid-generator.md)
 - [Guide List Editor](guide-list-editor.md)
 - [Metric Reference Lines](metric-reference-lines.md)
+- [Perpendicular Guides](perpendicular-guides.md)

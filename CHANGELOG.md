@@ -913,3 +913,5 @@ Add the complete Science Gothic 28-target/378-comparison Symmetry writer with lo
 N226: private .145 coherent union on reviewed .141; complete admitted CopyAnchors/shared scalar-style reader .144 and TextHolder/literal helper .139revision3 retained. Fresh artifacts/full consumer/Qt/whole-original coverage verification pending; full native qualification remains separate. No host/canonical/live install writes.
 
 N235: integrate complete reviewed literal TextHolder/anchor tools, both literal Find Files profiles and generic Qt table items without replacing prior workflows; host acceptance remains pending.
+
+Private .154: add complete first-selected-layer Perpendicular Guides action, including selected controls and transformed component centres; existing guide objects retained and one final history notification. Native qualification pending.

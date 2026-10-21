@@ -60,6 +60,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Grid Generator](guides/grid-generator.md)
 - [Guide List Editor](guides/guide-list-editor.md)
 - [Metric Reference Lines](guides/metric-reference-lines.md)
+- [Perpendicular Guides](guides/perpendicular-guides.md)
 
 ## Kerning
 
