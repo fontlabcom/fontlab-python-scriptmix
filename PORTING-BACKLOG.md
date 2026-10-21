@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 186 practical tools: 69 sample adaptations and 117
+The active menu contains 188 practical tools: 69 sample adaptations and 119
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -79,3 +79,15 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Anchors/Round To Grid.py | `rescued/samples/anchors_round_to_grid.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Anchors/Delete By Name.py | `rescued/samples/anchors_delete_by_name.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Anchors/Mirror Across Masters.py | `rescued/samples/anchors_mirror_across_masters.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+
+## Third-party behaviour sources
+
+These additional tools reproduce the behaviour of third-party Glyphs scripts
+as independent FontLab rewrites; no source code is copied. Each source
+identity has one row. Source hashes of the ported sources are in
+`additional-tools.json`; NOTICE holds the credits and licences.
+
+| Source | Disposition | Menu | Note |
+| --- | --- | --- | --- |
+| `pedroarilla/glyphs-scripts/Real* text/Real* English text.py` | Ported | Proof/Real English Text.py | 24 original passages; five distinct passages per proof |
+| `pedroarilla/glyphs-scripts/Real* text/Real* Spanish text.py` | Ported | Proof/Real Spanish Text.py | 24 original passages; five distinct passages per proof |

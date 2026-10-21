@@ -2034,5 +2034,43 @@
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
     "scope": "Native directional hint removal, role-based counts and read-back. Each Apply is recorded as one Undo step. Offline verification only; native acceptance pending."
+  },
+  {
+    "title": "Real English Text",
+    "key": "proof_real_english_text",
+    "destination": "Scripts/Proof/Real English Text.py",
+    "destination_sha256": "c4ebaa3ac8b97544c616c075369f1080633835be4de620fd2af3b97a821153b6",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source_path": "Real* text/Real* English text.py",
+    "source_sha256": "65ffbc899c2356dc81f2882bfd2d240273c3fe1a8551a5ba6441b7287cb8f773",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "copyright": "2018–2022 Pedro Arilla",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: native new-tab content, source binding and complete preservation",
+    "scope": "Open one new native Glyph tab for the captured current font. Sample five distinct passages without replacement, preserving case, punctuation and a final space. Use 24 original English passages instead of the upstream 300 third-party excerpts. Unlike the upstream sampling, no passage repeats within one proof. Pass missing characters unchanged. Refuse unsafe text before creation. No font-data write."
+  },
+  {
+    "title": "Real Spanish Text",
+    "key": "proof_real_spanish_text",
+    "destination": "Scripts/Proof/Real Spanish Text.py",
+    "destination_sha256": "d661bbd90038057b21eb29c741c4d281cfbc36843c7e07e50a2e41f4d86b30ce",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source_path": "Real* text/Real* Spanish text.py",
+    "source_sha256": "d05361190797853f73ce88413b99154a34bb6ebfd4a836478da5d37abc87a8d5",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "copyright": "2018–2022 Pedro Arilla",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "original_scope_acceptance": "pending: native new-tab content, source binding and complete preservation",
+    "scope": "Open one new native Glyph tab for the captured current font. Sample five distinct passages without replacement, preserving case, accents, punctuation and a final space. Use 24 original Spanish passages instead of the upstream 300 third-party excerpts. Unlike the upstream sampling, no passage repeats within one proof. Pass missing characters unchanged. Refuse unsafe text before creation. No font-data write."
   }
 ]

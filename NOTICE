@@ -1119,3 +1119,17 @@ arithmetic are reused under that licence; the previews, glyph creation,
 refusals and write path are new. Source and destination SHA-256 values are in
 additional-tools.json and rescue-index.json. The original files stay
 unchanged.
+
+Proof text tools after Pedro Arilla
+===================================
+
+Independent rewrites of scripts by Pedro Arilla, pedroarilla/glyphs-scripts,
+copyright 2018-2022 Pedro Arilla, Apache License 2.0
+(https://github.com/pedroarilla/glyphs-scripts):
+
+- Proof/Real English Text: Real* text/Real* English text.py.
+- Proof/Real Spanish Text: Real* text/Real* Spanish text.py.
+
+No source code or source corpus was copied. Each tool contains 24 original
+proof passages under Apache-2.0; the upstream third-party excerpts are not
+redistributed. Source and licence SHA-256 values are in additional-tools.json.
