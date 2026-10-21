@@ -142,3 +142,5 @@ N68 repair round1 (.82): preserve first selected parent only, without layer or l
 - [ ] Independently review and root-native-qualify complete .141 typed Cutoff/Symmetry, numeric and Character Map union without narrowing original predicates or holds.
 
 - [ ] N240: independently review .150 Raise Ascender and qualify complete original native domain, all per-occurrence history/Redo/reopen, implicit layer/auxiliary association and full metadata/hints; no refusal-as-equivalence.
+
+- [x] N257 .155: verify retained normal-terminal callbacks and live failed-Close diagnosis with ordinary artifacts/full original coverage; independent review still required.

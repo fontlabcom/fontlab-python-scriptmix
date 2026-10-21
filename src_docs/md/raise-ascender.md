@@ -3,7 +3,7 @@ this_file: src_docs/md/raise-ascender.md
 ---
 # Raise Ascender
 
-Choose **Contours > Raise Ascender** in Scriptmix (App .150 or later). Enter an Amount (default `10`).
+Choose **Contours > Raise Ascender** in Scriptmix (App .155 or later). Enter an Amount (default `10`).
 **Raise this master**, the default action, processes every currently selected
 layer occurrence in selection order. Repeated occurrences remain repeated.
 **Raise all masters** processes every foreground layer of the first selected
@@ -39,3 +39,6 @@ Finite input/results are required for native safety; NaN/infinity are never
 silently normalized. Metadata, history/Redo and full saved/reopened font
 preservation still require owned FontLab qualification. No font selection,
 master, live installation, preferences or clipboard is changed by opening UI.
+
+Retained callbacks are inert after normal Close or parent destruction. A failed
+Close keeps the live error diagnosis available while cleanup can be retried.
