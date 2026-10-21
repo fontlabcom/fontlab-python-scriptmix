@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 188 practical tools: 69 sample adaptations and 119
+The active menu contains 190 practical tools: 69 sample adaptations and 121
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -91,3 +91,10 @@ identity has one row. Source hashes of the ported sources are in
 | --- | --- | --- | --- |
 | `pedroarilla/glyphs-scripts/Real* text/Real* English text.py` | Ported | Proof/Real English Text.py | 24 original passages; five distinct passages per proof |
 | `pedroarilla/glyphs-scripts/Real* text/Real* Spanish text.py` | Ported | Proof/Real Spanish Text.py | 24 original passages; five distinct passages per proof |
+| `Reset-Type-Studio/Glyphs-Scripts/Paths/Change Weight.py` | Duplicate of | — | FontLab: Tools > Actions > Change Weight |
+| `Reset-Type-Studio/Glyphs-Scripts/Paths/Nodes At Extremes.py` | Duplicate of | Contours/Add Extremes.py | Also FontLab: Contour > Nodes at Extremes |
+| `Reset-Type-Studio/Glyphs-Scripts/Paths/Smart Slant.py` | Ported | Contours/Smart Slant.py | Keeps both sidebearings, or the ink centre at the same advance |
+| `Reset-Type-Studio/Glyphs-Scripts/Paths/Node Duplicator (all masters).py` | Ported | Contours/Node Duplicator.py | Combined with the two variants below |
+| `Reset-Type-Studio/Glyphs-Scripts/Paths/Node Duplicator (current layer).py` | Ported | Contours/Node Duplicator.py | Editor-layer scope |
+| `Reset-Type-Studio/Glyphs-Scripts/Paths/Node Duplicator + 2 Handles (all masters).py` | Ported | Contours/Node Duplicator.py | Optional coincident handles |
+| `Reset-Type-Studio/Glyphs-Scripts/Transformations/Transformations Tool (all masters).py` | Duplicate of | Contours/Transform.py | Transform covers all masters, with preview and origin choices |

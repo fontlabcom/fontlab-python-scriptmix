@@ -2072,5 +2072,41 @@
     "native_acceptance": "pending",
     "original_scope_acceptance": "pending: native new-tab content, source binding and complete preservation",
     "scope": "Open one new native Glyph tab for the captured current font. Sample five distinct passages without replacement, preserving case, accents, punctuation and a final space. Use 24 original Spanish passages instead of the upstream 300 third-party excerpts. Unlike the upstream sampling, no passage repeats within one proof. Pass missing characters unchanged. Refuse unsafe text before creation. No font-data write."
+  },
+  {
+    "title": "Smart Slant",
+    "key": "contours_smart_slant",
+    "destination": "Scripts/Contours/Smart Slant.py",
+    "destination_sha256": "c4456ee03f18fcf0a52bac718fda6b253e3668fa4c9a8799b02531bebfa4e2a0",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
+    "source_path": "Paths/Smart Slant.py",
+    "source_sha256": "db549c48734fb281617a4562bca311be84797ecd1c91d015df986c4c34a437a5",
+    "license": "Apache-2.0",
+    "license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
+    "copyright": "2025 Fernando Díaz & Reset Type Studio",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Selected glyphs and chosen masters; compensate measured ink bounds after shear. Keep both sidebearings by adjusting advance, or preserve advance and original ink centre. Adds spacing compensation beyond native Slant, Slant by Italic Angle, Actions Oblique and Scripts/Contours/Slant.py. Optional anchor transforms; shared transform writer and complete baked-node read-back. Unsupported layer content becomes a note while other glyphs remain editable."
+  },
+  {
+    "title": "Node Duplicator",
+    "key": "contours_node_duplicator",
+    "destination": "Scripts/Contours/Node Duplicator.py",
+    "destination_sha256": "5198e82e99f2721cb046c0e5a98ca8191dcf285e9f5869d7d7dd96fafa668633",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
+    "source_path": "Paths/Node Duplicator (all masters).py",
+    "source_sha256": "dff5c6f2d680956288f98c3492f0b617d8f92d1182bfea54d567256555b2bb77",
+    "license": "Apache-2.0",
+    "license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
+    "copyright": "2025 Fernando Díaz & Reset Type Studio",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Combine all-master duplication with Paths/Node Duplicator (current layer).py, SHA256 f6b7bc79856f85611abc485a8df959486afdb76c50e400b5e82f19f2b794c2c7, and Paths/Node Duplicator + 2 Handles (all masters).py, SHA256 eccf4cef027becf7fca14f29de6fde68bea8e0aaeca513c08ba75b717556cddc. One deadline-bound selection snapshot per plan supplies scope and per-glyph reference indices. Full contour correspondence, optional coincident cubic controls, and explicit auxiliary-layer mode. Unsupported content becomes notes; mismatched master edits are held when compatibility checking is enabled."
   }
 ]

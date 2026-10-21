@@ -1133,3 +1133,19 @@ copyright 2018-2022 Pedro Arilla, Apache License 2.0
 No source code or source corpus was copied. Each tool contains 24 original
 proof passages under Apache-2.0; the upstream third-party excerpts are not
 redistributed. Source and licence SHA-256 values are in additional-tools.json.
+
+Contours tools after Reset Type Studio
+======================================
+
+Independent rewrites of scripts by Fernando Díaz & Reset Type Studio,
+Reset-Type-Studio/Glyphs-Scripts, copyright 2025, Apache License 2.0 as
+declared in its README.md; the repository has no separate LICENSE file
+(https://github.com/Reset-Type-Studio/Glyphs-Scripts):
+
+- Contours/Smart Slant: Paths/Smart Slant.py.
+- Contours/Node Duplicator: Paths/Node Duplicator (all masters).py, Node
+  Duplicator (current layer).py and Node Duplicator + 2 Handles (all
+  masters).py, combined in one tool.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.
