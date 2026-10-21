@@ -721,5 +721,21 @@
     "source_body_redistributed": false,
     "native_acceptance": "pending",
     "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict ±2 angle/position, ±5% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
+  },
+  {
+    "title": "Show All Layers",
+    "key": "show_all_layers",
+    "destination": "Scripts/Proof/Show All Layers.py",
+    "destination_sha256": "84ba3d3803ad44623b26ecd60d8fab4a99646297ac8f372d3ee0d94adcbead29",
+    "kind": "complete-original-proof-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source": "Glyphs/Show All Layers.py",
+    "source_sha256": "45e501e6b106f4dea12bea30d85fd58fd61d76c03736112bb1ba846a4db9974a",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "scope": "Every selected parent occurrence, all stored foreground layers in order, mixed master/auxiliary named layer references, trailing newline perparent including emptyparent. Skip control/parentless selections; empty finalsequence opens no tab. Real new layer-aware proof; no existing source occurrence rewrite or font mutation. Native slot/role/association/tab/full-preservation qualification pending."
   }
 ]

@@ -802,3 +802,5 @@ no Output/font/selection writers. Numeric cubic angle repaired; original curve
 sampling/open wrap preserved. Tests, source/API calibration and ordinary
 archive verification: workspace verification/issue-120/near-miss-z35/.
 Native acceptance, root review and delivery remain pending.
+
+- N128/.110: complete Show All Layers proof candidate, preserving repeated selected parents, stored foreground layer order and trailing newlines. Native acceptance pending.

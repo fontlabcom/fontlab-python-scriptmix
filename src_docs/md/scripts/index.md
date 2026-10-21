@@ -120,6 +120,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Random Title Words](proof/random-title-words.md)
 - [Random Uppercase Nontext](proof/random-uppercase-nontext.md)
 - [Random Uppercase Words](proof/random-uppercase-words.md)
+- [Show All Layers](proof/show-all-layers.md)
 - [Tallest and Shortest](proof/tallest-and-shortest.md)
 - [Text By Master](proof/text-by-master.md)
 - [Text Filter](proof/text-filter.md)

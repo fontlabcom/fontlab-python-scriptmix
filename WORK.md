@@ -3207,3 +3207,5 @@ Independent original-contract review counterexamples for TT controls, exact cubi
 N111 reviewed .98 integration: complete Near Miss and both Sliders workflows
 combined with delivered .90. Every prior menu/resource retained; native .98
 acceptance remains pending. Original source contracts and historical records retained.
+
+N128 continuation .110: full Show All Layers original selected-parent proof implemented with tests first, no source-symbol-index rewrite. Clean Classes.107remains held/unported separately. Ordinary archives/fullgraph/whole-baseline gates in preparation; no native/canonical/push.

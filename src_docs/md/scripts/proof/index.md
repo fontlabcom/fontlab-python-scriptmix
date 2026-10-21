@@ -18,6 +18,7 @@
 - [Random Title Words](random-title-words.md)
 - [Random Uppercase Nontext](random-uppercase-nontext.md)
 - [Random Uppercase Words](random-uppercase-words.md)
+- [Show All Layers](show-all-layers.md)
 - [Tallest and Shortest](tallest-and-shortest.md)
 - [Text By Master](text-by-master.md)
 - [Text Filter](text-filter.md)
