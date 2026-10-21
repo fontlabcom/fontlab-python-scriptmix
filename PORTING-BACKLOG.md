@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 227 practical tools: 69 sample adaptations and 158
+The active menu contains 233 practical tools: 69 sample adaptations and 164
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -188,3 +188,11 @@ identity has one row. Source hashes of the ported sources are in
 | `slobzheninov/Glyphs-Scripts/App/Fit Zoom.py` | Duplicate of | — | FontLab: View > Zoom > Fit Content on Screen (Ctrl+0), Fit Selection, Fit Text on Screen |
 | `slobzheninov/Glyphs-Scripts/App/DarkMode.py` | Duplicate of | — | FontLab: Preferences > Glyph window > Dark preview |
 | `slobzheninov/Glyphs-Scripts/App/Floating Macro Panel.py` | Duplicate of | — | FontLab: Window > Panels > Python |
+| `slobzheninov/Glyphs-Scripts/Kerning/Delete Kerning Pair From All Masters.py` | Ported | Kerning/Delete Kerning Pair From All Masters.py | Consecutive selected pairs in every master; exceptions are listed |
+| `slobzheninov/Glyphs-Scripts/Kerning/Kern to max.py` | Ported | Kerning/Kern To Max.py | Minus half the narrower advance |
+| `slobzheninov/Glyphs-Scripts/Kerning/Steal Kerning From Next Pair at Cursor's Y.py` | Ported | Kerning/Steal Kerning From Next Pair.py | Matches the gap of the next pair at a chosen height |
+| `slobzheninov/Glyphs-Scripts/Features/Generate Random Alternates Feature.py` | Ported | Features/Generate Random Alternates Feature.py | Replacing an existing feature needs explicit consent |
+| `slobzheninov/Glyphs-Scripts/Glyphs/Reorder Shapes.py` | Ported | Masters/Reorder Shapes.py | One shape order per glyph, applied to matching master layers |
+| `slobzheninov/Glyphs-Scripts/Glyphs/Show All Layers.py` | Ported | Masters/Show All Layers.py | One proof row with every foreground layer of the selected glyphs |
+| `slobzheninov/Glyphs-Scripts/Glyphs/Copy Missing Special Layers.py` | Retired | — | FontLab has no Glyphs special-layer conditions |
+| `slobzheninov/Glyphs-Scripts/Bug fixing/Report Compatibility.py` | Duplicate of | Masters/Compatibility Check.py | Base report only; the export-flatten and overlap-filter states have no FontLab counterpart |

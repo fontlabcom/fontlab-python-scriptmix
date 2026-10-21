@@ -1423,3 +1423,29 @@ Python.
 
 No source code was copied; the script reproduces the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Kerning, Features and Masters tools after Alex Slobzheninov
+===========================================================
+
+Independent rewrites of scripts by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, copyright 2020, Apache License 2.0
+(https://github.com/slobzheninov/Glyphs-Scripts):
+
+- Kerning/Delete Kerning Pair From All Masters: Kerning/Delete Kerning Pair
+  From All Masters.py.
+- Kerning/Kern To Max: Kerning/Kern to max.py.
+- Kerning/Steal Kerning From Next Pair: Kerning/Steal Kerning From Next Pair
+  at Cursor's Y.py.
+- Features/Generate Random Alternates Feature: Features/Generate Random
+  Alternates Feature.py.
+- Masters/Reorder Shapes: Glyphs/Reorder Shapes.py.
+- Masters/Show All Layers: Glyphs/Show All Layers.py.
+
+The base report of Bug fixing/Report Compatibility.py is covered by
+Masters/Compatibility Check. Its export-flatten and overlap-filter states,
+and Glyphs/Copy Missing Special Layers.py, have no FontLab counterpart:
+FontLab has no Glyphs special-layer conditions or corner and cap component
+export states.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.
