@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 196 practical tools: 69 sample adaptations and 127
+The active menu contains 199 practical tools: 69 sample adaptations and 130
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -120,3 +120,7 @@ identity has one row. Source hashes of the ported sources are in
 | `slobzheninov/Glyphs-Scripts/Font Info/Preferred Names - Set.py` | Retired | — | Set instance names in FontLab: File > Font Info > Instances |
 | `slobzheninov/Glyphs-Scripts/Font Info/Set Vertical Metrics.py` | Retired | — | Its calculation differs from Font Info/Calculate Vertical Metrics.py; set Use Typo Metrics in FontLab: File > Font Info |
 | `slobzheninov/Glyphs-Scripts/Font Info/glyphOrder - Paste.py` | Ported | Font Info/Paste Glyph Order Encoding.py | Saves the ordered names as an encoding file |
+| `rsztype/Scripts/MasterTwins.py` | Ported | Masters/Master Twins.py | Content switches, component-only copies and whole-font scope |
+| `rsztype/Scripts/Postino.py` | Ported | Masters/Deliver Glyphs.py | Master-name pairing with visible fallbacks; components, hints and categories are not transferred |
+| `rsztype/Scripts/ShortNames.py` | Retired | — | FontLab generates instance PostScript names and file names; set PostScript names per master |
+| `rsztype/Scripts/StyleLinker.py` | Ported | Names/Style Linker.py | Whole-word base matching across width groups, with a preview |

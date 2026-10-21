@@ -1242,3 +1242,21 @@ existing tools or have no counterpart here; see PORTING-BACKLOG.md.
 
 No source code was copied; the script reproduces the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Masters and Names tools after Resistenza Type
+=============================================
+
+Independent rewrites of scripts by Giuseppe Salerno / Resistenza Type,
+rsztype/Scripts, copyright 2026 (repository README), Apache License 2.0
+(LICENSE.txt; https://github.com/rsztype/Scripts):
+
+- Masters/Master Twins: MasterTwins.py.
+- Masters/Deliver Glyphs: Postino.py.
+- Names/Style Linker: StyleLinker.py.
+
+ShortNames.py has no FontLab counterpart: FontLab generates instance
+PostScript names and output file names, and PostScript names are set per
+master.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.
