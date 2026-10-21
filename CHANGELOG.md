@@ -804,3 +804,12 @@ archive verification: workspace verification/issue-120/near-miss-z35/.
 Native acceptance, root review and delivery remain pending.
 
 Added complete Dangerous Offcurves full-font probe action and exact-layer proof tab; explicit fontTools analytic ordering adaptation.
+
+
+N157 finite-probe numerical repair (.120): exact control-hull exclusion prevents
+rounded solver hits for curves strictly beyond either finite probe endpoint.
+Exact endpoint coordinates replace rounded backend endpoint hits only when
+source fixed-coordinate equality and finite bounds prove the hit. All four
+probes, strict0.05 predicate, traversal, owned result and real-layer tab workflow
+remain. Ascending curve-time ordering stays an explicit adaptation; Glyphs
+engine equivalence and complete FontLab native acceptance remain pending.

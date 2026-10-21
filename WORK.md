@@ -3209,3 +3209,18 @@ combined with delivered .90. Every prior menu/resource retained; native .98
 acceptance remains pending. Original source contracts and historical records retained.
 
 N144: implemented full Dangerous Offcurves workflow from pinned Apache-2.0 original. Analytic, reader and actual Qt controls run in private evidence; native full-font preservation remains pending.
+
+
+N157 finite-probe numerical repair (.120): exact control-hull exclusion prevents
+rounded solver hits for curves strictly beyond either finite probe endpoint.
+Exact endpoint coordinates replace rounded backend endpoint hits only when
+source fixed-coordinate equality and finite bounds prove the hit. All four
+probes, strict0.05 predicate, traversal, owned result and real-layer tab workflow
+remain. Ascending curve-time ordering stays an explicit adaptation; Glyphs
+engine equivalence and complete FontLab native acceptance remain pending.
+
+N157 commands/evidence: `rtk proxy /opt/homebrew/bin/python3.11 -` test-first
+boundary controls exit1 (12 failures/49passes retained); repaired full original
+model/reader/actualQt5 + independent controls exit0 (101passes). Final ordinary
+archives, complete seven consumers and original whole-module gates are required
+before this repair is sealed; evidence dangerous-offcurves-repair-z44.
