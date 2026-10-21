@@ -23,7 +23,10 @@ Why this design:
     - Names are simulated before the first rename. A clash stops the run early.
     - If a rename fails, the script puts the old names back.
     - Locked, mask, service, automatic and image layers are refused. So is a
-      glyph that is a base of an automatic layer: FontLab cannot undo it.
+      glyph that has an automatic layer, or is a base of one (also through
+      manual composites): FontLab cannot undo it. So is a run while FontLab
+      has pending glyph updates. The shared App helper fly.ap.history does
+      these checks and the one-step write.
 
 How to use:
     Show a backup layer (see "Display Next Layer"). Run the script. Check
@@ -38,7 +41,7 @@ Credit:
     (Apache-2.0). Independent rewrite. No source code was copied.
 """
 
-from collections.abc import Callable, Collection, Sequence
+from collections.abc import Collection, Sequence
 from datetime import datetime
 from time import monotonic
 from typing import Any
@@ -46,16 +49,6 @@ from typing import Any
 TITLE = "Use Layer As Master"
 STAMP_FORMAT = "%H:%M:%S, %d/%m/%y"
 DEADLINE_SECONDS = 2.0
-
-
-def associated_master(name: str, masters: Sequence[str]) -> str | None:
-    """Return the master a layer name belongs to (text before "@" or "#")."""
-    base = name.removeprefix("|temp|")
-    cut = base.find("@")
-    if cut < 0:
-        cut = base.find("#")
-    head = base if cut < 0 else base[:cut]
-    return head if head and head in masters else None
 
 
 def mask_name_for(layer_name: str, masters: Sequence[str]) -> str:
@@ -104,68 +97,6 @@ def plan_swap(
     return steps
 
 
-def require_no_auto_dependants(package: Any, glyphs: Sequence[Any]) -> None:
-    """Refuse when a glyph is, or is a base of, an automatic layer.
-
-    A notification that reaches an automatic layer makes FontLab rebuild every
-    automatic glyph of the font. Use the shared App dependency reader.
-    """
-    from fly.ap.guides import affected_auto_layers, dependency_values
-
-    blocked = affected_auto_layers(
-        dependency_values(package), {str(glyph.name) for glyph in glyphs}
-    )
-    if blocked:
-        raise ValueError(
-            "FontLab cannot undo changes to automatic layers: " + ", ".join(blocked)
-            + ". Choose glyphs that are no base of an automatic layer."
-        )
-
-
-def commit(
-    title: str, layers: Sequence[Any], glyphs: Sequence[Any], mutate: Callable[[], Sequence[Any]]
-) -> Sequence[Any]:
-    """Run `mutate` inside one FontLab history step.
-
-    `layers` and `glyphs` exist before the change. `mutate` returns new objects.
-    One notification lists changed layers, new layers, then glyphs. Glyph dates
-    get one shared stamp. Raise RuntimeError if anything failed.
-    """
-    from fly import ap, qt
-
-    native = ap.fontlab
-    if tuple(native.flGlyph.updatedFgGlyphs()):
-        raise ValueError("FontLab has pending glyph updates; finish the open edit first.")
-    for item in (*layers, *glyphs):
-        item.checkInitHistoryState(0)
-    stamp = qt.QtCore.QDateTime.currentDateTimeUtc()
-    errors: list[str] = []
-    created: Sequence[Any] = ()
-    try:
-        created = mutate()
-    except Exception as error:  # noqa: BLE001 - finish history even after a failure
-        errors.append(str(error))
-    for owner in glyphs:
-        try:
-            owner.lastModified = stamp
-        except Exception as error:  # noqa: BLE001
-            errors.append(f"date: {error}")
-    try:
-        native.flItems().notifyChangesApplied(title, [*layers, *created, *glyphs])
-    except Exception as error:  # noqa: BLE001
-        errors.append(f"notification: {error}")
-    for owner in glyphs:
-        try:
-            owner.lastModified = stamp
-        except Exception as error:  # noqa: BLE001
-            errors.append(f"date: {error}")
-    if errors:
-        raise RuntimeError(
-            f"{title} failed: {'; '.join(errors)}. Native changes may remain; use Edit > Undo."
-        )
-    return created
-
-
 def _valid(layer: Any) -> bool:
     """True for a real native layer object."""
     return layer is not None and not layer.isNull and layer.isValid
@@ -190,6 +121,7 @@ def _mask_of(layer: Any, masters: Sequence[str]) -> Any | None:
 def plan() -> list[dict[str, Any]]:
     """Check every selected layer and plan its swap. Raise before any change."""
     from fly.ap.layer_selection import capture
+    from fly.ap.masters import associated_master
     from fly.ap.scripting import current_package
 
     selection = capture(monotonic() + DEADLINE_SECONDS)
@@ -230,12 +162,19 @@ def plan() -> list[dict[str, Any]]:
         )
         targets = {"master": old, "chosen": chosen, "master mask": old_mask, "chosen mask": new_mask}
         jobs.append({"glyph": item.glyph, "steps": steps, "targets": targets})
-    require_no_auto_dependants(package, [job["glyph"] for job in jobs])
     return jobs
 
 
 def apply_renames(jobs: Sequence[dict[str, Any]]) -> None:
-    """Rename all planned layers in one history step. Restore names on failure."""
+    """Rename all planned layers in one history step. Restore names on failure.
+
+    The shared App history commit refuses the whole run before any change when
+    FontLab has pending glyph updates, or when a glyph owns an automatic layer
+    or is a base of one (also through manual composites).
+    """
+    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    from fly.ap.scripting import current_package
+
     layers = [t for job in jobs for t in job["targets"].values() if t is not None]
     glyphs = [job["glyph"] for job in jobs]
 
@@ -255,7 +194,8 @@ def apply_renames(jobs: Sequence[dict[str, Any]]) -> None:
             raise
         return ()
 
-    commit(TITLE, layers, glyphs, mutate)
+    facts = history.scan_auto_facts(current_package())
+    history.commit(TITLE, layers, glyphs, mutate, operation="geometry", facts=facts)
 
 
 def run() -> list[str]:

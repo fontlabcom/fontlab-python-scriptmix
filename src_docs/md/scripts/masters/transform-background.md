@@ -29,8 +29,11 @@ Why this design:
       They break on invalid input. This panel checks the number and shows the
       reason in the status line.
     - The Glyphs scale script ignores components. This script moves them too.
-    - A glyph that is a base of an automatic layer is refused: FontLab cannot
-      undo an edit that reaches an automatic layer.
+    - A glyph that has an automatic layer, or is a base of one (also through
+      manual composites), is refused: FontLab cannot undo an edit that reaches
+      an automatic layer. So is a click while FontLab has pending glyph
+      updates. The shared App helper fly.ap.history does these checks and the
+      one-step write.
     - Zero, negative, empty and non-finite scale values are refused. A scale of
       0 would destroy the background; a negative scale would mirror it.
 
@@ -53,5 +56,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5e4796098afb134c69d7da69924f651e10e05209cfa2db917295e63e81dbe650.py)
+[Python source](../../../../.build/menu-sources/bb6642edfde3261e7384ac4242e07ae20b1388e1ba9417c506e76403727385f5.py)
 <!--/codeinclude-->

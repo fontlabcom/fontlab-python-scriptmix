@@ -25,7 +25,10 @@ Why this design:
     - The time stamp has seconds. Two quick copies do not collide.
     - Mask (background), service and automatic layers are refused. Their copies
       would break background naming or re-run automatic recipes. A glyph that
-      is a base of an automatic layer is refused too: FontLab cannot undo it.
+      has an automatic layer, or is a base of one (also through manual
+      composites), is refused too: FontLab cannot undo it. So is a run while
+      FontLab has pending glyph updates. The shared App helper fly.ap.history
+      does these checks and the one-step write.
     - FontLab clone() drops shape notes and names, active and selected flags,
       and the raw state and name of nodes. The script copies them back and
       checks the shape count before it adds the layer.
@@ -51,5 +54,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b1a7f1ef25312b4ee64916b9fa776890091739d5af1cd66f4501b644d252e909.py)
+[Python source](../../../../.build/menu-sources/74aec2a13efcdd39b19354cbd5983e6e7ccb8f61383d458b5cf3c1bf7f3637d5.py)
 <!--/codeinclude-->

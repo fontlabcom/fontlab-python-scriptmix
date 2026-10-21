@@ -15,7 +15,8 @@ How it works:
     replaced and glyphs to be skipped. "Replace backgrounds" checks again that
     nothing changed, then removes the old background shapes, creates missing
     backgrounds, and adds clones of the selected contours. One notification covers
-    the whole font: one Undo step.
+    the whole font: one Undo step. The shared App helper fly.ap.history decides
+    which glyphs are skipped and does the one-step write.
 
 Why this design:
     - The change spans the whole font and overwrites backgrounds. So there is a
@@ -45,7 +46,7 @@ Credit:
     restores node states.
 """
 
-from collections.abc import Callable, Sequence
+from collections.abc import Sequence
 from dataclasses import dataclass, field
 from time import monotonic
 from typing import Any
@@ -71,6 +72,7 @@ class Plan:
     skipped_names: tuple[str, ...] = ()
     pieces: tuple[tuple[Any, tuple[int, ...]], ...] = field(default=(), compare=False, repr=False)
     targets: tuple[tuple[Any, Any], ...] = field(default=(), compare=False, repr=False)
+    facts: Any = field(default=None, compare=False, repr=False)  # App auto-layer facts
 
     def summary(self) -> str:
         """Return the preview text of the panel."""
@@ -104,25 +106,6 @@ def selected_indexes(contours: Sequence[Sequence[bool]]) -> list[int]:
 SELECTED = 0x0020  # node state bit: selected
 
 
-def auto_related(records: Sequence[tuple[str, bool, Sequence[str]]]) -> set[str]:
-    """Names of glyphs that have an automatic layer or are a base of one.
-
-    `records` come from the shared App reader: (glyph, is auto layer, bases).
-    The walk covers chains through manual composites and cannot loop forever.
-    """
-    bases: dict[str, set[str]] = {}
-    for name, _, parts in records:
-        bases.setdefault(name, set()).update(parts)
-    related = {name for name, auto, _ in records if auto}
-    pending = list(related)
-    while pending:
-        for base in bases.get(pending.pop(), ()):
-            if base not in related:
-                related.add(base)
-                pending.append(base)
-    return related
-
-
 def restore_shape(old: Any, new: Any, indexes: Sequence[int]) -> None:
     """Copy back what FontLab's clone() drops (fl#8516, fl#8538).
 
@@ -138,50 +121,6 @@ def restore_shape(old: Any, new: Any, indexes: Sequence[int]) -> None:
             target.name = source.name
 
 
-def commit(
-    title: str, layers: Sequence[Any], glyphs: Sequence[Any], mutate: Callable[[], Sequence[Any]]
-) -> Sequence[Any]:
-    """Run `mutate` inside one FontLab history step.
-
-    `layers` and `glyphs` exist before the change. `mutate` returns new objects.
-    One notification lists changed layers, new layers, then glyphs. Glyph dates
-    get one shared stamp. Raise RuntimeError if anything failed.
-    """
-    from fly import ap, qt
-
-    native = ap.fontlab
-    if tuple(native.flGlyph.updatedFgGlyphs()):
-        raise ValueError("FontLab has pending glyph updates; finish the open edit first.")
-    for item in (*layers, *glyphs):
-        item.checkInitHistoryState(0)
-    stamp = qt.QtCore.QDateTime.currentDateTimeUtc()
-    errors: list[str] = []
-    created: Sequence[Any] = ()
-    try:
-        created = mutate()
-    except Exception as error:  # noqa: BLE001 - finish history even after a failure
-        errors.append(str(error))
-    for owner in glyphs:
-        try:
-            owner.lastModified = stamp
-        except Exception as error:  # noqa: BLE001
-            errors.append(f"date: {error}")
-    try:
-        native.flItems().notifyChangesApplied(title, [*layers, *created, *glyphs])
-    except Exception as error:  # noqa: BLE001
-        errors.append(f"notification: {error}")
-    for owner in glyphs:
-        try:
-            owner.lastModified = stamp
-        except Exception as error:  # noqa: BLE001
-            errors.append(f"date: {error}")
-    if errors:
-        raise RuntimeError(
-            f"{title} failed: {'; '.join(errors)}. Native changes may remain; use Edit > Undo."
-        )
-    return created
-
-
 def _valid(layer: Any) -> bool:
     """True for a real native layer object."""
     return layer is not None and not layer.isNull and layer.isValid
@@ -189,8 +128,8 @@ def _valid(layer: Any) -> bool:
 
 def make_plan() -> Plan:
     """Read the selection and the font. Change nothing. Raise ValueError."""
+    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import ap
-    from fly.ap.guides import dependency_values
     from fly.ap.layer_selection import capture
     from fly.ap.scripting import current_package
 
@@ -215,7 +154,7 @@ def make_plan() -> Plan:
     if not pieces:
         raise ValueError("No fully selected contour. Select whole contours first.")
     master = str(package.master)
-    related = auto_related(dependency_values(package))
+    facts = history.scan_auto_facts(package)
     targets, replaced, created, skipped = [], 0, 0, []
     for record in ap.fontlab.CurrentFont().glyphs:
         if monotonic() >= deadline:
@@ -225,7 +164,7 @@ def make_plan() -> Plan:
         if (
             not _valid(target)
             or target.isLocked
-            or str(glyph.name) in related
+            or history.refusal(facts, str(glyph.name), "geometry")
             or any(x.autoLayer for x in glyph.layers)
         ):
             skipped.append(str(record.name))
@@ -249,6 +188,7 @@ def make_plan() -> Plan:
         skipped_names=tuple(skipped),
         pieces=tuple(pieces),
         targets=tuple(targets),
+        facts=facts,
     )
 
 
@@ -266,6 +206,7 @@ def selected_clone(shape: Any, keep: Sequence[int]) -> Any:
 
 def replace_backgrounds(shown: Plan) -> str:
     """Apply `shown` after proof that the font and selection still match it."""
+    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     current = make_plan()
     if current.signature != shown.signature:
         raise ValueError("The selection or the font changed. Close the panel and run again.")
@@ -296,7 +237,7 @@ def replace_backgrounds(shown: Plan) -> str:
                 raise RuntimeError(f"FontLab could not update the background of '{glyph.name}'.")
         return made
 
-    commit(TITLE, existing, owners, mutate)
+    history.commit(TITLE, existing, owners, mutate, operation="geometry", facts=current.facts)
     return f"Background set in {len(owners)} glyph(s)."
 
 

@@ -23,8 +23,11 @@ Why this design:
       They break on invalid input. This panel checks the number and shows the
       reason in the status line.
     - The Glyphs scale script ignores components. This script moves them too.
-    - A glyph that is a base of an automatic layer is refused: FontLab cannot
-      undo an edit that reaches an automatic layer.
+    - A glyph that has an automatic layer, or is a base of one (also through
+      manual composites), is refused: FontLab cannot undo an edit that reaches
+      an automatic layer. So is a click while FontLab has pending glyph
+      updates. The shared App helper fly.ap.history does these checks and the
+      one-step write.
     - Zero, negative, empty and non-finite scale values are refused. A scale of
       0 would destroy the background; a negative scale would mirror it.
 
@@ -42,7 +45,7 @@ Credit:
 """
 
 import math
-from collections.abc import Callable, Sequence
+from collections.abc import Sequence
 from time import monotonic
 from typing import Any
 
@@ -80,73 +83,12 @@ def shift_matrix(units: float) -> Matrix:
     return (1.0, 0.0, 0.0, 1.0, units, 0.0)
 
 
-def require_no_auto_dependants(package: Any, glyphs: Sequence[Any]) -> None:
-    """Refuse when a glyph is, or is a base of, an automatic layer.
-
-    A notification that reaches an automatic layer makes FontLab rebuild every
-    automatic glyph of the font. Use the shared App dependency reader.
-    """
-    from fly.ap.guides import affected_auto_layers, dependency_values
-
-    blocked = affected_auto_layers(
-        dependency_values(package), {str(glyph.name) for glyph in glyphs}
-    )
-    if blocked:
-        raise ValueError(
-            "FontLab cannot undo changes to automatic layers: " + ", ".join(blocked)
-            + ". Choose glyphs that are no base of an automatic layer."
-        )
-
-
-def commit(
-    title: str, layers: Sequence[Any], glyphs: Sequence[Any], mutate: Callable[[], Sequence[Any]]
-) -> Sequence[Any]:
-    """Run `mutate` inside one FontLab history step.
-
-    `layers` and `glyphs` exist before the change. `mutate` returns new objects.
-    One notification lists changed layers, new layers, then glyphs. Glyph dates
-    get one shared stamp. Raise RuntimeError if anything failed.
-    """
-    from fly import ap, qt
-
-    native = ap.fontlab
-    if tuple(native.flGlyph.updatedFgGlyphs()):
-        raise ValueError("FontLab has pending glyph updates; finish the open edit first.")
-    for item in (*layers, *glyphs):
-        item.checkInitHistoryState(0)
-    stamp = qt.QtCore.QDateTime.currentDateTimeUtc()
-    errors: list[str] = []
-    created: Sequence[Any] = ()
-    try:
-        created = mutate()
-    except Exception as error:  # noqa: BLE001 - finish history even after a failure
-        errors.append(str(error))
-    for owner in glyphs:
-        try:
-            owner.lastModified = stamp
-        except Exception as error:  # noqa: BLE001
-            errors.append(f"date: {error}")
-    try:
-        native.flItems().notifyChangesApplied(title, [*layers, *created, *glyphs])
-    except Exception as error:  # noqa: BLE001
-        errors.append(f"notification: {error}")
-    for owner in glyphs:
-        try:
-            owner.lastModified = stamp
-        except Exception as error:  # noqa: BLE001
-            errors.append(f"date: {error}")
-    if errors:
-        raise RuntimeError(
-            f"{title} failed: {'; '.join(errors)}. Native changes may remain; use Edit > Undo."
-        )
-    return created
-
-
 def transform_backgrounds(action: str, matrix: Matrix) -> str:
     """Apply `matrix` to the background of every selected glyph layer.
 
     Return a status message. Raise ValueError when nothing can be done.
     """
+    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import qt
     from fly.ap.layer_selection import capture
     from fly.ap.scripting import current_package
@@ -170,7 +112,6 @@ def transform_backgrounds(action: str, matrix: Matrix) -> str:
         owners.setdefault(item.glyph_id, item.glyph)
     if not masks:
         raise ValueError("None of the selected layers has a background.")
-    require_no_auto_dependants(package, list(owners.values()))
     transform = qt.QtGui.QTransform(*matrix)
 
     def mutate() -> Sequence[Any]:
@@ -181,7 +122,14 @@ def transform_backgrounds(action: str, matrix: Matrix) -> str:
                 raise RuntimeError("FontLab could not update a background.")
         return ()
 
-    commit(f"{action} background", list(masks.values()), list(owners.values()), mutate)
+    history.commit(
+        f"{action} background",
+        list(masks.values()),
+        list(owners.values()),
+        mutate,
+        operation="geometry",
+        facts=history.scan_auto_facts(package),
+    )
     return f"{action}: {len(masks)} background(s) in {len(owners)} glyph(s)."
 
 

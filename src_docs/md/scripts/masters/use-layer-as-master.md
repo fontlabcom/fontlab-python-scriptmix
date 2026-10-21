@@ -29,7 +29,10 @@ Why this design:
     - Names are simulated before the first rename. A clash stops the run early.
     - If a rename fails, the script puts the old names back.
     - Locked, mask, service, automatic and image layers are refused. So is a
-      glyph that is a base of an automatic layer: FontLab cannot undo it.
+      glyph that has an automatic layer, or is a base of one (also through
+      manual composites): FontLab cannot undo it. So is a run while FontLab
+      has pending glyph updates. The shared App helper fly.ap.history does
+      these checks and the one-step write.
 
 How to use:
     Show a backup layer (see "Display Next Layer"). Run the script. Check
@@ -50,5 +53,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8e2b01d202dcdd7f947eb1919a52be4de1248f98fa262c676914950a96296e35.py)
+[Python source](../../../../.build/menu-sources/dd871c2a4140a061d2ddecf98366614e75694cc4dbcbb95bd18f37c68f594a55.py)
 <!--/codeinclude-->

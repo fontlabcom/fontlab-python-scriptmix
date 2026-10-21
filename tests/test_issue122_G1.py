@@ -1,10 +1,12 @@
 # this_file: tests/test_issue122_G1.py
 # SPDX-License-Identifier: Apache-2.0
-"""Issue 122 batch G1: seven Masters scripts, host-free with owned fakes.
+"""Seven Masters scripts, host-free with owned fakes.
 
-The tests load each script from disk, replace `fly` with small fakes, and check
-exact names, matrices and notification shapes. No FontLab or Qt is imported, so
-none of this proves native behaviour.
+The tests load each script from disk and check exact names, matrices and
+notification shapes. Font, selection and Qt access are small fakes; the shared
+App helpers (history, masters, edit guards) are the real installed App modules
+loaded over those fakes. No FontLab or Qt is imported, so none of this proves
+native behaviour.
 """
 
 import ast
@@ -17,6 +19,7 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
+from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 FOLDER = ROOT / "Scripts" / "Masters"
@@ -205,7 +208,7 @@ class Notifier:
 class World:
     """One fake `fly` universe: selection, package, native module, Qt."""
 
-    def __init__(self, monkeypatch: pytest.MonkeyPatch) -> None:
+    def __init__(self, monkeypatch: pytest.MonkeyPatch, real_app: Any) -> None:
         self.notifier = Notifier()
         self.pending: tuple = ()
         self.occurrences: list[Any] = []
@@ -241,22 +244,8 @@ class World:
         qtsafe = ModuleType("fly.ap.qtsafe")
         qtsafe.qt_list = lambda call, *a: list(call(*a))
         self.records: tuple = ()  # (glyph name, is auto layer, base names)
-
-        def affected(records: Any, targets: set[str]) -> list[str]:
-            reach = set(targets)
-            while True:
-                found = {n for n, _, bases in records if reach.intersection(bases)}
-                if found.issubset(reach):
-                    break
-                reach.update(found)
-            return sorted({n for n, auto, _ in records if auto and n in reach})
-
-        guides = ModuleType("fly.ap.guides")
-        guides.dependency_values = lambda package: tuple(self.records)
-        guides.affected_auto_layers = affected
         ap = ModuleType("fly.ap")
         ap.__path__ = []
-        ap.guides = guides
         ap.fontlab, ap.scripting = native, scripting
         ap.layer_selection = selection
         qt = ModuleType("fly.qt")
@@ -268,9 +257,17 @@ class World:
         for name, module in {
             "fly": fly, "fly.ap": ap, "fly.qt": qt, "fly.ap.scripting": scripting,
             "fly.ap.layer_selection": selection, "fly.ap.qtsafe": qtsafe,
-            "fly.ap.guides": guides,
         }.items():
             monkeypatch.setitem(sys.modules, name, module)
+        # The real App helpers, over the same fakes; the auto-layer facts read `records`.
+        self.app = real_app(
+            qt=qt,
+            fontlab=native,
+            scripting={name: getattr(scripting, name) for name in SCRIPTING_FAKES},
+            modules=APP_MODULES,
+        )
+        monkeypatch.setattr(self.app["guides"], "dependency_values", lambda package: tuple(self.records))
+        ap.scripting = self.app["scripting"]
 
     def occupy(self, glyph: Glyph, layer_name: str | None = None, block: int = 0, index: int = 0) -> Any:
         layer = glyph.layer(layer_name) if layer_name else glyph.layers[0]
@@ -282,9 +279,16 @@ class World:
         return item
 
 
+SCRIPTING_FAKES = (
+    "current_package", "names_font_window_selection", "select_glyphs",
+    "connect_guarded", "close_script_dialog", "show_script_dialog",
+)
+APP_MODULES = ("guides", "history", "masters", "edit_guards")
+
+
 @pytest.fixture
-def world(monkeypatch: pytest.MonkeyPatch) -> World:
-    return World(monkeypatch)
+def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
+    return World(monkeypatch, real_app)
 
 
 # ---------------------------------------------------------------- generic checks
@@ -325,13 +329,28 @@ LAYERS = [
      ("|temp|Bold", "Bold"), ("Regular@a#b", "Regular"), ("Bolder", None), ("@x", None),
      ("mask.Regular", None), ("", None)],
 )
-def test_associated_master_when_name_given_then_follows_fontlab_rule(name: str, expected: Any) -> None:
-    for title in ("Display Next Layer", "Duplicate Current Layer", "Use Layer As Master"):
-        assert load(title).associated_master(name, ("Regular", "Bold")) == expected, title
+def test_associated_master_when_name_given_then_follows_fontlab_rule(world: World, name: str, expected: Any) -> None:
+    assert world.app["masters"].associated_master(name, ("Regular", "Bold")) == expected
+
+
+@pytest.mark.parametrize(
+    "title",
+    ["Display Next Layer", "Display Previous Layer", "Duplicate Current Layer", "Use Layer As Master"],
+)
+def test_scripts_when_parsed_then_associated_master_comes_from_the_app(title: str) -> None:
+    tree = ast.parse((FOLDER / f"{title}.py").read_text())
+    defined = {node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)}
+    imported = {
+        alias.name
+        for node in ast.walk(tree)
+        if isinstance(node, ast.ImportFrom) and node.module == "fly.ap.masters"
+        for alias in node.names
+    }
+    assert "associated_master" not in defined and "associated_master" in imported, title
 
 
 @pytest.mark.parametrize("title,step", [("Display Next Layer", 1), ("Display Previous Layer", -1)])
-def test_layer_cycle_when_listing_then_only_same_master_body_layers(title: str, step: int) -> None:
+def test_layer_cycle_when_listing_then_only_same_master_body_layers(world: World, title: str, step: int) -> None:
     module = load(title)
     assert module.STEP == step
     cycle = module.layer_cycle(LAYERS, "Regular@ a", ("Regular", "Bold"))
@@ -341,7 +360,7 @@ def test_layer_cycle_when_listing_then_only_same_master_body_layers(title: str, 
     assert module.pick_layer(cycle, "Regular", -1) == "Regular#b"  # wrap backward
 
 
-def test_layer_cycle_when_no_master_or_single_then_value_error() -> None:
+def test_layer_cycle_when_no_master_or_single_then_value_error(world: World) -> None:
     module = load("Display Next Layer")
     with pytest.raises(ValueError, match="belongs to no master"):
         module.layer_cycle(LAYERS, "mask.Regular", ("Regular", "Bold"))
@@ -478,7 +497,7 @@ def test_run_when_add_fails_then_notification_still_sent_and_undo_hint(world: Wo
     glyph = Glyph("a", ["Regular"])
     glyph.addLayer = lambda layer: (_ for _ in ()).throw(RuntimeError("full"))
     world.occupy(glyph, "Regular")
-    with pytest.raises(RuntimeError, match="full.*Edit > Undo"):
+    with pytest.raises(world.app["history"].PartialWriteError, match="did not finish: full.*Edit > Undo"):
         module.run()
     assert len(world.notifier.calls) == 1
 
@@ -490,9 +509,9 @@ def test_run_when_pending_updates_or_no_selection_then_value_error(world: World)
     glyph = Glyph("a", ["Regular"])
     world.occupy(glyph, "Regular")
     world.pending = (3,)
-    with pytest.raises(ValueError, match="pending glyph updates"):
+    with pytest.raises(ValueError, match="updates are pending"):
         module.run()
-    assert len(glyph.layers) == 1
+    assert len(glyph.layers) == 1 and glyph.history == [] and world.notifier.calls == []
 
 
 # ---------------------------------------------------------------- use layer as master
@@ -565,7 +584,7 @@ def test_run_when_rename_fails_midway_then_old_names_restored(world: World) -> N
     fixed_clock(module)
     glyph, _master, chosen = master_glyph(world)
     chosen.fail_name = "Regular"
-    with pytest.raises(RuntimeError, match="rename refused.*Edit > Undo"):
+    with pytest.raises(world.app["history"].PartialWriteError, match="rename refused.*Edit > Undo"):
         module.run()
     assert [x.name for x in glyph.layers] == ["Regular", "Regular@ a", "mask.Regular", "mask.Regular@ a"]
     assert len(world.notifier.calls) == 1
@@ -687,7 +706,7 @@ def test_transform_backgrounds_when_update_fails_then_runtime_error_after_notifi
     module = load("Transform Background")
     (a,) = with_backgrounds(world, ("a",))
     a.layer("mask.Regular").update_result = False
-    with pytest.raises(RuntimeError, match="could not update"):
+    with pytest.raises(world.app["history"].PartialWriteError, match="could not update.*Edit > Undo"):
         module.transform_backgrounds("Scale", module.scale_matrix(90))
     assert len(world.notifier.calls) == 1
 
@@ -923,8 +942,8 @@ def test_run_when_no_package_then_value_error(world: World) -> None:
         load("Select Different Colour").run()
 
 
-# ================================================================ fix round 1
-# ---- 1. clone repair (FontLab clone drops note, names, flags, node state; fl#8516, fl#8538)
+# ================================================================ clone repair, errors
+# ---- clone repair (FontLab clone drops note, names, flags, node state; fl#8516, fl#8538)
 def rich_source(world: World) -> Any:
     """A glyph whose layer holds one shape with every field the clone loses."""
     glyph = Glyph("a", ["Regular"])
@@ -989,7 +1008,7 @@ def test_replace_backgrounds_when_cloning_then_clone_loss_is_repaired(world: Wor
     assert read(mask.shapes[0]) == expected, f"background copy: {field}"
 
 
-# ---- 2. panels and mains survive RuntimeError
+# ---- panels and mains survive RuntimeError
 def test_transform_panel_when_runtime_error_then_status_shows_message(world: World, monkeypatch: Any) -> None:
     module = load("Transform Background")
     panel = make_panel(module)
@@ -1036,7 +1055,7 @@ def test_main_when_runtime_error_then_printed_not_raised(world: World, monkeypat
     assert f"{title}: boom" in capsys.readouterr().out
 
 
-# ---- 3. never edit a glyph that is, or is a base of, an automatic layer
+# ---- never edit a glyph that is, or is a base of, an automatic layer
 def auto_world(world: World, name: str = "a") -> Glyph:
     """Glyph `name` is a base of automatic glyph 'aacute'."""
     world.records = (("aacute", True, (name,)), (name, False, ()))
@@ -1053,9 +1072,32 @@ def test_layer_scripts_when_glyph_is_base_of_auto_layer_then_refused_untouched(w
     fixed_clock(module)
     glyph = auto_world(world)
     names = [x.name for x in glyph.layers]
-    with pytest.raises(ValueError, match="automatic.*aacute"):
+    with pytest.raises(ValueError, match="a: base of auto aacute"):
         module.run()
     assert [x.name for x in glyph.layers] == names and world.notifier.calls == [] and glyph.history == []
+
+
+@pytest.mark.parametrize("title", ["Duplicate Current Layer", "Use Layer As Master"])
+def test_layer_scripts_when_base_reaches_auto_through_manual_composite_then_refused(world: World, title: str) -> None:
+    module = load(title)
+    fixed_clock(module)
+    glyph = auto_world(world)
+    # a -> manual composite "ab" -> automatic "abacute"
+    world.records = (("ab", False, ("a",)), ("abacute", True, ("ab",)), ("a", False, ()))
+    with pytest.raises(ValueError, match="a: base of auto abacute"):
+        module.run()
+    assert world.notifier.calls == [] and glyph.history == []
+
+
+def test_duplicate_when_glyph_owns_auto_layer_then_refused_before_history(world: World) -> None:
+    module = load("Duplicate Current Layer")
+    fixed_clock(module)
+    glyph = Glyph("aacute", ["Regular", "Bold"], Bold={"auto": True})
+    world.records = (("aacute", False, ()), ("aacute", True, ("a", "acute")))
+    world.occupy(glyph, "Regular")
+    with pytest.raises(ValueError, match="aacute: has auto layers"):
+        module.run()
+    assert len(glyph.layers) == 2 and world.notifier.calls == [] and glyph.history == []
 
 
 def test_transform_backgrounds_when_glyph_is_base_of_auto_layer_then_refused(world: World) -> None:
@@ -1063,9 +1105,18 @@ def test_transform_backgrounds_when_glyph_is_base_of_auto_layer_then_refused(wor
     glyph = auto_world(world)
     world.occurrences[0].layer = glyph.layer("Regular")
     world.occurrences[0].layer_name = "Regular"
-    with pytest.raises(ValueError, match="automatic.*aacute"):
+    with pytest.raises(ValueError, match="a: base of auto aacute"):
         module.transform_backgrounds("Scale", module.scale_matrix(50))
-    assert world.notifier.calls == []
+    assert world.notifier.calls == [] and glyph.history == []
+
+
+def test_transform_backgrounds_when_pending_updates_then_refused_before_history(world: World) -> None:
+    module = load("Transform Background")
+    (a,) = with_backgrounds(world, ("a",))
+    world.pending = (9,)
+    with pytest.raises(ValueError, match="updates are pending"):
+        module.transform_backgrounds("Scale", module.scale_matrix(90))
+    assert a.history == [] and a.layer("mask.Regular").calls == [] and world.notifier.calls == []
 
 
 def test_selection_to_all_backgrounds_when_glyph_is_base_of_auto_layer_then_skipped(world: World) -> None:
@@ -1080,69 +1131,45 @@ def test_selection_to_all_backgrounds_when_glyph_is_base_of_auto_layer_then_skip
     assert glyphs["b"] not in objects and glyphs["d"] not in objects
 
 
+def test_selection_to_all_backgrounds_when_base_through_manual_composite_then_skipped(world: World) -> None:
+    module = load("Selection To All Backgrounds")
+    font_world(world)
+    # automatic "y" uses manual "x", which uses "c"
+    world.records = (("x", False, ("c",)), ("y", True, ("x",)), ("c", False, ()))
+    plan = module.make_plan()
+    assert "c" in plan.skipped_names and "c" not in [g.name for g, _ in plan.targets]
+
+
 # ---- minors
 def test_transform_panel_hint_when_shown_then_names_the_origin() -> None:
     text = (FOLDER / "Transform Background.py").read_text()
     assert "origin (0, 0)" in text.split("def panel_type")[1]
 
 
-# ================================================================ fix round 2
-# ---- 1. real names: every imported App name exists (controller ruling)
-APP_SRC = Path("/Volumes/Falstaff4T/fontlab-scripting-data/issue122/fontlab-fontlabapp/src")
-AP_MODULES = ("guides", "layer_selection", "qtsafe", "scripting")
+# ================================================================ real App names
+def test_used_app_names_when_parsed_then_cover_the_real_modules() -> None:
+    names = app_names_used([FOLDER / f"{title}.py" for title in SCRIPTS])
+    assert set(names) == {
+        "fly.ap.history", "fly.ap.masters", "fly.ap.layer_selection", "fly.ap.qtsafe", "fly.ap.scripting",
+    }
+    assert {"commit", "scan_auto_facts", "refusal"} <= names["fly.ap.history"]
+    assert names["fly.ap.masters"] == {"associated_master"}
+    assert "capture" in names["fly.ap.layer_selection"] and "qt_list" in names["fly.ap.qtsafe"]
 
 
-def used_app_names() -> dict[str, set[str]]:
-    """Parse the scripts: `from fly.ap.X import a, b` and `ap.scripting.NAME` uses."""
-    names: dict[str, set[str]] = {}
+def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> None:
+    used = app_names_used([FOLDER / f"{title}.py" for title in SCRIPTS])
+    check_real_app_names(used)
+
+
+def test_scripts_when_parsed_then_no_private_commit_or_guard_copy() -> None:
     for title in SCRIPTS:
         tree = ast.parse((FOLDER / f"{title}.py").read_text())
-        for node in ast.walk(tree):
-            if isinstance(node, ast.ImportFrom) and (node.module or "").startswith("fly.ap."):
-                names.setdefault(node.module.removeprefix("fly.ap."), set()).update(a.name for a in node.names)
-            if (
-                isinstance(node, ast.Attribute)
-                and isinstance(node.value, ast.Attribute)
-                and node.value.attr == "scripting"
-                and isinstance(node.value.value, ast.Name)
-                and node.value.value.id == "ap"
-            ):
-                names.setdefault("scripting", set()).add(node.attr)
-    return names
+        defined = {node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)}
+        assert not defined & {"commit", "require_no_auto_dependants", "auto_related"}, title
 
 
-def test_used_app_names_when_parsed_then_cover_the_four_real_modules() -> None:
-    names = used_app_names()
-    assert set(names) == set(AP_MODULES)
-    assert {"affected_auto_layers", "dependency_values"} <= names["guides"]
-    assert "capture" in names["layer_selection"] and "qt_list" in names["qtsafe"]
-    assert {"current_package", "select_glyphs", "names_font_window_selection",
-            "connect_guarded", "close_script_dialog", "show_script_dialog"} <= names["scripting"]
-
-
-def test_real_app_modules_when_imported_then_every_used_name_is_callable(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.syspath_prepend(str(APP_SRC))
-    for key in [k for k in sys.modules if k == "fontlabapp" or k.startswith("fontlabapp.")]:
-        monkeypatch.delitem(sys.modules, key)
-    for module_name, wanted in used_app_names().items():
-        module = importlib.import_module(f"fontlabapp.{module_name}")
-        assert Path(module.__file__).is_relative_to(APP_SRC), f"{module_name} not loaded from the issue-122 worktree"
-        for name in wanted:
-            assert callable(getattr(module, name, None)), f"fontlabapp.{module_name}.{name} missing or not callable"
-
-
-def test_real_affected_auto_layers_when_base_glyph_then_blocked(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.syspath_prepend(str(APP_SRC))
-    for key in [k for k in sys.modules if k == "fontlabapp" or k.startswith("fontlabapp.")]:
-        monkeypatch.delitem(sys.modules, key)
-    guides = importlib.import_module("fontlabapp.guides")
-    records = (("aacute", True, ("a", "acute")), ("a", False, ()), ("b", False, ()), ("acute", False, ()))
-    assert guides.affected_auto_layers(records, {"a"}) == ["aacute"]
-    assert guides.affected_auto_layers(records, {"aacute"}) == ["aacute"]
-    assert guides.affected_auto_layers(records, {"b"}) == []
-
-
-# ---- 2. TimeoutError from capture() never escapes
+# ---- TimeoutError from capture() never escapes
 @pytest.mark.parametrize(
     "title",
     ["Display Next Layer", "Display Previous Layer", "Duplicate Current Layer", "Use Layer As Master"],
@@ -1168,7 +1195,7 @@ def test_selection_panel_when_capture_times_out_in_init_then_status_shows_messag
     assert panel.plan is None and panel.status.texts[-1] == "capture expired" and panel.go.enabled is False
 
 
-# ---- 3. preview lists skipped glyphs; public docstrings carry no acceptance status
+# ---- preview lists skipped glyphs; public docstrings carry no acceptance status
 def test_make_plan_when_glyphs_skipped_then_names_listed_in_preview(world: World) -> None:
     module = load("Selection To All Backgrounds")
     font_world(world)

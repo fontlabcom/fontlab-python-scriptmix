@@ -115,6 +115,26 @@ this_file: WORK.md
     recomputing the seven `destination_sha256` values).
   - Lint: `uvx ruff check --target-version py311` and `uvx ruff format` on the seven
     scripts: clean.
+- Masters (step 4, six scripts onto `fly.ap.history` / `fly.ap.masters`):
+  - The four private `commit` copies and the `require_no_auto_dependants` / `auto_related`
+    guards were removed; Duplicate Current Layer, Use Layer As Master, Transform
+    Background and Selection To All Backgrounds call `history.commit(...,
+    operation="geometry", facts=history.scan_auto_facts(package))` (Duplicate returns
+    `.created`; Selection To All Backgrounds skips with `history.refusal` and keeps the
+    facts in its plan). The four `associated_master` copies use
+    `fly.ap.masters.associated_master`. `mask_name_for` stays private.
+  - Test harness: the G1 world keeps its font/selection/Qt fakes and loads the real App
+    `guides`, `history`, `masters`, `edit_guards` through `real_app`; the hard-coded
+    App path and process wording were removed.
+  - RED (worktree, old scripts, new tests; focused mix.sh copy, full suite): EXIT=1,
+    17 failed, 1580 passed, 1 skipped (App-sourced `associated_master`, no private copies,
+    real names, PartialWriteError, pending-update and auto-policy texts, transitive
+    base through a manual composite, auto owner refused; mostly message-text changes).
+  - GREEN: EXIT=0, 1597 passed, 1 skipped (after recomputing six `destination_sha256`
+    values); a second run left the regenerated catalogue unchanged.
+  - Lint: `uvx ruff check --target-version py311` on all Masters scripts and the test:
+    clean (three unused `Callable` imports removed). The G1 scripts are not
+    ruff-formatted; they were edited in place, not reformatted.
 
 ## 2026-10-18: Two additional foreground reporter candidates
 

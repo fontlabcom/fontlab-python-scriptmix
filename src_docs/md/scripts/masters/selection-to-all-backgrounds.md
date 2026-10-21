@@ -21,7 +21,8 @@ How it works:
     replaced and glyphs to be skipped. "Replace backgrounds" checks again that
     nothing changed, then removes the old background shapes, creates missing
     backgrounds, and adds clones of the selected contours. One notification covers
-    the whole font: one Undo step.
+    the whole font: one Undo step. The shared App helper fly.ap.history decides
+    which glyphs are skipped and does the one-step write.
 
 Why this design:
     - The change spans the whole font and overwrites backgrounds. So there is a
@@ -57,5 +58,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/56bf57d5a99d1bf75fd536e0e85c1a103a51096b15c561738f57aef71c0f8b00.py)
+[Python source](../../../../.build/menu-sources/6f9d83ae2b3414f970f1eb92390eaa5e6d89d8a0a59a35f6bf1ada668db0ec59.py)
 <!--/codeinclude-->

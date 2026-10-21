@@ -23,6 +23,14 @@ this_file: CHANGELOG.md
   of an auto glyph is also found through other composites; after a failed
   write every planned glyph is still stamped and notified, and the message
   says "use Edit > Undo".
+- Masters: Duplicate Current Layer, Use Layer As Master, Transform Background and
+  Selection To All Backgrounds write through `fly.ap.history.commit`; the four
+  layer scripts take the master name rule from `fly.ap.masters.associated_master`.
+  The refusal policy is now the App one (a glyph that owns an auto layer, or is
+  a base of one, also through other composites, is refused, or skipped by
+  Selection To All Backgrounds). Changed behaviour: the refusal, pending-updates
+  and failure messages are the App texts ("Refused. a: base of auto aacute.",
+  "Native glyph updates are pending", "... did not finish: ... use Edit > Undo").
 
 ## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
 

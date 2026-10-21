@@ -17,7 +17,8 @@ How it works:
 
 Why this design:
     - The name rule is the rule of the FontLab source, so the cycle matches the
-      Layers panel.
+      Layers panel. The shared App helper fly.ap.masters.associated_master
+      holds it.
     - All slots are planned first. One bad slot stops the run before any change.
     - The script writes no font data. No Undo step is needed.
 
@@ -42,20 +43,6 @@ STEP = 1  # +1 = next layer, -1 = previous layer
 DEADLINE_SECONDS = 2.0
 
 
-def associated_master(name: str, masters: Sequence[str]) -> str | None:
-    """Return the master a layer name belongs to, or None.
-
-    FontLab cuts the name at the first "@", else at the first "#". The rest
-    must be a master name.
-    """
-    base = name.removeprefix("|temp|")
-    cut = base.find("@")
-    if cut < 0:
-        cut = base.find("#")
-    head = base if cut < 0 else base[:cut]
-    return head if head and head in masters else None
-
-
 def layer_cycle(
     layers: Sequence[tuple[str, bool]], current: str, masters: Sequence[str]
 ) -> list[str]:
@@ -64,6 +51,8 @@ def layer_cycle(
     `layers` holds (name, is_body) in glyph order. Mask and service layers
     have is_body False. Raise ValueError when `current` has no master.
     """
+    from fly.ap.masters import associated_master
+
     master = associated_master(current, masters)
     if master is None:
         raise ValueError(f"Layer '{current}' belongs to no master.")
