@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 221 practical tools: 69 sample adaptations and 152
+The active menu contains 222 practical tools: 69 sample adaptations and 153
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -157,3 +157,12 @@ identity has one row. Source hashes of the ported sources are in
 | `simoncozens/GlyphsScripts/componentize.py` | Duplicate of | — | FontLab: Font > Detect Composites; Contour > Convert > Detect Component |
 | `simoncozens/GlyphsScripts/Clean Classes.py` | Duplicate of | — | FontLab: Classes panel > Clean Up Selected Classes |
 | `simoncozens/GlyphsScripts/Rename To Glyphs Default Names.py` | Duplicate of | — | FontLab: Font > Rename Glyphs > Alternative, or Rename by Table |
+| `slobzheninov/Glyphs-Scripts/Align/Align Top.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
+| `slobzheninov/Glyphs-Scripts/Align/Align Bottom.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
+| `slobzheninov/Glyphs-Scripts/Align/Align Left.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
+| `slobzheninov/Glyphs-Scripts/Align/Align Right.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
+| `slobzheninov/Glyphs-Scripts/Align/Align Horizontal Center.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
+| `slobzheninov/Glyphs-Scripts/Align/Align Vertical Center.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
+| `slobzheninov/Glyphs-Scripts/Align/Distribute Nodes Horizontally.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
+| `slobzheninov/Glyphs-Scripts/Align/Distribute Nodes Vertically.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
+| `slobzheninov/Glyphs-Scripts/Align/Center Selected Glyphs.py` | Duplicate of | Metrics/Centre In Advance.py | Equal sidebearings with the advance kept, in the current or all masters |

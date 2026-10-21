@@ -2672,5 +2672,57 @@
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Qalmi pair selectors, numbered and s/sd alternates, master-specific entry/exit preview and persistent choices in managed rlig comments. Exclude Unicode-style names and right families without a numbered default. Compile valid saved pairs; retain stale pairs as named kept records without rules. Explicit Drop stale pairs on Save removes them. Warn about unmanaged reverse rules that run first. Preserve unrelated feature source and use source-bound Save connection."
+  },
+  {
+    "title": "Align And Distribute",
+    "key": "contours_align_and_distribute",
+    "destination": "Scripts/Contours/Align And Distribute.py",
+    "destination_sha256": "43b86780dd5c80484cf556cb3398aea2684fba718bf508deac9bac8398be54bc",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source_path": "Align/Align Left.py",
+    "source_sha256": "7a8533e0ea2d5e7b07bfa4ad57051080829cb54abedbdde67cb11c359defdb49",
+    "merged_sources": [
+      {
+        "path": "slobzheninov--Glyphs-Scripts/Align/Align Top.py",
+        "sha256": "e8114804848e24f812fa3398b1728ffa2f4de96ffa246cc303cb1d6459b88cf3"
+      },
+      {
+        "path": "slobzheninov--Glyphs-Scripts/Align/Align Bottom.py",
+        "sha256": "fff9a46cdaf6b96ae12da6e6e4cb7e38c06922f9815304f2f3c02aa4b5f33136"
+      },
+      {
+        "path": "slobzheninov--Glyphs-Scripts/Align/Align Left.py",
+        "sha256": "7a8533e0ea2d5e7b07bfa4ad57051080829cb54abedbdde67cb11c359defdb49"
+      },
+      {
+        "path": "slobzheninov--Glyphs-Scripts/Align/Align Right.py",
+        "sha256": "301640d438c4502cc419cc6156afa0b9c50b5667843ebe17b0f805e39246e9c8"
+      },
+      {
+        "path": "slobzheninov--Glyphs-Scripts/Align/Align Horizontal Center.py",
+        "sha256": "857e2e396605a10cd3abb9041ee6f4f6ccc91c0c271a920c4aeb8336620d5f95"
+      },
+      {
+        "path": "slobzheninov--Glyphs-Scripts/Align/Align Vertical Center.py",
+        "sha256": "4d85757975b721875f75b66624b9f2280647921780e4214fa26e281468658838"
+      },
+      {
+        "path": "slobzheninov--Glyphs-Scripts/Align/Distribute Nodes Horizontally.py",
+        "sha256": "3d1bd75c4919286408fb834db1e47e42cb052fff6790e25b9a71908e3c7eb308"
+      },
+      {
+        "path": "slobzheninov--Glyphs-Scripts/Align/Distribute Nodes Vertically.py",
+        "sha256": "8364cfc28c75bcfa25dfae44f296aff3f8773e899d5ad97a4b40f1ed1c9ca9db"
+      }
+    ],
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "copyright": "Alex Slobzheninov; sources also credit Rainer Erich Scheichelbauer (mekkablue)",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Six alignment choices and horizontal/vertical selected-node distribution in one non-modal preview panel. Extends Contour > Align Points and Element > Align / Distribute Shapes with node distribution, several glyph layers or masters in one Undo step, a numeric preview and explicit coordinate targets. Complete contours translate as units. Unselected adjacent handles follow their moved on-curve node by the same offset; explicitly selected handles use their own targets. Two selected nodes sharing one unselected curve handle are kept; select the handle too or align the nodes separately. Components move through outline_transform without changing their base glyphs. Anchors are never moved. Distribution requires selected nodes and is disabled for All nodes. Locked layers/shapes, shared outlines, contours with their own transform and invalid position calculations produce labelled kept rows while other eligible items remain editable. Selection is captured once per scan and again for Apply. Bounds include selected control points; coordinates are upright and italic angle is not applied. Automatic-layer glyphs and their bases are skipped."
   }
 ]

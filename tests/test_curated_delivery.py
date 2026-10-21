@@ -21,7 +21,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 152 and len(actual) == 221
+    assert len(rows) == 69 and len(extra) == 153 and len(actual) == 222
     for relative in actual:
         path = ROOT / relative
         assert len(Path(relative).parts) == 3, relative
@@ -113,7 +113,7 @@ NEW_TOOLS = {
                  "Remove PostScript Hints", "Smart Slant", "Node Duplicator", "Comb",
                  "Curve All Straights", "Delete Close Points", "Make Compatible", "Sandblast",
                  "Straighten All Curves", "Superaligner", "Interpolated Nudge", "Sansomatic",
-                 "Myanmar Medial Ra Maker"],
+                 "Myanmar Medial Ra Maker", "Align And Distribute"],
     "Proof": ["Real English Text", "Real Spanish Text"],
     "Font Info": ["Trial Font Maker", "Paste Glyph Order Encoding"],
     "Utilities": ["Magic Remover"],
@@ -126,7 +126,7 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     rows = {row["destination"]: row for row in json.loads((ROOT / "additional-tools.json").read_text())}
     wanted = [f"Scripts/{folder}/{name}.py" for folder, names in NEW_TOOLS.items() for name in names]
     wanted.append("Scripts/Contours/Raise Ascender.py")
-    assert len(wanted) == 99
+    assert len(wanted) == 100
     floors = {path: rows[path]["app_minimum"] for path in wanted}
     assert set(floors.values()) == {"0.2.150.dev0"}, floors
 

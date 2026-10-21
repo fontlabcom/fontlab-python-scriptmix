@@ -1364,3 +1364,22 @@ redistributed.
 No source code was copied; the scripts reproduce the behaviour for FontLab
 and are Apache-2.0. Source and licence SHA-256 values are in
 additional-tools.json.
+
+Contours alignment tool after Alex Slobzheninov
+===============================================
+
+Independent rewrite of scripts by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, Apache License 2.0
+(https://github.com/slobzheninov/Glyphs-Scripts); the alignment and
+distribution sources also credit Rainer Erich Scheichelbauer (mekkablue,
+Apache-2.0):
+
+- Contours/Align And Distribute: Align/Align Top.py, Align Bottom.py, Align
+  Left.py, Align Right.py, Align Horizontal Center.py, Align Vertical
+  Center.py, Distribute Nodes Horizontally.py and Distribute Nodes
+  Vertically.py, combined in one tool.
+
+Align/Center Selected Glyphs.py is covered by Metrics/Centre In Advance.
+
+No source code was copied; the script reproduces the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.
