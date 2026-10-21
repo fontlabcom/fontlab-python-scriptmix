@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 121 practical tools in one-level Title Case
-categories: 69 sample adaptations and 52 additional tools. Additional adaptations
+The curated `Scripts` folder contains 123 practical tools in one-level Title Case
+categories: 69 sample adaptations and 54 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -136,3 +136,5 @@ Kerning > Kerning Cutoff applies inclusive[-250,100] to every explicit pair on e
 Kerning > Symmetry applies the complete original seven named and21 Unicode targets on non-# / non-Ctr masters, retaining native typed glyph/group identities and sequential alias effects. Requires App>=0.2.137.dev0 via Fly; full-font native qualification pending.
 
 Anchors > Copy Anchors Between Fonts retains the complete TypeRig two-font writer, with source-bound selection and exact master/anchor/collision alternatives. Full native font history/reopen acceptance remains pending. The coherent App0.2.148.dev0/Glyport1.0.8.dev40 candidate preserves complete literal Text Holder, both Find Files profiles, crossfont anchor tools and shared Qt table items. Literal helper bytes are coalesced once; source/artifact qualification remains separate from genuine NUL IME, complete host-font/history/reopen and OS-dialog holds. Proof adds Hoefler Lowercase, Hoefler Uppercase, KernKing and KernSym. All five original texts and native slash-name/Unicode semantics remain complete; KernKing opens two tabs in order. Requires App0.2.149.dev0; full native preservation qualification is pending. The private complete .153 candidate retains the four proof workflows and both background-cleaning profiles; active/locked masks remain unsupported, and full native/history/reopen acceptance stays open.
+
+`Contours/Raise Ascender.py` retains the complete two-action Amount workflow and reviewed Close-failure lifetime repair. `Guides/Perpendicular Guides.py` adds the complete node/component guide action. Both require their matching reviewed App APIs through Fly; full original native/history/reopen domains remain pending.

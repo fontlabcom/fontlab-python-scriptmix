@@ -35,6 +35,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Contour Order View](contours/contour-order-view.md)
 - [Node Coordinates Panel](contours/node-coordinates-panel.md)
 - [Node Statistics](contours/node-statistics.md)
+- [Raise Ascender](contours/raise-ascender.md)
 - [Select Contours](contours/select-contours.md)
 - [Select Partial Contours](contours/select-partial-contours.md)
 - [Select Small Contours](contours/select-small-contours.md)
@@ -65,6 +66,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Grid Generator](guides/grid-generator.md)
 - [Guide List Editor](guides/guide-list-editor.md)
 - [Metric Reference Lines](guides/metric-reference-lines.md)
+- [Perpendicular Guides](guides/perpendicular-guides.md)
 
 ## Kerning
 

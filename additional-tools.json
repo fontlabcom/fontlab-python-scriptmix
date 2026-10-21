@@ -976,5 +976,42 @@
     "app_minimum": "0.2.151.dev0",
     "native_acceptance": "pending",
     "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending. Active and locked target masks explicitly unsupported: safe nonassigning resolver guard refuses before history, without claiming original-domain acceptance. Date failures never skip the one attempted-batch notification; errors aggregated. Deadline preparation is checked and grouped per glyph."
+  },
+  {
+    "title": "Raise Ascender",
+    "key": "raise_ascender",
+    "destination": "Scripts/Contours/Raise Ascender.py",
+    "destination_sha256": "0b39645ad7378e9118ad630fa859a14c38228f16fe45826190b7593a779f4dcc",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source_path": "Raise Ascender.py",
+    "source_sha256": "a6bba363ea8c22660f3f3a02f67a2cd14748afc7a683303c9acffacd85d671f2",
+    "source_license": "MIT",
+    "source_license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "source_body_redistributed": false,
+    "license": "MIT AND Apache-2.0",
+    "app_minimum": "0.2.157.dev0",
+    "native_acceptance": "pending",
+    "scope": "Original two-action Amount editor; every selected occurrence versus all foreground layers of first selected glyph, strict xHeight+10, every own node including controls, sequential per-occurrence Undo. Unknown association, implicit editor mapping and generated/hinted/locked/automatic writer domains remain incomplete native boundaries; no omitted targets or refusal-as-equivalence claim."
+  },
+  {
+    "title": "Perpendicular Guides",
+    "key": "perpendicular-guides",
+    "destination": "Scripts/Guides/Perpendicular Guides.py",
+    "destination_sha256": "2eb8755d2e9d919fbb15bd0ea5bc2a2720af82e652699fa963f9bbf10d9b8778",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
+    "source_path": "Guides/Perpendicular Guides.py",
+    "source_sha256": "4a634c17f65d75f7c79b5167d7cd575e59251874bd8a9995573f6c1cd3b931d3",
+    "source_license": "Apache-2.0",
+    "source_license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
+    "source_attribution": "Copyright 2025 Fernando Díaz & Reset Type Studio",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Complete first-layer selected-node mean/nearest-two-distinct stable rule and simultaneous transformed-component-centre horizontal/vertical branches. Controls included, stored order retained; one notification, existing metadata in place.",
+    "app_minimum": "0.2.154.dev0",
+    "native_acceptance": "pending"
   }
 ]

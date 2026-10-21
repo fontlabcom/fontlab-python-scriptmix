@@ -146,3 +146,5 @@ N68 repair round1 (.82): preserve first selected parent only, without layer or l
 - [ ] N236: independently review complete .149 source/artifacts and native-qualify all five proof tabs with whole-font/workspace/history preservation.
 
 - [ ] N248: independent final .153 integration review and separate complete native/preservation acceptance.
+
+- [ ] Qualify final .159 installed original workflows in owned FontLab, including complete writer/history/reopen and printer/OS domains; retain all inherited holds.

@@ -932,3 +932,7 @@ Add Hoefler Lowercase, Hoefler Uppercase, KernKing and KernSym through shared Ap
 - No native acceptance or reconstructed background rollback.
 
 N248 complete .153 union retains reviewed .148 and all four .149 proof workflows/five licensed texts, both complete .151 background cleaners and final admitted .152 Character Map contrast. Preserve full original workflow/coverage denominators and all prior menus. Active/locked backgrounds remain UNACCEPTED; all native font/history/reopen gates stay open. No canonical/native/live installation/push.
+
+- Private .159 integrates complete Raise Ascender with reviewed .157 failed-Close lifetime repair; all original font/history domains remain pending.
+
+- Private .159 includes complete reviewed Perpendicular Guides: selected nodes and component centre guides, first-selected-layer scope, transformed geometry and retained carriers; native full-font/history acceptance remains pending.

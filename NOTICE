@@ -975,3 +975,9 @@ Independent implementations of Pedro Arilla’s “Clear background in all layer
 and “Clear background in all master layers.py”, pedroarilla/glyphs-scripts,
 Apache License 2.0. Original source bodies are not redistributed.
 
+
+Raise Ascender: behavior adapted from Simon Cozens, GlyphsScripts/Raise Ascender.py.
+Copyright (c) 2017 Simon Cozens. https://github.com/simoncozens/GlyphsScripts
+MIT terms retained in full above apply. Independent FontLab adaptation; no original body redistribution.
+
+Perpendicular Guides: independent implementation of the complete Guides/Perpendicular Guides.py workflow by Fernando Díaz / Reset Type Studio, copyright 2025, Apache-2.0 (upstream README licence). Source SHA256 4a634c17f65d75f7c79b5167d7cd575e59251874bd8a9995573f6c1cd3b931d3. No original source body redistributed. The nearest-two distinct node rule, stable ties, selected controls and independent component branches are retained. FontLab guide angles use radians; transformed native component bounds and complete native history preservation require owned-host qualification.
