@@ -20,3 +20,5 @@ The [build dependency notes](plugins.md) record plugin use and compatibility.
 
 The [browser asset notices](frontend-notices.md) retain full texts and source
 provenance for named frontend components. Their transitive review remains open.
+
+Close But No Cigar retains the [complete Simon Cozens MIT notice](licenses/simon-cozens-mit.txt). See its [full source contract](near-miss-report.md).

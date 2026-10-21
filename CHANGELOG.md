@@ -791,3 +791,14 @@ Implement the complete first-selected-glyph left/right peer proof, independent c
 
 
 N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
+
+
+## N105 Close But No Cigar (.93 source candidate)
+
+Complete ordered all-selected-parent/first-layer near-angle, horizontal/vertical
+stem and six node-position checks, with explicit associated-master data and
+strict original boundaries/exclusions. Shared modeless Refresh/Close report;
+no Output/font/selection writers. Numeric cubic angle repaired; original curve
+sampling/open wrap preserved. Tests, source/API calibration and ordinary
+archive verification: workspace verification/issue-120/near-miss-z35/.
+Native acceptance, root review and delivery remain pending.
