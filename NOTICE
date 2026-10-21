@@ -572,3 +572,8 @@ scripts/FontLab/sg-toolbox/SG-Font-Kerning-Symmetry.py.
 Original SHA-256 6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c.
 No licence declared in the inspected original tree; original body is neither
 copied nor redistributed. New independent implementation: Apache-2.0.
+
+Paired Background Cleaning
+Independent implementations of Pedro Arilla’s “Clear background in all layers.py”
+and “Clear background in all master layers.py”, pedroarilla/glyphs-scripts,
+Apache License 2.0. Original source bodies are not redistributed.

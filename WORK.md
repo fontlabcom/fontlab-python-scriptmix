@@ -3444,3 +3444,21 @@ N201 final environment qualification:13 new wheel fallback packaging.pyc paths a
 ## N214 — complete .141 reviewed integration
 
 Integrate the entire independently reviewed typed Symmetry/Cutoff foundation and accepted Character Map initial viewport on exact .136. Preserve all newer numeric/IME/Find Files/Duplicate Unicodes workflows and every prior menu. Typed IDs, original378 ordered comparisons and distinct master filters remain exact donor bytes; viewport row count is font-dependent (Helvetica six, ambient Qt5 five, both full A row). Full ordinary source/archive/current seven-consumer/original-baseline whole80/80 zero-exclusion checks are retained in verification/issue-120/complete-union-z51. Native, canonical, live installation and push remain root-owned and unperformed here.
+
+## N228 .147 complete paired background-removal family
+
+Start isolated from exact reviewed .14192c54a81/8501a66c. Preserve both untouched Pedro whole-font originals and licence hashes in practical-family-z53/original-contract.json. Implement complete whole-object native mask removal, all-layer versus declared-master scopes, original order, real Clear and nonmodal owned preview/Refresh/Close through Fly/App. Source-backed getMaskLayer reversal/fallback and broad isMasterLayer naming require exact guards; no GL packaging dependency, mask reconstruction, ownerfont calls or acceptance claim. Tests first: model-first-red.log records missingmodule; model-green.log passes complete scope/identity/alias/refusal controls. All transient output external TMPDIR, -B/PYTHONDONTWRITEBYTECODE; no environment copies or canonical writes.
+
+N228 verification: tests-first model/capture/writer/panel/menu RED receipts retained.
+Focused App52 and Scriptmix2 pass; initial source App5217 pass. Initial Scriptmix run67 failures: missing preserved-root setup plus expected new menu counts; preserved historical output, correcting test environment and count-only expectation. No corpus execution/native calls.
+
+N228 final source/artifact checkpoint (App .147, reviewed .141 donor):
+- Commands: `python -B verification/issue-120/practical-family-z53/revision2/build_install.py`, `run_consumers.py`, `coverage_report.py`, `run_qt_controls_round2.py`, `audit_artifacts.py`, `final_checks.py` (all with absolute matched ordinary Python and recorded env/argv in receipts).
+- Both ordinary archive seven-consumer graphs: App5231, Glyport3218/1skip, Fontport4490/1skip, Examples565, Scriptmix1002/1skip, Lessons199, Fly17:14722pass/3existing skips each.
+- Both archives/both standalone Qt bindings:62focused controls each; original independent source-loop oracle64background-presence combinations per scope.
+- Original whole-module scopes App209/Glyport24/Scriptmix51/Examples72: every file>=80%statements and>=80%branches, zeroexclusions, both archive lanes.
+- Static Scriptmix docs15 controls and strict build PASS. Four injected-data light/dark UI screenshots inspected; no native-font claim.
+- All291priorApp payloads/114priorScriptmix menus exact;296runtime/116Scriptmix+41Examples=157menus. Original130source ledger unchanged.
+- All17291task-snapshot dependency files unchanged; prior qualifiedN20413cache additions retained, no historical-start parity claim.
+- Earlier missing-preserved-root/count/working-directory harness failures, round1archives, bounded-dependency RED and mixed-Qt fullcollection standalone crash preserved. Final Qt5 harness collects exactly the five owned new test files, retaining all assertions.
+- Native getMaskLayer(False)/removeLayer full-font mapping, whole-mask metadata/survivors/history/oneUndo/Redo/dirty/dates/save/reopen remain unqualified. Ambiguous/shared-excluded/orphan masks and automatic dependencies refuse before history; no contour-only substitute/manual reconstruction. No native/canonical/push/live install.

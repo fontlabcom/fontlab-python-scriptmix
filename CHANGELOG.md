@@ -909,3 +909,9 @@ N193 test compatibility: the owned kerning fixture exposes the resolved package 
 ## Unreleased .137 — Complete typed kerning symmetry
 
 Add the complete Science Gothic 28-target/378-comparison Symmetry writer with lossless explicit glyph/group identities, sequential class aliases and zero deletion. Preserve original # and case-sensitive Ctr master exclusion. Cutoff retains its distinct all-native-master policy. Native qualification pending.
+
+### N228 — paired whole-font background cleaning candidate
+
+- Add distinct all-layer and declared-master background removal tools through Fly/App.
+- Remove original whole mask objects; reject ambiguous mapping and automatic dependencies before history.
+- Contain partial native failures with one final notification and explicit Undo diagnosis. Native acceptance pending.
