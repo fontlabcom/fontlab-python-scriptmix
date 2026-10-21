@@ -620,3 +620,5 @@ Dangerous Offcurves: retain native source-engine, getter preservation and exact-
 
 
 N162: independently review final combined .122/.37 source/artifact tuple and retain complete native PythonQt/NUL and font/UI/history/reopen qualification separately.
+
+- [ ] Qualify complete Duplicate Unicodes .121 editor/writer on owned FontLab fonts: original controls, Apply/Undo/Redo/dirty/notes/cache/full-font/save/reopen.

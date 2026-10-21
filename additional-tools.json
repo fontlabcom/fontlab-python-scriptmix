@@ -789,5 +789,21 @@
     "scope": "All glyphs/all foreground layers/own paths; raw wrapped four-node windows, all four finite control-axis probes, strict0.05, distinct exact-layer new tab and every per-curve finding. Ascending analytic curve-t ordering is explicit adaptation, not proven Glyphs equivalence.",
     "app_minimum": "0.2.117.dev0",
     "native_acceptance": "pending"
+  },
+  {
+    "title": "Duplicate Unicodes",
+    "key": "names_duplicate_unicodes",
+    "destination": "Scripts/Names/Duplicate Unicodes.py",
+    "destination_sha256": "f3cc72fd0ef9c96f20827b81a39de686584c7af0749bc5d6fefc5f24427af0a4",
+    "kind": "complete-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "rescued_original_menu": "Scripts/Names/Duplicate Unicodes.py",
+    "source_path": "rescued/samples/names_duplicate_unicodes.py",
+    "source_sha256": "b42ab5f9a4bead19a4a0a042d9fe9fcffbfadfe650da6551b4f9ea3819ba865e",
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_minimum": "0.2.121.dev0",
+    "scope": "Whole font numeric duplicates, primary/fontorder keeper, expanded editable checkbox tree, Rescan/Remove ticked/Close, exact surviving Unicode order. Actual font-owned code setters with two-pass stale fences, Font-window/pending-update/auto-dependant/native-dedup preflight and one final history batch; explicit partial failures, no UpdateAll/fgGlyph getter. Full Undo/Redo/dirty/font/cache/reopen native qualification pending. Inactive open Glyph editors refuse too, through App GC-protected known-class inspection; native qualification remains pending."
   }
 ]

@@ -129,3 +129,5 @@ N68 repair round1 (.82): preserve first selected parent only, without layer or l
 
 
 - [ ] N162: qualify final combined native workflows and literal NUL host hold; source/artifact integration does not complete original scope.
+
+- [ ] Qualify complete Duplicate Unicodes .121 editor/writer on owned FontLab fonts: original controls, Apply/Undo/Redo/dirty/notes/cache/full-font/save/reopen.
