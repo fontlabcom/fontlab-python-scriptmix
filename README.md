@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 123 practical tools in one-level Title Case
-categories: 69 sample adaptations and 54 additional tools. Additional adaptations
+The curated `Scripts` folder contains 125 practical tools in one-level Title Case
+categories: 69 sample adaptations and 56 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.

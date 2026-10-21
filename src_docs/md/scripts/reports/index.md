@@ -16,6 +16,8 @@
 - [Open Contours](open-contours.md)
 - [Point Counter (Master Layers)](point-counter-master-layers.md)
 - [Point Counter](point-counter.md)
+- [Report Composite Differences](report-composite-differences.md)
+- [Report Glyph Set Differences](report-glyph-set-differences.md)
 - [Unicode Coverage](unicode-coverage.md)
 - [Vertical Metrics Reporter](vertical-metrics-reporter.md)
 - [Why You Not Compatible](why-you-not-compatible.md)

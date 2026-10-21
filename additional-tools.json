@@ -1013,5 +1013,41 @@
     "scope": "Complete first-layer selected-node mean/nearest-two-distinct stable rule and simultaneous transformed-component-centre horizontal/vertical branches. Controls included, stored order retained; one notification, existing metadata in place.",
     "app_minimum": "0.2.154.dev0",
     "native_acceptance": "pending"
+  },
+  {
+    "title": "Report Composite Differences",
+    "key": "composite_differences",
+    "destination": "Scripts/Reports/Report Composite Differences.py",
+    "destination_sha256": "99e597283b43107559ecbb1f53fec858dba7065019af51bf302a953b99439f89",
+    "kind": "independent-original-read-only-workflow",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/jenskutilek/Glyphs-Scripts",
+    "source_path": "Components/Report Composite Differences.py",
+    "source_sha256": "91b90cf5c6f9827dcdd2712c952a335e396be1fc7d3e74cd7212b6b2e7647100",
+    "source_license": "MIT",
+    "source_license_sha256": "a177820214b47d9f572bc4a95badbd8f1fdc54cb12012b768d32cb46642434fb",
+    "source_body_redistributed": false,
+    "license": "MIT AND Apache-2.0",
+    "app_minimum": "0.2.161.dev0",
+    "native_acceptance": "pending",
+    "scope": "Complete original current-reference/first-other composite or all-other glyph-set scan, original ordered output/exclusions/raw filepath semantics. Owned report instead of user Output; no font writes."
+  },
+  {
+    "title": "Report Glyph Set Differences",
+    "key": "glyph_set_differences",
+    "destination": "Scripts/Reports/Report Glyph Set Differences.py",
+    "destination_sha256": "404a9732d0a4385c1183a64bdbe3ae3040e7c7f2e99531c70f962755e5165f39",
+    "kind": "independent-original-read-only-workflow",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/jenskutilek/Glyphs-Scripts",
+    "source_path": "Font/Report Glyph Set Differences.py",
+    "source_sha256": "5d6df2609ebfa5df887833567151bb4f5bfc5290e3d494640ed11bdfe2795a87",
+    "source_license": "MIT",
+    "source_license_sha256": "a177820214b47d9f572bc4a95badbd8f1fdc54cb12012b768d32cb46642434fb",
+    "source_body_redistributed": false,
+    "license": "MIT AND Apache-2.0",
+    "app_minimum": "0.2.161.dev0",
+    "native_acceptance": "pending",
+    "scope": "Complete original current-reference/first-other composite or all-other glyph-set scan, original ordered output/exclusions/raw filepath semantics. Owned report instead of user Output; no font writes."
   }
 ]

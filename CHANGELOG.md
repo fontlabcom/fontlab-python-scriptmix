@@ -936,3 +936,5 @@ N248 complete .153 union retains reviewed .148 and all four .149 proof workflows
 - Private .159 integrates complete Raise Ascender with reviewed .157 failed-Close lifetime repair; all original font/history domains remain pending.
 
 - Private .159 includes complete reviewed Perpendicular Guides: selected nodes and component centre guides, first-selected-layer scope, transformed geometry and retained carriers; native full-font/history acceptance remains pending.
+
+Private .161 adds complete Jens Kutilek composite-difference and all-other-font glyph-set reports with source-defined reference/target/order/filepath policies and owned selectable output.
