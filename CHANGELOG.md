@@ -857,3 +857,14 @@ Fresh revision5 ordinary artifacts/full unchanged gates bind this repair.
 Import complete Reza master-layer report on reviewed .106, preserving its prior workflows.
 Reuse unchanged Text Holder literal editor read-only; preserve NBSP/LS/PS and UTF16 selections.
 F1 RED, complete artifacts/consumer/coverage results are recorded after verification. Native pending.
+
+N145 final .118 source/artifact gates:27focused controls pass source Qt5/Qt6
+and all4installed Qt/archive lanes;4actual public Fly/menu literal-MIME controls pass.
+Both complete7consumer graphs pass13752tests/3existing skips. Original whole scopes
+182App/45Scriptmix/70Examples pass80statement AND80branch perfile, zeroexclusions.
+Scriptmix15SDK/docs tests and strictbuild pass; unchanged .106 Examples docs coverage
+is reused byte-exact with explicit attribution, no write to that frozen tree.
+F1selection RED and readonly IME REDs retained. Literal helper byte-exact to .106;
+report-local IME ignores all preedit/commit. New report PythonQt/native probe pending.
+Exact commands/exits/archives/receipts: verification/issue-120/point-counter-repair-z43.
+No native/canonical/push/user-store/clipboard changes. Independent review required.

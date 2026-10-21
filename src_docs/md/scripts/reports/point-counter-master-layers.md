@@ -32,7 +32,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/06aa01793ae146b8d35973288d985c17424029e0ee7fcf2b602d20aebea3a747.py)
+[Python source](../../../../.build/menu-sources/eb7cae651b7ff4886300f9090d4c1f9e18fba1146a39ebb400b390ce8f2f5334.py)
 <!--/codeinclude-->
-
-Literal selection preserves NBSP, LS/PS and non-BMP text. The report stays read-only, including input-method entry.

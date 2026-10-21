@@ -13,9 +13,8 @@
 - [Master Node Compatibility Report](master-node-compatibility-report.md)
 - [Nodes Near Zones](nodes-near-zones.md)
 - [Open Contours](open-contours.md)
+- [Point Counter (Master Layers)](point-counter-master-layers.md)
 - [Point Counter](point-counter.md)
 - [Unicode Coverage](unicode-coverage.md)
 - [Vertical Metrics Reporter](vertical-metrics-reporter.md)
 - [Why You Not Compatible](why-you-not-compatible.md)
-
-- [Point Counter (Master Layers)](point-counter-master-layers.md)
