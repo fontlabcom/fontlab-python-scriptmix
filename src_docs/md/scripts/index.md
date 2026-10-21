@@ -4,12 +4,19 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Anchors
 
+- [Center Horizontally](anchors/center-horizontally.md)
 - [Cloud View](anchors/cloud-view.md)
 - [Compatibility Report](anchors/compatibility-report.md)
 - [Copy Anchors Between Fonts](anchors/copy-anchors-between-fonts.md)
 - [Copy Anchors From Glyph](anchors/copy-anchors-from-glyph.md)
+- [Delete By Name](anchors/delete-by-name.md)
 - [Duplicates Finder](anchors/duplicates-finder.md)
 - [Mark Attachment Preview](anchors/mark-attachment-preview.md)
+- [Mirror Across Masters](anchors/mirror-across-masters.md)
+- [Place From Bounds](anchors/place-from-bounds.md)
+- [Rename Bulk](anchors/rename-bulk.md)
+- [Round To Grid](anchors/round-to-grid.md)
+- [Snap To Metrics](anchors/snap-to-metrics.md)
 
 ## Cleaning
 
@@ -90,27 +97,47 @@ Choose a category, then a script. Each page includes its actual menu source.
 ## Masters
 
 - [Compatibility Check](masters/compatibility-check.md)
+- [Display Next Layer](masters/display-next-layer.md)
+- [Display Previous Layer](masters/display-previous-layer.md)
+- [Duplicate Current Layer](masters/duplicate-current-layer.md)
 - [Glyph Weight Chart](masters/glyph-weight-chart.md)
 - [Interpolation Preview](masters/interpolation-preview.md)
 - [Italic Angle](masters/italic-angle.md)
 - [Master Switcher](masters/master-switcher.md)
 - [Overview](masters/overview.md)
+- [Select Different Colour](masters/select-different-colour.md)
+- [Selection To All Backgrounds](masters/selection-to-all-backgrounds.md)
+- [Transform Background](masters/transform-background.md)
+- [Use Layer As Master](masters/use-layer-as-master.md)
 - [Width Chart](masters/width-chart.md)
 
 ## Metrics
 
+- [Centre In Advance](metrics/centre-in-advance.md)
 - [Check Tabular Widths](metrics/check-tabular-widths.md)
+- [Italic Sidebearings](metrics/italic-sidebearings.md)
+- [Round Advances](metrics/round-advances.md)
+- [Scale Advances](metrics/scale-advances.md)
 - [Spacing String Preview](metrics/spacing-string-preview.md)
+- [Tabular Width](metrics/tabular-width.md)
 - [Width Table](metrics/width-table.md)
+- [Zero-Width Marks](metrics/zero-width-marks.md)
 
 ## Names
 
+- [Batch Glyph Notes](names/batch-glyph-notes.md)
+- [Batch Rename](names/batch-rename.md)
 - [Case Pairs](names/case-pairs.md)
 - [Character Info](names/character-info.md)
 - [Character Set Compare](names/character-set-compare.md)
 - [Duplicate Unicodes](names/duplicate-unicodes.md)
 - [Glyph Finder](names/glyph-finder.md)
+- [Glyph Notes](names/glyph-notes.md)
+- [Glyph Tags](names/glyph-tags.md)
+- [Mark Color Palette](names/mark-color-palette.md)
 - [Select by Mark](names/select-by-mark.md)
+- [Suffix Tool](names/suffix-tool.md)
+- [Unicode From Names](names/unicode-from-names.md)
 
 ## Proof
 

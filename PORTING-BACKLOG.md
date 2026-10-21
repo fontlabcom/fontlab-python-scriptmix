@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 109 practical tools: 69 sample adaptations and 40
+The active menu contains 150 practical tools: 69 sample adaptations and 81
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -18,25 +18,25 @@ adaptations, package cleanup and native acceptance remain in scope.
 
 | Former menu | Preserved source | Status |
 | --- | --- | --- |
-| Metrics/Italic Sidebearings.py | `rescued/samples/metrics_italic_sidebearings.py` | Unported; native verification pending |
+| Metrics/Italic Sidebearings.py | `rescued/samples/metrics_italic_sidebearings.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Alignment Zones.py | `rescued/samples/metrics_zones_editor.py` | Unported; native verification pending |
-| Metrics/Round Advances.py | `rescued/samples/metrics_round_advances.py` | Unported; native verification pending |
-| Metrics/Centre In Advance.py | `rescued/samples/metrics_center_in_advance.py` | Unported; native verification pending |
-| Metrics/Zero-Width Marks.py | `rescued/samples/metrics_zero_width_marks.py` | Unported; native verification pending |
+| Metrics/Round Advances.py | `rescued/samples/metrics_round_advances.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Metrics/Centre In Advance.py | `rescued/samples/metrics_center_in_advance.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Metrics/Zero-Width Marks.py | `rescued/samples/metrics_zero_width_marks.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Vertical Metrics.py | `rescued/samples/metrics_vertical_metrics_diagram.py` | Unported; native verification pending |
 | Metrics/Equalize Sidebearings.py | `rescued/samples/metrics_equalize_sidebearings.py` | Unported; native verification pending |
-| Metrics/Tabular Width.py | `rescued/samples/metrics_tabular_width.py` | Unported; native verification pending |
-| Metrics/Scale Advances.py | `rescued/samples/metrics_scale_advances.py` | Unported; native verification pending |
+| Metrics/Tabular Width.py | `rescued/samples/metrics_tabular_width.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Metrics/Scale Advances.py | `rescued/samples/metrics_scale_advances.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Sidebearings Tuner.py | `rescued/samples/metrics_sidebearings_tuner.py` | Unported; native verification pending |
 | Metrics/Copy Metrics From Reference.py | `rescued/samples/metrics_copy_from_reference.py` | Unported; native verification pending |
-| Names/Glyph Tags.py | `rescued/samples/names_glyph_tags.py` | Unported; native verification pending |
-| Names/Mark Color Palette.py | `rescued/samples/names_mark_color_palette.py` | Unported; native verification pending |
+| Names/Glyph Tags.py | `rescued/samples/names_glyph_tags.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Names/Mark Color Palette.py | `rescued/samples/names_mark_color_palette.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Names/Duplicate Unicodes.py | `rescued/samples/names_duplicate_unicodes.py` | Unported; native verification pending |
-| Names/Suffix Tool.py | `rescued/samples/names_suffix_tool.py` | Unported; native verification pending |
-| Names/Batch Rename.py | `rescued/samples/names_batch_rename.py` | Unported; native verification pending |
-| Names/Batch Glyph Notes.py | `rescued/samples/utility_batch_glyph_notes.py` | Unported; native verification pending |
-| Names/Glyph Notes.py | `rescued/samples/names_glyph_notes.py` | Unported; native verification pending |
-| Names/Unicode From Names.py | `rescued/samples/names_unicode_from_names.py` | Unported; native verification pending |
+| Names/Suffix Tool.py | `rescued/samples/names_suffix_tool.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Names/Batch Rename.py | `rescued/samples/names_batch_rename.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Names/Batch Glyph Notes.py | `rescued/samples/utility_batch_glyph_notes.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Names/Glyph Notes.py | `rescued/samples/names_glyph_notes.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Names/Unicode From Names.py | `rescued/samples/names_unicode_from_names.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Components/Build From Recipes.py | `rescued/samples/components_build_from_recipes.py` | Unported; native verification pending |
 | Components/Align By Anchor.py | `rescued/samples/components_align_by_anchor.py` | Unported; native verification pending |
 | Components/Decompose.py | `rescued/samples/components_decompose.py` | Unported; native verification pending |
@@ -71,11 +71,11 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Masters/Restore Backup Layer.py | `rescued/samples/masters_restore_backup.py` | Unported; native verification pending |
 | Masters/Copy Layer Between Masters.py | `rescued/samples/masters_copy_layer.py` | Unported; native verification pending |
 | Masters/Back Up Master Layers.py | `rescued/samples/masters_backup_layer.py` | Unported; native verification pending |
-| Anchors/Rename Bulk.py | `rescued/samples/anchors_rename_bulk.py` | Unported; native verification pending |
-| Anchors/Center Horizontally.py | `rescued/samples/anchors_center_horizontally.py` | Unported; native verification pending |
-| Anchors/Place From Bounds.py | `rescued/samples/anchors_place_from_bounds.py` | Unported; native verification pending |
-| Anchors/Snap To Metrics.py | `rescued/samples/anchors_snap_to_metrics.py` | Unported; native verification pending |
+| Anchors/Rename Bulk.py | `rescued/samples/anchors_rename_bulk.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Anchors/Center Horizontally.py | `rescued/samples/anchors_center_horizontally.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Anchors/Place From Bounds.py | `rescued/samples/anchors_place_from_bounds.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Anchors/Snap To Metrics.py | `rescued/samples/anchors_snap_to_metrics.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Anchors/Duplicates Finder.py | `rescued/samples/anchors_duplicates_finder.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Anchors/Round To Grid.py | `rescued/samples/anchors_round_to_grid.py` | Unported; native verification pending |
-| Anchors/Delete By Name.py | `rescued/samples/anchors_delete_by_name.py` | Unported; native verification pending |
-| Anchors/Mirror Across Masters.py | `rescued/samples/anchors_mirror_across_masters.py` | Unported; native verification pending |
+| Anchors/Round To Grid.py | `rescued/samples/anchors_round_to_grid.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Anchors/Delete By Name.py | `rescued/samples/anchors_delete_by_name.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Anchors/Mirror Across Masters.py | `rescued/samples/anchors_mirror_across_masters.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |

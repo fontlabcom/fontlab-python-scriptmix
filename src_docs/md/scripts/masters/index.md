@@ -1,9 +1,16 @@
 # Masters
 
 - [Compatibility Check](compatibility-check.md)
+- [Display Next Layer](display-next-layer.md)
+- [Display Previous Layer](display-previous-layer.md)
+- [Duplicate Current Layer](duplicate-current-layer.md)
 - [Glyph Weight Chart](glyph-weight-chart.md)
 - [Interpolation Preview](interpolation-preview.md)
 - [Italic Angle](italic-angle.md)
 - [Master Switcher](master-switcher.md)
 - [Overview](overview.md)
+- [Select Different Colour](select-different-colour.md)
+- [Selection To All Backgrounds](selection-to-all-backgrounds.md)
+- [Transform Background](transform-background.md)
+- [Use Layer As Master](use-layer-as-master.md)
 - [Width Chart](width-chart.md)

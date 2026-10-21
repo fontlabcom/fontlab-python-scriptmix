@@ -2,6 +2,34 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
+
+Add 27 non-modal tools; the active menu grows from 123 to 150 (81 additional
+tools). All are source candidates with offline tests; native FontLab acceptance
+is pending for every one.
+
+- Metrics: Italic Sidebearings, Round Advances, Centre In Advance, Zero-Width
+  Marks, Tabular Width and Scale Advances, adapted from the author's own
+  samples. Preview panels; Apply plans again from the live font; outlines move
+  in place; Scale Advances gives the odd unit to the right sidebearing.
+- Names: Glyph Tags, Mark Color Palette, Suffix Tool, Batch Rename, Batch Glyph
+  Notes, Glyph Notes and Unicode From Names, adapted from the author's own
+  samples. Every write rescans the font, never reads the fgGlyph getter and
+  reads each value back.
+- Anchors: Rename Bulk, Center Horizontally, Place From Bounds, Snap To Metrics,
+  Round To Grid, Delete By Name and Mirror Across Masters, adapted from the
+  author's own samples. Origin moves and duplicate names are refused; new pins
+  get the name-derived appearance.
+- Masters: Display Next Layer, Display Previous Layer, Duplicate Current Layer,
+  Use Layer As Master, Transform Background, Selection To All Backgrounds and
+  Select Different Colour, independent rewrites after Pedro Arilla's Glyphs
+  scripts (Apache-2.0).
+- Shared rules: one Undo step per font edit, auto layers never notified, bases
+  of auto layers refused where the operation could re-resolve them, refusal
+  while native glyph updates are pending, and no UpdateAll call (fl#8537).
+- Tracking: 27 rows in additional-tools.json, four NOTICE sections, 20 rows in
+  PORTING-BACKLOG.md marked as source candidates, and generated catalogue pages.
+
 ## Unreleased — Categories to XML Lib Key candidate
 
 Add Simon Cozens' complete ordered Mark/base UFO lib fragment workflow using

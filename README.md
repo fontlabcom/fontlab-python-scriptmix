@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 123 practical tools in one-level Title Case
-categories: 69 sample adaptations and 54 additional tools. Additional adaptations
+The curated `Scripts` folder contains 150 practical tools in one-level Title Case
+categories: 69 sample adaptations and 81 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -14,9 +14,19 @@ Copy the practical `Scripts` entries into FontLab9's Scripts folder after
 provisioning those dependencies. Automated tests do not change a live FontLab
 environment.
 
+Metrics, Names and Anchors gain 20 non-modal editors adapted from the author's
+own samples: sidebearing, advance and tabular-width tools; tag, mark, note,
+rename, suffix and Unicode editors; and anchor rename, centre, place, snap,
+round, delete and mirror tools. Masters gains seven layer tools rewritten after
+Pedro Arilla's Glyphs scripts: next/previous layer, duplicate layer, use layer
+as master, background transform and copy, and select by different colour. Each
+font edit is one Undo step, auto layers are never notified, and native
+acceptance is pending.
+
 ## Unfinished ports and preserved sources
 
-The 61 legacy archive launchers are outside the active menu. Their original
+The 61 legacy archive launchers are outside the active menu; 22 of them return
+as new ports listed in `additional-tools.json`, and 39 stay unported. Their original
 sources remain byte-exact in the existing private/local `rescued` tree. The
 complete [porting backlog](PORTING-BACKLOG.md) lists each unfinished tool;
 `rescue-index.json` retains historical menu paths, source paths and hashes.
