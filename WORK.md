@@ -47,6 +47,8 @@ this_file: WORK.md
   `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-w3-docs/fa00b53`, `./build.sh
   --offline` there: EXIT=0, 0 warnings, 257 catalogue pages; `src_docs/md/scripts`
   copied back with `rsync -a` (no delete) and `diff -r` identical.
+- Docs commit d977c66: `mix-archive.sh d977c66` 3706 passed, 0 failed, 1 skipped,
+  EXIT=0.
 - Scope: offline tests only. No FontLab, Remopy or fl-native.sh call. Native acceptance
   of all 73 new tools is pending.
 
