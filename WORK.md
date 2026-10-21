@@ -3330,3 +3330,30 @@ N117 complete reviewed Text Holder .100 integration atop sealed .98. Four exact
 reviewed literal editor modules; original Unicode/geometry/save/window workflow
 retained. One explicitly authorized report-pair module two-string product-copy
 exception; every other prior runtime/menu byte preserved. Native pending.
+
+N117 final integration verification (all exit0):
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/build_install.py`
+(ordinary .100 wheel/sdist; two App-only roots, immutable dependency fallback).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/run_consumers.py`
+(each archive:4089App,3182Glyport/1skip,4490Fontport/1skip,559Examples,
+991Scriptmix/1skip,199Lessons,17Fly:13527passed/3existing skips).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/docs.py`
+(full Scriptmix/Examples docs tests and strict builds in owned writable roots).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/coverage_report.py`
+(167App/68Examples/43Scriptmix whole modules from unchanged original baselines;
+every module80statement AND80branch, zeroexclusions, both archive lanes).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/audit_artifacts.py`
+(255App payload,37Examples/108Scriptmix menus;250priorruntime bytes exact,
+1root-authorized two-string report-pair exception,4reviewedTextHolder modules
+and tests exact; notices/licences/privacy/RECORD/fullsourceclosure PASS).
+`rtk proxy verification/issue-120/text-holder-integration-z36/wheel-env/bin/python -I -B verification/issue-120/text-holder-integration-z36/full_pipchecks.py`
+(both full installed dependency graphs pass after matching pip tooling).
+Each TEXT_HOLDER_LANE=wheel|sdist runs installed run_text_holder_controls.py
+with corresponding .100 env (Qt6) and readonly qt5-v8-env (FONTLABAPP_TEST_QT5=1):
+52producer controls plus actual public Fly/menu Unicode/geometry/save workflow
+PASS in all4lanes. All stores temporary-owned, no systemclipboard writes.
+Bounded inherited root .91revision5 PythonQt builtin_qt_slot MIME dispatch/GC/
+destruction proof PASS, exact4module source inherited; full .100nativeworkflow
+remains pending. No native/canonical/live/sourcecorpus writes, push or release.
+Final WORK-only commits preserve every measured runtime hash and unchanged
+whole-scope machinery rebinds final heads without repeating unchanged suites.
