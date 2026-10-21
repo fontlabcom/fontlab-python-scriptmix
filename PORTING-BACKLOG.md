@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 233 practical tools: 69 sample adaptations and 164
+The active menu contains 240 practical tools: 69 sample adaptations and 171
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -196,3 +196,14 @@ identity has one row. Source hashes of the ported sources are in
 | `slobzheninov/Glyphs-Scripts/Glyphs/Show All Layers.py` | Ported | Masters/Show All Layers.py | One proof row with every foreground layer of the selected glyphs |
 | `slobzheninov/Glyphs-Scripts/Glyphs/Copy Missing Special Layers.py` | Retired | — | FontLab has no Glyphs special-layer conditions |
 | `slobzheninov/Glyphs-Scripts/Bug fixing/Report Compatibility.py` | Duplicate of | Masters/Compatibility Check.py | Base report only; the export-flatten and overlap-filter states have no FontLab counterpart |
+| `pedroarilla/glyphs-scripts/Cleaning/Delete annotations in all layers.py` | Ported | Cleaning/Delete Stickers.py | All layers scope |
+| `pedroarilla/glyphs-scripts/Cleaning/Delete annotations in all master layers.py` | Ported | Cleaning/Delete Stickers.py | Master layers scope |
+| `pedroarilla/glyphs-scripts/Cleaning/Start-from-scratch.py` | Ported | Cleaning/Start From Scratch.py | Cleanup checklist with Preview and default-No confirmation |
+| `pedroarilla/glyphs-scripts/Components/Decompose all corner components.py` | Retired | — | FontLab has no named corner-component attachment model |
+| `pedroarilla/glyphs-scripts/Components/Decompose all serif components.py` | Ported | Components/Decompose Serif Components.py | Serif base-name prefix, one level; compare Components/Decompose Named Components.py |
+| `pedroarilla/glyphs-scripts/Components/Make component glyph for all masters.py` | Duplicate of | — | FontLab: Font > Build Glyphs (Characters mode, Rebuild existing glyphs, All masters) |
+| `pedroarilla/glyphs-scripts/Components/Make lower-unicase font.py` | Ported | Components/Make Lower Unicase.py | Lowercase components in uppercase cells on all masters |
+| `pedroarilla/glyphs-scripts/Components/Set default figures.py` | Ported | Components/Set Default Figures.py | Chosen figure set as the default digits on every master |
+| `pedroarilla/glyphs-scripts/Paths/Make zero handles selected glyphs.py` | Ported | Contours/Retract Handles.py | All handles |
+| `pedroarilla/glyphs-scripts/Paths/Make zero handles selected nodes.py` | Ported | Contours/Retract Handles.py | Handles of the selected nodes |
+| `pedroarilla/glyphs-scripts/Paths/Simplify selection.py` | Ported | Contours/Simplify Selected Nodes.py | Alternate-node removal from selected polygon nodes |

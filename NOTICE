@@ -1449,3 +1449,30 @@ export states.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Cleaning, Components and Contours tools after Pedro Arilla
+==========================================================
+
+Independent rewrites of scripts by Pedro Arilla, pedroarilla/glyphs-scripts,
+copyright 2017 (LICENSE.txt) and 2018-2022 (README) Pedro Arilla, Apache
+License 2.0 (https://github.com/pedroarilla/glyphs-scripts):
+
+- Cleaning/Delete Stickers: Cleaning/Delete annotations in all layers.py and
+  Delete annotations in all master layers.py.
+- Cleaning/Start From Scratch: Cleaning/Start-from-scratch.py.
+- Components/Decompose Serif Components: Components/Decompose all serif
+  components.py.
+- Components/Make Lower Unicase: Components/Make lower-unicase font.py, based
+  on Georg Seifert's Make Unicase Font idea.
+- Components/Set Default Figures: Components/Set default figures.py.
+- Contours/Retract Handles: Paths/Make zero handles selected glyphs.py and
+  Make zero handles selected nodes.py.
+- Contours/Simplify Selected Nodes: Paths/Simplify selection.py.
+
+Components/Make component glyph for all masters.py is covered by FontLab's
+Font > Build Glyphs (Characters mode, Rebuild existing glyphs, All masters).
+Components/Decompose all corner components.py has no counterpart: FontLab
+has no named corner-component attachment model.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.

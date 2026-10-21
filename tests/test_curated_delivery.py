@@ -21,7 +21,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 164 and len(actual) == 233
+    assert len(rows) == 69 and len(extra) == 171 and len(actual) == 240
     for relative in actual:
         path = ROOT / relative
         assert len(Path(relative).parts) == 3, relative
@@ -104,7 +104,8 @@ NEW_TOOLS = {
                 "Selection Layer Navigator", "Reorder Shapes", "Show All Layers"],
     "Components": ["Build From Recipes", "Align By Anchor", "Decompose", "Replace Reference",
                    "Copy Offsets Between Masters", "Unlock Lock", "Nested Finder",
-                   "Decompose Named Components", "Set Component Locations"],
+                   "Decompose Named Components", "Set Component Locations",
+                   "Decompose Serif Components", "Make Lower Unicase", "Set Default Figures"],
     "Cleanup": ["Empty Layers"],
     "Contours": ["Round Coordinates", "Remove Overlap", "Add Extremes", "Correct Contour Direction",
                  "Straighten Short Curves", "Optimize Start Points", "Delete Small Contours",
@@ -115,13 +116,15 @@ NEW_TOOLS = {
                  "Curve All Straights", "Delete Close Points", "Make Compatible", "Sandblast",
                  "Straighten All Curves", "Superaligner", "Interpolated Nudge", "Sansomatic",
                  "Myanmar Medial Ra Maker", "Align And Distribute", "Rotate Selection",
-                 "Reflect Horizontally", "Reflect Vertically", "Overlap Nodes"],
+                 "Reflect Horizontally", "Reflect Vertically", "Overlap Nodes", "Retract Handles",
+                 "Simplify Selected Nodes"],
     "Proof": ["Real English Text", "Real Spanish Text"],
     "Font Info": ["Trial Font Maker", "Paste Glyph Order Encoding"],
     "Utilities": ["Magic Remover"],
     "Kerning": ["Kerning Energy Report", "Unbundle Punctuation Kerning",
                 "Delete Kerning Pair From All Masters", "Kern To Max", "Steal Kerning From Next Pair"],
     "Features": ["Nastaliq Connection Editor", "Generate Random Alternates Feature"],
+    "Cleaning": ["Start From Scratch", "Delete Stickers"],
 }
 
 
@@ -129,7 +132,7 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     rows = {row["destination"]: row for row in json.loads((ROOT / "additional-tools.json").read_text())}
     wanted = [f"Scripts/{folder}/{name}.py" for folder, names in NEW_TOOLS.items() for name in names]
     wanted.append("Scripts/Contours/Raise Ascender.py")
-    assert len(wanted) == 111
+    assert len(wanted) == 118
     floors = {path: rows[path]["app_minimum"] for path in wanted}
     assert set(floors.values()) == {"0.2.150.dev0"}, floors
 
