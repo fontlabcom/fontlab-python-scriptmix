@@ -570,3 +570,20 @@ Find first/highlight; UTF16-correct selected-or-whole replacement; Save stays
 open, Save & Close, Ignore & Close; owned-path UTF8 persistence and window size.
 Source/licence disposition retained; no original body is copied or executed.
 No native calls or user-store validation. Native acceptance remains pending.
+
+N97 geometry repair: preserve initial content500×400 separately from source
+NS frame min500×400/max1200×800. Persist decorated frame sizes, restore client
+sizes by measured chrome and map literal Cocoa origin(0,500) through complete
+primary logical screen geometry/current frame height after first show; no
+availableGeometry, DPR scaling or silent clamp. Prior .91 commits/artifacts
+are retained in attempt2; no immutable final .91 freeze existed before repair.
+27 focused actualQt5 controls pass; independent geometry controls pass bothQt5
+andQt6. Native qualification remains pending on root final combined .92.
+
+N97 final source fidelity: use normal Qt.Window with stays-on-top and explicit
+title/system/close/minmax hints, matching original Vanilla Window/NSWindow
+role rather than Tool/NSPanel hide-on-deactivation behavior. Preserve literal
+button ampersands, full frame constraints, Cocoa origin and saved frame sizes.
+Producer28 actualQt5 controls and independent32controls perQt5/Qt6 pass;
+ordinary final .91 artifacts and full declared147/42 gates are bound separately.
+Native acceptance remains pending on root combined .92, never claimed for .91.

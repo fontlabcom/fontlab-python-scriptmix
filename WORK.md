@@ -3208,3 +3208,34 @@ Initial missing-module, receiver-disconnect and old-artifact label-layout failur
 remain retained; the first non-discriminating macOS mnemonic-only control also
 remains visible. NativeFontLab qualification remains pending; tests write only
 owned temporary stores. No default user store, canonical edit or native call.
+
+N97 geometry repair: preserve initial content500×400 separately from source
+NS frame min500×400/max1200×800. Persist decorated frame sizes, restore client
+sizes by measured chrome and map literal Cocoa origin(0,500) through complete
+primary logical screen geometry/current frame height after first show; no
+availableGeometry, DPR scaling or silent clamp. Prior .91 commits/artifacts
+are retained in attempt2; no immutable final .91 freeze existed before repair.
+27 focused actualQt5 controls pass; independent geometry controls pass bothQt5
+andQt6. Native qualification remains pending on root final combined .92.
+
+N97 final source fidelity: use normal Qt.Window with stays-on-top and explicit
+title/system/close/minmax hints, matching original Vanilla Window/NSWindow
+role rather than Tool/NSPanel hide-on-deactivation behavior. Preserve literal
+button ampersands, full frame constraints, Cocoa origin and saved frame sizes.
+Producer28 actualQt5 controls and independent32controls perQt5/Qt6 pass;
+ordinary final .91 artifacts and full declared147/42 gates are bound separately.
+Native acceptance remains pending on root combined .92, never claimed for .91.
+
+N97 final ordinary source/artifact gates (exit0):
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/check_artifacts.py`
+(wheel and sdist:3695 App passed;990 Scriptmix passed/1skip each;235runtime
+files exact; actual installed Fly/Qt6 menu workflow; owned temporary stores).
+`FONTLABAPP_TEST_QT5=1 QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 rtk proxy verification/issue-120/glyph-completion-z20/qt5-v8-env/bin/python -I -B verification/issue-120/text-holder-z34/installed_qt5.py`
+(28producer controls+actual installed Fly workflow,Qt5.15.19).
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/whole_gates.py`
+(complete147App/42Scriptmix modules; unchanged80statement/80branch floors,
+zero exclusions; full3695/990+1skip suites and15docs tests).
+`rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/check_docs.py`
+(15docs tests+strict107-menu catalogue). Final commit scopes re-derived by
+unchanged milestone machinery against the exact measured source hashes.
+No canonical/live/native/store writes or push; root qualifies combined.92.
