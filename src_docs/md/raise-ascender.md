@@ -3,7 +3,7 @@ this_file: src_docs/md/raise-ascender.md
 ---
 # Raise Ascender
 
-Choose **Contours > Raise Ascender** in Scriptmix (App .155 or later). Enter an Amount (default `10`).
+Choose **Contours > Raise Ascender** in Scriptmix (App .157 or later). Enter an Amount (default `10`).
 **Raise this master**, the default action, processes every currently selected
 layer occurrence in selection order. Repeated occurrences remain repeated.
 **Raise all masters** processes every foreground layer of the first selected

@@ -640,3 +640,5 @@ N214: qualify the complete integrated .141 ordinary artifacts in FontLab, includ
 N240 Raise Ascender .150: source/artifact candidate verified; independent review and complete native original-domain qualification still required. Preserve every selected occurrence and first-parent ALL layers, plus hint/metadata/history/Redo/reopen and unknown association cases. Do not count diagnosed unsupported native cases as successful original actions.
 
 N257 .155 panel lifetime repair: source/artifact gates pass; independent repaired-tuple review and all original native domains still pending. Shared completion unchanged; successful UI retirement separate from failed live-Close retry.
+
+N263 .157 repair2: complete the independent repaired-tuple review of failed helper/retry/parent-destruction lifetime; all original Raise Ascender native domains and full-font history/reopen qualification remain required. Preserve .155 ITERATE evidence.
