@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 167 practical tools: 69 sample adaptations and 98
+The active menu contains 178 practical tools: 69 sample adaptations and 109
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -46,25 +46,25 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Components/Nested Finder.py | `rescued/samples/components_nested_finder.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Cleanup/Empty Layers.py | `rescued/samples/cleanup_empty_layers.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Guides/Suggest Zones From Overshoots.py | `rescued/samples/zones_from_glyphs.py` | Unported; held until the App has a qualified native zone writer (suggest rule in fontlabapp.alignment_zones) |
-| Contours/Round Coordinates.py | `rescued/samples/outlines_round_coordinates.py` | Unported; native verification pending |
+| Contours/Round Coordinates.py | `rescued/samples/outlines_round_coordinates.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Autohint Selected Layers.py | `rescued/samples/hints_autohint.py` | Unported; native verification pending |
 | Contours/Placeholder Glyphs.py | `rescued/samples/generate_placeholder_glyphs.py` | Unported; native verification pending |
 | Contours/Shadow Copy.py | `rescued/samples/generate_shadow.py` | Unported; native verification pending |
-| Contours/Remove Overlap.py | `rescued/samples/outlines_remove_overlap.py` | Unported; native verification pending |
-| Contours/Add Extremes.py | `rescued/samples/outlines_add_extremes.py` | Unported; native verification pending |
-| Contours/Correct Contour Direction.py | `rescued/samples/outlines_correct_direction.py` | Unported; native verification pending |
+| Contours/Remove Overlap.py | `rescued/samples/outlines_remove_overlap.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Contours/Add Extremes.py | `rescued/samples/outlines_add_extremes.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Contours/Correct Contour Direction.py | `rescued/samples/outlines_correct_direction.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Remove PostScript Hints.py | `rescued/samples/hints_remove.py` | Unported; native verification pending |
-| Contours/Straighten Short Curves.py | `rescued/samples/outlines_straighten_short_curves.py` | Unported; native verification pending |
-| Contours/Optimize Start Points.py | `rescued/samples/outlines_optimize_start_points.py` | Unported; native verification pending |
-| Contours/Delete Small Contours.py | `rescued/samples/outlines_delete_small_contours.py` | Unported; native verification pending |
-| Contours/Transform.py | `rescued/samples/outlines_transform_dialog.py` | Unported; native verification pending |
+| Contours/Straighten Short Curves.py | `rescued/samples/outlines_straighten_short_curves.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Contours/Optimize Start Points.py | `rescued/samples/outlines_optimize_start_points.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Contours/Delete Small Contours.py | `rescued/samples/outlines_delete_small_contours.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Contours/Transform.py | `rescued/samples/outlines_transform_dialog.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Tabular Figure Copies.py | `rescued/samples/generate_tabular_copies.py` | Unported; native verification pending |
 | Contours/Outline Effect.py | `rescued/samples/generate_outline_effect.py` | Unported; native verification pending |
 | Contours/Superior & Inferior Figures.py | `rescued/samples/generate_superiors.py` | Unported; native verification pending |
-| Contours/Fix Zero Handles.py | `rescued/samples/outlines_fix_zero_handles.py` | Unported; native verification pending |
-| Contours/Slant.py | `rescued/samples/outlines_slant.py` | Unported; native verification pending |
+| Contours/Fix Zero Handles.py | `rescued/samples/outlines_fix_zero_handles.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Contours/Slant.py | `rescued/samples/outlines_slant.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Small Caps From Capitals.py | `rescued/samples/generate_small_caps.py` | Unported; native verification pending |
-| Contours/Delete Duplicate Contours.py | `rescued/samples/outlines_delete_duplicate_contours.py` | Unported; native verification pending |
+| Contours/Delete Duplicate Contours.py | `rescued/samples/outlines_delete_duplicate_contours.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Masters/Copy Outline To Mask.py | `rescued/samples/masters_copy_to_mask.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Masters/Layer Cleanup.py | `rescued/samples/masters_layer_cleanup.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Masters/Sync Sidebearings.py | `rescued/samples/masters_sync_metrics.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |

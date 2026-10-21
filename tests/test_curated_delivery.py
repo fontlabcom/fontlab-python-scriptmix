@@ -21,7 +21,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 98 and len(actual) == 167
+    assert len(rows) == 69 and len(extra) == 109 and len(actual) == 178
     for relative in actual:
         path = ROOT / relative
         assert len(Path(relative).parts) == 3, relative
@@ -61,8 +61,8 @@ def test_reused_bodies_when_listed_then_only_the_authors_own_apache_samples():
     rows = json.loads((ROOT / "additional-tools.json").read_text())
     reused = [row for row in rows if row.get("source_body_redistributed") is True]
     families = sorted({row["destination"].split("/")[1] for row in reused})
-    assert families == ["Anchors", "Cleanup", "Components", "Masters", "Metrics", "Names"], families
-    assert len(reused) == 37, [row["destination"] for row in reused]
+    assert families == ["Anchors", "Cleanup", "Components", "Contours", "Masters", "Metrics", "Names"], families
+    assert len(reused) == 48, [row["destination"] for row in reused]
     for row in reused:
         assert row["license"] == "Apache-2.0", row["destination"]
         assert row["source_path"].startswith("rescued/samples/"), row["destination"]
@@ -100,6 +100,9 @@ NEW_TOOLS = {
     "Components": ["Build From Recipes", "Align By Anchor", "Decompose", "Replace Reference",
                    "Copy Offsets Between Masters", "Unlock Lock", "Nested Finder"],
     "Cleanup": ["Empty Layers"],
+    "Contours": ["Round Coordinates", "Remove Overlap", "Add Extremes", "Correct Contour Direction",
+                 "Straighten Short Curves", "Optimize Start Points", "Delete Small Contours",
+                 "Fix Zero Handles", "Delete Duplicate Contours", "Transform", "Slant"],
 }
 
 
@@ -107,7 +110,7 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     rows = {row["destination"]: row for row in json.loads((ROOT / "additional-tools.json").read_text())}
     wanted = [f"Scripts/{folder}/{name}.py" for folder, names in NEW_TOOLS.items() for name in names]
     wanted.append("Scripts/Contours/Raise Ascender.py")
-    assert len(wanted) == 45
+    assert len(wanted) == 56
     floors = {path: rows[path]["app_minimum"] for path in wanted}
     assert set(floors.values()) == {"0.2.150.dev0"}, floors
 
