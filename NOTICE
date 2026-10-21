@@ -524,3 +524,12 @@ Original SHA-256: 182c1c2486d79729632ea08ddc45c4c3aab8ccb19508ddb0276498a43c8c14
 No licence declaration was found in the inspected source tree. No original
 body is copied, executed or redistributed. This independently written
 implementation is Apache-2.0; complete terms are in LICENSE.
+
+
+Reza Bohloul Point Counter (master layers)
+========================================
+Independent implementation of the inspected RezaBohloul/RezaBohloul
+Path/Point Counter.py workflow, source SHA256 d6eeb1c6ba156dc03208b2d82362295f0f376a389f1414477c8abb0539e6bb6c.
+No licence is declared in the inspected source tree; no original body is
+redistributed. New implementation is Apache-2.0 under this project licence.
+Quadratic endpoints are included explicitly, correcting the original omission.

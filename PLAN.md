@@ -611,3 +611,7 @@ tripwire is RED on revision4 source/GREEN now.52producer Qt5/Qt6 controls pass.
 Revision4 ordinary archives eef6ac94.../305df303... and full148/42 gates remain
 retained as a prior source attempt, with no immutable candidate promotion.
 Fresh revision5 ordinary artifacts/full unchanged gates bind this repair.
+
+## N145 remaining qualification
+
+Qualify .118 master-layer Point Counter literal MIME, readonly entry and full native source/font preservation on the final combined tuple.

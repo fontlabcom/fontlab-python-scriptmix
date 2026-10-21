@@ -3362,3 +3362,9 @@ destruction proof PASS, exact4module source inherited; full .100nativeworkflow
 remains pending. No native/canonical/live/sourcecorpus writes, push or release.
 Final WORK-only commits preserve every measured runtime hash and unchanged
 whole-scope machinery rebinds final heads without repeating unchanged suites.
+
+## N145 .118 Point Counter literal selection repair
+
+Import complete Reza master-layer report on reviewed .106, preserving its prior workflows.
+Reuse unchanged Text Holder literal editor read-only; preserve NBSP/LS/PS and UTF16 selections.
+F1 RED, complete artifacts/consumer/coverage results are recorded after verification. Native pending.

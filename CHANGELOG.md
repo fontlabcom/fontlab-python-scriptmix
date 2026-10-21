@@ -851,3 +851,9 @@ tripwire is RED on revision4 source/GREEN now.52producer Qt5/Qt6 controls pass.
 Revision4 ordinary archives eef6ac94.../305df303... and full148/42 gates remain
 retained as a prior source attempt, with no immutable candidate promotion.
 Fresh revision5 ordinary artifacts/full unchanged gates bind this repair.
+
+## N145 .118 Point Counter literal selection repair
+
+Import complete Reza master-layer report on reviewed .106, preserving its prior workflows.
+Reuse unchanged Text Holder literal editor read-only; preserve NBSP/LS/PS and UTF16 selections.
+F1 RED, complete artifacts/consumer/coverage results are recorded after verification. Native pending.

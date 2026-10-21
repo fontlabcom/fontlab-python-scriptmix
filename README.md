@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 109 practical tools in one-level Title Case
+The curated `Scripts` folder contains 110 practical tools in one-level Title Case
 categories: 69 sample adaptations and 40 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
@@ -119,3 +119,7 @@ Anchors > Duplicates Finder is the complete native-pending source candidate for 
 Text Holder provides a complete editable persistent proof-text scratchpad,
 with Find, selected-or-whole replacement and distinct Save/Close controls.
 Requires App0.2.100.dev0; native qualification pending. See [Text Holder](docs/text-holder.md).
+
+Reports → Point Counter (Master Layers) counts every stored master per selected occurrence.
+It keeps repeated/empty rows, own contours only and a selectable fixed normal window.
+Quadratic endpoints are intentionally included; generated-shape/native qualification remains pending.

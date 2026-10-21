@@ -755,5 +755,22 @@
     "native_acceptance": "pending",
     "release_gate": "pending independent review and owned FontLab/PythonQt lifecycle/storage qualification",
     "app_minimum": "0.2.100.dev0"
+  },
+  {
+    "title": "Point Counter (Master Layers)",
+    "key": "master-point-counter",
+    "destination": "Scripts/Reports/Point Counter (Master Layers).py",
+    "destination_sha256": "eb7cae651b7ff4886300f9090d4c1f9e18fba1146a39ebb400b390ce8f2f5334",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Path/Point Counter.py",
+    "source_sha256": "d6eeb1c6ba156dc03208b2d82362295f0f376a389f1414477c8abb0539e6bb6c",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Every selected occurrence, stored master layers only, empty masters/repeats, own paths/handles/nodes, normal fixed400x300 readonly report; quadratic endpoints included as explicit source correction. Literal readonly MIME via unchanged reviewed Text Holder editor; report-local native IME refusal.",
+    "app_minimum": "0.2.118.dev0",
+    "native_acceptance": "pending"
   }
 ]

@@ -155,3 +155,5 @@ Choose a category, then a script. Each page includes its actual menu source.
 ## Utilities
 
 - [Text Holder](utilities/text-holder.md)
+
+- [Point Counter (Master Layers)](reports/point-counter-master-layers.md)
