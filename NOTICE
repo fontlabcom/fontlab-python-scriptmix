@@ -1132,7 +1132,7 @@ copyright 2018-2022 Pedro Arilla, Apache License 2.0
 
 No source code or source corpus was copied. Each tool contains 24 original
 proof passages under Apache-2.0; the upstream third-party excerpts are not
-redistributed. Source and licence SHA-256 values are in additional-tools.json.
+redistributed. Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Contours tools after Reset Type Studio
 ======================================
@@ -1148,7 +1148,7 @@ declared in its README.md; the repository has no separate LICENSE file
   masters).py, combined in one tool.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Components tools after Reset Type Studio
 ========================================
@@ -1172,7 +1172,7 @@ answers font-axis locations, and glyph-specific axes use source-layer
 locations, which Masters/Set Intermediate Layer creates.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Font Info tool after Reset Type Studio
 ======================================
@@ -1191,7 +1191,7 @@ FontLab and by existing tools, and FontInfo/Set TTFAutohint Options
 Automatically.py has no counterpart here; see PORTING-BACKLOG.md.
 
 No source code was copied; the script reproduces the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Reza Bohloul — Magic Remover (independent implementation)
 ------------------------------------------------------
@@ -1241,7 +1241,7 @@ https://github.com/RezaBohloul/RezaBohloul), are covered by FontLab and by
 existing tools or have no counterpart here; see PORTING-BACKLOG.md.
 
 No source code was copied; the script reproduces the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Masters and Names tools after Resistenza Type
 =============================================
@@ -1259,7 +1259,7 @@ PostScript names and output file names, and PostScript names are set per
 master.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Masters proof tools after Luke Prowse
 =====================================
@@ -1274,7 +1274,7 @@ MIT and the README declares Apache-2.0; both notices are preserved:
 
 No source code or preset text was copied; the scripts reproduce the
 behaviour for FontLab. Source and licence SHA-256 values are in
-additional-tools.json.
+additional-tools.json and PORTING-BACKLOG.md.
 
 Anchors tools after Simon Cozens
 ================================
@@ -1299,7 +1299,7 @@ Python API has no default-anchor regeneration.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab
 and are Apache-2.0. Source and licence SHA-256 values are in
-additional-tools.json.
+additional-tools.json and PORTING-BACKLOG.md.
 
 Contours tools after Simon Cozens
 =================================
@@ -1325,7 +1325,7 @@ Metrics/Round Advances. glyphmonkey.py is a helper module with no menu
 action.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Kerning and Contours tools after Simon Cozens
 =============================================
@@ -1344,7 +1344,7 @@ Autokern.py is covered by FontLab's Pairs panel > Autokern selected pairs
 Grid.py by Guides/Grid Generator.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Script tools after Simon Cozens
 ===============================
@@ -1363,7 +1363,7 @@ redistributed.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab
 and are Apache-2.0. Source and licence SHA-256 values are in
-additional-tools.json.
+additional-tools.json and PORTING-BACKLOG.md.
 
 Contours alignment tool after Alex Slobzheninov
 ===============================================
@@ -1382,7 +1382,7 @@ Apache-2.0):
 Align/Center Selected Glyphs.py is covered by Metrics/Centre In Advance.
 
 No source code was copied; the script reproduces the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Contours transform tools after Alex Slobzheninov
 ================================================
@@ -1402,7 +1402,7 @@ slobzheninov/Glyphs-Scripts, copyright 2020, Apache License 2.0
 G2 Harmonize.py is covered by FontLab's Contour > Harmonize.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Masters layer navigator after Alex Slobzheninov
 ===============================================
@@ -1422,7 +1422,7 @@ Screen), Preferences > Glyph window > Dark preview, and Window > Panels >
 Python.
 
 No source code was copied; the script reproduces the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Kerning, Features and Masters tools after Alex Slobzheninov
 ===========================================================
@@ -1448,7 +1448,7 @@ FontLab has no Glyphs special-layer conditions or corner and cap component
 export states.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
 Cleaning, Components and Contours tools after Pedro Arilla
 ==========================================================
@@ -1475,4 +1475,4 @@ Components/Decompose all corner components.py has no counterpart: FontLab
 has no named corner-component attachment model.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
-Source and licence SHA-256 values are in additional-tools.json.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
