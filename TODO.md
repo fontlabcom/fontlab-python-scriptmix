@@ -142,3 +142,7 @@ N68 repair round1 (.82): preserve first selected parent only, without layer or l
 - [ ] Independently review and root-native-qualify complete .141 typed Cutoff/Symmetry, numeric and Character Map union without narrowing original predicates or holds.
 
 - [ ] N235: final independent complete .148 source/artifact review and separate root-only complete native/preservation qualification.
+
+- [ ] N236: independently review complete .149 source/artifacts and native-qualify all five proof tabs with whole-font/workspace/history preservation.
+
+- [ ] N248: independent final .153 integration review and separate complete native/preservation acceptance.

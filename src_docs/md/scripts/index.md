@@ -11,6 +11,11 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Duplicates Finder](anchors/duplicates-finder.md)
 - [Mark Attachment Preview](anchors/mark-attachment-preview.md)
 
+## Cleaning
+
+- [Clear All Layer Backgrounds](cleaning/clear-all-layer-backgrounds.md)
+- [Clear Master Backgrounds](cleaning/clear-master-backgrounds.md)
+
 ## Cleanup
 
 - [Select Unreferenced Glyphs](cleanup/select-unreferenced-glyphs.md)
@@ -118,6 +123,10 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyphs Surrounded by I](proof/glyphs-surrounded-by-i.md)
 - [Glyphs Surrounded by Nnonn](proof/glyphs-surrounded-by-nnonn.md)
 - [Highest & Lowest Glyphs](proof/highest-lowest-glyphs.md)
+- [Hoefler Lowercase](proof/hoefler-lowercase.md)
+- [Hoefler Uppercase](proof/hoefler-uppercase.md)
+- [KernKing](proof/kernking.md)
+- [KernSym](proof/kernsym.md)
 - [Random Lowercase Nontext](proof/random-lowercase-nontext.md)
 - [Random Lowercase Words](proof/random-lowercase-words.md)
 - [Random Numbers](proof/random-numbers.md)

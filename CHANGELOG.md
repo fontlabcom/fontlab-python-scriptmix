@@ -913,3 +913,22 @@ Add the complete Science Gothic 28-target/378-comparison Symmetry writer with lo
 N226: private .145 coherent union on reviewed .141; complete admitted CopyAnchors/shared scalar-style reader .144 and TextHolder/literal helper .139revision3 retained. Fresh artifacts/full consumer/Qt/whole-original coverage verification pending; full native qualification remains separate. No host/canonical/live install writes.
 
 N235: integrate complete reviewed literal TextHolder/anchor tools, both literal Find Files profiles and generic Qt table items without replacing prior workflows; host acceptance remains pending.
+
+## N236 — complete four kerning proofs
+
+Add Hoefler Lowercase, Hoefler Uppercase, KernKing and KernSym through shared App/Fly. Keep all five exact licensed texts and KernKing two-tab order. Preserve Output. Ordinary artifact/current consumer/whole-module verification follows; full native tabs/font/history acceptance remains pending.
+
+### N228 — paired whole-font background cleaning candidate
+
+- Add distinct all-layer and declared-master background removal tools through Fly/App.
+- Remove original whole mask objects; reject ambiguous mapping and automatic dependencies before history.
+- Contain partial native failures with one final notification and explicit Undo diagnosis. Native acceptance pending.
+
+### N239 — background failure and active-state repair candidate
+
+- Always attempt one final notification after attempted removal, aggregate individual pre/post stamp and notification errors.
+- Use nonassigning active resolver; active/locked backgrounds remain explicitly unsupported original-domain gates.
+- Prepare survivor identities in checked per-glyph passes before history, and fence final staged sources/queue.
+- No native acceptance or reconstructed background rollback.
+
+N248 complete .153 union retains reviewed .148 and all four .149 proof workflows/five licensed texts, both complete .151 background cleaners and final admitted .152 Character Map contrast. Preserve full original workflow/coverage denominators and all prior menus. Active/locked backgrounds remain UNACCEPTED; all native font/history/reopen gates stay open. No canonical/native/live installation/push.

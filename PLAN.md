@@ -637,3 +637,7 @@ Independently review the complete typed Symmetry/Cutoff .137 donor, then integra
 N214: qualify the complete integrated .141 ordinary artifacts in FontLab, including typed Cutoff/Symmetry setters/history/diagnostics, original378 pair sequence and master filters, numeric caller lifetimes and font-dependent Character Map usable viewport. Preserve every existing whole-font/session/NUL hold; no native-completion claim from ordinary tests.
 
 N235: independently review exact complete .148 union and qualify root-only native full original workflows, true NUL IME/copy/restore, OS chooser/filesystem boundaries and complete two-font/source/destination/history/reopen preservation. All original scope and native holds remain.
+
+N236: qualify all four complete installed kerning proof workflows, including exact five texts, named/Unicode symbols, ordered fresh KernKing tabs, source/master binding, failure cleanup, user Output and full native font/workspace/history preservation.
+
+N248 complete .153 union retains reviewed .148 and all four .149 proof workflows/five licensed texts, both complete .151 background cleaners and final admitted .152 Character Map contrast. Preserve full original workflow/coverage denominators and all prior menus. Active/locked backgrounds remain UNACCEPTED; all native font/history/reopen gates stay open. No canonical/native/live installation/push.

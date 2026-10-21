@@ -593,7 +593,7 @@
     "source_sha256": "d6814436e871cc1e80668d31bb3b15428107d5fd6cbdd3976d74643b3a3a2840",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018\u20132022 Pedro Arilla",
+    "copyright": "2018–2022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -610,7 +610,7 @@
     "source_sha256": "fe88203e787c5a5e9ada86c16b25e4f9da0a1afe29391a197b26b67fa8a15c20",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018\u20132022 Pedro Arilla",
+    "copyright": "2018–2022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -627,7 +627,7 @@
     "source_sha256": "082e445b23e6085ace77ebc30ecb4025dc0210185d1646b854129630158dc444",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018\u20132022 Pedro Arilla",
+    "copyright": "2018–2022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -720,7 +720,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "source_body_redistributed": false,
     "native_acceptance": "pending",
-    "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict \u00b12 angle/position, \u00b15% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
+    "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict ±2 angle/position, ±5% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
   },
   {
     "title": "Duplicates Finder",
@@ -859,5 +859,122 @@
     "app_minimum": "0.2.144.dev0",
     "native_acceptance": "pending",
     "scope": "Complete two-font and master/layer selectors, four Refresh controls, all/selected glyphs, all/specific anchors, absolute/relative/italic coordinates, literal overwrite/incoming/destination collision modes and suffix; actual destination single-history writer. Selected source explicitly matches active Font-window carrier; duplicate basenames bind IDs. Full owned native two-font/history/rawflags/reopen qualification remains required."
+  },
+  {
+    "title": "Hoefler Lowercase",
+    "key": "kerning-proof-hoefler-lowercase",
+    "destination": "Scripts/Proof/Hoefler Lowercase.py",
+    "destination_sha256": "8daed3726f7859c2cb1250405f067fb63c58e79abd5b204bda7e72b2cfa5ab95",
+    "kind": "complete-original-proof-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source": "Kerning/Hoefler Lowercase.py",
+    "source_sha256": "fb4c261c58395e4e7a2bf847324793e25adb05e19b6b628d04f64af84e5fddf6",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "source_text_sha256": [
+      "20aa5f420ae61a4ab18c4a6cba81871db6a53f0c7786cc04e3de699c172eda0c"
+    ],
+    "source_body_redistributed": false,
+    "source_data_preserved": true,
+    "scope": "Complete original proof content; 1 ordered fresh native tabs; named slash escapes, Unicode, whitespace and blank lines retained. No Output clearing; native full-font/workspace acceptance pending.",
+    "app_minimum": "0.2.149.dev0",
+    "native_acceptance": "pending"
+  },
+  {
+    "title": "Hoefler Uppercase",
+    "key": "kerning-proof-hoefler-uppercase",
+    "destination": "Scripts/Proof/Hoefler Uppercase.py",
+    "destination_sha256": "dd6fbf7004e111e4f99da33fc553ea637f412f82f423a5a027262b2130c3ece7",
+    "kind": "complete-original-proof-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source": "Kerning/Hoefler Uppercase.py",
+    "source_sha256": "974e766b7ce3de73f05cd2b88e2ebf74dffd9372b3ffa3ed4e9c3d0f1de0641c",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "source_text_sha256": [
+      "54d4c7c3ec6d0700af6ae265de9a181fd01b03ffdb10bec2cc65603fb8455ff8"
+    ],
+    "source_body_redistributed": false,
+    "source_data_preserved": true,
+    "scope": "Complete original proof content; 1 ordered fresh native tabs; named slash escapes, Unicode, whitespace and blank lines retained. No Output clearing; native full-font/workspace acceptance pending.",
+    "app_minimum": "0.2.149.dev0",
+    "native_acceptance": "pending"
+  },
+  {
+    "title": "KernKing",
+    "key": "kerning-proof-kernking",
+    "destination": "Scripts/Proof/KernKing.py",
+    "destination_sha256": "1346a957d4059a3c713bee361989f7eb15f91feb77943cf971ec38fdceb8051d",
+    "kind": "complete-original-proof-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source": "Kerning/KernKing.py",
+    "source_sha256": "eb57f380919efb42c5cd7d88eb321da0ed5b08d3b43717b309b9187b15a5b857",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "source_text_sha256": [
+      "383c5749dfa776f773b6e8c62b33bac68adf2beec623d5dd92e48d69350a4853",
+      "80257cceb710af86ee65adceb26b516f77fccb61f9f7446bac1786c920ffd047"
+    ],
+    "source_body_redistributed": false,
+    "source_data_preserved": true,
+    "scope": "Complete original proof content; 2 ordered fresh native tabs; named slash escapes, Unicode, whitespace and blank lines retained. No Output clearing; native full-font/workspace acceptance pending.",
+    "app_minimum": "0.2.149.dev0",
+    "native_acceptance": "pending"
+  },
+  {
+    "title": "KernSym",
+    "key": "kerning-proof-kernsym",
+    "destination": "Scripts/Proof/KernSym.py",
+    "destination_sha256": "830254b09f69e6b62abfeb4d4f19570458289a0ba267af90d0085490f5a3a20a",
+    "kind": "complete-original-proof-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source": "Kerning/KernSym.py",
+    "source_sha256": "b9bdc90cfbb887724b53159e00614b78b75ca68c97c7eca2697af087b159df95",
+    "license": "Apache-2.0",
+    "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
+    "source_text_sha256": [
+      "2727482ae2f352ce86c25ddd205781d6baced3e69345a6e752a1e5505c93033c"
+    ],
+    "source_body_redistributed": false,
+    "source_data_preserved": true,
+    "scope": "Complete original proof content; 1 ordered fresh native tabs; named slash escapes, Unicode, whitespace and blank lines retained. No Output clearing; native full-font/workspace acceptance pending.",
+    "app_minimum": "0.2.149.dev0",
+    "native_acceptance": "pending"
+  },
+  {
+    "title": "Clear All Layer Backgrounds",
+    "key": "background_clear_show_all",
+    "destination": "Scripts/Cleaning/Clear All Layer Backgrounds.py",
+    "destination_sha256": "3671e9371e32ec5414ff0b529ec8f5d902229b938a32a2291631f991676d6c8c",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source_path": "Cleaning/Clear background in all layers.py",
+    "source_sha256": "efdddf6895ee001bb96e9a744a62b4cc31bb7d8f28045b367df7d6bc42d4c0d0",
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.151.dev0",
+    "native_acceptance": "pending",
+    "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending. Active and locked target masks explicitly unsupported: safe nonassigning resolver guard refuses before history, without claiming original-domain acceptance. Date failures never skip the one attempted-batch notification; errors aggregated. Deadline preparation is checked and grouped per glyph."
+  },
+  {
+    "title": "Clear Master Backgrounds",
+    "key": "background_clear_show_masters",
+    "destination": "Scripts/Cleaning/Clear Master Backgrounds.py",
+    "destination_sha256": "a2e99aba286bbc5f8ea0008a1e7210756f8b494b892fa911351483affae77fa4",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
+    "source_path": "Cleaning/Clear background in all master layers.py",
+    "source_sha256": "f4664b72409bf7a0a198dc0cc3c708f179415021b42bcbbd974ca9d5c8bad73a",
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.151.dev0",
+    "native_acceptance": "pending",
+    "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending. Active and locked target masks explicitly unsupported: safe nonassigning resolver guard refuses before history, without claiming original-domain acceptance. Date failures never skip the one attempted-batch notification; errors aggregated. Deadline preparation is checked and grouped per glyph."
   }
 ]

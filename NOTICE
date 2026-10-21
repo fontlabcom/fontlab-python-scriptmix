@@ -954,3 +954,24 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
   This Source Code Form is "Incompatible With Secondary Licenses", as
   defined by the Mozilla Public License, v. 2.0.
 
+
+
+N236 — Pedro Arilla complete kerning proof family (Apache-2.0)
+Copyright 2017 Pedro Arilla. Adapted from pedroarilla/glyphs-scripts:
+Kerning/Hoefler Lowercase.py, Hoefler Uppercase.py, KernKing.py and KernSym.py.
+All five proof text values are retained byte-for-byte in UTF-8; no corpus script
+body is executed or redistributed. The upstream proof-content attributions remain:
+Hoefler&Co.: https://www.typography.com/blog/text-for-proofing-fonts
+KernKing: http://logofontandlettering.com/kernking.html
+KernSym: https://www.dropbox.com/s/atjf1k6cz7jix4x/check-kerning.txt?dl=0
+Source/licence/text SHA256 values are retained in the paired Scriptmix
+additional-tools.json and original-provenance.json. Changes: typed shared App/Fly
+entrypoints, explicit current font/master, retained complete native-tab payloads,
+shared deadline/ownership and preservation of user Output. Native qualification
+remains pending; no proof text is rewritten, reordered, filtered or shortened.
+
+Paired Background Cleaning
+Independent implementations of Pedro Arilla’s “Clear background in all layers.py”
+and “Clear background in all master layers.py”, pedroarilla/glyphs-scripts,
+Apache License 2.0. Original source bodies are not redistributed.
+
