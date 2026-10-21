@@ -954,3 +954,7 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
   This Source Code Form is "Incompatible With Secondary Licenses", as
   defined by the Mozilla Public License, v. 2.0.
 
+
+Raise Ascender: behavior adapted from Simon Cozens, GlyphsScripts/Raise Ascender.py.
+Copyright (c) 2017 Simon Cozens. https://github.com/simoncozens/GlyphsScripts
+MIT terms retained in full above apply. Independent FontLab adaptation; no original body redistribution.

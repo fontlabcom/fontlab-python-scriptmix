@@ -635,3 +635,6 @@ N185 ordinary source/artifact/consumer/original-scope gates passed. Next: indepe
 Independently review the complete typed Symmetry/Cutoff .137 donor, then integrate separately reviewed newer candidates and qualify native complete authored-font/history/reopen acceptance.
 
 N214: qualify the complete integrated .141 ordinary artifacts in FontLab, including typed Cutoff/Symmetry setters/history/diagnostics, original378 pair sequence and master filters, numeric caller lifetimes and font-dependent Character Map usable viewport. Preserve every existing whole-font/session/NUL hold; no native-completion claim from ordinary tests.
+
+
+N240 Raise Ascender .150: source/artifact candidate verified; independent review and complete native original-domain qualification still required. Preserve every selected occurrence and first-parent ALL layers, plus hint/metadata/history/Redo/reopen and unknown association cases. Do not count diagnosed unsupported native cases as successful original actions.

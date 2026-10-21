@@ -859,5 +859,23 @@
     "app_minimum": "0.2.144.dev0",
     "native_acceptance": "pending",
     "scope": "Complete two-font and master/layer selectors, four Refresh controls, all/selected glyphs, all/specific anchors, absolute/relative/italic coordinates, literal overwrite/incoming/destination collision modes and suffix; actual destination single-history writer. Selected source explicitly matches active Font-window carrier; duplicate basenames bind IDs. Full owned native two-font/history/rawflags/reopen qualification remains required."
+  },
+  {
+    "title": "Raise Ascender",
+    "key": "raise_ascender",
+    "destination": "Scripts/Contours/Raise Ascender.py",
+    "destination_sha256": "0b39645ad7378e9118ad630fa859a14c38228f16fe45826190b7593a779f4dcc",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source_path": "Raise Ascender.py",
+    "source_sha256": "a6bba363ea8c22660f3f3a02f67a2cd14748afc7a683303c9acffacd85d671f2",
+    "source_license": "MIT",
+    "source_license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "source_body_redistributed": false,
+    "license": "MIT AND Apache-2.0",
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Original two-action Amount editor; every selected occurrence versus all foreground layers of first selected glyph, strict xHeight+10, every own node including controls, sequential per-occurrence Undo. Unknown association, implicit editor mapping and generated/hinted/locked/automatic writer domains remain incomplete native boundaries; no omitted targets or refusal-as-equivalence claim."
   }
 ]
