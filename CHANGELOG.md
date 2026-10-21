@@ -31,6 +31,13 @@ this_file: CHANGELOG.md
   Selection To All Backgrounds). Changed behaviour: the refusal, pending-updates
   and failure messages are the App texts ("Refused. a: base of auto aacute.",
   "Native glyph updates are pending", "... did not finish: ... use Edit > Undo").
+- Anchors: the seven anchor writers write through `fly.ap.history.commit`
+  (operation "geometry", with read-back) and check queued updates with
+  `fly.ap.edit_guards.require_settled`; the private history kernel, dependency
+  reader and settle check are gone. Each script keeps its planner and its panel;
+  the shared anchor panel base stays a private copy in each script (no App module
+  fits it). Changed behaviour: blocked rows say "has auto layers" or "base of auto
+  X"; the refusal, pending-updates and failure messages are the App texts.
 
 ## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
 

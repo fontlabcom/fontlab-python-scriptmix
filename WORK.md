@@ -135,6 +135,24 @@ this_file: WORK.md
   - Lint: `uvx ruff check --target-version py311` on all Masters scripts and the test:
     clean (three unused `Callable` imports removed). The G1 scripts are not
     ruff-formatted; they were edited in place, not reformatted.
+- Anchors (step 5, seven scripts onto `fly.ap.history` / `fly.ap.edit_guards`):
+  - `apply_work(work, title, facts)` calls `history.commit(..., operation="geometry",
+    facts=facts, read_back=read_back)` with a named `def mutate() -> None`; mismatches
+    raise the script's own "did not store" error. `require_safe` keeps the origin
+    rule and uses `edit_guards.require_settled` + `history.refusals`; the panel keeps
+    `history.scan_auto_facts` instead of raw records. `stamp_all`, `commit`,
+    `dependency_records`, `unsafe_glyphs`, `require_settled` removed.
+  - AnchorPanel (the shared panel base, 291 identical lines per script) stays a
+    private copy: no App module holds an anchor panel. Scripts are 727 to 772 lines.
+  - RED (worktree, old scripts, new tests; focused mix.sh copy): EXIT=1, 141 failed,
+    1465 passed, 1 skipped. Most failures come from the shared `load()` helper, which
+    now asserts that each script binds the real `fontlabapp.history` and
+    `fontlabapp.edit_guards`; the rest are new message texts, the kernel AST test and
+    the real-names test.
+  - GREEN: EXIT=0, 1606 passed, 1 skipped (after recomputing seven `destination_sha256`
+    values); a second run left the catalogue unchanged.
+  - Lint: `uvx ruff check --target-version py311` and `uvx ruff format` on the seven
+    scripts and the test: clean.
 
 ## 2026-10-18: Two additional foreground reporter candidates
 

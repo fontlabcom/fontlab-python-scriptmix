@@ -24,15 +24,18 @@ Safety: Auto layers are listed and never edited. The script refuses the whole
 batch, before any history exists, when:
 
 - an existing anchor would move to 0, 0 (FontLab cannot Redo that);
-- a glyph is the base of an automatic composite (FontLab rebuilds the
-  composite and Undo does not restore it);
+- a glyph has an automatic layer, or is the base of an automatic composite,
+  also through other composites (FontLab rebuilds the composite and Undo does
+  not restore it);
 - several anchors on a layer share a name (the edit is ambiguous);
 - FontLab holds queued glyph updates (they would alter other glyph dates).
 
 After the write, the script reads every value back. It reports any value
 that FontLab did not keep, for example under a strong rounding preference.
 If FontLab fails part-way, the error says that native changes may remain.
-Edit > Undo restores the font.
+Edit > Undo restores the font. The one-step write, the automatic-layer rule
+and the pending-update check are shared with other scripts (fly.ap.history,
+fly.ap.edit_guards); the planner and the panel belong to this script.
 
 Source: the author's own FontLab sample
 anchors_mirror_across_masters.py, Apache-2.0.
@@ -44,6 +47,8 @@ from collections.abc import Callable, Iterable
 from dataclasses import dataclass, field
 from typing import Any
 
+import fly.ap.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import ap, qt
 from fly.ap import scripting
 
@@ -53,14 +58,15 @@ TITLE = "Mirror Anchors Across Masters"
 KEY = "anchors_mirror_across_masters"
 
 # ---------------------------------------------------------------- shared kernel
-# Private copy: the same kernel serves all anchor writers of this folder.
+# Private copy: the same planner kernel serves all anchor writers of this folder.
+# The one-step write, the auto-layer policy and the pending-update check are
+# the shared fly.ap.history and fly.ap.edit_guards.
 Edit = tuple[str, str, Any]
 # Edit = (operation, anchor name, value).
 #   ("set", name, (x, y))   move the anchor; add it when missing
 #   ("remove", name, None)  delete every anchor with this name
 #   ("rename", name, new)   rename every anchor with this name
 Work = list[tuple[Any, Any, list[Edit]]]  # (glyph, layer, edits)
-Record = tuple[str, bool, tuple[str, ...]]  # (glyph name, auto layer, base glyphs)
 
 # Name-derived pin appearance. FontLab infers it only on Redo or reopen,
 # so a new pin gets it now (related: fl#8527).
@@ -188,97 +194,45 @@ def collect(glyphs: Iterable[Any], masters: Iterable[str], planner: Planner) -> 
     return plan
 
 
-def dependency_records(package: Any) -> list[Record]:
-    """Resolved base glyphs and auto roles of every layer in font order."""
-    records: list[Record] = []
-    for name, _ in scripting.names_font_glyphs():
-        glyph = package.findName(name)
-        if glyph is None or glyph.isNull:
-            raise ValueError("The font changed; press Reload selection.")
-        for layer in glyph.layers:
-            bases = tuple(
-                shape.shapeData.componentGlyph
-                for shape in layer.shapes
-                if shape.isComponent
-            )
-            records.append((name, bool(layer.autoLayer), bases))
-    return records
-
-
-def unsafe_glyphs(targets: set[str], records: list[Record]) -> dict[str, list[str]]:
-    """{glyph: glyphs with an auto layer that depend on it}, also through chains.
-
-    A target with an auto layer on another master counts as its own user.
-    """
-    users: dict[str, set[str]] = {}
-    for name, _, bases in records:
-        for base in bases:
-            users.setdefault(base, set()).add(name)
-    autos = {name for name, auto, _ in records if auto}
-    found: dict[str, list[str]] = {}
-    for target in sorted(targets):
-        seen, todo = {target}, [target]
-        while todo:
-            fresh = users.get(todo.pop(), set()) - seen
-            seen |= fresh
-            todo.extend(fresh)
-        if seen & autos:
-            found[target] = sorted(seen & autos)
-    return found
-
-
 def shown(names: list[str]) -> str:
     """'a, b, c …' for long lists."""
     return ", ".join(names[:8]) + (" …" if len(names) > 8 else "")
 
 
-def blocked_rows(work: Work, records: list[Record]) -> list[tuple[str, Change]]:
-    """One blocking row per edited glyph that automatic composites depend on."""
-    found = unsafe_glyphs({glyph.name for glyph, _, _ in work}, records)
+def blocked_rows(work: Work, facts: history.AutoFacts) -> list[tuple[str, Change]]:
+    """One blocking row per edited glyph that the geometry policy refuses.
+
+    A glyph that owns an auto layer, or is a base of one (also through other
+    composites), is refused: FontLab rebuilds the auto composite and Undo does
+    not restore it.
+    """
+    names = [glyph.name for glyph, _, _ in work]
+    found = history.refusals(facts, names, "geometry")
     return [
-        (
-            name,
-            Change(
-                "blocked", "", "", problem=f"base of automatic composite {shown(users)}"
-            ),
-        )
-        for name, users in found.items()
+        (name, Change("blocked", "", "", problem=why)) for name, why in found.items()
     ]
 
 
-def require_settled() -> None:
-    """Refuse while FontLab holds queued glyph updates.
-
-    A later edit would deliver them as real updates: unrelated glyph dates
-    change and stay changed after Undo (fl#8537). The queue is never cleared.
-    """
-    if tuple(fontlab.flGlyph.updatedFgGlyphs()):
-        raise ValueError(
-            "FontLab has pending glyph updates (fl#8537). "
-            "Wait a moment, then press Reload selection."
-        )
-
-
-def require_safe(work: Work, records: list[Record]) -> None:
+def require_safe(work: Work, facts: history.AutoFacts) -> None:
     """Refuse the whole batch before any history exists, when Undo or Redo would fail.
 
-    1. An existing anchor moved to 0, 0 does not Redo (fl#8527).
-    2. An edited base glyph makes FontLab rebuild its auto composites,
-       and Undo does not restore them (measured on FontLab 9.0.9784).
-    3. Queued glyph updates (see require_settled).
+    1. Queued glyph updates: a later edit would deliver them as real updates
+       and change unrelated glyph dates (fl#8537). The queue is never cleared.
+    2. An existing anchor moved to 0, 0 does not Redo (fl#8527).
+    3. A glyph that owns an auto layer or is a base of one (blocked_rows).
     """
-    require_settled()
+    edit_guards.require_settled(fontlab)
     for _, layer, edits in work:
         existing = {pin.name for pin in layer.anchors}
         for operation, name, value in edits:
             if operation == "set" and name in existing and tuple(value) == (0, 0):
                 raise ValueError(ORIGIN_ERROR)
-    found = unsafe_glyphs({glyph.name for glyph, _, _ in work}, records)
+    found = blocked_rows(work, facts)
     if found:
-        affected = sorted({name for users in found.values() for name in users})
+        reasons = [f"{name}: {change.problem}" for name, change in found]
         raise ValueError(
-            "FontLab cannot undo changes to automatic composites built on "
-            f"these glyphs: {shown(affected)}. Choose other glyphs."
+            f"FontLab cannot undo edits to these glyphs: {shown(reasons)}. "
+            "Choose other glyphs."
         )
 
 
@@ -349,55 +303,39 @@ def unstored(work: Work, before: list[dict[str, tuple[float, float]]]) -> list[s
     return missed
 
 
-def stamp_all(glyphs: list[Any], stamp: Any) -> None:
-    """Give every glyph the same UTC modification date."""
-    for glyph in glyphs:
-        glyph.lastModified = stamp
+def apply_work(work: Work, title: str, facts: history.AutoFacts) -> dict[str, int]:
+    """Write all edits as ONE native Undo step through history.commit.
 
-
-def commit(
-    prepared: list[tuple[Any, list]], glyphs: list[Any], items: list[Any], title: str
-) -> None:
-    """History, write, stamp, ONE notification, stamp again.
-
-    FontLab window observers re-stamp after history captured the date, so
-    the second stamp makes Undo and Redo agree. Errors pass through.
-    """
-    for item in items:
-        item.checkInitHistoryState(0)
-    stamp = QtCore.QDateTime.currentDateTimeUtc()
-    try:
-        for layer, steps in prepared:
-            write(layer, steps)
-    finally:
-        stamp_all(glyphs, stamp)
-        try:
-            fontlab.flItems().notifyChangesApplied(title, items)
-        finally:
-            stamp_all(glyphs, stamp)
-
-
-def apply_work(work: Work, title: str) -> dict[str, int]:
-    """Write all edits as ONE native Undo step.
-
-    Auto layers are never in `work`. No rollback is attempted. Any failure
-    after history has started is raised as RuntimeError that says so:
-    Edit > Undo is the recovery.
+    Auto layers are never in `work`; `facts` is a fresh history.scan_auto_facts.
+    No rollback is attempted. A failure after history has started raises
+    history.PartialWriteError ("... use Edit > Undo"). Afterwards every value
+    is read back; a value FontLab did not keep raises RuntimeError.
     """
     prepared = [(layer, prepare(layer, edits)) for _, layer, edits in work]
     glyphs = list({glyph.name: glyph for glyph, _, _ in work}.values())
-    items = [layer for _, layer, _ in work] + glyphs
-    if not items:
+    layers = [layer for _, layer, _ in work]
+    if not layers:
         return {"anchors": 0, "layers": 0}
-    before = [anchor_points(layer) for _, layer, _ in work]
-    try:
-        commit(prepared, glyphs, items, title)
-    except Exception as error:
-        raise RuntimeError(
-            f"Native changes may remain; use Edit > Undo. FontLab said: {error}"
-        ) from error
-    missed = unstored(work, before)
-    if missed:
+    before = [anchor_points(layer) for layer in layers]
+
+    def mutate() -> None:
+        for layer, steps in prepared:
+            write(layer, steps)
+
+    def read_back() -> list[str]:
+        return unstored(work, before)
+
+    done = history.commit(
+        title,
+        layers,
+        glyphs,
+        mutate,
+        operation="geometry",
+        facts=facts,
+        read_back=read_back,
+    )
+    if done.mismatches:
+        missed = done.mismatches
         raise RuntimeError(
             f"FontLab did not store {len(missed)} change(s): {', '.join(missed[:6])}. "
             "Check Preferences > Rounding. Edit > Undo restores the font."
@@ -460,7 +398,7 @@ class AnchorPanel(QtGui.QDialog):
         self.slot_error = ""
         self.last_result: dict[str, Any] = {}
         self.glyphs: list[Any] = []
-        self.records: list[Record] = []
+        self.facts = history.auto_facts(())
         self.scopes: list[Any] = []
         self.rows = 0
         self.read_font()
@@ -574,7 +512,7 @@ class AnchorPanel(QtGui.QDialog):
             self.scan()
         except Exception as error:  # noqa: BLE001 - the first scan runs in the constructor
             self.slot_error = repr(error)
-            self.glyphs, self.records = [], []
+            self.glyphs, self.facts = [], history.auto_facts(())
             self.refresh()
             self.status.setText(f"Error: {error}")
 
@@ -582,11 +520,11 @@ class AnchorPanel(QtGui.QDialog):
         """Read font, selection and the auto-composite map again."""
         self.read_font()
         self.relabel()
-        self.glyphs, self.records = [], []
+        self.glyphs, self.facts = [], history.auto_facts(())
         if self.package is not None:
             found = (self.package.findName(n) for n in self.glyph_names())
             self.glyphs = [glyph for glyph in found if glyph is not None]
-            self.records = dependency_records(self.package)
+            self.facts = history.scan_auto_facts(self.package)
         self.on_reload()
         self.refresh()
 
@@ -619,10 +557,10 @@ class AnchorPanel(QtGui.QDialog):
         if plan.problems:
             problem = plan.problems[0]
         if plan.work:
-            plan.rows[:0] = blocked_rows(plan.work, self.records)
+            plan.rows[:0] = blocked_rows(plan.work, self.facts)
             if not problem:
                 try:
-                    require_safe(plan.work, self.records)
+                    require_safe(plan.work, self.facts)
                 except ValueError as error:
                     problem = str(error)
         self.fill(plan)
@@ -677,12 +615,13 @@ class AnchorPanel(QtGui.QDialog):
             glyphs = [package.findName(glyph.name) for glyph in self.glyphs]
             if any(glyph is None or glyph.isNull for glyph in glyphs):
                 raise ValueError("Glyphs changed; Reload selection.")
-            require_settled()
+            edit_guards.require_settled(fontlab)
             plan = collect(glyphs, self.chosen_masters(), self.planner())
             if plan.problems:
                 raise ValueError(plan.problems[0])
-            require_safe(plan.work, dependency_records(self.package))
-            self.last_result = apply_work(plan.work, self.TITLE)
+            facts = history.scan_auto_facts(package)
+            require_safe(plan.work, facts)
+            self.last_result = apply_work(plan.work, self.TITLE, facts)
             self.last_result["skipped"] = plan.skipped
         finally:
             self.refresh()

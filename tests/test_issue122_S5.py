@@ -1,9 +1,10 @@
 # this_file: tests/test_issue122_S5.py
 # SPDX-License-Identifier: Apache-2.0
-"""Issue 122 batch S5: seven Anchors scripts on owned FontLab/Qt fakes.
+"""Seven Anchors scripts on owned FontLab/Qt fakes.
 
 The scripts run unchanged. Only the native modules `fontlab`, `FL` and
-`PythonQt` are fakes; `fly` and `fontlabapp.scripting` are the real packages.
+`PythonQt` are fakes; `fly` and the App modules (`fontlabapp.scripting`,
+`history`, `edit_guards`) are the real packages.
 Offline results never prove native FontLab behaviour.
 """
 
@@ -17,6 +18,7 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
+from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 ISOLATED = ("fly", "fontlabapp")  # top-level packages this file re-imports for itself
@@ -597,6 +599,10 @@ def load(name: str) -> dict[str, Any]:
     )
     assert scripting._native.__module__ == "fontlabapp", "unpatched native loader"
     assert scripting.__file__.endswith("fontlabapp/scripting.py")
+    assert namespace["history"].__name__ == "fontlabapp.history", (
+        "the App history commit"
+    )
+    assert namespace["edit_guards"].__name__ == "fontlabapp.edit_guards"
     return namespace
 
 
@@ -750,12 +756,12 @@ def test_require_safe_when_existing_anchor_moves_to_origin_then_refuses(
     with pytest.raises(ValueError, match="Redo"):
         ns["require_safe"](
             [(world.glyphs["a"], layer, [("set", "top", (0, 0))])],
-            ns["dependency_records"](world.package),
+            ns["history"].scan_auto_facts(world.package),
         )
     # A NEW anchor at 0, 0 and a move that stays off the origin are fine.
     ns["require_safe"](
         [(world.glyphs["a"], layer, [("set", "new", (0, 0)), ("set", "top", (0, 1))])],
-        ns["dependency_records"](world.package),
+        ns["history"].scan_auto_facts(world.package),
     )
 
 
@@ -771,13 +777,13 @@ def test_require_safe_when_glyph_is_base_of_auto_composite_then_refuses_with_nam
     ns = load(name)
     work = [(world.glyphs["a"], world.layer("a"), [("remove", "top", None)])]
     with pytest.raises(ValueError, match="agravedot"):
-        ns["require_safe"](work, ns["dependency_records"](world.package))
+        ns["require_safe"](work, ns["history"].scan_auto_facts(world.package))
     other = [(world.glyphs["agrave"], world.layer("agrave"), [("remove", "top", None)])]
     with pytest.raises(ValueError, match="agravedot"):
-        ns["require_safe"](other, ns["dependency_records"](world.package))
+        ns["require_safe"](other, ns["history"].scan_auto_facts(world.package))
     world.glyph("b", select=False)
     ok = [(world.glyphs["b"], world.layer("b"), [("remove", "top", None)])]
-    ns["require_safe"](ok, ns["dependency_records"](world.package))
+    ns["require_safe"](ok, ns["history"].scan_auto_facts(world.package))
 
 
 @pytest.mark.parametrize("name", NAMES)
@@ -787,7 +793,7 @@ def test_panel_when_glyph_updates_are_queued_then_refuses_and_never_clears_them(
     world.glyph("a", anchors={"Light": [("top", 203, 698), ("bottom", 251, 4)]})
     panel, _ = panel_of(name)
     world.pending.append(41)
-    with pytest.raises(ValueError, match="pending glyph updates"):
+    with pytest.raises(ValueError, match="updates are pending"):
         panel.apply()
     assert world.events == [] and world.pending == [41], "queue untouched, no history"
 
@@ -966,9 +972,23 @@ def test_round_panel_when_scope_has_auto_layer_then_listed_and_apply_blocked(
     panel, _ = panel_of("Round To Grid")
     panel.scope.setCurrentIndex(1)
     assert texts(panel)[-1] == ["a · Bold", "1 anchor", "", "auto layer, skipped"]
-    assert (
-        not panel.apply_button.enabled and "automatic composites" in panel.status.text
+    assert not panel.apply_button.enabled and "a: has auto layers" in panel.status.text
+
+
+def test_round_panel_when_glyph_owns_auto_layer_on_other_master_then_refused(
+    world: World,
+) -> None:
+    world.glyph(
+        "a",
+        anchors={"Light": [("top", 203, 698)], "Bold": [("top", 203, 698)]},
+        auto=("Bold",),
     )
+    panel, _ = panel_of("Round To Grid")
+    assert ["a", "blocked", "", "has auto layers"] in texts(panel)
+    assert not panel.apply_button.enabled and "a: has auto layers" in panel.status.text
+    with pytest.raises(ValueError, match="has auto layers"):
+        panel.apply()
+    assert world.events == [] and world.points("a") == {"top": (203, 698)}
 
 
 def test_apply_when_font_ignores_writes_then_error_names_gap_after_history(
@@ -1002,9 +1022,7 @@ def test_round_panel_when_updates_are_queued_then_preview_blocks_until_reload(
     world.glyph("a", anchors={"Light": [("top", 203, 698)]})
     world.pending.append(41)
     panel, _ = panel_of("Round To Grid")
-    assert (
-        "pending glyph updates" in panel.status.text and not panel.apply_button.enabled
-    )
+    assert "updates are pending" in panel.status.text and not panel.apply_button.enabled
     world.pending.clear()
     panel.reload_button.clicked.emit()
     assert (
@@ -1513,7 +1531,7 @@ def test_delete_changes_when_name_absent_then_no_row(world: World) -> None:
     assert delete_changes(world.layer("a"), {"nope"}) == []
 
 
-# ---------------------------------------------------------------- review fix round 1
+# ---------------------------------------------------------------- public text and failures
 JARGON = (
     "D22",
     "S-L4",
@@ -1572,7 +1590,8 @@ def test_apply_when_native_step_fails_after_history_started_then_undo_hint_chain
     else:
         world.fail_notify = True
     with pytest.raises(
-        RuntimeError, match=r"Native changes may remain; use Edit > Undo"
+        namespace["history"].PartialWriteError,
+        match=r"did not finish: boom.*Native changes may remain; use Edit > Undo",
     ) as raised:
         panel.apply()
     assert isinstance(raised.value.__cause__, RuntimeError) and "boom" in str(
@@ -1693,7 +1712,7 @@ def test_rename_whole_font_when_bases_of_auto_composites_then_blocked_glyphs_are
     assert texts(panel) == [], "no replanning per keystroke"
     panel.timer.timeout.emit()
     rows = texts(panel)
-    assert ["a", "blocked", "base of automatic composite aacute"] in rows
+    assert ["a", "blocked", "base of auto aacute"] in rows
     assert ["b · Light", "top", "t"] in rows and ["a · Light", "top", "t"] in rows
     assert rows[0][1] == "blocked", (
         "blocked rows come first, so the row limit never hides them"
@@ -1717,3 +1736,40 @@ def test_timer_when_panel_closes_then_it_is_stopped(world: World) -> None:
     assert panel.timer.active
     panel.close_button.clicked.emit()
     assert not panel.timer.active
+
+
+# ---------------------------------------------------------------- shared App parts
+@pytest.mark.parametrize("name", NAMES)
+def test_script_when_parsed_then_history_kernel_comes_from_the_app(name: str) -> None:
+    tree = ast.parse((FOLDER / f"{name}.py").read_text())
+    top = {n.name for n in tree.body if isinstance(n, ast.FunctionDef)}
+    private = {
+        "commit",
+        "stamp_all",
+        "require_settled",
+        "dependency_records",
+        "unsafe_glyphs",
+    }
+    assert not top & private, f"{name}: private copies {top & private}"
+    apply_work = next(
+        n
+        for n in tree.body
+        if isinstance(n, ast.FunctionDef) and n.name == "apply_work"
+    )
+    nested = {n.name: n for n in ast.walk(apply_work) if isinstance(n, ast.FunctionDef)}
+    assert "mutate" in nested and ast.unparse(nested["mutate"].returns) == "None", name
+    calls = [
+        n
+        for n in ast.walk(apply_work)
+        if isinstance(n, ast.Call) and ast.unparse(n.func) == "history.commit"
+    ]
+    assert len(calls) == 1, name
+    keywords = {k.arg: ast.unparse(k.value) for k in calls[0].keywords}
+    assert keywords["operation"] == "'geometry'" and "read_back" in keywords, name
+
+
+def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> None:
+    used = app_names_used([FOLDER / f"{name}.py" for name in NAMES])
+    assert {"commit", "scan_auto_facts", "refusals"} <= used["fly.ap.history"]
+    assert used["fly.ap.edit_guards"] == {"require_settled"}
+    check_real_app_names(used)
