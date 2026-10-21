@@ -48,6 +48,10 @@ this_file: WORK.md
   the 645cdc3 mix-archive run generated (`diff -r`: identical).
 - Bytecode: 92 `*.pyc`, 15 `__pycache__` and 2 `.ruff_cache` folders removed from
   `Scripts/`; none was tracked.
+- Docs commit e8fe485: `mix-archive.sh e8fe485` -> 1936 passed, 0 failed, 1 skipped,
+  EXIT=0; its regenerated catalogue equals the committed one (`diff -r`: identical).
+  `sh verification/issue-122/sdd/cmd/fly.sh` -> 17 passed, EXIT=0. This WORK record is
+  committed on its own and checked with `mix-archive.sh` again.
 - Scope: offline tests only. Native FontLab acceptance of all 17 tools is pending.
 
 ## Issue 122 Task 2 integration: Metrics, Names, Masters, Anchors (2026-10-21)
