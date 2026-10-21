@@ -889,3 +889,6 @@ N162 combined source candidate: The combined App0.2.122.dev0 source candidate ad
 
 
 N185 private source candidate: complete all-master Kerning Cutoff action retains inclusive[-250,100], explicit pair kinds and per-master counts; repairs earlier-master-only notification with the qualified batch writer. Native qualification pending.
+
+
+N193 test compatibility: the owned kerning fixture exposes the resolved package search path instead of preventing genuine shared helper imports. All menu bodies and runtime requirements unchanged.
