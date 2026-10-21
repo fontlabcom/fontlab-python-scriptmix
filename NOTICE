@@ -1008,3 +1008,26 @@ are reused under that licence; the rescan, refusal and write path are new.
 Source and destination SHA-256 values are in additional-tools.json and
 rescue-index.json. The original files stay unchanged. Native FontLab acceptance
 is pending.
+
+Masters layer tools after Pedro Arilla
+======================================
+
+Independent rewrites of scripts by Pedro Arilla, pedroarilla/glyphs-scripts,
+copyright 2018-2022 Pedro Arilla, Apache License 2.0
+(https://github.com/pedroarilla/glyphs-scripts):
+
+- Masters/Display Next Layer and Display Previous Layer: Layers/Display next
+  layer.py and Display previous layer.py.
+- Masters/Duplicate Current Layer: Layers/Duplicate current layer.py.
+- Masters/Use Layer As Master: Layers/Use layer as master.py.
+- Masters/Transform Background: Background/Scale background in selected
+  glyphs.py and Background/Shift background in selected glyphs.py.
+- Masters/Selection To All Backgrounds: Background/Selection to all the
+  backgrounds.py.
+- Masters/Select Different Colour: Labels/Select different colour.py, which
+  credits Select Different Color by Rainer Erich Scheichelbauer (mekkablue,
+  Apache-2.0).
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json. Native FontLab
+acceptance is pending.
