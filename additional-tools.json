@@ -854,9 +854,9 @@
     "source_sha256": "efdddf6895ee001bb96e9a744a62b4cc31bb7d8f28045b367df7d6bc42d4c0d0",
     "license": "Apache-2.0",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.147.dev0",
+    "app_minimum": "0.2.151.dev0",
     "native_acceptance": "pending",
-    "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending."
+    "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending. Active and locked target masks explicitly unsupported: safe nonassigning resolver guard refuses before history, without claiming original-domain acceptance. Date failures never skip the one attempted-batch notification; errors aggregated. Deadline preparation is checked and grouped per glyph."
   },
   {
     "title": "Clear Master Backgrounds",
@@ -870,8 +870,8 @@
     "source_sha256": "f4664b72409bf7a0a198dc0cc3c708f179415021b42bcbbd974ca9d5c8bad73a",
     "license": "Apache-2.0",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.147.dev0",
+    "app_minimum": "0.2.151.dev0",
     "native_acceptance": "pending",
-    "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending."
+    "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending. Active and locked target masks explicitly unsupported: safe nonassigning resolver guard refuses before history, without claiming original-domain acceptance. Date failures never skip the one attempted-batch notification; errors aggregated. Deadline preparation is checked and grouped per glyph."
   }
 ]

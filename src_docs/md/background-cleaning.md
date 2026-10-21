@@ -40,3 +40,23 @@ acceptance. The complete native whole-font background mapping, survivor
 metadata, one Undo/Redo, dirty state, timestamps and save/reopen workflow remain
 pending owned-font qualification. Native limitations are not completion of the
 original workflow. Existing source-migration denominators remain unchanged.
+
+## Active and Locked Background Boundary
+
+An active background cannot be removed while preserving that active layer. The
+tool refuses it before history. Locked backgrounds also refuse: the bound
+read-only resolver does not reveal whether the stored active pointer is locked.
+These cases remain part of the original required workflow and are **not accepted
+through refusal**. The complete original target list remains in the preview.
+
+The scan uses `updateActiveLayer(False)`, which does not assign a replacement.
+It never reads `activeLayer` or `isActive`, whose native getters can initialize a
+previously null active pointer. Null/unreadable resolution on a nonempty glyph
+refuses the scan. Final source and pending-update fences occur after all staged
+inputs, immediately before history preparation.
+
+After any attempted removal, every pre/post date error is collected and exactly
+one final notification is attempted even if stamping fails. A notification
+failure remains an explicit partial outcome. No-op and no-attempt paths never
+notify or write dates. Expected survivor order is prepared in checked per-glyph
+passes before history, not a quadratic whole-font traversal after it.
