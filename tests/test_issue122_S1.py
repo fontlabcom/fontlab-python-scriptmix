@@ -911,7 +911,7 @@ def test_round_advances_when_glyph_owns_auto_layer_then_its_manual_layers_stay(w
     manual = Layer(126, rect(10, 120))
     o = Glyph("o", {"Light": auto, "Bold": manual})
     n = two_master_glyph("n", (101, 10, 90), (126, 12, 108))
-    _, panel = edited(world, "Round Advances", [n, o], lambda m, p: p.scope.pick(1))
+    edited(world, "Round Advances", [n, o], lambda m, p: p.scope.pick(1))
     assert manual.advanceWidth == 126, "the geometry policy skips auto owners whole"
     assert manual.edit_log == [], "no native call on the skipped layer"
     assert o not in world.history[0][1], "an auto owner is never notified"
