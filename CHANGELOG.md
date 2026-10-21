@@ -2,6 +2,47 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — 2026-10-21 — Metrics, Components, Masters and Cleanup tools
+
+Add 17 tools adapted from the author's own samples; the active menu grows from
+150 to 167 (98 additional tools). 38 of the 61 former archive launchers now
+have a port.
+
+- Metrics: Equalize Sidebearings, Sidebearings Tuner and Copy Metrics From
+  Reference, on the shared Metrics panel. Preview panels; Apply plans again
+  from the live font; outlines move in place; bases of auto glyphs are refused
+  unless overridden. Sidebearings Tuner opens on "Add 0", a preview that
+  changes nothing.
+- Metrics: Vertical Metrics Diagram, a read-only panel that draws H, x, b and p
+  of every master against its own metric lines; edit the values in Font Info >
+  Master Metrics Table. Alignment Zones stays unported until the App has a
+  native zone writer.
+- Components: Build From Recipes, Align By Anchor, Decompose, Replace
+  Reference, Copy Offsets Between Masters, Unlock Lock and Nested Finder, on
+  the App `component_writer` and `component_panel`. Edits are made in place,
+  with no shape clones. Decompose and Nested Finder eject one level, restore
+  raw flags, names and notes on the copies, and hand the removed components to
+  FontLab in the one notification; Edit > Undo of removed components depends
+  on FontLab (fl#7641). Shared element data and uncopyable bases are refused.
+  Build From Recipes uses FontLab's own builder and always builds plain
+  layers; Edit > Undo of a rebuilt existing layer depends on FontLab.
+- Masters: Copy Outline To Mask, Copy Layer Between Masters, Restore Backup
+  Layer, Layer Cleanup and Sync Sidebearings; Cleanup: Empty Layers (no
+  dialog). Shape clones are repaired, backups use FontLab's "@" naming, shown
+  and locked layers are kept, and an anchor move to 0, 0 skips the layer
+  (fl#8527). Back Up Master Layers stays unported: Duplicate Current Layer
+  backs up the current master. Suggest Zones From Overshoots waits for a
+  native zone writer.
+- Shared rules: every edit except Build From Recipes is recorded as one Undo
+  step with one final notification; auto layers are never notified; auto
+  owners and bases of auto composites are refused or listed and skipped;
+  queued glyph updates are refused; no
+  UpdateAll call (fl#8537); every write is read back.
+- Wording: the new docstrings carry no acceptance-status lines; the
+  Components docstrings use "is recorded as one Undo step".
+- Tracking: 17 rows in additional-tools.json, three NOTICE sections, 20 rows
+  in PORTING-BACKLOG.md, generated catalogue pages.
+
 ## Unreleased — 2026-10-21 — Anchors scripts on the App anchor writer and panel
 
 - Anchors: Rename Bulk, Center Horizontally, Place From Bounds, Snap To

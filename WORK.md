@@ -14,6 +14,42 @@ this_file: WORK.md
 - Notes: SCRIPTMIX_APP_REQUIREMENT is the App worktree path (uv builds it; needs the generic pretend-version override only to satisfy later floors, kept for consistency). Canonical sources were read only.
 - Scope: offline tests only. This is not native FontLab proof.
 
+## Issue 122 Task 2 integration wave 2: Metrics, Components, Masters, Cleanup (2026-10-21)
+
+- Commits on `issue-122` (base 6786f2e): c397d89 Metrics (4 tools), d8e279a Components
+  (7), 645cdc3 Masters and Cleanup (6), then one docs/tracking commit (README, CHANGELOG,
+  WORK, generated `src_docs/md/scripts`). Each batch commit carries its own
+  additional-tools.json rows, NOTICE section, PORTING-BACKLOG statuses and shared count
+  edits, so every commit passes alone. The untracked Contours scripts and their tests
+  were not staged.
+- Peers: App worktree `fontlab-fontlabapp` de3a7a6 (clean; built fresh as 0.2.150.dev0,
+  env.sh touches pyproject.toml), Fly worktree `fontlab-fly`.
+- Wording (ruling "public wording"): the three Metrics writers lose "Native
+  Undo/Redo/reopen of in-place moves is pending."; the four in-place Components writers
+  lose "native Undo of this edit is not yet verified"; Decompose and Nested Finder say
+  "is recorded as one Undo step ... Edit > Undo of removed components depends on FontLab
+  (fl#7641)."; Build From Recipes says "Edit > Undo of a rebuilt existing layer depends
+  on FontLab". The S2 and S4 tests pin the new text. All 10 changed hashes recomputed.
+- Focused runs (workspace root): `sh verification/issue-122/sdd/cmd/mix-S2.sh` -> 72
+  passed, EXIT=0; `sh verification/issue-122/sdd/cmd/mix-S4.sh` -> 141 passed, EXIT=0.
+  `uvx ruff check --no-cache --target-version py311` on the 11 edited scripts and 2 tests:
+  EXIT=0.
+- Clean-export runs, `sh verification/issue-122/sdd/cmd/mix-archive.sh <sha>`
+  (`git archive` into `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-mix/tree-<sha>`,
+  `test.sh` with the mix.sh env): 6786f2e 1611 passed; c397d89 1683; d8e279a 1824;
+  645cdc3 1936; each 0 failed, 1 skipped, EXIT=0. Growth = 72 + 141 + 112 batch tests.
+- Counts: additional tools 81 -> 85 -> 92 -> 98; active menu 150 -> 154 -> 161 -> 167;
+  reused own-sample rows 20 -> 24 -> 31 -> 37; `NEW_TOOLS` floor check 28 -> 32 -> 39 -> 45.
+  The Masters no-reuse rule now covers only the Glyphs-corpus rewrites.
+- Docs: `git archive 645cdc3` into
+  `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-w2-docs/645cdc3`, then
+  `./build.sh --offline` there: EXIT=0 (strict build). Its `src_docs/md/scripts` was copied
+  back: 17 new pages and 5 index pages, no Contours page. It equals the catalogue that
+  the 645cdc3 mix-archive run generated (`diff -r`: identical).
+- Bytecode: 92 `*.pyc`, 15 `__pycache__` and 2 `.ruff_cache` folders removed from
+  `Scripts/`; none was tracked.
+- Scope: offline tests only. Native FontLab acceptance of all 17 tools is pending.
+
 ## Issue 122 Task 2 integration: Metrics, Names, Masters, Anchors (2026-10-21)
 
 - Commits on `issue-122` (base 7063123): c09fa7d Metrics (6 tools), dda705c Names (7),

@@ -25,15 +25,23 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Cleanup
 
+- [Empty Layers](cleanup/empty-layers.md)
 - [Select Unreferenced Glyphs](cleanup/select-unreferenced-glyphs.md)
 
 ## Components
 
+- [Align By Anchor](components/align-by-anchor.md)
+- [Build From Recipes](components/build-from-recipes.md)
 - [Compatibility](components/compatibility.md)
+- [Copy Offsets Between Masters](components/copy-offsets-between-masters.md)
 - [Count Badges](components/count-badges.md)
+- [Decompose](components/decompose.md)
 - [Dump Component Recipes](components/dump-component-recipes.md)
 - [Missing Bases](components/missing-bases.md)
+- [Nested Finder](components/nested-finder.md)
+- [Replace Reference](components/replace-reference.md)
 - [Report](components/report.md)
+- [Unlock Lock](components/unlock-lock.md)
 - [Where Used](components/where-used.md)
 
 ## Contours
@@ -97,16 +105,21 @@ Choose a category, then a script. Each page includes its actual menu source.
 ## Masters
 
 - [Compatibility Check](masters/compatibility-check.md)
+- [Copy Layer Between Masters](masters/copy-layer-between-masters.md)
+- [Copy Outline To Mask](masters/copy-outline-to-mask.md)
 - [Display Next Layer](masters/display-next-layer.md)
 - [Display Previous Layer](masters/display-previous-layer.md)
 - [Duplicate Current Layer](masters/duplicate-current-layer.md)
 - [Glyph Weight Chart](masters/glyph-weight-chart.md)
 - [Interpolation Preview](masters/interpolation-preview.md)
 - [Italic Angle](masters/italic-angle.md)
+- [Layer Cleanup](masters/layer-cleanup.md)
 - [Master Switcher](masters/master-switcher.md)
 - [Overview](masters/overview.md)
+- [Restore Backup Layer](masters/restore-backup-layer.md)
 - [Select Different Colour](masters/select-different-colour.md)
 - [Selection To All Backgrounds](masters/selection-to-all-backgrounds.md)
+- [Sync Sidebearings](masters/sync-sidebearings.md)
 - [Transform Background](masters/transform-background.md)
 - [Use Layer As Master](masters/use-layer-as-master.md)
 - [Width Chart](masters/width-chart.md)
@@ -115,11 +128,15 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 - [Centre In Advance](metrics/centre-in-advance.md)
 - [Check Tabular Widths](metrics/check-tabular-widths.md)
+- [Copy Metrics From Reference](metrics/copy-metrics-from-reference.md)
+- [Equalize Sidebearings](metrics/equalize-sidebearings.md)
 - [Italic Sidebearings](metrics/italic-sidebearings.md)
 - [Round Advances](metrics/round-advances.md)
 - [Scale Advances](metrics/scale-advances.md)
+- [Sidebearings Tuner](metrics/sidebearings-tuner.md)
 - [Spacing String Preview](metrics/spacing-string-preview.md)
 - [Tabular Width](metrics/tabular-width.md)
+- [Vertical Metrics Diagram](metrics/vertical-metrics-diagram.md)
 - [Width Table](metrics/width-table.md)
 - [Zero-Width Marks](metrics/zero-width-marks.md)
 

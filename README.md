@@ -4,8 +4,8 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 150 practical tools in one-level Title Case
-categories: 69 sample adaptations and 81 additional tools. Additional adaptations
+The curated `Scripts` folder contains 167 practical tools in one-level Title Case
+categories: 69 sample adaptations and 98 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
 layout, not accepted native workflows.
@@ -23,10 +23,19 @@ as master, background transform and copy, and select by different colour. Each
 font edit is one Undo step, auto layers are never notified, and native
 acceptance is pending.
 
+Metrics, Components, Masters and Cleanup gain 17 more tools adapted from the
+author's own samples: equalize, tune and copy sidebearings, and a read-only
+diagram of each master's vertical metrics; build glyphs from recipes, align,
+decompose, replace, offset, lock and unnest components; and copy outlines to
+masks, copy layers between masters, restore backup layers, clean up layers,
+sync sidebearings and delete empty layers. Build From Recipes uses FontLab's
+own builder; every other edit is recorded as one Undo step, and auto layers
+are never notified.
+
 ## Unfinished ports and preserved sources
 
-The 61 legacy archive launchers are outside the active menu; 22 of them return
-as new ports listed in `additional-tools.json`, and 39 stay unported. Their original
+The 61 legacy archive launchers are outside the active menu; 38 of them return
+as new ports listed in `additional-tools.json`, and 23 stay unported. Their original
 sources remain byte-exact in the existing private/local `rescued` tree. The
 complete [porting backlog](PORTING-BACKLOG.md) lists each unfinished tool;
 `rescue-index.json` retains historical menu paths, source paths and hashes.

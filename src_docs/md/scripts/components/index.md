@@ -1,8 +1,15 @@
 # Components
 
+- [Align By Anchor](align-by-anchor.md)
+- [Build From Recipes](build-from-recipes.md)
 - [Compatibility](compatibility.md)
+- [Copy Offsets Between Masters](copy-offsets-between-masters.md)
 - [Count Badges](count-badges.md)
+- [Decompose](decompose.md)
 - [Dump Component Recipes](dump-component-recipes.md)
 - [Missing Bases](missing-bases.md)
+- [Nested Finder](nested-finder.md)
+- [Replace Reference](replace-reference.md)
 - [Report](report.md)
+- [Unlock Lock](unlock-lock.md)
 - [Where Used](where-used.md)
