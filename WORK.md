@@ -34,10 +34,13 @@ this_file: WORK.md
   pending). The T0 block's 1016 passed was measured with the App at T0.
 - After integration (worktree): EXIT=1, 7 failed, 1566 passed, 1 skipped. The failing ids
   equal the T0-tree list exactly; no new failure.
-- Each commit alone (`git archive <sha>` into
-  `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-mix/tree-<sha>`, same env):
-  c09fa7d 1096 passed, dda705c 1291, ad4ccde 1406, f819822 1566; each with the same
-  7 failed and 1 skipped (EXIT=1).
+- Each commit alone: `sh verification/issue-122/sdd/cmd/mix-archive.sh <sha>...` (workspace
+  root; `git archive <sha>` into `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-mix/tree-<sha>`,
+  then `test.sh` with the mix.sh env): 7063123 1009 passed, c09fa7d 1096, dda705c 1291,
+  ad4ccde 1406, f819822 1566, 37ef60f 1566; each with the same 7 failed and 1 skipped
+  (EXIT=1). Failing-id lists compared with `cmp`: identical.
+- Follow-up commit corrects the CHANGELOG entry (22 of the 27 tools are panels; the
+  pending-update refusal applies to the Names, Anchors and Masters writers, not Metrics).
 - Count deltas (derived from the failing assertions): additional tools 54 -> 60 -> 67 ->
   74 -> 81; active menu 123 -> 129 -> 136 -> 143 -> 150, in
   `test_contour_menu_integration.py`, `test_curated_delivery.py` and `test_reports.py`.

@@ -4,9 +4,9 @@ this_file: CHANGELOG.md
 
 ## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
 
-Add 27 non-modal tools; the active menu grows from 123 to 150 (81 additional
-tools). All are source candidates with offline tests; native FontLab acceptance
-is pending for every one.
+Add 27 tools, 22 of them non-modal panels; the active menu grows from 123 to 150
+(81 additional tools). All are source candidates with offline tests; native
+FontLab acceptance is pending for every one.
 
 - Metrics: Italic Sidebearings, Round Advances, Centre In Advance, Zero-Width
   Marks, Tabular Width and Scale Advances, adapted from the author's own
@@ -23,10 +23,12 @@ is pending for every one.
 - Masters: Display Next Layer, Display Previous Layer, Duplicate Current Layer,
   Use Layer As Master, Transform Background, Selection To All Backgrounds and
   Select Different Colour, independent rewrites after Pedro Arilla's Glyphs
-  scripts (Apache-2.0).
+  scripts (Apache-2.0). Transform Background and Selection To All Backgrounds
+  are panels; the other five run once from the menu.
 - Shared rules: one Undo step per font edit, auto layers never notified, bases
-  of auto layers refused where the operation could re-resolve them, refusal
-  while native glyph updates are pending, and no UpdateAll call (fl#8537).
+  of auto layers refused where the operation could re-resolve them, and no
+  UpdateAll call (fl#8537). The Names, Anchors and Masters writers also refuse
+  while native glyph updates are pending.
 - Tracking: 27 rows in additional-tools.json, four NOTICE sections, 20 rows in
   PORTING-BACKLOG.md marked as source candidates, and generated catalogue pages.
 
