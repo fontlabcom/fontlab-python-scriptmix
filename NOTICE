@@ -1275,3 +1275,28 @@ MIT and the README declares Apache-2.0; both notices are preserved:
 No source code or preset text was copied; the scripts reproduce the
 behaviour for FontLab. Source and licence SHA-256 values are in
 additional-tools.json.
+
+Anchors tools after Simon Cozens
+================================
+
+Independent rewrites of scripts by Simon Cozens, simoncozens/GlyphsScripts,
+copyright 2017 Simon Cozens, MIT License
+(https://github.com/simoncozens/GlyphsScripts):
+
+- Anchors/Add Anchors From File: Add Anchors From File.py.
+- Anchors/Auto Cursive Attachment Add Anchors: AutoCursiveAttachment - Add
+  Anchors.py.
+- Anchors/Auto Cursive Attachment Get Sample: AutoCursiveAttachment - Get
+  Sample.py.
+- Anchors/Copy Myanmar Anchors: Copy Myanmar Anchors.py.
+- Anchors/Derive Anchors From Components: Derive Anchors From Components.py.
+- Anchors/Optical Center: Optical Center.py.
+- Anchors/Remove Extraneous Mark Anchors: Remove Extraneous Mark Anchors.py.
+
+Copy Anchor Context.py and Reset Anchors.py have no FontLab counterpart:
+FontLab feature output has no per-anchor contextual positioning, and its
+Python API has no default-anchor regeneration.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab
+and are Apache-2.0. Source and licence SHA-256 values are in
+additional-tools.json.

@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 201 practical tools: 69 sample adaptations and 132
+The active menu contains 208 practical tools: 69 sample adaptations and 139
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -126,3 +126,12 @@ identity has one row. Source hashes of the ported sources are in
 | `rsztype/Scripts/StyleLinker.py` | Ported | Names/Style Linker.py | Whole-word base matching across width groups, with a preview |
 | `NaN-xyz/GlyphsApp-Scripts/MasterBlaster/MasterBlaster.py` | Ported | Masters/Master Text Comparison.py | Word groups and file presets with exact per-slot master layers |
 | `NaN-xyz/GlyphsApp-Scripts/CommonGlyphs.py` | Ported | Masters/Common Glyphs.py | Exact-name proof set shared by every open font |
+| `simoncozens/GlyphsScripts/Add Anchors From File.py` | Ported | Anchors/Add Anchors From File.py | CSV coordinates round half up before the preview |
+| `simoncozens/GlyphsScripts/AutoCursiveAttachment - Add Anchors.py` | Ported | Anchors/Auto Cursive Attachment Add Anchors.py | Cursive entry and exit anchors from a saved sample profile |
+| `simoncozens/GlyphsScripts/AutoCursiveAttachment - Get Sample.py` | Ported | Anchors/Auto Cursive Attachment Get Sample.py | Saves the sample profile to a new file |
+| `simoncozens/GlyphsScripts/Copy Anchor Context.py` | Retired | — | FontLab feature output has no per-anchor contextual positioning |
+| `simoncozens/GlyphsScripts/Copy Myanmar Anchors.py` | Ported | Anchors/Copy Myanmar Anchors.py | Unicode routing preset; compare Anchors/Copy Anchors From Glyph.py |
+| `simoncozens/GlyphsScripts/Derive Anchors From Components.py` | Ported | Anchors/Derive Anchors From Components.py | Stacked marks use the first mark per label |
+| `simoncozens/GlyphsScripts/Optical Center.py` | Ported | Anchors/Optical Center.py | Scanline column weights; the result is an estimate |
+| `simoncozens/GlyphsScripts/Remove Extraneous Mark Anchors.py` | Ported | Anchors/Remove Extraneous Mark Anchors.py | Preview before removal |
+| `simoncozens/GlyphsScripts/Reset Anchors.py` | Retired | — | FontLab's Python API has no default-anchor regeneration |
