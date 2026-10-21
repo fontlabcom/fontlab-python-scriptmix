@@ -2,6 +2,18 @@
 this_file: WORK.md
 ---
 
+## Issue 122 T0 baseline
+
+- Suite MIX; pre-change worktree HEAD recorded below; branch `issue-122` confirmed.
+- Common env: `I=/Volumes/Falstaff4T/fontlab-scripting-data/issue122; export UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`
+- Command (working form): `SETUPTOOLS_SCM_PRETEND_VERSION=0.2.146.dev0; PYTHONPATH=$I/fontlab-fly/src; FONTLAB_PRESERVED_ROOT=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-python-scriptmix; cd $I/fontlab-python-scriptmix && SCRIPTMIX_APP_REQUIREMENT=$I/fontlab-fontlabapp rtk proxy sh test.sh --original-source-root /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting`
+- Result: **exit 0; 1016 passed, 0 failed, 1 skipped, 0 errors (2.3 s)**
+- Pre-existing failing test ids (working form): none
+- Attempts (including failed invocations):
+  - Designed command + `--original-source-root /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting` (workspace root; conftest maps `/_old/` to `/rescued/`) with no other env: exit 1, 70 failed / 946 passed / 1 skipped. 61x tests/test_rescued_menus.py::test_unported_source_is_preserved_without_an_active_dispatcher[...], tests/test_rescued_menus.py::test_complete_preserved_inventory_stays_unchanged, tests/test_curated_delivery.py::test_unported_sources_remain_a_complete_hashed_backlog (missing `rescued/` in the worktree: need FONTLAB_PRESERVED_ROOT), and 7 Fly-facade tests (ModuleNotFoundError: fly): test_anchor_duplicates_menu.py::test_complete_candidate_is_lazy_and_dispatches_through_fly; test_contour_selection_menus.py::test_actual_fly_facades_dispatch_public_app_actions (3 params); test_crossfont_anchors_menu.py::test_crossfont_anchor_menu_calls_actual_lazy_fly_facade; test_perpendicular_guides.py::test_direct_menu_execution_uses_same_complete_fly_writer; test_perpendicular_guides.py::test_public_menu_calls_complete_shared_action. Fix: FONTLAB_PRESERVED_ROOT to the canonical scriptmix checkout (read-only) and PYTHONPATH to Fly src.
+- Notes: SCRIPTMIX_APP_REQUIREMENT is the App worktree path (uv builds it; needs the generic pretend-version override only to satisfy later floors, kept for consistency). Canonical sources were read only.
+- Scope: offline tests only. This is not native FontLab proof.
+
 ## 2026-10-18: Two additional foreground reporter candidates
 
 Added only two thin lazy Reporters menu scripts, separate additional-tools.json,
