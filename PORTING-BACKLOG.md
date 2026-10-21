@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 222 practical tools: 69 sample adaptations and 153
+The active menu contains 226 practical tools: 69 sample adaptations and 157
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -166,3 +166,14 @@ identity has one row. Source hashes of the ported sources are in
 | `slobzheninov/Glyphs-Scripts/Align/Distribute Nodes Horizontally.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
 | `slobzheninov/Glyphs-Scripts/Align/Distribute Nodes Vertically.py` | Ported | Contours/Align And Distribute.py | Combined alignment and node distribution panel |
 | `slobzheninov/Glyphs-Scripts/Align/Center Selected Glyphs.py` | Duplicate of | Metrics/Centre In Advance.py | Equal sidebearings with the advance kept, in the current or all masters |
+| `slobzheninov/Glyphs-Scripts/Rotate/Rotate.py` | Ported | Contours/Rotate Selection.py | Preview and six rotation presets over several layers |
+| `slobzheninov/Glyphs-Scripts/Rotate/Rotate 1 CCW.py` | Ported | Contours/Rotate Selection.py | Preview and six rotation presets over several layers |
+| `slobzheninov/Glyphs-Scripts/Rotate/Rotate 1 CW.py` | Ported | Contours/Rotate Selection.py | Preview and six rotation presets over several layers |
+| `slobzheninov/Glyphs-Scripts/Rotate/Rotate 10 CCW.py` | Ported | Contours/Rotate Selection.py | Preview and six rotation presets over several layers |
+| `slobzheninov/Glyphs-Scripts/Rotate/Rotate 10 CW.py` | Ported | Contours/Rotate Selection.py | Preview and six rotation presets over several layers |
+| `slobzheninov/Glyphs-Scripts/Rotate/Rotate 45 CCW.py` | Ported | Contours/Rotate Selection.py | Preview and six rotation presets over several layers |
+| `slobzheninov/Glyphs-Scripts/Rotate/Rotate 45 CW.py` | Ported | Contours/Rotate Selection.py | Preview and six rotation presets over several layers |
+| `slobzheninov/Glyphs-Scripts/Reflect/Reflect Horizontally.py` | Ported | Contours/Reflect Horizontally.py | Preview over several masters or selected layers |
+| `slobzheninov/Glyphs-Scripts/Reflect/Reflect Vertically.py` | Ported | Contours/Reflect Vertically.py | Preview over several masters or selected layers |
+| `slobzheninov/Glyphs-Scripts/Overlap nodes.py` | Ported | Contours/Overlap Nodes.py | Coincident terminal nodes; each layer uses its own master's italic angle |
+| `slobzheninov/Glyphs-Scripts/G2 Harmonize.py` | Duplicate of | — | FontLab: Contour > Harmonize |

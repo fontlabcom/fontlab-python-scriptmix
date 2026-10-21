@@ -2724,5 +2724,107 @@
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Six alignment choices and horizontal/vertical selected-node distribution in one non-modal preview panel. Extends Contour > Align Points and Element > Align / Distribute Shapes with node distribution, several glyph layers or masters in one Undo step, a numeric preview and explicit coordinate targets. Complete contours translate as units. Unselected adjacent handles follow their moved on-curve node by the same offset; explicitly selected handles use their own targets. Two selected nodes sharing one unselected curve handle are kept; select the handle too or align the nodes separately. Components move through outline_transform without changing their base glyphs. Anchors are never moved. Distribution requires selected nodes and is disabled for All nodes. Locked layers/shapes, shared outlines, contours with their own transform and invalid position calculations produce labelled kept rows while other eligible items remain editable. Selection is captured once per scan and again for Apply. Bounds include selected control points; coordinates are upright and italic angle is not applied. Automatic-layer glyphs and their bases are skipped."
+  },
+  {
+    "title": "Rotate Selection",
+    "key": "contours_rotate_selection",
+    "destination": "Scripts/Contours/Rotate Selection.py",
+    "destination_sha256": "5a70a17803378552634cbdff7a72622fe244ccda0f78ae35187530c335995b71",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source_path": "Rotate/Rotate.py",
+    "source_sha256": "3878c0c231670ab72d6649d703d7d6aa76e9f940c1d8b38f3f01b262d8e8835e",
+    "merged_sources": [
+      {
+        "path": "Rotate/Rotate.py",
+        "sha256": "3878c0c231670ab72d6649d703d7d6aa76e9f940c1d8b38f3f01b262d8e8835e"
+      },
+      {
+        "path": "Rotate/Rotate 1 CCW.py",
+        "sha256": "061d519ae5d296fc01395b7e810c5ea1c45ad1ab9a536143fb1b52d89440eca3"
+      },
+      {
+        "path": "Rotate/Rotate 1 CW.py",
+        "sha256": "b70cffef7c0e675220499dd51b1978bbaeb1dde8cb74e9ae55a21b78681cd5d6"
+      },
+      {
+        "path": "Rotate/Rotate 10 CCW.py",
+        "sha256": "273de5fae7847b77ac75e99dc59b4d5170156c13b1ba5f5694138a16109c003a"
+      },
+      {
+        "path": "Rotate/Rotate 10 CW.py",
+        "sha256": "e1243a56bdf051d421d3a053c2d1f4818b918bf7aa03425fda3c1f1128c0cd47"
+      },
+      {
+        "path": "Rotate/Rotate 45 CCW.py",
+        "sha256": "c9d513f3460824f2198c11244f6e35feea7bdf9887fa7e97369b844cd83fa5dc"
+      },
+      {
+        "path": "Rotate/Rotate 45 CW.py",
+        "sha256": "8fe8ac5c043d800b1f7ae0ebb04327e3ed8e3055b13b9857f855482447681524"
+      }
+    ],
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "copyright": "2020 Alex Slobzheninov",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Signed rotation of selected own nodes and selected components about combined coordinate bounds. Six one-click presets apply 1, 10 or 45 degrees CW/CCW. Adds a preview and processes several masters or selected layers together compared with native Rotate commands and the Transform panel. Each action is recorded as one Undo step."
+  },
+  {
+    "title": "Reflect Horizontally",
+    "key": "contours_reflect_horizontally",
+    "destination": "Scripts/Contours/Reflect Horizontally.py",
+    "destination_sha256": "365ddc61ffc45b14f1f62ca895448ec33667ffaaa2a1bf962e373c78c4c45d53",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source_path": "Reflect/Reflect Horizontally.py",
+    "source_sha256": "104bf20424822eff74014cc9adfcbc4e7c99433938027ebc6d4ab3b188faf509",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "copyright": "2020 Alex Slobzheninov",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Horizontal reflection of selected own nodes and selected component placements about combined coordinate bounds. Adds a preview and processes several masters or selected layers together compared with Tools > Flip Horizontal. Each action is recorded as one Undo step."
+  },
+  {
+    "title": "Reflect Vertically",
+    "key": "contours_reflect_vertically",
+    "destination": "Scripts/Contours/Reflect Vertically.py",
+    "destination_sha256": "0965871b27b324df8bf564ac29135e8704f3bd6c7bc4099e0fac1c347db71b34",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source_path": "Reflect/Reflect Vertically.py",
+    "source_sha256": "0fa06c54283284c67e7b9bb6fd3ef74670c87e5d39cd67c4c7bd65b365c8c8d6",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "copyright": "2020 Alex Slobzheninov",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Vertical reflection of selected own nodes and selected component placements about combined coordinate bounds. Adds a preview and processes several masters or selected layers together compared with Tools > Flip Vertical. Each action is recorded as one Undo step."
+  },
+  {
+    "title": "Overlap Nodes",
+    "key": "contours_overlap_nodes",
+    "destination": "Scripts/Contours/Overlap Nodes.py",
+    "destination_sha256": "15b1d2140eaab85922e7bfb14271dc41fae8d8c5bca3f9ecbf517be41b5bd33a",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source_path": "Overlap nodes.py",
+    "source_sha256": "a03d0dac0525058b61f21d90dbec32dba0f518174890968001e42dda8334c5c8",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "copyright": "2020 Alex Slobzheninov; italic-coordinate idea credited to Rainer Erich Scheichelbauer",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Move the first eligible adjacent corner onto each selected tip, make it sharp and align its next handle using that layer's associated master italic angle. Auxiliary layers resolve by FontLab master naming rules; layers without an associated master are refused. Handle x is truncated in glyph space. Conflicting targets and scaled or rotated selected shapes are refused. Selected-layer or all-master scope includes a preview. Each action is recorded as one Undo step."
   }
 ]

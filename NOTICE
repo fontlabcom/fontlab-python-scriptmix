@@ -1383,3 +1383,23 @@ Align/Center Selected Glyphs.py is covered by Metrics/Centre In Advance.
 
 No source code was copied; the script reproduces the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Contours transform tools after Alex Slobzheninov
+================================================
+
+Independent rewrites of scripts by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, copyright 2020, Apache License 2.0
+(https://github.com/slobzheninov/Glyphs-Scripts):
+
+- Contours/Rotate Selection: Rotate/Rotate.py, Rotate 1 CCW.py, Rotate 1
+  CW.py, Rotate 10 CCW.py, Rotate 10 CW.py, Rotate 45 CCW.py and Rotate 45
+  CW.py, combined in one tool.
+- Contours/Reflect Horizontally: Reflect/Reflect Horizontally.py.
+- Contours/Reflect Vertically: Reflect/Reflect Vertically.py.
+- Contours/Overlap Nodes: Overlap nodes.py, which credits Rainer Erich
+  Scheichelbauer (mekkablue) for the italic-coordinate idea.
+
+G2 Harmonize.py is covered by FontLab's Contour > Harmonize.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.
