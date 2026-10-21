@@ -42,7 +42,7 @@ fly.ap.edit_guards); the planner and the panel belong to this script.
 
 Source: the author's own FontLab sample
 anchors_round_to_grid.py, Apache-2.0.
-Independent rewrite for the current FontLab 9 API.
+Adapted for the current FontLab 9 API.
 
 Run **Anchors > Round To Grid** from FontLab's Scripts menu.
 
@@ -51,5 +51,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a4b80292becd2e52339e0deea85714930bffc14f1385876e091cb5d91928a0b5.py)
+[Python source](../../../../.build/menu-sources/47d35cb405d78eab474d9dce607325087ba411f8f6276a4ed224991edba20adb.py)
 <!--/codeinclude-->

@@ -153,6 +153,26 @@ this_file: WORK.md
     values); a second run left the catalogue unchanged.
   - Lint: `uvx ruff check --target-version py311` and `uvx ruff format` on the seven
     scripts and the test: clean.
+- Rows and wording (step 6):
+  - App floor: one value, `0.2.150.dev0` (the branch pretend version that mix.sh
+    builds), for the 27 new rows and Raise Ascender (was 0.2.157.dev0; it uses
+    `fly.ap.layer_selection` like the Masters rows). Older rows keep their own floors;
+    Clear All Layer/Master Backgrounds (0.2.151.dev0, pinned by
+    `tests/test_background_clear_menu.py`) and Perpendicular Guides (0.2.154.dev0) were
+    not part of the ruling and are unchanged.
+  - `source_body_redistributed: true` for the six Metrics and seven Anchors rows (Names
+    already true; Masters stay false). Anchors scope texts and the seven docstrings say
+    "adapted" instead of "independent rewrite" and name the shared history commit;
+    the Names scopes say "every planned glyph" instead of "attempted entries only".
+    README: "Third-party and Glyphs-corpus original bodies are not copied ...; the
+    author's own Apache-2.0 FontLab samples may be adapted". NOTICE already said
+    "adapt the author's own FontLab samples"; unchanged.
+  - PORTING-BACKLOG: the Duplicate Unicodes row is a source writer candidate (it has
+    an additional-tools row); 39 rows stay unported, matching the README count.
+  - RED: three new tests in `tests/test_curated_delivery.py` (reuse rows only own
+    Apache samples + README scope; no ported row marked unported; one App floor):
+    EXIT=1, 3 failed, 1606 passed, 1 skipped. GREEN: EXIT=0, 1609 passed, 1 skipped;
+    second run unchanged.
 
 ## 2026-10-18: Two additional foreground reporter candidates
 

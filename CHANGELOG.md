@@ -38,6 +38,13 @@ this_file: CHANGELOG.md
   the shared anchor panel base stays a private copy in each script (no App module
   fits it). Changed behaviour: blocked rows say "has auto layers" or "base of auto
   X"; the refusal, pending-updates and failure messages are the App texts.
+- Provenance: the Metrics and Anchors rows now say `source_body_redistributed:
+  true`, like the Names rows: these ports reuse parts of the author's own
+  Apache-2.0 samples. The README limits "not copied" to third-party and
+  Glyphs-corpus originals. The Anchors scope texts and docstrings say "adapted"
+  instead of "independent rewrite"; the Masters rows stay independent rewrites.
+  The Raise Ascender row's App floor is 0.2.150.dev0, like the 27 new rows. The
+  backlog lists Duplicate Unicodes as a source candidate, no longer unported.
 
 ## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
 

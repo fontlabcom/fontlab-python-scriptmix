@@ -42,7 +42,7 @@ fly.ap.edit_guards); the planner and the panel belong to this script.
 
 Source: the author's own FontLab sample
 anchors_rename_bulk.py, Apache-2.0.
-Independent rewrite for the current FontLab 9 API.
+Adapted for the current FontLab 9 API.
 
 Run **Anchors > Rename Bulk** from FontLab's Scripts menu.
 
@@ -51,5 +51,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/714185a637e882f26efa14377d5b8aaa057013f64f3287cb4bf9ca381d524065.py)
+[Python source](../../../../.build/menu-sources/7989abef992901c5cc3fea4e67dac4e18a0508d3d006a831052ea0d699bfea5a.py)
 <!--/codeinclude-->

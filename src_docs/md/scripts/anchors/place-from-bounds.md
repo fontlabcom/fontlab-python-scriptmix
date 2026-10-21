@@ -43,7 +43,7 @@ fly.ap.edit_guards); the planner and the panel belong to this script.
 
 Source: the author's own FontLab sample
 anchors_place_from_bounds.py, Apache-2.0.
-Independent rewrite for the current FontLab 9 API.
+Adapted for the current FontLab 9 API.
 
 Run **Anchors > Place From Bounds** from FontLab's Scripts menu.
 
@@ -52,5 +52,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7f2b9cd3798af442ecdb14df86bbfc78faea8807e27de2eba3a7ab390c3470ff.py)
+[Python source](../../../../.build/menu-sources/223da6e425e82475a7ff1adbaeca94d0a3800c7ac37c4b7906d8f8a9bc50e4ae.py)
 <!--/codeinclude-->

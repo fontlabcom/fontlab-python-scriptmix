@@ -38,7 +38,7 @@ fly.ap.edit_guards); the planner and the panel belong to this script.
 
 Source: the author's own FontLab sample
 anchors_delete_by_name.py, Apache-2.0.
-Independent rewrite for the current FontLab 9 API.
+Adapted for the current FontLab 9 API.
 
 Run **Anchors > Delete By Name** from FontLab's Scripts menu.
 
@@ -47,5 +47,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/bb1c1fd8c113b820359a484d604c9d7d1c5894daf93f95731eacb27d020b73d2.py)
+[Python source](../../../../.build/menu-sources/6980991efcb150b1da4eacb7f017055990227f42d576f9f5eaf8a3247a3f86db.py)
 <!--/codeinclude-->

@@ -47,7 +47,7 @@ fly.ap.edit_guards); the planner and the panel belong to this script.
 
 Source: the author's own FontLab sample
 anchors_center_horizontally.py, Apache-2.0.
-Independent rewrite for the current FontLab 9 API.
+Adapted for the current FontLab 9 API.
 
 Run **Anchors > Center Horizontally** from FontLab's Scripts menu.
 
@@ -56,5 +56,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/979fe4893b977af7dd7d4c5ef08ce974a141b6e92dad6d180a031910e5d38c50.py)
+[Python source](../../../../.build/menu-sources/0abf9bd54d082c5d8b8e8a32a330d6914876e8fcf7a409fa728982538d578cc6.py)
 <!--/codeinclude-->

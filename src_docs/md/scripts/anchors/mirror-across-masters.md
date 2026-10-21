@@ -44,7 +44,7 @@ fly.ap.edit_guards); the planner and the panel belong to this script.
 
 Source: the author's own FontLab sample
 anchors_mirror_across_masters.py, Apache-2.0.
-Independent rewrite for the current FontLab 9 API.
+Adapted for the current FontLab 9 API.
 
 Run **Anchors > Mirror Across Masters** from FontLab's Scripts menu.
 
@@ -53,5 +53,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e497509d6cb2650e9f5875054981cd1cbc616010854cd2564f1b541f55830497.py)
+[Python source](../../../../.build/menu-sources/1fbd323a4f460958a2acf0dacf9911c5d4af81d16b4dfeccfe05535305e871c5.py)
 <!--/codeinclude-->

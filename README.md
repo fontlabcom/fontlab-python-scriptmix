@@ -33,7 +33,10 @@ complete [porting backlog](PORTING-BACKLOG.md) lists each unfinished tool;
 Retiring a dispatcher does not complete its port. The original 130-sample
 migration and the wider Issue120 scope remain open.
 
-Original bodies are not copied into public commits, packages or documentation.
+Third-party and Glyphs-corpus original bodies are not copied into public
+commits, packages or documentation. The author's own Apache-2.0 FontLab samples
+may be adapted: rows with `source_body_redistributed: true` in
+`additional-tools.json` reuse parts of them.
 For an offline source-byte audit, set `FONTLAB_PRESERVED_ROOT` to the existing
 checkout containing its matching `rescued` tree. Tests read those bytes only;
 missing or mismatched originals fail the requested audit. No archived body is

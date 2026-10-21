@@ -41,7 +41,7 @@ fly.ap.edit_guards); the planner and the panel belong to this script.
 
 Source: the author's own FontLab sample
 anchors_snap_to_metrics.py, Apache-2.0.
-Independent rewrite for the current FontLab 9 API.
+Adapted for the current FontLab 9 API.
 
 Run **Anchors > Snap To Metrics** from FontLab's Scripts menu.
 
@@ -50,5 +50,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9c0fe26475f0716f249b227e01cade82520e7e5e23e91a56cd7fdf33353487c0.py)
+[Python source](../../../../.build/menu-sources/ca8514490a62697a1870df16c536cbedc0a5601a1a5b2a3ea44fd41665513545.py)
 <!--/codeinclude-->
