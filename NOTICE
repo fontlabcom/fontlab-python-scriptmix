@@ -981,3 +981,16 @@ Copyright (c) 2017 Simon Cozens. https://github.com/simoncozens/GlyphsScripts
 MIT terms retained in full above apply. Independent FontLab adaptation; no original body redistribution.
 
 Perpendicular Guides: independent implementation of the complete Guides/Perpendicular Guides.py workflow by Fernando Díaz / Reset Type Studio, copyright 2025, Apache-2.0 (upstream README licence). Source SHA256 4a634c17f65d75f7c79b5167d7cd575e59251874bd8a9995573f6c1cd3b931d3. No original source body redistributed. The nearest-two distinct node rule, stable ties, selected controls and independent component branches are retained. FontLab guide angles use radians; transformed native component bounds and complete native history preservation require owned-host qualification.
+
+Metrics editors from the author's own samples
+=============================================
+
+Metrics/Italic Sidebearings, Round Advances, Centre In Advance, Zero-Width
+Marks, Tabular Width and Scale Advances adapt the author's own FontLab samples
+(Apache-2.0), kept under rescued/samples/ as metrics_italic_sidebearings.py,
+metrics_round_advances.py, metrics_center_in_advance.py,
+metrics_zero_width_marks.py, metrics_tabular_width.py and
+metrics_scale_advances.py. Controls, names and parts of the calculations are
+reused under that licence; the panels and the write path are new. Source and
+destination SHA-256 values are in additional-tools.json and rescue-index.json.
+The original files stay unchanged. Native FontLab acceptance is pending.
