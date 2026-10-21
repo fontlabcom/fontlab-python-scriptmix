@@ -1031,3 +1031,18 @@ copyright 2018-2022 Pedro Arilla, Apache License 2.0
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json. Native FontLab
 acceptance is pending.
+
+Anchors editors from the author's own samples
+=============================================
+
+Anchors/Rename Bulk, Center Horizontally, Place From Bounds, Snap To Metrics,
+Round To Grid, Delete By Name and Mirror Across Masters adapt the author's own
+FontLab samples (Apache-2.0), kept under rescued/samples/ as
+anchors_rename_bulk.py, anchors_center_horizontally.py,
+anchors_place_from_bounds.py, anchors_snap_to_metrics.py,
+anchors_round_to_grid.py, anchors_delete_by_name.py and
+anchors_mirror_across_masters.py. Controls, names and parts of the arithmetic
+are reused under that licence; the panels, refusals and write path are new.
+Source and destination SHA-256 values are in additional-tools.json and
+rescue-index.json. The original files stay unchanged. Native FontLab acceptance
+is pending.
