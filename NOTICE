@@ -1345,3 +1345,22 @@ Grid.py by Guides/Grid Generator.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Script tools after Simon Cozens
+===============================
+
+Independent rewrites of scripts by Simon Cozens, simoncozens/GlyphsScripts,
+copyright 2017 Simon Cozens, MIT License
+(https://github.com/simoncozens/GlyphsScripts):
+
+- Contours/Myanmar Medial Ra Maker: Myanmar Medial Ra Maker.py.
+- Features/Nastaliq Connection Editor: Nastaliq Connection Editor.py.
+
+componentize.py, Clean Classes.py and Rename To Glyphs Default Names.py are
+covered by FontLab commands (Font > Detect Composites, Classes panel > Clean
+Up Selected Classes, and Font > Rename Glyphs); no alias table is
+redistributed.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab
+and are Apache-2.0. Source and licence SHA-256 values are in
+additional-tools.json.

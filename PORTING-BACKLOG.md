@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 219 practical tools: 69 sample adaptations and 150
+The active menu contains 221 practical tools: 69 sample adaptations and 152
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -152,3 +152,8 @@ identity has one row. Source hashes of the ported sources are in
 | `simoncozens/GlyphsScripts/LightSpace.py` | Duplicate of | — | FontLab: Font > Metrics > Autospace |
 | `simoncozens/GlyphsScripts/Sansomatic.py` | Ported | Contours/Sansomatic.py | Fourteen geometric capitals in empty selected layers |
 | `simoncozens/GlyphsScripts/Cadence Grid.py` | Duplicate of | Guides/Grid Generator.py | Regular vertical glyph guides with preview and master scope |
+| `simoncozens/GlyphsScripts/Myanmar Medial Ra Maker.py` | Ported | Contours/Myanmar Medial Ra Maker.py | Per-master extensions with a preview of every target |
+| `simoncozens/GlyphsScripts/Nastaliq Connection Editor.py` | Ported | Features/Nastaliq Connection Editor.py | Qalmi connection choices kept in managed rlig comments |
+| `simoncozens/GlyphsScripts/componentize.py` | Duplicate of | — | FontLab: Font > Detect Composites; Contour > Convert > Detect Component |
+| `simoncozens/GlyphsScripts/Clean Classes.py` | Duplicate of | — | FontLab: Classes panel > Clean Up Selected Classes |
+| `simoncozens/GlyphsScripts/Rename To Glyphs Default Names.py` | Duplicate of | — | FontLab: Font > Rename Glyphs > Alternative, or Rename by Table |

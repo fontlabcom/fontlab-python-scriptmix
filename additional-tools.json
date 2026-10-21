@@ -2636,5 +2636,41 @@
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Non-modal construction of A E F H I L N O S T V X Y Z in empty selected master layers. Five explicit dimensions replace Glyphs Dimension palette data. Diagonals end horizontally and every capital spans baseline to cap height. Shared contour conversion, outline writing and metrics-link checks are used. Existing outlines, components, linked metrics and locked layers are kept."
+  },
+  {
+    "title": "Myanmar Medial Ra Maker",
+    "key": "contours_myanmar_medial_ra",
+    "destination": "Scripts/Contours/Myanmar Medial Ra Maker.py",
+    "destination_sha256": "6c150012ce363c6ab2f202a8a6c7edf14172dd0d410be7a428cb35ae3bf1e9af",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source_path": "Myanmar Medial Ra Maker.py",
+    "source_sha256": "f7eae550217669cbef4a2ba2e29e474183afd3b4f0ae6cd1d9f307591fa7624e",
+    "license": "MIT",
+    "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "copyright": "2017 Simon Cozens",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Group consonants on the current master and reuse membership on every master. Calculate each master's extension from its mean advance and template enclosure. Validate contour roles, stretch sides and matching node topology. Preview every target's per-master extensions, node/handle bounds and kept reasons. With an empty selection, use U+103C as the template; a multi-glyph selection is a kept row. Existing names and targets with a failed master are kept. List automatic-glyph rebuild candidates and require consent. Each Add Glyph command includes every master; outlines use one shared geometry history action."
+  },
+  {
+    "title": "Nastaliq Connection Editor",
+    "key": "features_nastaliq_connections",
+    "destination": "Scripts/Features/Nastaliq Connection Editor.py",
+    "destination_sha256": "bbe018282d33c7c05f843898d5fcfffe8db47a34779b03f6647da60b0f5cf7d7",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source_path": "Nastaliq Connection Editor.py",
+    "source_sha256": "bcb30599c055ac0cb8884154537735e30024bd7a02cbc9bdf0b97f8518163bdd",
+    "license": "MIT",
+    "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "copyright": "2017 Simon Cozens",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Qalmi pair selectors, numbered and s/sd alternates, master-specific entry/exit preview and persistent choices in managed rlig comments. Exclude Unicode-style names and right families without a numbered default. Compile valid saved pairs; retain stale pairs as named kept records without rules. Explicit Drop stale pairs on Save removes them. Warn about unmanaged reverse rules that run first. Preserve unrelated feature source and use source-bound Save connection."
   }
 ]
