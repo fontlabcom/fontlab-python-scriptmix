@@ -2108,5 +2108,43 @@
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Combine all-master duplication with Paths/Node Duplicator (current layer).py, SHA256 f6b7bc79856f85611abc485a8df959486afdb76c50e400b5e82f19f2b794c2c7, and Paths/Node Duplicator + 2 Handles (all masters).py, SHA256 eccf4cef027becf7fca14f29de6fde68bea8e0aaeca513c08ba75b717556cddc. One deadline-bound selection snapshot per plan supplies scope and per-glyph reference indices. Full contour correspondence, optional coincident cubic controls, and explicit auxiliary-layer mode. Unsupported content becomes notes; mismatched master edits are held when compatibility checking is enabled."
+  },
+  {
+    "title": "Decompose Named Components",
+    "key": "components_decompose_named",
+    "destination": "Scripts/Components/Decompose Named Components.py",
+    "destination_sha256": "2e71e069df4c76e235537a08e614fe3d49710f7492e4444d4b9689b754f5d60f",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
+    "source_path": "Components/Decompose Specific Components (all masters).py",
+    "source_sha256": "1c49c1e450961d83006aa368b3823333fae14b27453c69a5fd9bf16ad9459a15",
+    "source_license": "Apache-2.0",
+    "source_license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
+    "source_attribution": "Copyright 2025 Fernando Díaz & Reset Type Studio",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Selected glyphs; current or all masters, initially all. Exact source-name filter and recursive decomposition inside matched occurrences. Preview reads source-layer counts without updating builders or making native copies. Apply prepares detached copies and compares contour counts before history. Unrelated siblings remain linked. Refused occurrences are kept rows. One geometry history commit with retained removed components and read-back.",
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending"
+  },
+  {
+    "title": "Set Component Locations",
+    "key": "components_set_locations",
+    "destination": "Scripts/Components/Set Component Locations.py",
+    "destination_sha256": "811d37ae8a93552725c7132eaf12f3711514abb1b2000d125a6e2a37c269496f",
+    "kind": "independent-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
+    "source_path": "Smart Components/Values for Smart Components.py",
+    "source_sha256": "2e96caed001c3d27b31cf82d557ceb27e65f463285546ee60c000d4390e1e389",
+    "source_license": "Apache-2.0",
+    "source_license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
+    "source_attribution": "Copyright 2025 Fernando Díaz & Reset Type Studio",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Batch component locations with one coordinate row per component/master occurrence. Rows start at current component coordinates; Set writes only edited rows and retains an existing @node suffix. Reset sets Base layer name to the host master layer and skips existing matches. Defaults to all components in selected glyphs; optional Glyph-window component selection matches position and source name across masters. Optional exact-name filter. Validate declared axes, finite values and design bounds. Shared data and refused items are kept rows. Preview precedes one geometry history commit with read-back; no-change actions create no history.",
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending"
   }
 ]

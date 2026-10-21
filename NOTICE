@@ -1149,3 +1149,27 @@ declared in its README.md; the repository has no separate LICENSE file
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Components tools after Reset Type Studio
+========================================
+
+Independent rewrites of scripts by Fernando Díaz & Reset Type Studio,
+Reset-Type-Studio/Glyphs-Scripts, Copyright 2025 Fernando Díaz & Reset Type
+Studio, Apache License 2.0 as declared in its README.md
+(https://github.com/Reset-Type-Studio/Glyphs-Scripts):
+
+- Components/Decompose Named Components: Components/Decompose Specific
+  Components (all masters).py. Only matched subtrees are flattened;
+  unrelated sibling components stay linked.
+- Components/Set Component Locations: Smart Components/Values for Smart
+  Components.py. Its Reset action also covers Smart Components/Selected to
+  Normal Components.py: it sets Base layer name to the host master layer.
+
+Components/Component Swapper (all masters).py is covered by
+Components/Replace Reference. Smart Components/Selected to Smart
+Components.py needs no FontLab counterpart: a multi-master base already
+answers font-axis locations, and glyph-specific axes use source-layer
+locations, which Masters/Set Intermediate Layer creates.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.

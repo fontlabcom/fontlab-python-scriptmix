@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 190 practical tools: 69 sample adaptations and 121
+The active menu contains 192 practical tools: 69 sample adaptations and 123
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -98,3 +98,8 @@ identity has one row. Source hashes of the ported sources are in
 | `Reset-Type-Studio/Glyphs-Scripts/Paths/Node Duplicator (current layer).py` | Ported | Contours/Node Duplicator.py | Editor-layer scope |
 | `Reset-Type-Studio/Glyphs-Scripts/Paths/Node Duplicator + 2 Handles (all masters).py` | Ported | Contours/Node Duplicator.py | Optional coincident handles |
 | `Reset-Type-Studio/Glyphs-Scripts/Transformations/Transformations Tool (all masters).py` | Duplicate of | Contours/Transform.py | Transform covers all masters, with preview and origin choices |
+| `Reset-Type-Studio/Glyphs-Scripts/Components/Component Swapper (all masters).py` | Duplicate of | Components/Replace Reference.py | Replaces a named component source across selected glyphs and all masters, with a preview |
+| `Reset-Type-Studio/Glyphs-Scripts/Components/Decompose Specific Components (all masters).py` | Ported | Components/Decompose Named Components.py | Exact-name filter; recursive subtree decomposition |
+| `Reset-Type-Studio/Glyphs-Scripts/Smart Components/Values for Smart Components.py` | Ported | Components/Set Component Locations.py | Rows start at the current locations; Set writes only edited rows |
+| `Reset-Type-Studio/Glyphs-Scripts/Smart Components/Selected to Normal Components.py` | Duplicate of | Components/Set Component Locations.py | Reset sets Base layer name to the host master layer |
+| `Reset-Type-Studio/Glyphs-Scripts/Smart Components/Selected to Smart Components.py` | Retired | — | No conversion is needed in FontLab; glyph-specific axes use source-layer locations, which Scripts/Masters/Set Intermediate Layer.py creates |
