@@ -137,6 +137,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Categories to XML Lib Key](reports/categories-to-xml-lib-key.md)
 - [Close But No Cigar](reports/close-but-no-cigar.md)
 - [Compare Open Font Revisions](reports/compare-open-font-revisions.md)
+- [Dangerous Offcurves](reports/dangerous-offcurves.md)
 - [Dump to Svg Path Commands](reports/dump-to-svg-path-commands.md)
 - [Empty Glyphs](reports/empty-glyphs.md)
 - [Font Overview](reports/font-overview.md)

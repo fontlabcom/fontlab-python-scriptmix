@@ -112,3 +112,5 @@ Close But No Cigar reports near angles, stem lengths and all six node-position
 checks for every selected glyph occurrence, using each first layer and its
 associated named master. Shared selectable Refresh/Close report; native
 acceptance pending. Full original contract, source fixes and MIT terms: NOTICE.
+
+Dangerous Offcurves scans the entire font and opens exact matching layers plus complete selectable findings. Requires App[fontui]; analytic ordering adaptation and native qualification are documented in its menu.

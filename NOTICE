@@ -509,3 +509,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Dangerous Offcurves workflow
+---------------------------
+Alex Slobzheninov, https://github.com/slobzheninov/Glyphs-Scripts
+Original Bug fixing/Dangerous Offcurves.py, Apache License 2.0.
+SHA256 b4278e37d164357b16051cdec642b19554199e3561246b9016ad56792884816a.
+Independent FontLab implementation; original body is not redistributed.
+The complete four finite-probe policy is retained. Ascending fontTools curve-t
+ordering adapts unspecified Glyphs ordering; exact engine equivalence and native
+font-read/tab preservation remain unqualified. No original bug-fix claim.

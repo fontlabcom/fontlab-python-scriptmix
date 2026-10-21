@@ -802,3 +802,5 @@ no Output/font/selection writers. Numeric cubic angle repaired; original curve
 sampling/open wrap preserved. Tests, source/API calibration and ordinary
 archive verification: workspace verification/issue-120/near-miss-z35/.
 Native acceptance, root review and delivery remain pending.
+
+Added complete Dangerous Offcurves full-font probe action and exact-layer proof tab; explicit fontTools analytic ordering adaptation.

@@ -117,3 +117,5 @@ this_file: TODO.md
 
 
 N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
+
+- [ ] Qualify complete Dangerous Offcurves installed workflow inside FontLab with full-font preservation.

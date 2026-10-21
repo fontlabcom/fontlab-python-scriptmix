@@ -721,5 +721,22 @@
     "source_body_redistributed": false,
     "native_acceptance": "pending",
     "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict ±2 angle/position, ±5% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
+  },
+  {
+    "title": "Dangerous Offcurves",
+    "key": "dangerous-offcurves",
+    "destination": "Scripts/Reports/Dangerous Offcurves.py",
+    "destination_sha256": "08945918db739592e7f0f267e6e46712eaffaee32ba9bdf3adc9f7de16f44d01",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source_path": "Bug fixing/Dangerous Offcurves.py",
+    "source_sha256": "b4278e37d164357b16051cdec642b19554199e3561246b9016ad56792884816a",
+    "source_license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "All glyphs/all foreground layers/own paths; raw wrapped four-node windows, all four finite control-axis probes, strict0.05, distinct exact-layer new tab and every per-curve finding. Ascending analytic curve-t ordering is explicit adaptation, not proven Glyphs equivalence.",
+    "app_minimum": "0.2.117.dev0",
+    "native_acceptance": "pending"
   }
 ]
