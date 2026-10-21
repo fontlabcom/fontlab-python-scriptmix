@@ -676,6 +676,42 @@ Controller reports native5acceptance:31workflow,10fullfont/history,7chooser/CSV,
 no native calls, commits, pushes, owner installs or App source changes. Fix1 adds
 no new behavior requiring another native run; controller decides integration.
 
+## Issue 122 T14c: Anchors scripts on the App anchor writer and panel (2026-10-21)
+
+- Base 8d21675; App worktree at 8bd2299 (new `anchor_writer`, `anchor_panel`,
+  `_anchor_panel`). Other lanes had untracked S2/S4/S8 files in this worktree;
+  only T14c paths were staged.
+- uv cache trap: `--refresh-package` / `--reinstall-package` and
+  `uv cache clean fontlab-fontlabapp` still gave the old App build without the new
+  modules (134 x ModuleNotFoundError `fontlabapp.anchor_panel`). `touch` of the App
+  `pyproject.toml` (mtime only) made uv rebuild it.
+- Focus runner: scratchpad copy of `sdd/cmd/mix-S5.sh` with
+  `--refresh-package fontlab-fontlabapp` and `-p no:cacheprovider "$@"`.
+- RED `<focus> tests/test_issue122_S5.py tests/test_curated_delivery.py tests/test_background_clear_menu.py`
+  (old scripts, new tests, new App): exit 1, 146 failed / 33 passed. 133 x
+  `KeyError: 'anchor_writer'` (scripts do not use the App modules), 7 kernel-copy
+  AST failures, 2 background floor pins, the new floor test, and 2 count tests
+  caused by the other lanes' untracked scripts.
+- Re-point: kernel and panel block removed from the seven scripts, names qualified as
+  `anchor_writer.X` / `anchor_panel.X`, base class `anchor_panel.panel_type()`,
+  shared-part docstring sentence rewritten, unused imports and aliases removed.
+  `uvx ruff check --target-version py311` (fixed 31 F401) and `uvx ruff format`
+  on the seven files: all checks passed, formatted.
+- Manifest: seven `destination_sha256` values recomputed and scope texts name
+  `fly.ap.anchor_writer, fly.ap.anchor_panel`; three `app_minimum` values lowered to
+  0.2.150.dev0. The seven rows are unreleased candidates, so `menu-revisions.json`
+  has no records for them and is unchanged.
+- GREEN same focus command: exit 1, 2 failed / 177 passed; the 2 are
+  `test_curated_delivery` count tests failing only on the other lanes' untracked files.
+- MIX `bash verification/issue-122/sdd/cmd/mix.sh` (worktree, with the other lanes'
+  files): exit 1, 30 failed / 1864 passed / 1 skipped. All 30 are the other lanes' files
+  (10 `test_issue122_S2`, 16 `test_rescued_menus` cases for their new scripts, 2
+  `test_curated_delivery` counts, `test_contour_menu_integration` count,
+  `test_reports` manifest). The run regenerated the seven Anchors catalogue pages
+  (`src_docs/md/scripts/anchors/*.md`); index pages changed only by the other lanes'
+  scripts were not staged.
+- Offline tests only; not native FontLab proof.
+
 ## 2026-10-17: Kerning native acceptance
 
 Source and scoped fix reviews approve. Five kerning tools pass 31 independent

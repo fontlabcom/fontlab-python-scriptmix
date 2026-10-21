@@ -957,7 +957,7 @@
     "source_sha256": "efdddf6895ee001bb96e9a744a62b4cc31bb7d8f28045b367df7d6bc42d4c0d0",
     "license": "Apache-2.0",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.151.dev0",
+    "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending. Active and locked target masks explicitly unsupported: safe nonassigning resolver guard refuses before history, without claiming original-domain acceptance. Date failures never skip the one attempted-batch notification; errors aggregated. Deadline preparation is checked and grouped per glyph."
   },
@@ -973,7 +973,7 @@
     "source_sha256": "f4664b72409bf7a0a198dc0cc3c708f179415021b42bcbbd974ca9d5c8bad73a",
     "license": "Apache-2.0",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.151.dev0",
+    "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending. Active and locked target masks explicitly unsupported: safe nonassigning resolver guard refuses before history, without claiming original-domain acceptance. Date failures never skip the one attempted-batch notification; errors aggregated. Deadline preparation is checked and grouped per glyph."
   },
@@ -1011,7 +1011,7 @@
     "source_body_redistributed": false,
     "license": "Apache-2.0",
     "scope": "Complete first-layer selected-node mean/nearest-two-distinct stable rule and simultaneous transformed-component-centre horizontal/vertical branches. Controls included, stored order retained; one notification, existing metadata in place.",
-    "app_minimum": "0.2.154.dev0",
+    "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending"
   },
   {
@@ -1352,7 +1352,7 @@
     "title": "Rename Bulk",
     "key": "anchors_rename_bulk",
     "destination": "Scripts/Anchors/Rename Bulk.py",
-    "destination_sha256": "7989abef992901c5cc3fea4e67dac4e18a0508d3d006a831052ea0d699bfea5a",
+    "destination_sha256": "88a65a46fb92d0121677d441e43a5a4e794395e205a8b3da57e1194c9e579dce",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Anchors/Rename Bulk.py",
@@ -1362,13 +1362,13 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
     "title": "Center Horizontally",
     "key": "anchors_center_horizontally",
     "destination": "Scripts/Anchors/Center Horizontally.py",
-    "destination_sha256": "0abf9bd54d082c5d8b8e8a32a330d6914876e8fcf7a409fa728982538d578cc6",
+    "destination_sha256": "cb4e969fc82bbc62ea026a8887122a3f8844d8308426c90db3442defeeecdccc",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Anchors/Center Horizontally.py",
@@ -1378,13 +1378,13 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
     "title": "Place From Bounds",
     "key": "anchors_place_from_bounds",
     "destination": "Scripts/Anchors/Place From Bounds.py",
-    "destination_sha256": "223da6e425e82475a7ff1adbaeca94d0a3800c7ac37c4b7906d8f8a9bc50e4ae",
+    "destination_sha256": "cb948ce7a413b50ef09065067b328e4e8c6768f0f4e43b11841759e4a8cb07a7",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Anchors/Place From Bounds.py",
@@ -1394,13 +1394,13 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
     "title": "Snap To Metrics",
     "key": "anchors_snap_to_metrics",
     "destination": "Scripts/Anchors/Snap To Metrics.py",
-    "destination_sha256": "ca8514490a62697a1870df16c536cbedc0a5601a1a5b2a3ea44fd41665513545",
+    "destination_sha256": "1a6c5be24aff024394962858ca987bb62eb83152d1cbba0f4704c109851522a2",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Anchors/Snap To Metrics.py",
@@ -1410,13 +1410,13 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
     "title": "Round To Grid",
     "key": "anchors_round_to_grid",
     "destination": "Scripts/Anchors/Round To Grid.py",
-    "destination_sha256": "47d35cb405d78eab474d9dce607325087ba411f8f6276a4ed224991edba20adb",
+    "destination_sha256": "78cf58b3e7c229ee5a6bb292520a96cc0e67204a12dd748dc9edf6cfaf733f23",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Anchors/Round To Grid.py",
@@ -1426,13 +1426,13 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
     "title": "Delete By Name",
     "key": "anchors_delete_by_name",
     "destination": "Scripts/Anchors/Delete By Name.py",
-    "destination_sha256": "6980991efcb150b1da4eacb7f017055990227f42d576f9f5eaf8a3247a3f86db",
+    "destination_sha256": "dc186cbd415fbbfef7997f6e6412957ed4fe3bfef93cb37c8f67ad16ebd95e8b",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Anchors/Delete By Name.py",
@@ -1442,13 +1442,13 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
     "title": "Mirror Across Masters",
     "key": "anchors_mirror_across_masters",
     "destination": "Scripts/Anchors/Mirror Across Masters.py",
-    "destination_sha256": "1fbd323a4f460958a2acf0dacf9911c5d4af81d16b4dfeccfe05535305e871c5",
+    "destination_sha256": "ab4628d370447cf5a58063c5f6bd0773913246fc0c1b1834b81323f487654072",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Anchors/Mirror Across Masters.py",
@@ -1458,6 +1458,6 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   }
 ]

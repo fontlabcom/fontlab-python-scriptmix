@@ -36,9 +36,10 @@ batch, before any history exists, when:
 
 After the write, the script reads the result back and reports any gap.
 If FontLab fails part-way, the error says that native changes may remain.
-Edit > Undo restores the font. The one-step write, the automatic-layer rule
-and the pending-update check are shared with other scripts (fly.ap.history,
-fly.ap.edit_guards); the planner and the panel belong to this script.
+Edit > Undo restores the font. The plan, the safety checks, the one-step
+write and the panel base are shared with the other anchor scripts
+(fly.ap.anchor_writer, fly.ap.anchor_panel); the planner and the controls
+belong to this script.
 
 Source: the author's own FontLab sample
 anchors_rename_bulk.py, Apache-2.0.
@@ -51,5 +52,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7989abef992901c5cc3fea4e67dac4e18a0508d3d006a831052ea0d699bfea5a.py)
+[Python source](../../../../.build/menu-sources/88a65a46fb92d0121677d441e43a5a4e794395e205a8b3da57e1194c9e579dce.py)
 <!--/codeinclude-->

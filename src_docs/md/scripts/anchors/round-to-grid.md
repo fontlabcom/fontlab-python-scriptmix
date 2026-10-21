@@ -36,9 +36,10 @@ batch, before any history exists, when:
 After the write, the script reads every value back. It reports any value
 that FontLab did not keep, for example under a strong rounding preference.
 If FontLab fails part-way, the error says that native changes may remain.
-Edit > Undo restores the font. The one-step write, the automatic-layer rule
-and the pending-update check are shared with other scripts (fly.ap.history,
-fly.ap.edit_guards); the planner and the panel belong to this script.
+Edit > Undo restores the font. The plan, the safety checks, the one-step
+write and the panel base are shared with the other anchor scripts
+(fly.ap.anchor_writer, fly.ap.anchor_panel); the planner and the controls
+belong to this script.
 
 Source: the author's own FontLab sample
 anchors_round_to_grid.py, Apache-2.0.
@@ -51,5 +52,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/47d35cb405d78eab474d9dce607325087ba411f8f6276a4ed224991edba20adb.py)
+[Python source](../../../../.build/menu-sources/78cf58b3e7c229ee5a6bb292520a96cc0e67204a12dd748dc9edf6cfaf733f23.py)
 <!--/codeinclude-->

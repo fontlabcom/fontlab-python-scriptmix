@@ -106,6 +106,22 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     assert set(floors.values()) == {"0.2.150.dev0"}, floors
 
 
+#: The App version that this branch builds; no menu may require a later App.
+BRANCH_APP = "0.2.150.dev0"
+
+
+def test_app_floor_when_any_row_then_not_above_the_branch_app():
+    from packaging.version import Version
+
+    rows = json.loads((ROOT / "additional-tools.json").read_text())
+    above = {
+        row["destination"]: row["app_minimum"]
+        for row in rows
+        if "app_minimum" in row and Version(row["app_minimum"]) > Version(BRANCH_APP)
+    }
+    assert above == {}, above
+
+
 PROCESS_WORDS = ("reviewed App", "reviewed unpublished", "App helper", "issue 12", "Issue 12", "batch S", "batch G")
 
 

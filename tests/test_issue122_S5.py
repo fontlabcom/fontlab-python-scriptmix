@@ -4,7 +4,8 @@
 
 The scripts run unchanged. Only the native modules `fontlab`, `FL` and
 `PythonQt` are fakes; `fly` and the App modules (`fontlabapp.scripting`,
-`history`, `edit_guards`) are the real packages.
+`anchor_writer`, `anchor_panel` with its `AnchorPanel`, `history`,
+`edit_guards`) are the real installed packages.
 Offline results never prove native FontLab behaviour.
 """
 
@@ -599,10 +600,14 @@ def load(name: str) -> dict[str, Any]:
     )
     assert scripting._native.__module__ == "fontlabapp", "unpatched native loader"
     assert scripting.__file__.endswith("fontlabapp/scripting.py")
-    assert namespace["history"].__name__ == "fontlabapp.history", (
-        "the App history commit"
-    )
-    assert namespace["edit_guards"].__name__ == "fontlabapp.edit_guards"
+    writer, panel = namespace["anchor_writer"], namespace["anchor_panel"]
+    assert writer.__name__ == "fontlabapp.anchor_writer", "the App anchor writer"
+    assert panel.__name__ == "fontlabapp.anchor_panel", "the App panel helpers"
+    assert writer.history is sys.modules["fontlabapp.history"], "the App history commit"
+    assert writer.edit_guards is sys.modules["fontlabapp.edit_guards"]
+    base = sys.modules["fontlabapp._anchor_panel"].AnchorPanel
+    panels = [v for v in namespace.values() if isinstance(v, type) and issubclass(v, base)]
+    assert panels and all(v is not base for v in panels), "one script panel on the App base"
     return namespace
 
 
@@ -754,14 +759,14 @@ def test_require_safe_when_existing_anchor_moves_to_origin_then_refuses(
     ns = load(name)
     layer = world.layer("a")
     with pytest.raises(ValueError, match="Redo"):
-        ns["require_safe"](
+        ns["anchor_writer"].require_safe(
             [(world.glyphs["a"], layer, [("set", "top", (0, 0))])],
-            ns["history"].scan_auto_facts(world.package),
+            ns["anchor_writer"].history.scan_auto_facts(world.package),
         )
     # A NEW anchor at 0, 0 and a move that stays off the origin are fine.
-    ns["require_safe"](
+    ns["anchor_writer"].require_safe(
         [(world.glyphs["a"], layer, [("set", "new", (0, 0)), ("set", "top", (0, 1))])],
-        ns["history"].scan_auto_facts(world.package),
+        ns["anchor_writer"].history.scan_auto_facts(world.package),
     )
 
 
@@ -777,13 +782,13 @@ def test_require_safe_when_glyph_is_base_of_auto_composite_then_refuses_with_nam
     ns = load(name)
     work = [(world.glyphs["a"], world.layer("a"), [("remove", "top", None)])]
     with pytest.raises(ValueError, match="agravedot"):
-        ns["require_safe"](work, ns["history"].scan_auto_facts(world.package))
+        ns["anchor_writer"].require_safe(work, ns["anchor_writer"].history.scan_auto_facts(world.package))
     other = [(world.glyphs["agrave"], world.layer("agrave"), [("remove", "top", None)])]
     with pytest.raises(ValueError, match="agravedot"):
-        ns["require_safe"](other, ns["history"].scan_auto_facts(world.package))
+        ns["anchor_writer"].require_safe(other, ns["anchor_writer"].history.scan_auto_facts(world.package))
     world.glyph("b", select=False)
     ok = [(world.glyphs["b"], world.layer("b"), [("remove", "top", None)])]
-    ns["require_safe"](ok, ns["history"].scan_auto_facts(world.package))
+    ns["anchor_writer"].require_safe(ok, ns["anchor_writer"].history.scan_auto_facts(world.package))
 
 
 @pytest.mark.parametrize("name", NAMES)
@@ -810,9 +815,9 @@ def test_collect_when_layer_is_auto_then_listed_skipped_and_never_written(
     ns = load(name)
 
     def planner(g: Any, master: str, layer: Any) -> list:
-        return [ns["Change"]("top", "old", "new", ("remove", "top", None))]
+        return [ns["anchor_writer"].Change("top", "old", "new", ("remove", "top", None))]
 
-    plan = ns["collect"]([glyph], ["Light", "Bold"], planner)
+    plan = ns["anchor_writer"].collect([glyph], ["Light", "Bold"], planner)
     assert plan.skipped == ["a/Bold"]
     assert [l.master for _, l, _ in plan.work] == ["Light"], (
         "auto layer must not enter the write list"
@@ -1119,7 +1124,7 @@ def test_target_x_when_italic_advance_then_slanted_line_through_baseline_point(
     ns = load("Center Horizontally")
     layer = world.layer("a")
     assert round(ns["target_x"](layer, "advance", 0.5, -10, 700), 2) == 373.43
-    assert ns["half_up"](ns["target_x"](layer, "advance", 0.5, -10, 700)) == 373
+    assert ns["anchor_writer"].half_up(ns["target_x"](layer, "advance", 0.5, -10, 700)) == 373
     assert (
         ns["target_x"](layer, "advance", 0.0, 0, 700) == 0
         and ns["target_x"](layer, "advance", 1.0, 0, 0) == 500
@@ -1136,7 +1141,7 @@ def test_target_x_when_ink_box_then_centre_line_and_none_for_empty(
     world.glyph("e", box=(0, 0, 0, 0))
     ns = load("Center Horizontally")
     assert ns["target_x"](world.layer("a"), "ink", 0.5, 0, 700) == 250
-    assert ns["half_up"](ns["target_x"](world.layer("a"), "ink", 0.5, -10, 700)) == 312
+    assert ns["anchor_writer"].half_up(ns["target_x"](world.layer("a"), "ink", 0.5, -10, 700)) == 312
     assert ns["target_x"](world.layer("e"), "ink", 0.5, 0, 700) is None
 
 
@@ -1568,7 +1573,7 @@ def test_docstring_when_script_adds_no_pins_then_never_claims_pin_appearance(
 @pytest.mark.parametrize("name", NAMES)
 @pytest.mark.parametrize("stage", ["write", "notify"])
 def test_apply_when_native_step_fails_after_history_started_then_undo_hint_chained(
-    world: World, name: str, stage: str
+    world: World, monkeypatch: pytest.MonkeyPatch, name: str, stage: str
 ) -> None:
     world.glyph("a", anchors={"Light": [("top", 203, 698), ("bottom", 251, 4)]})
     panel, namespace = panel_of(name)
@@ -1586,11 +1591,11 @@ def test_apply_when_native_step_fails_after_history_started_then_undo_hint_chain
         raise RuntimeError("boom write")
 
     if stage == "write":
-        namespace["apply_work"].__globals__["write"] = broken
+        monkeypatch.setattr(namespace["anchor_writer"], "write", broken)
     else:
         world.fail_notify = True
     with pytest.raises(
-        namespace["history"].PartialWriteError,
+        namespace["anchor_writer"].history.PartialWriteError,
         match=r"did not finish: boom.*Native changes may remain; use Edit > Undo",
     ) as raised:
         panel.apply()
@@ -1739,37 +1744,54 @@ def test_timer_when_panel_closes_then_it_is_stopped(world: World) -> None:
 
 
 # ---------------------------------------------------------------- shared App parts
+SHARED = {
+    # the App anchor writer kernel
+    "Change", "Plan", "Planner", "Edit", "Work", "APPEARANCE", "ORIGIN_ERROR",
+    "EPSILON", "half_up", "plural", "fmt", "layer_of", "raw_point",
+    "anchor_points", "duplicated", "refusal", "parse_names", "collect", "shown",
+    "blocked_rows", "require_safe", "prepare", "write", "unstored", "apply_work",
+    # the App panel base and helpers
+    "AnchorPanel", "ink", "muted", "readable_palette", "ERROR_COLOR", "MAX_ROWS",
+    # older private copies of the history commit
+    "commit", "stamp_all", "require_settled", "dependency_records", "unsafe_glyphs",
+}  # fmt: skip
+
+
 @pytest.mark.parametrize("name", NAMES)
-def test_script_when_parsed_then_history_kernel_comes_from_the_app(name: str) -> None:
-    tree = ast.parse((FOLDER / f"{name}.py").read_text())
-    top = {n.name for n in tree.body if isinstance(n, ast.FunctionDef)}
-    private = {
-        "commit",
-        "stamp_all",
-        "require_settled",
-        "dependency_records",
-        "unsafe_glyphs",
+def test_script_when_parsed_then_kernel_and_panel_base_come_from_the_app(
+    name: str,
+) -> None:
+    source = (FOLDER / f"{name}.py").read_text()
+    tree = ast.parse(source)
+    top: set[str] = set()
+    for node in tree.body:
+        if isinstance(node, (ast.FunctionDef, ast.ClassDef)):
+            top.add(node.name)
+        elif isinstance(node, ast.Assign):
+            top.update(t.id for t in node.targets if isinstance(t, ast.Name))
+    assert not top & SHARED, f"{name}: private copies {sorted(top & SHARED)}"
+    assert "shared kernel" not in source and "shared panel" not in source
+    imported = {
+        alias.name
+        for node in tree.body
+        if isinstance(node, ast.Import)
+        for alias in node.names
     }
-    assert not top & private, f"{name}: private copies {top & private}"
-    apply_work = next(
-        n
-        for n in tree.body
-        if isinstance(n, ast.FunctionDef) and n.name == "apply_work"
-    )
-    nested = {n.name: n for n in ast.walk(apply_work) if isinstance(n, ast.FunctionDef)}
-    assert "mutate" in nested and ast.unparse(nested["mutate"].returns) == "None", name
-    calls = [
-        n
-        for n in ast.walk(apply_work)
-        if isinstance(n, ast.Call) and ast.unparse(n.func) == "history.commit"
+    assert {"fly.ap.anchor_writer", "fly.ap.anchor_panel"} <= imported, name
+    assert not imported & {"fly.ap.history", "fly.ap.edit_guards"}, name
+    bases = [
+        ast.unparse(base)
+        for node in tree.body
+        if isinstance(node, ast.ClassDef)
+        for base in node.bases
     ]
-    assert len(calls) == 1, name
-    keywords = {k.arg: ast.unparse(k.value) for k in calls[0].keywords}
-    assert keywords["operation"] == "'geometry'" and "read_back" in keywords, name
+    assert bases == ["anchor_panel.panel_type()"], (name, bases)
+    assert len(source.splitlines()) < 500, f"{name}: planner, panel subclass and main only"
 
 
 def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> None:
     used = app_names_used([FOLDER / f"{name}.py" for name in NAMES])
-    assert {"commit", "scan_auto_facts", "refusals"} <= used["fly.ap.history"]
-    assert used["fly.ap.edit_guards"] == {"require_settled"}
+    assert set(used) == {"fly.ap.anchor_writer", "fly.ap.anchor_panel"}, sorted(used)
+    assert {"Change", "Planner", "fmt", "half_up"} <= used["fly.ap.anchor_writer"]
+    assert {"panel_type", "ink", "muted"} <= used["fly.ap.anchor_panel"]
     check_real_app_names(used)

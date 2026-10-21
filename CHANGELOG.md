@@ -2,6 +2,25 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — 2026-10-21 — Anchors scripts on the App anchor writer and panel
+
+- Anchors: Rename Bulk, Center Horizontally, Place From Bounds, Snap To
+  Metrics, Round To Grid, Delete By Name and Mirror Across Masters no longer
+  carry a private copy of the anchor kernel and the 291-line panel base. They
+  use `fly.ap.anchor_writer` (plan, safety checks, one-step write, read-back)
+  and `fly.ap.anchor_panel` (`panel_type()`, colour helpers); each keeps only
+  its planner, its panel subclass and `main` (146 to 190 lines, was 727 to
+  772). Changed behaviour: a "set" edit of a name that several anchors on the
+  layer carry is also refused at Apply (the planners already blocked it).
+  Destination hashes and scope texts of the seven rows are updated.
+- App floors: Clear All Layer Backgrounds, Clear Master Backgrounds (were
+  0.2.151.dev0) and Perpendicular Guides (was 0.2.154.dev0) now require
+  0.2.150.dev0, the App this branch builds. A test keeps every floor at or
+  below it.
+- Tests: `tests/test_issue122_S5.py` runs the scripts against the real App
+  `anchor_writer`, `anchor_panel` and `AnchorPanel`, and checks that no kernel
+  or panel name is defined in a script.
+
 ## Unreleased — 2026-10-21 — scripts use the shared App and Fontport helpers
 
 - Features: Build Suffix Substitution and Feature Code Viewer read and write

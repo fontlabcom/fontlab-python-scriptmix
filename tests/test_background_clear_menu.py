@@ -21,6 +21,6 @@ def test_complete_scope_dispatch_and_original_pins(monkeypatch,title,method):
     assert calls==[method,method]
     row=next(row for row in json.loads((ROOT/'additional-tools.json').read_text()) if row['destination']==destination)
     assert row['destination_sha256']==hashlib.sha256((ROOT/destination).read_bytes()).hexdigest()
-    assert row['app_minimum']=='0.2.151.dev0'
+    assert row['app_minimum']=='0.2.150.dev0'
     assert row['native_acceptance']=='pending' and row['counted_in_130_sample_migration'] is False
     assert row['source_sha256'] in {'efdddf6895ee001bb96e9a744a62b4cc31bb7d8f28045b367df7d6bc42d4c0d0','f4664b72409bf7a0a198dc0cc3c708f179415021b42bcbbd974ca9d5c8bad73a'}
