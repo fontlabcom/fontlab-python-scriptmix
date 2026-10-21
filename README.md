@@ -128,3 +128,9 @@ Dangerous Offcurves scans the entire font and opens exact matching layers plus c
 
 
 The combined App0.2.122.dev0 source candidate adds Reports > Point Counter (Master Layers) and Dangerous Offcurves, preserving all prior109menus and both complete original workflows. Dangerous Offcurves uses explicitly adapted ascending fontTools curve-time intersection order; opaque Glyphs engine equivalence remains unproved. Literal text is checked before publication; a lossy literal NUL is refused and remains a native host hold. Source/artifact verification does not complete native/font-history preservation acceptance.
+
+
+Copy Anchors Between Fonts provides both font/master selectors, all/selected
+glyphs and anchors, proportional/italic placement and all collision modes.
+Selected mode verifies the chosen source Font window; All mode supports every
+registered source. Full native history/reopen qualification remains pending.

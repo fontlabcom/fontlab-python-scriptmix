@@ -620,3 +620,7 @@ Dangerous Offcurves: retain native source-engine, getter preservation and exact-
 
 
 N162: independently review final combined .122/.37 source/artifact tuple and retain complete native PythonQt/NUL and font/UI/history/reopen qualification separately.
+
+
+N188: finish complete cross-font Copy Anchors source/artifact/whole-module
+verification, independent review and owned two-font native qualification.

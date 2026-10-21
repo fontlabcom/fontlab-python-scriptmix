@@ -129,3 +129,5 @@ N68 repair round1 (.82): preserve first selected parent only, without layer or l
 
 
 - [ ] N162: qualify final combined native workflows and literal NUL host hold; source/artifact integration does not complete original scope.
+
+- [ ] N188 complete cross-font Copy Anchors final artifacts, whole-module gates and native qualification.

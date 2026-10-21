@@ -3410,3 +3410,8 @@ hits before restoring only valid exact source endpoints; interior roots survive.
 
 
 N162: form exact independently reviewed .116 editable-choice and revised .118 Point Counter plus independently accepted complete .120 Dangerous Offcurves union on .115; test ordinary .122/.37 archives, all current consumers and original whole-module floors. No native/canonical/push. Private command/evidence: verification/issue-120/reviewed-union-z45.
+
+
+N188: independent complete cross-font Copy Anchors candidate on reviewed.122.
+Source-boundary and realQt controls in progress; no native acceptance yet.
+Exact commands/receipts: verification/issue-120/crossfont-anchors-z48 (workspace).
