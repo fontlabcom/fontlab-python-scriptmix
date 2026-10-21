@@ -61,7 +61,10 @@ layout; documentation routes and publication require their own review.
 
 Run pytest with plugin autoload disabled and the preserved-source root supplied.
 Scriptmix also requires the reviewed installed App and `--original-source-root`
-for original-byte checks. Examples retains its repository tests and the `lessons`
+for original-byte checks. The Features tests also need Fontport, which now holds
+the feature source helpers (`fly.fp.feature_blocks`): set
+`SCRIPTMIX_EXTRA_REQUIREMENTS` to a Fontport wheel or checkout (space-separated
+for several). Examples retains its repository tests and the `lessons`
 package suites. Exact commands, skips and limitations are recorded in WORK.md.
 
 Current lifecycle verification uses the reviewed unpublished App0.2.43.dev0

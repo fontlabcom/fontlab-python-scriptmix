@@ -57,6 +57,40 @@ this_file: WORK.md
   from older script docstrings (unchanged).
 - Scope: offline tests only. Native FontLab acceptance of all 27 tools is pending.
 
+## Issue 122 T16: scripts use the shared App and Fontport helpers (2026-10-21)
+
+- Base 56a0292. Peers: App worktree 033e0f2, Fontport worktree b085cf7, Fly 6214776.
+- Runner: `bash verification/issue-122/sdd/cmd/mix.sh` (workspace root). It now also
+  exports `SCRIPTMIX_EXTRA_REQUIREMENTS=$I/fontlab-fontport` (same edit in
+  `mix-archive.sh`); `test.sh` turns each entry into one `--with`.
+- uv cache trap: the App path build was cached as 0.2.146.dev0 (the T0 pretend
+  version); changing `SETUPTOOLS_SCM_PRETEND_VERSION` does not invalidate it, so the
+  earlier "built as 0.2.150.dev0" note was not true. Fontport needs App >=0.2.150.dev0,
+  so the first run failed to resolve (exit 1, "only fontlab-fontlabapp<0.2.150.dev0 is
+  available"). Fix used once: `uv run --no-project --python 3.11 --refresh-package
+  fontlab-fontlabapp --refresh-package fontlab-fontport --with $I/fontlab-fontlabapp
+  --with $I/fontlab-fontport python -c ...` (from the tmp volume) printed
+  `0.2.150.dev0 0.2.150.dev0`; later runs reuse that build.
+- Features (step 1):
+  - RED: focused copy of mix.sh plus `-p no:cacheprovider`, `tests/test_features.py`
+    against the unchanged scripts: EXIT=1, 4 failed (2 new identity tests, whitespace
+    run order, viewer snapshot), 1571 passed, 1 skipped.
+  - After re-pointing the imports: EXIT=1, 12 released-byte tests failed (Build Suffix
+    Substitution hash). Recorded both import edits (and one docstring word, "App's" ->
+    "Fontport's") in `menu-revisions.json` as kind `import-repoint`. Then 3 failed: two
+    harness tests built synthetic rows without `source_sha256` (test_components) or
+    copied the whole revision ledger into a one-row tree (test_anchor_menu_polish);
+    both now pass the real row / only that menu's revision. Assertions unchanged.
+  - GREEN: EXIT=0, 1575 passed, 1 skipped.
+  - Acceptance `rg -n "fontlabapp\.(vanilla|_qtsafe)|scripting\.(read|write)_feature_blocks|fly\.ap\.scripting import[^)]*feature_blocks|fontui\.(font_info|groups|kerning|transform)_editor|batch_panel|glyph_sequence" Scripts tests`:
+    exit 1 (no match).
+  - Verified, unchanged: `Reports/Categories to XML Lib Key.py:26`
+    (`fly.gp.glyphsapp.glyph_info.glyph_categories` exists in Glyport),
+    `Reports/Dangerous Offcurves.py:14` and `Contours/Select Small Contours.py:15`
+    (App still has the `[fontui]` extra). T5 was skipped, so the three poller scripts
+    need no change.
+  - Lint: `uvx ruff check --target-version py311` on the two Feature scripts: clean.
+
 ## 2026-10-18: Two additional foreground reporter candidates
 
 Added only two thin lazy Reporters menu scripts, separate additional-tools.json,

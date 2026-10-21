@@ -180,9 +180,12 @@ def test_revision_accepts_current_hash_without_rewriting_either_manifest_form(tm
     destination.write_bytes(MENU.read_bytes())
     (tmp_path / "migration.json").write_text(json.dumps([current]))
     (tmp_path / "menu-moves.json").write_text('{"moves": []}')
-    (tmp_path / "menu-revisions.json").write_bytes(
-        (root / "menu-revisions.json").read_bytes()
-    )
+    # Keep only this menu's revision: the copied manifest has only its row.
+    ledger = json.loads((root / "menu-revisions.json").read_text())
+    ledger["revisions"] = [
+        row for row in ledger["revisions"] if row["destination"] == current["destination"]
+    ]
+    (tmp_path / "menu-revisions.json").write_text(json.dumps(ledger))
     before = (tmp_path / "migration.json").read_bytes()
     assert current_rows(tmp_path) == [current]
     assert (tmp_path / "migration.json").read_bytes() == before

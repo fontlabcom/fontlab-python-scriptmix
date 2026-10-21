@@ -16,12 +16,8 @@ from fly.ap.feature_code import (
     safe_name,  # noqa: F401 - preserve sample helper interface
     suffix_pairs,
 )
-from fly.ap.scripting import (
-    features_dialog_type,
-    read_feature_blocks,
-    show_script_dialog,
-    write_feature_blocks,
-)
+from fly.ap.scripting import features_dialog_type, show_script_dialog
+from fly.fp.feature_blocks import read_feature_blocks, write_feature_blocks
 
 fontlab = ap.fontlab
 QtCore, QtGui = (qt.QtCore, qt.QtGui)

@@ -17,6 +17,36 @@
           "current": "    def source_glyph(self) -> \"fontlab.flGlyph | None\":\n        \"\"\"Return the named native glyph, or None without a source font or name.\"\"\"\n"
         }
       ]
+    },
+    {
+      "destination": "Scripts/Features/Build Suffix Substitution.py",
+      "historical_sha256": "13e7bb721cad475e3893fb905abd1abba8be38b6b159422390e31cbe5613f49f",
+      "current_sha256": "a8731789ba198ebf01725827a633d60928245c0db863044a1733d4ae34608555",
+      "source_sha256": "23294f73a4936c77ad4c475e8900620c219d88f6d8df8467a6b1b21a695fc47f",
+      "kind": "import-repoint",
+      "edits": [
+        {
+          "historical": "from fly.ap.scripting import (\n    features_dialog_type,\n    read_feature_blocks,\n    show_script_dialog,\n    write_feature_blocks,\n)\n",
+          "current": "from fly.ap.scripting import features_dialog_type, show_script_dialog\nfrom fly.fp.feature_blocks import read_feature_blocks, write_feature_blocks\n"
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Features/Feature Code Viewer.py",
+      "historical_sha256": "96df801f97d645706cb714d34c1324800f36354c0b460c22a929868434ab9301",
+      "current_sha256": "f47c5634f787d5a0439bb0a9c39a32250f4c66b51502d5fc3abeba33c14da7bd",
+      "source_sha256": "d2de9d47c51a49b74b5817c4e6ce580d6901b48bc51c3f5fcfd0eb3638b1de97",
+      "kind": "import-repoint",
+      "edits": [
+        {
+          "historical": "from fly.ap.scripting import (\n    features_dialog_type,\n    read_feature_blocks,\n    show_script_dialog,\n)\n",
+          "current": "from fly.ap.scripting import features_dialog_type, show_script_dialog\nfrom fly.fp.feature_blocks import read_feature_blocks\n"
+        },
+        {
+          "historical": "    access can synthesize class declarations. The caller must use App's exact\n",
+          "current": "    access can synthesize class declarations. The caller must use Fontport's exact\n"
+        }
+      ]
     }
   ]
 }

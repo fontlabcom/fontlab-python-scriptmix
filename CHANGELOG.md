@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — 2026-10-21 — scripts use the shared App and Fontport helpers
+
+- Features: Build Suffix Substitution and Feature Code Viewer read and write
+  feature source through `fly.fp.feature_blocks` (Fontport). The App functions
+  they used were removed. `menu-revisions.json` records the exact import edits,
+  so the released bytes stay verifiable. `test.sh` accepts
+  `SCRIPTMIX_EXTRA_REQUIREMENTS` (space-separated) to supply Fontport.
+
 ## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
 
 Add 27 tools, 22 of them non-modal panels; the active menu grows from 123 to 150

@@ -82,10 +82,17 @@ def assert_released49(root, rows):
         json.dumps(rows[:49], sort_keys=True, separators=(",", ":")).encode()
     ).hexdigest()
     assert digest == RELEASED49_DIGEST, "Released v1.0.8 manifest changed"
+    # A recorded menu revision is checked against the row's source hash too.
+    sources = {row["destination"]: row["source_sha256"] for row in rows}
     for destination, expected in RELEASED49_BYTES.items():
-        assert (
-            hashlib.sha256(released_bytes(root, {"destination": destination, "destination_sha256": expected})).hexdigest() == expected
-        ), destination
+        row = {
+            "destination": destination,
+            "destination_sha256": expected,
+            "source_sha256": sources[destination],
+        }
+        assert hashlib.sha256(released_bytes(root, row)).hexdigest() == expected, (
+            destination
+        )
 
 
 def test_immutable_released49_manifest_and_every_menu_byte():
@@ -517,10 +524,16 @@ def test_released49_rejects_changed_provenance(field):
 
 def test_released49_rejects_changed_menu_bytes(tmp_path):
     rows = json.loads((ROOT / "migration.json").read_text())
+    sources = {row["destination"]: row["source_sha256"] for row in rows}
     for destination, expected in RELEASED49_BYTES.items():
         target = tmp_path / destination
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes(released_bytes(ROOT, {"destination": destination, "destination_sha256": expected}))
+        row = {
+            "destination": destination,
+            "destination_sha256": expected,
+            "source_sha256": sources[destination],
+        }
+        target.write_bytes(released_bytes(ROOT, row))
     (tmp_path / rows[48]["destination"]).write_bytes(b"changed")
     with pytest.raises(AssertionError):
         assert_released49(tmp_path, rows)

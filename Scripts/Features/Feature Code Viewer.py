@@ -13,11 +13,8 @@ from collections.abc import Iterable
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
-    features_dialog_type,
-    read_feature_blocks,
-    show_script_dialog,
-)
+from fly.ap.scripting import features_dialog_type, show_script_dialog
+from fly.fp.feature_blocks import read_feature_blocks
 
 fontlab = ap.fontlab
 QtCore, QtGui = (qt.QtCore, qt.QtGui)
@@ -35,7 +32,7 @@ def run(features: Iterable[tuple[str, str]]) -> list[tuple[str, str]]:
     """Copy ordered (tag, exact source) pairs from a VFJ-equivalent snapshot.
 
     Native feature iteration can yield positions rather than tags; raw prefix
-    access can synthesize class declarations. The caller must use App's exact
+    access can synthesize class declarations. The caller must use Fontport's exact
     read_feature_blocks snapshot so displayed source matches persisted source.
     Empty sources are retained, order is unchanged, and nothing is compiled.
     """

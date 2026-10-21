@@ -24,8 +24,29 @@ def test_requested_tool_exists(title):
 
 
 import importlib.util
+import os
 import sys
+from importlib.metadata import PackageNotFoundError, distribution
 from types import SimpleNamespace as NS
+
+
+def fontport_sources() -> Path:
+    """Locate the installed Fontport package. Feature source helpers live there.
+
+    ``SCRIPTMIX_FONTPORT_SOURCE`` overrides the installed distribution. Supply
+    Fontport to ``test.sh`` with ``SCRIPTMIX_EXTRA_REQUIREMENTS``.
+    """
+    override = os.environ.get("SCRIPTMIX_FONTPORT_SOURCE")
+    if override:
+        return Path(override)
+    try:
+        located = distribution("fontlab-fontport").locate_file("fontlab_fontport")
+    except PackageNotFoundError:
+        pytest.fail(
+            "Fontport is missing: set SCRIPTMIX_EXTRA_REQUIREMENTS to a Fontport "
+            "wheel or checkout (fly.fp.feature_blocks)"
+        )
+    return Path(located)
 
 
 @pytest.fixture
@@ -39,11 +60,9 @@ def load(monkeypatch, app_sources):
     )
     native = NS(CurrentFont=lambda: NS(glyphs=[NS(name=n) for n in state.names]))
     qt = NS(QtCore=NS(), QtGui=NS(QDialog=object, QWidget=object))
-    monkeypatch.setitem(
-        sys.modules,
-        "fontlabapp",
-        NS(_native=lambda name: native if name == "fontlab" else qt),
-    )
+    app = NS(_native=lambda name: native if name == "fontlab" else qt)
+    monkeypatch.setitem(sys.modules, "fontlabapp", app)
+    monkeypatch.setitem(sys.modules, "fontlab", native)
     spec = importlib.util.spec_from_file_location(
         "fontlabapp.scripting",
         app_sources / "scripting.py",
@@ -51,6 +70,8 @@ def load(monkeypatch, app_sources):
     scripting = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, "fontlabapp.scripting", scripting)
     spec.loader.exec_module(scripting)
+    # Fontport calls App through the module object ``fontlabapp.scripting``.
+    app.scripting = scripting
     monkeypatch.setattr(
         scripting,
         "current_package",
@@ -89,8 +110,19 @@ def load(monkeypatch, app_sources):
         shared = importlib.util.module_from_spec(spec)
         monkeypatch.setitem(sys.modules, "fontlabapp." + leaf, shared)
         spec.loader.exec_module(shared)
+    # The real Fontport module, loaded under its canonical name so that its
+    # relative ``from .host import NativeFontBackend`` finds the Backend double.
+    spec = importlib.util.spec_from_file_location(
+        "fontlab_fontport.feature_blocks",
+        fontport_sources() / "feature_blocks.py",
+    )
+    blocks = importlib.util.module_from_spec(spec)
+    monkeypatch.setitem(sys.modules, "fontlab_fontport.feature_blocks", blocks)
+    spec.loader.exec_module(blocks)
     monkeypatch.setitem(sys.modules, "fly", NS(ap=NS(fontlab=native), qt=qt))
     monkeypatch.setitem(sys.modules, "fly.ap.scripting", scripting)
+    # A Fly alias is the canonical module object itself.
+    monkeypatch.setitem(sys.modules, "fly.fp.feature_blocks", blocks)
     spec = importlib.util.spec_from_file_location(
         "fly.ap.feature_code",
         app_sources / "feature_code.py",
@@ -107,7 +139,7 @@ def load(monkeypatch, app_sources):
         spec.loader.exec_module(result)
         return result
 
-    return module, state, scripting
+    return module, state, blocks
 
 
 def test_independent_feature_calculations(load):
@@ -163,8 +195,22 @@ def test_append_preserves_existing_and_rejects_conflicts(load):
         build.append_code("", "smcp", [])
 
 
+@pytest.mark.parametrize("title", [TITLES[1], TITLES[3]])
+def test_feature_scripts_read_and_write_source_through_fly_fp(load, title):
+    module, _, blocks = load
+    tool = module(title)
+    assert blocks.__name__ == "fontlab_fontport.feature_blocks"
+    assert tool.read_feature_blocks is blocks.read_feature_blocks, (
+        "Feature scripts must read source through fly.fp.feature_blocks"
+    )
+    if title == TITLES[1]:
+        assert tool.write_feature_blocks is blocks.write_feature_blocks, (
+            "Build Suffix Substitution must write through fly.fp.feature_blocks"
+        )
+
+
 def test_shared_writer_reuses_backend_preserves_blocks_and_noop(load):
-    _, state, scripting = load
+    _, state, blocks = load
     state.package = NS(id=11, fgId=101, master="Regular")
     state.names = ["a", "a.sc"]
     old = {
@@ -177,11 +223,11 @@ def test_shared_writer_reuses_backend_preserves_blocks_and_noop(load):
         "features": old["features"]
         + [("smcp", "feature smcp { sub a by a.sc; } smcp;")],
     }
-    assert scripting.write_feature_blocks(
+    assert blocks.write_feature_blocks(
         state.package, old, new, references=["a", "a.sc"], undo_name="Build"
     ) == {"changed": 1}
     assert state.writes == [(new, "Build")]
-    assert scripting.write_feature_blocks(
+    assert blocks.write_feature_blocks(
         state.package, new, new, references=[], undo_name="Build"
     ) == {"changed": 0}
     assert len(state.writes) == 1
@@ -189,7 +235,7 @@ def test_shared_writer_reuses_backend_preserves_blocks_and_noop(load):
 
 @pytest.mark.parametrize("failure", ["font", "source", "reference"])
 def test_shared_writer_stale_preflight_does_not_write(load, failure):
-    _, state, scripting = load
+    _, state, blocks = load
     package = NS(id=11, fgId=101, master="Regular")
     state.package = package if failure != "font" else NS(id=12)
     state.names = ["a"]
@@ -198,7 +244,7 @@ def test_shared_writer_stale_preflight_does_not_write(load, failure):
         expected if failure != "source" else {"prefix": "changed", "features": []}
     )
     with pytest.raises(ValueError):
-        scripting.write_feature_blocks(
+        blocks.write_feature_blocks(
             package,
             expected,
             {"prefix": expected["prefix"], "features": [("smcp", "new")]},
@@ -209,12 +255,12 @@ def test_shared_writer_stale_preflight_does_not_write(load, failure):
 
 
 def test_shared_writer_reports_partial_failure(load):
-    _, state, scripting = load
+    _, state, blocks = load
     state.package = NS(id=11, fgId=101, master="Regular")
     state.failure = RuntimeError("native assignment failed")
     expected = state.blocks
     with pytest.raises(RuntimeError, match="may be partial"):
-        scripting.write_feature_blocks(
+        blocks.write_feature_blocks(
             state.package,
             expected,
             {"prefix": expected["prefix"], "features": [("smcp", "new")]},
