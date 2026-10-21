@@ -104,3 +104,14 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     assert len(wanted) == 28
     floors = {path: rows[path]["app_minimum"] for path in wanted}
     assert set(floors.values()) == {"0.2.150.dev0"}, floors
+
+
+PROCESS_WORDS = ("reviewed App", "reviewed unpublished", "App helper", "issue 12", "Issue 12", "batch S", "batch G")
+
+
+def test_script_docstrings_when_public_then_no_process_jargon():
+    found = []
+    for path in sorted((ROOT / "Scripts").rglob("*.py")):
+        doc = ast.get_docstring(ast.parse(path.read_text())) or ""
+        found += [f"{path.relative_to(ROOT)}: {word}" for word in PROCESS_WORDS if word in doc]
+    assert not found, found

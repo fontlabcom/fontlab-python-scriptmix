@@ -31,7 +31,7 @@ Why this design:
     - Locked, mask, service, automatic and image layers are refused. So is a
       glyph that has an automatic layer, or is a base of one (also through
       manual composites): FontLab cannot undo it. So is a run while FontLab
-      has pending glyph updates. The shared App helper fly.ap.history does
+      has pending glyph updates. The shared module fly.ap.history does
       these checks and the one-step write.
 
 How to use:
@@ -53,5 +53,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/dd871c2a4140a061d2ddecf98366614e75694cc4dbcbb95bd18f37c68f594a55.py)
+[Python source](../../../../.build/menu-sources/70031f5ad737231f402d0120066c5da31d333c01afe4808ca47fa97b6509f530.py)
 <!--/codeinclude-->

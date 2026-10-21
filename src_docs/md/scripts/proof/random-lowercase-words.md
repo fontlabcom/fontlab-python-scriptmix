@@ -26,7 +26,7 @@ handling, source-font binding and full data/history preservation remain pending.
 
 The port repairs the source's undefined Font global with explicit current-font
 lookup. It preserves Output instead of clearing it or printing status there.
-Requires reviewed App>=0.2.38.dev0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random lowercase words.py.
+Requires App>=0.2.38.dev0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random lowercase words.py.
 See NOTICE and additional-tools.json for source/data/license provenance.
 
 Run **Proof > Random Lowercase Words** from FontLab's Scripts menu.
@@ -36,5 +36,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2e94312e002c096132808a36c9f4a83f511cf415702ff580a32d351a7eb47542.py)
+[Python source](../../../../.build/menu-sources/5ba9fb84427edcd9572f07a7892bceac33e9fdeb8a97bd2a7d0ab98b42301ce2.py)
 <!--/codeinclude-->

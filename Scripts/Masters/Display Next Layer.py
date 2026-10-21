@@ -17,7 +17,7 @@ How it works:
 
 Why this design:
     - The name rule is the rule of the FontLab source, so the cycle matches the
-      Layers panel. The shared App helper fly.ap.masters.associated_master
+      Layers panel. The shared module fly.ap.masters.associated_master
       holds it.
     - All slots are planned first. One bad slot stops the run before any change.
     - The script writes no font data. No Undo step is needed.

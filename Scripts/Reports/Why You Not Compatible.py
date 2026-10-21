@@ -19,7 +19,7 @@ are repaired; name sets print deterministically. No Output panel is cleared,
 and no font/selection/master/history/preference writer is called. Actual native
 mapping, read/cache/font/history/persistence and UI acceptance remain pending.
 
-Requires reviewed App>=0.2.51.dev0 and FontLab9 Python3.11 with fontlab-fly.
+Requires App>=0.2.51.dev0 and FontLab9 Python3.11 with fontlab-fly.
 Adapted from Simon Cozens' MIT Why You Not Compatible? See NOTICE and
 additional-tools.json for exact source and license provenance.
 """

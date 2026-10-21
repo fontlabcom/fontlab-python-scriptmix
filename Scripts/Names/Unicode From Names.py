@@ -17,7 +17,7 @@ X" (another glyph already owns the code, or an earlier row claims it), a
 refusal reason, or "assign". The write rescans, then sets the code points on
 the font-owned FontGate record as one Undo step. It reads each list back and
 compares it with the plan. The scan, the refusal policy and the one-step write
-come from the App helper fly.ap.names_edit. If a write fails part way, every
+come from the shared module fly.ap.names_edit. If a write fails part way, every
 planned glyph is still notified and stamped, and the message asks you to use
 Edit > Undo.
 

@@ -12,7 +12,7 @@ mark. One click writes the mark to every selected glyph.
 HOW: FontLab stores a mark as hue + 1 (1 to 360), grey as 1000 + level, and 0
 for none. The script rescans the font, plans the change, and writes it as one
 Undo step. It then reads each mark back and compares it with the plan. The
-scan, the refusal policy and the one-step write come from the App helper
+scan, the refusal policy and the one-step write come from the shared module
 fly.ap.names_edit. If a write fails part way, every planned glyph is still
 notified and stamped, and the message asks you to use Edit > Undo.
 

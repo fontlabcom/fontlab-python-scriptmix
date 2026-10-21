@@ -23,7 +23,7 @@ How it works:
 
 Why this design:
     - The name rule is the rule of the FontLab source, so the cycle matches the
-      Layers panel. The shared App helper fly.ap.masters.associated_master
+      Layers panel. The shared module fly.ap.masters.associated_master
       holds it.
     - All slots are planned first. One bad slot stops the run before any change.
     - The script writes no font data. No Undo step is needed.
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/88cacaef8d6100f95d03dea198289a5508589a0215391ce008019f7b1179ea49.py)
+[Python source](../../../../.build/menu-sources/4d90e069d299929200afc2715968dee33631a1823a1a3f76f45a42b5f485c050.py)
 <!--/codeinclude-->

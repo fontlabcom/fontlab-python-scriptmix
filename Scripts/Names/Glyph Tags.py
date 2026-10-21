@@ -9,13 +9,13 @@ WHAT: A non-modal panel lists each tag used by the selected glyphs and how
 many glyphs carry it. Type a tag and press Add, or tick tags and press Remove.
 The tag field completes from all tags in the font.
 
-HOW: The script reads the selection through the App helper. It then scans the
-whole font once. For each edit it rescans, builds a plan, and writes the plan
-as one Undo step. After the write it reads each tag list back and compares it
-with the plan. The scan, the refusal policy and the one-step write come from
-the App helper fly.ap.names_edit. If a write fails part way, every planned
-glyph is still notified and stamped, and the message asks you to use Edit >
-Undo.
+HOW: The script reads the selection through the shared App selection reader. It
+then scans the whole font once. For each edit it rescans, builds a plan, and
+writes the plan as one Undo step. After the write it reads each tag list back
+and compares it with the plan. The scan, the refusal policy and the one-step
+write come from the shared module fly.ap.names_edit. If a write fails part way,
+every planned glyph is still notified and stamped, and the message asks you to
+use Edit > Undo.
 
 WHY: FontLab rebuilds all auto layers when an auto layer is notified. Undo
 does not restore the rebuilt layers. So the script REFUSES glyphs that own an

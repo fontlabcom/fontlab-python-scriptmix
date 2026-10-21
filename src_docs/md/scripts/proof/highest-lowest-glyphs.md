@@ -20,7 +20,7 @@ No missing layer is created; no master/selection/font/history/Output writer or
 application-wide event loop is used. A native tab failure can leave a new tab;
 no atomic UI rollback is claimed. Native scope/order/role/bounds/tab and full
 font/history/dirty/save/reopen preservation still require owned qualification.
-Requires reviewed unpublished App>=0.2.49.dev0 and Fly in FontLab9/Python3.11.
+Requires App>=0.2.49.dev0 and Fly in FontLab9/Python3.11.
 Modified from slobzheninov--Glyphs-Scripts/Testing/Highest & Lowest Glyphs.py; see NOTICE/additional-tools.json.
 The port fixes zero being mistaken for an unset extrema value.
 
@@ -31,5 +31,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1f1b20d908dcae98f9ba6bfb10ebfc1ac19dfdbed26bafb6ba3c8651d6a075bc.py)
+[Python source](../../../../.build/menu-sources/64f7759832675815f422606ece0f161045d55494c5418b0f6519f3fb7aea2bf8.py)
 <!--/codeinclude-->

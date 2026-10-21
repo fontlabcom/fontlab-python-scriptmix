@@ -19,7 +19,7 @@ glyph is not tied to an auto layer. The write is one Undo step. The rename and
 the optional Unicode removal use the font-owned FontGate record, never
 flGlyph.fgGlyph. After clearing Unicode the script reads the list back and
 compares it with the plan. The scan, the refusal policy and the one-step write
-come from the App helper fly.ap.names_edit. If a write fails part way, every
+come from the shared module fly.ap.names_edit. If a write fails part way, every
 planned glyph is still notified and stamped, and the message asks you to use
 Edit > Undo.
 
@@ -49,5 +49,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/24f4a532ccb8ba9bd04bbefa36bf84a7c31c0bb74080ce5724c10a68feac3fa9.py)
+[Python source](../../../../.build/menu-sources/8fc4c46baeb6165a33a30b7eb94a0b9b4cab917d2b6174c0fd71f8d15d101f02.py)
 <!--/codeinclude-->

@@ -45,6 +45,9 @@ this_file: CHANGELOG.md
   instead of "independent rewrite"; the Masters rows stay independent rewrites.
   The Raise Ascender row's App floor is 0.2.150.dev0, like the 27 new rows. The
   backlog lists Duplicate Unicodes as a source candidate, no longer unported.
+- Docstrings: 38 scripts lose process wording ("reviewed App", "reviewed
+  unpublished App ... candidate", "App helper"); they now say "Requires
+  App>=..." and "the shared module fly.ap...". The generated pages follow.
 
 ## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
 

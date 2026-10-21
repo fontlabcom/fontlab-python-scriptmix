@@ -30,7 +30,7 @@ rollback is claimed. The owned native sender is disconnected and deleted.
 This adaptation preserves Output instead of clearing/printing status. It calls
 no glyph geometry, history, preference or master writer. Native tab text/order,
 missing names, selection/focus and complete font/history/dirty preservation remain
-pending. Requires reviewed App>=0.2.40.dev0 and Fly in FontLab9 Python3.11.
+pending. Requires App>=0.2.40.dev0 and Fly in FontLab9 Python3.11.
 Adapted from Pedro Arilla's Apache-2.0 Glyphs between/Glyphs between UPPERCASE.py.
 See NOTICE and additional-tools.json for complete source/license provenance.
 
@@ -41,5 +41,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3d164120a81dd39f295cba8802184d71fdf3488708aee8da3a80f2b201d677b7.py)
+[Python source](../../../../.build/menu-sources/2816ba0ad27f119f929d35d46db2e655ac0348eede8bbeab10385fa7959bb6cf.py)
 <!--/codeinclude-->

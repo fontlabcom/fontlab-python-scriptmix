@@ -25,7 +25,7 @@ are repaired; name sets print deterministically. No Output panel is cleared,
 and no font/selection/master/history/preference writer is called. Actual native
 mapping, read/cache/font/history/persistence and UI acceptance remain pending.
 
-Requires reviewed App>=0.2.51.dev0 and FontLab9 Python3.11 with fontlab-fly.
+Requires App>=0.2.51.dev0 and FontLab9 Python3.11 with fontlab-fly.
 Adapted from Simon Cozens' MIT Why You Not Compatible? See NOTICE and
 additional-tools.json for exact source and license provenance.
 
@@ -36,5 +36,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8f2222b91f234a9c093b6b14949a91b19356128ff663fae93797427854add950.py)
+[Python source](../../../../.build/menu-sources/ba9c6a6455d02c1b4c64bf7005933720eba4c6ca949ce37a0e504797dfed9548.py)
 <!--/codeinclude-->

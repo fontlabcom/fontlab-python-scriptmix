@@ -26,7 +26,7 @@ Why this design:
     - A glyph that has an automatic layer, or is a base of one (also through
       manual composites), is refused: FontLab cannot undo an edit that reaches
       an automatic layer. So is a click while FontLab has pending glyph
-      updates. The shared App helper fly.ap.history does these checks and the
+      updates. The shared module fly.ap.history does these checks and the
       one-step write.
     - Zero, negative, empty and non-finite scale values are refused. A scale of
       0 would destroy the background; a negative scale would mirror it.

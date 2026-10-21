@@ -15,7 +15,7 @@ How it works:
     replaced and glyphs to be skipped. "Replace backgrounds" checks again that
     nothing changed, then removes the old background shapes, creates missing
     backgrounds, and adds clones of the selected contours. One notification covers
-    the whole font: one Undo step. The shared App helper fly.ap.history decides
+    the whole font: one Undo step. The shared module fly.ap.history decides
     which glyphs are skipped and does the one-step write.
 
 Why this design:

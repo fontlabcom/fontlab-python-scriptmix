@@ -10,13 +10,13 @@ glyph note (an empty Set clears the notes). Append adds the text on a new line
 after the existing note. A table shows every note before and after. Apply
 writes only the glyphs whose note changes.
 
-HOW: The script reads the selection through the App helper and scans the whole
-font. For the write it rescans, plans, and writes as one Undo step: layers and
-glyph in one notify list (a glyph alone adds no Undo step). After the write it
-reads each note back and compares it with the plan. The scan, the refusal
-policy and the one-step write come from the App helper fly.ap.names_edit. If a
-write fails part way, every planned glyph is still notified and stamped, and
-the message asks you to use Edit > Undo.
+HOW: The script reads the selection through the shared App selection reader and
+scans the whole font. For the write it rescans, plans, and writes as one Undo
+step: layers and glyph in one notify list (a glyph alone adds no Undo step).
+After the write it reads each note back and compares it with the plan. The
+scan, the refusal policy and the one-step write come from the shared module
+fly.ap.names_edit. If a write fails part way, every planned glyph is still
+notified and stamped, and the message asks you to use Edit > Undo.
 
 WHY: A glyph note belongs to the glyph, not to a master. FontLab rebuilds
 all auto layers when an auto layer is notified, and Undo does not restore

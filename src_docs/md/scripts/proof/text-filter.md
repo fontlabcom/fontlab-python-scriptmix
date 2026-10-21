@@ -18,7 +18,7 @@ font captured on launch; a changed/closed font is refused by the shared sender.
 Fly loads shared App controls, filtering, saved fields and owned lifecycle.
 No application event loop, system clipboard or font-design writer is used.
 Native PythonQt/settings/tab/font/history preservation remains pending.
-Requires the reviewed unpublished App>=0.2.48.dev0 candidate and Fly.
+Requires App>=0.2.48.dev0 and Fly.
 Modified from Slobzheninov/Glyphs-Scripts Testing/Text Filter.py (Apache-2.0).
 See NOTICE and additional-tools.json for exact provenance and acceptance scope.
 
@@ -29,5 +29,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1f173d1fa967446c300fc7873bc9e3e1c7107c063f78925f5d4f03e32aa262a2.py)
+[Python source](../../../../.build/menu-sources/b26e7587bed8afbe53959fe0d283743fa592f9beff7e00bd21b28db4be8707fd.py)
 <!--/codeinclude-->

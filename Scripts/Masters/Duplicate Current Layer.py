@@ -21,7 +21,7 @@ Why this design:
       would break background naming or re-run automatic recipes. A glyph that
       has an automatic layer, or is a base of one (also through manual
       composites), is refused too: FontLab cannot undo it. So is a run while
-      FontLab has pending glyph updates. The shared App helper fly.ap.history
+      FontLab has pending glyph updates. The shared module fly.ap.history
       does these checks and the one-step write.
     - FontLab clone() drops shape notes and names, active and selected flags,
       and the raw state and name of nodes. The script copies them back and

@@ -24,7 +24,7 @@ qualification remain pending.
 Refresh replaces the entire snapshot. Select and copy text normally. Close
 removes this owned modeless panel. This presentation replaces the source's
 Output clearing; no font, history, selection, preference or Output writer is
-called. Requires reviewed App>=0.2.37.dev0 and Fly in FontLab9 Python3.11.
+called. Requires App>=0.2.37.dev0 and Fly in FontLab9 Python3.11.
 Adapted from Pedro Arilla's Apache-2.0 Vertical metrics reporter.py; provenance
 and license are retained in NOTICE and additional-tools.json.
 
@@ -35,5 +35,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e05b572099f4e3edfca70dbbe731d911fdad843c1e72bc7f40278011fb8f742b.py)
+[Python source](../../../../.build/menu-sources/9a0fea3d46f86152a9fe4e48097941a50652b5fc7c5d8546bd018d4007d67ae4.py)
 <!--/codeinclude-->

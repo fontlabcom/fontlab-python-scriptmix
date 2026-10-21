@@ -18,7 +18,7 @@ No Output panel clearing or source font/master/selection/history/preference edit
 is requested. Native read/cache, symbol/layer mapping, full font preservation and
 UI acceptance remain pending. A failed tab creation/population may leave a new tab.
 
-Requires reviewed App>=0.2.53.dev0 and FontLab9 Python3.11 with fontlab-fly.
+Requires App>=0.2.53.dev0 and FontLab9 Python3.11 with fontlab-fly.
 Adapted from Reset Type Studio's New Tab with Glyphs containing BL.py.
 Copyright2025 Fernando Díaz & Reset Type Studio. See NOTICE and additional-tools.json.
 """

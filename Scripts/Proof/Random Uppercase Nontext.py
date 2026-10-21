@@ -20,7 +20,7 @@ handling, source-font binding and full data/history preservation remain pending.
 
 The port repairs the source's undefined Font global with explicit current-font
 lookup. It preserves Output instead of clearing it or printing status there.
-Requires reviewed App>=0.2.38.dev0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random UPPERCASE non-text.py.
+Requires App>=0.2.38.dev0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random UPPERCASE non-text.py.
 See NOTICE and additional-tools.json for source/data/license provenance.
 """
 

@@ -12,7 +12,7 @@ one result per selected-layer occurrence, same/different totals and time heading
 Use Refresh after changing selection, master or widths. Close removes the
 owned modeless panel. The report calls no font, selection, history, preferences
 or Output writers. Empty/stale/missing sources produce a complete diagnosis.
-Requires the reviewed App>=0.2.33.dev0 candidate and fontlab-fly in FontLab9
+Requires App>=0.2.33.dev0 and fontlab-fly in FontLab9
 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Tabular width checker; see
 additional-tools.json and NOTICE. Native acceptance is pending.
 """
