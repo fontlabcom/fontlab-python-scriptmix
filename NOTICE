@@ -509,3 +509,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+Reza Bohloul Point Counter (master layers)
+========================================
+Independent implementation of the inspected RezaBohloul/RezaBohloul
+Path/Point Counter.py workflow, source SHA256 d6eeb1c6ba156dc03208b2d82362295f0f376a389f1414477c8abb0539e6bb6c.
+No licence is declared in the inspected source tree; no original body is
+redistributed. New implementation is Apache-2.0 under this project licence.
+Quadratic endpoints are included explicitly, correcting the original omission.

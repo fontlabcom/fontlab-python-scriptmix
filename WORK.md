@@ -3207,3 +3207,7 @@ Independent original-contract review counterexamples for TT controls, exact cubi
 N111 reviewed .98 integration: complete Near Miss and both Sliders workflows
 combined with delivered .90. Every prior menu/resource retained; native .98
 acceptance remains pending. Original source contracts and historical records retained.
+
+N138 .114 master-layer Point Counter: complete original report implementation; source/artifact/full-original coverage and native gates tracked in verification/issue-120/priority-next-z42. No native or publication claim.
+
+N138 commands/results: test-first missing-module RED retained; new26 actualQt5+Qt6 source controls pass, four installed archive/Qt focused26+actualFlymenu lanes pass. `python priority-next-z42/build_install.py` exit0; `run_consumers.py` final14terminal consumer receipts13,500passes/3existing skips perarchive; `docs.py`15SDK/doc tests+strictbuild exit0; `audit.py` exit0(all254runtime and all251priorruntime/107priormenus unchanged, ownerGit/physicalbytes exact). First missing newmenu-count expectations retained; exact39additional/108menu counts repaired. Full original-baseline scope is recorded in whole-scope-results.json; no native/source-original execution or publication.

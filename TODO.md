@@ -117,3 +117,5 @@ this_file: TODO.md
 
 
 N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
+
+N138 .114 master-layer Point Counter: complete original report implementation; source/artifact/full-original coverage and native gates tracked in verification/issue-120/priority-next-z42. No native or publication claim.

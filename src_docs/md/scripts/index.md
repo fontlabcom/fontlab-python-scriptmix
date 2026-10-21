@@ -146,6 +146,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Master Node Compatibility Report](reports/master-node-compatibility-report.md)
 - [Nodes Near Zones](reports/nodes-near-zones.md)
 - [Open Contours](reports/open-contours.md)
+- [Point Counter (Master Layers)](reports/point-counter-master-layers.md)
 - [Point Counter](reports/point-counter.md)
 - [Unicode Coverage](reports/unicode-coverage.md)
 - [Vertical Metrics Reporter](reports/vertical-metrics-reporter.md)

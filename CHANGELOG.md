@@ -802,3 +802,7 @@ no Output/font/selection writers. Numeric cubic angle repaired; original curve
 sampling/open wrap preserved. Tests, source/API calibration and ordinary
 archive verification: workspace verification/issue-120/near-miss-z35/.
 Native acceptance, root review and delivery remain pending.
+
+## .114 — master-layer Point Counter
+
+Independent complete Reza report: every selected occurrence, stored master layers, empty masters, own contour totals and fixed400×300 read-only window. Quadratic endpoints are included, correcting the original omission. Native qualification remains pending.

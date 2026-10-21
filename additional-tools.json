@@ -721,5 +721,22 @@
     "source_body_redistributed": false,
     "native_acceptance": "pending",
     "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict ±2 angle/position, ±5% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
+  },
+  {
+    "title": "Point Counter (Master Layers)",
+    "key": "master-point-counter",
+    "destination": "Scripts/Reports/Point Counter (Master Layers).py",
+    "destination_sha256": "06aa01793ae146b8d35973288d985c17424029e0ee7fcf2b602d20aebea3a747",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Path/Point Counter.py",
+    "source_sha256": "d6eeb1c6ba156dc03208b2d82362295f0f376a389f1414477c8abb0539e6bb6c",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Every selected occurrence, stored master layers only, empty masters/repeats, own paths/handles/nodes, normal fixed400x300 readonly report; quadratic endpoints included as explicit source correction.",
+    "app_minimum": "0.2.114.dev0",
+    "native_acceptance": "pending"
   }
 ]

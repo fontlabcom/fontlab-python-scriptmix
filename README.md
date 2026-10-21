@@ -112,3 +112,6 @@ Close But No Cigar reports near angles, stem lengths and all six node-position
 checks for every selected glyph occurrence, using each first layer and its
 associated named master. Shared selectable Refresh/Close report; native
 acceptance pending. Full original contract, source fixes and MIT terms: NOTICE.
+
+
+Point Counter (Master Layers) independently implements Reza Bohloul’s complete master-only selected-occurrence report in a fixed read-only normal window. Empty masters and repeats remain; quadratic endpoints are counted explicitly. Requires matching App .114; native read/lifecycle preservation remains pending.
