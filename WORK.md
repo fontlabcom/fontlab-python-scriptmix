@@ -3182,3 +3182,29 @@ Private union preserves all229 App.80 runtime/resource bytes and105 prior menu b
 Both normal App.84 wheel/sdist installed graphs pass App3667, Glyport3182/1skip, Fontport4489/2skips, Examples550, Scriptmix988/1skip, Lessons199 and Fly17. Every144 whole original-baseline changed module passes80% statements/branches with zero exclusions (99.1484% statements/97.1705% branches). Both lanes pass12 public first-reader/group/symbol/Fly controls,1600 row-oracle cases and2048 ordered peers, plus8 existing simultaneous real Qt5 lifecycle controls. Strict local source-backed docs and10 SDK tests pass. Evidence: workspace verification/issue-120/kerning-proof-integration-z33/{consumer-results.json,whole-scope-results.json,artifact-verification.json,public-controls.json,cross-family-commands.json,docs-tests.json}.
 
 Exact rtk proxy commands and exit0 results are retained in those receipts and build-install.json. A first docs build selected global properdocs via PATH and failed its missing categories plugin; the corrected locked SDK bin PATH passed without source edits. No native calls, live installation, canonical edits, push, release or publication were performed. Source/artifact verification does not qualify full native fresh-tab/font/history/cache/save/reopen behavior.
+
+N97 Text Holder candidate (.91): full editable/resizable floating window; literal
+Find first/highlight; UTF16-correct selected-or-whole replacement; Save stays
+open, Save & Close, Ignore & Close; owned-path UTF8 persistence and window size.
+Source/licence disposition retained; no original body is copied or executed.
+No native calls or user-store validation. Native acceptance remains pending.
+
+N97 direct verification recipes (exit0 unless marked retained RED):
+- rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/check_artifacts.py
+  Ordinary .91 wheel+sdist, one owned arm64 Py3.11 env: each App3691;
+  Scriptmix990/1skip; pipcheck/origin/all235runtime bytes/notices/licences;
+  actual menu→installed Fly→App→Qt controls with injected owned temporary store.
+- rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/whole_gates.py
+  Unchanged accepted baseline scopes147App/42Scriptmix; full source App suite,
+  installed App consumer suite and SDK docs under complete zero-exclusion scope.
+- rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/text-holder-z34/check_docs.py
+  SDK/docs15 and strict107-menu catalogue pass (attempt1 receipts; unchanged
+  Scriptmix/menu bytes after the App-only literal-ampersand label correction).
+- FONTLABAPP_TEST_QT5=1 QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+  PYTHONDONTWRITEBYTECODE=1 rtk proxy verification/issue-120/glyph-completion-z20/qt5-v8-env/bin/python
+  -I -B verification/issue-120/text-holder-z34/installed_qt5.py
+  ActualQt5.15.19 installed final payload:24controls and actual public menu pass.
+Initial missing-module, receiver-disconnect and old-artifact label-layout failures
+remain retained; the first non-discriminating macOS mnemonic-only control also
+remains visible. NativeFontLab qualification remains pending; tests write only
+owned temporary stores. No default user store, canonical edit or native call.

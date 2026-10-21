@@ -564,3 +564,9 @@ Qualify the installed complete peer proof, named/unencoded symbols, literal labe
 
 
 N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
+
+N97 Text Holder candidate (.91): full editable/resizable floating window; literal
+Find first/highlight; UTF16-correct selected-or-whole replacement; Save stays
+open, Save & Close, Ignore & Close; owned-path UTF8 persistence and window size.
+Source/licence disposition retained; no original body is copied or executed.
+No native calls or user-store validation. Native acceptance remains pending.

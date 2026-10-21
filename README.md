@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 106 practical tools in one-level Title Case
+The curated `Scripts` folder contains 107 practical tools in one-level Title Case
 categories: 69 sample adaptations and 37 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
@@ -107,3 +107,7 @@ in font order, including unencoded names. Empty/singleton groups receive the
 original no-peers diagnosis. Requires Fly and App0.2.82.dev0. Native fresh-tab
 and full preservation acceptance remain pending; the130-sample denominator is
 unchanged. Reza Bohloul is credited, and no unlicensed source body is distributed.
+
+Text Holder provides a complete editable persistent proof-text scratchpad,
+with Find, selected-or-whole replacement and distinct Save/Close controls.
+Requires App0.2.91.dev0; native qualification pending. See [Text Holder](docs/text-holder.md).

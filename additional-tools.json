@@ -703,5 +703,23 @@
     "native_acceptance": "pending",
     "release_gate": "pending owned native fresh-tab/cursor/workspace and full font/cache/history preservation",
     "app_minimum": "0.2.82.dev0"
+  },
+  {
+    "title": "Text Holder",
+    "key": "text_holder",
+    "destination": "Scripts/Utilities/Text Holder.py",
+    "destination_sha256": "4bbbc23fb20866db01576bd7e64bad212d9e9b9171a3d14c3d747e1e5b13352c",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Window/Text holder.py",
+    "source_sha256": "182c1c2486d79729632ea08ddc45c4c3aab8ccb19508ddb0276498a43c8c1410",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Resizable floating text editor, Find first/highlight, selected-or-whole literal replacement, Save, Save & Close, Ignore & Close and persistent UTF8 content recovery. Qt UTF16 selection conversion; no font editing.",
+    "native_acceptance": "pending",
+    "release_gate": "pending independent review and owned FontLab/PythonQt lifecycle/storage qualification",
+    "app_minimum": "0.2.91.dev0"
   }
 ]
