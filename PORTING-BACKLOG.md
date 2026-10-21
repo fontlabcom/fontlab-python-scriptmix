@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 150 practical tools: 69 sample adaptations and 81
+The active menu contains 154 practical tools: 69 sample adaptations and 85
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -19,16 +19,16 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Former menu | Preserved source | Status |
 | --- | --- | --- |
 | Metrics/Italic Sidebearings.py | `rescued/samples/metrics_italic_sidebearings.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Metrics/Alignment Zones.py | `rescued/samples/metrics_zones_editor.py` | Unported; native verification pending |
+| Metrics/Alignment Zones.py | `rescued/samples/metrics_zones_editor.py` | Unported; held until the App has a qualified native zone writer (fontlabapp.zone_editor Backend.apply) |
 | Metrics/Round Advances.py | `rescued/samples/metrics_round_advances.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Centre In Advance.py | `rescued/samples/metrics_center_in_advance.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Zero-Width Marks.py | `rescued/samples/metrics_zero_width_marks.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Metrics/Vertical Metrics.py | `rescued/samples/metrics_vertical_metrics_diagram.py` | Unported; native verification pending |
-| Metrics/Equalize Sidebearings.py | `rescued/samples/metrics_equalize_sidebearings.py` | Unported; native verification pending |
+| Metrics/Vertical Metrics.py | `rescued/samples/metrics_vertical_metrics_diagram.py` | Ported read-only as Metrics/Vertical Metrics Diagram.py (comparison diagram); value edits through Font Info/Master Metrics Table.py; native verification pending |
+| Metrics/Equalize Sidebearings.py | `rescued/samples/metrics_equalize_sidebearings.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Tabular Width.py | `rescued/samples/metrics_tabular_width.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Scale Advances.py | `rescued/samples/metrics_scale_advances.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Metrics/Sidebearings Tuner.py | `rescued/samples/metrics_sidebearings_tuner.py` | Unported; native verification pending |
-| Metrics/Copy Metrics From Reference.py | `rescued/samples/metrics_copy_from_reference.py` | Unported; native verification pending |
+| Metrics/Sidebearings Tuner.py | `rescued/samples/metrics_sidebearings_tuner.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
+| Metrics/Copy Metrics From Reference.py | `rescued/samples/metrics_copy_from_reference.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Names/Glyph Tags.py | `rescued/samples/names_glyph_tags.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Names/Mark Color Palette.py | `rescued/samples/names_mark_color_palette.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Names/Duplicate Unicodes.py | `rescued/samples/names_duplicate_unicodes.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |

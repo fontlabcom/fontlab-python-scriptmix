@@ -995,6 +995,19 @@ reused under that licence; the panels and the write path are new. Source and
 destination SHA-256 values are in additional-tools.json and rescue-index.json.
 The original files stay unchanged. Native FontLab acceptance is pending.
 
+Metrics sidebearing editors and diagram from the author's own samples
+=====================================================================
+
+Metrics/Equalize Sidebearings, Sidebearings Tuner, Copy Metrics From Reference
+and Vertical Metrics Diagram adapt the author's own FontLab samples
+(Apache-2.0), kept under rescued/samples/ as metrics_equalize_sidebearings.py,
+metrics_sidebearings_tuner.py, metrics_copy_from_reference.py and
+metrics_vertical_metrics_diagram.py. Controls, names and parts of the
+calculations and drawing are reused under that licence; the panels and the
+write path are new, and the diagram only reads the font. Source and
+destination SHA-256 values are in additional-tools.json and rescue-index.json.
+The original files stay unchanged.
+
 Names editors from the author's own samples
 ===========================================
 
