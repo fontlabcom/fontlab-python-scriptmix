@@ -1104,3 +1104,18 @@ that licence; the panels, refusals and write path are new. No third-party or
 Glyphs-corpus code is included. Source and destination SHA-256 values are in
 additional-tools.json and rescue-index.json. The original files stay
 unchanged.
+
+Contours generators and hint tools from the author's own samples
+================================================================
+
+Contours/Placeholder Glyphs, Shadow Copy, Tabular Figure Copies, Outline
+Effect, Superior & Inferior Figures, Small Caps From Capitals, Autohint
+Selected Layers and Remove PostScript Hints adapt the author's own FontLab
+samples (Apache-2.0), kept under rescued/samples/ as
+generate_placeholder_glyphs.py, generate_shadow.py, generate_tabular_copies.py,
+generate_outline_effect.py, generate_superiors.py, generate_small_caps.py,
+hints_autohint.py and hints_remove.py. Controls, names and parts of the
+arithmetic are reused under that licence; the previews, glyph creation,
+refusals and write path are new. Source and destination SHA-256 values are in
+additional-tools.json and rescue-index.json. The original files stay
+unchanged.

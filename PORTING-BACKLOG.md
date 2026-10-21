@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 178 practical tools: 69 sample adaptations and 109
+The active menu contains 186 practical tools: 69 sample adaptations and 117
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -47,23 +47,23 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Cleanup/Empty Layers.py | `rescued/samples/cleanup_empty_layers.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Guides/Suggest Zones From Overshoots.py | `rescued/samples/zones_from_glyphs.py` | Unported; held until the App has a qualified native zone writer (suggest rule in fontlabapp.alignment_zones) |
 | Contours/Round Coordinates.py | `rescued/samples/outlines_round_coordinates.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Contours/Autohint Selected Layers.py | `rescued/samples/hints_autohint.py` | Unported; native verification pending |
-| Contours/Placeholder Glyphs.py | `rescued/samples/generate_placeholder_glyphs.py` | Unported; native verification pending |
-| Contours/Shadow Copy.py | `rescued/samples/generate_shadow.py` | Unported; native verification pending |
+| Contours/Autohint Selected Layers.py | `rescued/samples/hints_autohint.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
+| Contours/Placeholder Glyphs.py | `rescued/samples/generate_placeholder_glyphs.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
+| Contours/Shadow Copy.py | `rescued/samples/generate_shadow.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
 | Contours/Remove Overlap.py | `rescued/samples/outlines_remove_overlap.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Add Extremes.py | `rescued/samples/outlines_add_extremes.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Correct Contour Direction.py | `rescued/samples/outlines_correct_direction.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Contours/Remove PostScript Hints.py | `rescued/samples/hints_remove.py` | Unported; native verification pending |
+| Contours/Remove PostScript Hints.py | `rescued/samples/hints_remove.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
 | Contours/Straighten Short Curves.py | `rescued/samples/outlines_straighten_short_curves.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Optimize Start Points.py | `rescued/samples/outlines_optimize_start_points.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Delete Small Contours.py | `rescued/samples/outlines_delete_small_contours.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Transform.py | `rescued/samples/outlines_transform_dialog.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Contours/Tabular Figure Copies.py | `rescued/samples/generate_tabular_copies.py` | Unported; native verification pending |
-| Contours/Outline Effect.py | `rescued/samples/generate_outline_effect.py` | Unported; native verification pending |
-| Contours/Superior & Inferior Figures.py | `rescued/samples/generate_superiors.py` | Unported; native verification pending |
+| Contours/Tabular Figure Copies.py | `rescued/samples/generate_tabular_copies.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
+| Contours/Outline Effect.py | `rescued/samples/generate_outline_effect.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
+| Contours/Superior & Inferior Figures.py | `rescued/samples/generate_superiors.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
 | Contours/Fix Zero Handles.py | `rescued/samples/outlines_fix_zero_handles.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Slant.py | `rescued/samples/outlines_slant.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Contours/Small Caps From Capitals.py | `rescued/samples/generate_small_caps.py` | Unported; native verification pending |
+| Contours/Small Caps From Capitals.py | `rescued/samples/generate_small_caps.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
 | Contours/Delete Duplicate Contours.py | `rescued/samples/outlines_delete_duplicate_contours.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Masters/Copy Outline To Mask.py | `rescued/samples/masters_copy_to_mask.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Masters/Layer Cleanup.py | `rescued/samples/masters_layer_cleanup.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
