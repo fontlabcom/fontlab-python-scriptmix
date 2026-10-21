@@ -92,3 +92,8 @@ No build/runtime dependency changes. Existing locked ProperDocs/MaterialX/plugin
 N119 adds no dependency. Duplicate-anchor UI uses injected host Qt5/PythonQt and existing Fly/App ownership helpers; external PyQt5/PySide6 serve offline tests only.
 
 Duplicate Unicodes reuses App-owned glyph catalog facts, dependency analysis, exact signal ownership and completion lifecycle. No new runtime dependency; menu requires Fly and App0.2.121.dev0.
+
+Font Info/Trial Font Maker needs the public fontTools package in FontLab's Python
+site-packages (fontlab-fontport installs it as a dependency). FontLab's private
+fontTools namespace does not satisfy the import; without the package the tool
+shows an install hint for Settings > Python. No other dependency is added.

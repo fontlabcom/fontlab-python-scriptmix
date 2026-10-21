@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 192 practical tools: 69 sample adaptations and 123
+The active menu contains 193 practical tools: 69 sample adaptations and 124
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -103,3 +103,9 @@ identity has one row. Source hashes of the ported sources are in
 | `Reset-Type-Studio/Glyphs-Scripts/Smart Components/Values for Smart Components.py` | Ported | Components/Set Component Locations.py | Rows start at the current locations; Set writes only edited rows |
 | `Reset-Type-Studio/Glyphs-Scripts/Smart Components/Selected to Normal Components.py` | Duplicate of | Components/Set Component Locations.py | Reset sets Base layer name to the host master layer |
 | `Reset-Type-Studio/Glyphs-Scripts/Smart Components/Selected to Smart Components.py` | Retired | — | No conversion is needed in FontLab; glyph-specific axes use source-layer locations, which Scripts/Masters/Set Intermediate Layer.py creates |
+| `Reset-Type-Studio/Glyphs-Scripts/FontInfo/Axis Coordinates to Location (Custom Parameter).py` | Duplicate of | — | FontLab: File > Font Info > Masters and Instances store locations and axis mapping natively |
+| `Reset-Type-Studio/Glyphs-Scripts/FontInfo/Set TTFAutohint Options Automatically.py` | Retired | — | Set the TTFAutohint values in FontLab: File > Font Info > Other Values |
+| `Reset-Type-Studio/Glyphs-Scripts/Exports/Trial Font Maker.py` | Ported | Font Info/Trial Font Maker.py | Selection-based trial copies of static exports |
+| `Reset-Type-Studio/Glyphs-Scripts/Layers/Delete 'Empty' Layers.py` | Duplicate of | Masters/Layer Cleanup.py | Previews auxiliary layers and deletes them explicitly, unnamed layers included |
+| `Reset-Type-Studio/Glyphs-Scripts/KernOn/Delete KernOn.py` | Duplicate of | — | FontLab: Kerning panel > Remove All Pairs, with class and all-master options |
+| `Reset-Type-Studio/Glyphs-Scripts/Bracket Layers/Bracket Layers to Alternate Glyphs method.py` | Duplicate of | Names/Glyph Tags.py | FontLab switches alternates through glyph-tag design rules |

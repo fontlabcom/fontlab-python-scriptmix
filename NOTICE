@@ -1173,3 +1173,22 @@ locations, which Masters/Set Intermediate Layer creates.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Font Info tool after Reset Type Studio
+======================================
+
+Independent rewrite of a script by Fernando Díaz & Reset Type Studio,
+Reset-Type-Studio/Glyphs-Scripts, Copyright 2025 Fernando Díaz & Reset Type
+Studio, Apache License 2.0 as declared in its README.md
+(https://github.com/Reset-Type-Studio/Glyphs-Scripts):
+
+- Font Info/Trial Font Maker: Exports/Trial Font Maker.py.
+
+The same repository's FontInfo/Axis Coordinates to Location (Custom
+Parameter).py, Layers/Delete 'Empty' Layers.py, KernOn/Delete KernOn.py and
+Bracket Layers/Bracket Layers to Alternate Glyphs method.py are covered by
+FontLab and by existing tools, and FontInfo/Set TTFAutohint Options
+Automatically.py has no counterpart here; see PORTING-BACKLOG.md.
+
+No source code was copied; the script reproduces the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.

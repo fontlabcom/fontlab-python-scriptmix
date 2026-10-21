@@ -2146,5 +2146,23 @@
     "scope": "Batch component locations with one coordinate row per component/master occurrence. Rows start at current component coordinates; Set writes only edited rows and retains an existing @node suffix. Reset sets Base layer name to the host master layer and skips existing matches. Defaults to all components in selected glyphs; optional Glyph-window component selection matches position and source name across masters. Optional exact-name filter. Validate declared axes, finite values and design bounds. Shared data and refused items are kept rows. Preview precedes one geometry history commit with read-back; no-change actions create no history.",
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending"
+  },
+  {
+    "title": "Trial Font Maker",
+    "key": "fontinfo_trial_font_maker",
+    "destination": "Scripts/Font Info/Trial Font Maker.py",
+    "destination_sha256": "1b278c2473dc26e76eca8a2e8fdc8b5738871561599e0aba3fcd6b2bc6fb4346",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
+    "source_path": "Exports/Trial Font Maker.py",
+    "source_sha256": "6ec98b7326e40e633c93edd96a8de8b13ca928ea91fa2b3a359f0e30c007f1b2",
+    "license": "Apache-2.0",
+    "license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
+    "copyright": "2025 Fernando Díaz & Reset Type Studio",
+    "source_body_redistributed": false,
+    "app_minimum": "0.2.150.dev0",
+    "native_acceptance": "pending",
+    "scope": "Current FontLab selection supplies exported glyph names. Non-modal preview processes matching static OTF/TTF exports. Layout closure is off by default; optional ligature expansion lists additional glyphs in Preview. Kerning and positioning remain unless explicitly removed. Prefix localized identity records and CFF names; preserve copyright, licence records and source binaries. Require separate input/output folders and never overwrite. Cache source inspection across prefix and checkbox edits; rescan on folder or selection change or Refresh Exports. Refuse changed source bytes before writing. Requires user-installed public fontTools. No live-font write."
   }
 ]
