@@ -21,7 +21,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 124 and len(actual) == 193
+    assert len(rows) == 69 and len(extra) == 126 and len(actual) == 195
     for relative in actual:
         path = ROOT / relative
         assert len(Path(relative).parts) == 3, relative
@@ -96,7 +96,7 @@ NEW_TOOLS = {
     "Masters": ["Display Next Layer", "Display Previous Layer", "Duplicate Current Layer",
                 "Use Layer As Master", "Transform Background", "Selection To All Backgrounds",
                 "Select Different Colour", "Copy Outline To Mask", "Copy Layer Between Masters",
-                "Restore Backup Layer", "Layer Cleanup", "Sync Sidebearings"],
+                "Restore Backup Layer", "Layer Cleanup", "Sync Sidebearings", "Set Intermediate Layer"],
     "Components": ["Build From Recipes", "Align By Anchor", "Decompose", "Replace Reference",
                    "Copy Offsets Between Masters", "Unlock Lock", "Nested Finder",
                    "Decompose Named Components", "Set Component Locations"],
@@ -109,6 +109,7 @@ NEW_TOOLS = {
                  "Remove PostScript Hints", "Smart Slant", "Node Duplicator"],
     "Proof": ["Real English Text", "Real Spanish Text"],
     "Font Info": ["Trial Font Maker"],
+    "Utilities": ["Magic Remover"],
 }
 
 
@@ -116,7 +117,7 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     rows = {row["destination"]: row for row in json.loads((ROOT / "additional-tools.json").read_text())}
     wanted = [f"Scripts/{folder}/{name}.py" for folder, names in NEW_TOOLS.items() for name in names]
     wanted.append("Scripts/Contours/Raise Ascender.py")
-    assert len(wanted) == 71
+    assert len(wanted) == 73
     floors = {path: rows[path]["app_minimum"] for path in wanted}
     assert set(floors.values()) == {"0.2.150.dev0"}, floors
 

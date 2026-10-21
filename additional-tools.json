@@ -2164,5 +2164,43 @@
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Current FontLab selection supplies exported glyph names. Non-modal preview processes matching static OTF/TTF exports. Layout closure is off by default; optional ligature expansion lists additional glyphs in Preview. Kerning and positioning remain unless explicitly removed. Prefix localized identity records and CFF names; preserve copyright, licence records and source binaries. Require separate input/output folders and never overwrite. Cache source inspection across prefix and checkbox edits; rescan on folder or selection change or Refresh Exports. Refuse changed source bytes before writing. Requires user-installed public fontTools. No live-font write."
+  },
+  {
+    "title": "Magic Remover",
+    "key": "utilities_magic_remover",
+    "destination": "Scripts/Utilities/Magic Remover.py",
+    "destination_sha256": "51ef715b8e2ca2aa5252741e4855fd707177ed00ba0aa0a7cef37e14c4b5fc13",
+    "kind": "independent-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Edit/Magic Remover.py",
+    "source_sha256": "e5aa9f72395cf6e354cf2d640399d770997a43ec258c960ba1bcd5d8994b7b7b",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "source_attribution": "Reza Bohloul",
+    "license": "Apache-2.0",
+    "scope": "One selected Glyph window slot; preview corresponding polygon nodes, whole contours and components across compatible foreground master and intermediate layers. If any compatible master must keep an item, every master keeps it, with one named reason. Empty outline shapes are removed. Anchors remain unchanged because pin selection is not bound. Partial curve-node selections are kept; use native Delete with synchronized Remove node. Component removal retains original history objects. Mask backup remains a separate workflow.",
+    "native_acceptance": "pending",
+    "release_gate": "pending owned native panel, complete font preservation, Undo, Redo and save-reopen verification",
+    "app_minimum": "0.2.150.dev0"
+  },
+  {
+    "title": "Set Intermediate Layer",
+    "key": "masters_set_intermediate_layer",
+    "destination": "Scripts/Masters/Set Intermediate Layer.py",
+    "destination_sha256": "bb7401c6add0b9f59e7849b8dc1318b1262e9d854f0fe9fc1275d343f357368b",
+    "kind": "independent-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Glyph/Set Intermediate Layer.py",
+    "source_sha256": "64155690415236040d32fdbdb38845191883cfbd3e660db27fa61c53d9ff27c4",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "source_attribution": "Reza Bohloul",
+    "license": "Apache-2.0",
+    "scope": "Selected glyphs in fonts with declared axes; explicit design coordinates on every axis; native interpolation into location-named intermediate layers. Declared axis-key case is preserved for interpolation; layer names use lower-case keys. Existing locations, incompatible masters and unsafe glyphs receive kept rows. Layer addition is confirmed by name read-back after the void native addLayer call. Fractional coordinates and existing editor slots are preserved. The addition is recorded as one Undo step.",
+    "native_acceptance": "pending",
+    "release_gate": "pending owned native interpolation, panel, complete font preservation, Undo, Redo and save-reopen verification",
+    "app_minimum": "0.2.150.dev0"
   }
 ]

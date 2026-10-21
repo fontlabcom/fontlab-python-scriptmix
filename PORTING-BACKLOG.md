@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 193 practical tools: 69 sample adaptations and 124
+The active menu contains 195 practical tools: 69 sample adaptations and 126
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -109,3 +109,6 @@ identity has one row. Source hashes of the ported sources are in
 | `Reset-Type-Studio/Glyphs-Scripts/Layers/Delete 'Empty' Layers.py` | Duplicate of | Masters/Layer Cleanup.py | Previews auxiliary layers and deletes them explicitly, unnamed layers included |
 | `Reset-Type-Studio/Glyphs-Scripts/KernOn/Delete KernOn.py` | Duplicate of | — | FontLab: Kerning panel > Remove All Pairs, with class and all-master options |
 | `Reset-Type-Studio/Glyphs-Scripts/Bracket Layers/Bracket Layers to Alternate Glyphs method.py` | Duplicate of | Names/Glyph Tags.py | FontLab switches alternates through glyph-tag design rules |
+| `RezaBohloul/RezaBohloul/Edit/Magic Remover.py` | Ported | Utilities/Magic Remover.py | Compatible-layer preview and named kept reasons; no licence declared upstream |
+| `RezaBohloul/RezaBohloul/component/Toggle automatic alignment.py` | Duplicate of | — | FontLab: Element > Anchored, with matching operations; no licence declared upstream |
+| `RezaBohloul/RezaBohloul/Glyph/Set Intermediate Layer.py` | Ported | Masters/Set Intermediate Layer.py | Creates and interpolates intermediate layers over selected glyphs; no licence declared upstream |

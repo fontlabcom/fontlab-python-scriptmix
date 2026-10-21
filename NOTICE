@@ -1192,3 +1192,32 @@ Automatically.py has no counterpart here; see PORTING-BACKLOG.md.
 
 No source code was copied; the script reproduces the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json.
+
+Reza Bohloul — Magic Remover (independent implementation)
+------------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: Edit/Magic Remover.py
+Original SHA-256: e5aa9f72395cf6e354cf2d640399d770997a43ec258c960ba1bcd5d8994b7b7b
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. This independently written
+implementation is Apache-2.0; complete terms are in LICENSE.
+Destination: Scripts/Utilities/Magic Remover.py
+
+Reza Bohloul — Set Intermediate Layer (independent implementation)
+---------------------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: Glyph/Set Intermediate Layer.py
+Original SHA-256: 64155690415236040d32fdbdb38845191883cfbd3e660db27fa61c53d9ff27c4
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. This independently written
+implementation is Apache-2.0; complete terms are in LICENSE.
+Destination: Scripts/Masters/Set Intermediate Layer.py
+
+Reza Bohloul — Toggle automatic alignment (native equivalent)
+-----------------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: component/Toggle automatic alignment.py
+Original SHA-256: 2740f6b923cb12c7068b120b42eac5d419c030c975b6f54905a76cb173fa73cc
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. The equivalent native command
+is FontLab Element > Anchored, with matching operations.
