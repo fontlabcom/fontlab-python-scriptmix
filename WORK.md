@@ -106,6 +106,15 @@ this_file: WORK.md
     `destination_sha256` was recomputed for the six rows).
   - Lint: `uvx ruff check --target-version py311` and `uvx ruff format` on the six
     scripts: clean (the scripts were already ruff-formatted).
+- Names (step 3, seven scripts onto `fly.ap.names_edit` / `fly.ap.edit_guards`):
+  - RED: the updated `tests/test_issue122_S3.py` on a `git archive HEAD` tree
+    (`/Volumes/Falstaff4T/fontlab-scripting-data/tmp/t16mix-red-s3`, mix.sh env): 27 S3
+    failures (App module identity, no private copies, import without Qt/FontLab,
+    transitive base refusal, layers-first init order, real names).
+  - GREEN: focused mix.sh copy, full suite: EXIT=0, 1588 passed, 1 skipped (after
+    recomputing the seven `destination_sha256` values).
+  - Lint: `uvx ruff check --target-version py311` and `uvx ruff format` on the seven
+    scripts: clean.
 
 ## 2026-10-18: Two additional foreground reporter candidates
 

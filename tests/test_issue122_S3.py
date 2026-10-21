@@ -1,12 +1,14 @@
 # this_file: tests/test_issue122_S3.py
 # SPDX-License-Identifier: Apache-2.0
-"""The seven Names editors (S3 batch), against an in-memory FontLab.
+"""The seven Names editors, against an in-memory FontLab and the real App helpers.
 
 Each script keeps its algorithm at module level and builds its panel lazily.
-So the tests load the script file, drive the core functions with exact values,
-and drive the panel slots with Qt-shaped fakes. The fake font logs every
-history call and every property write, so the one-Undo shape is asserted
-exactly. Offline results do not prove native FontLab behaviour.
+The scan, refusal policy and one-step write are the real installed App module
+`fly.ap.names_edit` (with `fly.ap.history` and `fly.ap.edit_guards`), loaded
+over the fakes. So the tests load the script file, drive the core functions
+with exact values, and drive the panel slots with Qt-shaped fakes. The fake
+font logs every history call and every property write, so the one-Undo shape
+is asserted exactly. Offline results do not prove native FontLab behaviour.
 """
 
 import ast
@@ -19,6 +21,7 @@ from types import SimpleNamespace as NS
 from unittest.mock import MagicMock
 
 import pytest
+from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 NAMES = ROOT / "Scripts" / "Names"
@@ -179,10 +182,12 @@ class World:
 
 
 def history(names: list[str], title: str, edits: list) -> list:
-    """The exact App history order for glyphs NAMES (one manual layer each)."""
-    out: list = []
-    for n in names:
-        out += [("init", "layer", n), ("init", "glyph", n)]
+    """The exact App history order for glyphs NAMES (one manual layer each).
+
+    history.commit starts the history of every layer first, then every glyph.
+    """
+    out: list = [("init", "layer", n) for n in names]
+    out += [("init", "glyph", n) for n in names]
     out += edits
     out += [("stamp", n) for n in names]
     out.append(
@@ -218,6 +223,16 @@ def load(name: str, monkeypatch) -> ModuleType:
 @pytest.fixture
 def mods(monkeypatch):
     return {name: load(name, monkeypatch) for name in SCRIPTS}
+
+
+def app(name: str) -> ModuleType:
+    """The real App module that the scripts reach as fly.ap.NAME."""
+    return sys.modules[f"fly.ap.{name}"]
+
+
+def scan(world: "World"):
+    """Scan the fake font with the real App names_edit.scan."""
+    return app("names_edit").scan(world.native)
 
 
 # ----------------------------------------------------------------- fake Qt
@@ -287,7 +302,7 @@ def fake_gui():
 
 
 @pytest.fixture(autouse=True)
-def env(world, monkeypatch):
+def env(world, monkeypatch, real_app):
     """Install fake fly.ap, fly.ap.scripting and fly.qt. Return the shown dialogs."""
     shown: list = []
     scripting = ModuleType("fly.ap.scripting")
@@ -330,6 +345,20 @@ def env(world, monkeypatch):
         "fly.ap.duplicate_unicodes_capture": capture,
     }.items():
         monkeypatch.setitem(sys.modules, name, module)
+    loaded = real_app(
+        qt=qt,
+        fontlab=world.native,
+        scripting={
+            "names_dialog_type": scripting.names_dialog_type,
+            "names_selected_names": scripting.names_selected_names,
+            "select_glyphs": scripting.select_glyphs,
+            "show_script_dialog": show,
+            "_require_selection_window": require_font_window,
+        },
+        modules=["names_edit", "history", "edit_guards", "duplicate_unicodes_capture"],
+    )
+    # The editor scan walks native widgets; the fake world answers instead.
+    loaded["duplicate_unicodes_capture"].require_no_editors = require_no_editors
     return shown
 
 
@@ -362,105 +391,123 @@ def test_script_when_parsed_then_follows_house_rules(name):
 
 
 @pytest.mark.parametrize("name", SCRIPTS)
-def test_script_when_imported_without_fly_then_loads(name, monkeypatch):
-    for key in [k for k in sys.modules if k == "fly" or k.startswith("fly.")]:
-        monkeypatch.delitem(sys.modules, key)
-    assert callable(load(name, monkeypatch).main), "import must not need FontLab or fly"
+def test_script_when_imported_then_needs_no_qt_fontlab_or_scripting(name, monkeypatch):
+    """Import needs only the stdlib-only App helper fly.ap.names_edit."""
+    for key in ("fly.ap.scripting", "fly.ap.duplicate_unicodes_capture", "fly.qt"):
+        monkeypatch.delitem(sys.modules, key, raising=False)
+    monkeypatch.delitem(sys.modules, "PythonQt")
+    monkeypatch.delitem(sys.modules, "fontlab")
+    module = load(name, monkeypatch)
+    assert callable(module.main), "import must not need FontLab, Qt or the panel helpers"
+    assert module.names_edit is app("names_edit")
+    assert "PythonQt" not in sys.modules and "fontlab" not in sys.modules
 
 
 # ----------------------------------------------------------------- shared helpers
-def test_scan_when_no_font_then_value_error(mods, world):
+def test_scan_when_no_font_then_value_error(world):
     world.has_font = False
     with pytest.raises(ValueError, match="Open a font first"):
-        mods["Glyph Tags"].scan(world.native)
+        scan(world)
 
 
-def test_scan_when_mapping_differs_then_value_error(mods, world):
+def test_scan_when_mapping_differs_then_value_error(world):
     world.records[0].name = "zzz"
     with pytest.raises(ValueError, match="inconsistent"):
-        mods["Glyph Tags"].scan(world.native)
+        scan(world)
 
 
-def test_refusal_when_auto_layer_or_auto_base_then_reason(mods, world):
-    m = mods["Glyph Tags"]
-    facts = m.scan(world.native)
-    assert m.refusal(facts, "a") == ""
-    assert m.refusal(facts, "ecircumflex") == "has auto layers"
-    assert m.refusal(facts, "e") == "base of auto ecircumflex"
-    assert m.refusal(facts, "nope") == "not in font"
+def test_refusal_when_auto_layer_or_auto_base_then_reason(world):
+    refusal = app("names_edit").refusal
+    facts = scan(world)
+    assert refusal(facts, "a", "rename") == ""
+    assert refusal(facts, "ecircumflex", "rename") == "has auto layers"
+    assert refusal(facts, "e", "rename") == "base of auto ecircumflex"
+    assert refusal(facts, "e", "unicode") == "base of auto ecircumflex"
+    assert refusal(facts, "nope", "rename") == "not in font"
     world.glyphs["b"].layers = []
-    assert m.refusal(m.scan(world.native), "b") == "has no layers"
+    assert refusal(scan(world), "b", "rename") == "has no layers"
 
 
-def test_refusal_when_many_users_then_names_two_and_ellipsis(mods, world):
+def test_refusal_when_many_users_then_names_two_and_ellipsis(world):
     for extra in ("x1", "x2", "x3"):
         world.add(extra, auto=True, bases=("a",))
-    m = mods["Glyph Tags"]
-    assert m.refusal(m.scan(world.native), "a") == "base of auto x1, x2…"
+    assert app("names_edit").refusal(scan(world), "a", "rename") == (
+        "base of auto x1, x2…"
+    )
 
 
-def test_fresh_facts_when_font_switched_then_value_error(mods, world):
-    m = mods["Glyph Tags"]
+def test_refusal_when_base_reaches_auto_glyph_through_composite_then_refused(world):
+    """e -> manual ebar -> auto ebaracute: base detection follows the chain."""
+    world.add("ebar").layers[0].shapes = [Shape("e")]
+    world.add("ebaracute", auto=True, bases=("ebar",))
+    refusal = app("names_edit").refusal
+    facts = scan(world)
+    assert refusal(facts, "ebar", "rename") == "base of auto ebaracute"
+    assert refusal(facts, "e", "rename") == "base of auto ebaracute, ecircumflex"
+    assert refusal(facts, "e", "metadata") == "", "metadata lets bases through"
+
+
+def test_fresh_facts_when_font_switched_then_value_error(world):
     with pytest.raises(ValueError, match="no longer current"):
-        m.fresh_facts(world.native, 99)
+        app("names_edit").fresh_facts(99, native=world.native)
 
 
-def test_fresh_facts_when_updates_pending_then_value_error(mods, world):
+def test_fresh_facts_when_updates_pending_then_value_error(world):
     world.pending.append(1)
     with pytest.raises(ValueError, match="updates are pending"):
-        mods["Glyph Tags"].fresh_facts(world.native, 7)
+        app("names_edit").fresh_facts(7, native=world.native)
 
 
-def test_commit_when_mutation_fails_then_history_still_finalised(mods, world):
-    m = mods["Glyph Tags"]
-    facts = m.scan(world.native)
+def commit(world, title, entries, mutate):
+    """Write through the real App names_edit.commit, as the scripts do."""
+    return app("names_edit").commit(
+        title,
+        entries,
+        mutate,
+        operation="metadata",
+        facts=scan(world),
+        native=world.native,
+        stamp=STAMP,
+    )
 
-    def boom(attempted: list) -> None:
-        attempted.append(facts.entries["a"])
+
+def test_commit_when_mutation_fails_then_history_still_finalised(world):
+    facts = scan(world)
+
+    def boom() -> None:
         world.log.append(("set", "boom", "a", None))
         raise KeyError("x")
 
-    with pytest.raises(RuntimeError, match="Edit > Undo"):
-        m.commit(world.native, world.qtcore, "T", [facts.entries["a"]], boom)
+    with pytest.raises(app("history").PartialWriteError, match="use Edit > Undo"):
+        commit(world, "T", [facts.entries["a"]], boom)
     assert world.log == history(["a"], "T", [("set", "boom", "a", None)])
 
 
-def test_commit_when_second_entry_never_reached_then_it_gets_no_stamp_or_notify(
-    mods, world
-):
-    m = mods["Glyph Tags"]
-    facts = m.scan(world.native)
+def test_commit_when_second_entry_never_reached_then_it_is_still_notified(world):
+    """One protocol: every declared glyph is stamped and notified after a failure."""
+    facts = scan(world)
     entries = [facts.entries["a"], facts.entries["b"]]
 
-    def boom(attempted: list) -> None:
-        attempted.append(entries[0])
+    def boom() -> None:
         world.log.append(("set", "boom", "a", None))
         raise KeyError("x")
 
     with pytest.raises(RuntimeError, match="Edit > Undo"):
-        m.commit(world.native, world.qtcore, "T", entries, boom)
-    assert world.log == [
-        ("init", "layer", "a"),
-        ("init", "glyph", "a"),
-        ("init", "layer", "b"),
-        ("init", "glyph", "b"),
-        ("set", "boom", "a", None),
-        ("stamp", "a"),
-        ("notify", "T", (("layer", "a"), ("glyph", "a"))),
-        ("stamp", "a"),
-    ], "b was never attempted: no stamp and no notify"
+        commit(world, "T", entries, boom)
+    assert world.log == history(["a", "b"], "T", [("set", "boom", "a", None)])
 
 
-def test_commit_when_nothing_attempted_then_no_notify_and_error_raised(mods, world):
-    m = mods["Glyph Tags"]
-    facts = m.scan(world.native)
+def test_commit_when_mutation_fails_at_once_then_history_closed_and_error_raised(
+    world,
+):
+    facts = scan(world)
 
-    def boom(attempted: list) -> None:
+    def boom() -> None:
         raise KeyError("early")
 
     with pytest.raises(RuntimeError, match="early"):
-        m.commit(world.native, world.qtcore, "T", [facts.entries["a"]], boom)
-    assert [e[0] for e in world.log] == ["init", "init"]
+        commit(world, "T", [facts.entries["a"]], boom)
+    assert world.log == history(["a"], "T", [])
 
 
 # ----------------------------------------------------------------- Glyph Tags
@@ -560,7 +607,7 @@ def test_font_tags_when_tagged_then_sorted_union(mods, world):
     world.glyphs["a"]._tags = ["z", "m"]
     world.glyphs["e"]._tags = ["a"]
     m = mods["Glyph Tags"]
-    assert m.font_tags(m.scan(world.native)) == ["a", "m", "z"]
+    assert m.font_tags(scan(world)) == ["a", "m", "z"]
 
 
 def test_glyph_tags_panel_when_add_pressed_then_tag_written_and_reloaded(
@@ -656,7 +703,7 @@ def test_mark_counts_when_marked_then_font_and_selection_counts(mods, world):
     world.glyphs["a"]._mark = 121
     world.glyphs["b"]._mark = 121
     m = mods["Mark Color Palette"]
-    facts = m.scan(world.native)
+    facts = scan(world)
     assert m.mark_counts(facts) == {121: 2, 0: 2}
     assert m.mark_counts(facts, ["a", "e"]) == {121: 1, 0: 1}
 
@@ -766,7 +813,7 @@ def test_plan_renames_when_conflicts_then_exact_statuses(mods, world):
     world.add("a.alt")
     world.add("c")
     world.add("d")
-    facts = m.scan(world.native)
+    facts = scan(world)
     pairs = [
         ("a", "a.alt"),
         ("b", "9b"),
@@ -803,8 +850,8 @@ def test_apply_suffix_when_add_then_one_undo_step_with_clear_unicode(mods, world
     )
     assert world.log == [
         ("init", "layer", "a"),
-        ("init", "glyph", "a"),
         ("init", "layer", "b"),
+        ("init", "glyph", "a"),
         ("init", "glyph", "b"),
         ("rename", "a", "a.ss01"),
         ("set", "unicodes", "a.ss01", []),
@@ -893,7 +940,7 @@ def test_plan_renames_when_rename_conflicts_then_exact_statuses(mods, world):
     m = mods["Batch Rename"]
     world.add("p")
     world.add("q")
-    facts = m.scan(world.native)
+    facts = scan(world)
     pairs = [
         ("a", "b"),
         ("p", "z"),
@@ -915,7 +962,7 @@ def test_plan_renames_when_rename_conflicts_then_exact_statuses(mods, world):
 
 def test_plan_renames_when_two_glyphs_swap_names_then_both_refused(mods, world):
     m = mods["Batch Rename"]
-    rows = m.plan_renames(m.scan(world.native), [("a", "b"), ("b", "a")])
+    rows = m.plan_renames(scan(world), [("a", "b"), ("b", "a")])
     assert [r[2] for r in rows] == ["exists in font", "exists in font"]
 
 
@@ -1026,7 +1073,7 @@ def test_plan_notes_when_mixed_then_exact_rows(mods, world):
     world.glyphs["b"]._note = "other"
     m = mods["Batch Glyph Notes"]
     rows = m.plan_notes(
-        m.scan(world.native), ["a", "b", "e", "ecircumflex"], "keep", False
+        scan(world), ["a", "b", "e", "ecircumflex"], "keep", False
     )
     assert rows == [
         ("a", "keep", "keep", "same"),
@@ -1051,7 +1098,7 @@ def test_apply_notes_when_set_then_layers_and_glyph_in_one_notify(mods, world):
 
 def test_apply_notes_when_name_vanished_since_preview_then_not_in_font_row(mods, world):
     m = mods["Batch Glyph Notes"]
-    assert m.plan_notes(m.scan(world.native), ["gone"], "x", False) == [
+    assert m.plan_notes(scan(world), ["gone"], "x", False) == [
         ("gone", "", "", "not in font")
     ]
     assert m.apply_notes(world.native, world.qtcore, 7, ["gone"], "x", False) == []
@@ -1114,7 +1161,7 @@ def test_notes_in_font_when_blank_notes_then_only_real_notes_in_order(mods, worl
     world.glyphs["a"]._note = "first\nmore"
     world.glyphs["e"]._note = "   "
     m = mods["Glyph Notes"]
-    assert m.notes_in_font(m.scan(world.native)) == [
+    assert m.notes_in_font(scan(world)) == [
         ("a", "first\nmore"),
         ("b", "second"),
     ]
@@ -1240,7 +1287,7 @@ def test_plan_unicodes_when_mixed_then_exact_rows(mods, world):
     world.add("Lslash", codes=(0x142,))
     world.add("uni0043", codes=(0x43,))
     m = mods["Unicode From Names"]
-    facts = m.scan(world.native)
+    facts = scan(world)
     names = ["uni0041", "A", "uni0042", "B", "Lslash", "uni0043", "a", "e"]
     assert m.plan_unicodes(facts, names, False) == [
         ("uni0041", [], 0x41, "uni", "used by A"),
@@ -1307,7 +1354,7 @@ def test_apply_unicodes_when_bad_input_then_value_error_before_history(mods, wor
 
 def test_apply_unicodes_when_implying_name_vanished_then_not_in_font_row(mods, world):
     m = mods["Unicode From Names"]
-    assert m.plan_unicodes(m.scan(world.native), ["uni0042"], False) == [
+    assert m.plan_unicodes(scan(world), ["uni0042"], False) == [
         ("uni0042", [], 0x42, "uni", "not in font")
     ]
     assert m.apply_unicodes(world.native, world.qtcore, 7, ["uni0042"], False) == []
@@ -1382,30 +1429,48 @@ def test_panel_when_no_font_then_opens_with_diagnosis_and_no_edit(
     assert world.edits() == []
 
 
-def test_shared_block_when_compared_then_identical_in_all_seven_scripts():
-    marker = "# " + "-" * 66
-    blocks = set()
-    for name in SCRIPTS:
-        text = (NAMES / f"{name}.py").read_text()
-        start = text.index(marker + " shared")
-        end = text.index(marker + " core")
-        blocks.add(text[start:end])
-    assert len(blocks) == 1, "the shared helper block must not drift between scripts"
-
-
-# ----------------------------------------------------------------- review round 1
-def test_refusal_when_bases_not_checked_then_base_allowed_but_auto_glyph_refused(
-    mods, world
+@pytest.mark.parametrize(
+    ("name", "operation"),
+    [
+        ("Glyph Tags", "metadata"),
+        ("Mark Color Palette", "metadata"),
+        ("Suffix Tool", "rename"),
+        ("Batch Rename", "rename"),
+        ("Batch Glyph Notes", "metadata"),
+        ("Glyph Notes", "metadata"),
+        ("Unicode From Names", "unicode"),
+    ],
+)
+def test_script_when_loaded_then_uses_app_names_edit_and_keeps_no_copy(
+    mods, name, operation
 ):
-    m = mods["Glyph Tags"]
-    facts = m.scan(world.native)
-    assert m.refusal(facts, "e", bases=False) == ""
-    assert m.refusal(facts, "ecircumflex", bases=False) == "has auto layers"
-    assert m.editable(facts, ["e", "ecircumflex"], bases=False) == (
+    module = mods[name]
+    assert module.names_edit is app("names_edit"), name
+    assert module.OPERATION == operation, name
+    for moved in ("Entry", "Facts", "scan", "refusal", "editable", "fresh_facts", "commit"):
+        assert moved not in vars(module), f"{name} still defines {moved}"
+
+
+# ----------------------------------------------------------------- refusal policy
+def test_refusal_when_metadata_then_base_allowed_but_auto_glyph_refused(world):
+    names_edit = app("names_edit")
+    facts = scan(world)
+    assert names_edit.refusal(facts, "e", "metadata") == ""
+    assert names_edit.refusal(facts, "ecircumflex", "metadata") == "has auto layers"
+    assert names_edit.editable(facts, ["e", "ecircumflex"], "metadata") == (
         ["e"],
         {"ecircumflex": "has auto layers"},
     )
-    assert m.refusal(facts, "e") == "base of auto ecircumflex", "default stays strict"
+    assert names_edit.refusal(facts, "e", "rename") == "base of auto ecircumflex"
+
+
+def test_plan_renames_when_base_reaches_auto_through_composite_then_refused(
+    mods, world
+):
+    world.add("ebar").layers[0].shapes = [Shape("e")]
+    world.add("ebaracute", auto=True, bases=("ebar",))
+    rows = mods["Batch Rename"].plan_renames(scan(world), [("ebar", "ebar.alt")])
+    assert rows == [("ebar", "ebar.alt", "base of auto ebaracute")]
 
 
 @pytest.mark.parametrize(
@@ -1486,7 +1551,7 @@ def test_plan_renames_when_notdef_or_space_then_reserved(mods, world, name):
     world.add(".notdef")
     world.add("space")
     m = mods[name]
-    rows = m.plan_renames(m.scan(world.native), [(".notdef", "nd"), ("space", "sp")])
+    rows = m.plan_renames(scan(world), [(".notdef", "nd"), ("space", "sp")])
     assert rows == [
         (".notdef", "nd", "reserved glyph"),
         ("space", "sp", "reserved glyph"),
@@ -1514,7 +1579,7 @@ def test_apply_suffix_when_notdef_then_nothing_written(mods, world):
 def test_unicode_loss_when_rows_ok_then_codes_listed(mods, world):
     world.records[0]._codes = [97, 98]
     m = mods["Suffix Tool"]
-    facts = m.scan(world.native)
+    facts = scan(world)
     plan = m.plan_renames(facts, [("a", "a.alt"), ("e", "e.alt"), ("b", "b.alt")])
     assert m.unicode_loss(facts, plan) == {"a": [97, 98], "b": []}
 
@@ -1627,31 +1692,22 @@ def test_script_text_when_read_then_no_internal_jargon_and_no_overclaims(name):
 
 
 def test_real_fontlabapp_when_imported_then_every_name_the_scripts_use_exists():
+    """No fakes: the real Fly aliases give every App name that the scripts use."""
+    used = app_names_used([NAMES / f"{name}.py" for name in SCRIPTS])
+    assert {"fly.ap.names_edit", "fly.ap.edit_guards", "fly.ap.scripting"} <= set(used)
+    assert {"scan", "fresh_facts", "editable", "refusal", "commit", "Facts"} <= used[
+        "fly.ap.names_edit"
+    ]
+    check_real_app_names(used)
+
+
+def test_real_names_dialog_when_parsed_then_has_the_hooks_the_panels_use():
     from importlib.metadata import distribution
 
     package = Path(distribution("fontlab-fontlabapp").locate_file("fontlabapp"))
-    code = (
-        "import ast, sys\n"
-        "import importlib\ns = importlib.import_module('fontlabapp.scripting')\n"
-        "from fontlabapp.duplicate_unicodes_capture import require_no_editors\n"
-        "for n in ('names_dialog_type','names_selected_names','select_glyphs',"
-        "'show_script_dialog','_require_selection_window'):\n"
-        "    assert callable(getattr(s, n)), n\n"
-        "assert callable(require_no_editors)\n"
-        "tree = ast.parse(open(sys.argv[1]).read())\n"
-        "cls = next(c for c in tree.body if isinstance(c, ast.ClassDef) and c.name == 'NamesDialog')\n"
-        "have = {f.name for f in cls.body if isinstance(f, ast.FunctionDef)}\n"
-        "assert {'__init__','make_table','_connect','invalidate'} <= have, have\n"
-        "print('ok')\n"
+    tree = ast.parse((package / "_names_dialog.py").read_text())
+    cls = next(
+        c for c in tree.body if isinstance(c, ast.ClassDef) and c.name == "NamesDialog"
     )
-    import subprocess
-
-    out = subprocess.run(
-        [sys.executable, "-I", "-c", code, str(package / "_names_dialog.py")],
-        capture_output=True,
-        text=True,
-        check=False,
-        env={"PYTHONPATH": str(package.parent), "PATH": ""},
-        timeout=120,
-    )
-    assert out.returncode == 0 and out.stdout.strip() == "ok", out.stderr[-800:]
+    have = {f.name for f in cls.body if isinstance(f, ast.FunctionDef)}
+    assert {"__init__", "make_table", "_connect", "invalidate"} <= have, have

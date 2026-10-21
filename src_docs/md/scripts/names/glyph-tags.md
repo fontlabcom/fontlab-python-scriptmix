@@ -14,8 +14,11 @@ The tag field completes from all tags in the font.
 
 HOW: The script reads the selection through the App helper. It then scans the
 whole font once. For each edit it rescans, builds a plan, and writes the plan
-as one Undo step with the App history order (see commit). After the write it
-reads each tag list back and compares it with the plan.
+as one Undo step. After the write it reads each tag list back and compares it
+with the plan. The scan, the refusal policy and the one-step write come from
+the App helper fly.ap.names_edit. If a write fails part way, every planned
+glyph is still notified and stamped, and the message asks you to use Edit >
+Undo.
 
 WHY: FontLab rebuilds all auto layers when an auto layer is notified. Undo
 does not restore the rebuilt layers. So the script REFUSES glyphs that own an
@@ -33,7 +36,8 @@ no commas.
 BENEFIT: Review states, spacing status and similar marks stay on the glyphs
 and travel with the font. One Edit > Undo reverts one Add or Remove.
 
-Credit: archived Apache-2.0 FontLab samples. Native acceptance pending.
+Credit: adapted from the author's own archived Apache-2.0
+FontLab samples. Native acceptance pending.
 
 Run **Names > Glyph Tags** from FontLab's Scripts menu.
 
@@ -42,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8e72e6fa8856e1bd58e4f469a7104f9722a812f21c3213d04310c652dacc3ebf.py)
+[Python source](../../../../.build/menu-sources/3066f2e430f7cb7dc07921e572e236a99f48162c256d84d27c85971c430c9b95.py)
 <!--/codeinclude-->

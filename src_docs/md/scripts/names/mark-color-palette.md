@@ -14,8 +14,10 @@ mark. One click writes the mark to every selected glyph.
 
 HOW: FontLab stores a mark as hue + 1 (1 to 360), grey as 1000 + level, and 0
 for none. The script rescans the font, plans the change, and writes it as one
-Undo step with the App history order (see commit). It then reads each mark
-back and compares it with the plan.
+Undo step. It then reads each mark back and compares it with the plan. The
+scan, the refusal policy and the one-step write come from the App helper
+fly.ap.names_edit. If a write fails part way, every planned glyph is still
+notified and stamped, and the message asks you to use Edit > Undo.
 
 WHY: FontLab rebuilds all auto layers when an auto layer is notified. Undo
 does not restore the rebuilt layers. So the script REFUSES glyphs that own an
@@ -32,7 +34,8 @@ Reload selection after you change the selection.
 BENEFIT: Colour marks sort work (done, check, kerning needed) and show in the
 Font window. One Edit > Undo reverts one click.
 
-Credit: archived Apache-2.0 FontLab samples. Native acceptance pending.
+Credit: adapted from the author's own archived Apache-2.0
+FontLab samples. Native acceptance pending.
 
 Run **Names > Mark Color Palette** from FontLab's Scripts menu.
 
@@ -41,5 +44,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/14c7938afc4c9f48ccf7e7f95c2d5692f0fcac4d69686c0572ccfddaa11fafdb.py)
+[Python source](../../../../.build/menu-sources/d1c3f32a2e83290735e41241efd88513a3bcb2d19fe909a847219c0bc5e0e139.py)
 <!--/codeinclude-->

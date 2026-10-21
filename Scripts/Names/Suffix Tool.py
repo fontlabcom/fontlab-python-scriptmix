@@ -12,19 +12,23 @@ and a check result. Apply renames all rows that pass.
 
 HOW: The script rescans the font before the write. A row passes only when the
 new name is valid, does not exist, is not the target of another row, and the
-glyph is not tied to an auto layer. The write is one Undo step with the App
-history order (see commit). The rename and the optional Unicode removal use the
-font-owned FontGate record, never flGlyph.fgGlyph. After clearing Unicode the
-script reads the list back and compares it with the plan.
+glyph is not tied to an auto layer. The write is one Undo step. The rename and
+the optional Unicode removal use the font-owned FontGate record, never
+flGlyph.fgGlyph. After clearing Unicode the script reads the list back and
+compares it with the plan. The scan, the refusal policy and the one-step write
+come from the App helper fly.ap.names_edit. If a write fails part way, every
+planned glyph is still notified and stamped, and the message asks you to use
+Edit > Undo.
 
 WHY: Suffixed alternates are normally unencoded, so the panel can clear their
 Unicode in the same step. FontLab would replace an existing glyph that has the
 new name, so the script refuses that. FontLab rebuilds auto layers when they
 are notified, so the script REFUSES glyphs that have auto layers and glyphs
-that are the base of an auto composite. It never calls UpdateAll (fl#8537) and
-refuses to write while native updates are pending.
-Before it removes Unicode, the script applies the guards of the App Unicode
-writer: a regular Font window must be active and no Glyph editor may be open.
+that are the base of an auto composite, also through other composites. It never
+calls UpdateAll (fl#8537) and refuses to write while native updates are
+pending. Before it removes Unicode, the script applies the guards of the App
+Unicode writer: a regular Font window must be active and no Glyph editor may be
+open.
 
 USE: Select glyphs in the Font window. Run the script. Choose the operation,
 type or pick a suffix (a missing leading dot is added), then press Apply.
@@ -32,16 +36,18 @@ type or pick a suffix (a missing leading dot is added), then press Apply.
 BENEFIT: Alternate sets (.ss01, .sc, .case) get consistent names in one
 previewed, undoable step.
 
-Credit: archived Apache-2.0 FontLab samples. Native acceptance pending.
+Credit: adapted from the author's own archived Apache-2.0
+FontLab samples. Native acceptance pending.
 """
 
 import re
-from collections.abc import Callable
-from dataclasses import dataclass
 from typing import Any
+
+import fly.ap.names_edit as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
 TITLE = "Suffix Tool"
 KEY = "names_suffix_tool"
+OPERATION = "rename"  # names_edit refusal policy for this write
 PRESETS = [
     ".ss01",
     ".ss02",
@@ -61,157 +67,6 @@ MODES = [
     ("Remove suffix", "remove"),
     ("Replace suffix", "replace"),
 ]
-
-
-# ------------------------------------------------------------------ shared
-# This block is identical in all seven Names editors. Reason: each menu script
-# stays one file. A shared App helper could replace it later.
-@dataclass(frozen=True)
-class Entry:
-    """One glyph. RECORD is the FontGate glyph (rename, Unicode). GLYPH is the FontLab glyph."""
-
-    name: str
-    record: Any
-    glyph: Any
-
-
-@dataclass(frozen=True)
-class Facts:
-    """Whole-font snapshot. Never patched: a stale snapshot is rescanned."""
-
-    package: Any
-    package_id: int
-    entries: dict[str, Entry]
-    autos: frozenset[str]
-    bases: dict[str, tuple[str, ...]]
-
-
-def scan(native: Any) -> Facts:
-    """Read every glyph and every auto-layer dependency of the current font.
-
-    Use font-owned records and package.findFgId. Never read flGlyph.fgGlyph:
-    on build 9784 that getter can clear a fresh note mirror.
-    """
-    package = native.flWorkspace.instance().currentPackage
-    font = native.CurrentFont()
-    if package is None or package.isNull or font is None:
-        raise ValueError("Open a font first.")
-    entries: dict[str, Entry] = {}
-    autos: set[str] = set()
-    users: dict[str, set[str]] = {}
-    for record in font.glyphs:
-        glyph = package.findFgId(int(record.id))
-        if (
-            glyph is None
-            or glyph.isNull
-            or glyph.name != record.name
-            or int(glyph.fgGlyphId) != int(record.id)
-        ):
-            raise ValueError("Native glyph mapping is inconsistent; reload the font.")
-        entries[str(record.name)] = Entry(str(record.name), record, glyph)
-        for layer in glyph.layers:
-            if not layer.autoLayer:
-                continue
-            autos.add(str(record.name))
-            for shape in layer.shapes:
-                if shape.isComponent:
-                    base = str(shape.shapeData.componentGlyph)
-                    users.setdefault(base, set()).add(str(record.name))
-    bases = {base: tuple(sorted(names)) for base, names in users.items()}
-    return Facts(package, int(package.id), entries, frozenset(autos), bases)
-
-
-def refusal(facts: Facts, name: str, *, bases: bool = True) -> str:
-    """Return why NAME must not be edited, or "" when it may be.
-
-    FontLab rebuilds every auto layer when an auto layer or the base of an
-    auto composite is notified, and Undo does not restore the result.
-    Glyphs that own an auto layer are always refused. With BASES false, a base
-    of an auto composite is allowed: use that for metadata (tags, marks, notes)
-    that does not reach the composites. Renames and Unicode keep BASES true.
-    """
-    entry = facts.entries.get(name)
-    if entry is None:
-        return "not in font"
-    if not tuple(entry.glyph.layers):
-        return "has no layers"
-    if name in facts.autos:
-        return "has auto layers"
-    users = facts.bases.get(name)
-    if bases and users:
-        return "base of auto " + ", ".join(users[:2]) + ("…" if len(users) > 2 else "")
-    return ""
-
-
-def editable(
-    facts: Facts, names: list[str], *, bases: bool = True
-) -> tuple[list[str], dict[str, str]]:
-    """Split NAMES into (names that may be edited, {refused name: reason})."""
-    refused = {n: r for n in names if (r := refusal(facts, n, bases=bases))}
-    return [n for n in names if n not in refused], refused
-
-
-def fresh_facts(native: Any, package_id: int) -> Facts:
-    """Rescan just before a write. Refuse a switched font or pending host updates."""
-    facts = scan(native)
-    if facts.package_id != package_id:
-        raise ValueError("The scanned font is no longer current; reload.")
-    if tuple(native.flGlyph.updatedFgGlyphs()):
-        raise ValueError(
-            "Native glyph updates are pending; finish the current edit first."
-        )
-    return facts
-
-
-def commit(
-    native: Any,
-    qtcore: Any,
-    title: str,
-    entries: list[Entry],
-    mutate: Callable[[list[Entry]], Any],
-) -> Any:
-    """Run MUTATE as one Undo step, in the order the App writers use.
-
-    1. checkInitHistoryState(0) on every layer and glyph, before any change.
-    2. MUTATE(attempted). It appends each entry to ATTEMPTED before it changes it.
-    3. One notifyChangesApplied([layers..., glyphs...]) for ATTEMPTED entries only.
-    4. Same UTC lastModified stamp on every attempted glyph, before and after the notify.
-    Finalise even when MUTATE fails, so a partial edit stays on the Undo stack.
-    Glyphs that MUTATE never reached get no stamp and no notify.
-    """
-    stamp = qtcore.QDateTime.currentDateTimeUtc()
-    work = {id(e): (e.glyph, tuple(e.glyph.layers)) for e in entries}
-    for glyph, layers in work.values():
-        for item in (*layers, glyph):
-            item.checkInitHistoryState(0)
-    errors: list[Exception] = []
-    attempted: list[Entry] = []
-    result = None
-    try:
-        result = mutate(attempted)
-    except Exception as error:  # noqa: BLE001 - finalise history first
-        errors.append(error)
-    done = [work[id(e)] for e in attempted]
-    if done:
-        objects = [layer for _, layers in done for layer in layers]
-        objects += [glyph for glyph, _ in done]
-        try:
-            for glyph, _ in done:
-                glyph.lastModified = stamp
-            native.flItems().notifyChangesApplied(title, objects)
-        except Exception as error:  # noqa: BLE001 - never report a failed notify
-            errors.append(error)
-        finally:
-            for glyph, _ in done:
-                try:
-                    glyph.lastModified = stamp
-                except Exception as error:  # noqa: BLE001 - keep every observer error
-                    errors.append(error)
-    if errors:
-        raise RuntimeError(
-            f"{title} did not finish cleanly ({errors[0]!r}); check Edit > Undo."
-        ) from errors[0]
-    return result
 
 
 # ------------------------------------------------------------------ core
@@ -242,7 +97,7 @@ def suffixed(name: str, mode: str, suffix: str, replacement: str = "") -> str:
 
 
 def plan_renames(
-    facts: Facts, pairs: list[tuple[str, str]]
+    facts: names_edit.Facts, pairs: list[tuple[str, str]]
 ) -> list[tuple[str, str, str]]:
     """Return (old, new, status) for each pair whose name changes.
 
@@ -260,7 +115,7 @@ def plan_renames(
             status = "reserved glyph"
         elif not VALID_NAME.match(new):
             status = "invalid name"
-        elif reason := refusal(facts, old):
+        elif reason := names_edit.refusal(facts, old, OPERATION):
             status = reason
         elif new in facts.entries:
             status = "exists in font"
@@ -276,21 +131,17 @@ def unicode_write_guard(package_id: int) -> None:
     """Apply the App Unicode writer guards before any history call.
 
     A regular Font window must be active, and no Glyph editor may be open, even
-    inactive (the host has a Unicode save-cache gap). These App names are
-    internal; a public App helper is proposed.
+    inactive (the host has a Unicode save-cache gap). The public App guards
+    (fly.ap.edit_guards) do both checks; the editor scan has a 2-second limit.
     """
-    from time import monotonic
+    import fly.ap.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
-    from fly import qt
-    from fly.ap.duplicate_unicodes_capture import require_no_editors
-    from fly.ap.scripting import _require_selection_window
-
-    _require_selection_window(package_id)
-    require_no_editors(qt, monotonic() + 2.0)
+    edit_guards.require_selection_window(package_id)
+    edit_guards.require_no_editors()
 
 
 def unicode_loss(
-    facts: Facts, plan: list[tuple[str, str, str]]
+    facts: names_edit.Facts, plan: list[tuple[str, str, str]]
 ) -> dict[str, list[int]]:
     """Return {old name: code points} that a Unicode removal would delete (rows "ok")."""
     return {
@@ -323,7 +174,7 @@ def apply_suffix(
     """
     if not names:
         raise ValueError("Select at least one glyph.")
-    facts = fresh_facts(native, package_id)
+    facts = names_edit.fresh_facts(package_id, native=native)
     pairs = [(n, suffixed(n, mode, suffix, replacement)) for n in names]
     todo = [
         (facts.entries[old], new)
@@ -336,9 +187,8 @@ def apply_suffix(
         unicode_write_guard(package_id)
     renamed: list[tuple[str, str]] = []
 
-    def mutate(attempted: list[Entry]) -> None:
+    def mutate() -> None:
         for entry, new in todo:
-            attempted.append(entry)
             if not facts.package.renameGlyph(entry.record, new, False):
                 raise RuntimeError(f"FontLab refused to rename {entry.name} to {new}.")
             renamed.append((entry.name, new))
@@ -351,7 +201,15 @@ def apply_suffix(
                 if list(entry.record.unicodes or []):
                     raise RuntimeError(f"Native Unicode of {new} was not cleared.")
 
-    commit(native, qtcore, TITLE, [entry for entry, _ in todo], mutate)
+    names_edit.commit(
+        TITLE,
+        [entry for entry, _ in todo],
+        mutate,
+        operation=OPERATION,
+        facts=facts,
+        native=native,
+        stamp=qtcore.QDateTime.currentDateTimeUtc(),
+    )
     return renamed
 
 
@@ -375,7 +233,7 @@ def _dialog_type() -> type:
         def __init__(self, parent: Any = None) -> None:
             super().__init__(parent, TITLE, KEY)
             self.setMinimumWidth(520)
-            self.facts: Facts | None = None
+            self.facts: names_edit.Facts | None = None
             self.names: list[str] = []
             self.plan: list[tuple[str, str, str]] = []
             form = QtGui.QGridLayout()
@@ -456,7 +314,7 @@ def _dialog_type() -> type:
         def reload(self) -> None:
             """Rescan the font and re-read the selection."""
             try:
-                self.facts = scan(native)
+                self.facts = names_edit.scan(native)
                 self.names = [
                     n for n in names_selected_names() if n in self.facts.entries
                 ]

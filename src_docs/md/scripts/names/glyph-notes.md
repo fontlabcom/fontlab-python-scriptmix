@@ -14,10 +14,13 @@ note. A click loads that note into the editor. A double-click also selects the
 glyph in the Font window.
 
 HOW: The script scans the whole font. Save rescans, then writes one note as one
-Undo step with the App history order: layers and glyph in one notify list (a
-glyph alone adds no Undo step). It then reads the note back and compares it
-with the text. Double-click selection goes through the App selection helper,
-which checks that a regular Font window is active (fl#8528).
+Undo step: layers and glyph in one notify list (a glyph alone adds no Undo
+step). It then reads the note back and compares it with the text. Double-click
+selection goes through the App selection helper, which checks that a regular
+Font window is active (fl#8528). The scan, the refusal policy and the one-step
+write come from the App helper fly.ap.names_edit. If a write fails part way,
+every planned glyph is still notified and stamped, and the message asks you to
+use Edit > Undo.
 
 WHY: FontLab rebuilds all auto layers when an auto layer is notified, and Undo
 does not restore them. So the script REFUSES to save a note on a glyph that
@@ -33,7 +36,8 @@ Save note. Pick a row in the list to edit another glyph.
 BENEFIT: Notes travel with the glyph in .vfc and .vfj files. The list gives an
 overview of all remarks in the font. One Edit > Undo reverts one save.
 
-Credit: archived Apache-2.0 FontLab samples. Native acceptance pending.
+Credit: adapted from the author's own archived Apache-2.0
+FontLab samples. Native acceptance pending.
 
 Run **Names > Glyph Notes** from FontLab's Scripts menu.
 
@@ -42,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/10f227c91eaeea31abc033f257b79ff5852b6c250abf85f5ae398d187a66cecc.py)
+[Python source](../../../../.build/menu-sources/7bc701da583dd1ba942c649d6ba21c72960533c54eb809ad3b7b3605ab7f3cc8.py)
 <!--/codeinclude-->

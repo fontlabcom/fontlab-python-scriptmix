@@ -17,6 +17,12 @@ this_file: CHANGELOG.md
   native glyph updates are pending (the earlier entry said Metrics had no such
   check, which is no longer true); a failure after the write started reports
   "use Edit > Undo"; the status says "N layers skipped (auto)".
+- Names: the seven editors scan, refuse and write through `fly.ap.names_edit`
+  (on `fly.ap.history`); Suffix Tool and Unicode From Names use the public
+  `fly.ap.edit_guards` instead of private App names. Changed behaviour: a base
+  of an auto glyph is also found through other composites; after a failed
+  write every planned glyph is still stamped and notified, and the message
+  says "use Edit > Undo".
 
 ## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
 

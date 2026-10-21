@@ -16,17 +16,20 @@ ACUTE, found with unicodedata). Names with a suffix (a.ss01), ligature names
 
 HOW: The script scans the font and plans each row: "same" (already right),
 "encoded differently" (the glyph has another code and Replace is off), "used by
-X" (another glyph already owns the code, or an earlier row claims it), a refusal
-reason, or "assign". The write rescans, then sets the code points on the
-font-owned FontGate record as one Undo step with the App history order (see
-commit). It reads each list back and compares it with the plan.
+X" (another glyph already owns the code, or an earlier row claims it), a
+refusal reason, or "assign". The write rescans, then sets the code points on
+the font-owned FontGate record as one Undo step. It reads each list back and
+compares it with the plan. The scan, the refusal policy and the one-step write
+come from the App helper fly.ap.names_edit. If a write fails part way, every
+planned glyph is still notified and stamped, and the message asks you to use
+Edit > Undo.
 
 WHY: A code point must belong to one glyph only. The plan never steals a code
 from another glyph and never lets two rows claim one code. FontLab rebuilds all
-auto layers when an auto layer, or the base glyph of an auto composite, is
-notified, and Undo does not restore them. So the script REFUSES such glyphs. It
-never reads flGlyph.fgGlyph, never calls UpdateAll (fl#8537), and refuses to
-write while native updates are pending.
+auto layers when an auto layer, or the base glyph of an auto composite (also
+through other composites), is notified, and Undo does not restore them. So the
+script REFUSES such glyphs. It never reads flGlyph.fgGlyph, never calls
+UpdateAll (fl#8537), and refuses to write while native updates are pending.
 Before it writes, the script applies the guards of the App Unicode writer: a
 regular Font window must be active and no Glyph editor may be open.
 
@@ -36,7 +39,8 @@ the script. Check the table. Press Assign.
 BENEFIT: Fonts built from named outlines get a correct character map in one
 previewed, undoable step.
 
-Credit: archived Apache-2.0 FontLab samples. Native acceptance pending.
+Credit: adapted from the author's own archived Apache-2.0
+FontLab samples. Native acceptance pending.
 
 Run **Names > Unicode From Names** from FontLab's Scripts menu.
 
@@ -45,5 +49,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0fa0460faccb6d2fc6f23d80121cd9929c4026e581146097b839bc2b8ed5a4c2.py)
+[Python source](../../../../.build/menu-sources/e544333dabd2c78bc9e1293a1e97f2adc9a28c0da9b87703e81aa9f184511598.py)
 <!--/codeinclude-->

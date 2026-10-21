@@ -11,8 +11,10 @@ mark. One click writes the mark to every selected glyph.
 
 HOW: FontLab stores a mark as hue + 1 (1 to 360), grey as 1000 + level, and 0
 for none. The script rescans the font, plans the change, and writes it as one
-Undo step with the App history order (see commit). It then reads each mark
-back and compares it with the plan.
+Undo step. It then reads each mark back and compares it with the plan. The
+scan, the refusal policy and the one-step write come from the App helper
+fly.ap.names_edit. If a write fails part way, every planned glyph is still
+notified and stamped, and the message asks you to use Edit > Undo.
 
 WHY: FontLab rebuilds all auto layers when an auto layer is notified. Undo
 does not restore the rebuilt layers. So the script REFUSES glyphs that own an
@@ -29,16 +31,18 @@ Reload selection after you change the selection.
 BENEFIT: Colour marks sort work (done, check, kerning needed) and show in the
 Font window. One Edit > Undo reverts one click.
 
-Credit: archived Apache-2.0 FontLab samples. Native acceptance pending.
+Credit: adapted from the author's own archived Apache-2.0
+FontLab samples. Native acceptance pending.
 """
 
 import colorsys
-from collections.abc import Callable
-from dataclasses import dataclass
 from typing import Any
+
+import fly.ap.names_edit as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
 TITLE = "Mark Color Palette"
 KEY = "names_mark_color_palette"
+OPERATION = "metadata"  # names_edit refusal policy for this write
 PRESETS: list[tuple[str, int]] = [
     ("None", 0),
     ("Red", 1),
@@ -53,157 +57,6 @@ PRESETS: list[tuple[str, int]] = [
 ]
 LIGHTNESS = 150  # of 255; the lightness FontLab uses for mark colours
 SATURATION = 200  # of 255
-
-
-# ------------------------------------------------------------------ shared
-# This block is identical in all seven Names editors. Reason: each menu script
-# stays one file. A shared App helper could replace it later.
-@dataclass(frozen=True)
-class Entry:
-    """One glyph. RECORD is the FontGate glyph (rename, Unicode). GLYPH is the FontLab glyph."""
-
-    name: str
-    record: Any
-    glyph: Any
-
-
-@dataclass(frozen=True)
-class Facts:
-    """Whole-font snapshot. Never patched: a stale snapshot is rescanned."""
-
-    package: Any
-    package_id: int
-    entries: dict[str, Entry]
-    autos: frozenset[str]
-    bases: dict[str, tuple[str, ...]]
-
-
-def scan(native: Any) -> Facts:
-    """Read every glyph and every auto-layer dependency of the current font.
-
-    Use font-owned records and package.findFgId. Never read flGlyph.fgGlyph:
-    on build 9784 that getter can clear a fresh note mirror.
-    """
-    package = native.flWorkspace.instance().currentPackage
-    font = native.CurrentFont()
-    if package is None or package.isNull or font is None:
-        raise ValueError("Open a font first.")
-    entries: dict[str, Entry] = {}
-    autos: set[str] = set()
-    users: dict[str, set[str]] = {}
-    for record in font.glyphs:
-        glyph = package.findFgId(int(record.id))
-        if (
-            glyph is None
-            or glyph.isNull
-            or glyph.name != record.name
-            or int(glyph.fgGlyphId) != int(record.id)
-        ):
-            raise ValueError("Native glyph mapping is inconsistent; reload the font.")
-        entries[str(record.name)] = Entry(str(record.name), record, glyph)
-        for layer in glyph.layers:
-            if not layer.autoLayer:
-                continue
-            autos.add(str(record.name))
-            for shape in layer.shapes:
-                if shape.isComponent:
-                    base = str(shape.shapeData.componentGlyph)
-                    users.setdefault(base, set()).add(str(record.name))
-    bases = {base: tuple(sorted(names)) for base, names in users.items()}
-    return Facts(package, int(package.id), entries, frozenset(autos), bases)
-
-
-def refusal(facts: Facts, name: str, *, bases: bool = True) -> str:
-    """Return why NAME must not be edited, or "" when it may be.
-
-    FontLab rebuilds every auto layer when an auto layer or the base of an
-    auto composite is notified, and Undo does not restore the result.
-    Glyphs that own an auto layer are always refused. With BASES false, a base
-    of an auto composite is allowed: use that for metadata (tags, marks, notes)
-    that does not reach the composites. Renames and Unicode keep BASES true.
-    """
-    entry = facts.entries.get(name)
-    if entry is None:
-        return "not in font"
-    if not tuple(entry.glyph.layers):
-        return "has no layers"
-    if name in facts.autos:
-        return "has auto layers"
-    users = facts.bases.get(name)
-    if bases and users:
-        return "base of auto " + ", ".join(users[:2]) + ("…" if len(users) > 2 else "")
-    return ""
-
-
-def editable(
-    facts: Facts, names: list[str], *, bases: bool = True
-) -> tuple[list[str], dict[str, str]]:
-    """Split NAMES into (names that may be edited, {refused name: reason})."""
-    refused = {n: r for n in names if (r := refusal(facts, n, bases=bases))}
-    return [n for n in names if n not in refused], refused
-
-
-def fresh_facts(native: Any, package_id: int) -> Facts:
-    """Rescan just before a write. Refuse a switched font or pending host updates."""
-    facts = scan(native)
-    if facts.package_id != package_id:
-        raise ValueError("The scanned font is no longer current; reload.")
-    if tuple(native.flGlyph.updatedFgGlyphs()):
-        raise ValueError(
-            "Native glyph updates are pending; finish the current edit first."
-        )
-    return facts
-
-
-def commit(
-    native: Any,
-    qtcore: Any,
-    title: str,
-    entries: list[Entry],
-    mutate: Callable[[list[Entry]], Any],
-) -> Any:
-    """Run MUTATE as one Undo step, in the order the App writers use.
-
-    1. checkInitHistoryState(0) on every layer and glyph, before any change.
-    2. MUTATE(attempted). It appends each entry to ATTEMPTED before it changes it.
-    3. One notifyChangesApplied([layers..., glyphs...]) for ATTEMPTED entries only.
-    4. Same UTC lastModified stamp on every attempted glyph, before and after the notify.
-    Finalise even when MUTATE fails, so a partial edit stays on the Undo stack.
-    Glyphs that MUTATE never reached get no stamp and no notify.
-    """
-    stamp = qtcore.QDateTime.currentDateTimeUtc()
-    work = {id(e): (e.glyph, tuple(e.glyph.layers)) for e in entries}
-    for glyph, layers in work.values():
-        for item in (*layers, glyph):
-            item.checkInitHistoryState(0)
-    errors: list[Exception] = []
-    attempted: list[Entry] = []
-    result = None
-    try:
-        result = mutate(attempted)
-    except Exception as error:  # noqa: BLE001 - finalise history first
-        errors.append(error)
-    done = [work[id(e)] for e in attempted]
-    if done:
-        objects = [layer for _, layers in done for layer in layers]
-        objects += [glyph for glyph, _ in done]
-        try:
-            for glyph, _ in done:
-                glyph.lastModified = stamp
-            native.flItems().notifyChangesApplied(title, objects)
-        except Exception as error:  # noqa: BLE001 - never report a failed notify
-            errors.append(error)
-        finally:
-            for glyph, _ in done:
-                try:
-                    glyph.lastModified = stamp
-                except Exception as error:  # noqa: BLE001 - keep every observer error
-                    errors.append(error)
-    if errors:
-        raise RuntimeError(
-            f"{title} did not finish cleanly ({errors[0]!r}); check Edit > Undo."
-        ) from errors[0]
-    return result
 
 
 # ------------------------------------------------------------------ core
@@ -240,7 +93,9 @@ def ink_for(rgb: tuple[int, int, int]) -> str:
     return "#111111" if (max(rgb) + min(rgb)) / 2 > 140 else "#ffffff"
 
 
-def mark_counts(facts: Facts, names: list[str] | None = None) -> dict[int, int]:
+def mark_counts(
+    facts: names_edit.Facts, names: list[str] | None = None
+) -> dict[int, int]:
     """Return {mark: glyph count} over the whole font, or only over NAMES."""
     wanted = None if names is None else set(names)
     counts: dict[int, int] = {}
@@ -264,8 +119,8 @@ def apply_mark(
         raise ValueError("Select at least one glyph.")
     if not valid_mark(mark):
         raise ValueError(f"Mark {mark} is outside 0, 1-360 and 1001-1255.")
-    facts = fresh_facts(native, package_id)
-    allowed, _ = editable(facts, names, bases=False)
+    facts = names_edit.fresh_facts(package_id, native=native)
+    allowed, _ = names_edit.editable(facts, names, OPERATION)
     todo = [
         facts.entries[n]
         for n in allowed
@@ -274,16 +129,23 @@ def apply_mark(
     if not todo:
         return []
 
-    def mutate(attempted: list[Entry]) -> None:
+    def mutate() -> None:
         for entry in todo:
-            attempted.append(entry)
             entry.glyph.mark = mark
             if int(entry.glyph.mark or 0) != mark:
                 raise RuntimeError(
                     f"Native mark of {entry.name} differs from the plan."
                 )
 
-    commit(native, qtcore, TITLE, todo, mutate)
+    names_edit.commit(
+        TITLE,
+        todo,
+        mutate,
+        operation=OPERATION,
+        facts=facts,
+        native=native,
+        stamp=qtcore.QDateTime.currentDateTimeUtc(),
+    )
     return [entry.name for entry in todo]
 
 
@@ -337,7 +199,7 @@ def _dialog_type() -> type:
             super().__init__(parent, TITLE, KEY)
             self.resize(560, 420)
             self.setMinimumWidth(500)
-            self.facts: Facts | None = None
+            self.facts: names_edit.Facts | None = None
             self.names: list[str] = []
             self.targets: list[str] = []
             self.refused: dict[str, str] = {}
@@ -391,12 +253,12 @@ def _dialog_type() -> type:
         def reload(self, message: str = "") -> None:
             """Rescan the font, re-read the selection, redraw the panel."""
             try:
-                self.facts = scan(native)
+                self.facts = names_edit.scan(native)
                 self.names = [
                     n for n in names_selected_names() if n in self.facts.entries
                 ]
-                self.targets, self.refused = editable(
-                    self.facts, self.names, bases=False
+                self.targets, self.refused = names_edit.editable(
+                    self.facts, self.names, OPERATION
                 )
             except ValueError as error:
                 self.facts, self.names, self.targets, self.refused = None, [], [], {}

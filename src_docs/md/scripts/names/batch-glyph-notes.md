@@ -14,9 +14,12 @@ after the existing note. A table shows every note before and after. Apply
 writes only the glyphs whose note changes.
 
 HOW: The script reads the selection through the App helper and scans the whole
-font. For the write it rescans, plans, and writes as one Undo step with the App
-history order: layers and glyph in one notify list (a glyph alone adds no Undo
-step). After the write it reads each note back and compares it with the plan.
+font. For the write it rescans, plans, and writes as one Undo step: layers and
+glyph in one notify list (a glyph alone adds no Undo step). After the write it
+reads each note back and compares it with the plan. The scan, the refusal
+policy and the one-step write come from the App helper fly.ap.names_edit. If a
+write fails part way, every planned glyph is still notified and stamped, and
+the message asks you to use Edit > Undo.
 
 WHY: A glyph note belongs to the glyph, not to a master. FontLab rebuilds
 all auto layers when an auto layer is notified, and Undo does not restore
@@ -34,7 +37,8 @@ change the selection.
 BENEFIT: Review comments or to-do remarks reach many glyphs in one undoable
 step, with a preview.
 
-Credit: archived Apache-2.0 FontLab samples. Native acceptance pending.
+Credit: adapted from the author's own archived Apache-2.0
+FontLab samples. Native acceptance pending.
 
 Run **Names > Batch Glyph Notes** from FontLab's Scripts menu.
 
@@ -43,5 +47,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6139d081f75ce8d577f39a008d1d92dd3c6ef5454290c1575fe330cc9bdf0d2f.py)
+[Python source](../../../../.build/menu-sources/1b7b6bac97044ee6887a22fdfcb20c050905c83ed40d02ff34d9d46bef32af92.py)
 <!--/codeinclude-->
