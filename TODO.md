@@ -122,3 +122,10 @@ N68 repair round1 (.82): preserve first selected parent only, without layer or l
 
 
 - [ ] Qualify Text Holder final artifact in owned FontLab/PythonQt: Unicode selection/replacement, resizable floating UI, saved temporary content recovery and complete terminal lifecycle.
+
+- [ ] Qualify .118 master-layer Point Counter literal MIME, readonly entry and full native source/font preservation on the final combined tuple.
+
+- [ ] Qualify complete Dangerous Offcurves installed workflow inside FontLab with full-font preservation.
+
+
+- [ ] N162: qualify final combined native workflows and literal NUL host hold; source/artifact integration does not complete original scope.

@@ -3362,3 +3362,51 @@ destruction proof PASS, exact4module source inherited; full .100nativeworkflow
 remains pending. No native/canonical/live/sourcecorpus writes, push or release.
 Final WORK-only commits preserve every measured runtime hash and unchanged
 whole-scope machinery rebinds final heads without repeating unchanged suites.
+
+## N145 .118 Point Counter literal selection repair
+
+Import complete Reza master-layer report on reviewed .106, preserving its prior workflows.
+Reuse unchanged Text Holder literal editor read-only; preserve NBSP/LS/PS and UTF16 selections.
+F1 RED, complete artifacts/consumer/coverage results are recorded after verification. Native pending.
+
+N145 final .118 source/artifact gates:27focused controls pass source Qt5/Qt6
+and all4installed Qt/archive lanes;4actual public Fly/menu literal-MIME controls pass.
+Both complete7consumer graphs pass13752tests/3existing skips. Original whole scopes
+182App/45Scriptmix/70Examples pass80statement AND80branch perfile, zeroexclusions.
+Scriptmix15SDK/docs tests and strictbuild pass; unchanged .106 Examples docs coverage
+is reused byte-exact with explicit attribution, no write to that frozen tree.
+F1selection RED and readonly IME REDs retained. Literal helper byte-exact to .106;
+report-local IME ignores all preedit/commit. New report PythonQt/native probe pending.
+Exact commands/exits/archives/receipts: verification/issue-120/point-counter-repair-z43.
+No native/canonical/push/user-store/clipboard changes. Independent review required.
+
+Final environment caveat: three addition-only pytest_cov assertion-rewrite .pyc
+files appeared in the shared wheel dependency root. Original dependency bytes
+are unchanged; the sdist root is exact. Attribution is not proven. ROOT directed
+keeping the shared outputs and sealing this explicit environment-only discrepancy
+without deleting files or repeating suites solely for cache additions. See
+dependency-drift.json. Source/artifact gates pass; independent/native review pending.
+
+N144: implemented full Dangerous Offcurves workflow from pinned Apache-2.0 original. Analytic, reader and actual Qt controls run in private evidence; native full-font preservation remains pending.
+
+
+N157 finite-probe numerical repair (.120): exact control-hull exclusion prevents
+rounded solver hits for curves strictly beyond either finite probe endpoint.
+Exact endpoint coordinates replace rounded backend endpoint hits only when
+source fixed-coordinate equality and finite bounds prove the hit. All four
+probes, strict0.05 predicate, traversal, owned result and real-layer tab workflow
+remain. Ascending curve-time ordering stays an explicit adaptation; Glyphs
+engine equivalence and complete FontLab native acceptance remain pending.
+
+N157 commands/evidence: `rtk proxy /opt/homebrew/bin/python3.11 -` test-first
+boundary controls exit1 (12 failures/49passes retained); repaired full original
+model/reader/actualQt5 + independent controls exit0 (101passes). Final ordinary
+archives, complete seven consumers and original whole-module gates are required
+before this repair is sealed; evidence dangerous-offcurves-repair-z44.
+
+N160 retained first .120 artifacts as a failed attempt: an outside exact endpoint
+can round onto a finite probe even with overlapping hulls. Drop numerical t0/t1
+hits before restoring only valid exact source endpoints; interior roots survive.
+
+
+N162: form exact independently reviewed .116 editable-choice and revised .118 Point Counter plus independently accepted complete .120 Dangerous Offcurves union on .115; test ordinary .122/.37 archives, all current consumers and original whole-module floors. No native/canonical/push. Private command/evidence: verification/issue-120/reviewed-union-z45.

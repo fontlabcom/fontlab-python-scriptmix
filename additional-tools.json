@@ -593,7 +593,7 @@
     "source_sha256": "d6814436e871cc1e80668d31bb3b15428107d5fd6cbdd3976d74643b3a3a2840",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018–2022 Pedro Arilla",
+    "copyright": "2018\u20132022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -610,7 +610,7 @@
     "source_sha256": "fe88203e787c5a5e9ada86c16b25e4f9da0a1afe29391a197b26b67fa8a15c20",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018–2022 Pedro Arilla",
+    "copyright": "2018\u20132022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -627,7 +627,7 @@
     "source_sha256": "082e445b23e6085ace77ebc30ecb4025dc0210185d1646b854129630158dc444",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018–2022 Pedro Arilla",
+    "copyright": "2018\u20132022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -720,7 +720,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "source_body_redistributed": false,
     "native_acceptance": "pending",
-    "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict ±2 angle/position, ±5% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
+    "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict \u00b12 angle/position, \u00b15% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
   },
   {
     "title": "Duplicates Finder",
@@ -755,5 +755,39 @@
     "native_acceptance": "pending",
     "release_gate": "pending independent review and owned FontLab/PythonQt lifecycle/storage qualification",
     "app_minimum": "0.2.100.dev0"
+  },
+  {
+    "title": "Point Counter (Master Layers)",
+    "key": "master-point-counter",
+    "destination": "Scripts/Reports/Point Counter (Master Layers).py",
+    "destination_sha256": "eb7cae651b7ff4886300f9090d4c1f9e18fba1146a39ebb400b390ce8f2f5334",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Path/Point Counter.py",
+    "source_sha256": "d6eeb1c6ba156dc03208b2d82362295f0f376a389f1414477c8abb0539e6bb6c",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Every selected occurrence, stored master layers only, empty masters/repeats, own paths/handles/nodes, normal fixed400x300 readonly report; quadratic endpoints included as explicit source correction. Literal readonly MIME via unchanged reviewed Text Holder editor; report-local native IME refusal.",
+    "app_minimum": "0.2.118.dev0",
+    "native_acceptance": "pending"
+  },
+  {
+    "title": "Dangerous Offcurves",
+    "key": "dangerous-offcurves",
+    "destination": "Scripts/Reports/Dangerous Offcurves.py",
+    "destination_sha256": "08945918db739592e7f0f267e6e46712eaffaee32ba9bdf3adc9f7de16f44d01",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
+    "source_path": "Bug fixing/Dangerous Offcurves.py",
+    "source_sha256": "b4278e37d164357b16051cdec642b19554199e3561246b9016ad56792884816a",
+    "source_license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "All glyphs/all foreground layers/own paths; raw wrapped four-node windows, all four finite control-axis probes, strict0.05, distinct exact-layer new tab and every per-curve finding. Ascending analytic curve-t ordering is explicit adaptation, not proven Glyphs equivalence.",
+    "app_minimum": "0.2.117.dev0",
+    "native_acceptance": "pending"
   }
 ]

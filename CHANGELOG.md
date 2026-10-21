@@ -851,3 +851,38 @@ tripwire is RED on revision4 source/GREEN now.52producer Qt5/Qt6 controls pass.
 Revision4 ordinary archives eef6ac94.../305df303... and full148/42 gates remain
 retained as a prior source attempt, with no immutable candidate promotion.
 Fresh revision5 ordinary artifacts/full unchanged gates bind this repair.
+
+## N145 .118 Point Counter literal selection repair
+
+Import complete Reza master-layer report on reviewed .106, preserving its prior workflows.
+Reuse unchanged Text Holder literal editor read-only; preserve NBSP/LS/PS and UTF16 selections.
+F1 RED, complete artifacts/consumer/coverage results are recorded after verification. Native pending.
+
+N145 final .118 source/artifact gates:27focused controls pass source Qt5/Qt6
+and all4installed Qt/archive lanes;4actual public Fly/menu literal-MIME controls pass.
+Both complete7consumer graphs pass13752tests/3existing skips. Original whole scopes
+182App/45Scriptmix/70Examples pass80statement AND80branch perfile, zeroexclusions.
+Scriptmix15SDK/docs tests and strictbuild pass; unchanged .106 Examples docs coverage
+is reused byte-exact with explicit attribution, no write to that frozen tree.
+F1selection RED and readonly IME REDs retained. Literal helper byte-exact to .106;
+report-local IME ignores all preedit/commit. New report PythonQt/native probe pending.
+Exact commands/exits/archives/receipts: verification/issue-120/point-counter-repair-z43.
+No native/canonical/push/user-store/clipboard changes. Independent review required.
+
+Added complete Dangerous Offcurves full-font probe action and exact-layer proof tab; explicit fontTools analytic ordering adaptation.
+
+
+N157 finite-probe numerical repair (.120): exact control-hull exclusion prevents
+rounded solver hits for curves strictly beyond either finite probe endpoint.
+Exact endpoint coordinates replace rounded backend endpoint hits only when
+source fixed-coordinate equality and finite bounds prove the hit. All four
+probes, strict0.05 predicate, traversal, owned result and real-layer tab workflow
+remain. Ascending curve-time ordering stays an explicit adaptation; Glyphs
+engine equivalence and complete FontLab native acceptance remain pending.
+
+N160 retained first .120 artifacts as a failed attempt: an outside exact endpoint
+can round onto a finite probe even with overlapping hulls. Drop numerical t0/t1
+hits before restoring only valid exact source endpoints; interior roots survive.
+
+
+N162 combined source candidate: The combined App0.2.122.dev0 source candidate adds Reports > Point Counter (Master Layers) and Dangerous Offcurves, preserving all prior109menus and both complete original workflows. Dangerous Offcurves uses explicitly adapted ascending fontTools curve-time intersection order; opaque Glyphs engine equivalence remains unproved. Literal text is checked after publication; a lossy literal NUL is refused and remains a native host hold. Source/artifact verification does not complete native/font-history preservation acceptance.
