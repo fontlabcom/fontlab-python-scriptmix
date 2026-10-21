@@ -891,3 +891,5 @@ N162 combined source candidate: The combined App0.2.122.dev0 source candidate ad
 N188: independent complete cross-font Copy Anchors candidate on reviewed.122.
 Source-boundary and realQt controls in progress; no native acceptance yet.
 Exact commands/receipts: verification/issue-120/crossfont-anchors-z48 (workspace).
+
+N208 (.140 private): repair integer advance fidelity, preserve exact native-derived caret cloud/mark expectations, and stage complete native insertion-name normalization with owned detached cleanup. Original variants and all options retained. RED-first failures and focused repairs retained; final artifacts/native calibration remain pending. Prior .134 revision2 is unchanged.
