@@ -3415,3 +3415,5 @@ N162: form exact independently reviewed .116 editable-choice and revised .118 Po
 N188: independent complete cross-font Copy Anchors candidate on reviewed.122.
 Source-boundary and realQt controls in progress; no native acceptance yet.
 Exact commands/receipts: verification/issue-120/crossfont-anchors-z48 (workspace).
+
+N188 revision2 final verification: ordinary wheel and sdist each pass all seven installed consumers (14,028 tests /3 existing skips per artifact); four actual Qt lanes each pass 88 focused controls and the real Fly menu. Strict docs pass 26 tests plus both builds. Complete original-baseline whole-module gates pass 194 App /47 Scriptmix /70 Examples, every module >=80% statements and branches, zero exclusions. Exact payload/RECORD/license/privacy audit retains all276 prior runtime files and150 prior menus. Native full-font editing/history/reopen remains pending. External retained evidence: verification/issue-120/crossfont-anchors-z48/revision2.
