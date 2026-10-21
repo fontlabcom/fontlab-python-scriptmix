@@ -915,3 +915,10 @@ Add the complete Science Gothic 28-target/378-comparison Symmetry writer with lo
 - Add distinct all-layer and declared-master background removal tools through Fly/App.
 - Remove original whole mask objects; reject ambiguous mapping and automatic dependencies before history.
 - Contain partial native failures with one final notification and explicit Undo diagnosis. Native acceptance pending.
+
+### N239 — background failure and active-state repair candidate
+
+- Always attempt one final notification after attempted removal, aggregate individual pre/post stamp and notification errors.
+- Use nonassigning active resolver; active/locked backgrounds remain explicitly unsupported original-domain gates.
+- Prepare survivor identities in checked per-glyph passes before history, and fence final staged sources/queue.
+- No native acceptance or reconstructed background rollback.
