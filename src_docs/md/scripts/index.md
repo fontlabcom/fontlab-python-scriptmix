@@ -7,6 +7,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Cloud View](anchors/cloud-view.md)
 - [Compatibility Report](anchors/compatibility-report.md)
 - [Copy Anchors From Glyph](anchors/copy-anchors-from-glyph.md)
+- [Duplicates Finder](anchors/duplicates-finder.md)
 - [Mark Attachment Preview](anchors/mark-attachment-preview.md)
 
 ## Cleanup

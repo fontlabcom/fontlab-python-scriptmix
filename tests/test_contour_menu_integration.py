@@ -16,12 +16,13 @@ def test_three_contour_candidates_extend_curated_menu_without_archive_dispatcher
     additional = json.loads((ROOT / "additional-tools.json").read_text())
     menus = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert len(sample_rows) == 69
-    assert len(additional) == 38
-    assert len(menus) == 107
+    assert len(additional) == 39
+    assert len(menus) == 108
     assert menus == {row["destination"] for row in sample_rows + additional}
     archive = json.loads((ROOT / "rescue-index.json").read_text())
     assert len(archive["menus"]) == 61
-    assert menus.isdisjoint(row["menu"] for row in archive["menus"])
+    candidates = {row["rescued_original_menu"] for row in additional if row.get("rescued_original_menu")}
+    assert menus.intersection(row["menu"] for row in archive["menus"]) == candidates
     selected = [row for row in additional if row["title"] in TITLES]
     assert {row["title"] for row in selected} == set(TITLES)
     for row in selected:

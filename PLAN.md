@@ -564,3 +564,5 @@ Qualify the installed complete peer proof, named/unencoded symbols, literal labe
 
 
 N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
+
+N119 retains full duplicate-anchor writer scope. Complete original source/GUI/model/action, native one-Undo/full-font/history/dirty/reopen and artifact/consumer gates are separate; only verified source/artifact work can be recorded complete.

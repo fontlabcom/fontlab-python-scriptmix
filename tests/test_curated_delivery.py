@@ -21,7 +21,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 38 and len(actual) == 107
+    assert len(rows) == 69 and len(extra) == 39 and len(actual) == 108
     for relative in actual:
         path = ROOT / relative
         assert len(Path(relative).parts) == 3, relative
@@ -38,7 +38,15 @@ def test_unported_sources_remain_a_complete_hashed_backlog():
     assert len(index["menus"]) == index["new_menu_count"] == 61
     assert len(index["preserved_sources"]) == 69
     for row in index["menus"]:
-        assert not (ROOT / row["menu"]).exists(), row["menu"]
+        candidates = {r.get("rescued_original_menu"): r for r in json.loads((ROOT / "additional-tools.json").read_text()) if r.get("rescued_original_menu")}
+        if row["menu"] in candidates:
+            candidate = candidates[row["menu"]]
+            assert candidate["destination"] == row["menu"]
+            assert candidate["source_sha256"] == row["target_sha256"]
+            assert candidate["native_acceptance"] == "pending"
+            assert candidate["counted_in_130_sample_migration"] is False
+        else:
+            assert not (ROOT / row["menu"]).exists(), row["menu"]
         assert hashlib.sha256((ARCHIVE / row["target"]).read_bytes()).hexdigest() == row["target_sha256"]
     assert (ROOT / "PORTING-BACKLOG.md").is_file(), "Keep unfinished ports visible"
 

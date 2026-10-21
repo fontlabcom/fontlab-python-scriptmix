@@ -75,7 +75,7 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Anchors/Center Horizontally.py | `rescued/samples/anchors_center_horizontally.py` | Unported; native verification pending |
 | Anchors/Place From Bounds.py | `rescued/samples/anchors_place_from_bounds.py` | Unported; native verification pending |
 | Anchors/Snap To Metrics.py | `rescued/samples/anchors_snap_to_metrics.py` | Unported; native verification pending |
-| Anchors/Duplicates Finder.py | `rescued/samples/anchors_duplicates_finder.py` | Unported; native verification pending |
+| Anchors/Duplicates Finder.py | `rescued/samples/anchors_duplicates_finder.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Anchors/Round To Grid.py | `rescued/samples/anchors_round_to_grid.py` | Unported; native verification pending |
 | Anchors/Delete By Name.py | `rescued/samples/anchors_delete_by_name.py` | Unported; native verification pending |
 | Anchors/Mirror Across Masters.py | `rescued/samples/anchors_mirror_across_masters.py` | Unported; native verification pending |

@@ -721,5 +721,21 @@
     "source_body_redistributed": false,
     "native_acceptance": "pending",
     "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict ±2 angle/position, ±5% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
+  },
+  {
+    "title": "Duplicates Finder",
+    "key": "anchors_duplicates_finder",
+    "destination": "Scripts/Anchors/Duplicates Finder.py",
+    "destination_sha256": "d56f720b404d6020413607143fccd199f2576e04b86e87528a90ec8c63274832",
+    "kind": "complete-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "rescued_original_menu": "Scripts/Anchors/Duplicates Finder.py",
+    "source_path": "rescued/samples/anchors_duplicates_finder.py",
+    "source_sha256": "7cda723f2e4499930aa49d701bb1dd1cca703bc92de44e5ec2a18876ff130f71",
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_minimum": "0.2.102.dev0",
+    "scope": "Whole font/opening selection, all masters; exact original one-pass Unicode numbered families, first-in-layer retention, ties-even coincidences opt-in, automatic layers reported/kept; actual identity-based removals with complete preflight, single final layer+glyph notification, explicit recoverable partial failures. No append rollback or UpdateAll. Real one Undo/full-font/history/dirty/save/reopen remains required."
   }
 ]

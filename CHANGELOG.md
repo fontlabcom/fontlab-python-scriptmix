@@ -802,3 +802,7 @@ no Output/font/selection writers. Numeric cubic angle repaired; original curve
 sampling/open wrap preserved. Tests, source/API calibration and ordinary
 archive verification: workspace verification/issue-120/near-miss-z35/.
 Native acceptance, root review and delivery remain pending.
+
+## Issue120 N119 — complete duplicate-anchor source candidate
+
+Retain the complete original all-master duplicate removal workflow, exact first-in-layer/name-family/coincident policies, opening-selection scope and auto-layer skips. Direct original pin removals use preflight and one final layer/glyph notification; partial failures remain explicit for Undo. Native one-Undo, whole-font/history/dirty/save/reopen and lifetime acceptance remain pending. No native/live/canonical operation occurred.

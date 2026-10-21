@@ -66,7 +66,7 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
     assert len(set(destinations)) == 69
     additional = json.loads((ROOT / "additional-tools.json").read_text())
     extra_destinations = {entry["destination"] for entry in additional}
-    assert len(extra_destinations) == len(additional) == 38
+    assert len(extra_destinations) == len(additional) == 39
     for entry in additional:
         assert (
             hashlib.sha256((ROOT / entry["destination"]).read_bytes()).hexdigest()
@@ -76,7 +76,8 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
     assert set(destinations).isdisjoint(extra_destinations)
     archive = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     archive_destinations = {row["menu"] for row in archive}
-    assert not ((set(destinations) | extra_destinations) & archive_destinations)
+    candidates = {row["rescued_original_menu"] for row in additional if row.get("rescued_original_menu")}
+    assert ((set(destinations) | extra_destinations) & archive_destinations) == candidates
     assert set(destinations) | extra_destinations == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }

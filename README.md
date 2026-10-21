@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab practical scripts
 
-The curated `Scripts` folder contains 106 practical tools in one-level Title Case
+The curated `Scripts` folder contains 108 practical tools in one-level Title Case
 categories: 69 sample adaptations and 37 additional tools. Additional adaptations
 include reviewed source candidates with pending native acceptance. Use Python3.11,
 fontlab-fly and the matching reviewed Fontlabapp APIs. Counts describe source
@@ -112,3 +112,5 @@ Close But No Cigar reports near angles, stem lengths and all six node-position
 checks for every selected glyph occurrence, using each first layer and its
 associated named master. Shared selectable Refresh/Close report; native
 acceptance pending. Full original contract, source fixes and MIT terms: NOTICE.
+
+Anchors > Duplicates Finder is the complete native-pending source candidate for whole-font/opening-selection, all-master duplicate removal. Coincidence remains opt-in and automatic layers are kept. Identity-preserving Fix uses one final notification; failed attempts are diagnosed for Undo. Native full-font/history/reopen acceptance remains open. Historical rescue rows remain intact; the additional-tools row records this candidate without increasing the accepted130-tool numerator.

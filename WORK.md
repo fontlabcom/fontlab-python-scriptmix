@@ -3207,3 +3207,7 @@ Independent original-contract review counterexamples for TT controls, exact cubi
 N111 reviewed .98 integration: complete Near Miss and both Sliders workflows
 combined with delivered .90. Every prior menu/resource retained; native .98
 acceptance remains pending. Original source contracts and historical records retained.
+
+## N119 — duplicate-anchor workflow
+
+Private .98-based source candidate, reserved App0.2.102.dev0. Tests-first model/native/GUI RED receipts and subsequent passing controls are retained at verification/issue-120/anchor-duplicates-z37. Baseline App4037 passed; full source/installed/gate results are recorded there before freeze. Historical rescue originals/ledger and every prior menu remain. Native acceptance, real one-Undo/full-font/history/dirty/save/reopen remain open; no immediate exact append rollback is claimed. Exact commands and exit codes are in the evidence command JSON/logs.
