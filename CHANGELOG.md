@@ -886,3 +886,6 @@ hits before restoring only valid exact source endpoints; interior roots survive.
 
 
 N162 combined source candidate: The combined App0.2.122.dev0 source candidate adds Reports > Point Counter (Master Layers) and Dangerous Offcurves, preserving all prior109menus and both complete original workflows. Dangerous Offcurves uses explicitly adapted ascending fontTools curve-time intersection order; opaque Glyphs engine equivalence remains unproved. Literal text is checked after publication; a lossy literal NUL is refused and remains a native host hold. Source/artifact verification does not complete native/font-history preservation acceptance.
+
+
+N186: add complete Science Gothic Kerning Symmetry writer, all configured pairs/non-Ctr masters, exact native zero deletion and class-order diagnostics. Shared whole-batch history repairs final-master-only notification. Native qualification pending.

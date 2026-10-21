@@ -13,4 +13,5 @@
 - [Round Values](round-values.md)
 - [Same Kerning Groups](same-kerning-groups.md)
 - [Scale Values](scale-values.md)
+- [Symmetry](symmetry.md)
 - [Text Preview](text-preview.md)

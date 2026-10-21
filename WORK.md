@@ -3410,3 +3410,6 @@ hits before restoring only valid exact source endpoints; interior roots survive.
 
 
 N162: form exact independently reviewed .116 editable-choice and revised .118 Point Counter plus independently accepted complete .120 Dangerous Offcurves union on .115; test ordinary .122/.37 archives, all current consumers and original whole-module floors. No native/canonical/push. Private command/evidence: verification/issue-120/reviewed-union-z45.
+
+
+N186 source: test-first failure retained; 39 focused controls pass, including exhaustive arithmetic and sequential aliases plus actual Qt result lifetime. Unchanged batch baseline60 passes. Ordinary archives, full graph and whole original coverage are required before sealing; workspace evidence kerning-symmetry-z48.

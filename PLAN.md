@@ -620,3 +620,6 @@ Dangerous Offcurves: retain native source-engine, getter preservation and exact-
 
 
 N162: independently review final combined .122/.37 source/artifact tuple and retain complete native PythonQt/NUL and font/UI/history/reopen qualification separately.
+
+
+N186: qualify installed Kerning Symmetry across complete owned fonts, native class order/identity/history/cache/Undo/Redo/save/reopen and result lifecycle; source/artifact evidence is separate.

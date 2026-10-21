@@ -543,3 +543,11 @@ Independent FontLab implementation; original body is not redistributed.
 The complete four finite-probe policy is retained. Ascending fontTools curve-t
 ordering adapts unspecified Glyphs ordering; exact engine equivalence and native
 font-read/tab preservation remain unqualified. No original bug-fix claim.
+
+Kerning Symmetry: independent behavior implementation of Vassil Kateliev /
+Karandash Type Foundry (2025), Science Gothic,
+https://github.com/googlefonts/science-gothic ,
+scripts/FontLab/sg-toolbox/SG-Font-Kerning-Symmetry.py.
+Original SHA-256 6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c.
+No licence declared in the inspected original tree; original body is neither
+copied nor redistributed. New independent implementation: Apache-2.0.

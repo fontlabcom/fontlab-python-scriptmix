@@ -593,7 +593,7 @@
     "source_sha256": "d6814436e871cc1e80668d31bb3b15428107d5fd6cbdd3976d74643b3a3a2840",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018\u20132022 Pedro Arilla",
+    "copyright": "2018–2022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -610,7 +610,7 @@
     "source_sha256": "fe88203e787c5a5e9ada86c16b25e4f9da0a1afe29391a197b26b67fa8a15c20",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018\u20132022 Pedro Arilla",
+    "copyright": "2018–2022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -627,7 +627,7 @@
     "source_sha256": "082e445b23e6085ace77ebc30ecb4025dc0210185d1646b854129630158dc444",
     "license": "Apache-2.0",
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
-    "copyright": "2018\u20132022 Pedro Arilla",
+    "copyright": "2018–2022 Pedro Arilla",
     "scope": "First selected layer; exact stored node order. Small uses analytic unsigned area; mixed nonnode clearing has explicit single-displayed-glyph limitation.",
     "native_acceptance": "pending",
     "release_gate": "pending: controller review and owned native workflows"
@@ -720,7 +720,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "source_body_redistributed": false,
     "native_acceptance": "pending",
-    "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict \u00b12 angle/position, \u00b15% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
+    "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict ±2 angle/position, ±5% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
   },
   {
     "title": "Duplicates Finder",
@@ -788,6 +788,23 @@
     "license": "Apache-2.0",
     "scope": "All glyphs/all foreground layers/own paths; raw wrapped four-node windows, all four finite control-axis probes, strict0.05, distinct exact-layer new tab and every per-curve finding. Ascending analytic curve-t ordering is explicit adaptation, not proven Glyphs equivalence.",
     "app_minimum": "0.2.117.dev0",
+    "native_acceptance": "pending"
+  },
+  {
+    "title": "Symmetry",
+    "key": "kerning-symmetry",
+    "destination": "Scripts/Kerning/Symmetry.py",
+    "destination_sha256": "e630b1f1552ccc59b12801934c84ea609e9ab9a85816b318876791e3543fc1be",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/googlefonts/science-gothic",
+    "source_path": "scripts/FontLab/sg-toolbox/SG-Font-Kerning-Symmetry.py",
+    "source_sha256": "6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Complete seven smallcaps plus 21 Unicode targets; all 378 pair comparisons/reversals in source order on every non-Ctr master. Original first-side classes, sequential aliases, zero deletion and ties-even fives. One complete shared history batch and owned full diagnostics; ordered stale-source refusal.",
+    "app_minimum": "0.2.133.dev0",
     "native_acceptance": "pending"
   }
 ]
