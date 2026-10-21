@@ -524,3 +524,13 @@ Original SHA-256: 182c1c2486d79729632ea08ddc45c4c3aab8ccb19508ddb0276498a43c8c14
 No licence declaration was found in the inspected source tree. No original
 body is copied, executed or redistributed. This independently written
 implementation is Apache-2.0; complete terms are in LICENSE.
+
+Duplicate Unicodes complete editor
+=================================
+Apache-2.0 FontLab sample rescued/samples/names_duplicate_unicodes.py
+SHA256 b42ab5f9a4bead19a4a0a042d9fe9fcffbfadfe650da6551b4f9ea3819ba865e.
+The original remains untouched in Scriptmix. Shared App model/native/UI and Fly
+facade preserve complete scan, keeper, checkbox, Rescan, removal and Close flow.
+Unsafe getter/UpdateAll/double-notification behavior is replaced by font-owned
+Unicode records, precise preflight, one final history batch and partial errors.
+Native FontLab/history/full-font/reopen qualification remains pending.

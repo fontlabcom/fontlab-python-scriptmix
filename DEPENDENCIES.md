@@ -90,3 +90,5 @@ Z9 bracket-layer workflows add no runtime dependency: stdlib graph traversal, ex
 No build/runtime dependency changes. Existing locked ProperDocs/MaterialX/plugin versions remain. Browser notice texts record pinned npm/publisher sources and the captured shared-theme/font responses; the full transitive review remains open.
 
 N119 adds no dependency. Duplicate-anchor UI uses injected host Qt5/PythonQt and existing Fly/App ownership helpers; external PyQt5/PySide6 serve offline tests only.
+
+Duplicate Unicodes reuses App-owned glyph catalog facts, dependency analysis, exact signal ownership and completion lifecycle. No new runtime dependency; menu requires Fly and App0.2.121.dev0.

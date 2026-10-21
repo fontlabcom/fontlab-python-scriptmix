@@ -3362,3 +3362,5 @@ destruction proof PASS, exact4module source inherited; full .100nativeworkflow
 remains pending. No native/canonical/live/sourcecorpus writes, push or release.
 Final WORK-only commits preserve every measured runtime hash and unchanged
 whole-scope machinery rebinds final heads without repeating unchanged suites.
+
+N161 .121 private candidate from reviewed .106. Read complete original and local FontGate/FontLab C++ bindings plus official Qt5 tree docs before implementation. Tests-first RED retained; model/native/UI full workflow initially41 controls, full archive/gates pending. Evidence and TMPDIR are on /Volumes/Falstaff4T/fontlab-scripting-verification/duplicate-unicodes-z45 (verification path is a symlink); no native/canonical/push/live install.

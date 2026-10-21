@@ -122,3 +122,5 @@ N68 repair round1 (.82): preserve first selected parent only, without layer or l
 
 
 - [ ] Qualify Text Holder final artifact in owned FontLab/PythonQt: Unicode selection/replacement, resizable floating UI, saved temporary content recovery and complete terminal lifecycle.
+
+- [ ] Qualify complete Duplicate Unicodes .121 editor/writer on owned FontLab fonts: original controls, Apply/Undo/Redo/dirty/notes/cache/full-font/save/reopen.

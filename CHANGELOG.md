@@ -851,3 +851,7 @@ tripwire is RED on revision4 source/GREEN now.52producer Qt5/Qt6 controls pass.
 Revision4 ordinary archives eef6ac94.../305df303... and full148/42 gates remain
 retained as a prior source attempt, with no immutable candidate promotion.
 Fresh revision5 ordinary artifacts/full unchanged gates bind this repair.
+
+## Duplicate Unicodes .121 candidate
+
+Complete whole-font checkbox cleanup editor through shared App/Fly, preserving primary-owner defaults and ordered surviving assignments. Adds stale/preflight/partial-write handling and single final history notification; original native getter/UpdateAll paths are not used. Native qualification remains pending.
