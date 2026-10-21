@@ -4,7 +4,7 @@ this_file: PORTING-BACKLOG.md
 
 # Porting backlog
 
-The active menu contains 208 practical tools: 69 sample adaptations and 139
+The active menu contains 216 practical tools: 69 sample adaptations and 147
 additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
@@ -135,3 +135,14 @@ identity has one row. Source hashes of the ported sources are in
 | `simoncozens/GlyphsScripts/Optical Center.py` | Ported | Anchors/Optical Center.py | Scanline column weights; the result is an estimate |
 | `simoncozens/GlyphsScripts/Remove Extraneous Mark Anchors.py` | Ported | Anchors/Remove Extraneous Mark Anchors.py | Preview before removal |
 | `simoncozens/GlyphsScripts/Reset Anchors.py` | Retired | — | FontLab's Python API has no default-anchor regeneration |
+| `simoncozens/GlyphsScripts/Comb.py` | Ported | Contours/Comb.py | Configurable ribbon strips over selected glyphs and masters |
+| `simoncozens/GlyphsScripts/Curve All Straights.py` | Ported | Contours/Curve All Straights.py | Selected contours, mapped onto compatible layers |
+| `simoncozens/GlyphsScripts/Delete Close Points.py` | Ported | Contours/Delete Close Points.py | Configurable short-segment threshold |
+| `simoncozens/GlyphsScripts/Make Compatible.py` | Ported | Contours/Make Compatible.py | Promotes lines where another master has a curve |
+| `simoncozens/GlyphsScripts/Sandblast.py` | Ported | Contours/Sandblast.py | Seeded holes inside the filled shape |
+| `simoncozens/GlyphsScripts/Straighten All Curves.py` | Ported | Contours/Straighten All Curves.py | Selected contours, mapped onto compatible layers |
+| `simoncozens/GlyphsScripts/Superaligner.py` | Ported | Contours/Superaligner.py | Aligns contour order and start points with the first master |
+| `simoncozens/GlyphsScripts/Interpolated Nudge.py` | Ported | Contours/Interpolated Nudge.py | Moves selected nodes and scales their handles |
+| `simoncozens/GlyphsScripts/Make bottom-left node first.py` | Duplicate of | Contours/Optimize Start Points.py | Puts Y before X and can match a reference master |
+| `simoncozens/GlyphsScripts/Round Everything.py` | Duplicate of | Contours/Round Coordinates.py | Also Anchors/Round To Grid.py and Metrics/Round Advances.py |
+| `simoncozens/GlyphsScripts/glyphmonkey.py` | Retired | — | Helper module with no menu action |

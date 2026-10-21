@@ -1300,3 +1300,29 @@ Python API has no default-anchor regeneration.
 No source code was copied; the scripts reproduce the behaviour for FontLab
 and are Apache-2.0. Source and licence SHA-256 values are in
 additional-tools.json.
+
+Contours tools after Simon Cozens
+=================================
+
+Independent rewrites of scripts by Simon Cozens, simoncozens/GlyphsScripts,
+copyright 2017 Simon Cozens, MIT License
+(https://github.com/simoncozens/GlyphsScripts). The FontLab scripts are
+also MIT:
+
+- Contours/Comb: Comb.py.
+- Contours/Curve All Straights: Curve All Straights.py.
+- Contours/Delete Close Points: Delete Close Points.py.
+- Contours/Make Compatible: Make Compatible.py.
+- Contours/Sandblast: Sandblast.py.
+- Contours/Straighten All Curves: Straighten All Curves.py.
+- Contours/Superaligner: Superaligner.py.
+- Contours/Interpolated Nudge: Interpolated Nudge.py.
+
+Make bottom-left node first.py is covered by Contours/Optimize Start Points
+(which puts Y before X and can match a reference master), and Round
+Everything.py by Contours/Round Coordinates, Anchors/Round To Grid and
+Metrics/Round Advances. glyphmonkey.py is a helper module with no menu
+action.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json.
