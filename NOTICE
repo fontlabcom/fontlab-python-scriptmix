@@ -471,3 +471,41 @@ Original SHA-256: fc2e6b144d53388b7105498f9debf55edf2c65986c3f559683b106623fbb95
 No licence declaration was found in the inspected source tree. No original
 body is copied, executed or redistributed. This independently written
 implementation is Apache-2.0; complete terms are in LICENSE.
+
+
+Close But No Cigar provenance
+============================
+Behavior adapted from Simon Cozens, GlyphsScripts/Close But No Cigar.py
+and glyphmonkey.py. https://github.com/simoncozens/GlyphsScripts
+Original SHA-256: bcf9ec870ac1a36ed5fb65f0f863c826ea80e6049f072d4891f0d2daa52084ed
+Helper SHA-256: 26f0f745b72f7a275ced449f4a82e14ab1be60df7f20abacb973f6c5f240a105
+Licence SHA-256: 6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5
+All selected parent occurrences; literal first layer, associated named-master
+PostScript stems/four metrics; all strict angle/stem/six node tests. Preserves
+original open-path wrap and sub-one 50-step cubic length. Repairs numeric cubic
+angle and empty contours. TrueType controls, malformed topology, generated or
+projective shapes and unknown association refuse the whole report. No source
+bodies or assets copied/executed. Native acceptance remains pending. Host/UI
+adaptation also uses Apache-2.0. Complete original MIT terms follow.
+
+MIT License
+
+Copyright (c) 2017 Simon Cozens
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -107,3 +107,8 @@ in font order, including unencoded names. Empty/singleton groups receive the
 original no-peers diagnosis. Requires Fly and App0.2.82.dev0. Native fresh-tab
 and full preservation acceptance remain pending; the130-sample denominator is
 unchanged. Reza Bohloul is credited, and no unlicensed source body is distributed.
+
+Close But No Cigar reports near angles, stem lengths and all six node-position
+checks for every selected glyph occurrence, using each first layer and its
+associated named master. Shared selectable Refresh/Close report; native
+acceptance pending. Full original contract, source fixes and MIT terms: NOTICE.

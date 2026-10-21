@@ -3182,3 +3182,28 @@ Private union preserves all229 App.80 runtime/resource bytes and105 prior menu b
 Both normal App.84 wheel/sdist installed graphs pass App3667, Glyport3182/1skip, Fontport4489/2skips, Examples550, Scriptmix988/1skip, Lessons199 and Fly17. Every144 whole original-baseline changed module passes80% statements/branches with zero exclusions (99.1484% statements/97.1705% branches). Both lanes pass12 public first-reader/group/symbol/Fly controls,1600 row-oracle cases and2048 ordered peers, plus8 existing simultaneous real Qt5 lifecycle controls. Strict local source-backed docs and10 SDK tests pass. Evidence: workspace verification/issue-120/kerning-proof-integration-z33/{consumer-results.json,whole-scope-results.json,artifact-verification.json,public-controls.json,cross-family-commands.json,docs-tests.json}.
 
 Exact rtk proxy commands and exit0 results are retained in those receipts and build-install.json. A first docs build selected global properdocs via PATH and failed its missing categories plugin; the corrected locked SDK bin PATH passed without source edits. No native calls, live installation, canonical edits, push, release or publication were performed. Source/artifact verification does not qualify full native fresh-tab/font/history/cache/save/reopen behavior.
+
+
+## N105 Close But No Cigar (.93 source candidate)
+
+Complete ordered all-selected-parent/first-layer near-angle, horizontal/vertical
+stem and six node-position checks, with explicit associated-master data and
+strict original boundaries/exclusions. Shared modeless Refresh/Close report;
+no Output/font/selection writers. Numeric cubic angle repaired; original curve
+sampling/open wrap preserved. Tests, source/API calibration and ordinary
+archive verification: workspace verification/issue-120/near-miss-z35/.
+Native acceptance, root review and delivery remain pending.
+
+
+N105 final verification (.93, native pending):
+
+Commands from the workspace root, all exit0: `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/near-miss-z35/build_install.py` (normal wheel/sdist, independent thin arm64 Python3.11 installs, real pip checks); `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/near-miss-z35/run_consumers.py` (both complete seven-consumer graphs); `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/near-miss-z35/rerun_stub_context.py` (complete Glyport suites with original sibling stub audit context); `rtk proxy verification/issue-120/elastic-integration-z34/wheel-env/bin/python verification/issue-120/near-miss-z35/coverage_report.py` (original baselines, every153App/42Scriptmix whole module >=80% statements and branches, zero exclusions); `rtk proxy /opt/homebrew/bin/python3.11 verification/issue-120/near-miss-z35/audit_artifacts.py` (all241runtime bytes exact across source/archives/installs; all238prior runtime and106prior menus preserved).
+
+Fresh source App3939 passes; each installed graph: App3939, Glyport3182/1skip, Fontport4490/1skip, Examples553, Scriptmix989/1skip, Lessons199, Fly17. Existing optional/corpus/inspector skips stay explicit. Full public Fly/menu reader + actual Qt5 Refresh/failure/recovery/all4Close paths/parent destruction pass per archive. Strict actual docs launcher from /tmp and10docs tests pass; complete rendered facade, guide, MIT download and26frontend notices checked.
+
+Independent original-contract review counterexamples for TT controls, exact cubic arithmetic and quiet-row deadlines were retained RED then repaired before final artifacts. Repeated original sampling arithmetic, duplicates, first-layer/master read domains and every original check remain. Initial setup failures are retained separately. NativeFontLab getter/cache/font/history/lifetime acceptance, later combined current producer graph, review/push/release/sitepublication remain pending; no original execution, native call, live install or canonical source write occurred.
+
+
+N111 reviewed .98 integration: complete Near Miss and both Sliders workflows
+combined with delivered .90. Every prior menu/resource retained; native .98
+acceptance remains pending. Original source contracts and historical records retained.

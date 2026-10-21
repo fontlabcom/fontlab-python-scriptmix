@@ -2,6 +2,7 @@
 
 - [Bracket Layers and Components](bracket-layers-and-components.md)
 - [Categories to XML Lib Key](categories-to-xml-lib-key.md)
+- [Close But No Cigar](close-but-no-cigar.md)
 - [Compare Open Font Revisions](compare-open-font-revisions.md)
 - [Dump to Svg Path Commands](dump-to-svg-path-commands.md)
 - [Empty Glyphs](empty-glyphs.md)

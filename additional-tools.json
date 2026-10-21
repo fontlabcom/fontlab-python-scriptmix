@@ -703,5 +703,23 @@
     "native_acceptance": "pending",
     "release_gate": "pending owned native fresh-tab/cursor/workspace and full font/cache/history preservation",
     "app_minimum": "0.2.82.dev0"
+  },
+  {
+    "title": "Close But No Cigar",
+    "key": "near_miss",
+    "destination": "Scripts/Reports/Close But No Cigar.py",
+    "destination_sha256": "4da50707a3e71a18284e8a1bcef13a661825cd9314c00fbb0b3003d92059d57e",
+    "kind": "complete-read-only-report-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
+    "source": "Close But No Cigar.py",
+    "source_sha256": "bcf9ec870ac1a36ed5fb65f0f863c826ea80e6049f072d4891f0d2daa52084ed",
+    "helper_source": "glyphmonkey.py",
+    "helper_sha256": "26f0f745b72f7a275ced449f4a82e14ab1be60df7f20abacb973f6c5f240a105",
+    "license": "MIT AND Apache-2.0",
+    "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "scope": "All selected parent occurrences; first layer only, explicit associated-master PostScript stems/four metrics; strict ±2 angle/position, ±5% length, exact-value exclusions, all own paths and nodes incl handles; original open wrap/cubic sampling. Repairs numeric cubic angle and empty contours. Quadratic controls, malformed/generated/projective shapes, unknown or changed sources refuse whole report."
   }
 ]
