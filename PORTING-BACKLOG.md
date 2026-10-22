@@ -217,7 +217,9 @@ from; NOTICE holds the credits and licences.
 
 FontLab capture uses public.skipExportGlyphs as an explicitly labelled export
 policy and exact SC suffix particles for classification. Unknown name mappings
-and ambiguous groups remain visible. Native timing, complete-font preservation,
+and ambiguous groups remain visible. Legacy `legacy_lowercase_without_smallcaps` independently reports missing
+exporting `.sc` glyphs even when modern `.smcp` coverage passes.
+Native timing, complete-font preservation,
 installed origins, repeat refresh and report destruction still need owned-font
 qualification. Synchronous getters cannot be preempted; budget checks on return
 refuse partial output. This one port does not complete the wider corpus.

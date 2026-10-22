@@ -3091,9 +3091,9 @@
     "source_sha256": "515a006343efe90ea922f63da932e9298224de31e12226a4cb242ed91c814ab0",
     "license": "Apache-2.0",
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
-    "scope": "Both modern and legacy report workflows: export census, missing and orphan counterparts, two-sided capital kerning groups. Correct Boolean counterpart logic; preserve alternate suffixes, ligatures and Unicode casing. Export scope is public.skipExportGlyphs compatibility policy; SC case uses exact suffix particles. Disclose unknown mappings and ambiguous groups; refuse partial/stale reports.",
+    "scope": "Both modern and legacy report workflows: export census, missing and orphan counterparts, two-sided capital kerning groups. Correct Boolean counterpart logic; preserve alternate suffixes, ligatures and Unicode casing. Report legacy lowercase .sc-only gaps separately from modern .smcp acceptance. Export scope is public.skipExportGlyphs compatibility policy; SC case uses exact suffix particles. Disclose unknown mappings and ambiguous groups; refuse partial/stale reports.",
     "native_acceptance": "pending",
     "source_body_redistributed": false,
-    "app_source_commit": "85b8b34fad89f9549e6682044bf3b43f43599c7e"
+    "app_source_commit": "f1624437365951dfbecf40e282a2c33a6c6144e3"
   }
 ]

@@ -30,6 +30,9 @@ def test_menu_when_rerun_then_refreshes_snapshot_under_same_owned_key(monkeypatc
     assert calls[1][0]["missing_lowercase_smallcaps"] == [], (
         'Expected calls[1][0]["missing_lowercase_smallcaps"] == []'
     )
+    assert calls[1][0]["legacy_lowercase_without_smallcaps"] == ["a"], (
+        "The refreshed report retains the independent legacy .sc-only warning"
+    )
     assert (
         calls[0][1]
         == calls[1][1]

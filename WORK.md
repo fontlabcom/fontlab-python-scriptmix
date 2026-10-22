@@ -2,6 +2,30 @@
 this_file: WORK.md
 ---
 
+## Issue 123 P1 fix round 1 — independent legacy lowercase check
+
+- Review I1: modern `.sc`/`.smcp` acceptance omitted independent legacy
+  lowercase→`.sc` coverage. Add `legacy_lowercase_without_smallcaps` without
+  changing modern results. Its regression covers .smcp-only success with
+  separate legacy warning, excluded nonexporting .sc, font order and valid .sc.
+- Review M1: Scriptmix README leading tool total corrected 240→241.
+- RED, App: `PYTHONPATH=src PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests/test_smallcap_consistency.py::test_legacy_lowercase_when_smcp_only_then_modern_passes_and_legacy_warns`
+  exit1, missing result-key failure; sdd/smallcaps-fix1-red.log.
+- GREEN, App: `PYTHONPATH=src PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with pytest-cov python -B -m pytest -q -p no:cacheprovider -p pytest_cov tests/test_smallcap_consistency.py tests/test_smallcap_capture.py --cov=fontlabapp.smallcap_consistency --cov=fontlabapp.smallcap_capture --cov-branch --cov-report=term-missing`
+  exit0,33passed, engine100%, capture99.16% combined; sdd/smallcaps-fix1-green.log.
+- Scriptmix focused real-Fly menu/provenance command from the P1 verification
+  block: exit0,15passed, sdd/smallcaps-fix1-menu.log. Menu regression asserts
+  .smcp refresh still shows the independent legacy warning. Same docs command:
+  exit0,10passed, sdd/smallcaps-fix1-docs.log. App public-surface command:
+  exit0,90passed, sdd/smallcaps-fix1-readme.log. F821 lint on changed Python
+  files exit0. External UV_CACHE_DIR/TMPDIR as above; coverage file external.
+- New manifest record binds final App fix commit `f1624437365951dfbecf40e282a2c33a6c6144e3`; all prior 171 rows/pins are unchanged.
+- Existing source-page bytes need no regeneration: menu script bytes/hash do
+  not change; shared JSON report automatically includes the new named section.
+- Wait, but: focused proof closes the named review findings only. Parent owns
+  final full-suite pre-push-hook verification and native qualification. No
+  native request, broad refactor, merge or push performed.
+
 ## Issue 123 P1 source binding follow-up
 
 - Bind Smallcap Consistency's App source record to final App commit

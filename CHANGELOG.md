@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 — Separate legacy lowercase coverage
+
+- Report legacy lowercase-to-`.sc` gaps separately from modern `.sc`/`.smcp` acceptance; retain export filtering and font order. Correct the Scriptmix menu total to 241.
+
 ## 2026-10-22 — Smallcap Consistency
 
 - Add complete modern/legacy smallcap reporting: export census, missing and orphan counterparts, capital/lowercase coverage and both kerning-group sides. Correct the original Boolean predicate and preserve Unicode/ligature/alternate names. Report unknown mappings and ambiguous groups.
