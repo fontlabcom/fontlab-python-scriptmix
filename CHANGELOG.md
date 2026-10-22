@@ -2,6 +2,11 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 — Master Text Comparison review fix1 pin
+
+- Bind the shared App repair for native result-slot ownership, immediate-preset routing around unrelated custom holds, and cumulative bounded failed-panel recovery. Menu bytes are unchanged; native acceptance remains pending.
+
+
 ## 2026-10-22 — Master Text Comparison workflow repair
 
 - Restore original blank custom/Side-by-side defaults, automatic optional local presets/four attributed fallback lists, Run/double-click precedence, full sanitation diagnostics and every final space/newline.

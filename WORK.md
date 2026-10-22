@@ -2,6 +2,16 @@
 this_file: WORK.md
 ---
 
+## Issue123 P3 fix1 — bind I1/I2/I3 source repairs
+
+- FIX_BASEdd76a7795fed649bb71dd5f155c683460e8dce71. Bind the unchanged Master Text Comparison menu to reviewed-fix candidate App291ee1120271e8d68071fe1f0e70decfb0cf10ac. Only this row's app_source_commit changes; all source/resource/licence/menu hashes and other172 records remain exact. All242 menu bodies remain byte-exact versus FIX_BASE.
+- App fix preserves native QDialog.result, routes immediate presets before unrelated custom holds without rewriting unreadable custom, and retains/fences every failed panel owner until explicit bounded recovery with complete error receipts. App focused73passed; changed modules controller100%,owners100%,panel94.92%,settings97.80%, zero exclusions/pragmas. No unchanged full suite repeated; root performs scoped re-review before corrected artifact/fullgate wave.
+- Candidate1 gates/artifacts remain retained PRE-FIX evidence, not acceptance. No native/canonical/install/merge/push/descendant work. Native #8576 and all rendering/settings/input/full-preservation/lifecycle holds remain open. Exact focused commands/receipts/source hashes are appended to the same external master-text-comparison-report.md.
+
+
+- Bounded Scriptmix verification (cwd this repository; external UV_CACHE_DIR/TMPDIR, PYTEST_DISABLE_PLUGIN_AUTOLOAD=1, PYTHONPATH=../fontlab-fontlabapp/src:../fontlab-fly/src): `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests/test_master_text_menu.py tests/test_reports.py::test_manifest_when_distributed_then_hashes_and_menu_paths_match tests/test_curated_delivery.py::test_active_menu_contains_only_indexed_practical_tools`; exit0,3passed, master-text-fix1-mix-focused.log. This is focused source/integrity evidence; the root's installed artifact/native/fullgate wave remains pending.
+- Direct exact FIX_BASE comparison:173records, only masters_text_comparison.app_source_commit changed; other172records/pins exact, all242menu bytes exact including repaired menu, every destination digest correct. `git diff --check` exit0. Candidate1 master-text-source-manifest.json/file-hashes and archives are retained unchanged; new fix1-specific source manifest/hashes accompany the appended report.
+
 ## Issue123 P3 — Master Text Comparison source candidate
 
 - Independently implement the complete original workflow in shared App and one thin Fly menu. Preserve all other menu sources and provenance rows. Source defaults, sanitation, exact delimiters, real Qt double-click/settings/geometry and bounded preflight/cleanup are covered by focused tests.

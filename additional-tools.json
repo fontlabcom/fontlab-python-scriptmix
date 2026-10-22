@@ -2298,7 +2298,7 @@
     "source_readme_sha256": "3abde106024dfeef3527df09aa9460b3ff5f2f78a41fc481ad8e0ba7d9847885",
     "source_resource_redistributed": false,
     "fallback_data_policy": "Four source fallback list VALUES retained as attributed behavioral data; independent executable implementation, no original preset file shipped.",
-    "app_source_commit": "61c5f5dca0533e53accff3ab4426c26ab6a9b78b"
+    "app_source_commit": "291ee1120271e8d68071fe1f0e70decfb0cf10ac"
   },
   {
     "title": "Common Glyphs",
