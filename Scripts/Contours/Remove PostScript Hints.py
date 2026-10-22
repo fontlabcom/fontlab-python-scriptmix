@@ -1,6 +1,7 @@
 # this_file: Scripts/Contours/Remove PostScript Hints.py
 # SPDX-License-Identifier: Apache-2.0
-"""Remove PostScript stem hints from the selected glyphs, horizontal and/or vertical.
+"""Remove PostScript stem hints from the selected glyphs, horizontal and/or
+vertical.
 
 What it does:
     For each selected glyph and chosen master, the script removes the
@@ -28,7 +29,7 @@ Why this design:
       auto glyphs anyway": the change notification makes FontLab rebuild
       those composites, which can drop their anchors and locks, and Undo
       does not restore them. Locked layers are skipped.
-    - Apply is refused while FontLab has pending glyph updates. The script
+    - Apply discloses queued ids and their possible date changes. The script
       does not call UpdateAll (fl#8537).
 
 How to use:
@@ -144,7 +145,7 @@ def remove_hints(
 
     todo = [r for r in rows if not r.note]
     if not todo:
-        return {"layers": 0, "glyphs": 0, "removed": 0, "mismatches": []}
+        return {"pending_updates": (), "pending_note": "", "layers": 0, "glyphs": 0, "removed": 0, "mismatches": []}
     glyphs = list({str(r.glyph.name): r.glyph for r in todo}.values())
 
     def mutate() -> None:
@@ -171,7 +172,8 @@ def remove_hints(
         - chosen(hints.hint_counts(r.layer), horizontal, vertical)
         for r in todo
     )
-    return {
+    return {"pending_note": done.pending_note, 
+        "pending_updates": done.pending_updates,
         "layers": len(todo),
         "glyphs": len(glyphs),
         "removed": removed,

@@ -13,7 +13,8 @@ How it works:
     with getMaskLayer(False), so it never creates a background. Layers without
     one are skipped. It then applies one transform to the mask layer: contours,
     components and anchors move together. Metrics and guides of the mask stay.
-    FontLab rounds the result as set in the preferences. One notification covers
+    FontLab rounds the result as set in the preferences. One notification
+    covers
     all backgrounds: one Undo step per click.
 
 Why this design:
@@ -83,7 +84,7 @@ def shift_matrix(units: float) -> Matrix:
     return (1.0, 0.0, 0.0, 1.0, units, 0.0)
 
 
-def transform_backgrounds(action: str, matrix: Matrix) -> str:
+def transform_backgrounds(action: str, matrix: Matrix, *, disclosure: dict[str, Any] | None = None) -> str:
     """Apply `matrix` to the background of every selected glyph layer.
 
     Return a status message. Raise ValueError when nothing can be done.
@@ -122,7 +123,7 @@ def transform_backgrounds(action: str, matrix: Matrix) -> str:
                 raise RuntimeError("FontLab could not update a background.")
         return ()
 
-    history.commit(
+    _done = history.commit(
         f"{action} background",
         list(masks.values()),
         list(owners.values()),
@@ -130,7 +131,9 @@ def transform_backgrounds(action: str, matrix: Matrix) -> str:
         operation="geometry",
         facts=history.scan_auto_facts(package),
     )
-    return f"{action}: {len(masks)} background(s) in {len(owners)} glyph(s)."
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
+    return _guards.append_note(f"{action}: {len(masks)} background(s) in {len(owners)} glyph(s).", _done)
 
 
 def muted(widget: Any, QtGui: Any) -> str:
@@ -204,18 +207,20 @@ def panel_type(QtGui: Any) -> Any:
 
         def apply(self, action: str) -> None:
             """Run one action and show its result or its refusal."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             try:
                 if action == "scale":
                     message = transform_backgrounds(
                         "Scale", scale_matrix(parse_number(self.scale_edit.text))
-                    )
+                    , disclosure=disclosure)
                 else:
                     message = transform_backgrounds(
                         "Shift", shift_matrix(parse_number(self.shift_edit.text))
-                    )
+                    , disclosure=disclosure)
             except (ValueError, RuntimeError, TimeoutError) as error:
                 message = str(error)
-            self.status.setText(message)
+            self.status.setText(result_guards.append_note(message, disclosure))
 
         def closeEvent(self, event: Any) -> None:
             """Release owned signals and delete the panel."""

@@ -39,8 +39,8 @@ Why this design:
     - A figure needs a layer with contours on every master, with no
       components and no automatic layer. Otherwise the figure is listed and
       skipped, so the new glyphs stay compatible across masters.
-    - A target name that exists is never overwritten. Create is refused
-      while FontLab has pending glyph updates. The script does not call
+    - A target name that exists is never overwritten. Create discloses queued
+      ids and their possible date changes. The script does not call
       UpdateAll (fl#8537).
     - FontLab can rebuild an automatic glyph when a new name appears. When
       the font has automatic glyphs without a recipe whose names carry the

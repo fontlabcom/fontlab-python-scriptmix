@@ -18,7 +18,8 @@ How it works:
     The kind comes from the layer role, fly.ap.masters.associated_master,
     and the same backup resolver as Restore Backup Layer: "mask" for a
     background; "backup" for <master> backup <suffix> and legacy @ or
-    space-prefixed backups; "alternate" for <master>#... layers, such as bracket
+    space-prefixed backups; "alternate" for <master>#... layers, such as
+    bracket
     layers; "other" for every other layer. Master layers, service layers,
     image layers and temporary "|temp|" layers are never listed. The delete
     runs in one Undo step through the shared module fly.ap.history. FontLab
@@ -40,11 +41,12 @@ Why this design:
       both to remove both.
     - The components of the deleted layers (shape, shape data, builder) are
       read before the edit and retained in the notification. The deletion
-      is recorded as one Undo step. Edit > Undo of removed components depends on FontLab (fl#7641).
+      is recorded as one Undo step. Edit > Undo of removed components depends
+      on FontLab (fl#7641).
     - To clear the backgrounds of the whole font, use Cleaning > Clear All
       Layer Backgrounds or Clear Master Backgrounds: they check the whole
       font mapping first. This panel is for mixed cleanup of a selection.
-    - Delete is refused while FontLab has pending glyph updates. The panel
+    - Delete discloses queued ids and their possible date changes. The panel
       binds to the font that was current when it opened.
 
 How to use:
@@ -67,5 +69,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b1726ed75bd5cb0581c2d7e1d46f62ae0277bf37a10775b2d3b5f08a8a6e806a.py)
+[Python source](../../../../.build/menu-sources/92eab2ba3768419ff073d859fc12e8af7bedfe22664765eb2f26a0a715921793.py)
 <!--/codeinclude-->

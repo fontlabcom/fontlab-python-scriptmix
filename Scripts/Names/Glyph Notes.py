@@ -24,8 +24,8 @@ does not restore them. So the script REFUSES to save a note on a glyph that
 owns an auto layer, says why, and never puts an auto layer in the notify list.
 A base glyph of an auto composite may get a note (native check pending). The
 script never reads flGlyph.fgGlyph (that getter can clear a fresh note mirror
-on build 9784), never calls UpdateAll (fl#8537), and refuses to write while
-native updates are pending.
+on build 9784), never calls UpdateAll (fl#8537), and discloses queued ids and
+their possible date changes.
 
 USE: Select a glyph in the Font window. Run the script. Edit the note. Press
 Save note. Pick a row in the list to edit another glyph.
@@ -65,11 +65,11 @@ def first_line(text: str) -> str:
     return ""
 
 
-def save_note(native: Any, qtcore: Any, package_id: int, name: str, text: str) -> bool:
+def save_note(native: Any, qtcore: Any, package_id: int, name: str, text: str, *, disclosure: dict[str, Any] | None = None) -> bool:
     """Set the note of glyph NAME. One Undo step. Return True when it changed.
 
     Raise ValueError when the glyph is refused (auto layers, auto base, no
-    layers), unknown, the font switched or host updates are pending.
+    layers), unknown, the font switched or the font switched. Queued ids and their possible date changes are disclosed.
     """
     facts = names_edit.fresh_facts(package_id, native=native)
     if name not in facts.entries:
@@ -85,7 +85,7 @@ def save_note(native: Any, qtcore: Any, package_id: int, name: str, text: str) -
         if str(entry.glyph.note or "") != text:
             raise RuntimeError(f"Native note of {name} differs from the text.")
 
-    names_edit.commit(
+    _done = names_edit.commit(
         TITLE,
         [entry],
         mutate,
@@ -94,6 +94,8 @@ def save_note(native: Any, qtcore: Any, package_id: int, name: str, text: str) -
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
     return True
 
 
@@ -251,15 +253,18 @@ def _dialog_type() -> type:
 
         def apply(self) -> None:
             """Save the note of the focused glyph. One Undo step."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             name = self.glyph_name
             if self.facts is None or not name:
                 raise ValueError("Select a glyph first.")
             text = self.editor.toPlainText()
-            changed = save_note(native, QtCore, self.facts.package_id, name, text)
+            changed = save_note(native, QtCore, self.facts.package_id, name, text, disclosure=disclosure)
             self.last_result = {"glyph": name, "changed": changed}
+            self.last_result.update(disclosure)
             self.loaded = text
             self.reload(focus=name)
-            self.status.setText(f"Saved note for {name}" if changed else "No change")
+            self.status.setText(result_guards.append_note((f"Saved note for {name}" if changed else "No change"), disclosure))
 
     return GlyphNotes
 

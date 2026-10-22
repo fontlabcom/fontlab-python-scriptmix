@@ -3,12 +3,14 @@
 """Clear chosen glyph data to prepare a fresh design.
 
 What: Remove chosen anchors, layer guides, backgrounds, images, colour marks,
-kerning class memberships, auxiliary layers, stickers, or paths and components. Reset
+kerning class memberships, auxiliary layers, stickers, or paths and components.
+Reset
 layer metric expressions and advances to 600 when requested. All options start
 off. Choose selected or all glyphs, current or all masters, masters or all
 foreground layers. Glyph marks and kerning membership use the glyph scope.
 How: Preview the exact scope, then confirm the font and counts before Clear.
-A changed scope needs a new Preview. Image and sticker shapes stay unless chosen.
+A changed scope needs a new Preview. Image and sticker shapes stay unless
+chosen.
 Why: Explicit switches prevent accidental deletion of unrelated design data.
 Use: Select glyphs, choose the scope and data, Preview, then Clear chosen data.
 Benefit: Several cleanup operations are recorded as one Undo step. Automatic
@@ -17,7 +19,8 @@ Font-level guides stay; the guide option clears only guides on scoped layers.
 
 Independent behaviour rewrite after Pedro Arilla, glyphs-scripts,
 Cleaning/Start-from-scratch.py, Apache-2.0.
-Repository: https://github.com/pedroarilla/glyphs-scripts . No source code copied.
+Repository: https://github.com/pedroarilla/glyphs-scripts . No source code
+copied.
 """
 
 from typing import Any
@@ -96,7 +99,7 @@ def fingerprint(package: Any, jobs: list[Job], options: set[str]) -> tuple:
     )
 
 
-def clean(package: Any, jobs: list[Job], options: set[str]) -> int:
+def clean(package: Any, jobs: list[Job], options: set[str], *, disclosure: dict[str, Any] | None = None) -> int:
     """Validate the complete plan, then clear it through one shared commit."""
     if not options or options - OPTIONS.keys():
         raise ValueError("Choose at least one supported cleanup option.")
@@ -287,6 +290,8 @@ def clean(package: Any, jobs: list[Job], options: set[str]) -> int:
         retain=retained,
         read_back=read_back,
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(result, disclosure)
     if result.mismatches:
         raise RuntimeError(
             "Some data remain. Native changes may remain; use Edit > Undo."
@@ -404,6 +409,8 @@ def panel_type() -> type:
                 self.status.setText(str(error))
 
         def execute(self) -> None:
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             try:
                 package, jobs, options = self.plan()
                 if (
@@ -432,11 +439,11 @@ def panel_type() -> type:
                     raise ValueError(
                         "The plan changed during confirmation. Press Preview again."
                     )
-                count = clean(package, jobs, options)
+                count = clean(package, jobs, options, disclosure=disclosure)
                 self.invalidate()
-                self.status.setText(f"Cleared chosen data on {count} layers.")
+                self.status.setText(result_guards.append_note(f"Cleared chosen data on {count} layers.", disclosure))
             except (ValueError, RuntimeError, TimeoutError) as error:
-                self.status.setText(str(error))
+                self.status.setText(result_guards.append_note(str(error), disclosure))
 
         def closeEvent(self, event: Any) -> None:
             scripting.close_script_dialog(self, event, KEY)

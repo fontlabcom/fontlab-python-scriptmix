@@ -48,7 +48,8 @@ A glyph that has an automatic layer is listed and skipped. So is a glyph
 that is a base of an automatic composite, also through other composites,
 unless you tick "Also edit bases of automatic composites" (FontLab then
 rebuilds those composites; Undo may not restore their anchors). The script
-refuses before any history exists when FontLab holds queued glyph updates.
+keeps the compatibility check; writes disclose queued ids and possible date
+changes.
 Every move is planned before the first one is written, so the current master
 stays a valid reference. After the write, the script reads the start nodes
 back. If FontLab fails part-way, the error says that native changes may
@@ -67,5 +68,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/86a235097d24cd71b243a06da7529853e817c0e109fa46c6313952e01888bb61.py)
+[Python source](../../../../.build/menu-sources/cbbd0e5748218bd193b831e928fb2177093ca01b63ff5cdae6393d2824e095f3.py)
 <!--/codeinclude-->

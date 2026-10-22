@@ -1,6 +1,7 @@
 # this_file: Scripts/Metrics/Copy Metrics From Reference.py
 # SPDX-License-Identifier: Apache-2.0
-"""Give the selected glyphs the sidebearings or the advance width of a reference glyph.
+"""Give the selected glyphs the sidebearings or the advance width of a reference
+glyph.
 
 What it does: copies the metrics of one reference glyph to the selected glyphs,
 on the current master or on all masters. Four modes are available: "LSB and
@@ -19,7 +20,8 @@ modes) and a layer without outline are listed and skipped. A result with a
 negative width is refused for that layer.
 
 Why: related glyphs share their spacing: n, m, h and u take the sidebearings of
-n; H, I and N take those of H; figures take one tabular width. Copying values by
+n; H, I and N take those of H; figures take one tabular width. Copying values
+by
 hand in every master is slow and error prone.
 
 How to use: select the glyphs to change in the Font window. Type the reference
@@ -28,12 +30,13 @@ offset and the current master or all masters. Check the table. Press Apply. The
 panel stays open. Press "Use selection" to read the Font window selection and
 the glyph list again.
 
-Safety: each Apply is recorded as one Undo step. Auto layers are listed and never edited. A
+Safety: each Apply is recorded as one Undo step. Auto layers are listed and
+never edited. A
 glyph that owns an auto layer is listed and skipped as a whole. Layers with a
 metrics link or expression are listed and skipped. A base of auto glyphs is
 refused, because FontLab rebuilds the auto glyphs and may lose their anchors
 and locks (FontLab issue 8512). Tick "Edit bases of auto glyphs anyway" to go
-on. Apply is refused while FontLab has pending glyph updates. After the write
+on. Apply discloses queued ids and their possible date changes. After the write
 the script reads advance and outline back and reports any mismatch. A failure
 after the write started says so and asks you to use Edit > Undo. It does not
 call UpdateAll (FontLab issue 8537).

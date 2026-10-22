@@ -6,7 +6,8 @@ categories: ["Contours"]
 
 # Shadow Copy
 
-Add a shifted copy of the outline behind each selected glyph, as its own element.
+Add a shifted copy of the outline behind each selected glyph, as its own
+element.
 
 What it does:
     For each selected glyph and chosen master, the script copies the contours
@@ -42,7 +43,7 @@ Why this design:
       base of automatic composites is skipped unless you tick "Edit bases of
       auto glyphs anyway": FontLab then rebuilds those composites, can drop
       their anchors and locks, and Undo does not restore them.
-    - Apply is refused while FontLab has pending glyph updates. The script
+    - Apply discloses queued ids and their possible date changes. The script
       does not call UpdateAll (fl#8537). The panel binds to the font that was
       current when it opened.
 
@@ -67,5 +68,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/adf3171da25b1edd7f0c218dc2560f64e9f08e779cab96f8d8bd82911e398525.py)
+[Python source](../../../../.build/menu-sources/1883fe5a05be4c6f3dbeec219721657bc6a48489d308098568ba0dce936c8547.py)
 <!--/codeinclude-->

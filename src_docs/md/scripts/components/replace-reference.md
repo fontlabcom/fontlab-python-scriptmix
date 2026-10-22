@@ -40,7 +40,6 @@ The script refuses the whole batch, before any history exists, when:
 - a glyph has an automatic layer, or is the base of an automatic composite,
   also through other composites (FontLab rebuilds the composite and Undo does
   not restore it);
-- FontLab holds queued glyph updates (they would alter other glyph dates).
 
 After the write, the script reads the components back and reports any gap.
 If FontLab fails part-way, the error says that native changes may remain.
@@ -61,5 +60,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/00c5a128cdb1cf8286e848e00aa7ccf687ce1b90b28b25753be27dd477f8d425.py)
+[Python source](../../../../.build/menu-sources/180895c4f4e27ac2bfad68c15ce67fd0bcd01bdd057191a58dbb6ca46569e7ea.py)
 <!--/codeinclude-->

@@ -32,9 +32,11 @@ Why:
     contour_copy restores node names and raw flags with selection cleared.
     Element names, notes and transforms are copied explicitly. Named contours
     and nodes with an explicit corner_smooth value are kept. Other node and
-    contour properties are not detected and not copied (fl#8569). Nothing is saved.
+    contour properties are not detected and not copied (fl#8569). Nothing is
+    saved.
 Use:
-    Select glyphs in the source Font window and run. Activate a destination Font
+    Select glyphs in the source Font window and run. Activate a destination
+    Font
     window with its Glyph editors closed. Click Preview. Review every row and
     any 'may rebuild auto' warning. Tick consent if appropriate, then Deliver.
     Each new glyph is recorded as its own Undo step, and the outlines as one
@@ -54,5 +56,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/321bb7aa8e89522cc59290bea651799a8c756d0d4d81a60fac3ee384d863a9e6.py)
+[Python source](../../../../.build/menu-sources/54dd8e13b586c94ad5505e0dd8bab6636f08203ab1d6c2c706cbc512bf58af4d.py)
 <!--/codeinclude-->

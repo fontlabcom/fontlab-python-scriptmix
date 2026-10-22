@@ -15,7 +15,8 @@ What:
 How:
     A non-modal panel previews layer pairs. Copy plans again from the live
     font. Shape copies and anchor_writer steps are prepared before history.
-    contour_copy restores node names and raw node flags, with selection cleared.
+    contour_copy restores node names and raw node flags, with selection
+    cleared.
     Element names, notes and transforms are copied explicitly. Named contours
     and nodes with an explicit corner_smooth value are kept. Other node and
     contour properties are not detected and not copied. outline_writer records
@@ -45,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/77e948c00133c4d52da755fa11bee6ada9b001ab88036fc20debab41b7bb2d8e.py)
+[Python source](../../../../.build/menu-sources/da5871c9b9405bd4b60a3031fe4832ea380f3e124caff9368546edd03f60d123.py)
 <!--/codeinclude-->

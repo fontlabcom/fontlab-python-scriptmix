@@ -36,7 +36,7 @@ Why this design:
       composites (also through manual composites) and locked layers are
       listed and skipped. A notification there makes FontLab rebuild the
       automatic glyphs, and Undo does not restore them.
-    - Apply is refused while FontLab has pending glyph updates. The panel
+    - Apply discloses queued ids and their possible date changes. The panel
       binds to the font that was current when it opened.
 
 How to use:
@@ -179,7 +179,7 @@ def copy_to_masks(rows: Sequence[Row], replace: bool, facts: Any) -> dict[str, A
 
     todo = [r for r in rows if not r.note]
     if not todo:
-        return {"layers": 0, "glyphs": 0, "contours": 0, "created": 0, "mismatches": []}
+        return {"pending_updates": (), "pending_note": "", "layers": 0, "glyphs": 0, "contours": 0, "created": 0, "mismatches": []}
     existing = [m for m in (r.layer.getMaskLayer(False) for r in todo) if _valid(m)]
     glyphs = list({str(r.glyph.name): r.glyph for r in todo}.values())
     # Read before any removal: a builder read after detachment can be too late (fl#7641).
@@ -223,7 +223,8 @@ def copy_to_masks(rows: Sequence[Row], replace: bool, facts: Any) -> dict[str, A
     done = history.commit(
         TITLE, existing, glyphs, mutate, operation="geometry", facts=facts, read_back=read_back, retain=retain
     )
-    return {
+    return {"pending_note": done.pending_note, 
+        "pending_updates": done.pending_updates,
         "layers": len(todo),
         "glyphs": len(glyphs),
         "contours": sum(r.outline for r in todo),
@@ -375,6 +376,7 @@ def panel_type() -> type:
 
         def apply(self) -> None:
             """Plan again from the live font, then write. One Undo step."""
+            import fly.ap.edit_guards as result_guards
             try:
                 rows = self.plan()
                 result = copy_to_masks(rows, self.replace(), history.scan_auto_facts(self.font_package()))
@@ -392,7 +394,7 @@ def panel_type() -> type:
                 text += f" · {result['created']} new"
             if result["mismatches"]:
                 text += " · did not read back as planned: " + "; ".join(result["mismatches"][:5])
-            self.status.setText(text)
+            self.status.setText(result_guards.append_note(text, result))
 
         def closeEvent(self, event: Any) -> None:
             """Disconnect owned signals, then delete the panel."""

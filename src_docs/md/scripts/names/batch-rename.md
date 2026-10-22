@@ -26,7 +26,8 @@ script refuses that. FontLab rebuilds auto layers when they are notified (it
 turned ecircumflex into a lone "ee" after e was renamed). So the script REFUSES
 glyphs that have auto layers and glyphs that are the base of an auto composite,
 also through other composites. It never calls UpdateAll (fl#8537) and refuses
-to write while native updates are pending. Kerning and features keep the old
+to hide queued ids; it discloses their possible date changes. Kerning and
+features keep the old
 names.
 
 USE: Select glyphs in the Font window. Run the script. Type Find and Replace.
@@ -46,5 +47,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/91f8c59445b9450ce64104052a687f5107f72f08595c869f2dc3ce53783a0ccb.py)
+[Python source](../../../../.build/menu-sources/3c916d570d3d5bd71161001fb9c0c8e378cc42eac79e08d98798e32b92f7e401.py)
 <!--/codeinclude-->

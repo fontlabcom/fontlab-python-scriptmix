@@ -23,8 +23,8 @@ auto layer and never puts an auto layer in the notify list. A base glyph of
 an auto composite may be tagged: its tags do not reach the composites (native
 check pending). The script never reads flGlyph.fgGlyph (that getter can clear
 a fresh glyph note on build 9784). It never calls UpdateAll (that feeds the
-fl#8537 pending-update queue). It refuses to write when native updates are
-pending.
+fl#8537 pending-update queue). It discloses queued ids and their possible date
+changes.
 
 USE: Select glyphs in the Font window. Run the script. Press Reload selection
 after you change the selection. A tag has 1 to 64 characters, no spaces and
@@ -92,11 +92,11 @@ def apply_tags(
     names: list[str],
     add: Sequence[str] = (),
     remove: Sequence[str] = (),
-) -> list[str]:
+ *, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Add and remove tags on NAMES. One Undo step. Return the names changed.
 
     Refused glyphs (those that own an auto layer) are skipped. Raise ValueError for
-    an empty selection, a bad tag, a switched font or pending host updates.
+    an empty selection, a bad tag, a switched font (queued updates are disclosed).
     """
     if not names:
         raise ValueError("Select at least one glyph.")
@@ -123,7 +123,7 @@ def apply_tags(
             if list(entry.glyph.tags or []) != new:
                 raise RuntimeError(f"Native tags of {entry.name} differ from the plan.")
 
-    names_edit.commit(
+    _done = names_edit.commit(
         TITLE,
         [entry for entry, _ in plans],
         mutate,
@@ -132,6 +132,8 @@ def apply_tags(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
     return [entry.name for entry, _ in plans]
 
 
@@ -283,6 +285,8 @@ def _dialog_type() -> type:
 
         def _write(self, add: list[str], remove: list[str], message: str) -> None:
             """Write one plan. Reload from the font afterwards. Show MESSAGE."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             changed = apply_tags(
                 native,
                 QtCore,
@@ -290,11 +294,12 @@ def _dialog_type() -> type:
                 self.targets,
                 add,
                 remove,
-            )
+            disclosure=disclosure)
             self.last_result = {"added": add, "removed": remove, "changed": changed}
+            self.last_result.update(disclosure)
             self.reload()
             noun = "glyph" if len(changed) == 1 else "glyphs"
-            self.status.setText(f"{message} on {len(changed)} {noun}")
+            self.status.setText(result_guards.append_note((f"{message} on {len(changed)} {noun}"), disclosure))
 
         def add_tag(self) -> None:
             """Add the typed tag to the selected glyphs."""

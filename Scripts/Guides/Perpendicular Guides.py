@@ -1,11 +1,14 @@
 # this_file: Scripts/Guides/Perpendicular Guides.py
 # SPDX-License-Identifier: Apache-2.0
-"""Add a perpendicular guide through selected nodes and centre guides to components.
+"""Add a perpendicular guide through selected nodes and centre guides to
+components.
 
 What it does:
-    Use the first selected layer, retaining stored node order and both independent
-    branches. Existing guides remain. One Undo step; unsafe automatic dependants and
-    pending native updates are refused.
+    Use the first selected layer, retaining stored node order and both
+    independent
+    branches. Existing guides remain. One Undo step; unsafe automatic
+    dependants and
+    queued ids and their possible date changes are disclosed.
 
 How it works:
     Delegate the two guide branches to App: perpendicular construction from

@@ -35,7 +35,6 @@ batch, before any history exists, when:
 - a glyph has an automatic layer, or is the base of an automatic composite,
   also through other composites (FontLab rebuilds the composite and Undo does
   not restore it);
-- FontLab holds queued glyph updates (they would alter other glyph dates).
 
 After the write, the script reads the lock flags again and reports any gap.
 If FontLab fails part-way, the error says that native changes may remain.
@@ -56,5 +55,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b879fa733de56f85b2ecc2e4e12a35ac2ab53965a159cd761a8befe015a17fb0.py)
+[Python source](../../../../.build/menu-sources/12b7ca216a88c0c30bf0d116baa46138dfcbd9084757b57507489eee02df77e8.py)
 <!--/codeinclude-->

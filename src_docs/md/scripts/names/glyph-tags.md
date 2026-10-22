@@ -26,8 +26,8 @@ auto layer and never puts an auto layer in the notify list. A base glyph of
 an auto composite may be tagged: its tags do not reach the composites (native
 check pending). The script never reads flGlyph.fgGlyph (that getter can clear
 a fresh glyph note on build 9784). It never calls UpdateAll (that feeds the
-fl#8537 pending-update queue). It refuses to write when native updates are
-pending.
+fl#8537 pending-update queue). It discloses queued ids and their possible date
+changes.
 
 USE: Select glyphs in the Font window. Run the script. Press Reload selection
 after you change the selection. A tag has 1 to 64 characters, no spaces and
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8602e20267e384f837fc3eb4dccd06522f1055288342b181f721ad5004fd39a8.py)
+[Python source](../../../../.build/menu-sources/9e56cdc339d9dc152b0bb7e456d3633379104d6bade7edf3247093912746cdf2.py)
 <!--/codeinclude-->

@@ -6,7 +6,8 @@ categories: ["Contours"]
 
 # Autohint Selected Layers
 
-Run FontLab's PostScript autohinter on the selected glyphs, in one or all masters.
+Run FontLab's PostScript autohinter on the selected glyphs, in one or all
+masters.
 
 What it does:
     For each selected glyph and chosen master, the script runs FontLab's own
@@ -21,10 +22,12 @@ How it works:
     calls the native flLayer.autohint() on every planned layer, all in one
     Undo step through the shared module fly.ap.history. Read-back reports
     a layer that has an outline but no PostScript hints after the call. The
-    hint counts and the panel are shared (fly.ap.hints, fly.ap.selection_panel).
+    hint counts and the panel are shared (fly.ap.hints,
+    fly.ap.selection_panel).
 
 Native call caveat:
-    FontLab's source shows that autohint switches the package master temporarily,
+    FontLab's source shows that autohint switches the package master
+    temporarily,
     writes hinting options and stored hinting data, and can attach hints as
     node links. These effects extend beyond the notified layers; the script
     does not check them. TrueType instructions are separate.
@@ -40,7 +43,7 @@ Why this design:
       those composites, which can drop their anchors and locks, and Undo
       does not restore them. Locked layers and layers without contours are
       skipped.
-    - Apply is refused while FontLab has pending glyph updates. The script
+    - Apply discloses queued ids and their possible date changes. The script
       does not call UpdateAll (fl#8537).
 
 How to use:
@@ -64,5 +67,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d5c722f0e7bc3aaaf7127594f9b539c3ad746546eeade07d6c05ead1feb49528.py)
+[Python source](../../../../.build/menu-sources/15e0380dab0758e3706267f487f17a5d824ebf4b4deab5189526f53b562136f6.py)
 <!--/codeinclude-->

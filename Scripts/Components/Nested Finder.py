@@ -34,7 +34,6 @@ batch, before any history exists, when:
 - a glyph has an automatic layer, or is the base of an automatic composite,
   also through other composites (FontLab rebuilds the composite and Undo does
   not restore it);
-- FontLab holds queued glyph updates (they would alter other glyph dates);
 - a base glyph has no plain layer for the master, holds a perspective
   transform or a composite shape that is not a component, or the components
   loop or nest more than 64 levels (the row says which).
@@ -43,7 +42,8 @@ After the write, the script reads the layers back and reports any gap.
 If FontLab fails part-way, the error says that native changes may remain.
 The write is recorded as one Undo step: it hands FontLab each removed
 component, with its data and builder. Edit > Undo of removed components
-depends on FontLab (fl#7641). The copy, the base checks, the history write, the panel, the
+depends on FontLab (fl#7641). The copy, the base checks, the history write, the
+panel, the
 automatic-layer rule and the pending-update check are shared with other
 scripts (fly.ap.component_writer, fly.ap.component_panel, fly.ap.history,
 fly.ap.edit_guards); the planner and the panel controls belong to this

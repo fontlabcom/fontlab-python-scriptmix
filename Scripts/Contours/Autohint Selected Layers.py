@@ -1,6 +1,7 @@
 # this_file: Scripts/Contours/Autohint Selected Layers.py
 # SPDX-License-Identifier: Apache-2.0
-"""Run FontLab's PostScript autohinter on the selected glyphs, in one or all masters.
+"""Run FontLab's PostScript autohinter on the selected glyphs, in one or all
+masters.
 
 What it does:
     For each selected glyph and chosen master, the script runs FontLab's own
@@ -15,10 +16,12 @@ How it works:
     calls the native flLayer.autohint() on every planned layer, all in one
     Undo step through the shared module fly.ap.history. Read-back reports
     a layer that has an outline but no PostScript hints after the call. The
-    hint counts and the panel are shared (fly.ap.hints, fly.ap.selection_panel).
+    hint counts and the panel are shared (fly.ap.hints,
+    fly.ap.selection_panel).
 
 Native call caveat:
-    FontLab's source shows that autohint switches the package master temporarily,
+    FontLab's source shows that autohint switches the package master
+    temporarily,
     writes hinting options and stored hinting data, and can attach hints as
     node links. These effects extend beyond the notified layers; the script
     does not check them. TrueType instructions are separate.
@@ -34,7 +37,7 @@ Why this design:
       those composites, which can drop their anchors and locks, and Undo
       does not restore them. Locked layers and layers without contours are
       skipped.
-    - Apply is refused while FontLab has pending glyph updates. The script
+    - Apply discloses queued ids and their possible date changes. The script
       does not call UpdateAll (fl#8537).
 
 How to use:
@@ -144,7 +147,7 @@ def autohint(rows: Sequence[Row], facts: Any, allow_bases: bool) -> dict[str, An
 
     todo = [r for r in rows if not r.note]
     if not todo:
-        return {"layers": 0, "glyphs": 0, "after": {}, "mismatches": []}
+        return {"pending_updates": (), "pending_note": "", "layers": 0, "glyphs": 0, "after": {}, "mismatches": []}
     glyphs = list({str(r.glyph.name): r.glyph for r in todo}.values())
 
     def mutate() -> None:
@@ -162,7 +165,8 @@ def autohint(rows: Sequence[Row], facts: Any, allow_bases: bool) -> dict[str, An
         TITLE, [r.layer for r in todo], glyphs, mutate,
         operation="geometry", facts=facts, allow_bases=allow_bases, read_back=read_back,
     )  # fmt: skip
-    return {
+    return {"pending_note": done.pending_note, 
+        "pending_updates": done.pending_updates,
         "layers": len(todo),
         "glyphs": len(glyphs),
         "after": {

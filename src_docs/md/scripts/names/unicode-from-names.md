@@ -12,7 +12,8 @@ WHAT: A non-modal panel reads glyph names and lists the code point each name
 implies. It knows uniXXXX and uXXXX[XX] names, a built-in table of Adobe Glyph
 List names, and accented Latin names (Wacute is LATIN CAPITAL LETTER W WITH
 ACUTE, found with unicodedata). Names with a suffix (a.ss01), ligature names
-(f_i) and surrogate code points (U+D800 to U+DFFF) are left alone. Assign writes all rows marked "assign".
+(f_i) and surrogate code points (U+D800 to U+DFFF) are left alone. Assign
+writes all rows marked "assign".
 
 HOW: The script scans the font and plans each row: "same" (already right),
 "encoded differently" (the glyph has another code and Replace is off), "used by
@@ -29,7 +30,7 @@ from another glyph and never lets two rows claim one code. FontLab rebuilds all
 auto layers when an auto layer, or the base glyph of an auto composite (also
 through other composites), is notified, and Undo does not restore them. So the
 script REFUSES such glyphs. It never reads flGlyph.fgGlyph, never calls
-UpdateAll (fl#8537), and refuses to write while native updates are pending.
+UpdateAll (fl#8537), discloses queued ids and their possible date changes.
 Before it writes, the script applies the guards of the App Unicode writer: a
 regular Font window must be active and no Glyph editor may be open.
 
@@ -49,5 +50,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3fe5fae25f05de8e72719cb79c43868d7cc2b18296492bbc93c71459798ca354.py)
+[Python source](../../../../.build/menu-sources/417e49156ac2f70618ac2aa58f321b665b56e569752c9410fc431af796db400c.py)
 <!--/codeinclude-->

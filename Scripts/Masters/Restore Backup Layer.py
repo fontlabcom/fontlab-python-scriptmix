@@ -10,7 +10,8 @@ What it does:
     width. Optionally delete the backup layer and its mask afterwards.
 
 How it works:
-    The script discovers plain "Regular backup" layers and old "Regular@ backup"
+    The script discovers plain "Regular backup" layers and old "Regular@
+    backup"
     layers. The longest matching master name chooses the restore target;
     no new @ layer is created. Bracket layers ("#") and
     temporary layers are never offered. A non-modal panel shows, per glyph,
@@ -36,10 +37,11 @@ Why this design:
       composites), locked master layers, master layers with a metrics link
       or expression, and an empty backup. A backup that is the shown layer
       of its glyph, or that is locked or has a locked mask, is not deleted.
-      Apply is refused while FontLab has pending glyph updates.
+      Apply discloses queued ids and their possible date changes.
     - A deleted backup usually holds components. Their shape, shape data
       and builder are read before the edit and retained in the notification.
-      The restore is recorded as one Undo step. Edit > Undo of removed components depends on FontLab (fl#7641).
+      The restore is recorded as one Undo step. Edit > Undo of removed
+      components depends on FontLab (fl#7641).
 
 How to use:
     Make backups with "Duplicate Current Layer". Later select the glyphs in
@@ -236,7 +238,7 @@ def restore(jobs: Sequence[Job], delete: bool, facts: Any) -> dict[str, Any]:
 
     todo = [j for j in jobs if not j.note]
     if not todo:
-        return {"layers": 0, "glyphs": 0, "deleted": 0, "kept": 0, "mismatches": []}
+        return {"pending_updates": (), "pending_note": "", "layers": 0, "glyphs": 0, "deleted": 0, "kept": 0, "mismatches": []}
     glyphs = list({str(j.glyph.name): j.glyph for j in todo}.values())
     doomed: list[tuple[Any, Any, str]] = []  # (glyph, layer, name): backup, then its mask
     kept = 0
@@ -284,7 +286,8 @@ def restore(jobs: Sequence[Job], delete: bool, facts: Any) -> dict[str, Any]:
         TITLE, [j.target for j in todo], glyphs, mutate, operation="geometry", facts=facts, read_back=read_back,
         retain=retain,
     )
-    return {
+    return {"pending_note": done.pending_note, 
+        "pending_updates": done.pending_updates,
         "layers": len(todo),
         "glyphs": len(glyphs),
         "deleted": len(doomed),
@@ -444,6 +447,7 @@ def panel_type() -> type:
 
         def apply(self) -> None:
             """Plan again from the live font, then write. One Undo step."""
+            import fly.ap.edit_guards as result_guards
             try:
                 jobs = self.plan()
                 facts = history.scan_auto_facts(self.font_package())
@@ -464,7 +468,7 @@ def panel_type() -> type:
                 text += f" · kept {result['kept']} shown backup(s)"
             if result["mismatches"]:
                 text += " · did not read back as planned: " + "; ".join(result["mismatches"][:5])
-            self.status.setText(text)
+            self.status.setText(result_guards.append_note(text, result))
 
         def closeEvent(self, event: Any) -> None:
             """Disconnect owned signals, then delete the panel."""

@@ -21,7 +21,7 @@ does not restore the rebuilt layers. So the script REFUSES glyphs that own an
 auto layer and never puts an auto layer in the notify list. A base glyph of
 an auto composite may be marked: its mark does not reach the composites
 (native check pending). The script never reads flGlyph.fgGlyph, never calls
-UpdateAll (fl#8537) and refuses to write when native updates are pending.
+UpdateAll (fl#8537) discloses queued ids and their possible date changes.
 Swatch colours come from plain HLS arithmetic, so the colour logic works and
 is testable without Qt.
 
@@ -108,12 +108,12 @@ def mark_counts(
 
 def apply_mark(
     native: Any, qtcore: Any, package_id: int, names: list[str], mark: int
-) -> list[str]:
+, *, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Set MARK on NAMES. One Undo step. Return the names whose mark changed.
 
     Refused glyphs are skipped. Glyphs that already carry MARK are untouched.
     Raise ValueError for an empty selection, an unknown mark, a switched font
-    or pending host updates.
+    (queued updates are disclosed).
     """
     if not names:
         raise ValueError("Select at least one glyph.")
@@ -137,7 +137,7 @@ def apply_mark(
                     f"Native mark of {entry.name} differs from the plan."
                 )
 
-    names_edit.commit(
+    _done = names_edit.commit(
         TITLE,
         todo,
         mutate,
@@ -146,6 +146,8 @@ def apply_mark(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
     return [entry.name for entry in todo]
 
 
@@ -300,17 +302,20 @@ def _dialog_type() -> type:
 
         def apply(self, mark: int) -> None:
             """Write MARK to the selected glyphs. One Undo step."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             changed = apply_mark(
                 native,
                 QtCore,
                 self.facts.package_id if self.facts else -1,
                 self.targets,
                 mark,
-            )
+            disclosure=disclosure)
             self.last_result = {"mark": mark, "changed": changed}
+            self.last_result.update(disclosure)
             label = {m: name for name, m in PRESETS}.get(mark, str(mark))
             noun = "glyph" if len(changed) == 1 else "glyphs"
-            self.reload(f"{label}: changed {len(changed)} {noun}")
+            self.reload(result_guards.append_note(f"{label}: changed {len(changed)} {noun}", disclosure))
 
     return MarkPalette
 

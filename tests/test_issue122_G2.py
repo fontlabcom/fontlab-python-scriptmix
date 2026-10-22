@@ -1311,17 +1311,19 @@ def test_component_write_one_deep_notification(
 
 
 @pytest.mark.parametrize("relative", [PATHS[2]])
-def test_pending_updates_refuse_component_write(
+def test_pending_updates_allow_component_write(
     components: Any, monkeypatch: pytest.MonkeyPatch, relative: str
-) -> None:
+, capsys) -> None:
     w = components
     add_glyph(w, "a")
     add_glyph(w, "A")
     ns = load(relative)
+    prototype(w)
     w.pending = [5]
-    with pytest.raises(ValueError):
-        ns["apply_pairs"](w.package, [("A", "a")])
-    assert not w.notifications()
+    result = ns["apply_pairs"](w.package, [("A", "a")])
+    assert w.pending == [5] and w.notifications()
+    output = capsys.readouterr().out
+    assert "(5,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
 
 
 def test_reset_scope_and_exact_fields(components: Any) -> None:
@@ -1345,7 +1347,7 @@ def test_reset_scope_and_exact_fields(components: Any) -> None:
 
 
 @pytest.mark.parametrize("failure", ["empty", "unknown", "locked", "auto", "pending"])
-def test_reset_refusals_before_history(components: Any, failure: str) -> None:
+def test_reset_refusals_before_history(components: Any, failure: str, capsys) -> None:
     w = components
     glyph = add_glyph(w, "A")
     ns = load(PATHS[0])
@@ -1360,6 +1362,12 @@ def test_reset_refusals_before_history(components: Any, failure: str) -> None:
         glyph.layers[0].autoLayer = True
     else:
         w.pending = [7]
+    if failure == "pending":
+        ns["clean"](w.package, [(glyph, glyph.layers[0])], options)
+        assert w.pending == [7] and w.notifications()
+        output = capsys.readouterr().out
+        assert "(7,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
+        return
     with pytest.raises(ValueError):
         ns["clean"](w.package, [(glyph, glyph.layers[0])], options)
     assert not w.notifications()
@@ -1607,7 +1615,7 @@ def test_sticker_scope_preserves_other_shapes(
     ns = load(PATHS[6])
     rows = ns["survey"](w.package, ["A"], masters_only)
     assert len(rows) == expected
-    assert ns["remove"](w.package, rows) == {"stickers": expected, "layers": expected}
+    assert ns["remove"](w.package, rows) == {"pending_note": "", "pending_updates": (), "stickers": expected, "layers": expected}
     assert all(
         any(shape.shapeType == 1 for shape in layer.shapes) for layer in glyph.layers
     )
@@ -1738,7 +1746,7 @@ def test_unicase_preview_confirmation_and_race(
     ns = load(PATHS[2])
     calls = []
     monkeypatch.setitem(
-        ns["panel_type"].__globals__, "apply_pairs", lambda *a: calls.append(a) or 2
+        ns["panel_type"].__globals__, "apply_pairs", lambda *a, **kw: calls.append(a) or 2
     )
     panel = ns["panel_type"]()()
     assert not panel.apply_button.enabled
@@ -1781,13 +1789,14 @@ def test_figure_contour_switch_defaults_on_and_preserves_anchors(
     panel = ns["panel_type"]()()
     assert panel.replace_contours.isChecked()
     panel.apply()
-    assert calls == [{"replace_contours": True, "allow_rebuild": False, "report": []}]
+    assert calls == [{"replace_contours": True, "allow_rebuild": False, "report": [], "disclosure": {"pending_updates": (), "pending_note": ""}}]
     panel.replace_contours.setChecked(False)
     panel.apply()
     assert calls[-1] == {
         "replace_contours": False,
         "allow_rebuild": False,
         "report": [],
+        "disclosure": {"pending_updates": (), "pending_note": ""},
     }
 
 
@@ -2266,3 +2275,29 @@ def test_selected_sticker_delete_does_not_require_whole_font_confirmation(
     panel.glyph_scope.setCurrentIndex(1)
     panel.apply()
     assert sticker not in glyph.layers[0].shapes and not w.questions
+
+
+@pytest.mark.parametrize("relative", PATHS[2:4])
+def test_component_panel_with_queued_id_writes_and_shows_one_note(components: Any, relative: str) -> None:
+    w = components
+    if relative == PATHS[2]:
+        add_glyph(w, "a", 0x61)
+        add_glyph(w, "A", 0x41)
+        prototype(w)
+    else:
+        for digit in load(relative)["DIGITS"]:
+            add_glyph(w, digit)
+            add_glyph(w, digit + ".lf")
+        prototype(w, "zero.lf")
+    ns = load(relative)
+    panel = ns["panel_type"]()()
+    w.pending = [5]
+    if relative == PATHS[2]:
+        panel.preview()
+        w.answers.append(1)
+    panel.apply()
+    assert w.notifications() and w.pending == [5], panel.status.text
+    assert panel.last_result["pending_updates"] == (5,)
+    note = panel.last_result["pending_note"]
+    assert "8537" in note and note in panel.status.text
+    assert panel.status.text.count("8537") == 1, "The note must appear once per result"

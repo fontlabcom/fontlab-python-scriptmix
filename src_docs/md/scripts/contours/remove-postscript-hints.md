@@ -6,7 +6,8 @@ categories: ["Contours"]
 
 # Remove PostScript Hints
 
-Remove PostScript stem hints from the selected glyphs, horizontal and/or vertical.
+Remove PostScript stem hints from the selected glyphs, horizontal and/or
+vertical.
 
 What it does:
     For each selected glyph and chosen master, the script removes the
@@ -34,7 +35,7 @@ Why this design:
       auto glyphs anyway": the change notification makes FontLab rebuild
       those composites, which can drop their anchors and locks, and Undo
       does not restore them. Locked layers are skipped.
-    - Apply is refused while FontLab has pending glyph updates. The script
+    - Apply discloses queued ids and their possible date changes. The script
       does not call UpdateAll (fl#8537).
 
 How to use:
@@ -57,5 +58,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ddd8b1de182672250649a8272e535f4f3353e7c8286a6b2ade24f65877ac7cdf.py)
+[Python source](../../../../.build/menu-sources/3eacc5e9c39e63085114eface9d667d68422114d4dde8f2f7225da7fe65c299a.py)
 <!--/codeinclude-->

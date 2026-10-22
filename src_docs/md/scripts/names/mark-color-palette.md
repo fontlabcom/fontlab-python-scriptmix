@@ -24,7 +24,7 @@ does not restore the rebuilt layers. So the script REFUSES glyphs that own an
 auto layer and never puts an auto layer in the notify list. A base glyph of
 an auto composite may be marked: its mark does not reach the composites
 (native check pending). The script never reads flGlyph.fgGlyph, never calls
-UpdateAll (fl#8537) and refuses to write when native updates are pending.
+UpdateAll (fl#8537) discloses queued ids and their possible date changes.
 Swatch colours come from plain HLS arithmetic, so the colour logic works and
 is testable without Qt.
 
@@ -44,5 +44,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/de483d238c0217884b330833fb420ad0b463b8091d30fde8eb6bdfd30f8227bc.py)
+[Python source](../../../../.build/menu-sources/adde61cce97397f48fe581b156a70739d6fe24818ffc858c6df76798c4714e77.py)
 <!--/codeinclude-->

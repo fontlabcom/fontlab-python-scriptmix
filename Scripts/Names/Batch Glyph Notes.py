@@ -24,8 +24,8 @@ them. So the script REFUSES glyphs that own an auto layer, shows the reason in
 the table, and never puts an auto layer in the notify list. A base glyph of an
 auto composite may get a note (native check pending). The script never reads
 flGlyph.fgGlyph (that getter can clear a fresh note mirror on build 9784),
-never calls UpdateAll (fl#8537), and refuses to write while native updates are
-pending.
+never calls UpdateAll (fl#8537), and discloses queued ids and their possible
+date changes.
 
 USE: Select glyphs in the Font window. Run the script. Choose Set or Append,
 type the note, check the table, press Apply. Press Reload selection after you
@@ -78,11 +78,11 @@ def plan_notes(
 
 def apply_notes(
     native: Any, qtcore: Any, package_id: int, names: list[str], text: str, append: bool
-) -> list[str]:
+, *, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Write the note to NAMES. One Undo step. Return the names changed.
 
     Refused glyphs are skipped. Raise ValueError for an empty selection, a
-    switched font or pending host updates.
+    switched font (queued updates are disclosed).
     """
     if not names:
         raise ValueError("Select at least one glyph.")
@@ -103,7 +103,7 @@ def apply_notes(
                     f"Native note of {entry.name} differs from the plan."
                 )
 
-    names_edit.commit(
+    _done = names_edit.commit(
         TITLE,
         [entry for entry, _ in todo],
         mutate,
@@ -112,6 +112,8 @@ def apply_notes(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
     return [entry.name for entry, _ in todo]
 
 
@@ -227,6 +229,8 @@ def _dialog_type() -> type:
 
         def apply(self) -> None:
             """Write the note to the selected glyphs. One Undo step."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             changed = apply_notes(
                 native,
                 QtCore,
@@ -234,13 +238,14 @@ def _dialog_type() -> type:
                 self.names,
                 self.note_input.toPlainText(),
                 self.mode.currentIndex == 1,
-            )
+            disclosure=disclosure)
             self.last_result = {"glyphs": len(changed), "changed": changed}
+            self.last_result.update(disclosure)
             self.reload()
             self.status.setText(
-                "Updated the note on 1 glyph"
+                result_guards.append_note(("Updated the note on 1 glyph"
                 if len(changed) == 1
-                else f"Updated notes on {len(changed)} glyphs"
+                else f"Updated notes on {len(changed)} glyphs"), disclosure)
             )
 
     return BatchGlyphNotes

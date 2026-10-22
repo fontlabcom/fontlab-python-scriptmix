@@ -466,7 +466,7 @@ def test_ra_real_creation_and_geometry_history(
         glyphs[data["name"]].layers = layers
         return {"status": "ok", "created": True}
 
-    patch_api(monkeypatch, edit_guards, "require_settled", lambda *a: None)
+    patch_api(monkeypatch, edit_guards, "pending_updates", lambda *a: ())
     patch_api(monkeypatch, glyph_creation, "_native", lambda name: NS(call=add))
     patch_api(monkeypatch, glyph_copies, "_native", lambda name: native)
     patch_api(
@@ -492,7 +492,7 @@ def test_ra_real_creation_and_geometry_history(
             glyph_copies.create(package, jobs, "Medial ra", facts)
     else:
         result = glyph_copies.create(package, jobs, "Medial ra", facts)
-        assert result == {"glyphs": 2, "layers": 4, "mismatches": []}
+        assert result == {"pending_note": "", "glyphs": 2, "layers": 4, "mismatches": [], "pending_updates": ()}
     assert len(calls) == 2
     for command, kwargs in calls:
         assert command == "set_glyph" and kwargs["create"] is True
@@ -1247,7 +1247,7 @@ def test_all_faked_app_functions_have_installed_signatures() -> None:
         ("fontlabapp.scripting", "anchors_view_types"),
         ("fontlab_fontport.feature_blocks", "read_feature_blocks"),
         ("fontlab_fontport.feature_blocks", "write_feature_blocks"),
-        ("fontlabapp.edit_guards", "require_settled"),
+        ("fontlabapp.edit_guards", "pending_updates"),
         ("fontlabapp.glyph_copies", "panel_type"),
         ("fontlabapp.anchor_writer", "anchor_points"),
     }.issubset(names)

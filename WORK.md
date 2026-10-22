@@ -4074,3 +4074,36 @@ N270 admitted complete repaired .154 Perpendicular Guides after immutable N265PA
 N270 complete private source gates: App5684PASS, Scriptmix1016PASS+1existing skip, Examples568PASS. Initial isolated Scriptmix launcher omitted its repository import path; retained collection failure, corrected launcher only, complete suite passed. All308 prior App files/162menus exact; final322App/166menus. Ordinary artifact and full installed gates pending.
 
 N270 final ordinary .159 source/artifact checkpoint: each seven-consumer graph15586PASS+3existing skips; four actualQt/archive new-family lanes170PASS each (680 total). Both strict sites and15+11doc testsPASS;166exact source routesPASS. Original whole scopes234App/24GL/74Examples/58Scriptmix all80statement+80branch per module,zero exclusions,both lanes. Ordinary wheel/sdist322App+unchanged115GL runtime exact; all308priorApp/162prior menus exact;17291borrowed dependency bytes retained including13previouslyqualifiedN204cache additions. Original CharacterMap Qt5 36/36 each; Qt6 retains34/36 with2known copy failures, colddefaultsPASS this round; no waiver or native claim. Failed own test-launcher/interaction-fixture/auditor attempts retained in external evidence. Full original writer/font/history/reopen/printer/OS and inherited native holds remain open. Evidence verification/issue-120/complete-union-z60.
+
+## 2026-10-22 — Round D: disclose queued native updates
+
+- Replaced direct queue refusals in eight scripts with read-only disclosure;
+  propagated ids/status through Names and existing writer result dictionaries.
+  Twenty-six scripts and their generated source links changed.
+- Updated nineteen test files, including writes with queued ids and the empty/
+  wholly refused interpolation paths. No automatic-dependant guard was removed.
+- Refreshed 26 `additional-tools.json` destination pins. All 171 additional-tool
+  and 68 revision pins were audited; no revision or historical source pin changed.
+- Runtime gate: **3,814 passed, 6 skipped**. Documentation gate: **10 passed**
+  with Homebrew Git for isolated notice fixtures. F821/Python 3.11 check passes.
+
+Exact file inventory and gate logs: `../round-D/`. No native retest, commit
+or repository Git-state change was performed.
+
+## 2026-10-22 — Round D fix round 1
+
+- Traced both writer sweeps and fixed all bespoke result/status/print paths,
+  including Selection To All Backgrounds, backup/master/cleanup writers,
+  Master Twins and Make Lower Unicase. Legacy return types remain usable;
+  optional disclosure outputs carry the actual commit result to the UI.
+- Added queued-id panel tests for Suffix Tool, Batch Rename, Glyph Tags,
+  Batch Glyph Notes and Unicode From Names. Both component panels now prove
+  one visible note; queued function/console tests prove exact ids and note.
+- Replaced stale refusal promises, including line-wrapped Names text, and
+  regenerated source-backed pages with src_docs/build.py's catalogue generator.
+  All 71 edited script destinations have refreshed pins; menu-revisions needs
+  no change. Full runtime: 3,821 passed, 6 skipped. Docs: 10 passed.
+  Installed-package gates use --no-cache to force current App wheel bytes.
+
+Complete caller, pin, file and gate evidence: `../s6-scratch/roundD-r1/`.
+No native retest, commits or repository Git-state changes.

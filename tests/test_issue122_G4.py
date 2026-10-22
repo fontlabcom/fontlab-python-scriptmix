@@ -971,6 +971,10 @@ def test_refusals_do_not_open_history(world: Any, title: str, failure: str) -> N
         world.package.id += 1
     world.events.clear()
     ui.apply_button.clicked.emit()
+    if failure == "pending":
+        assert world.notifications() and world.pending == [4242]
+        assert ui.last_result["pending_updates"] == (4242,) and "8537" in ui.status.text
+        return
     assert not world.notifications(), (title, failure, ui.status.text)
     assert not any(event[0] == "init" for event in world.events)
 

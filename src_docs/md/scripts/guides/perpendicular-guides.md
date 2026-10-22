@@ -6,12 +6,15 @@ categories: ["Guides"]
 
 # Perpendicular Guides
 
-Add a perpendicular guide through selected nodes and centre guides to components.
+Add a perpendicular guide through selected nodes and centre guides to
+components.
 
 What it does:
-    Use the first selected layer, retaining stored node order and both independent
-    branches. Existing guides remain. One Undo step; unsafe automatic dependants and
-    pending native updates are refused.
+    Use the first selected layer, retaining stored node order and both
+    independent
+    branches. Existing guides remain. One Undo step; unsafe automatic
+    dependants and
+    queued ids and their possible date changes are disclosed.
 
 How it works:
     Delegate the two guide branches to App: perpendicular construction from
@@ -38,5 +41,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/376afe9e1b6d5d6b507c2d3161d6205e9f7ca06cf185d569ea91324ade366fb5.py)
+[Python source](../../../../.build/menu-sources/da0a1a606b373ed6a7841d0cd8e1558eb93d1cee6894644a8af71471706c74f1.py)
 <!--/codeinclude-->

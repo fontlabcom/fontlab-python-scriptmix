@@ -6,7 +6,8 @@ categories: ["Names"]
 
 # Suffix Tool
 
-Add, remove or replace a glyph-name suffix (.ss01, .sc, .alt) on the selected glyphs.
+Add, remove or replace a glyph-name suffix (.ss01, .sc, .alt) on the selected
+glyphs.
 
 WHAT: A non-modal panel offers three operations. Add puts a suffix on each
 selected name. Remove strips one suffix (or the last suffix when the field is
@@ -28,8 +29,8 @@ Unicode in the same step. FontLab would replace an existing glyph that has the
 new name, so the script refuses that. FontLab rebuilds auto layers when they
 are notified, so the script REFUSES glyphs that have auto layers and glyphs
 that are the base of an auto composite, also through other composites. It never
-calls UpdateAll (fl#8537) and refuses to write while native updates are
-pending. Before it removes Unicode, the script applies the guards of the App
+calls UpdateAll (fl#8537) and discloses queued ids and their possible date
+changes. Before it removes Unicode, the script applies the guards of the App
 Unicode writer: a regular Font window must be active and no Glyph editor may be
 open.
 
@@ -49,5 +50,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0132e80463f0036a218c95bd21e185384949efec2cc45c28d53b116f92c2529e.py)
+[Python source](../../../../.build/menu-sources/92758541752bfadec95f35dcab6ae35d5fa51e947c7858c576241393377c4a25.py)
 <!--/codeinclude-->

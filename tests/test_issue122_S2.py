@@ -1074,7 +1074,7 @@ def test_main_when_called_then_opens_one_keyed_panel(world, name):
 
 
 @pytest.mark.parametrize("name", NAMES)
-def test_apply_when_native_updates_pending_then_refused_before_history(world, name):
+def test_apply_when_native_updates_pending_then_writes_and_discloses(world, name):
     module, panel = open_panel(
         world,
         name,
@@ -1085,8 +1085,8 @@ def test_apply_when_native_updates_pending_then_refused_before_history(world, na
     world.updates = [17]
     LOG.clear()
     panel.apply_button.press()
-    assert world.history == [] and LOG == [], "refused before any history call"
-    assert "pending" in panel.status.text, panel.status.text
+    assert world.history and world.updates == [17]
+    assert panel.last_result["pending_updates"] == (17,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
 
 
 def test_equalize_when_applied_on_all_masters_then_one_undo_and_auto_skipped(world):

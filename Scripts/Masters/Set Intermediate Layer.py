@@ -1,14 +1,17 @@
 # this_file: Scripts/Masters/Set Intermediate Layer.py
 # SPDX-License-Identifier: Apache-2.0
-"""Add interpolated intermediate layers to selected glyphs at explicit coordinates.
+"""Add interpolated intermediate layers to selected glyphs at explicit
+coordinates.
 
 What: Preview one new intermediate layer per selected glyph. Set each axis
 coordinate in design units, then press Add Layers. Existing layers stay.
 How: FontLab interpolates each glyph with interpolateInstance. The result gets
 a location name such as :wt=512.5 and is added through shared history.commit.
 The change is recorded as one Undo step. No glyph or font master is created.
-Why: FontLab's Layers and Masters panel can add a layer and Glyph > Reinterpolate
-can fill it. This panel combines the two over a selection, with a refusal report.
+Why: FontLab's Layers and Masters panel can add a layer and Glyph >
+Reinterpolate
+can fill it. This panel combines the two over a selection, with a refusal
+report.
 Use: Open a font with at least two masters and declared axes. Select glyphs,
 run the tool, set coordinates and inspect the preview before adding layers.
 Benefit: Build matching intermediate locations without repeating layer setup.
@@ -159,8 +162,8 @@ def write_rows(
         if r.note
     ]
     if not ready:
-        return {"layers": 0, "mismatches": [], "kept": kept}
-    guards.require_settled()
+        return {"pending_note": "", "layers": 0, "mismatches": [], "kept": kept, "pending_updates": ()}
+    ids = guards.pending_updates()
     prepared = []
     for row in ready:
         try:
@@ -174,7 +177,7 @@ def write_rows(
         layer.name = row.name
         prepared.append((row, layer))
     if not prepared:
-        return {"layers": 0, "mismatches": [], "kept": kept}
+        return {"pending_note": guards.pending_note(ids), "layers": 0, "mismatches": [], "kept": kept, "pending_updates": ids}
     created: list[tuple[IntermediateRow, Any]] = []
     failures: list[str] = []
 
@@ -228,7 +231,7 @@ def write_rows(
             + "; ".join([*failures, *done.mismatches])
             + ". Native changes may remain; use Edit > Undo."
         )
-    return {"layers": len(created), "mismatches": [], "kept": kept}
+    return {"pending_note": guards.pending_note(ids), "layers": len(created), "mismatches": [], "kept": kept, "pending_updates": ids}
 
 
 class IntermediatePanel(panels.panel_type()):

@@ -7,18 +7,23 @@ oldstyle (.tosf) figures. Missing default digit cells are created. With Replace
 own contours on, their old contours are removed; turn it off to
 keep them. Their components, widths and kerning class memberships follow
 the chosen figures on every master. Unicode assignments stay.
-How: Preview exact base names and set explicit base and master-layer names. No automatic layer is made.
+How: Preview exact base names and set explicit base and master-layer names. No
+automatic layer is made.
 Why: One complete set avoids mixing figure styles between glyphs or masters.
 Use: Choose the set and the contour option, inspect the table, then Apply.
-Benefit: Ten digits across every master. Each new glyph is recorded as its own Undo step.
+Benefit: Ten digits across every master. Each new glyph is recorded as its own
+Undo step.
 Changed kerning memberships are recorded in the same Undo step, or as one more
-Undo step when no outlines are filled. Circular references, automatic targets and targets without
-a safe plain component to copy are listed as kept; other targets can change. Components are placed at the origin with the source advance; Glyphs'
+Undo step when no outlines are filled. Circular references, automatic targets
+and targets without
+a safe plain component to copy are listed as kept; other targets can change.
+Components are placed at the origin with the source advance; Glyphs'
 automatic component alignment has no identical FontLab control here.
 
 Independent behaviour rewrite after Pedro Arilla, glyphs-scripts,
 Components/Set default figures.py, Apache-2.0.
-Repository: https://github.com/pedroarilla/glyphs-scripts . No source code copied.
+Repository: https://github.com/pedroarilla/glyphs-scripts . No source code
+copied.
 """
 
 from typing import Any
@@ -200,9 +205,16 @@ def write_components(
     unicodes: dict[str, tuple[int, ...]] | None = None,
     kept: list[str] | None = None,
     report: list[str] | None = None,
+    disclosure: dict[str, Any] | None = None,
 ) -> int:
     """Replace target components, widths and class memberships in one history batch."""
-    edit_guards.require_settled()
+    ids = edit_guards.pending_updates()
+    captured = {"pending_updates": ids, "pending_note": edit_guards.pending_note(ids)}
+    edit_guards.disclose(captured, disclosure if disclosure is not None else {})
+    if report is not None and ids and disclosure is None:
+        report.append(captured["pending_note"])
+    elif disclosure is None and report is None:
+        edit_guards.disclose(captured)
     facts = history.scan_auto_facts(package)
     rows = component_rows(
         package,
@@ -363,6 +375,7 @@ def apply_pairs(
     allow_rebuild: bool = False,
     kept: list[str] | None = None,
     report: list[str] | None = None,
+    disclosure: dict[str, Any] | None = None,
 ) -> int:
     """Use the single component-set writer with figure-specific preservation rules."""
     return write_components(
@@ -374,6 +387,7 @@ def apply_pairs(
         allow_rebuild=allow_rebuild,
         kept=kept,
         report=report,
+        disclosure=disclosure,
         unicodes={name: (ord("0") + i,) for i, name in enumerate(DIGITS)},
     )
 
@@ -436,6 +450,7 @@ def panel_type() -> type:
             )
 
         def write(self, package: Any, rows: list[glyph_copies.Row]) -> dict[str, Any]:
+            disclosure = {"pending_updates": (), "pending_note": ""}
             report: list[str] = []
             count = apply_pairs(
                 package,
@@ -443,8 +458,9 @@ def panel_type() -> type:
                 replace_contours=bool(self.replace_contours.isChecked()),
                 allow_rebuild=self.consented(),
                 report=report,
+                disclosure=disclosure,
             )
-            return {"layers": count, "report": report}
+            return {"layers": count, "report": report, **disclosure}
 
         def result_text(self, result: dict[str, Any]) -> str:
             return f"Changed {result['layers']} master layers." + (

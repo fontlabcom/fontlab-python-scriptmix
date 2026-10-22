@@ -31,12 +31,12 @@ batch, before any history exists, when:
   also through other composites (FontLab rebuilds the composite and Undo does
   not restore it);
 - several anchors on a layer share a name (the edit is ambiguous);
-- FontLab holds queued glyph updates (they would alter other glyph dates).
 
 After the write, the script reads every value back. It reports any value
 that FontLab did not keep, for example under a strong rounding preference.
 If FontLab fails part-way, the error says that native changes may remain.
-The edit is recorded as one Undo step. The plan, the safety checks, the one-step
+The edit is recorded as one Undo step. The plan, the safety checks, the
+one-step
 write and the panel base are shared with the other anchor scripts
 (fly.ap.anchor_writer, fly.ap.anchor_panel); the planner and the controls
 belong to this script.
@@ -52,5 +52,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ec7fe1a901b346904215013e26adcb88f3ccca00c56d4286013fc5bb285a25ce.py)
+[Python source](../../../../.build/menu-sources/65e6ba82d3d341731bf88f2fe0c488c27e9f0bd0d4f1eed8b6ab6918eb4d8e0b.py)
 <!--/codeinclude-->

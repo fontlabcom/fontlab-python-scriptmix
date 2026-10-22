@@ -5,7 +5,8 @@
 What it does:
     Take the selected contours of the shown glyph layer. Replace the background
     (mask layer) of the current-master layer of EVERY glyph in the font with
-    copies of them. Use it to put one guide shape, such as a grid or a reference
+    copies of them. Use it to put one guide shape, such as a grid or a
+    reference
     skeleton, behind all glyphs.
 
 How it works:
@@ -14,7 +15,8 @@ How it works:
     shows what will happen: contour count, glyph count, backgrounds to be
     replaced and glyphs to be skipped. "Replace backgrounds" checks again that
     nothing changed, then removes the old background shapes, creates missing
-    backgrounds, and adds clones of the selected contours. One notification covers
+    backgrounds, and adds clones of the selected contours. One notification
+    covers
     the whole font: one Undo step. The shared module fly.ap.history decides
     which glyphs are skipped and does the one-step write. Read-back checks
     every target background for the planned contour count and no components.
@@ -190,7 +192,7 @@ def selected_clone(shape: Any, keep: Sequence[int]) -> Any:
     return clone
 
 
-def replace_backgrounds(shown: Plan) -> str:
+def replace_backgrounds(shown: Plan, *, disclosure: dict[str, Any] | None = None) -> str:
     """Apply `shown` after proof that the font and selection still match it."""
     import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     current = make_plan()
@@ -246,9 +248,11 @@ def replace_backgrounds(shown: Plan) -> str:
         TITLE, existing, owners, mutate, operation="geometry", facts=current.facts,
         retain=retain, read_back=read_back,
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(done, disclosure)
     if done.mismatches:
         raise history.unstored_error(done.mismatches, history.UNDO_HINT)
-    return f"Background set in {len(owners)} glyph(s)."
+    return _guards.append_note(f"Background set in {len(owners)} glyph(s).", done)
 
 
 def muted(widget: Any, QtGui: Any) -> str:
@@ -313,14 +317,16 @@ def panel_type(QtGui: Any) -> Any:
 
         def replace(self) -> None:
             """Apply the previewed plan once."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             if self.plan is None:
                 return
             shown, self.plan = self.plan, None
             self.go.setEnabled(False)  # one attempt per preview, even after a failure
             try:
-                self.status.setText(replace_backgrounds(shown))
+                self.status.setText(result_guards.append_note(replace_backgrounds(shown, disclosure=disclosure), disclosure))
             except (ValueError, RuntimeError, TimeoutError) as error:
-                self.status.setText(str(error))
+                self.status.setText(result_guards.append_note(str(error), disclosure))
 
         def closeEvent(self, event: Any) -> None:
             """Release owned signals and delete the panel."""

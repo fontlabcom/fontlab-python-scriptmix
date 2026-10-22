@@ -47,8 +47,8 @@ fixes to historical scripts. Export an external `UV_CACHE_DIR` as in README.
   do not add attributes to native widget instances. Call protected native
   event handlers through the explicit native class.
 - Never notify automatic layers. Never call `UpdateAll` or clear the process
-  glyph-update queue. Retain the shared guards for automatic dependants and
-  pending updates. An Undo notification needs the layers and glyph together.
+  glyph-update queue. Retain the shared guards for automatic dependants;
+  disclose pending updates and their possible date changes (issue 8537). An Undo notification needs the layers and glyph together.
 - Use the shared font-id helper for fontpr: its font_id is FontGate fgId,
   not the package object's id. Selection writes require an active Font window.
 - Avoid `flGlyph.fgGlyph` in metadata scans: it can erase the note mirror.

@@ -604,7 +604,7 @@ def load(name: str) -> dict[str, Any]:
     assert writer.__name__ == "fontlabapp.anchor_writer", "the App anchor writer"
     assert panel.__name__ == "fontlabapp.anchor_panel", "the App panel helpers"
     assert writer.history is sys.modules["fontlabapp.history"], "the App history commit"
-    assert writer.edit_guards is sys.modules["fontlabapp.edit_guards"]
+    assert not hasattr(writer, "edit_guards"), "No orphaned guard import in the writer"
     base = sys.modules["fontlabapp._anchor_panel"].AnchorPanel
     panels = [v for v in namespace.values() if isinstance(v, type) and issubclass(v, base)]
     assert panels and all(v is not base for v in panels), "one script panel on the App base"
@@ -792,15 +792,20 @@ def test_require_safe_when_glyph_is_base_of_auto_composite_then_refuses_with_nam
 
 
 @pytest.mark.parametrize("name", NAMES)
-def test_panel_when_glyph_updates_are_queued_then_refuses_and_never_clears_them(
+def test_panel_when_glyph_updates_are_queued_then_discloses_and_never_clears_them(
     world: World, name: str
 ) -> None:
     world.glyph("a", anchors={"Light": [("top", 203, 698), ("bottom", 251, 4)]})
     panel, _ = panel_of(name)
+    if name == "Delete By Name":
+        tick(panel.list, 1, 2)
+    if name == "Rename Bulk":
+        panel.find.setText("top")
+        panel.replace.setText("up")
     world.pending.append(41)
-    with pytest.raises(ValueError, match="updates are pending"):
-        panel.apply()
-    assert world.events == [] and world.pending == [41], "queue untouched, no history"
+    result = panel.apply()
+    assert world.pending == [41]
+    assert panel.last_result["pending_updates"] == (41,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
 
 
 @pytest.mark.parametrize("name", NAMES)
@@ -1022,18 +1027,16 @@ def test_apply_when_strong_rounding_alters_untouched_axis_then_no_false_alarm(
     assert world.points("a") == {"top": (200.0, 698.0)}
 
 
-def test_round_panel_when_updates_are_queued_then_preview_blocks_until_reload(
+def test_round_panel_when_updates_are_queued_then_preview_allows_write_and_discloses(
     world: World,
 ) -> None:
     world.glyph("a", anchors={"Light": [("top", 203, 698)]})
     world.pending.append(41)
     panel, _ = panel_of("Round To Grid")
-    assert "updates are pending" in panel.status.text and not panel.apply_button.enabled
-    world.pending.clear()
-    panel.reload_button.clicked.emit()
-    assert (
-        panel.apply_button.enabled and panel.status.text == "1 anchor change on 1 layer"
-    )
+    assert panel.apply_button.enabled
+    panel.apply()
+    assert world.pending == [41] and world.notifications()
+    assert panel.last_result["pending_updates"] == (41,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
 
 
 def test_round_panel_when_selection_changes_then_reload_button_rescans(

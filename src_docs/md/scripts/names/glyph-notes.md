@@ -27,8 +27,8 @@ does not restore them. So the script REFUSES to save a note on a glyph that
 owns an auto layer, says why, and never puts an auto layer in the notify list.
 A base glyph of an auto composite may get a note (native check pending). The
 script never reads flGlyph.fgGlyph (that getter can clear a fresh note mirror
-on build 9784), never calls UpdateAll (fl#8537), and refuses to write while
-native updates are pending.
+on build 9784), never calls UpdateAll (fl#8537), and discloses queued ids and
+their possible date changes.
 
 USE: Select a glyph in the Font window. Run the script. Edit the note. Press
 Save note. Pick a row in the list to edit another glyph.
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/61023e6a8924c4344303229cdb365b90bf1273c03bc331ae7dcf2eace73b5db2.py)
+[Python source](../../../../.build/menu-sources/2e5636a4e20af47818dcde26c0ffce22ca1a18a16859f20b50ed632a00fc6de4.py)
 <!--/codeinclude-->

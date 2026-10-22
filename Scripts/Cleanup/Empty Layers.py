@@ -5,7 +5,8 @@
 What it does:
     Remove every extra layer that holds nothing: no shapes, anchors, guides,
     note, recipe, library data, TrueType hints or data, metrics links, and no
-    mask that holds any of these. An empty mask of such a layer goes with it. Print the
+    mask that holds any of these. An empty mask of such a layer goes with it.
+    Print the
     deleted layers (the first ten by name) and what was skipped.
 
 How it works:
@@ -32,7 +33,7 @@ Why this design:
       through manual composites) are skipped and named in the result. A
       notification there makes FontLab rebuild the automatic glyphs, and
       Undo does not restore them.
-    - The run is refused while FontLab has pending glyph updates.
+    - The run discloses queued ids and their possible date changes.
 
 How to use:
     Select glyphs in the Font window (Select All for the whole font), or
@@ -131,7 +132,7 @@ def undo_layer(glyph: Any, doomed: set[int], masters: Sequence[str]) -> Any:
     raise ValueError(f"'{glyph.name}' has no layer left to record the Undo step.")
 
 
-def remove(jobs: Sequence[tuple[Any, Any]], masters: Sequence[str], facts: Any) -> list[str]:
+def remove(jobs: Sequence[tuple[Any, Any]], masters: Sequence[str], facts: Any, *, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Delete the planned layers as ONE Undo step. Return the read-back mismatches."""
     import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
@@ -152,6 +153,8 @@ def remove(jobs: Sequence[tuple[Any, Any]], masters: Sequence[str], facts: Any) 
         ]
 
     done = history.commit(TITLE, carriers, glyphs, mutate, operation="geometry", facts=facts, read_back=read_back)
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(done, disclosure)
     return list(done.mismatches)
 
 
@@ -160,7 +163,7 @@ def plural(count: int, word: str) -> str:
     return f"{count} {word}{'' if count == 1 else 's'}"
 
 
-def run() -> str:
+def run(*, disclosure: dict[str, Any] | None = None) -> str:
     """Plan and delete. Return the result text. Raise ValueError for a refusal."""
     import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     import fly.ap.scripting as scripting  # noqa: PLR0402
@@ -175,7 +178,10 @@ def run() -> str:
     jobs, skipped = plan(package, names, facts)
     if not jobs:
         raise ValueError("No empty layer in the selected glyphs.")
-    mismatches = remove(jobs, [str(m) for m in package.masters], facts)
+    import fly.ap.edit_guards as _guards
+    captured = {"pending_updates": (), "pending_note": ""}
+    mismatches = remove(jobs, [str(m) for m in package.masters], facts, disclosure=captured)
+    _guards.disclose(captured, disclosure)
     glyphs = len({str(g.name) for g, _ in jobs})
     shown = ", ".join(f"{g.name}/{x.name}" for g, x in jobs[:MAX_LISTED])
     extra = f" and {len(jobs) - MAX_LISTED} more" if len(jobs) > MAX_LISTED else ""
@@ -185,13 +191,13 @@ def run() -> str:
         text += f" Skipped {len(skipped)}: {'; '.join(skipped[:MAX_LISTED])}{more}."
     if mismatches:
         text += " Did not read back as planned: " + "; ".join(mismatches) + "."
-    return text
+    return _guards.append_note(text, captured)
 
 
 def main() -> None:
     """Menu entry. Print the result or the reason for a refusal."""
     try:
-        print(f"{TITLE}: {run()}")
+        print(f"{TITLE}: {run(disclosure={})}")
     except (ValueError, RuntimeError, TimeoutError) as error:
         print(f"{TITLE}: {error}")
 

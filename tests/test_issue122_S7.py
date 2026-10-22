@@ -1291,7 +1291,7 @@ def test_placeholder_create_when_applied_then_fontpr_add_glyph_per_glyph(
     package = world.use([Glyph("A", {"Light": {}, "Bold": {}}, unicodes=[0x41])])
     rows = placeholder_rows(module, world, "Ω A.alt2 A")
     result = module.create(package, rows, 600, world.facts())
-    assert result == {"glyphs": 2, "layers": 4, "codes": 1, "mismatches": []}
+    assert result == {"pending_note": "", "pending_updates": (), "glyphs": 2, "layers": 4, "codes": 1, "mismatches": []}
     layers = [
         {"name": "Light", "advanceWidth": 600},
         {"name": "Bold", "advanceWidth": 600},
@@ -1337,7 +1337,7 @@ def test_placeholder_create_when_nothing_ready_then_no_history(world: World) -> 
     result = module.create(
         package, placeholder_rows(module, world, "A bad!"), 500, world.facts()
     )
-    assert result == {"glyphs": 0, "layers": 0, "codes": 0, "mismatches": []}
+    assert result == {"glyphs": 0, "layers": 0, "codes": 0, "mismatches": [], "pending_updates": (), "pending_note": ""}
     assert LOG == [] and world.notifications() == []
 
 
@@ -1353,16 +1353,20 @@ def test_placeholder_create_when_name_appeared_since_preview_then_refused_before
     assert LOG == [] and world.notifications() == []
 
 
-def test_placeholder_create_when_pending_updates_then_refused_before_history(
+def test_placeholder_create_when_pending_updates_then_writes_and_keeps_queue(
     world: World,
 ) -> None:
     module = load("Placeholder Glyphs")
     package = world.use([Glyph("A", {"Light": {}})])
     rows = placeholder_rows(module, world, "B")
     world.updates = [3]
-    with pytest.raises(ValueError, match="pending"):
-        module.create(package, rows, 500, world.facts())
-    assert LOG == [] and world.notifications() == []
+    panel = module.panel_type()(None)
+    panel.names.setPlainText("B")
+    panel.apply_button.press()
+    result = panel.last_result
+    assert world.updates == [3] and world.fontpr
+    assert result["pending_updates"] == (3,)
+    assert "8537" in result["pending_note"] and result["pending_note"] in panel.status.text
 
 
 def test_placeholder_create_when_code_not_kept_then_mismatch(world: World) -> None:
@@ -1648,7 +1652,7 @@ def test_tabular_prepare_and_create_when_applied_then_add_glyph_then_one_outline
     rows = module.survey(package, ["one", "two"], world.facts())
     jobs = module.prepare(rows, module.tabular_widths(rows, 10))
     result = create_copies(world, module.TITLE, jobs)
-    assert result == {"glyphs": 2, "layers": 4, "mismatches": []}
+    assert result == {"pending_note": "", "glyphs": 2, "layers": 4, "mismatches": [], "pending_updates": ()}
     assert [(c["font_id"], c["glyph_name"], c["create"], c["glyph_data"]) for c in world.fontpr] == [
         (107, name, True, {"name": name, "layers": [
             {"name": "Light", "advanceWidth": 531}, {"name": "Bold", "advanceWidth": 570},
@@ -1717,7 +1721,7 @@ def generator_jobs(module: ModuleType, title: str, rows: list[Any]) -> list[Any]
 
 
 @pytest.mark.parametrize("title", GENERATORS)
-def test_generator_create_when_pending_updates_then_refused(
+def test_generator_create_when_pending_updates_then_writes_and_keeps_queue(
     world: World, title: str
 ) -> None:
     module = load(title)
@@ -1726,9 +1730,13 @@ def test_generator_create_when_pending_updates_then_refused(
         module, title, module.survey(package, [source], world.facts())
     )
     world.updates = [1]
-    with pytest.raises(ValueError, match="pending"):
-        create_copies(world, module.TITLE, jobs)
-    assert LOG == [] and world.fontpr == []
+    world.selection = [source]
+    panel = module.panel_type()(None)
+    panel.apply_button.press()
+    result = panel.last_result
+    assert world.updates == [1] and world.fontpr
+    assert result["pending_updates"] == (1,)
+    assert "8537" in result["pending_note"] and result["pending_note"] in panel.status.text
 
 
 def rebuild_font(world: World, title: str) -> tuple[Package, Glyph, str, str]:
@@ -2048,7 +2056,7 @@ def test_shadow_when_applied_then_inserted_first_shifted_one_step(world: World) 
     facts = world.facts()
     rows = module.survey(package, ["H", "O"], ["Light", "Bold"], facts, True)
     result = module.add_shadows(rows, 40, -40, facts, True)
-    assert result == {"layers": 3, "glyphs": 2, "contours": 4, "mismatches": []}
+    assert result == {"pending_note": "", "pending_updates": (), "layers": 3, "glyphs": 2, "contours": 4, "mismatches": []}
     layer = package.findName("H").layer("Light")
     assert [s.name for s in layer.shapes] == ["shadow", ""]
     assert [c.points()[0] for c in layer.shapes[0].contours] == [(40, -40), (100, -40)]
@@ -2125,7 +2133,7 @@ def test_outline_when_applied_then_shapes_replaced_one_step(world: World) -> Non
         ("Bold", 0, "built from components (skipped)"),
     ]
     result = module.outline(rows, 30, facts, False)
-    assert result == {"layers": 1, "glyphs": 1, "contours": 2, "mismatches": []}
+    assert result == {"pending_note": "", "pending_updates": (), "layers": 1, "glyphs": 1, "contours": 2, "mismatches": []}
     layer = package.findName("H").layer("Light")
     assert len(layer.shapes) == 1 and layer.shapes[0].contoursCount == 2
     assert (
@@ -2210,7 +2218,7 @@ def test_remove_hints_when_applied_then_counts_zero_one_step(world: World) -> No
     facts = world.facts()
     rows = module.survey(package, ["H"], ["Light"], facts, False, True, False)
     result = module.remove_hints(rows, True, False, facts, False)
-    assert result == {"layers": 1, "glyphs": 1, "removed": 1, "mismatches": []}
+    assert result == {"pending_note": "", "pending_updates": (), "layers": 1, "glyphs": 1, "removed": 1, "mismatches": []}
     assert app(world, "hints").hint_counts(package.findName("H").layer("Light")) == (
         0,
         1,
@@ -2401,6 +2409,8 @@ def test_autohint_when_no_planned_layers_then_no_history(world: World) -> None:
     world.use([])
     module = load("Autohint Selected Layers")
     assert module.autohint([], world.facts(), False) == {
+        "pending_updates": (),
+        "pending_note": "",
         "layers": 0,
         "glyphs": 0,
         "after": {},

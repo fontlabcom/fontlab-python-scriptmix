@@ -36,8 +36,8 @@ Safety: These cases block or limit the edit:
 So is a glyph that is a base of an automatic composite, also through other
 composites, unless you tick "Also edit bases of automatic composites"
 (FontLab then rebuilds those composites; Undo may not restore their
-anchors). The script refuses before any history exists when FontLab holds
-queued glyph updates. After the write, it reads transforms, a node per baked
+anchors). The script discloses queued ids and their possible date changes.
+After the write, it reads transforms, a node per baked
 shape and the anchors back. If FontLab fails part-way, the error says that
 native changes may remain. The change is recorded as one Undo step. The
 one-step write, the automatic-layer rule, the pending-update check, the

@@ -24,7 +24,8 @@ How it works:
     removed and the ring is added as one new element. Images and empty
     elements stay in the layer. After the write it
     counts the contours again and reports any difference. The path-to-contour
-    step and the panel are shared (fly.ap.contour_copy, fly.ap.selection_panel).
+    step and the panel are shared (fly.ap.contour_copy,
+    fly.ap.selection_panel).
 
 Why this design:
     - FontLab has no Python call that strokes an outline, so the script uses
@@ -39,7 +40,7 @@ Why this design:
       base of automatic composites is skipped unless you tick "Edit bases of
       auto glyphs anyway": FontLab then rebuilds those composites, can drop
       their anchors and locks, and Undo does not restore them.
-    - Apply is refused while FontLab has pending glyph updates. The script
+    - Apply discloses queued ids and their possible date changes. The script
       does not call UpdateAll (fl#8537).
 
 How to use:
@@ -62,5 +63,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5d9b76d2c2dc3e8a415c7082255a251a699fd9615787b491f8473ee31525370e.py)
+[Python source](../../../../.build/menu-sources/62caf6c3dced1338b86c23ac52489178933d81534f78eaad48ef0ad99a301441.py)
 <!--/codeinclude-->

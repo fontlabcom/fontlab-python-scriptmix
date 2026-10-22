@@ -44,8 +44,8 @@ Why this design:
       components and no automatic layer. Otherwise it is listed and skipped,
       so the new glyphs stay compatible across masters. Accented capitals
       are usually components: build their small caps from the new bases.
-    - A target name that exists is never overwritten. Create is refused
-      while FontLab has pending glyph updates. The script does not call
+    - A target name that exists is never overwritten. Create discloses queued
+      ids and their possible date changes. The script does not call
       UpdateAll (fl#8537).
     - FontLab can rebuild an automatic glyph when a new name appears. When
       the font has automatic glyphs without a recipe whose names carry the
@@ -73,5 +73,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/cc2b7a13e8eafaec227c56c596f3cc95892abd80ab1bfd9a8d0f5551459ce762.py)
+[Python source](../../../../.build/menu-sources/e22549c124f19a12e6f1a95763479aa2a690c6fc119392aeb6ed332b03454b0a.py)
 <!--/codeinclude-->

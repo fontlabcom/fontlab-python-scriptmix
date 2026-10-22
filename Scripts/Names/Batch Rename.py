@@ -23,7 +23,8 @@ script refuses that. FontLab rebuilds auto layers when they are notified (it
 turned ecircumflex into a lone "ee" after e was renamed). So the script REFUSES
 glyphs that have auto layers and glyphs that are the base of an auto composite,
 also through other composites. It never calls UpdateAll (fl#8537) and refuses
-to write while native updates are pending. Kerning and features keep the old
+to hide queued ids; it discloses their possible date changes. Kerning and
+features keep the old
 names.
 
 USE: Select glyphs in the Font window. Run the script. Type Find and Replace.
@@ -90,11 +91,11 @@ def plan_renames(
 
 def apply_renames(
     native: Any, qtcore: Any, package_id: int, pairs: list[tuple[str, str]]
-) -> list[tuple[str, str]]:
+, *, disclosure: dict[str, Any] | None = None) -> list[tuple[str, str]]:
     """Rename every pair that passes the checks. One Undo step. Return [(old, new)].
 
     Rescan first, so a stale preview cannot rename the wrong glyph. Raise
-    ValueError for a switched font or pending host updates.
+    ValueError for a switched font (queued updates are disclosed).
     """
     facts = names_edit.fresh_facts(package_id, native=native)
     todo = [
@@ -116,7 +117,7 @@ def apply_renames(
                     f"After renaming, {new} is missing; check Edit > Undo."
                 )
 
-    names_edit.commit(
+    _done = names_edit.commit(
         TITLE,
         [entry for entry, _ in todo],
         mutate,
@@ -125,6 +126,8 @@ def apply_renames(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
     return renamed
 
 
@@ -274,14 +277,17 @@ def _dialog_type() -> type:
 
         def apply(self) -> None:
             """Rename the passing rows. One Undo step."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             pairs = [(old, new) for old, new, _ in self.plan]
             renamed = apply_renames(
                 native, QtCore, self.facts.package_id if self.facts else -1, pairs
-            )
+            , disclosure=disclosure)
             self.last_result = {"renamed": renamed}
+            self.last_result.update(disclosure)
             self.reload()
             self.status.setText(
-                f"Renamed {len(renamed)} glyph{'s' if len(renamed) != 1 else ''}"
+                result_guards.append_note((f"Renamed {len(renamed)} glyph{'s' if len(renamed) != 1 else ''}"), disclosure)
             )
 
     return BatchRename

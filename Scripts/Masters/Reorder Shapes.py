@@ -124,7 +124,7 @@ def run() -> dict:
         if planned:
             edited_glyphs.append(glyph)
     if not jobs:
-        return {"changed": 0, "skipped": skipped}
+        return {"pending_updates": (), "pending_note": "", "changed": 0, "skipped": skipped}
     current = scripting.current_package()
     if current is None or current.id != package.id:
         raise ValueError("The active font changed before writing.")
@@ -157,14 +157,15 @@ def run() -> dict:
         raise RuntimeError(
             "Shape order differs. Native changes may remain; use Edit > Undo."
         )
-    return {"changed": len(jobs), "skipped": skipped}
+    return {"pending_note": result.pending_note, "pending_updates": result.pending_updates, "changed": len(jobs), "skipped": skipped}
 
 
 def main() -> None:
     """Report changed layer count or contain selection/history failures."""
+    import fly.ap.edit_guards as result_guards
     try:
         result = run()
-        print(f"{TITLE}: changed {result['changed']} layers.")
+        print(result_guards.append_note(f"{TITLE}: changed {result['changed']} layers.", result))
         for line in result["skipped"]:
             print(f"Skipped: {line}")
     except (ValueError, RuntimeError, TimeoutError) as error:

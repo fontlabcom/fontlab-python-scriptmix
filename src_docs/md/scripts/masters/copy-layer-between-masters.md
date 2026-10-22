@@ -38,8 +38,8 @@ Why this design:
     - Skipped and listed: automatic layers, glyphs with automatic layers,
       bases of automatic composites (also through manual composites),
       locked layers, layers with a metrics link or expression, and a source
-      without outline. Apply is refused while FontLab has pending glyph
-      updates. The panel binds to the font that was current when it opened.
+      without outline. Apply discloses queued ids and their possible date
+      changes. The panel binds to the font that was current when it opened.
 
 How to use:
     Select glyphs in the Font window. Run the script. Pick the source master
@@ -65,5 +65,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/32181f1641b0c46cceceb83e4654c0964a5eedd3083f0889df904b74ed4e4d06.py)
+[Python source](../../../../.build/menu-sources/bc4786a1ff1a5a645e86859d53dd9202c99799c9da03226108d5f314ba19ac24.py)
 <!--/codeinclude-->

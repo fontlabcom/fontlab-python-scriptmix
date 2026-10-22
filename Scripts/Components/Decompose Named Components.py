@@ -241,7 +241,6 @@ class NamedDecomposition(component_panel.panel_type()):
                     self.planner(),
                     self.facts,
                 )
-                edit_guards.require_settled()
         except (ValueError, RuntimeError, TimeoutError) as error:
             message = str(error)
         self.fill(plan)
@@ -253,7 +252,7 @@ class NamedDecomposition(component_panel.panel_type()):
         message = ""
         try:
             package, glyphs = self.live_glyphs()
-            edit_guards.require_settled()
+
             facts = history.scan_auto_facts(package)
             plan = make_plan(
                 package,
@@ -266,7 +265,9 @@ class NamedDecomposition(component_panel.panel_type()):
             result = component_writer.apply_work(plan.work, TITLE, facts, self.editor())
             self.last_result = result
             self.facts = facts
+
             message = f"Decomposed {result['edits']} occurrences on {result['layers']} layers; review kept rows above."
+            message = edit_guards.append_note(message, self.last_result)
         except (ValueError, RuntimeError, TimeoutError) as error:
             message = str(error)
         finally:

@@ -897,12 +897,12 @@ def test_round_advances_when_applied_then_rsb_absorbs_and_one_undo(world):
         "auto layer (skipped)",
         "glyph has auto layers (skipped)",
     ], "a glyph that owns an auto layer is skipped as a whole"
-    assert panel.last_result == {
+    assert panel.last_result == {"pending_note": "", 
         "layers": 2,
         "glyphs": 1,
         "auto_skipped": 2,
         "mismatches": [],
-    }
+    "pending_updates": ()}
     assert "Changed 2 layers in 1 glyphs" in panel.status.text
     assert "2 layers skipped (auto)" in panel.status.text, panel.status.text
 
@@ -1282,16 +1282,13 @@ def test_apply_when_cache_update_fails_then_error_shown_and_history_still_notifi
     assert "use Edit > Undo" in panel.status.text, panel.status.text
 
 
-def test_apply_when_native_updates_pending_then_refused_before_history(world):
+def test_apply_when_native_updates_pending_then_writes_and_discloses(world):
     n = two_master_glyph("n", (101, 10, 90), (101, 10, 90))
     _, panel = open_panel(world, "Round Advances", [n])
     world.updates = [17]
     panel.apply_button.press()
-    assert world.history == [] and LOG == [], "refused before any history call"
-    assert n.findLayer("Light").advanceWidth == 101
-    assert panel.status.text == (
-        "Native glyph updates are pending; finish the current edit first."
-    ), panel.status.text
+    assert world.history and world.updates == [17]
+    assert panel.last_result["pending_updates"] == (17,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
 
 
 def test_panel_when_base_reaches_auto_glyph_through_composite_then_refused(world):

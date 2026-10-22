@@ -45,7 +45,6 @@ script refuses, before any change, when:
 - an existing target glyph has an automatic layer, or is the base of an
   automatic composite (FontLab rebuilds the composite and Undo does not
   restore it);
-- FontLab holds queued glyph updates (they would alter other glyph dates);
 - a line contains a character that FontLab's text conversion can change
   (NUL, no-break space, line or paragraph separator).
 
@@ -66,5 +65,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d607deaa09f361eefc4c65773100d1020b1a87c6b58b8248d5313663aa4a7e8f.py)
+[Python source](../../../../.build/menu-sources/3d7a8f0dcdcb34baf69f9d89e8745736448992339841c2a1ecdab70b0bec0ef2.py)
 <!--/codeinclude-->

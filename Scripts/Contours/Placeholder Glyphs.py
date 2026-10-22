@@ -1,11 +1,13 @@
 # this_file: Scripts/Contours/Placeholder Glyphs.py
 # SPDX-License-Identifier: Apache-2.0
-"""Create empty placeholder glyphs from typed glyph names or characters, on every master.
+"""Create empty placeholder glyphs from typed glyph names or characters, on every
+master.
 
 What it does:
     Type or paste glyph names and characters, separated by spaces, commas or
     new lines. The script creates one empty glyph per entry, with a layer on
-    every master and the chosen advance width. A single non-ASCII character becomes
+    every master and the chosen advance width. A single non-ASCII character
+    becomes
     uniXXXX (or uXXXXX) and gets that code point. A name of that form also
     gets its code point, unless another glyph has it already. ASCII tokens
     are glyph names: A stays A; & and 1 are invalid names.
@@ -30,8 +32,8 @@ Why this design:
       refuses text with NUL, no-break space or the Unicode line and paragraph
       separators instead of creating changed names.
     - A code point write needs an active Font window and no open Glyph
-      window, as every Unicode writer of this menu does. Create is
-      refused while FontLab has pending glyph updates. The script does not
+      window, as every Unicode writer of this menu does. Create discloses
+      queued ids and their possible date changes. The script does not
       call UpdateAll (fl#8537).
     - FontLab can rebuild an automatic glyph when a new name appears. When
       the font has automatic glyphs without a recipe whose names share a
@@ -219,8 +221,7 @@ def create(
     Return ``{"glyphs", "layers", "codes", "mismatches"}``. Nothing ready
     returns zeros and makes no native call. A name or code point that is
     taken now, an unconsented rebuild, a code point without an active Font
-    window or with an open Glyph window, or pending native updates raise
-    ValueError before any change. A failure after the first glyph exists
+    window or with an open Glyph window, queued ids are disclosed with their possible date changes. A failure after the first glyph exists
     raises RuntimeError that names the new glyphs.
     """
     import fly.ap.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
@@ -232,7 +233,7 @@ def create(
     coded = [r for r in ready if r.code is not None]
     masters = list(package.masters)
     if not ready:
-        return {"glyphs": 0, "layers": 0, "codes": 0, "mismatches": []}
+        return {"pending_updates": (), "pending_note": "", "glyphs": 0, "layers": 0, "codes": 0, "mismatches": []}
     if coded:
         edit_guards.require_selection_window(int(package.id))
         edit_guards.require_no_editors()
@@ -287,7 +288,8 @@ def create(
     done = glyph_creation.create_glyphs(
         package, specs, TITLE, facts, read_back=read_back, allow_rebuild=allow_rebuild
     )
-    return {
+    return {"pending_note": done.pending_note, 
+        "pending_updates": done.pending_updates,
         "glyphs": len(ready),
         "layers": len(ready) * len(masters),
         "codes": len(coded),
@@ -476,7 +478,8 @@ def panel_type() -> type:
                 text += " · did not read back as planned: " + "; ".join(
                     result["mismatches"][:5]
                 )
-            self.status.setText(text)
+            note = result.get("pending_note", "")
+            self.status.setText(f"{text} · {note}" if note else text)
 
         def closeEvent(self, event: Any) -> None:
             """Disconnect owned signals, then delete the panel."""

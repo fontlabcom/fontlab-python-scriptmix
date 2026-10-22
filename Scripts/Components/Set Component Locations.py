@@ -446,7 +446,6 @@ class LocationPanel(panels.panel_type()):
         try:
             if self.package is not None and self.glyphs:
                 plan = self.current_plan(self.package, self.glyphs, self.facts)
-                guards.require_settled()
         except (ValueError, RuntimeError, TimeoutError) as error:
             message = str(error)
         self.fill(plan)
@@ -461,14 +460,16 @@ class LocationPanel(panels.panel_type()):
         wrote = False
         try:
             package, glyphs = self.live_glyphs()
-            guards.require_settled()
+
             self.facts = history.scan_auto_facts(package)
             plan = self.current_plan(package, glyphs, self.facts)
             wrote = bool(plan.work)
             self.last_result = writer.apply_work(
                 plan.work, TITLE, self.facts, LocationEditor()
             )
+
             message = f"Changed {self.last_result['edits']} components; review kept rows above."
+            message = guards.append_note(message, self.last_result)
         except (ValueError, RuntimeError, TimeoutError) as error:
             message = str(error)
         finally:

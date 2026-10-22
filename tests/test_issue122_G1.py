@@ -509,16 +509,17 @@ def test_run_when_add_fails_then_notification_still_sent_and_undo_hint(world: Wo
     assert len(world.notifier.calls) == 1
 
 
-def test_run_when_pending_updates_or_no_selection_then_value_error(world: World) -> None:
+def test_run_when_pending_updates_or_no_selection_then_value_error(world: World, capsys) -> None:
     module = load("Duplicate Current Layer")
     with pytest.raises(ValueError, match="Select a glyph"):
         module.run()
     glyph = Glyph("a", ["Regular"])
     world.occupy(glyph, "Regular")
     world.pending = (3,)
-    with pytest.raises(ValueError, match="updates are pending"):
-        module.run()
-    assert len(glyph.layers) == 1 and glyph.history == [] and world.notifier.calls == []
+    result = module.run()
+    assert len(glyph.layers) == 2 and world.pending == (3,) and world.notifier.calls
+    output = capsys.readouterr().out
+    assert "(3,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
 
 
 # ---------------------------------------------------------------- use layer as master
@@ -727,7 +728,7 @@ def test_panel_when_buttons_pressed_then_actions_run_and_errors_show_in_status(w
     module = load("Transform Background")
     panel = make_panel(module)
     calls = []
-    monkeypatch.setattr(module, "transform_backgrounds", lambda action, matrix: calls.append((action, matrix)) or "ok")
+    monkeypatch.setattr(module, "transform_backgrounds", lambda action, matrix, **kwargs: calls.append((action, matrix)) or "ok")
     panel.scale_edit.__dict__["value"] = "50"
     panel.shift_edit.__dict__["value"] = "-3,5"
     panel.apply("scale")
@@ -1023,7 +1024,7 @@ def test_transform_panel_when_runtime_error_then_status_shows_message(world: Wor
     module = load("Transform Background")
     panel = make_panel(module)
 
-    def boom(action: str, matrix: Any) -> str:
+    def boom(action: str, matrix: Any, **kwargs: Any) -> str:
         raise RuntimeError("boom: Edit > Undo")
 
     monkeypatch.setattr(module, "transform_backgrounds", boom)
@@ -1036,7 +1037,7 @@ def test_selection_panel_when_runtime_error_then_status_plan_cleared_and_button_
     font_world(world)
     panel = make_panel(module)
 
-    def boom(plan: Any) -> str:
+    def boom(plan: Any, **kwargs: Any) -> str:
         raise RuntimeError("boom: Edit > Undo")
 
     monkeypatch.setattr(module, "replace_backgrounds", boom)
@@ -1060,7 +1061,7 @@ def test_selection_panel_when_stale_preview_then_also_cleared(world: World) -> N
 )
 def test_main_when_runtime_error_then_printed_not_raised(world: World, monkeypatch: Any, capsys: Any, title: str) -> None:
     module = load(title)
-    monkeypatch.setattr(module, "run", lambda *a: (_ for _ in ()).throw(RuntimeError("boom")))
+    monkeypatch.setattr(module, "run", lambda *a, **kw: (_ for _ in ()).throw(RuntimeError("boom")))
     module.main()
     assert f"{title}: boom" in capsys.readouterr().out
 
@@ -1120,13 +1121,14 @@ def test_transform_backgrounds_when_glyph_is_base_of_auto_layer_then_refused(wor
     assert world.notifier.calls == [] and glyph.history == []
 
 
-def test_transform_backgrounds_when_pending_updates_then_refused_before_history(world: World) -> None:
+def test_transform_backgrounds_when_pending_updates_then_writes_and_keeps_queue(world: World, capsys) -> None:
     module = load("Transform Background")
     (a,) = with_backgrounds(world, ("a",))
     world.pending = (9,)
-    with pytest.raises(ValueError, match="updates are pending"):
-        module.transform_backgrounds("Scale", module.scale_matrix(90))
-    assert a.history == [] and a.layer("mask.Regular").calls == [] and world.notifier.calls == []
+    result = module.transform_backgrounds("Scale", module.scale_matrix(90))
+    assert world.pending == (9,) and world.notifier.calls
+    output = capsys.readouterr().out
+    assert "(9,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
 
 
 def test_selection_to_all_backgrounds_when_glyph_is_base_of_auto_layer_then_skipped(world: World) -> None:
@@ -1161,7 +1163,7 @@ def test_used_app_names_when_parsed_then_cover_the_real_modules() -> None:
     names = app_names_used([FOLDER / f"{title}.py" for title in SCRIPTS])
     assert set(names) == {
         "fly.ap.history", "fly.ap.masters", "fly.ap.layer_selection", "fly.ap.qtsafe", "fly.ap.scripting",
-        "fly.ap.selection_panel", "fly.ap.contour_copy",
+        "fly.ap.selection_panel", "fly.ap.contour_copy", "fly.ap.edit_guards",
     }
     assert {"commit", "scan_auto_facts", "refusal"} <= names["fly.ap.history"]
     assert names["fly.ap.masters"] == {"associated_master", "backup_master", "backup_layer_name", "default_suffix"}

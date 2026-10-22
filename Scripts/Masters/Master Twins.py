@@ -9,7 +9,8 @@ What:
 How:
     A non-modal panel previews layer pairs. Copy plans again from the live
     font. Shape copies and anchor_writer steps are prepared before history.
-    contour_copy restores node names and raw node flags, with selection cleared.
+    contour_copy restores node names and raw node flags, with selection
+    cleared.
     Element names, notes and transforms are copied explicitly. Named contours
     and nodes with an explicit corner_smooth value are kept. Other node and
     contour properties are not detected and not copied. outline_writer records
@@ -464,11 +465,13 @@ def panel_type() -> type:
 
         def write_content(self) -> None:
             """Plan again, prepare detached copies, then make one history action."""
+            import fly.ap.edit_guards as result_guards
             try:
                 work, facts = self.build_work(fresh=True)
                 result = outlines.apply_work(work, TITLE, facts, editor_type()())
                 self.preview_pairs()
-                self.status.setText(f"Copied {result['layers']} layers.")
+                self.last_result = result
+                self.status.setText(result_guards.append_note(f"Copied {result['layers']} layers.", result))
             except (ValueError, RuntimeError, TimeoutError) as error:
                 self.status.setText(
                     str(error)

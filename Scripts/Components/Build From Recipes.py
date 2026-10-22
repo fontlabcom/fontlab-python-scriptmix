@@ -40,7 +40,6 @@ script refuses, before any change, when:
 - an existing target glyph has an automatic layer, or is the base of an
   automatic composite (FontLab rebuilds the composite and Undo does not
   restore it);
-- FontLab holds queued glyph updates (they would alter other glyph dates);
 - a line contains a character that FontLab's text conversion can change
   (NUL, no-break space, line or paragraph separator).
 
@@ -205,7 +204,7 @@ def check_lines(
     return results
 
 
-def add_layers(package: Any, results: list[Result], facts: history.AutoFacts) -> int:
+def add_layers(package: Any, results: list[Result], facts: history.AutoFacts, *, disclosure: dict[str, Any] | None = None) -> int:
     """Add the empty master layers that the builds need, as ONE Undo step."""
     wanted: dict[str, list[str]] = {}
     for result in results:
@@ -221,9 +220,10 @@ def add_layers(package: Any, results: list[Result], facts: history.AutoFacts) ->
             made.extend(glyph.findLayerCreate(m) for m in wanted[glyph.name])
         return made
 
-    history.commit(
+    committed = history.commit(
         "Add Master Layers", [], glyphs, mutate, operation="geometry", facts=facts
     )
+    edit_guards.disclose(committed, disclosure)
     return sum(len(masters) for masters in wanted.values())
 
 
@@ -323,7 +323,7 @@ class BuildRecipes(component_panel.panel_type()):
         package = scripting.current_package(self.package_id)
         if package is None:
             raise ValueError("The font changed; press Check.")
-        edit_guards.require_settled(fontlab)
+        ids = edit_guards.pending_updates(fontlab)
         facts = history.scan_auto_facts(package)
         results = check_lines(
             package, self.lines(), self.chosen_masters(), self.replacing(), facts
@@ -333,7 +333,7 @@ class BuildRecipes(component_panel.panel_type()):
             self.results = results
             self.refresh()
             raise ValueError(f"{failed[0].target}: {failed[0].message}")
-        added = add_layers(package, results, facts)
+        added = add_layers(package, results, facts, disclosure={})
         built: list[Result] = []
         for result in results:
             if result.message.startswith("new glyph:"):
@@ -354,9 +354,10 @@ class BuildRecipes(component_panel.panel_type()):
         left = sum(1 for r in built if r.message.startswith("new glyph:"))
         more = f" · {component_writer.plural(left, 'master')} still to build: press Build again"
         tail = f" · {len(errors)} failed: {errors[0].message}" if errors else ""
-        self.last_result = {"built": done, "failed": len(errors), "added": added}
+        self.last_result = {"pending_note": edit_guards.pending_note(ids), "built": done, "failed": len(errors), "added": added, "pending_updates": ids}
         self.status.setText(
             f"Built {component_writer.plural(done, 'layer')}{note}{more if left else ''}{tail}"
+            + (" · " + self.last_result["pending_note"] if self.last_result["pending_note"] else "")
         )
 
 

@@ -27,8 +27,8 @@ them. So the script REFUSES glyphs that own an auto layer, shows the reason in
 the table, and never puts an auto layer in the notify list. A base glyph of an
 auto composite may get a note (native check pending). The script never reads
 flGlyph.fgGlyph (that getter can clear a fresh note mirror on build 9784),
-never calls UpdateAll (fl#8537), and refuses to write while native updates are
-pending.
+never calls UpdateAll (fl#8537), and discloses queued ids and their possible
+date changes.
 
 USE: Select glyphs in the Font window. Run the script. Choose Set or Append,
 type the note, check the table, press Apply. Press Reload selection after you
@@ -47,5 +47,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e6dd64ab3c893a40c50d698e36798af94886ac8c9439e1301653269c8f44c595.py)
+[Python source](../../../../.build/menu-sources/7b33e8d2339e542e16585a0acbd07d5418ea65eaef322f93b7fd1deb899c1038.py)
 <!--/codeinclude-->

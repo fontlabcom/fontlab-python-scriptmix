@@ -19,7 +19,8 @@ How it works:
     with getMaskLayer(False), so it never creates a background. Layers without
     one are skipped. It then applies one transform to the mask layer: contours,
     components and anchors move together. Metrics and guides of the mask stay.
-    FontLab rounds the result as set in the preferences. One notification covers
+    FontLab rounds the result as set in the preferences. One notification
+    covers
     all backgrounds: one Undo step per click.
 
 Why this design:
@@ -56,5 +57,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ecabadc0fd3fb2501fc5b37690207c635bf8fea3ad8b1174e243bced4361d35f.py)
+[Python source](../../../../.build/menu-sources/f4b0b7028ce3f29b6a294f1b61a13e99b64d280945147356ba9bfc1c97f46bca.py)
 <!--/codeinclude-->

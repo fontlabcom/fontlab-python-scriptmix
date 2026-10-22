@@ -3,7 +3,8 @@
 # Adapted from the archived Apache-2.0 FontLab samples
 # Historical source: rescued/samples/names_suffix_tool.py; provenance in NOTICE.
 # FLM: Names · Suffix Tool
-"""Add, remove or replace a glyph-name suffix (.ss01, .sc, .alt) on the selected glyphs.
+"""Add, remove or replace a glyph-name suffix (.ss01, .sc, .alt) on the selected
+glyphs.
 
 WHAT: A non-modal panel offers three operations. Add puts a suffix on each
 selected name. Remove strips one suffix (or the last suffix when the field is
@@ -25,8 +26,8 @@ Unicode in the same step. FontLab would replace an existing glyph that has the
 new name, so the script refuses that. FontLab rebuilds auto layers when they
 are notified, so the script REFUSES glyphs that have auto layers and glyphs
 that are the base of an auto composite, also through other composites. It never
-calls UpdateAll (fl#8537) and refuses to write while native updates are
-pending. Before it removes Unicode, the script applies the guards of the App
+calls UpdateAll (fl#8537) and discloses queued ids and their possible date
+changes. Before it removes Unicode, the script applies the guards of the App
 Unicode writer: a regular Font window must be active and no Glyph editor may be
 open.
 
@@ -165,12 +166,12 @@ def apply_suffix(
     suffix: str,
     replacement: str = "",
     clear_unicode: bool = False,
-) -> list[tuple[str, str]]:
+ *, disclosure: dict[str, Any] | None = None) -> list[tuple[str, str]]:
     """Rename NAMES by suffix. One Undo step. Return [(old, new)] renamed.
 
     Rescan first, so a stale preview cannot rename the wrong glyph. When
     CLEAR_UNICODE is true, each renamed glyph also loses its code points.
-    Raise ValueError for an empty selection, a switched font or pending updates.
+    Raise ValueError for an empty selection, a switched font (queued updates are disclosed).
     """
     if not names:
         raise ValueError("Select at least one glyph.")
@@ -201,7 +202,7 @@ def apply_suffix(
                 if list(entry.record.unicodes or []):
                     raise RuntimeError(f"Native Unicode of {new} was not cleared.")
 
-    names_edit.commit(
+    _done = names_edit.commit(
         TITLE,
         [entry for entry, _ in todo],
         mutate,
@@ -210,6 +211,8 @@ def apply_suffix(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
     return renamed
 
 
@@ -388,6 +391,8 @@ def _dialog_type() -> type:
 
         def apply(self) -> None:
             """Rename the passing rows. One Undo step."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             clear = self.clear_unicode.isChecked() and self.mode_key() != "remove"
             renamed = apply_suffix(
                 native,
@@ -398,11 +403,12 @@ def _dialog_type() -> type:
                 text_of(self.suffix),
                 text_of(self.replacement),
                 clear,
-            )
+            disclosure=disclosure)
             self.last_result = {"renamed": renamed, "cleared_unicode": clear}
+            self.last_result.update(disclosure)
             self.reload()
             self.status.setText(
-                f"Renamed {len(renamed)} glyph{'s' if len(renamed) != 1 else ''}"
+                result_guards.append_note((f"Renamed {len(renamed)} glyph{'s' if len(renamed) != 1 else ''}"), disclosure)
             )
 
     return SuffixTool

@@ -230,9 +230,16 @@ def apply_pairs(
     unicodes: dict[str, tuple[int, ...]] | None = None,
     kept: list[str] | None = None,
     report: list[str] | None = None,
+    disclosure: dict[str, Any] | None = None,
 ) -> int:
     """Replace target components, widths and class memberships in one history batch."""
-    edit_guards.require_settled()
+    ids = edit_guards.pending_updates()
+    captured = {"pending_updates": ids, "pending_note": edit_guards.pending_note(ids)}
+    edit_guards.disclose(captured, disclosure if disclosure is not None else {})
+    if report is not None and ids and disclosure is None:
+        report.append(captured["pending_note"])
+    elif disclosure is None and report is None:
+        edit_guards.disclose(captured)
     facts = history.scan_auto_facts(package)
     rows = component_rows(
         package,
@@ -495,12 +502,14 @@ def panel_type() -> type:
                     raise ValueError(
                         "The plan changed during confirmation. Press Preview again."
                     )
+                disclosure = {"pending_updates": (), "pending_note": ""}
                 changed = apply_pairs(
-                    package, [(row.target, row.source) for row in rows if not row.note]
+                    package, [(row.target, row.source) for row in rows if not row.note], disclosure=disclosure
                 )
                 self.preview_key = None
                 self.refresh()
-                self.status.setText(f"Changed {changed} master layers.")
+                self.last_result = {"layers": changed, **disclosure}
+                self.status.setText(edit_guards.append_note(f"Changed {changed} master layers.", self.last_result))
             except (ValueError, RuntimeError, TimeoutError) as error:
                 self.preview_key = None
                 self.apply_button.setEnabled(False)

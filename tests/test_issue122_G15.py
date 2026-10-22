@@ -1052,6 +1052,13 @@ def test_refusal_creates_no_history(world: Any, fault: str) -> None:
     else:
         nodes[0]._x = math.nan
     panel = load()["main"]()
+    if fault == "pending":
+        before = tuple(world.pending)
+        assert panel.apply_button.enabled
+        press(panel)
+        assert world.history() and tuple(world.pending) == before
+        assert panel.last_result["pending_updates"] == before and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
+        return
     assert not panel.apply_button.enabled, (fault, panel.status.text)
     press(panel)
     assert not world.history(), (fault, world.history())

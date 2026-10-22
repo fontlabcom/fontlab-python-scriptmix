@@ -1163,8 +1163,9 @@ def test_refusals_when_queued_or_auto_then_no_history(title: str, world: Any) ->
     panel, _ = ready(world, title)
     world.pending = [44]
     press(panel)
-    assert not world.notifications(), world.events
-    assert "Error" in panel.status.text
+    assert world.notifications() and world.pending == [44]
+    assert panel.last_result["pending_updates"] == (44,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
+    world.events.clear()
     world.pending = []
     world.layer("a").autoLayer = True
     panel.reload()

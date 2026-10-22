@@ -11,7 +11,8 @@ Delete the empty extra layers of the selected glyphs.
 What it does:
     Remove every extra layer that holds nothing: no shapes, anchors, guides,
     note, recipe, library data, TrueType hints or data, metrics links, and no
-    mask that holds any of these. An empty mask of such a layer goes with it. Print the
+    mask that holds any of these. An empty mask of such a layer goes with it.
+    Print the
     deleted layers (the first ten by name) and what was skipped.
 
 How it works:
@@ -38,7 +39,7 @@ Why this design:
       through manual composites) are skipped and named in the result. A
       notification there makes FontLab rebuild the automatic glyphs, and
       Undo does not restore them.
-    - The run is refused while FontLab has pending glyph updates.
+    - The run discloses queued ids and their possible date changes.
 
 How to use:
     Select glyphs in the Font window (Select All for the whole font), or
@@ -59,5 +60,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/08d8d53a4aaeb47450dd265d6c5109e7aa5d7117042eb6e42583cd7cd8b90781.py)
+[Python source](../../../../.build/menu-sources/6bb402b8524739ebdaafb242ee98c42e651b31ec8bdbef3da9f74bf8b4efb9c2.py)
 <!--/codeinclude-->

@@ -487,7 +487,7 @@ def test_removal_when_component_selected_then_retains_history_and_preserves_pins
         for s in world.app["history"].component_history(layer.shapes[1])
     ]
     rows = module.survey(glyph, layers[0], facts(world))
-    assert module.write_rows(rows, facts(world)) == {"edits": 2, "layers": 2}
+    assert module.write_rows(rows, facts(world)) == {"pending_note": "", "edits": 2, "layers": 2, "pending_updates": ()}
     assert world.calls == [(module.TITLE, [*removed, *layers, glyph], True)]
     assert [[p.name for p in layer.anchors] for layer in layers] == [
         ["top", "bottom"],
@@ -611,7 +611,7 @@ def test_removal_when_native_node_delete_is_ignored_then_readback_fails(
 
 
 @pytest.mark.parametrize("index", [0, 1])
-def test_writers_when_updates_are_pending_then_no_mutation_or_history(
+def test_writers_when_updates_are_pending_then_write_and_report_ids(
     world: Any, index: int
 ) -> None:
     module = world.load(index)
@@ -620,13 +620,13 @@ def test_writers_when_updates_are_pending_then_no_mutation_or_history(
     glyph = Glyph("a", [source, Layer("Bold", [polygon()])])
     world.glyphs = [glyph]
     world.pending = (100,)
-    with pytest.raises(ValueError, match="updates are pending"):
-        if index == 0:
-            module.write_rows(module.survey(glyph, source, facts(world)), facts(world))
-        else:
-            rows = module.survey(world.package, ["a"], {"wt": 500}, facts(world))
-            module.write_rows(world.package, rows, facts(world))
-    assert glyph.history == [] and world.calls == []
+    if index == 0:
+        result = module.write_rows(module.survey(glyph, source, facts(world)), facts(world))
+    else:
+        rows = module.survey(world.package, ["a"], {"wt": 500}, facts(world))
+        result = module.write_rows(world.package, rows, facts(world))
+    assert glyph.history and world.calls and world.pending == (100,)
+    assert result["pending_updates"] == (100,)
 
 
 @pytest.mark.parametrize("number", [float("nan"), float("inf"), -1, 1001])
@@ -1001,7 +1001,7 @@ def test_removal_when_one_item_is_held_then_other_items_still_match_on_all_maste
     glyph = Glyph("aacute", layers)
     rows = module.survey(glyph, layers[0], facts(world))
     assert len([row for row in rows if row.note]) == 1
-    assert module.write_rows(rows, facts(world)) == {"edits": 2, "layers": 2}
+    assert module.write_rows(rows, facts(world)) == {"pending_note": "", "edits": 2, "layers": 2, "pending_updates": ()}
     assert all(
         len(layer.shapes) == 1 and len(layer.shapes[0].contours[0].nodes()) == 5
         for layer in layers
@@ -1055,3 +1055,19 @@ def test_removal_when_shape_has_an_unselected_contour_then_it_must_survive(
             module.survey(Glyph("a", [layer]), layer, facts(world)), facts(world)
         )
         assert layer.shapes == [shape] and shape.contours == [survivor]
+
+
+@pytest.mark.parametrize("interpolate", [False, True])
+def test_intermediate_when_no_layer_added_then_result_without_history_and_queue_kept(
+    world: Any, interpolate: bool,
+) -> None:
+    module = world.load(1)
+    world.pending = (100,)
+    glyph = Glyph("a", [Layer("Light"), Layer("Bold")])
+    glyph.fail_interpolation = True
+    world.glyphs = [glyph]
+    rows = module.survey(world.package, ["a"], {"wt": 500}, facts(world)) if interpolate else []
+    result = module.write_rows(world.package, rows, facts(world))
+    assert result["layers"] == 0 and not world.calls and not glyph.history
+    assert result["pending_updates"] == ((100,) if interpolate else ())
+    assert world.pending == (100,), "An empty or refused plan must not clear queued ids"

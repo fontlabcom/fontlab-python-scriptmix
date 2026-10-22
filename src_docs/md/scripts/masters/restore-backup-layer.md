@@ -16,7 +16,8 @@ What it does:
     width. Optionally delete the backup layer and its mask afterwards.
 
 How it works:
-    The script discovers plain "Regular backup" layers and old "Regular@ backup"
+    The script discovers plain "Regular backup" layers and old "Regular@
+    backup"
     layers. The longest matching master name chooses the restore target;
     no new @ layer is created. Bracket layers ("#") and
     temporary layers are never offered. A non-modal panel shows, per glyph,
@@ -42,10 +43,11 @@ Why this design:
       composites), locked master layers, master layers with a metrics link
       or expression, and an empty backup. A backup that is the shown layer
       of its glyph, or that is locked or has a locked mask, is not deleted.
-      Apply is refused while FontLab has pending glyph updates.
+      Apply discloses queued ids and their possible date changes.
     - A deleted backup usually holds components. Their shape, shape data
       and builder are read before the edit and retained in the notification.
-      The restore is recorded as one Undo step. Edit > Undo of removed components depends on FontLab (fl#7641).
+      The restore is recorded as one Undo step. Edit > Undo of removed
+      components depends on FontLab (fl#7641).
 
 How to use:
     Make backups with "Duplicate Current Layer". Later select the glyphs in
@@ -69,5 +71,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0f224ef21fd9f2a2ce02e5ae307ac90065d56c75f278506b97de8d2a4b3a75d4.py)
+[Python source](../../../../.build/menu-sources/6e349a0a70228d6256009094bf0533dd55be09c21fee6144d12fe934f24eaf26.py)
 <!--/codeinclude-->

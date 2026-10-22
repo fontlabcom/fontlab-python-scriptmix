@@ -2,6 +2,17 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 - Complete queued-update disclosure
+
+- Complete default-writer status/console disclosure, including all custom
+  master, cleanup and unicase paths. Show the figures warning once.
+- Correct pending-update documentation and refresh generated pages and pins.
+
+## 2026-10-22 - Pending native update disclosure
+
+- Disclose pending native updates in writer results and status messages.
+- Refresh destination hashes and cover queued writes and empty interpolation.
+
 ## Unreleased — Final script fixes (2026-10-22)
 
 - Use the corrected App backup resolver, custom-suffix naming, default suffix

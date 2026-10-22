@@ -879,6 +879,13 @@ def test_refusals_write_nothing(world: Any, title: str, fault: str) -> None:
             "Aacute", {"Light": [Shape(world, base="A")]}, auto=("Light",), select=False
         )
     panel = load(title)["main"]()
+    if fault == "pending":
+        before = tuple(world.pending)
+        assert panel.apply_button.enabled
+        press(panel)
+        assert world.history() and tuple(world.pending) == before
+        assert panel.last_result["pending_updates"] == before and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
+        return
     assert not panel.apply_button.enabled, (title, fault, panel.status.text)
     press(panel)
     assert not world.history(), (title, fault, world.history())

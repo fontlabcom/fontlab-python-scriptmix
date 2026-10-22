@@ -18,6 +18,9 @@ FontLab Undo/Redo, saved font state or panel lifetime. Historical sample
 acceptance remains 68 of 130; the Italic Angle candidate and later ports retain
 their separate checks. Menu counts describe available source files.
 
+Writers disclose queued native glyph ids and the possible modification-date changes
+(FontLab issue 8537). They never clear the queue or normalise unrelated dates.
+
 ## Requirements and installation
 
 Use FontLab 9 with embedded Python 3.11 arm64 on Apple Silicon. Keep matching

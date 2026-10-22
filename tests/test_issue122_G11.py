@@ -671,6 +671,12 @@ def test_writer_refusals_and_partial_failure(
         "pending": "pending",
         "partial": "Native changes may remain; use Edit > Undo",
     }[bad]
+    if bad == "pending":
+        panel.apply()
+        assert world.pending == [123] and world.notifications()
+        assert panel.last_result["pending_updates"] == (123,)
+        assert "8537" in panel.last_result["pending_note"] and panel.last_result["pending_note"] in panel.status.text
+        return
     with pytest.raises((ValueError, RuntimeError), match=message):
         panel.apply()
     assert len(world.notifications()) == (1 if bad == "partial" else 0)

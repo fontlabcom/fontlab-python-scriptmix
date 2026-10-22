@@ -40,7 +40,8 @@ A glyph that has an automatic layer is listed and skipped. So is a glyph
 that is a base of an automatic composite, also through other composites,
 unless you tick "Also edit bases of automatic composites" (FontLab then
 rebuilds those composites; Undo may not restore their anchors). The script
-refuses before any history exists when FontLab holds queued glyph updates.
+keeps the compatibility check; writes disclose queued ids and possible date
+changes.
 The area needs FontTools (fontlab-fontlabapp[fontui]); without it the status
 line says so and nothing changes. After the write, the script reads the
 contour counts back. If FontLab fails part-way, the error says that native
@@ -59,5 +60,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a68dd311ce836325f1eab174a6c568b17ae86f1cc44740acf37261b3d3ad47df.py)
+[Python source](../../../../.build/menu-sources/e328dc163e8258666c5f0fb5b0fb1e22304eefd6141133c2cc311d76fc0fb606.py)
 <!--/codeinclude-->

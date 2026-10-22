@@ -1,6 +1,7 @@
 # this_file: Scripts/Contours/Shadow Copy.py
 # SPDX-License-Identifier: Apache-2.0
-"""Add a shifted copy of the outline behind each selected glyph, as its own element.
+"""Add a shifted copy of the outline behind each selected glyph, as its own
+element.
 
 What it does:
     For each selected glyph and chosen master, the script copies the contours
@@ -36,7 +37,7 @@ Why this design:
       base of automatic composites is skipped unless you tick "Edit bases of
       auto glyphs anyway": FontLab then rebuilds those composites, can drop
       their anchors and locks, and Undo does not restore them.
-    - Apply is refused while FontLab has pending glyph updates. The script
+    - Apply discloses queued ids and their possible date changes. The script
       does not call UpdateAll (fl#8537). The panel binds to the font that was
       current when it opened.
 
@@ -149,7 +150,7 @@ def add_shadows(
     fontlab = ap.fontlab
     todo = [r for r in rows if not r.note]
     if not todo:
-        return {"layers": 0, "glyphs": 0, "contours": 0, "mismatches": []}
+        return {"pending_updates": (), "pending_note": "", "layers": 0, "glyphs": 0, "contours": 0, "mismatches": []}
     move = qt.QtGui.QTransform(1, 0, 0, 1, dx, dy)
     prepared = [
         (row, contour_copy.copy_contours(row.layer, move)) for row in todo
@@ -181,7 +182,8 @@ def add_shadows(
         TITLE, [r.layer for r in todo], glyphs, mutate,
         operation="geometry", facts=facts, allow_bases=allow_bases, read_back=read_back,
     )  # fmt: skip
-    return {
+    return {"pending_note": done.pending_note, 
+        "pending_updates": done.pending_updates,
         "layers": len(todo),
         "glyphs": len(glyphs),
         "contours": sum(len(c) for _, c in prepared),

@@ -842,7 +842,7 @@ def test_copy_to_masks_when_applied_then_one_step_masks_created_and_read_back(wo
     rows = module.survey(package, ["a", "b"], ["Light", "Bold"], True, facts)
     result = module.copy_to_masks(rows, True, facts)
     a = package.findName("a")
-    assert result == {"layers": 2, "glyphs": 1, "contours": 3, "created": 1, "mismatches": []}
+    assert result == {"pending_note": "", "pending_updates": (), "layers": 2, "glyphs": 1, "contours": 3, "created": 1, "mismatches": []}
     assert contours_of(a.layer("mask.Light")) == 2 and contours_of(a.layer("mask.Bold")) == 1
     assert notified_names(world) == [["mask.Light", "mask.Bold", "a"]], "existing mask, created mask, glyph"
     assert [e for e in LOG if e[0] == "notify"] == [("notify", "Copy Outline To Mask")]
@@ -903,15 +903,19 @@ def test_copy_to_masks_when_nothing_to_do_then_no_history(world: World) -> None:
     assert world.notifications() == [] and LOG == []
 
 
-def test_copy_to_masks_when_pending_updates_then_refused_before_history(world: World) -> None:
+def test_copy_to_masks_when_pending_updates_then_writes_and_keeps_queue(world: World) -> None:
     module = load("Copy Outline To Mask")
     package = mask_font(world)
     facts = world.facts()
     rows = module.survey(package, ["a"], ["Light"], True, facts)
     world.updates = [1]
-    with pytest.raises(ValueError, match="pending"):
-        module.copy_to_masks(rows, True, facts)
-    assert LOG == [] and world.notifications() == []
+    world.selection = ["a"]
+    panel = module.panel_type()(None)
+    panel.apply_button.press()
+    result = panel.last_result
+    assert world.updates == [1] and world.notifications()
+    assert result["pending_updates"] == (1,)
+    assert "8537" in result["pending_note"] and result["pending_note"] in panel.status.text
 
 
 def test_copy_to_masks_when_mask_update_fails_then_partial_write_error_after_notify(world: World) -> None:
@@ -1033,7 +1037,7 @@ def test_copy_layer_when_applied_then_outline_replaced_anchor_width_one_step(wor
     pairs = module.survey(package, ["n"], "Light", ["Bold"], True, True, facts)
     result = module.copy_pairs(pairs, facts)
     bold = package.findName("n").layer("Bold")
-    assert result == {"layers": 1, "glyphs": 1, "contours": 1, "missing": ["bottom"], "mismatches": []}
+    assert result == {"pending_note": "", "pending_updates": (), "layers": 1, "glyphs": 1, "contours": 1, "missing": ["bottom"], "mismatches": []}
     outline = [s for s in bold.shapes if not s.isComponent]
     assert len(outline) == 1 and outline[0].shapeData.note == "stem", "old outline shapes and the empty shape go"
     assert [(n.x, n.y) for n in outline[0].contours[0].nodes()][:2] == [(10, 0), (90, 0)]
@@ -1149,7 +1153,7 @@ def test_restore_when_applied_and_delete_then_master_restored_backup_and_its_mas
     jobs = module.survey(package, ["n"], stamp, facts)
     result = module.restore(jobs, True, facts)
     n = package.findName("n")
-    assert result == {"layers": 1, "glyphs": 1, "deleted": 2, "kept": 0, "mismatches": []}
+    assert result == {"pending_note": "", "pending_updates": (), "layers": 1, "glyphs": 1, "deleted": 2, "kept": 0, "mismatches": []}
     assert contours_of(n.layer("Light")) == 2 and n.layer("Light").advanceWidth == 320
     assert n.layer("Light").anchors[0].point == Point(30, 70)
     assert [x.name for x in n.layers] == ["Light", "Bold"]
@@ -1287,7 +1291,7 @@ def test_delete_layers_when_applied_then_one_step_and_ids_gone(world: World) -> 
     entries = module.survey(package, ["a"], package.masters, facts)
     doomed = [e for e in entries if e.kind in {"mask", "backup"}]
     result = module.delete_layers(doomed, package.masters, facts)
-    assert result == {"layers": 2, "glyphs": 1, "deleted": ["a/mask.Light", "a/Light@ 1"], "mismatches": []}
+    assert result == {"pending_note": "", "pending_updates": (), "layers": 2, "glyphs": 1, "deleted": ["a/mask.Light", "a/Light@ 1"], "mismatches": []}
     assert [x.name for x in package.findName("a").layers] == ["Light", "Bold", "Sketch", "Light#alt"]
     assert notified_names(world) == [["Light", "a"]], "a surviving body layer carries the Undo step"
     assert world.flags == [()], "no component removed: the two-argument call"
@@ -1540,14 +1544,15 @@ def test_run_when_nothing_or_no_font_then_value_error_and_main_prints(world: Wor
     assert world.notifications() == []
 
 
-def test_run_when_pending_updates_then_refused(world: World) -> None:
+def test_run_when_pending_updates_then_writes_and_keeps_queue(world: World, capsys) -> None:
     module = load("Empty Layers")
     empty_font(world)
     world.selection = ["a"]
     world.updates = [3]
-    with pytest.raises(ValueError, match="pending"):
-        module.run()
-    assert LOG == []
+    result = module.run()
+    assert world.updates == [3] and LOG
+    output = capsys.readouterr().out
+    assert "(3,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
 
 
 # ---------------------------------------------------------------- main entries
@@ -1615,7 +1620,7 @@ def test_backup_panel_when_opened_then_scope_suffix_inventory_and_refused_rows(w
     glyph.bindDependencies = lambda: None
     active.setActive = lambda: setattr(glyph, "active", active)
     panel.apply()
-    assert panel.last_result == {"layers": 2}
+    assert panel.last_result == {"pending_updates": (), "pending_note": "", "layers": 2}
     assert len(world.notifications()) == 1
     assert [obj.name for obj in world.notifications()[0][1]] == ["Light backup before", "Bold backup before", "a"]
     assert glyph.active is active and len(refused.layers) == 2

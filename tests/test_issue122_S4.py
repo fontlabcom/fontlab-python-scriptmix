@@ -1066,7 +1066,7 @@ def test_panel_when_closed_then_disconnects_deletes_and_unregisters(
 def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> None:
     used = app_names_used([FOLDER / f"{name}.py" for name in NAMES])
     assert {"commit", "scan_auto_facts", "refusal"} <= used["fly.ap.history"]
-    assert used["fly.ap.edit_guards"] == {"require_settled"}
+    assert used["fly.ap.edit_guards"] == {"pending_updates", "pending_note", "disclose"}
     assert {
         "EjectEditor",
         "MoveEditor",
@@ -1171,7 +1171,7 @@ def test_apply_work_when_written_then_one_undo_step_of_layer_and_glyph(
     result = kernel(ns, "apply_work")(
         work, ns["TITLE"], facts, editor_for(name, ns, world)
     )
-    assert result == {"edits": 1, "layers": 1}
+    assert result == {"pending_note": "", "edits": 1, "layers": 1, "pending_updates": ()}
     one_step(world, ns["TITLE"], ["Aacute/Light"], ["Aacute"], retained_of(removed))
     assert ("changed", "Aacute/Light") in world.events, "layer settled inside history"
     assert "update-all" not in [e[0] for e in world.events]
@@ -1226,15 +1226,24 @@ def test_require_safe_when_glyph_is_base_of_auto_composite_then_refuses(
 
 
 @pytest.mark.parametrize("name", WRITERS)
-def test_panel_when_glyph_updates_are_queued_then_refuses_and_never_clears_them(
+def test_panel_when_glyph_updates_are_queued_then_discloses_and_never_clears_them(
     world: World, name: str
 ) -> None:
     accented(world)
+    if name == "Copy Offsets Between Masters":
+        world.layer("Aacute", "Light").shapes[1]._transform = Transform(dx=40, dy=-12)
+    if name == "Nested Finder":
+        world.glyph("Nested", shapes={m: [("c", "Aacute", 5, 0)] for m in world.masters})
     panel, _ = panel_of(name)
+    if name == "Replace Reference":
+        panel.old_edit.setText("acute")
+        panel.new_edit.setText("A")
+        panel.timer.timeout.emit()
     world.pending.append(41)
     press(panel)
-    assert "updates are pending" in panel.status.text
-    assert world.history() == [] and world.pending == [41], "queue untouched"
+    assert world.pending == [41]
+    assert bool(world.history()) == bool(panel.last_result["edits"])
+    assert panel.last_result["pending_updates"] == (41,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
 
 
 @pytest.mark.parametrize("name", WRITERS)
@@ -1815,7 +1824,7 @@ def test_build_panel_when_fontlab_fails_later_then_reports_and_keeps_others(
     assert panel.table.colors() == ["#d33"]
 
 
-def test_build_panel_when_updates_are_queued_then_refuses_before_any_build(
+def test_build_panel_when_updates_are_queued_then_builds_and_discloses(
     world: World,
 ) -> None:
     accented(world, select=False)
@@ -1823,5 +1832,5 @@ def test_build_panel_when_updates_are_queued_then_refuses_before_any_build(
     world.pending.append(3)
     world.calls.clear()
     press(panel)
-    assert "updates are pending" in panel.status.text
-    assert world.calls == [] and world.pending == [3]
+    assert world.calls and world.pending == [3]
+    assert panel.last_result["pending_updates"] == (3,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text

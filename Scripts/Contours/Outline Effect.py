@@ -18,7 +18,8 @@ How it works:
     removed and the ring is added as one new element. Images and empty
     elements stay in the layer. After the write it
     counts the contours again and reports any difference. The path-to-contour
-    step and the panel are shared (fly.ap.contour_copy, fly.ap.selection_panel).
+    step and the panel are shared (fly.ap.contour_copy,
+    fly.ap.selection_panel).
 
 Why this design:
     - FontLab has no Python call that strokes an outline, so the script uses
@@ -33,7 +34,7 @@ Why this design:
       base of automatic composites is skipped unless you tick "Edit bases of
       auto glyphs anyway": FontLab then rebuilds those composites, can drop
       their anchors and locks, and Undo does not restore them.
-    - Apply is refused while FontLab has pending glyph updates. The script
+    - Apply discloses queued ids and their possible date changes. The script
       does not call UpdateAll (fl#8537).
 
 How to use:
@@ -162,7 +163,7 @@ def outline(
 
     todo = [r for r in rows if not r.note]
     if not todo:
-        return {"layers": 0, "glyphs": 0, "contours": 0, "mismatches": []}
+        return {"pending_updates": (), "pending_note": "", "layers": 0, "glyphs": 0, "contours": 0, "mismatches": []}
     prepared = [
         (row, ring_shape(row.layer, line)) for row in todo
     ]  # all geometry before history
@@ -193,7 +194,8 @@ def outline(
         TITLE, [r.layer for r in todo], glyphs, mutate,
         operation="geometry", facts=facts, allow_bases=allow_bases, read_back=read_back,
     )  # fmt: skip
-    return {
+    return {"pending_note": done.pending_note, 
+        "pending_updates": done.pending_updates,
         "layers": len(todo),
         "glyphs": len(glyphs),
         "contours": sum(ring.contoursCount for _, ring in prepared),

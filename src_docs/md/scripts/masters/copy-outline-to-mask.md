@@ -42,7 +42,7 @@ Why this design:
       composites (also through manual composites) and locked layers are
       listed and skipped. A notification there makes FontLab rebuild the
       automatic glyphs, and Undo does not restore them.
-    - Apply is refused while FontLab has pending glyph updates. The panel
+    - Apply discloses queued ids and their possible date changes. The panel
       binds to the font that was current when it opened.
 
 How to use:
@@ -67,5 +67,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/911ef0df4aa1b22efd119e18a192610aa9b039c7062e2541e84e6f032f81c14b.py)
+[Python source](../../../../.build/menu-sources/0c326bc183ced9d824248080338aec041a858ec00e4a9f380683b9391383341e.py)
 <!--/codeinclude-->

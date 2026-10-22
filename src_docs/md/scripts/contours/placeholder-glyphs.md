@@ -6,12 +6,14 @@ categories: ["Contours"]
 
 # Placeholder Glyphs
 
-Create empty placeholder glyphs from typed glyph names or characters, on every master.
+Create empty placeholder glyphs from typed glyph names or characters, on every
+master.
 
 What it does:
     Type or paste glyph names and characters, separated by spaces, commas or
     new lines. The script creates one empty glyph per entry, with a layer on
-    every master and the chosen advance width. A single non-ASCII character becomes
+    every master and the chosen advance width. A single non-ASCII character
+    becomes
     uniXXXX (or uXXXXX) and gets that code point. A name of that form also
     gets its code point, unless another glyph has it already. ASCII tokens
     are glyph names: A stays A; & and 1 are invalid names.
@@ -36,8 +38,8 @@ Why this design:
       refuses text with NUL, no-break space or the Unicode line and paragraph
       separators instead of creating changed names.
     - A code point write needs an active Font window and no open Glyph
-      window, as every Unicode writer of this menu does. Create is
-      refused while FontLab has pending glyph updates. The script does not
+      window, as every Unicode writer of this menu does. Create discloses
+      queued ids and their possible date changes. The script does not
       call UpdateAll (fl#8537).
     - FontLab can rebuild an automatic glyph when a new name appears. When
       the font has automatic glyphs without a recipe whose names share a
@@ -65,5 +67,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/026d5cf0680c897d339712579a9bf082db7e1b4f04ad35eca55b77edf9328efa.py)
+[Python source](../../../../.build/menu-sources/978c4d39e08f6ea3e597adcec4c942ac145ba61036167ff79cd99e66a23e708c.py)
 <!--/codeinclude-->

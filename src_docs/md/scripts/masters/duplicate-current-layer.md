@@ -9,16 +9,19 @@ categories: ["Masters"]
 Back up the current master layer or all master layers of selected glyphs.
 
 What it does:
-    Choose current or all masters, a custom suffix and inspect existing backups.
+    Choose current or all masters, a custom suffix and inspect existing
+    backups.
     Names use <master> backup <suffix>, with (2), (3) on collisions.
     Names with @, # or |temp|, exact master names, and names that Restore
     would read as another master are refused.
 
 How it works:
     The non-modal panel uses fly.ap.selection_panel. Copies keep repaired shape
-    and node metadata (fl#8516, fl#8538). The shown layer stays active. Each Apply
+    and node metadata (fl#8516, fl#8538). The shown layer stays active. Each
+    Apply
     is recorded as one Undo step through fly.ap.history and read back. Auto
-    owners and bases are listed and kept. Pending native updates refuse Apply.
+    owners and bases are listed and kept. Apply discloses queued ids and their
+    possible date changes.
 
 Why this design:
     FontLab's Layers panel duplicates one layer. This adds all-master backup,
@@ -42,5 +45,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/26e8db13bd05021e1c6b4912a0017ec8c49aecaf8913ded895a1361d65c29316.py)
+[Python source](../../../../.build/menu-sources/6c9027e0c81f1528bbac28c4d5987b52db305f4e51cd011bbec597c560621f93.py)
 <!--/codeinclude-->

@@ -19,19 +19,22 @@ How it works:
     (see "Display Next Layer"). So the script only renames. It renames the old
     master layer to the backup name, then the chosen layer to the master name,
     and renames their mask layers to match the FontLab mask-name rule
-    ("mask.<layer name>", or plain "mask" for the layer of a single-master font).
+    ("mask.<layer name>", or plain "mask" for the layer of a single-master
+    font).
     Shapes, anchors, guides and metrics stay in the layer objects. Nothing is
-    cloned, so nothing is lost. One notification covers all layers: one Undo step.
+    cloned, so nothing is lost. One notification covers all layers: one Undo
+    step.
 
 Why this design:
-    - Renaming keeps every property of both layers. The Glyphs original must copy
+    - Renaming keeps every property of both layers. The Glyphs original must
+      copy
       paths, components, anchors and sidebearing keys one by one.
     - Names are simulated before the first rename. A clash stops the run early.
     - If a rename fails, the script puts the old names back.
     - Locked, mask, service, automatic and image layers are refused. So is a
       glyph that has an automatic layer, or is a base of one (also through
-      manual composites): FontLab cannot undo it. So is a run while FontLab
-      has pending glyph updates. The shared module fly.ap.history does
+      manual composites): FontLab cannot undo it. Queued ids and their possible
+      date changes are disclosed. The shared module fly.ap.history does
       these checks and the one-step write.
 
 How to use:
@@ -53,5 +56,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/70031f5ad737231f402d0120066c5da31d333c01afe4808ca47fa97b6509f530.py)
+[Python source](../../../../.build/menu-sources/3a06183b158ae7db8c4252e4d0e3282f19a71b2713eb8f5ec5029e6c6c4fb151.py)
 <!--/codeinclude-->

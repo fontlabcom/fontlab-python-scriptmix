@@ -11,7 +11,8 @@ Copy the selected contours into the background of every glyph.
 What it does:
     Take the selected contours of the shown glyph layer. Replace the background
     (mask layer) of the current-master layer of EVERY glyph in the font with
-    copies of them. Use it to put one guide shape, such as a grid or a reference
+    copies of them. Use it to put one guide shape, such as a grid or a
+    reference
     skeleton, behind all glyphs.
 
 How it works:
@@ -20,7 +21,8 @@ How it works:
     shows what will happen: contour count, glyph count, backgrounds to be
     replaced and glyphs to be skipped. "Replace backgrounds" checks again that
     nothing changed, then removes the old background shapes, creates missing
-    backgrounds, and adds clones of the selected contours. One notification covers
+    backgrounds, and adds clones of the selected contours. One notification
+    covers
     the whole font: one Undo step. The shared module fly.ap.history decides
     which glyphs are skipped and does the one-step write. Read-back checks
     every target background for the planned contour count and no components.
@@ -60,5 +62,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f84336da6fc2a11f6657814c0b75cca6a328db65d95e4e2e75c31a735ed1c420.py)
+[Python source](../../../../.build/menu-sources/32e438fe8cb8e3ab6dcce174ddd6c9ccf74e0643a6bfb8a83aa77a46d0fd4d82.py)
 <!--/codeinclude-->

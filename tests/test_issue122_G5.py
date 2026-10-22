@@ -336,7 +336,7 @@ def test_recursive_detached_copies_exact_offsets_and_one_notification(env: Any) 
         env.modules["history"].auto_facts(()),
         env.script.NamedEditor(unlock=True),
     )
-    assert result == {"edits": 1, "layers": 1}
+    assert result == {"pending_note": "", "edits": 1, "layers": 1, "pending_updates": ()}
     assert layer.shapes[0] is sibling
     assert [s.x for s in layer.shapes[1:]] == [110, 105]
     assert all(not s.isComponent and not s.contentLocked for s in layer.shapes[1:])
@@ -458,7 +458,7 @@ def test_apply_mixed_selection_only_notifies_eligible_layer(
 
     replace_app(monkeypatch, env.modules["history"], "scan_auto_facts", scan_auto_facts)
     panel.apply()
-    assert panel.last_result == {"edits": 1, "layers": 1}
+    assert panel.last_result == {"pending_note": "", "edits": 1, "layers": 1, "pending_updates": ()}
     assert good.layers[0].shapes[0].x == 25
     assert len(env.notifications) == 1
     assert env.notifications[0][1][-2:] == [good.layers[0], good]
@@ -475,7 +475,7 @@ def test_no_match_creates_no_history(env: Any) -> None:
     result = env.modules["component_writer"].apply_work(
         plan.work, "Named", facts, env.script.NamedEditor(True)
     )
-    assert result == {"edits": 0, "layers": 0}
+    assert result == {"edits": 0, "layers": 0, "pending_updates": (), "pending_note": ""}
     assert not env.notifications
 
 
@@ -715,7 +715,7 @@ def test_set_and_reset_locations_use_one_notification_and_readback(env: Any) -> 
     result = env.modules["component_writer"].apply_work(
         plan.work, "Locations", facts, env.locations.LocationEditor()
     )
-    assert result == {"edits": 2, "layers": 2}
+    assert result == {"pending_note": "", "edits": 2, "layers": 2, "pending_updates": ()}
     assert [s.shapeData.componentLayer for s in shapes] == [
         "#wt=400,wd=100",
         "#wt=800,wd=90",
@@ -908,7 +908,7 @@ def test_location_panel_applies_previewed_batch_and_refreshes(
     assert panel.preview.edits == 1 and panel.apply_button.enabled
     panel.apply()
     assert root.shapeData.componentLayer == "#wt=650,wd=100"
-    assert panel.last_result == {"edits": 1, "layers": 1}
+    assert panel.last_result == {"pending_note": "", "edits": 1, "layers": 1, "pending_updates": ()}
     assert len(env.notifications) == 1
     assert not panel.preview.work and not panel.apply_button.enabled
 

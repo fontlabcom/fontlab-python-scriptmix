@@ -9,7 +9,8 @@ WHAT: A non-modal panel reads glyph names and lists the code point each name
 implies. It knows uniXXXX and uXXXX[XX] names, a built-in table of Adobe Glyph
 List names, and accented Latin names (Wacute is LATIN CAPITAL LETTER W WITH
 ACUTE, found with unicodedata). Names with a suffix (a.ss01), ligature names
-(f_i) and surrogate code points (U+D800 to U+DFFF) are left alone. Assign writes all rows marked "assign".
+(f_i) and surrogate code points (U+D800 to U+DFFF) are left alone. Assign
+writes all rows marked "assign".
 
 HOW: The script scans the font and plans each row: "same" (already right),
 "encoded differently" (the glyph has another code and Replace is off), "used by
@@ -26,7 +27,7 @@ from another glyph and never lets two rows claim one code. FontLab rebuilds all
 auto layers when an auto layer, or the base glyph of an auto composite (also
 through other composites), is notified, and Undo does not restore them. So the
 script REFUSES such glyphs. It never reads flGlyph.fgGlyph, never calls
-UpdateAll (fl#8537), and refuses to write while native updates are pending.
+UpdateAll (fl#8537), discloses queued ids and their possible date changes.
 Before it writes, the script applies the guards of the App Unicode writer: a
 regular Font window must be active and no Glyph editor may be open.
 
@@ -212,11 +213,11 @@ def unicode_write_guard(package_id: int) -> None:
 
 def apply_unicodes(
     native: Any, qtcore: Any, package_id: int, names: list[str], overwrite: bool
-) -> list[str]:
+, *, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Assign the implied code points to NAMES. One Undo step. Return names changed.
 
     Rescan first, so a stale preview cannot write. Raise ValueError for an
-    empty selection, a switched font or pending host updates.
+    empty selection, a switched font (queued updates are disclosed).
     """
     if not names:
         raise ValueError("Select at least one glyph.")
@@ -238,7 +239,7 @@ def apply_unicodes(
                     f"Native Unicode of {entry.name} differs from the plan."
                 )
 
-    names_edit.commit(
+    _done = names_edit.commit(
         TITLE,
         [entry for entry, _ in todo],
         mutate,
@@ -247,6 +248,8 @@ def apply_unicodes(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
     return [entry.name for entry, _ in todo]
 
 
@@ -386,17 +389,20 @@ def _dialog_type() -> type:
 
         def apply(self) -> None:
             """Assign the implied code points. One Undo step."""
+            import fly.ap.edit_guards as result_guards
+            disclosure = {"pending_updates": (), "pending_note": ""}
             changed = apply_unicodes(
                 native,
                 QtCore,
                 self.facts.package_id if self.facts else -1,
                 self.scope_names(),
                 self.overwrite.isChecked(),
-            )
+            disclosure=disclosure)
             self.last_result = {"changed": changed}
+            self.last_result.update(disclosure)
             self.reload()
             noun = "code point" if len(changed) == 1 else "code points"
-            self.status.setText(f"Assigned {len(changed)} {noun}")
+            self.status.setText(result_guards.append_note((f"Assigned {len(changed)} {noun}"), disclosure))
 
     return UnicodeFromNames
 

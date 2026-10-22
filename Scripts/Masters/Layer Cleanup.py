@@ -12,7 +12,8 @@ How it works:
     The kind comes from the layer role, fly.ap.masters.associated_master,
     and the same backup resolver as Restore Backup Layer: "mask" for a
     background; "backup" for <master> backup <suffix> and legacy @ or
-    space-prefixed backups; "alternate" for <master>#... layers, such as bracket
+    space-prefixed backups; "alternate" for <master>#... layers, such as
+    bracket
     layers; "other" for every other layer. Master layers, service layers,
     image layers and temporary "|temp|" layers are never listed. The delete
     runs in one Undo step through the shared module fly.ap.history. FontLab
@@ -34,11 +35,12 @@ Why this design:
       both to remove both.
     - The components of the deleted layers (shape, shape data, builder) are
       read before the edit and retained in the notification. The deletion
-      is recorded as one Undo step. Edit > Undo of removed components depends on FontLab (fl#7641).
+      is recorded as one Undo step. Edit > Undo of removed components depends
+      on FontLab (fl#7641).
     - To clear the backgrounds of the whole font, use Cleaning > Clear All
       Layer Backgrounds or Clear Master Backgrounds: they check the whole
       font mapping first. This panel is for mixed cleanup of a selection.
-    - Delete is refused while FontLab has pending glyph updates. The panel
+    - Delete discloses queued ids and their possible date changes. The panel
       binds to the font that was current when it opened.
 
 How to use:
@@ -177,7 +179,7 @@ def delete_layers(entries: Sequence[Entry], masters: Sequence[str], facts: Any) 
     if kept:
         raise ValueError("Refused: " + "; ".join(kept[:3]))
     if not entries:
-        return {"layers": 0, "glyphs": 0, "deleted": [], "mismatches": []}
+        return {"pending_updates": (), "pending_note": "", "layers": 0, "glyphs": 0, "deleted": [], "mismatches": []}
     glyphs = list({str(e.glyph.name): e.glyph for e in entries}.values())
     doomed = {int(e.layer.id) for e in entries}
     carriers = [layer for glyph in glyphs for layer in undo_layers(glyph, doomed, masters)]
@@ -199,7 +201,7 @@ def delete_layers(entries: Sequence[Entry], masters: Sequence[str], facts: Any) 
     done = history.commit(
         TITLE, carriers, glyphs, mutate, operation="geometry", facts=facts, read_back=read_back, retain=retain
     )
-    return {"layers": len(entries), "glyphs": len(glyphs), "deleted": labels, "mismatches": list(done.mismatches)}
+    return {"pending_note": done.pending_note, "pending_updates": done.pending_updates, "layers": len(entries), "glyphs": len(glyphs), "deleted": labels, "mismatches": list(done.mismatches)}
 
 
 def plural(count: int, word: str) -> str:
@@ -359,6 +361,7 @@ def panel_type() -> type:
 
         def apply(self) -> None:
             """Delete the ticked layers, read from a fresh survey. One Undo step."""
+            import fly.ap.edit_guards as result_guards
             wanted = {(int(e.glyph.id), int(e.layer.id)) for e in self.ticked()}
             try:
                 fresh = [e for e in self.plan() if (int(e.glyph.id), int(e.layer.id)) in wanted]
@@ -376,7 +379,7 @@ def panel_type() -> type:
             text = f"Deleted {plural(result['layers'], 'layer')} from {plural(result['glyphs'], 'glyph')}"
             if result["mismatches"]:
                 text += " · did not read back as planned: " + "; ".join(result["mismatches"][:5])
-            self.status.setText(text)
+            self.status.setText(result_guards.append_note(text, result))
 
         def closeEvent(self, event: Any) -> None:
             """Disconnect owned signals, then delete the panel."""

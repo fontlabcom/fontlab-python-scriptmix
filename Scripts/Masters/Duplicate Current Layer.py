@@ -3,16 +3,19 @@
 """Back up the current master layer or all master layers of selected glyphs.
 
 What it does:
-    Choose current or all masters, a custom suffix and inspect existing backups.
+    Choose current or all masters, a custom suffix and inspect existing
+    backups.
     Names use <master> backup <suffix>, with (2), (3) on collisions.
     Names with @, # or |temp|, exact master names, and names that Restore
     would read as another master are refused.
 
 How it works:
     The non-modal panel uses fly.ap.selection_panel. Copies keep repaired shape
-    and node metadata (fl#8516, fl#8538). The shown layer stays active. Each Apply
+    and node metadata (fl#8516, fl#8538). The shown layer stays active. Each
+    Apply
     is recorded as one Undo step through fly.ap.history and read back. Auto
-    owners and bases are listed and kept. Pending native updates refuse Apply.
+    owners and bases are listed and kept. Apply discloses queued ids and their
+    possible date changes.
 
 Why this design:
     FontLab's Layers panel duplicates one layer. This adds all-master backup,
@@ -112,11 +115,11 @@ def backups_of(glyph: Any, masters: Sequence[str]) -> list[str]:
             and backup_master(str(layer.name), masters) is not None]
 
 
-def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
+def duplicate(jobs: Sequence[tuple[Any, Any, str]], *, disclosure: dict[str, Any] | None = None) -> list[Any]:
     """Clone each layer, name the clone, add it to its glyph. One Undo step.
 
     The shared App history commit refuses the whole run before any change when
-    FontLab has pending glyph updates, or when a glyph owns an automatic layer
+    a glyph owns an automatic layer
     or is a base of one (also through manual composites).
     """
     import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
@@ -170,16 +173,21 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
         return missed
 
     done = history.commit(TITLE, [], glyphs, mutate, operation="geometry", facts=facts, read_back=read_back)
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(done, disclosure)
     if done.mismatches:
         raise history.unstored_error(done.mismatches)
     return list(done.created)
 
 
-def run() -> list[str]:
+def run(*, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Plan, then duplicate. Return one message per new layer."""
     jobs = plan()
-    duplicate(jobs)
-    return [f"{glyph.name}: new layer '{name}'" for glyph, _, name in jobs]
+    import fly.ap.edit_guards as _guards
+    captured = {"pending_updates": (), "pending_note": ""}
+    duplicate(jobs, disclosure=captured)
+    _guards.disclose(captured, disclosure)
+    return [_guards.append_note(f"{glyph.name}: new layer '{name}'", captured) for glyph, _, name in jobs]
 
 
 def panel_type() -> type:
@@ -228,9 +236,10 @@ def panel_type() -> type:
             return [f"{glyph.name} · {layer.name}" if layer is not None else glyph.name, name, note or "New backup"]
 
         def write(self, package: Any, rows: list[Any]) -> dict[str, int]:
+            disclosure = {"pending_updates": (), "pending_note": ""}
             created = duplicate([(g, layer, name) for g, layer, name, note in rows
-                                 if layer is not None and not note])
-            return {"layers": len(created)}
+                                 if layer is not None and not note], disclosure=disclosure)
+            return {"layers": len(created), **disclosure}
 
         def result_text(self, result: dict[str, int]) -> str:
             return f"Created {result['layers']} backup layer(s)"

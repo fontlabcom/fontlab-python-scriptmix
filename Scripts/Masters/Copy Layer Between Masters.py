@@ -32,8 +32,8 @@ Why this design:
     - Skipped and listed: automatic layers, glyphs with automatic layers,
       bases of automatic composites (also through manual composites),
       locked layers, layers with a metrics link or expression, and a source
-      without outline. Apply is refused while FontLab has pending glyph
-      updates. The panel binds to the font that was current when it opened.
+      without outline. Apply discloses queued ids and their possible date
+      changes. The panel binds to the font that was current when it opened.
 
 How to use:
     Select glyphs in the Font window. Run the script. Pick the source master
@@ -220,7 +220,7 @@ def copy_pairs(pairs: Sequence[Pair], facts: Any) -> dict[str, Any]:
     todo = [p for p in pairs if not p.note]
     missing = sorted({n for p in todo for n in p.missing})
     if not todo:
-        return {"layers": 0, "glyphs": 0, "contours": 0, "missing": missing, "mismatches": []}
+        return {"pending_updates": (), "pending_note": "", "layers": 0, "glyphs": 0, "contours": 0, "missing": missing, "mismatches": []}
     glyphs = list({str(p.glyph.name): p.glyph for p in todo}.values())
 
     def mutate() -> None:
@@ -255,7 +255,8 @@ def copy_pairs(pairs: Sequence[Pair], facts: Any) -> dict[str, Any]:
     done = history.commit(
         TITLE, [p.target for p in todo], glyphs, mutate, operation="geometry", facts=facts, read_back=read_back
     )
-    return {
+    return {"pending_note": done.pending_note, 
+        "pending_updates": done.pending_updates,
         "layers": len(todo),
         "glyphs": len(glyphs),
         "contours": sum(p.contours_after for p in todo),
@@ -451,6 +452,7 @@ def panel_type() -> type:
 
         def apply(self) -> None:
             """Plan again from the live font, then write. One Undo step."""
+            import fly.ap.edit_guards as result_guards
             try:
                 pairs = self.plan()
                 result = copy_pairs(pairs, history.scan_auto_facts(self.font_package()))
@@ -465,7 +467,7 @@ def panel_type() -> type:
                 text += " · anchors missing in targets: " + ", ".join(result["missing"])
             if result["mismatches"]:
                 text += " · did not read back as planned: " + "; ".join(result["mismatches"][:5])
-            self.status.setText(text)
+            self.status.setText(result_guards.append_note(text, result))
 
         def closeEvent(self, event: Any) -> None:
             """Disconnect owned signals, then delete the panel."""

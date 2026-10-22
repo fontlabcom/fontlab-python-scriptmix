@@ -26,8 +26,8 @@ Why this design:
       Layers with a metrics link or expression are listed and skipped: the
       link would undo the change. A base of automatic composites needs the
       "Edit bases of auto glyphs anyway" tick, because FontLab rebuilds the
-      automatic glyphs and may lose their anchors and locks. Apply is
-      refused while FontLab has pending glyph updates.
+      automatic glyphs and may lose their anchors and locks. Apply discloses
+      queued ids and their possible date changes.
     - A glyph without outline in the reference or the target is listed and
       skipped: it has no sidebearings.
     - Values round half up, not to the nearest even number: 52.5 becomes 53.

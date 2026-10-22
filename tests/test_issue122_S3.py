@@ -452,10 +452,10 @@ def test_fresh_facts_when_font_switched_then_value_error(world):
         app("names_edit").fresh_facts(99, native=world.native)
 
 
-def test_fresh_facts_when_updates_pending_then_value_error(world):
+def test_fresh_facts_when_updates_pending_then_discloses(world):
     world.pending.append(1)
-    with pytest.raises(ValueError, match="updates are pending"):
-        app("names_edit").fresh_facts(7, native=world.native)
+    assert not hasattr(app("names_edit").fresh_facts(7, native=world.native), "pending_updates")
+    assert world.pending == [1]
 
 
 def commit(world, title, entries, mutate):
@@ -759,7 +759,7 @@ def test_mark_panel_when_swatch_clicked_then_marks_written(mods, world, env):
     dialog = open_panel(mods, "Mark Color Palette", env)
     slot_of(dialog, dialog.swatches[121].clicked)()
     assert [world.glyphs[n].mark for n in ("a", "b")] == [121, 121]
-    assert dialog.last_result == {"mark": 121, "changed": ["a", "b"]}
+    assert dialog.last_result == {"pending_note": "", "pending_updates": (), "mark": 121, "changed": ["a", "b"]}
     dialog.status.setText.assert_called_with("Green: changed 2 glyphs")
 
 
@@ -892,16 +892,17 @@ def test_apply_suffix_when_rename_refused_by_native_then_error_and_history_close
     assert world.log[-1] == ("stamp", "a")
 
 
-def test_apply_suffix_when_bad_input_then_value_error_before_history(mods, world):
+def test_apply_suffix_when_bad_input_then_value_error_before_history(mods, world, capsys):
     m = mods["Suffix Tool"]
     with pytest.raises(ValueError, match="at least one glyph"):
         m.apply_suffix(world.native, world.qtcore, 7, [], "add", ".alt")
     with pytest.raises(ValueError, match="no longer current"):
         m.apply_suffix(world.native, world.qtcore, 1, ["a"], "add", ".alt")
     world.pending.append(5)
-    with pytest.raises(ValueError, match="updates are pending"):
-        m.apply_suffix(world.native, world.qtcore, 7, ["a"], "add", ".alt")
-    assert world.log == []
+    m.apply_suffix(world.native, world.qtcore, 7, ["a"], "add", ".alt")
+    assert world.pending == [5] and world.log
+    output = capsys.readouterr().out
+    assert "(5,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
 
 
 def test_suffix_panel_when_apply_then_selected_glyphs_renamed(mods, world, env):
@@ -1218,7 +1219,7 @@ def test_glyph_notes_panel_when_save_then_note_written_and_focus_kept(mods, worl
     assert dialog.glyph_name == "b", (
         "focus stays on the saved glyph, not the Font window selection"
     )
-    assert dialog.last_result == {"glyph": "b", "changed": True}
+    assert dialog.last_result == {"pending_note": "", "pending_updates": (), "glyph": "b", "changed": True}
 
 
 def test_glyph_notes_panel_when_double_click_then_selection_goes_through_app_helper(
@@ -1711,3 +1712,79 @@ def test_real_names_dialog_when_parsed_then_has_the_hooks_the_panels_use():
     )
     have = {f.name for f in cls.body if isinstance(f, ast.FunctionDef)}
     assert {"__init__", "make_table", "_connect", "invalidate"} <= have, have
+
+
+def test_suffix_panel_when_apply_then_selected_glyphs_renamed_with_queued_id_discloses_once(mods, world, env):
+    dialog = open_panel(mods, "Suffix Tool", env)
+    dialog.suffix.currentText = ".alt"
+    dialog.replacement.currentText = ""
+    dialog.mode.currentIndex = 0
+    world.pending = [17]
+    slot_of(dialog, dialog.apply_button.clicked)()
+    assert sorted(world.glyphs) == ["a.alt", "b.alt", "e", "ecircumflex"]
+    assert dialog.last_result["renamed"] == [("a", "a.alt"), ("b", "b.alt")]
+    assert dialog.last_result["pending_updates"] == (17,) and world.pending == [17]
+    note = dialog.last_result["pending_note"]
+    shown = dialog.status.setText.call_args[0][0]
+    assert "8537" in note and note in shown and shown.count("8537") == 1
+    assert world.edits(), "A queued id must allow the actual native write"
+
+
+def test_rename_panel_when_find_replace_then_preview_and_apply_with_queued_id_discloses_once(mods, world, env):
+    dialog = open_panel(mods, "Batch Rename", env)
+    dialog.find.text, dialog.replace.text = "a", "A"
+    dialog.refresh()
+    assert dialog.plan == [("a", "A", "ok")]
+    world.pending = [17]
+    slot_of(dialog, dialog.apply_button.clicked)()
+    assert "A" in world.glyphs and dialog.last_result["renamed"] == [("a", "A")]
+    assert dialog.last_result["pending_updates"] == (17,) and world.pending == [17]
+    note = dialog.last_result["pending_note"]
+    shown = dialog.status.setText.call_args[0][0]
+    assert "8537" in note and note in shown and shown.count("8537") == 1
+    assert world.edits(), "A queued id must allow the actual native write"
+
+
+def test_glyph_tags_panel_when_add_pressed_then_tag_written_and_reloaded_with_queued_id_discloses_once(
+    mods, world, env
+):
+    dialog = open_panel(mods, "Glyph Tags", env)
+    assert dialog.targets == ["a", "b"] and env[-1][1] == "names_glyph_tags"
+    dialog.tag.text = "review"
+    world.pending = [17]
+    slot_of(dialog, dialog.add_button.clicked)()
+    assert world.glyphs["a"].tags == ["review"] and world.glyphs["b"].tags == ["review"]
+    assert dialog.last_result["changed"] == ["a", "b"]
+    assert dialog.last_result["pending_updates"] == (17,) and world.pending == [17]
+    note = dialog.last_result["pending_note"]
+    shown = dialog.status.setText.call_args[0][0]
+    assert "8537" in note and note in shown and shown.count("8537") == 1
+    assert world.edits(), "A queued id must allow the actual native write"
+
+
+def test_batch_notes_panel_when_apply_then_notes_written_with_queued_id_discloses_once(mods, world, env):
+    dialog = open_panel(mods, "Batch Glyph Notes", env)
+    dialog.note_input.toPlainText.return_value = "check"
+    dialog.refresh()
+    assert [r[3] for r in dialog.plan] == ["change", "change"]
+    world.pending = [17]
+    slot_of(dialog, dialog.apply_button.clicked)()
+    assert [world.glyphs[n].note for n in ("a", "b")] == ["check", "check"]
+    assert dialog.last_result["pending_updates"] == (17,) and world.pending == [17]
+    note = dialog.last_result["pending_note"]
+    shown = dialog.status.setText.call_args[0][0]
+    assert "8537" in note and note in shown and shown.count("8537") == 1
+    assert world.edits(), "A queued id must allow the actual native write"
+
+
+def test_unicode_panel_when_assign_then_selected_glyphs_encoded_with_queued_id_discloses_once(mods, world, env):
+    dialog = open_panel(mods, "Unicode From Names", env)
+    assert [r[4] for r in dialog.plan] == ["assign", "assign"]
+    world.pending = [17]
+    slot_of(dialog, dialog.apply_button.clicked)()
+    assert [r.unicodes for r in world.records[:2]] == [[0x61], [0x62]]
+    assert dialog.last_result["pending_updates"] == (17,) and world.pending == [17]
+    note = dialog.last_result["pending_note"]
+    shown = dialog.status.setText.call_args[0][0]
+    assert "8537" in note and note in shown and shown.count("8537") == 1
+    assert world.edits(), "A queued id must allow the actual native write"

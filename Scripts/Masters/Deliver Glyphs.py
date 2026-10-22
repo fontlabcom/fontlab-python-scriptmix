@@ -26,9 +26,11 @@ Why:
     contour_copy restores node names and raw flags with selection cleared.
     Element names, notes and transforms are copied explicitly. Named contours
     and nodes with an explicit corner_smooth value are kept. Other node and
-    contour properties are not detected and not copied (fl#8569). Nothing is saved.
+    contour properties are not detected and not copied (fl#8569). Nothing is
+    saved.
 Use:
-    Select glyphs in the source Font window and run. Activate a destination Font
+    Select glyphs in the source Font window and run. Activate a destination
+    Font
     window with its Glyph editors closed. Click Preview. Review every row and
     any 'may rebuild auto' warning. Tick consent if appropriate, then Deliver.
     Each new glyph is recorded as its own Undo step, and the outlines as one
@@ -246,10 +248,10 @@ def deliver(target: Any, jobs: list[dict[str, Any]], consent: bool) -> dict[str,
     # This guard explicitly takes an object id, not a fontpr/workspace font id.
     guards.require_selection_window(int(current.id))
     guards.require_no_editors()
-    guards.require_settled()
+    ids = guards.pending_updates()
     ready = [j for j in jobs if not j["note"]]
     if not ready:
-        return {"created": 0, "glyphs": 0, "layers": 0, "unicode_changes": []}
+        return {"pending_updates": (), "pending_note": "", "created": 0, "glyphs": 0, "layers": 0, "unicode_changes": []}
     # All source shape copies exist before the first Add Glyph command.
     prepared = [
         (
@@ -364,7 +366,8 @@ def deliver(target: Any, jobs: list[dict[str, Any]], consent: bool) -> dict[str,
             Delivery(),
             allow_bases=consent,
         )
-        return {
+        return {"pending_note": guards.pending_note(ids), 
+            "pending_updates": ids,
             "created": len(made.glyphs),
             "glyphs": len(ready),
             "layers": result["layers"],
@@ -543,6 +546,7 @@ def panel_type() -> type:
                 self.preview_delivery()
                 self.status.setText(
                     f"Delivered {result['glyphs']} glyphs in {result['layers']} layers; {result['created']} added."
+                    + (" · " + result["pending_note"] if result.get("pending_note") else "")
                 )
             except (ValueError, RuntimeError, TimeoutError) as error:
                 self.apply_button.setEnabled(False)

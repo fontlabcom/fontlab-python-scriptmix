@@ -98,7 +98,8 @@ def link_plan(values: list[Any]) -> list[tuple[int, str, int]]:
 
 
 def apply_links(
-    package_id: int, expected: tuple[Any, ...], plan: list[tuple[int, str, int]]
+    package_id: int, expected: tuple[Any, ...], plan: list[tuple[int, str, int]],
+    *, report: list[str] | None = None, disclosure: dict[str, Any] | None = None,
 ) -> int:
     """Check the preview and use the Font Info notification list and order."""
     import fly.ap.edit_guards as guards
@@ -120,7 +121,11 @@ def apply_links(
     ]
     if not changes:
         return 0
-    guards.require_settled()
+    ids = guards.pending_updates()
+    captured = {"pending_updates": ids, "pending_note": guards.pending_note(ids)}
+    guards.disclose(captured, disclosure)
+    if report is not None and ids:
+        report.append(guards.pending_note(ids))
     original = list(package.instances)
     notification = [package, package.mastersContainer()]
     try:
@@ -224,9 +229,13 @@ def panel_type() -> type:
         def write_links(self) -> None:
             """Apply the exact preview or show a refusal in the panel."""
             try:
-                count = apply_links(self.package_id, self.expected, self.proposals)
+                report: list[str] = []
+                disclosure = {"pending_updates": (), "pending_note": ""}
+                count = apply_links(self.package_id, self.expected, self.proposals, report=report, disclosure=disclosure)
                 self.read_font()
-                self.status.setText(f"Updated {count} instances.")
+                self.last_result = {"instances": count, **disclosure}
+                import fly.ap.edit_guards as guards
+                self.status.setText(guards.append_note(f"Updated {count} instances.", self.last_result))
             except (ValueError, RuntimeError, TimeoutError) as error:
                 self.status.setText(str(error))
 

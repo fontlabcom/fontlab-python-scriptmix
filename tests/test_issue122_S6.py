@@ -1391,7 +1391,7 @@ def test_apply_when_font_ignores_write_then_read_back_reports(
 
 
 @pytest.mark.parametrize("name", NAMES)
-def test_apply_when_updates_queued_then_refuses_before_history(
+def test_apply_when_updates_queued_then_writes_and_discloses(
     world: World, name: str
 ) -> None:
     fixture_glyph(world, name)
@@ -1399,10 +1399,10 @@ def test_apply_when_updates_queued_then_refuses_before_history(
     make_work(panel, name)
     world.pending.append(42)
     panel.refresh()
-    assert not panel.apply_button.enabled
-    assert "pending" in panel.status.text
+    assert panel.apply_button.enabled
     press(panel)
-    assert world.history() == [] and world.pending == [42], "queue never cleared"
+    assert world.history() and world.pending == [42]
+    assert panel.last_result["pending_updates"] == (42,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
 
 
 @pytest.mark.parametrize("name", NAMES)

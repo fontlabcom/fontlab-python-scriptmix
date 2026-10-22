@@ -1024,7 +1024,7 @@ def test_master_copy_restores_names_flags_and_has_one_notification(world: Any) -
         work, "Copy", facts, tool.editor_type()()
     )
     target = glyph.findLayer("Bold")
-    assert result == {"edits": 1, "layers": 1}
+    assert result == {"pending_note": "", "edits": 1, "layers": 1, "pending_updates": ()}
     assert target.advanceWidth == 480
     cloned = target.shapes[0]
     assert cloned is not shape and cloned.shapeData.note == "keep"
@@ -1202,9 +1202,9 @@ def test_style_write_refuses_stale_switched_and_pending(world: Any) -> None:
     with pytest.raises(ValueError, match="Instances changed"):
         tool.apply_links(package.fgId, expected, plan)
     world.updates.append(1)
-    with pytest.raises(ValueError):
-        tool.apply_links(package.fgId, tool.instance_state(package.instances), plan)
-    assert not world.history
+    report = []
+    tool.apply_links(package.fgId, tool.instance_state(package.instances), plan, report=report)
+    assert world.updates == [1] and world.history and "8537" in report[0]
 
 
 def target_font(world: Any) -> Any:
@@ -1243,7 +1243,7 @@ def test_delivery_new_glyph_creation_and_one_outline_action(
 
     monkeypatch.setattr(sys.modules["fly"].pr, "call", add)
     result = tool.deliver(target, jobs, False)
-    assert result == {"created": 1, "glyphs": 1, "layers": 2, "unicode_changes": ["A"]}
+    assert result == {"pending_note": "", "created": 1, "glyphs": 1, "layers": 2, "unicode_changes": ["A"], "pending_updates": ()}
     assert calls == [
         (
             "set_glyph",
@@ -1283,12 +1283,12 @@ def test_delivery_preserves_existing_by_default_and_replaces_explicitly(
     )
     jobs = tool.delivery_plan(source, target, ["A"], "Light", True)
     world.package = target
-    assert tool.deliver(target, jobs, False) == {
+    assert tool.deliver(target, jobs, False) == {"pending_note": "", 
         "created": 0,
         "glyphs": 1,
         "layers": 2,
         "unicode_changes": [],
-    }
+    "pending_updates": ()}
     assert target.fgPackage[0].unicodes == [66], "Existing destination Unicode is kept"
     assert len(world.history) == 1
 
@@ -1721,7 +1721,7 @@ def test_delivery_unicode_collision_is_kept_while_other_glyph_copies(
     assert "U+0041" in jobs[0]["note"] and not jobs[1]["note"]
     world.package = target
     result = tool.deliver(target, jobs, False)
-    assert result == {"created": 0, "glyphs": 1, "layers": 2, "unicode_changes": []}
+    assert result == {"pending_note": "", "created": 0, "glyphs": 1, "layers": 2, "unicode_changes": [], "pending_updates": ()}
     assert target.fgPackage[0].unicodes == [67] and target.fgPackage[1].unicodes == []
     assert target.findName("A").findLayer("Light").advanceWidth == 500
     assert target.findName("B").findLayer("Light").advanceWidth == 410

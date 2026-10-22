@@ -21,19 +21,22 @@ move with it) and the advance gets the new width. A layer without outline is
 listed and skipped. A rule that gives a negative width is refused for that
 layer.
 
-Why: symmetric letters such as O, H, o and n, and many symbols, start with equal
-sidebearings. Setting both sides by hand in each master is slow and error prone.
+Why: symmetric letters such as O, H, o and n, and many symbols, start with
+equal
+sidebearings. Setting both sides by hand in each master is slow and error
+prone.
 
 How to use: select glyphs in the Font window. Choose the rule. Choose the
 current master or all masters. Check the table. Press Apply. The panel stays
 open. Press "Use selection" to read the Font window selection again.
 
-Safety: each Apply is recorded as one Undo step. Auto layers are listed and never edited. A
+Safety: each Apply is recorded as one Undo step. Auto layers are listed and
+never edited. A
 glyph that owns an auto layer is listed and skipped as a whole. Layers with a
 metrics link or expression are listed and skipped. A base of auto glyphs is
 refused, because FontLab rebuilds the auto glyphs and may lose their anchors
 and locks (FontLab issue 8512). Tick "Edit bases of auto glyphs anyway" to go
-on. Apply is refused while FontLab has pending glyph updates. After the write
+on. Apply discloses queued ids and their possible date changes. After the write
 the script reads advance and outline back and reports any mismatch. A failure
 after the write started says so and asks you to use Edit > Undo. It does not
 call UpdateAll (FontLab issue 8537).
@@ -54,5 +57,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9704dd23af73901f37698c224227a27df805baef1d76e7fa688a6bddb986d403.py)
+[Python source](../../../../.build/menu-sources/b55144e279944a16f5e662411f4b2bf02f29923af92d9e89509c8f12813c28b6.py)
 <!--/codeinclude-->

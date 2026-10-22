@@ -32,11 +32,11 @@ batch, before any history exists, when:
 - a glyph has an automatic layer, or is the base of an automatic composite,
   also through other composites (FontLab rebuilds the composite and Undo does
   not restore it);
-- FontLab holds queued glyph updates (they would alter other glyph dates).
 
 After the write, the script reads the result back and reports any gap.
 If FontLab fails part-way, the error says that native changes may remain.
-The edit is recorded as one Undo step. The plan, the safety checks, the one-step
+The edit is recorded as one Undo step. The plan, the safety checks, the
+one-step
 write and the panel base are shared with the other anchor scripts
 (fly.ap.anchor_writer, fly.ap.anchor_panel); the planner and the controls
 belong to this script.
@@ -52,5 +52,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f6182f69a7f055b8139f0cff1c0925686e7c5dd7a28fd748a381dcfe8fe72e35.py)
+[Python source](../../../../.build/menu-sources/8a1c9ca53a38b4c5e26d78c67d5ff310a863f00f55d5beb417134464e71ff7fe.py)
 <!--/codeinclude-->

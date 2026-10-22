@@ -75,7 +75,7 @@ def remove(package: Any, rows: list[Row]) -> dict[str, int]:
     """Remove the previewed sticker objects through one history commit."""
     ready = [row for row in rows if not row.note]
     if not ready:
-        return {"stickers": 0, "layers": 0}
+        return {"pending_updates": (), "pending_note": "", "stickers": 0, "layers": 0}
     kind = sticker_kind()
     for row in ready:
         if (
@@ -125,7 +125,7 @@ def remove(package: Any, rows: list[Row]) -> dict[str, int]:
         raise RuntimeError(
             "Some stickers remain. Native changes may remain; use Edit > Undo."
         )
-    return {"stickers": sum(len(row.stickers) for row in ready), "layers": len(ready)}
+    return {"pending_note": result.pending_note, "pending_updates": result.pending_updates, "stickers": sum(len(row.stickers) for row in ready), "layers": len(ready)}
 
 
 def panel_type() -> type:

@@ -1,6 +1,7 @@
 # this_file: Scripts/Contours/Tabular Figure Copies.py
 # SPDX-License-Identifier: Apache-2.0
-"""Create tabular (.tf) copies of the selected figures, with one shared width per master.
+"""Create tabular (.tf) copies of the selected figures, with one shared width per
+master.
 
 What it does:
     For each selected figure (zero to nine, also with a suffix such as
@@ -39,7 +40,7 @@ Why this design:
       components and no automatic layer. Otherwise the figure is listed and
       skipped, so the new glyphs stay compatible across masters.
     - A target name that exists is never overwritten.
-    - Create is refused while FontLab has pending glyph updates. The script
+    - Create discloses queued ids and their possible date changes. The script
       does not call UpdateAll (fl#8537).
     - FontLab can rebuild an automatic glyph when a new name appears. When
       the font has automatic glyphs without a recipe whose names carry the

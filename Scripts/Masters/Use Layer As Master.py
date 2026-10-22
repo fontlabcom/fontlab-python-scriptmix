@@ -13,19 +13,22 @@ How it works:
     (see "Display Next Layer"). So the script only renames. It renames the old
     master layer to the backup name, then the chosen layer to the master name,
     and renames their mask layers to match the FontLab mask-name rule
-    ("mask.<layer name>", or plain "mask" for the layer of a single-master font).
+    ("mask.<layer name>", or plain "mask" for the layer of a single-master
+    font).
     Shapes, anchors, guides and metrics stay in the layer objects. Nothing is
-    cloned, so nothing is lost. One notification covers all layers: one Undo step.
+    cloned, so nothing is lost. One notification covers all layers: one Undo
+    step.
 
 Why this design:
-    - Renaming keeps every property of both layers. The Glyphs original must copy
+    - Renaming keeps every property of both layers. The Glyphs original must
+      copy
       paths, components, anchors and sidebearing keys one by one.
     - Names are simulated before the first rename. A clash stops the run early.
     - If a rename fails, the script puts the old names back.
     - Locked, mask, service, automatic and image layers are refused. So is a
       glyph that has an automatic layer, or is a base of one (also through
-      manual composites): FontLab cannot undo it. So is a run while FontLab
-      has pending glyph updates. The shared module fly.ap.history does
+      manual composites): FontLab cannot undo it. Queued ids and their possible
+      date changes are disclosed. The shared module fly.ap.history does
       these checks and the one-step write.
 
 How to use:
@@ -165,11 +168,11 @@ def plan() -> list[dict[str, Any]]:
     return jobs
 
 
-def apply_renames(jobs: Sequence[dict[str, Any]]) -> None:
+def apply_renames(jobs: Sequence[dict[str, Any]], *, disclosure: dict[str, Any] | None = None) -> None:
     """Rename all planned layers in one history step. Restore names on failure.
 
     The shared App history commit refuses the whole run before any change when
-    FontLab has pending glyph updates, or when a glyph owns an automatic layer
+    a glyph owns an automatic layer
     or is a base of one (also through manual composites).
     """
     import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
@@ -195,15 +198,20 @@ def apply_renames(jobs: Sequence[dict[str, Any]]) -> None:
         return ()
 
     facts = history.scan_auto_facts(current_package())
-    history.commit(TITLE, layers, glyphs, mutate, operation="geometry", facts=facts)
+    _done = history.commit(TITLE, layers, glyphs, mutate, operation="geometry", facts=facts)
+    import fly.ap.edit_guards as _guards
+    _guards.disclose(_done, disclosure)
 
 
-def run() -> list[str]:
+def run(*, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Plan all swaps, then apply them. Return one message per glyph."""
     jobs = plan()
-    apply_renames(jobs)
+    import fly.ap.edit_guards as _guards
+    captured = {"pending_updates": (), "pending_note": ""}
+    apply_renames(jobs, disclosure=captured)
+    _guards.disclose(captured, disclosure)
     return [
-        f"{job['glyph'].name}: '{job['steps'][-1][1]}' is now the master layer"
+        _guards.append_note(f"{job['glyph'].name}: '{job['steps'][-1][1]}' is now the master layer", captured)
         for job in jobs
     ]
 
@@ -211,7 +219,7 @@ def run() -> list[str]:
 def main() -> None:
     """Menu entry. Print each result or the reason for a refusal."""
     try:
-        for line in run():
+        for line in run(disclosure={}):
             print(f"{TITLE}: {line}")
     except (ValueError, RuntimeError, TimeoutError) as error:
         print(f"{TITLE}: {error}")
