@@ -1,4 +1,4 @@
-# this_file: Scripts/Cleaning/Delete Stickers.py
+# this_file: Scripts/Cleanup/Delete Stickers.py
 # SPDX-License-Identifier: Apache-2.0
 """Remove FontLab stickers from all layers or master layers.
 

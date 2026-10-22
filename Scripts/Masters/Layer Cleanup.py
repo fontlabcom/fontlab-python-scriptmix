@@ -37,7 +37,7 @@ Why this design:
       read before the edit and retained in the notification. The deletion
       is recorded as one Undo step. Edit > Undo of removed components depends
       on FontLab (fl#7641).
-    - To clear the backgrounds of the whole font, use Cleaning > Clear All
+    - To clear the backgrounds of the whole font, use Cleanup > Clear All
       Layer Backgrounds or Clear Master Backgrounds: they check the whole
       font mapping first. This panel is for mixed cleanup of a selection.
     - Delete discloses queued ids and their possible date changes. The panel

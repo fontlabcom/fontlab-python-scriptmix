@@ -22,13 +22,13 @@ from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
 PATHS = [
-    "Cleaning/Start From Scratch.py",
+    "Cleanup/Start From Scratch.py",
     "Components/Decompose Serif Components.py",
     "Components/Make Lower Unicase.py",
     "Components/Set Default Figures.py",
     "Contours/Retract Handles.py",
     "Contours/Simplify Selected Nodes.py",
-    "Cleaning/Delete Stickers.py",
+    "Cleanup/Delete Stickers.py",
 ]
 ISOLATED = ("fly", "fontlabapp", "echopy", "fontpr")
 IDS = itertools.count(1)

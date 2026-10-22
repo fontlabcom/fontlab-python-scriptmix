@@ -25,17 +25,14 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Round To Grid](anchors/round-to-grid.md)
 - [Snap To Metrics](anchors/snap-to-metrics.md)
 
-## Cleaning
-
-- [Clear All Layer Backgrounds](cleaning/clear-all-layer-backgrounds.md)
-- [Clear Master Backgrounds](cleaning/clear-master-backgrounds.md)
-- [Delete Stickers](cleaning/delete-stickers.md)
-- [Start From Scratch](cleaning/start-from-scratch.md)
-
 ## Cleanup
 
+- [Clear All Layer Backgrounds](cleanup/clear-all-layer-backgrounds.md)
+- [Clear Master Backgrounds](cleanup/clear-master-backgrounds.md)
+- [Delete Stickers](cleanup/delete-stickers.md)
 - [Empty Layers](cleanup/empty-layers.md)
 - [Select Unreferenced Glyphs](cleanup/select-unreferenced-glyphs.md)
+- [Start From Scratch](cleanup/start-from-scratch.md)
 
 ## Components
 
@@ -258,11 +255,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Waterfall](proof/waterfall.md)
 - [Word Finder](proof/word-finder.md)
 
-## Reporters
-
-- [Duplicate Anchor Rings](reporters/duplicate-anchor-rings.md)
-- [Sidebearing Direction Marker](reporters/sidebearing-direction-marker.md)
-
 ## Reports
 
 - [Bracket Layers and Components](reports/bracket-layers-and-components.md)
@@ -271,6 +263,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Compare Open Font Revisions](reports/compare-open-font-revisions.md)
 - [Dangerous Offcurves](reports/dangerous-offcurves.md)
 - [Dump to Svg Path Commands](reports/dump-to-svg-path-commands.md)
+- [Duplicate Anchor Rings](reports/duplicate-anchor-rings.md)
 - [Empty Glyphs](reports/empty-glyphs.md)
 - [Font Overview](reports/font-overview.md)
 - [Glyph Table CSV](reports/glyph-table-csv.md)
@@ -281,6 +274,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Open Contours](reports/open-contours.md)
 - [Point Counter (Master Layers)](reports/point-counter-master-layers.md)
 - [Point Counter](reports/point-counter.md)
+- [Sidebearing Direction Marker](reports/sidebearing-direction-marker.md)
 - [Unicode Coverage](reports/unicode-coverage.md)
 - [Vertical Metrics Reporter](reports/vertical-metrics-reporter.md)
 - [Why You Not Compatible](reports/why-you-not-compatible.md)

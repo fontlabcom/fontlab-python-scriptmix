@@ -43,7 +43,7 @@ Why this design:
       read before the edit and retained in the notification. The deletion
       is recorded as one Undo step. Edit > Undo of removed components depends
       on FontLab (fl#7641).
-    - To clear the backgrounds of the whole font, use Cleaning > Clear All
+    - To clear the backgrounds of the whole font, use Cleanup > Clear All
       Layer Backgrounds or Clear Master Backgrounds: they check the whole
       font mapping first. This panel is for mixed cleanup of a selection.
     - Delete discloses queued ids and their possible date changes. The panel
@@ -69,5 +69,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/92eab2ba3768419ff073d859fc12e8af7bedfe22664765eb2f26a0a715921793.py)
+[Python source](../../../../.build/menu-sources/2eaafb42ee474e65bd0eb028f03e68bd3c5e043f06c0ebdec405859c724511e8.py)
 <!--/codeinclude-->

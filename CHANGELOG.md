@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 - Menu folder merge
+
+- Merge the Cleaning menu into Cleanup and Reporters into Reports (owner decision).
+
 ## 2026-10-22 - Glyph-window Undo scope and Refresh fixes
 
 - Selection To All Backgrounds: Refresh in a Glyph window reads the selection

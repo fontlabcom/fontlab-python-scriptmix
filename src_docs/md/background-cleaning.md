@@ -4,7 +4,7 @@ this_file: src_docs/md/background-cleaning.md
 
 # Clear Backgrounds Across a Font
 
-Open **Cleaning > Clear All Layer Backgrounds** to scan every glyph and every
+Open **Cleanup > Clear All Layer Backgrounds** to scan every glyph and every
 physical foreground layer in the current font. **Clear Master Backgrounds**
 includes only declared master layers, including non-interpolating masters.
 Auxiliary layers with interpolatable names are not treated as declared masters.

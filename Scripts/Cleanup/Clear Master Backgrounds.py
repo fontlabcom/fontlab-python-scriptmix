@@ -1,5 +1,5 @@
 # MenuTitle: Clear Master Backgrounds
-# this_file: Scripts/Cleaning/Clear Master Backgrounds.py
+# this_file: Scripts/Cleanup/Clear Master Backgrounds.py
 # SPDX-License-Identifier: Apache-2.0
 """Inspect every current-font glyph, then clear entire mapped backgrounds.
 
@@ -19,7 +19,7 @@ Why this design:
     backgrounds outside this cleaning operation.
 
 How to use:
-    Run Cleaning > Clear Master Backgrounds. Inspect the current-font preview,
+    Run Cleanup > Clear Master Backgrounds. Inspect the current-font preview,
     use Refresh after edits and press Clear for the shown master-layer
     proposal. Read the background-cleaning guide before use.
 

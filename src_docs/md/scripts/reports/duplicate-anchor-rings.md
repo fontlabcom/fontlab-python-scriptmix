@@ -1,7 +1,7 @@
 ---
-this_file: src_docs/md/scripts/reporters/duplicate-anchor-rings.md
-tags: ["Reporters"]
-categories: ["Reporters"]
+this_file: src_docs/md/scripts/reports/duplicate-anchor-rings.md
+tags: ["Reports"]
+categories: ["Reports"]
 ---
 
 # Duplicate Anchor Rings
@@ -19,12 +19,12 @@ reporter. Drawing is foreground across tools, with explicit handle sizes.
 Glyphs background ordering and text/hand-tool suppression are not provided.
 Shared capture, painting and native ownership live in Fontlabapp. See its NOTICE.
 
-Run **Reporters > Duplicate Anchor Rings** from FontLab's Scripts menu.
+Run **Reports > Duplicate Anchor Rings** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/54ef3ff781a4469741fb2f3e049a14bfec048d23c12919e43c508bce4ba24e7f.py)
+[Python source](../../../../.build/menu-sources/667544aeb7e91ca306bc65b88073108a3a2e5c5d51339a63155bc005499e4566.py)
 <!--/codeinclude-->

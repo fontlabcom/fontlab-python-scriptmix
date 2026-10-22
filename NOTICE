@@ -1460,16 +1460,16 @@ export states.
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
 
-Cleaning, Components and Contours tools after Pedro Arilla
+Cleanup, Components and Contours tools after Pedro Arilla
 ==========================================================
 
 Independent rewrites of scripts by Pedro Arilla, pedroarilla/glyphs-scripts,
 copyright 2017 (LICENSE.txt) and 2018-2022 (README) Pedro Arilla, Apache
 License 2.0 (https://github.com/pedroarilla/glyphs-scripts):
 
-- Cleaning/Delete Stickers: Cleaning/Delete annotations in all layers.py and
+- Cleanup/Delete Stickers: Cleaning/Delete annotations in all layers.py and
   Delete annotations in all master layers.py.
-- Cleaning/Start From Scratch: Cleaning/Start-from-scratch.py.
+- Cleanup/Start From Scratch: Cleaning/Start-from-scratch.py.
 - Components/Decompose Serif Components: Components/Decompose all serif
   components.py.
 - Components/Make Lower Unicase: Components/Make lower-unicase font.py, based

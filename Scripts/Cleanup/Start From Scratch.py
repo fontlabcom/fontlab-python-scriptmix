@@ -1,4 +1,4 @@
-# this_file: Scripts/Cleaning/Start From Scratch.py
+# this_file: Scripts/Cleanup/Start From Scratch.py
 # SPDX-License-Identifier: Apache-2.0
 """Clear chosen glyph data to prepare a fresh design.
 

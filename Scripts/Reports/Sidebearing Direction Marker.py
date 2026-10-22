@@ -1,12 +1,6 @@
----
-this_file: src_docs/md/scripts/reporters/sidebearing-direction-marker.md
-tags: ["Reporters"]
-categories: ["Reporters"]
----
-
-# Sidebearing Direction Marker
-
-Mark each laid-out glyph's advance edge in the active FontLab Glyph window.
+# this_file: Scripts/Reports/Sidebearing Direction Marker.py
+# SPDX-License-Identifier: Apache-2.0
+"""Mark each laid-out glyph's advance edge in the active FontLab Glyph window.
 
 What it does:
     Open a Glyph window, then run this script. Choose LTR or RTL explicitly.
@@ -28,20 +22,26 @@ Why this design:
     left-to-right; the overlay remains separate from font data.
 
 How to use:
-    Open a Glyph window and run Reporters > Sidebearing Direction Marker.
+    Open a Glyph window and run Reports > Sidebearing Direction Marker.
     Choose LTR or RTL and enable the overlay; use Disable or Close to remove
     it.
 
 Benefit:
     Inspect advance edges across tools without adding guides or altering glyph
     spacing.
+"""
 
-Run **Reporters > Sidebearing Direction Marker** from FontLab's Scripts menu.
+from typing import Any
 
-Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
+from fly.ap.scripting import canvas_rsb_dialog_type, show_script_dialog
 
-## Source
+TITLE, KEY = "Sidebearing Direction Marker", "canvas_right_sidebearing_line"
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/845f7ca8252c781addff8874bfaff9b0dcfa7ac725bf0e9aa0cb8383ade7eee5.py)
-<!--/codeinclude-->
+
+def main() -> Any:
+    """Replace only this reporter's owned panel; preserve other open tools."""
+    return show_script_dialog(canvas_rsb_dialog_type(), KEY)
+
+
+if __name__ == "__main__":
+    main()

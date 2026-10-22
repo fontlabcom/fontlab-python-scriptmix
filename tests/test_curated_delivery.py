@@ -18,6 +18,10 @@ def test_active_menu_contains_only_indexed_practical_tools():
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
     assert len(rows) == 69 and len(extra) == 171 and len(actual) == 240
+    assert {path.parent.name for path in (ROOT / "Scripts").glob("*/*.py")} == {
+        "Anchors", "Cleanup", "Components", "Contours", "Features", "Font Info",
+        "Guides", "Kerning", "Masters", "Metrics", "Names", "Proof", "Reports", "Utilities",
+    }, "The menu must contain exactly the 14 merged categories"
     for relative in actual:
         path = ROOT / relative
         assert len(Path(relative).parts) == 3, relative
@@ -104,7 +108,7 @@ NEW_TOOLS = {
                    "Copy Offsets Between Masters", "Unlock Lock", "Nested Finder",
                    "Decompose Named Components", "Set Component Locations",
                    "Decompose Serif Components", "Make Lower Unicase", "Set Default Figures"],
-    "Cleanup": ["Empty Layers"],
+    "Cleanup": ["Empty Layers", "Start From Scratch", "Delete Stickers"],
     "Contours": ["Round Coordinates", "Remove Overlap", "Add Extremes", "Correct Contour Direction",
                  "Straighten Short Curves", "Optimize Start Points", "Delete Small Contours",
                  "Fix Zero Handles", "Delete Duplicate Contours", "Transform", "Slant",
@@ -122,7 +126,6 @@ NEW_TOOLS = {
     "Kerning": ["Kerning Energy Report", "Unbundle Punctuation Kerning",
                 "Delete Kerning Pair From All Masters", "Kern To Max", "Steal Kerning From Next Pair"],
     "Features": ["Nastaliq Connection Editor", "Generate Random Alternates Feature"],
-    "Cleaning": ["Start From Scratch", "Delete Stickers"],
 }
 
 

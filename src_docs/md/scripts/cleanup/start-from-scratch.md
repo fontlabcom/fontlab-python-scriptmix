@@ -1,7 +1,7 @@
 ---
-this_file: src_docs/md/scripts/cleaning/start-from-scratch.md
-tags: ["Cleaning"]
-categories: ["Cleaning"]
+this_file: src_docs/md/scripts/cleanup/start-from-scratch.md
+tags: ["Cleanup"]
+categories: ["Cleanup"]
 ---
 
 # Start From Scratch
@@ -28,12 +28,12 @@ Cleaning/Start-from-scratch.py, Apache-2.0.
 Repository: https://github.com/pedroarilla/glyphs-scripts . No source code
 copied.
 
-Run **Cleaning > Start From Scratch** from FontLab's Scripts menu.
+Run **Cleanup > Start From Scratch** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b54f8259cd54dca55d8d876bf95c596810a13ce49f0d96fe1f6d2cf8e67b0479.py)
+[Python source](../../../../.build/menu-sources/9d7ee77ef3f3becc3b00543225a814f1c48347b0346c8ae5d0d7af84887e8ff2.py)
 <!--/codeinclude-->

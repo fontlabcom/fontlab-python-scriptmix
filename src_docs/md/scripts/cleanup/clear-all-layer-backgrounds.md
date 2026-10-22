@@ -1,7 +1,12 @@
-# MenuTitle: Clear All Layer Backgrounds
-# this_file: Scripts/Cleaning/Clear All Layer Backgrounds.py
-# SPDX-License-Identifier: Apache-2.0
-"""Inspect every current-font glyph, then clear entire mapped backgrounds.
+---
+this_file: src_docs/md/scripts/cleanup/clear-all-layer-backgrounds.md
+tags: ["Cleanup"]
+categories: ["Cleanup"]
+---
+
+# Clear All Layer Backgrounds
+
+Inspect every current-font glyph, then clear entire mapped backgrounds.
 
 What it does:
     All physical foreground layers are included. Refresh rereads the original
@@ -19,23 +24,20 @@ Why this design:
     outlines, so the preview shows the actual mapped scope.
 
 How to use:
-    Run Cleaning > Clear All Layer Backgrounds. Inspect the preview for the
+    Run Cleanup > Clear All Layer Backgrounds. Inspect the preview for the
     current font, use Refresh after changes and press Clear only for the shown
     proposal. Read the background-cleaning guide for supported domains.
 
 Benefit:
     Clear mapped backgrounds across foreground layers in one recorded history
     batch.
-"""
-from typing import Any
 
+Run **Cleanup > Clear All Layer Backgrounds** from FontLab's Scripts menu.
 
-def main() -> Any:
-    """Open the complete nonmodal FontLab background-cleaning workflow."""
-    from fly.ap.background_clear import show_all
+Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-    return show_all()
+## Source
 
-
-if __name__ == "__main__":
-    main()
+<!--codeinclude-->
+[Python source](../../../../.build/menu-sources/0cf8c953961d3bdf67d6669f422de97f4bc199bfd1021a6a64c4c6cd6ea631e8.py)
+<!--/codeinclude-->

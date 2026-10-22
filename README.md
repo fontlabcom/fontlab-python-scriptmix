@@ -6,11 +6,11 @@ this_file: README.md
 
 240 practical tools for FontLab 9: 69 sample adaptations and 171 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
-PythonQt and shared App helpers. The menu has 16 one-level categories.
+PythonQt and shared App helpers. The menu has 14 one-level categories.
 
 Current source includes Metrics, Names and Anchors editors; component writers;
 master navigation, backups and layer copying; contour editing, generators and
-hint tools; feature tools; kerning editors; proof texts; reports and reporters.
+hint tools; feature tools; kerning editors; proof texts; reports and drawing panels.
 The [porting backlog](PORTING-BACKLOG.md) records source dispositions and gaps.
 
 New ports require native acceptance. Source tests do not establish correct

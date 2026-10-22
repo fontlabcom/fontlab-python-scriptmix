@@ -14,7 +14,7 @@ ROOT=Path(__file__).parents[1]
 def test_complete_scope_dispatch_and_original_pins(monkeypatch,title,method):
     calls=[]
     monkeypatch.setitem(sys.modules,'fly.ap.background_clear',S(**{method:lambda:calls.append(method) or 'owned'}))
-    destination=f'Scripts/Cleaning/{title}.py'
+    destination=f'Scripts/Cleanup/{title}.py'
     module=runpy.run_path(str(ROOT/destination));assert not calls
     assert module['main']()=='owned'
     runpy.run_path(str(ROOT/destination),run_name='__main__')

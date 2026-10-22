@@ -2,6 +2,53 @@
 this_file: WORK.md
 ---
 
+## Final round F - owner decision D27 (2026-10-22)
+
+- Merge Cleaning into Cleanup and Reporters into Reports using plain file
+  moves after a complete filename-collision check. Six menu sources and two
+  reporter __pycache__ files moved without overwriting; the old directories
+  are gone. The 240 scripts now occupy exactly 14 Title Case categories.
+- Update moved this_file headers, visible menu instructions, current manifest
+  routes, backlog destinations, notice destination labels, README/PLAN counts,
+  pre-integration guide, background guide and four path/layout tests. Preserve
+  third-party Cleaning source identities and all source/historical hashes.
+- Regenerate the source-backed catalogue with src_docs/build.py::catalogue:
+  move six pages, merge both section indexes and rebuild the catalogue index;
+  refresh the Layer Cleanup page. awesome-nav derives sections from these
+  directories, so the authored navigation needs no separate path edit.
+- The requested Examples path sweep found no matches; no Examples file edited.
+  No rescued content or Git state was changed; no Git command was invoked
+  directly. Docs distribution tests exercise their own scratch repositories.
+- Verification: MIX 3,831 passed / 2 skipped, EXIT=0; EX core 1,747 passed /
+  92 skipped plus R 496 passed / 7 skipped, EXIT=0/0; Scriptmix docs 10 passed,
+  exit 0. The supplied gates first failed at the unwritable configured uv
+  cache; rerun copies retain their complete bodies and override only cache/tmp
+  paths after env.sh (plus disable bytecode). Docs require Homebrew first on
+  PATH because /usr/bin/git fails in this host toolchain.
+- Wait, but: this is a menu-path/documentation change, with offline gate proof;
+  it adds no native FontLab behaviour claim. All 240 current destination pins,
+  merged documentation headers/links and the exact 14-folder set pass audit.
+  No unresolved item remains in this round.
+
+Moved menu sources:
+
+- `Scripts/Cleaning/Delete Stickers.py` -> `Scripts/Cleanup/Delete Stickers.py`
+- `Scripts/Cleaning/Clear Master Backgrounds.py` -> `Scripts/Cleanup/Clear Master Backgrounds.py`
+- `Scripts/Cleaning/Start From Scratch.py` -> `Scripts/Cleanup/Start From Scratch.py`
+- `Scripts/Cleaning/Clear All Layer Backgrounds.py` -> `Scripts/Cleanup/Clear All Layer Backgrounds.py`
+- `Scripts/Reporters/Duplicate Anchor Rings.py` -> `Scripts/Reports/Duplicate Anchor Rings.py`
+- `Scripts/Reporters/Sidebearing Direction Marker.py` -> `Scripts/Reports/Sidebearing Direction Marker.py`
+
+Refreshed `additional-tools.json` destination pins (the only changed pins):
+
+- `Scripts/Reports/Sidebearing Direction Marker.py`: `5202f5b21310833341a887b10e8a8bb36cf58272cd4a5ec058e58bd685f86944`
+- `Scripts/Reports/Duplicate Anchor Rings.py`: `667544aeb7e91ca306bc65b88073108a3a2e5c5d51339a63155bc005499e4566`
+- `Scripts/Cleanup/Clear All Layer Backgrounds.py`: `0cf8c953961d3bdf67d6669f422de97f4bc199bfd1021a6a64c4c6cd6ea631e8`
+- `Scripts/Cleanup/Clear Master Backgrounds.py`: `2057d0f8b04cf41146b4328247f417856a1da85a663147065eddf056ee177de5`
+- `Scripts/Masters/Layer Cleanup.py`: `2eaafb42ee474e65bd0eb028f03e68bd3c5e043f06c0ebdec405859c724511e8`
+- `Scripts/Cleanup/Start From Scratch.py`: `9d7ee77ef3f3becc3b00543225a814f1c48347b0346c8ae5d0d7af84887e8ff2`
+- `Scripts/Cleanup/Delete Stickers.py`: `d7edf968a9ea1df73db7d15d0f1e94001dd5d1e6c9c4af13fafd86c3d30e2492`
+
 ## Scoped round-B re-review, fix round 1 (2026-10-22)
 
 - Read roundB-rereview.md and the corrected App masters/selection-panel code.
@@ -535,7 +582,7 @@ PATH="$PWD/.venv/bin:/opt/homebrew/bin:$PATH" \
 
 ## 2026-10-18: Two additional foreground reporter candidates
 
-Added only two thin lazy Reporters menu scripts, separate additional-tools.json,
+Added only two thin lazy Reports menu scripts, separate additional-tools.json,
 scoped routing/provenance tests and documentation. Original migration.json SHA
 ef87bc7a69eef091a3061dfed5fee748631edca8576b6fdf0c2ebf9a99cff415 and all68
 payload hashes stay exact. Universe check is the strict disjoint union of68

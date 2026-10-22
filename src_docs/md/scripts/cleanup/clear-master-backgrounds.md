@@ -1,7 +1,7 @@
 ---
-this_file: src_docs/md/scripts/cleaning/clear-master-backgrounds.md
-tags: ["Cleaning"]
-categories: ["Cleaning"]
+this_file: src_docs/md/scripts/cleanup/clear-master-backgrounds.md
+tags: ["Cleanup"]
+categories: ["Cleanup"]
 ---
 
 # Clear Master Backgrounds
@@ -24,7 +24,7 @@ Why this design:
     backgrounds outside this cleaning operation.
 
 How to use:
-    Run Cleaning > Clear Master Backgrounds. Inspect the current-font preview,
+    Run Cleanup > Clear Master Backgrounds. Inspect the current-font preview,
     use Refresh after edits and press Clear for the shown master-layer
     proposal. Read the background-cleaning guide before use.
 
@@ -32,12 +32,12 @@ Benefit:
     Remove mapped master backgrounds in one recorded history batch while
     retaining auxiliary scope boundaries.
 
-Run **Cleaning > Clear Master Backgrounds** from FontLab's Scripts menu.
+Run **Cleanup > Clear Master Backgrounds** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b7764eb03a1e3f9670344fcd247a00157bd5f7f462423306bf264a3715cee4aa.py)
+[Python source](../../../../.build/menu-sources/2057d0f8b04cf41146b4328247f417856a1da85a663147065eddf056ee177de5.py)
 <!--/codeinclude-->

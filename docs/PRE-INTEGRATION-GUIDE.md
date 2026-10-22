@@ -7,7 +7,7 @@ Small and useful scripts for FontLab
 
 ## Canvas reporters
 
-Reporters contains Sidebearing Direction Marker and Duplicate Anchor Rings.
+Reports contains Sidebearing Direction Marker and Duplicate Anchor Rings.
 Requires fontlab-fontlabapp 0.2.23 or newer and fontlab-fly.
 Open a Glyph window, run either script, then choose direction or handle size.
 Disable or Close removes its overlay. Reopen after switching font, master or

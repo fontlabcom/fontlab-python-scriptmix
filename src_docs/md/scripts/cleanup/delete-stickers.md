@@ -1,7 +1,7 @@
 ---
-this_file: src_docs/md/scripts/cleaning/delete-stickers.md
-tags: ["Cleaning"]
-categories: ["Cleaning"]
+this_file: src_docs/md/scripts/cleanup/delete-stickers.md
+tags: ["Cleanup"]
+categories: ["Cleanup"]
 ---
 
 # Delete Stickers
@@ -23,12 +23,12 @@ Cleaning/Delete annotations in all layers.py and Delete annotations in all
 master layers.py, Apache-2.0. Repository:
 https://github.com/pedroarilla/glyphs-scripts . No source code copied.
 
-Run **Cleaning > Delete Stickers** from FontLab's Scripts menu.
+Run **Cleanup > Delete Stickers** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a133ca080445c48bef1aeb258da2683d3e8b0f9d3b0fcb461d6ff0b4e6e6e0f6.py)
+[Python source](../../../../.build/menu-sources/d7edf968a9ea1df73db7d15d0f1e94001dd5d1e6c9c4af13fafd86c3d30e2492.py)
 <!--/codeinclude-->

@@ -1,4 +1,4 @@
-# this_file: Scripts/Reporters/Duplicate Anchor Rings.py
+# this_file: Scripts/Reports/Duplicate Anchor Rings.py
 # SPDX-License-Identifier: Apache-2.0
 """Highlight anchor pairs less than one font unit apart in the Glyph window.
 
