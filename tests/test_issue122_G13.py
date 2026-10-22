@@ -519,11 +519,14 @@ def test_report_main_report_no_font_refusal_and_exact_report(
         monkeypatch, batch, "snapshot_kerning", lambda package, *, typed=False: source
     )
     patch_app(monkeypatch, batch, "ensure_snapshot", lambda package, expected: source)
+    report_parameters = inspect.signature(reports.show_report).parameters
     shown = patch_app(
         monkeypatch,
         reports,
         "show_report",
-        lambda report, *, title="Report", key="json-report": report,
+        lambda report, *, title="Report", key="json-report", deadline=None,
+        clock=report_parameters["clock"].default,
+        cancelled=report_parameters["cancelled"].default: report,
     )
     report = tool.run()
     assert report["energy"] == 6400

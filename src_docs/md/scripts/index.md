@@ -258,6 +258,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 ## Reports
 
 - [Bracket Layers and Components](reports/bracket-layers-and-components.md)
+- [Case Coverage](reports/case-coverage.md)
 - [Categories to XML Lib Key](reports/categories-to-xml-lib-key.md)
 - [Close But No Cigar](reports/close-but-no-cigar.md)
 - [Compare Open Font Revisions](reports/compare-open-font-revisions.md)

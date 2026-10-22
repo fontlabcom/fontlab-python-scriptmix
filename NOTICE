@@ -1508,3 +1508,16 @@ Changes: detached FontLab capture and owned non-modal report; corrected
 Boolean counterpart test, complete suffix preservation and Unicode casing;
 unknown mappings and ambiguous group membership explicitly disclosed.
 Export scope uses public.skipExportGlyphs compatibility policy.
+
+Case Coverage (issue 123 P2 candidate)
+--------------------------------------
+Reimplements the controls, detached case analysis, diagnostics and proof-target
+workflow of mekkablue/Glyphs-Scripts/Glyph Names, Notes and Unicode/
+Casefolding Report.py, https://github.com/mekkablue/Glyphs-Scripts, Apache-2.0.
+Source SHA-256 b9285d7bfdcbc8b21f368959705a786d931828d55ff33a153853898a4c4f25e7.
+LICENSE SHA-256 bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec.
+No original body is redistributed. Corrected multi-character ord failure;
+retained i_dotaccentcomb→i and SS→Germandbls compatibility. Caller-supplied
+maintained GlyphData categories/canonical names stay outside generic App.
+Native exact text-block binding/proof usability remains unqualified; explicit
+inactive-view choice is a documented FontLab adaptation, not Glyphs MRU parity.

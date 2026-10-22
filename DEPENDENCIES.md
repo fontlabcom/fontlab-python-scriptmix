@@ -97,3 +97,14 @@ Font Info/Trial Font Maker needs the public fontTools package in FontLab's Pytho
 site-packages (fontlab-fontport installs it as a dependency). FontLab's private
 fontTools namespace does not satisfy the import; without the package the tool
 shows an install hint for Settings > Python. No other dependency is added.
+
+## Issue123 Case Coverage candidate
+
+Case Coverage uses the existing FontLab/Fly/App stack plus fontlab-glyport and
+its declared glyphsLib dependency for maintained GlyphData category/canonical
+metadata. The caller owns that policy; generic App imports neither Glyport nor
+GlyphData. No new package requirement is added to App. Native proof operations
+require the reviewed matching App source commit in additional-tools.json; a
+version label alone does not establish the typed text-block binding or native
+proof usability. Tests use owned doubles; a separate real GlyphData metadata
+probe is retained in the external report.

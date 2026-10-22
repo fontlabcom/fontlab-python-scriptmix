@@ -2,6 +2,109 @@
 this_file: WORK.md
 ---
 
+## Issue 123 P2 — final Scriptmix source receipt
+
+- Final matching App commit: `9441886b10c54d9bf6998c2c528200afc4f21bbd`.
+  New Case Coverage source SHA-256:
+  `fdab954a270ea6f738085dd8ba826168cc58f6d39a8ade49215ffe365ac6278f`.
+  The new manifest row binds both; all172prior records/pins/scripts preserved.
+- Final frozen full command from workspace root:
+  `rtk proxy sh -c 'UV_NO_CACHE=1 .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-python-scriptmix fontlab-python-scriptmix > /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-mix-gate-final-r2.log 2>&1'`
+  exit0,4325passed/6skips, .metaswarm/runs/fontlab-python-scriptmix.OGZgm6;
+  menu35statements/10branches100%, zero exclusions/pragmas. Expected warning:
+  this menu collection has no imported src package; Scripts are measured.
+- Final docs tests: same exact arm64 docs command below, output
+  case-coverage-docs-final.log; exit0,10passed. Only new source page/indexes
+  changed; no full site build/publication claim.
+- Final F821 lint on new menu/test and adjusted G13 fake: exit0; final
+  Python3.11 AST/compile/annotations/docstrings and git diff --check exit0.
+- Real metadata probe command (Scriptmix cwd, external cache/TMP and App/Fly/
+  Glyport source PYTHONPATH):
+  `uv run --no-project --python cpython-3.11-macos-aarch64-none --with glyphslib python -B /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-metadata-probe.py`
+  exit0; glyphsLib6.16.2 actual glyphdata.py SHA-256
+  d695df716d88946ac6b83db5d659e83aa5e7a09f18905dc4bbbe04198ad2d23d;
+  actual Math/Ligature/known/unknown and expansion metadata verified, no
+  original corpus body executed and no native FontLab call.
+- DONE_WITH_CONCERNS candidate source only: exact native model binding and
+  proof usability remain root-owned acceptance holds. Final local commit tuple
+  and all source hashes are external in case-coverage-report.md and
+  case-coverage-source-manifest.json. No push, merge or canonical change.
+
+## Issue 123 P2 — final bounded-loop correction
+
+- Audited every P2 Python loop. Shared crossfont_anchors_capture.fonts now
+  accepts an optional checkpoint, checked inside registered package/font/master/
+  glyph-name loops while retaining default call behavior/order/filtering. P2
+  propagates action deadline (final minus0.5s) and cancellation through carriers,
+  alternative Unicode/fact validation/alias walks/caller metadata/proof staging,
+  dynamic target choices/status/cleanup and complete JSON serialization.
+- Regression RED: `tests/test_case_coverage_deadline_pass.py`, exit1, retained
+  case-coverage-deadline-pass-red.log. GREEN focused App+Reports+Crossfont:
+  same explicit arm64/external-cache pytest-cov command as below, adding
+  tests/test_crossfont_anchors_native.py, --cov=src/fontlabapp and external
+  case-coverage-deadline-focus.json; exit0,74passed. The bounded-loop audit is
+  issue123/sdd/case-coverage-deadline-loop-audit.md. No cap/truncation/exclusion.
+- Final frozen App gate:
+  `rtk proxy sh -c 'UV_NO_CACHE=1 .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-fontlabapp fontlab-fontlabapp > /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-app-gate-final-r2.log 2>&1'`
+  exit0,6627passed/76warnings; .metaswarm/runs/fontlab-fontlabapp.QHJ1hu.
+  All11changed modules pass80%combined with zero exclusions/pragmas. Coverage:
+  engine96.99,capture93.71,cleanup91.18,controller94.55,panel96.36,
+  proof90.91,settings100,targets100,views98.92,crossfontcapture97.11,reports100.
+- First Scriptmix gate exposed the old G13 show_report fake signature, exit1,
+  4323passed/6skips plus1failure. Updated only the fake's exact keyword-only
+  optional parameters/default objects; all parameter_shape/autospec/source/pin/
+  equality assertions remain intact. Focused contract exit0,5passed; subsequent
+  pre-deadline-correction full gate exit0,4324passed/6skips. These older receipts
+  remain history; final matching App/menu gate and source tuple are recorded in
+  issue123/sdd/case-coverage-report.md after terminal completion.
+- Still no native calls, canonical changes, live installation, merges or pushes.
+  Native typed text-block binding/proof usability remains unqualified. Root's
+  latest readonly host readiness is empty; no current owner-font blocker is
+  claimed. Native operations remain root-coordinated after artifact/source review.
+
+## Issue 123 P2 — Case Coverage candidate (2026-10-22)
+
+- Read complete original Casefolding Report and actual Apache-2.0 licence;
+  hashes match the brief. Retain original four controls/defaults/persistence,
+  current/all-font reports, explicit Unicode aliases/expansions, actual Math/
+  Ligature metadata, export asymmetry, complete diagnostics and ordered repeats.
+- Candidate proof workflow uses exact model ids, explicit inactive-view choices,
+  actual-content verification and bounded retained cleanup. Typed active-model
+  binding/native proof usability is HELD; source/mock success is not acceptance.
+- Self-review fixed loss of complete analysis on proof failure, stale Details
+  after new capture failure, and unbounded asdict/JSON serialization. Shared
+  reports.py optional budgets preserve default text/API behavior; check every
+  encoder chunk and before/after native show. No rows truncated.
+- TDD RED receipts for engine/capture/settings/panel/controller/targets/proof/
+  cleanup and alias/retained-report/budget regressions live externally under
+  issue123/sdd/case-coverage-*.log. Menu was source-first, then tested.
+- Final App full command from workspace root:
+  `rtk proxy sh -c 'UV_NO_CACHE=1 .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-fontlabapp fontlab-fontlabapp > /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-app-gate-final.log 2>&1'`
+  exit0,6624passed/76warnings; .metaswarm/runs/fontlab-fontlabapp.YkvI7A;
+  all10 changed modules >=80% combined, zero exclusions/pragmas. Earlier
+  6619pass/9module gate retained as pre-correction iteration, not final receipt.
+- Final focused App command (App cwd, external UV_CACHE_DIR/TMPDIR,
+  QT_QPA_PLATFORM=offscreen, PYTHONPATH=src, PYTEST_DISABLE_PLUGIN_AUTOLOAD=1,
+  external COVERAGE_FILE):
+  `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with pytest-cov --with PySide6-Essentials python -B -m pytest -q -p no:cacheprovider -p pytest_cov tests/test_case_coverage*.py tests/test_reports.py --cov=src/fontlabapp --cov-branch --cov-report=json:/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-final-focus.json --cov-report=`
+  exit0,45passed; final-focus.log/json. Per-module final combined: engine97.08,
+  capture93.69, cleanup91.04, controller93.88, panel95.90, proof89.26,
+  settings100, targets100, views98.84, reports100.
+- Scriptmix source/menu/provenance focused exit0,16passed; corrected directory
+  coverage run3passed/22statements+8branches100%. Initial --cov=file collected
+  no data and is explicitly not coverage evidence. All172 prior manifest rows,
+  source pins and script hashes retained; new menu count242=69+173.
+- Existing docs catalogue generator wrote only the new source page/indexes.
+  Scriptmix docs command (same external cache/TMP; PATH=/opt/homebrew/bin:$PATH):
+  `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs`
+  exit0,10passed; case-coverage-docs.log.
+- No native call, descendant, canonical edit, live install, merge or push.
+  Exact API/semantic/source-hash report and final Scriptmix/commit receipt:
+  /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-report.md.
+- Wait, but: exact flTextBlockItem model access and inactive multiple-block
+  activation remain capability-gated/native-held. A refusal does not finish the
+  practical native port. Root retains owned-fixture and final review gates.
+
 ## Issue 123 P1 fix round 1 — independent legacy lowercase check
 
 - Review I1: modern `.sc`/`.smcp` acceptance omitted independent legacy

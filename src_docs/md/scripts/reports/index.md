@@ -1,6 +1,7 @@
 # Reports
 
 - [Bracket Layers and Components](bracket-layers-and-components.md)
+- [Case Coverage](case-coverage.md)
 - [Categories to XML Lib Key](categories-to-xml-lib-key.md)
 - [Close But No Cigar](close-but-no-cigar.md)
 - [Compare Open Font Revisions](compare-open-font-revisions.md)

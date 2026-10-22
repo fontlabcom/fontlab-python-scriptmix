@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab practical scripts
 
-241 practical tools for FontLab 9: 69 sample adaptations and 172 additional
+242 practical tools for FontLab 9: 69 sample adaptations and 173 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 14 one-level categories.
 
@@ -20,6 +20,12 @@ their separate checks. Menu counts describe available source files.
 
 Writers disclose queued native glyph ids and the possible modification-date changes
 (FontLab issue 8537). They never clear the queue or normalise unrelated dates.
+
+Case Coverage provides the original four report controls, complete detached
+case diagnostics and an explicit existing-view chooser when inactive views are
+ambiguous. GlyphData metadata is supplied by the Scriptmix caller. Exact native
+text-block binding and proof usability remain unqualified; a capability refusal
+is not native acceptance.
 
 ## Requirements and installation
 

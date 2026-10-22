@@ -2,6 +2,13 @@
 this_file: PLAN.md
 ---
 
+## Case Coverage P2 candidate
+
+Complete the owned installed-font proof protocol, including typed text-block
+normalization, active panel/context restoration, multiple inactive views and
+multi-block refusal/activation. Source controls, analysis and explicit target
+choice do not establish native usability or Glyphs remembered-tab equivalence.
+
 ## Smallcap Consistency
 
 Modern and legacy report source workflows are implemented with detached facts.
@@ -16,7 +23,7 @@ non-modal panels. Keep source provenance and native acceptance separate.
 
 ## Done
 
-The menu has 241 tools in 14 categories: 69 sample adaptations and 172 additional
+The menu has 242 tools in 14 categories: 69 sample adaptations and 173 additional
 tools. Shared Metrics, Names, Anchors, Components, Masters and Contours clients,
 Glyphs-script rewrites, feature-source routing and backup/copy/rounding extensions
 are present. Historical source records and optional external archive audits are

@@ -3095,5 +3095,22 @@
     "native_acceptance": "pending",
     "source_body_redistributed": false,
     "app_source_commit": "f1624437365951dfbecf40e282a2c33a6c6144e3"
+  },
+  {
+    "title": "Case Coverage",
+    "key": "case_coverage",
+    "destination": "Scripts/Reports/Case Coverage.py",
+    "destination_sha256": "fdab954a270ea6f738085dd8ba826168cc58f6d39a8ade49215ffe365ac6278f",
+    "kind": "report-proof-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/mekkablue/Glyphs-Scripts",
+    "source": "Glyph Names, Notes and Unicode/Casefolding Report.py",
+    "source_sha256": "b9285d7bfdcbc8b21f368959705a786d931828d55ff33a153853898a4c4f25e7",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "scope": "Candidate full controls/analysis/current-all-font reports and exact proof target workflow. Canonical/encoded aliases, expansion compatibility, export asymmetry, Math/Ligature/unknown diagnostics and repeated source order. Explicit inactive-view chooser replaces unavailable Glyphs per-font MRU semantics. Typed text-block binding and actual native proof usability remain HELD; no native/full-port acceptance.",
+    "native_acceptance": "pending",
+    "source_body_redistributed": false,
+    "app_source_commit": "9441886b10c54d9bf6998c2c528200afc4f21bbd"
   }
 ]

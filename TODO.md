@@ -2,6 +2,8 @@
 this_file: TODO.md
 ---
 
+- [ ] Qualify installed Case Coverage controls/persistence, complete font/history preservation, exact model binding, current/all-font proofs, inactive-view chooser, repeated glyph/layer content, no-op refusal, bounded cleanup/failure fence and owned report lifetime.
+
 - [ ] Qualify installed Smallcap Consistency: export-policy/case disclosures, complete modern and legacy findings, both kerning-group sides, deadline/stale refusal, repeat refresh and destruction, complete-font preservation.
 
 # Open work

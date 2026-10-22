@@ -2,6 +2,11 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 — Case Coverage candidate
+
+- Add full original controls, persistent owned settings, current/all-font detached case reports, explicit aliases/Unicode alternatives/Math/Ligature/unknown findings and multi-character compatibility fixes.
+- Add explicit exact-view target choices and source-backed proof mechanics with content verification and bounded retained cleanup. Native text-block binding and actual proof usability remain held; no native/full-port acceptance claimed.
+
 ## 2026-10-22 — Separate legacy lowercase coverage
 
 - Report legacy lowercase-to-`.sc` gaps separately from modern `.sc`/`.smcp` acceptance; retain export filtering and font order. Correct the Scriptmix menu total to 241.

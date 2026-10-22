@@ -223,3 +223,16 @@ Native timing, complete-font preservation,
 installed origins, repeat refresh and report destruction still need owned-font
 qualification. Synchronous getters cannot be preempted; budget checks on return
 refuse partial output. This one port does not complete the wider corpus.
+
+## Issue 123: Case Coverage candidate
+
+| Source | SHA-256 | Destination | Disposition |
+| --- | --- | --- | --- |
+| mekkablue/Glyphs-Scripts/Glyph Names, Notes and Unicode/Casefolding Report.py | `b9285d7bfdcbc8b21f368959705a786d931828d55ff33a153853898a4c4f25e7` | Reports/Case Coverage.py | Candidate complete controls and detached analysis, exact proof choices; actual native text-block binding/proof usability HELD. No native/full-port or automatic MRU-equivalence claim. |
+
+All four defaults and option persistence are preserved. Multiple encodings are
+alternatives; expansions retain complete strings. Preferred names precede
+encoded aliases; ambiguities, math, ligatures and unknowns remain visible.
+The public.skipExportGlyphs export policy is compatibility-only. Inactive
+ambiguous FontLab views require explicit selection because hidden Glyphs
+remembered-current ordering has no equivalent exposed binding.
