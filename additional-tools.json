@@ -3094,6 +3094,6 @@
     "scope": "Both modern and legacy report workflows: export census, missing and orphan counterparts, two-sided capital kerning groups. Correct Boolean counterpart logic; preserve alternate suffixes, ligatures and Unicode casing. Export scope is public.skipExportGlyphs compatibility policy; SC case uses exact suffix particles. Disclose unknown mappings and ambiguous groups; refuse partial/stale reports.",
     "native_acceptance": "pending",
     "source_body_redistributed": false,
-    "app_source_commit": "dbb9c492d2a07bf54715a4a99a4eed6f7f34a61b"
+    "app_source_commit": "85b8b34fad89f9549e6682044bf3b43f43599c7e"
   }
 ]

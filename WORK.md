@@ -2,6 +2,15 @@
 this_file: WORK.md
 ---
 
+## Issue 123 P1 source binding follow-up
+
+- Bind Smallcap Consistency's App source record to final App commit
+  `85b8b34fad89f9549e6682044bf3b43f43599c7e`, whose only follow-up change
+  makes README testing paths portable for distribution privacy. Runtime
+  helper bytes are identical to the fully gated implementation commit.
+- Source/menu/manifest focused verification: 15passed, exit0; full gates
+  below remain the final unchanged runtime verification.
+
 ## Issue 123 P1 — Smallcap Consistency (2026-10-22)
 
 - Read both modern and legacy upstream branches; verify source SHA-256
@@ -43,7 +52,7 @@ this_file: WORK.md
 - Scriptmix docs: `PATH=/opt/homebrew/bin:$PATH PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs`
   exit 0: 10 passed (`sdd/smallcaps-docs.log`).
 - Focused lint: `uv run --no-project --python cpython-3.11-macos-aarch64-none --with ruff==0.14.10 ruff check --no-cache --select F821` on the six new Python files, exit 0.
-- New helper availability is bound to App source commit `dbb9c492d2a07bf54715a4a99a4eed6f7f34a61b` in additional-tools.json; no published version floor is asserted.
+- New helper availability is bound to App source commit `85b8b34fad89f9549e6682044bf3b43f43599c7e` in additional-tools.json; no published version floor is asserted.
 - Root's unrelated baseline correction is retained in Scriptmix
   tests/test_cov_b_kerning_panels.py: expect zero UpdateAll calls, preserving
   its exact selected-name assertion (fl#8537). Required inventory-only test
