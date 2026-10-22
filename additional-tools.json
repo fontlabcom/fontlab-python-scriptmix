@@ -1316,7 +1316,7 @@
     "title": "Selection To All Backgrounds",
     "key": "masters_selection_to_all_backgrounds",
     "destination": "Scripts/Masters/Selection To All Backgrounds.py",
-    "destination_sha256": "32e438fe8cb8e3ab6dcce174ddd6c9ccf74e0643a6bfb8a83aa77a46d0fd4d82",
+    "destination_sha256": "3ce5d9b4934ac635c3b3a3207b2070be8eb332d5713603f1a07a12a28ecbc48a",
     "kind": "independent-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",

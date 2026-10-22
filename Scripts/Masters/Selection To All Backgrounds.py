@@ -13,18 +13,25 @@ How it works:
     A contour counts as selected when all its nodes are selected (select a
     contour with a double click, or drag a box around it). A panel first
     shows what will happen: contour count, glyph count, backgrounds to be
-    replaced and glyphs to be skipped. "Replace backgrounds" checks again that
-    nothing changed, then removes the old background shapes, creates missing
-    backgrounds, and adds clones of the selected contours. One notification
-    covers
-    the whole font: one Undo step. The shared module fly.ap.history decides
-    which glyphs are skipped and does the one-step write. Read-back checks
-    every target background for the planned contour count and no components.
-    A mismatch is reported with the Edit > Undo hint.
+    replaced and glyphs to be skipped. The panel stays open. Switch to the
+    Font window, then press "Replace backgrounds". It reads the planned
+    contours and the font again and stops if anything changed. Then it
+    removes the old background shapes, creates missing backgrounds, and adds
+    clones of the selected contours. One notification covers the whole
+    font: one Undo step in the Font window. The shared module
+    fly.ap.history decides which glyphs
+    are skipped and does the one-step write. Read-back checks every target
+    background for the planned contour count and no components. A mismatch
+    is reported with the Edit > Undo hint.
 
 Why this design:
     - The change spans the whole font and overwrites backgrounds. So there is a
       preview and an explicit button; there is no silent run.
+    - The write runs only while the Font window is active. While a Glyph
+      window is active, FontLab records the Undo step for the shown glyph
+      only: Edit > Undo then restores that glyph and leaves the other
+      backgrounds changed (measured on FontLab 9.0.9790). Edit > Undo in a
+      Glyph window after the write also undoes only the shown glyph.
     - The panel works only on the current master. Other masters keep their
       backgrounds.
     - Glyphs with an automatic layer, glyphs that are a base of one (also
@@ -38,7 +45,8 @@ Why this design:
 
 How to use:
     Open a Glyph window. Select the contours. Run the script. Read the summary.
-    Click "Replace backgrounds". Use Edit > Undo to revert.
+    Switch to the Font window. Click "Replace backgrounds". Use Edit > Undo in
+    the Font window to revert.
 
 Benefit:
     One reference shape behind the whole font in one step.
@@ -60,6 +68,14 @@ KEY = "masters_selection_to_all_backgrounds"
 PLAN_SECONDS = 60.0  # reading a big font takes time; this is a GUI-thread guard
 WRITE_SECONDS = 120.0
 MAX_LISTED = 10  # skipped glyph names shown in the preview
+FONT_WINDOW = (
+    "Switch to the Font window, then press Replace backgrounds. From a Glyph "
+    "window, FontLab would undo only the shown glyph."
+)
+
+
+class WrongWindow(ValueError):
+    """The write was refused because the Font window is not active. Keep the plan."""
 
 
 @dataclass(frozen=True)
@@ -87,6 +103,7 @@ class Plan:
             f"{self.created} will be created. {self.skipped} glyph(s) are skipped "
             "(automatic, locked or missing master layer)."
             + self.skipped_text()
+            + "\nSwitch to the Font window, then press Replace backgrounds."
         )
 
     def skipped_text(self) -> str:
@@ -113,9 +130,7 @@ def _valid(layer: Any) -> bool:
 
 
 def make_plan() -> Plan:
-    """Read the selection and the font. Change nothing. Raise ValueError."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    from fly import ap
+    """Read the selection of the Glyph window and the font. Change nothing. Raise ValueError."""
     from fly.ap.layer_selection import capture
     from fly.ap.scripting import current_package
 
@@ -125,18 +140,65 @@ def make_plan() -> Plan:
     if selection.context[2] != "editor" or package is None or not selection.occurrences:
         raise ValueError("Open a Glyph window and select contours first.")
     source = selection.occurrences[0]
-    layer = source.layer
+    return plan_for(package, source.glyph, source.layer, deadline)
+
+
+def replan(shown: Plan) -> Plan:
+    """Read the planned contours of `shown` and the font again. Change nothing.
+
+    Works in any window. The Glyph window shows the source layer through
+    another wrapper (another id and its own node selection), so the source
+    layer is found by glyph and layer name, and the contours by the planned
+    shape and contour indexes. Their node coordinates and types are part of
+    the signature: an edited source no longer matches. Raise ValueError when
+    the font, the source glyph or its layer is gone.
+    """
+    from fly.ap.scripting import current_package
+
+    changed = ValueError("The selection or the font changed. Close the panel and run again.")
+    package = current_package()
+    if package is None or int(package.id) != shown.signature[0]:
+        raise changed
+    glyph = package.findName(shown.glyph)
+    if glyph is None or glyph.isNull or int(glyph.id) != shown.signature[1]:
+        raise changed
+    layer = next((x for x in glyph.layers if str(x.name) == shown.signature[2]), None)
+    if layer is None:
+        raise changed
+    chosen = {index: keep for index, _, keep, _ in shown.signature[3]}
+    return plan_for(package, glyph, layer, monotonic() + PLAN_SECONDS, chosen)
+
+
+def outline(contour: Any) -> tuple[Any, ...]:
+    """Node coordinates and types of a contour, for the plan signature."""
+    return tuple((round(float(n.x), 3), round(float(n.y), 3), str(n.type)) for n in contour.nodes())
+
+
+def plan_for(
+    package: Any, glyph: Any, layer: Any, deadline: float, chosen: dict[int, tuple[int, ...]] | None = None,
+) -> Plan:
+    """Plan from contours of `layer` (in `glyph`). Change nothing. Raise ValueError.
+
+    Without `chosen`, take the fully selected contours. With `chosen`
+    ({shape index: contour indexes}), take those contours.
+    """
+    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    from fly import ap
+
     if layer.isMaskLayer or layer.isService:
         raise ValueError("Select contours on a body layer, not on a background.")
     pieces, signature = [], []
-    for shape in layer.shapes:
+    for index, shape in enumerate(layer.shapes):
         if shape.isComponent:
             continue
-        flags = [tuple(bool(n.selected) for n in c.nodes()) for c in shape.contours]
-        keep = selected_indexes(flags)
+        contours = list(shape.contours)
+        if chosen is None:
+            keep = selected_indexes([tuple(bool(n.selected) for n in c.nodes()) for c in contours])
+        else:
+            keep = [i for i in chosen.get(index, ()) if i < len(contours)]
         if keep:
             pieces.append((shape, tuple(keep)))
-            signature.append((int(shape.id), tuple(keep)))
+            signature.append((index, len(contours), tuple(keep), tuple(outline(contours[i]) for i in keep)))
     if not pieces:
         raise ValueError("No fully selected contour. Select whole contours first.")
     master = str(package.master)
@@ -145,13 +207,13 @@ def make_plan() -> Plan:
     for record in ap.fontlab.CurrentFont().glyphs:
         if monotonic() >= deadline:
             raise ValueError("Reading the font took too long; try again.")
-        glyph = package.findName(record.name)
-        target = None if glyph is None or glyph.isNull else glyph.findLayer(master)
+        other = package.findName(record.name)
+        target = None if other is None or other.isNull else other.findLayer(master)
         if (
             not _valid(target)
             or target.isLocked
-            or history.refusal(facts, str(glyph.name), "geometry")
-            or any(x.autoLayer for x in glyph.layers)
+            or history.refusal(facts, str(other.name), "geometry")
+            or any(x.autoLayer for x in other.layers)
         ):
             skipped.append(str(record.name))
             continue
@@ -159,14 +221,14 @@ def make_plan() -> Plan:
             replaced += 1
         else:
             created += 1
-        targets.append((glyph, target))
+        targets.append((other, target))
     if not targets:
         raise ValueError(f"No glyph has a usable layer for master '{master}'.")
     return Plan(
-        glyph=source.glyph_name,
+        glyph=str(glyph.name),
         master=master,
         contours=sum(len(keep) for _, keep in pieces),
-        signature=(int(source.glyph_id), int(source.layer_id), tuple(signature), master,
+        signature=(int(package.id), int(glyph.id), str(layer.name), tuple(signature), master,
                    tuple(int(g.id) for g, _ in targets)),
         replaced=replaced,
         created=created,
@@ -193,9 +255,19 @@ def selected_clone(shape: Any, keep: Sequence[int]) -> Any:
 
 
 def replace_backgrounds(shown: Plan, *, disclosure: dict[str, Any] | None = None) -> str:
-    """Apply `shown` after proof that the font and selection still match it."""
+    """Apply `shown` after proof that the font and selection still match it.
+
+    Raise WrongWindow (a ValueError) before reading the font when the Font
+    window of the font is not active.
+    """
+    import fly.ap.edit_guards as guards
     import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    current = make_plan()
+
+    try:
+        guards.require_selection_window(shown.signature[0])
+    except ValueError as error:
+        raise WrongWindow(FONT_WINDOW) from error
+    current = replan(shown)
     if current.signature != shown.signature:
         raise ValueError("The selection or the font changed. Close the panel and run again.")
     deadline = monotonic() + WRITE_SECONDS
@@ -304,9 +376,18 @@ def panel_type(QtGui: Any) -> Any:
             self.refresh()
 
         def refresh(self) -> None:
-            """Read the selection again and show what a click would do."""
+            """Read the selection again and show what a click would do.
+
+            Outside a Glyph window, re-read the planned contours of the last plan.
+            """
+            previous = self.plan
             try:
-                self.plan = make_plan()
+                try:
+                    self.plan = make_plan()
+                except ValueError:
+                    if previous is None:
+                        raise
+                    self.plan = replan(previous)
                 self.preview.setText(self.plan.summary())
                 self.status.setText("")
             except (ValueError, RuntimeError, TimeoutError) as error:
@@ -325,6 +406,10 @@ def panel_type(QtGui: Any) -> Any:
             self.go.setEnabled(False)  # one attempt per preview, even after a failure
             try:
                 self.status.setText(result_guards.append_note(replace_backgrounds(shown, disclosure=disclosure), disclosure))
+            except WrongWindow as error:  # nothing was read or written: keep the preview
+                self.plan = shown
+                self.go.setEnabled(True)
+                self.status.setText(str(error))
             except (ValueError, RuntimeError, TimeoutError) as error:
                 self.status.setText(result_guards.append_note(str(error), disclosure))
 

@@ -19,18 +19,25 @@ How it works:
     A contour counts as selected when all its nodes are selected (select a
     contour with a double click, or drag a box around it). A panel first
     shows what will happen: contour count, glyph count, backgrounds to be
-    replaced and glyphs to be skipped. "Replace backgrounds" checks again that
-    nothing changed, then removes the old background shapes, creates missing
-    backgrounds, and adds clones of the selected contours. One notification
-    covers
-    the whole font: one Undo step. The shared module fly.ap.history decides
-    which glyphs are skipped and does the one-step write. Read-back checks
-    every target background for the planned contour count and no components.
-    A mismatch is reported with the Edit > Undo hint.
+    replaced and glyphs to be skipped. The panel stays open. Switch to the
+    Font window, then press "Replace backgrounds". It reads the planned
+    contours and the font again and stops if anything changed. Then it
+    removes the old background shapes, creates missing backgrounds, and adds
+    clones of the selected contours. One notification covers the whole
+    font: one Undo step in the Font window. The shared module
+    fly.ap.history decides which glyphs
+    are skipped and does the one-step write. Read-back checks every target
+    background for the planned contour count and no components. A mismatch
+    is reported with the Edit > Undo hint.
 
 Why this design:
     - The change spans the whole font and overwrites backgrounds. So there is a
       preview and an explicit button; there is no silent run.
+    - The write runs only while the Font window is active. While a Glyph
+      window is active, FontLab records the Undo step for the shown glyph
+      only: Edit > Undo then restores that glyph and leaves the other
+      backgrounds changed (measured on FontLab 9.0.9790). Edit > Undo in a
+      Glyph window after the write also undoes only the shown glyph.
     - The panel works only on the current master. Other masters keep their
       backgrounds.
     - Glyphs with an automatic layer, glyphs that are a base of one (also
@@ -44,7 +51,8 @@ Why this design:
 
 How to use:
     Open a Glyph window. Select the contours. Run the script. Read the summary.
-    Click "Replace backgrounds". Use Edit > Undo to revert.
+    Switch to the Font window. Click "Replace backgrounds". Use Edit > Undo in
+    the Font window to revert.
 
 Benefit:
     One reference shape behind the whole font in one step.
@@ -62,5 +70,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/32e438fe8cb8e3ab6dcce174ddd6c9ccf74e0643a6bfb8a83aa77a46d0fd4d82.py)
+[Python source](../../../../.build/menu-sources/3ce5d9b4934ac635c3b3a3207b2070be8eb332d5713603f1a07a12a28ecbc48a.py)
 <!--/codeinclude-->

@@ -2,6 +2,16 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 - Selection To All Backgrounds: font-wide Undo
+
+- Write only while the Font window is active. In a Glyph window FontLab
+  records the step for the shown glyph only, so one Undo left the other
+  backgrounds changed (measured on 9.0.9790). The refusal keeps the preview.
+- Plan in the Glyph window, then re-read the planned contours by layer name
+  and shape/contour index, with node coordinates and types in the signature.
+  Selection is not read again: the Font window shows the layer through
+  another wrapper without it. Refresh the docs page and destination hash.
+
 ## 2026-10-22 - Complete queued-update disclosure
 
 - Complete default-writer status/console disclosure, including all custom

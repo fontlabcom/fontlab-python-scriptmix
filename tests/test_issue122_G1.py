@@ -765,7 +765,8 @@ class Contour:
         self.flags = flags
         self.states = tuple(states or (0x0100 | (SELECTED_BIT if f else 0) for f in flags))
         self.names = tuple(names or (f"n{i}" for i in range(len(flags))))
-        self._nodes = [NS(selected=f, nodeState=s, name=n) for f, s, n in zip(flags, self.states, self.names)]
+        self._nodes = [NS(selected=f, nodeState=s, name=n, x=10.0 * i, y=0.0, type="on")
+                       for i, (f, s, n) in enumerate(zip(flags, self.states, self.names))]
 
     def nodes(self) -> list[Any]:
         return list(self._nodes)
@@ -812,7 +813,26 @@ def font_world(world: World) -> dict[str, Glyph]:
     glyphs = {g.name: g for g in (source, other, withmask, auto, locked, nomaster)}
     world.glyphs = list(glyphs.values())
     world.package.findName = lambda name: glyphs.get(name)
+    world.window_calls, world.glyph_window_active = [], False
+
+    def font_window_guard(package_id: int) -> None:
+        """Stand-in for edit_guards.require_selection_window (Font window active?)."""
+        world.window_calls.append(package_id)
+        if world.glyph_window_active:
+            raise ValueError("Activate the Font window before selecting glyphs.")
+
+    world.app["edit_guards"].require_selection_window = font_window_guard
     return glyphs
+
+
+def in_font_window(world: World, glyphs: dict[str, Glyph]) -> None:
+    """Leave the Glyph window: no editor occurrence, and node selection reads as cleared."""
+    world.context, world.glyph_window_active = (1, "Regular", "font"), False
+    world.occurrences.clear()
+    for shape in glyphs["s"].layer("Regular").shapes:
+        for contour in shape.contours:
+            for node in contour.nodes():
+                node.selected = False
 
 
 def test_make_plan_when_selection_then_counts_and_skips_exact(world: World) -> None:
@@ -851,8 +871,10 @@ def test_replace_backgrounds_when_confirmed_then_all_targets_replaced_in_one_ste
     module = load("Selection To All Backgrounds")
     glyphs = font_world(world)
     shown = module.make_plan()
+    in_font_window(world, glyphs)  # the user switches to the Font window; selection is not read again
     message = module.replace_backgrounds(shown)
     assert message == "Background set in 3 glyph(s)."
+    assert world.window_calls == [1]  # Font-window guard checked with the planned package id
     for name in ("s", "c"):
         mask = glyphs[name].layer("mask.Regular")
         assert "removeAllShapes" not in mask.calls
@@ -866,6 +888,41 @@ def test_replace_backgrounds_when_confirmed_then_all_targets_replaced_in_one_ste
     assert all(g.lastModified == "UTC-STAMP" for g in (glyphs["s"], glyphs["b"], glyphs["c"]))
     assert glyphs["d"].history == [] and glyphs["d"].lastModified is None  # skipped glyphs untouched
     assert glyphs["s"].layer("Regular").shapes[0].contours[1].flags == (True, False)  # source intact
+
+
+def test_replace_backgrounds_when_glyph_window_active_then_wrong_window_and_nothing_read_or_written(world: World) -> None:
+    module = load("Selection To All Backgrounds")
+    glyphs = font_world(world)
+    shown = module.make_plan()
+    world.glyph_window_active = True
+    with pytest.raises(module.WrongWindow, match="Switch to the Font window"):
+        module.replace_backgrounds(shown)
+    assert issubclass(module.WrongWindow, ValueError)
+    assert world.notifier.calls == [] and glyphs["c"].layer("mask.Regular").calls == []
+    assert all(g.history == [] for g in glyphs.values())
+
+
+def test_replace_backgrounds_when_planned_contour_edited_then_nothing_written(world: World) -> None:
+    module = load("Selection To All Backgrounds")
+    glyphs = font_world(world)
+    shown = module.make_plan()
+    in_font_window(world, glyphs)
+    glyphs["s"].layer("Regular").shapes[2].contours[0].nodes()[0].x = 999.0
+    with pytest.raises(ValueError, match="changed"):
+        module.replace_backgrounds(shown)
+    assert world.notifier.calls == []
+
+
+def test_replan_when_source_glyph_or_layer_gone_then_value_error(world: World) -> None:
+    module = load("Selection To All Backgrounds")
+    glyphs = font_world(world)
+    shown = module.make_plan()
+    glyphs["s"].layer("Regular")._name = "Renamed"
+    with pytest.raises(ValueError, match="changed"):
+        module.replan(shown)
+    world.package.findName = lambda name: None
+    with pytest.raises(ValueError, match="changed"):
+        module.replan(shown)
 
 
 def test_replace_backgrounds_when_font_changed_since_preview_then_nothing_written(world: World) -> None:
@@ -900,8 +957,16 @@ def test_replace_backgrounds_when_time_limit_hit_then_runtime_error(world: World
 
 def test_selection_panel_when_opened_then_preview_and_single_replace(world: World, monkeypatch: Any) -> None:
     module = load("Selection To All Backgrounds")
-    font_world(world)
+    glyphs = font_world(world)
     panel = make_panel(module)
+    assert panel.plan is not None and "2 selected contour(s)" in panel.preview.texts[-1]
+    assert "Switch to the Font window" in panel.preview.texts[-1]
+    world.glyph_window_active = True
+    panel.replace()  # refused in the Glyph window: preview and button stay
+    assert "Switch to the Font window" in panel.status.texts[-1] and panel.plan is not None
+    assert world.notifier.calls == []
+    in_font_window(world, glyphs)
+    panel.refresh()  # no editor any more: the planned contours are read again
     assert panel.plan is not None and "2 selected contour(s)" in panel.preview.texts[-1]
     panel.replace()
     assert panel.status.texts[-1] == "Background set in 3 glyph(s)." and panel.plan is None
