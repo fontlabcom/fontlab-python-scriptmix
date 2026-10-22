@@ -373,6 +373,8 @@ def test_labels_core_when_marks_and_names_given_then_colours_and_labels_resolve(
     assert module.mark_color(1100).args == (125, 125, 125), "grey marks sit above 1000"
     assert module.mark_label(1100) == "Grey 100", "expected: module.mark_label(1100) == 'Grey 100'"
     assert module.mark_label(341) == "Red (hue 340°)", "late hues wrap to red"
+    assert module.mark_label(500) == "Mark 500", "marks between hues and greys are undefined, not negative greys"
+    assert module.mark_label(1300) == "Mark 1300", "marks above the grey range are undefined"
     assert module.mark_label(46) == "Yellow (hue 45°)", "expected: module.mark_label(46) == 'Yellow (hue 45°)'"
     assert module.suffix_of("a.ss01.sc") == ".ss01.sc" and module.suffix_of(".notdef") == "", "expected: module.suffix_of('a.ss01.sc') == '.ss01.sc' and module.suffix_of('...."
     marks, suffixes = module.statistics([("a", 1), ("b", 1), ("c.alt", 0)])

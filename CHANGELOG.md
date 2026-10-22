@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 - Undefined marks no longer read as negative greys
+
+- Reports > Label Statistics and Names > Select by Mark label only marks 1000-1255 as greys, the range FontGate defines (`glyphs_write.cpp`). Marks 361-999 and above 1255 now read "Mark N" instead of "Grey -639". Revision records and docs pins are updated.
+
 ## 2026-10-22 - Coverage tests for 39 scripts
 
 - `tests/test_cov_a_*.py` and `tests/test_cov_b_*.py` cover the Anchors, Components, Contours, Features, Font Info, Masters, Names, Kerning and Reports scripts below the 80% gate (now 98-100%). Script bytes and pins are unchanged; the fakes model PythonQt strictly.

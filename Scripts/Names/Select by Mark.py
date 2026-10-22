@@ -83,8 +83,10 @@ def mark_label(mark: int) -> str:
     """Describe native mark hue or grey value; zero means unmarked."""
     if mark <= 0:
         return "Unmarked"
-    if mark > 360:
+    if 1000 <= mark <= 1255:
         return f"Grey {mark - 1000}"
+    if mark > 360:
+        return f"Mark {mark}"  # FontGate defines only hues 1-360 and greys 1000-1255.
     hue = mark - 1
     return (
         next(name for limit, name in HUES if hue < limit).capitalize()

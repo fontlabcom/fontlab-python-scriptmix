@@ -358,6 +358,9 @@ def test_font_window_selection_when_called_then_shared_helper_result(host):
         (160, "Green (hue 159°)"),
         (360, "Red (hue 359°)"),
         (1100, "Grey 100"),
+        (1255, "Grey 255"),
+        (500, "Mark 500"),
+        (1300, "Mark 1300"),
     ],
 )
 def test_mark_label_when_mark_then_hue_name_or_grey(host, mark, label):
