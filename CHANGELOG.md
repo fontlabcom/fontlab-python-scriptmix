@@ -2,6 +2,24 @@
 this_file: CHANGELOG.md
 ---
 
+## Common Glyphs report source repair (partial milestone)
+
+- Add explicit literal Copy Characters/Copy Original Report source actions through
+  existing App native MIME helpers; normalized human selection stays distinct.
+  New callbacks/panel/OS clipboard handoff remain native acceptance gates.
+
+- Replace the embedded comparison implementation with shared App capture,
+  source-faithful reports and owned lifecycle; use actual GlyphData production
+  metadata at this caller boundary with explicit unknowns. Restore first-open
+  primary strings, family order, one-font glyph order and exact trailing spaces;
+  retain alternative encodings and reusable slash-name text.
+- Expose default-off charcoal marking as visibly unavailable under FontLab issue
+  8564. The full all-open-font action remains unimplemented/unaccepted. This is a
+  partial source milestone, not full original-scope/native completion.
+- Change only the Common Glyphs menu/source pin and generated source page;
+  migrate obsolete embedded-engine tests to expanded App coverage while retaining
+  both menu files' original import/source contracts.
+
 ## 2026-10-22 — Master Text Comparison review fix1 pin
 
 - Bind the shared App repair for native result-slot ownership, immediate-preset routing around unrelated custom holds, and cumulative bounded failed-panel recovery. Menu bytes are unchanged; native acceptance remains pending.

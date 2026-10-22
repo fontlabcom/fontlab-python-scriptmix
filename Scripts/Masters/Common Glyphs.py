@@ -1,146 +1,97 @@
 # this_file: Scripts/Masters/Common Glyphs.py
 # SPDX-License-Identifier: Apache-2.0
-"""Report glyph names common to every open font, including unencoded glyphs.
+"""Report exact glyph names common to every open font, including unencoded glyphs.
 
-What: Intersect exact glyph names across the registered open fonts. Show the
-sorted names, reusable slash text and each font's complete Unicode assignments.
-How: Read the registered fonts twice within a deadline. Refuse changed data.
-Map AllFonts() FontGate fonts to registered workspace packages by font ID,
-then read each canonical font.glyphs list. Errors print a short diagnosis.
-Use: Open the fonts to compare, make one current, then run the script. Select
-and copy the report text for proofing. Run again to replace the report with a
-fresh snapshot. With one font open, all its glyph names are reported.
-Why: Exact names keep alternates and unencoded glyphs. Per-font Unicode lists
-expose different encodings of a shared name. FontLab has no verified equivalent
-of Glyphs' productionGlyphName conversion; the report uses stored FontLab names.
-Over FontLab's Glyph-window multi-master text views and Text By Master, this
-adds an exact-name proof set shared by every open font, with per-font encodings.
-Benefit: Copy shared glyph names or the current font's encoded proof text.
+What:
+    Show analysed family names, count, first-open-font character strings, exact
+    stored nice names and verified GlyphData production names. Unknown production
+    mappings remain explicit. Alternative encodings are listed separately.
 
-Credit: Luke Prowse (LukeProwse), NaN-xyz/GlyphsApp-Scripts, CommonGlyphs.py,
-MIT (root LICENSE), copyright 2019 LukeProwse. The README also declares Apache-2.0.
-https://github.com/NaN-xyz/GlyphsApp-Scripts
-Independent rewrite of behaviour. No source code was copied.
+How:
+    Shared App double-reads registered font-owned records within a deadline;
+    this caller supplies real glyphsLib production metadata. One font retains
+    its glyph order. Multiple fonts use sorted names because the original set
+    intersection order was unspecified. Character strings use the first assigned
+    scalar, never the current font, alternate concatenation or inferred ligatures.
+    Each nonempty string and each name retains its final source space.
+
+Use:
+    Run Masters > Common Glyphs with one or more open fonts; none need be current.
+    Use Copy Characters or Copy Original Report for exact detached source MIME
+    payloads, or inspect the encoding/metadata details. Refresh after changing
+    fonts, and Close when done. Opening/Refresh changes no clipboard, Output or
+    font data. Ordinary selection copying can normalize Unicode spaces/separators;
+    escaped JSON retains exact strings. The literal MIME callbacks/OS clipboard
+    handoff and native rendering still need qualification.
+    The optional charcoal control is visible, unchecked and unavailable: FontLab
+    lacks a supported glyph-only mark/history path (FontLab issue 8564).
+
+Status:
+    Partial source improvement. The original optional all-open-font charcoal
+    action remains required and unimplemented; native report acceptance remains
+    pending. This is not a complete equivalent of the original workflow.
+
+Credits:
+    Independent rewrite of behaviour, not copied source code. Luke Prowse
+    (LukeProwse), NaN-xyz/GlyphsApp-Scripts/CommonGlyphs.py. MIT root LICENSE,
+    Copyright (c) 2019 LukeProwse; upstream README also declares Apache-2.0.
+    Exact MIT notice is retained in NOTICE.
+    https://github.com/NaN-xyz/GlyphsApp-Scripts
 """
 
-from time import monotonic
+from collections.abc import Callable
 from typing import Any
-
-TITLE = "Common Glyphs"
-FontRows = tuple[tuple[int, str, tuple[tuple[str, tuple[int, ...]], ...]], ...]
-
-
-def common_report(fonts: FontRows, current_id: int) -> dict[str, Any]:
-    """Intersect exact names; retain every font's Unicode order and empty sets."""
-    if not fonts or current_id not in {row[0] for row in fonts}:
-        raise ValueError("Open a font and make it current first.")
-    shared = {name for name, _ in fonts[0][2]}
-    for _, _, glyphs in fonts[1:]:
-        shared.intersection_update(name for name, _ in glyphs)
-    ordered = sorted(shared)
-    current_glyphs = dict(
-        next(glyphs for identity, _, glyphs in fonts if identity == current_id)
-    )
-    return {
-        "text": "".join(chr(code) for name in ordered for code in current_glyphs[name]),
-        "count": len(ordered),
-        "glyph_names": ordered,
-        "slash_text": "".join("/" + name for name in ordered),
-        "unicode_by_font": [
-            {
-                "font": title,
-                "package_id": identity,
-                "glyphs": {
-                    name: [f"U+{code:04X}" for code in codes]
-                    for name, codes in glyphs
-                    if name in shared
-                },
-            }
-            for identity, title, glyphs in fonts
-        ],
-        "scope": "Exact stored FontLab glyph names in every open font; Unicode assignments are reported separately. The report includes current-font encoded proof text.",
-    }
+import fly.ap.common_glyphs_controller as controller
+from fly.ap.common_glyphs import Production
 
 
-def read_fonts(deadline: float) -> FontRows:
-    """Read registered packages only; stop before returning a partial report."""
-    if monotonic() >= deadline:
-        raise TimeoutError("Open-font scan expired; run again.")
-    from fly import fl
+def metadata(name: str, *, checkpoint: Callable = lambda: None) -> Production:
+    """Use actual GlyphData production_name with explicit provenance/unknowns.
 
-    workspace = fl.flWorkspace.instance()
-    rows = []
-    registered_fonts = {}
-    for registered in workspace.packages():
-        if monotonic() >= deadline:
-            raise TimeoutError("Open-font scan expired; run again.")
-        package = fl.flPackage(registered)
-        if package is None or package.isNull:
-            raise ValueError("Open font registration changed; run again.")
-        identity = int(package.fgId)
-        if identity <= 0 or identity in registered_fonts:
-            raise ValueError(
-                "An open font has invalid or duplicate FontGate registration."
-            )
-        registered_fonts[identity] = package
-    seen = set()
-    for font in fl.AllFonts():
-        identity = int(font.id)
-        package = registered_fonts.get(identity)
-        if package is None or identity in seen:
-            raise ValueError(
-                "An open font is not uniquely registered in the workspace."
-            )
-        seen.add(identity)
-        glyphs = []
-        names = set()
-        for glyph in font.glyphs:
-            if monotonic() >= deadline:
-                raise TimeoutError("Open-font scan expired; run again.")
-            name, codes = str(glyph.name), tuple(glyph.unicodes)
-            if not name or name in names:
-                raise ValueError("A font has empty or duplicate glyph names.")
-            if any(
-                type(code) is not int or not 0 <= code <= 0x10FFFF for code in codes
-            ):
-                raise ValueError(f"Invalid Unicode assignment in '{name}'.")
-            names.add(name)
-            glyphs.append((name, codes))
-        rows.append((int(package.id), str(package.title_name()), tuple(glyphs)))
-    if seen != set(registered_fonts):
-        raise ValueError("A registered font is absent from AllFonts; run again.")
-    if len(rows) != len({row[0] for row in rows}):
-        raise ValueError("Open font registration contains duplicate identities.")
-    if monotonic() >= deadline:
-        raise TimeoutError("Open-font scan expired; run again.")
-    return tuple(rows)
+    get_glyph may sanitize unknown names into an unchanged fallback. Accept
+    exact database/alias/production keys or derivations with verified base and
+    ligature-component keys; never call an unknown stored name a conversion.
+    """
+    checkpoint()
+    from glyphsLib import glyphdata
 
+    record = glyphdata.get_glyph(name)
+    checkpoint()
+    data = glyphdata.GLYPHDATA
 
-def capture_common() -> dict[str, Any]:
-    """Fence the current font and all compared scalar values with double reads."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    def known(value: str) -> bool:
+        """Membership, not nonempty API fallback, proves known GlyphData."""
+        checkpoint()
+        return any(
+            value in index
+            for index in (data.names, data.alternative_names, data.production_names)
+        )
 
-    package = scripting.current_package()
-    if package is None:
-        raise ValueError("Open a font first.")
-    identity = int(package.id)
-    deadline = monotonic() + 2.0
-    fonts = read_fonts(deadline)
-    if fonts != read_fonts(deadline) or scripting.current_package(identity) is None:
-        raise ValueError("Open fonts changed during the scan; run again.")
-    return common_report(fonts, identity)
+    if known(name):
+        status = "database"
+    else:
+        base = name.partition(".")[0]
+        parts = base.split("_")
+        status = "derived" if all(known(part) for part in parts) else "unknown"
+    checkpoint()
+    if status == "unknown" or not record.production_name:
+        return Production(None, "unknown")
+    return Production(record.production_name, status)
 
 
 def main() -> Any:
-    """Publish a complete selectable report in the shared non-modal shell."""
-    import fly.ap.reports as reports  # noqa: PLR0402
-
+    """Launch the complete detached report through the installed Fly/App alias."""
     try:
-        return reports.show_report(
-            capture_common(), title=TITLE, key="masters_common_glyphs"
-        )
-    except (ValueError, RuntimeError, TimeoutError) as error:
-        print(f"{TITLE}: {error}")
+        return controller.show(metadata)
+    except (
+        ValueError,
+        RuntimeError,
+        TimeoutError,
+        InterruptedError,
+        ExceptionGroup,
+        ImportError,
+    ) as error:
+        print(f"Common Glyphs: {error}")
         return None
 
 

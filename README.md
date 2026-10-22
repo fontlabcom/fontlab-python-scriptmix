@@ -2,6 +2,19 @@
 this_file: README.md
 ---
 
+Common Glyphs now calls App for the complete original report: family order,
+first-open-font primary character strings, stored nice names, caller-verified
+GlyphData production names and explicit unknowns, exact trailing spaces and all
+alternative encodings. One font retains glyph order; multi-font names are sorted.
+Escaped JSON retains exact source strings. Ordinary selection copying can
+normalize Unicode spaces/separators; explicit Copy Characters/Copy Original Report
+actions stage exact source MIME data. Native callbacks/OS clipboard handoff and
+rendering remain unqualified.
+The owned report needs no current font and never clears Output. Its optional
+charcoal control is visible, unchecked and unavailable under FontLab issue 8564.
+This partial source milestone leaves the full all-font action and native report
+acceptance open; it does not complete the original workflow.
+
 Master Text Comparison restores the original preset/custom workflow, usable-character sanitation, exact master-copy delimiters and owned settings. It stages named glyph/layer symbols in a fresh proof; native model binding, rendering and full preservation remain unqualified. Multiline/paragraph custom input is held explicitly; exact UTF-8 presets retain those scalars.
 
 

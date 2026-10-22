@@ -2,6 +2,54 @@
 this_file: WORK.md
 ---
 
+## Issue123 P4 — partial Common Glyphs report milestone; full writer remains open
+
+- Current matching pair checks (supersede the earlier final/r2 receipts below):
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/verify.sh menu` exit0:16passed, current menu30statements/6branches100%, menu-final-source.log; `.../verify.sh docs` exit0:10passed, docs-final-source.log; `.../verify.sh lint` exit0 in both repos, lint-final-pair.log. AST/this_file/zero exclusions, exact source pins/all172other records and241other menu bytes and git diff --check are independently audited in final-source-audit-r2.json. No full baseline or site build/publication rerun.
+
+- Latest literal MIME stage: explicit Copy Characters/Copy Original Report actions use exact detached facts and genuine Qt-owned native MIME factory plus unchanged qt_literal_text adapters. Human selection normalization remains distinct. Owned-sink tests preserve all source payloads and retain unknown ownership/failures until proven resolution. No real clipboard/native call by this lane. App focused55passed (43Common+12boundary), aggregate99.35%, every changed module>=97.79%, zero exclusions. Root9792 eleven-vector helper-only receipt does not qualify new P4 callbacks/panel/OS handoff or full writer.
+
+- Unicode representation follow-up: visible panel/menu notices explicitly hold literal source-character copying/native rendering. Standalone Qt primary-copy normalization (NBSP->space, LS->newline), disclosed human NUL escape, non-BMP text and exact escaped-JSON characters/full-source_text roundtrips are tested in App46cases (34Common+12boundary), app-final-r5.log. This proves retained data representations, not literal copying or native acceptance.
+
+- Controller explicitly approved report repairs and a visible default-off unavailable
+  charcoal control while preserving the unchanged full report+all-font action goal.
+  Full optional writer is UNIMPLEMENTED/unaccepted under FontLab issue 8564. No
+  auto/locked/unencoded/nonexport narrowing, guessed method, cascading mark write,
+  native request, canonical change, live installation, merge, push or descendant.
+- Thin menu uses Fly/App; actual glyphsLib6.16.2 get_glyph.production_name supplies
+  verified database/alias/known-base/component mappings with explicit unknowns.
+  App stays Glyphs/UFO generic. Preserve first-open primary strings (not current
+  font/alternate concatenation), source one-font order, family order, all name/string
+  trailing spaces, complete per-font encodings and reusable slash-name proof text.
+- Final App source pin1a4bd809372ec50d3c4b78e357a7b83e60f6a900; menu SHA256
+  432d5f0e4cfcf28900c93b48e92ac3f46c93a4b39195a931960ea72da58def8f.
+  Original source/licence/attribution hashes remain exact. Direct final BASE audit
+  verifies all other172rows/pins and241menu bytes;173records/242menus total.
+- RED thin caller tests exited1:10 expected routing/metadata failures before menu
+  replacement, menu-red.log. Initial caller GREEN10passed, menu-green-r1.log.
+  Common-specific embedded G10 tests move to43 expanded App source/capture/real-Qt/
+  lifecycle cases; original G10 static/import assertions for both menus are retained.
+  Wrong current-font/all-encoding expectations are replaced by source first-font
+  primary-string expectations; no pin/source assertion was weakened.
+- Exact final command:
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/verify.sh menu`
+  exit0:16passed (10caller/metadata,4retained static/import,2source-integrity),
+  menu-final.log. Changed menu30statements/6branches100%, zero exclusions/pragmas.
+  This focused run explicitly uses SCRIPTMIX_APP_SOURCE/PYTHONPATH for reviewed App;
+  it is source/Fly identity evidence, not an installed artifact acceptance claim.
+- Exact docs command:
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/verify.sh docs`
+  exit0:10passed, docs-final.log; no site build/publication claim.
+- Exact lint command:
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/verify.sh lint`
+  exit0 in both repositories (Ruff0.14.10 F821/F401), lint-final.log. Initial App
+  test-unused-import failure is retained in lint-r1.log and corrected. Python3.11
+  AST/this_file, zero pragma exclusions, manifest integrity and git diff --check pass.
+- Root owns artifact/full-hook and native acceptance; unchanged6711 App/4304 Mix
+  baselines were not rerun. Standalone Qt is not FontLab proof. Full future native
+  contract, root's measured9792 missing-binding receipt and complete command/log
+  evidence are external in sdd/common-glyphs-report.md/common-glyphs-research/.
+
 ## Issue123 P3 fix1 — bind I1/I2/I3 source repairs
 
 - FIX_BASEdd76a7795fed649bb71dd5f155c683460e8dce71. Bind the unchanged Master Text Comparison menu to reviewed-fix candidate App291ee1120271e8d68071fe1f0e70decfb0cf10ac. Only this row's app_source_commit changes; all source/resource/licence/menu hashes and other172 records remain exact. All242 menu bodies remain byte-exact versus FIX_BASE.

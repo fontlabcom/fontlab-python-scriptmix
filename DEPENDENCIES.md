@@ -108,3 +108,8 @@ require the reviewed matching App source commit in additional-tools.json; a
 version label alone does not establish the typed text-block binding or native
 proof usability. Tests use owned doubles; a separate real GlyphData metadata
 probe is retained in the external report.
+
+Common Glyphs uses the same existing glyphsLib dependency for public
+get_glyph().production_name plus verified GlyphData membership. Unknown sanitized
+fallbacks remain explicit. This policy lives in the Scriptmix caller; generic App
+imports no Glyphs database or peer. No package/version dependency was changed.

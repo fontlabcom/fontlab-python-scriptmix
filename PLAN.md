@@ -2,6 +2,19 @@
 this_file: PLAN.md
 ---
 
+## Common Glyphs staged report and unchanged full-action requirement
+
+The report now uses shared App capture/analysis/UI/lifecycle and caller GlyphData
+production metadata. Qualify installed rendering/first-open families/scalars,
+complete encodings, no-current/one-font cases and retained cleanup. The original
+all-font charcoal action remains required and unimplemented pending FontLab issue
+8564 glyph-only mark/history support. Preserve raw layer mark/inheritance, all
+common glyphs (including auto/locked/unencoded/nonexport owners), active context,
+complete preflight and per-font Undo/Redo/reopen with partial-failure receipts.
+The visible unchecked unavailable option is a staged hold, not a completed port.
+Qualify literal Copy Characters/Copy Original Report callbacks and OS clipboard
+handoff separately from the root9792 helper-only MIME receipt.
+
 ## Master Text Comparison P3 candidate
 
 Complete original defaults, automatic local UTF-8 presets/four fallback lists,

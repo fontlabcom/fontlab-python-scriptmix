@@ -6,27 +6,43 @@ categories: ["Masters"]
 
 # Common Glyphs
 
-Report glyph names common to every open font, including unencoded glyphs.
+Report exact glyph names common to every open font, including unencoded glyphs.
 
-What: Intersect exact glyph names across the registered open fonts. Show the
-sorted names, reusable slash text and each font's complete Unicode assignments.
-How: Read the registered fonts twice within a deadline. Refuse changed data.
-Map AllFonts() FontGate fonts to registered workspace packages by font ID,
-then read each canonical font.glyphs list. Errors print a short diagnosis.
-Use: Open the fonts to compare, make one current, then run the script. Select
-and copy the report text for proofing. Run again to replace the report with a
-fresh snapshot. With one font open, all its glyph names are reported.
-Why: Exact names keep alternates and unencoded glyphs. Per-font Unicode lists
-expose different encodings of a shared name. FontLab has no verified equivalent
-of Glyphs' productionGlyphName conversion; the report uses stored FontLab names.
-Over FontLab's Glyph-window multi-master text views and Text By Master, this
-adds an exact-name proof set shared by every open font, with per-font encodings.
-Benefit: Copy shared glyph names or the current font's encoded proof text.
+What:
+    Show analysed family names, count, first-open-font character strings, exact
+    stored nice names and verified GlyphData production names. Unknown production
+    mappings remain explicit. Alternative encodings are listed separately.
 
-Credit: Luke Prowse (LukeProwse), NaN-xyz/GlyphsApp-Scripts, CommonGlyphs.py,
-MIT (root LICENSE), copyright 2019 LukeProwse. The README also declares Apache-2.0.
-https://github.com/NaN-xyz/GlyphsApp-Scripts
-Independent rewrite of behaviour. No source code was copied.
+How:
+    Shared App double-reads registered font-owned records within a deadline;
+    this caller supplies real glyphsLib production metadata. One font retains
+    its glyph order. Multiple fonts use sorted names because the original set
+    intersection order was unspecified. Character strings use the first assigned
+    scalar, never the current font, alternate concatenation or inferred ligatures.
+    Each nonempty string and each name retains its final source space.
+
+Use:
+    Run Masters > Common Glyphs with one or more open fonts; none need be current.
+    Use Copy Characters or Copy Original Report for exact detached source MIME
+    payloads, or inspect the encoding/metadata details. Refresh after changing
+    fonts, and Close when done. Opening/Refresh changes no clipboard, Output or
+    font data. Ordinary selection copying can normalize Unicode spaces/separators;
+    escaped JSON retains exact strings. The literal MIME callbacks/OS clipboard
+    handoff and native rendering still need qualification.
+    The optional charcoal control is visible, unchecked and unavailable: FontLab
+    lacks a supported glyph-only mark/history path (FontLab issue 8564).
+
+Status:
+    Partial source improvement. The original optional all-open-font charcoal
+    action remains required and unimplemented; native report acceptance remains
+    pending. This is not a complete equivalent of the original workflow.
+
+Credits:
+    Independent rewrite of behaviour, not copied source code. Luke Prowse
+    (LukeProwse), NaN-xyz/GlyphsApp-Scripts/CommonGlyphs.py. MIT root LICENSE,
+    Copyright (c) 2019 LukeProwse; upstream README also declares Apache-2.0.
+    Exact MIT notice is retained in NOTICE.
+    https://github.com/NaN-xyz/GlyphsApp-Scripts
 
 Run **Masters > Common Glyphs** from FontLab's Scripts menu.
 
@@ -35,5 +51,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ed5a35144920f6dfe8d819d77bd2ca8d02818eb4d48d379d3a82d09ae06f4a0b.py)
+[Python source](../../../../.build/menu-sources/432d5f0e4cfcf28900c93b48e92ac3f46c93a4b39195a931960ea72da58def8f.py)
 <!--/codeinclude-->

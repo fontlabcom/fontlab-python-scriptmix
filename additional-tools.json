@@ -2304,8 +2304,8 @@
     "title": "Common Glyphs",
     "key": "masters_common_glyphs",
     "destination": "Scripts/Masters/Common Glyphs.py",
-    "destination_sha256": "ed5a35144920f6dfe8d819d77bd2ca8d02818eb4d48d379d3a82d09ae06f4a0b",
-    "kind": "independent-original-workflow-implementation",
+    "destination_sha256": "432d5f0e4cfcf28900c93b48e92ac3f46c93a4b39195a931960ea72da58def8f",
+    "kind": "partial-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/NaN-xyz/GlyphsApp-Scripts",
     "source_path": "CommonGlyphs.py",
@@ -2317,7 +2317,9 @@
     "source_body_redistributed": false,
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
-    "scope": "Over FontLab's Glyph-window multi-master text views and Text By Master, this adds an exact-name proof set shared by every open font, with per-font encodings. Map AllFonts fonts to registered packages through FontGate IDs and read canonical font.glyphs lists twice. Publish sorted shared names, slash proof text, current-font encoded characters and complete per-font Unicode assignments in the shared report panel. Refuse changed registrations, invalid records and expired scans. Use stored FontLab names in place of Glyphs production-name conversion. The optional source label-colour action is omitted."
+    "scope": "Partial source milestone toward the unchanged full original workflow: exact common names across every open font, no current-font prerequisite, one-font glyph order and sorted multi-font intersection. Family names retain captured AllFonts order; first font primary scalar strings and nice/production names retain every trailing space. Genuine caller GlyphData database/alias/derived mappings are separate from explicit unknowns; complete per-font alternative encodings and slash-name proof text remain visible. Shared App double-read capture and owned nonmodal Refresh/Close have bounded retained cleanup. Charcoal option is visible, unchecked and unavailable; no unsafe cascading or narrowed-domain writer is implemented. Full all-font action remains required under FontLab issue 8564; raw layer marks/inheritance must be preserved. Source staging is not original-scope or native acceptance. Exact original source_text and character facts remain in escaped JSON; Qt primary literal copying may normalize NBSP/line separators and native literal-copy/rendering remains unqualified. Explicit Copy Characters/Copy Original Report actions now stage exact detached source MIME through the existing native factory/qt_literal_text adapter, with retained ownership and bounded cleanup; actual P4 native callbacks/OS handoff remain unqualified.",
+    "app_source_commit": "1a4bd809372ec50d3c4b78e357a7b83e60f6a900",
+    "original_scope_acceptance": "incomplete: original all-font charcoal action requires FontLab issue 8564 glyph-only mark/history support; native report acceptance pending"
   },
   {
     "title": "Add Anchors From File",

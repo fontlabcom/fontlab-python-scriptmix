@@ -1524,3 +1524,12 @@ retained i_dotaccentcomb→i and SS→Germandbls compatibility. Caller-supplied
 maintained GlyphData categories/canonical names stay outside generic App.
 Native exact text-block binding/proof usability remains unqualified; explicit
 inactive-view choice is a documented FontLab adaptation, not Glyphs MRU parity.
+
+Common Glyphs staged shared report
+==================================
+
+The practical Common Glyphs caller now supplies maintained GlyphData production
+metadata to independently implemented shared App report/capture/UI helpers. The
+Luke Prowse source identity and complete MIT/Apache notices above remain exact.
+The original optional all-font charcoal action is held under FontLab issue 8564;
+this staged report repair is not a complete equivalent of the original workflow.

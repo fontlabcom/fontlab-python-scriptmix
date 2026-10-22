@@ -2,6 +2,8 @@
 this_file: TODO.md
 ---
 
+- [ ] Complete and qualify Common Glyphs original all-font charcoal action after FontLab issue 8564 supplies a supported glyph-only mark/history path; preserve raw layer inheritance and full auto/locked/unencoded/nonexport scope. Qualify installed report rendering, literal Copy Characters/Copy Original Report callbacks/OS handoff, whole-font/context preservation and bounded lifecycle separately; current source stage is partial.
+
 - [ ] Qualify installed Master Text Comparison: FontLab #8576 exact active-model binding, all-slot master/layer and trailing delimiter rendering, complete font/cache/history preservation, NUL/UTF16/IME domain, owned settings/geometry, cleanup recovery and real Close.
 
 
