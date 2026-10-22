@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 — Case Coverage shared report fixes
+
+- Bind the reviewed App fix for unknown uncased all-clear feedback and automatic Details after completed-analysis proof errors. Menu source bytes and controls are unchanged; native proof usability remains held.
+
 ## 2026-10-22 — Case Coverage candidate
 
 - Add full original controls, persistent owned settings, current/all-font detached case reports, explicit aliases/Unicode alternatives/Math/Ligature/unknown findings and multi-character compatibility fixes.

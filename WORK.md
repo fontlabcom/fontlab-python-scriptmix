@@ -2,6 +2,28 @@
 this_file: WORK.md
 ---
 
+## Issue123 P2 fix round1 — shared App review fixes and source pin
+
+- Shared App fix `ba37d438f2330e1e0c61bb106b1527faa4d26b93` closes review I1
+  unknown encoded-uncased all-clear and I2 automatic Details after completed
+  analysis proof failures/target choices. Four controls/defaults unchanged.
+- Update only Case Coverage's app_source_commit pin. Menu bytes/SHA-256
+  fdab954a270ea6f738085dd8ba826168cc58f6d39a8ade49215ffe365ac6278f,
+  existing source page/indexes and all172prior records/pins/scripts unchanged.
+- Covering App tests59passed,exit0; changed engine96.99%/panel95.54%combined,
+  no exclusions/pragmas; exact commands/RED and GREEN receipts in App WORK
+  and the same external case-coverage-report.md append.
+- Scriptmix bounded command (cwd this repository; external cache/TMP,
+  PYTHONPATH=../fontlab-fontlabapp/src:../fontlab-fly/src,
+  PYTEST_DISABLE_PLUGIN_AUTOLOAD=1):
+  `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests/test_case_coverage.py tests/test_reports.py::test_manifest_when_distributed_then_hashes_and_menu_paths_match tests/test_curated_delivery.py::test_active_menu_contains_only_indexed_practical_tools`
+  exit0,6passed; case-coverage-fix1-provenance.log. Actual pin-to-App-head and
+  every prior manifest/script digest checked directly. No test assertions weakened.
+- No unchanged full suite/site build repeated; native proof route untouched.
+  Native active-item None calibration v2–v6 remains a material hold. No native
+  calls, descendants, owner/canonical edits, merges or pushes. M1 gate warning
+  work remains root tooling backlog; no gates/thresholds/warnings changed.
+
 ## Issue 123 P2 — final Scriptmix source receipt
 
 - Final matching App commit: `9441886b10c54d9bf6998c2c528200afc4f21bbd`.
