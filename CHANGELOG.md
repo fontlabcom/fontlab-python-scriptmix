@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 - Coverage tests for 39 scripts
+
+- `tests/test_cov_a_*.py` and `tests/test_cov_b_*.py` cover the Anchors, Components, Contours, Features, Font Info, Masters, Names, Kerning and Reports scripts below the 80% gate (now 98-100%). Script bytes and pins are unchanged; the fakes model PythonQt strictly.
+
 ## 2026-10-22 - Menu folder merge
 
 - Merge the Cleaning menu into Cleanup and Reporters into Reports (owner decision).

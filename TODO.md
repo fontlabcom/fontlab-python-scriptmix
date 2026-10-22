@@ -42,3 +42,4 @@ this_file: TODO.md
 - [ ] Qualify Selection To All Backgrounds on masks with components: retained shape/data/builder ownership, contour/component read-back diagnostics, complete-font history and save/reopen.
 - [ ] Qualify the seven fact-reusing panels in FontLab: control changes, reselect/Refresh, stale-font refusal, fresh Apply facts, painting and Close.
 - [ ] Complete native milestone cases: new layers isMasterLayer=False/autoLayer=False after create/Redo/reopen; rounding preference read-back; Copy Layers From Font cross-font Undo/Redo; glyph-to-layer mark propagation; retained component history; in-place versus repaired-clone transforms; base-of-auto metadata state; __smart_selected persistence.
+- [ ] `Reports/Label Statistics.py` `mark_label`: marks 361-999 read as "Grey -639"; define the mark range explicitly.
