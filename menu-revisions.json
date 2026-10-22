@@ -4,7 +4,7 @@
     {
       "destination": "Scripts/Anchors/Copy Anchors From Glyph.py",
       "historical_sha256": "d99143550bef5989a5f7e13e0a87ddc25a7ce39076b0bacfaa6b19de97167ded",
-      "current_sha256": "046dbf5a680c87aa722a527da700231dcdf126d0c4a4c95e4d24f21259397f89",
+      "current_sha256": "3ab1b1965bc3c2a78632b8114e41ff8975070c449df096c51402c0ef44068877",
       "source_sha256": "5a75bff7b933ab4f65d694d1e3c780e5a75cec3b52ec0875e038f308475da747",
       "kind": "annotations-and-docstrings-only",
       "edits": [
@@ -15,26 +15,34 @@
         {
           "historical": "    def source_glyph(self):\n",
           "current": "    def source_glyph(self) -> \"fontlab.flGlyph | None\":\n        \"\"\"Return the named native glyph, or None without a source font or name.\"\"\"\n"
+        },
+        {
+          "historical": "\"\"\"Copy a source glyph's anchors to selected glyphs, master by master.\n\nType a source name with fontwide completion; choose merge/replace, width scaling\nand current/all masters. Automatic layers are skipped. Unsafe automatic\ndependants and stale source previews refuse the complete write before history.\nOne Copy is one native Undo. Close disconnects every owned callback.\n\"\"\"",
+          "current": "\"\"\"Copy a source glyph's anchors to selected glyphs, master by master.\n\nWhat it does:\n    Type a source name with fontwide completion; choose merge/replace, width scaling\n    and current/all masters. Automatic layers are skipped. Unsafe automatic\n    dependants and stale source previews refuse the complete write before history.\n    One Copy is one native Undo. Close disconnects every owned callback.\n\nHow it works:\n    Plan source anchors master by master through App. Apply merge or replace\n    with optional width scaling; retain automatic layers and refuse unsafe or\n    stale sources.\n\nWhy this design:\n    A preview makes replacement and scaling decisions explicit before the\n    selected target anchor sets change.\n\nHow to use:\n    Select target glyphs and run Anchors > Copy Anchors From Glyph. Enter the\n    source, choose scope and options, inspect the preview and press Copy.\n\nBenefit:\n    Reuse anchor placement across a selected set; Copy is recorded as one Undo\n    step.\n\"\"\""
         }
       ]
     },
     {
       "destination": "Scripts/Features/Build Suffix Substitution.py",
       "historical_sha256": "13e7bb721cad475e3893fb905abd1abba8be38b6b159422390e31cbe5613f49f",
-      "current_sha256": "a8731789ba198ebf01725827a633d60928245c0db863044a1733d4ae34608555",
+      "current_sha256": "def83c621849aa1bd9c0c416e011596b47e76b509693bb78a1e441c06091c18c",
       "source_sha256": "23294f73a4936c77ad4c475e8900620c219d88f6d8df8467a6b1b21a695fc47f",
       "kind": "import-repoint",
       "edits": [
         {
           "historical": "from fly.ap.scripting import (\n    features_dialog_type,\n    read_feature_blocks,\n    show_script_dialog,\n    write_feature_blocks,\n)\n",
           "current": "from fly.ap.scripting import features_dialog_type, show_script_dialog\nfrom fly.fp.feature_blocks import read_feature_blocks, write_feature_blocks\n"
+        },
+        {
+          "historical": "\"\"\"Preview a font-wide suffix substitution. Append to source only; compile and test in the Features panel.\n\nRun with a font active. All original controls use the shared fly panel lifecycle.\nFeature data is font-wide; reopen after switching fonts or changing source.\n\"\"\"",
+          "current": "\"\"\"Preview a font-wide suffix substitution. Append to source only; compile and test in the Features panel.\n\nWhat it does:\n    Run with a font active. All original controls use the shared fly panel lifecycle.\n    Feature data is font-wide; reopen after switching fonts or changing source.\n\nHow it works:\n    Build safe base/alternate pairs from a suffix and append statements\n    through Fontport's exact-source writer. Refuse stale references or\n    ambiguous existing code.\n\nWhy this design:\n    Keeping the original prefix and unrelated feature blocks prevents a small\n    substitution edit from replacing other stored source.\n\nHow to use:\n    Run Features > Build Suffix Substitution. Set suffix and tag, inspect the\n    full proposed source, then Apply or Copy preview. Compile and test\n    manually in FontLab's Features panel.\n\nBenefit:\n    Prepare a consistent substitution block while retaining source outside the\n    requested feature edit.\n\"\"\""
         }
       ]
     },
     {
       "destination": "Scripts/Features/Feature Code Viewer.py",
       "historical_sha256": "96df801f97d645706cb714d34c1324800f36354c0b460c22a929868434ab9301",
-      "current_sha256": "f47c5634f787d5a0439bb0a9c39a32250f4c66b51502d5fc3abeba33c14da7bd",
+      "current_sha256": "c3690344e02e91c614830fc62929b9188d27fff6f835d861f77ef339dca700f6",
       "source_sha256": "d2de9d47c51a49b74b5817c4e6ce580d6901b48bc51c3f5fcfd0eb3638b1de97",
       "kind": "import-repoint",
       "edits": [
@@ -45,6 +53,855 @@
         {
           "historical": "    access can synthesize class declarations. The caller must use App's exact\n",
           "current": "    access can synthesize class declarations. The caller must use Fontport's exact\n"
+        },
+        {
+          "historical": "\"\"\"Read-only feature source for the whole font. Choose a feature and search its code.\n\nRun with a font active. All original controls use the shared fly panel lifecycle.\nFeature data is font-wide; reopen after switching fonts or changing source.\n\"\"\"",
+          "current": "\"\"\"Read-only feature source for the whole font. Choose a feature and search its code.\n\nWhat it does:\n    Run with a font active. All original controls use the shared fly panel lifecycle.\n    Feature data is font-wide; reopen after switching fonts or changing source.\n\nHow it works:\n    Read ordered prefix and feature blocks through Fontport. Keep empty blocks\n    and exact source; highlight literal search matches without compiling the\n    font.\n\nWhy this design:\n    Direct source inspection avoids confusing generated classes with the code\n    that is actually stored.\n\nHow to use:\n    Run Features > Feature Code Viewer with a font open. Choose the prefix or\n    a feature, enter search text and use the search action to move through its\n    matches.\n\nBenefit:\n    Locate a rule or language declaration while leaving feature source and\n    glyph data unchanged.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Reports/Empty Glyphs.py",
+      "historical_sha256": "24d24dc5af8d1e95870eb5134215f696a8fca90aa71e452c6cb2b04bed18c539",
+      "current_sha256": "b04ed765f371e0ae3465bd90e176d6d78b1cf79ec73a6b8291e9677e81c8d3dc",
+      "source_sha256": "bf8fe903b88aced87b32e968bce89d86f24c650c6b55c293c1bcadcdd982320b",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"List glyphs that have no outlines and no components on some or all masters, and select them.\n\nA glyph empty on one master but drawn on others is usually a mistake;\nspaces are empty on purpose and can be hidden. Each master is a column.\nSelect puts the listed glyphs (or the rows you pick) into the Font window\nselection. Nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"List glyphs that have no outlines and no components on some or all masters, and select them.\n\nWhat it does:\n    A glyph empty on one master but drawn on others is usually a mistake;\n    spaces are empty on purpose and can be hidden. Each master is a column.\n    Select puts the listed glyphs (or the rows you pick) into the Font window\n    selection. Nothing in the font changes.\n\nHow it works:\n    Read whether each glyph layer draws contours, including component\n    contours. Record empty masters and optionally hide whitespace-like glyphs\n    and conventional empty names.\n\nWhy this design:\n    Some empty glyphs are intentional; a report with a whitespace filter\n    supports review without deleting data.\n\nHow to use:\n    Run Reports > Empty Glyphs. Choose whether to hide whitespace, inspect the\n    per-master columns and select chosen rows or all listed glyphs in the Font\n    window.\n\nBenefit:\n    Find incomplete master drawings while preserving empty glyphs and their\n    advances.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Reports/Open Contours.py",
+      "historical_sha256": "47f01b0930d1ad4464f09a717a5c8552d74415305fe7a07f98da2842065c6d29",
+      "current_sha256": "10540577d3d96859b8e3e3a2c8cf930ff6bbfbb2ee25a3efb7c59ddd054d4b84",
+      "source_sha256": "3b558f6a22d17a4ecd1aac785d466928b57edee4062644f77c42781d1735bc3e",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Find open contours on every master and select the glyphs that have them.\n\nOpen paths are usually unintended in a font for filling: they render\nunpredictably and break overlap removal. Each row is one open contour with\nits master, node count and the gap between its end points. Nothing in the\nfont changes.\n\"\"\"",
+          "current": "\"\"\"Find open contours on every master and select the glyphs that have them.\n\nWhat it does:\n    Open paths are usually unintended in a font for filling: they render\n    unpredictably and break overlap removal. Each row is one open contour with\n    its master, node count and the gap between its end points. Nothing in the\n    font changes.\n\nHow it works:\n    Scan glyph layers on every declared master. For each open contour, list\n    its node count and the distance between its end points; keep source\n    identity for selection.\n\nWhy this design:\n    An open contour can be intentional, so the report identifies it for review\n    rather than closing paths automatically.\n\nHow to use:\n    Run Reports > Open Contours. Inspect the glyph, master and gap columns.\n    Select report rows to locate their glyphs in the Font window, then review\n    the actual paths.\n\nBenefit:\n    Find open-path candidates across masters without changing their topology\n    or geometry.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Reports/Font Overview.py",
+      "historical_sha256": "913c65036087cbca7e8fdb2ad1f0939dba7544f8afb4d5396fe98ed29e51c388",
+      "current_sha256": "f0ae565b22375ffd609e929b99e12a766a686ce44e7728858f4537f40c422c9c",
+      "source_sha256": "69ffb23a42cecae7cbbb29ad7718a85f312715d90379b9ac97eef7c17b952d69",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"A one-screen dashboard of the current font: glyphs, encoding, masters, kerning, composites.\n\nCards show glyph and code point counts, composites, glyphs without\noutlines on the current master, marks and notes; the table lists each\nmaster's vertical metrics and kerning pair count. Click Refresh after\nediting. Nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"A one-screen dashboard of the current font: glyphs, encoding, masters, kerning, composites.\n\nWhat it does:\n    Cards show glyph and code point counts, composites, glyphs without\n    outlines on the current master, marks and notes; the table lists each\n    master's vertical metrics and kerning pair count. Click Refresh after\n    editing. Nothing in the font changes.\n\nHow it works:\n    Count glyph encodings, composites, empty current-master drawings, marks\n    and notes. Read each master's vertical metrics and explicit kerning-pair\n    count for the table.\n\nWhy this design:\n    Cards give a compact census, while the master rows keep family-specific\n    metrics visible beside it.\n\nHow to use:\n    Run Reports > Font Overview with a font open. Inspect the cards and master\n    rows; press Refresh after edits or a font change to obtain a new report.\n\nBenefit:\n    Review the reported font inventory without modifying outlines, labels,\n    metrics or kerning.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Reports/Live Glyph Info.py",
+      "historical_sha256": "d950a1a7e3f38b38405c51fadc968acc0dcf571fd8eba5db9adb3cce354f3b10",
+      "current_sha256": "099ae94f54c877799291208da323d96fd7d33ba942f2b7d5078a316a6e0df0bc",
+      "source_sha256": "ed3342486a7ee476d7ca41251682d3a713f4a88661fa0fa285ac9e8da5e99543",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"A live panel for the glyph you are working on: widths, side-bearings, bounds and counts per master.\n\nIt follows the first glyph selected in the Font window (or the glyph being\nedited) and re-reads it twice a second, so edits show up as you make them.\nValues that differ between masters stand out. Nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"A live panel for the glyph you are working on: widths, side-bearings, bounds and counts per master.\n\nWhat it does:\n    It follows the first glyph selected in the Font window (or the glyph being\n    edited) and re-reads it twice a second, so edits show up as you make them.\n    Values that differ between masters stand out. Nothing in the font changes.\n\nHow it works:\n    Poll the focused glyph and read width, sidebearings, bounds and object\n    counts for its master layers. Highlight columns whose displayed values\n    differ.\n\nWhy this design:\n    Live values remove the need to reopen a static report after each drawing\n    or spacing edit.\n\nHow to use:\n    Run Reports > Live Glyph Info with a font open. Select a glyph in the Font\n    window or edit a glyph and inspect the updated master rows. Close the\n    panel when finished.\n\nBenefit:\n    Monitor the reported metrics and counts while leaving the font data\n    unchanged.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Reports/Glyph Table CSV.py",
+      "historical_sha256": "633627b3f2d375b2e67abf6cea0b0ae355178be4771c8a6a2380a45dd5fa8a16",
+      "current_sha256": "7cb67c7d78be7697eb88ea55440fbe3e9576a1221a1f4718a1e622601ce7511d",
+      "source_sha256": "9e3539ac9bfe579a22d3c0187c6c2c74ce661b35ebda9bac39870833c1ad7993",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"A sortable table of glyphs (name, Unicode, width per master, contours, components) with CSV export.\n\nPick all glyphs or the selection, review the table, then export it as a\nUTF-8 CSV file (choose the path first) or copy it to the clipboard for a\nspreadsheet. Contours count everything drawn, components included, on the\ncurrent master. Nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"A sortable table of glyphs (name, Unicode, width per master, contours, components) with CSV export.\n\nWhat it does:\n    Pick all glyphs or the selection, review the table, then export it as a\n    UTF-8 CSV file (choose the path first) or copy it to the clipboard for a\n    spreadsheet. Contours count everything drawn, components included, on the\n    current master. Nothing in the font changes.\n\nHow it works:\n    Capture glyph names, encodings, master advances and current-master\n    contour/component counts. Encode rows with CSV quoting for clipboard or\n    UTF-8 file export.\n\nWhy this design:\n    A spreadsheet-friendly snapshot supports external review while keeping the\n    font as the source of the measured values.\n\nHow to use:\n    Run Reports > Glyph Table CSV. Choose all glyphs or selection, review the\n    columns and choose a path before Export, or use Copy for the computed CSV\n    text.\n\nBenefit:\n    Share a glyph inventory with widths across masters without writing any\n    font data.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Reports/Label Statistics.py",
+      "historical_sha256": "160b4c80d899c42329bd4fb5264e9e2aec54400f8e1b7e230611ff1f40e8c2f9",
+      "current_sha256": "20a76102de6bd15df87a10142774ba0432ee6b75e2207e609cb5328de7073e83",
+      "source_sha256": "a0b6bf699ea9f54ea79873205abde17697eb0402bdc7568ce682c1c8db25819d",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Count glyphs by mark colour and by name suffix (.sc, .ss01, .loclPLK\u2026); click a row to select them.\n\nTwo lists side by side give a quick census of a big font's working labels\nand alternate sets. Clicking a row selects those glyphs in the Font window\n(hold Add to extend the selection). Nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"Count glyphs by mark colour and by name suffix (.sc, .ss01, .loclPLK\u2026); click a row to select them.\n\nWhat it does:\n    Two lists side by side give a quick census of a big font's working labels\n    and alternate sets. Clicking a row selects those glyphs in the Font window\n    (hold Add to extend the selection). Nothing in the font changes.\n\nHow it works:\n    Group font glyphs by mark value and complete name suffix. Sort each group\n    list by count and retain the names behind each row for explicit selection.\n\nWhy this design:\n    Counts expose the size of alternate sets and marked work batches without\n    altering their labels.\n\nHow to use:\n    Run Reports > Label Statistics. Compare the mark and suffix lists. Click a\n    group to select its glyphs; enable Add when the current selection must be\n    kept.\n\nBenefit:\n    Locate a labelled work set quickly while preserving mark values and glyph\n    names.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Reports/Nodes Near Zones.py",
+      "historical_sha256": "e5a80cd4148f4e58f55e0a6d1515dd3311fdcf646dd0d69673f46498ecf1217c",
+      "current_sha256": "747edb4fb3133b6c8550b802b421c7e94cd48084723294fc06a94efd90cbdc0d",
+      "source_sha256": "cf86a42920f30e8258e67acb34c83154c688a84355681f9e06ec1138c2ef2613",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Find on-curve nodes that sit within a few units of a vertical metric but not on it.\n\nNear misses (y = 687 when the cap height is 688) are almost always slips\nof the mouse; real overshoots are further away and pass. Checks baseline,\nx-height, cap height, ascender and descender of every master. Select the\nglyphs to fix them. Nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"Find on-curve nodes that sit within a few units of a vertical metric but not on it.\n\nWhat it does:\n    Near misses (y = 687 when the cap height is 688) are almost always slips\n    of the mouse; real overshoots are further away and pass. Checks baseline,\n    x-height, cap height, ascender and descender of every master. Select the\n    glyphs to fix them. Nothing in the font changes.\n\nHow it works:\n    Transform own on-curve node positions into layer coordinates. Report\n    points with a nonzero distance within the chosen tolerance of each\n    master's vertical metrics.\n\nWhy this design:\n    A near-miss report is a review aid; small offsets can be intentional and\n    must not be snapped automatically.\n\nHow to use:\n    Run Reports > Nodes Near Zones. Choose selection or whole font and a\n    tolerance, inspect glyph/master/metric rows and select results to examine\n    them in FontLab.\n\nBenefit:\n    Find nodes close to metric lines without moving nodes, handles, components\n    or anchors.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Reports/Unicode Coverage.py",
+      "historical_sha256": "abadcdc25b285677df5922c92c1ba2b60a1463e327f124fe45d7a473a0a245ab",
+      "current_sha256": "c7fd8e16a0a6e6d6185228fe14b28e76efe9072932ab87637c7c0fef92fd107d",
+      "source_sha256": "ace84203d35947bdf3a23eeb5eac7181ce5aa5f4c35defd4b462b6770b6853a1",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Unicode coverage of the current font, block by block, with progress bars.\n\nFor every Unicode block that the font touches, shows how many of the\nblock's assigned characters (per Python's unicodedata) have a glyph.\nDouble-click a block to select its glyphs in the Font window. Block ranges\nare embedded (planes 0 and 1). Nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"Unicode coverage of the current font, block by block, with progress bars.\n\nWhat it does:\n    For every Unicode block that the font touches, shows how many of the\n    block's assigned characters (per Python's unicodedata) have a glyph.\n    Double-click a block to select its glyphs in the Font window. Block ranges\n    are embedded (planes 0 and 1). Nothing in the font changes.\n\nHow it works:\n    Collect all font encodings and compare them with embedded Unicode block\n    ranges. Count assigned characters with Python's Unicode data and report\n    codes outside those ranges.\n\nWhy this design:\n    Block percentages depend on the assigned-character denominator; displaying\n    counts avoids implying complete Unicode support from a progress bar alone.\n\nHow to use:\n    Run Reports > Unicode Coverage. Inspect covered and assigned counts,\n    change the block visibility option and double-click a block to select its\n    encoded glyphs.\n\nBenefit:\n    Review the reported Unicode-block coverage without assigning code points\n    or changing export flags.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Font Info/Glyph Order Preview and Export.py",
+      "historical_sha256": "491df26b75a450f54e81c9ea49643c3509e5e1e70ab49ea072fc4702e7125966",
+      "current_sha256": "e22e6259490c327f407a08d4e3106a741dde23fd8b6d82b630b56fe888adaed6",
+      "source_sha256": "516de6e60b7f163855062a6cb7561f9383d611e72c534fd26ba82dbea3e2bf2f",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Sort by Unicode, name or Unicode script; export one glyph name per line for the whole font.\n\nOpen this script with a font active. Choose Unicode, Name or Script, then select\nExport order. The modeless chooser saves UTF-8 text for use in another workflow.\nThe font's glyph order and outlines stay unchanged. Reopen after switching fonts.\n\"\"\"",
+          "current": "\"\"\"Sort by Unicode, name or Unicode script; export one glyph name per line for the whole font.\n\nWhat it does:\n    Open this script with a font active. Choose Unicode, Name or Script, then select\n    Export order. The modeless chooser saves UTF-8 text for use in another workflow.\n    The font's glyph order and outlines stay unchanged. Reopen after switching fonts.\n\nHow it works:\n    Sort captured glyph records by the selected Unicode, name or script key,\n    always keeping .notdef first. Export the resulting names as UTF-8 lines.\n\nWhy this design:\n    An exported proposal can feed another workflow without relying on an\n    unverified native glyph-order writer.\n\nHow to use:\n    Run Font Info > Glyph Order Preview and Export. Choose the sort mode,\n    inspect old and new indices and select Export order to choose a\n    destination file.\n\nBenefit:\n    Prepare a reproducible glyph-order list while preserving the font's stored\n    glyph order.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Font Info/Master Metrics Table.py",
+      "historical_sha256": "4455e14f52b4db43cd372c2d5218af04e5f4afcf7c925f7f5a75de61402b8be1",
+      "current_sha256": "9e0c582b5d576c0bb9ac1203c613a803ca6c2343331fec24b9481fb43b040233",
+      "source_sha256": "1ef204ffb90ad88da181af66d60729bdc3e86cfb8c866cb8fbe2ddc44d006573",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Edit ascender, descender, x-height and cap-height across masters; diagram follows the selected row.\n\nOpen with a font active. Double-click a metric value, check the selected row's\ndiagram, then choose Apply. Every row is checked before any edit. Apply records\none undoable metadata operation and preserves glyph outlines. Keep this panel\nbound to its original font; reopen it after switching to another font.\n\"\"\"",
+          "current": "\"\"\"Edit ascender, descender, x-height and cap-height across masters; diagram follows the selected row.\n\nWhat it does:\n    Open with a font active. Double-click a metric value, check the selected row's\n    diagram, then choose Apply. Every row is checked before any edit. Apply records\n    one undoable metadata operation and preserves glyph outlines. Keep this panel\n    bound to its original font; reopen it after switching to another font.\n\nHow it works:\n    Read each master's four vertical metrics while restoring the original\n    current master. Validate finite, ordered, signed-16-bit proposals before\n    writing metadata.\n\nWhy this design:\n    A complete multi-row proposal prevents a later invalid cell from leaving\n    an earlier master partially updated by normal validation.\n\nHow to use:\n    Run Font Info > Master Metrics Table. Edit metric cells, select a row to\n    inspect its diagram and press Apply after reviewing every master. Reopen\n    after changing fonts.\n\nBenefit:\n    Stage family-wide vertical metrics together while keeping glyph outlines\n    unchanged.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Font Info/Names and Credits.py",
+      "historical_sha256": "22770ea8c13c0e5680a12f718a2d3d774139011938e33bd48a46808d3f3f2557",
+      "current_sha256": "6f53bcec74d4f657b3cf7a5595c9e567ab03e5c3009fe0dc19070d40498d46e5",
+      "source_sha256": "f133a43c9a9d796401900b998060ceea276c4738539d216aea8810d32846e0aa",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Edit family, style, credits and version naming for the current font.\n\nFamily, designer, copyright and version name are font-wide; the style name belongs\nto the current master (FontLab stores it per master). A table previews the changed\nfields before Apply.\n\nOpen with a font active. Edit the fields, review the table, then choose Apply.\nBlank family or style names and invalid version text disable Apply. The undoable\nedit leaves outlines and other masters' style names intact. Reopen after changing\nthe active master or font so the displayed style scope stays explicit.\n\"\"\"",
+          "current": "\"\"\"Edit family, style, credits and version naming for the current font.\n\nWhat it does:\n    Family, designer, copyright and version name are font-wide; the style name belongs\n    to the current master (FontLab stores it per master). A table previews the changed\n    fields before Apply.\n\n    Open with a font active. Edit the fields, review the table, then choose Apply.\n    Blank family or style names and invalid version text disable Apply. The undoable\n    edit leaves outlines and other masters' style names intact. Reopen after changing\n    the active master or font so the displayed style scope stays explicit.\n\nHow it works:\n    Validate all single-line naming fields and stage explicit font-wide or\n    current-master metadata changes. Apply through the shared Font Info\n    history writer.\n\nWhy this design:\n    Style is master-specific while family and credit fields are global, so the\n    preview must keep their scopes distinct.\n\nHow to use:\n    Run Font Info > Names and Credits. Edit the fields, review the changed-\n    field table and press Apply. Reopen after changing font or master before\n    editing that master's style.\n\nBenefit:\n    Update related naming and credit metadata together while retaining\n    outlines and other masters' style names.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Font Info/Unicode Ranges and Codepages.py",
+      "historical_sha256": "e8fd9fab22d4aead8839c737d5a64fe0e8fd476aedc375728ee7e1de54b6cf14",
+      "current_sha256": "8092778be9fe1747aa459a17e1f0ed9f45b5428b541492dc8a93efe92d15917c",
+      "source_sha256": "d8ddb9048992be3e20ec1f5410070e0bfd2f8909d1625560bfe75ba932c8386b",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Report OS/2 range bits and complete printable codepage coverage from every glyph encoding; no font changes.\n\nOpen with a font active. Read covered OS/2 Unicode ranges and printable single-byte\ncodepage coverage, then use Refresh report after encoding edits. Every encoding\non each glyph is counted. Multibyte codepages need manual review. This report\ndoes not change export flags: coverage alone does not establish a correct flag.\n\"\"\"",
+          "current": "\"\"\"Report OS/2 range bits and complete printable codepage coverage from every glyph encoding; no font changes.\n\nWhat it does:\n    Open with a font active. Read covered OS/2 Unicode ranges and printable single-byte\n    codepage coverage, then use Refresh report after encoding edits. Every encoding\n    on each glyph is counted. Multibyte codepages need manual review. This report\n    does not change export flags: coverage alone does not establish a correct flag.\n\nHow it works:\n    Collect all valid glyph encodings, assess OS/2 Unicode ranges and compare\n    printable characters of supported single-byte codepages. Report multibyte\n    domains for manual review.\n\nWhy this design:\n    Encoding coverage alone cannot establish correct export flags, so this\n    tool reports findings rather than writing OS/2 bits.\n\nHow to use:\n    Run Font Info > Unicode Ranges and Codepages. Inspect coverage rows and\n    use Refresh report after encoding changes; review multibyte codepages\n    separately.\n\nBenefit:\n    Gather evidence for export-flag decisions without changing font metadata\n    or encodings.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Font Info/Bump Font Version.py",
+      "historical_sha256": "3f55b998e7650df88b8b470bdc756013fc94c2cb19447098e3088a2d2953b670",
+      "current_sha256": "ace2fa186c915300524e1c5923784d8382b69e4cf2685226ab8f3ca57be7a700",
+      "source_sha256": "0a518b94388dd3923170691c1b09293b054e74c84c07a647bc9dad0cdf6d32bc",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Bump the numeric version and version name; optionally append a dated font note.\n\nOpen with a font active. Choose a major or minor bump and optional dated notes,\nreview the field changes, then choose Apply. Minor 999 carries into the major.\nVersion fields are global; notes are appended to each master's existing note.\nThe edit is undoable. Reopen the panel after switching fonts.\n\"\"\"",
+          "current": "\"\"\"Bump the numeric version and version name; optionally append a dated font note.\n\nWhat it does:\n    Open with a font active. Choose a major or minor bump and optional dated notes,\n    review the field changes, then choose Apply. Minor 999 carries into the major.\n    Version fields are global; notes are appended to each master's existing note.\n    The edit is undoable. Reopen the panel after switching fonts.\n\nHow it works:\n    Plan a bounded numeric version and matching version name. Optionally\n    append a dated note to every master's existing note; keep the fields\n    staged until Apply.\n\nWhy this design:\n    Version naming and numeric metadata must agree, while an optional history\n    note must not replace existing master notes.\n\nHow to use:\n    Run Font Info > Bump Font Version. Choose major or minor and the dated-\n    note option, inspect all proposed changes and press Apply once for the\n    intended increment.\n\nBenefit:\n    Update related version metadata together and retain the previous note\n    content.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Features/Alternate Preview.py",
+      "historical_sha256": "ffb72d9561f925a7e2fdedd7973c74d12b9786983a25e5c2c0eb966ea96e233d",
+      "current_sha256": "82b6530ab5a41f2c19577abd5f6b480bc151b5d73f94a3d02c2fb4bedbfdcebe",
+      "source_sha256": "8005230d49193c541587f6eb78e2fdedebb379f17ef4b866d8d97ec79e7fc04a",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Compare a base glyph and its suffixed alternates in each master. Read-only; outlines share one scale per row.\n\nRun with a font active. All original controls use the shared fly panel lifecycle.\nFeature data is font-wide; reopen after switching fonts or changing source.\n\"\"\"",
+          "current": "\"\"\"Compare a base glyph and its suffixed alternates in each master. Read-only; outlines share one scale per row.\n\nWhat it does:\n    Run with a font active. All original controls use the shared fly panel lifecycle.\n    Feature data is font-wide; reopen after switching fonts or changing source.\n\nHow it works:\n    Match the complete base-plus-dot prefix, then draw existing alternates\n    with their transformed outlines. Each master row uses a common scale for\n    comparison.\n\nWhy this design:\n    Naming identifies candidate alternates without claiming that a feature\n    rule selects them during shaping.\n\nHow to use:\n    Run Features > Alternate Preview. Enter an existing base name, choose the\n    master scope and scroll through all displayed rows. Reopen after changing\n    the bound font.\n\nBenefit:\n    Compare alternate proportions and master differences without generating a\n    font or changing glyphs.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Features/Classes Browser.py",
+      "historical_sha256": "c2ee6f461021b20a639a7d4ef64f7c22e6dc34230b4eafa2e56d11e068e60584",
+      "current_sha256": "d5adae4c1efeeb7322afb39ed857de524cd3ac63e9b76532b3156edf838719ac",
+      "source_sha256": "75f08473ae0383b1c2c3d676ad80a90303e1cf214c6e4b898a7192b03d1733e5",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Browse feature classes and their members. Filter by class name or glyph; font-wide across masters.\n\nRun with a font active. All original controls use the shared fly panel lifecycle.\nFeature data is font-wide; reopen after switching fonts or changing source.\n\"\"\"",
+          "current": "\"\"\"Browse feature classes and their members. Filter by class name or glyph; font-wide across masters.\n\nWhat it does:\n    Run with a font active. All original controls use the shared fly panel lifecycle.\n    Feature data is font-wide; reopen after switching fonts or changing source.\n\nHow it works:\n    Read feature-class records, exclude kerning-only classes and strip the\n    native key-member marker. Filter the captured class names and member text.\n\nWhy this design:\n    Feature classes and kerning classes serve different tasks; this view keeps\n    the feature membership explicit.\n\nHow to use:\n    Run Features > Classes Browser with a font open. Type a class or member\n    filter, choose a row and copy the displayed class declaration when needed.\n\nBenefit:\n    Check which glyphs belong to a feature class without editing membership or\n    feature source.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Features/Ligature Finder.py",
+      "historical_sha256": "556e965cf21995a1220af8ab94355c599439fa04492cf88809b865bfa3711657",
+      "current_sha256": "076a3a1e83238b473ccb5fdd0902668b9ca5f906e0b8aa2e55d72845856e9b1d",
+      "source_sha256": "9df82eb3fca73954df1010d0a20010fabc37ecf6a38171d6259938e4d3194b68",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Find underscore-named glyphs and existing input glyphs. Name-derived recipes do not imply outline components.\n\nRun with a font active. All original controls use the shared fly panel lifecycle.\nFeature data is font-wide; reopen after switching fonts or changing source.\n\"\"\"",
+          "current": "\"\"\"Find underscore-named glyphs and existing input glyphs. Name-derived recipes do not imply outline components.\n\nWhat it does:\n    Run with a font active. All original controls use the shared fly panel lifecycle.\n    Feature data is font-wide; reopen after switching fonts or changing source.\n\nHow it works:\n    Split underscore names into input recipes and check that every input glyph\n    exists and has a safe name. Produce liga text only for usable recipes.\n\nWhy this design:\n    An underscore name suggests a ligature recipe but does not prove component\n    structure or existing shaping behaviour.\n\nHow to use:\n    Run Features > Ligature Finder. Filter the rows, inspect missing inputs\n    and copy the usable rules for review. Add and compile them separately if\n    they suit the font.\n\nBenefit:\n    Find naming-based ligature candidates without silently adding\n    substitutions or modifying outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Features/Suffix Report.py",
+      "historical_sha256": "388b4c2b68498b4ae23fec27affc6709adfe6cc6fa000251364a979b251e1128",
+      "current_sha256": "4f6ecd89bbe7cb3d74c17ed144ff4bdec6528d332acc8b1483a9b1ba4a734d3c",
+      "source_sha256": "1656007da6d4a57a2e921dc104bd2e8afe327e6d6baee9de99652538f342f190",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Suffix inventory across the whole font. Suggestions are naming hints; review the generated code.\n\nRun with a font active. All original controls use the shared fly panel lifecycle.\nFeature data is font-wide; reopen after switching fonts or changing source.\n\"\"\"",
+          "current": "\"\"\"Suffix inventory across the whole font. Suggestions are naming hints; review the generated code.\n\nWhat it does:\n    Run with a font active. All original controls use the shared fly panel lifecycle.\n    Feature data is font-wide; reopen after switching fonts or changing source.\n\nHow it works:\n    Collect complete suffixes after the first dot in glyph names. Count names\n    and usable base pairs, suggest conventional tags and build a copyable code\n    preview.\n\nWhy this design:\n    A suffix can exist without a base glyph; separate counts prevent an orphan\n    name from becoming a false substitution suggestion.\n\nHow to use:\n    Run Features > Suffix Report. Select a suffix row, inspect the suggested\n    tag and substitution pairs, then copy the snippet for manual review in the\n    Features panel.\n\nBenefit:\n    Inventory alternate sets and prepare feature text without automatically\n    adding rules to the font.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Names/Case Pairs.py",
+      "historical_sha256": "ffdb7108bf39cb42219cf22e595b4a41c81f4813be14c5692635ce69cef8a226",
+      "current_sha256": "9d366e8b87d56e2144fb96d5a1182d10b83107bbfe5a4a6767a7aa26188a5e78",
+      "source_sha256": "b7afe233095c7155806cf7f196f263fae1b17751a9bb8da06e38618dcc298a01",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Find the upper- or lowercase counterparts of the selected glyphs and select them.\n\nCounterparts come from Unicode case mapping of each glyph's code point;\nunencoded alternates use their base name (a.ss01 -> A.ss01). Select the\ncounterparts alone or together with the originals. Nothing in the font\nchanges.\n\"\"\"",
+          "current": "\"\"\"Find the upper- or lowercase counterparts of the selected glyphs and select them.\n\nWhat it does:\n    Counterparts come from Unicode case mapping of each glyph's code point;\n    unencoded alternates use their base name (a.ss01 -> A.ss01). Select the\n    counterparts alone or together with the originals. Nothing in the font\n    changes.\n\nHow it works:\n    Map Unicode case counterparts to existing glyphs. For unencoded suffixed\n    names, try the base counterpart with the original suffix; reject multi-\n    character case expansions.\n\nWhy this design:\n    A Unicode case change is not always one glyph, so missing or expanding\n    mappings remain visible rather than guessed.\n\nHow to use:\n    Select source glyphs and run Names > Case Pairs. Review the mapping rows,\n    choose whether originals stay selected and select the available\n    counterparts.\n\nBenefit:\n    Move between related case glyphs while preserving names, encodings and\n    outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Names/Character Info.py",
+      "historical_sha256": "71a8250426b55d0f184ce581128315b623ca6ab441cb3f82079eacedd52598ae",
+      "current_sha256": "f67cd3c497172096bd984473ff0fbac230b2ff8724758e1597ae74d421699892",
+      "source_sha256": "205679698769895a9b18ad06f792fe171be32038ef679fbe8b75f026b80885e1",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"A live panel describing the character of the glyph selected in the Font window.\n\nShows the outline next to the system font's rendering, the code point, the\nUnicode name and category (Python's unicodedata), case counterpart,\ndecomposition and the UTF-8/UTF-16 encodings. It follows the selection\ntwice a second; nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"A live panel describing the character of the glyph selected in the Font window.\n\nWhat it does:\n    Shows the outline next to the system font's rendering, the code point, the\n    Unicode name and category (Python's unicodedata), case counterpart,\n    decomposition and the UTF-8/UTF-16 encodings. It follows the selection\n    twice a second; nothing in the font changes.\n\nHow it works:\n    Describe the selected glyph's encoded character with Python Unicode data.\n    Draw its current outline beside a system-font character and refresh from\n    the live selection.\n\nWhy this design:\n    The separate renderings distinguish character identity from the font's own\n    drawing without treating the system glyph as a design target.\n\nHow to use:\n    Run Names > Character Info. Select an encoded glyph in the Font window,\n    inspect its code point and encodings and use Copy to copy the current\n    character.\n\nBenefit:\n    Check Unicode identity, case and decomposition while leaving the glyph's\n    encoding unchanged.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Names/Character Set Compare.py",
+      "historical_sha256": "a1c2b1426812516c1d731a38f315bd7cf9cf6414174ef70f4b0b3b7f5c10a1df",
+      "current_sha256": "6ebc5324ee8025e96c0f7a48419aa850c8393ca303e27aa3eb186fcaa975b8d7",
+      "source_sha256": "222c77aef210f87f2cb327707b2b98100ca5133a8b48cd80a40428c2d9e23036",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Paste a text or a character set and compare it with the font's encoded characters.\n\nLists characters of the text the font lacks and characters the font has\nthat the text does not use, with names from unicodedata. Language presets\nfill in common alphabets. Copy the missing set, or select the extra glyphs\nin the Font window. Nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"Paste a text or a character set and compare it with the font's encoded characters.\n\nWhat it does:\n    Lists characters of the text the font lacks and characters the font has\n    that the text does not use, with names from unicodedata. Language presets\n    fill in common alphabets. Copy the missing set, or select the extra glyphs\n    in the Font window. Nothing in the font changes.\n\nHow it works:\n    Compare distinct non-whitespace input characters with every encoded font\n    character. Show missing and extra sets with Unicode names and code points.\n\nWhy this design:\n    A character-set comparison answers a repertoire question without confusing\n    unencoded alternates with encoded characters.\n\nHow to use:\n    Run Names > Character Set Compare. Paste text or choose a language preset,\n    inspect both lists, then copy missing characters or select extra glyphs as\n    required.\n\nBenefit:\n    Prepare a character-coverage review while leaving encodings and glyph\n    membership intact.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Names/Glyph Finder.py",
+      "historical_sha256": "0141062c32e45e4efb40810fee2b91030e73f3044bf00aae05bf48605cbcfce9",
+      "current_sha256": "7dba91b4e447cc7a4d5afff4188c69fece55cac4e8e2e42e4b8712d24f9eebe9",
+      "source_sha256": "e5bb9a3fe49d1257e8fe92b523fc633668836504346180bf0804e3c7596448d9",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Type to find glyphs by name, character or code point; Enter selects them in the Font window.\n\nAccepts a name fragment (acute), a wildcard pattern (*.ss0?), a character\n(\u00e9), or a code point (U+00E9, 0x1E82, uni00E9). The list updates as you\ntype; double-click a row to select just that glyph. Nothing in the font\nchanges.\n\"\"\"",
+          "current": "\"\"\"Type to find glyphs by name, character or code point; Enter selects them in the Font window.\n\nWhat it does:\n    Accepts a name fragment (acute), a wildcard pattern (*.ss0?), a character\n    (\u00e9), or a code point (U+00E9, 0x1E82, uni00E9). The list updates as you\n    type; double-click a row to select just that glyph. Nothing in the font\n    changes.\n\nHow it works:\n    Choose a matcher from the query syntax: name fragment, wildcard, literal\n    character or code-point form. Filter glyph records and guard explicit\n    Font-window selection.\n\nWhy this design:\n    Several input forms let the user locate an encoded character or a named\n    alternate in the same view.\n\nHow to use:\n    Run Names > Glyph Finder. Enter a query, inspect the result list and press\n    Enter to select matches. Double-click a row when only that glyph is\n    required.\n\nBenefit:\n    Find glyphs by the identifier at hand without renaming or changing their\n    Unicode assignments.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Names/Select by Mark.py",
+      "historical_sha256": "c13b40e3808df4dbcdfc1142b8d524cd59e499194aa66c3782cbaade1149daf0",
+      "current_sha256": "af0008b903366da7f3131f6daa35d3c8b4d69a78558094f406408523c06a44dd",
+      "source_sha256": "5f058a947558f279bb7ebccb7cc82cd57c73d3811770f73a379960241c1d3323",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Select glyphs in the Font window by their mark colour.\n\nLists every mark colour used in the font (and unmarked glyphs) with a\nswatch and a count. Pick one or more rows and click Select, or double-click\na row. Optionally add to the current selection. Nothing in the font changes.\n\"\"\"",
+          "current": "\"\"\"Select glyphs in the Font window by their mark colour.\n\nWhat it does:\n    Lists every mark colour used in the font (and unmarked glyphs) with a\n    swatch and a count. Pick one or more rows and click Select, or double-click\n    a row. Optionally add to the current selection. Nothing in the font changes.\n\nHow it works:\n    Group the current font's glyphs by native mark value, then draw swatches\n    and counts. Selection goes through the shared Names panel source guard.\n\nWhy this design:\n    Colour groups can identify a work batch without requiring a persistent\n    naming convention.\n\nHow to use:\n    Run Names > Select by Mark. Pick one or more rows and press Select, or\n    double-click a row. Enable Add to the current selection when the old\n    selection must remain.\n\nBenefit:\n    Turn existing mark colours into a Font-window selection while keeping the\n    stored marks unchanged.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Classes Browser.py",
+      "historical_sha256": "d2fb6a60232ef806b20d25b55c1ceee1a56a91257a5edfb68b07bd16b57114d3",
+      "current_sha256": "4385bbdde453e94a1ed9a429f9d208bf0b3d504d3780cf3604e03d036b6a550c",
+      "source_sha256": "9c41585f31449564540afe8bc52947437504b6330204cf9807da179ed868f80a",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Browse kerning classes: their side, members, and every pair that uses them on each master.\n\nThe list on the left shows each class with its side (left = first glyph of a pair, right =\nsecond) and size; filter it by class or member name. Pick a class to see its members and the\npairs that use it with one value column per master. \"Select members\" selects the class's glyphs\nin the Font window. Nothing is edited.\n\"\"\"",
+          "current": "\"\"\"Browse kerning classes: their side, members, and every pair that uses them on each master.\n\nWhat it does:\n    The list on the left shows each class with its side (left = first glyph of a pair, right =\n    second) and size; filter it by class or member name. Pick a class to see its members and the\n    pairs that use it with one value column per master. \"Select members\" selects the class's glyphs\n    in the Font window. Nothing is edited.\n\nHow it works:\n    Read side-specific kerning classes and their members, then collect\n    explicit pairs using the selected class across masters. Filter class names\n    or exact member names.\n\nWhy this design:\n    Class membership and pair use are different questions; showing both avoids\n    mistaking an unused class for an active kerning rule.\n\nHow to use:\n    Run Kerning > Classes Browser. Enter a filter, choose a class and inspect\n    its members and pair values. Use Select members to locate its glyphs in\n    the Font window.\n\nBenefit:\n    Trace kerning-class use without changing membership or pair data.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Compare Masters.py",
+      "historical_sha256": "f0051ebeee2e17c7cdb3c1e794334fbcc3bae733c7169eb906d3667207dfb872",
+      "current_sha256": "78be84906a2c0c02e96236cc39ee21b790422c1803f84b69baf508eae33706fb",
+      "source_sha256": "d0728097d89208bfb654cf97d09073628267388ebc7b0dca80ad185b805ca413",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Line up every kerning pair across all masters and flag the ones that look inconsistent.\n\nEach row is one pair (glyph or @class sides) with its value on every master; a pair missing\non a master shows a dash. Rows are flagged when the sign flips between masters, when a pair\nexists on some masters only, or when neighbouring masters differ by more than the jump\nthreshold. Tick \"Only flagged\" to proof just those. Nothing is edited.\n\"\"\"",
+          "current": "\"\"\"Line up every kerning pair across all masters and flag the ones that look inconsistent.\n\nWhat it does:\n    Each row is one pair (glyph or @class sides) with its value on every master; a pair missing\n    on a master shows a dash. Rows are flagged when the sign flips between masters, when a pair\n    exists on some masters only, or when neighbouring masters differ by more than the jump\n    threshold. Tick \"Only flagged\" to proof just those. Nothing is edited.\n\nHow it works:\n    Union explicit pair keys across masters, preserve missing values as absent\n    cells and flag sign changes, partial presence or jumps above the chosen\n    threshold.\n\nWhy this design:\n    A missing pair differs from an explicit zero; separate display values help\n    identify the type of inconsistency.\n\nHow to use:\n    Run Kerning > Compare Masters. Set the jump threshold, inspect reasons and\n    use Only flagged to reduce the table to candidates for manual proofing.\n\nBenefit:\n    Review family kerning differences without filling absent pairs or changing\n    values.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Pair List Browser.py",
+      "historical_sha256": "925c5ac9178477b00f4c133d54982116ba63175959ae4a0e2ebcd95b1f9e3ae0",
+      "current_sha256": "93d265b35fe09f9c0daac3603e20280023c6711556b5e03048754cbb3550b523",
+      "source_sha256": "924d35fee20f5bbc26f45ee1470615998c5214fd1f0fe84159629f0ec81f66bf",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Browse every kerning pair of a master: filter, sort by any column, export to CSV.\n\nType in the filter to keep pairs whose left or right side contains the text (glyph or @class\nname); \"=\" anchors a whole side, so \"=T\" shows pairs with exactly T on one side. Click a header\nto sort; values sort numerically. Export writes the pairs shown to a CSV file. Read-only.\n\"\"\"",
+          "current": "\"\"\"Browse every kerning pair of a master: filter, sort by any column, export to CSV.\n\nWhat it does:\n    Type in the filter to keep pairs whose left or right side contains the text (glyph or @class\n    name); \"=\" anchors a whole side, so \"=T\" shows pairs with exactly T on one side. Click a header\n    to sort; values sort numerically. Export writes the pairs shown to a CSV file. Read-only.\n\nHow it works:\n    Read explicit pairs on the chosen master and filter either side by\n    substring or exact equals-prefixed name. Export rows in the table's\n    displayed order.\n\nWhy this design:\n    Numeric value sorting and exact-side filtering help isolate a pair set\n    without changing its stored values.\n\nHow to use:\n    Run Kerning > Pair List Browser. Choose a master, enter a filter, sort by\n    a header and use Export to save the shown rows as CSV.\n\nBenefit:\n    Inspect and share an explicit kerning subset while retaining all glyph and\n    class pairs.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Missing Pairs.py",
+      "historical_sha256": "eb9a0ee1b2763280639fc9e1810a2f92528a9b4fc58fb8c293ed21026d5d3680",
+      "current_sha256": "65fcd76363d99c6af29ca98aea8c33bf37985daa9d9fd749d736cf63b98af0f3",
+      "source_sha256": "5925dbb199d82f7e40c33e73d7ebba5205d7f514622f6b9b7e158bdbb2931d5f",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"List the combinations of two glyph groups that no kerning pair covers on a master.\n\nEnter left and right glyphs: names separated by spaces, plain characters (\u201cAVT\u201d), or @class\ntokens that stand for all their members. Every left + right combination that neither a glyph\npair nor a class pair reaches is listed, ready to proof or to kern. \"Copy list\" puts the\nmissing pairs on the clipboard, one \"left right\" per line. Nothing is edited.\n\"\"\"",
+          "current": "\"\"\"List the combinations of two glyph groups that no kerning pair covers on a master.\n\nWhat it does:\n    Enter left and right glyphs: names separated by spaces, plain characters (\u201cAVT\u201d), or @class\n    tokens that stand for all their members. Every left + right combination that neither a glyph\n    pair nor a class pair reaches is listed, ready to proof or to kern. \"Copy list\" puts the\n    missing pairs on the clipboard, one \"left right\" per line. Nothing is edited.\n\nHow it works:\n    Expand character, glyph-name and class tokens into ordered unique sets.\n    Test every left/right combination against explicit glyph and side-\n    appropriate class coverage.\n\nWhy this design:\n    An explicit zero pair still covers a combination; the report must not\n    confuse zero adjustment with an absent kerning rule.\n\nHow to use:\n    Run Kerning > Missing Pairs. Choose a master, enter left and right sets\n    and inspect uncovered combinations. Use Copy list to prepare the shown\n    pairs for proofing.\n\nBenefit:\n    Find uncovered pair combinations without adding kerning values or editing\n    class membership.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Text Preview.py",
+      "historical_sha256": "f2dc3bb04c60fbb5c21d7d097de570694ee5222fbaf99706beb53c16abd908e0",
+      "current_sha256": "20440aea9ec454e262b6436010f97d16edbf92c492fae6d6edd635c8ebd5da31",
+      "source_sha256": "1961db49fe7d76257991adf4a84cee7fe25d56b9677f22b736552e0f4883ae5f",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Set text from the font's outlines with its kerning applied, per master, at any size.\n\nType text or /glyphname tokens, pick a master and drag the size slider; lines wrap to the\nwindow. Kerned gaps can be labelled with their values, and kerning can be switched off to see\nthe raw spacing. FontLab resolves each pair, including class kerning. Nothing is edited.\n\"\"\"",
+          "current": "\"\"\"Set text from the font's outlines with its kerning applied, per master, at any size.\n\nWhat it does:\n    Type text or /glyphname tokens, pick a master and drag the size slider; lines wrap to the\n    window. Kerned gaps can be labelled with their values, and kerning can be switched off to see\n    the raw spacing. FontLab resolves each pair, including class kerning. Nothing is edited.\n\nHow it works:\n    Resolve text tokens to glyphs, cache transformed paths and ask FontLab for\n    effective pair kerning on the chosen master. Wrap lines inside the proof\n    window.\n\nWhy this design:\n    Effective pair lookup includes class kerning, so the proof can compare\n    resolved spacing with raw advances.\n\nHow to use:\n    Run Kerning > Text Preview. Enter characters or slash-name tokens, choose\n    a master and size, then toggle kerning and value labels to compare the\n    spacing.\n\nBenefit:\n    Inspect the current outlines with effective kerning without exporting or\n    editing the font.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Copy Between Masters.py",
+      "historical_sha256": "fb9bb91736945a3cf1fb968188bacbfdbe6ae49e0696872de126b69920c42861",
+      "current_sha256": "caa0a564eb7e2536afad16b33382f5600a62b86cd310a39ba0c8991779aebe00",
+      "source_sha256": "6bef8dae54c1be82656a40b28f5cb694f08a34c6a5804110cac44f9996ffa512",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Copy the kerning of one master to other masters, optionally scaled.\n\nStart a new master's kerning from an existing one, or push corrections from the Regular to its\nneighbours. \"Replace\" makes the targets identical to the source, \"Add missing\" only adds pairs\nthe target lacks, \"Overwrite matching\" updates pairs both have. The summary shows, per target,\nhow many pairs are added, changed and removed. One Apply is one Undo step for all targets.\"\"\"",
+          "current": "\"\"\"Copy the kerning of one master to other masters, optionally scaled.\n\nWhat it does:\n    Start a new master's kerning from an existing one, or push corrections from the Regular to its\n    neighbours. \"Replace\" makes the targets identical to the source, \"Add missing\" only adds pairs\n    the target lacks, \"Overwrite matching\" updates pairs both have. The summary shows, per target,\n    how many pairs are added, changed and removed. One Apply is one Undo step for all targets.\n\nHow it works:\n    Stage source pairs and target differences under Replace, Add missing or\n    Overwrite matching, with optional percentage scaling. Commit the complete\n    checked target batch.\n\nWhy this design:\n    The per-target added/changed/removed summary makes destructive replacement\n    visible before the write begins.\n\nHow to use:\n    Run Kerning > Copy Between Masters. Choose source and targets, set mode\n    and scale, inspect every target summary and press Apply.\n\nBenefit:\n    Seed or update family kerning with explicit scope; Apply is recorded as\n    one Undo step.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Pair Editor.py",
+      "historical_sha256": "2e31e1278e5de1606eea877ecbed5d6ee93e433440acd934f0de8cb762a66dfc",
+      "current_sha256": "f95c078a3b2cfac40d291141b7296cdda08b6a365faefcb3a11bd93431ec96d6",
+      "source_sha256": "513ed4180b9137028cdddb0eca5a357bc92eef58f9b43053f38092ce828b786c",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Edit every kerning pair that involves one glyph, with one column per master.\n\nRows are the pairs where the glyph, or a kerning class it belongs to, is on the left or right.\nType a new value in any master's cell; clear a cell to delete that pair on that master. Edited\ncells turn the accent colour until Apply, which writes all of them as one Undo step. Add a row\nfor a new partner with the field under the table.\"\"\"",
+          "current": "\"\"\"Edit every kerning pair that involves one glyph, with one column per master.\n\nWhat it does:\n    Rows are the pairs where the glyph, or a kerning class it belongs to, is on the left or right.\n    Type a new value in any master's cell; clear a cell to delete that pair on that master. Edited\n    cells turn the accent colour until Apply, which writes all of them as one Undo step. Add a row\n    for a new partner with the field under the table.\n\nHow it works:\n    Collect pairs involving the glyph or its applicable classes and stage\n    editable master cells. Treat an empty cell as deletion and validate new\n    side-specific partners.\n\nWhy this design:\n    Staged cells let the user review several master changes before the shared\n    writer checks and commits the complete batch.\n\nHow to use:\n    Run Kerning > Pair Editor. Choose a glyph, edit values or add a partner\n    row, inspect highlighted changes and press Apply. Clear a cell only when\n    that stored pair should be deleted.\n\nBenefit:\n    Edit related explicit pairs together; Apply is recorded as one Undo step.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Scale Values.py",
+      "historical_sha256": "6e0fd81379e5fe5a51da62cbb409dba08c7f8e0f7d972715b919e886d47ce7f6",
+      "current_sha256": "1e4412bc6d198a63ed2949d678aa073bb847c0c02832ba47fed953b028187e40",
+      "source_sha256": "780d9bf0db0b7f8f89ed381125a708c299a77322ff0af9ef4fa4556ec3a5e4c8",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Scale all kerning values by a percentage on one or all masters.\n\nLoosen a Light master's kerning or tighten a display master's in one go: every pair (glyph and\nclass pairs alike) is multiplied and rounded to whole units, halves away from zero. Pairs that\nbecome 0 can be deleted. The preview lists every change; one Apply is one Undo step.\"\"\"",
+          "current": "\"\"\"Scale all kerning values by a percentage on one or all masters.\n\nWhat it does:\n    Loosen a Light master's kerning or tighten a display master's in one go: every pair (glyph and\n    class pairs alike) is multiplied and rounded to whole units, halves away from zero. Pairs that\n    become 0 can be deleted. The preview lists every change; one Apply is one Undo step.\n\nHow it works:\n    Plan explicit glyph and class pairs on the selected master scope. Multiply\n    by the percentage, round halves away from zero and optionally remove\n    resulting zero pairs.\n\nWhy this design:\n    A complete preview allows a broad spacing adjustment to be checked before\n    any kerning values are written.\n\nHow to use:\n    Run Kerning > Scale Values. Choose percentage, zero-pair policy and\n    current or all masters. Review each old/new value, then Apply the\n    displayed proposal.\n\nBenefit:\n    Change a master's kerning strength in one batch; Apply is recorded as one\n    Undo step.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Round Values.py",
+      "historical_sha256": "9aa3ef344a8bc61bdf1542b4900154e9afc15c0da4ad8c188d784eb0cd68ef5e",
+      "current_sha256": "1855835ff8f6a270bac92c03d3fc85b1b179010e0a24d8677e1c3d4c9bcff774",
+      "source_sha256": "356fa81bbb3bbe11ab62c0d819675852a9197532adca2010f7a79c60f457ba86",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Round kerning values to a step (5, 10 \u2026) on one or all masters, previewing every change.\n\nRounded kerning is easier to read, compare and edit by hand, and interpolates to tidier\ninstances. Halves round away from zero, as FontLab rounds. Pairs that round to 0 can be deleted\ninstead of being kept as explicit zeros. One Apply is one Undo step for all masters.\"\"\"",
+          "current": "\"\"\"Round kerning values to a step (5, 10 \u2026) on one or all masters, previewing every change.\n\nWhat it does:\n    Rounded kerning is easier to read, compare and edit by hand, and interpolates to tidier\n    instances. Halves round away from zero, as FontLab rounds. Pairs that round to 0 can be deleted\n    instead of being kept as explicit zeros. One Apply is one Undo step for all masters.\n\nHow it works:\n    Build a complete explicit-pair plan for current or all masters. Round\n    values to the chosen step with halves away from zero and apply the\n    selected zero-pair policy.\n\nWhy this design:\n    Previewing zero deletions separately avoids treating an explicit zero pair\n    as interchangeable with an absent pair.\n\nHow to use:\n    Run Kerning > Round Values. Choose a step, master scope and zero-pair\n    option. Review the old/new rows, then Apply to write the displayed batch.\n\nBenefit:\n    Make stored kerning values easier to inspect; Apply is recorded as one\n    Undo step.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Remove Small Pairs.py",
+      "historical_sha256": "de4b6244375ea09af774a8bd4effeaf7f67be65c2b15ad05a328c23048f269cd",
+      "current_sha256": "50c387064d616231cbd5664bc63e7c1e8b22b62df2c59c7f737b48e336a03c40",
+      "source_sha256": "f72727c86f289fb7364d99091ba440649cf3aba023646c1e1bd571be55f7d64e",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Delete kerning pairs whose value is smaller than a threshold, on one or all masters.\n\nTiny pairs (\u00b11 \u2026 \u00b15 units) are invisible in print, bloat the kern feature and often come from\nauto-kerning or interpolation. The preview lists every pair that would go, with the count per\nmaster; zero pairs are included. Class pairs (@name) count like glyph pairs. One Apply is one\nUndo step for all masters.\"\"\"",
+          "current": "\"\"\"Delete kerning pairs whose value is smaller than a threshold, on one or all masters.\n\nWhat it does:\n    Tiny pairs (\u00b11 \u2026 \u00b15 units) are invisible in print, bloat the kern feature and often come from\n    auto-kerning or interpolation. The preview lists every pair that would go, with the count per\n    master; zero pairs are included. Class pairs (@name) count like glyph pairs. One Apply is one\n    Undo step for all masters.\n\nHow it works:\n    Read explicit glyph and class pairs, compare their magnitudes with the\n    chosen threshold and stage every deletion before calling the shared\n    kerning writer.\n\nWhy this design:\n    Zero and small pairs can still be intentional, so the complete preview\n    leaves the deletion choice visible.\n\nHow to use:\n    Run Kerning > Remove Small Pairs. Choose the threshold and master scope,\n    inspect the pair list and counts, then Apply to remove the displayed\n    candidates.\n\nBenefit:\n    Clean a chosen explicit-pair range in one recorded Undo step across the\n    selected masters.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Exceptions Finder.py",
+      "historical_sha256": "adfbdc13fe2f9e09f1a990c67c303a909bd313183d0922a45f82d1918ba7a5e6",
+      "current_sha256": "045bfa9f313846ef16da78db9dd4b5580fb5e8ab971f058a27eedc289d6d92b0",
+      "source_sha256": "068c1072825fb72df7ed5cccd3b842144219632183abe0f0122346967057f3ac",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Find kerning exceptions: pairs that override a class pair, and remove the ones you tick.\n\nAn exception is a pair whose glyph side belongs to a kerning class that already has a pair\nwith the same partner (A V overriding @A V). Exceptions with the same value as the class pair\nare redundant and safe to delete; the others are deliberate overrides worth a second look.\nTick rows (or \"Tick redundant\") and Remove; one Undo step for all masters.\n\"\"\"",
+          "current": "\"\"\"Find kerning exceptions: pairs that override a class pair, and remove the ones you tick.\n\nWhat it does:\n    An exception is a pair whose glyph side belongs to a kerning class that already has a pair\n    with the same partner (A V overriding @A V). Exceptions with the same value as the class pair\n    are redundant and safe to delete; the others are deliberate overrides worth a second look.\n    Tick rows (or \"Tick redundant\") and Remove; one Undo step for all masters.\n\nHow it works:\n    Compare explicit exceptions with applicable class pairs on the chosen\n    masters. Mark equal-value rows as redundant and stage deletion only for\n    checked rows.\n\nWhy this design:\n    An unequal exception can be intentional; listing it beside the class\n    baseline supports review before removal.\n\nHow to use:\n    Run Kerning > Exceptions Finder. Choose the master scope, inspect override\n    values and use Tick redundant if suitable. Press Remove for the checked\n    rows only.\n\nBenefit:\n    Remove a reviewed exception subset in one recorded Undo step without\n    rewriting class pairs.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Kerning/Pairs From Text.py",
+      "historical_sha256": "813044df6b23eff64ee02a3e7fda6d3501002c55770578e04684e42eae105495",
+      "current_sha256": "9739f2adade5329f5c913c82bf30fcce58dc102b2372a3ab87ab6eb291605f19",
+      "source_sha256": "9929dcace05edd22dfbff2590ac7a913bd0d04cc03985ae7a396a67bb43ca03b",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Type a word, see each adjacent pair's kerning on every master, and set the ones you tick.\n\nPairs are taken inside words (spaces separate words; /glyphname tokens work too). The table\nshows what FontLab applies now on each master, marking values that come from a class pair.\nSet or Add writes explicit glyph pairs for the ticked rows on the chosen masters; one Apply is\none Undo step.\n\"\"\"",
+          "current": "\"\"\"Type a word, see each adjacent pair's kerning on every master, and set the ones you tick.\n\nWhat it does:\n    Pairs are taken inside words (spaces separate words; /glyphname tokens work too). The table\n    shows what FontLab applies now on each master, marking values that come from a class pair.\n    Set or Add writes explicit glyph pairs for the ticked rows on the chosen masters; one Apply is\n    one Undo step.\n\nHow it works:\n    Parse adjacent glyph pairs inside words, resolve effective kerning on each\n    master and stage Set or Add values only for checked rows.\n\nWhy this design:\n    An effective class-pair value supplies the displayed baseline, while the\n    requested write creates an explicit glyph pair.\n\nHow to use:\n    Run Kerning > Pairs From Text. Enter text or slash-name tokens, tick\n    pairs, choose masters and Set or Add, inspect the values and press Apply.\n\nBenefit:\n    Kern a specific proof-text batch; Apply is recorded as one Undo step.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Proof/Glyph Grid.py",
+      "historical_sha256": "8e4dee95447fd6d09f24796a5d2d890e5285d5fcefcf535e8456af8926ed30e5",
+      "current_sha256": "f375682e88239a3165bd4f24efdbe9c3d331759f6353cd9dbe537cec5f8d892c",
+      "source_sha256": "983ee040cfee4eed511232ef7fa3a80f2247746cfe9650923f18f42ecf231403",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Show the selected glyphs on every master side by side, drawn from their outlines.\n\nRows are glyphs, columns are masters; all cells share one scale so weights\nand widths compare directly. The slider zooms. Composites are drawn with\ntheir components in place. Nothing in the font changes.\"\"\"",
+          "current": "\"\"\"Show the selected glyphs on every master side by side, drawn from their outlines.\n\nWhat it does:\n    Rows are glyphs, columns are masters; all cells share one scale so weights\n    and widths compare directly. The slider zooms. Composites are drawn with\n    their components in place. Nothing in the font changes.\n\nHow it works:\n    Read selected glyph layers and build a grid with glyphs as rows and\n    masters as columns. Fit outlines and advance labels at one common scale.\n\nWhy this design:\n    A shared scale keeps width and weight differences visible rather than\n    fitting each glyph independently.\n\nHow to use:\n    Select glyphs and run Proof > Glyph Grid. Adjust the zoom slider and\n    inspect each master column. Use Reload selection after choosing another\n    set in the Font window.\n\nBenefit:\n    Compare master drawings directly without exporting fonts or altering the\n    current outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Proof/Text By Master.py",
+      "historical_sha256": "9fec00539d5cfbcbab6efb91a129ddb7690d72a649898923c66ccb95e889d8cf",
+      "current_sha256": "22a100a01bf9af350a0cec5981c67e0f2c5dde77648b8e47dda92c2bfc424907",
+      "source_sha256": "bf478dc6d23b3938b942211596cccf381769cc0330f8990c5c3f5416ab76fea9",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Render the same text once per master, stacked, to compare weight and width at a glance.\n\nEach row is drawn from that master's outlines with its line width in units.\nType text (use /glyphname for unencoded glyphs), adjust the size and scroll\nthrough the masters. Advance widths only: kerning is not applied. Nothing in\nthe font changes.\"\"\"",
+          "current": "\"\"\"Render the same text once per master, stacked, to compare weight and width at a glance.\n\nWhat it does:\n    Each row is drawn from that master's outlines with its line width in units.\n    Type text (use /glyphname for unencoded glyphs), adjust the size and scroll\n    through the masters. Advance widths only: kerning is not applied. Nothing in\n    the font changes.\n\nHow it works:\n    Parse characters and slash-name tokens, read each master's glyph run and\n    draw stacked rows with their total advances. Use the same requested proof\n    size.\n\nWhy this design:\n    A repeated text line makes width and weight changes easier to compare\n    across the complete master set.\n\nHow to use:\n    Run Proof > Text By Master. Enter proof text, adjust the size and scroll\n    through the master rows. Inspect missing-character counts as well as the\n    drawings.\n\nBenefit:\n    Compare master text with advance spacing while keeping kerning and font\n    data unchanged.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Proof/Waterfall.py",
+      "historical_sha256": "0174d79bfb4f89a952510f9ae567aff15c245cce4b824874a138dcf815eb154e",
+      "current_sha256": "e5f24b89131a390244121dccaa57058fb71e87509b2f58b14107204f1cea5ba3",
+      "source_sha256": "b5e8c5dd2c300386546ad940f3f9f0f8182a99e2a3b728867f0798473e3371df",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Render a line of text in a cascade of sizes, drawn straight from the glyph outlines.\n\nType any text (use /glyphname for unencoded glyphs, e.g. /a.ss01), pick a\nmaster and edit the list of pixel sizes. Characters the font lacks show as\nred boxes. Advance widths only: kerning is not applied. Nothing in the font\nchanges.\"\"\"",
+          "current": "\"\"\"Render a line of text in a cascade of sizes, drawn straight from the glyph outlines.\n\nWhat it does:\n    Type any text (use /glyphname for unencoded glyphs, e.g. /a.ss01), pick a\n    master and edit the list of pixel sizes. Characters the font lacks show as\n    red boxes. Advance widths only: kerning is not applied. Nothing in the font\n    changes.\n\nHow it works:\n    Resolve characters and slash-name tokens against the captured font maps.\n    Draw the chosen master at the requested pixel sizes and mark missing\n    characters visibly.\n\nWhy this design:\n    Drawing the current outlines avoids generating a test font, while the\n    missing boxes prevent unsupported text from disappearing unnoticed.\n\nHow to use:\n    Run Proof > Waterfall. Enter text, choose a master and edit the size list.\n    Scroll through the cascade to compare the drawings at small and large\n    sizes.\n\nBenefit:\n    Judge the same text at several sizes with advance spacing and no kerning\n    or font edits.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Proof/Word Finder.py",
+      "historical_sha256": "8f2004e41ad01387db42fd7ef4b234e22bc7ea9414719dc53560687c909634f8",
+      "current_sha256": "1afa96fd3ebac2b2aad0713ea2e7bc3df34b01ff1d2dda6605876e07a07bfbdb",
+      "source_sha256": "b10497f22fdd82bb24d78a7795f07f5c9bb33502e6a9d9beb1eac63ead756ad2",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Find real words to proof with: words the font can set, that use the letters you are working on.\n\nSearches a small embedded English and Latin word list. Keep only words\nwhose every letter has a glyph, require some letters (e.g. the new 'k'),\nor restrict to a set of letters (e.g. what is drawn so far). Copy the\nresult as proof text. Nothing in the font changes.\"\"\"",
+          "current": "\"\"\"Find real words to proof with: words the font can set, that use the letters you are working on.\n\nWhat it does:\n    Searches a small embedded English and Latin word list. Keep only words\n    whose every letter has a glyph, require some letters (e.g. the new 'k'),\n    or restrict to a set of letters (e.g. what is drawn so far). Copy the\n    result as proof text. Nothing in the font changes.\n\nHow it works:\n    Filter the embedded English and Latin word list against the captured\n    encoded characters, required letters and any allowed-letter restriction.\n\nWhy this design:\n    Keeping every letter drawable makes the result usable as proof text for an\n    incomplete character repertoire.\n\nHow to use:\n    Run Proof > Word Finder. Set the required or allowed letters, inspect the\n    filtered words and press Copy to copy the displayed list. Reopen after\n    changing the font repertoire.\n\nBenefit:\n    Build a small proof-text set without creating glyphs or changing the font.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Masters/Overview.py",
+      "historical_sha256": "4e0de2e71ab69e3983debe74ca1a3e117e2cd545b8f989660e8864ec24f57bad",
+      "current_sha256": "2b42521906afbad032dff6a9cba444fb3bd6d453b949c3fe055252e30ef145dc",
+      "source_sha256": "91d8392b35f82758f7f85d9799d2aee1e666b781ea92799710d2dd733e1cba9f",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"One table of all masters: axis location, vertical metrics and italic angle.\n\nRows follow the font's master order; the current master is bold. Vertical metrics come from\n``fontlab.FontMetrics(package, master)``; FontLab has no per-master italic-angle accessor, so each\nmaster is made current for the read and the original master is restored. Double-click a row to\nmake that master current. Read-only otherwise.\n\"\"\"",
+          "current": "\"\"\"One table of all masters: axis location, vertical metrics and italic angle.\n\nWhat it does:\n    Rows follow the font's master order; the current master is bold. Vertical metrics come from\n    ``fontlab.FontMetrics(package, master)``; FontLab has no per-master italic-angle accessor, so each\n    master is made current for the read and the original master is restored. Double-click a row to\n    make that master current. Read-only otherwise.\n\nHow it works:\n    Use the shared Masters report to read axis locations and vertical metrics.\n    Temporarily activate masters for italic-angle access, then restore the\n    original master.\n\nWhy this design:\n    The explicit current-master action is separate from the report read, so\n    reviewing rows does not leave a different master active.\n\nHow to use:\n    Run Masters > Overview. Inspect the master rows and bold current entry.\n    Double-click a row only when that master should become current in FontLab.\n\nBenefit:\n    Compare master metadata in one table and navigate masters without changing\n    stored values.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Masters/Width Chart.py",
+      "historical_sha256": "7c0d431651958c581bccfee5774fc9eec7efd138f81019aa8e1f21ab7b86ff41",
+      "current_sha256": "23e832186bde7fa4d5ad850e772d44cc334ed0d4c0c7d5b9ba30bd86f3926e57",
+      "source_sha256": "61fc783f152de37f625e1bd9b23815faf8526b57bd46fd650b9baa2e1413fb6d",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Line chart of the advance widths of the selected glyphs across masters.\n\nMasters run left to right in axis order; each glyph is one line with its widths labelled, so a\nmaster that breaks the progression stands out at once. Read-only.\n\"\"\"",
+          "current": "\"\"\"Line chart of the advance widths of the selected glyphs across masters.\n\nWhat it does:\n    Masters run left to right in axis order; each glyph is one line with its widths labelled, so a\n    master that breaks the progression stands out at once. Read-only.\n\nHow it works:\n    Read selected glyph widths in master axis order. Draw one labelled series\n    per glyph through the shared Masters chart, with a limit on displayed\n    series.\n\nWhy this design:\n    A chart makes a reversed width progression easier to see than a table of\n    individual values.\n\nHow to use:\n    Select glyphs in the Font window. Run Masters > Width Chart. Compare each\n    line and its labels; select fewer glyphs if the series limit hides a\n    glyph.\n\nBenefit:\n    Find masters that need spacing review without changing advance widths or\n    outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Masters/Glyph Weight Chart.py",
+      "historical_sha256": "065db5fbb8727be35506317f30d3c7c997928aa0ff3af1a89b4cf6ca7c29ca36",
+      "current_sha256": "caa919742c2ca9277144d697d243f9688614c39fe6e6406f0cc9d99288b969e1",
+      "source_sha256": "f397b4fb5d570bbd1bb5055caadbd3231ca7bf0beb8b4378a440e7a92de15ff9",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Bar chart of the ink area of the selected glyphs in every master.\n\nInk area is the filled area of the outline: contour areas from the flattened curves, counters\nsubtracted by nesting. Overlapping contours are counted twice, so remove overlaps first for exact\nnumbers. Each glyph gets one bar per master in axis order, labelled in thousands of square units.\nRead-only.\n\"\"\"",
+          "current": "\"\"\"Bar chart of the ink area of the selected glyphs in every master.\n\nWhat it does:\n    Ink area is the filled area of the outline: contour areas from the flattened curves, counters\n    subtracted by nesting. Overlapping contours are counted twice, so remove overlaps first for exact\n    numbers. Each glyph gets one bar per master in axis order, labelled in thousands of square units.\n    Read-only.\n\nHow it works:\n    Use the shared Masters chart and flattened outline areas, subtracting\n    counters by nesting. Draw one labelled bar per glyph and master in axis\n    order.\n\nWhy this design:\n    Area bars expose weight differences, but overlapping contours can count\n    twice and must be reviewed before treating values as exact filled areas.\n\nHow to use:\n    Select glyphs and run Masters > Glyph Weight Chart. Compare bars between\n    masters; inspect overlap in the source outlines when a value looks\n    unexpectedly large.\n\nBenefit:\n    Compare the reported ink-area trend without changing outlines or removing\n    overlaps.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Masters/Compatibility Check.py",
+      "historical_sha256": "153b663e08561d54cf5d1de999553832a4ea15dab50c878157abcc73be3666b3",
+      "current_sha256": "4c603134d62833b57706d2a6e7fb2ec0bf91240447d9b9b11b34666bff2a1c30",
+      "source_sha256": "d39e4496e7bcf59a789b97d9fa88b9a637731e851999b4baa3bac5d937eb5c4f",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Check that every master of each glyph can interpolate: same contours, nodes, anchors, components.\n\nThe tree lists each glyph with \u2713 or \u2717; expand it to see the counts per master, with the values\nthat differ from the other masters highlighted. Contour structure is compared node by node\n(on-curve / handle pattern), anchors by name and components by base glyph. Select the failing\nglyphs in the Font window with one click. Read-only.\n\"\"\"",
+          "current": "\"\"\"Check that every master of each glyph can interpolate: same contours, nodes, anchors, components.\n\nWhat it does:\n    The tree lists each glyph with \u2713 or \u2717; expand it to see the counts per master, with the values\n    that differ from the other masters highlighted. Contour structure is compared node by node\n    (on-curve / handle pattern), anchors by name and components by base glyph. Select the failing\n    glyphs in the Font window with one click. Read-only.\n\nHow it works:\n    Use the shared Masters compatibility checks for corresponding contours and\n    node patterns, anchor names and component bases. Display the counts under\n    each glyph.\n\nWhy this design:\n    Matching totals alone do not establish structural compatibility; node\n    patterns and named objects need separate checks.\n\nHow to use:\n    Select glyphs and run Masters > Compatibility Check. Expand failing rows,\n    compare their master details and use the action button to select\n    incompatible glyphs.\n\nBenefit:\n    Locate reported interpolation obstacles without reordering contours or\n    changing glyph data.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Metrics/Spacing String Preview.py",
+      "historical_sha256": "69965386fcaf31c39db85123ff29118d16e4aa4cd3237ba52dc5be4c98220894",
+      "current_sha256": "0c1c9d2968b2e270bbac73f22cddc18cc40f950e27815117b0ee676aa1aef104",
+      "source_sha256": "8715a780c4d9c03cedabec2cf2c73ca367dc85b89eb3b2ad77761d4e886699f9",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Render a spacing control string such as HOHnono from the font's own outlines and advances.\n\nType characters or /glyphname tokens, pick a master, and judge the rhythm of straight and round\nsidebearings without generating a font. Advance boxes and LSB/RSB numbers can be shown under\neach glyph. Nothing is edited; the preview follows the outlines as they are now.\"\"\"",
+          "current": "\"\"\"Render a spacing control string such as HOHnono from the font's own outlines and advances.\n\nWhat it does:\n    Type characters or /glyphname tokens, pick a master, and judge the rhythm of straight and round\n    sidebearings without generating a font. Advance boxes and LSB/RSB numbers can be shown under\n    each glyph. Nothing is edited; the preview follows the outlines as they are now.\n\nHow it works:\n    Resolve text tokens to current outline paths and advances on the chosen\n    master. Draw optional advance boxes and sidebearing values below each\n    glyph.\n\nWhy this design:\n    Control strings isolate spacing rhythm; the preview uses the font drawings\n    directly and does not add kerning to hide raw spacing.\n\nHow to use:\n    Run Metrics > Spacing String Preview. Enter a control string, choose a\n    master and enable boxes or numbers as needed. Compare straight and round\n    glyphs at the chosen size.\n\nBenefit:\n    Judge current spacing without generating a font or changing advance\n    widths.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Metrics/Width Table.py",
+      "historical_sha256": "c0f364ff9cfdc644f1f3b1741364b0946979d06034ba6d918c2f91f36b41d4e5",
+      "current_sha256": "e42b807227d1c1d354722bc4cc65df2000f0268ad2d407df2bf36e18d9e46e00",
+      "source_sha256": "cc57d3317590e8701a8f12d8ba4e9817357435361c81486f3bb7b2dcfc6d2177",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Advance widths of the selected glyphs across all masters, sortable, with odd progressions flagged.\n\nIn a weight family the widths usually grow (or shrink) steadily from master to master. A glyph\nwhose width goes up and then down again is flagged: often a spacing slip. Click a column header\nto sort; \"Select flagged\" selects those glyphs in the Font window. Nothing is edited.\"\"\"",
+          "current": "\"\"\"Advance widths of the selected glyphs across all masters, sortable, with odd progressions flagged.\n\nWhat it does:\n    In a weight family the widths usually grow (or shrink) steadily from master to master. A glyph\n    whose width goes up and then down again is flagged: often a spacing slip. Click a column header\n    to sort; \"Select flagged\" selects those glyphs in the Font window. Nothing is edited.\n\nHow it works:\n    Read selected glyph advances in master order and classify their\n    progression. Show numeric master columns and flag mixed\n    increasing/decreasing sequences.\n\nWhy this design:\n    A mixed progression is a spacing-review candidate, not proof that the\n    design is wrong; selection leaves the decision to the user.\n\nHow to use:\n    Select glyphs and run Metrics > Width Table. Sort columns or restrict the\n    view to mixed progressions, then use Select flagged to locate the reported\n    glyphs.\n\nBenefit:\n    Find unusual master width trends without changing advances or outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Contours/Contour Order View.py",
+      "historical_sha256": "ca39b81fa0a200b048ce1a18ec888717a8b4fb4ed8cab59d4bfc470e3b2739d4",
+      "current_sha256": "a6631d3cb8e2a3aec56ca5ea5c7b0103447f9cc0b4c4491dab95d84c842331a9",
+      "source_sha256": "b366af45f9cfdc1ed3adc45e9fdc9982ad0bdbbe2d21e4c45893f995367fda9c",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Show every master of a glyph side by side with numbered contours, start points and directions.\n\nEach contour carries its index at the start node, a dot on the start node and an arrow along\nits first segment, so start-point and order mismatches between masters are visible at a glance\nbefore interpolation surprises you. Read-only: nothing in the font changes.\"\"\"",
+          "current": "\"\"\"Show every master of a glyph side by side with numbered contours, start points and directions.\n\nWhat it does:\n    Each contour carries its index at the start node, a dot on the start node and an arrow along\n    its first segment, so start-point and order mismatches between masters are visible at a glance\n    before interpolation surprises you. Read-only: nothing in the font changes.\n\nHow it works:\n    Use the shared contour-order view to draw each master and label contour\n    indices, start nodes and first-segment directions at their native\n    positions.\n\nWhy this design:\n    A structural count cannot reveal a different start point or contour order;\n    the drawing exposes those differences directly.\n\nHow to use:\n    Select a glyph and run Contours > Contour Order View. Compare matching\n    contour numbers and direction arrows between the master panels before\n    editing compatibility.\n\nBenefit:\n    Review contour order and starts without reversing paths or changing\n    interpolation structure.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Contours/Node Statistics.py",
+      "historical_sha256": "7eff97dfbb7b7c2ea5e080dd3e413be96987aaf8cd64ae2961372252ba28b8ca",
+      "current_sha256": "dcc972723a148c263d9fba99267508d7c518d48c95733367590323141b425eea",
+      "source_sha256": "933c4948d63b6af180dc8e93ec26400bcae33ad9e4945aee7749d12150b5f6cd",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Contours and nodes per glyph and master in one table, with incompatible glyphs flagged.\n\nEach cell reads \"contours / nodes\" for a master; a glyph is flagged when its masters differ,\nwhich breaks interpolation. Work on the selection or the whole font, then select the flagged\nglyphs in the Font window with one click. Read-only: nothing in the font changes.\"\"\"",
+          "current": "\"\"\"Contours and nodes per glyph and master in one table, with incompatible glyphs flagged.\n\nWhat it does:\n    Each cell reads \"contours / nodes\" for a master; a glyph is flagged when its masters differ,\n    which breaks interpolation. Work on the selection or the whole font, then select the flagged\n    glyphs in the Font window with one click. Read-only: nothing in the font changes.\n\nHow it works:\n    Read contour and node counts on the selection or whole font, grouped by\n    master. Flag differing counts and keep the source snapshot for the\n    selection action.\n\nWhy this design:\n    Count differences can rule out compatibility, but matching counts alone do\n    not prove matching contour structure.\n\nHow to use:\n    Run Contours > Node Statistics. Choose the source scope, inspect each\n    contours/nodes cell and use the action button to select flagged glyphs in\n    the Font window.\n\nBenefit:\n    Find count mismatches quickly while preserving node positions, topology\n    and layer data.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Components/Compatibility.py",
+      "historical_sha256": "df701b5ebd9fc0605bf8553d40b8f29a0fc00f904e5bdce43a06d34be37feb0e",
+      "current_sha256": "597d05621e7f7716484f94bcd39fbf8b04e400a737a4d9366be7d0c42bdf644d",
+      "source_sha256": "fa3a00b93e110f7c3205cdc4e6135258d0a0765555629c2970392c9374bef887",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Compare component names and order across masters; glyphs that differ cannot interpolate their components.\n\nOne row per composite glyph, one column per master. Masters whose component list\ndiffers from the first master are shown in red, and mismatching glyphs are listed\nfirst. Double-click a row to select the glyph in the Font window. Nothing is changed.\"\"\"",
+          "current": "\"\"\"Compare component names and order across masters; glyphs that differ cannot interpolate their components.\n\nWhat it does:\n    One row per composite glyph, one column per master. Masters whose component list\n    differs from the first master are shown in red, and mismatching glyphs are listed\n    first. Double-click a row to select the glyph in the Font window. Nothing is changed.\n\nHow it works:\n    Read ordered component base lists for each composite and master. Compare\n    each list with the first master's list and display mismatching master\n    cells in red.\n\nWhy this design:\n    Matching component counts alone cannot show an order or base-name\n    mismatch; explicit lists make that difference visible.\n\nHow to use:\n    Run Components > Compatibility. Inspect the mismatches first and double-\n    click a row to select its glyph in the Font window for manual review.\n\nBenefit:\n    Locate component-name and order differences without changing decomposition\n    or master drawings.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Components/Count Badges.py",
+      "historical_sha256": "95b91a9c3a0d2ff12b5bb7a30bcc59117404d6d9217078d1f6b475ade96c985e",
+      "current_sha256": "16238d3703da6ce1126a8c20af2983b0e8ae5c1030b9460fad204771bf1a0c99",
+      "source_sha256": "e442337cfbf93e6ef05a42f130fc32d7114ce4f6ed0a883a6fc848f77eba6257",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"A painted card per selected glyph: its drawing plus component and contour counts for every master.\n\nAccent badges count components, muted badges count the glyph's own contours; a\nmaster that differs from the first one is marked with a dot, and auto layers are\nlabelled. A quick way to see which glyphs are composites, outlines or a mix.\nNothing in the font is changed.\"\"\"",
+          "current": "\"\"\"A painted card per selected glyph: its drawing plus component and contour counts for every master.\n\nWhat it does:\n    Accent badges count components, muted badges count the glyph's own contours; a\n    master that differs from the first one is marked with a dot, and auto layers are\n    labelled. A quick way to see which glyphs are composites, outlines or a mix.\n    Nothing in the font is changed.\n\nHow it works:\n    Use the shared component card view for the selected glyphs. Draw each\n    glyph and count its own contours and components per master, marking\n    differences from the first master.\n\nWhy this design:\n    Counts beside the drawing make mixed outline/component construction easier\n    to spot than names alone.\n\nHow to use:\n    Select glyphs and run Components > Count Badges. Inspect each master's\n    badges, mismatch dots and automatic-layer labels; scroll or resize to view\n    more cards.\n\nBenefit:\n    Review construction differences without decomposing components or editing\n    layer geometry.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Components/Missing Bases.py",
+      "historical_sha256": "a6ab4aa6160b8cf9ac2d5bd851b47dbe07399f59f8f429c5b30e40cbd4a0fe4c",
+      "current_sha256": "724e76eb0b9ad97ab16bd7bf35e6686770d69c19e7fc02c7d51b7d3215bf5e11",
+      "source_sha256": "27bb6fc8a98c46582bd6a55dce97f8d2bb9902de230c3bfa1617b5531ebc1674",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Find components that point to glyphs which do not exist, or to a base glyph without that master.\n\nSuch components draw nothing and break exports. The tree groups the problems by\nthe missing base glyph; expand a group to see the composites and masters affected.\nSelect affected glyphs puts them in the Font window selection. Nothing is changed.\"\"\"",
+          "current": "\"\"\"Find components that point to glyphs which do not exist, or to a base glyph without that master.\n\nWhat it does:\n    Such components draw nothing and break exports. The tree groups the problems by\n    the missing base glyph; expand a group to see the composites and masters affected.\n    Select affected glyphs puts them in the Font window selection. Nothing is changed.\n\nHow it works:\n    Read component references through App and group missing glyphs or missing\n    master layers by base name. Retain the affected owners for guarded\n    selection.\n\nWhy this design:\n    A missing base can make several composite drawings disappear, so grouping\n    by base helps expose the common cause.\n\nHow to use:\n    Run Components > Missing Bases. Expand a missing-base group, inspect the\n    composite and master entries and use Select affected glyphs to locate the\n    owners.\n\nBenefit:\n    Locate broken component dependencies without adding placeholder bases or\n    changing references.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Components/Report.py",
+      "historical_sha256": "5326d70f69898f1272e0946451a06ce56c45ebde017be55b0fa64bea768c09dc",
+      "current_sha256": "4978c26f1087bb1960ca5c74333c0915cd2ffa0b7348e7f7f29f0779361acb8f",
+      "source_sha256": "32426f97bf2bc4eccfc4406b8a0d02cba2b7a0cd19d6e73421f45bc5d80c8871",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"List every composite layer in the font: base and mark names, offsets and auto-layer status.\n\nThe table covers the current master or all masters, filters as you type and can\nbe copied to the clipboard as CSV for a spreadsheet. Double-click a row to make\nthat glyph current in FontLab. Nothing in the font is changed.\"\"\"",
+          "current": "\"\"\"List every composite layer in the font: base and mark names, offsets and auto-layer status.\n\nWhat it does:\n    The table covers the current master or all masters, filters as you type and can\n    be copied to the clipboard as CSV for a spreadsheet. Double-click a row to make\n    that glyph current in FontLab. Nothing in the font is changed.\n\nHow it works:\n    Use the App component report to collect composite layers for the current\n    or all masters. Filter visible rows and encode those rows as quoted CSV\n    text.\n\nWhy this design:\n    A table shows reference names and placement together, making a composite\n    inventory easier to inspect or share.\n\nHow to use:\n    Run Components > Report. Choose the master scope, type a filter and copy\n    CSV if needed. Double-click a row to make its glyph current in FontLab.\n\nBenefit:\n    Review component use and offsets without rewriting component references or\n    outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Components/Where Used.py",
+      "historical_sha256": "4f5fc5877419a7ac391ebc527040b0c68687af40b3bb5c8f2cf93ee002848ccf",
+      "current_sha256": "ea6711552728cf4bc3a57dd3b67fa236e3e0dcd845e2519c530648423ea412c5",
+      "source_sha256": "8a7983f919bd8074a2ccaf502dee0704aa51188dc3cdabcfc18b75c47b035180",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Find every glyph that uses a given glyph as a component, on any master.\n\nType a glyph name (the field completes as you type). The table lists the composites,\nthe masters where the component appears and whether those layers are auto layers.\nClick a row to select that glyph in the Font window; \"Select all\" selects them all.\"\"\"",
+          "current": "\"\"\"Find every glyph that uses a given glyph as a component, on any master.\n\nWhat it does:\n    Type a glyph name (the field completes as you type). The table lists the composites,\n    the masters where the component appears and whether those layers are auto layers.\n    Click a row to select that glyph in the Font window; \"Select all\" selects them all.\n\nHow it works:\n    Search component references on all masters through App and list the owning\n    composite glyphs. Keep the captured source guarded when selecting results.\n\nWhy this design:\n    Reverse lookup shows which composites need review after a base glyph\n    changes, without rewriting those composites.\n\nHow to use:\n    Run Components > Where Used. Enter a base glyph name, inspect the\n    composites and master columns, then click a row or use Select all to\n    select the results.\n\nBenefit:\n    Trace component use across masters while leaving references, transforms\n    and outlines intact.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Anchors/Cloud View.py",
+      "historical_sha256": "a041af1b904b6c7184ab858d7558bec99f9f0e3643c6edcc8c74e8bcebad45ad",
+      "current_sha256": "ffc9c1f3171984b714df6033b8626daf0e8aa97d0efb19aa88680a3ac7ccd012",
+      "source_sha256": "5885402147ffe2572bf075aab5d990ced876acc195002fe8ca5933caf7d2cd56",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Overlay the selected glyphs faintly and show every anchor of one name as a cloud of dots, per master.\n\nA tight cloud means marks will sit consistently; a stray dot is a glyph whose anchor\nis off. Hover-free and read-only: the list under each panel gives the extreme values.\nNothing in the font is changed.\"\"\"",
+          "current": "\"\"\"Overlay the selected glyphs faintly and show every anchor of one name as a cloud of dots, per master.\n\nWhat it does:\n    A tight cloud means marks will sit consistently; a stray dot is a glyph whose anchor\n    is off. Hover-free and read-only: the list under each panel gives the extreme values.\n    Nothing in the font is changed.\n\nHow it works:\n    Read anchors of the chosen name from selected glyphs, grouped by master.\n    Overlay faint glyph paths and plot positions with their extreme values.\n\nWhy this design:\n    A cloud reveals a stray anchor position that can be difficult to see by\n    opening glyphs one at a time.\n\nHow to use:\n    Select glyphs in the Font window, run Anchors > Cloud View and choose an\n    anchor name. Compare the master panels and the position ranges below them.\n\nBenefit:\n    Find candidates for anchor correction while retaining all stored anchor\n    coordinates.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Anchors/Compatibility Report.py",
+      "historical_sha256": "35038e202e171e0301a981249d9846f1327e9fad8aa80c727f4254baa3a8edc8",
+      "current_sha256": "101b94559f9ad9d0bf49f65c587477d3342fcf3452fd85b0d4f509692c2ef4a6",
+      "source_sha256": "430e803dac504a7f7e81348d4ca0080fb29d0b0fe41e3554d55f97f47275bd61",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Compare anchor names across masters: a glyph whose masters carry different anchors cannot interpolate them.\n\nThe tree lists each glyph with its anchor count per master; expand a glyph to see\nwhich master lacks which anchor. Mismatches are flagged and listed first.\nAuto layers show \"auto\" and are not compared: FontLab rebuilds their anchors.\nDouble-click a glyph to select it in the Font window. Nothing is changed.\"\"\"",
+          "current": "\"\"\"Compare anchor names across masters: a glyph whose masters carry different anchors cannot interpolate them.\n\nWhat it does:\n    The tree lists each glyph with its anchor count per master; expand a glyph to see\n    which master lacks which anchor. Mismatches are flagged and listed first.\n    Auto layers show \"auto\" and are not compared: FontLab rebuilds their anchors.\n    Double-click a glyph to select it in the Font window. Nothing is changed.\n\nHow it works:\n    Read anchor-name sets for selected glyphs on each master. Compare only\n    non-automatic layers and expand mismatches to show missing names per\n    master.\n\nWhy this design:\n    Automatic layers rebuild anchors, so including them as manually comparable\n    source sets would give a misleading compatibility diagnosis.\n\nHow to use:\n    Select glyphs and run Anchors > Compatibility Report. Expand flagged\n    glyphs to inspect their anchor names and double-click a glyph to select it\n    in the Font window.\n\nBenefit:\n    Find anchor-name differences without adding, deleting or moving anchors.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Anchors/Mark Attachment Preview.py",
+      "historical_sha256": "c1ac89a5f9a85b873001e5e5dd7faaad21278183afb7d07fc88b1cdd063ef30e",
+      "current_sha256": "3da6bb5291d560ed5e79341b014ebe503a44ce777aa2c183eecb9e7c6a316cef",
+      "source_sha256": "1aecb69d2abebbfc64d16cff871d6e33edce6e52120376a5674cbe6a401f8896",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Preview a mark attached to a base glyph by matching anchors (top + _top), side by side for every master.\n\nPick a base glyph, a mark glyph and an anchor family; the mark is drawn where\nmark positioning would put it: base anchor minus mark anchor. Offsets per master\nare listed under the drawing. Nothing in the font is changed.\"\"\"",
+          "current": "\"\"\"Preview a mark attached to a base glyph by matching anchors (top + _top), side by side for every master.\n\nWhat it does:\n    Pick a base glyph, a mark glyph and an anchor family; the mark is drawn where\n    mark positioning would put it: base anchor minus mark anchor. Offsets per master\n    are listed under the drawing. Nothing in the font is changed.\n\nHow it works:\n    Find a shared anchor family between the chosen base and mark. Draw the\n    mark at base-anchor minus mark-anchor and list the offset for each master.\n\nWhy this design:\n    The offset preview exposes missing or inconsistent anchor pairs without\n    constructing a composite or compiling mark features.\n\nHow to use:\n    Run Anchors > Mark Attachment Preview. Choose base, mark and family, then\n    inspect every master panel and its offset or missing-anchor message.\n\nBenefit:\n    Check anchor-based placement before editing anchors or building a marked\n    glyph.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Cleanup/Select Unreferenced Glyphs.py",
+      "historical_sha256": "a5e8d7e44df8719de8e0ac3d10f0b28d04b277e141a9594339c5abf1d921cdbb",
+      "current_sha256": "9c10a7d32d4c45efbc015f5d630716cc97bb4c48961948bf391f2e3e13ebdcbe",
+      "source_sha256": "a2d640ec1a01d13a1a2332d75b5eefd748bc1b1047140856edecddccedf919c7",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"List unencoded glyphs that nothing references, and select them in the Font window for review.\n\nA glyph counts as referenced when it has a code point, is used as a component or in an\nauto recipe on any layer, is named in the OpenType feature source, or belongs to a feature\nclass that the source uses. Candidates are often alternates waiting for a feature, so the\nscript only selects them; it never deletes. Feature files pulled in with include() cannot\nbe read and stop the scan.\"\"\"",
+          "current": "\"\"\"List unencoded glyphs that nothing references, and select them in the Font window for review.\n\nWhat it does:\n    A glyph counts as referenced when it has a code point, is used as a component or in an\n    auto recipe on any layer, is named in the OpenType feature source, or belongs to a feature\n    class that the source uses. Candidates are often alternates waiting for a feature, so the\n    script only selects them; it never deletes. Feature files pulled in with include() cannot\n    be read and stop the scan.\n\nHow it works:\n    Use the shared App reference scan for encodings, component use, automatic\n    recipes and feature/class references. Refuse unresolved include files\n    rather than guessing their contents.\n\nWhy this design:\n    Unencoded alternates can still be useful, so a candidate list must support\n    review rather than automatic deletion.\n\nHow to use:\n    Run Cleanup > Select Unreferenced Glyphs with a font open. Review all\n    listed candidates and press Select in Font window to locate them before\n    making any separate deletion decision.\n\nBenefit:\n    Identify possible unused glyphs without deleting glyphs or changing their\n    references.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Masters/Interpolation Preview.py",
+      "historical_sha256": "5dd93fe326c901cd7588cb9cf3d5a4f197ed0ffcae8d162efca767299f87d7cf",
+      "current_sha256": "56242263beb02b196e49c4cff235dc8f48afd90aa626801d50ced1fb5c705726",
+      "source_sha256": "5018a343e9da00ba9abaf422a8805861e7d772e24a0e00eeee6a8c7d970182c9",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Preview a glyph between two masters with a slider, from the masters' own nodes.\n\nPick two masters and drag the slider: the painter blends every node linearly (0 % = first\nmaster, 100 % = second) and draws the result over faint outlines of both masters. Incompatible\nlayers (different contour or node structure) are reported instead of drawn. Read-only.\"\"\"",
+          "current": "\"\"\"Preview a glyph between two masters with a slider, from the masters' own nodes.\n\nWhat it does:\n    Pick two masters and drag the slider: the painter blends every node linearly (0 % = first\n    master, 100 % = second) and draws the result over faint outlines of both masters. Incompatible\n    layers (different contour or node structure) are reported instead of drawn. Read-only.\n\nHow it works:\n    Use the shared Masters preview to compare contour and node structure\n    before blending corresponding node coordinates linearly between two chosen\n    masters.\n\nWhy this design:\n    The tool reports incompatible structures instead of drawing a misleading\n    blend from unrelated node positions.\n\nHow to use:\n    Select a glyph and run Masters > Interpolation Preview. Choose two\n    masters, move the percentage slider and compare the blended path with the\n    faint source paths.\n\nBenefit:\n    Inspect a node-based interpolation proposal without adding instances or\n    changing master outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Contours/Node Coordinates Panel.py",
+      "historical_sha256": "4dc0d75c5aa4c73dce01988302edd14bb91b148b6bd84a7ec629701a0f262b63",
+      "current_sha256": "3dc045bd4ecec623478b084e2a901fa961c677fccfa7ae57fa5ccf260d71639b",
+      "source_sha256": "34ca1fb6722bb13a808b713ae1b78741f0a08da77313dbca358ec53b020b6082",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Follow selected nodes as you edit; inspect coordinates, offsets and distances.\n\nOpen a glyph, run this script and select nodes. Both tables update every 400 ms.\nCopy exports the displayed node coordinates as tab-separated lines. Contour\nnumbers start at one; node indices start at zero. Component contours are excluded.\nThe modeless panel reads the bound font only. Switching or closing that font\nstops polling; reopen the tool to bind another font. No font data is written.\n\"\"\"",
+          "current": "\"\"\"Follow selected nodes as you edit; inspect coordinates, offsets and distances.\n\nWhat it does:\n    Open a glyph, run this script and select nodes. Both tables update every 400 ms.\n    Copy exports the displayed node coordinates as tab-separated lines. Contour\n    numbers start at one; node indices start at zero. Component contours are excluded.\n    The modeless panel reads the bound font only. Switching or closing that font\n    stops polling; reopen the tool to bind another font. No font data is written.\n\nHow it works:\n    Read selected own nodes on the bound glyph layer and publish both tables\n    from the same snapshot. Poll every 400 ms and recheck that snapshot before\n    Copy.\n\nWhy this design:\n    Live coordinates support measurement while a stale-font refusal prevents\n    copying values from a different document under the old panel title.\n\nHow to use:\n    Open a glyph and run Contours > Node Coordinates Panel. Select nodes,\n    inspect positions and distances, then use Copy for the displayed tab-\n    separated coordinates.\n\nBenefit:\n    Measure selected nodes without moving them; Close stops polling and\n    releases owned connections.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Masters/Master Switcher.py",
+      "historical_sha256": "4c5acdf64eb680f6351902fcc8d5864e8e656496c3cc2d7b952fe87cc936c6a4",
+      "current_sha256": "07e2dc1bb6868e0c7feb6a0a6238b64968c598cb10b4af3b17233ecae8b208ab",
+      "source_sha256": "bc538294e8998a8d45640e928a54b4ce6ae38c846921647d64ce3267b752c07b",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Choose the font's current master from a compact modeless palette.\n\nRun the script with a font open. Click a master button; its axis location appears\nbelow its name. The current master is checked and bold. Use the first nine button\nshortcuts while the palette has focus. The controls change the package master,\nusing FontLab's native setMaster/UpdateAll behavior. Close releases owned signals.\nReopen the palette after changing the font's masters or their locations.\n\"\"\"",
+          "current": "\"\"\"Choose the font's current master from a compact modeless palette.\n\nWhat it does:\n    Run the script with a font open. Click a master button; its axis location appears\n    below its name. The current master is checked and bold. Use the first nine button\n    shortcuts while the palette has focus. The controls change the package master,\n    using FontLab's native setMaster/UpdateAll behavior. Close releases owned signals.\n    Reopen the palette after changing the font's masters or their locations.\n\nHow it works:\n    Use the shared App master-switcher panel with one exclusive button per\n    master. Show axis locations and highlight the current master after a\n    guarded switch.\n\nWhy this design:\n    A compact palette keeps master navigation available without repeatedly\n    opening a larger font-info view.\n\nHow to use:\n    Open a font and run Masters > Master Switcher. Click a master or use the\n    first nine shortcuts while the palette has focus. Reopen after changing\n    the masters list or locations.\n\nBenefit:\n    Navigate the family masters with visible current state while keeping\n    master definitions unchanged.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Guides/Font Guides Panel.py",
+      "historical_sha256": "2b4c83307984466415679bc85c1066330f40d34e55cb8f9d783ef01069cca0f1",
+      "current_sha256": "638d03dda5be391c0a3559e1b7daf2381400abac5fa4945d94061dcfcee7f6d7",
+      "source_sha256": "cd2c67cc3ffda766ffaa196f03e4eed752bb995b957946ec91def24d239ecb0f",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"List font-guide names and add named horizontal or vertical glyph guides.\n\nSelect glyphs, run the script, name a guide and choose its position and master\nscope. Inspect every planned row, then use Add glyph guide. Existing matching\nguides and automatic layers are kept. Fonts whose automatic dependants cannot\nbe restored by Undo are refused before editing. Close releases owned signals.\nThis panel adds glyph guides; it does not add font-wide guides.\n\"\"\"",
+          "current": "\"\"\"List font-guide names and add named horizontal or vertical glyph guides.\n\nWhat it does:\n    Select glyphs, run the script, name a guide and choose its position and master\n    scope. Inspect every planned row, then use Add glyph guide. Existing matching\n    guides and automatic layers are kept. Fonts whose automatic dependants cannot\n    be restored by Undo are refused before editing. Close releases owned signals.\n    This panel adds glyph guides; it does not add font-wide guides.\n\nHow it works:\n    Read font-guide names for reference, then plan one named horizontal or\n    vertical glyph guide per chosen layer. Keep matching guides and automatic\n    layers.\n\nWhy this design:\n    Listing font guides provides context without implying that this panel\n    edits font-wide guide objects.\n\nHow to use:\n    Select glyphs and run Guides > Font Guides Panel. Enter a guide name,\n    direction and position, choose the master scope, inspect rows and press\n    Add glyph guide.\n\nBenefit:\n    Add a consistent named glyph reference while preserving existing guide\n    records and outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Guides/Grid Generator.py",
+      "historical_sha256": "864193a2310c73340875bd73fe77cbaf6f155c76244cdefad21348ee5c2bd67b",
+      "current_sha256": "82cdc78171aaa47dc89c6620cbc5a6be3ada858862725e972e5069dfbcd87192",
+      "source_sha256": "ad2b5bfa02bee6dabcc4c11827574dba71bcdd67d7c3443c6b1ee9709d3e0038",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Preview and add named horizontal, vertical or combined glyph-guide grids.\n\nSelect glyphs, choose current or all masters and inspect the complete preview.\nExisting matching guides and automatic layers are kept. Apply uses one named Undo\nstep. Unsafe automatic dependants are refused before history. Close releases all\nowned signals and preview paths. No font-wide guides or outlines are changed.\n\"\"\"",
+          "current": "\"\"\"Preview and add named horizontal, vertical or combined glyph-guide grids.\n\nWhat it does:\n    Select glyphs, choose current or all masters and inspect the complete preview.\n    Existing matching guides and automatic layers are kept. Apply uses one named Undo\n    step. Unsafe automatic dependants are refused before history. Close releases all\n    owned signals and preview paths. No font-wide guides or outlines are changed.\n\nHow it works:\n    Generate named horizontal, vertical or combined guide records from origin,\n    step and count. Compare them with existing guides and add only missing\n    records.\n\nWhy this design:\n    Matching-guide checks let the user extend a construction grid without\n    adding duplicate guides at the same records.\n\nHow to use:\n    Select glyphs and run Guides > Grid Generator. Set scope, direction,\n    origin, step and count, inspect the complete preview and press Apply.\n\nBenefit:\n    Build consistent glyph-guide grids without changing font-wide guides or\n    outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Guides/Metric Reference Lines.py",
+      "historical_sha256": "f00869cacb362cc66aa6b4111f4b58633f4371516afa1aea7ceddf63e595ea9a",
+      "current_sha256": "d9a7bcd40c2a5a5cedd92af0ac8a96474f54429a0a98af50141e05a9838ec4a1",
+      "source_sha256": "24c60ef99fa26bc4018ed0652b00b0c5419e922f7ff0e8d651a3b2283349e8d9",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Add named glyph guides at the selected metric levels of each master.\n\nSelect glyphs, choose current or all masters and inspect the complete preview.\nExisting matching guides and automatic layers are kept. Apply uses one named Undo\nstep. Unsafe automatic dependants are refused before history. Close releases all\nowned signals and preview paths. No font-wide guides or outlines are changed.\n\"\"\"",
+          "current": "\"\"\"Add named glyph guides at the selected metric levels of each master.\n\nWhat it does:\n    Select glyphs, choose current or all masters and inspect the complete preview.\n    Existing matching guides and automatic layers are kept. Apply uses one named Undo\n    step. Unsafe automatic dependants are refused before history. Close releases all\n    owned signals and preview paths. No font-wide guides or outlines are changed.\n\nHow it works:\n    Read the selected metric levels on each chosen master and create named\n    glyph-guide records, including the requested offset. Keep matching guides\n    and automatic layers.\n\nWhy this design:\n    Master-specific reference lines follow each master's own metrics rather\n    than copying one master's positions to all layers.\n\nHow to use:\n    Select glyphs and run Guides > Metric Reference Lines. Choose scope,\n    levels and offset, inspect the preview and press Apply for the displayed\n    additions.\n\nBenefit:\n    Add metric construction lines without changing font-wide guides, metrics\n    or outlines.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Guides/Clear Glyph Guides.py",
+      "historical_sha256": "2c6c25ef6f839560347d7ca8989eb94cb1eb60ef857a051f4ee1e0bdd1f764f1",
+      "current_sha256": "d5903492b3438aef20b1e0649d86dd25c3f553aa2cd9bb00819629c41031a86a",
+      "source_sha256": "d33764e9267ba08c946d525d028d3d83e0e3cad3a2af4338c2373118ce4efce2",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Remove matching glyph guides while preserving hints and retained guides.\n\nSelect glyphs. Choose current or all masters, direction and name text. Inspect\nevery matching guide, then use Remove. Retained native colour, tags and geometry\nare kept. Batches with unsafe automatic dependants are refused before history.\nChanged font, selection or source clears the plan; Close releases owned signals.\n\"\"\"",
+          "current": "\"\"\"Remove matching glyph guides while preserving hints and retained guides.\n\nWhat it does:\n    Select glyphs. Choose current or all masters, direction and name text. Inspect\n    every matching guide, then use Remove. Retained native colour, tags and geometry\n    are kept. Batches with unsafe automatic dependants are refused before history.\n    Changed font, selection or source clears the plan; Close releases owned signals.\n\nHow it works:\n    Filter each selected layer's glyph guides by direction and name text. Plan\n    removals separately from retained native guides, preserving hints and\n    unrelated properties.\n\nWhy this design:\n    A removal preview exposes exactly which guides match before a broad\n    master-scope operation starts.\n\nHow to use:\n    Select glyphs and run Guides > Clear Glyph Guides. Choose master scope and\n    filters, inspect matching guide rows and press Remove. Refresh the plan\n    after source changes.\n\nBenefit:\n    Remove a targeted guide subset; the action is recorded as one Undo step.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Guides/Copy Guides Between Masters.py",
+      "historical_sha256": "218123089612d8496dddef4da8c7f2bfb31858d3ebe1793b3b17409135810f26",
+      "current_sha256": "e94845d8841585bb9e67d62768f8e272e48df055c4e4f5bc29725aa631c6897b",
+      "source_sha256": "967d72c8b3cf5e38e3d5e475c773dbf66fb08db55e3c6958d07ced203d4f8e5a",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Merge or replace glyph guides on explicitly selected target masters.\n\nSelect glyphs and choose From, To, merge/replace and optional width scaling.\nInspect every add/remove row, then use Copy. Nonpositive widths cannot be scaled.\nMatching target guides retain native colour, tags and geometry; hints are kept.\nUnsafe automatic dependants are refused before history. Close releases signals.\n\"\"\"",
+          "current": "\"\"\"Merge or replace glyph guides on explicitly selected target masters.\n\nWhat it does:\n    Select glyphs and choose From, To, merge/replace and optional width scaling.\n    Inspect every add/remove row, then use Copy. Nonpositive widths cannot be scaled.\n    Matching target guides retain native colour, tags and geometry; hints are kept.\n    Unsafe automatic dependants are refused before history. Close releases signals.\n\nHow it works:\n    Read source guide records and plan merge or replacement for each checked\n    target master. Preserve matching native guide properties and reject\n    impossible width scaling.\n\nWhy this design:\n    Explicit target checks prevent a master choice from silently applying to\n    the whole family; matching guides need not be rebuilt.\n\nHow to use:\n    Select glyphs and run Guides > Copy Guides Between Masters. Choose source,\n    targets, mode and scaling, inspect add/remove rows and press Copy.\n\nBenefit:\n    Reuse construction guides between masters; Copy is recorded as one Undo\n    step.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Guides/Guide List Editor.py",
+      "historical_sha256": "fdf1c8c18c9675a8895305d80a78435bb2f8b0681d97b4a4e531c5cf9222d984",
+      "current_sha256": "71a4acbb10222ed881983d7aaa9b28bccd4280f8fc320fa54f7acb35b4020fbb",
+      "source_sha256": "39ef5746559d858caa6970dc6c1500f681c562f5059d22bcf9056d7ad2e40df0",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Edit glyph-guide coordinates, angles and names of the first selected glyph.\n\nChoose current or all masters. Edit X, Y, angle in degrees and name; Add guide,\nDelete selected and Revert change the proposal. Apply makes each editable master\nmatch its rows in one Undo step. Unchanged guides retain their native properties;\nhints are kept. Bad/non-finite cells and unknown masters refuse the whole write.\nUnsafe automatic dependants are refused. Close releases signals and glyphs.\n\"\"\"",
+          "current": "\"\"\"Edit glyph-guide coordinates, angles and names of the first selected glyph.\n\nWhat it does:\n    Choose current or all masters. Edit X, Y, angle in degrees and name; Add guide,\n    Delete selected and Revert change the proposal. Apply makes each editable master\n    match its rows in one Undo step. Unchanged guides retain their native properties;\n    hints are kept. Bad/non-finite cells and unknown masters refuse the whole write.\n    Unsafe automatic dependants are refused. Close releases signals and glyphs.\n\nHow it works:\n    Stage guide rows for the first selected glyph across the chosen master\n    scope. Validate names, coordinates and angles before replacing editable\n    master guide sets.\n\nWhy this design:\n    Retaining unchanged native guides keeps their properties, while a proposal\n    table makes added and deleted records explicit.\n\nHow to use:\n    Run Guides > Guide List Editor after selecting a glyph. Edit rows or use\n    Add, Delete and Revert, inspect each master's proposal and press Apply to\n    write it.\n\nBenefit:\n    Edit glyph construction guides in one recorded Undo step while preserving\n    hints and retained guide properties.\n\"\"\""
+        }
+      ]
+    },
+    {
+      "destination": "Scripts/Masters/Italic Angle.py",
+      "historical_sha256": "aa528b09a27e0ae6044dedbef4b07017e1589983ba740d457833bf386c1a8423",
+      "current_sha256": "45249ea52af2b0fdad140d59e44fae866ec4171886a1e74f36a12e49fa971e03",
+      "source_sha256": "a128519cb0930bf4f8cc0bb818472faa47ca7b70a473f5a4a37975dc4f92a36f",
+      "kind": "annotations-and-docstrings-only",
+      "edits": [
+        {
+          "historical": "\"\"\"Stage each master's italic angle, preview its slant and Apply in one Undo.\n\nThe font remains unchanged until Apply. Reopen after changing fonts, masters or\ntheir source angles. Close disconnects all owned signals and painter callbacks.\n\"\"\"",
+          "current": "\"\"\"Stage each master's italic angle, preview its slant and Apply in one Undo.\n\nWhat it does:\n    The font remains unchanged until Apply. Reopen after changing fonts, masters or\n    their source angles. Close disconnects all owned signals and painter callbacks.\n\nHow it works:\n    Use the App master-angle editor and its owned panel. Keep proposed angles\n    separate from stored values until the explicit Apply action.\n\nWhy this design:\n    Staging several angles together lets the user compare slant before\n    changing master metadata.\n\nHow to use:\n    Open the font and run Masters > Italic Angle. Edit the proposed angle\n    values, inspect the slant preview and press Apply. Close to discard an\n    unapplied proposal.\n\nBenefit:\n    Review a family's master angles in one place and record the Apply action\n    as one Undo step.\n\"\"\""
         }
       ]
     }

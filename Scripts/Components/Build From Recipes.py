@@ -64,7 +64,7 @@ import fly.ap.component_writer as component_writer  # noqa: PLR0402 - fontlabapp
 import fly.ap.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import ap, qt
-from fly.ap import scripting
+import fly.ap.scripting as scripting
 
 QtGui = qt.QtGui
 fontlab = ap.fontlab

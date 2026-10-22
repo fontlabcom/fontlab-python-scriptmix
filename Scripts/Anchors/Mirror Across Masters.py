@@ -33,7 +33,7 @@ batch, before any history exists, when:
 After the write, the script reads every value back. It reports any value
 that FontLab did not keep, for example under a strong rounding preference.
 If FontLab fails part-way, the error says that native changes may remain.
-Edit > Undo restores the font. The plan, the safety checks, the one-step
+The edit is recorded as one Undo step. The plan, the safety checks, the one-step
 write and the panel base are shared with the other anchor scripts
 (fly.ap.anchor_writer, fly.ap.anchor_panel); the planner and the controls
 belong to this script.
@@ -48,7 +48,7 @@ from typing import Any
 import fly.ap.anchor_panel as anchor_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import qt
-from fly.ap import scripting
+import fly.ap.scripting as scripting
 
 QtCore, QtGui = qt.QtCore, qt.QtGui
 TITLE = "Mirror Anchors Across Masters"

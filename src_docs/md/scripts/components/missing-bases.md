@@ -8,9 +8,28 @@ categories: ["Components"]
 
 Find components that point to glyphs which do not exist, or to a base glyph without that master.
 
-Such components draw nothing and break exports. The tree groups the problems by
-the missing base glyph; expand a group to see the composites and masters affected.
-Select affected glyphs puts them in the Font window selection. Nothing is changed.
+What it does:
+    Such components draw nothing and break exports. The tree groups the problems by
+    the missing base glyph; expand a group to see the composites and masters affected.
+    Select affected glyphs puts them in the Font window selection. Nothing is changed.
+
+How it works:
+    Read component references through App and group missing glyphs or missing
+    master layers by base name. Retain the affected owners for guarded
+    selection.
+
+Why this design:
+    A missing base can make several composite drawings disappear, so grouping
+    by base helps expose the common cause.
+
+How to use:
+    Run Components > Missing Bases. Expand a missing-base group, inspect the
+    composite and master entries and use Select affected glyphs to locate the
+    owners.
+
+Benefit:
+    Locate broken component dependencies without adding placeholder bases or
+    changing references.
 
 Run **Components > Missing Bases** from FontLab's Scripts menu.
 
@@ -19,5 +38,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a6ab4aa6160b8cf9ac2d5bd851b47dbe07399f59f8f429c5b30e40cbd4a0fe4c.py)
+[Python source](../../../../.build/menu-sources/724e76eb0b9ad97ab16bd7bf35e6686770d69c19e7fc02c7d51b7d3215bf5e11.py)
 <!--/codeinclude-->

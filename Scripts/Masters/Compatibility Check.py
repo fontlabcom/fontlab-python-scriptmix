@@ -3,10 +3,29 @@
 # FLM: Masters · Compatibility Check
 """Check that every master of each glyph can interpolate: same contours, nodes, anchors, components.
 
-The tree lists each glyph with ✓ or ✗; expand it to see the counts per master, with the values
-that differ from the other masters highlighted. Contour structure is compared node by node
-(on-curve / handle pattern), anchors by name and components by base glyph. Select the failing
-glyphs in the Font window with one click. Read-only.
+What it does:
+    The tree lists each glyph with ✓ or ✗; expand it to see the counts per master, with the values
+    that differ from the other masters highlighted. Contour structure is compared node by node
+    (on-curve / handle pattern), anchors by name and components by base glyph. Select the failing
+    glyphs in the Font window with one click. Read-only.
+
+How it works:
+    Use the shared Masters compatibility checks for corresponding contours and
+    node patterns, anchor names and component bases. Display the counts under
+    each glyph.
+
+Why this design:
+    Matching totals alone do not establish structural compatibility; node
+    patterns and named objects need separate checks.
+
+How to use:
+    Select glyphs and run Masters > Compatibility Check. Expand failing rows,
+    compare their master details and use the action button to select
+    incompatible glyphs.
+
+Benefit:
+    Locate reported interpolation obstacles without reordering contours or
+    changing glyph data.
 """
 
 from typing import Any, ClassVar

@@ -62,7 +62,6 @@ from typing import Any
 TITLE = "Copy Outline To Mask"
 KEY = "masters_copy_to_mask"
 MODES = ("Replace mask", "Add to mask")
-SELECTED = 0x0020  # node state bit: selected
 MAX_NAMES = 8  # glyph names shown in the subtitle
 
 
@@ -100,25 +99,14 @@ def _valid(layer: Any) -> bool:
     return layer is not None and not layer.isNull
 
 
-def restore_shape(old: Any, new: Any) -> None:
-    """Copy back what FontLab's clone() drops (fl#8516, fl#8538).
-
-    Restore shape note and name, and the raw state and name of every node.
-    Selection bits stay as the clone has them.
-    """
-    new.shapeData.note, new.shapeData.name = old.shapeData.note, old.shapeData.name
-    for before, after in zip(old.contours, new.contours, strict=True):
-        for source, target in zip(before.nodes(), after.nodes(), strict=True):
-            target.nodeState = (source.nodeState & ~SELECTED) | (target.nodeState & SELECTED)
-            target.name = source.name
-
-
 def clone_shape(shape: Any) -> Any:
     """Return a repaired clone of ``shape``. Raise RuntimeError on a lost contour."""
+    import fly.ap.contour_copy as contour_copy
+
     copy = shape.clone()
     if len(copy.contours) != len(shape.contours):
         raise RuntimeError("FontLab clone changed the contour count of a shape.")
-    restore_shape(shape, copy)
+    contour_copy.restore_shape(shape, copy)
     return copy
 
 

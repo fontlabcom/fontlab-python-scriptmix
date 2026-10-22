@@ -37,7 +37,7 @@ BENEFIT: Bulk renames (for example uniXXXX to AGL names) are safe, previewed
 and reversible with one Edit > Undo.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 
 Run **Names > Batch Rename** from FontLab's Scripts menu.
 
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c65860e9b8e6f6c5fd643ebc73e072dccddeb125aa6c790b78258936baa07fc2.py)
+[Python source](../../../../.build/menu-sources/91f8c59445b9450ce64104052a687f5107f72f08595c869f2dc3ce53783a0ccb.py)
 <!--/codeinclude-->

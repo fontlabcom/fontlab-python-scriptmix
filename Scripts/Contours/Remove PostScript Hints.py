@@ -209,8 +209,8 @@ def panel_type() -> type:
             return bool(self.horizontal.isChecked()), bool(self.vertical.isChecked())
 
         def plan_rows(self, package: Any, masters: list[str]) -> list[Row]:
-            """Plan with fresh auto-layer facts, the bases opt-in and the directions."""
-            facts = history.scan_auto_facts(package)
+            """Plan with the captured auto-layer facts, the bases opt-in and the directions."""
+            facts = self.facts
             return survey(
                 package,
                 self.names,

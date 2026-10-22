@@ -3,9 +3,29 @@
 # FLM: Contours · Node Statistics
 """Contours and nodes per glyph and master in one table, with incompatible glyphs flagged.
 
-Each cell reads "contours / nodes" for a master; a glyph is flagged when its masters differ,
-which breaks interpolation. Work on the selection or the whole font, then select the flagged
-glyphs in the Font window with one click. Read-only: nothing in the font changes."""
+What it does:
+    Each cell reads "contours / nodes" for a master; a glyph is flagged when its masters differ,
+    which breaks interpolation. Work on the selection or the whole font, then select the flagged
+    glyphs in the Font window with one click. Read-only: nothing in the font changes.
+
+How it works:
+    Read contour and node counts on the selection or whole font, grouped by
+    master. Flag differing counts and keep the source snapshot for the
+    selection action.
+
+Why this design:
+    Count differences can rule out compatibility, but matching counts alone do
+    not prove matching contour structure.
+
+How to use:
+    Run Contours > Node Statistics. Choose the source scope, inspect each
+    contours/nodes cell and use the action button to select flagged glyphs in
+    the Font window.
+
+Benefit:
+    Find count mismatches quickly while preserving node positions, topology
+    and layer data.
+"""
 
 from typing import Any
 

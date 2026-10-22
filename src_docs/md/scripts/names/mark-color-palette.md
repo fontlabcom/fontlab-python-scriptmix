@@ -35,7 +35,7 @@ BENEFIT: Colour marks sort work (done, check, kerning needed) and show in the
 Font window. One Edit > Undo reverts one click.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 
 Run **Names > Mark Color Palette** from FontLab's Scripts menu.
 
@@ -44,5 +44,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/30a713212e34a73dfe0b2324c7efe6cef5f08f371b0f0b57c438f9bf43dfed6b.py)
+[Python source](../../../../.build/menu-sources/de483d238c0217884b330833fb420ad0b463b8091d30fde8eb6bdfd30f8227bc.py)
 <!--/codeinclude-->

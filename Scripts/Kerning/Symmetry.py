@@ -12,7 +12,7 @@ mismatch, warning, chosen class and per-master count without clearing Output.
 The complete batch uses shared history and preflight: stale targets/classes,
 missing required targets/class categories, fractional history and unsupported
 save/reopen ranges refuse before writes. A native write failure can be partial;
-use Undo as its diagnostic directs. Full-font native qualification is pending.
+use Undo as its diagnostic directs.
 
 Independent implementation of Vassil Kateliev / Karandash Type Foundry's
 SG-Font-Kerning-Symmetry.py (2025), Science Gothic. Original licence undeclared;
@@ -20,7 +20,10 @@ no original body is copied. Requires App>=0.2.137.dev0 and public Fly.
 """
 
 
-def main():
+from typing import Any
+
+
+def main() -> Any:
     """Execute the complete writer and owned result through public Fly."""
     from fly.ap.kerning_symmetry import show
     return show()

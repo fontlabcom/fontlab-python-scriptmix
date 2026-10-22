@@ -34,6 +34,8 @@ uv run --no-project --python cpython-3.11-macos-aarch64-none \
 Ruff 0.14.10 reports 87 existing findings in this scope. Do not apply automatic
 fixes to historical scripts. Export an external `UV_CACHE_DIR` as in README.
 
+`migration.json` is a frozen v0.2.0 record, not current pins.
+
 ## Host limits
 
 - PythonQt widgets live in `QtGui`, not `QtWidgets`. Do not create QApplication,

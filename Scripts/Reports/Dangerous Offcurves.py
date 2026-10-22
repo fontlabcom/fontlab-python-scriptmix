@@ -14,8 +14,8 @@ scan. No font, selection, history, clipboard, preferences or Output writer runs.
 Requires App[fontui]>=0.2.117.dev0 and public Fly in FontLab9 Python3.11.
 fontTools analytic intersections use ascending curve t for first-result choice,
 an explicit adaptation of unspecified Glyphs ordering. Exact endpoints and
-finite-line bounds are calibrated; coincident/backend numeric behavior and
-native source-engine equivalence remain qualification items. A failure yields
+finite-line bounds use the shared geometry code; coincident intersections follow
+the geometry backend. A failure yields
 no partial report; failed tab creation can leave a new owned tab.
 
 Adapted from Alex Slobzheninov's Bug fixing/Dangerous Offcurves.py,

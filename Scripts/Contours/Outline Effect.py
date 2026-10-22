@@ -225,12 +225,12 @@ def panel_type() -> type:
             self.add_row("Line width", self.line)
 
         def plan_rows(self, package: Any, masters: list[str]) -> list[Row]:
-            """Plan with fresh auto-layer facts and the bases opt-in."""
+            """Plan with the captured auto-layer facts and the bases opt-in."""
             return survey(
                 package,
                 self.names,
                 masters,
-                history.scan_auto_facts(package),
+                self.facts,
                 self.consented(),
             )
 

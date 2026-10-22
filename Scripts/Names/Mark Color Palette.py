@@ -32,7 +32,7 @@ BENEFIT: Colour marks sort work (done, check, kerning needed) and show in the
 Font window. One Edit > Undo reverts one click.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 """
 
 import colorsys

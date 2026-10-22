@@ -49,7 +49,7 @@ from typing import Any
 import fly.ap.component_panel as component_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 import fly.ap.component_writer as component_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import qt
-from fly.ap import scripting
+import fly.ap.scripting as scripting
 
 QtCore, QtGui = qt.QtCore, qt.QtGui
 TITLE = "Copy Component Offsets"

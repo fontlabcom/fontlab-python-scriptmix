@@ -2,6 +2,36 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — Final script fixes (2026-10-22)
+
+- Use the corrected App backup resolver, custom-suffix naming, default suffix
+  and detached-shape repair APIs. Keep backup view state and now retain contour
+  names. Remove the repeated empty-job guard.
+- Reuse captured automatic-layer facts in six planning hooks; Tabular Figure
+  Copies inherits the corrected App hook. Keep fresh facts at write time.
+- Replace background shapes individually and retain component shape/data/builder
+  history before detachment. Add ownership and clone-metadata regressions.
+- Expand 79 short menu docstrings with What/How/Why/Usage/Benefit sections;
+  retain source credits and licence text. Replace public acceptance-status and
+  unmeasured Undo wording, normalize Fly module imports and type both remaining
+  unannotated entry points.
+- Refresh 76 additional-tool hashes, three moved-menu hashes and 68 reversible
+  documentation overlays. Keep migration.json as the frozen v0.2.0 record;
+  extend historical reconstruction to compose docstring edits with path moves.
+- Regenerate source-backed catalogue pages. Record remaining shared App
+  scaffolds and native milestone checks as open work in PLAN and TODO.
+- Keep backup prefixes and the temporary-layer marker case-sensitive, with
+  case-insensitive exclusion of master names; test case-twin master routing.
+- Use one uniform indented house layout for the 79 expanded docstrings;
+  remove residual qualification status, trailing spaces and long blank runs.
+- Read back every replaced background for its planned contour count and no
+  components. Report missing masks and silent native write mismatches with
+  the Undo hint after closing history.
+- Verification: requested runtime command, 3,812 passed / 6 skipped, exit 0;
+  full arm64 runtime suite, 3,812 passed / 6 skipped, exit 0; documentation
+  suite, 10 passed, exit 0; selected Ruff rules, 144 changed scripts clean,
+  exit 0; strict site build, exit 0. Native FontLab qualification remains open.
+
 ## Unreleased — 2026-10-22 — Practical tools and shared helpers
 
 - Expand the practical menu to 240 tools: 69 sample adaptations and 171

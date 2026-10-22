@@ -384,6 +384,7 @@ class Node:
 
 class Contour:
     def __init__(self, points: Any, names: Any = (), states: Any = ()) -> None:
+        self.name = "contour-name"
         names, states = list(names), list(states)
         self._nodes = [
             Node(x, y, names[i] if i < len(names) else "", states[i] if i < len(states) else 0)
@@ -411,6 +412,8 @@ class Shape:
 
     def clone(self) -> "Shape":
         copies = [Contour([(n.x, n.y) for n in c.nodes()]) for c in self.contours]
+        for contour in copies:
+            contour.name = ""
         if self.drop_contour:
             copies = copies[:-1]
         return Shape(copies)
@@ -649,7 +652,7 @@ def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
             )
         },
         completion=completion.install,
-        modules=["guides", "history", "masters", "edit_guards", "metrics_panel", "selection_panel"],
+        modules=["guides", "history", "masters", "edit_guards", "metrics_panel", "selection_panel", "contour_copy"],
     )
     monkeypatch.setattr(state.app["guides"], "dependency_values", lambda package: package.records())
     ap.scripting = state.app["scripting"]
@@ -1648,3 +1651,13 @@ def test_legacy_backup_when_discovered_then_restore_and_read_back(world: World) 
     result = module.restore(jobs, False, world.facts())
     assert result["mismatches"] == [] and glyph.layer("Light").advanceWidth == 200
     assert len(world.notifications()) == 1
+
+
+@pytest.mark.parametrize("title", ["Copy Outline To Mask", "Copy Layer Between Masters", "Restore Backup Layer"])
+def test_shape_copy_when_contour_named_then_shared_repair_keeps_it(world: World, title: str) -> None:
+    module = load(title)
+    source = Shape([square(0, 0, 100, 100)], note="shape-note", name="shape-name")
+    source.contours[0].name = "named-contour"
+    copy = module.clone_shape(source)
+    assert copy.contours[0].name == "named-contour", "Keep contour names in detached copies"
+    assert (copy.shapeData.note, copy.shapeData.name) == ("shape-note", "shape-name")

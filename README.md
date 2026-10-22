@@ -101,6 +101,8 @@ Feature source uses `fly.fp.feature_blocks`. Fontport holds fontParts/UFO
 integration; Glyport holds Glyphs.app compatibility. Scripts do not load other
 menu scripts as libraries. No `lessons` package is shipped here.
 
+`migration.json` is a frozen v0.2.0 record, not current pins.
+
 ## Runtime tests
 
 Prerequisites: a prepared Python 3.11 arm64 test `.venv` with pytest and the

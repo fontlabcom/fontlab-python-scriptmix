@@ -89,11 +89,29 @@ def test_cleanup_when_new_or_legacy_backup_then_classified_as_backup(name: str) 
     assert load("Layer Cleanup").kind(layer, ["Light", "Light Italic"]) == "backup"
 
 
-def test_backup_rule_when_copied_between_tools_then_identical_source() -> None:
-    bodies = []
+def test_backup_rule_when_used_by_companions_then_calls_installed_app() -> None:
     for title in ["Duplicate Current Layer", "Restore Backup Layer", "Display Next Layer", "Display Previous Layer", "Layer Cleanup"]:
         module = load(title)
         tree = ast.parse(Path(module.__file__).read_text())
-        helper = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "_backup_master")
-        bodies.append(ast.dump(helper, include_attributes=False))
-    assert len(set(bodies)) == 1, "Companion tools must share one backup-name rule"
+        assert not any(isinstance(node, ast.FunctionDef) and node.name == "_backup_master" for node in ast.walk(tree))
+        assert module.backup_master("light text old", ["Light", "Light Text"]) is None
+        assert module.backup_master("LIGHT", ["Light"]) is None
+
+
+@pytest.mark.parametrize("title", ["Duplicate Current Layer", "Restore Backup Layer", "Display Next Layer", "Display Previous Layer", "Layer Cleanup"])
+@pytest.mark.parametrize("name,expected", [
+    ("bold backup x", None), ("regular sketch", None), ("bold@x", None),
+    ("Bold |TEMP| x", "Bold"), ("Bold |temp| x", None),
+    ("BOLD backup x", "BOLD"), ("BOLD@x", "BOLD"),
+    ("bold", None), ("Bold Italic old", "Bold Italic"),
+])
+def test_backup_prefix_when_case_varies_then_retains_exact_master_spelling(title: str, name: str, expected: str | None) -> None:
+    assert load(title).backup_master(name, ["Bold", "BOLD", "Bold Italic", "Regular"]) == expected, "Resolve exact-case prefixes; exclude master names casefolded"
+
+
+def test_backup_name_when_masters_differ_only_by_case_then_stays_with_its_base() -> None:
+    module = load("Duplicate Current Layer")
+    masters = ["Bold", "BOLD"]
+    for base in masters:
+        name = module.backup_name(base, [], "trial", masters)
+        assert module.backup_master(name, masters) == base, "Case-twin masters must not cross-route"

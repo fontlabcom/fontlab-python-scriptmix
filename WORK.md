@@ -2,6 +2,157 @@
 this_file: WORK.md
 ---
 
+## Scoped round-B re-review, fix round 1 (2026-10-22)
+
+- Read roundB-rereview.md and the corrected App masters/selection-panel code.
+  App is read-only. The earlier casefolded-prefix observation is superseded:
+  backup prefixes and the |temp| marker use exact case; exclusion of any
+  master name remains casefolded. Replaced the old lowercase-prefix assertion
+  and added 45 companion-tool case variants plus a case-twin naming test.
+  SelectionPanel refreshes facts before Apply planning; CopiesPanel writes
+  with that snapshot, as supplied by the corrected App.
+- M-1: reformatted the 79 module docstrings with a summary, uniform house
+  section headings and four-space section bodies, with one blank separator.
+  All prior content/credit/licence lines survive the indentation pass except
+  the requested status replacement and Master Switcher wording correction.
+- M-2/M-3: removed remaining qualification-status wording throughout Scripts,
+  retained concrete scope/failure limitations, stripped trailing spaces and
+  removed four-to-six blank-line runs. No new measured-native claim.
+- M-4: background replacement now reads back every target mask, checking
+  existence, the planned own-contour count and zero components. Mismatches
+  use the shared unstored_error with the shared Undo hint after history ends.
+  Four new regressions simulate ignored component/outline removal, ignored
+  addition and a disappeared mask. RED: 4 failed / 130 deselected, exit 1.
+  An intermediate run caught the missing Undo advice; the final focused
+  suite passes all 227 tests, exit 0.
+- Only Selection To All Backgrounds has an executable change in this fix.
+  The other 111 changed scripts retain identical executable ASTs. Refreshed
+  44 additional destination hashes, 68 current revision hashes/text overlays
+  and three moved destination hashes. Historical hashes, historical revision
+  fragments and migration.json are unchanged. Cumulative round-B changes
+  affect 144 scripts, including 76 additional-tool destination pins.
+- M-5: CHANGELOG now reports the actual final runs, rather than another
+  controller environment's counts. Requested runtime gate: 3,812 passed /
+  6 skipped, exit 0. Explicit arm64 runtime gate: 3,812 passed / 6 skipped,
+  exit 0. Documentation gate: 10 passed, exit 0. Ruff 0.14.10 rules
+  F821,F401,F811: all 144 round-B changed scripts clean, exit 0.
+- Regenerated the source-backed catalogue using the existing documentation
+  .venv and src_docs/build.py --offline. Strict site build: exit 0.
+  All 240 catalogue descriptions and content-addressed source snapshots match.
+  All 240 current destination pins match; all 69 frozen historical sources
+  reconstruct to their recorded digests. All 240 scripts compile as Python
+  3.11 and have module docstrings >=700 characters (minimum 721), exit 0.
+  All 79 house-layout checks pass. No trailing spaces or long blank runs.
+- Three final source greps are empty, each exit 1 as expected: original
+  forbidden patterns; residual qualification/status wording; and casefolded
+  backup-prefix wording. The read-back and prefix tests add 50 cases.
+- Gates retain the previously documented environment. UV_CACHE_DIR and TMPDIR
+  use permitted external OS scratch because the requested volume cache was
+  denied by the sandbox in the preceding round. Bytecode and pytest caches
+  are disabled. Exact runtime commands match the preceding gate recipe;
+  Ruff receives all 144 paths listed in the external receipt.
+- Receipts: external scriptmix-rereview-r1 scratch contains before.json,
+  changes.json, all-changed-scripts.json, red.log, focused-final.log,
+  runtime.log, runtime-arm64.log, docs.log, ruff.log, site-build.log and
+  final-audit.json. No source archive was executed or changed.
+- Wait, but: these checks prove source/offline behaviour and documentation,
+  not FontLab Apply/Undo/Redo or saved/reopened full-font state. The native
+  component/history/read-back checks remain open in TODO. No native item was
+  ticked, no App or sibling checkout was edited, and no git state changed.
+
+## Final script fixes, round B (2026-10-22)
+
+- Read both final review reports, the batch rules, workspace host landmines and
+  the corrected read-only App sources. All five layer scripts' pre-edit bytes
+  matched HEAD. No App, canonical checkout, branch, index or commit changes.
+- Five backup-rule adapters now call masters.backup_master. Duplicate Current
+  Layer delegates naming to backup_layer_name(base, taken, suffix, masters)
+  and time formatting to default_suffix. Four full-shape repair copies plus
+  the partial-contour background copy now call contour_copy.restore_shape;
+  Duplicate passes keep_view_state=True and the partial copy passes indexes.
+  Remove the second empty-job guard. Contour names are now retained.
+- Six plan_rows hooks reuse self.facts. Tabular Figure Copies already inherits
+  CopiesPanel.plan_rows and uses its corrected captured facts without a local
+  override. Existing write-time fresh scans remain. Seven planning-hook tests
+  change controls and forbid a whole-font scan.
+- Selection To All Backgrounds reads component_history before detachment,
+  removes each mask shape individually and passes retained shape/data/builder
+  objects to history.commit. A component-mask regression checks read order,
+  removal, retained notification order and deep-history flag.
+- Expanded all 79 listed short docstrings with What/How/Why/Usage/Benefit;
+  preserved existing credit/source/licence lines. Executable ASTs match the
+  saved originals, except the explicitly requested Text Holder return typing.
+  Added return typing to Symmetry without changing its return value.
+- Replaced all ten from-Fly-module imports. Removed public generic acceptance
+  status and unmeasured Undo claims; Metrics and Anchors describe a recorded
+  Undo step. Restated the one NOTICE process sentence in plain attribution.
+- Updated 59 additional-tool current hashes and three moved-menu hashes.
+  Extended 68 reversible docstring overlays in menu-revisions.json, preserving
+  every historical source/hash and migration.json byte. menu_layout composes
+  docstring overlays with historical path moves. Tests retain frozen hashes;
+  the AST comparison now excludes module docstrings as well as function docs.
+- README and AGENTS identify migration.json as the frozen v0.2.0 record.
+  PLAN/TODO leave all native checks open, with the four contour-selection
+  scaffolds, five spans helpers and three Font Info catalogue reads on the
+  App backlog. The sibling Examples forward pins are outside this write scope.
+- Initial RED regressions: 2 failed / 150 deselected, exit 1. The first full
+  runtime run found 23 failures / 3,738 passed / 6 skipped, exit 1. Fixed stale
+  wording/API assertions, historical-fixture overlays, tracked contour_copy
+  aliases in helper fakes, and the Trial Font panel's native font catalogue
+  fake for construction-time fact scanning. No production behaviour was
+  weakened to satisfy a fake. Focused arm64 rerun: 720 passed, exit 0.
+- Saved-HEAD differential checks: 73 cases passed, exit 0, for backup discovery,
+  custom suffixes/collisions/refusals and full/subset shape repair with both
+  view-state modes. All prior fields match; contour names are additionally
+  retained. Corrected casefold behaviour is tested through the App contract.
+- Requested runtime command: 3,762 passed / 6 skipped, exit 0. Plain 3.11
+  resolves to x86_64 on this Mac. Repeated the complete suite with explicit
+  cpython-3.11-macos-aarch64-none: 3,762 passed / 6 skipped, exit 0.
+- Documentation gate: 10 passed, exit 0. Ruff 0.14.10 selected rules
+  F821,F401,F811: 127 changed scripts, no findings, exit 0. No auto-fixes.
+- Regenerated all 240 source-backed catalogue pages with src_docs/build.py
+  using the existing documentation .venv; strict site build passed, exit 0.
+  Generated pages were not hand-edited. No dependency change or publication.
+- The requested UV_CACHE_DIR was rejected by the filesystem sandbox (exit 2).
+  Cache and TMPDIR therefore use a permitted external OS scratch directory;
+  all other requested gate exports are retained. Bytecode and pytest cache
+  writes are disabled. Full commands/logs and pin lists are retained in the
+  external scriptmix-round-b scratch receipt.
+- Final recheck after regeneration: 127 changed scripts pass Ruff, exit 0;
+  forbidden-source grep has zero matches, exit 1 as expected; the separate
+  "is pending" grep is also empty, exit 1. All 240 module docstrings meet
+  700 characters, exit 0; all 240 compile as Python 3.11. All 171 current
+  additional-tool pins and all 240 catalogue descriptions/snapshots match.
+  Documentation gate after regeneration: 10 passed, exit 0.
+- Wait, but: these are offline/source and documentation results. Real FontLab
+  Apply/Undo/Redo, saved/reopened full-font state, painting and Close remain
+  unverified for the changed tools and final dependency combination. No TODO
+  item was ticked and no historical native acceptance count was increased.
+
+Gate recipe (from this worktree; external scratch supplies cache and TMPDIR):
+
+```sh
+export UV_CACHE_DIR="$ROUND_B_SCRATCH/uv-cache-final"
+export TMPDIR="$ROUND_B_SCRATCH"
+export PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1
+export SETUPTOOLS_SCM_PRETEND_VERSION=0.2.150.dev0
+export PYTHONPATH="$(cd ../fontlab-fly/src && pwd)"
+export FONTLAB_PRESERVED_ROOT=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-python-scriptmix
+rtk proxy uv run --no-project --python 3.11 --with pytest \
+  --with ../fontlab-fontlabapp --with ../fontlab-fontport \
+  python -m pytest -q -p no:cacheprovider tests
+rtk proxy uv run --no-project --python cpython-3.11-macos-aarch64-none \
+  --with pytest --with ../fontlab-fontlabapp --with ../fontlab-fontport \
+  python -B -m pytest -q -p no:cacheprovider tests
+rtk proxy uv run --no-project --python cpython-3.11-macos-aarch64-none \
+  --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML \
+  python -B -m pytest -q -p no:cacheprovider tests_docs
+rtk proxy uv run --no-project --with ruff==0.14.10 \
+  ruff check --no-cache --select F821,F401,F811 <127 changed Scripts paths>
+PATH="$PWD/.venv/bin:/opt/homebrew/bin:$PATH" \
+  rtk proxy .venv/bin/python -B src_docs/build.py --offline
+```
+
 ## Removal prep review: Scriptmix fix round 1 (2026-10-22)
 
 - M4: README now shows both --audit-rescued-sources and

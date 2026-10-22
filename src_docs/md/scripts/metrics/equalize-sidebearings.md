@@ -28,7 +28,7 @@ How to use: select glyphs in the Font window. Choose the rule. Choose the
 current master or all masters. Check the table. Press Apply. The panel stays
 open. Press "Use selection" to read the Font window selection again.
 
-Safety: one Apply is one Undo step. Auto layers are listed and never edited. A
+Safety: each Apply is recorded as one Undo step. Auto layers are listed and never edited. A
 glyph that owns an auto layer is listed and skipped as a whole. Layers with a
 metrics link or expression are listed and skipped. A base of auto glyphs is
 refused, because FontLab rebuilds the auto glyphs and may lose their anchors
@@ -54,5 +54,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e8a377435c152ccccca56491ffecd8b1f646ef52eed6fdc9a1d7c0e8710f55ae.py)
+[Python source](../../../../.build/menu-sources/9704dd23af73901f37698c224227a27df805baef1d76e7fa688a6bddb986d403.py)
 <!--/codeinclude-->

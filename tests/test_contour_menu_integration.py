@@ -37,10 +37,9 @@ def test_three_contour_candidates_extend_curated_menu_without_archive_dispatcher
 
 def test_current_rows_accepts_already_current_owner_routes_without_rewriting(tmp_path):
     """Exercise the unchanged current_rows against both supported representations."""
-    for name in ("menu-moves.json", "migration.json"):
+    for name in ("menu-moves.json", "menu-revisions.json", "migration.json"):
         (tmp_path / name).write_bytes((ROOT / name).read_bytes())
-    moves = json.loads((ROOT / "menu-moves.json").read_text())["moves"]
-    for move in moves:
+    for move in current_rows(ROOT):
         source = ROOT / move["destination"]
         target = tmp_path / move["destination"]
         target.parent.mkdir(parents=True, exist_ok=True)

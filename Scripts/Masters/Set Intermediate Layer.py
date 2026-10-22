@@ -253,7 +253,7 @@ class IntermediatePanel(panels.panel_type()):
 
     def plan_rows(self, package: Any, masters: list[str]) -> list[IntermediateRow]:
         values = {key: float(box.value) for key, box in self.axis_controls.items()}
-        return survey(package, self.names, values, history.scan_auto_facts(package))
+        return survey(package, self.names, values, self.facts)
 
     def cells(self, row: IntermediateRow) -> list[str]:
         return [

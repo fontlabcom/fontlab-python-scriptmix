@@ -16,8 +16,7 @@ no partial window. Requires App>=0.2.118.dev0 and Fly in FontLab9 Python3.11.
 Independently implements Reza Bohloul's Path/Point Counter.py workflow; the
 inspected source declares no licence, so its body is not redistributed. Cubic
 and line reports preserve original text. Quadratic endpoints are included in
-Points/Nodes, explicitly correcting the original omission. Native layer order,
-reader preservation and window lifecycle qualification remain pending.
+Points/Nodes, explicitly correcting the original omission.
 """
 
 

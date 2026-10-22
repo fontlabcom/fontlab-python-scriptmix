@@ -644,7 +644,8 @@ def test_script_file_when_listed_then_has_house_header_and_py311_syntax(name):
     for claim in ("measured natively", "Undo restores", "stem hints", "Stem hints"):
         assert claim not in text, f"{name}: unproven claim '{claim}'"
     assert "clone" not in text, f"{name}: shapes must not be cloned"
-    assert doc.count("Native Undo/Redo/reopen") == 1, "pending note once"
+    assert "is recorded as one Undo step" in doc, "Describe the history operation"
+    assert "is pending" not in doc, "Keep acceptance status outside public script text"
     for node in ast.walk(tree):
         if isinstance(node, ast.FunctionDef):
             assert node.returns is not None or node.name == "__init__", (

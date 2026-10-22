@@ -24,7 +24,7 @@ How to use: select glyphs in the Font window. Choose the current master or all
 masters. Enter the percentage. Check the table. Press Apply. The panel stays
 open. Press "Use selection" to read the Font window selection again.
 
-Safety: one Apply is one Undo step. Auto layers are listed and never edited. A
+Safety: each Apply is recorded as one Undo step. Auto layers are listed and never edited. A
 glyph that owns an auto layer is listed and skipped as a whole. Layers with a
 metrics link or expression are listed and skipped. A base of auto glyphs is
 refused, because FontLab rebuilds the auto glyphs and may lose their anchors
@@ -33,8 +33,7 @@ glyph through other composites. Tick "Edit bases of auto glyphs anyway" to go
 on. Apply is refused while FontLab has pending glyph updates. After the write
 the script reads advance and outline back and reports any mismatch. A failure
 after the write started says so and asks you to use Edit > Undo. It does not
-call UpdateAll (FontLab issue 8537). Native Undo/Redo/reopen of in-place moves
-is pending.
+call UpdateAll (FontLab issue 8537).
 
 Shared parts: the panel, the plan model, the one-step write and the read-back
 come from the App module fly.ap.metrics_panel. This script holds its own
@@ -53,5 +52,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/bbc62f225a328d671e13c5ef7ec52f689e49628fbdc7f159227b6050bbeb9561.py)
+[Python source](../../../../.build/menu-sources/e0bdbc3a04e6e7fb7be64b5dc621a62125a60675ff19966b20eae1b70cd344ab.py)
 <!--/codeinclude-->

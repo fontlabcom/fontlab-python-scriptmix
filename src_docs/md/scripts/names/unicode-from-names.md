@@ -40,7 +40,7 @@ BENEFIT: Fonts built from named outlines get a correct character map in one
 previewed, undoable step.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 
 Run **Names > Unicode From Names** from FontLab's Scripts menu.
 
@@ -49,5 +49,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0d2a2cc59388ec95df9f7bb850b7664bfc404cbd6d5f3ec7f11f25c402373819.py)
+[Python source](../../../../.build/menu-sources/3fe5fae25f05de8e72719cb79c43868d7cc2b18296492bbc93c71459798ca354.py)
 <!--/codeinclude-->

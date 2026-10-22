@@ -18,7 +18,7 @@ closes. Open paths are omitted when a closed angular result replaces paths.
 The bound session refuses stale sources, unsupported hints, automatic
 dependants and ambiguous shape ownership before editing. A late native failure
 disables further writes and retains recovery data; close the panel and inspect
-the diagnosed result before continuing. Native FontLab acceptance is pending.
+the diagnosed result before continuing.
 Requires matching App/Fly candidates. Adapted from NaN Angularizzle; see NOTICE.
 
 Run **Contours > Angularizzle** from FontLab's Scripts menu.
@@ -28,5 +28,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/207a1e6279026b105f5f767be9772dabada23e2bec4d3f52eea03b03b4f1c9ae.py)
+[Python source](../../../../.build/menu-sources/39f04cfe82db26d11497703ca5f86c0a5ecbeda4fbd6df809ca130aa6d68f89a.py)
 <!--/codeinclude-->

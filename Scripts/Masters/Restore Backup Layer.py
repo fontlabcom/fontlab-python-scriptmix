@@ -63,7 +63,6 @@ from typing import Any
 
 TITLE = "Restore Backup Layer"
 KEY = "masters_restore_backup"
-SELECTED = 0x0020  # node state bit: selected
 LINK_FIELDS = ("metricsLeft", "metricsRight", "metricsWidth")
 TEMP_PREFIX = "|temp|"
 MAX_NAMES = 8  # glyph names shown in the subtitle
@@ -94,28 +93,16 @@ class Job:
     note: str = ""
 
 
-def _backup_master(name: str, masters: Sequence[str]) -> str | None:
-    """Resolve backups by the longest master prefix; keep legacy @ names.
+def backup_master(name: str, masters: Sequence[str]) -> str | None:
+    """Resolve backup layers through the shared App rule."""
+    import fly.ap.masters as masters_api
 
-    New names use <master> backup <suffix>, then optional collision (n).
-    Exact master names, bracket names and temporary names are never backups.
-    """
-    if "#" in name or "|temp|" in name or name.casefold() in {m.casefold() for m in masters}:
-        return None
-    if "@" in name:
-        prefix = name.split("@", 1)[0]
-        return prefix if prefix in masters else None
-    return next((m for m in sorted(masters, key=len, reverse=True) if name.startswith(m + " ")), None)
+    return masters_api.backup_master(name, masters)
 
 
 def _valid(layer: Any) -> bool:
     """True for a real native layer object."""
     return layer is not None and not layer.isNull
-
-
-def backup_master(name: str, masters: Sequence[str]) -> str | None:
-    """Resolve new and legacy backup names with the companion tools' rule."""
-    return _backup_master(name, masters)
 
 
 def backup_names(glyphs: Sequence[Any], masters: Sequence[str]) -> list[str]:
@@ -140,25 +127,14 @@ def contours_in(layer: Any) -> int:
     return sum(len(s.contours) for s in layer.shapes if not s.isComponent)
 
 
-def restore_shape(old: Any, new: Any) -> None:
-    """Copy back what FontLab's clone() drops (fl#8516, fl#8538).
-
-    Restore shape note and name, and the raw state and name of every node.
-    Selection bits stay as the clone has them.
-    """
-    new.shapeData.note, new.shapeData.name = old.shapeData.note, old.shapeData.name
-    for before, after in zip(old.contours, new.contours, strict=True):
-        for source, target in zip(before.nodes(), after.nodes(), strict=True):
-            target.nodeState = (source.nodeState & ~SELECTED) | (target.nodeState & SELECTED)
-            target.name = source.name
-
-
 def clone_shape(shape: Any) -> Any:
     """Return a repaired clone of ``shape``. Raise RuntimeError on a lost contour."""
+    import fly.ap.contour_copy as contour_copy
+
     copy = shape.clone()
     if len(copy.contours) != len(shape.contours):
         raise RuntimeError("FontLab clone changed the contour count of a shape.")
-    restore_shape(shape, copy)
+    contour_copy.restore_shape(shape, copy)
     return copy
 
 

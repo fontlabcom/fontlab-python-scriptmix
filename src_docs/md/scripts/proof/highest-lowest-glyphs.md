@@ -18,8 +18,7 @@ A modeless coordinate panel preserves the source messages without changing Outpu
 Fly loads shared App capture, extrema selection and native named-layer tabs.
 No missing layer is created; no master/selection/font/history/Output writer or
 application-wide event loop is used. A native tab failure can leave a new tab;
-no atomic UI rollback is claimed. Native scope/order/role/bounds/tab and full
-font/history/dirty/save/reopen preservation still require owned qualification.
+no atomic UI rollback is claimed.
 Requires App>=0.2.49.dev0 and Fly in FontLab9/Python3.11.
 Modified from slobzheninov--Glyphs-Scripts/Testing/Highest & Lowest Glyphs.py; see NOTICE/additional-tools.json.
 The port fixes zero being mistaken for an unset extrema value.
@@ -31,5 +30,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/64f7759832675815f422606ece0f161045d55494c5418b0f6519f3fb7aea2bf8.py)
+[Python source](../../../../.build/menu-sources/b1a8215b52fe0991d9fcf5307ea749bb2c242dd1f63220a32204a925864b9033.py)
 <!--/codeinclude-->

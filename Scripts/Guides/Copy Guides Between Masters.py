@@ -2,10 +2,28 @@
 # SPDX-License-Identifier: Apache-2.0
 """Merge or replace glyph guides on explicitly selected target masters.
 
-Select glyphs and choose From, To, merge/replace and optional width scaling.
-Inspect every add/remove row, then use Copy. Nonpositive widths cannot be scaled.
-Matching target guides retain native colour, tags and geometry; hints are kept.
-Unsafe automatic dependants are refused before history. Close releases signals.
+What it does:
+    Select glyphs and choose From, To, merge/replace and optional width scaling.
+    Inspect every add/remove row, then use Copy. Nonpositive widths cannot be scaled.
+    Matching target guides retain native colour, tags and geometry; hints are kept.
+    Unsafe automatic dependants are refused before history. Close releases signals.
+
+How it works:
+    Read source guide records and plan merge or replacement for each checked
+    target master. Preserve matching native guide properties and reject
+    impossible width scaling.
+
+Why this design:
+    Explicit target checks prevent a master choice from silently applying to
+    the whole family; matching guides need not be rebuilt.
+
+How to use:
+    Select glyphs and run Guides > Copy Guides Between Masters. Choose source,
+    targets, mode and scaling, inspect add/remove rows and press Copy.
+
+Benefit:
+    Reuse construction guides between masters; Copy is recorded as one Undo
+    step.
 """
 
 from typing import Any

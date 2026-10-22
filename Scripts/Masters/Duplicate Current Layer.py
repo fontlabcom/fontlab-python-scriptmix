@@ -36,69 +36,22 @@ from time import monotonic
 from typing import Any
 
 TITLE = "Duplicate Current Layer"
-STAMP_FORMAT = "%H:%M:%S, %d/%m/%y"
 DEADLINE_SECONDS = 2.0
 KEY = "masters_duplicate_current_layer"
 
 
-def _backup_master(name: str, masters: Sequence[str]) -> str | None:
-    """Resolve backups by the longest master prefix; keep legacy @ names.
+def backup_master(name: str, masters: Sequence[str]) -> str | None:
+    """Resolve backup layers through the shared App rule."""
+    import fly.ap.masters as masters_api
 
-    New names use <master> backup <suffix>, then optional collision (n).
-    Exact master names, bracket names and temporary names are never backups.
-    """
-    if "#" in name or "|temp|" in name or name.casefold() in {m.casefold() for m in masters}:
-        return None
-    if "@" in name:
-        prefix = name.split("@", 1)[0]
-        return prefix if prefix in masters else None
-    return next((m for m in sorted(masters, key=len, reverse=True) if name.startswith(m + " ")), None)
+    return masters_api.backup_master(name, masters)
 
 
 def backup_name(base: str, taken: Collection[str], stamp: str, masters: Sequence[str]) -> str:
-    """Return a plain, case-insensitively unique backup name."""
-    if not stamp.strip():
-        raise ValueError("Enter a backup suffix.")
-    candidate = f"{base} backup {stamp.strip()}"
-    if "@" in candidate or "#" in candidate or "|temp|" in candidate:
-        raise ValueError("Backup names must not contain @, # or |temp|.")
-    used = {name.lower() for name in taken}
-    name, number = candidate, 2
-    while name.lower() in used:
-        name = f"{candidate} ({number})"
-        number += 1
-    if name.casefold() in {master.casefold() for master in masters}:
-        raise ValueError(f"Backup '{name}' is a font master name; choose another suffix.")
-    resolved = _backup_master(name, masters)
-    if resolved != base:
-        raise ValueError(f"Backup '{name}' would read as master {resolved!r}, not {base!r}; choose another suffix.")
-    return name
+    """Return the shared unique plain backup name, or raise ValueError."""
+    import fly.ap.masters as masters_api
 
-
-SELECTED = 0x0020  # node state bit: selected
-
-
-def restore_shape(old: Any, new: Any, keep_view_state: bool, indexes: Sequence[int] | None = None) -> None:
-    """Copy back what FontLab's clone() drops (fl#8516, fl#8538).
-
-    Restore shape note and name, the raw state and name of every node, and,
-    with `keep_view_state`, the active and selected flags of the shape. Without
-    it, node selection bits stay as the clone has them. `indexes` picks the
-    contours of `old` that `new` holds (default: all, in order).
-    """
-    new.shapeData.note, new.shapeData.name = old.shapeData.note, old.shapeData.name
-    if keep_view_state:
-        new.active, new.selected = old.active, old.selected
-    contours = list(old.contours)
-    if indexes is not None:
-        contours = [contours[i] for i in indexes]
-    for before, after in zip(contours, new.contours, strict=True):
-        for source, target in zip(before.nodes(), after.nodes(), strict=True):
-            if keep_view_state:
-                target.nodeState = source.nodeState
-            else:
-                target.nodeState = (source.nodeState & ~SELECTED) | (target.nodeState & SELECTED)
-            target.name = source.name
+    return masters_api.backup_layer_name(base, taken, stamp, masters)
 
 
 def plan(all_masters: bool = False, suffix: str | None = None) -> list[tuple[Any, Any, str]]:
@@ -108,6 +61,7 @@ def plan(all_masters: bool = False, suffix: str | None = None) -> list[tuple[Any
     """
     from fly.ap.layer_selection import capture
     from fly.ap.masters import associated_master
+    import fly.ap.masters as masters_api
     from fly.ap.scripting import current_package
 
     selection = capture(monotonic() + DEADLINE_SECONDS)
@@ -115,7 +69,7 @@ def plan(all_masters: bool = False, suffix: str | None = None) -> list[tuple[Any
     if package is None or not selection.occurrences:
         raise ValueError("Select a glyph first.")
     masters = tuple(str(name) for name in package.masters)
-    stamp = suffix if suffix is not None else datetime.now().astimezone().strftime(STAMP_FORMAT)
+    stamp = suffix if suffix is not None else masters_api.default_suffix(datetime.now().astimezone())
     taken: dict[int, set[str]] = {}
     seen: set[tuple[int, int]] = set()
     jobs = []
@@ -133,7 +87,7 @@ def plan(all_masters: bool = False, suffix: str | None = None) -> list[tuple[Any
                 "or automatic layer; select a body layer."
             )
         names = taken.setdefault(item.glyph_id, {str(x.name) for x in item.glyph.layers})
-        base = associated_master(item.layer_name, masters) or _backup_master(item.layer_name, masters) or item.layer_name
+        base = associated_master(item.layer_name, masters) or backup_master(item.layer_name, masters) or item.layer_name
         name = backup_name(base, names, stamp, masters)
         names.add(name)
         jobs.append((item.glyph, layer, name))
@@ -155,7 +109,7 @@ def backups_of(glyph: Any, masters: Sequence[str]) -> list[str]:
     """Inventory plain space-prefixed and old @ backups, excluding special layers."""
     return [str(layer.name) for layer in glyph.layers
             if not layer.isMaskLayer and not layer.isService and not layer.autoLayer
-            and _backup_master(str(layer.name), masters) is not None]
+            and backup_master(str(layer.name), masters) is not None]
 
 
 def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
@@ -166,6 +120,7 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
     or is a base of one (also through manual composites).
     """
     import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.contour_copy as contour_copy
     from fly.ap.masters import associated_master
     from fly.ap.scripting import current_package
 
@@ -173,10 +128,10 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
         return []
     masters = tuple(str(master) for master in current_package().masters)
     for _, layer, name in jobs:
-        base = associated_master(str(layer.name), masters) or _backup_master(str(layer.name), masters)
+        base = associated_master(str(layer.name), masters) or backup_master(str(layer.name), masters)
         if base is None or not name.startswith(base + " backup "):
             raise ValueError(f"Backup '{name}' must use <master> backup <suffix>.")
-        if "@" in name or "#" in name or "|temp|" in name or _backup_master(name, masters) != base:
+        if "@" in name or "#" in name or "|temp|" in name or backup_master(name, masters) != base:
             raise ValueError(f"Backup '{name}' does not resolve to its own master; choose another suffix.")
     active = [(glyph, glyph.updateActiveLayer(False)) for glyph, _, _ in jobs]
 
@@ -187,7 +142,7 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
             if len(clone.shapes) != len(layer.shapes):
                 raise RuntimeError(f"FontLab clone changed the shape count of '{glyph.name}'.")
             for old, new in zip(layer.shapes, clone.shapes, strict=True):
-                restore_shape(old, new, True)
+                contour_copy.restore_shape(old, new, keep_view_state=True)
             clone.name = name
             glyph.addLayer(clone)
             found = glyph.findLayer(name)
@@ -200,8 +155,6 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
                 shown.setActive()
         return created
 
-    if not jobs:
-        return []
     glyphs = list({int(glyph.id): glyph for glyph, _, _ in jobs}.values())
     facts = history.scan_auto_facts(current_package())
     def read_back() -> list[str]:
@@ -233,6 +186,7 @@ def panel_type() -> type:
     """Use the shared non-modal selection panel with scope, suffix and inventory."""
     import fly.ap.history as history  # noqa: PLR0402
     import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
+    import fly.ap.masters as masters_api
     from fly import qt
 
     class BackupPanel(selection_panel.panel_type()):
@@ -242,12 +196,12 @@ def panel_type() -> type:
         ALIGN = False
 
         def build_controls(self) -> None:
-            self.suffix = qt.QtGui.QLineEdit(datetime.now().astimezone().strftime(STAMP_FORMAT))
+            self.suffix = qt.QtGui.QLineEdit(masters_api.default_suffix(datetime.now().astimezone()))
             self.add_row("Suffix", self.suffix)
             self.watch(self.suffix.editingFinished)
 
         def plan_rows(self, package: Any, masters: list[str]) -> list[Any]:
-            facts = history.scan_auto_facts(package)
+            facts = self.facts
             rows = []
             for name in self.names:
                 glyph = package.findName(name)

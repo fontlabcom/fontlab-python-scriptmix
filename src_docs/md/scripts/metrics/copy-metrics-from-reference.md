@@ -34,7 +34,7 @@ offset and the current master or all masters. Check the table. Press Apply. The
 panel stays open. Press "Use selection" to read the Font window selection and
 the glyph list again.
 
-Safety: one Apply is one Undo step. Auto layers are listed and never edited. A
+Safety: each Apply is recorded as one Undo step. Auto layers are listed and never edited. A
 glyph that owns an auto layer is listed and skipped as a whole. Layers with a
 metrics link or expression are listed and skipped. A base of auto glyphs is
 refused, because FontLab rebuilds the auto glyphs and may lose their anchors
@@ -60,5 +60,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b1fb92ef0f35446d55601b92d79374d3db472e3b45a0507d7b3b932b6d38d845.py)
+[Python source](../../../../.build/menu-sources/212ab42d323539a1c1c811baf328a5dd18599098e4800bc858a39caa10bb786e.py)
 <!--/codeinclude-->

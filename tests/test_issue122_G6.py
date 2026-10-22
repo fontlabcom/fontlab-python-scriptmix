@@ -391,7 +391,7 @@ def panels(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> Any:
     }
     app = real_app(
         qt=qt,
-        fontlab=NS(),
+        fontlab=NS(CurrentFont=lambda: NS(glyphs=[])),
         scripting=fakes,
         modules=["selection_panel", "qt_literal_text"],
     )

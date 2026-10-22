@@ -31,7 +31,7 @@ with 0, so the first preview changes nothing. Switching to "Scale %" turns a
 value of 0 into 100 %, which also changes nothing; leaving "Scale %" turns
 only that untouched 100 back into 0. A value that you typed is kept.
 
-Safety: one Apply is one Undo step. Auto layers are listed and never edited. A
+Safety: each Apply is recorded as one Undo step. Auto layers are listed and never edited. A
 glyph that owns an auto layer is listed and skipped as a whole. Layers with a
 metrics link or expression are listed and skipped. A base of auto glyphs is
 refused, because FontLab rebuilds the auto glyphs and may lose their anchors
@@ -58,5 +58,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/61179560f15eaec272317d9cd8f3a9fc50e2c4d0b95f340721588be297c11fcb.py)
+[Python source](../../../../.build/menu-sources/835bf5e4113323cf2f9b8fb08eb35f27a2de50e18ca2a805852e61736882b491.py)
 <!--/codeinclude-->

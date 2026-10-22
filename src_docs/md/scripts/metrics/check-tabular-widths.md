@@ -20,7 +20,7 @@ owned modeless panel. The report calls no font, selection, history, preferences
 or Output writers. Empty/stale/missing sources produce a complete diagnosis.
 Requires App>=0.2.33.dev0 and fontlab-fly in FontLab9
 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Tabular width checker; see
-additional-tools.json and NOTICE. Native acceptance is pending.
+additional-tools.json and NOTICE.
 
 Run **Metrics > Check Tabular Widths** from FontLab's Scripts menu.
 
@@ -29,5 +29,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/65e79b5c29561fc7703d7ecbfc5e0c6fc56661a95fe839f636b77feb8b7f70ea.py)
+[Python source](../../../../.build/menu-sources/91f3239547e78b08dc880af51b90047e061cebaedf97e85ae59271f71a3c9c1e.py)
 <!--/codeinclude-->

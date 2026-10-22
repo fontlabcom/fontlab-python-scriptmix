@@ -12,8 +12,7 @@ FontLab mapping uses master ascender/descender/lineGap, otherData hhea fields,
 safeBottom and safeTop. This compares stored native settings; exported or
 automatically derived metrics are outside its claim. No active-master switch
 is used. No open fonts, unreadable data, deadline or changing source produces
-a partial report. Native serialization/schema/order and complete preservation
-qualification remain pending.
+a partial report.
 
 Refresh replaces the entire snapshot. Select and copy text normally. Close
 removes this owned modeless panel. This presentation replaces the source's

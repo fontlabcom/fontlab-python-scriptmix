@@ -94,6 +94,12 @@ def test_revision_preserves_historical_source_and_all_executable_ast():
     assert (root / "migration.json").read_bytes() == manifest
 
     class Executable(ast.NodeTransformer):
+        def visit_Module(self, node):
+            self.generic_visit(node)
+            if node.body and isinstance(node.body[0], ast.Expr) and isinstance(node.body[0].value, ast.Constant) and isinstance(node.body[0].value.value, str):
+                node.body = node.body[1:]
+            return node
+
         def visit_FunctionDef(self, node):
             self.generic_visit(node)
             node.returns = None
@@ -119,7 +125,7 @@ def test_revision_preserves_historical_source_and_all_executable_ast():
         include_attributes=False,
     )
     assert normalize(historical) == normalize(MENU.read_bytes()), (
-        "Only annotations and function docstrings may change"
+        "Only annotations and module/function docstrings may change"
     )
 
 

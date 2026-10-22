@@ -17,7 +17,7 @@ when the last master has no edits. No options or current-master subset apply.
 Requires Fontlabapp >=0.2.132.dev0 and Fly in FontLab9 Python3.11. The shared
 writer refuses stale fonts/masters/classes/pairs, fractional source history and
 invalid save ranges before mutation. On a native failure, use Undo and inspect
-all masters. Final native full-font/history/save/reopen qualification is pending.
+all masters.
 
 Independent implementation of Science Gothic SG-Font-Kerning-Cutoff.py v1.1,
 Vassil Kateliev and Karandash Type Foundry (2025). Its source has no declared
@@ -30,5 +30,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6f0ca16a2cdf2822fce5298f9d53d7f574e73ee934e76909deb3b4a600758d37.py)
+[Python source](../../../../.build/menu-sources/3e0f4bd3d28ae2db89c4f2807592567c5cd9e22bd1b4efdf617052765b1a6498.py)
 <!--/codeinclude-->

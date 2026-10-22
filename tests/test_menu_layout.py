@@ -122,3 +122,27 @@ def test_current_manifest_representation_rejects_unknown_or_changed_routes(tmp_p
     (tmp_path / "migration.json").write_text(json.dumps(rows))
     with pytest.raises(ValueError):
         current_rows(tmp_path)
+
+
+@pytest.mark.parametrize("corrupt", [False, True])
+def test_moved_menu_when_docstring_overlay_then_recovers_frozen_bytes(tmp_path, corrupt):
+    old, moved, row, move, path = fixture(tmp_path)
+    current = moved.replace(b"value=1", b'"""Documented menu."""\nvalue=1')
+    path.write_bytes(current)
+    digest = lambda data: hashlib.sha256(data).hexdigest()
+    move["destination_sha256"] = digest(current)
+    revision = {
+        "destination": move["destination"], "historical_sha256": digest(moved),
+        "current_sha256": digest(current), "source_sha256": row["source_sha256"],
+        "edits": [{"historical": "value=1", "current": '"""Documented menu."""\nvalue=1'}],
+    }
+    if corrupt:
+        revision["edits"][0]["historical"] = "value=2"
+    (tmp_path / "menu-moves.json").write_text(json.dumps({"moves": [move]}))
+    (tmp_path / "menu-revisions.json").write_text(json.dumps({"revisions": [revision]}))
+    if corrupt:
+        with pytest.raises(ValueError, match="changed more"):
+            released_bytes(tmp_path, row)
+    else:
+        assert released_bytes(tmp_path, row) == old, "Recover exact released bytes"
+        assert current_rows(tmp_path)[0]["destination_sha256"] == digest(current)

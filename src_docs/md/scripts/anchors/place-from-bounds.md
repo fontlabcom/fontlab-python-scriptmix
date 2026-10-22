@@ -37,7 +37,7 @@ batch, before any history exists, when:
 After the write, the script reads every value back. It reports any value
 that FontLab did not keep, for example under a strong rounding preference.
 If FontLab fails part-way, the error says that native changes may remain.
-Edit > Undo restores the font. The plan, the safety checks, the one-step
+The edit is recorded as one Undo step. The plan, the safety checks, the one-step
 write and the panel base are shared with the other anchor scripts
 (fly.ap.anchor_writer, fly.ap.anchor_panel); the planner and the controls
 belong to this script.
@@ -53,5 +53,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/cb948ce7a413b50ef09065067b328e4e8c6768f0f4e43b11841759e4a8cb07a7.py)
+[Python source](../../../../.build/menu-sources/6f8ab4ddf8311c401a86e8bb8566d27b8e665fd1b96fbeee08b994ef17202f5c.py)
 <!--/codeinclude-->

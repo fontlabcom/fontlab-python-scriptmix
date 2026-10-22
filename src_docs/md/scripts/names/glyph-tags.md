@@ -37,7 +37,7 @@ BENEFIT: Review states, spacing status and similar marks stay on the glyphs
 and travel with the font. One Edit > Undo reverts one Add or Remove.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 
 Run **Names > Glyph Tags** from FontLab's Scripts menu.
 
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7a2aaf86cda6be3978982f26e423c4977483ef1554f654ba80ce60150782dcf4.py)
+[Python source](../../../../.build/menu-sources/8602e20267e384f837fc3eb4dccd06522f1055288342b181f721ad5004fd39a8.py)
 <!--/codeinclude-->

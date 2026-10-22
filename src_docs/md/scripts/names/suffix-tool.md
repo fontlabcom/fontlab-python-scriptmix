@@ -40,7 +40,7 @@ BENEFIT: Alternate sets (.ss01, .sc, .case) get consistent names in one
 previewed, undoable step.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 
 Run **Names > Suffix Tool** from FontLab's Scripts menu.
 
@@ -49,5 +49,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1cce90de78df9c71d62808c2e7979e27978bd5fd67c536fab2018f00ba9689bf.py)
+[Python source](../../../../.build/menu-sources/0132e80463f0036a218c95bd21e185384949efec2cc45c28d53b116f92c2529e.py)
 <!--/codeinclude-->

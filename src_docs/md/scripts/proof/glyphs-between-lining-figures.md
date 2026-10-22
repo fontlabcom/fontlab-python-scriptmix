@@ -19,8 +19,8 @@ Surround opens its context alone. The original behavior is retained.
 
 App builds all glyph-name rows before opening. Named native symbols retain
 unencoded glyphs and oldstyle .osf names without slash-text or Unicode fallback.
-No context is filtered or substituted when a name is missing; native missing-name
-behavior still needs qualification. One deadline covers selected-layer capture,
+No context is filtered or substituted when a name is missing. One deadline covers
+selected-layer capture,
 generation, symbols and preflight. A changed source selection/font or invalid
 input refuses the complete operation. A named-content writer can target only a
 verified new active tab belonging to the captured source font. It never populates
@@ -28,9 +28,8 @@ an existing or foreign tab. Native failure can leave a new tab; no atomic UI
 rollback is claimed. The owned native sender is disconnected and deleted.
 
 This adaptation preserves Output instead of clearing/printing status. It calls
-no glyph geometry, history, preference or master writer. Native tab text/order,
-missing names, selection/focus and complete font/history/dirty preservation remain
-pending. Requires App>=0.2.40.dev0 and Fly in FontLab9 Python3.11.
+no glyph geometry, history, preference or master writer.
+Requires App>=0.2.40.dev0 and Fly in FontLab9 Python3.11.
 Adapted from Pedro Arilla's Apache-2.0 Glyphs between/Glyphs between figures_lining.py.
 See NOTICE and additional-tools.json for complete source/license provenance.
 
@@ -41,5 +40,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3f74d70da29b19cf47605175aed13318035548cd5bc9f17edb6c9d3368b7e269.py)
+[Python source](../../../../.build/menu-sources/9e3211e44dd8260665541bb62e2072c9a8d3225ae6668c286126ae7b6c5140de.py)
 <!--/codeinclude-->

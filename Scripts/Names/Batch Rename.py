@@ -34,7 +34,7 @@ BENEFIT: Bulk renames (for example uniXXXX to AGL names) are safe, previewed
 and reversible with one Edit > Undo.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 """
 
 import re

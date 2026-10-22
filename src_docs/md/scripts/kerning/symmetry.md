@@ -18,7 +18,7 @@ mismatch, warning, chosen class and per-master count without clearing Output.
 The complete batch uses shared history and preflight: stale targets/classes,
 missing required targets/class categories, fractional history and unsupported
 save/reopen ranges refuse before writes. A native write failure can be partial;
-use Undo as its diagnostic directs. Full-font native qualification is pending.
+use Undo as its diagnostic directs.
 
 Independent implementation of Vassil Kateliev / Karandash Type Foundry's
 SG-Font-Kerning-Symmetry.py (2025), Science Gothic. Original licence undeclared;
@@ -31,5 +31,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2bc3e7cc5c4294aaf0b90ff6ee81ef886abada90d93ff85fc1409362ccbdffd9.py)
+[Python source](../../../../.build/menu-sources/4fa3ec2bb9387e4b5eaaf69d5e16976ae2e394cb3300a616bbeb3e7dd0cda88a.py)
 <!--/codeinclude-->

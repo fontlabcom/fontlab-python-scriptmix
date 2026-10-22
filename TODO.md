@@ -26,7 +26,7 @@ this_file: TODO.md
 - [ ] Limit App kerning numeric validation to changed masters while preserving persistence-range checks.
 - [ ] Consolidate selected-editor-layer capture, font validation, scope mapping, selected-contour checks and coordinate/transform planning in App.
 - [ ] Consolidate repeated component-construction logic in App without loading sibling scripts.
-- [ ] Review duplicate backup-name planning in plan()/plan_rows() and reconcile case-sensitive prefix recognition with casefolded master-name refusal.
+- [ ] Consolidate duplicate backup-job planning in plan()/plan_rows(); retain the shared App exact-case prefix rule and casefolded master-name exclusion.
 - [ ] Review deferred App lifecycle details: overlay detach after timer-stop errors, owned-menu lookup, menu failure while inside a slot, duplicated master/history traversal, warning output and notice wording.
 - [ ] Audit older public source comments and notices for stale status or unmeasured Undo claims; retain source identity and licence bytes.
 - [ ] Keep Examples destination hashes current after Scriptmix changes; repeat the cross-repository pin check at final delivery.
@@ -34,3 +34,11 @@ this_file: TODO.md
 - [ ] Complete browser-asset transitive provenance, full notices and source-availability checks before site publication.
 - [ ] Verify the final source copy, installed dependencies, complete offline suite, documentation build and distribution payload; retain separate native results.
 - [ ] Obtain owner confirmation before canonical archive deletion, live installation, release delivery or site publication.
+
+- [ ] Move the four contour-selection NodeEditor/selected_contours/chosen_masters scaffolds and three SelectionEditor/selection_changes planners into App; retain script-specific transforms and controls.
+- [ ] Consolidate the five contour spans helpers (Make Compatible, Comb, Straighten All Curves, Superaligner, Curve All Straights) in App.
+- [ ] Replace glyph_records in the three Font Info tools (Unicode Ranges and Codepages, Glyph Order Preview and Export, Calculate Vertical Metrics) with a metadata-safe shared App catalogue read.
+- [ ] Qualify final App backup naming and restore helpers in the five layer tools plus both outline-copy tools: custom suffixes, legacy and overlapping names, active selection, contour names, notes, flags, complete Undo/Redo and saved/reopened fonts.
+- [ ] Qualify Selection To All Backgrounds on masks with components: retained shape/data/builder ownership, contour/component read-back diagnostics, complete-font history and save/reopen.
+- [ ] Qualify the seven fact-reusing panels in FontLab: control changes, reselect/Refresh, stale-font refusal, fresh Apply facts, painting and Close.
+- [ ] Complete native milestone cases: new layers isMasterLayer=False/autoLayer=False after create/Redo/reopen; rounding preference read-back; Copy Layers From Font cross-font Undo/Redo; glyph-to-layer mark propagation; retained component history; in-place versus repaired-clone transforms; base-of-auto metadata state; __smart_selected persistence.

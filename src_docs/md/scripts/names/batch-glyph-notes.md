@@ -38,7 +38,7 @@ BENEFIT: Review comments or to-do remarks reach many glyphs in one undoable
 step, with a preview.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 
 Run **Names > Batch Glyph Notes** from FontLab's Scripts menu.
 
@@ -47,5 +47,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/41200e72185788878463e46cf6c7e9c5f58dd291102749e27c2df6814f33a021.py)
+[Python source](../../../../.build/menu-sources/e6dd64ab3c893a40c50d698e36798af94886ac8c9439e1301653269c8f44c595.py)
 <!--/codeinclude-->

@@ -22,7 +22,9 @@ How it works:
     nothing changed, then removes the old background shapes, creates missing
     backgrounds, and adds clones of the selected contours. One notification covers
     the whole font: one Undo step. The shared module fly.ap.history decides
-    which glyphs are skipped and does the one-step write.
+    which glyphs are skipped and does the one-step write. Read-back checks
+    every target background for the planned contour count and no components.
+    A mismatch is reported with the Edit > Undo hint.
 
 Why this design:
     - The change spans the whole font and overwrites backgrounds. So there is a
@@ -58,5 +60,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3355ff969d7f144824ded8fad86a3d61b516e9737c927aee164bf38e5f51183e.py)
+[Python source](../../../../.build/menu-sources/f84336da6fc2a11f6657814c0b75cca6a328db65d95e4e2e75c31a735ed1c420.py)
 <!--/codeinclude-->

@@ -37,7 +37,7 @@ BENEFIT: Fonts built from named outlines get a correct character map in one
 previewed, undoable step.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 """
 
 import re

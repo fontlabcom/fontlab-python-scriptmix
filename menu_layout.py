@@ -62,6 +62,14 @@ def released_bytes(root: Path, row: dict) -> bytes:
         or hashlib.sha256(raw).hexdigest() != move["destination_sha256"]
     ):
         raise ValueError("Moved menu source hash differs from its reviewed provenance.")
+    revision = _revisions(root).get(move["destination"])
+    if revision is not None:
+        # Undo recorded docstring edits before undoing the historical path move.
+        raw = released_bytes(root, {
+            **row,
+            "destination": move["destination"],
+            "destination_sha256": revision["historical_sha256"],
+        })
     old, new = move["original_header"].encode(), move["destination_header"].encode()
     if not raw.startswith(new):
         raise ValueError("Moved menu header differs from its reviewed prefix.")

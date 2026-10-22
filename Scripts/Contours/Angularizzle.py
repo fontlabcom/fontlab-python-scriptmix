@@ -12,7 +12,7 @@ closes. Open paths are omitted when a closed angular result replaces paths.
 The bound session refuses stale sources, unsupported hints, automatic
 dependants and ambiguous shape ownership before editing. A late native failure
 disables further writes and retains recovery data; close the panel and inspect
-the diagnosed result before continuing. Native FontLab acceptance is pending.
+the diagnosed result before continuing.
 Requires matching App/Fly candidates. Adapted from NaN Angularizzle; see NOTICE.
 """
 

@@ -37,7 +37,7 @@ BENEFIT: Notes travel with the glyph in .vfc and .vfj files. The list gives an
 overview of all remarks in the font. One Edit > Undo reverts one save.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 
 Run **Names > Glyph Notes** from FontLab's Scripts menu.
 
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2ba91175d1c19188986d6112ee8efb2130a1fcf627716b2321afc4d29eaf6a59.py)
+[Python source](../../../../.build/menu-sources/61023e6a8924c4344303229cdb365b90bf1273c03bc331ae7dcf2eace73b5db2.py)
 <!--/codeinclude-->

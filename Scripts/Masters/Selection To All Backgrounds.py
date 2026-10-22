@@ -16,7 +16,9 @@ How it works:
     nothing changed, then removes the old background shapes, creates missing
     backgrounds, and adds clones of the selected contours. One notification covers
     the whole font: one Undo step. The shared module fly.ap.history decides
-    which glyphs are skipped and does the one-step write.
+    which glyphs are skipped and does the one-step write. Read-back checks
+    every target background for the planned contour count and no components.
+    A mismatch is reported with the Edit > Undo hint.
 
 Why this design:
     - The change spans the whole font and overwrites backgrounds. So there is a
@@ -103,24 +105,6 @@ def selected_indexes(contours: Sequence[Sequence[bool]]) -> list[int]:
     return [i for i, flags in enumerate(contours) if flags and all(flags)]
 
 
-SELECTED = 0x0020  # node state bit: selected
-
-
-def restore_shape(old: Any, new: Any, indexes: Sequence[int]) -> None:
-    """Copy back what FontLab's clone() drops (fl#8516, fl#8538).
-
-    Restore shape note and name, and the raw state and name of every node of
-    the kept contours `indexes`. Selection bits and shape flags stay as the
-    clone has them: a background must not look selected.
-    """
-    new.shapeData.note, new.shapeData.name = old.shapeData.note, old.shapeData.name
-    kept = [list(old.contours)[i] for i in indexes]
-    for before, after in zip(kept, new.contours, strict=True):
-        for source, target in zip(before.nodes(), after.nodes(), strict=True):
-            target.nodeState = (source.nodeState & ~SELECTED) | (target.nodeState & SELECTED)
-            target.name = source.name
-
-
 def _valid(layer: Any) -> bool:
     """True for a real native layer object."""
     return layer is not None and not layer.isNull and layer.isValid
@@ -194,13 +178,15 @@ def make_plan() -> Plan:
 
 def selected_clone(shape: Any, keep: Sequence[int]) -> Any:
     """Clone `shape` and remove every contour that is not in `keep`."""
+    import fly.ap.contour_copy as contour_copy
+
     clone = shape.clone()
     for index, contour in reversed(list(enumerate(tuple(clone.contours)))):
         if index not in keep:
             clone.removeContour(contour)
     if len(clone.contours) != len(keep):
         raise RuntimeError("FontLab changed the contour count while cloning.")
-    restore_shape(shape, clone, keep)
+    contour_copy.restore_shape(shape, clone, indexes=keep)
     return clone
 
 
@@ -217,6 +203,9 @@ def replace_backgrounds(shown: Plan) -> str:
         if _valid(mask):
             existing.append(mask)
 
+    retain = [obj for mask in existing for shape in mask.shapes
+              for obj in history.component_history(shape)]
+
     def mutate() -> Sequence[Any]:
         made = []
         for glyph, target in current.targets:
@@ -224,7 +213,8 @@ def replace_backgrounds(shown: Plan) -> str:
                 raise RuntimeError(f"Stopped at '{glyph.name}': time limit reached.")
             mask = target.getMaskLayer(False)
             if _valid(mask):
-                mask.removeAllShapes()
+                for old in list(mask.shapes):
+                    mask.removeShape(old)
             else:
                 mask = target.getMaskLayer(True)
                 if not _valid(mask):
@@ -237,7 +227,27 @@ def replace_backgrounds(shown: Plan) -> str:
                 raise RuntimeError(f"FontLab could not update the background of '{glyph.name}'.")
         return made
 
-    history.commit(TITLE, existing, owners, mutate, operation="geometry", facts=current.facts)
+    def read_back() -> list[str]:
+        mismatches = []
+        for glyph, target in current.targets:
+            mask = target.getMaskLayer(False)
+            if not _valid(mask):
+                mismatches.append(f"{glyph.name}: missing background")
+                continue
+            contours = sum(len(shape.contours) for shape in mask.shapes if not shape.isComponent)
+            if contours != current.contours:
+                mismatches.append(f"{glyph.name}: background has {contours} contours, planned {current.contours}")
+            components = sum(1 for shape in mask.shapes if shape.isComponent)
+            if components:
+                mismatches.append(f"{glyph.name}: background still has {components} component(s), planned 0")
+        return mismatches
+
+    done = history.commit(
+        TITLE, existing, owners, mutate, operation="geometry", facts=current.facts,
+        retain=retain, read_back=read_back,
+    )
+    if done.mismatches:
+        raise history.unstored_error(done.mismatches, history.UNDO_HINT)
     return f"Background set in {len(owners)} glyph(s)."
 
 

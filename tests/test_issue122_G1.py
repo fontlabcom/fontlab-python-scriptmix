@@ -116,6 +116,10 @@ class Layer:
         self.calls.append("removeAllShapes")
         self.shapes = []
 
+    def removeShape(self, shape: Any) -> None:
+        self.calls.append(("removeShape", shape))
+        self.shapes.remove(shape)
+
     def addShape(self, shape: Any) -> None:
         self.calls.append(("addShape", shape))
         self.shapes.append(shape)
@@ -201,7 +205,8 @@ class Notifier:
     def __init__(self) -> None:
         self.calls: list[tuple[str, list[Any]]] = []
 
-    def notifyChangesApplied(self, title: str, objects: list[Any]) -> None:
+    def notifyChangesApplied(self, title: str, objects: list[Any], deep: bool = False) -> None:
+        self.deep = deep
         if getattr(self, "fail", False):
             raise RuntimeError("notify failed")
         self.calls.append((title, list(objects)))
@@ -285,7 +290,7 @@ SCRIPTING_FAKES = (
     "current_package", "names_font_window_selection", "select_glyphs",
     "connect_guarded", "close_script_dialog", "show_script_dialog",
 )
-APP_MODULES = ("guides", "history", "masters", "edit_guards")
+APP_MODULES = ("guides", "history", "masters", "edit_guards", "contour_copy")
 
 
 @pytest.fixture
@@ -755,6 +760,7 @@ class Contour:
     """Fake contour. Nodes carry selection, raw state and a name."""
 
     def __init__(self, flags: tuple[bool, ...], states: Any = None, names: Any = None) -> None:
+        self.name = "contour-name"
         self.flags = flags
         self.states = tuple(states or (0x0100 | (SELECTED_BIT if f else 0) for f in flags))
         self.names = tuple(names or (f"n{i}" for i in range(len(flags))))
@@ -765,7 +771,9 @@ class Contour:
 
     def lossy_copy(self) -> "Contour":
         """What FontLab's clone does: keeps selection, drops raw state and names."""
-        return Contour(self.flags, states=[0] * len(self.flags), names=[""] * len(self.flags))
+        copy = Contour(self.flags, states=[0] * len(self.flags), names=[""] * len(self.flags))
+        copy.name = ""
+        return copy
 
 
 class Shape:
@@ -846,7 +854,7 @@ def test_replace_backgrounds_when_confirmed_then_all_targets_replaced_in_one_ste
     assert message == "Background set in 3 glyph(s)."
     for name in ("s", "c"):
         mask = glyphs[name].layer("mask.Regular")
-        assert mask.calls[0] == "removeAllShapes"
+        assert "removeAllShapes" not in mask.calls
         assert [len(s.contours) for s in mask.shapes] == [1, 1]  # partial contour dropped
     created = glyphs["b"].layer("Regular").masks[True]
     assert [len(s.contours) for s in created.shapes] == [1, 1]
@@ -1153,10 +1161,10 @@ def test_used_app_names_when_parsed_then_cover_the_real_modules() -> None:
     names = app_names_used([FOLDER / f"{title}.py" for title in SCRIPTS])
     assert set(names) == {
         "fly.ap.history", "fly.ap.masters", "fly.ap.layer_selection", "fly.ap.qtsafe", "fly.ap.scripting",
-        "fly.ap.selection_panel",
+        "fly.ap.selection_panel", "fly.ap.contour_copy",
     }
     assert {"commit", "scan_auto_facts", "refusal"} <= names["fly.ap.history"]
-    assert names["fly.ap.masters"] == {"associated_master"}
+    assert names["fly.ap.masters"] == {"associated_master", "backup_master", "backup_layer_name", "default_suffix"}
     assert "capture" in names["fly.ap.layer_selection"] and "qt_list" in names["fly.ap.qtsafe"]
 
 
@@ -1279,3 +1287,76 @@ def test_duplicate_main_when_panel_startup_fails_then_printed_not_raised(
     monkeypatch.setattr(module, "panel_type", lambda: object)
     assert module.main() is None
     assert f"Duplicate Current Layer: {error}" in capsys.readouterr().out
+
+
+def test_background_component_when_replaced_then_history_is_retained(world: World, monkeypatch: Any) -> None:
+    module = load("Selection To All Backgrounds")
+    glyphs = font_world(world)
+    mask = glyphs["c"].layer("mask.Regular")
+    component = Shape([], component=True)
+    mask.shapes = [component]
+    import fly.ap.history as history
+    component.shapeData.builder = object()
+    retained = [component, component.shapeData, component.shapeData.builder]
+    real_component_history = history.component_history
+    reads = []
+    def component_history(shape: Any) -> tuple[Any, ...]:
+        assert shape in mask.shapes, "Read component history before detachment"
+        reads.append(shape)
+        return real_component_history(shape)
+    monkeypatch.setattr(history, "component_history", component_history)
+    seen = {}
+    real_commit = history.commit
+    def commit(*args: Any, **kwargs: Any) -> Any:
+        seen.update(kwargs)
+        return real_commit(*args, **kwargs)
+    monkeypatch.setattr(history, "commit", commit)
+    module.replace_backgrounds(module.make_plan())
+    assert reads == [component] and seen["retain"] == retained
+    assert world.notifier.deep, "Retained components require deep native history"
+    assert world.notifier.calls[0][1][:3] == retained
+    assert ("removeShape", component) in mask.calls
+    assert "removeAllShapes" not in mask.calls
+
+
+
+def test_backup_when_clone_drops_view_and_contour_names_then_shared_repair_keeps_them(world: World) -> None:
+    module = load("Duplicate Current Layer")
+    glyph = Glyph("a", ["Regular"])
+    shape = Shape([Contour((True, False), states=(0x123, 0x100))])
+    shape.contours[0].name = "named-contour"
+    shape.shapeData.note, shape.shapeData.name = "note", "shape-name"
+    shape.active = shape.selected = True
+    glyph.layer("Regular").shapes = [shape]
+    world.occupy(glyph, "Regular")
+    created = module.duplicate(module.plan(suffix="trial"))
+    copy = created[0].shapes[0]
+    assert copy.contours[0].name == "named-contour", "Repair contour names on backups"
+    assert copy.active and copy.selected, "Keep the source shape view state"
+    assert [n.nodeState for n in copy.contours[0].nodes()] == [0x123, 0x100]
+    assert (copy.shapeData.note, copy.shapeData.name) == ("note", "shape-name")
+
+
+@pytest.mark.parametrize("failure", ["component", "outline", "add", "missing"])
+def test_background_write_when_native_silently_loses_plan_then_reports_read_back(world: World, failure: str) -> None:
+    module = load("Selection To All Backgrounds")
+    glyphs = font_world(world)
+    layer = glyphs["c"].layer("Regular")
+    mask = glyphs["c"].layer("mask.Regular")
+    if failure in ("component", "outline"):
+        old = Shape([] if failure == "component" else [Contour((False,))], component=failure == "component")
+        old.shapeData.builder = object()
+        mask.shapes = [old]
+        mask.removeShape = lambda shape: None
+    elif failure == "add":
+        mask.addShape = lambda shape: None
+    else:
+        original = world.notifier.notifyChangesApplied
+        def notify(title: str, objects: list[Any], deep: bool = False) -> None:
+            original(title, objects, deep)
+            layer.masks.clear()
+        world.notifier.notifyChangesApplied = notify
+    reason = {"component": "component", "outline": "contours", "add": "contours", "missing": "missing background"}[failure]
+    with pytest.raises(RuntimeError, match=rf"did not store.*c.*{reason}.*Edit > Undo"):
+        module.replace_backgrounds(module.make_plan())
+    assert len(world.notifier.calls) == 1, "Close history before reporting a silent native mismatch"

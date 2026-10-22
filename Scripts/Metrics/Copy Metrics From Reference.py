@@ -28,7 +28,7 @@ offset and the current master or all masters. Check the table. Press Apply. The
 panel stays open. Press "Use selection" to read the Font window selection and
 the glyph list again.
 
-Safety: one Apply is one Undo step. Auto layers are listed and never edited. A
+Safety: each Apply is recorded as one Undo step. Auto layers are listed and never edited. A
 glyph that owns an auto layer is listed and skipped as a whole. Layers with a
 metrics link or expression are listed and skipped. A base of auto glyphs is
 refused, because FontLab rebuilds the auto glyphs and may lose their anchors

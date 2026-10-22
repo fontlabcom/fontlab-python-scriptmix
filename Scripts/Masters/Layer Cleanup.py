@@ -78,18 +78,11 @@ class Entry:
     note: str = ""
 
 
-def _backup_master(name: str, masters: Sequence[str]) -> str | None:
-    """Resolve backups by the longest master prefix; keep legacy @ names.
+def backup_master(name: str, masters: Sequence[str]) -> str | None:
+    """Resolve backup layers through the shared App rule."""
+    import fly.ap.masters as masters_api
 
-    New names use <master> backup <suffix>, then optional collision (n).
-    Exact master names, bracket names and temporary names are never backups.
-    """
-    if "#" in name or "|temp|" in name or name.casefold() in {m.casefold() for m in masters}:
-        return None
-    if "@" in name:
-        prefix = name.split("@", 1)[0]
-        return prefix if prefix in masters else None
-    return next((m for m in sorted(masters, key=len, reverse=True) if name.startswith(m + " ")), None)
+    return masters_api.backup_master(name, masters)
 
 
 def kind(layer: Any, masters: Sequence[str]) -> str | None:
@@ -103,7 +96,7 @@ def kind(layer: Any, masters: Sequence[str]) -> str | None:
         return None
     if name.lower() in {str(m).lower() for m in masters}:
         return None
-    if _backup_master(name, masters) is not None:
+    if backup_master(name, masters) is not None:
         return "backup"
     if associated_master(name, masters) is not None:
         return "alternate"

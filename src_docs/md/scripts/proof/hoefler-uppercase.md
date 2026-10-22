@@ -24,9 +24,7 @@ shape activation. No font geometry, kerning, history, preference or Output write
 is called. The source's undefined Font global is repaired by explicit lookup;
 its Output clearing/printing is omitted to preserve the user's existing Output.
 
-Requires App>=0.2.149.dev0 and Fly with FontLab Python3.11. Source/artifact tests
-do not establish actual tab rendering, missing-name behavior or full-font/
-workspace/history preservation; final native qualification remains pending.
+Requires App>=0.2.149.dev0 and Fly with FontLab Python3.11.
 Adapted from Pedro Arilla's Apache-2.0 Kerning/Hoefler Uppercase.py. Complete original and
 proof-text credits, resource hashes and licence are in NOTICE/additional-tools.json.
 
@@ -37,5 +35,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/dd6fbf7004e111e4f99da33fc553ea637f412f82f423a5a027262b2130c3ece7.py)
+[Python source](../../../../.build/menu-sources/10eefb87ddc9f3b9e80998ae5536d11aee749efa13d5a5f6a92d499c90ef765a.py)
 <!--/codeinclude-->

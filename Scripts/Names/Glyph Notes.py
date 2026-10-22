@@ -34,7 +34,7 @@ BENEFIT: Notes travel with the glyph in .vfc and .vfj files. The list gives an
 overview of all remarks in the font. One Edit > Undo reverts one save.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 """
 
 from typing import Any

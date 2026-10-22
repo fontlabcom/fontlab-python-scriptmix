@@ -22,8 +22,7 @@ no partial window. Requires App>=0.2.118.dev0 and Fly in FontLab9 Python3.11.
 Independently implements Reza Bohloul's Path/Point Counter.py workflow; the
 inspected source declares no licence, so its body is not redistributed. Cubic
 and line reports preserve original text. Quadratic endpoints are included in
-Points/Nodes, explicitly correcting the original omission. Native layer order,
-reader preservation and window lifecycle qualification remain pending.
+Points/Nodes, explicitly correcting the original omission.
 
 Run **Reports > Point Counter (Master Layers)** from FontLab's Scripts menu.
 
@@ -32,5 +31,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/eb7cae651b7ff4886300f9090d4c1f9e18fba1146a39ebb400b390ce8f2f5334.py)
+[Python source](../../../../.build/menu-sources/b4c335d0a172c03aca160bea824275a1c2dbd3942929567a45ac758d8596990b.py)
 <!--/codeinclude-->

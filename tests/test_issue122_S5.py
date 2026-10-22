@@ -1792,7 +1792,7 @@ def test_script_when_parsed_then_kernel_and_panel_base_come_from_the_app(
 
 def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> None:
     used = app_names_used([FOLDER / f"{name}.py" for name in NAMES])
-    assert set(used) == {"fly.ap.anchor_writer", "fly.ap.anchor_panel"}, sorted(used)
+    assert set(used) == {"fly.ap.anchor_writer", "fly.ap.anchor_panel", "fly.ap.scripting"}, sorted(used)
     assert {"Change", "Planner", "fmt", "half_up"} <= used["fly.ap.anchor_writer"]
     assert {"panel_type", "ink", "muted"} <= used["fly.ap.anchor_panel"]
     check_real_app_names(used)

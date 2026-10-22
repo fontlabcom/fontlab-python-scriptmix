@@ -43,7 +43,8 @@ Move repeated selected-layer/contour capture, validation and transform planning
 into App. Use public shared helpers throughout; keep UFO and Glyphs compatibility
 inside their respective packages.
 
-Review deferred backup-name matching and duplicate-name planning. Preserve
+Consolidate backup-job planning between plan() and plan_rows(). Keep the shared
+App exact-case prefix rule and casefolded master-name exclusion. Preserve
 existing refusal rules until replacement behaviour has native proof.
 
 ## Distribution and documentation
@@ -58,3 +59,35 @@ External archives retain the original source bytes. Keep their manifests and
 recovery copies; deletion of canonical originals remains an owner decision.
 TODO lists the remaining actions. PORTING-BACKLOG records source dispositions
 and the behaviour gaps that remain after a duplicate is identified.
+
+## App consolidation and native follow-up
+
+Move the contour-selection scaffolds into App: Rotate Selection, Reflect
+Horizontally, Reflect Vertically and Overlap Nodes share NodeEditor,
+selected_contours and chosen_masters (four copies); three also share the
+SelectionEditor and selection_changes planner. Keep script-specific controls
+and transforms at their menu entry points. Also consolidate the spans helper
+in Make Compatible, Comb, Straighten All Curves, Superaligner and Curve All
+Straights (five copies), and the glyph_records read in three Font Info tools:
+Unicode Ranges and Codepages, Glyph Order Preview and Export, and Calculate
+Vertical Metrics. The latter needs a metadata-safe shared catalogue read.
+App is read-only in this round; these are future App tasks.
+
+Qualify the changed five layer tools plus Copy Outline To Mask, Copy Layer
+Between Masters and Selection To All Backgrounds against the exact final
+App files. Check custom suffixes, collisions, overlapping and legacy master
+names, layer cycles, cleanup exclusions, active selection, contour names,
+shape notes and raw node flags. Replace masks containing components and prove
+retained ownership with full-font Apply/Undo/Redo and saved/reopened state.
+Test the seven fact-reusing panels with control changes, reselect, Refresh,
+stale-font refusal and a fresh Apply scan in the actual host.
+
+Complete the remaining native milestone cases: new layers must have
+isMasterLayer=False and autoLayer=False after create/Redo/reopen; coordinate
+read-back must follow the rounding preference; Copy Layers From Font needs
+cross-font Undo/Redo; mark actions need glyph-to-layer propagation checks;
+component removal needs retained history; in-place transforms need repaired-
+clone controls; base-of-auto metadata writes need complete dependent state;
+__smart_selected needs persistence checks. Include painting and Close. Use owned
+fixtures in a dedicated document-free session. No native qualification is
+claimed by the offline final-fix gates.

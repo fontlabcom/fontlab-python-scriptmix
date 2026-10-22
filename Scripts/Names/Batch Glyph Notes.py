@@ -35,7 +35,7 @@ BENEFIT: Review comments or to-do remarks reach many glyphs in one undoable
 step, with a preview.
 
 Credit: adapted from the author's own archived Apache-2.0
-FontLab samples. Native acceptance pending.
+FontLab samples. The edit is recorded as one Undo step.
 """
 
 from typing import Any
