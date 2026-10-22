@@ -14,6 +14,29 @@ this_file: WORK.md
 - Notes: SCRIPTMIX_APP_REQUIREMENT is the App worktree path (uv builds it; needs the generic pretend-version override only to satisfy later floors, kept for consistency). Canonical sources were read only.
 - Scope: offline tests only. This is not native FontLab proof.
 
+## Issue 122 Task 2 integration wave 4: C5 tool extensions, C4 zone ruling (2026-10-22)
+
+- Commits on `issue-122` (base 0e836a7): 801fd7a C5 (Duplicate Current Layer, Copy
+  Layer Between Masters, Restore Backup Layer, Display Next/Previous Layer, Layer
+  Cleanup, Round Coordinates; tests C5 new, G1/S6/S8 edited; 7 additional-tools.json
+  hashes and scopes, app_minimum 0.2.150.dev0 and native_acceptance pending kept;
+  NOTICE section; CHANGELOG; 7 regenerated docs pages); then this docs commit
+  (PORTING-BACKLOG zone rows per ruling "zones", Back Up Master Layers row, CHANGELOG,
+  WORK). Menu and tool counts unchanged (240 / 171).
+- All 11 file hashes equal batch-C5-fragment.md. Peers: App worktree 2937e3a built
+  fresh as 0.2.150.dev0; Fly worktree read only.
+- `uvx ruff check --no-cache --target-version py311` on the 7 tools and 4 tests:
+  EXIT=0.
+- `sh verification/issue-122/sdd/cmd/mix-archive.sh 801fd7a` from the workspace
+  root: 3744 passed, 0 failed, 1 skipped, EXIT=0 (base 3706; +38).
+- Docs: `git archive 801fd7a` into
+  `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-w4-docs/801fd7a`, `./build.sh
+  --offline`: EXIT=0; `diff -r` of `src_docs/md/scripts` against the commit: identical.
+- C3 replacement records: 68 rows written to the examples worktree
+  `_coverage/dispositions-C3-C5.json` with target hashes of the committed blobs.
+- Scope: offline tests only. No FontLab, Remopy or fl-native.sh call. Native
+  acceptance of the seven tools is pending.
+
 ## Issue 122 Task 2 integration wave 3: T14i, S6, S7, G2-G18 (2026-10-22)
 
 - Commits on `issue-122` (base e87c2e3): fc7ea07 T14i fgId fix (Build From Recipes,

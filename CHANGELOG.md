@@ -27,6 +27,11 @@ Extend seven existing tools; the menu and its counts do not change.
   0, 0 is listed and kept.
 - Vertical Metrics Diagram stays read-only. Font Info > Master Metrics Table
   edits the same four metrics with a selected-row diagram.
+- PORTING-BACKLOG.md records Alignment Zones and Suggest Zones From Overshoots
+  as duplicates of Font Info > Zones (Add and Remove zones; Auto-detect zones),
+  which work per master. A scripted all-master zone port waits for an App zone
+  writer. Back Up Master Layers is recorded as a duplicate of Duplicate Current
+  Layer, which now covers all masters.
 
 ## Unreleased — 2026-10-22 — Contours tools and Glyphs-script rewrites
 

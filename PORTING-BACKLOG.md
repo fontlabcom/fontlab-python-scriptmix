@@ -19,7 +19,7 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Former menu | Preserved source | Status |
 | --- | --- | --- |
 | Metrics/Italic Sidebearings.py | `rescued/samples/metrics_italic_sidebearings.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Metrics/Alignment Zones.py | `rescued/samples/metrics_zones_editor.py` | Unported; held until the App has a qualified native zone writer (fontlabapp.zone_editor Backend.apply) |
+| Metrics/Alignment Zones.py | `rescued/samples/metrics_zones_editor.py` | Unported; duplicate-of FontLab's Font Info > Zones (Add and Remove zones, per master); the sample stages zone edits for all masters at once. A scripted all-master port waits for an App zone writer with one history.commit (fontlabapp zone_editor has no production Backend.apply) |
 | Metrics/Round Advances.py | `rescued/samples/metrics_round_advances.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Centre In Advance.py | `rescued/samples/metrics_center_in_advance.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Zero-Width Marks.py | `rescued/samples/metrics_zero_width_marks.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
@@ -45,7 +45,7 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Components/Unlock Lock.py | `rescued/samples/components_unlock_lock.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Components/Nested Finder.py | `rescued/samples/components_nested_finder.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Cleanup/Empty Layers.py | `rescued/samples/cleanup_empty_layers.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Guides/Suggest Zones From Overshoots.py | `rescued/samples/zones_from_glyphs.py` | Unported; held until the App has a qualified native zone writer (suggest rule in fontlabapp.alignment_zones) |
+| Guides/Suggest Zones From Overshoots.py | `rescued/samples/zones_from_glyphs.py` | Unported; duplicate-of FontLab's Font Info > Zones > Auto-detect zones, per master; the sample suggests zones from overshoots for all masters at once. A scripted all-master port waits for an App zone writer with one history.commit (fontlabapp zone_editor has no production Backend.apply) |
 | Contours/Round Coordinates.py | `rescued/samples/outlines_round_coordinates.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Contours/Autohint Selected Layers.py | `rescued/samples/hints_autohint.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
 | Contours/Placeholder Glyphs.py | `rescued/samples/generate_placeholder_glyphs.py` | Complete source writer candidate; native glyph-creation/content Undo, full-font preservation and reopen verification pending; original rescue ledger retained |
@@ -70,7 +70,7 @@ adaptations, package cleanup and native acceptance remain in scope.
 | Masters/Sync Sidebearings.py | `rescued/samples/masters_sync_metrics.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Masters/Restore Backup Layer.py | `rescued/samples/masters_restore_backup.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Masters/Copy Layer Between Masters.py | `rescued/samples/masters_copy_layer.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
-| Masters/Back Up Master Layers.py | `rescued/samples/masters_backup_layer.py` | Unported; duplicate of Masters/Duplicate Current Layer.py (current-master scope); all-masters scope not in the menu |
+| Masters/Back Up Master Layers.py | `rescued/samples/masters_backup_layer.py` | Unported; duplicate of Masters/Duplicate Current Layer.py (current-master and all-master scopes, custom suffix, inventory of existing backups) |
 | Anchors/Rename Bulk.py | `rescued/samples/anchors_rename_bulk.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Anchors/Center Horizontally.py | `rescued/samples/anchors_center_horizontally.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Anchors/Place From Bounds.py | `rescued/samples/anchors_place_from_bounds.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
