@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pytest
 from conftest import original_source
+
 from menu_layout import released_bytes
 
 ROOT = Path(__file__).parents[1]
@@ -419,8 +420,7 @@ def test_actual_original_chart_draws_lines_bars_and_contains_failures(
             assert masters.painter.calls[-1][0] == "end"
 
 
-def test_original_defaults_signal_expressions_and_previous_menus_unchanged(request):
-    import ast
+def test_previous_menu_records_and_current_bytes_unchanged():
     import hashlib
     import json
 
@@ -435,9 +435,16 @@ def test_original_defaults_signal_expressions_and_previous_menus_unchanged(reque
             hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         )
+
+
+def test_external_original_defaults_and_signals_when_requested_then_match(request):
+    import ast
+    import json
+
     source_root = request.config.getoption("--original-source-root")
     if source_root is None:
-        return
+        pytest.skip("Original source-byte audit requires --original-source-root")
+    now = json.loads((ROOT / "migration.json").read_text())
     for title, klass in TOOLS:
         row = next(r for r in now if r["destination"] == f"Scripts/Masters/{title}.py")
         before = ast.parse(original_source(source_root, row["source"]).read_text())

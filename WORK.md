@@ -2,6 +2,89 @@
 this_file: WORK.md
 ---
 
+## Removal prep review: Scriptmix fix round 1 (2026-10-22)
+
+- M4: README now shows both --audit-rescued-sources and
+  --original-source-root /path/to/workspace, defines the workspace root and lists
+  the four original-source comparison families. Explicit preserved root wins.
+- M7: removed parentheses from seven Names historical-source headers; refreshed
+  only their destination hashes and seven generated catalogue include references.
+  All seven ASTs and all historical source paths/hashes remain unchanged.
+- I2 ruling: Scriptmix must land first; Examples then pins its Scriptmix
+  destinations to the resulting Scriptmix worktree bytes. No reverse pin and no
+  Examples edits from this worktree. Read-only verification after header cleanup:
+  all 24 Examples forward pins already match current Scriptmix bytes. Batch Rename
+  is c65860e9b8e6f6c5fd643ebc73e072dccddeb125aa6c790b78258936baa07fc2.
+- I1 proof: Scriptmix already failed partial archives. Its full-archive audit now
+  collects missing-file and hash-mismatch failures before asserting. Added a
+  regression copying a valid owned archive, deleting one file and corrupting a
+  second; both errors must appear. A real 130-source canonical copy with the same
+  mutations also fails, reporting both paths. Source archives themselves untouched.
+- M5: gate now sets PYTHONDONTWRITEBYTECODE=1 and -p no:cacheprovider; docs gates
+  use both too. Removed 20 cache directories from source/test locations and staged
+  them at .build/removal-prep/discard. The requested external move was rejected
+  by the workspace sandbox (Operation not permitted); transfer to
+  /Volumes/Falstaff4T/fontlab-scripting-data/tmp/discard remains outstanding.
+  Ready command: .build/removal-prep/round1/move-staged-caches.sh. Subsequent gates
+  recreated no __pycache__ or .pytest_cache outside the .build scratch area.
+- M6: /opt/homebrew/bin/ruff 0.14.10, --no-cache --target-version py311, full edited
+  Python set: exit 1, 8 E402 + 1 E731 in test_masters.py/test_proof.py. Same nine
+  findings reproduced from the saved pre-removal baseline, consistent with review
+  evidence at HEAD. Remaining edited files: exit 0. No lint-driven code cleanup.
+- Canonical gate: `rtk proxy sh .build/removal-prep/gate.sh`: exit 0,
+  3752 passed / 1 skipped. Empty gate: same command plus
+  "$PWD/.removal-sim/empty": exit 0, 3747 passed / 6 skipped.
+- Partial-copy proof: `rtk proxy sh .build/removal-prep/round1/partial-audit.sh
+  "$PWD/.removal-sim/partial"`: exit 1 expected, 1 failed / 3752 deselected;
+  missing metrics_italic_sidebearings.py and mismatched metrics_zones_editor.py
+  are both reported. Initial broad partial run: 1 failed / 3747 passed / 5 skipped,
+  exit 1 expected; the final focused runner avoids running unrelated tests.
+- Documentation gates: 10 passed each, exit 0, with canonical and empty roots.
+  Full commands/logs and cache-transfer limitation: .build/removal-prep/round1/.
+  .removal-sim removed after verification. No repository Git state changes.
+
+
+## Issue 122 Task 1: external rescued archive removal preparation (2026-10-22)
+
+- Default tests now use immutable historical identities from rescue-index.json,
+  migration.json and additional-tools.json. All 130 rescue identities are pinned;
+  the 69 released sources are cross-checked against migration.json.
+- Source-byte hashing is opt-in with --audit-rescued-sources. Existing
+  --original-source-root comparisons remain optional and skip clearly when the
+  external folder is absent. Split Reports/Masters audits so skips cannot hide
+  current-file checks; Proof now reports its optional skip. An explicit
+  FONTLAB_PRESERVED_ROOT is authoritative: no canonical fallback. Partial restored
+  archives and bad hashes still fail. Added four resolver regression checks.
+- README, NOTICE, PORTING-BACKLOG and the historical guide describe external
+  archives; NOTICE records both owner-supplied archive SHA-256 values. Attribution
+  and licence terms retained. Seven Names tool comments now label historical
+  paths explicitly; only their destination hashes and generated catalogue include
+  references changed. Tool ASTs are identical. No preserved-source headers existed.
+- Adapted sdd/cmd/mix-archive.sh to run in this worktree: no Git export, no sibling
+  timestamp touches; UV_CACHE_DIR and TMPDIR under .build/removal-prep. Commands
+  and complete outputs are in .build/removal-prep/{gate.sh,report.md,*.log}.
+- Pre-change baseline: exit 0, 3744 passed / 1 skipped. Final canonical gate:
+  `rtk proxy sh .build/removal-prep/gate.sh`: exit 0, 3751 passed / 1 skipped.
+  Empty gate: `rtk proxy sh .build/removal-prep/gate.sh "$PWD/.removal-sim/empty"`:
+  exit 0, 3746 passed / 6 skipped (five optional source-byte audits plus the existing
+  Spacing Preview skip). Both included --original-source-root and the new opt-in
+  audit, exercising actual canonical bytes and absent-source handling respectively.
+- Documentation suite, `uv run --locked python -m pytest -q tests_docs`, with local
+  UV_PROJECT_ENVIRONMENT/cache/TMPDIR and each FONTLAB_PRESERVED_ROOT: exit 0,
+  10 passed each. First attempt: 7 passed / 3 failed because /usr/bin/git hits broken
+  xcrun; rerun with PATH=/opt/homebrew/bin:$PATH passed. Its Git distribution tests
+  use only isolated fixtures under .build/removal-prep/tmp, never this repo's state.
+- The original uvx Ruff invocation returned exit 0. This is tool-specific: Homebrew
+  Ruff 0.14.10 reports nine findings already present at HEAD (8 E402, 1 E731) in
+  test_masters.py and test_proof.py; the round-1 baseline comparison reproduces them. Historical ledgers byte-identical; only seven
+  destination_sha256 fields differ in additional-tools.json. Existing NOTICE
+  hashes and copyright lines retained. .removal-sim/ removed after both gates.
+- Historical rescued/ and /_old/ identifiers remain intentionally in ledgers,
+  attribution and optional audit code. No runtime/current-file check needs source
+  bytes. No lessons directory exists in this repository; tests_docs has no rescued
+  reads. No canonical source deletion, native execution, commit or Git state change.
+
+
 ## Issue 122 T0 baseline
 
 - Suite MIX; pre-change worktree HEAD recorded below; branch `issue-122` confirmed.

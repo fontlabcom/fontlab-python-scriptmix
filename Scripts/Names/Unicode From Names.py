@@ -1,7 +1,7 @@
 # this_file: Scripts/Names/Unicode From Names.py
 # SPDX-License-Identifier: Apache-2.0
 # Adapted from the archived Apache-2.0 FontLab samples
-# (rescued/samples/names_unicode_from_names.py); provenance in NOTICE.
+# Historical source: rescued/samples/names_unicode_from_names.py; provenance in NOTICE.
 # FLM: Names · Unicode From Names
 """Assign Unicode code points that the glyph names imply. Preview first.
 

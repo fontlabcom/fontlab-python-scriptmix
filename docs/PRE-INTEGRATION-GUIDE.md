@@ -98,14 +98,16 @@ alongside the explicit dependency. Missing helpers fail the run.
 Every default run checks all 54 destination hashes, exact menu paths/depth,
 Python 3.11 syntax and provenance metadata. It does not audit absent originals.
 To additionally check every original source hash, provide the workspace root
-containing the manifest's `fontlab-python-examples` paths:
+containing externally restored historical `fontlab-python-examples` paths
+(see the archive identities in NOTICE):
 
 ```sh
 SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh --original-source-root /path/to/workspace
 ```
 
-Missing or mismatched originals fail this requested audit. Original hashes and
-product script bytes are unchanged.
+An absent external source folder skips only its optional byte audit. A present
+archive with missing files or mismatched hashes fails. Historical source hashes
+remain recorded; this guide describes the earlier release layout.
 
 ## Names inspection and selection tools
 

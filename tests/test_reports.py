@@ -11,6 +11,7 @@ from types import SimpleNamespace as NS
 
 import pytest
 from conftest import original_source
+
 from menu_layout import current_rows
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,7 +60,7 @@ def load(monkeypatch):
     return module, native, state
 
 
-def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
+def test_manifest_when_distributed_then_hashes_and_menu_paths_match():
     entries = current_rows(ROOT)
     assert len(entries) == 69
     destinations = [entry["destination"] for entry in entries]
@@ -81,7 +82,6 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
     assert set(destinations) | extra_destinations == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }
-    original_root = request.config.getoption("--original-source-root")
     for entry in entries:
         target = ROOT / entry["destination"]
         path = Path(entry["destination"])
@@ -111,18 +111,20 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
             hashlib.sha256(target.read_bytes()).hexdigest()
             == entry["destination_sha256"]
         )
-        if original_root is not None:
-            original = original_source(original_root, entry["source"])
-            assert original.is_file(), f"Missing requested original: {original}"
-            assert (
-                hashlib.sha256(original.read_bytes()).hexdigest()
-                == entry["source_sha256"]
-            ), f"Original hash mismatch: {original}"
         source = target.read_text()
         ast.parse(source, feature_version=(3, 11))
         assert "from fly.ap.scripting import" in source
         assert "exec(" not in source
         assert entry["license"] == "Apache-2.0"
+
+
+def test_external_original_hashes_when_requested_then_match(request):
+    original_root = request.config.getoption("--original-source-root")
+    if original_root is None:
+        pytest.skip("Original source-byte audit requires --original-source-root")
+    for entry in current_rows(ROOT):
+        original = original_source(original_root, entry["source"])
+        assert hashlib.sha256(original.read_bytes()).hexdigest() == entry["source_sha256"], entry["source"]
 
 
 def test_calculations_when_multiple_masters_then_real_report_results(load):

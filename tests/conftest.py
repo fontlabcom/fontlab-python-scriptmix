@@ -9,11 +9,24 @@ import pytest
 
 
 def original_source(root: Path, relative: str) -> Path:
-    """Read preserved originals after the authorized archive relocation."""
-    current = root / relative
-    if current.is_file():
-        return current
-    return root / relative.replace("/_old/", "/rescued/", 1)
+    """Resolve an opt-in byte audit; absent external sources skip only that audit."""
+    import json
+
+    archive = os.environ.get("FONTLAB_PRESERVED_ROOT")
+    if archive:
+        records = json.loads((Path(__file__).parents[1] / "rescue-index.json").read_text())
+        record = records["preserved_sources"].get(relative)
+        assert record is not None, f"No historical source record: {relative}"
+        current = Path(archive) / record["path"]
+    else:
+        current = root / relative
+        if not current.is_file():
+            current = root / relative.replace("/_old/", "/rescued/", 1)
+    source_folder = Path(*current.parts[:current.parts.index("rescued") + 1]) if "rescued" in current.parts else current.parent
+    if not source_folder.is_dir():
+        pytest.skip(f"External historical sources absent: {source_folder}; restore the archive for this opt-in byte audit")
+    assert current.is_file(), f"Missing requested original: {current}"
+    return current
 
 
 def pytest_addoption(parser):
@@ -21,8 +34,24 @@ def pytest_addoption(parser):
         "--original-source-root",
         type=Path,
         default=None,
-        help="Audit every original hash relative to this workspace root",
+        help="Opt in to original-byte comparisons; absent external source folders skip those audits",
     )
+
+    parser.addoption(
+        "--audit-rescued-sources", action="store_true",
+        help="Opt in to hashing the external rescued archive (FONTLAB_PRESERVED_ROOT)",
+    )
+
+
+@pytest.fixture(scope="session")
+def rescued_source_root(request):
+    """Only explicit source-byte audits need an externally restored archive."""
+    if not request.config.getoption("--audit-rescued-sources"):
+        pytest.skip("External source-byte audit requires --audit-rescued-sources")
+    root = Path(os.environ.get("FONTLAB_PRESERVED_ROOT", str(Path(__file__).parents[1])))
+    if not (root / "rescued").is_dir():
+        pytest.skip("External rescued/ archive absent; restore it at FONTLAB_PRESERVED_ROOT for the opt-in byte audit")
+    return root
 
 
 def resolve_app_sources(required_helpers=None):

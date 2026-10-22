@@ -1,7 +1,7 @@
 # this_file: Scripts/Names/Batch Glyph Notes.py
 # SPDX-License-Identifier: Apache-2.0
 # Adapted from the archived Apache-2.0 FontLab samples
-# (rescued/samples/utility_batch_glyph_notes.py); provenance in NOTICE.
+# Historical source: rescued/samples/utility_batch_glyph_notes.py; provenance in NOTICE.
 # FLM: Names · Batch Glyph Notes
 """Set or append one note on every selected glyph at once.
 

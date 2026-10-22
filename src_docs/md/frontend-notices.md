@@ -16,7 +16,7 @@ The [machine-readable notice list](frontend-notices.json) records source URLs,
 full-text SHA-256 digests and remaining review items. MaterialX's dependency
 versions are bound to publisher commit
 [`c088af2`](https://github.com/jaywhj/mkdocs-materialx/tree/c088af2faa3a75dd4b9cded468eca285b6775d71).
-Retained archive assets keep their existing bytes and attribution.
+Browser asset licence texts and attribution are recorded below.
 
 | Component | Version / source | Terms and full notices |
 | --- | --- | --- |

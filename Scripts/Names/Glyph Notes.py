@@ -1,7 +1,7 @@
 # this_file: Scripts/Names/Glyph Notes.py
 # SPDX-License-Identifier: Apache-2.0
 # Adapted from the archived Apache-2.0 FontLab samples
-# (rescued/samples/names_glyph_notes.py); provenance in NOTICE.
+# Historical source: rescued/samples/names_glyph_notes.py; provenance in NOTICE.
 # FLM: Names · Glyph Notes
 """Read and edit the note of one glyph. Browse every glyph that has a note.
 

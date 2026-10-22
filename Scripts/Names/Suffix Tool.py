@@ -1,7 +1,7 @@
 # this_file: Scripts/Names/Suffix Tool.py
 # SPDX-License-Identifier: Apache-2.0
 # Adapted from the archived Apache-2.0 FontLab samples
-# (rescued/samples/names_suffix_tool.py); provenance in NOTICE.
+# Historical source: rescued/samples/names_suffix_tool.py; provenance in NOTICE.
 # FLM: Names · Suffix Tool
 """Add, remove or replace a glyph-name suffix (.ss01, .sc, .alt) on the selected glyphs.
 

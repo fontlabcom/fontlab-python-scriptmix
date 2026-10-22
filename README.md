@@ -49,11 +49,11 @@ Utilities. No source code is copied. The
 ported, covered by a FontLab command or an existing tool, or without a FontLab
 counterpart. Trial Font Maker needs the public fontTools package.
 
-## Unfinished ports and preserved sources
+## Unfinished ports and historical sources
 
 The 61 legacy archive launchers are outside the active menu; 57 of them return
 as new ports listed in `additional-tools.json`, and 4 stay unported. Their original
-sources remain byte-exact in the existing private/local `rescued` tree. The
+source identities remain recorded in the historical rescue ledger. The
 complete [porting backlog](PORTING-BACKLOG.md) lists each unfinished tool;
 `rescue-index.json` retains historical menu paths, source paths and hashes.
 Retiring a dispatcher does not complete its port. The original 130-sample
@@ -63,10 +63,18 @@ Third-party and Glyphs-corpus original bodies are not copied into public
 commits, packages or documentation. The author's own Apache-2.0 FontLab samples
 may be adapted: rows with `source_body_redistributed: true` in
 `additional-tools.json` reuse parts of them.
-For an offline source-byte audit, set `FONTLAB_PRESERVED_ROOT` to the existing
-checkout containing its matching `rescued` tree. Tests read those bytes only;
-missing or mismatched originals fail the requested audit. No archived body is
-executed during source integration or verification.
+Historical `rescued/...` paths identify sources archived outside the repository,
+not files available here: `fontlab-python-scriptmix-rescued.tar.gz` has SHA-256
+`ffa611cfec3f2550400989abff51cea1a391d714a91ea4863ca0610711dd4b32`.
+For an optional offline source-byte audit, restore that archive externally, set
+`FONTLAB_PRESERVED_ROOT` to its parent of `rescued/`, and add
+both `--audit-rescued-sources` and `--original-source-root /path/to/workspace`
+to `test.sh`. The workspace root is the directory containing
+`fontlab-python-examples`; the latter flag enables the Masters, Proof, Reports
+and Inspectors original-source comparisons. `FONTLAB_PRESERVED_ROOT` selects
+the external Scriptmix archive when set. An absent archive skips only byte audits;
+a present archive with missing files or mismatched hashes fails. No archived body
+is executed during source integration or verification.
 
 ## Integration and acceptance
 
@@ -88,9 +96,10 @@ layout; documentation routes and publication require their own review.
 
 ## Verification
 
-Run pytest with plugin autoload disabled and the preserved-source root supplied.
-Scriptmix also requires the reviewed installed App and `--original-source-root`
-for original-byte checks. The Features tests also need Fontport, which now holds
+Run pytest with plugin autoload disabled. The default suite checks historical
+path/hash records and current files without an external source archive.
+Scriptmix requires the reviewed installed App; `--original-source-root` optionally
+compares original bytes and interfaces (absent external folders skip those audits). The Features tests also need Fontport, which now holds
 the feature source helpers (`fly.fp.feature_blocks`): set
 `SCRIPTMIX_EXTRA_REQUIREMENTS` to a Fontport wheel or checkout (space-separated
 for several). Examples retains its repository tests and the `lessons`

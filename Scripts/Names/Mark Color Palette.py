@@ -1,7 +1,7 @@
 # this_file: Scripts/Names/Mark Color Palette.py
 # SPDX-License-Identifier: Apache-2.0
 # Adapted from the archived Apache-2.0 FontLab samples
-# (rescued/samples/names_mark_color_palette.py); provenance in NOTICE.
+# Historical source: rescued/samples/names_mark_color_palette.py; provenance in NOTICE.
 # FLM: Names · Mark Color Palette
 """Click a colour swatch to mark the selected glyphs with that colour.
 

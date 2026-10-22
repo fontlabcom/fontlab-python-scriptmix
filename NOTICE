@@ -1,16 +1,26 @@
 this_file: NOTICE
 
-The Kerning category adapts five Apache-2.0 fontlab-samples scripts retained in
+Historical source locations
+===========================
+Paths beginning rescued/ or containing /_old/ name historical sources archived
+outside this repository, not files a reader can open here; the scriptmix archive
+fontlab-python-scriptmix-rescued.tar.gz has SHA-256
+ffa611cfec3f2550400989abff51cea1a391d714a91ea4863ca0610711dd4b32,
+and the examples archive fontlab-python-examples-rescued.tar.gz has SHA-256
+f49848d39bdac1a6a973864500afe56af635871e5001ae94ee36cd95370a8266.
+Source paths and SHA-256 identifiers in the JSON ledgers remain historical records.
+
+The Kerning category adapts five Apache-2.0 fontlab-samples scripts historically identified in
 fontlab-python-examples/_old/part4/fontlab-samples/samples/:
 kerning_classes_browser.py, kerning_compare_masters.py, kerning_list_browser.py,
 kerning_missing_pairs.py and kerning_text_preview.py. Source and destination
 SHA-256 mappings are recorded in migration.json. Native access and shared
 lifecycle adaptations live in fontlab-fontlabapp (see its NOTICE). Every original
 control is retained; error containment and complete-ink proof fitting are added.
-See LICENSE for the Apache License, Version 2.0. Original sources stay unchanged.
+See LICENSE for the Apache License, Version 2.0. Original source identities remain recorded.
 
 Five additional Kerning editors adapt these Apache-2.0 sources from the same
-retained samples directory: kerning_copy_between_masters.py,
+historical samples directory: kerning_copy_between_masters.py,
 kerning_pair_editor.py, kerning_scale_values.py, kerning_round_values.py and
 kerning_remove_small.py. All controls/actions and original interfaces are
 retained. Shared calculations, multi-master preflight/writing and common UI
@@ -19,15 +29,15 @@ recovery are added. The five original source/destination hashes are appended to
 migration.json without changing prior mappings. Native acceptance is pending.
 
 Selected Kerning editors adapt Apache-2.0 kerning_exceptions_finder.py and
-kerning_pairs_from_text.py from the same retained fontlab-samples archive.
+kerning_pairs_from_text.py from the same historical fontlab-samples archive.
 App's kerning_selection.py shares exception precedence, word parsing, explicit/
 effective previews and ticked plans; the existing complete batch writer and
 owned dialog shell provide snapshot guards, Refresh and history. Scriptmix
-migration.json appends both source/destination hashes; originals are unchanged.
+migration.json appends both source/destination hashes; original source identities remain recorded.
 
 Proof tools adapt the Apache-2.0 fontlab-samples proof_glyph_grid.py,
 proof_text_by_master.py, proof_waterfall.py and proof_word_finder.py from the
-same retained archive. App proof.py shares exact embedded words, Unicode/slash
+same historical archive. App proof.py shares exact embedded words, Unicode/slash
 parsing, ordered sizes, advance-only runs and transformed outline assembly;
 _proof_views.py preserves the three actual native painters, and _proof_dialog.py
 reuses owned dialog lifecycle with stale-font/failed-read/paint guards. Scriptmix
@@ -39,28 +49,28 @@ Masters report provenance
 
 The four Masters tools adapt Apache-2.0 masters_overview.py,
 masters_width_chart.py, masters_glyph_weight_chart.py and
-masters_compatibility_check.py from retained fontlab-samples sources.
+masters_compatibility_check.py from historical fontlab-samples sources.
 App masters.py shares actual reads, twelve-step transformed contour areas,
 counter nesting and own-contour structural signatures; _masters_views.py
 retains original labelled lines/grouped bars. _masters_dialog.py extends the
 existing Proof/Names shell and paint boundary, with complete initial UI,
 source-bound actions and owned cleanup. Scriptmix retains every original
 control, class, key and native scenario interface; migration.json appends four
-exact source/destination SHA-256 pairs. Originals remain unchanged.
+exact source/destination SHA-256 pairs. Original source identities remain recorded.
 
 Metrics and outline inspector provenance
 =======================================
 
 The four read-only tools adapt Apache-2.0 metrics_spacing_string_preview.py,
 metrics_width_table.py, outlines_contour_order_view.py and
-outlines_node_statistics.py from the retained fontlab-samples archive.
+outlines_node_statistics.py from the historical fontlab-samples archive.
 App inspectors.py preserves original parsing, missing/zero/auto rules, rounded
 width progressions, raw node-polygon winding and contour/node statistics; actual
 transformed paths and repeated reads reuse accepted Proof/Masters helpers.
 _inspectors_views.py retains the complete original spacing and contour diagrams
 on the existing safe painter boundary. _inspectors_dialog.py reuses the owned
 Masters/Proof/Names lifecycle and selection guards. Scriptmix migration.json
-retains exact original/menu SHA-256 pairs; all originals remain unchanged.
+retains exact original/menu SHA-256 pairs; all original source identities remain recorded.
 
 Read-only Components provenance
 ==============================
@@ -82,7 +92,7 @@ Read-only Anchors provenance
 
 Anchor Cloud, Anchor Compatibility and Mark Attachment Preview adapt the
 Apache-2.0 anchors_cloud_view.py, anchors_compatibility_report.py and
-anchors_mark_attachment_preview.py from retained fontlab-samples-L1 sources.
+anchors_mark_attachment_preview.py from historical fontlab-samples-L1 sources.
 App anchors.py preserves original frequency/order, auto-layer exclusions, raw
 anchor snapshots and rounded attachment arithmetic. Existing Components/Proof
 helpers supply placed outlines, source guards, owned lifecycle and the exact
@@ -96,9 +106,9 @@ Read-only glyph review provenance
 =================================
 
 Select Unreferenced Glyphs adapts Apache-2.0 cleanup_unused_glyphs_report.py
-from retained fontlab-samples-C4; four original copies are byte-identical.
+from historical fontlab-samples-C4; four original copies are byte-identical.
 Interpolation Preview adapts Apache-2.0 masters_interpolation_preview.py from
-retained fontlab-samples-L1, retaining the defensive QColor/palette fixes.
+historical fontlab-samples-L1, retaining the defensive QColor/palette fixes.
 Nine copies match L1; L2 only removes those protections. Complete calculations,
 controls, diagram and public helper interfaces remain. Shared lifecycle/painter
 boundaries come from existing App helpers. migration.json retains original and
@@ -109,7 +119,7 @@ Live Node Coordinates provenance
 ================================
 
 Node Coordinates Panel adapts Apache-2.0 outlines_node_coordinates_panel.py
-from retained fontlab-samples-L1. Nine original copies match; L2 only removes
+from historical fontlab-samples-L1. Nine original copies match; L2 only removes
 palette protections. App node_coordinates.py retains complete own-node order,
 consecutive measurements and formatting. CurrentGlyph resolves actual active
 context with explicit None checks. Shared Names heading/lifecycle and Masters
@@ -120,7 +130,7 @@ and independent downloaded-tag acceptance; receipts are recorded in WORK.md.
 Compact Master Switcher provenance
 =================================
 
-Master Switcher adapts Apache-2.0 masters_switcher_palette.py from retained
+Master Switcher adapts Apache-2.0 masters_switcher_palette.py from historical
 fontlab-samples sources. Nine copies match central; L2 removes palette safeguards.
 Original location formatting and existing master_order calculation are retained.
 MastersDialog supplies owned theme/binding/refresh/Close; added guards verify the
@@ -154,12 +164,12 @@ native/prior64 and independent downloaded-tag acceptance, recorded in WORK.md.
 Copy Anchors From Glyph provenance
 =================================
 
-Adapted from the retained Apache-2.0 fontlab-samples-L1 anchor-copy source.
+Adapted from the historical Apache-2.0 fontlab-samples-L1 anchor-copy source.
 Preserves complete source completion, merge/replace, width scaling and master
 controls. Shared App support adds late native binding, raw source guards,
 preconstructed writes and measured native-history safeguards. Existing pins
 retain native style; new pins use FontLab name-derived appearance defaults.
-The original source and independent L1 scenario remain retained. Candidate
+The original source identity and independent L1 scenario remain recorded. Candidate
 acceptance and the pending release/fresh-tag gates are recorded in WORK.md.
 
 Copy Anchors acceptance update: reviewed Appv0.2.21/Scriptmixv1.0.17 pass all
@@ -170,11 +180,11 @@ visual receipt. No original source is removed. See WORK.md for exact evidence.
 Italic Angle provenance
 =======================
 
-Masters/Italic Angle.py adapts the retained Apache-2.0 fontlab-samples
+Masters/Italic Angle.py adapts the historical Apache-2.0 fontlab-samples
 masters_italic_angle.py through shared App helpers, preserving the original
 controls, helper/class names, slant gauge and independent native scenario.
 The exact source/destination pair is recorded in migration.json. Original
-sources remain retained. This candidate does not claim broader archive cleanup.
+source identities remain recorded. This candidate does not claim broader archive cleanup.
 
 
 Tabular width checker adaptation
@@ -512,7 +522,7 @@ SOFTWARE.
 
 N119 Anchors/Duplicates Finder adapts the complete Apache-2.0 rescued sample
 anchors_duplicates_finder.py, SHA2567cda723f2e4499930aa49d701bb1dd1cca703bc92de44e5ec2a18876ff130f71.
-The original body and historical rescue ledger remain unchanged. Native
+The historical rescue ledger retains the original source identity. Native
 one-Undo/full-font/history/dirty/save/reopen acceptance remains pending.
 
 
@@ -987,39 +997,39 @@ Metrics editors from the author's own samples
 
 Metrics/Italic Sidebearings, Round Advances, Centre In Advance, Zero-Width
 Marks, Tabular Width and Scale Advances adapt the author's own FontLab samples
-(Apache-2.0), kept under rescued/samples/ as metrics_italic_sidebearings.py,
+(Apache-2.0), historically identified under rescued/samples/ as metrics_italic_sidebearings.py,
 metrics_round_advances.py, metrics_center_in_advance.py,
 metrics_zero_width_marks.py, metrics_tabular_width.py and
 metrics_scale_advances.py. Controls, names and parts of the calculations are
 reused under that licence; the panels and the write path are new. Source and
 destination SHA-256 values are in additional-tools.json and rescue-index.json.
-The original files stay unchanged. Native FontLab acceptance is pending.
+The historical source identities remain recorded. Native FontLab acceptance is pending.
 
 Metrics sidebearing editors and diagram from the author's own samples
 =====================================================================
 
 Metrics/Equalize Sidebearings, Sidebearings Tuner, Copy Metrics From Reference
 and Vertical Metrics Diagram adapt the author's own FontLab samples
-(Apache-2.0), kept under rescued/samples/ as metrics_equalize_sidebearings.py,
+(Apache-2.0), historically identified under rescued/samples/ as metrics_equalize_sidebearings.py,
 metrics_sidebearings_tuner.py, metrics_copy_from_reference.py and
 metrics_vertical_metrics_diagram.py. Controls, names and parts of the
 calculations and drawing are reused under that licence; the panels and the
 write path are new, and the diagram only reads the font. Source and
 destination SHA-256 values are in additional-tools.json and rescue-index.json.
-The original files stay unchanged.
+The historical source identities remain recorded.
 
 Names editors from the author's own samples
 ===========================================
 
 Names/Glyph Tags, Mark Color Palette, Suffix Tool, Batch Rename, Batch Glyph
 Notes, Glyph Notes and Unicode From Names adapt the author's own FontLab samples
-(Apache-2.0), kept under rescued/samples/ as names_glyph_tags.py,
+(Apache-2.0), historically identified under rescued/samples/ as names_glyph_tags.py,
 names_mark_color_palette.py, names_suffix_tool.py, names_batch_rename.py,
 utility_batch_glyph_notes.py, names_glyph_notes.py and
 names_unicode_from_names.py. Controls, calculations and the glyph-name table
 are reused under that licence; the rescan, refusal and write path are new.
 Source and destination SHA-256 values are in additional-tools.json and
-rescue-index.json. The original files stay unchanged. Native FontLab acceptance
+rescue-index.json. The historical source identities remain recorded. Native FontLab acceptance
 is pending.
 
 Masters layer tools after Pedro Arilla
@@ -1050,14 +1060,14 @@ Anchors editors from the author's own samples
 
 Anchors/Rename Bulk, Center Horizontally, Place From Bounds, Snap To Metrics,
 Round To Grid, Delete By Name and Mirror Across Masters adapt the author's own
-FontLab samples (Apache-2.0), kept under rescued/samples/ as
+FontLab samples (Apache-2.0), historically identified under rescued/samples/ as
 anchors_rename_bulk.py, anchors_center_horizontally.py,
 anchors_place_from_bounds.py, anchors_snap_to_metrics.py,
 anchors_round_to_grid.py, anchors_delete_by_name.py and
 anchors_mirror_across_masters.py. Controls, names and parts of the arithmetic
 are reused under that licence; the panels, refusals and write path are new.
 Source and destination SHA-256 values are in additional-tools.json and
-rescue-index.json. The original files stay unchanged. Native FontLab acceptance
+rescue-index.json. The historical source identities remain recorded. Native FontLab acceptance
 is pending.
 
 Components writers from the author's own samples
@@ -1065,27 +1075,27 @@ Components writers from the author's own samples
 
 Components/Build From Recipes, Align By Anchor, Decompose, Replace Reference,
 Copy Offsets Between Masters, Unlock Lock and Nested Finder adapt the author's
-own FontLab samples (Apache-2.0), kept under rescued/samples/ as
+own FontLab samples (Apache-2.0), historically identified under rescued/samples/ as
 components_build_from_recipes.py, components_align_by_anchor.py,
 components_decompose.py, components_replace_reference.py,
 components_copy_offsets_between_masters.py, components_unlock_lock.py and
 components_nested_finder.py. The recipe syntax, controls and parts of the
 arithmetic are reused under that licence; the panels, refusals and write path
 are new. Source and destination SHA-256 values are in additional-tools.json
-and rescue-index.json. The original files stay unchanged.
+and rescue-index.json. The historical source identities remain recorded.
 
 Layer and master tools from the author's own samples
 ====================================================
 
 Masters/Copy Outline To Mask, Copy Layer Between Masters, Restore Backup
 Layer, Layer Cleanup and Sync Sidebearings, and Cleanup/Empty Layers adapt the
-author's own FontLab samples (Apache-2.0), kept under rescued/samples/ as
+author's own FontLab samples (Apache-2.0), historically identified under rescued/samples/ as
 masters_copy_to_mask.py, masters_copy_layer.py, masters_restore_backup.py,
 masters_layer_cleanup.py, masters_sync_metrics.py and cleanup_empty_layers.py.
 Controls, names and parts of the layer rules are reused under that licence;
 the panels, refusals and write path are new. Source and destination SHA-256
-values are in additional-tools.json and rescue-index.json. The original files
-stay unchanged.
+values are in additional-tools.json and rescue-index.json. The historical source identities
+remain recorded.
 
 Contours writers from the author's own samples
 ==============================================
@@ -1093,7 +1103,7 @@ Contours writers from the author's own samples
 Contours/Round Coordinates, Remove Overlap, Add Extremes, Correct Contour
 Direction, Straighten Short Curves, Optimize Start Points, Delete Small
 Contours, Fix Zero Handles, Delete Duplicate Contours, Transform and Slant
-adapt the author's own FontLab samples (Apache-2.0), kept under
+adapt the author's own FontLab samples (Apache-2.0), historically identified under
 rescued/samples/ as outlines_round_coordinates.py, outlines_remove_overlap.py,
 outlines_add_extremes.py, outlines_correct_direction.py,
 outlines_straighten_short_curves.py, outlines_optimize_start_points.py,
@@ -1102,8 +1112,8 @@ outlines_delete_duplicate_contours.py, outlines_transform_dialog.py and
 outlines_slant.py. Controls, names and parts of the geometry are reused under
 that licence; the panels, refusals and write path are new. No third-party or
 Glyphs-corpus code is included. Source and destination SHA-256 values are in
-additional-tools.json and rescue-index.json. The original files stay
-unchanged.
+additional-tools.json and rescue-index.json. The historical source identities remain
+recorded.
 
 Contours generators and hint tools from the author's own samples
 ================================================================
@@ -1111,14 +1121,14 @@ Contours generators and hint tools from the author's own samples
 Contours/Placeholder Glyphs, Shadow Copy, Tabular Figure Copies, Outline
 Effect, Superior & Inferior Figures, Small Caps From Capitals, Autohint
 Selected Layers and Remove PostScript Hints adapt the author's own FontLab
-samples (Apache-2.0), kept under rescued/samples/ as
+samples (Apache-2.0), historically identified under rescued/samples/ as
 generate_placeholder_glyphs.py, generate_shadow.py, generate_tabular_copies.py,
 generate_outline_effect.py, generate_superiors.py, generate_small_caps.py,
 hints_autohint.py and hints_remove.py. Controls, names and parts of the
 arithmetic are reused under that licence; the previews, glyph creation,
 refusals and write path are new. Source and destination SHA-256 values are in
-additional-tools.json and rescue-index.json. The original files stay
-unchanged.
+additional-tools.json and rescue-index.json. The historical source identities remain
+recorded.
 
 Proof text tools after Pedro Arilla
 ===================================

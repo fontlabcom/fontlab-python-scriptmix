@@ -1,7 +1,7 @@
 # this_file: Scripts/Names/Batch Rename.py
 # SPDX-License-Identifier: Apache-2.0
 # Adapted from the archived Apache-2.0 FontLab samples
-# (rescued/samples/names_batch_rename.py); provenance in NOTICE.
+# Historical source: rescued/samples/names_batch_rename.py; provenance in NOTICE.
 # FLM: Names · Batch Rename
 """Find and replace in glyph names, with a live preview and strict checks.
 

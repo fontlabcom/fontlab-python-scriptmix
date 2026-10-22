@@ -2,6 +2,34 @@
 this_file: CHANGELOG.md
 ---
 
+## Removal prep: review fixes, round 1 (2026-10-22)
+
+- Document both source-audit flags; simplify seven historical Names headers and
+  refresh their destination hashes and generated source includes.
+- Collect every missing/mismatched archive file before failure; test a copied
+  archive with one deletion and one corruption. Current-file checks stay intact.
+- Record Scriptmix-first landing order, then Examples forward pins (all 24
+  currently match). Prevent bytecode/pytest caches in gates; stage old caches
+  locally because the sandbox rejected the requested external discard directory.
+- Canonical suite: 3752 passed, 1 skipped; empty root: 3747 passed, 6 skipped;
+  docs: 10 passed each. Corrupt-copy audit: exit 1 expected, both faults reported.
+  Homebrew Ruff reproduces nine pre-existing findings; other edited files pass.
+
+
+## Issue 122 Task 1: removal preparation (2026-10-22)
+
+- Keep historical source path/hash checks independent of external rescued/ bytes;
+  source-byte/interface audits are explicit and skip absent archives clearly.
+  Current menu hashes, behaviour and release-byte checks remain mandatory.
+- Explain external archives and both archive SHA-256 values in NOTICE; correct
+  README/backlog/guide and historical Names source comments, retaining credits.
+  Refresh only seven current destination hashes and their catalogue pages.
+- Canonical suite: 3751 passed, 1 skipped; empty preserved root: 3746 passed,
+  6 skipped; documentation tests: 10 passed in each. Original uvx Ruff returned 0;
+  Homebrew Ruff 0.14.10 reports nine pre-existing findings (see fix round 1).
+  Full commands and limitations: WORK.md and .build/removal-prep/report.md.
+
+
 ## Unreleased — 2026-10-22 — Backup, copy and rounding extensions
 
 Extend seven existing tools; the menu and its counts do not change.

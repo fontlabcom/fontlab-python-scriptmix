@@ -1,7 +1,7 @@
 # this_file: Scripts/Names/Glyph Tags.py
 # SPDX-License-Identifier: Apache-2.0
 # Adapted from the archived Apache-2.0 FontLab samples
-# (rescued/samples/names_glyph_tags.py); provenance in NOTICE.
+# Historical source: rescued/samples/names_glyph_tags.py; provenance in NOTICE.
 # FLM: Names · Glyph Tags
 """Add tags to, or remove tags from, the selected glyphs in one step.
 

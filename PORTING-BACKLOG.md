@@ -9,14 +9,15 @@ additional tools. Source and native acceptance differ; new reviewed candidates
 retain their pending native status in `additional-tools.json` and their docstrings.
 
 These 61 archived launchers were removed from `Scripts`, not completed. Every
-original remains byte-exact under `rescued/`. `rescue-index.json` retains the
+original has a historical path/hash identity in the external archive described
+in NOTICE. `rescue-index.json` retains the
 historical menu path, source path and SHA-256. The other 69 sample originals
-also remain preserved. The sample migration denominator stays 130; released
+also retain their historical identities. The sample migration denominator stays 130; released
 acceptance remains 68/130, with the Italic Angle candidate and these 61 ports
 still subject to their existing gates. The wider Glyphs source corpus, PythonQt
 adaptations, package cleanup and native acceptance remain in scope.
 
-| Former menu | Preserved source | Status |
+| Former menu | Historical source | Status |
 | --- | --- | --- |
 | Metrics/Italic Sidebearings.py | `rescued/samples/metrics_italic_sidebearings.py` | Complete source writer candidate; native one-Undo/full-font preservation pending; original rescue ledger retained |
 | Metrics/Alignment Zones.py | `rescued/samples/metrics_zones_editor.py` | Unported; duplicate-of FontLab's Font Info > Zones (Add and Remove zones, per master); the sample stages zone edits for all masters at once. A scripted all-master port waits for an App zone writer with one history.commit (fontlabapp zone_editor has no production Backend.apply) |

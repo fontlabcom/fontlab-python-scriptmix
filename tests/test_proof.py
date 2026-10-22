@@ -629,7 +629,7 @@ def test_original_embedded_words_and_public_defaults_match_strict_sources(
 ):
     source_root = request.config.getoption("--original-source-root")
     if source_root is None:
-        return  # Optional originals audit; portable default has no private checkout.
+        pytest.skip("Original source-byte audit requires --original-source-root")
     import ast
 
     for title, stem in zip(
