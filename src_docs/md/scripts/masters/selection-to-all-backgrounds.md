@@ -9,24 +9,25 @@ categories: ["Masters"]
 Copy the selected contours into the background of every glyph.
 
 What it does:
-    Take the selected contours of the shown glyph layer. Replace the background
-    (mask layer) of the current-master layer of EVERY glyph in the font with
-    copies of them. Use it to put one guide shape, such as a grid or a
-    reference
-    skeleton, behind all glyphs.
+    Take the selected contours of the shown glyph layer. Replace the
+    background (mask layer) of the current-master layer of EVERY glyph in the
+    font with copies of them. Use it to put one guide shape, such as a grid or
+    a reference skeleton, behind all glyphs.
 
 How it works:
     A contour counts as selected when all its nodes are selected (select a
     contour with a double click, or drag a box around it). A panel first
     shows what will happen: contour count, glyph count, backgrounds to be
-    replaced and glyphs to be skipped. The panel stays open. Switch to the
-    Font window, then press "Replace backgrounds". It reads the planned
-    contours and the font again and stops if anything changed. Then it
-    removes the old background shapes, creates missing backgrounds, and adds
-    clones of the selected contours. One notification covers the whole
-    font: one Undo step in the Font window. The shared module
-    fly.ap.history decides which glyphs
-    are skipped and does the one-step write. Read-back checks every target
+    replaced and glyphs to be skipped. The panel stays open. "Refresh" in a
+    Glyph window reads the selection again; when nothing is selected there,
+    it clears the preview and turns off the button. "Refresh" in the Font
+    window reads the planned contours again. Switch to the Font window, then
+    press "Replace backgrounds". It reads the planned contours and the font
+    again and stops if anything changed. Then it removes the old background
+    shapes, creates missing backgrounds, and adds clones of the selected
+    contours. One notification covers the whole font: one Undo step in the
+    Font window. The shared module fly.ap.history decides which glyphs are
+    skipped and does the one-step write. Read-back checks every target
     background for the planned contour count and no components. A mismatch
     is reported with the Edit > Undo hint.
 
@@ -70,5 +71,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3ce5d9b4934ac635c3b3a3207b2070be8eb332d5713603f1a07a12a28ecbc48a.py)
+[Python source](../../../../.build/menu-sources/388c35317e11b26a432c8405ff328e6ac90ae0dcd98a84cd22ba1ae774e24fee.py)
 <!--/codeinclude-->

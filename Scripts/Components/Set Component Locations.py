@@ -23,7 +23,11 @@ active layer and matched by shape position and base name in other masters.
 All components in selected glyphs is the default. For Selected components,
 select components in a Glyph window first. Reload selection reads current
 coordinates and clears pending field edits. In Set mode, Apply without edits
-writes nothing.
+writes nothing. Apply reads the selection again. From a Glyph window, Apply
+refuses an edit that includes glyphs the window does not show, because
+FontLab would undo only the shown glyphs. So keep a Selected components edit
+to the glyphs in the Glyph window, and apply All components in selected glyphs
+from the Font window.
 Benefit: Tune or reset many instances without repeating per-component edits.
 Automatic layers, their owners and bases, locked layers, shared element data
 and missing sources are listed as kept. Other eligible occurrences still

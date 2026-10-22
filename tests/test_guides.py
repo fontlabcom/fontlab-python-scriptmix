@@ -27,6 +27,7 @@ def guides(components, monkeypatch, app_sources):  # noqa: F811
 
     base.qt.QtGui.QComboBox = Combo
     for name in [
+        "edit_guards",
         "_masters_dialog",
         "_guides_sources",
         "guides",

@@ -53,6 +53,7 @@ def rewrite(guides, monkeypatch, app_sources):  # noqa: F811
     base.qt.QtCore.Qt.ItemIsEditable = 2
     base.qt.QtCore.Qt.AlignTop = 32
     for name in [
+        "edit_guards",
         "guide_records",
         "guide_rewrite",
         "_guide_rewrite_dialog",

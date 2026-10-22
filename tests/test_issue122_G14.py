@@ -467,6 +467,7 @@ def test_ra_real_creation_and_geometry_history(
         return {"status": "ok", "created": True}
 
     patch_api(monkeypatch, edit_guards, "pending_updates", lambda *a: ())
+    patch_api(monkeypatch, edit_guards, "canvas_glyphs", lambda *a, **k: None)  # Font window active
     patch_api(monkeypatch, glyph_creation, "_native", lambda name: NS(call=add))
     patch_api(monkeypatch, glyph_copies, "_native", lambda name: native)
     patch_api(

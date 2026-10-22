@@ -2,6 +2,18 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 - Glyph-window Undo scope and Refresh fixes
+
+- Selection To All Backgrounds: Refresh in a Glyph window reads the selection
+  again; when it fails (nothing selected, a mask layer) the plan is cleared and
+  Replace is off. Only outside a Glyph window does Refresh re-read the planned
+  contours. A closed or changed font now says so instead of "Switch to the
+  Font window". Docstring rewrapped and Refresh described.
+- Set Component Locations: say that Apply refuses in a Glyph window when the
+  edit includes glyphs the window does not show (App guard, FontLab issue
+  8573): keep Selected components edits to the shown glyphs and apply All
+  components from the Font window. Docs pages and destination hashes refreshed.
+
 ## 2026-10-22 - Selection To All Backgrounds: font-wide Undo
 
 - Write only while the Font window is active. In a Glyph window FontLab

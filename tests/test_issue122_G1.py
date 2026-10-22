@@ -977,6 +977,50 @@ def test_selection_panel_when_opened_then_preview_and_single_replace(world: Worl
     assert panel.plan is None and "Glyph window" in panel.status.texts[-1]
 
 
+def test_selection_panel_when_glyph_window_selection_cleared_then_refresh_clears_plan(world: World) -> None:
+    """Refresh in a Glyph window reads the selection again; it never falls back to the old plan."""
+    module = load("Selection To All Backgrounds")
+    glyphs = font_world(world)
+    panel = make_panel(module)
+    assert panel.plan is not None and panel.go.enabled is True
+    for shape in glyphs["s"].layer("Regular").shapes:  # the user deselects in the Glyph window
+        for contour in shape.contours:
+            for node in contour.nodes():
+                node.selected = False
+    assert world.context[2] == "editor"
+    panel.refresh()
+    assert panel.plan is None and panel.go.enabled is False
+    assert "No fully selected contour" in panel.status.texts[-1] and panel.preview.texts[-1] == ""
+    panel.replace()  # nothing to write
+    assert world.notifier.calls == []
+
+
+def test_selection_panel_when_font_window_then_refresh_rereads_planned_contours(world: World) -> None:
+    module = load("Selection To All Backgrounds")
+    glyphs = font_world(world)
+    panel = make_panel(module)
+    shown = panel.plan
+    in_font_window(world, glyphs)
+    with pytest.raises(module.NotInGlyphWindow):
+        module.make_plan()
+    panel.refresh()
+    assert panel.plan == shown and panel.go.enabled is True and panel.status.texts[-1] == ""
+
+
+def test_replace_backgrounds_when_font_closed_then_font_gone_not_wrong_window(world: World) -> None:
+    module = load("Selection To All Backgrounds")
+    glyphs = font_world(world)
+    panel = make_panel(module)
+    in_font_window(world, glyphs)
+    world.app["scripting"].current_package = lambda *a: None  # font closed
+    with pytest.raises(ValueError, match="closed or another font") as raised:
+        module.replace_backgrounds(panel.plan)
+    assert not isinstance(raised.value, module.WrongWindow) and world.window_calls == []
+    panel.replace()
+    assert "closed or another font" in panel.status.texts[-1]
+    assert panel.plan is None and panel.go.enabled is False and world.notifier.calls == []
+
+
 # ---------------------------------------------------------------- select different colour
 MARKS = [("a", 0), ("b", 45), ("c", 45), ("d", 200), ("e", 0)]
 

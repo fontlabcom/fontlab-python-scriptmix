@@ -3,24 +3,25 @@
 """Copy the selected contours into the background of every glyph.
 
 What it does:
-    Take the selected contours of the shown glyph layer. Replace the background
-    (mask layer) of the current-master layer of EVERY glyph in the font with
-    copies of them. Use it to put one guide shape, such as a grid or a
-    reference
-    skeleton, behind all glyphs.
+    Take the selected contours of the shown glyph layer. Replace the
+    background (mask layer) of the current-master layer of EVERY glyph in the
+    font with copies of them. Use it to put one guide shape, such as a grid or
+    a reference skeleton, behind all glyphs.
 
 How it works:
     A contour counts as selected when all its nodes are selected (select a
     contour with a double click, or drag a box around it). A panel first
     shows what will happen: contour count, glyph count, backgrounds to be
-    replaced and glyphs to be skipped. The panel stays open. Switch to the
-    Font window, then press "Replace backgrounds". It reads the planned
-    contours and the font again and stops if anything changed. Then it
-    removes the old background shapes, creates missing backgrounds, and adds
-    clones of the selected contours. One notification covers the whole
-    font: one Undo step in the Font window. The shared module
-    fly.ap.history decides which glyphs
-    are skipped and does the one-step write. Read-back checks every target
+    replaced and glyphs to be skipped. The panel stays open. "Refresh" in a
+    Glyph window reads the selection again; when nothing is selected there,
+    it clears the preview and turns off the button. "Refresh" in the Font
+    window reads the planned contours again. Switch to the Font window, then
+    press "Replace backgrounds". It reads the planned contours and the font
+    again and stops if anything changed. Then it removes the old background
+    shapes, creates missing backgrounds, and adds clones of the selected
+    contours. One notification covers the whole font: one Undo step in the
+    Font window. The shared module fly.ap.history decides which glyphs are
+    skipped and does the one-step write. Read-back checks every target
     background for the planned contour count and no components. A mismatch
     is reported with the Edit > Undo hint.
 
@@ -74,8 +75,15 @@ FONT_WINDOW = (
 )
 
 
+FONT_GONE = "The font was closed or another font is active. Close the panel and run again."
+
+
 class WrongWindow(ValueError):
     """The write was refused because the Font window is not active. Keep the plan."""
+
+
+class NotInGlyphWindow(ValueError):
+    """Planning was refused because no Glyph window is the active context."""
 
 
 @dataclass(frozen=True)
@@ -130,14 +138,20 @@ def _valid(layer: Any) -> bool:
 
 
 def make_plan() -> Plan:
-    """Read the selection of the Glyph window and the font. Change nothing. Raise ValueError."""
+    """Read the selection of the Glyph window and the font. Change nothing.
+
+    Raise NotInGlyphWindow (a ValueError) when the selection context is not a
+    Glyph window. Raise ValueError for every other refusal.
+    """
     from fly.ap.layer_selection import capture
     from fly.ap.scripting import current_package
 
     deadline = monotonic() + PLAN_SECONDS
     selection = capture(deadline)
+    if selection.context[2] != "editor":
+        raise NotInGlyphWindow("Open a Glyph window and select contours first.")
     package = current_package()
-    if selection.context[2] != "editor" or package is None or not selection.occurrences:
+    if package is None or not selection.occurrences:
         raise ValueError("Open a Glyph window and select contours first.")
     source = selection.occurrences[0]
     return plan_for(package, source.glyph, source.layer, deadline)
@@ -257,12 +271,16 @@ def selected_clone(shape: Any, keep: Sequence[int]) -> Any:
 def replace_backgrounds(shown: Plan, *, disclosure: dict[str, Any] | None = None) -> str:
     """Apply `shown` after proof that the font and selection still match it.
 
-    Raise WrongWindow (a ValueError) before reading the font when the Font
-    window of the font is not active.
+    Raise ValueError(FONT_GONE) when the planned font is closed or no longer
+    the current font. Raise WrongWindow (a ValueError) before reading the font
+    when the Font window of the font is not active.
     """
     import fly.ap.edit_guards as guards
     import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    from fly.ap.scripting import current_package
 
+    if current_package(shown.signature[0]) is None:
+        raise ValueError(FONT_GONE)
     try:
         guards.require_selection_window(shown.signature[0])
     except ValueError as error:
@@ -378,13 +396,14 @@ def panel_type(QtGui: Any) -> Any:
         def refresh(self) -> None:
             """Read the selection again and show what a click would do.
 
+            In a Glyph window, a failed read clears the plan and shows why.
             Outside a Glyph window, re-read the planned contours of the last plan.
             """
             previous = self.plan
             try:
                 try:
                     self.plan = make_plan()
-                except ValueError:
+                except NotInGlyphWindow:
                     if previous is None:
                         raise
                     self.plan = replan(previous)
