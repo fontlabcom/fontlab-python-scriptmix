@@ -2,6 +2,32 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — 2026-10-22 — Backup, copy and rounding extensions
+
+Extend seven existing tools; the menu and its counts do not change.
+
+- Masters > Duplicate Current Layer backs up the current master layer or all
+  master layers of the selected glyphs, with a custom suffix, and lists the
+  existing backups (preview only). Each Apply is recorded as one Undo step.
+- Backups are named `<master> backup <suffix>`; a taken name gets (2), (3).
+  A name that equals a master, contains @, # or |temp|, or would read as
+  another master is refused.
+- Restore Backup Layer, Display Next Layer, Display Previous Layer and Layer
+  Cleanup share one backup rule: new names, legacy @ names and any layer named
+  `<master> <text>` (for example "Light Copy") resolve to the longest matching
+  master. Such layers now take part in the Next/Previous cycle and are classed
+  as backups in Layer Cleanup; nothing is ticked at the start, and "tick kind"
+  can select them.
+- Copy Layer Between Masters copies to the checked target masters in one Undo
+  step. Changing the source checks all other masters again; the target list
+  scrolls.
+- Contours > Round Coordinates rounds nodes, anchors and component offsets in
+  one Undo step. Anchors starts ticked; untick Anchors to round only nodes and
+  offsets. A layer with duplicate anchor names or an anchor that would move to
+  0, 0 is listed and kept.
+- Vertical Metrics Diagram stays read-only. Font Info > Master Metrics Table
+  edits the same four metrics with a selected-row diagram.
+
 ## Unreleased — 2026-10-22 — Contours tools and Glyphs-script rewrites
 
 Add 73 tools; the active menu grows from 167 to 240 (171 additional tools).

@@ -10,9 +10,9 @@ What it does:
     width. Optionally delete the backup layer and its mask afterwards.
 
 How it works:
-    FontLab binds a layer to a master by the name text before the first "@"
-    (fly.ap.masters.associated_master). The script lists only such "@"
-    layers; "Duplicate Current Layer" makes them. Bracket layers ("#") and
+    The script discovers plain "Regular backup" layers and old "Regular@ backup"
+    layers. The longest matching master name chooses the restore target;
+    no new @ layer is created. Bracket layers ("#") and
     temporary layers are never offered. A non-modal panel shows, per glyph,
     the master, contours and width (master now → after). Restore reads the
     font again and writes all master layers in one Undo step through the
@@ -94,23 +94,28 @@ class Job:
     note: str = ""
 
 
+def _backup_master(name: str, masters: Sequence[str]) -> str | None:
+    """Resolve backups by the longest master prefix; keep legacy @ names.
+
+    New names use <master> backup <suffix>, then optional collision (n).
+    Exact master names, bracket names and temporary names are never backups.
+    """
+    if "#" in name or "|temp|" in name or name.casefold() in {m.casefold() for m in masters}:
+        return None
+    if "@" in name:
+        prefix = name.split("@", 1)[0]
+        return prefix if prefix in masters else None
+    return next((m for m in sorted(masters, key=len, reverse=True) if name.startswith(m + " ")), None)
+
+
 def _valid(layer: Any) -> bool:
     """True for a real native layer object."""
     return layer is not None and not layer.isNull
 
 
 def backup_master(name: str, masters: Sequence[str]) -> str | None:
-    """Return the master of an "@" backup layer name, or None.
-
-    The name must hold "@", must not be temporary, and must not be the
-    master name itself. A "#" bracket layer is no backup.
-    """
-    from fly.ap.masters import associated_master
-
-    if name.startswith(TEMP_PREFIX) or "@" not in name:
-        return None
-    master = associated_master(name, masters)
-    return master if master is not None and name != master else None
+    """Resolve new and legacy backup names with the companion tools' rule."""
+    return _backup_master(name, masters)
 
 
 def backup_names(glyphs: Sequence[Any], masters: Sequence[str]) -> list[str]:
@@ -119,7 +124,8 @@ def backup_names(glyphs: Sequence[Any], masters: Sequence[str]) -> list[str]:
         str(layer.name)
         for glyph in glyphs
         for layer in glyph.layers
-        if not layer.isMaskLayer and backup_master(str(layer.name), masters)
+        if not layer.isMaskLayer and not layer.isService and not layer.autoLayer
+        and backup_master(str(layer.name), masters)
     }
     return sorted(found)
 

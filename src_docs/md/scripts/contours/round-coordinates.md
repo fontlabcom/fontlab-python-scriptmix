@@ -6,7 +6,7 @@ categories: ["Contours"]
 
 # Round Coordinates
 
-Round node coordinates and component offsets to a grid.
+Round node coordinates, anchors and component offsets to a grid.
 
 What: For each selected glyph and master, the table shows how many nodes are
 off the grid and which component offsets change. Round snaps them to the
@@ -21,12 +21,14 @@ Nodes are moved in place, which is meant to keep node names and flags
 (FontLab’s source; not measured).
 
 Why: Scaling, interpolation and imports leave fractional or off-grid
-coordinates. They cost file size and can cause rendering noise. Anchors are
-not touched here: Anchors > Round To Grid rounds them with the checks that
-anchors need.
+coordinates. They cost file size and can cause rendering noise. Optional
+anchor rounding uses fly.ap.anchor_writer in the same transaction. A layer
+with ambiguous anchor names or an existing anchor that would move to 0, 0
+is listed and kept (fl#8527).
 
 Use: Select glyphs. Run the script. Set the grid and the masters; untick
-"Component offsets" to keep them. Press Round. Press Reload selection after
+"Component offsets" to keep them. Anchors starts ticked; untick Anchors to
+round only nodes and offsets. Press Round. Press Reload selection after
 you change the selection.
 
 Benefit: Cleans many glyphs over many masters in one Undo step, and shows
@@ -61,5 +63,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e6fb03217a9f098aa5e36be36e52b4ce63521d0f1eb70d6d210a5116b797026f.py)
+[Python source](../../../../.build/menu-sources/26221318bd8a21042c3bd74e3b67b3caf2b8d04c269b52992a6f70882f7ef4b8.py)
 <!--/codeinclude-->

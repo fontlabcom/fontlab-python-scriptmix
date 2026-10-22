@@ -1226,7 +1226,7 @@
     "title": "Display Next Layer",
     "key": "masters_display_next_layer",
     "destination": "Scripts/Masters/Display Next Layer.py",
-    "destination_sha256": "e7808302ee1c19bbb59cf9032bdab8672d31826bd927bde290b7764f99c26376",
+    "destination_sha256": "ea1b52148550f01470b90bf1a1a8da4a177cbc4f32c05182236179dc734e3e69",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -1238,13 +1238,13 @@
     "source_body_redistributed": false,
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
-    "scope": "Selected editor slots; cycle body layers of the same master (FontLab name rule); explicit slot layerName or glyph active layer; read-back proof; no font write."
+    "scope": "Selected editor slots; cycle body layers of the same master (FontLab name rule, plus new and legacy backups by the shared longest-master-prefix rule); explicit slot layerName or glyph active layer; read-back proof; no font write."
   },
   {
     "title": "Display Previous Layer",
     "key": "masters_display_previous_layer",
     "destination": "Scripts/Masters/Display Previous Layer.py",
-    "destination_sha256": "4d90e069d299929200afc2715968dee33631a1823a1a3f76f45a42b5f485c050",
+    "destination_sha256": "375a90fc140cc9e061aaa69a11b7d9a40c335a54e314e2844078236fbca90d8e",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -1262,7 +1262,7 @@
     "title": "Duplicate Current Layer",
     "key": "masters_duplicate_current_layer",
     "destination": "Scripts/Masters/Duplicate Current Layer.py",
-    "destination_sha256": "82d80347e9df44cc2112e894ff89013c93a83f169fe03a74517036c583cfed36",
+    "destination_sha256": "a093aac9b69afe8534a34213828db557c62c6cfca9d62fdbeaca5cb9935f4ba9",
     "kind": "independent-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -1274,7 +1274,7 @@
     "source_body_redistributed": false,
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
-    "scope": "layer.clone + rename '<Master>@ HH:MM:SS, DD/MM/YY' + addLayer; mask/service/automatic refused; one notification [new layers, glyphs]. Clone caveats fl#8516/fl#8538 open."
+    "scope": "Current master layer or all master layers of the selected glyphs, named '<master> backup <suffix>' with (2), (3) on collisions; names with @, # or |temp|, exact master names and names that resolve to another master are refused; preview-only inventory of existing backups. layer.clone with repaired shape and node metadata (fl#8516, fl#8538); the shown layer stays active; mask/service/automatic layers kept; auto owners and bases listed and kept; one history.commit, read back; pending updates refuse Apply."
   },
   {
     "title": "Use Layer As Master",
@@ -1655,7 +1655,7 @@
     "title": "Copy Layer Between Masters",
     "key": "masters_copy_layer",
     "destination": "Scripts/Masters/Copy Layer Between Masters.py",
-    "destination_sha256": "7cc747978719a26e7af9c71143d4cd51db8ef07dbaded367ef018c0a5566373a",
+    "destination_sha256": "ec70ed82d265132618e22a35a25020df408c1317723473a498e45a5996275e57",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Masters/Copy Layer Between Masters.py",
@@ -1665,13 +1665,13 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Target outline shapes removed, repaired source clones added; same-named anchors move, 0,0 moves (fl#8527) and duplicate names skip the layer; metrics links skip the layer. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Checked target masters share one Apply; changing the source checks all other masters again; the target list scrolls. Target outline shapes removed, repaired source clones added; same-named anchors move, 0,0 moves (fl#8527) and duplicate names skip the layer; metrics links skip the layer. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
     "title": "Restore Backup Layer",
     "key": "masters_restore_backup",
     "destination": "Scripts/Masters/Restore Backup Layer.py",
-    "destination_sha256": "17c8d5cb6ae1df34a73637b51c4e96aa0f18204eeecf253371ec3fb2ee59348b",
+    "destination_sha256": "7a77823479b71e07ce84eecb2f724d62d85be4d84f89fac090006e25774e0772",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Masters/Restore Backup Layer.py",
@@ -1681,13 +1681,13 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Backups are FontLab '@' layers (associated_master), never '#' or |temp|; outline, anchors and width come back; optional delete of the backup and its mask keeps a shown or locked backup and retains the components of deleted layers (retain=, fl#7641). Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Backups are '<master> backup <suffix>' layers and legacy '@' or space-prefixed layers, resolved by the longest master prefix (the rule shared with Duplicate Current Layer, Display Next/Previous Layer and Layer Cleanup), never '#' or |temp|; outline, anchors and width come back; optional delete of the backup and its mask keeps a shown or locked backup and retains the components of deleted layers (retain=, fl#7641). Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
     "title": "Layer Cleanup",
     "key": "masters_layer_cleanup",
     "destination": "Scripts/Masters/Layer Cleanup.py",
-    "destination_sha256": "99af551cc8e6fecf08f8d7a0d7bca02d43eafd333954717409af26e466b1886d",
+    "destination_sha256": "13da13152e662725e055cc53e3f612c66c3c051af66c51155eb4f35a4b0622c4",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Masters/Layer Cleanup.py",
@@ -1697,7 +1697,7 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Kinds mask/backup(@)/alternate(#)/other; shown, locked and refused layers listed but not tickable; components of deleted layers retained (retain=, fl#7641); deletion read back by layer id. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
+    "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Kinds mask/backup/alternate(#)/other, where backup is any '<master> <text>' or legacy '@' layer by the shared longest-master-prefix rule; shown, locked and refused layers listed but not tickable; components of deleted layers retained (retain=, fl#7641); deletion read back by layer id. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
     "title": "Sync Sidebearings",
@@ -1735,7 +1735,7 @@
     "title": "Round Coordinates",
     "key": "outlines_round_coordinates",
     "destination": "Scripts/Contours/Round Coordinates.py",
-    "destination_sha256": "e6fb03217a9f098aa5e36be36e52b4ce63521d0f1eb70d6d210a5116b797026f",
+    "destination_sha256": "26221318bd8a21042c3bd74e3b67b3caf2b8d04c269b52992a6f70882f7ef4b8",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Contours/Round Coordinates.py",
@@ -1745,7 +1745,7 @@
     "source_body_redistributed": true,
     "native_acceptance": "pending",
     "app_minimum": "0.2.150.dev0",
-    "scope": "Round node coordinates half up in glyph coordinates and optionally component offsets; fractional shape offsets kept. In-place setters are meant to keep node names and flags, as source-traced but not measured. Anchors unchanged. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
+    "scope": "Round node coordinates half up in glyph coordinates and optionally component offsets; fractional shape offsets kept. In-place setters are meant to keep node names and flags, as source-traced but not measured. Optional anchors (ticked at start) are rounded through fly.ap.anchor_writer in the same transaction; a layer with duplicate anchor names or an anchor that would move to 0, 0 (fl#8527) is listed and kept. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
     "title": "Remove Overlap",

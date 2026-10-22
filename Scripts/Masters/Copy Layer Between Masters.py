@@ -10,8 +10,8 @@ What it does:
     the source are not copied.
 
 How it works:
-    A non-modal panel has a "From" master, a "To" choice (all other masters
-    or one master), and two options: Anchors and Advance width. The table
+    A non-modal panel has a "From" master, checked target masters, and two
+    options: Anchors and Advance width. The table
     shows, per target layer, contours now and after, width now and after.
     Copy reads the font again and writes every target in one Undo step
     through the shared module fly.ap.history. The old outline shapes of a
@@ -37,7 +37,8 @@ Why this design:
 
 How to use:
     Select glyphs in the Font window. Run the script. Pick the source master
-    and the targets. Check the table. Press Copy. Then check the masters for
+    and the targets. Changing the source checks all other masters again.
+    Check the table. Press Copy. Then check the masters for
     compatibility: the targets now have the point structure of the source.
 
 Benefit:
@@ -58,7 +59,6 @@ from typing import Any
 
 TITLE = "Copy Layer Between Masters"
 KEY = "masters_copy_layer"
-ALL_OTHERS = "All other masters"
 SELECTED = 0x0020  # node state bit: selected
 LINK_FIELDS = ("metricsLeft", "metricsRight", "metricsWidth")
 MAX_NAMES = 8  # glyph names shown in the subtitle
@@ -317,7 +317,13 @@ def panel_type() -> type:
             grid = QtGui.QGridLayout()
             grid.setHorizontalSpacing(10)
             self.source = QtGui.QComboBox()
-            self.target = QtGui.QComboBox()
+            self.target_checks: dict[str, Any] = {}
+            self.targets_scroll = QtGui.QScrollArea()
+            self.targets_scroll.setWidgetResizable(True)
+            self.targets_scroll.setMaximumHeight(150)
+            targets_widget = QtGui.QWidget()
+            self.targets_box = QtGui.QVBoxLayout(targets_widget)
+            self.targets_scroll.setWidget(targets_widget)
             self.anchors = QtGui.QCheckBox("Anchors")
             self.anchors.setChecked(True)
             self.copy_width = QtGui.QCheckBox("Advance width")
@@ -325,7 +331,7 @@ def panel_type() -> type:
             grid.addWidget(QtGui.QLabel("From"), 0, 0)
             grid.addWidget(self.source, 0, 1, 1, 2)
             grid.addWidget(QtGui.QLabel("To"), 1, 0)
-            grid.addWidget(self.target, 1, 1, 1, 2)
+            grid.addWidget(self.targets_scroll, 1, 1, 1, 2)
             grid.addWidget(QtGui.QLabel("Also"), 2, 0)
             grid.addWidget(self.anchors, 2, 1)
             grid.addWidget(self.copy_width, 2, 2)
@@ -361,12 +367,17 @@ def panel_type() -> type:
                         self.source.addItem(master)
                     if str(package.master) in self.masters:
                         self.source.setCurrentIndex(self.masters.index(str(package.master)))
+                    for master in self.masters:
+                        check = QtGui.QCheckBox(master)
+                        check.setChecked(master != self.source.currentText)
+                        self.target_checks[master] = check
+                        self.targets_box.addWidget(check)
+                        scripting.connect_guarded(self, check.toggled, lambda *a: self.refresh())
                     self.fill_targets()
             except (ValueError, RuntimeError, TimeoutError) as error:
                 self.status.setText(str(error))
             for signal, slot in (
                 (self.source.currentIndexChanged, lambda *a: self.source_changed()),
-                (self.target.currentIndexChanged, lambda *a: self.refresh()),
                 (self.anchors.toggled, lambda *a: self.refresh()),
                 (self.copy_width.toggled, lambda *a: self.refresh()),
                 (self.selection_button.clicked, lambda *a: self.reselect()),
@@ -377,25 +388,24 @@ def panel_type() -> type:
             self.refresh()
 
         def fill_targets(self) -> None:
-            """List "all other masters", then every master except the source."""
-            self.target.blockSignals(True)
-            self.target.clear()
-            self.target.addItem(ALL_OTHERS)
-            for master in self.masters:
-                if master != self.source.currentText:
-                    self.target.addItem(master)
-            self.target.blockSignals(False)
+            """Disable the source checkbox; preserve the other checked choices."""
+            for master, check in self.target_checks.items():
+                source = master == self.source.currentText
+                check.setEnabled(not source)
 
         def source_changed(self) -> None:
-            """A new source changes the target list."""
+            """A source master cannot also be a target."""
+            for check in self.target_checks.values():
+                check.blockSignals(True)
+                check.setChecked(True)
+                check.blockSignals(False)
             self.fill_targets()
             self.refresh()
 
         def chosen_targets(self) -> list[str]:
-            """Return the target masters."""
-            if self.target.currentIndex == 0:
-                return [m for m in self.masters if m != self.source.currentText]
-            return [self.target.currentText]
+            """Return the checked subset, in font order, excluding the source."""
+            return [master for master, check in self.target_checks.items()
+                    if master != self.source.currentText and check.isChecked()]
 
         def font_package(self) -> Any:
             """Return the bound font. Refuse a closed or switched font."""

@@ -130,7 +130,7 @@ class FakeFont:
 class Widget:
     """Accept layout calls; reject Python attributes that shadow native members."""
 
-    SIGNALS = frozenset({"valueChanged", "currentIndexChanged", "toggled", "clicked", "finished", "itemChanged"})
+    SIGNALS = frozenset({"valueChanged", "currentIndexChanged", "toggled", "clicked", "finished", "itemChanged", "textChanged", "editingFinished"})
     registry: ClassVar[list[Any]] = []
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
@@ -359,6 +359,8 @@ def fake_qt() -> ModuleType:
     qt = ModuleType("fly.qt")
     gui, core = ModuleType("QtGui"), ModuleType("QtCore")
     gui.QDialog, gui.QLabel, gui.QComboBox, gui.QCheckBox = Dialog, Label, Combo, Check
+    gui.QLineEdit = Label
+    gui.QWidget = gui.QScrollArea = Widget
     gui.QSpinBox = gui.QDoubleSpinBox = Widget
     gui.QPushButton, gui.QTableWidget, gui.QTableWidgetItem = Button, Table, Item
     gui.QVBoxLayout = gui.QHBoxLayout = gui.QGridLayout = Widget
@@ -647,7 +649,7 @@ def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
             )
         },
         completion=completion.install,
-        modules=["guides", "history", "masters", "edit_guards", "metrics_panel"],
+        modules=["guides", "history", "masters", "edit_guards", "metrics_panel", "selection_panel"],
     )
     monkeypatch.setattr(state.app["guides"], "dependency_values", lambda package: package.records())
     ap.scripting = state.app["scripting"]
@@ -1067,13 +1069,14 @@ def test_copy_layer_panel_when_opened_then_targets_and_copy(world: World) -> Non
     world.selection = ["n"]
     panel = module.panel_type()(None)
     assert panel.source.items == ["Light", "Bold", "Black"]
-    assert panel.target.items == ["All other masters", "Bold", "Black"]
+    assert panel.chosen_targets() == ["Bold", "Black"]
     assert panel.table.texts(0) == ["n · Bold", "2", "1", "120", "100"]
     assert panel.table.texts(1) == ["n · Black", "metrics link or expression (skipped)"]
     panel.source.pick(1)
-    assert panel.target.items == ["All other masters", "Light", "Black"]
+    assert panel.chosen_targets() == ["Light", "Black"]
     panel.source.pick(0)
-    panel.target.pick(1)
+    panel.target_checks["Black"].setChecked(False)
+    panel.refresh()
     assert len(panel.table.all_texts()) == 1
     panel.apply_button.press()
     assert panel.status.text.startswith("Replaced 1 layer in 1 glyph")
@@ -1091,10 +1094,10 @@ def test_copy_layer_panel_when_opened_then_targets_and_copy(world: World) -> Non
         ("mask.Light@ x", None),
         ("|temp|Light@ x", None),
         ("Medium@ x", None),
-        ("Light backup", None),
+        ("Light backup", "Light"),
     ],
 )
-def test_backup_master_when_name_given_then_only_at_layers_of_a_master(world: World, name: str, expected: Any) -> None:
+def test_backup_master_when_name_given_then_resolves_plain_and_legacy_backups(world: World, name: str, expected: Any) -> None:
     module = load("Restore Backup Layer")
     assert module.backup_master(name, ["Light", "Bold"]) == expected
 
@@ -1565,3 +1568,83 @@ def test_sources_when_hashed_then_match_rescue_index() -> None:
         assert menu == f"Scripts/{SCRIPTS[title]}/{title}.py", (menu, title)
         assert len(rows[target]) == 64
     assert "rescued/samples/masters_backup_layer.py" in rows
+
+
+def test_copy_checked_subset_when_selected_then_one_transaction(world: World) -> None:
+    module = load("Copy Layer Between Masters")
+    package = world.use([Glyph("n", {"Light": {"shapes": [Shape([square(0, 0, 5, 5)])]},
+                                     "Medium": {}, "Bold": {}, "Black": {}})])
+    package.masters = ["Light", "Medium", "Bold", "Black"]
+    panel = module.panel_type()()
+    panel.target_checks["Medium"].setChecked(True)
+    panel.target_checks["Bold"].setChecked(False)
+    panel.target_checks["Black"].setChecked(True)
+    assert panel.chosen_targets() == ["Medium", "Black"]
+    panel.apply()
+    assert panel.last_result["layers"] == 2
+    assert len(world.notifications()) == 1
+
+
+def test_backup_panel_when_opened_then_scope_suffix_inventory_and_refused_rows(world: World, monkeypatch: Any) -> None:
+    monkeypatch.setitem(SCRIPTS, "Duplicate Current Layer", "Masters")
+    module = load("Duplicate Current Layer")
+    glyph = Glyph("a", {"Light": {}, "Bold": {}, "Light old": {}})
+    refused = Glyph("b", {"Light": {"auto": True}, "Bold": {}})
+    world.use([glyph, refused])
+    panel = module.main()
+    assert panel.scope.items == ["Current master", "All masters"]
+    assert panel.suffix.editingFinished.slots
+    assert not panel.suffix.textChanged.slots, "Typing must not trigger whole-font scans"
+    panel.suffix.setText("before")
+    panel.scope.setCurrentIndex(1)
+    panel.refresh()
+    assert any(row[-1] == "Existing backup" for row in panel.table.all_texts())
+    assert any("auto" in row[-1] for row in panel.table.all_texts())
+    active = glyph.active
+    def clone(layer: Layer) -> Layer:
+        return Layer(layer.name)
+    for layer in glyph.layers:
+        layer.clone = lambda layer=layer: clone(layer)
+    def add(layer: Layer) -> None:
+        layer.glyph = glyph
+        glyph.layers.append(layer)
+    glyph.addLayer = add
+    glyph.bindDependencies = lambda: None
+    active.setActive = lambda: setattr(glyph, "active", active)
+    panel.apply()
+    assert panel.last_result == {"layers": 2}
+    assert len(world.notifications()) == 1
+    assert [obj.name for obj in world.notifications()[0][1]] == ["Light backup before", "Bold backup before", "a"]
+    assert glyph.active is active and len(refused.layers) == 2
+    assert len([row for row in panel.table.all_texts() if row[-1] == "Existing backup"]) == 3
+    panel.suffix.setText("@ unsafe")
+    panel.refresh()
+    assert not panel.apply_button.isEnabled()
+    assert "must not contain" in panel.subtitle.text
+    panel.close()
+    assert world.closed[-1] == module.KEY
+
+
+def test_copy_checked_subset_when_empty_then_no_write(world: World) -> None:
+    module = load("Copy Layer Between Masters")
+    layer_font(world)
+    panel = module.panel_type()(None)
+    for check in panel.target_checks.values():
+        check.setChecked(False)
+    panel.refresh()
+    assert not panel.apply_button.isEnabled()
+    panel.apply()
+    assert panel.last_result["layers"] == 0
+    assert world.notifications() == []
+
+
+def test_legacy_backup_when_discovered_then_restore_and_read_back(world: World) -> None:
+    module = load("Restore Backup Layer")
+    glyph = Glyph("n", {"Light": {"width": 100},
+                         "Light before": {"width": 200, "shapes": [Shape([square(0, 0, 10, 10)])]}})
+    package = world.use([glyph])
+    assert module.backup_names([glyph], package.masters) == ["Light before"]
+    jobs = module.survey(package, ["n"], "Light before", world.facts())
+    result = module.restore(jobs, False, world.facts())
+    assert result["mismatches"] == [] and glyph.layer("Light").advanceWidth == 200
+    assert len(world.notifications()) == 1

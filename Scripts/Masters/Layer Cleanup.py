@@ -9,10 +9,10 @@ What it does:
     button. "Delete Ticked" removes the ticked layers.
 
 How it works:
-    The kind comes from the layer role and the FontLab name rule
-    (fly.ap.masters.associated_master): "mask" for a mask (background)
-    layer; "backup" for "<master>@ ..." layers, as "Duplicate Current Layer"
-    makes them; "alternate" for "<master>#..." layers, such as bracket
+    The kind comes from the layer role, fly.ap.masters.associated_master,
+    and the same backup resolver as Restore Backup Layer: "mask" for a
+    background; "backup" for <master> backup <suffix> and legacy @ or
+    space-prefixed backups; "alternate" for <master>#... layers, such as bracket
     layers; "other" for every other layer. Master layers, service layers,
     image layers and temporary "|temp|" layers are never listed. The delete
     runs in one Undo step through the shared module fly.ap.history. FontLab
@@ -78,6 +78,20 @@ class Entry:
     note: str = ""
 
 
+def _backup_master(name: str, masters: Sequence[str]) -> str | None:
+    """Resolve backups by the longest master prefix; keep legacy @ names.
+
+    New names use <master> backup <suffix>, then optional collision (n).
+    Exact master names, bracket names and temporary names are never backups.
+    """
+    if "#" in name or "|temp|" in name or name.casefold() in {m.casefold() for m in masters}:
+        return None
+    if "@" in name:
+        prefix = name.split("@", 1)[0]
+        return prefix if prefix in masters else None
+    return next((m for m in sorted(masters, key=len, reverse=True) if name.startswith(m + " ")), None)
+
+
 def kind(layer: Any, masters: Sequence[str]) -> str | None:
     """Return the kind of an extra layer, or None for a layer that is never listed."""
     from fly.ap.masters import associated_master
@@ -89,8 +103,10 @@ def kind(layer: Any, masters: Sequence[str]) -> str | None:
         return None
     if name.lower() in {str(m).lower() for m in masters}:
         return None
+    if _backup_master(name, masters) is not None:
+        return "backup"
     if associated_master(name, masters) is not None:
-        return "backup" if "@" in name else "alternate"
+        return "alternate"
     return "other"
 
 

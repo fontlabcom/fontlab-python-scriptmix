@@ -14,17 +14,17 @@ What it does:
 
 How it works:
     FontLab binds a layer to a master by its name. The text before the first
-    "@" (or "#") must equal a master name. So "Bold" and "Bold@ 10:41, 02/03/26"
-    belong to master "Bold". Mask (background) and service layers never take part.
+    "@" (or "#") identifies master and alternate layers. Backups use
+    <master> backup <suffix>; legacy @ and space-prefixed backups also take
+    part, resolved by the longest master prefix. Masks and service layers stay out.
     The script reads the shown layer of each selected slot, lists the glyph layers
     of the same master in glyph order, and picks the next one. A slot with an
     explicit layer name gets the new name. A slot that follows the active layer
     gets a new active layer for its glyph.
 
 Why this design:
-    - The name rule is the rule of the FontLab source, so the cycle matches the
-      Layers panel. The shared module fly.ap.masters.associated_master
-      holds it.
+    - fly.ap.masters.associated_master resolves native layer names; the same
+      backup resolver as Restore Backup Layer adds plain backup names.
     - All slots are planned first. One bad slot stops the run before any change.
     - The script writes no font data. No Undo step is needed.
 
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e7808302ee1c19bbb59cf9032bdab8672d31826bd927bde290b7764f99c26376.py)
+[Python source](../../../../.build/menu-sources/ea1b52148550f01470b90bf1a1a8da4a177cbc4f32c05182236179dc734e3e69.py)
 <!--/codeinclude-->

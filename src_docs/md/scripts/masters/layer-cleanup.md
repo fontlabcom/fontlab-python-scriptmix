@@ -15,10 +15,10 @@ What it does:
     button. "Delete Ticked" removes the ticked layers.
 
 How it works:
-    The kind comes from the layer role and the FontLab name rule
-    (fly.ap.masters.associated_master): "mask" for a mask (background)
-    layer; "backup" for "<master>@ ..." layers, as "Duplicate Current Layer"
-    makes them; "alternate" for "<master>#..." layers, such as bracket
+    The kind comes from the layer role, fly.ap.masters.associated_master,
+    and the same backup resolver as Restore Backup Layer: "mask" for a
+    background; "backup" for <master> backup <suffix> and legacy @ or
+    space-prefixed backups; "alternate" for <master>#... layers, such as bracket
     layers; "other" for every other layer. Master layers, service layers,
     image layers and temporary "|temp|" layers are never listed. The delete
     runs in one Undo step through the shared module fly.ap.history. FontLab
@@ -67,5 +67,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/99af551cc8e6fecf08f8d7a0d7bca02d43eafd333954717409af26e466b1886d.py)
+[Python source](../../../../.build/menu-sources/13da13152e662725e055cc53e3f612c66c3c051af66c51155eb4f35a4b0622c4.py)
 <!--/codeinclude-->

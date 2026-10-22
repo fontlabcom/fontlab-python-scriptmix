@@ -1476,3 +1476,11 @@ has no named corner-component attachment model.
 
 No source code was copied; the scripts reproduce the behaviour for FontLab.
 Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Masters backup extension from the author's own sample
+=====================================================
+
+- Masters/Duplicate Current Layer: extended from the author's own FontLab
+  sample masters_backup_layer.py, Apache-2.0.
+
+The existing credit to Pedro Arilla's Layers/Duplicate current layer.py stays.

@@ -11,7 +11,9 @@ native behaviour.
 
 import ast
 import importlib.util
+import inspect
 import sys
+from collections.abc import Callable
 from datetime import UTC, datetime
 from pathlib import Path
 from types import ModuleType
@@ -440,9 +442,9 @@ def fixed_clock(module: ModuleType) -> None:
 
 def test_backup_name_when_taken_then_counts_up_without_case() -> None:
     module = load("Duplicate Current Layer")
-    assert module.backup_name("Regular", [], STAMP) == f"Regular@ {STAMP}"
-    taken = [f"regular@ {STAMP}", f"Regular@ {STAMP} (2)"]
-    assert module.backup_name("Regular", taken, STAMP) == f"Regular@ {STAMP} (3)"
+    assert module.backup_name("Regular", [], STAMP, ["Regular"]) == f"Regular backup {STAMP}"
+    taken = [f"regular backup {STAMP}", f"Regular backup {STAMP} (2)"]
+    assert module.backup_name("Regular", taken, STAMP, ["Regular"]) == f"Regular backup {STAMP} (3)"
 
 
 def test_run_when_duplicating_then_clone_named_added_and_one_notification(world: World) -> None:
@@ -452,8 +454,8 @@ def test_run_when_duplicating_then_clone_named_added_and_one_notification(world:
     world.occupy(glyph, "Regular@ old")
     messages = module.run()
     new = glyph.layers[-1]
-    assert new.name == f"Regular@ {STAMP}"
-    assert messages == [f"a: new layer 'Regular@ {STAMP}'"]
+    assert new.name == f"Regular backup {STAMP}"
+    assert messages == [f"a: new layer 'Regular backup {STAMP}'"]
     assert glyph.layers[1].clones == 1 and glyph.bound == 1
     assert world.notifier.calls == [("Duplicate Current Layer", [new, glyph])]
     assert glyph.history == [0] and glyph.lastModified == "UTC-STAMP"
@@ -474,10 +476,10 @@ def test_run_when_same_layer_selected_twice_then_one_copy_and_two_glyphs_two_cop
 def test_run_when_stamp_already_used_then_suffix(world: World) -> None:
     module = load("Duplicate Current Layer")
     fixed_clock(module)
-    glyph = Glyph("a", ["Regular", f"Regular@ {STAMP}"])
+    glyph = Glyph("a", ["Regular", f"Regular backup {STAMP}"])
     world.occupy(glyph, "Regular")
     module.run()
-    assert glyph.layers[-1].name == f"Regular@ {STAMP} (2)"
+    assert glyph.layers[-1].name == f"Regular backup {STAMP} (2)"
 
 
 @pytest.mark.parametrize("flag", ["mask", "service", "auto"])
@@ -1046,7 +1048,7 @@ def test_selection_panel_when_stale_preview_then_also_cleared(world: World) -> N
 
 @pytest.mark.parametrize(
     "title",
-    ["Display Next Layer", "Display Previous Layer", "Duplicate Current Layer", "Use Layer As Master", "Select Different Colour"],
+    ["Display Next Layer", "Display Previous Layer", "Use Layer As Master", "Select Different Colour"],
 )
 def test_main_when_runtime_error_then_printed_not_raised(world: World, monkeypatch: Any, capsys: Any, title: str) -> None:
     module = load(title)
@@ -1151,6 +1153,7 @@ def test_used_app_names_when_parsed_then_cover_the_real_modules() -> None:
     names = app_names_used([FOLDER / f"{title}.py" for title in SCRIPTS])
     assert set(names) == {
         "fly.ap.history", "fly.ap.masters", "fly.ap.layer_selection", "fly.ap.qtsafe", "fly.ap.scripting",
+        "fly.ap.selection_panel",
     }
     assert {"commit", "scan_auto_facts", "refusal"} <= names["fly.ap.history"]
     assert names["fly.ap.masters"] == {"associated_master"}
@@ -1172,7 +1175,7 @@ def test_scripts_when_parsed_then_no_private_commit_or_guard_copy() -> None:
 # ---- TimeoutError from capture() never escapes
 @pytest.mark.parametrize(
     "title",
-    ["Display Next Layer", "Display Previous Layer", "Duplicate Current Layer", "Use Layer As Master"],
+    ["Display Next Layer", "Display Previous Layer", "Use Layer As Master"],
 )
 def test_main_when_capture_times_out_then_printed_not_raised(world: World, capsys: Any, title: str) -> None:
     world.capture_error = TimeoutError("capture expired")
@@ -1216,3 +1219,63 @@ def test_summary_when_more_than_ten_skipped_then_ten_names_and_count() -> None:
 def test_docstring_when_public_then_no_native_acceptance_sentence(title: str) -> None:
     doc = ast.get_docstring(ast.parse((FOLDER / f"{title}.py").read_text())) or ""
     assert "acceptance is pending" not in doc, title
+
+
+def test_all_master_backup_when_suffix_given_then_inventory_and_active_preserved(world: World) -> None:
+    module = load("Duplicate Current Layer")
+    glyph = Glyph("a", ["Regular", "Bold", "Regular old"])
+    world.occupy(glyph, "Regular")
+    world.package.masters = ["Regular", "Bold"]
+    active = glyph.active
+    jobs = module.plan(all_masters=True, suffix="before")
+    assert [name for _, _, name in jobs] == ["Regular backup before", "Bold backup before"]
+    module.duplicate(jobs)
+    assert glyph.active is active
+    assert module.backups_of(glyph, world.package.masters) == ["Regular old", "Regular backup before", "Bold backup before"]
+    assert len(world.notifier.calls) == 1
+    assert world.notifier.calls[0][1] == [glyph.layers[-2], glyph.layers[-1], glyph]
+
+
+def test_backup_when_native_add_changes_active_then_shown_layer_restored(world: World) -> None:
+    module = load("Duplicate Current Layer")
+    glyph = Glyph("a", ["Regular", "Bold"])
+    world.occupy(glyph, "Regular")
+    def add(layer: Any) -> None:
+        layer.glyph = glyph
+        glyph.layers.append(layer)
+        glyph.active = layer
+    glyph.addLayer = add
+    module.duplicate(module.plan(all_masters=True, suffix="before"))
+    assert glyph.active.name == "Regular"
+    assert len(world.notifier.calls) == 1
+
+
+def test_backup_when_added_layer_disappears_at_read_back_then_reported(world: World) -> None:
+    module = load("Duplicate Current Layer")
+    glyph = Glyph("a", ["Regular"])
+    world.occupy(glyph, "Regular")
+    original = world.notifier.notifyChangesApplied
+    def notify(title: str, objects: list[Any]) -> None:
+        original(title, objects)
+        glyph.layers.pop()
+    world.notifier.notifyChangesApplied = notify
+    with pytest.raises(RuntimeError, match="did not store"):
+        module.run()
+    assert len(world.notifier.calls) == 1
+
+
+@pytest.mark.parametrize("error", [RuntimeError("boom"), ValueError("bad font"), TimeoutError("capture expired")])
+def test_duplicate_main_when_panel_startup_fails_then_printed_not_raised(
+    world: World, monkeypatch: Any, capsys: Any, app_sources: Path, error: Exception,
+) -> None:
+    module = load("Duplicate Current Layer")
+    spec = importlib.util.spec_from_file_location("c5_installed_scripting", app_sources / "scripting.py")
+    real = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(real)
+    def refuse(dialog_type: Callable[[Any], Any], key: str) -> Any:
+        raise error
+    assert inspect.signature(refuse) == inspect.signature(real.show_script_dialog)
+    monkeypatch.setattr(world.app["scripting"], "show_script_dialog", refuse)
+    monkeypatch.setattr(module, "panel_type", lambda: object)
+    assert module.main() is None
+    assert f"Duplicate Current Layer: {error}" in capsys.readouterr().out

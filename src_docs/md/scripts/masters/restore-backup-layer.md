@@ -16,9 +16,9 @@ What it does:
     width. Optionally delete the backup layer and its mask afterwards.
 
 How it works:
-    FontLab binds a layer to a master by the name text before the first "@"
-    (fly.ap.masters.associated_master). The script lists only such "@"
-    layers; "Duplicate Current Layer" makes them. Bracket layers ("#") and
+    The script discovers plain "Regular backup" layers and old "Regular@ backup"
+    layers. The longest matching master name chooses the restore target;
+    no new @ layer is created. Bracket layers ("#") and
     temporary layers are never offered. A non-modal panel shows, per glyph,
     the master, contours and width (master now → after). Restore reads the
     font again and writes all master layers in one Undo step through the
@@ -69,5 +69,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/17c8d5cb6ae1df34a73637b51c4e96aa0f18204eeecf253371ec3fb2ee59348b.py)
+[Python source](../../../../.build/menu-sources/7a77823479b71e07ce84eecb2f724d62d85be4d84f89fac090006e25774e0772.py)
 <!--/codeinclude-->

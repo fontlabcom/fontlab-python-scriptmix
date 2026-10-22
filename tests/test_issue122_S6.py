@@ -2274,3 +2274,67 @@ def test_apply_when_save_risk_advice_then_success_status_keeps_truthful_note(
     assert panel.status.text.startswith(panel.DONE), panel.status.text
     assert message in panel.status.text, "successful writes must show save-risk advice"
     assert "did not store" not in panel.status.text
+
+
+
+def test_round_when_anchors_enabled_then_same_transaction_as_nodes_and_offsets(world: World) -> None:
+    mark = Shape(world, base="acute", dx=10.4, dy=-2.5, matrix=(1, 0, 0.2, 1))
+    outline = world.outline([(0.4, 0, True), (10, 0, True), (10, 10, True)])
+    world.glyph("A", {"Light": [outline, mark]}, anchors={"Light": [("top", 1.4, 2.6)]})
+    panel, _ = panel_of("Round Coordinates")
+    press(panel)
+    layer = world.layer("A")
+    assert world.points("A")[0][0] == (0, 0, True)
+    assert (layer.anchors[0].point.x(), layer.anchors[0].point.y()) == (1, 3)
+    assert mark.transform.values == (1, 0, 0.2, 1, 10, -2)
+    assert len(world.notifications()) == 1
+    assert world.notifications()[0][2] == ["A/Light", "A"]
+
+
+@pytest.mark.parametrize("pins", [[("top", 0.3, 0.2)], [("top", 1.4, 2.6), ("top", 3.2, 4.1)]])
+def test_round_when_anchor_origin_or_duplicates_then_layer_kept_and_other_glyph_written(world: World, pins: list) -> None:
+    world.same("A", [(0.4, 0, True), (10, 0, True), (10, 10, True)])
+    world.layer("A").anchors = [Pin(world, *pin) for pin in pins]
+    world.same("B", [(0.4, 0, True), (10, 0, True), (10, 10, True)])
+    panel, _ = panel_of("Round Coordinates")
+    assert any(row[1] == "anchors" and "layer kept" in row[-1] for row in texts(panel))
+    press(panel)
+    assert world.points("A")[0][0][0] == 0.4
+    assert world.points("B")[0][0][0] == 0
+    assert world.notifications()[0][2] == ["B/Light", "B"]
+
+
+def test_round_when_anchor_option_off_then_positions_kept(world: World) -> None:
+    world.glyph("A", anchors={"Light": [("top", 1.4, 2.6)]})
+    panel, _ = panel_of("Round Coordinates")
+    panel.anchors.setChecked(False)
+    press(panel)
+    pin = world.layer("A").anchors[0]
+    assert (pin.point.x(), pin.point.y()) == (1.4, 2.6)
+    assert not world.notifications()
+
+
+def test_round_when_anchor_write_ignored_then_read_back_reports(world: World) -> None:
+    world.glyph("A", anchors={"Light": [("top", 1.4, 2.6)]})
+    panel, _ = panel_of("Round Coordinates")
+    world.ignore_writes = True
+    press(panel)
+    assert "did not store" in panel.status.text and "Light/top" in panel.status.text
+    assert len(world.notifications()) == 1
+
+
+def test_round_when_prepared_anchor_origin_is_forced_then_refused_before_history(world: World) -> None:
+    script = load("Round Coordinates")
+    world.glyph("A", anchors={"Light": [("top", 1.4, 2.6)]})
+    with pytest.raises(ValueError, match="0, 0"):
+        script["RoundEditor"]().prepare(world.layer("A"), [("anchors", [("set", "top", (0, 0))])])
+    assert world.history() == []
+
+
+def test_round_when_anchor_setter_fails_then_one_notification_and_undo_hint(world: World) -> None:
+    world.glyph("A", anchors={"Light": [("top", 1.4, 2.6)]})
+    panel, _ = panel_of("Round Coordinates")
+    world.fail_write = True
+    press(panel)
+    assert "Native changes may remain; use Edit > Undo" in panel.status.text
+    assert len(world.notifications()) == 1

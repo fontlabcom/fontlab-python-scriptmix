@@ -1,45 +1,33 @@
 # this_file: Scripts/Masters/Duplicate Current Layer.py
 # SPDX-License-Identifier: Apache-2.0
-"""Copy the selected glyph layer into a new time-stamped layer.
+"""Back up the current master layer or all master layers of selected glyphs.
 
 What it does:
-    Make an exact copy of the shown layer of each selected glyph. The copy is a
-    normal body layer named "<Master>@ HH:MM:SS, DD/MM/YY". It stays attached to
-    the same master, so "Display Next Layer" finds it.
+    Choose current or all masters, a custom suffix and inspect existing backups.
+    Names use <master> backup <suffix>, with (2), (3) on collisions.
+    Names with @, # or |temp|, exact master names, and names that Restore
+    would read as another master are refused.
 
 How it works:
-    FontLab binds a layer to a master by the name text before the first "@".
-    The script keeps that prefix, adds the time stamp, and adds " (2)", " (3)"
-    when the name is taken. It clones the layer, renames the clone, and adds it
-    to the glyph. One notification covers all new layers: one Undo step.
+    The non-modal panel uses fly.ap.selection_panel. Copies keep repaired shape
+    and node metadata (fl#8516, fl#8538). The shown layer stays active. Each Apply
+    is recorded as one Undo step through fly.ap.history and read back. Auto
+    owners and bases are listed and kept. Pending native updates refuse Apply.
 
 Why this design:
-    - A plain backup layer never joins interpolation: FontLab does not treat the
-      "@" name as a second master location.
-    - The time stamp has seconds. Two quick copies do not collide.
-    - Mask (background), service and automatic layers are refused. Their copies
-      would break background naming or re-run automatic recipes. A glyph that
-      has an automatic layer, or is a base of one (also through manual
-      composites), is refused too: FontLab cannot undo it. So is a run while
-      FontLab has pending glyph updates. The shared module fly.ap.history
-      does these checks and the one-step write.
-    - FontLab clone() drops shape notes and names, active and selected flags,
-      and the raw state and name of nodes. The script copies them back and
-      checks the shape count before it adds the layer.
-    - Every layer is checked before the first change.
+    FontLab's Layers panel duplicates one layer. This adds all-master backup,
+    custom naming and an inventory before risky edits.
 
 How to use:
-    Select glyphs (Font window) or open a Glyph window. Run the script. Use it
-    before a risky edit, then use "Use Layer As Master" to swap back if needed.
+    Select glyphs, open the panel, choose the scope and suffix, then Back up.
 
 Benefit:
-    A safe copy in one key press, without the Layers panel dialog.
+    Keep copies of several masters with one action before redesigning them.
 
 Credit:
-    Behaviour after Pedro Arilla's Glyphs script "Duplicate current layer"
-    (Apache-2.0). Independent rewrite. No source code was copied.
-    Known limit: clone() recalculates smooth flags (fl#8516); the script
-    restores node states.
+    Independent rewrite after Pedro Arilla's "Duplicate current layer"
+    (Apache-2.0), extended from the author's own FontLab sample
+    masters_backup_layer.py, Apache-2.0.
 """
 
 from collections.abc import Collection, Sequence
@@ -50,18 +38,40 @@ from typing import Any
 TITLE = "Duplicate Current Layer"
 STAMP_FORMAT = "%H:%M:%S, %d/%m/%y"
 DEADLINE_SECONDS = 2.0
+KEY = "masters_duplicate_current_layer"
 
 
-def backup_name(base: str, taken: Collection[str], stamp: str) -> str:
-    """Return "<base>@ <stamp>", made unique with " (2)", " (3)" when needed.
+def _backup_master(name: str, masters: Sequence[str]) -> str | None:
+    """Resolve backups by the longest master prefix; keep legacy @ names.
 
-    FontLab compares layer names without case. So does this test.
+    New names use <master> backup <suffix>, then optional collision (n).
+    Exact master names, bracket names and temporary names are never backups.
     """
+    if "#" in name or "|temp|" in name or name.casefold() in {m.casefold() for m in masters}:
+        return None
+    if "@" in name:
+        prefix = name.split("@", 1)[0]
+        return prefix if prefix in masters else None
+    return next((m for m in sorted(masters, key=len, reverse=True) if name.startswith(m + " ")), None)
+
+
+def backup_name(base: str, taken: Collection[str], stamp: str, masters: Sequence[str]) -> str:
+    """Return a plain, case-insensitively unique backup name."""
+    if not stamp.strip():
+        raise ValueError("Enter a backup suffix.")
+    candidate = f"{base} backup {stamp.strip()}"
+    if "@" in candidate or "#" in candidate or "|temp|" in candidate:
+        raise ValueError("Backup names must not contain @, # or |temp|.")
     used = {name.lower() for name in taken}
-    name, number = f"{base}@ {stamp}", 2
+    name, number = candidate, 2
     while name.lower() in used:
-        name = f"{base}@ {stamp} ({number})"
+        name = f"{candidate} ({number})"
         number += 1
+    if name.casefold() in {master.casefold() for master in masters}:
+        raise ValueError(f"Backup '{name}' is a font master name; choose another suffix.")
+    resolved = _backup_master(name, masters)
+    if resolved != base:
+        raise ValueError(f"Backup '{name}' would read as master {resolved!r}, not {base!r}; choose another suffix.")
     return name
 
 
@@ -91,7 +101,7 @@ def restore_shape(old: Any, new: Any, keep_view_state: bool, indexes: Sequence[i
             target.name = source.name
 
 
-def plan() -> list[tuple[Any, Any, str]]:
+def plan(all_masters: bool = False, suffix: str | None = None) -> list[tuple[Any, Any, str]]:
     """Choose the new layer name of every selected layer. Return jobs.
 
     A job is (glyph, layer, new name). Raise ValueError before any change.
@@ -105,11 +115,13 @@ def plan() -> list[tuple[Any, Any, str]]:
     if package is None or not selection.occurrences:
         raise ValueError("Select a glyph first.")
     masters = tuple(str(name) for name in package.masters)
-    stamp = datetime.now().astimezone().strftime(STAMP_FORMAT)
+    stamp = suffix if suffix is not None else datetime.now().astimezone().strftime(STAMP_FORMAT)
     taken: dict[int, set[str]] = {}
     seen: set[tuple[int, int]] = set()
     jobs = []
     for item in selection.occurrences:
+        if all_masters:
+            continue
         key = (item.glyph_id, item.layer_id)
         if key in seen:
             continue
@@ -121,11 +133,29 @@ def plan() -> list[tuple[Any, Any, str]]:
                 "or automatic layer; select a body layer."
             )
         names = taken.setdefault(item.glyph_id, {str(x.name) for x in item.glyph.layers})
-        base = associated_master(item.layer_name, masters) or item.layer_name
-        name = backup_name(base, names, stamp)
+        base = associated_master(item.layer_name, masters) or _backup_master(item.layer_name, masters) or item.layer_name
+        name = backup_name(base, names, stamp, masters)
         names.add(name)
         jobs.append((item.glyph, layer, name))
+    if all_masters:
+        glyphs = {item.glyph_id: item.glyph for item in selection.occurrences}
+        for glyph in glyphs.values():
+            names = {str(layer.name) for layer in glyph.layers}
+            for master in masters:
+                layer = glyph.findLayer(master)
+                if layer is None or layer.isNull or layer.autoLayer or layer.isMaskLayer or layer.isService:
+                    continue
+                name = backup_name(master, names, stamp, masters)
+                names.add(name)
+                jobs.append((glyph, layer, name))
     return jobs
+
+
+def backups_of(glyph: Any, masters: Sequence[str]) -> list[str]:
+    """Inventory plain space-prefixed and old @ backups, excluding special layers."""
+    return [str(layer.name) for layer in glyph.layers
+            if not layer.isMaskLayer and not layer.isService and not layer.autoLayer
+            and _backup_master(str(layer.name), masters) is not None]
 
 
 def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
@@ -136,7 +166,19 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
     or is a base of one (also through manual composites).
     """
     import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    from fly.ap.masters import associated_master
     from fly.ap.scripting import current_package
+
+    if not jobs:
+        return []
+    masters = tuple(str(master) for master in current_package().masters)
+    for _, layer, name in jobs:
+        base = associated_master(str(layer.name), masters) or _backup_master(str(layer.name), masters)
+        if base is None or not name.startswith(base + " backup "):
+            raise ValueError(f"Backup '{name}' must use <master> backup <suffix>.")
+        if "@" in name or "#" in name or "|temp|" in name or _backup_master(name, masters) != base:
+            raise ValueError(f"Backup '{name}' does not resolve to its own master; choose another suffix.")
+    active = [(glyph, glyph.updateActiveLayer(False)) for glyph, _, _ in jobs]
 
     def mutate() -> list[Any]:
         created = []
@@ -153,11 +195,30 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]]) -> list[Any]:
                 raise RuntimeError(f"FontLab did not add layer '{name}'.")
             glyph.bindDependencies()
             created.append(found)
+        for glyph, shown in active:
+            if shown is not None and not shown.isNull:
+                shown.setActive()
         return created
 
+    if not jobs:
+        return []
     glyphs = list({int(glyph.id): glyph for glyph, _, _ in jobs}.values())
     facts = history.scan_auto_facts(current_package())
-    done = history.commit(TITLE, [], glyphs, mutate, operation="geometry", facts=facts)
+    def read_back() -> list[str]:
+        missed = []
+        for glyph, source, name in jobs:
+            found = glyph.findLayer(name)
+            if found is None or found.isNull or len(found.shapes) != len(source.shapes):
+                missed.append(f"{glyph.name}: {name}")
+        for glyph, shown in active:
+            current = glyph.updateActiveLayer(False)
+            if shown is not None and (current is None or current.id != shown.id):
+                missed.append(f"{glyph.name}: active layer changed")
+        return missed
+
+    done = history.commit(TITLE, [], glyphs, mutate, operation="geometry", facts=facts, read_back=read_back)
+    if done.mismatches:
+        raise history.unstored_error(done.mismatches)
     return list(done.created)
 
 
@@ -168,13 +229,70 @@ def run() -> list[str]:
     return [f"{glyph.name}: new layer '{name}'" for glyph, _, name in jobs]
 
 
-def main() -> None:
-    """Menu entry. Print each result or the reason for a refusal."""
+def panel_type() -> type:
+    """Use the shared non-modal selection panel with scope, suffix and inventory."""
+    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
+    from fly import qt
+
+    class BackupPanel(selection_panel.panel_type()):
+        TITLE, KEY, ACTION = "Duplicate Current Layer", "masters_duplicate_current_layer", "Back up"
+        HEADERS = ("Glyph · master", "Backup layer", "Status")
+        CONSENT = ""
+        ALIGN = False
+
+        def build_controls(self) -> None:
+            self.suffix = qt.QtGui.QLineEdit(datetime.now().astimezone().strftime(STAMP_FORMAT))
+            self.add_row("Suffix", self.suffix)
+            self.watch(self.suffix.editingFinished)
+
+        def plan_rows(self, package: Any, masters: list[str]) -> list[Any]:
+            facts = history.scan_auto_facts(package)
+            rows = []
+            for name in self.names:
+                glyph = package.findName(name)
+                if glyph is None or glyph.isNull:
+                    continue
+                taken = {str(layer.name) for layer in glyph.layers}
+                reason = history.refusal(facts, name, "geometry")
+                for master in masters:
+                    layer = glyph.findLayer(master)
+                    if layer is None or layer.isNull:
+                        continue
+                    new = backup_name(master, taken, self.suffix.text, list(package.masters))
+                    taken.add(new)
+                    note = reason or ("special layer, kept" if layer.autoLayer or layer.isMaskLayer or layer.isService else "")
+                    rows.append((glyph, layer, new, note))
+                rows.extend((glyph, None, old, "Existing backup") for old in backups_of(glyph, package.masters))
+            return rows
+
+        def is_ready(self, row: Any) -> bool:
+            return row[1] is not None and not row[3]
+
+        def cells(self, row: Any) -> list[str]:
+            glyph, layer, name, note = row
+            return [f"{glyph.name} · {layer.name}" if layer is not None else glyph.name, name, note or "New backup"]
+
+        def write(self, package: Any, rows: list[Any]) -> dict[str, int]:
+            created = duplicate([(g, layer, name) for g, layer, name, note in rows
+                                 if layer is not None and not note])
+            return {"layers": len(created)}
+
+        def result_text(self, result: dict[str, int]) -> str:
+            return f"Created {result['layers']} backup layer(s)"
+
+    return BackupPanel
+
+
+def main() -> Any:
+    """Open the backup panel; print startup refusals."""
+    import fly.ap.scripting as scripting  # noqa: PLR0402
+
     try:
-        for line in run():
-            print(f"{TITLE}: {line}")
+        return scripting.show_script_dialog(panel_type(), KEY)
     except (ValueError, RuntimeError, TimeoutError) as error:
         print(f"{TITLE}: {error}")
+        return None
 
 
 if __name__ == "__main__":

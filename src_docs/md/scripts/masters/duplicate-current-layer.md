@@ -6,46 +6,34 @@ categories: ["Masters"]
 
 # Duplicate Current Layer
 
-Copy the selected glyph layer into a new time-stamped layer.
+Back up the current master layer or all master layers of selected glyphs.
 
 What it does:
-    Make an exact copy of the shown layer of each selected glyph. The copy is a
-    normal body layer named "<Master>@ HH:MM:SS, DD/MM/YY". It stays attached to
-    the same master, so "Display Next Layer" finds it.
+    Choose current or all masters, a custom suffix and inspect existing backups.
+    Names use <master> backup <suffix>, with (2), (3) on collisions.
+    Names with @, # or |temp|, exact master names, and names that Restore
+    would read as another master are refused.
 
 How it works:
-    FontLab binds a layer to a master by the name text before the first "@".
-    The script keeps that prefix, adds the time stamp, and adds " (2)", " (3)"
-    when the name is taken. It clones the layer, renames the clone, and adds it
-    to the glyph. One notification covers all new layers: one Undo step.
+    The non-modal panel uses fly.ap.selection_panel. Copies keep repaired shape
+    and node metadata (fl#8516, fl#8538). The shown layer stays active. Each Apply
+    is recorded as one Undo step through fly.ap.history and read back. Auto
+    owners and bases are listed and kept. Pending native updates refuse Apply.
 
 Why this design:
-    - A plain backup layer never joins interpolation: FontLab does not treat the
-      "@" name as a second master location.
-    - The time stamp has seconds. Two quick copies do not collide.
-    - Mask (background), service and automatic layers are refused. Their copies
-      would break background naming or re-run automatic recipes. A glyph that
-      has an automatic layer, or is a base of one (also through manual
-      composites), is refused too: FontLab cannot undo it. So is a run while
-      FontLab has pending glyph updates. The shared module fly.ap.history
-      does these checks and the one-step write.
-    - FontLab clone() drops shape notes and names, active and selected flags,
-      and the raw state and name of nodes. The script copies them back and
-      checks the shape count before it adds the layer.
-    - Every layer is checked before the first change.
+    FontLab's Layers panel duplicates one layer. This adds all-master backup,
+    custom naming and an inventory before risky edits.
 
 How to use:
-    Select glyphs (Font window) or open a Glyph window. Run the script. Use it
-    before a risky edit, then use "Use Layer As Master" to swap back if needed.
+    Select glyphs, open the panel, choose the scope and suffix, then Back up.
 
 Benefit:
-    A safe copy in one key press, without the Layers panel dialog.
+    Keep copies of several masters with one action before redesigning them.
 
 Credit:
-    Behaviour after Pedro Arilla's Glyphs script "Duplicate current layer"
-    (Apache-2.0). Independent rewrite. No source code was copied.
-    Known limit: clone() recalculates smooth flags (fl#8516); the script
-    restores node states.
+    Independent rewrite after Pedro Arilla's "Duplicate current layer"
+    (Apache-2.0), extended from the author's own FontLab sample
+    masters_backup_layer.py, Apache-2.0.
 
 Run **Masters > Duplicate Current Layer** from FontLab's Scripts menu.
 
@@ -54,5 +42,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/82d80347e9df44cc2112e894ff89013c93a83f169fe03a74517036c583cfed36.py)
+[Python source](../../../../.build/menu-sources/a093aac9b69afe8534a34213828db557c62c6cfca9d62fdbeaca5cb9935f4ba9.py)
 <!--/codeinclude-->

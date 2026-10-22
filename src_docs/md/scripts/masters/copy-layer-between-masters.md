@@ -16,8 +16,8 @@ What it does:
     the source are not copied.
 
 How it works:
-    A non-modal panel has a "From" master, a "To" choice (all other masters
-    or one master), and two options: Anchors and Advance width. The table
+    A non-modal panel has a "From" master, checked target masters, and two
+    options: Anchors and Advance width. The table
     shows, per target layer, contours now and after, width now and after.
     Copy reads the font again and writes every target in one Undo step
     through the shared module fly.ap.history. The old outline shapes of a
@@ -43,7 +43,8 @@ Why this design:
 
 How to use:
     Select glyphs in the Font window. Run the script. Pick the source master
-    and the targets. Check the table. Press Copy. Then check the masters for
+    and the targets. Changing the source checks all other masters again.
+    Check the table. Press Copy. Then check the masters for
     compatibility: the targets now have the point structure of the source.
 
 Benefit:
@@ -64,5 +65,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7cc747978719a26e7af9c71143d4cd51db8ef07dbaded367ef018c0a5566373a.py)
+[Python source](../../../../.build/menu-sources/ec70ed82d265132618e22a35a25020df408c1317723473a498e45a5996275e57.py)
 <!--/codeinclude-->

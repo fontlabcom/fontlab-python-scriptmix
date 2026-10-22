@@ -1,7 +1,7 @@
 # this_file: Scripts/Contours/Round Coordinates.py
 # SPDX-License-Identifier: Apache-2.0
 # FLM: Contours · Round Coordinates
-"""Round node coordinates and component offsets to a grid.
+"""Round node coordinates, anchors and component offsets to a grid.
 
 What: For each selected glyph and master, the table shows how many nodes are
 off the grid and which component offsets change. Round snaps them to the
@@ -16,12 +16,14 @@ Nodes are moved in place, which is meant to keep node names and flags
 (FontLab’s source; not measured).
 
 Why: Scaling, interpolation and imports leave fractional or off-grid
-coordinates. They cost file size and can cause rendering noise. Anchors are
-not touched here: Anchors > Round To Grid rounds them with the checks that
-anchors need.
+coordinates. They cost file size and can cause rendering noise. Optional
+anchor rounding uses fly.ap.anchor_writer in the same transaction. A layer
+with ambiguous anchor names or an existing anchor that would move to 0, 0
+is listed and kept (fl#8527).
 
 Use: Select glyphs. Run the script. Set the grid and the masters; untick
-"Component offsets" to keep them. Press Round. Press Reload selection after
+"Component offsets" to keep them. Anchors starts ticked; untick Anchors to
+round only nodes and offsets. Press Round. Press Reload selection after
 you change the selection.
 
 Benefit: Cleans many glyphs over many masters in one Undo step, and shows
@@ -53,6 +55,7 @@ Apache-2.0. Adapted for the current FontLab 9 API.
 import math
 from typing import Any
 
+import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402
 import fly.ap.outline_panel as outline_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 import fly.ap.outline_writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
@@ -78,12 +81,25 @@ def base_of(shape: Any) -> str:
     return str(shape.shapeData.componentGlyph)
 
 
-def round_changes(layer: Any, grid: int, offsets: bool) -> list[outline_writer.Change]:
+def round_changes(layer: Any, grid: int, offsets: bool, anchors: bool = False) -> list[outline_writer.Change]:
     """Rows for one layer: off-grid nodes, then component offsets, then notes.
 
     Node edit: ("nodes", [(node, x, y)]) with x, y in shape coordinates.
     Offset edit: ("offset", shape, (dx, dy)).
     """
+    anchor_edits = []
+    if anchors:
+        repeated = anchor_writer.duplicated(layer, [str(pin.name) for pin in layer.anchors])
+        if repeated:
+            return [outline_writer.Change("anchors", "", f"several anchors named {', '.join(repeated)}; layer kept")]
+        for pin in layer.anchors:
+            old = anchor_writer.raw_point(pin)
+            new = (snap(old[0], grid), snap(old[1], grid))
+            if old == new:
+                continue
+            if anchor_writer.on_origin(new):
+                return [outline_writer.Change("anchors", "", "anchor would move to 0, 0; layer kept (fl#8527)")]
+            anchor_edits.append(("set", str(pin.name), new))
     shapes, notes = outline_writer.outline_shapes(layer)
     moves = []
     for shape in shapes:
@@ -124,14 +140,34 @@ def round_changes(layer: Any, grid: int, offsets: bool) -> list[outline_writer.C
                     ("offset", shape, new),
                 )
             )
+    if anchor_edits:
+        rows.append(outline_writer.Change("anchors", f"{len(anchor_edits)} off grid", f"on grid {grid}",
+                                          ("anchors", anchor_edits)))
     return rows + outline_writer.note_rows(notes)
 
 
 class RoundEditor(outline_writer.Editor):
     """Move nodes in place; set component offsets and keep their matrix."""
 
+    def prepare(self, layer: Any, edits: list[Any]) -> list[Any]:
+        """Prepare native points before the shared history starts."""
+        steps = []
+        for step in edits:
+            if step[0] != "anchors":
+                steps.append(step)
+                continue
+            if anchor_writer.duplicated(layer, [name for _, name, _ in step[1]]):
+                raise ValueError("Several anchors share a name; layer kept.")
+            if any(anchor_writer.on_origin(value) for _, _, value in step[1]):
+                raise ValueError("Anchor would move to 0, 0 (fl#8527).")
+            steps.append(("anchors", anchor_writer.prepare(layer, step[1]), step[1]))
+        return steps
+
     def write(self, layer: Any, steps: list[Any]) -> None:
         for step in steps:
+            if step[0] == "anchors":
+                anchor_writer.write(layer, step[1])
+                continue
             if step[0] == "nodes":
                 for node, x, y in step[1]:
                     node.x, node.y = x, y
@@ -147,6 +183,11 @@ class RoundEditor(outline_writer.Editor):
         missed: list[str] = []
         for layer, steps in prepared:
             for step in steps:
+                if step[0] == "anchors":
+                    points = anchor_writer.anchor_points(layer)
+                    missed.extend(f"{layer.name}/{name}" for _, name, value in step[2]
+                                  if points.get(name) != value)
+                    continue
                 if step[0] == "nodes":
                     wrong = [
                         1
@@ -173,16 +214,20 @@ class RoundCoordinates(outline_panel.panel_type()):
 
     def build_controls(self) -> None:
         self.grid = self.spin(1, 100, 1, " units")
+        self.anchors = QtGui.QCheckBox("Anchors")
+        self.anchors.setChecked(True)
         self.offsets = QtGui.QCheckBox("Component offsets")
         self.offsets.setChecked(True)
-        self.add_row("Grid", self.grid, self.offsets)
+        self.add_row("Grid", self.grid, self.anchors, self.offsets)
+        self.watch(self.anchors.toggled)
         self.watch(self.offsets.toggled)
 
     def planner(self) -> outline_writer.Planner:
         grid, offsets = int(self.grid.value), self.offsets.isChecked()
         if grid < 1:
             raise ValueError("The grid must be 1 unit or more.")
-        return lambda glyph, master, layer: round_changes(layer, grid, offsets)
+        anchors = self.anchors.isChecked()
+        return lambda glyph, master, layer: round_changes(layer, grid, offsets, anchors)
 
     def editor(self) -> outline_writer.Editor:
         return RoundEditor()

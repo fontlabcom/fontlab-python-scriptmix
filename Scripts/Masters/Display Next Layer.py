@@ -8,17 +8,17 @@ What it does:
 
 How it works:
     FontLab binds a layer to a master by its name. The text before the first
-    "@" (or "#") must equal a master name. So "Bold" and "Bold@ 10:41, 02/03/26"
-    belong to master "Bold". Mask (background) and service layers never take part.
+    "@" (or "#") identifies master and alternate layers. Backups use
+    <master> backup <suffix>; legacy @ and space-prefixed backups also take
+    part, resolved by the longest master prefix. Masks and service layers stay out.
     The script reads the shown layer of each selected slot, lists the glyph layers
     of the same master in glyph order, and picks the next one. A slot with an
     explicit layer name gets the new name. A slot that follows the active layer
     gets a new active layer for its glyph.
 
 Why this design:
-    - The name rule is the rule of the FontLab source, so the cycle matches the
-      Layers panel. The shared module fly.ap.masters.associated_master
-      holds it.
+    - fly.ap.masters.associated_master resolves native layer names; the same
+      backup resolver as Restore Backup Layer adds plain backup names.
     - All slots are planned first. One bad slot stops the run before any change.
     - The script writes no font data. No Undo step is needed.
 
@@ -43,6 +43,20 @@ STEP = 1  # +1 = next layer, -1 = previous layer
 DEADLINE_SECONDS = 2.0
 
 
+def _backup_master(name: str, masters: Sequence[str]) -> str | None:
+    """Resolve backups by the longest master prefix; keep legacy @ names.
+
+    New names use <master> backup <suffix>, then optional collision (n).
+    Exact master names, bracket names and temporary names are never backups.
+    """
+    if "#" in name or "|temp|" in name or name.casefold() in {m.casefold() for m in masters}:
+        return None
+    if "@" in name:
+        prefix = name.split("@", 1)[0]
+        return prefix if prefix in masters else None
+    return next((m for m in sorted(masters, key=len, reverse=True) if name.startswith(m + " ")), None)
+
+
 def layer_cycle(
     layers: Sequence[tuple[str, bool]], current: str, masters: Sequence[str]
 ) -> list[str]:
@@ -53,13 +67,13 @@ def layer_cycle(
     """
     from fly.ap.masters import associated_master
 
-    master = associated_master(current, masters)
+    master = associated_master(current, masters) or _backup_master(current, masters)
     if master is None:
         raise ValueError(f"Layer '{current}' belongs to no master.")
     names = [
         name
         for name, body in layers
-        if body and associated_master(name, masters) == master
+        if body and (associated_master(name, masters) or _backup_master(name, masters)) == master
     ]
     if current not in names:
         raise ValueError(f"Layer '{current}' is not a body layer.")
