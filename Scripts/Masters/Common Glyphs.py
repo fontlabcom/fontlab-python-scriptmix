@@ -49,30 +49,42 @@ def metadata(name: str, *, checkpoint: Callable = lambda: None) -> Production:
     """Use actual GlyphData production_name with explicit provenance/unknowns.
 
     get_glyph may sanitize unknown names into an unchanged fallback. Accept
-    exact database/alias/production keys or derivations with verified base and
-    ligature-component keys; never call an unknown stored name a conversion.
+    exact database/alias/production keys or semantic base/component productions.
+    Nonfinal dotted component productions force sanitized fallback in GlyphData;
+    never advertise that fallback as a conversion, even for known components.
     """
     checkpoint()
     from glyphsLib import glyphdata
+    from fontTools.agl import AGL2UV
 
     record = glyphdata.get_glyph(name)
     checkpoint()
     data = glyphdata.GLYPHDATA
 
-    def known(value: str) -> bool:
-        """Membership, not nonempty API fallback, proves known GlyphData."""
+    def entry(value: str) -> dict[str, str]:
+        """Read real entries in the same precedence as GlyphData's lookup."""
         checkpoint()
-        return any(
-            value in index
-            for index in (data.names, data.alternative_names, data.production_names)
-        )
+        for index in (data.names, data.alternative_names, data.production_names):
+            if value in index:
+                return index[value]
+        return {}
 
-    if known(name):
+    def semantic_production(value: str) -> str | None:
+        """Mirror GlyphData's AGL/component rule without its sanitized fallback."""
+        checkpoint()
+        return value if value in AGL2UV else entry(value).get("production")
+
+    if entry(name):
         status = "database"
     else:
         base = name.partition(".")[0]
-        parts = base.split("_")
-        status = "derived" if all(known(part) for part in parts) else "unknown"
+        parts = [semantic_production(part) for part in base.split("_")]
+        derived = semantic_production(base) or (
+            len(parts) > 1
+            and all(parts)
+            and not any("." in (part or "") for part in parts[:-1])
+        )
+        status = "derived" if derived else "unknown"
     checkpoint()
     if status == "unknown" or not record.production_name:
         return Production(None, "unknown")

@@ -37,6 +37,9 @@ def test_menu_routes_complete_report_and_contains_refusals(monkeypatch, capsys):
         ("fi", "fi", "database"),
         ("A-cy.alt", "uni0410.alt", "derived"),
         ("f_i", "f_i", "derived"),
+        ("a_idotaccent", "a_i.loclTRK", "derived"),
+        ("idotaccent.alt", "i.loclTRK.alt", "derived"),
+        ("A-cy_a", "uni04100061", "derived"),
         ("_helper", None, "unknown"),
         ("unknown_custom_thing", None, "unknown"),
     ],
@@ -51,6 +54,38 @@ def test_actual_public_glyphdata_field_and_explicit_unknown_mapping(
         "Use verified production metadata; never silent stored-name fallback"
     )
     assert len(calls) >= 3, "Propagate budget through metadata lookup"
+
+
+@pytest.mark.parametrize("name", ["idotaccent_a", "a_idotaccent_a", "idotaccent_a.alt"])
+def test_nonfinal_dotted_component_when_glyphdata_punts_then_unknown(name):
+    from glyphsLib import glyphdata
+
+    assert glyphdata.get_glyph("idotaccent").production_name == "i.loclTRK"
+    assert glyphdata.get_glyph(name).production_name == name, (
+        "Real GlyphData deliberately sanitizes this invalid nonfinal-dot derivation"
+    )
+    menu = runpy.run_path(str(SCRIPT), run_name="test_common_metadata")
+    record = menu["metadata"](name)
+    assert (record.name, record.status) == (None, "unknown"), (
+        "Known components do not prove conversion when GlyphData takes its fallback"
+    )
+
+
+@pytest.mark.parametrize(
+    "name,fallback",
+    [("CR_a", "CR_a"), ("descender-cy_a", "descendercy_a"), ("CR.alt", "CR.alt")],
+)
+def test_known_name_without_semantic_production_when_glyphdata_punts_then_unknown(
+    name, fallback
+):
+    from glyphsLib import glyphdata
+
+    assert glyphdata.get_glyph(name).production_name == fallback
+    menu = runpy.run_path(str(SCRIPT), run_name="test_common_metadata")
+    record = menu["metadata"](name)
+    assert (record.name, record.status) == (None, "unknown"), (
+        "A known component without a production entry or AGL meaning still falls back"
+    )
 
 
 def test_metadata_cancellation_and_dependency_failure_remain_explicit(monkeypatch):

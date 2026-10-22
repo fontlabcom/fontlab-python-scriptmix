@@ -2304,7 +2304,7 @@
     "title": "Common Glyphs",
     "key": "masters_common_glyphs",
     "destination": "Scripts/Masters/Common Glyphs.py",
-    "destination_sha256": "432d5f0e4cfcf28900c93b48e92ac3f46c93a4b39195a931960ea72da58def8f",
+    "destination_sha256": "dd5740edb20c13cea44d57dafce15a8d71643589fba5becec854beb129b5b0f4",
     "kind": "partial-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/NaN-xyz/GlyphsApp-Scripts",

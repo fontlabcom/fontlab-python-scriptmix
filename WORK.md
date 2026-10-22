@@ -2,6 +2,33 @@
 this_file: WORK.md
 ---
 
+## Issue123 P4 fix1 — production fallback provenance
+
+- FIX_BASE App1a4bd809372ec50d3c4b78e357a7b83e60f6a900 remains unchanged;
+  Scriptmix6be6f4fc996c0ca7550346038bf4db36b70e539d. Reviewer I1 is the sole
+  terminal finding. Inspect actual glyphsLib6.16.2 `_construct_production_name`:
+  nonfinal dotted productions deliberately punt; known components without an
+  explicit production or AGL meaning also take sanitized fallback. Use verified
+  entries/AGL meanings to prove derivation, retaining actual get_glyph output.
+- Tests first: exact public menu/real GlyphData regressions for idotaccent_a,
+  a_idotaccent_a, idotaccent_a.alt, CR_a, descender-cy_a and CR.alt. Retain f_i
+  unchanged, final-dot a_idotaccent, idotaccent.alt, Unicode A-cy_a controls.
+  Exact RED command/environment and original failures are in external fix1 report:
+  `rtk proxy env UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/tmp PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=../fontlab-fontlabapp/src:../fontlab-fly/src /Users/adam/.local/bin/uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with glyphslib python -B -m pytest -q -p no:cacheprovider tests/test_common_glyphs_menu.py`
+  RED exit1:6failed/13passed (red-complete.log); GREEN exit0:19passed (green.log).
+- Exact focused verification:
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/fix1/verify.sh menu`
+  exit0:25passed; changed menu38statements/10branches100%, no exclusions.
+  Same script `docs` exit0:10passed; `lint` exit0. Logs, commands and coverage
+  retained separately under common-glyphs-research/fix1, preserving prior receipts.
+  No other production-name tests exist outside this file; Case Coverage tests
+  concern Unicode categories/preferred proof names and were not rerun.
+- Only Common Glyphs menu and SHA pins/page change, with its source identity,
+  full licence and App pin exact; all172other records and241other menus remain
+  byte-exact. No App edit, full-suite rerun, native/clipboard call, installation,
+  canonical/zone/root edit, push or descendant. Full all-font writer/native and
+  artifact gates remain open. Earlier P4 checks below describe the pre-fix pair.
+
 ## Issue123 P4 — partial Common Glyphs report milestone; full writer remains open
 
 - Current matching pair checks (supersede the earlier final/r2 receipts below):

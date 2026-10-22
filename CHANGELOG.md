@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 — Common Glyphs review fix1
+
+- Classify GlyphData's sanitized fallback as unknown when a nonfinal component
+  production contains a dot or a component/base has no semantic production.
+  Preserve genuine unchanged `f_i`, final-component dots and known-base suffixes.
+  App source and all unrelated menu/provenance records stay unchanged. Full
+  all-font charcoal action and installed/native acceptance remain incomplete.
+
 ## Common Glyphs report source repair (partial milestone)
 
 - Add explicit literal Copy Characters/Copy Original Report source actions through
