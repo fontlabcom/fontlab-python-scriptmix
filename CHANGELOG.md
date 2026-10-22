@@ -2,6 +2,32 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — 2026-10-22 — Practical tools and shared helpers
+
+- Expand the practical menu to 240 tools: 69 sample adaptations and 171
+  additional tools, including Metrics, Names, Anchors, Components, Masters and
+  Contours editors and independent Glyphs-script rewrites.
+- Route common panels, edit guards, planners and history through App via Fly.
+  Route feature-source access through Fontport. Use FontGate font identities
+  for glyph-building and locking calls.
+- Extend master backups, all-master layer copying and coordinate rounding;
+  keep the shared backup recognition rule and explicit anchor refusals.
+- Bind third-party source identities to SHA-256 records. Keep historical
+  migration records and current destination hashes independently verifiable.
+- Make default tests independent of external original folders. Add explicit
+  source audits; a present partial or corrupt archive fails with all findings.
+- Restore the explicit permission to adapt the author's own Apache-2.0 FontLab
+  samples; keep the separate restriction on third-party original bodies.
+- Require installed matching App and Fontport packages for the complete suite;
+  keep only Fly on the sibling source path.
+- Offline checks on Python 3.11 arm64: complete runtime suite 3,747 passed,
+  6 skipped; documentation suite 10 passed. Both exit 0, with no failures.
+  Ruff 0.14.10 reports 87 existing findings across
+  Scripts, tests, documentation tests, menu_layout.py and src_docs/build.py.
+- Retain full source/licence attribution and source-backed menu documentation.
+  Earlier native receipts remain limited to their exact installed files;
+  new ports still require native acceptance.
+
 ## Removal prep: review fixes, round 1 (2026-10-22)
 
 - Document both source-audit flags; simplify seven historical Names headers and
