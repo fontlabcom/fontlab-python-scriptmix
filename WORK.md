@@ -2,6 +2,18 @@
 this_file: WORK.md
 ---
 
+## Issue 122 zones port (2026-10-22)
+
+- Add Metrics/Alignment Zones.py (shared App panel + zone_native.backend) and
+  Guides/Suggest Zones From Overshoots.py (pure H/O, x/o measurement and merge;
+  preview; Apply through the same backend). Master Metrics Table now writes
+  with master_metrics.write_master_metrics and reads `*_value` per master.
+- Records: additional-tools.json (173), menu-revisions.json MMT edits/hash,
+  PORTING-BACKLOG, README/PLAN counts, NOTICE, docs via build.py::catalogue.
+- Verification: `sh .metaswarm/quality.sh coverage <worktree>
+  fontlab-python-scriptmix`; results in
+  verification/issue-122/sdd/final/port-zones-report.md. No FontLab run.
+
 ## Final round F - owner decision D27 (2026-10-22)
 
 - Merge Cleaning into Cleanup and Reporters into Reports using plain file

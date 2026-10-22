@@ -751,7 +751,6 @@ def test_import_when_loaded_then_nothing_opens_and_no_write(world: World, title:
 def test_back_up_master_layers_when_checked_then_not_ported_as_duplicate() -> None:
     assert not (ROOT / "Scripts/Masters/Back Up Master Layers.py").exists()
     assert (ROOT / "Scripts/Masters/Duplicate Current Layer.py").exists()
-    assert not (ROOT / "Scripts/Guides/Suggest Zones From Overshoots.py").exists()
 
 
 # ---------------------------------------------------------------- shared clone repair

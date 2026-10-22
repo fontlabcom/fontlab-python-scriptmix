@@ -295,17 +295,54 @@ def test_names_main_when_run_as_script_then_window_opens(host):
 
 # ---- Master Metrics Table --------------------------------------------------------
 
-METRICS = dict(ascender=800.0, descender=-200.0, xHeight=500.0, capHeight=700.0)
+METRICS = dict(ascender=800.0, descender=-200.0, xHeight=500.0, capsHeight=700.0)
 
 
-def metrics_tool(host: Host, writes: list) -> Any:
-    return host.load(FONT_INFO + "Master Metrics Table.py", scripting=recorder(host, writes))
+class MetricsPackage(MasterPackage):
+    """Package double for the master metric properties that the App writer uses."""
+
+    def setMaster(self, name: str, notify: bool = True) -> None:  # noqa: N802 - FontLab method name
+        self.switches.append((name, notify))
+        self.master = name
+
+    def __getattr__(self, name: str) -> Any:
+        if name.endswith("_value"):
+            return getattr(self.infos[self.master], name.removesuffix("_value"))
+        raise AttributeError(name)
+
+
+def metrics_tool(host: Host, writes: list, pending_note: str = "") -> Any:
+    """Load the table with the real ``master_metrics`` and a recording writer."""
+
+    def write(package: Any, values: dict, title: str) -> NS:
+        parsed = host.loaded["master_metrics"].parse(values)  # the real field/alias check
+        writes.append((values, title))
+        for master, fields in parsed.items():
+            for field, value in fields.items():
+                setattr(package.infos[master], field, value)
+        return NS(values=parsed, pending_updates=(7,) if pending_note else (), pending_note=pending_note)
+
+    def guard(package: Any, native: Any = None) -> None:
+        """The Font-window guard double: record the call, raise ``host.guard_error``."""
+        host.__dict__.setdefault("guard_calls", []).append(list(package.switches))
+        error = getattr(host, "guard_error", None)
+        if error is not None:
+            raise error
+
+    return host.load(
+        FONT_INFO + "Master Metrics Table.py",
+        modules=("font_history", "master_metrics"),
+        patches={
+            "master_metrics": {"write_master_metrics": write},
+            "font_history": {"require_font_window": guard},
+        },
+    )
 
 
 def metrics_package(host: Host) -> MasterPackage:
-    package = open_package(host, **METRICS)
-    package.infos["Bold"].ascender = 820.0
-    return package
+    host.package = MetricsPackage(**METRICS)
+    host.package.infos["Bold"].ascender = 820.0
+    return host.package
 
 
 @pytest.mark.parametrize(
@@ -338,6 +375,9 @@ def test_master_values_when_read_then_each_master_listed_and_master_restored(hos
         ("Bold", [820.0, -200.0, 500.0, 700.0]),
     ], "master values when read then each master listed and master restored: unexpected result"
     assert package.master == "Regular", "master values when read then each master listed and master restored: expected package.master == 'Regular'"
+    assert package.switches == [("Regular", False), ("Bold", False), ("Regular", False)], (
+        "master values: every switch skips FontLab's notification, as the writer's read-back does"
+    )
 
 
 def test_metrics_run_when_rows_given_then_single_plan_written(host):
@@ -345,14 +385,41 @@ def test_metrics_run_when_rows_given_then_single_plan_written(host):
     tool = metrics_tool(host, writes)
     package = metrics_package(host)
     result = tool.run(package, [("Regular", [810, -210, 510, 710])])
-    assert result == {"changed": 4}, "metrics run when rows given then single plan written: expected result == {'changed': 4}"
-    assert [c[:2] for c in writes[0][0]] == [
-        ("Regular", "ascender"),
-        ("Regular", "descender"),
-        ("Regular", "xHeight"),
-        ("Regular", "capHeight"),
-    ], "metrics run when rows given then single plan written: unexpected result"
-    assert writes[0][0][0][2] == 800.0, "The previous value comes from the font"
+    assert result == {"changed": 4, "pending_updates": (), "pending_note": ""}, f"metrics run: four changed fields, got {result}"
+    assert writes == [
+        ({"Regular": {"ascender": 810, "descender": -210, "xHeight": 510, "capHeight": 710}}, "Master Metrics Table"),
+    ], f"metrics run: one write_master_metrics call with the changed fields, got {writes}"
+    assert package.infos["Regular"].capsHeight == 710, "capHeight is written through the App alias capsHeight"
+
+
+def test_write_changes_when_only_some_values_change_then_only_those_are_requested(host):
+    writes: list = []
+    tool = metrics_tool(host, writes)
+    package = metrics_package(host)
+    plan = [("Regular", "ascender", 800.0, 800.0), ("Bold", "ascender", 820.0, 830.0)]
+    assert tool.write_changes(package, plan)["changed"] == 1, "write changes: one value changes"
+    assert writes == [({"Bold": {"ascender": 830.0}}, "Master Metrics Table")], f"write changes: unchanged masters are left out, got {writes}"
+
+
+def test_write_changes_when_nothing_changes_then_writer_not_called(host):
+    writes: list = []
+    tool = metrics_tool(host, writes)
+    package = metrics_package(host)
+    assert tool.write_changes(package, [("Regular", "ascender", 800.0, 800.0)]) == {"changed": 0}, "write changes: a no-op plan reports 0"
+    assert writes == [], "write changes: a no-op plan makes no Undo step"
+
+
+@pytest.mark.parametrize(
+    "plan",
+    [[("Regular", "ascender", 790.0, 810.0)], [("Light", "ascender", 800.0, 810.0)]],
+)
+def test_write_changes_when_font_differs_from_preview_then_refused_before_write(host, plan):
+    writes: list = []
+    tool = metrics_tool(host, writes)
+    package = metrics_package(host)
+    with pytest.raises(ValueError, match="changed since preview"):
+        tool.write_changes(package, plan)
+    assert writes == [], "write changes: a stale or foreign plan writes nothing"
 
 
 def test_metrics_run_when_row_invalid_then_nothing_written(host):
@@ -389,9 +456,71 @@ def test_metrics_dialog_when_value_edited_then_plan_ready_and_apply_writes(host)
     assert dialog.apply_button.isEnabled(), "A changed number enables Apply"
     assert dialog._plan[0] == ("Regular", "ascender", 800.0, 810.0), "metrics dialog when value edited then plan ready and apply writes: expected dialog._plan[0] == ('Regular', 'ascender', 800.0, 810.0)"
     dialog.apply()
-    assert package.infos["Regular"].ascender == 810.0 and dialog.last_result == {"changed": 8}, "metrics dialog when value edited then plan ready and apply writes: unexpected result"
-    assert dialog.status.text == "Applied 8 metric fields", "metrics dialog when value edited then plan ready and apply writes: expected dialog.status.text == 'Applied 8 metric fields'"
+    assert package.infos["Regular"].ascender == 810.0 and dialog.last_result["changed"] == 1, f"metrics dialog apply: one changed field written, got {dialog.last_result}"
+    assert dialog.status.text == "Applied 1 metric field", f"metrics dialog apply: singular status, got {dialog.status.text!r}"
     assert not dialog.apply_button.isEnabled(), "After apply the table equals the font"
+
+
+def test_metrics_dialog_when_refresh_fails_after_write_then_success_still_shown(host):
+    writes: list = []
+    tool = metrics_tool(host, writes)
+    package = metrics_package(host)
+    write = host.loaded["master_metrics"].write_master_metrics
+
+    def write_then_switch_font(*args: Any, **kwargs: Any) -> Any:
+        result = write(*args, **kwargs)
+        host.package = MetricsPackage(package_id=99, **METRICS)  # the new preview will refuse
+        return result
+
+    host.mp.setattr(host.loaded["master_metrics"], "write_master_metrics", write_then_switch_font)
+    dialog = tool.Dialog(None)
+    edit_cell(dialog, 0, 1, "810")
+    dialog.apply_button.clicked.emit()
+    assert package.infos["Regular"].ascender == 810.0 and dialog.last_result["changed"] == 1, f"metrics dialog: the write is recorded, got {dialog.last_result}"
+    assert dialog.status.text == (
+        "Applied 1 metric field; the new preview failed: Activate the original font and reopen this tool."
+    ), f"metrics dialog: both the write and the failed preview are shown, got {dialog.status.text!r}"
+
+
+def test_metrics_dialog_when_glyph_ids_queued_then_status_discloses_note(host):
+    tool = metrics_tool(host, [], pending_note="Dates may change (8537).")
+    metrics_package(host)
+    dialog = tool.Dialog(None)
+    edit_cell(dialog, 1, 3, "520")
+    dialog.apply()
+    assert dialog.last_result["pending_updates"] == (7,), f"metrics dialog: queued ids are kept, got {dialog.last_result}"
+    assert dialog.status.text == "Applied 1 metric field · Dates may change (8537).", f"metrics dialog: the date note reaches the status, got {dialog.status.text!r}"
+
+
+def test_metrics_dialog_when_writer_refuses_then_message_shown_and_font_unchanged(host):
+    writes: list = []
+    tool = metrics_tool(host, writes)
+    package = metrics_package(host)
+    message = host.loaded["font_history"].WINDOW_TEXT
+
+    def refuse(*_: Any, **__: Any) -> None:
+        raise ValueError(message)  # as commit_masters' own Font-window guard raises
+
+    host.mp.setattr(host.loaded["master_metrics"], "write_master_metrics", refuse)
+    dialog = tool.Dialog(None)
+    edit_cell(dialog, 0, 1, "810")
+    dialog.apply_button.clicked.emit()
+    assert dialog.status.text == message, f"metrics dialog: the refusal text reaches the user, got {dialog.status.text!r}"
+    assert package.infos["Regular"].ascender == 800.0 and not dialog.apply_button.isEnabled(), "metrics dialog: nothing written; Apply off until a new preview"
+
+
+def test_write_changes_when_font_window_guard_refuses_then_no_master_switch(host):
+    writes: list = []
+    tool = metrics_tool(host, writes)
+    package = metrics_package(host)
+    host.guard_error = ValueError(host.loaded["font_history"].WINDOW_TEXT)
+    package.switches.clear()
+    with pytest.raises(ValueError, match="Activate the Font window"):
+        tool.write_changes(package, [("Regular", "ascender", 800.0, 810.0)])
+    assert package.switches == [] and writes == [], "write changes: the guard refuses before any master switch or write"
+    host.guard_error = None
+    tool.write_changes(package, [("Regular", "ascender", 800.0, 810.0)])
+    assert host.guard_calls[-1] == [], "write changes: the guard runs before master_values switches masters"
 
 
 @pytest.mark.parametrize("text", ["abc", "9000000", "50"])

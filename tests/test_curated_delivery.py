@@ -17,7 +17,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 171 and len(actual) == 240
+    assert len(rows) == 69 and len(extra) == 173 and len(actual) == 242, (len(rows), len(extra), len(actual), "expected 69 samples + 173 additional = 242 menu tools")
     assert {path.parent.name for path in (ROOT / "Scripts").glob("*/*.py")} == {
         "Anchors", "Cleanup", "Components", "Contours", "Features", "Font Info",
         "Guides", "Kerning", "Masters", "Metrics", "Names", "Proof", "Reports", "Utilities",
@@ -63,8 +63,8 @@ def test_reused_bodies_when_listed_then_only_the_authors_own_apache_samples():
     rows = json.loads((ROOT / "additional-tools.json").read_text())
     reused = [row for row in rows if row.get("source_body_redistributed") is True]
     families = sorted({row["destination"].split("/")[1] for row in reused})
-    assert families == ["Anchors", "Cleanup", "Components", "Contours", "Masters", "Metrics", "Names"], families
-    assert len(reused) == 56, [row["destination"] for row in reused]
+    assert families == ["Anchors", "Cleanup", "Components", "Contours", "Guides", "Masters", "Metrics", "Names"], families
+    assert len(reused) == 58, [row["destination"] for row in reused]
     for row in reused:
         assert row["license"] == "Apache-2.0", row["destination"]
         assert row["source_path"].startswith("rescued/samples/"), row["destination"]
@@ -90,7 +90,7 @@ def test_backlog_when_a_port_exists_then_its_row_is_not_unported():
 NEW_TOOLS = {
     "Metrics": ["Italic Sidebearings", "Round Advances", "Centre In Advance", "Zero-Width Marks",
                 "Tabular Width", "Scale Advances", "Equalize Sidebearings", "Sidebearings Tuner",
-                "Copy Metrics From Reference", "Vertical Metrics Diagram"],
+                "Copy Metrics From Reference", "Vertical Metrics Diagram", "Alignment Zones"],
     "Names": ["Glyph Tags", "Mark Color Palette", "Suffix Tool", "Batch Rename", "Batch Glyph Notes",
               "Glyph Notes", "Unicode From Names", "Style Linker"],
     "Anchors": ["Rename Bulk", "Center Horizontally", "Place From Bounds", "Snap To Metrics",
@@ -126,6 +126,7 @@ NEW_TOOLS = {
     "Kerning": ["Kerning Energy Report", "Unbundle Punctuation Kerning",
                 "Delete Kerning Pair From All Masters", "Kern To Max", "Steal Kerning From Next Pair"],
     "Features": ["Nastaliq Connection Editor", "Generate Random Alternates Feature"],
+    "Guides": ["Suggest Zones From Overshoots"],
 }
 
 
@@ -133,7 +134,7 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     rows = {row["destination"]: row for row in json.loads((ROOT / "additional-tools.json").read_text())}
     wanted = [f"Scripts/{folder}/{name}.py" for folder, names in NEW_TOOLS.items() for name in names]
     wanted.append("Scripts/Contours/Raise Ascender.py")
-    assert len(wanted) == 118
+    assert len(wanted) == 120, f"NEW_TOOLS plus Raise Ascender: expected 120 paths, got {len(wanted)}"
     floors = {path: rows[path]["app_minimum"] for path in wanted}
     assert set(floors.values()) == {"0.2.150.dev0"}, floors
 

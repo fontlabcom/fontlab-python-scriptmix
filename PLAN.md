@@ -9,7 +9,7 @@ non-modal panels. Keep source provenance and native acceptance separate.
 
 ## Done
 
-The menu has 240 tools in 14 categories: 69 sample adaptations and 171 additional
+The menu has 242 tools in 14 categories: 69 sample adaptations and 173 additional
 tools. Shared Metrics, Names, Anchors, Components, Masters and Contours clients,
 Glyphs-script rewrites, feature-source routing and backup/copy/rounding extensions
 are present. Historical source records and optional external archive audits are
@@ -33,7 +33,7 @@ does not establish native acceptance.
 
 ## Shared App work
 
-Implement a production all-master zone writer before adding scripted zone edits;
+The all-master zone writer exists; Alignment Zones and Suggest Zones From Overshoots use it (native acceptance pending);
 Font Info > Zones remains the per-master alternative. Add a public ttfautohint
 Font Info writer before restoring the stem tool.
 

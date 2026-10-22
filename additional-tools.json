@@ -3078,5 +3078,37 @@
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Exact alternate-node removal from selected polygon indices, mapped from the current master onto compatible masters. Open endpoints stay; closed polygons retain at least three nodes. Curves stay; use FontLab Contour > Simplify for curve reduction."
+  },
+  {
+    "title": "Alignment Zones",
+    "key": "metrics_zones_editor",
+    "destination": "Scripts/Metrics/Alignment Zones.py",
+    "destination_sha256": "0dbd56629eaddc7c640a66aeede1dd1d4888d4af6f37fb18bdedb5f175a9810d",
+    "kind": "complete-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "rescued_original_menu": "Scripts/Metrics/Alignment Zones.py",
+    "source_path": "rescued/samples/metrics_zones_editor.py",
+    "source_sha256": "485bdb80fe2ea9afbc2822cf7a988dd7e47d56c91471c9016a3f37cec261527b",
+    "license": "Apache-2.0",
+    "source_body_redistributed": true,
+    "native_acceptance": "pending",
+    "app_minimum": "0.2.150.dev0",
+    "scope": "Thin launcher of the shared App Alignment Zones panel (zone_editor.show) with the native zone backend (zone_native.backend): per-master zone table, add/remove/edit position, width and name, Suggest from o / O, stages for all masters, one Undo step per Apply through font_history.commit_masters; row refusals (empty or repeated names, zero-width rows of the other kind) and restored rollbacks keep the panel usable; zone guides of written masters are re-created as Font Info does; fl#8574 after Undo/Redo. Native qualification pending."
+  },
+  {
+    "title": "Suggest Zones From Overshoots",
+    "key": "zones_from_glyphs",
+    "destination": "Scripts/Guides/Suggest Zones From Overshoots.py",
+    "destination_sha256": "ff7422573379bb6724d661185929dc64856113c733d76512a52f4042cefe6c1c",
+    "kind": "complete-original-writer-candidate",
+    "counted_in_130_sample_migration": false,
+    "rescued_original_menu": "Scripts/Guides/Suggest Zones From Overshoots.py",
+    "source_path": "rescued/samples/zones_from_glyphs.py",
+    "source_sha256": "351614aefe3c842978b3e232702102928ff73d8ee2b4da7c2e8c655efb5b62c0",
+    "license": "Apache-2.0",
+    "source_body_redistributed": true,
+    "native_acceptance": "pending",
+    "app_minimum": "0.2.150.dev0",
+    "scope": "Preview of baseline, x-height and caps zones from H/O and x/o overshoots for the current or all masters; a zone at the same position (else the same name) is replaced and keeps its name, tags and lock; other zones stay; Apply re-measures the glyphs, refuses a stale preview and writes through zone_native.backend as one Undo step (\"Alignment Zones\"); refusals reach the status line; fl#8574 after Undo/Redo. Native qualification pending."
   }
 ]

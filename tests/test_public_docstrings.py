@@ -9,7 +9,7 @@ ROOT = Path(__file__).parents[1]
 
 def test_every_menu_when_documented_then_has_complete_module_text() -> None:
     paths = sorted((ROOT / "Scripts").glob("*/*.py"))
-    assert len(paths) == 240, "Inspect the full menu collection"
+    assert len(paths) == 242, "Inspect the full menu collection"
     for path in paths:
         text = path.read_text()
         doc = ast.get_docstring(ast.parse(text, feature_version=(3, 11))) or ""

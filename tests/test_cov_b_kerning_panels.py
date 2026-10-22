@@ -84,7 +84,7 @@ def test_classes_dialog_when_select_members_clicked_then_font_selection_changes(
     names = [glyph.name for glyph in env.glyph_list]
     assert env.selected == {names.index("A"), names.index("Aacute")}, env.selected
     assert dialog.status.text == "Selected 2 glyphs of @L_A in the Font window", "expected: dialog.status.text == 'Selected 2 glyphs of @L_A in the Font window'"
-    assert env.updates == 1, "selection is followed by one UpdateAll"
+    assert env.updates == 0, "selection makes no UpdateAll call: it queues glyph ids (fl#8537)"
 
 
 def test_classes_dialog_when_nothing_chosen_then_select_members_does_nothing(env):

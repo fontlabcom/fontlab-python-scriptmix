@@ -37,15 +37,26 @@ def load(monkeypatch, app_sources):
         close_script_dialog=lambda *a, **k: None,
         show_script_dialog=lambda *a: None,
     )
+    # Master Metrics Table reads the properties that the App metric writer uses.
+    master_metrics = NS(
+        FIELDS={
+            "ascender": "ascender_value",
+            "descender": "descender_value",
+            "xHeight": "xHeight_value",
+            "capsHeight": "capsHeight_value",
+        },
+        ALIASES={"capHeight": "capsHeight"},
+    )
     monkeypatch.setitem(
         sys.modules,
         "fly",
         NS(
-            ap=NS(fontlab=native, FL=NS()),
+            ap=NS(fontlab=native, FL=NS(), master_metrics=master_metrics),
             qt=NS(QtCore=NS(), QtGui=NS(QDialog=object, QWidget=object)),
         ),
     )
     monkeypatch.setitem(sys.modules, "fly.ap.scripting", helpers)
+    monkeypatch.setitem(sys.modules, "fly.ap.master_metrics", master_metrics)
     # Exercise the actual shared panel methods against owned import doubles.
     shared_path = app_sources / "_font_info_dialog.py"
     qt = sys.modules["fly"].qt
@@ -227,7 +238,16 @@ def metric_package():
             "note": "bold note",
         },
     }
-    package = NS(
+    class Package(NS):
+        """Also expose the native per-master ``*_value`` metric properties."""
+
+        def __getattr__(self, name):
+            if not name.endswith("_value"):
+                raise AttributeError(name)
+            field = name.removesuffix("_value")
+            return values[self.master]["capHeight" if field == "capsHeight" else field]
+
+    package = Package(
         id=1, master="Bold", masters=list(values), versionMajor=1, versionMinor=999
     )
     for row in values.values():
@@ -255,7 +275,7 @@ def metric_package():
             return values[package.master][field]
 
     package.info = Info()
-    package.setMaster = lambda master: setattr(package, "master", master)
+    package.setMaster = lambda master, notify=True: setattr(package, "master", master)
     return package, values
 
 

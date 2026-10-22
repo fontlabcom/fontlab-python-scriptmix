@@ -5,27 +5,37 @@
 
 What it does:
     Open with a font active. Double-click a metric value, check the selected row's
-    diagram, then choose Apply. Every row is checked before any edit. Apply records
-    one undoable metadata operation and preserves glyph outlines. Keep this panel
-    bound to its original font; reopen it after switching to another font.
+    diagram, then choose Apply. Every row is checked before any edit. Apply writes
+    all changed masters as one Undo step and preserves glyph outlines. Keep this
+    panel bound to its original font; reopen it after switching to another font.
 
 How it works:
     Read each master's four vertical metrics while restoring the original
     current master. Validate finite, ordered, signed-16-bit proposals before
-    writing metadata.
+    writing metadata. Apply refuses when a value changed since the preview.
+    It then writes and reads back each changed master. When one master fails,
+    the written values are restored and nothing is added to Undo. When a
+    restore also fails, the status names each failure (such as "master Bold
+    was not restored") and says that values can remain; check every master
+    before you save.
 
 Why this design:
     A complete multi-row proposal prevents a later invalid cell from leaving
     an earlier master partially updated by normal validation.
 
 How to use:
-    Run Font Info > Master Metrics Table. Edit metric cells, select a row to
-    inspect its diagram and press Apply after reviewing every master. Reopen
-    after changing fonts.
+    Activate the font's Font window and run Font Info > Master Metrics Table.
+    Edit metric cells, select a row to inspect its diagram and press Apply
+    after reviewing every master. Use Edit > Undo in the Font window to revert
+    the whole Apply. Reopen after changing fonts.
 
 Benefit:
     Stage family-wide vertical metrics together while keeping glyph outlines
     unchanged.
+
+Known issue:
+    FontLab defect fl#8574: after Edit > Undo or Redo, the metric guides show
+    3 of 9 lines until you reopen the font. The saved file is correct.
 """
 
 import math
@@ -35,7 +45,6 @@ from fly import ap, qt
 from fly.ap.scripting import (
     font_info_dialog_type,
     show_script_dialog,
-    write_font_info,
 )
 
 fontlab = ap.fontlab
@@ -45,9 +54,32 @@ TITLE = "Master Metrics Table"
 KEY = "fontinfo_master_metrics_table"
 
 
-def write_changes(package: Any, changes: list[tuple]) -> dict[str, int]:
-    """Apply this tool's explicit validated metadata plan using shared history."""
-    return write_font_info(package, changes, undo_name=TITLE)
+def write_changes(package: Any, changes: list[tuple]) -> dict[str, Any]:
+    """Write the changed values of a validated plan as one Undo step.
+
+    ``changes`` holds ``(master, field, previous, value)``. Refuse when a
+    previous value differs from the font; write nothing when no value changes.
+    """
+    import fly.ap.font_history as font_history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.master_metrics as master_metrics  # noqa: PLR0402 - same reason
+
+    font_history.require_font_window(package)  # before master_values switches masters
+    current = dict(master_values(package))
+    request: dict[str, dict[str, float]] = {}
+    for master, field, previous, value in changes:
+        if master not in current or current[master][MASTER_FIELDS.index(field)] != previous:
+            msg = f"{master} {field} changed since preview; refresh the tool."
+            raise ValueError(msg)
+        if value != previous:
+            request.setdefault(master, {})[field] = value
+    if not request:
+        return {"changed": 0}
+    result = master_metrics.write_master_metrics(package, request, title=TITLE)
+    return {
+        "changed": sum(len(fields) for fields in request.values()),
+        "pending_updates": result.pending_updates,
+        "pending_note": result.pending_note,
+    }
 
 
 MASTER_FIELDS = ["ascender", "descender", "xHeight", "capHeight"]
@@ -68,17 +100,23 @@ def validate_metrics(values: list[float]) -> list[float]:
 
 
 def master_values(package: Any) -> list[tuple[str, list[float]]]:
-    """Read all master metrics and restore the original master."""
+    """Read all master metrics, as the writer reads them back; restore the master."""
+    import fly.ap.master_metrics as master_metrics  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+
+    properties = [
+        master_metrics.FIELDS[master_metrics.ALIASES.get(key, key)]
+        for key in MASTER_FIELDS
+    ]
     original = package.master
     result = []
     try:
         for master in package.masters:
-            package.setMaster(master)
+            package.setMaster(master, False)
             result.append(
-                (master, [getattr(package.info, key) for key in MASTER_FIELDS]),
+                (master, [float(getattr(package, name)) for name in properties]),
             )
     finally:
-        package.setMaster(original)
+        package.setMaster(original, False)
     return result
 
 
@@ -243,8 +281,17 @@ class Dialog(FontInfoDialog):
         """Apply the last successful preview to its original font."""
         self.ensure_preview()
         self.last_result = write_changes(self.package, self._plan)
-        self.refresh()
-        self.status.setText(f"Applied {self.last_result['changed']} metric fields")
+        changed, note = self.last_result["changed"], self.last_result.get("pending_note")
+        done = f"Applied {changed} metric field{'s' if changed != 1 else ''}" + (
+            f" · {note}" if note else ""
+        )
+        self.status.setText(done)
+        try:  # a failed new preview must not hide the completed write
+            self.refresh()
+        except Exception as error:  # noqa: BLE001 - keep the success visible
+            self.status.setText(f"{done}; the new preview failed: {error}")
+            return
+        self.status.setText(done)
 
 
 def main() -> Any:

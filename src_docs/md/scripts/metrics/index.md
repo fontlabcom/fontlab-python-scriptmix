@@ -1,5 +1,6 @@
 # Metrics
 
+- [Alignment Zones](alignment-zones.md)
 - [Centre In Advance](centre-in-advance.md)
 - [Check Tabular Widths](check-tabular-widths.md)
 - [Copy Metrics From Reference](copy-metrics-from-reference.md)

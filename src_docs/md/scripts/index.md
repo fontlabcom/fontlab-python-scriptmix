@@ -135,6 +135,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Guide List Editor](guides/guide-list-editor.md)
 - [Metric Reference Lines](guides/metric-reference-lines.md)
 - [Perpendicular Guides](guides/perpendicular-guides.md)
+- [Suggest Zones From Overshoots](guides/suggest-zones-from-overshoots.md)
 
 ## Kerning
 
@@ -192,6 +193,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Metrics
 
+- [Alignment Zones](metrics/alignment-zones.md)
 - [Centre In Advance](metrics/centre-in-advance.md)
 - [Check Tabular Widths](metrics/check-tabular-widths.md)
 - [Copy Metrics From Reference](metrics/copy-metrics-from-reference.md)

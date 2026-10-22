@@ -1018,6 +1018,20 @@ write path are new, and the diagram only reads the font. Source and
 destination SHA-256 values are in additional-tools.json and rescue-index.json.
 The historical source identities remain recorded.
 
+Alignment zone tools from the author's own samples
+==================================================
+
+Metrics/Alignment Zones and Guides/Suggest Zones From Overshoots adapt the
+author's own FontLab samples (Apache-2.0), historically identified under
+rescued/samples/ as metrics_zones_editor.py and zones_from_glyphs.py. The zone
+table, its controls and the o/O rules are reused under that licence in the
+shared App panel, which Alignment Zones opens. The overshoot rules, the
+replacement rule and the preview columns of zones_from_glyphs.py are rewritten
+in Suggest Zones From Overshoots. Both write through the App zone backend.
+Source and destination SHA-256 values are in additional-tools.json and
+rescue-index.json. The historical source identities remain recorded. Native
+FontLab acceptance is pending.
+
 Names editors from the author's own samples
 ===========================================
 

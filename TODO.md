@@ -18,7 +18,8 @@ this_file: TODO.md
 - [ ] Qualify Raise Ascender and Perpendicular Guides: complete original controls, node/component scopes, native Undo/Redo, saved state and failure cleanup.
 - [ ] Resolve active/locked background removal domains and prove whole-mask metadata, automatic dependencies, full-font history and save/reopen.
 - [ ] Regress earlier accepted workflows on the final matching installed App/Fly/Fontport combination; preserve original controls and acceptance scope.
-- [ ] Add a production App zone writer with all-master staging and one history commit; then port zone editing and overshoot suggestions.
+- [x] Add a production App zone writer with all-master staging and one history commit; then port zone editing and overshoot suggestions (source and offline tests; native checks below).
+- [ ] Qualify Metrics > Alignment Zones, Guides > Suggest Zones From Overshoots and Font Info > Master Metrics Table on owned fonts: one Undo step per Apply, Undo/Redo, refusals in a Glyph window, row refusals, tags/lock of replaced zones, save/reopen; fl#8574 guide display after Undo.
 - [ ] Add a public App Font Info ttfautohint writer; then restore the stem tool.
 - [ ] Resolve App Metrics planning when a selected composite and its base both move; prove no double shift and measure Master Metrics Table capHeight writes.
 - [ ] Extend Round Advances to accept step 1; preserve the current step 2 to 100 behaviour and prove the added path.

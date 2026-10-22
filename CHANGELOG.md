@@ -2,6 +2,28 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 - Alignment zone tools; Master Metrics Table on the master writer
+
+- Metrics > Alignment Zones opens the shared App zone panel with the native
+  zone backend: per-master zone table, add, remove and edit, Suggest from
+  o / O, staging for all masters and one Undo step per Apply. Docstring lists
+  what differs from the original sample (required unique names, whole-table
+  refusal of a bad cell, Font window only, re-created zone guides, fl#8574).
+- Guides > Suggest Zones From Overshoots previews baseline, x-height and caps
+  zones from H/O and x/o for the current or all masters. A zone at the same
+  position, else with the same name, is replaced and keeps its name, tags and
+  lock. Apply measures again, refuses a stale preview and writes through the
+  same backend as one Undo step. Refusals reach the status line.
+- Font Info > Master Metrics Table writes through the App master-metrics
+  writer (one Undo step, read-back, restore on failure) instead of the
+  Font Info plan writer. It reads the same per-master properties that the
+  writer reads back, refuses values that changed since the preview and shows
+  the queued-glyph note. Docstring adds fl#8574.
+- Records: two `additional-tools.json` rows (173 additional, 242 tools),
+  PORTING-BACKLOG statuses, NOTICE section, Master Metrics Table revision
+  edits and hash, docs pages. Offline tests: `tests/test_issue122_Z1.py` and
+  the rewritten Master Metrics Table tests. Native verification pending.
+
 ## 2026-10-22 - Undefined marks no longer read as negative greys
 
 - Reports > Label Statistics and Names > Select by Mark label only marks 1000-1255 as greys, the range FontGate defines (`glyphs_write.cpp`). Marks 361-999 and above 1255 now read "Mark N" instead of "Grey -639". Revision records and docs pins are updated.
