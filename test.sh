@@ -12,5 +12,5 @@ for requirement in ${SCRIPTMIX_EXTRA_REQUIREMENTS:-}; do
 done
 # $extra is split on purpose: one --with flag per requirement.
 # shellcheck disable=SC2086
-PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python "${SCRIPTMIX_PYTHON:-3.11}" --with pytest \
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python "${SCRIPTMIX_PYTHON:-3.11}" --with pytest --with glyphslib \
     --with "$SCRIPTMIX_APP_REQUIREMENT" $extra python -m pytest -q tests "$@"

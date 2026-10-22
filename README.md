@@ -132,7 +132,7 @@ menu scripts as libraries. No `lessons` package is shipped here.
 
 ## Runtime tests
 
-Prerequisites: a prepared Python 3.11 arm64 test `.venv` with pytest and the
+Prerequisites: a prepared Python 3.11 arm64 test `.venv` with pytest, glyphsLib and the
 matching App and Fontport packages installed, plus App test dependencies.
 Use the sibling Fly checkout on PYTHONPATH. Set
 `SCRIPTMIX_TEST_VENV` to that prepared environment's absolute path. It must be

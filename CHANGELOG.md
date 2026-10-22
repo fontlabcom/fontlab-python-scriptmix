@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 — Common Glyphs review fix2 test dependency
+
+- Provision glyphsLib explicitly in test.sh so real production-metadata tests
+  run with an ordinary App wheel. Document the prepared environment requirement.
+  No App/menu/runtime requirement, assertion, hook or coverage change. Full
+  App/Fontport artifact compatibility and native/writer acceptance remain open.
+
 ## 2026-10-22 — Common Glyphs review fix1
 
 - Classify GlyphData's sanitized fallback as unknown when a nonfinal component

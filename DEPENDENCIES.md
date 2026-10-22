@@ -6,8 +6,10 @@ this_file: DEPENDENCIES.md
 
 Runtime: FontLab 9 Python 3.11 native APIs and PythonQt, fontlab-fly aliases,
 fontlab-fontlabapp scripting helpers. No new third-party runtime dependencies.
-Tests: pytest and an explicit current fontlab-fontlabapp requirement, supplied
-temporarily by uv via test.sh. A current wheel can be supplied before App 0.2.5
+Tests: pytest, glyphsLib and an explicit current fontlab-fontlabapp requirement,
+supplied temporarily by uv via test.sh. glyphsLib supplies real caller-owned
+production metadata tests; generic App does not declare this Glyphs dependency.
+A current wheel can be supplied before App 0.2.5
 is published; see README. Ruff is a development check only.
 
 Build Suffix Substitution and Feature Code Viewer use App's existing optional
@@ -112,4 +114,6 @@ probe is retained in the external report.
 Common Glyphs uses the same existing glyphsLib dependency for public
 get_glyph().production_name plus verified GlyphData membership. Unknown sanitized
 fallbacks remain explicit. This policy lives in the Scriptmix caller; generic App
-imports no Glyphs database or peer. No package/version dependency was changed.
+imports no Glyphs database or peer. Runtime package/version requirements remain
+unchanged; test.sh explicitly provisions glyphsLib for the actual metadata tests
+instead of relying on it being installed transitively by another optional peer.

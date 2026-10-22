@@ -2,6 +2,32 @@
 this_file: WORK.md
 ---
 
+## Issue123 P4 fix2 — standard runner's real GlyphData test dependency
+
+- FIX_BASEdf247b4bfb0e4e992a78433c043b4e783e830c4b. App remains unchanged at
+  1a4bd809372ec50d3c4b78e357a7b83e60f6a900. Declare glyphsLib beside pytest in
+  test.sh's isolated uv requirements; update dependency/prepared-environment docs.
+  No product/helper/test/hook/coverage change or source override.
+- Consult public `rtk proxy /Users/adam/.local/bin/uv run --help` first: --with
+  installs requested requirements; UV_NO_CACHE=1 avoids cache reads/writes using
+  temporary storage. Use the requested ordinary built App wheel and actual Fly
+  source, explicitly unset App/Fontport source overrides and the active venv.
+- Exact standard-runner RED/GREEN command (cwd task Scriptmix; only log filename
+  differs, red-standard.log before source edit / green-standard.log after):
+  `rtk proxy env -u SCRIPTMIX_APP_SOURCE -u SCRIPTMIX_FONTPORT_SOURCE -u SCRIPTMIX_EXTRA_REQUIREMENTS -u VIRTUAL_ENV UV_NO_CACHE=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/tmp PATH=/Users/adam/.local/bin:/opt/homebrew/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=../fontlab-fly/src SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none SCRIPTMIX_APP_REQUIREMENT=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/common-glyphs/app-dist-r2/fontlab_fontlabapp-0.2.24.dev149+g1a4bd8093-py3-none-any.whl sh test.sh -k common_glyphs -p no:cacheprovider`
+  RED exit1:18failed/1passed,4295deselected, ModuleNotFoundError glyphsLib;
+  GREEN exit0:19passed,4295deselected in0.66s. Retained separate fix2 logs under
+  common-glyphs-research. No unchanged full suite or menu coverage rerun.
+- First attempt with the existing Fontport wheel exited1 before tests because
+  it requires App>=0.2.150.dev0, conflicting with the requested ordinary App wheel.
+  Retain red.log as a separate genuine integration/version gate. Focused runner
+  omits those unrelated extras; no version override/requirement weakening. Full
+  tuple artifact integration remains unaccepted. Root owns final normal full-hook
+  retry and re-review; full all-font writer/native/artifact gates remain open.
+- `rtk proxy sh -n test.sh` and scoped `git diff --check` exit0. App/menu/tests,
+  all173provenance rows, all242menus and hashes are unchanged from FIX_BASE.
+  No native/clipboard/live install/canonical/zone/root edit, push or descendants.
+
 ## Issue123 P4 fix1 — production fallback provenance
 
 - FIX_BASE App1a4bd809372ec50d3c4b78e357a7b83e60f6a900 remains unchanged;
