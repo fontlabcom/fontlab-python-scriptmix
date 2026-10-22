@@ -2,6 +2,8 @@
 this_file: TODO.md
 ---
 
+- [ ] Qualify installed Smallcap Consistency: export-policy/case disclosures, complete modern and legacy findings, both kerning-group sides, deadline/stale refusal, repeat refresh and destruction, complete-font preservation.
+
 # Open work
 
 - [ ] Qualify Italic Angle from the final installed files and independently downloaded release before increasing historical sample acceptance beyond 68 of 130.

@@ -208,3 +208,16 @@ from; NOTICE holds the credits and licences.
 | `pedroarilla/glyphs-scripts/Paths/Make zero handles selected glyphs.py` | `bbc177fd99ed4ba204bacd93c79d808f14e5a0622ccf6912e8287a1c23841fe2` | Ported | Contours/Retract Handles.py | All handles |
 | `pedroarilla/glyphs-scripts/Paths/Make zero handles selected nodes.py` | `96eba1b2fb939b225bc792621780089edce1208ef8dd11cacba319b1f67e6cd8` | Ported | Contours/Retract Handles.py | Handles of the selected nodes |
 | `pedroarilla/glyphs-scripts/Paths/Simplify selection.py` | `6c784fc646dd94b012b9b6172e3074232e43fd0af31100cdd4e2523ec88ea8a4` | Ported | Contours/Simplify Selected Nodes.py | Alternate-node removal from selected polygon nodes |
+
+## Issue 123: Smallcap Consistency
+
+| Source | SHA-256 | Destination | Disposition |
+| --- | --- | --- | --- |
+| mekkablue/Glyphs-Scripts/Smallcaps/Check Smallcap Consistency.py | `515a006343efe90ea922f63da932e9298224de31e12226a4cb242ed91c814ab0` | Reports/Smallcap Consistency.py | Modern and legacy report source workflows implemented; native acceptance pending. Corrected counterpart Boolean; retained counts, export filtering, suffix/Unicode orphans, missing capital/lowercase and both kerning-group sides. |
+
+FontLab capture uses public.skipExportGlyphs as an explicitly labelled export
+policy and exact SC suffix particles for classification. Unknown name mappings
+and ambiguous groups remain visible. Native timing, complete-font preservation,
+installed origins, repeat refresh and report destruction still need owned-font
+qualification. Synchronous getters cannot be preempted; budget checks on return
+refuse partial output. This one port does not complete the wider corpus.

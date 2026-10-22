@@ -1494,3 +1494,17 @@ Masters backup extension from the author's own sample
   sample masters_backup_layer.py, Apache-2.0.
 
 Duplicate Current Layer also credits Pedro Arilla's Layers/Duplicate current layer.py.
+
+Smallcap Consistency (issue 123)
+------------------------------
+Reports/Smallcap Consistency.py reimplements the modern and legacy report
+workflows of mekkablue (Rainer Erich Scheichelbauer), Glyphs-Scripts,
+Smallcaps/Check Smallcap Consistency.py. Upstream repository:
+https://github.com/mekkablue/Glyphs-Scripts . Licensed under Apache License
+2.0 (LICENSE in this distribution). Original bodies are not redistributed.
+Source SHA-256: 515a006343efe90ea922f63da932e9298224de31e12226a4cb242ed91c814ab0
+Upstream LICENSE SHA-256: bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec
+Changes: detached FontLab capture and owned non-modal report; corrected
+Boolean counterpart test, complete suffix preservation and Unicode casing;
+unknown mappings and ambiguous group membership explicitly disclosed.
+Export scope uses public.skipExportGlyphs compatibility policy.

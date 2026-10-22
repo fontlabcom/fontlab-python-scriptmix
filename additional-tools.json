@@ -3078,5 +3078,22 @@
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
     "scope": "Exact alternate-node removal from selected polygon indices, mapped from the current master onto compatible masters. Open endpoints stay; closed polygons retain at least three nodes. Curves stay; use FontLab Contour > Simplify for curve reduction."
+  },
+  {
+    "title": "Smallcap Consistency",
+    "key": "report_smallcap_consistency",
+    "destination": "Scripts/Reports/Smallcap Consistency.py",
+    "destination_sha256": "c80aab2e2f230fa790c7bb35be065bf2e71d15a88896ad551ec65d60e33147d2",
+    "kind": "report-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/mekkablue/Glyphs-Scripts",
+    "source": "Smallcaps/Check Smallcap Consistency.py",
+    "source_sha256": "515a006343efe90ea922f63da932e9298224de31e12226a4cb242ed91c814ab0",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "scope": "Both modern and legacy report workflows: export census, missing and orphan counterparts, two-sided capital kerning groups. Correct Boolean counterpart logic; preserve alternate suffixes, ligatures and Unicode casing. Export scope is public.skipExportGlyphs compatibility policy; SC case uses exact suffix particles. Disclose unknown mappings and ambiguous groups; refuse partial/stale reports.",
+    "native_acceptance": "pending",
+    "source_body_redistributed": false,
+    "app_source_commit": "dbb9c492d2a07bf54715a4a99a4eed6f7f34a61b"
   }
 ]

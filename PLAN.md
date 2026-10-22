@@ -2,6 +2,13 @@
 this_file: PLAN.md
 ---
 
+## Smallcap Consistency
+
+Modern and legacy report source workflows are implemented with detached facts.
+Qualify installed FontGate name/unicode capture, public.skipExportGlyphs policy,
+master-specific groups, deadline refusal and owned report refresh/destruction on
+complete owned fonts before claiming native acceptance.
+
 # Practical script plan
 
 Provide useful FontLab tools with shared, bounded native operations and simple
@@ -9,7 +16,7 @@ non-modal panels. Keep source provenance and native acceptance separate.
 
 ## Done
 
-The menu has 240 tools in 14 categories: 69 sample adaptations and 171 additional
+The menu has 241 tools in 14 categories: 69 sample adaptations and 172 additional
 tools. Shared Metrics, Names, Anchors, Components, Masters and Contours clients,
 Glyphs-script rewrites, feature-source routing and backup/copy/rounding extensions
 are present. Historical source records and optional external archive audits are

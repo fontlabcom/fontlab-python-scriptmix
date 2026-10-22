@@ -2,6 +2,56 @@
 this_file: WORK.md
 ---
 
+## Issue 123 P1 — Smallcap Consistency (2026-10-22)
+
+- Read both modern and legacy upstream branches; verify source SHA-256
+  `515a006343efe90ea922f63da932e9298224de31e12226a4cb242ed91c814ab0`
+  and Apache-2.0 LICENSE SHA-256
+  `bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec`.
+- Add detached typed facts and full export/counterpart/orphan/legacy kerning
+  analysis; fix the upstream Boolean test, preserve Unicode, ligatures and
+  alternate suffixes. Unknown mappings and ambiguous groups remain visible.
+- Native capture reads CurrentFont().glyphs name/unicodes, fgNametable.unc,
+  packageLib public.skipExportGlyphs and master-pinned list_kerning_classes.
+  It never reads flGlyph.fgGlyph, changes a font, selection, preferences or
+  Output, or sends notifications. Three-second budget checks refuse partial
+  reports; synchronous native getters cannot be preempted and remain a native
+  timing gate. Export policy is explicitly not a binary-export guarantee.
+- TDD RED: focused pytest tests/test_smallcap_consistency.py before engine
+  creation: exit 2 (missing module, sdd/smallcaps-red.log). Capture RED:
+  tests/test_smallcap_capture.py exit 2 (missing module, retained tool output).
+  Menu RED: Scriptmix tests/test_smallcap_consistency.py exit 1, two missing-file
+  failures before the menu existed. GREEN: App focused 32 passed, exit 0;
+  real Fly menu focused two passed, exit 0. No exclusions/pragmas added.
+- Commands use external UV_CACHE_DIR/TMPDIR and Python
+  cpython-3.11-macos-aarch64-none. Exact full-gate commands and receipts below.
+- Wait, but: offline source/artifact evidence does not qualify installed
+  FontLab behavior. Native origins, timing, complete-font preservation,
+  repeated refresh and report destruction remain open. No native run,
+  canonical promotion, live install, merge or push performed.
+
+### P1 final verification commands and results
+
+- `rtk proxy bash .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-fontlabapp fontlab-fontlabapp`
+  exit 0: 6,586 passed, 76 existing warnings; engine 100.00%, capture 99.16%
+  combined statement+branch coverage. Receipt `.metaswarm/runs/fontlab-fontlabapp.6cOW1r`.
+- `rtk proxy env UV_NO_CACHE=1 bash .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-python-scriptmix fontlab-python-scriptmix`
+  exit 0: 4,321 passed, 6 skipped; menu 100.00% combined coverage. Receipt
+  `.metaswarm/runs/fontlab-python-scriptmix.Uh6OIR`. UV_NO_CACHE forces the
+  matching App path build; the initial cached-wheel run failed collection,
+  retained in `sdd/smallcaps-mix-gate.log` (no production change to evade it).
+- Scriptmix docs: `PATH=/opt/homebrew/bin:$PATH PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs`
+  exit 0: 10 passed (`sdd/smallcaps-docs.log`).
+- Focused lint: `uv run --no-project --python cpython-3.11-macos-aarch64-none --with ruff==0.14.10 ruff check --no-cache --select F821` on the six new Python files, exit 0.
+- New helper availability is bound to App source commit `dbb9c492d2a07bf54715a4a99a4eed6f7f34a61b` in additional-tools.json; no published version floor is asserted.
+- Root's unrelated baseline correction is retained in Scriptmix
+  tests/test_cov_b_kerning_panels.py: expect zero UpdateAll calls, preserving
+  its exact selected-name assertion (fl#8537). Required inventory-only test
+  updates: test_reports.py/test_curated_delivery.py/test_contour_menu_integration.py
+  171→172; test_curated_delivery.py/test_contour_menu_integration.py/
+  test_public_docstrings.py 240→241. All previous manifest records and pins
+  remain identical; source-backed generator changes only new report/index pages.
+
 ## Final round F - owner decision D27 (2026-10-22)
 
 - Merge Cleaning into Cleanup and Reporters into Reports using plain file

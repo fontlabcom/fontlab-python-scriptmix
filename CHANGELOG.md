@@ -2,6 +2,11 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 — Smallcap Consistency
+
+- Add complete modern/legacy smallcap reporting: export census, missing and orphan counterparts, capital/lowercase coverage and both kerning-group sides. Correct the original Boolean predicate and preserve Unicode/ligature/alternate names. Report unknown mappings and ambiguous groups.
+- Use detached facts and bounded lazy native capture; explicit public.skipExportGlyphs compatibility policy, no font changes. Installed native qualification remains pending.
+
 ## 2026-10-22 - Undefined marks no longer read as negative greys
 
 - Reports > Label Statistics and Names > Select by Mark label only marks 1000-1255 as greys, the range FontGate defines (`glyphs_write.cpp`). Marks 361-999 and above 1255 now read "Mark N" instead of "Grey -639". Revision records and docs pins are updated.

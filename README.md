@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab practical scripts
 
-240 practical tools for FontLab 9: 69 sample adaptations and 171 additional
+240 practical tools for FontLab 9: 69 sample adaptations and 172 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 14 one-level categories.
 
@@ -51,6 +51,8 @@ After the owner provisions dependencies:
 
 Use a dedicated FontLab session and owned fonts for acceptance tests. Keep
 normal work and original fonts outside that session.
+
+Reports > Smallcap Consistency checks the complete exporting case set and capital kerning groups in a read-only snapshot. It uses the `public.skipExportGlyphs` compatibility policy, exact SC suffix particles and Unicode/name-table mappings; unknown names and ambiguous groups remain visible. Run again to refresh the same report. This tool requires the matching issue-123-smallcaps App implementation; no published version floor is asserted for the new helpers.
 
 ## Examples
 

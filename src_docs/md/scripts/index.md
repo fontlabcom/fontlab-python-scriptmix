@@ -275,6 +275,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Point Counter (Master Layers)](reports/point-counter-master-layers.md)
 - [Point Counter](reports/point-counter.md)
 - [Sidebearing Direction Marker](reports/sidebearing-direction-marker.md)
+- [Smallcap Consistency](reports/smallcap-consistency.md)
 - [Unicode Coverage](reports/unicode-coverage.md)
 - [Vertical Metrics Reporter](reports/vertical-metrics-reporter.md)
 - [Why You Not Compatible](reports/why-you-not-compatible.md)

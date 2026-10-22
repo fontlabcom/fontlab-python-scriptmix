@@ -18,6 +18,7 @@
 - [Point Counter (Master Layers)](point-counter-master-layers.md)
 - [Point Counter](point-counter.md)
 - [Sidebearing Direction Marker](sidebearing-direction-marker.md)
+- [Smallcap Consistency](smallcap-consistency.md)
 - [Unicode Coverage](unicode-coverage.md)
 - [Vertical Metrics Reporter](vertical-metrics-reporter.md)
 - [Why You Not Compatible](why-you-not-compatible.md)
