@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-10-22 — Master Text Comparison workflow repair
+
+- Restore original blank custom/Side-by-side defaults, automatic optional local presets/four attributed fallback lists, Run/double-click precedence, full sanitation diagnostics and every final space/newline.
+- Share bounded opening-font capture, exact named-symbol staging/readback and retained sender/shape cleanup; persist only owned source controls after proof and geometry on Close. Native model binding, special text/IME, rendering and complete preservation remain pending (FontLab #8576).
+
+
 ## 2026-10-22 — Case Coverage shared report fixes
 
 - Bind the reviewed App fix for unknown uncased all-clear feedback and automatic Details after completed-analysis proof errors. Menu source bytes and controls are unchanged; native proof usability remains held.

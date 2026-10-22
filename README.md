@@ -2,6 +2,9 @@
 this_file: README.md
 ---
 
+Master Text Comparison restores the original preset/custom workflow, usable-character sanitation, exact master-copy delimiters and owned settings. It stages named glyph/layer symbols in a fresh proof; native model binding, rendering and full preservation remain unqualified. Multiline/paragraph custom input is held explicitly; exact UTF-8 presets retain those scalars.
+
+
 # FontLab practical scripts
 
 242 practical tools for FontLab 9: 69 sample adaptations and 173 additional

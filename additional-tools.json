@@ -2279,7 +2279,7 @@
     "title": "Master Text Comparison",
     "key": "masters_text_comparison",
     "destination": "Scripts/Masters/Master Text Comparison.py",
-    "destination_sha256": "71df63167f60cefd2de6c6b3e363f2175b63ba1dceffb6945cb9ff2a52e3c260",
+    "destination_sha256": "a90920a023fcbc419da46bee88ca61f5cbc910fc561f2e9aa5e3238a4c467bdc",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/NaN-xyz/GlyphsApp-Scripts",
@@ -2292,7 +2292,13 @@
     "source_body_redistributed": false,
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
-    "scope": "Over FontLab's Glyph-window multi-master text views and Text By Master, this adds comma-separated word groups and file presets with exact per-slot layers. Non-modal panel uses proof.font_maps with first-encoded-name-wins lookup. Preflight checks all requested layers. One call to the public named_tab.open_layer_rows opens one tab: side by side puts each word group on one row with a space between master copies; stacked puts each word/master on one row, with blank group separators. Preset paths remain in the panel until Close; UTF-8 BOM and newline normalization are reported."
+    "scope": "Complete original workflow: blank custom and Side-by-side defaults; automatic optional local UTF-8 presets with four attributed fallback lists; immediate preset double-click versus custom Run precedence; full usable-character sanitation, whitespace/repeats, explicit names mode, alternate Unicode/first font-order aliases and complete diagnostics. Every copy/group final space/newline is exact. Shared App stages named glyph/layer/control symbols in one fresh target with complete source/layer identity fences, post-send readback and bounded retained cleanup. Tool-owned controls save after success and geometry on Close. Native active model binding (#8576), delimiter rendering, special text/IME and full preservation remain pending; paragraph/multiline custom input is explicitly held with exact UTF-8 preset alternative.",
+    "source_resource_path": "MasterBlaster/MasterBlaster-presets.txt",
+    "source_resource_sha256": "03cf0ac2d9f0149d9771bdc293d4778a60c533bd7141819781c030990a2c12a9",
+    "source_readme_sha256": "3abde106024dfeef3527df09aa9460b3ff5f2f78a41fc481ad8e0ba7d9847885",
+    "source_resource_redistributed": false,
+    "fallback_data_policy": "Four source fallback list VALUES retained as attributed behavioral data; independent executable implementation, no original preset file shipped.",
+    "app_source_commit": "61c5f5dca0533e53accff3ab4426c26ab6a9b78b"
   },
   {
     "title": "Common Glyphs",

@@ -1282,9 +1282,12 @@ MIT and the README declares Apache-2.0; both notices are preserved:
 - Masters/Master Text Comparison: MasterBlaster/MasterBlaster.py.
 - Masters/Common Glyphs: CommonGlyphs.py.
 
-No source code or preset text was copied; the scripts reproduce the
-behaviour for FontLab. Source and licence SHA-256 values are in
-additional-tools.json and PORTING-BACKLOG.md.
+No original executable or preset resource file is shipped. Master Text
+Comparison retains only the four attributed fallback list VALUES as behavioral
+data in shared App; its code is independently implemented. The original preset
+resource SHA256 is 03cf0ac2d9f0149d9771bdc293d4778a60c533bd7141819781c030990a2c12a9.
+Source and licence SHA-256 values are retained in additional-tools.json and
+PORTING-BACKLOG.md; the complete MIT terms/copyright are preserved above.
 
 Anchors tools after Simon Cozens
 ================================

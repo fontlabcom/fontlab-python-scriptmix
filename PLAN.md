@@ -2,6 +2,19 @@
 this_file: PLAN.md
 ---
 
+## Master Text Comparison P3 candidate
+
+Complete original defaults, automatic local UTF-8 presets/four fallback lists,
+custom-versus-double-click precedence, usable-character sanitation, complete
+diagnostics, exact final layout delimiters and owned settings are implemented.
+The opening font/master/glyph/layer identities fence one fresh proof. Native
+active-model binding (FontLab issue 8576), exact delimiter rendering, IME/UTF16
+input, complete font/cache/history preservation and lifecycle remain open.
+Multiline/paragraph custom input is explicitly held; UTF-8 presets retain exact
+scalars and named symbols. No original executable or preset file is distributed.
+
+
+
 ## Case Coverage P2 candidate
 
 Complete the owned installed-font proof protocol, including typed text-block

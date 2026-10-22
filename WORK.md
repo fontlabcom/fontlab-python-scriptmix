@@ -2,6 +2,20 @@
 this_file: WORK.md
 ---
 
+## Issue123 P3 — Master Text Comparison source candidate
+
+- Independently implement the complete original workflow in shared App and one thin Fly menu. Preserve all other menu sources and provenance rows. Source defaults, sanitation, exact delimiters, real Qt double-click/settings/geometry and bounded preflight/cleanup are covered by focused tests.
+- Root-owned native binding/rendering/preservation remains OPEN (FontLab #8576); no native calls or owner installations were performed in this lane. Commands, receipts and full source mapping are external in `master-text-comparison-report.md`. Final exact gates/commits recorded below.
+
+
+- Final matching App pin: `61c5f5dca0533e53accff3ab4426c26ab6a9b78b`; changed menu SHA256 `a90920a023fcbc419da46bee88ca61f5cbc910fc561f2e9aa5e3238a4c467bdc`. Direct BASE equality checks prove all other172 original records/pins and all other241 menu source bodies unchanged;173 records/242 menus total. Frozen migration/revision/provenance manifests remain unchanged.
+- Corrected frozen gate (workspace root): `rtk proxy sh -c 'PATH=/opt/homebrew/bin:$PATH UV_NO_CACHE=1 .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-python-scriptmix fontlab-python-scriptmix > /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/master-text-mix-gate-final-r1.log 2>&1'`; exit0,4304 passed/6 existing skips, .metaswarm/runs/fontlab-python-scriptmix.9rpepx. Changed menu10statements/2branches100%, zero exclusions/pragmas. UV_NO_CACHE rebuilt the exact current App source wheel. The collection's unused-src coverage warning is expected; Scripts remain measured.
+- Pre-correction source gate4304/.R3okZo was completed and retained before actual controller/panel opening-deadline repair; it is superseded by this corrected Apppin gate. App final .nccqyN gate6698passed/76 existing warnings, every changed module>=92.25% combined. No unchanged baseline suite was rerun merely for another green.
+- Covering menu RED `tests/test_master_text_menu.py` failed1 before routing repair; GREEN menu entrypoints and retained Common/static G10 cases pass in the full installed-App gate. Thirteen obsolete Master-specific G10 functions/22cases move to60 expanded App cases plus the thin menu test;19 Common/static G10 cases remain. Equality/hash assertions were not weakened.
+- Final docs command (Scriptmix cwd, external UV_CACHE_DIR/TMPDIR, PYTEST_DISABLE_PLUGIN_AUTOLOAD=1, PATH=/opt/homebrew/bin:$PATH): `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs`; exit0,10passed, master-text-docs-final-r1.log. Initial docs attempt selected broken /usr/bin/git and failed3; failed log retained; no test/filter assertion changed. No site build/publication claim.
+- Final Ruff command with external cache/tmp: `uv run --no-project --python cpython-3.11-macos-aarch64-none --with ruff==0.14.10 ruff check --no-cache --target-version py311 --select F821,F401 "Scripts/Masters/Master Text Comparison.py" tests/test_master_text_menu.py tests/test_issue122_G10.py`; exit0. Python3.11 AST/this_file/zero-pragmas and git diff --check pass. The affected generated source page/snapshot uses the new menu digest; other pages/indexes remain exact.
+- Native #8576, exact delimiter/layer rendering, special text/IME, opaque QByteArray settings/geometry, complete font/cache/history preservation and native lifecycle remain OPEN. No native calls, original body/resource redistribution, owner installation edits, descendant, merge or push. Full report and receipts: `/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/master-text-comparison-report.md`.
+
 ## Issue123 P2 fix round1 — shared App review fixes and source pin
 
 - Shared App fix `ba37d438f2330e1e0c61bb106b1527faa4d26b93` closes review I1
