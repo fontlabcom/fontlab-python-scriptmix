@@ -1,0 +1,5750 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Scripts, reports and drawing panels for FontLab.">
+      
+      
+      
+        <link rel="canonical" href="https://fontlabcom.github.io/fontlab-python-scriptmix/scripts/font-info/glyph-order-preview-and-export.html">
+      
+      
+        <link rel="prev" href="calculate-vertical-metrics.html">
+      
+      
+        <link rel="next" href="master-metrics-table.html">
+      
+      
+        
+      
+      
+      
+      
+        
+        
+        
+          <link rel="icon" href="../../assets/images/favicon.png">
+        
+      
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-materialx-10.1.5">
+    
+    
+      
+        <title>Glyph Order Preview and Export - FontLab Scriptmix</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.5cda52a2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.d7242098.min.css">
+      
+    
+    
+
+    
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-materialx.css">
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/components.css">
+    
+      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/theme.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <meta name="fltheme-site" content="documentation">
+
+  </head>
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="glass">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#glyph-order-preview-and-export" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="FontLab Scriptmix" class="md-header__button md-logo" aria-label="FontLab Scriptmix" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FontLab Scriptmix
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Glyph Order Preview and Export
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fontlabcom/fontlab-python-scriptmix" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FontLab Scriptmix
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../install.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Install the scripts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../use.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Work with an open font
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../index.html" class="md-tabs__link">
+          
+  
+  
+  Scripts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../backlog.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Porting backlog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tags.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Find pages by tag
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../topics.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Find pages by topic
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contribute.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Build and edit the documentation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../plugins.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Documentation plugins
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../licenses.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Licences
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../print_page.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Print this documentation
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="FontLab Scriptmix" class="md-nav__button md-logo" aria-label="FontLab Scriptmix" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FontLab Scriptmix
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fontlabcom/fontlab-python-scriptmix" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FontLab Scriptmix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install the scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work with an open font
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scripts
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Script catalogue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anchors
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Anchors
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anchors/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anchors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anchors/cloud-view.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anchors/compatibility-report.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anchors/copy-anchors-from-glyph.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copy Anchors From Glyph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anchors/mark-attachment-preview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mark Attachment Preview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cleanup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cleanup
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleanup/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cleanup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cleanup/select-unreferenced-glyphs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Select Unreferenced Glyphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Components
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/compatibility.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/count-badges.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Count Badges
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/dump-component-recipes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dump Component Recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/missing-bases.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Missing Bases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/report.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../components/where-used.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Where Used
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contours
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contours
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contours/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contours
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contours/angularizzle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Angularizzle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contours/contour-order-view.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contour Order View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contours/node-coordinates-panel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Coordinates Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contours/node-statistics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/alternate-preview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alternate Preview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/build-suffix-substitution.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Suffix Substitution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/classes-browser.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/feature-code-viewer.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Code Viewer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/ligature-finder.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ligature Finder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/suffix-report.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Suffix Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Font info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Font info
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Font Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bump-font-version.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bump Font Version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="calculate-vertical-metrics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Calculate Vertical Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyph Order Preview and Export
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="glyph-order-preview-and-export.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyph Order Preview and Export
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="master-metrics-table.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Metrics Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="names-and-credits.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Names and Credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="unicode-ranges-and-codepages.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unicode Ranges and Codepages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/clear-glyph-guides.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clear Glyph Guides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/copy-guides-between-masters.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copy Guides Between Masters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/font-guides-panel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Font Guides Panel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/grid-generator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grid Generator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/guide-list-editor.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide List Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/metric-reference-lines.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metric Reference Lines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kerning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Kerning
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kerning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/classes-browser.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classes Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/compare-masters.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare Masters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/copy-between-masters.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copy Between Masters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/exceptions-finder.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exceptions Finder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/missing-pairs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Missing Pairs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/pair-editor.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pair Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/pair-list-browser.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pair List Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/pairs-from-text.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pairs From Text
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/persistence-audit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Persistence Audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/remove-small-pairs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remove Small Pairs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/round-values.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Round Values
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/scale-values.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scale Values
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kerning/text-preview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text Preview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Masters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Masters
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masters/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Masters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masters/compatibility-check.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masters/glyph-weight-chart.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyph Weight Chart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masters/interpolation-preview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interpolation Preview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masters/italic-angle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Italic Angle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masters/master-switcher.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Switcher
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masters/overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masters/width-chart.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Width Chart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Metrics
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/check-tabular-widths.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Check Tabular Widths
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/spacing-string-preview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spacing String Preview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics/width-table.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Width Table
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Names
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Names
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../names/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Names
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../names/case-pairs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Pairs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../names/character-info.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../names/character-set-compare.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Character Set Compare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../names/glyph-finder.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyph Finder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../names/select-by-mark.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Select by Mark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_13" id="__nav_4_13_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proof
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/bracket-layers-and-components.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bracket Layers and Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/glyph-grid.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyph Grid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/glyphs-between-lining-figures.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyphs Between Lining Figures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/glyphs-between-lowercase.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyphs Between Lowercase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/glyphs-between-oldstyle-figures.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyphs Between Oldstyle Figures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/glyphs-between-uppercase.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyphs Between Uppercase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/glyphs-surrounded-by-h.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyphs Surrounded by H
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/glyphs-surrounded-by-hhohh.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyphs Surrounded by HHOHH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/glyphs-surrounded-by-i.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyphs Surrounded by I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/glyphs-surrounded-by-nnonn.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyphs Surrounded by Nnonn
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/highest-lowest-glyphs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Highest &amp; Lowest Glyphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/random-lowercase-nontext.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random Lowercase Nontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/random-lowercase-words.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random Lowercase Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/random-numbers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/random-title-nontext.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random Title Nontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/random-title-words.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random Title Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/random-uppercase-nontext.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random Uppercase Nontext
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/random-uppercase-words.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random Uppercase Words
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/tallest-and-shortest.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tallest and Shortest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/text-by-master.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text By Master
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/text-filter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Text Filter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/waterfall.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Waterfall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof/word-finder.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Word Finder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_14" id="__nav_4_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reporters
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporters/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporters/duplicate-anchor-rings.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplicate Anchor Rings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporters/sidebearing-direction-marker.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sidebearing Direction Marker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_15" id="__nav_4_15_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/bracket-layers-and-components.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bracket Layers and Components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/compare-open-font-revisions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare Open Font Revisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/empty-glyphs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Empty Glyphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/font-overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Font Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/glyph-table-csv.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glyph Table CSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/label-statistics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Label Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/live-glyph-info.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Live Glyph Info
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nodes-near-zones.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nodes Near Zones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/open-contours.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Contours
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/point-counter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Point Counter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/unicode-coverage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unicode Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/vertical-metrics-reporter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vertical Metrics Reporter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/why-you-not-compatible.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why You Not Compatible
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backlog.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Porting backlog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find pages by tag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../topics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find pages by topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contribute.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build and edit the documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Licences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print_page.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Print this documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Categories
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../index.html" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    FontLab Scriptmix
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="index.html" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Font info
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="glyph-order-preview-and-export">Glyph Order Preview and Export</h1>
+<p>Sort by Unicode, name or Unicode script; export one glyph name per line for the whole font.</p>
+<p>Open this script with a font active. Choose Unicode, Name or Script, then select
+Export order. The modeless chooser saves UTF-8 text for use in another workflow.
+The font's glyph order and outlines stay unchanged. Reopen after switching fonts.</p>
+<p>Run <strong>Font Info &gt; Glyph Order Preview and Export</strong> from FontLab's Scripts menu.</p>
+<p>Read <a href="../../install.html">installation</a> and <a href="../../use.html">working with scripts</a> before use.</p>
+<h2 id="source">Source</h2>
+<div class="highlight"><span class="filename">Python source</span><pre><span></span><code><span class="c1"># this_file: Scripts/Font Info/Glyph Order Preview and Export.py</span>
+<span class="c1"># SPDX-License-Identifier: Apache-2.0</span>
+<span class="c1"># FLM: Font Info · Glyph Order Preview &amp; Export</span>
+<span class="sd">"""Sort by Unicode, name or Unicode script; export one glyph name per line for the whole font.</span>
+
+<span class="sd">Open this script with a font active. Choose Unicode, Name or Script, then select</span>
+<span class="sd">Export order. The modeless chooser saves UTF-8 text for use in another workflow.</span>
+<span class="sd">The font's glyph order and outlines stay unchanged. Reopen after switching fonts.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">bisect</span><span class="w"> </span><span class="kn">import</span> <span class="n">bisect_right</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">fly</span><span class="w"> </span><span class="kn">import</span> <span class="n">ap</span><span class="p">,</span> <span class="n">qt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fly.ap.scripting</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">close_script_dialog</span><span class="p">,</span>
+    <span class="n">current_package</span><span class="p">,</span>
+    <span class="n">font_info_dialog_type</span><span class="p">,</span>
+    <span class="n">show_script_dialog</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">fontlab</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">fontlab</span>
+<span class="n">QtCore</span><span class="p">,</span> <span class="n">QtGui</span> <span class="o">=</span> <span class="n">qt</span><span class="o">.</span><span class="n">QtCore</span><span class="p">,</span> <span class="n">qt</span><span class="o">.</span><span class="n">QtGui</span>
+
+<span class="n">TITLE</span> <span class="o">=</span> <span class="s2">"Glyph Order Preview &amp; Export"</span>
+<span class="n">KEY</span> <span class="o">=</span> <span class="s2">"fontinfo_glyph_order_tool"</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">glyph_records</span><span class="p">(</span><span class="n">package</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Read all Unicode assignments, including secondary encodings, in font order."""</span>
+    <span class="n">FL</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">FL</span>
+
+    <span class="n">active</span> <span class="o">=</span> <span class="n">current_package</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">active</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">active</span><span class="o">.</span><span class="n">id</span> <span class="o">!=</span> <span class="n">package</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">"Activate the original font and reopen this tool."</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">legacy</span> <span class="o">=</span> <span class="n">FL</span><span class="o">.</span><span class="n">fl</span><span class="o">.</span><span class="n">font</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">legacy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">package</span><span class="o">.</span><span class="n">findName</span><span class="p">(</span><span class="n">legacy</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">fgGlyph</span><span class="o">.</span><span class="n">unicodes</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">legacy</span><span class="p">))</span>
+    <span class="p">]</span>
+
+
+<span class="c1"># Unicode Script property boundaries (Unicode 18.0 data snapshot, 2026-06-29).</span>
+<span class="c1"># Source: https://unicode.org/Public/UNIDATA/Scripts.txt via FontTools data.</span>
+<span class="c1"># © 2026 Unicode, Inc. Terms: https://www.unicode.org/license.txt</span>
+<span class="c1"># These are specification data; no FontTools runtime dependency.</span>
+<span class="n">SCRIPT_DATA</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">0:Zyyy 41:Latn 5B:Zyyy 61:Latn 7B:Zyyy AA:Latn AB:Zyyy BA:Latn BB:Zyyy C0:Latn D7:Zyyy D8:Latn F7:Zyyy F8:Latn</span>
+<span class="s2">2B9:Zyyy 2E0:Latn 2E5:Zyyy 2EA:Bopo 2EC:Zyyy 300:Zinh 370:Grek 374:Zyyy 375:Grek 378:Zzzz 37A:Grek 37E:Zyyy</span>
+<span class="s2">37F:Grek 380:Zzzz 384:Grek 385:Zyyy 386:Grek 387:Zyyy 388:Grek 38B:Zzzz 38C:Grek 38D:Zzzz 38E:Grek 3A2:Zzzz</span>
+<span class="s2">3A3:Grek 3E2:Copt 3F0:Grek 400:Cyrl 485:Zinh 487:Cyrl 530:Zzzz 531:Armn 557:Zzzz 558:Armn 590:Zzzz 591:Hebr</span>
+<span class="s2">5CA:Zzzz 5D0:Hebr 5EB:Zzzz 5EF:Hebr 5F5:Zzzz 600:Arab 605:Zyyy 606:Arab 60C:Zyyy 60D:Arab 61B:Zyyy 61C:Arab</span>
+<span class="s2">61F:Zyyy 620:Arab 640:Zyyy 641:Arab 64B:Zinh 656:Arab 670:Zinh 671:Arab 6DD:Zyyy 6DE:Arab 700:Syrc 70E:Zzzz</span>
+<span class="s2">70F:Syrc 74B:Zzzz 74D:Syrc 750:Arab 780:Thaa 7B2:Zzzz 7C0:Nkoo 7FB:Zzzz 7FD:Nkoo 800:Samr 82E:Zzzz 830:Samr</span>
+<span class="s2">83F:Zzzz 840:Mand 85C:Zzzz 85E:Mand 85F:Zzzz 860:Syrc 86B:Zzzz 870:Arab 892:Zzzz 897:Arab 8E2:Zyyy 8E3:Arab</span>
+<span class="s2">900:Deva 951:Zinh 955:Deva 964:Zyyy 966:Deva 980:Beng 984:Zzzz 985:Beng 98D:Zzzz 98F:Beng 991:Zzzz 993:Beng</span>
+<span class="s2">9A9:Zzzz 9AA:Beng 9B1:Zzzz 9B2:Beng 9B3:Zzzz 9B6:Beng 9BA:Zzzz 9BC:Beng 9C5:Zzzz 9C7:Beng 9C9:Zzzz 9CB:Beng</span>
+<span class="s2">9CF:Zzzz 9D7:Beng 9D8:Zzzz 9DC:Beng 9DE:Zzzz 9DF:Beng 9E4:Zzzz 9E6:Beng 9FF:Zzzz A01:Guru A04:Zzzz A05:Guru</span>
+<span class="s2">A0B:Zzzz A0F:Guru A11:Zzzz A13:Guru A29:Zzzz A2A:Guru A31:Zzzz A32:Guru A34:Zzzz A35:Guru A37:Zzzz A38:Guru</span>
+<span class="s2">A3A:Zzzz A3C:Guru A3D:Zzzz A3E:Guru A43:Zzzz A47:Guru A49:Zzzz A4B:Guru A4E:Zzzz A51:Guru A52:Zzzz A59:Guru</span>
+<span class="s2">A5D:Zzzz A5E:Guru A5F:Zzzz A66:Guru A77:Zzzz A81:Gujr A84:Zzzz A85:Gujr A8E:Zzzz A8F:Gujr A92:Zzzz A93:Gujr</span>
+<span class="s2">AA9:Zzzz AAA:Gujr AB1:Zzzz AB2:Gujr AB4:Zzzz AB5:Gujr ABA:Zzzz ABC:Gujr AC6:Zzzz AC7:Gujr ACA:Zzzz ACB:Gujr</span>
+<span class="s2">ACE:Zzzz AD0:Gujr AD1:Zzzz AE0:Gujr AE4:Zzzz AE6:Gujr AF2:Zzzz AF9:Gujr B00:Zzzz B01:Orya B04:Zzzz B05:Orya</span>
+<span class="s2">B0D:Zzzz B0F:Orya B11:Zzzz B13:Orya B29:Zzzz B2A:Orya B31:Zzzz B32:Orya B34:Zzzz B35:Orya B3A:Zzzz B3C:Orya</span>
+<span class="s2">B45:Zzzz B47:Orya B49:Zzzz B4B:Orya B4E:Zzzz B53:Orya B58:Zzzz B5C:Orya B5E:Zzzz B5F:Orya B64:Zzzz B66:Orya</span>
+<span class="s2">B78:Zzzz B82:Taml B84:Zzzz B85:Taml B8B:Zzzz B8E:Taml B91:Zzzz B92:Taml B96:Zzzz B99:Taml B9B:Zzzz B9C:Taml</span>
+<span class="s2">B9D:Zzzz B9E:Taml BA0:Zzzz BA3:Taml BA5:Zzzz BA8:Taml BAB:Zzzz BAE:Taml BBA:Zzzz BBE:Taml BC3:Zzzz BC6:Taml</span>
+<span class="s2">BC9:Zzzz BCA:Taml BCE:Zzzz BD0:Taml BD1:Zzzz BD7:Taml BD8:Zzzz BE6:Taml BFB:Zzzz C00:Telu C0D:Zzzz C0E:Telu</span>
+<span class="s2">C11:Zzzz C12:Telu C29:Zzzz C2A:Telu C3A:Zzzz C3C:Telu C45:Zzzz C46:Telu C49:Zzzz C4A:Telu C4E:Zzzz C55:Telu</span>
+<span class="s2">C57:Zzzz C58:Telu C5B:Zzzz C5C:Telu C5E:Zzzz C60:Telu C64:Zzzz C66:Telu C70:Zzzz C77:Telu C80:Knda C8D:Zzzz</span>
+<span class="s2">C8E:Knda C91:Zzzz C92:Knda CA9:Zzzz CAA:Knda CB4:Zzzz CB5:Knda CBA:Zzzz CBC:Knda CC5:Zzzz CC6:Knda CC9:Zzzz</span>
+<span class="s2">CCA:Knda CCE:Zzzz CD5:Knda CD7:Zzzz CDC:Knda CDF:Zzzz CE0:Knda CE4:Zzzz CE6:Knda CF0:Zzzz CF1:Knda CF4:Zzzz</span>
+<span class="s2">D00:Mlym D0D:Zzzz D0E:Mlym D11:Zzzz D12:Mlym D45:Zzzz D46:Mlym D49:Zzzz D4A:Mlym D50:Zzzz D54:Mlym D64:Zzzz</span>
+<span class="s2">D66:Mlym D80:Zzzz D81:Sinh D84:Zzzz D85:Sinh D97:Zzzz D9A:Sinh DB2:Zzzz DB3:Sinh DBC:Zzzz DBD:Sinh DBE:Zzzz</span>
+<span class="s2">DC0:Sinh DC7:Zzzz DCA:Sinh DCB:Zzzz DCF:Sinh DD5:Zzzz DD6:Sinh DD7:Zzzz DD8:Sinh DE0:Zzzz DE6:Sinh DF0:Zzzz</span>
+<span class="s2">DF2:Sinh DF5:Zzzz E01:Thai E3B:Zzzz E3F:Zyyy E40:Thai E5C:Zzzz E81:Laoo E83:Zzzz E84:Laoo E85:Zzzz E86:Laoo</span>
+<span class="s2">E8B:Zzzz E8C:Laoo EA4:Zzzz EA5:Laoo EA6:Zzzz EA7:Laoo EBE:Zzzz EC0:Laoo EC5:Zzzz EC6:Laoo EC7:Zzzz EC8:Laoo</span>
+<span class="s2">ECF:Zzzz ED0:Laoo EDA:Zzzz EDC:Laoo EE0:Zzzz F00:Tibt F48:Zzzz F49:Tibt F6D:Zzzz F71:Tibt F98:Zzzz F99:Tibt</span>
+<span class="s2">FBD:Zzzz FBE:Tibt FCD:Zzzz FCE:Tibt FD5:Zyyy FD9:Tibt FDB:Zzzz 1000:Mymr 10A0:Geor 10C6:Zzzz 10C7:Geor</span>
+<span class="s2">10C8:Zzzz 10CD:Geor 10CE:Zzzz 10D0:Geor 10FB:Zyyy 10FC:Geor 1100:Hang 1200:Ethi 1249:Zzzz 124A:Ethi 124E:Zzzz</span>
+<span class="s2">1250:Ethi 1257:Zzzz 1258:Ethi 1259:Zzzz 125A:Ethi 125E:Zzzz 1260:Ethi 1289:Zzzz 128A:Ethi 128E:Zzzz 1290:Ethi</span>
+<span class="s2">12B1:Zzzz 12B2:Ethi 12B6:Zzzz 12B8:Ethi 12BF:Zzzz 12C0:Ethi 12C1:Zzzz 12C2:Ethi 12C6:Zzzz 12C8:Ethi 12D7:Zzzz</span>
+<span class="s2">12D8:Ethi 1311:Zzzz 1312:Ethi 1316:Zzzz 1318:Ethi 135B:Zzzz 135D:Ethi 137D:Zzzz 1380:Ethi 139A:Zzzz 13A0:Cher</span>
+<span class="s2">13F6:Zzzz 13F8:Cher 13FE:Zzzz 1400:Cans 1680:Ogam 169D:Zzzz 16A0:Runr 16EB:Zyyy 16EE:Runr 16F9:Zzzz 1700:Tglg</span>
+<span class="s2">1716:Zzzz 171F:Tglg 1720:Hano 1735:Zyyy 1737:Zzzz 1740:Buhd 1754:Zzzz 1760:Tagb 176D:Zzzz 176E:Tagb 1771:Zzzz</span>
+<span class="s2">1772:Tagb 1774:Zzzz 1780:Khmr 17DE:Zzzz 17E0:Khmr 17EA:Zzzz 17F0:Khmr 17FA:Zzzz 1800:Mong 1802:Zyyy 1804:Mong</span>
+<span class="s2">1805:Zyyy 1806:Mong 181A:Zzzz 1820:Mong 1879:Zzzz 1880:Mong 18AB:Zzzz 18B0:Cans 18F6:Zzzz 1900:Limb 191F:Zzzz</span>
+<span class="s2">1920:Limb 192C:Zzzz 1930:Limb 193C:Zzzz 1940:Limb 1941:Zzzz 1944:Limb 1950:Tale 196E:Zzzz 1970:Tale 1975:Zzzz</span>
+<span class="s2">1980:Talu 19AC:Zzzz 19B0:Talu 19CA:Zzzz 19D0:Talu 19DB:Zzzz 19DE:Talu 19E0:Khmr 1A00:Bugi 1A1C:Zzzz 1A1E:Bugi</span>
+<span class="s2">1A20:Lana 1A5F:Zzzz 1A60:Lana 1A7D:Zzzz 1A7F:Lana 1A8A:Zzzz 1A90:Lana 1A9A:Zzzz 1AA0:Lana 1AAE:Zzzz 1AB0:Zinh</span>
+<span class="s2">1AF1:Zzzz 1B00:Bali 1B4D:Zzzz 1B4E:Bali 1B80:Sund 1BC0:Batk 1BF4:Zzzz 1BFC:Batk 1C00:Lepc 1C38:Zzzz 1C3B:Lepc</span>
+<span class="s2">1C4A:Zzzz 1C4D:Lepc 1C50:Olck 1C80:Cyrl 1C8B:Zzzz 1C90:Geor 1CBB:Zzzz 1CBD:Geor 1CC0:Sund 1CC8:Zzzz 1CD0:Zinh</span>
+<span class="s2">1CD3:Zyyy 1CD4:Zinh 1CE1:Zyyy 1CE2:Zinh 1CE9:Zyyy 1CED:Zinh 1CEE:Zyyy 1CF4:Zinh 1CF5:Zyyy 1CF8:Zinh 1CFA:Zyyy</span>
+<span class="s2">1CFB:Zzzz 1D00:Latn 1D26:Grek 1D2B:Cyrl 1D2C:Latn 1D5D:Grek 1D62:Latn 1D66:Grek 1D6B:Latn 1D78:Cyrl 1D79:Latn</span>
+<span class="s2">1DBF:Grek 1DC0:Zinh 1E00:Latn 1F00:Grek 1F16:Zzzz 1F18:Grek 1F1E:Zzzz 1F20:Grek 1F46:Zzzz 1F48:Grek 1F4E:Zzzz</span>
+<span class="s2">1F50:Grek 1F58:Zzzz 1F59:Grek 1F5A:Zzzz 1F5B:Grek 1F5C:Zzzz 1F5D:Grek 1F5E:Zzzz 1F5F:Grek 1F7E:Zzzz 1F80:Grek</span>
+<span class="s2">1FB5:Zzzz 1FB6:Grek 1FC5:Zzzz 1FC6:Grek 1FD4:Zzzz 1FD6:Grek 1FDC:Zzzz 1FDD:Grek 1FF0:Zzzz 1FF2:Grek 1FF5:Zzzz</span>
+<span class="s2">1FF6:Grek 1FFF:Zzzz 2000:Zyyy 200C:Zinh 200E:Zyyy 2065:Zzzz 2066:Zyyy 2071:Latn 2072:Zzzz 2074:Zyyy 207F:Latn</span>
+<span class="s2">2080:Zyyy 2090:Latn 20A0:Zyyy 20C5:Zzzz 20D0:Zinh 20F1:Zzzz 2100:Zyyy 2126:Grek 2127:Zyyy 212A:Latn 212C:Zyyy</span>
+<span class="s2">2132:Latn 2133:Zyyy 214E:Latn 214F:Zyyy 2160:Latn 2189:Zyyy 218C:Zzzz 2190:Zyyy 242A:Zzzz 2440:Zyyy 244B:Zzzz</span>
+<span class="s2">2460:Zyyy 2800:Brai 2900:Zyyy 2B74:Zzzz 2B76:Zyyy 2C00:Glag 2C60:Latn 2C80:Copt 2CF4:Zzzz 2CF9:Copt 2D00:Geor</span>
+<span class="s2">2D26:Zzzz 2D27:Geor 2D28:Zzzz 2D2D:Geor 2D2E:Zzzz 2D30:Tfng 2D68:Zzzz 2D6F:Tfng 2D71:Zzzz 2D7F:Tfng 2D80:Ethi</span>
+<span class="s2">2D97:Zzzz 2DA0:Ethi 2DA7:Zzzz 2DA8:Ethi 2DAF:Zzzz 2DB0:Ethi 2DB7:Zzzz 2DB8:Ethi 2DBF:Zzzz 2DC0:Ethi 2DC7:Zzzz</span>
+<span class="s2">2DC8:Ethi 2DCF:Zzzz 2DD0:Ethi 2DD7:Zzzz 2DD8:Ethi 2DDF:Zzzz 2DE0:Cyrl 2E00:Zyyy 2E5E:Zzzz 2E60:Zyyy 2E64:Zzzz</span>
+<span class="s2">2E80:Hani 2E9A:Zzzz 2E9B:Hani 2EF4:Zzzz 2F00:Hani 2FD6:Zzzz 2FF0:Zyyy 3005:Hani 3006:Zyyy 3007:Hani 3008:Zyyy</span>
+<span class="s2">3021:Hani 302A:Zinh 302E:Hang 3030:Zyyy 3038:Hani 303C:Zyyy 3040:Zzzz 3041:Hira 3097:Zzzz 3099:Zinh 309B:Zyyy</span>
+<span class="s2">309D:Hira 30A0:Zyyy 30A1:Kana 30FB:Zyyy 30FD:Kana 3100:Zzzz 3105:Bopo 3130:Zzzz 3131:Hang 318F:Zzzz 3190:Zyyy</span>
+<span class="s2">31A0:Bopo 31C0:Zyyy 31E6:Zzzz 31EF:Zyyy 31F0:Kana 3200:Hang 321F:Zzzz 3220:Zyyy 3260:Hang 327F:Zyyy 32D0:Kana</span>
+<span class="s2">32FF:Zyyy 3300:Kana 3358:Zyyy 3400:Hani 4DC0:Zyyy 4E00:Hani A000:Yiii A48D:Zzzz A490:Yiii A4C7:Zzzz A4D0:Lisu</span>
+<span class="s2">A500:Vaii A62C:Zzzz A640:Cyrl A6A0:Bamu A6F8:Zzzz A700:Zyyy A722:Latn A788:Zyyy A78B:Latn A7DE:Zzzz A7E2:Latn</span>
+<span class="s2">A7E3:Zzzz A7F1:Latn A800:Sylo A82D:Zzzz A830:Zyyy A83A:Zzzz A840:Phag A878:Zzzz A880:Saur A8C6:Zzzz A8CE:Saur</span>
+<span class="s2">A8DA:Zzzz A8E0:Deva A900:Kali A92E:Zyyy A92F:Kali A930:Rjng A954:Zzzz A95F:Rjng A960:Hang A97D:Zzzz A980:Java</span>
+<span class="s2">A9CE:Zzzz A9CF:Zyyy A9D0:Java A9DA:Zzzz A9DE:Java A9E0:Mymr A9FF:Zzzz AA00:Cham AA37:Zzzz AA40:Cham AA4E:Zzzz</span>
+<span class="s2">AA50:Cham AA5A:Zzzz AA5C:Cham AA60:Mymr AA80:Tavt AAC3:Zzzz AADB:Tavt AAE0:Mtei AAF7:Zzzz AB01:Ethi AB07:Zzzz</span>
+<span class="s2">AB09:Ethi AB0F:Zzzz AB11:Ethi AB17:Zzzz AB20:Ethi AB27:Zzzz AB28:Ethi AB2F:Zzzz AB30:Latn AB5B:Zyyy AB5C:Latn</span>
+<span class="s2">AB65:Grek AB66:Latn AB6A:Zyyy AB6C:Latn AB6E:Zzzz AB70:Cher ABC0:Mtei ABEE:Zzzz ABF0:Mtei ABFA:Zzzz AC00:Hang</span>
+<span class="s2">D7A4:Zzzz D7B0:Hang D7C7:Zzzz D7CB:Hang D7FC:Zzzz F900:Hani FA6E:Zzzz FA70:Hani FADA:Zzzz FB00:Latn FB07:Zzzz</span>
+<span class="s2">FB13:Armn FB18:Zzzz FB1D:Hebr FB37:Zzzz FB38:Hebr FB3D:Zzzz FB3E:Hebr FB3F:Zzzz FB40:Hebr FB42:Zzzz FB43:Hebr</span>
+<span class="s2">FB45:Zzzz FB46:Hebr FB50:Arab FD3E:Zyyy FD40:Arab FDD0:Zzzz FDF0:Arab FE00:Zinh FE10:Zyyy FE1A:Zzzz FE20:Zinh</span>
+<span class="s2">FE2E:Cyrl FE30:Zyyy FE53:Zzzz FE54:Zyyy FE67:Zzzz FE68:Zyyy FE6C:Zzzz FE70:Arab FE75:Zzzz FE76:Arab FEFD:Zzzz</span>
+<span class="s2">FEFF:Zyyy FF00:Zzzz FF01:Zyyy FF21:Latn FF3B:Zyyy FF41:Latn FF5B:Zyyy FF66:Kana FF70:Zyyy FF71:Kana FF9E:Zyyy</span>
+<span class="s2">FFA0:Hang FFBF:Zzzz FFC2:Hang FFC8:Zzzz FFCA:Hang FFD0:Zzzz FFD2:Hang FFD8:Zzzz FFDA:Hang FFDD:Zzzz FFE0:Zyyy</span>
+<span class="s2">FFE7:Zzzz FFE8:Zyyy FFEF:Zzzz FFF9:Zyyy FFFE:Zzzz 10000:Linb 1000C:Zzzz 1000D:Linb 10027:Zzzz 10028:Linb</span>
+<span class="s2">1003B:Zzzz 1003C:Linb 1003E:Zzzz 1003F:Linb 1004E:Zzzz 10050:Linb 1005E:Zzzz 10080:Linb 100FB:Zzzz 10100:Zyyy</span>
+<span class="s2">10103:Zzzz 10107:Zyyy 10134:Zzzz 10137:Zyyy 10140:Grek 1018F:Zzzz 10190:Zyyy 1019D:Zzzz 101A0:Grek 101A1:Zzzz</span>
+<span class="s2">101D0:Zyyy 101FD:Zinh 101FE:Zzzz 10280:Lyci 1029D:Zzzz 102A0:Cari 102D1:Zzzz 102E0:Zinh 102E1:Zyyy 102FC:Zzzz</span>
+<span class="s2">10300:Ital 10324:Zzzz 1032D:Ital 10330:Goth 1034B:Zzzz 10350:Perm 1037B:Zzzz 10380:Ugar 1039E:Zzzz 1039F:Ugar</span>
+<span class="s2">103A0:Xpeo 103C4:Zzzz 103C8:Xpeo 103D6:Zzzz 10400:Dsrt 10450:Shaw 10480:Osma 1049E:Zzzz 104A0:Osma 104AA:Zzzz</span>
+<span class="s2">104B0:Osge 104D4:Zzzz 104D8:Osge 104FC:Zzzz 10500:Elba 10528:Zzzz 10530:Aghb 10564:Zzzz 1056F:Aghb 10570:Vith</span>
+<span class="s2">1057B:Zzzz 1057C:Vith 1058B:Zzzz 1058C:Vith 10593:Zzzz 10594:Vith 10596:Zzzz 10597:Vith 105A2:Zzzz 105A3:Vith</span>
+<span class="s2">105B2:Zzzz 105B3:Vith 105BA:Zzzz 105BB:Vith 105BD:Zzzz 105C0:Todr 105F4:Zzzz 10600:Lina 10737:Zzzz 10740:Lina</span>
+<span class="s2">10756:Zzzz 10760:Lina 10768:Zzzz 10780:Latn 10786:Zzzz 10787:Latn 107B1:Zzzz 107B2:Latn 107C0:Zzzz 10800:Cprt</span>
+<span class="s2">10806:Zzzz 10808:Cprt 10809:Zzzz 1080A:Cprt 10836:Zzzz 10837:Cprt 10839:Zzzz 1083C:Cprt 1083D:Zzzz 1083F:Cprt</span>
+<span class="s2">10840:Armi 10856:Zzzz 10857:Armi 10860:Palm 10880:Nbat 1089F:Zzzz 108A7:Nbat 108B0:Zzzz 108E0:Hatr 108F3:Zzzz</span>
+<span class="s2">108F4:Hatr 108F6:Zzzz 108FB:Hatr 10900:Phnx 1091C:Zzzz 1091F:Phnx 10920:Lydi 1093A:Zzzz 1093F:Lydi 10940:Sidt</span>
+<span class="s2">1095A:Zzzz 10980:Mero 109A0:Merc 109B8:Zzzz 109BC:Merc 109D0:Zzzz 109D2:Merc 10A00:Khar 10A04:Zzzz 10A05:Khar</span>
+<span class="s2">10A07:Zzzz 10A0C:Khar 10A14:Zzzz 10A15:Khar 10A18:Zzzz 10A19:Khar 10A36:Zzzz 10A38:Khar 10A3B:Zzzz 10A3F:Khar</span>
+<span class="s2">10A49:Zzzz 10A50:Khar 10A59:Zzzz 10A60:Sarb 10A80:Narb 10AA0:Zzzz 10AC0:Mani 10AE7:Zzzz 10AEB:Mani 10AF7:Zzzz</span>
+<span class="s2">10B00:Avst 10B36:Zzzz 10B39:Avst 10B40:Prti 10B56:Zzzz 10B58:Prti 10B60:Phli 10B73:Zzzz 10B78:Phli 10B80:Phlp</span>
+<span class="s2">10B92:Zzzz 10B99:Phlp 10B9D:Zzzz 10BA9:Phlp 10BB0:Zzzz 10C00:Orkh 10C49:Zzzz 10C80:Hung 10CB3:Zzzz 10CC0:Hung</span>
+<span class="s2">10CF3:Zzzz 10CFA:Hung 10D00:Rohg 10D28:Zzzz 10D30:Rohg 10D3A:Zzzz 10D40:Gara 10D66:Zzzz 10D69:Gara 10D86:Zzzz</span>
+<span class="s2">10D8E:Gara 10D90:Zzzz 10E60:Arab 10E7F:Zzzz 10E80:Yezi 10EAA:Zzzz 10EAB:Yezi 10EAE:Zzzz 10EB0:Yezi 10EB2:Zzzz</span>
+<span class="s2">10EC2:Arab 10EC8:Zzzz 10EC9:Arab 10EEF:Zzzz 10EF0:Arab 10F00:Sogo 10F28:Zzzz 10F30:Sogd 10F5A:Zzzz 10F70:Ougr</span>
+<span class="s2">10F8A:Zzzz 10FB0:Chrs 10FCC:Zzzz 10FE0:Elym 10FF7:Zzzz 11000:Brah 1104E:Zzzz 11052:Brah 11076:Zzzz 1107F:Brah</span>
+<span class="s2">11080:Kthi 110C3:Zzzz 110CD:Kthi 110CE:Zzzz 110D0:Sora 110E9:Zzzz 110F0:Sora 110FA:Zzzz 11100:Cakm 11135:Zzzz</span>
+<span class="s2">11136:Cakm 11148:Zzzz 11150:Mahj 11177:Zzzz 11180:Shrd 111E0:Zzzz 111E1:Sinh 111F5:Zzzz 11200:Khoj 11212:Zzzz</span>
+<span class="s2">11213:Khoj 11242:Zzzz 11280:Mult 11287:Zzzz 11288:Mult 11289:Zzzz 1128A:Mult 1128E:Zzzz 1128F:Mult 1129E:Zzzz</span>
+<span class="s2">1129F:Mult 112AA:Zzzz 112B0:Sind 112EB:Zzzz 112F0:Sind 112FA:Zzzz 11300:Gran 11304:Zzzz 11305:Gran 1130D:Zzzz</span>
+<span class="s2">1130F:Gran 11311:Zzzz 11313:Gran 11329:Zzzz 1132A:Gran 11331:Zzzz 11332:Gran 11334:Zzzz 11335:Gran 1133A:Zzzz</span>
+<span class="s2">1133B:Zinh 1133C:Gran 11345:Zzzz 11347:Gran 11349:Zzzz 1134B:Gran 1134E:Zzzz 11350:Gran 11351:Zzzz 11357:Gran</span>
+<span class="s2">11358:Zzzz 1135D:Gran 11364:Zzzz 11366:Gran 1136D:Zzzz 11370:Gran 11375:Zzzz 11380:Tutg 1138A:Zzzz 1138B:Tutg</span>
+<span class="s2">1138C:Zzzz 1138E:Tutg 1138F:Zzzz 11390:Tutg 113B6:Zzzz 113B7:Tutg 113C1:Zzzz 113C2:Tutg 113C3:Zzzz 113C5:Tutg</span>
+<span class="s2">113C6:Zzzz 113C7:Tutg 113CB:Zzzz 113CC:Tutg 113D6:Zzzz 113D7:Tutg 113D9:Zzzz 113E1:Tutg 113E3:Zzzz 11400:Newa</span>
+<span class="s2">1145C:Zzzz 1145D:Newa 11462:Zzzz 11480:Tirh 114C8:Zzzz 114D0:Tirh 114DA:Zzzz 11580:Sidd 115B6:Zzzz 115B8:Sidd</span>
+<span class="s2">115DE:Zzzz 11600:Modi 11645:Zzzz 11650:Modi 1165A:Zzzz 11660:Mong 1166D:Zzzz 11680:Takr 116BA:Zzzz 116C0:Takr</span>
+<span class="s2">116CA:Zzzz 116D0:Mymr 116E4:Zzzz 11700:Ahom 1171B:Zzzz 1171D:Ahom 1172C:Zzzz 11730:Ahom 11747:Zzzz 11800:Dogr</span>
+<span class="s2">1183C:Zzzz 118A0:Wara 118F3:Zzzz 118FF:Wara 11900:Diak 11907:Zzzz 11909:Diak 1190A:Zzzz 1190C:Diak 11914:Zzzz</span>
+<span class="s2">11915:Diak 11917:Zzzz 11918:Diak 11936:Zzzz 11937:Diak 11939:Zzzz 1193B:Diak 11947:Zzzz 11950:Diak 1195A:Zzzz</span>
+<span class="s2">119A0:Nand 119A8:Zzzz 119AA:Nand 119D8:Zzzz 119DA:Nand 119E5:Zzzz 11A00:Zanb 11A48:Zzzz 11A50:Soyo 11AA3:Zzzz</span>
+<span class="s2">11AB0:Cans 11AC0:Pauc 11AF9:Zzzz 11B00:Deva 11B0B:Zzzz 11B60:Shrd 11B68:Zzzz 11BC0:Sunu 11BE2:Zzzz 11BF0:Sunu</span>
+<span class="s2">11BFA:Zzzz 11C00:Bhks 11C09:Zzzz 11C0A:Bhks 11C37:Zzzz 11C38:Bhks 11C46:Zzzz 11C50:Bhks 11C6D:Zzzz 11C70:Marc</span>
+<span class="s2">11C90:Zzzz 11C92:Marc 11CA8:Zzzz 11CA9:Marc 11CB7:Zzzz 11D00:Gonm 11D07:Zzzz 11D08:Gonm 11D0A:Zzzz 11D0B:Gonm</span>
+<span class="s2">11D37:Zzzz 11D3A:Gonm 11D3B:Zzzz 11D3C:Gonm 11D3E:Zzzz 11D3F:Gonm 11D48:Zzzz 11D50:Gonm 11D5A:Zzzz 11D60:Gong</span>
+<span class="s2">11D66:Zzzz 11D67:Gong 11D69:Zzzz 11D6A:Gong 11D8F:Zzzz 11D90:Gong 11D92:Zzzz 11D93:Gong 11D99:Zzzz 11DA0:Gong</span>
+<span class="s2">11DAA:Zzzz 11DB0:Tols 11DDC:Zzzz 11DE0:Tols 11DEA:Zzzz 11DF0:Beng 11DF2:Zzzz 11EE0:Maka 11EF9:Zzzz 11F00:Kawi</span>
+<span class="s2">11F11:Zzzz 11F12:Kawi 11F3B:Zzzz 11F3E:Kawi 11F5B:Zzzz 11FB0:Lisu 11FB1:Zzzz 11FC0:Taml 11FF2:Zzzz 11FFF:Taml</span>
+<span class="s2">12000:Xsux 1239A:Zzzz 12400:Xsux 12544:Zzzz 12550:Xsux 125A8:Pcun 1264C:Xsux 12687:Zzzz 12F90:Cpmn 12FF3:Zzzz</span>
+<span class="s2">13000:Egyp 13456:Zzzz 13460:Egyp 143FB:Zzzz 14400:Hluw 14647:Zzzz 16100:Gukh 1613A:Zzzz 16800:Bamu 16A39:Zzzz</span>
+<span class="s2">16A40:Mroo 16A5F:Zzzz 16A60:Mroo 16A6A:Zzzz 16A6E:Mroo 16A70:Tnsa 16ABF:Zzzz 16AC0:Tnsa 16ACA:Zzzz 16AD0:Bass</span>
+<span class="s2">16AEE:Zzzz 16AF0:Bass 16AF6:Zzzz 16B00:Hmng 16B46:Zzzz 16B50:Hmng 16B5A:Zzzz 16B5B:Hmng 16B62:Zzzz 16B63:Hmng</span>
+<span class="s2">16B78:Zzzz 16B7D:Hmng 16B90:Zzzz 16D40:Krai 16D7A:Zzzz 16E40:Medf 16E9B:Zzzz 16EA0:Berf 16EB9:Zzzz 16EBB:Berf</span>
+<span class="s2">16ED4:Zzzz 16F00:Plrd 16F4B:Zzzz 16F4F:Plrd 16F88:Zzzz 16F8F:Plrd 16FA0:Zzzz 16FE0:Tang 16FE1:Nshu 16FE2:Hani</span>
+<span class="s2">16FE4:Kits 16FE5:Zzzz 16FF0:Hani 16FF7:Zzzz 17000:Tang 18B00:Kits 18CDB:Zzzz 18CFF:Kits 18D00:Tang 18D21:Zzzz</span>
+<span class="s2">18D80:Tang 18DF3:Zzzz 18E00:Jurc 19192:Zzzz 191A0:Jurc 191D3:Zzzz 1AFF0:Kana 1AFF4:Zzzz 1AFF5:Kana 1AFFC:Zzzz</span>
+<span class="s2">1AFFD:Kana 1AFFF:Zzzz 1B000:Kana 1B001:Hira 1B120:Kana 1B123:Hira 1B124:Kana 1B129:Zzzz 1B132:Hira 1B133:Zzzz</span>
+<span class="s2">1B150:Hira 1B153:Zzzz 1B155:Kana 1B156:Zzzz 1B164:Kana 1B169:Zzzz 1B170:Nshu 1B2FC:Zzzz 1BC00:Dupl 1BC6B:Zzzz</span>
+<span class="s2">1BC70:Dupl 1BC7D:Zzzz 1BC80:Dupl 1BC89:Zzzz 1BC90:Dupl 1BC9A:Zzzz 1BC9C:Dupl 1BCA0:Zyyy 1BCA4:Zzzz 1CC00:Zyyy</span>
+<span class="s2">1CCFD:Zzzz 1CD00:Zyyy 1CEB4:Zzzz 1CEBA:Zyyy 1CED1:Zzzz 1CED2:Zyyy 1CED5:Zzzz 1CEDD:Zyyy 1CEFE:Zzzz 1CF00:Zinh</span>
+<span class="s2">1CF2E:Zzzz 1CF30:Zinh 1CF47:Zzzz 1CF50:Zyyy 1CFC4:Zzzz 1D000:Zyyy 1D0F6:Zzzz 1D100:Zyyy 1D127:Zinh 1D129:Zyyy</span>
+<span class="s2">1D167:Zinh 1D16A:Zyyy 1D17B:Zinh 1D183:Zyyy 1D185:Zinh 1D18C:Zyyy 1D1AA:Zinh 1D1AE:Zyyy 1D200:Grek 1D246:Zzzz</span>
+<span class="s2">1D250:Zyyy 1D25B:Zinh 1D25D:Zyyy 1D282:Zzzz 1D2C0:Zyyy 1D2D4:Zzzz 1D2E0:Zyyy 1D2F4:Zzzz 1D300:Zyyy 1D357:Zzzz</span>
+<span class="s2">1D360:Zyyy 1D379:Zzzz 1D400:Zyyy 1D455:Zzzz 1D456:Zyyy 1D49D:Zzzz 1D49E:Zyyy 1D4A0:Zzzz 1D4A2:Zyyy 1D4A3:Zzzz</span>
+<span class="s2">1D4A5:Zyyy 1D4A7:Zzzz 1D4A9:Zyyy 1D4AD:Zzzz 1D4AE:Zyyy 1D4BA:Zzzz 1D4BB:Zyyy 1D4BC:Zzzz 1D4BD:Zyyy 1D4C4:Zzzz</span>
+<span class="s2">1D4C5:Zyyy 1D506:Zzzz 1D507:Zyyy 1D50B:Zzzz 1D50D:Zyyy 1D515:Zzzz 1D516:Zyyy 1D51D:Zzzz 1D51E:Zyyy 1D53A:Zzzz</span>
+<span class="s2">1D53B:Zyyy 1D53F:Zzzz 1D540:Zyyy 1D545:Zzzz 1D546:Zyyy 1D547:Zzzz 1D54A:Zyyy 1D551:Zzzz 1D552:Zyyy 1D6A7:Zzzz</span>
+<span class="s2">1D6A8:Zyyy 1D7CC:Zzzz 1D7CE:Zyyy 1D800:Sgnw 1DA8C:Zzzz 1DA9B:Sgnw 1DAA0:Zzzz 1DAA1:Sgnw 1DAB0:Zzzz 1DB00:Zyyy</span>
+<span class="s2">1DB1D:Zzzz 1DF00:Latn 1DF82:Zzzz 1DF90:Latn 1DF97:Zzzz 1DFCD:Latn 1DFF3:Grek 1DFF5:Latn 1E000:Glag 1E007:Zzzz</span>
+<span class="s2">1E008:Glag 1E019:Zzzz 1E01B:Glag 1E022:Zzzz 1E023:Glag 1E025:Zzzz 1E026:Glag 1E02B:Zzzz 1E030:Cyrl 1E06E:Zzzz</span>
+<span class="s2">1E08F:Cyrl 1E090:Zzzz 1E100:Hmnp 1E12D:Zzzz 1E130:Hmnp 1E13E:Zzzz 1E140:Hmnp 1E14A:Zzzz 1E14E:Hmnp 1E150:Zzzz</span>
+<span class="s2">1E290:Toto 1E2AF:Zzzz 1E2C0:Wcho 1E2FA:Zzzz 1E2FF:Wcho 1E300:Zzzz 1E4D0:Nagm 1E4FA:Zzzz 1E5D0:Onao 1E5FB:Zzzz</span>
+<span class="s2">1E5FF:Onao 1E600:Zzzz 1E6C0:Tayo 1E6DF:Zzzz 1E6E0:Tayo 1E6F6:Zzzz 1E6FE:Tayo 1E700:Zzzz 1E7E0:Ethi 1E7E7:Zzzz</span>
+<span class="s2">1E7E8:Ethi 1E7EC:Zzzz 1E7ED:Ethi 1E7EF:Zzzz 1E7F0:Ethi 1E7FF:Zzzz 1E800:Mend 1E8C5:Zzzz 1E8C7:Mend 1E8D7:Zzzz</span>
+<span class="s2">1E900:Adlm 1E94C:Zzzz 1E950:Adlm 1E95A:Zzzz 1E95E:Adlm 1E960:Zzzz 1EC71:Zyyy 1ECB5:Zzzz 1ED01:Zyyy 1ED3E:Zzzz</span>
+<span class="s2">1EE00:Arab 1EE04:Zzzz 1EE05:Arab 1EE20:Zzzz 1EE21:Arab 1EE23:Zzzz 1EE24:Arab 1EE25:Zzzz 1EE27:Arab 1EE28:Zzzz</span>
+<span class="s2">1EE29:Arab 1EE33:Zzzz 1EE34:Arab 1EE38:Zzzz 1EE39:Arab 1EE3A:Zzzz 1EE3B:Arab 1EE3C:Zzzz 1EE42:Arab 1EE43:Zzzz</span>
+<span class="s2">1EE47:Arab 1EE48:Zzzz 1EE49:Arab 1EE4A:Zzzz 1EE4B:Arab 1EE4C:Zzzz 1EE4D:Arab 1EE50:Zzzz 1EE51:Arab 1EE53:Zzzz</span>
+<span class="s2">1EE54:Arab 1EE55:Zzzz 1EE57:Arab 1EE58:Zzzz 1EE59:Arab 1EE5A:Zzzz 1EE5B:Arab 1EE5C:Zzzz 1EE5D:Arab 1EE5E:Zzzz</span>
+<span class="s2">1EE5F:Arab 1EE60:Zzzz 1EE61:Arab 1EE63:Zzzz 1EE64:Arab 1EE65:Zzzz 1EE67:Arab 1EE6B:Zzzz 1EE6C:Arab 1EE73:Zzzz</span>
+<span class="s2">1EE74:Arab 1EE78:Zzzz 1EE79:Arab 1EE7D:Zzzz 1EE7E:Arab 1EE7F:Zzzz 1EE80:Arab 1EE8A:Zzzz 1EE8B:Arab 1EE9C:Zzzz</span>
+<span class="s2">1EEA1:Arab 1EEA4:Zzzz 1EEA5:Arab 1EEAA:Zzzz 1EEAB:Arab 1EEBC:Zzzz 1EEF0:Arab 1EEF2:Zzzz 1F000:Zyyy 1F02C:Zzzz</span>
+<span class="s2">1F030:Zyyy 1F094:Zzzz 1F0A0:Zyyy 1F0AF:Zzzz 1F0B1:Zyyy 1F0C0:Zzzz 1F0C1:Zyyy 1F0D0:Zzzz 1F0D1:Zyyy 1F0F6:Zzzz</span>
+<span class="s2">1F100:Zyyy 1F1AF:Zzzz 1F1E6:Zyyy 1F200:Hira 1F201:Zyyy 1F203:Zzzz 1F210:Zyyy 1F23C:Zzzz 1F240:Zyyy 1F249:Zzzz</span>
+<span class="s2">1F250:Zyyy 1F252:Zzzz 1F260:Zyyy 1F266:Zzzz 1F300:Zyyy 1F6DA:Zzzz 1F6DC:Zyyy 1F6ED:Zzzz 1F6F0:Zyyy 1F6FD:Zzzz</span>
+<span class="s2">1F700:Zyyy 1F7DC:Zzzz 1F7E0:Zyyy 1F7EC:Zzzz 1F7F0:Zyyy 1F80C:Zzzz 1F810:Zyyy 1F848:Zzzz 1F850:Zyyy 1F85A:Zzzz</span>
+<span class="s2">1F860:Zyyy 1F888:Zzzz 1F890:Zyyy 1F8AE:Zzzz 1F8B0:Zyyy 1F8BC:Zzzz 1F8C0:Zyyy 1F8C2:Zzzz 1F8D0:Zyyy 1F8D9:Zzzz</span>
+<span class="s2">1F900:Zyyy 1FA58:Zzzz 1FA60:Zyyy 1FA6E:Zzzz 1FA70:Zyyy 1FA7D:Zzzz 1FA80:Zyyy 1FAC7:Zzzz 1FAC8:Zyyy 1FAC9:Zzzz</span>
+<span class="s2">1FACC:Zyyy 1FADE:Zzzz 1FADF:Zyyy 1FAEC:Zzzz 1FAEF:Zyyy 1FAFB:Zzzz 1FB00:Zyyy 1FB93:Zzzz 1FB94:Zyyy 1FBFB:Zzzz</span>
+<span class="s2">20000:Hani 2A6E0:Zzzz 2A700:Hani 2B81F:Zzzz 2B820:Hani 2CEAE:Zzzz 2CEB0:Hani 2EBE1:Zzzz 2EBF0:Hani 2EE5E:Zzzz</span>
+<span class="s2">2F800:Hani 2FA1E:Zzzz 30000:Hani 3134B:Zzzz 31350:Hani 3347A:Zzzz 3D000:Seal 3FC40:Zzzz E0001:Zyyy E0002:Zzzz</span>
+<span class="s2">E0020:Zyyy E0080:Zzzz E0100:Zinh E01F0:Zzzz</span>
+<span class="s2">"""</span>
+<span class="n">SCRIPT_BOUNDARIES</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">":"</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">SCRIPT_DATA</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">SCRIPT_TAGS</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">token</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">":"</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">SCRIPT_DATA</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="n">SCRIPT_NAMES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Adlm"</span><span class="p">:</span> <span class="s2">"Adlam"</span><span class="p">,</span>
+    <span class="s2">"Aghb"</span><span class="p">:</span> <span class="s2">"Caucasian_Albanian"</span><span class="p">,</span>
+    <span class="s2">"Ahom"</span><span class="p">:</span> <span class="s2">"Ahom"</span><span class="p">,</span>
+    <span class="s2">"Arab"</span><span class="p">:</span> <span class="s2">"Arabic"</span><span class="p">,</span>
+    <span class="s2">"Armi"</span><span class="p">:</span> <span class="s2">"Imperial_Aramaic"</span><span class="p">,</span>
+    <span class="s2">"Armn"</span><span class="p">:</span> <span class="s2">"Armenian"</span><span class="p">,</span>
+    <span class="s2">"Avst"</span><span class="p">:</span> <span class="s2">"Avestan"</span><span class="p">,</span>
+    <span class="s2">"Bali"</span><span class="p">:</span> <span class="s2">"Balinese"</span><span class="p">,</span>
+    <span class="s2">"Bamu"</span><span class="p">:</span> <span class="s2">"Bamum"</span><span class="p">,</span>
+    <span class="s2">"Bass"</span><span class="p">:</span> <span class="s2">"Bassa_Vah"</span><span class="p">,</span>
+    <span class="s2">"Batk"</span><span class="p">:</span> <span class="s2">"Batak"</span><span class="p">,</span>
+    <span class="s2">"Beng"</span><span class="p">:</span> <span class="s2">"Bengali"</span><span class="p">,</span>
+    <span class="s2">"Berf"</span><span class="p">:</span> <span class="s2">"Beria_Erfe"</span><span class="p">,</span>
+    <span class="s2">"Bhks"</span><span class="p">:</span> <span class="s2">"Bhaiksuki"</span><span class="p">,</span>
+    <span class="s2">"Bopo"</span><span class="p">:</span> <span class="s2">"Bopomofo"</span><span class="p">,</span>
+    <span class="s2">"Brah"</span><span class="p">:</span> <span class="s2">"Brahmi"</span><span class="p">,</span>
+    <span class="s2">"Brai"</span><span class="p">:</span> <span class="s2">"Braille"</span><span class="p">,</span>
+    <span class="s2">"Bugi"</span><span class="p">:</span> <span class="s2">"Buginese"</span><span class="p">,</span>
+    <span class="s2">"Buhd"</span><span class="p">:</span> <span class="s2">"Buhid"</span><span class="p">,</span>
+    <span class="s2">"Cakm"</span><span class="p">:</span> <span class="s2">"Chakma"</span><span class="p">,</span>
+    <span class="s2">"Cans"</span><span class="p">:</span> <span class="s2">"Canadian_Aboriginal"</span><span class="p">,</span>
+    <span class="s2">"Cari"</span><span class="p">:</span> <span class="s2">"Carian"</span><span class="p">,</span>
+    <span class="s2">"Cham"</span><span class="p">:</span> <span class="s2">"Cham"</span><span class="p">,</span>
+    <span class="s2">"Cher"</span><span class="p">:</span> <span class="s2">"Cherokee"</span><span class="p">,</span>
+    <span class="s2">"Chrs"</span><span class="p">:</span> <span class="s2">"Chorasmian"</span><span class="p">,</span>
+    <span class="s2">"Copt"</span><span class="p">:</span> <span class="s2">"Coptic"</span><span class="p">,</span>
+    <span class="s2">"Cpmn"</span><span class="p">:</span> <span class="s2">"Cypro_Minoan"</span><span class="p">,</span>
+    <span class="s2">"Cprt"</span><span class="p">:</span> <span class="s2">"Cypriot"</span><span class="p">,</span>
+    <span class="s2">"Cyrl"</span><span class="p">:</span> <span class="s2">"Cyrillic"</span><span class="p">,</span>
+    <span class="s2">"Deva"</span><span class="p">:</span> <span class="s2">"Devanagari"</span><span class="p">,</span>
+    <span class="s2">"Diak"</span><span class="p">:</span> <span class="s2">"Dives_Akuru"</span><span class="p">,</span>
+    <span class="s2">"Dogr"</span><span class="p">:</span> <span class="s2">"Dogra"</span><span class="p">,</span>
+    <span class="s2">"Dsrt"</span><span class="p">:</span> <span class="s2">"Deseret"</span><span class="p">,</span>
+    <span class="s2">"Dupl"</span><span class="p">:</span> <span class="s2">"Duployan"</span><span class="p">,</span>
+    <span class="s2">"Egyp"</span><span class="p">:</span> <span class="s2">"Egyptian_Hieroglyphs"</span><span class="p">,</span>
+    <span class="s2">"Elba"</span><span class="p">:</span> <span class="s2">"Elbasan"</span><span class="p">,</span>
+    <span class="s2">"Elym"</span><span class="p">:</span> <span class="s2">"Elymaic"</span><span class="p">,</span>
+    <span class="s2">"Ethi"</span><span class="p">:</span> <span class="s2">"Ethiopic"</span><span class="p">,</span>
+    <span class="s2">"Gara"</span><span class="p">:</span> <span class="s2">"Garay"</span><span class="p">,</span>
+    <span class="s2">"Geor"</span><span class="p">:</span> <span class="s2">"Georgian"</span><span class="p">,</span>
+    <span class="s2">"Glag"</span><span class="p">:</span> <span class="s2">"Glagolitic"</span><span class="p">,</span>
+    <span class="s2">"Gong"</span><span class="p">:</span> <span class="s2">"Gunjala_Gondi"</span><span class="p">,</span>
+    <span class="s2">"Gonm"</span><span class="p">:</span> <span class="s2">"Masaram_Gondi"</span><span class="p">,</span>
+    <span class="s2">"Goth"</span><span class="p">:</span> <span class="s2">"Gothic"</span><span class="p">,</span>
+    <span class="s2">"Gran"</span><span class="p">:</span> <span class="s2">"Grantha"</span><span class="p">,</span>
+    <span class="s2">"Grek"</span><span class="p">:</span> <span class="s2">"Greek"</span><span class="p">,</span>
+    <span class="s2">"Gujr"</span><span class="p">:</span> <span class="s2">"Gujarati"</span><span class="p">,</span>
+    <span class="s2">"Gukh"</span><span class="p">:</span> <span class="s2">"Gurung_Khema"</span><span class="p">,</span>
+    <span class="s2">"Guru"</span><span class="p">:</span> <span class="s2">"Gurmukhi"</span><span class="p">,</span>
+    <span class="s2">"Hang"</span><span class="p">:</span> <span class="s2">"Hangul"</span><span class="p">,</span>
+    <span class="s2">"Hani"</span><span class="p">:</span> <span class="s2">"Han"</span><span class="p">,</span>
+    <span class="s2">"Hano"</span><span class="p">:</span> <span class="s2">"Hanunoo"</span><span class="p">,</span>
+    <span class="s2">"Hatr"</span><span class="p">:</span> <span class="s2">"Hatran"</span><span class="p">,</span>
+    <span class="s2">"Hebr"</span><span class="p">:</span> <span class="s2">"Hebrew"</span><span class="p">,</span>
+    <span class="s2">"Hira"</span><span class="p">:</span> <span class="s2">"Hiragana"</span><span class="p">,</span>
+    <span class="s2">"Hluw"</span><span class="p">:</span> <span class="s2">"Anatolian_Hieroglyphs"</span><span class="p">,</span>
+    <span class="s2">"Hmng"</span><span class="p">:</span> <span class="s2">"Pahawh_Hmong"</span><span class="p">,</span>
+    <span class="s2">"Hmnp"</span><span class="p">:</span> <span class="s2">"Nyiakeng_Puachue_Hmong"</span><span class="p">,</span>
+    <span class="s2">"Hrkt"</span><span class="p">:</span> <span class="s2">"Katakana_Or_Hiragana"</span><span class="p">,</span>
+    <span class="s2">"Hung"</span><span class="p">:</span> <span class="s2">"Old_Hungarian"</span><span class="p">,</span>
+    <span class="s2">"Ital"</span><span class="p">:</span> <span class="s2">"Old_Italic"</span><span class="p">,</span>
+    <span class="s2">"Java"</span><span class="p">:</span> <span class="s2">"Javanese"</span><span class="p">,</span>
+    <span class="s2">"Jurc"</span><span class="p">:</span> <span class="s2">"Jurchen"</span><span class="p">,</span>
+    <span class="s2">"Kali"</span><span class="p">:</span> <span class="s2">"Kayah_Li"</span><span class="p">,</span>
+    <span class="s2">"Kana"</span><span class="p">:</span> <span class="s2">"Katakana"</span><span class="p">,</span>
+    <span class="s2">"Kawi"</span><span class="p">:</span> <span class="s2">"Kawi"</span><span class="p">,</span>
+    <span class="s2">"Khar"</span><span class="p">:</span> <span class="s2">"Kharoshthi"</span><span class="p">,</span>
+    <span class="s2">"Khmr"</span><span class="p">:</span> <span class="s2">"Khmer"</span><span class="p">,</span>
+    <span class="s2">"Khoj"</span><span class="p">:</span> <span class="s2">"Khojki"</span><span class="p">,</span>
+    <span class="s2">"Kits"</span><span class="p">:</span> <span class="s2">"Khitan_Small_Script"</span><span class="p">,</span>
+    <span class="s2">"Knda"</span><span class="p">:</span> <span class="s2">"Kannada"</span><span class="p">,</span>
+    <span class="s2">"Krai"</span><span class="p">:</span> <span class="s2">"Kirat_Rai"</span><span class="p">,</span>
+    <span class="s2">"Kthi"</span><span class="p">:</span> <span class="s2">"Kaithi"</span><span class="p">,</span>
+    <span class="s2">"Lana"</span><span class="p">:</span> <span class="s2">"Tai_Tham"</span><span class="p">,</span>
+    <span class="s2">"Laoo"</span><span class="p">:</span> <span class="s2">"Lao"</span><span class="p">,</span>
+    <span class="s2">"Latn"</span><span class="p">:</span> <span class="s2">"Latin"</span><span class="p">,</span>
+    <span class="s2">"Lepc"</span><span class="p">:</span> <span class="s2">"Lepcha"</span><span class="p">,</span>
+    <span class="s2">"Limb"</span><span class="p">:</span> <span class="s2">"Limbu"</span><span class="p">,</span>
+    <span class="s2">"Lina"</span><span class="p">:</span> <span class="s2">"Linear_A"</span><span class="p">,</span>
+    <span class="s2">"Linb"</span><span class="p">:</span> <span class="s2">"Linear_B"</span><span class="p">,</span>
+    <span class="s2">"Lisu"</span><span class="p">:</span> <span class="s2">"Lisu"</span><span class="p">,</span>
+    <span class="s2">"Lyci"</span><span class="p">:</span> <span class="s2">"Lycian"</span><span class="p">,</span>
+    <span class="s2">"Lydi"</span><span class="p">:</span> <span class="s2">"Lydian"</span><span class="p">,</span>
+    <span class="s2">"Mahj"</span><span class="p">:</span> <span class="s2">"Mahajani"</span><span class="p">,</span>
+    <span class="s2">"Maka"</span><span class="p">:</span> <span class="s2">"Makasar"</span><span class="p">,</span>
+    <span class="s2">"Mand"</span><span class="p">:</span> <span class="s2">"Mandaic"</span><span class="p">,</span>
+    <span class="s2">"Mani"</span><span class="p">:</span> <span class="s2">"Manichaean"</span><span class="p">,</span>
+    <span class="s2">"Marc"</span><span class="p">:</span> <span class="s2">"Marchen"</span><span class="p">,</span>
+    <span class="s2">"Medf"</span><span class="p">:</span> <span class="s2">"Medefaidrin"</span><span class="p">,</span>
+    <span class="s2">"Mend"</span><span class="p">:</span> <span class="s2">"Mende_Kikakui"</span><span class="p">,</span>
+    <span class="s2">"Merc"</span><span class="p">:</span> <span class="s2">"Meroitic_Cursive"</span><span class="p">,</span>
+    <span class="s2">"Mero"</span><span class="p">:</span> <span class="s2">"Meroitic_Hieroglyphs"</span><span class="p">,</span>
+    <span class="s2">"Mlym"</span><span class="p">:</span> <span class="s2">"Malayalam"</span><span class="p">,</span>
+    <span class="s2">"Modi"</span><span class="p">:</span> <span class="s2">"Modi"</span><span class="p">,</span>
+    <span class="s2">"Mong"</span><span class="p">:</span> <span class="s2">"Mongolian"</span><span class="p">,</span>
+    <span class="s2">"Mroo"</span><span class="p">:</span> <span class="s2">"Mro"</span><span class="p">,</span>
+    <span class="s2">"Mtei"</span><span class="p">:</span> <span class="s2">"Meetei_Mayek"</span><span class="p">,</span>
+    <span class="s2">"Mult"</span><span class="p">:</span> <span class="s2">"Multani"</span><span class="p">,</span>
+    <span class="s2">"Mymr"</span><span class="p">:</span> <span class="s2">"Myanmar"</span><span class="p">,</span>
+    <span class="s2">"Nagm"</span><span class="p">:</span> <span class="s2">"Nag_Mundari"</span><span class="p">,</span>
+    <span class="s2">"Nand"</span><span class="p">:</span> <span class="s2">"Nandinagari"</span><span class="p">,</span>
+    <span class="s2">"Narb"</span><span class="p">:</span> <span class="s2">"Old_North_Arabian"</span><span class="p">,</span>
+    <span class="s2">"Nbat"</span><span class="p">:</span> <span class="s2">"Nabataean"</span><span class="p">,</span>
+    <span class="s2">"Newa"</span><span class="p">:</span> <span class="s2">"Newa"</span><span class="p">,</span>
+    <span class="s2">"Nkoo"</span><span class="p">:</span> <span class="s2">"Nko"</span><span class="p">,</span>
+    <span class="s2">"Nshu"</span><span class="p">:</span> <span class="s2">"Nushu"</span><span class="p">,</span>
+    <span class="s2">"Ogam"</span><span class="p">:</span> <span class="s2">"Ogham"</span><span class="p">,</span>
+    <span class="s2">"Olck"</span><span class="p">:</span> <span class="s2">"Ol_Chiki"</span><span class="p">,</span>
+    <span class="s2">"Onao"</span><span class="p">:</span> <span class="s2">"Ol_Onal"</span><span class="p">,</span>
+    <span class="s2">"Orkh"</span><span class="p">:</span> <span class="s2">"Old_Turkic"</span><span class="p">,</span>
+    <span class="s2">"Orya"</span><span class="p">:</span> <span class="s2">"Oriya"</span><span class="p">,</span>
+    <span class="s2">"Osge"</span><span class="p">:</span> <span class="s2">"Osage"</span><span class="p">,</span>
+    <span class="s2">"Osma"</span><span class="p">:</span> <span class="s2">"Osmanya"</span><span class="p">,</span>
+    <span class="s2">"Ougr"</span><span class="p">:</span> <span class="s2">"Old_Uyghur"</span><span class="p">,</span>
+    <span class="s2">"Palm"</span><span class="p">:</span> <span class="s2">"Palmyrene"</span><span class="p">,</span>
+    <span class="s2">"Pauc"</span><span class="p">:</span> <span class="s2">"Pau_Cin_Hau"</span><span class="p">,</span>
+    <span class="s2">"Pcun"</span><span class="p">:</span> <span class="s2">"Proto_Cuneiform"</span><span class="p">,</span>
+    <span class="s2">"Perm"</span><span class="p">:</span> <span class="s2">"Old_Permic"</span><span class="p">,</span>
+    <span class="s2">"Phag"</span><span class="p">:</span> <span class="s2">"Phags_Pa"</span><span class="p">,</span>
+    <span class="s2">"Phli"</span><span class="p">:</span> <span class="s2">"Inscriptional_Pahlavi"</span><span class="p">,</span>
+    <span class="s2">"Phlp"</span><span class="p">:</span> <span class="s2">"Psalter_Pahlavi"</span><span class="p">,</span>
+    <span class="s2">"Phnx"</span><span class="p">:</span> <span class="s2">"Phoenician"</span><span class="p">,</span>
+    <span class="s2">"Plrd"</span><span class="p">:</span> <span class="s2">"Miao"</span><span class="p">,</span>
+    <span class="s2">"Prti"</span><span class="p">:</span> <span class="s2">"Inscriptional_Parthian"</span><span class="p">,</span>
+    <span class="s2">"Rjng"</span><span class="p">:</span> <span class="s2">"Rejang"</span><span class="p">,</span>
+    <span class="s2">"Rohg"</span><span class="p">:</span> <span class="s2">"Hanifi_Rohingya"</span><span class="p">,</span>
+    <span class="s2">"Runr"</span><span class="p">:</span> <span class="s2">"Runic"</span><span class="p">,</span>
+    <span class="s2">"Samr"</span><span class="p">:</span> <span class="s2">"Samaritan"</span><span class="p">,</span>
+    <span class="s2">"Sarb"</span><span class="p">:</span> <span class="s2">"Old_South_Arabian"</span><span class="p">,</span>
+    <span class="s2">"Saur"</span><span class="p">:</span> <span class="s2">"Saurashtra"</span><span class="p">,</span>
+    <span class="s2">"Seal"</span><span class="p">:</span> <span class="s2">"Seal"</span><span class="p">,</span>
+    <span class="s2">"Sgnw"</span><span class="p">:</span> <span class="s2">"SignWriting"</span><span class="p">,</span>
+    <span class="s2">"Shaw"</span><span class="p">:</span> <span class="s2">"Shavian"</span><span class="p">,</span>
+    <span class="s2">"Shrd"</span><span class="p">:</span> <span class="s2">"Sharada"</span><span class="p">,</span>
+    <span class="s2">"Sidd"</span><span class="p">:</span> <span class="s2">"Siddham"</span><span class="p">,</span>
+    <span class="s2">"Sidt"</span><span class="p">:</span> <span class="s2">"Sidetic"</span><span class="p">,</span>
+    <span class="s2">"Sind"</span><span class="p">:</span> <span class="s2">"Khudawadi"</span><span class="p">,</span>
+    <span class="s2">"Sinh"</span><span class="p">:</span> <span class="s2">"Sinhala"</span><span class="p">,</span>
+    <span class="s2">"Sogd"</span><span class="p">:</span> <span class="s2">"Sogdian"</span><span class="p">,</span>
+    <span class="s2">"Sogo"</span><span class="p">:</span> <span class="s2">"Old_Sogdian"</span><span class="p">,</span>
+    <span class="s2">"Sora"</span><span class="p">:</span> <span class="s2">"Sora_Sompeng"</span><span class="p">,</span>
+    <span class="s2">"Soyo"</span><span class="p">:</span> <span class="s2">"Soyombo"</span><span class="p">,</span>
+    <span class="s2">"Sund"</span><span class="p">:</span> <span class="s2">"Sundanese"</span><span class="p">,</span>
+    <span class="s2">"Sunu"</span><span class="p">:</span> <span class="s2">"Sunuwar"</span><span class="p">,</span>
+    <span class="s2">"Sylo"</span><span class="p">:</span> <span class="s2">"Syloti_Nagri"</span><span class="p">,</span>
+    <span class="s2">"Syrc"</span><span class="p">:</span> <span class="s2">"Syriac"</span><span class="p">,</span>
+    <span class="s2">"Tagb"</span><span class="p">:</span> <span class="s2">"Tagbanwa"</span><span class="p">,</span>
+    <span class="s2">"Takr"</span><span class="p">:</span> <span class="s2">"Takri"</span><span class="p">,</span>
+    <span class="s2">"Tale"</span><span class="p">:</span> <span class="s2">"Tai_Le"</span><span class="p">,</span>
+    <span class="s2">"Talu"</span><span class="p">:</span> <span class="s2">"New_Tai_Lue"</span><span class="p">,</span>
+    <span class="s2">"Taml"</span><span class="p">:</span> <span class="s2">"Tamil"</span><span class="p">,</span>
+    <span class="s2">"Tang"</span><span class="p">:</span> <span class="s2">"Tangut"</span><span class="p">,</span>
+    <span class="s2">"Tavt"</span><span class="p">:</span> <span class="s2">"Tai_Viet"</span><span class="p">,</span>
+    <span class="s2">"Tayo"</span><span class="p">:</span> <span class="s2">"Tai_Yo"</span><span class="p">,</span>
+    <span class="s2">"Telu"</span><span class="p">:</span> <span class="s2">"Telugu"</span><span class="p">,</span>
+    <span class="s2">"Tfng"</span><span class="p">:</span> <span class="s2">"Tifinagh"</span><span class="p">,</span>
+    <span class="s2">"Tglg"</span><span class="p">:</span> <span class="s2">"Tagalog"</span><span class="p">,</span>
+    <span class="s2">"Thaa"</span><span class="p">:</span> <span class="s2">"Thaana"</span><span class="p">,</span>
+    <span class="s2">"Thai"</span><span class="p">:</span> <span class="s2">"Thai"</span><span class="p">,</span>
+    <span class="s2">"Tibt"</span><span class="p">:</span> <span class="s2">"Tibetan"</span><span class="p">,</span>
+    <span class="s2">"Tirh"</span><span class="p">:</span> <span class="s2">"Tirhuta"</span><span class="p">,</span>
+    <span class="s2">"Tnsa"</span><span class="p">:</span> <span class="s2">"Tangsa"</span><span class="p">,</span>
+    <span class="s2">"Todr"</span><span class="p">:</span> <span class="s2">"Todhri"</span><span class="p">,</span>
+    <span class="s2">"Tols"</span><span class="p">:</span> <span class="s2">"Tolong_Siki"</span><span class="p">,</span>
+    <span class="s2">"Toto"</span><span class="p">:</span> <span class="s2">"Toto"</span><span class="p">,</span>
+    <span class="s2">"Tutg"</span><span class="p">:</span> <span class="s2">"Tulu_Tigalari"</span><span class="p">,</span>
+    <span class="s2">"Ugar"</span><span class="p">:</span> <span class="s2">"Ugaritic"</span><span class="p">,</span>
+    <span class="s2">"Vaii"</span><span class="p">:</span> <span class="s2">"Vai"</span><span class="p">,</span>
+    <span class="s2">"Vith"</span><span class="p">:</span> <span class="s2">"Vithkuqi"</span><span class="p">,</span>
+    <span class="s2">"Wara"</span><span class="p">:</span> <span class="s2">"Warang_Citi"</span><span class="p">,</span>
+    <span class="s2">"Wcho"</span><span class="p">:</span> <span class="s2">"Wancho"</span><span class="p">,</span>
+    <span class="s2">"Xpeo"</span><span class="p">:</span> <span class="s2">"Old_Persian"</span><span class="p">,</span>
+    <span class="s2">"Xsux"</span><span class="p">:</span> <span class="s2">"Cuneiform"</span><span class="p">,</span>
+    <span class="s2">"Yezi"</span><span class="p">:</span> <span class="s2">"Yezidi"</span><span class="p">,</span>
+    <span class="s2">"Yiii"</span><span class="p">:</span> <span class="s2">"Yi"</span><span class="p">,</span>
+    <span class="s2">"Zanb"</span><span class="p">:</span> <span class="s2">"Zanabazar_Square"</span><span class="p">,</span>
+    <span class="s2">"Zinh"</span><span class="p">:</span> <span class="s2">"Inherited"</span><span class="p">,</span>
+    <span class="s2">"Zyyy"</span><span class="p">:</span> <span class="s2">"Common"</span><span class="p">,</span>
+    <span class="s2">"Zzzz"</span><span class="p">:</span> <span class="s2">"Unknown"</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">script_group</span><span class="p">(</span><span class="n">codes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Resolve the primary Unicode encoding using the retained data snapshot."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">codes</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">"Unencoded"</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">code</span> <span class="o">&lt;=</span> <span class="mh">0x10FFFF</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">"Unknown"</span>
+    <span class="n">tag</span> <span class="o">=</span> <span class="n">SCRIPT_TAGS</span><span class="p">[</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">SCRIPT_BOUNDARIES</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">SCRIPT_NAMES</span><span class="p">[</span><span class="n">tag</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"_"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">sorted_order</span><span class="p">(</span>
+    <span class="n">records</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]],</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]:</span>
+<span class="w">    </span><span class="sd">"""Sort by the selected key while keeping .notdef first."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">key</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return the selected glyph ordering key."""</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">codes</span> <span class="o">=</span> <span class="n">record</span>
+        <span class="n">unicode_key</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">codes</span><span class="p">)</span> <span class="k">if</span> <span class="n">codes</span> <span class="k">else</span> <span class="mh">0x110000</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"Name"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">casefold</span><span class="p">(),</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">"Script"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">script_group</span><span class="p">(</span><span class="n">codes</span><span class="p">),</span> <span class="n">unicode_key</span><span class="p">,</span> <span class="n">name</span>
+        <span class="k">return</span> <span class="n">unicode_key</span><span class="p">,</span> <span class="n">name</span>
+
+    <span class="c1"># Keep .notdef at GID 0 in every exported order.</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">record</span><span class="p">:</span> <span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">".notdef"</span><span class="p">,</span> <span class="n">key</span><span class="p">(</span><span class="n">record</span><span class="p">)))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">records</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]]],</span> <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Compute or apply the complete tool operation from validated inputs."""</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">sorted_order</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">mode</span><span class="p">))</span> <span class="o">+</span> <span class="p">(</span>
+        <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="k">if</span> <span class="n">records</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="p">)</span>
+
+
+<span class="n">FontInfoDialog</span> <span class="o">=</span> <span class="n">font_info_dialog_type</span><span class="p">()</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Dialog</span><span class="p">(</span><span class="n">FontInfoDialog</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Open the shared Font Info panel with this tool's controls and preview."""</span>
+        <span class="n">FontInfoDialog</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">parent</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="n">TITLE</span><span class="p">,</span>
+            <span class="n">subtitle</span><span class="o">=</span><span class="s2">"Sort by Unicode, name or Unicode script; export one glyph name per line for the whole font."</span><span class="p">,</span>
+            <span class="n">key</span><span class="o">=</span><span class="n">KEY</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">closeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Disconnect owned slots and destroy this modeless dialog on close."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_preview_valid</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">close_script_dialog</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">event</span><span class="p">,</span>
+            <span class="n">KEY</span><span class="p">,</span>
+            <span class="n">children</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chooser</span><span class="p">,)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chooser</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">(),</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chooser</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Build all original controls and connect owned signals."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chooser</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">records</span> <span class="o">=</span> <span class="n">glyph_records</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">package</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">package</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QComboBox</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">addItems</span><span class="p">([</span><span class="s2">"Unicode"</span><span class="p">,</span> <span class="s2">"Name"</span><span class="p">,</span> <span class="s2">"Script"</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QLabel</span><span class="p">(</span><span class="s2">"Sort by"</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">"Export order…"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">currentIndexChanged</span><span class="p">,</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">a</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">())</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Validate and display a complete preview before enabling Apply."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_preview_valid</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">package</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_font</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">records</span> <span class="o">=</span> <span class="n">glyph_records</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">package</span><span class="p">)</span>
+        <span class="n">ordered</span> <span class="o">=</span> <span class="n">sorted_order</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">currentText</span><span class="p">)</span>
+        <span class="n">positions</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">)}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">(</span>
+            <span class="p">[</span><span class="s2">"Glyph"</span><span class="p">,</span> <span class="s2">"Old index"</span><span class="p">,</span> <span class="s2">"New index"</span><span class="p">,</span> <span class="s2">"Script"</span><span class="p">],</span>
+            <span class="p">[</span>
+                <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">positions</span><span class="p">[</span><span class="n">name</span><span class="p">],</span> <span class="n">index</span><span class="p">,</span> <span class="n">script_group</span><span class="p">(</span><span class="n">codes</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">codes</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ordered</span><span class="p">)</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"order"</span><span class="p">:</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">ordered</span><span class="p">],</span>
+            <span class="s2">"text"</span><span class="p">:</span> <span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">currentText</span><span class="p">),</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_button</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">ordered</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span>
+            <span class="s2">"Export only: no verified bound API safely reorders glyphs. Script uses the primary encoding and a Unicode 18.0 data snapshot. .notdef stays first."</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_preview_valid</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Show one owned modeless chooser for the refreshed glyph order."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_preview</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chooser</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">chooser</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QFileDialog</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span> <span class="s2">"Export glyph order"</span><span class="p">,</span> <span class="s2">"glyph-order.txt"</span><span class="p">,</span> <span class="s2">"Text files (*.txt)"</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">chooser</span><span class="o">.</span><span class="n">setAcceptMode</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QFileDialog</span><span class="o">.</span><span class="n">AcceptSave</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">chooser</span><span class="o">.</span><span class="n">setDefaultSuffix</span><span class="p">(</span><span class="s2">"txt"</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chooser</span><span class="o">.</span><span class="n">fileSelected</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">export_order</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chooser</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">export_order</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Write the refreshed complete glyph order as UTF-8 text."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensure_font</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+        <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">last_result</span><span class="p">[</span><span class="s2">"text"</span><span class="p">],</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Exported </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="p">)</span><span class="si">}</span><span class="s2"> names to </span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Replace this tool's owned dialog using the shared script registry."""</span>
+    <span class="k">return</span> <span class="n">show_script_dialog</span><span class="p">(</span><span class="n">Dialog</span><span class="p">,</span> <span class="n">KEY</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="categories">Categories</h2>
+<ul>
+<li><a href="../../topics/font-info/">Font Info</a></li>
+</ul>
+
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../../tags.html#tag:font-info" class="md-tag md-tag-icon">Font Info</a>
+      
+    
+      
+      
+      
+      
+        <a href="../../tags.html#tag:python" class="md-tag md-tag-icon">Python</a>
+      
+    
+  </nav>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden>
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M15 3v18"/></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.download": "Download", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1a8646e9.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="https://i.fontlab.com/fltheme26/1.0.0/basecoat.js"></script>
+      
+        <script src="https://i.fontlab.com/fltheme26/1.0.0/theme.js"></script>
+      
+    
+  </body>
+</html>

@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Real compact-panel construction and slots with owned Qt-shaped controls."""
 
+from _migration_history import before_contours_rename
 import hashlib
 import importlib.util
 import json
@@ -10,7 +11,6 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
-from menu_layout import released_bytes
 from test_masters import MasterWidget, masters  # noqa: F401
 
 ROOT = Path(__file__).parents[1]
@@ -208,12 +208,12 @@ def test_all_released60_rows_and_menu_bytes_remain_immutable():
     assert len(rows) == 69
     assert (
         hashlib.sha256(
-            json.dumps(rows[:60], sort_keys=True, separators=(",", ":")).encode()
+            json.dumps(before_contours_rename(rows[:60]), sort_keys=True, separators=(",", ":")).encode()
         ).hexdigest()
         == "5802a1d55ccce6eebb1531794bd0aaa8f935e943314912be1ba1a8dbc23832df"
     )
     for row in rows[:60]:
         assert (
-            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
+            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
             == row["destination_sha256"]
         ), row["destination"]

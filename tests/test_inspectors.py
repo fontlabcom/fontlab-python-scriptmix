@@ -2,12 +2,10 @@
 # SPDX-License-Identifier: Apache-2.0
 """Complete original metrics and outline menu acceptance with native-shaped doubles."""
 
-import runpy
 from pathlib import Path
+from _migration_history import preserved_source
 
 import pytest
-from conftest import original_source
-from menu_layout import current_rows, released_bytes
 
 ROOT = Path(__file__).parents[1]
 TOOLS = [
@@ -18,18 +16,21 @@ TOOLS = [
 ]
 
 
-@pytest.mark.parametrize("title", ["Contour Order View", "Node Statistics"])
-def test_moved_menu_main_guard_opens_owned_panel_and_close_releases_it(
-    inspectors, monkeypatch, title
-):
+@pytest.mark.parametrize(
+    "title,klass", [("Contour Order View", "ContourOrder"), ("Node Statistics", "NodeStatistics")]
+)
+def test_contour_inspector_runs_from_its_renamed_menu_entry(inspectors, monkeypatch, title, klass):
+    import runpy
+
     monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
+    inspectors.font()
     namespace = runpy.run_path(
-        str(ROOT / "Scripts" / "Contours" / (title + ".py")), run_name="__main__"
+        str(ROOT / "Scripts/Contours" / (title + ".py")), run_name="__main__"
     )
     dialog = sys._fontlab_samples[namespace["KEY"]]
-    assert "Open a font" in dialog.subtitle.text, "Launch must retain the no-font diagnosis"
-    dialog.close_button.clicked.emit()
-    assert dialog.deleted and not sys._fontlab_samples, "Close must release the owned panel"
+    assert isinstance(dialog, namespace[klass]), "File execution must show the complete editor"
+    dialog.close()
+    assert namespace["KEY"] not in sys._fontlab_samples, "Close must release the renamed menu"
 
 
 @pytest.mark.parametrize("category,title,klass", TOOLS)
@@ -375,7 +376,7 @@ def _assert_released45_invariant(rows: list[dict], root: Path) -> None:
     )
     for row in released:
         assert (
-            hashlib.sha256(released_bytes(root, row)).hexdigest()
+            hashlib.sha256((root / row["destination"]).read_bytes()).hexdigest()
             == row["destination_sha256"]
         ), f"Changed released menu bytes: {row['destination']}"
 
@@ -680,12 +681,12 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
     root = request.config.getoption("--original-source-root")
     if root is None:
         pytest.skip("Original source audit requires --original-source-root")
-    rows = current_rows(ROOT)
+    rows = json.loads((ROOT / "migration.json").read_text())
     for category, title, klass in TOOLS:
         row = next(
             r for r in rows if r["destination"] == f"Scripts/{category}/{title}.py"
         )
-        before = ast.parse(original_source(root, row["source"]).read_text())
+        before = ast.parse(preserved_source(root, row["source"]).read_text())
         after = ast.parse((ROOT / row["destination"]).read_text())
         constants = lambda t: {
             n.targets[0].id: ast.literal_eval(n.value)
@@ -785,7 +786,7 @@ def test_released45_fixed_manifest_rejects_changed_menu_bytes(tmp_path):
     for row in rows[:45]:
         destination = tmp_path / row["destination"]
         destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_bytes(released_bytes(ROOT, row))
+        destination.write_bytes((ROOT / row["destination"]).read_bytes())
     (tmp_path / rows[0]["destination"]).write_bytes(b"# changed menu\n")
     with pytest.raises(AssertionError, match="released menu bytes"):
         _assert_released45_invariant(rows, tmp_path)

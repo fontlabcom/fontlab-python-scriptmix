@@ -2,33 +2,19 @@
 # SPDX-License-Identifier: Apache-2.0
 """Real panel slots with owned Qt-shaped timers and clipboard, without a host."""
 
+from _migration_history import before_contours_rename
 import hashlib
 import importlib.util
 import json
-import runpy
 import sys
 from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
-from menu_layout import released_bytes
 from test_anchors import anchors, components, masters  # noqa: F401
 from test_proof import Signal
 
 ROOT = Path(__file__).parents[1]
-
-
-def test_moved_node_menu_main_guard_opens_owned_panel_and_close_releases_it(
-    nodes, monkeypatch
-):
-    monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
-    namespace = runpy.run_path(
-        str(ROOT / "Scripts/Contours/Node Coordinates Panel.py"), run_name="__main__"
-    )
-    dialog = sys._fontlab_samples[namespace["KEY"]]
-    assert not dialog.timer.active, "A no-font launch must leave polling stopped"
-    dialog.close_button.clicked.emit()
-    assert dialog.deleted and not sys._fontlab_samples, "Close must release panel and timer"
 
 
 @pytest.fixture
@@ -100,6 +86,22 @@ def test_no_font_is_diagnosed_complete_and_owned_close_disconnects_timer(
     dialog.close_button.clicked.emit()
     assert dialog.deleted and not dialog._connections and not sys._fontlab_samples
     assert all(slot not in signal.slots for signal, slot in connections)
+
+
+def test_renamed_node_menu_file_execution_starts_and_closes_its_owned_timer(nodes, monkeypatch):
+    import runpy
+
+    monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
+    _package, layers = nodes.font()
+    selected(layers)
+    namespace = runpy.run_path(
+        str(ROOT / "Scripts/Contours/Node Coordinates Panel.py"), run_name="__main__"
+    )
+    dialog = sys._fontlab_samples[namespace["KEY"]]
+    assert dialog.timer.isActive(), "Running the menu file must start its owned live view"
+    dialog.close_button.clicked.emit()
+    assert not dialog.timer.isActive(), "Close must stop the live view after category relocation"
+    assert namespace["KEY"] not in sys._fontlab_samples
 
 
 def test_timer_tracks_selection_geometry_master_and_falsey_current_glyph(nodes):
@@ -285,12 +287,12 @@ def test_every_released59_mapping_and_menu_remains_byte_exact():
     assert len(rows) == 69
     assert (
         hashlib.sha256(
-            json.dumps(rows[:59], sort_keys=True, separators=(",", ":")).encode()
+            json.dumps(before_contours_rename(rows[:59]), sort_keys=True, separators=(",", ":")).encode()
         ).hexdigest()
         == "8d9d4202f2c7ffbfa425072c945d7c7debeb8a84d064d7f3a06c4555f9efeab2"
     )
     for row in rows[:59]:
         assert (
-            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
+            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
             == row["destination_sha256"]
         ), row["destination"]
