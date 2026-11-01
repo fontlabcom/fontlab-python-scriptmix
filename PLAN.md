@@ -488,3 +488,5 @@ Independent source review, installed/native original scenarios, exact complete-f
 predictions/firstUndo/Redo/reopen and actual Close remain pending. Previous41menus/
 rows and archived originals stay unchanged. Full130stems/othercollections/archive
 cleanup/newtools/reporters/docs remain open.
+
+- [ ] Complete Select Different Colour displayed-cell scope with a verified package-qualified chart snapshot, mark mapping and full native preservation; empty-selection and additive source repairs alone do not qualify the original.

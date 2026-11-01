@@ -97,3 +97,5 @@ this_file: TODO.md
 - [x] Issue111 Copy Anchors: final artifact/direct review, prior67 regression, reviewed D17 and downloaded-tag R053 pass with Appv0.2.21/Scriptmixv1.0.17.
 
 - [ ] Qualify the isolated pair of read-only tools with full consumers, artifact audits, native matrix/prior68, review, release and independent downloaded-tag R053.
+
+- [ ] Complete Select Different Colour displayed-cell scope with a verified package-qualified chart snapshot, mark mapping and full native preservation; empty-selection and additive source repairs alone do not qualify the original.
