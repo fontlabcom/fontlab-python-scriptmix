@@ -25,6 +25,11 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Round To Grid](anchors/round-to-grid.md)
 - [Snap To Metrics](anchors/snap-to-metrics.md)
 
+## Cleaning
+
+- [Clear All Layer Backgrounds](cleaning/clear-all-layer-backgrounds.md)
+- [Clear Master Backgrounds](cleaning/clear-master-backgrounds.md)
+
 ## Cleanup
 
 - [Clear All Layer Backgrounds](cleanup/clear-all-layer-backgrounds.md)
