@@ -16,7 +16,8 @@ Masks/service records are backgrounds.
 How to use: activate the Font window, select one or more glyphs, then run this
 command. The new proof lists each parent's layers in stored order, so a repeated
 selection stays repeated and compatible masters can be compared side by side.
-Nothing in the font is edited. Requires Fly and App 0.2.26.dev325.
+Nothing in the font is edited, and no existing proof tab is replaced or reused.
+Requires Fly and App 0.2.26.dev325.
 
 Run **Proof > Show All Layers** from FontLab's Scripts menu.
 
@@ -25,5 +26,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/53eab6318a9d8ec01c1d68f75148a73cf22e1d2168edf3755139015050ba9504.py)
+[Python source](../../../../.build/menu-sources/d3f538f7e0236c508f297cb8f0719b161e70243f9a4abfe531283c6c48f8611d.py)
 <!--/codeinclude-->

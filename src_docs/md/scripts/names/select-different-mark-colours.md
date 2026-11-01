@@ -16,7 +16,7 @@ preferences and Output contents are not cleared or edited.
 
 Independently adapted from Pedro Arilla's Select different colour.py, based on
 Rainer Erich Scheichelbauer's Select Different Color. See NOTICE and the exact
-source identity in additional-tools.json. Requires Fly and App 0.2.26.dev325.
+source identity in additional-tools.json. Requires Fly and App 0.2.26.dev332.
 Native acceptance, including filtered/combined Font views, remains pending.
 
 Run **Names > Select Different Mark Colours** from FontLab's Scripts menu.
@@ -26,5 +26,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f5eddbb35bfb6ed10d3209092ea2f4d884718854bac111a277d378d60e2a6992.py)
+[Python source](../../../../.build/menu-sources/b7ae9a80df16bdf93ab885dce5e52a17edd1ac518931673bb77283563689070c.py)
 <!--/codeinclude-->

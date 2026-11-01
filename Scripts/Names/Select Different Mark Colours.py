@@ -10,7 +10,7 @@ preferences and Output contents are not cleared or edited.
 
 Independently adapted from Pedro Arilla's Select different colour.py, based on
 Rainer Erich Scheichelbauer's Select Different Color. See NOTICE and the exact
-source identity in additional-tools.json. Requires Fly and App 0.2.26.dev325.
+source identity in additional-tools.json. Requires Fly and App 0.2.26.dev332.
 Native acceptance, including filtered/combined Font views, remains pending.
 """
 

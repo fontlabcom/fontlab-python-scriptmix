@@ -3207,7 +3207,7 @@
     "title": "Select Different Mark Colours",
     "key": "select_different_mark_colours",
     "destination": "Scripts/Names/Select Different Mark Colours.py",
-    "destination_sha256": "f5eddbb35bfb6ed10d3209092ea2f4d884718854bac111a277d378d60e2a6992",
+    "destination_sha256": "b7ae9a80df16bdf93ab885dce5e52a17edd1ac518931673bb77283563689070c",
     "kind": "original-workflow-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -3220,6 +3220,6 @@
     "scope": "Add current Font-window displayed glyphs outside the initial selected native mark-hue set. Keep initial selections; empty selection is unchanged; current filtered model controls native GID mapping.",
     "native_acceptance": "pending",
     "release_gate": "pending root review, installed native filtered/combined-window selection and preservation",
-    "app_minimum": "0.2.26.dev325"
+    "app_minimum": "0.2.26.dev332"
   }
 ]
