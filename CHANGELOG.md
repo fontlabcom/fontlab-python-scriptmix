@@ -2,6 +2,43 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-01 — figure window geometry and completion
+
+The isolated figure panel saves/restores geometry in its own settings store.
+Restore runs after full construction and keeps malformed settings usable with a
+diagnostic. Close records save failures and always runs owned cleanup. Reuse
+App script_completion for reject/Escape and duplicate-launch closure; no custom
+reject recursion. Family/unrelated keys remain, contour replacement resets.
+Existing larger preview layout and stay-open Apply behavior remain explicit
+adaptation differences; automatic alignment and native preservation are open.
+
+Seven new full-selection-base fakeQt regressions failed before implementation.
+Final focused checks:311passed against each ordinary App wheel/sdist. Nine realQt
+subprocess cases pass on Qt5.15.19 and Qt6.12.0 using the production subclass,
+minimal QDialog selection base and actual App completion/cleanup/launcher helpers.
+They cover Close/button/reject/Escape/replacement, parent/flags/modality, geometry
+roundtrip, repeated completion, destruction, malformed data and write/sync/save
+failures. Qt5 uses source App; Qt6 uses installed App. No font/preferences touched.
+Close errors are retained in slot_error, not promised as user-visible feedback.
+
+Full configured gate x6Yymo:58failed4403passed17skipped, exit1; exact58failed-node
+set unchanged. Nine extra skips are the realQt tests absent from the minimal gate;
+they pass separately. All14modules exceed80%; figure module88.22%. Docs10pass,
+173current pins match, scoped Ruff/diff check pass. Independent source review
+finds no blocking issue. No push while the full gate fails; native remains open.
+
+Commands through rtk proxy:
+- Candidate: env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/ordinary-artifacts/wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_geometry.py (before production:exit1,7failed).
+- Same environment: tests/test_default_figure_geometry.py tests/test_default_figure_geometry_runtime.py tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py tests/test_issue122_G2.py tests/test_cov_a_writers.py:exit0,311passed; repeat sdist-env/bin/python:exit0,311passed.
+- Candidate: env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 FONTLABAPP_TEST_QT5=1 PYTHONPATH=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src:/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-fly/src /Volumes/Falstaff4T/fontlab-scripting-data/verification/issue-120/typed-date-z11/qt5-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_geometry_runtime.py:exit0,9passed.
+- Workspace: .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/fontlab-python-scriptmix fontlab-python-scriptmix:exit1.
+- Candidate: env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs:exit0,10passed.
+- Candidate: ruff check 'Scripts/Components/Set Default Figures.py' tests/test_default_figure_geometry.py tests/test_default_figure_geometry_runtime.py; git diff --check:each exit0.
+
+Wait, but: real standalone Qt is not native FontLab. Dedicated-host positioning,
+full native cleanup, Apply/history/save and original-domain acceptance remain.
+External evidence uses menu-message-priority-20261101/figure-geometry-*.
+
 ## 2026-11-01 — recover from figure preference read failures
 
 Independent review found213d687 could fail during partial panel construction,

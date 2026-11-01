@@ -14,7 +14,8 @@ contours stay by default, so the new components can overlap the old drawing.
 Enable Replace own contours to remove those contours. Components, widths and
 kerning class memberships follow the chosen figures on every master. Existing
 anchors and Unicode assignments stay. The chosen family is remembered; Replace
-own contours starts unchecked each time.
+own contours starts unchecked each time. Window position and size are restored
+when reopened; closing saves them even without Apply.
 How: Preview exact base names and set explicit base and master-layer names. No
 automatic layer is made.
 Why: One complete set avoids mixing figure styles between glyphs or masters.
@@ -40,5 +41,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c0449cb19153c1beccc645edbbccc443b946a0be23a2fa809256d586cb43cb94.py)
+[Python source](../../../../.build/menu-sources/ca0babc7458b01abfea6b691d9819fd5c3ac709ea251178f43c4b2405da8964c.py)
 <!--/codeinclude-->

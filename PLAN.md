@@ -6,7 +6,7 @@ this_file: PLAN.md
 
 ## Figures contour-preservation repair — 2026-11-01
 
-- [ ] Finish Set Default Figures automatic alignment, window persistence, prototype-domain and native/history preservation. Source-default contour preservation is repaired and verified separately (figures-default-20261101 evidence); do not treat that bounded fix as complete port acceptance.
+- [ ] Finish Set Default Figures automatic alignment, native window persistence, prototype-domain and native/history preservation. Source-default contour preservation is repaired and verified separately (figures-default-20261101 evidence); do not treat that bounded fix as complete port acceptance.
 
 
 - [ ] Resolve and qualify priority through the macOS sheet transition for Glyph Table CSV, Glyph Order Preview and Export, and Pair List Browser; preserve open() asynchronous window modality and owned cleanup.

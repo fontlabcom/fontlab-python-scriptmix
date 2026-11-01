@@ -30,7 +30,7 @@ SIGNALS = frozenset(
         "valueChanged", "stateChanged", "currentTextChanged", "itemChanged", "cellChanged",
         "editingFinished", "returnPressed", "activated", "finished", "timeout",
         "itemDoubleClicked", "currentItemChanged", "triggered", "cellClicked", "itemClicked",
-        "selectionChanged", "currentRowChanged", "currentCellChanged", "fileSelected", "cellDoubleClicked", "textEdited", "accepted", "rejected",
+        "selectionChanged", "currentRowChanged", "currentCellChanged", "fileSelected", "cellDoubleClicked", "textEdited", "accepted", "rejected", "destroyed",
     }
 )
 
@@ -410,6 +410,13 @@ class Dialog(Widget):
     def close(self) -> bool:
         self.closed = True
         return self.close_result
+
+    def saveGeometry(self):
+        return b"owned"
+
+    def restoreGeometry(self, value):
+        self.restored_geometry = value
+        return value == b"owned"
 
     def closeEvent(self, event: Any) -> None:
         self.base_close_event = event

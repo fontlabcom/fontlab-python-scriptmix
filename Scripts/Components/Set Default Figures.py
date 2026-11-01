@@ -8,7 +8,8 @@ contours stay by default, so the new components can overlap the old drawing.
 Enable Replace own contours to remove those contours. Components, widths and
 kerning class memberships follow the chosen figures on every master. Existing
 anchors and Unicode assignments stay. The chosen family is remembered; Replace
-own contours starts unchecked each time.
+own contours starts unchecked each time. Window position and size are restored
+when reopened; closing saves them even without Apply.
 How: Preview exact base names and set explicit base and master-layer names. No
 automatic layer is made.
 Why: One complete set avoids mixing figure styles between glyphs or masters.
@@ -36,6 +37,7 @@ import fly.ap.edit_guards as edit_guards  # noqa: PLR0402
 import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
 import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402
 import fly.ap.history as history  # noqa: PLR0402
+import fly.ap.script_completion as script_completion  # noqa: PLR0402
 import fly.ap.scripting as scripting  # noqa: PLR0402
 import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
 
@@ -430,9 +432,18 @@ def panel_type(settings: Any = None) -> type:
         def __init__(self, parent: Any = None) -> None:
             self.settings_error = ""
             super().__init__(parent)
+            self._completion_lifetime = script_completion.install(self, KEY)
+            try:
+                geometry = self.figure_settings.value("geometry", None)
+                if geometry is not None and not self.restoreGeometry(geometry):
+                    raise ValueError("Saved window geometry is invalid.")
+            except Exception as error:  # Preserve a usable panel.
+                self.settings_error = "; ".join(
+                    filter(None, (self.settings_error, str(error)))
+                )
             if self.settings_error:
                 self.status.setText(
-                    "Saved figure family could not be loaded: " + self.settings_error
+                    "Saved figure settings could not be loaded: " + self.settings_error
                 )
 
         def build_controls(self) -> None:
@@ -462,6 +473,22 @@ def panel_type(settings: Any = None) -> type:
             """Refresh first so a settings error cannot leave the previous preview."""
             self.refresh()
             save_family(self.figure_settings, int(self.figure_family.currentIndex))
+
+        def closeEvent(self, event: Any) -> None:
+            """Persist window placement without preventing owned cleanup on failure."""
+            if self._completion_lifetime.closed:
+                return
+            try:
+                if not self.figure_settings.isWritable():
+                    raise RuntimeError("Figure settings are read-only.")
+                self.figure_settings.setValue("geometry", self.saveGeometry())
+                self.figure_settings.sync()
+                if self.figure_settings.status() != type(self.figure_settings).NoError:
+                    raise RuntimeError("Figure window geometry could not be saved.")
+            except Exception as error:  # Cleanup must still run.
+                self.slot_error = repr(error)
+            finally:
+                super().closeEvent(event)
 
         def plan(self) -> list[glyph_copies.Row]:
             package = self.font_package()

@@ -37,6 +37,8 @@ IDS = itertools.count(1)
 SMOOTH = 0x30
 Spec = tuple
 SIGNALS = {
+    "finished",
+    "destroyed",
     "clicked",
     "textChanged",
     "toggled",
@@ -317,6 +319,13 @@ class Dialog(Widget):
         self.palette = Palette()
         self.core_closed = 0
         Dialog.registry.append(self)
+
+    def saveGeometry(self):
+        return b"owned"
+
+    def restoreGeometry(self, value):
+        self.restored_geometry = value
+        return value == b"owned"
 
     def closeEvent(self, event: Any) -> None:
         self.core_closed += 1
