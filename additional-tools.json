@@ -150,7 +150,7 @@
     "title": "Check Tabular Widths",
     "key": "check_tabular_widths",
     "destination": "Scripts/Metrics/Check Tabular Widths.py",
-    "destination_sha256": "91f3239547e78b08dc880af51b90047e061cebaedf97e85ae59271f71a3c9c1e",
+    "destination_sha256": "7ee3a883e5019ae68b03077a330b3255f53d6433f22498b75ea1dca0d4c9487d",
     "kind": "practical-report-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -199,7 +199,7 @@
     "title": "Point Counter",
     "key": "point_counter",
     "destination": "Scripts/Reports/Point Counter.py",
-    "destination_sha256": "6bd2b98026efdcf2c537e0767c8397b0fa0c30549040febb0bf751330e268767",
+    "destination_sha256": "7566b7a194efebf36af04aaeb9173bd04e4b9ff18d394b7c425565d87e57a193",
     "kind": "practical-all-layer-report-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
@@ -215,7 +215,7 @@
     "title": "Vertical Metrics Reporter",
     "key": "vertical_metrics_reporter",
     "destination": "Scripts/Reports/Vertical Metrics Reporter.py",
-    "destination_sha256": "4c51bd52195903544a1913513989c5992256f349ea64fab1042a13ac180cb867",
+    "destination_sha256": "dee6fe507900cb334dded3b1e3db87d884c14edc18ab8e52a3013b2ea97c18e4",
     "kind": "practical-all-master-report-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -231,7 +231,7 @@
     "title": "Random Numbers",
     "key": "random_proof_numbers",
     "destination": "Scripts/Proof/Random Numbers.py",
-    "destination_sha256": "690f1460982f7fa188e5156cabfd8a0c6c7392f9d20a2abe4cd43d34c0f076d2",
+    "destination_sha256": "558771f1e3765bfb4f85a5f22c6c7d8a7943fe4cfba662b40b73d1e1b3fed3df",
     "kind": "practical-random-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -247,7 +247,7 @@
     "title": "Random Lowercase Nontext",
     "key": "random_proof_lowercase_nontext",
     "destination": "Scripts/Proof/Random Lowercase Nontext.py",
-    "destination_sha256": "b21a43e318f270f2ba6ea584fdb592328771d97c33af4c498a8926af1987d976",
+    "destination_sha256": "ae85f58dc5a9a98415439bc16247527ca4fcd91e4f6f02313f54dc11e1e14786",
     "kind": "practical-random-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -263,7 +263,7 @@
     "title": "Random Title Nontext",
     "key": "random_proof_title_nontext",
     "destination": "Scripts/Proof/Random Title Nontext.py",
-    "destination_sha256": "a0b03c4dee51be0e95554f51d9f41908f59e4e669eebaa253fbf6446706b72e8",
+    "destination_sha256": "0bb7637b351916aef0f4106e9045030af0d4d1a161de178637248656ed678a2d",
     "kind": "practical-random-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -279,7 +279,7 @@
     "title": "Random Uppercase Nontext",
     "key": "random_proof_uppercase_nontext",
     "destination": "Scripts/Proof/Random Uppercase Nontext.py",
-    "destination_sha256": "49422f4c1a396bc6b4ecafba71a28172b13e10ce65d4d610764a58210ecf32ba",
+    "destination_sha256": "4de453a380540682b87f6c779cac2d1043c5d523f334a204ecb30656574543c9",
     "kind": "practical-random-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -295,7 +295,7 @@
     "title": "Random Lowercase Words",
     "key": "random_proof_lowercase_words",
     "destination": "Scripts/Proof/Random Lowercase Words.py",
-    "destination_sha256": "5ba9fb84427edcd9572f07a7892bceac33e9fdeb8a97bd2a7d0ab98b42301ce2",
+    "destination_sha256": "505aa0881c0c14fc68a0e27739f2be562151919ebe2962a8d9b86becc8e75f8f",
     "kind": "practical-random-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -311,7 +311,7 @@
     "title": "Random Title Words",
     "key": "random_proof_title_words",
     "destination": "Scripts/Proof/Random Title Words.py",
-    "destination_sha256": "298fe1a894fcf2d4456f11ffed0515b3afd792fea714e9c75a54553a0ce4c9b4",
+    "destination_sha256": "0146c24ca847de4fb70520e078b9e180fcd7038f25fb10a6a4d31cf8ed34ef09",
     "kind": "practical-random-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -327,7 +327,7 @@
     "title": "Random Uppercase Words",
     "key": "random_proof_uppercase_words",
     "destination": "Scripts/Proof/Random Uppercase Words.py",
-    "destination_sha256": "54cf736bdda9d265a856e39533c3ff3c2e9b19803afbf952cf8e8b2e79f6ef65",
+    "destination_sha256": "bca6a0f7efe597e961a2ad7950448ea684d1da45806f555735a67f05132be22d",
     "kind": "practical-random-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -343,7 +343,7 @@
     "title": "Glyphs Between Lowercase",
     "key": "context_proof_lowercase",
     "destination": "Scripts/Proof/Glyphs Between Lowercase.py",
-    "destination_sha256": "e653fca3806128de7c95777b77e821ef585ea3f19a4ea985547225bee67af69a",
+    "destination_sha256": "8318e61f74c4d03baa7db7f153444027e3304bd25b723ca6d47c395cd6d7b143",
     "kind": "practical-context-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -359,7 +359,7 @@
     "title": "Glyphs Between Uppercase",
     "key": "context_proof_uppercase",
     "destination": "Scripts/Proof/Glyphs Between Uppercase.py",
-    "destination_sha256": "56fee6616cb92fcfedb6dca62d6d4e118ebc00c02aba69e5807d0f939eaf73f8",
+    "destination_sha256": "d86fcbf841ffa593e290e2cff377dbc6964cd7b5e4a95c15ad74450e48d4d00e",
     "kind": "practical-context-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -375,7 +375,7 @@
     "title": "Glyphs Between Lining Figures",
     "key": "context_proof_lining",
     "destination": "Scripts/Proof/Glyphs Between Lining Figures.py",
-    "destination_sha256": "9e3211e44dd8260665541bb62e2072c9a8d3225ae6668c286126ae7b6c5140de",
+    "destination_sha256": "196192a7858d2f2359d69bf91c0708a589615e27dcb53850f72a13db81034d42",
     "kind": "practical-context-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -391,7 +391,7 @@
     "title": "Glyphs Between Oldstyle Figures",
     "key": "context_proof_oldstyle",
     "destination": "Scripts/Proof/Glyphs Between Oldstyle Figures.py",
-    "destination_sha256": "f0faf89f81c158a033fd9188e4701efbd0e7b69c7a2de419e980872f505dc9c9",
+    "destination_sha256": "2fcc6177e60560e458de31293dac2b7b977c2a7ee0a2d32c8587454b2a65f788",
     "kind": "practical-context-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -407,7 +407,7 @@
     "title": "Glyphs Surrounded by H",
     "key": "context_proof_H",
     "destination": "Scripts/Proof/Glyphs Surrounded by H.py",
-    "destination_sha256": "f93f130ba02503e47b064635fc67727bbb6e64d1fbb71b4c07a06e1e3e721000",
+    "destination_sha256": "490f93dccfdcc8d0dfe58017614686e174e87fec02f1b4aebfe59721d2d3d8a9",
     "kind": "practical-context-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -423,7 +423,7 @@
     "title": "Glyphs Surrounded by I",
     "key": "context_proof_I",
     "destination": "Scripts/Proof/Glyphs Surrounded by I.py",
-    "destination_sha256": "33570d511d1b14b19c952d6f1b8c4343f5cd19ab5438d0a075588767077022a9",
+    "destination_sha256": "4bea801587c5c86c8c813baf3bcb5b62a1bfd52f2a41cf4c6b9e2ea0e7297534",
     "kind": "practical-context-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -439,7 +439,7 @@
     "title": "Glyphs Surrounded by HHOHH",
     "key": "context_proof_HHOHH",
     "destination": "Scripts/Proof/Glyphs Surrounded by HHOHH.py",
-    "destination_sha256": "2a257fa2fb7847a47267e7adc884988d1abb0e40796e7dfc04ca90bfa5668509",
+    "destination_sha256": "6b27df5c1cd3be9817e22abea14a71479abac0a8aea138643e5101e2f3e4e2d9",
     "kind": "practical-context-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -455,7 +455,7 @@
     "title": "Glyphs Surrounded by Nnonn",
     "key": "context_proof_nnonn",
     "destination": "Scripts/Proof/Glyphs Surrounded by Nnonn.py",
-    "destination_sha256": "61796d5b7d9f4577fca75c22ade9cd37febb22f3da2b1a539ad5b97080c4c534",
+    "destination_sha256": "c4f65f1b6b09ecd1296b970f9e705cbd310877870bcfe0fa274f960b8599087f",
     "kind": "practical-context-proof-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -471,7 +471,7 @@
     "title": "Text Filter",
     "key": "text_filter",
     "destination": "Scripts/Proof/Text Filter.py",
-    "destination_sha256": "b26e7587bed8afbe53959fe0d283743fa592f9beff7e00bd21b28db4be8707fd",
+    "destination_sha256": "19b763704e3157b7d6ee26d55c88721723ebf92ff569c818919fc43c83469ca6",
     "kind": "practical-text-filter-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
@@ -487,7 +487,7 @@
     "title": "Tallest and Shortest",
     "key": "layer_extrema_current",
     "destination": "Scripts/Proof/Tallest and Shortest.py",
-    "destination_sha256": "3c6d424de9ff0463345b97f3edb047d7b5065173bf0cc2dcefffaf4aed903520",
+    "destination_sha256": "0991d387da230fe6ee87a8c98dbabc90b37c5156d988b2d5e885d8b0027f49cb",
     "kind": "practical-layer-extrema-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
@@ -503,7 +503,7 @@
     "title": "Highest & Lowest Glyphs",
     "key": "layer_extrema_all",
     "destination": "Scripts/Proof/Highest & Lowest Glyphs.py",
-    "destination_sha256": "b1a8215b52fe0991d9fcf5307ea749bb2c242dd1f63220a32204a925864b9033",
+    "destination_sha256": "7a774534a4c6905a5123fdb6c15ba9b39d81947d8de8dc7b6422827c58e675dc",
     "kind": "practical-layer-extrema-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
@@ -519,7 +519,7 @@
     "title": "Why You Not Compatible?",
     "key": "layer_compatibility",
     "destination": "Scripts/Reports/Why You Not Compatible.py",
-    "destination_sha256": "ba9c6a6455d02c1b4c64bf7005933720eba4c6ca949ce37a0e504797dfed9548",
+    "destination_sha256": "cc1bf2861af45e722cc855088569921e890c7067cc1158b1f240c0e5c4a5cd04",
     "kind": "practical-layer-compatibility-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
@@ -541,7 +541,7 @@
     "title": "Bracket Layers and Components",
     "key": "bracket_layers_report",
     "destination": "Scripts/Reports/Bracket Layers and Components.py",
-    "destination_sha256": "627aa6f7ac9f755ddc80128ac4958989d7f57f9786edbb786b7585115b1401b6",
+    "destination_sha256": "142738e5fa8d4a9b657069958f438097a578af79c7907f769c85458766816911",
     "kind": "practical-bracket-layers-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
@@ -563,7 +563,7 @@
     "title": "Bracket Layers and Components",
     "key": "bracket_layers_tab",
     "destination": "Scripts/Proof/Bracket Layers and Components.py",
-    "destination_sha256": "131a8885c55527a6a64dd62c04cf54f0ce9fcf6df3ec8327b2c13931f404e4a1",
+    "destination_sha256": "193932cf6805cfa1aeb8d0fb800a4a838af10df8edb444b411eb631d7814a2e0",
     "kind": "practical-bracket-layers-workflow-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
@@ -585,7 +585,7 @@
     "title": "Select Contours",
     "key": "select_contours",
     "destination": "Scripts/Contours/Select Contours.py",
-    "destination_sha256": "33ea16c7dae09da3f0fe8c2f94c2ae16472e3637cebe8e0c07879ef8aed6b8fc",
+    "destination_sha256": "30b78148e9049c09c8144d9a01dcaec3f51e428d525ed60756b78cad81c2e1cb",
     "kind": "independent-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -602,7 +602,7 @@
     "title": "Select Small Contours",
     "key": "select_small_contours",
     "destination": "Scripts/Contours/Select Small Contours.py",
-    "destination_sha256": "702ed948aac46aa77e8be547b524e04552b252157513220359545748b029d2eb",
+    "destination_sha256": "a0da6134d7e5809512e64a5101d3ef6659759b91c0969dfc9ab0f51707909492",
     "kind": "independent-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -619,7 +619,7 @@
     "title": "Select Partial Contours",
     "key": "select_partial_contours",
     "destination": "Scripts/Contours/Select Partial Contours.py",
-    "destination_sha256": "8e2c40191f1ad26cbe5fe652bff8760c33a04ac4826ab6a31ea18a0ddc6f062c",
+    "destination_sha256": "38411a794d81792986729e5e479e3403d980f5933ce19c9462379f1d72f977f0",
     "kind": "independent-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -647,13 +647,13 @@
     "scope": "Every glyph in font order; existing Glyport GSGlyph.category Mark versus base; complete selectable XML lib fragment with Refresh/Close. XML escaping adaptation.",
     "native_acceptance": "pending",
     "release_gate": "pending native preservation/lifecycle and reviewed artifact gates",
-    "app_minimum": "0.2.74.dev0"
+    "app_minimum": "0.2.26.dev159"
   },
   {
     "title": "Master Node Compatibility Report",
     "key": "master_node_report",
     "destination": "Scripts/Reports/Master Node Compatibility Report.py",
-    "destination_sha256": "69b3a139639f7b40fc87b06d68a86ab8351a6b43f383fa2f91fc98dd93ba3147",
+    "destination_sha256": "f9c5d29d7bcd3152f5fb101aa79683f2c8a0cf98acf28683e649d3afa7138f93",
     "kind": "original-workflow-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/Reset-Type-Studio/Glyphs-Scripts",
@@ -665,13 +665,13 @@
     "scope": "Selected unique glyphs, every master versus first, full path/oncurve/line/curve+qcurve/handle/point counters and first node mismatch. Fix equal-count type mismatches and trailing missing reference paths.",
     "native_acceptance": "pending",
     "release_gate": "pending controller review, owned native preservation/lifecycle and artifact gates",
-    "app_minimum": "0.2.77.dev0"
+    "app_minimum": "0.2.26.dev159"
   },
   {
     "title": "Dump to SVG Path Commands",
     "key": "svg_path_commands",
     "destination": "Scripts/Reports/Dump to Svg Path Commands.py",
-    "destination_sha256": "be2066e63cdf0a8ceb58f8ca251b8bcf643ecee821423b7dfbb27fb9376da535",
+    "destination_sha256": "e93030cb93c103beefb66e96ac910e8455d1575fae19513ff356fe961c8540b5",
     "kind": "original-workflow-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
@@ -683,13 +683,13 @@
     "scope": "First selected layer own paths only; ordered M/L/C operands, unconditional Z and blank line after every open/closed/empty contour. Unsupported/quadratic segments refuse the whole report; not a complete SVG/component export. Own affine shape transforms are applied; projective transforms refuse the whole report.",
     "native_acceptance": "pending",
     "release_gate": "pending controller review, owned native preservation/lifecycle and artifact gates",
-    "app_minimum": "0.2.77.dev0"
+    "app_minimum": "0.2.26.dev159"
   },
   {
     "title": "Same Kerning Groups",
     "key": "same_kerning_groups",
     "destination": "Scripts/Kerning/Same Kerning Groups.py",
-    "destination_sha256": "bbcde4e727fd0e25cfce8c194796b8cc49b37f8f419698d4533a72e3af8e7d2a",
+    "destination_sha256": "b929c1ca588c43c37cdc17bb61eba2279fef25c085b259c69ee761ffa53d7106",
     "kind": "independent-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
@@ -702,13 +702,13 @@
     "scope": "First selected glyph; independent visual left/right group peers in font order, excluding current identity. Literal labels/separators and explicit named peer symbols in a fresh tab; source empty/singleton diagnosis. Distinct overlapping side classes are diagnosed before tab creation; nonkerning classes are filtered. Read first selected parent only, no selected layers; peer sides queried only when current has that side, no-group branch skips peers.",
     "native_acceptance": "pending",
     "release_gate": "pending owned native fresh-tab/cursor/workspace and full font/cache/history preservation",
-    "app_minimum": "0.2.82.dev0"
+    "app_minimum": "0.2.26.dev159"
   },
   {
     "title": "Close But No Cigar",
     "key": "near_miss",
     "destination": "Scripts/Reports/Close But No Cigar.py",
-    "destination_sha256": "4da50707a3e71a18284e8a1bcef13a661825cd9314c00fbb0b3003d92059d57e",
+    "destination_sha256": "29ff35e0f154f429cdac652bae909f858224f854a909953ba635da4a8ac391c9",
     "kind": "complete-read-only-report-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",
@@ -726,7 +726,7 @@
     "title": "Duplicates Finder",
     "key": "anchors_duplicates_finder",
     "destination": "Scripts/Anchors/Duplicates Finder.py",
-    "destination_sha256": "c853e3e80d446f333074e1dd7fd3214f3db690fc22aec86c41fbfb958e5931b7",
+    "destination_sha256": "96c167085b638162e90d2b74755056a19021f1517ea933c8361c24650ab8ef84",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Anchors/Duplicates Finder.py",
@@ -735,14 +735,14 @@
     "license": "Apache-2.0",
     "source_body_redistributed": false,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.102.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Whole font/opening selection, all masters; exact original one-pass Unicode numbered families, first-in-layer retention, ties-even coincidences opt-in, automatic layers reported/kept; actual identity-based removals with complete preflight, single final layer+glyph notification, explicit recoverable partial failures. No append rollback or UpdateAll. Real one Undo/full-font/history/dirty/save/reopen remains required."
   },
   {
     "title": "Text Holder",
     "key": "text_holder",
     "destination": "Scripts/Utilities/Text Holder.py",
-    "destination_sha256": "340ba2802a47dd91ed7a6798ad31fc2432ad97d8ba9d2840a1917feb9ac9a0bd",
+    "destination_sha256": "53728ccdcee112c49575c0a37065b8fcc84dfd15931c6149f6e256aee678d95c",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
@@ -754,13 +754,13 @@
     "scope": "Resizable floating text editor, Find first/highlight, selected-or-whole literal replacement, Save, Save & Close, Ignore & Close and persistent UTF8 content recovery. Qt UTF16 selection conversion; no font editing.",
     "native_acceptance": "pending",
     "release_gate": "pending independent review and owned FontLab/PythonQt lifecycle/storage qualification",
-    "app_minimum": "0.2.100.dev0"
+    "app_minimum": "0.2.26.dev159"
   },
   {
     "title": "Point Counter (Master Layers)",
     "key": "master-point-counter",
     "destination": "Scripts/Reports/Point Counter (Master Layers).py",
-    "destination_sha256": "b4c335d0a172c03aca160bea824275a1c2dbd3942929567a45ac758d8596990b",
+    "destination_sha256": "80bfa4e3db9c366d1c0e2be8a6556227692760901f6a69729d981e7bc1d0a4f1",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
@@ -770,14 +770,14 @@
     "source_body_redistributed": false,
     "license": "Apache-2.0",
     "scope": "Every selected occurrence, stored master layers only, empty masters/repeats, own paths/handles/nodes, normal fixed400x300 readonly report; quadratic endpoints included as explicit source correction. Literal readonly MIME via unchanged reviewed Text Holder editor; report-local native IME refusal.",
-    "app_minimum": "0.2.118.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
     "title": "Dangerous Offcurves",
     "key": "dangerous-offcurves",
     "destination": "Scripts/Reports/Dangerous Offcurves.py",
-    "destination_sha256": "04d94256f6f0171c2b579e4d36c73a0a2833cc33d6f2a974d9ad504d52b370e0",
+    "destination_sha256": "094319b2155bc5bf10024282bfffd9063388e36ec356918e99e446c700ff5989",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/slobzheninov/Glyphs-Scripts",
@@ -787,14 +787,14 @@
     "source_body_redistributed": false,
     "license": "Apache-2.0",
     "scope": "All glyphs/all foreground layers/own paths; raw wrapped four-node windows, all four finite control-axis probes, strict0.05, distinct exact-layer new tab and every per-curve finding. Ascending analytic curve-t ordering is explicit adaptation, not proven Glyphs equivalence.",
-    "app_minimum": "0.2.117.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
     "title": "Duplicate Unicodes",
     "key": "names_duplicate_unicodes",
     "destination": "Scripts/Names/Duplicate Unicodes.py",
-    "destination_sha256": "f3cc72fd0ef9c96f20827b81a39de686584c7af0749bc5d6fefc5f24427af0a4",
+    "destination_sha256": "48b1b56cc3efd4bb9b1c47ae42767bcf40bbae1a47750f01dc31c422a7a47812",
     "kind": "complete-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "rescued_original_menu": "Scripts/Names/Duplicate Unicodes.py",
@@ -803,14 +803,14 @@
     "license": "Apache-2.0",
     "source_body_redistributed": false,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.121.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Whole font numeric duplicates, primary/fontorder keeper, expanded editable checkbox tree, Rescan/Remove ticked/Close, exact surviving Unicode order. Actual font-owned code setters with two-pass stale fences, Font-window/pending-update/auto-dependant/native-dedup preflight and one final history batch; explicit partial failures, no UpdateAll/fgGlyph getter. Full Undo/Redo/dirty/font/cache/reopen native qualification pending. Inactive open Glyph editors refuse too, through App GC-protected known-class inspection; native qualification remains pending."
   },
   {
     "title": "Kerning Cutoff",
     "key": "kerning_cutoff",
     "destination": "Scripts/Kerning/Kerning Cutoff.py",
-    "destination_sha256": "3e0f4bd3d28ae2db89c4f2807592567c5cd9e22bd1b4efdf617052765b1a6498",
+    "destination_sha256": "c76ca3e306df6f6bc71eed0ae7234d2c308d8b8d5a39d025564bdb86fbae5227",
     "kind": "independent-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/googlefonts/science-gothic",
@@ -823,13 +823,13 @@
     "scope": "Every master and every explicit pair kind; inclusive[-250,100], per-master counts and one snapshot-bound batch. Earlier-master-only notification defect repaired. Shared fractional-history and persistence guards retained.",
     "native_acceptance": "pending",
     "release_gate": "pending independent review and owned full-font/history/save/reopen qualification",
-    "app_minimum": "0.2.132.dev0"
+    "app_minimum": "0.2.26.dev159"
   },
   {
     "title": "Symmetry",
     "key": "kerning-symmetry",
     "destination": "Scripts/Kerning/Symmetry.py",
-    "destination_sha256": "4fa3ec2bb9387e4b5eaaf69d5e16976ae2e394cb3300a616bbeb3e7dd0cda88a",
+    "destination_sha256": "1de7a5b93646f95d46925084f7a55aa0fdf8d9b571177f4696c438268c8f02af",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/googlefonts/science-gothic",
@@ -839,7 +839,7 @@
     "source_body_redistributed": false,
     "license": "Apache-2.0",
     "scope": "Complete seven smallcaps plus 21 Unicode targets; all 378 pair comparisons/reversals in source order on every original non-# / non-Ctr master. Original first-side classes, sequential aliases, zero deletion and ties-even fives. One complete shared history batch and owned full diagnostics; ordered stale-source refusal.",
-    "app_minimum": "0.2.137.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
@@ -856,7 +856,7 @@
     "source_license_sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
     "source_body_redistributed": false,
     "license": "Apache-2.0",
-    "app_minimum": "0.2.144.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Complete two-font and master/layer selectors, four Refresh controls, all/selected glyphs, all/specific anchors, absolute/relative/italic coordinates, literal overwrite/incoming/destination collision modes and suffix; actual destination single-history writer. Selected source explicitly matches active Font-window carrier; duplicate basenames bind IDs. Full owned native two-font/history/rawflags/reopen qualification remains required."
   },
@@ -864,7 +864,7 @@
     "title": "Hoefler Lowercase",
     "key": "kerning-proof-hoefler-lowercase",
     "destination": "Scripts/Proof/Hoefler Lowercase.py",
-    "destination_sha256": "347e908964d71921cdcd2c345a77a5e97715cb39f8b72f9a0d55b8c13c25da1a",
+    "destination_sha256": "3e0ea88318e69f9b84561a95d727c58f33eb4846baa4fd4d7e0aa86fae35f08f",
     "kind": "complete-original-proof-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -878,14 +878,14 @@
     "source_body_redistributed": false,
     "source_data_preserved": true,
     "scope": "Complete original proof content; 1 ordered fresh native tabs; named slash escapes, Unicode, whitespace and blank lines retained. No Output clearing; native full-font/workspace acceptance pending.",
-    "app_minimum": "0.2.149.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
     "title": "Hoefler Uppercase",
     "key": "kerning-proof-hoefler-uppercase",
     "destination": "Scripts/Proof/Hoefler Uppercase.py",
-    "destination_sha256": "10eefb87ddc9f3b9e80998ae5536d11aee749efa13d5a5f6a92d499c90ef765a",
+    "destination_sha256": "f83fc7f395dda186908f6ef5be938013abdd61fb85aa1f1cc1e0c5df3f0ca9da",
     "kind": "complete-original-proof-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -899,14 +899,14 @@
     "source_body_redistributed": false,
     "source_data_preserved": true,
     "scope": "Complete original proof content; 1 ordered fresh native tabs; named slash escapes, Unicode, whitespace and blank lines retained. No Output clearing; native full-font/workspace acceptance pending.",
-    "app_minimum": "0.2.149.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
     "title": "KernKing",
     "key": "kerning-proof-kernking",
     "destination": "Scripts/Proof/KernKing.py",
-    "destination_sha256": "999c689ff9f67998a501c9e5ee04c68413fe17e2b83f25c8e38937c7c1f50e14",
+    "destination_sha256": "39e2d446595ca8c5b1d815bff67d921d428be341b212ad8d0bf88f0cfd130050",
     "kind": "complete-original-proof-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -921,14 +921,14 @@
     "source_body_redistributed": false,
     "source_data_preserved": true,
     "scope": "Complete original proof content; 2 ordered fresh native tabs; named slash escapes, Unicode, whitespace and blank lines retained. No Output clearing; native full-font/workspace acceptance pending.",
-    "app_minimum": "0.2.149.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
     "title": "KernSym",
     "key": "kerning-proof-kernsym",
     "destination": "Scripts/Proof/KernSym.py",
-    "destination_sha256": "45f1e8c161ecd7d6ea3cfad71951b06f822977715255abef9a057cfd7e11926d",
+    "destination_sha256": "828da9db071c7150e0942c57e0c9e55c86024672a6e5205e0da340960dfc3aef",
     "kind": "complete-original-proof-adaptation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -942,7 +942,7 @@
     "source_body_redistributed": false,
     "source_data_preserved": true,
     "scope": "Complete original proof content; 1 ordered fresh native tabs; named slash escapes, Unicode, whitespace and blank lines retained. No Output clearing; native full-font/workspace acceptance pending.",
-    "app_minimum": "0.2.149.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
@@ -957,7 +957,7 @@
     "source_sha256": "efdddf6895ee001bb96e9a744a62b4cc31bb7d8f28045b367df7d6bc42d4c0d0",
     "license": "Apache-2.0",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending. Active and locked target masks explicitly unsupported: safe nonassigning resolver guard refuses before history, without claiming original-domain acceptance. Date failures never skip the one attempted-batch notification; errors aggregated. Deadline preparation is checked and grouped per glyph."
   },
@@ -973,7 +973,7 @@
     "source_sha256": "f4664b72409bf7a0a198dc0cc3c708f179415021b42bcbbd974ca9d5c8bad73a",
     "license": "Apache-2.0",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Whole current font in original glyph/layer order; remove entire original background objects. Distinct all-layer and declared-master scope, deduplicated shared identities. Ambiguous/orphan mappings and auto dependants refuse before history. One final batch, explicit partial failure; complete native payload/history/reopen acceptance pending. Active and locked target masks explicitly unsupported: safe nonassigning resolver guard refuses before history, without claiming original-domain acceptance. Date failures never skip the one attempted-batch notification; errors aggregated. Deadline preparation is checked and grouped per glyph."
   },
@@ -991,7 +991,7 @@
     "source_license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "source_body_redistributed": false,
     "license": "MIT AND Apache-2.0",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Original two-action Amount editor; every selected occurrence versus all foreground layers of first selected glyph, strict xHeight+10, every own node including controls, sequential per-occurrence Undo. Unknown association, implicit editor mapping and generated/hinted/locked/automatic writer domains remain incomplete native boundaries; no omitted targets or refusal-as-equivalence claim."
   },
@@ -1011,7 +1011,7 @@
     "source_body_redistributed": false,
     "license": "Apache-2.0",
     "scope": "Complete first-layer selected-node mean/nearest-two-distinct stable rule and simultaneous transformed-component-centre horizontal/vertical branches. Controls included, stored order retained; one notification, existing metadata in place.",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
@@ -1027,7 +1027,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "De-slanted (italic) and plain sidebearings per layer; Add or Set italic LSB/RSB with a measuring height; current or all masters; non-modal preview, one Undo step per Apply, auto layers never edited or notified, no UpdateAll; bases of auto glyphs refused unless overridden. Native Undo/Redo/dirty/save/reopen qualification pending."
   },
   {
@@ -1043,7 +1043,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Round advances to a step (nearest/up/down) for selected or all glyphs, current or all masters; the right sidebearing absorbs the change; one Undo step per Apply, auto layers never edited or notified, no UpdateAll; bases of auto glyphs refused unless overridden. Native qualification pending."
   },
   {
@@ -1059,7 +1059,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Centre the outline in the advance, optionally with a kept, set or changed width; odd unit to the right; negative width refused per layer; current or all masters; one Undo step per Apply, auto layers never edited or notified, no UpdateAll; bases of auto glyphs refused unless overridden. Native qualification pending."
   },
   {
@@ -1075,7 +1075,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Zero the advance of selected combining marks (Mn/Me or name ending comb; filter optional); keep, hang left or centre the outline; current or all masters; one Undo step per Apply, auto layers never edited or notified, no UpdateAll; bases of auto glyphs refused unless overridden. Native qualification pending."
   },
   {
@@ -1091,7 +1091,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "One shared advance and centred outlines for the plain-name figures (optionally currency) or the selection; widest-per-master or fixed width; one Undo step per Apply, auto layers never edited or notified, no UpdateAll; bases of auto glyphs refused unless overridden. Suffixed figures need Selected glyphs. Native qualification pending."
   },
   {
@@ -1107,7 +1107,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Scale advances by a percentage with the change split between both sidebearings (right takes the odd unit); current or all masters; one Undo step per Apply, auto layers never edited or notified, no UpdateAll; bases of auto glyphs refused unless overridden. Native qualification pending."
   },
   {
@@ -1123,7 +1123,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Tag add/remove for the selected glyphs with font-wide completion and per-tag counts. Rescan before every write; glyphs with auto layers refused before history in all seven, bases of auto composites also refused by Suffix Tool, Batch Rename and Unicode From Names (tags, marks and notes may edit a base; native check pending); Suffix Tool (when removing Unicode) and Unicode From Names also require a Font window and no open Glyph editor; no fgGlyph getter, no UpdateAll; pending-update refusal; App history order (checkInitHistoryState, one notify of layers+glyphs, lastModified stamp, every planned glyph) with read-back. Native Undo/Redo/reopen qualification pending."
   },
   {
@@ -1139,7 +1139,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Ten mark swatches with font and selection counts. Rescan before every write; glyphs with auto layers refused before history in all seven, bases of auto composites also refused by Suffix Tool, Batch Rename and Unicode From Names (tags, marks and notes may edit a base; native check pending); Suffix Tool (when removing Unicode) and Unicode From Names also require a Font window and no open Glyph editor; no fgGlyph getter, no UpdateAll; pending-update refusal; App history order (checkInitHistoryState, one notify of layers+glyphs, lastModified stamp, every planned glyph) with read-back. Native Undo/Redo/reopen qualification pending."
   },
   {
@@ -1155,7 +1155,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Add, remove or replace one name suffix, with optional Unicode removal. Rescan before every write; glyphs with auto layers refused before history in all seven, bases of auto composites also refused by Suffix Tool, Batch Rename and Unicode From Names (tags, marks and notes may edit a base; native check pending); Suffix Tool (when removing Unicode) and Unicode From Names also require a Font window and no open Glyph editor; no fgGlyph getter, no UpdateAll; pending-update refusal; App history order (checkInitHistoryState, one notify of layers+glyphs, lastModified stamp, every planned glyph) with read-back. Native Undo/Redo/reopen qualification pending."
   },
   {
@@ -1171,7 +1171,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Plain or regular-expression find and replace in glyph names over selection or whole font. Rescan before every write; glyphs with auto layers refused before history in all seven, bases of auto composites also refused by Suffix Tool, Batch Rename and Unicode From Names (tags, marks and notes may edit a base; native check pending); Suffix Tool (when removing Unicode) and Unicode From Names also require a Font window and no open Glyph editor; no fgGlyph getter, no UpdateAll; pending-update refusal; App history order (checkInitHistoryState, one notify of layers+glyphs, lastModified stamp, every planned glyph) with read-back. Native Undo/Redo/reopen qualification pending."
   },
   {
@@ -1187,7 +1187,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Set or append one note on every selected glyph, with before and after table. Rescan before every write; glyphs with auto layers refused before history in all seven, bases of auto composites also refused by Suffix Tool, Batch Rename and Unicode From Names (tags, marks and notes may edit a base; native check pending); Suffix Tool (when removing Unicode) and Unicode From Names also require a Font window and no open Glyph editor; no fgGlyph getter, no UpdateAll; pending-update refusal; App history order (checkInitHistoryState, one notify of layers+glyphs, lastModified stamp, every planned glyph) with read-back. Native Undo/Redo/reopen qualification pending."
   },
   {
@@ -1203,7 +1203,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Single-glyph note editor plus a list of every note; double-click selects through the App guard. Rescan before every write; glyphs with auto layers refused before history in all seven, bases of auto composites also refused by Suffix Tool, Batch Rename and Unicode From Names (tags, marks and notes may edit a base; native check pending); Suffix Tool (when removing Unicode) and Unicode From Names also require a Font window and no open Glyph editor; no fgGlyph getter, no UpdateAll; pending-update refusal; App history order (checkInitHistoryState, one notify of layers+glyphs, lastModified stamp, every planned glyph) with read-back. Native Undo/Redo/reopen qualification pending."
   },
   {
@@ -1219,7 +1219,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "uniXXXX, uXXXXXX, built-in AGL and derived accented Latin names give code points. Rescan before every write; glyphs with auto layers refused before history in all seven, bases of auto composites also refused by Suffix Tool, Batch Rename and Unicode From Names (tags, marks and notes may edit a base; native check pending); Suffix Tool (when removing Unicode) and Unicode From Names also require a Font window and no open Glyph editor; no fgGlyph getter, no UpdateAll; pending-update refusal; App history order (checkInitHistoryState, one notify of layers+glyphs, lastModified stamp, every planned glyph) with read-back. Native Undo/Redo/reopen qualification pending."
   },
   {
@@ -1236,7 +1236,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "source_attribution": "2018\u20132022 Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Selected editor slots; cycle body layers of the same master (FontLab name rule, plus new and legacy backups by the shared longest-master-prefix rule); explicit slot layerName or glyph active layer; read-back proof; no font write."
   },
@@ -1254,7 +1254,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "source_attribution": "2018\u20132022 Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "As Display Next Layer, step -1."
   },
@@ -1272,7 +1272,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "source_attribution": "2018\u20132022 Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Current master layer or all master layers of the selected glyphs, named '<master> backup <suffix>' with (2), (3) on collisions; names with @, # or |temp|, exact master names and names that resolve to another master are refused; preview-only inventory of existing backups. layer.clone with repaired shape and node metadata (fl#8516, fl#8538); the shown layer stays active; mask/service/automatic layers kept; auto owners and bases listed and kept; one history.commit, read back; pending updates refuse Apply."
   },
@@ -1290,7 +1290,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "source_attribution": "2018\u20132022 Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Rename-swap of master and chosen layers plus their mask layers (FontLab mask-name rule incl. single-master 'mask'); simulated name plan, rollback on failure; locked/automatic/mask/service/image refused. Undo recording of renames unqualified natively."
   },
@@ -1308,7 +1308,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "source_attribution": "2018\u20132022 Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Also covers Background/Shift background in selected glyphs.py (sha256 784535664170bced35b310dfd35710645c2ff3caf42a3dbf6eadcb909e2ee649). Non-modal panel; getMaskLayer(False) only; layer.applyTransform(QTransform, contours+components, anchors; no metrics/guides) on the mask; one notification [masks, glyphs] per click."
   },
@@ -1326,7 +1326,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "source_attribution": "2018\u20132022 Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Whole font, current master only; preview panel then explicit Replace; fully selected contours only; getMaskLayer(True) creation, removeAllShapes + shape clones; glyphs with automatic layers/locked/missing master layer skipped and counted; one notification. getMaskLayer(True) and removeAllShapes on masks unqualified natively."
   },
@@ -1344,7 +1344,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "source_attribution": "2018\u20132022 Pedro Arilla; based on Select Different Color by Rainer Erich Scheichelbauer (mekkablue, Apache-2.0)",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Add all glyphs whose mark differs from every selected glyph; shared select_glyphs(add=True) guard (fl#8528). No Font-window filter available."
   },
@@ -1361,7 +1361,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1377,7 +1377,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1393,7 +1393,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1409,7 +1409,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1425,7 +1425,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1441,7 +1441,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1457,7 +1457,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App anchor writer and panel base (fly.ap.anchor_writer, fly.ap.anchor_panel; history commit, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, refusal of 0,0 moves / auto owners and auto-composite bases (also through other composites) / queued glyph updates / duplicate names, read-back check, Undo hint when a write fails part-way. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1473,7 +1473,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Equal sidebearings by average (keep width, odd unit right), LSB, RSB, smaller or larger; negative width refused per layer; current or all masters; one Undo step per Apply, auto layers never edited or notified, no UpdateAll; bases of auto glyphs refused unless overridden. Native qualification pending."
   },
   {
@@ -1489,7 +1489,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Add to, set or scale (percent) the LSB and/or RSB in whole units; opens on Add 0 (no change); typed values survive the percent swap; negative width refused per layer; current or all masters; one Undo step per Apply, auto layers never edited or notified, no UpdateAll; bases of auto glyphs refused unless overridden. Native qualification pending."
   },
   {
@@ -1505,7 +1505,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Copy LSB and RSB, one side or the advance width (centred, odd unit right) of a typed reference glyph, master by master, plus an offset; reference never edited; missing reference layers listed; current or all masters; one Undo step per Apply, auto layers never edited or notified, no UpdateAll; bases of auto glyphs refused unless overridden. Native qualification pending."
   },
   {
@@ -1520,7 +1520,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Read-only, non-modal: one column per master with the H, x, b and p outlines of that master against its baseline, ascender, cap height, x-height and descender (FontMetrics per master, no master switch); missing glyphs or layers listed; paint errors contained; edits go to Font Info > Master Metrics Table. Native qualification pending."
   },
   {
@@ -1536,7 +1536,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: FontLab build_glyph through fly.pr with the package id, dry-run Check, Check only on request, missing master layers added as one history.commit step, plain layers only (auto_layer false), refusal of auto owners / auto-composite bases / queued glyph updates / unsafe text; FontLab's builder writes each layer itself (Edit > Undo of a rebuilt existing layer depends on FontLab; a new glyph is FontLab's Add Glyph step). Offline fakes only; native acceptance remains pending."
   },
   {
@@ -1552,7 +1552,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: in-place component transform through history.commit (operation geometry, one Undo step), no clone, no UpdateAll, plain-translation check, refusal of auto owners / auto-composite bases / queued glyph updates, read-back. Offline fakes only; native acceptance remains pending."
   },
   {
@@ -1568,7 +1568,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: one-level ejectTo copies built before history, copy preflight per base level, raw connection bits, element names and notes restored, builder.update refresh, swap through history.commit (operation geometry, retain component/shapeData/builder with deep history; recorded as one Undo step; Edit > Undo of removed components depends on FontLab, fl#7641), refusal of auto owners / auto-composite bases / queued glyph updates, read-back. Offline fakes only; native acceptance remains pending."
   },
   {
@@ -1584,7 +1584,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: in-place componentGlyph change plus builder.update through history.commit (operation geometry, one Undo step), blocks for missing component layer / cycles (fresh data at Apply) / shared element data, refusal of auto owners / auto-composite bases / queued glyph updates, read-back. Offline fakes only; native acceptance remains pending."
   },
   {
@@ -1600,7 +1600,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: in-place component offsets through history.commit (operation geometry, one Undo step), optional width-ratio scaling, no clone, no UpdateAll, refusal of auto owners / auto-composite bases / queued glyph updates, read-back. Offline fakes only; native acceptance remains pending."
   },
   {
@@ -1616,7 +1616,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: own lock flags read from FontLab get_glyph data and trusted only on a one-to-one element match, in-place contentLocked through history.commit (operation geometry, one Undo step), refusal of auto owners / auto-composite bases / queued glyph updates, read-back through a second read. Offline fakes only; native acceptance remains pending."
   },
   {
@@ -1632,7 +1632,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: true one-level unnest with ejectTo copies built before history, copy preflight per base level, raw connection bits, element names and notes restored, swap through history.commit (operation geometry, retain component/shapeData/builder with deep history; recorded as one Undo step; Edit > Undo of removed components depends on FontLab, fl#7641), selected-glyph or whole-font scope, refusal of auto owners / auto-composite bases / queued glyph updates, read-back. Offline fakes only; native acceptance remains pending."
   },
   {
@@ -1648,7 +1648,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Shape clones repaired (notes, names, raw node state; selection cleared); components not copied; masks created inside the Undo step; Replace mode removes mask shapes one by one and retains removed mask components in the notification (history.commit retain=, fl#7641), read back with no component left. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1664,7 +1664,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Checked target masters share one Apply; changing the source checks all other masters again; the target list scrolls. Target outline shapes removed, repaired source clones added; same-named anchors move, 0,0 moves (fl#8527) and duplicate names skip the layer; metrics links skip the layer. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1680,7 +1680,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Backups are '<master> backup <suffix>' layers and legacy '@' or space-prefixed layers, resolved by the longest master prefix (the rule shared with Duplicate Current Layer, Display Next/Previous Layer and Layer Cleanup), never '#' or |temp|; outline, anchors and width come back; optional delete of the backup and its mask keeps a shown or locked backup and retains the components of deleted layers (retain=, fl#7641). Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1696,7 +1696,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Kinds mask/backup/alternate(#)/other, where backup is any '<master> <text>' or legacy '@' layer by the shared longest-master-prefix rule; shown, locked and refused layers listed but not tickable; components of deleted layers retained (retain=, fl#7641); deletion read back by layer id. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1712,7 +1712,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. Shared Metrics panel (fly.ap.metrics_panel): in-place applyTransform, half-up rounding, metrics links skipped, base override tick. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1728,7 +1728,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Adapted from the owner rescued sample: shared App history commit (fly.ap.history, operation geometry), one Undo step (checkInitHistoryState, write, stamp, one notify of layers+glyph, stamp), no UpdateAll, no auto layer in the notification, auto owners and auto-composite bases (also through other composites) skipped and listed, queued glyph updates refused, read-back check, Undo hint when a write fails part-way. No UI; data fields and mask content checked; shown and locked layers kept; an empty mask is deleted with its layer; deletion read back by layer id. Offline fakes only; native one-Undo/Redo/full-font/save/reopen acceptance remains pending."
   },
   {
@@ -1744,7 +1744,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Round node coordinates half up in glyph coordinates and optionally component offsets; fractional shape offsets kept. In-place setters are meant to keep node names and flags, as source-traced but not measured. Optional anchors (ticked at start) are rounded through fly.ap.anchor_writer in the same transaction; a layer with duplicate anchor names or an anchor that would move to 0, 0 (fl#8527) is listed and kept. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1760,7 +1760,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Native contour intersections or same-direction nesting required before FontGate merge; one result per shape id per scan. Separate shapes and single self-intersecting contours kept. FontGate assign replaces appearance and loses node names, flags, contour names and corner_smooth. Restore surviving start points. Snapshot existing final Smooth-control conditions; report newly introduced conditions as save-risk advice, outside failed-store mismatches. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1776,7 +1776,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Cubic derivative roots and native insertNodeTo; cuts within 0.1002 Manhattan units of endpoints or accepted cuts kept. New nodes follow native rounding; closed PostScript contours only. Structural master compatibility hold. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1792,7 +1792,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Native clockwise and contains with all segment start and midpoint tests. Same-shape nesting decides edits, matching flShapeData::setDirection. When layer-wide nesting differs in parity, keep the contour and list inside another shape, direction left. Native segments handle quadratic implied points; overlapping outers remain outer. Snapshot existing final Smooth-control conditions and report only newly introduced conditions as save-risk advice. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1808,7 +1808,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Chord and handle tolerance with native convertToLine; FontLab recomputes smooth flags at both ends. Structural master compatibility hold. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1824,7 +1824,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Bottom-left on-curve or match-current-master start with native setStartPoint. In-place rotation is meant to keep node flags; Safety describes the VFJ reopen risk. All moves planned before writing; structural master compatibility hold. Snapshot existing final Smooth-control conditions and report only newly introduced conditions as save-risk advice. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1840,7 +1840,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Strict unsigned analytic area through fly.ap.contour_selection; closed contours only. Open contours listed as open contour, kept without area measurement. Requires App fontui extra. Native removeContour and master compatibility hold. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1856,7 +1856,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Double-zero curves to native convertToLine; both end smooth flags recomputed. Optional single-handle pull rounded to whole units; Smooth-base handles can become non-collinear and later realign. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1872,7 +1872,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Same-direction closed cyclic duplicates only. Every member with a reversed counterpart is listed as reversed duplicate, kept, including further copies; open contours kept. Native removeContour and master compatibility hold. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1888,7 +1888,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "App affine scale/skew/rotation/move about a per-layer origin. Bake plain unshared translation-only outlines; compose transforms for components and shared/scaled shapes. Optional anchors with App near-origin Redo refusal; painted preview. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1904,7 +1904,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "App affine slant with baseline or half-x-height pivot per master. Button explicitly copies current master italic angle to the common angle field. Bake plain unshared outlines; compose transforms for components and shared/scaled shapes. Optional anchors with App near-origin Redo refusal; painted preview. Shared App geometry history and read-back; the change is recorded as one Undo step. Native acceptance pending."
   },
   {
@@ -1920,7 +1920,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Empty glyphs through App glyph_creation and fontpr set_glyph(create=True), with master widths and optional Unicode, Font-window guards, auto-rebuild consent and read-back. Each new glyph is recorded as its own Undo step. Non-ASCII characters map to Unicode names; ASCII tokens are glyph names. Offline verification only; native acceptance pending."
   },
   {
@@ -1936,7 +1936,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "One shifted shadow element; node names and raw flags repaired, selection cleared. Other node properties and contour names are not repaired; copied contours merge, source element names and notes are not copied. Each Apply is recorded as one Undo step. Offline verification only; native acceptance pending."
   },
   {
@@ -1952,7 +1952,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "New .tf glyphs, widest source width plus extra per master, half-up rounding and whole-unit centring. Contour-copy limits and omitted anchors documented. App glyph_copies/glyph_creation, auto-rebuild consent and read-back. Each new glyph is recorded as its own Undo step, and the outlines as one more Undo step. Offline verification only; native acceptance pending."
   },
   {
@@ -1968,7 +1968,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Qt stroked rings with FontGate overlap removal, built before history. Only contour elements are replaced; images and empty elements remain. Read-back checks ring identity and contour count. Each Apply is recorded as one Undo step. Offline verification only; native acceptance pending."
   },
   {
@@ -1984,7 +1984,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "New .sups/.subs glyphs, uniform scale and vertical shift, half-up advances. Contour-copy limits and omitted anchors documented. App glyph_copies/glyph_creation, auto-rebuild consent and read-back. Each new glyph is recorded as its own Undo step, and the outlines as one more Undo step. Offline verification only; native acceptance pending."
   },
   {
@@ -2000,7 +2000,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "New .sc glyphs with separate x/y scales and half-up advances. Contour-copy limits and omitted anchors documented; add anchors before building accented composites. App glyph_copies/glyph_creation, auto-rebuild consent and read-back. Each new glyph is recorded as its own Undo step, and the outlines as one more Undo step. Offline verification only; native acceptance pending."
   },
   {
@@ -2016,7 +2016,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Native autohint with role-based counts and read-back reporting outlined layers left without hints, including native success returns. Source-only master/options/stored-data/node-link caveat documented. Each Apply is recorded as one Undo step. Offline verification only; native acceptance pending."
   },
   {
@@ -2032,7 +2032,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Native directional hint removal, role-based counts and read-back. Each Apply is recorded as one Undo step. Offline verification only; native acceptance pending."
   },
   {
@@ -2049,7 +2049,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "copyright": "2018\u20132022 Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "original_scope_acceptance": "pending: native new-tab content, source binding and complete preservation",
     "scope": "Open one new native Glyph tab for the captured current font. Sample five distinct passages without replacement, preserving case, punctuation and a final space. Use 24 original English passages instead of the upstream 300 third-party excerpts. Unlike the upstream sampling, no passage repeats within one proof. Pass missing characters unchanged. Refuse unsafe text before creation. No font-data write."
@@ -2068,7 +2068,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "copyright": "2018\u20132022 Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "original_scope_acceptance": "pending: native new-tab content, source binding and complete preservation",
     "scope": "Open one new native Glyph tab for the captured current font. Sample five distinct passages without replacement, preserving case, accents, punctuation and a final space. Use 24 original Spanish passages instead of the upstream 300 third-party excerpts. Unlike the upstream sampling, no passage repeats within one proof. Pass missing characters unchanged. Refuse unsafe text before creation. No font-data write."
@@ -2087,7 +2087,7 @@
     "license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
     "copyright": "2025 Fernando D\u00edaz & Reset Type Studio",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Selected glyphs and chosen masters; compensate measured ink bounds after shear. Keep both sidebearings by adjusting advance, or preserve advance and original ink centre. Adds spacing compensation beyond native Slant, Slant by Italic Angle, Actions Oblique and Scripts/Contours/Slant.py. Optional anchor transforms; shared transform writer and complete baked-node read-back. Unsupported layer content becomes a note while other glyphs remain editable."
   },
@@ -2105,7 +2105,7 @@
     "license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
     "copyright": "2025 Fernando D\u00edaz & Reset Type Studio",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Combine all-master duplication with Paths/Node Duplicator (current layer).py, SHA256 f6b7bc79856f85611abc485a8df959486afdb76c50e400b5e82f19f2b794c2c7, and Paths/Node Duplicator + 2 Handles (all masters).py, SHA256 eccf4cef027becf7fca14f29de6fde68bea8e0aaeca513c08ba75b717556cddc. One deadline-bound selection snapshot per plan supplies scope and per-glyph reference indices. Full contour correspondence, optional coincident cubic controls, and explicit auxiliary-layer mode. Unsupported content becomes notes; mismatched master edits are held when compatibility checking is enabled."
   },
@@ -2125,7 +2125,7 @@
     "source_body_redistributed": false,
     "license": "Apache-2.0",
     "scope": "Selected glyphs; current or all masters, initially all. Exact source-name filter and recursive decomposition inside matched occurrences. Preview reads source-layer counts without updating builders or making native copies. Apply prepares detached copies and compares contour counts before history. Unrelated siblings remain linked. Refused occurrences are kept rows. One geometry history commit with retained removed components and read-back.",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
@@ -2144,7 +2144,7 @@
     "source_body_redistributed": false,
     "license": "Apache-2.0",
     "scope": "Batch component locations with one coordinate row per component/master occurrence. Rows start at current component coordinates; Set writes only edited rows and retains an existing @node suffix. Reset sets Base layer name to the host master layer and skips existing matches. Defaults to all components in selected glyphs; optional Glyph-window component selection matches position and source name across masters. Optional exact-name filter. Validate declared axes, finite values and design bounds. Shared data and refused items are kept rows. Preview precedes one geometry history commit with read-back; no-change actions create no history.",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending"
   },
   {
@@ -2161,7 +2161,7 @@
     "license_sha256": "b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d",
     "copyright": "2025 Fernando D\u00edaz & Reset Type Studio",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Current FontLab selection supplies exported glyph names. Non-modal preview processes matching static OTF/TTF exports. Layout closure is off by default; optional ligature expansion lists additional glyphs in Preview. Kerning and positioning remain unless explicitly removed. Prefix localized identity records and CFF names; preserve copyright, licence records and source binaries. Require separate input/output folders and never overwrite. Cache source inspection across prefix and checkbox edits; rescan on folder or selection change or Refresh Exports. Refuse changed source bytes before writing. Requires user-installed public fontTools. No live-font write."
   },
@@ -2182,7 +2182,7 @@
     "scope": "One selected Glyph window slot; preview corresponding polygon nodes, whole contours and components across compatible foreground master and intermediate layers. If any compatible master must keep an item, every master keeps it, with one named reason. Empty outline shapes are removed. Anchors remain unchanged because pin selection is not bound. Partial curve-node selections are kept; use native Delete with synchronized Remove node. Component removal retains original history objects. Mask backup remains a separate workflow.",
     "native_acceptance": "pending",
     "release_gate": "pending owned native panel, complete font preservation, Undo, Redo and save-reopen verification",
-    "app_minimum": "0.2.150.dev0"
+    "app_minimum": "0.2.26.dev159"
   },
   {
     "title": "Set Intermediate Layer",
@@ -2201,7 +2201,7 @@
     "scope": "Selected glyphs in fonts with declared axes; explicit design coordinates on every axis; native interpolation into location-named intermediate layers. Declared axis-key case is preserved for interpolation; layer names use lower-case keys. Existing locations, incompatible masters and unsafe glyphs receive kept rows. Layer addition is confirmed by name read-back after the void native addLayer call. Fractional coordinates and existing editor slots are preserved. The addition is recorded as one Undo step.",
     "native_acceptance": "pending",
     "release_gate": "pending owned native interpolation, panel, complete font preservation, Undo, Redo and save-reopen verification",
-    "app_minimum": "0.2.150.dev0"
+    "app_minimum": "0.2.26.dev159"
   },
   {
     "title": "Paste Glyph Order Encoding",
@@ -2217,7 +2217,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "Copyright 2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Modeless insertion of pasted current-font glyph names before the initially selected glyph. Unknown names are reported and repetitions removed. Unsupported names, including non-ASCII names, receive named kept rows and are omitted while supported rows save. Each capture receives a fresh deadline. Saving checks the live font order through a names-only capture, so clearing selection after preview does not prevent saving. Header ID is -1 and its name is the file stem. Existing files and stored glyph indices remain unchanged. Import through File > Import > Encoding; use the encoding chooser's Refresh button as needed."
   },
@@ -2235,7 +2235,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "source_attribution": "2026 Giuseppe Salerno / Resistenza Type",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Non-modal current-font master copier with selection or whole-font scope and independent contours, components, anchors and metrics switches. Refused glyphs appear as kept rows while eligible glyphs copy. Hints keep a glyph only when contours are copied; transferTTH is not used. Shared shape data, named contours and nodes with an explicit corner_smooth value are kept. Other node and contour properties are not detected and not copied. contour_copy restores node names and raw flags, clearing selection; element names, notes and transforms are copied explicitly. Removed components retain history objects. Catalogue and auto facts are cached per Refresh and refreshed before Copy. Check master compatibility after copying contours or components."
   },
@@ -2253,7 +2253,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "source_attribution": "2026 Giuseppe Salerno / Resistenza Type",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Non-modal source-retaining delivery to each user-activated destination Font window. Stored font identities and workspace/fontpr lookups use fgId; the active-window guard receives the package object id. Master names match without case or surrounding spaces; unmatched masters use the captured source master and are listed. Refused glyphs appear as kept rows while others copy. New glyphs use glyph_creation, including checked creation results, explicit glyph_name, Unicode values, suffix-scoped automatic rebuild consent and automatic-layer read-back. Existing Unicode lists remain unchanged; conflicting code points keep the glyph. The result declares new glyphs receiving Unicode assignments. Transfers outlines, anchors, advances and metrics expressions. Components, hints, shared shape data, named contours and nodes with an explicit corner_smooth value are kept. Other node and contour properties are not detected and not copied. Units per em must match. Category, subcategory, script and export status are not transferred. contour_copy restores node names and raw flags, clearing selection; element names, notes and transforms are copied explicitly."
   },
@@ -2271,7 +2271,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "source_attribution": "2026 Giuseppe Salerno / Resistenza Type",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Non-modal exportable-instance preview with whole-word Bold, Italic and Oblique matching across width groups. Lists missing typographic style names and other kept rows. Copies only explicit base Style Groups; automatic base groups are kept because per-instance tfn is not exposed by the Python API. Native autoSLV/autoSGN and multi-instance controls remain available in Font Info. Checks the bound fgId and preview values before assignment. Uses the Font Info notification list [package, package.mastersContainer()] before assignment and again afterwards, followed by UpdateAll. Native instance values retain family names and hidden properties; setter failures restore original values and report the Undo hint."
   },
@@ -2290,7 +2290,7 @@
     "license_note": "Root LICENSE is MIT; upstream README declares Apache-2.0. Preserve both notices.",
     "copyright": "2019 LukeProwse",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Complete original workflow: blank custom and Side-by-side defaults; automatic optional local UTF-8 presets with four attributed fallback lists; immediate preset double-click versus custom Run precedence; full usable-character sanitation, whitespace/repeats, explicit names mode, alternate Unicode/first font-order aliases and complete diagnostics. Every copy/group final space/newline is exact. Shared App stages named glyph/layer/control symbols in one fresh target with complete source/layer identity fences, post-send readback and bounded retained cleanup. Tool-owned controls save after success and geometry on Close. Native active model binding (#8576), delimiter rendering, special text/IME and full preservation remain pending; paragraph/multiline custom input is explicitly held with exact UTF-8 preset alternative.",
     "source_resource_path": "MasterBlaster/MasterBlaster-presets.txt",
@@ -2315,7 +2315,7 @@
     "license_note": "Root LICENSE is MIT; upstream README declares Apache-2.0. Preserve both notices.",
     "copyright": "2019 LukeProwse",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Over FontLab's Glyph-window multi-master text views and Text By Master, this adds an exact-name proof set shared by every open font, with per-font encodings. Map AllFonts fonts to registered packages through FontGate IDs and read canonical font.glyphs lists twice. Publish sorted shared names, slash proof text, current-font encoded characters and complete per-font Unicode assignments in the shared report panel. Refuse changed registrations, invalid records and expired scans. Use stored FontLab names in place of Glyphs production-name conversion. The optional source label-colour action is omitted."
   },
@@ -2333,7 +2333,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Import a complete UTF-8 CSV anchor table into named glyphs on the current master. Strip header whitespace and reject unknown columns, malformed rows and missing glyphs. Round coordinates half up before preview and writing. Report only actual BOM and newline conversions. Non-modal Browse, Load and Import panel. Each application is recorded as one Undo step."
   },
@@ -2351,7 +2351,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Read a reusable cursive sample and preview missing entry/exit anchors on selected current-master glyphs. Use the right-to-left convention: exit at the left edge, entry at the right edge. Score thickness and polygon-edge tangents, preserve existing pins and accept perfect zero scores. Require closed decomposed outlines and matching master names. Layer failures become note rows. Report actual text conversions. Each application is recorded as one Undo step."
   },
@@ -2369,7 +2369,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Measure entry/exit anchors inside one selected body layer and save a new JSON file containing master name, mean ink distances and polygon-edge tangent estimates. The owned save chooser starts in the home folder and avoids overwrite confirmation for files that will be kept. Existing-file attempts request a new name. The font is read only."
   },
@@ -2387,7 +2387,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Capture Myanmar Unicode routing once per scan. Copy U+101D and U+1000 anchors to their respective bowl families across named masters. Cache each source layer once per plan and bound source and target work per layer. Doubtful layers become note rows while clean masters continue. Adds a Unicode routing preset to the two manual passes available in Copy Anchors From Glyph. Each application is recorded as one Undo step."
   },
@@ -2405,7 +2405,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Capture glyph names once per scan and inspect manual composites across named masters with a separate budget per layer. Infer each missing base label from its first mark in component order, including stacked accents. Honour mark transforms, inverse base transforms and explicit mark-layer references. Ambiguous marks, missing or automatic references, non-master bases and layer failures become note rows. Cross-composite conflicts remove only the affected base label. Clean labels and layers continue. Each application is recorded as one Undo step."
   },
@@ -2423,7 +2423,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Flatten the shared placed layer path once, including components. At at most 512 columns, compute exact filled-span lengths from the flattened rings with nonzero winding. Counters require correctly directed contours. Blend one third toward the horizontal ink median from the bounds centre. Give each layer its own time budget; refused layers become note rows while other selected layers continue. Report the estimate and optionally align an existing top anchor. Each application is recorded as one Undo step."
   },
@@ -2441,7 +2441,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Preview conditional anchor removal across all masters of selected glyphs: remove bottom where _top exists and top where _bottom exists. Keep other pins and automatic layers. Refuse unsafe dependencies before writing. Each application is recorded as one Undo step."
   },
@@ -2459,7 +2459,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Selected glyphs and chosen masters; configurable ribbon strips and filled percentage; unsuitable outlines produce kept rows while other glyphs remain writable; keyword native constructors; compare complete stored shape contour counts, node counts and point lists with 0.5-unit coordinate tolerance, without contour-wrapper equality."
   },
@@ -2477,7 +2477,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Capture node selection from the current selected layer; selected nodes choose whole contours; map contour and endpoint indices onto layers with matching contour counts, node counts and point types; shared or scaled shapes have a distinct kept message; mark every on-curve node of converted contours smooth and read back counts and smooth flags."
   },
@@ -2495,7 +2495,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Selected glyphs and chosen masters; configurable short-segment threshold; 32-interval cubic length sampling; removal indices from one node snapshot without wrapper equality; retain at least three endpoints; guard a final Smooth control before changing the start; preview and checked history write."
   },
@@ -2513,7 +2513,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Compare declared master outlines after starts and directions have been aligned; promote lines where another master has a cubic; components do not prevent outline pairing; unsuitable glyphs receive kept rows while valid glyphs remain writable; use the planner's compatibility rule with the generic compatibility tick hidden."
   },
@@ -2531,7 +2531,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Seeded holes inside the combined filled shape, including existing counters; bounded placement, separated holes and opposite winding; cache per scan and control setting; keyword native constructors; compare complete stored contour counts, node counts and point lists with 0.5-unit coordinate tolerance, without contour-wrapper equality."
   },
@@ -2549,7 +2549,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Current-layer node selection chooses whole contours; no node selection chooses all contours; map contour and endpoint indices onto layers with matching contour counts, node counts and point types; distinct kept messages for shared or scaled shapes and incompatible counts; replace cubics with chords; FontLab may reset both endpoint smooth flags."
   },
@@ -2567,7 +2567,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Compare normalized contour geometry against the first declared master among forward and reversed cyclic point-type matches; choose a unique minimum-distance order; keep ambiguous or unsuitable glyphs; read back actual coordinates, start and winding; guard a final Smooth control; generic compatibility tick hidden."
   },
@@ -2585,7 +2585,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Selected on-curve nodes; simultaneous endpoint and handle planning; the moved node's own handles also scale; per-axis factors clamped to zero through four; crossed handles collapse at their endpoints rather than flip; tiny spans use rigid movement; read-back tolerance 0.5 unit per axis; inspect smooth-node collinearity."
   },
@@ -2603,7 +2603,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Read-only current-master kerning energy and independent spacing suggestions for selected glyphs. Side memberships are indexed once. Energy is the unscaled sum of squared effective values. Ambiguous pairs are named and excluded individually; explicit zeros win. No square matrix is retained."
   },
@@ -2621,7 +2621,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Non-modal selected-glyph exception expansion on current or all masters. Unencoded alternates use their base-name glyph's punctuation classification. Explicit overrides, zeros and classes remain. Public App whole-value and pair validation are reused; positive finite UPM and the inclusive twice-UPM limit are checked. Class failures keep individual masters. Numeric failures on any master produce named kept rows and block all writes, matching the writer's font-wide numeric history checks."
   },
@@ -2639,7 +2639,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Non-modal construction of A E F H I L N O S T V X Y Z in empty selected master layers. Five explicit dimensions replace Glyphs Dimension palette data. Diagonals end horizontally and every capital spans baseline to cap height. Shared contour conversion, outline writing and metrics-link checks are used. Existing outlines, components, linked metrics and locked layers are kept."
   },
@@ -2657,7 +2657,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Group consonants on the current master and reuse membership on every master. Calculate each master's extension from its mean advance and template enclosure. Validate contour roles, stretch sides and matching node topology. Preview every target's per-master extensions, node/handle bounds and kept reasons. With an empty selection, use U+103C as the template; a multi-glyph selection is a kept row. Existing names and targets with a failed master are kept. List automatic-glyph rebuild candidates and require consent. Each Add Glyph command includes every master; outlines use one shared geometry history action."
   },
@@ -2675,7 +2675,7 @@
     "license_sha256": "6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5",
     "copyright": "2017 Simon Cozens",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Qalmi pair selectors, numbered and s/sd alternates, master-specific entry/exit preview and persistent choices in managed rlig comments. Exclude Unicode-style names and right families without a numbered default. Compile valid saved pairs; retain stale pairs as named kept records without rules. Explicit Drop stale pairs on Save removes them. Warn about unmanaged reverse rules that run first. Preserve unrelated feature source and use source-bound Save connection."
   },
@@ -2727,7 +2727,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "Alex Slobzheninov; sources also credit Rainer Erich Scheichelbauer (mekkablue)",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Six alignment choices and horizontal/vertical selected-node distribution in one non-modal preview panel. Extends Contour > Align Points and Element > Align / Distribute Shapes with node distribution, several glyph layers or masters in one Undo step, a numeric preview and explicit coordinate targets. Complete contours translate as units. Unselected adjacent handles follow their moved on-curve node by the same offset; explicitly selected handles use their own targets. Two selected nodes sharing one unselected curve handle are kept; select the handle too or align the nodes separately. Components move through outline_transform without changing their base glyphs. Anchors are never moved. Distribution requires selected nodes and is disabled for All nodes. Locked layers/shapes, shared outlines, contours with their own transform and invalid position calculations produce labelled kept rows while other eligible items remain editable. Selection is captured once per scan and again for Apply. Bounds include selected control points; coordinates are upright and italic angle is not applied. Automatic-layer glyphs and their bases are skipped."
   },
@@ -2775,7 +2775,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Signed rotation of selected own nodes and selected components about combined coordinate bounds. Six one-click presets apply 1, 10 or 45 degrees CW/CCW. Adds a preview and processes several masters or selected layers together compared with native Rotate commands and the Transform panel. Each action is recorded as one Undo step."
   },
@@ -2793,7 +2793,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Horizontal reflection of selected own nodes and selected component placements about combined coordinate bounds. Adds a preview and processes several masters or selected layers together compared with Tools > Flip Horizontal. Each action is recorded as one Undo step."
   },
@@ -2811,7 +2811,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Vertical reflection of selected own nodes and selected component placements about combined coordinate bounds. Adds a preview and processes several masters or selected layers together compared with Tools > Flip Vertical. Each action is recorded as one Undo step."
   },
@@ -2829,7 +2829,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov; italic-coordinate idea credited to Rainer Erich Scheichelbauer",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Move the first eligible adjacent corner onto each selected tip, make it sharp and align its next handle using that layer's associated master italic angle. Auxiliary layers resolve by FontLab master naming rules; layers without an associated master are refused. Handle x is truncated in glyph space. Conflicting targets and scaled or rotated selected shapes are refused. Selected-layer or all-master scope includes a preview. Each action is recorded as one Undo step."
   },
@@ -2847,7 +2847,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Also covers App/Next Layer in Selection.py, Previous Layer in Selection.py, Toggle Axis 1.py through Toggle Axis 4.py and Toggle Italic.py. Non-modal Previous/Next navigator. Layer order skips locked layers and synchronizes selected Glyph-window slots by the first usable reference's target name. Unusable references produce named kept rows while later slots continue. Axis mode cycles complete native locations with other coordinates fixed; Font-window mode cycles the current font master. Explicit slots stay explicit; default-follow slots continue to follow the glyph's active layer. Editor navigation retains the package master. No geometry or history notifications."
   },
@@ -2865,7 +2865,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Delete existing side-group or fallback glyph records for consecutive selected-or-active master-layer slots across every master. Preserve and list overriding exceptions. Report actual removed records and no-op separately. Use the shared typed kerning batch writer."
   },
@@ -2883,7 +2883,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Set typed class or fallback glyph kerning to minus truncated half of the narrower advance. Require exactly two consecutive selected-or-active slots on the same declared master. Reject invalid widths and ambiguous groups. List overriding exceptions and report unchanged values distinctly."
   },
@@ -2901,7 +2901,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Non-modal four-slot gap matching with height defaulting to half the shown master's x-height. Read transformed component contours, elevate quadratics and use shared twelve-step curve flattening. Include vertices and flat edges at the measuring height. Skip open contours and list notices by glyph name. Preserve target exception identities; show the target Record in the preview. A computed zero removes that record. Remeasure and reject stale inputs before one shared kerning write. Curve measurements are approximate."
   },
@@ -2919,7 +2919,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Non-modal seeded contextual-feature generator with side-by-side existing and generated source, Copy feature and Write feature. Differing existing code requires the unchecked-by-default Replace existing feature checkbox. Append and identical blocks need no consent. Input changes, refreshed previews, stale-source refusals and successful writes reset consent. Use the source-bound feature_blocks writer with every emitted glyph reference; preserve prefix and unrelated features. Compile in the Features panel. Unicode category filtering replaces Glyphs categories; export flags are not used. Class and lookup names include tag and seed."
   },
@@ -2937,7 +2937,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Compute one shape-index permutation per glyph from the current master or first declared master present. Apply it only to foreground layers with matching ordered component-base and contour-node-count signatures. Preserve shape groups and internal contour order. Skip and list automatic owners, bases of auto composites, glyphs with locked layers and mismatched layers. Use per-glyph scan budgets. Call layer.changed after reorderShapes and commit eligible changes together with readback."
   },
@@ -2955,7 +2955,7 @@
     "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
     "copyright": "2020 Alex Slobzheninov",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Open exact foreground glyph/layer symbols for every selected-or-active occurrence in one new proof row. Include masters and auxiliary layers; preserve repeated occurrences; omit mask and service layers. Give each glyph its own scan budget and scale the tab population allowance with occurrence count. No font-data writer."
   },
@@ -2973,7 +2973,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "copyright": "2017 in LICENSE.txt; 2018\u20132022 in README.md, Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Non-modal cleanup checklist with required Preview and default-No confirmation naming the font, glyph count, layer count and chosen data. Includes stickers. Marks, kerning memberships and sticker-only cleanup use the metadata policy. Paths and components preserve image and sticker shapes unless separately chosen. Font-level guides stay."
   },
@@ -2991,7 +2991,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "copyright": "2017 in LICENSE.txt; 2018\u20132022 in README.md, Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Selected glyphs or whole font; all stored layers or master layers. Whole-font deletion requires Preview and default-No confirmation naming the font and glyph, layer and sticker counts, followed by a fresh plan check. Removes only ShapeSticker shapes under the metadata policy. Other shapes and notes stay. Automatic owners and locked layers are listed and kept."
   },
@@ -3009,7 +3009,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "copyright": "2017 in LICENSE.txt; 2018\u20132022 in README.md, Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Selected glyphs and chosen masters; case-sensitive Serif base-name prefix. Preview and shared one-level decomposition. Other components and own contours stay. Automatic layers and automatic dependants refuse."
   },
@@ -3027,7 +3027,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "copyright": "2017 in LICENSE.txt; 2018\u20132022 in README.md, Pedro Arilla; based on Georg Seifert's Make Unicase Font idea",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Existing uppercase cells on all masters. Canonical round-trip lowercase sources precede Unicode and glyph-name order. Later mappings, missing capitals, characters without a separate uppercase and multi-character uppercase mappings have distinct kept rows. Required Preview and default-No confirmation name the font and counts. Image and sticker shapes stay. Existing targets without a safe plain component to copy are kept; other eligible targets still change."
   },
@@ -3045,7 +3045,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "copyright": "2017 in LICENSE.txt; 2018\u20132022 in README.md, Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Choose .lf, .osf, .tf or .tosf sources for every master. Missing default digit cells are created with components and Unicode assignments through Add Glyph. Existing targets without a safe plain component to copy are kept. Own contours stay by default and can overlap the new components; Replace own contours is an explicit opt-in. Existing anchors, images, stickers and Unicode stay. Copies advances and kerning memberships. Rebuild consent releases eligible automatic-composite bases. Reports created names and automatic rebuild diagnostics; consented work continues."
   },
@@ -3063,7 +3063,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "copyright": "2017 in LICENSE.txt; 2018\u20132022 in README.md, Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Selected glyphs and chosen masters. Retract all cubic handles or handles attached to selected on-curve indices from the current master. Matching master structures are required for mapped selection. Open ends do not wrap; quadratic, shared and transformed outlines stay."
   },
@@ -3081,7 +3081,7 @@
     "license_sha256": "ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37",
     "copyright": "2017 in LICENSE.txt; 2018\u20132022 in README.md, Pedro Arilla",
     "source_body_redistributed": false,
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
     "scope": "Exact alternate-node removal from selected polygon indices, mapped from the current master onto compatible masters. Open endpoints stay; closed polygons retain at least three nodes. Curves stay; use FontLab Contour > Simplify for curve reduction."
   },
@@ -3098,7 +3098,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Thin launcher of the shared App Alignment Zones panel (zone_editor.show) with the native zone backend (zone_native.backend): per-master zone table, add/remove/edit position, width and name, Suggest from o / O, stages for all masters, one Undo step per Apply through font_history.commit_masters; row refusals (empty or repeated names, zero-width rows of the other kind) and restored rollbacks keep the panel usable; zone guides of written masters are re-created as Font Info does; fl#8574 after Undo/Redo. Native qualification pending."
   },
   {
@@ -3114,7 +3114,7 @@
     "license": "Apache-2.0",
     "source_body_redistributed": true,
     "native_acceptance": "pending",
-    "app_minimum": "0.2.150.dev0",
+    "app_minimum": "0.2.26.dev159",
     "scope": "Preview of baseline, x-height and caps zones from H/O and x/o overshoots for the current or all masters; a zone at the same position (else the same name) is replaced and keeps its name, tags and lock; other zones stay; Apply re-measures the glyphs, refuses a stale preview and writes through zone_native.backend as one Undo step (\"Alignment Zones\"); refusals reach the status line; fl#8574 after Undo/Redo. Native qualification pending."
   }
 ]

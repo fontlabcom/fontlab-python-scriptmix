@@ -1536,3 +1536,30 @@ provisional0.2.150.dev0 field is retained unchanged and remains a release blocke
 The tested installed dependency is genuine App0.2.26.dev159+gb1e905b61.
 
 Same-environment baseline6a769d2e:57failed4402passed19skipped; all57failure IDs match candidate exactly (failure-comparison.json). The21net fewer passing cases follow removal of22obsolete standalone-panel cases and addition of one shared-controller routing case; shared App retains73passing workflow tests. Neither full gate passes.
+
+## 2026-11-01 — Genuine App source baseline
+
+Replaced139active provisional App minima with conservative0.2.26.dev159. This
+is a current source baseline, not a claim of earliest historical per-tool support
+or whole-menu compatibility. App159 still lacks the pending zone handoff.
+Updated42menu docstrings, destination pins and mirrored source pages; executable
+ASTs remain identical. Frozen migration.json and original-source hashes unchanged.
+Removed the pretend-version testing recipe, supplied genuine wheel examples,
+updated test.sh guidance and qualified historical dependency/setup notes.
+
+The former branch-constant test passed against invented metadata. Its replacement
+compares every recorded floor with actual installed fontlab-fontlabapp metadata:
+RED1failed before repair (red.log, exit1), GREEN2floor checks (floor.log, exit0)
+using genuine0.2.26.dev159+gb1e905b61. Exact test command from this checkout:
+`rtk proxy sh -c 'PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/current-cohort-20261101/env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_curated_delivery.py -k app_floor'`.
+Full suite uses the same command with `tests` instead of the file/filter.
+Evidence root: external issue123/scriptmix-real-floor-20261101/.
+
+Invariants:242menus compile;173additional pins exact;139floor fields and42hash
+fields are the only manifest deltas;42page docstrings/source hashes match; all42
+runtime ASTs unchanged. Independent read-only review approved with no blockers,
+limited to source/metadata consistency. `rtk proxy /opt/homebrew/bin/git diff
+--check` exits0. No runtime dependency is added to the docs-only pyproject.
+Native proof, complete cohort integration, promotion and publication stay open.
+
+Full suite exit1:57failed4381passed19skipped; counts and all57failure IDs match base aa6740e in the same environment (failure-comparison.json). The full gate is still failing; matching IDs do not qualify its affected workflows.

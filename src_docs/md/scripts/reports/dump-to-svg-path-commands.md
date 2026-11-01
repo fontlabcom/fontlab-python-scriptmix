@@ -13,7 +13,7 @@ panel offers selectable text, Refresh and Close. Failures clear the entire old
 report; no partial prefix is shown. No font, file, clipboard, Output, selection,
 history or preference writers run. Actual native getter preservation and panel
 lifetime acceptance remain pending. Requires FontLab9 Python3.11, matching Fly
-and App0.2.77.dev0 or later. Adapted from simoncozens--GlyphsScripts/Dump to SVG.py; see NOTICE.
+and App0.2.26.dev159 or later. Adapted from simoncozens--GlyphsScripts/Dump to SVG.py; see NOTICE.
 
 Run **Reports > Dump to Svg Path Commands** from FontLab's Scripts menu.
 
@@ -22,5 +22,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/be2066e63cdf0a8ceb58f8ca251b8bcf643ecee821423b7dfbb27fb9376da535.py)
+[Python source](../../../../.build/menu-sources/e93030cb93c103beefb66e96ac910e8455d1575fae19513ff356fe961c8540b5.py)
 <!--/codeinclude-->

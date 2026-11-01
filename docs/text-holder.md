@@ -29,7 +29,7 @@ or inject the default location into an owned directory. No validation uses the
 users saved text. Validation changes no global preferences, fonts, selection, history, Output or
 system clipboard. User-invoked Copy/Cut retain normal clipboard behavior. There is no autosave of draft content.
 
-App0.2.100.dev0 and Fly are required. The menus and editor are independently
+App0.2.26.dev159 and Fly are required. The menus and editor are independently
 implemented from Reza Bohlouls `Window/Text holder.py`; no licence declaration
 was found, and no original body is redistributed or executed. Apache2.0 terms
 for the new implementation remain in the repository licence files. Native

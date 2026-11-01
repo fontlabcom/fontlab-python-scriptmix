@@ -20,7 +20,7 @@ the existing tab. No font data, selection, preferences, history or Output is edi
 
 Independent implementation of Reza Bohloul's Same Kerning Groups.py workflow.
 The inspected source has no licence declaration; its body is not redistributed.
-See NOTICE and additional-tools.json. Requires Fly and App0.2.82.dev0.
+See NOTICE and additional-tools.json. Requires Fly and App0.2.26.dev159.
 Native tab/cursor/workspace and complete font/cache preservation remain pending.
 """
 

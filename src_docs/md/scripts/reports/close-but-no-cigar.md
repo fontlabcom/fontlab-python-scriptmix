@@ -27,7 +27,7 @@ Quadratic/malformed segments, generated/projective shapes, unknown associated
 masters and unreadable or changed sources refuse the entire report. Refresh
 clears failed results. No Output, font, selection, history, preference, clipboard
 or file writer runs. Native getter preservation and lifetime remain pending.
-Requires FontLab 9 Python 3.11, Fly and App 0.2.93.dev0 or later.
+Requires FontLab 9 Python 3.11, Fly and App 0.2.26.dev159 or later.
 Adapted from Simon Cozens' Close But No Cigar.py and glyphmonkey.py (MIT).
 Complete source hashes, contract, fixes and licence are in NOTICE and provenance.
 
@@ -38,5 +38,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4da50707a3e71a18284e8a1bcef13a661825cd9314c00fbb0b3003d92059d57e.py)
+[Python source](../../../../.build/menu-sources/29ff35e0f154f429cdac652bae909f858224f854a909953ba635da4a8ac391c9.py)
 <!--/codeinclude-->

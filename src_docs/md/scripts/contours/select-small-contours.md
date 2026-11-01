@@ -18,7 +18,7 @@ Mixed non-node selection currently requires one displayed glyph; unsupported
 native selection kinds refuse before writes.
 Adapted independently from Pedro Arilla's Paths/Select small paths.py
 (2018–2022), Apache-2.0; exact hashes are in NOTICE/additional-tools.json.
-Requires fontlab-fly and fontlab-fontlabapp[fontui] 0.2.71.dev0.
+Requires fontlab-fly and fontlab-fontlabapp[fontui] 0.2.26.dev159.
 
 Run **Contours > Select Small Contours** from FontLab's Scripts menu.
 
@@ -27,5 +27,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/702ed948aac46aa77e8be547b524e04552b252157513220359545748b029d2eb.py)
+[Python source](../../../../.build/menu-sources/a0da6134d7e5809512e64a5101d3ef6659759b91c0969dfc9ab0f51707909492.py)
 <!--/codeinclude-->

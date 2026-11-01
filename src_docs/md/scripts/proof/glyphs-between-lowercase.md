@@ -29,7 +29,7 @@ rollback is claimed. The owned native sender is disconnected and deleted.
 
 This adaptation preserves Output instead of clearing/printing status. It calls
 no glyph geometry, history, preference or master writer.
-Requires App>=0.2.40.dev0 and Fly in FontLab9 Python3.11.
+Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.
 Adapted from Pedro Arilla's Apache-2.0 Glyphs between/Glyphs between lowercase.py.
 See NOTICE and additional-tools.json for complete source/license provenance.
 
@@ -40,5 +40,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e653fca3806128de7c95777b77e821ef585ea3f19a4ea985547225bee67af69a.py)
+[Python source](../../../../.build/menu-sources/8318e61f74c4d03baa7db7f153444027e3304bd25b723ca6d47c395cd6d7b143.py)
 <!--/codeinclude-->

@@ -14,7 +14,7 @@ stay distinct. Every master reports its changed count without clearing Output.
 Any changed master enters one complete Undo batch, including earlier masters
 when the last master has no edits. No options or current-master subset apply.
 
-Requires Fontlabapp >=0.2.132.dev0 and Fly in FontLab9 Python3.11. The shared
+Requires Fontlabapp >=0.2.26.dev159 and Fly in FontLab9 Python3.11. The shared
 writer refuses stale fonts/masters/classes/pairs, fractional source history and
 invalid save ranges before mutation. On a native failure, use Undo and inspect
 all masters.
@@ -30,5 +30,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3e0f4bd3d28ae2db89c4f2807592567c5cd9e22bd1b4efdf617052765b1a6498.py)
+[Python source](../../../../.build/menu-sources/c76ca3e306df6f6bc71eed0ae7234d2c308d8b8d5a39d025564bdb86fbae5227.py)
 <!--/codeinclude-->

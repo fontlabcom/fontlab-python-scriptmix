@@ -23,7 +23,7 @@ instead of clearing/writing the user's Output panel; no font, selection,
 history or preference writers are called. Native getter preservation, layer
 mapping, selection order/focus and lifecycle acceptance are pending.
 
-Requires App>=0.2.35.dev1 and fontlab-fly in FontLab9 Python3.11.
+Requires App>=0.2.26.dev159 and fontlab-fly in FontLab9 Python3.11.
 Adapted from Alex Slobzheninov's Apache-2.0 Point Counter. See NOTICE and
 additional-tools.json for source identity and full license provenance.
 
@@ -34,5 +34,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6bd2b98026efdcf2c537e0767c8397b0fa0c30549040febb0bf751330e268767.py)
+[Python source](../../../../.build/menu-sources/7566b7a194efebf36af04aaeb9173bd04e4b9ff18d394b7c425565d87e57a193.py)
 <!--/codeinclude-->

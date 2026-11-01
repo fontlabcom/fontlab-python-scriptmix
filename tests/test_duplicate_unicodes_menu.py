@@ -34,7 +34,7 @@ def test_full_original_provenance_and_rescued_source_are_retained():
         if x["key"] == "names_duplicate_unicodes"
     )
     assert row["destination"] == "Scripts/Names/Duplicate Unicodes.py"
-    assert row["app_minimum"] == "0.2.121.dev0"
+    assert row["app_minimum"] == "0.2.26.dev159"
     assert (
         row["native_acceptance"] == "pending"
         and row["counted_in_130_sample_migration"] is False

@@ -31,7 +31,7 @@ def test_menu_when_imported_and_run_then_lazy_exact_fly_dispatch(
     tree = ast.parse(path.read_text(), feature_version=(3, 11))
     main = next(n for n in tree.body if isinstance(n, ast.FunctionDef))
     assert main.returns.value is None
-    assert "App>=0.2.53.dev0" in ast.get_docstring(tree)
+    assert "App>=0.2.26.dev159" in ast.get_docstring(tree)
 
 
 @pytest.mark.parametrize(

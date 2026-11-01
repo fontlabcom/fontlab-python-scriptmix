@@ -2,6 +2,16 @@
 this_file: DEPENDENCIES.md
 ---
 
+## Current source requirements
+
+Current menu metadata uses App `0.2.26.dev159` as a conservative source baseline,
+with matching Fly and Fontport artifacts. Use the current README installation
+and testing instructions with genuine versions. Missing-zone integration, the
+full failing suite and native qualification remain open. The per-feature version
+labels, old setup recipes and release acceptance records below are historical;
+they are not installation instructions or acceptance for the current menu.
+
+
 # Dependencies
 
 The 2026-11-01 priority-message candidate requires App

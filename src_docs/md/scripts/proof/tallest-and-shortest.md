@@ -19,7 +19,7 @@ Fly loads shared App capture, extrema selection and native named-layer tabs.
 No missing layer is created; no master/selection/font/history/Output writer or
 application-wide event loop is used. A native tab failure can leave a new tab;
 no atomic UI rollback is claimed.
-Requires App>=0.2.49.dev0 and Fly in FontLab9/Python3.11.
+Requires App>=0.2.26.dev159 and Fly in FontLab9/Python3.11.
 Modified from simoncozens--GlyphsScripts/Tallest And Shortest.py; see NOTICE/additional-tools.json.
 The port fixes the undefined font global and +/-9999 sentinels.
 
@@ -30,5 +30,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3c6d424de9ff0463345b97f3edb047d7b5065173bf0cc2dcefffaf4aed903520.py)
+[Python source](../../../../.build/menu-sources/0991d387da230fe6ee87a8c98dbabc90b37c5156d988b2d5e885d8b0027f49cb.py)
 <!--/codeinclude-->

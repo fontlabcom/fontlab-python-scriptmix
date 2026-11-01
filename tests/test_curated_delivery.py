@@ -136,23 +136,21 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     wanted.append("Scripts/Contours/Raise Ascender.py")
     assert len(wanted) == 120, f"NEW_TOOLS plus Raise Ascender: expected 120 paths, got {len(wanted)}"
     floors = {path: rows[path]["app_minimum"] for path in wanted}
-    assert set(floors.values()) == {"0.2.150.dev0"}, floors
+    assert set(floors.values()) == {"0.2.26.dev159"}, floors
 
 
-#: The App version that this branch builds; no menu may require a later App.
-BRANCH_APP = "0.2.150.dev0"
-
-
-def test_app_floor_when_any_row_then_not_above_the_branch_app():
+def test_app_floor_when_installed_then_every_recorded_minimum_is_satisfied():
+    from importlib.metadata import version
     from packaging.version import Version
 
+    installed = Version(version("fontlab-fontlabapp"))
     rows = json.loads((ROOT / "additional-tools.json").read_text())
     above = {
         row["destination"]: row["app_minimum"]
         for row in rows
-        if "app_minimum" in row and Version(row["app_minimum"]) > Version(BRANCH_APP)
+        if "app_minimum" in row and Version(row["app_minimum"]) > installed
     }
-    assert above == {}, above
+    assert above == {}, f"Installed App {installed} does not meet these floors: {above}"
 
 
 PROCESS_WORDS = ("reviewed App", "reviewed unpublished", "App helper", "issue 12", "Issue 12", "batch S", "batch G")

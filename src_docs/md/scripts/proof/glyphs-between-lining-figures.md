@@ -29,7 +29,7 @@ rollback is claimed. The owned native sender is disconnected and deleted.
 
 This adaptation preserves Output instead of clearing/printing status. It calls
 no glyph geometry, history, preference or master writer.
-Requires App>=0.2.40.dev0 and Fly in FontLab9 Python3.11.
+Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.
 Adapted from Pedro Arilla's Apache-2.0 Glyphs between/Glyphs between figures_lining.py.
 See NOTICE and additional-tools.json for complete source/license provenance.
 
@@ -40,5 +40,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9e3211e44dd8260665541bb62e2072c9a8d3225ae6668c286126ae7b6c5140de.py)
+[Python source](../../../../.build/menu-sources/196192a7858d2f2359d69bf91c0708a589615e27dcb53850f72a13db81034d42.py)
 <!--/codeinclude-->

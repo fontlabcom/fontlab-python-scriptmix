@@ -24,7 +24,7 @@ No Output panel clearing or source font/master/selection/history/preference edit
 is requested. Native read/cache, symbol/layer mapping, full font preservation and
 UI acceptance remain pending. A failed tab creation/population may leave a new tab.
 
-Requires App>=0.2.53.dev0 and FontLab9 Python3.11 with fontlab-fly.
+Requires App>=0.2.26.dev159 and FontLab9 Python3.11 with fontlab-fly.
 Adapted from Reset Type Studio's Report Glyphs containing BL.py.
 Copyright2025 Fernando Díaz & Reset Type Studio. See NOTICE and additional-tools.json.
 
@@ -35,5 +35,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/627aa6f7ac9f755ddc80128ac4958989d7f57f9786edbb786b7585115b1401b6.py)
+[Python source](../../../../.build/menu-sources/142738e5fa8d4a9b657069958f438097a578af79c7907f769c85458766816911.py)
 <!--/codeinclude-->

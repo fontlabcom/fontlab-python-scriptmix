@@ -26,7 +26,7 @@ handling, source-font binding and full data/history preservation remain pending.
 
 The port repairs the source's undefined Font global with explicit current-font
 lookup. It preserves Output instead of clearing it or printing status there.
-Requires App>=0.2.38.dev0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random UPPERCASE non-text.py.
+Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random UPPERCASE non-text.py.
 See NOTICE and additional-tools.json for source/data/license provenance.
 
 Run **Proof > Random Uppercase Nontext** from FontLab's Scripts menu.
@@ -36,5 +36,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/49422f4c1a396bc6b4ecafba71a28172b13e10ce65d4d610764a58210ecf32ba.py)
+[Python source](../../../../.build/menu-sources/4de453a380540682b87f6c779cac2d1043c5d523f334a204ecb30656574543c9.py)
 <!--/codeinclude-->

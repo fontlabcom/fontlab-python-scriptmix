@@ -7,7 +7,7 @@ panel offers selectable text, Refresh and Close. Failures clear the entire old
 report; no partial prefix is shown. No font, file, clipboard, Output, selection,
 history or preference writers run. Actual native getter preservation and panel
 lifetime acceptance remain pending. Requires FontLab9 Python3.11, matching Fly
-and App0.2.77.dev0 or later. Adapted from simoncozens--GlyphsScripts/Dump to SVG.py; see NOTICE.
+and App0.2.26.dev159 or later. Adapted from simoncozens--GlyphsScripts/Dump to SVG.py; see NOTICE.
 """
 
 

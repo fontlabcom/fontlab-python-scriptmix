@@ -29,10 +29,12 @@ to FontLab. Some tools use the App `fontui` extra. Trial Font Maker needs the
 public `fontTools` package; FontLab's private namespace does not supply it.
 Glyport supplies Glyphs-specific compatibility and category metadata where used.
 
-The current source set uses the matching App development sources. The common
-recorded App floor is `0.2.150.dev0`; that version label alone does not prove
-that an installation contains all current helpers. Old per-tool development
-floors in historical documentation do not describe the complete current menu.
+Every recorded `app_minimum` uses the conservative source baseline
+`0.2.26.dev159`, matching the genuine App development-version lineage. This is
+not an earliest historical per-tool minimum or proof of full compatibility.
+The tested App159 artifact still lacks the pending zone handoff, and the full
+Scriptmix gate remains failing. Native workflow acceptance and promotion remain
+open. Historical per-tool labels are retained in Git history and old receipts.
 
 Editable installation into FontLab is owner-managed. Do not install packages
 into FontLab, replace its Qt bindings or change its Python site-packages from
@@ -130,14 +132,14 @@ outputs may be refreshed. To provision an isolated dependency set instead,
 `test.sh` accepts explicit App and Fontport wheels or checkouts:
 
 ```sh
-export SETUPTOOLS_SCM_PRETEND_VERSION="0.2.150.dev0"
-export SCRIPTMIX_APP_REQUIREMENT="../fontlab-fontlabapp"
-export SCRIPTMIX_EXTRA_REQUIREMENTS="../fontlab-fontport"
+export SCRIPTMIX_APP_REQUIREMENT="/absolute/path/to/fontlab_fontlabapp-0.2.26.dev159+gb1e905b61-py3-none-any.whl"
+export SCRIPTMIX_EXTRA_REQUIREMENTS="/absolute/path/to/fontlab_fontport-1.0.3.dev19+g3ddbd097f-py3-none-any.whl"
 export SCRIPTMIX_PYTHON="cpython-3.11-macos-aarch64-none"
 sh test.sh -p no:cacheprovider
 ```
 
-Use a freshly built matching wheel or an approved prepared environment when
+Supply existing reviewed artifacts with genuine build metadata; do not override
+package versions. Use a freshly built matching wheel or an approved prepared environment when
 validating changed dependencies. Cached builds with the same development
 version can be stale. These tests do not modify the live FontLab installation.
 

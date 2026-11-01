@@ -16,7 +16,7 @@ What it does:
 
     Adapted independently from Pedro Arilla's Paths/Select partial path.py
     (2018–2022). See NOTICE and additional-tools.json for exact hashes and Apache
-    terms. Requires fontlab-fly and App 0.2.71.dev0.
+    terms. Requires fontlab-fly and App 0.2.26.dev159.
 
 How it works:
     Delegate the stored-order toggle-fill algorithm to App. Capture original
@@ -43,5 +43,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8e2c40191f1ad26cbe5fe652bff8760c33a04ac4826ab6a31ea18a0ddc6f062c.py)
+[Python source](../../../../.build/menu-sources/38411a794d81792986729e5e479e3403d980f5933ce19c9462379f1d72f977f0.py)
 <!--/codeinclude-->

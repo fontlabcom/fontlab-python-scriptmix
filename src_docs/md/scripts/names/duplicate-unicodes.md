@@ -11,7 +11,7 @@ Find shared Unicode assignments across the whole current font and remove chosen 
 Expanded codepoint groups preserve font order and prefer the first primary owner
 as keeper. Untick any row to keep its code, or tick the keeper too. Rescan resets
 the preview; Remove ticked writes only the checked assignments and refreshes.
-Requires Fly and App0.2.121.dev0. No glyph geometry or selection is edited.
+Requires Fly and App0.2.26.dev159. No glyph geometry or selection is edited.
 
 Close all Glyph editors and activate the Font window before applying. Changed sources, pending native glyph
 updates, automatic targets/dependants or surviving repeated-code lists that the
@@ -26,5 +26,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f3cc72fd0ef9c96f20827b81a39de686584c7af0749bc5d6fefc5f24427af0a4.py)
+[Python source](../../../../.build/menu-sources/48b1b56cc3efd4bb9b1c47ae42767bcf40bbae1a47750f01dc31c422a7a47812.py)
 <!--/codeinclude-->

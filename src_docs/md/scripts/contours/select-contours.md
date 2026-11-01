@@ -15,7 +15,7 @@ What it does:
 
     Adapted independently from Pedro Arilla's Paths/Select paths.py (2018–2022).
     See NOTICE and additional-tools.json for exact source hashes and Apache terms.
-    Requires fontlab-fly and App 0.2.71.dev0.
+    Requires fontlab-fly and App 0.2.26.dev159.
 
 How it works:
     Delegate contour expansion to App. Capture original node selection on the
@@ -40,5 +40,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/33ea16c7dae09da3f0fe8c2f94c2ae16472e3637cebe8e0c07879ef8aed6b8fc.py)
+[Python source](../../../../.build/menu-sources/30b78148e9049c09c8144d9a01dcaec3f51e428d525ed60756b78cad81c2e1cb.py)
 <!--/codeinclude-->
