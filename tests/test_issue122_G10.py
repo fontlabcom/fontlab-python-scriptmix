@@ -75,7 +75,9 @@ def host(monkeypatch: Any) -> NS:
         font_maps=lambda: ({97: "a", 98: "b", 32: "space"}, {"a", "b", "space"}),
     )
     opening = create_autospec(real_named_tab.open_layer_rows, side_effect=open_tab)
-    assert inspect.signature(opening) == inspect.signature(real_named_tab.open_layer_rows)
+    assert inspect.signature(opening) == inspect.signature(
+        real_named_tab.open_layer_rows
+    )
     module("named_tab", open_layer_rows=opening)
     module(
         "reports", show_report=lambda report, **kw: state.reports.append((report, kw))
@@ -95,109 +97,6 @@ def package() -> NS:
             isNull=False, findLayer=lambda layer: NS(isNull=False)
         ),
     )
-
-
-def test_layout_exact_master_order_and_word_grouping(menus: Any) -> None:
-    tool, _ = menus
-    rows = tool.comparison_rows(
-        "ab,a", {97: "a", 98: "b"}, {"a", "b"}, ("Regular", "Bold"), False
-    )
-    assert rows == (
-        (("a", "Regular"), ("b", "Regular"), (None, ""), ("a", "Bold"), ("b", "Bold")),
-        (("a", "Regular"), (None, ""), ("a", "Bold")),
-    ), "Each word must retain master order"
-
-
-def test_layout_stacked_keeps_unencoded_names_and_repeats(menus: Any) -> None:
-    rows = menus[0].comparison_rows("/a.alt /a.alt", {}, {"a.alt"}, ("R", "B"), True)
-    assert rows == (
-        (("a.alt", "R"), ("a.alt", "R")),
-        (("a.alt", "B"), ("a.alt", "B")),
-    ), "Named glyphs need no Unicode"
-
-
-def test_stacked_word_groups_have_blank_separator(menus: Any) -> None:
-    rows = menus[0].comparison_rows(
-        "a,b", {97: "a", 98: "b"}, {"a", "b"}, ("R", "B"), True
-    )
-    assert rows == ((("a", "R"),), (("a", "B"),), (), (("b", "R"),), (("b", "B"),)), (
-        "Keep a blank row between word groups"
-    )
-
-
-@pytest.mark.parametrize(
-    "text", ["", " , ", "a\0", "a\u00a0", "a\u2028", "a\u2029", "x", "/missing"]
-)
-def test_layout_refuses_empty_lossy_or_missing_input(menus: Any, text: str) -> None:
-    with pytest.raises(ValueError):
-        menus[0].comparison_rows(text, {97: "a"}, {"a"}, ("R",), False)
-
-
-@pytest.mark.parametrize("masters", [(), ("",), ("R", "R")])
-def test_layout_refuses_invalid_master_domain(menus: Any, masters: tuple) -> None:
-    with pytest.raises(ValueError):
-        menus[0].comparison_rows("a", {97: "a"}, {"a"}, masters, False)
-
-
-def test_presets_read_bom_newlines_and_no_silent_conversion(
-    menus: Any, tmp_path: Path
-) -> None:
-    path = tmp_path / "words.txt"
-    path.write_bytes(b"\xef\xbb\xbfa,b\r\nc,d\r\n\r\n")
-    assert menus[0].read_presets(str(path)) == ("a,b", "c,d"), (
-        "Normalize UTF-8 BOM and line endings"
-    )
-    path.write_text("a\u00a0b", encoding="utf-8")
-    with pytest.raises(ValueError):
-        menus[0].read_presets(str(path))
-
-
-def test_presets_missing_empty_and_bad_utf8(menus: Any, tmp_path: Path) -> None:
-    with pytest.raises(OSError):
-        menus[0].read_presets(str(tmp_path / "missing"))
-    path = tmp_path / "empty"
-    path.write_bytes(b"")
-    with pytest.raises(ValueError):
-        menus[0].read_presets(str(path))
-    path.write_bytes(b"\xff")
-    with pytest.raises(UnicodeError):
-        menus[0].read_presets(str(path))
-
-
-def test_proof_uses_fenced_tab_and_exact_native_symbols(menus: Any, host: NS) -> None:
-    host.package = package()
-    menus[0].open_comparison("ab,a", False, 17)
-    assert len(host.opened) == 1, "Keep all comparison rows in one exact-layer tab"
-    assert host.opened[0][0] == ((
-        ("a", "Regular"),
-        ("b", "Regular"),
-        (None, ""),
-        ("a", "Bold"),
-        ("b", "Bold"),
-    ), (
-        ("a", "Regular"),
-        (None, ""),
-        ("a", "Bold"),
-    )), "No Unicode substitution for proof glyphs"
-
-
-def test_proof_refuses_switched_font_missing_layer_and_timeout(
-    menus: Any, host: NS, monkeypatch: Any
-) -> None:
-    host.package = package()
-    with pytest.raises(ValueError):
-        menus[0].open_comparison("a", False, 999)
-    host.package.findName = lambda name: NS(
-        isNull=False, findLayer=lambda layer: NS(isNull=True)
-    )
-    with pytest.raises(ValueError):
-        menus[0].open_comparison("a", False, 17)
-    host.package = package()
-    ticks = iter([0, 3])
-    monkeypatch.setattr(menus[0], "monotonic", lambda: next(ticks))
-    with pytest.raises(TimeoutError):
-        menus[0].open_comparison("a", False, 17)
-    assert not host.opened and not host.requests, "Refuse before opening any tab"
 
 
 def test_common_intersection_keeps_unencoded_and_per_font_unicode(menus: Any) -> None:
@@ -295,147 +194,6 @@ def test_public_files_are_python311_and_read_only(menus: Any) -> None:
         ), "Read-only tools must not write history"
 
 
-def test_panel_widgets_callbacks_and_cleanup(
-    menus: Any, host: NS, tmp_path: Path, monkeypatch: Any
-) -> None:
-    """Reject native member collisions and exercise each owned panel action."""
-    forbidden = {
-        "font",
-        "size",
-        "layout",
-        "update",
-        "move",
-        "render",
-        "statusBar",
-        "windowTitle",
-    }
-
-    class Signal:
-        def __init__(self) -> None:
-            self.slots: list = []
-
-        def connect(self, slot: Any) -> None:
-            self.slots.append(slot)
-
-        def disconnect(self, slot: Any) -> None:
-            self.slots.remove(slot)
-
-        def emit(self, *args: Any) -> None:
-            for slot in self.slots:
-                slot(*args)
-
-    class Widget:
-        def __init__(self, *args: Any) -> None:
-            self.text = args[0] if args and isinstance(args[0], str) else ""
-            self.currentIndex = 0
-            self.currentText = ""
-            self.items: list = []
-            self.clicked, self.currentIndexChanged = Signal(), Signal()
-
-        def __setattr__(self, key: str, value: Any) -> None:
-            assert key not in forbidden, f"Native member collision: {key}"
-            object.__setattr__(self, key, value)
-
-        def setText(self, value: str) -> None:
-            self.text = value
-
-        def setPlaceholderText(self, value: str) -> None:
-            self.placeholder = value
-
-        def setWindowTitle(self, value: str) -> None:
-            self.caption = value
-
-        def setMinimumWidth(self, value: int) -> None:
-            self.minimum = value
-
-        def setWordWrap(self, value: bool) -> None:
-            self.wrap = value
-
-        def addWidget(self, widget: Any) -> None:
-            self.items.append(widget)
-
-        def addLayout(self, layout: Any) -> None:
-            self.items.append(layout)
-
-        def addItems(self, values: list) -> None:
-            self.items.extend(values)
-            self.currentText = values[0]
-            self.currentIndexChanged.emit(0)
-
-        def clear(self) -> None:
-            self.items.clear()
-            self.currentText = ""
-
-        def close(self) -> None:
-            self.closeEvent("event")
-
-    gui = NS(
-        **{
-            key: Widget
-            for key in (
-                "QDialog",
-                "QVBoxLayout",
-                "QHBoxLayout",
-                "QLabel",
-                "QLineEdit",
-                "QComboBox",
-                "QPushButton",
-            )
-        }
-    )
-    host.fly.qt = NS(QtGui=gui)
-    host.package = package()
-    closed = []
-
-    def connect_guarded(dialog: Any, signal: Any, callback: Any) -> None:
-        signal.connect(callback)
-        dialog._connections.append((signal, callback))
-
-    def close_dialog(dialog: Any, event: Any, key: str) -> None:
-        for signal, slot in dialog._connections:
-            signal.disconnect(slot)
-        dialog._connections.clear()
-        closed.append((event, key))
-
-    scripting = sys.modules["fly.ap.scripting"]
-    scripting.connect_guarded = connect_guarded
-    scripting.close_script_dialog = close_dialog
-    scripting.show_script_dialog = lambda cls, key: cls()
-    tool = menus[0]
-    panel = tool.main()
-    assert not forbidden.intersection(type(panel).__dict__), (
-        "No class member may shadow a native method"
-    )
-    assert len(panel._connections) == 4
-    path = tmp_path / "presets.txt"
-    path.write_bytes(b"\xef\xbb\xbfa,b\r\nab\r\n")
-    panel.path_edit.setText(str(path))
-    panel.load_presets()
-    assert panel.words_edit.text == "a,b" and "normalized" in panel.status.text
-    panel.words_edit.setText("a")
-    panel.open_proof()
-    assert "Opened 1 comparison tabs" in panel.status.text
-    host.package = None
-    panel.open_proof()
-    assert "changed or closed" in panel.status.text
-    panel.path_edit.setText(str(tmp_path / "missing"))
-    panel.load_presets()
-    assert panel.status.text, "Show file errors in the panel"
-    monkeypatch.setattr(
-        tool,
-        "open_comparison",
-        lambda *args: (_ for _ in ()).throw(TimeoutError("deadline")),
-    )
-    panel.open_proof()
-    assert panel.status.text == "deadline"
-    signals = [signal for signal, _ in panel._connections]
-    panel.close()
-    assert closed == [("event", tool.KEY)] and all(
-        not signal.slots for signal in signals
-    ), "Disconnect before panel deletion"
-    assert tool.main() is None, "No font must refuse before constructing a panel"
-
-
 @pytest.mark.parametrize(
     "bad", ["null", "backing", "duplicate", "empty", "unicode", "repeat_font"]
 )
@@ -485,58 +243,16 @@ def test_common_capture_refuses_unregistered_font(menus: Any, host: NS) -> None:
         menus[1].read_fonts(float("inf"))
 
 
-def test_stacked_rows_keep_blank_separators_in_one_tab(menus: Any, host: NS) -> None:
-    host.package = package()
-    assert menus[0].open_comparison("a,b", True, 17) == 1
-    assert host.opened[0][0] == (
-        (("a", "Regular"),),
-        (("a", "Bold"),),
-        (),
-        (("b", "Regular"),),
-        (("b", "Bold"),),
-    )
-
-
-def test_public_rows_propagate_failure_and_need_no_encoded_space(
-    menus: Any, host: NS
-) -> None:
-    host.package = package()
-    helper = sys.modules["fly.ap.named_tab"]
-    opening = helper.open_layer_rows
-    opening.side_effect = ValueError("source changed")
-    with pytest.raises(ValueError, match="source changed"):
-        menus[0].open_comparison("a,b", False, 17)
-    assert not host.opened
-    opening.side_effect = lambda rows, **kwargs: host.opened.append((rows, kwargs))
-    sys.modules["fly.ap.proof"].font_maps = lambda: ({97: "a"}, {"a"})
-    assert menus[0].open_comparison("a", False, 17) == 1
-    assert host.opened[0][0] == ((("a", "Regular"), (None, ""), ("a", "Bold")),)
-    with pytest.raises(TypeError):
-        opening((), 17, "Regular")
-
-
 def test_scripts_use_only_public_app_attributes() -> None:
     used = app_names_used(
         [ROOT / "Scripts/Masters" / f"{title}.py" for title in TITLES]
     )
-    assert all(not part.startswith("_") for module in used for part in module.split(".")), used
+    assert all(
+        not part.startswith("_") for module in used for part in module.split(".")
+    ), used
     assert all(not name.startswith("_") for names in used.values() for name in names), (
         "Keep App implementation details behind public helpers"
     )
-
-
-def test_real_font_maps_duplicate_unicode_uses_first_name(
-    menus: Any, real_app: Any
-) -> None:
-    modules = real_app(
-        qt=NS(),
-        fontlab=NS(),
-        scripting={"names_font_glyphs": lambda: [("a", [97]), ("a.alt", [97])]},
-        modules=("proof",),
-    )
-    cmap, names = modules["proof"].font_maps()
-    assert cmap == {97: "a"} and names == {"a", "a.alt"}
-    assert menus[0].comparison_rows("a", cmap, names, ("R",), False) == ((("a", "R"),),)
 
 
 @pytest.mark.parametrize("failure", [ValueError, RuntimeError, TimeoutError])
@@ -563,5 +279,9 @@ def test_explicit_fly_app_paths_have_no_private_names() -> None:
             while isinstance(current, ast.Attribute):
                 parts.insert(0, current.attr)
                 current = current.value
-            if isinstance(current, ast.Name) and current.id == "fly" and parts[0] == "ap":
+            if (
+                isinstance(current, ast.Name)
+                and current.id == "fly"
+                and parts[0] == "ap"
+            ):
                 assert all(not part.startswith("_") for part in parts), (path, parts)

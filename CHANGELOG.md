@@ -1510,3 +1510,29 @@ Candidate cwd:
 The first archive check assumed242total files but found5extra historical .DS_Store
 entries. The final menus-final.tar includes exactly242Python menus and no others;
 no .DS_Store copied into the executed bundle. Failed setup logs retained.
+
+## 2026-11-01 — Integrate reviewed Master Text menu
+
+The App159 candidate already contains the reviewed MasterBlaster workflow, but
+this Scriptmix branch still launched its old standalone implementation. Restored
+the exact reviewed a549976b menu and its focused routing test, corresponding G10
+test migration and documentation. All surviving G10 test functions have identical
+ASTs; former local-panel behavior is covered by73fresh shared App tests.
+Updated only its additional-tools row, preserving all172other rows; menu hash and
+docstring/source link match. Corrected backlog acceptance to native-pending.
+
+Evidence: external issue123/master-text-reconcile-20261101/. Initial routing test
+failed against the old menu (menu-red.log, exit1); final20scoped tests pass
+(menu-final.log, exit0). App73tests pass with standalone PySide6 (tests-qt.log,
+exit0); initial reused environment lacked PySide6 (tests.log, collection exit2).
+AST-only original-source extraction confirms all four fallback values exactly,
+without executing original code.
+
+Full Scriptmix current gate:57failed4381passed19skipped; preserve failures and
+compare the unchanged base in the same environment before promotion. No native
+acceptance, canonical promotion, push, site build or publication. A trial isolated
+App-minimum correction exposed the whole-cohort assertion, so the existing
+provisional0.2.150.dev0 field is retained unchanged and remains a release blocker.
+The tested installed dependency is genuine App0.2.26.dev159+gb1e905b61.
+
+Same-environment baseline6a769d2e:57failed4402passed19skipped; all57failure IDs match candidate exactly (failure-comparison.json). The21net fewer passing cases follow removal of22obsolete standalone-panel cases and addition of one shared-controller routing case; shared App retains73passing workflow tests. Neither full gate passes.

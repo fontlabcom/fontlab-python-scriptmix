@@ -64,3 +64,5 @@ this_file: TODO.md
 - [ ] Resolve retained baseline provenance gate and qualify Cursive Sample parent/priority in the final native tuple.
 
 - [ ] Qualify both background menu panels in native FontLab: stacking, complete-font preservation, Undo/Redo and reopen. Installed standalone integration passes with App .158; source wording repair does not close native acceptance.
+
+- [ ] Qualify the integrated Master Text menu with genuine cohort metadata, actual native master-layer proof rendering and complete preservation; source routing is verified separately.

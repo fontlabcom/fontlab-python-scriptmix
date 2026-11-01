@@ -117,3 +117,5 @@ claimed by the offline final-fix gates.
 Cursive sampler parent/priority source and scoped cleanup tests are reviewed. Resolve owner-held baseline provenance failures, qualify final installed App/Scriptmix tuple and native chooser/cancel/stacking before delivery.
 
 - [ ] Qualify both background menu panels in native FontLab: stacking, complete-font preservation, Undo/Redo and reopen. Installed standalone integration passes with App .158; source wording repair does not close native acceptance.
+
+- [ ] Qualify the integrated Master Text menu with genuine cohort metadata, actual native master-layer proof rendering and complete preservation; source routing is verified separately.

@@ -6,28 +6,29 @@ categories: ["Masters"]
 
 # Master Text Comparison
 
-Open comparison tabs whose glyph slots name exact master layers.
+Compare comma-separated text across all masters of the opening font.
 
-What: Resolve comma-separated words and repeat each word on every master.
-How: Use proof.font_maps for first-encoded-name-wins Unicode lookup, check all
-requested layers, then call public named_tab.open_layer_rows once.
-The shared tab helper saves and restores shape activation flags.
-Use: Enter words or /glyphname tokens and press Open comparison. Side by side
-puts each word group on one row, with a space between master copies.
-Stacked puts each word/master on one row, with blank group separators.
-Keep the non-modal panel open for repeated proofs. Enter an absolute UTF-8
-preset-file path and press Load presets; each nonempty line is one preset.
-The path stays in the panel until it closes. BOM and line endings are normalized;
-NUL, NBSP and Unicode line/paragraph separators are refused.
-Why: Over FontLab's Glyph-window multi-master text views and Text By Master,
-this adds comma-separated word groups and file presets with exact per-slot layers.
-Benefit: Prepare repeatable master comparisons from one short word list.
+Start with blank custom text or select one of four original fallback lists.
+A local UTF-8 MasterBlaster-presets.txt in the opening working directory loads
+on opening; an absolute path also supports manual loading. Each physical line
+is an editable comma-separated list; BOM and platform newlines are normalized.
+Selecting a preset preserves custom input. Double-click runs that preset
+immediately; List as Masters prefers nonempty custom text, then the selection.
+Stacked (0) ends every copy with newline and each group with another newline.
+Side-by-side (1, default) ends every copy with literal space, each group with
+newline, including the final group. Available characters, whitespace and
+repetitions retain their order; complete sanitation and alias diagnostics are
+shown before proofing. Explicit Names mode adds /glyphname for unencoded names.
+Tool-owned custom/layout settings save after successful proof; Close saves
+window geometry. No selection and blank custom disables List as Masters.
+Exact native binding, special text/IME fidelity and rendering remain pending.
 
 Credit: Luke Prowse (LukeProwse), NaN-xyz/GlyphsApp-Scripts,
 MasterBlaster/MasterBlaster.py, MIT (root LICENSE), copyright 2019 LukeProwse.
-The repository README also declares Apache-2.0.
+The upstream README also declares Apache-2.0.
 https://github.com/NaN-xyz/GlyphsApp-Scripts
-Independent rewrite of behaviour. No source code or preset text was copied.
+Independent rewrite of behaviour. Only attributed fallback list VALUES are
+retained as behavioral data; no original executable or preset file is shipped.
 
 Run **Masters > Master Text Comparison** from FontLab's Scripts menu.
 
@@ -36,5 +37,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/71df63167f60cefd2de6c6b3e363f2175b63ba1dceffb6945cb9ff2a52e3c260.py)
+[Python source](../../../../.build/menu-sources/a90920a023fcbc419da46bee88ca61f5cbc910fc561f2e9aa5e3238a4c467bdc.py)
 <!--/codeinclude-->
