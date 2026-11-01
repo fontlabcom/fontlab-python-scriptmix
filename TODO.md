@@ -21,6 +21,15 @@ this_file: TODO.md
 - [ ] Verify the eleven warning and three confirmation routes with the matching
   installed App/Scriptmix artifacts and native FontLab priority/lifetime protocol.
 
+- [ ] Complete and qualify Common Glyphs original all-font charcoal action after FontLab issue 8564 supplies a supported glyph-only mark/history path; preserve raw layer inheritance and full auto/locked/unencoded/nonexport scope. Qualify installed report rendering, literal Copy Characters/Copy Original Report callbacks/OS handoff, whole-font/context preservation and bounded lifecycle separately; current source stage is partial.
+
+- [ ] Qualify installed Master Text Comparison: FontLab #8576 exact active-model binding, all-slot master/layer and trailing delimiter rendering, complete font/cache/history preservation, NUL/UTF16/IME domain, owned settings/geometry, cleanup recovery and real Close.
+
+
+- [ ] Qualify installed Case Coverage controls/persistence, complete font/history preservation, exact model binding, current/all-font proofs, inactive-view chooser, repeated glyph/layer content, no-op refusal, bounded cleanup/failure fence and owned report lifetime.
+
+- [ ] Qualify installed Smallcap Consistency: export-policy/case disclosures, complete modern and legacy findings, both kerning-group sides, deadline/stale refusal, repeat refresh and destruction, complete-font preservation.
+
 # Open work
 
 - [ ] Qualify Italic Angle from the final installed files and independently downloaded release before increasing historical sample acceptance beyond 68 of 130.

@@ -211,3 +211,31 @@ each identity; NOTICE holds the credits and licences. Original bodies are not co
 | `pedroarilla/glyphs-scripts/Paths/Make zero handles selected glyphs.py` | `bbc177fd99ed4ba204bacd93c79d808f14e5a0622ccf6912e8287a1c23841fe2` | Ported | Contours/Retract Handles.py | All handles |
 | `pedroarilla/glyphs-scripts/Paths/Make zero handles selected nodes.py` | `96eba1b2fb939b225bc792621780089edce1208ef8dd11cacba319b1f67e6cd8` | Ported | Contours/Retract Handles.py | Handles of the selected nodes |
 | `pedroarilla/glyphs-scripts/Paths/Simplify selection.py` | `6c784fc646dd94b012b9b6172e3074232e43fd0af31100cdd4e2523ec88ea8a4` | Ported | Contours/Simplify Selected Nodes.py | Alternate-node removal from selected polygon nodes |
+
+## Issue 123: Smallcap Consistency
+
+| Source | SHA-256 | Destination | Disposition |
+| --- | --- | --- | --- |
+| mekkablue/Glyphs-Scripts/Smallcaps/Check Smallcap Consistency.py | `515a006343efe90ea922f63da932e9298224de31e12226a4cb242ed91c814ab0` | Reports/Smallcap Consistency.py | Modern and legacy report source workflows implemented; native acceptance pending. Corrected counterpart Boolean; retained counts, export filtering, suffix/Unicode orphans, missing capital/lowercase and both kerning-group sides. |
+
+FontLab capture uses public.skipExportGlyphs as an explicitly labelled export
+policy and exact SC suffix particles for classification. Unknown name mappings
+and ambiguous groups remain visible. Legacy `legacy_lowercase_without_smallcaps` independently reports missing
+exporting `.sc` glyphs even when modern `.smcp` coverage passes.
+Native timing, complete-font preservation,
+installed origins, repeat refresh and report destruction still need owned-font
+qualification. Synchronous getters cannot be preempted; budget checks on return
+refuse partial output. This one port does not complete the wider corpus.
+
+## Issue 123: Case Coverage candidate
+
+| Source | SHA-256 | Destination | Disposition |
+| --- | --- | --- | --- |
+| mekkablue/Glyphs-Scripts/Glyph Names, Notes and Unicode/Casefolding Report.py | `b9285d7bfdcbc8b21f368959705a786d931828d55ff33a153853898a4c4f25e7` | Reports/Case Coverage.py | Candidate complete controls and detached analysis, exact proof choices; actual native text-block binding/proof usability HELD. No native/full-port or automatic MRU-equivalence claim. |
+
+All four defaults and option persistence are preserved. Multiple encodings are
+alternatives; expansions retain complete strings. Preferred names precede
+encoded aliases; ambiguities, math, ligatures and unknowns remain visible.
+The public.skipExportGlyphs export policy is compatibility-only. Inactive
+ambiguous FontLab views require explicit selection because hidden Glyphs
+remembered-current ordering has no equivalent exposed binding.

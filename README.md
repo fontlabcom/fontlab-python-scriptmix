@@ -2,6 +2,22 @@
 this_file: README.md
 ---
 
+Common Glyphs now calls App for the complete original report: family order,
+first-open-font primary character strings, stored nice names, caller-verified
+GlyphData production names and explicit unknowns, exact trailing spaces and all
+alternative encodings. One font retains glyph order; multi-font names are sorted.
+Escaped JSON retains exact source strings. Ordinary selection copying can
+normalize Unicode spaces/separators; explicit Copy Characters/Copy Original Report
+actions stage exact source MIME data. Native callbacks/OS clipboard handoff and
+rendering remain unqualified.
+The owned report needs no current font and never clears Output. Its optional
+charcoal control is visible, unchecked and unavailable under FontLab issue 8564.
+This partial source milestone leaves the full all-font action and native report
+acceptance open; it does not complete the original workflow.
+
+Master Text Comparison restores the original preset/custom workflow, usable-character sanitation, exact master-copy delimiters and owned settings. It stages named glyph/layer symbols in a fresh proof; native model binding, rendering and full preservation remain unqualified. Multiline/paragraph custom input is held explicitly; exact UTF-8 presets retain those scalars.
+
+
 # FontLab practical scripts
 
 242 practical tools for FontLab 9: 69 sample adaptations and 173 additional
@@ -20,6 +36,12 @@ their separate checks. Menu counts describe available source files.
 
 Writers disclose queued native glyph ids and the possible modification-date changes
 (FontLab issue 8537). They never clear the queue or normalise unrelated dates.
+
+Case Coverage provides the original four report controls, complete detached
+case diagnostics and an explicit existing-view chooser when inactive views are
+ambiguous. GlyphData metadata is supplied by the Scriptmix caller. Exact native
+text-block binding and proof usability remain unqualified; a capability refusal
+is not native acceptance.
 
 ## Requirements and installation
 
@@ -53,6 +75,8 @@ After the owner provisions dependencies:
 
 Use a dedicated FontLab session and owned fonts for acceptance tests. Keep
 normal work and original fonts outside that session.
+
+Reports > Smallcap Consistency checks the complete exporting case set and capital kerning groups in a read-only snapshot. It uses the `public.skipExportGlyphs` compatibility policy, exact SC suffix particles and Unicode/name-table mappings; unknown names and ambiguous groups remain visible. Run again to refresh the same report. This tool requires the matching issue-123-smallcaps App implementation; no published version floor is asserted for the new helpers.
 
 ## Examples
 
@@ -110,7 +134,7 @@ menu scripts as libraries. No `lessons` package is shipped here.
 
 ## Runtime tests
 
-Prerequisites: a prepared Python 3.11 arm64 test `.venv` with pytest and the
+Prerequisites: a prepared Python 3.11 arm64 test `.venv` with pytest, glyphsLib and the
 matching App and Fontport packages installed, plus App test dependencies.
 Use the sibling Fly checkout on PYTHONPATH. Set
 `SCRIPTMIX_TEST_VENV` to that prepared environment's absolute path. It must be

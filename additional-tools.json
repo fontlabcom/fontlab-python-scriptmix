@@ -2348,8 +2348,8 @@
     "title": "Common Glyphs",
     "key": "masters_common_glyphs",
     "destination": "Scripts/Masters/Common Glyphs.py",
-    "destination_sha256": "ed5a35144920f6dfe8d819d77bd2ca8d02818eb4d48d379d3a82d09ae06f4a0b",
-    "kind": "independent-original-workflow-implementation",
+    "destination_sha256": "dd5740edb20c13cea44d57dafce15a8d71643589fba5becec854beb129b5b0f4",
+    "kind": "partial-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/NaN-xyz/GlyphsApp-Scripts",
     "source_path": "CommonGlyphs.py",
@@ -2361,7 +2361,9 @@
     "source_body_redistributed": false,
     "app_minimum": "0.2.26.dev159",
     "native_acceptance": "pending",
-    "scope": "Over FontLab's Glyph-window multi-master text views and Text By Master, this adds an exact-name proof set shared by every open font, with per-font encodings. Map AllFonts fonts to registered packages through FontGate IDs and read canonical font.glyphs lists twice. Publish sorted shared names, slash proof text, current-font encoded characters and complete per-font Unicode assignments in the shared report panel. Refuse changed registrations, invalid records and expired scans. Use stored FontLab names in place of Glyphs production-name conversion. The optional source label-colour action is omitted."
+    "scope": "Partial source milestone toward the unchanged full original workflow: exact common names across every open font, no current-font prerequisite, one-font glyph order and sorted multi-font intersection. Family names retain captured AllFonts order; first font primary scalar strings and nice/production names retain every trailing space. Genuine caller GlyphData database/alias/derived mappings are separate from explicit unknowns; complete per-font alternative encodings and slash-name proof text remain visible. Shared App double-read capture and owned nonmodal Refresh/Close have bounded retained cleanup. Charcoal option is visible, unchecked and unavailable; no unsafe cascading or narrowed-domain writer is implemented. Full all-font action remains required under FontLab issue 8564; raw layer marks/inheritance must be preserved. Source staging is not original-scope or native acceptance. Exact original source_text and character facts remain in escaped JSON; Qt primary literal copying may normalize NBSP/line separators and native literal-copy/rendering remains unqualified. Explicit Copy Characters/Copy Original Report actions now stage exact detached source MIME through the existing native factory/qt_literal_text adapter, with retained ownership and bounded cleanup; actual P4 native callbacks/OS handoff remain unqualified.",
+    "app_source_commit": "1a4bd809372ec50d3c4b78e357a7b83e60f6a900",
+    "original_scope_acceptance": "incomplete: original all-font charcoal action requires FontLab issue 8564 glyph-only mark/history support; native report acceptance pending"
   },
   {
     "title": "Add Anchors From File",
@@ -3160,5 +3162,39 @@
     "native_acceptance": "pending",
     "app_minimum": "0.2.26.dev159",
     "scope": "Preview of baseline, x-height and caps zones from H/O and x/o overshoots for the current or all masters; a zone at the same position (else the same name) is replaced and keeps its name, tags and lock; other zones stay; Apply re-measures the glyphs, refuses a stale preview and writes through zone_native.backend as one Undo step (\"Alignment Zones\"); refusals reach the status line; fl#8574 after Undo/Redo. Native qualification pending."
+  },
+  {
+    "title": "Smallcap Consistency",
+    "key": "report_smallcap_consistency",
+    "destination": "Scripts/Reports/Smallcap Consistency.py",
+    "destination_sha256": "c80aab2e2f230fa790c7bb35be065bf2e71d15a88896ad551ec65d60e33147d2",
+    "kind": "report-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/mekkablue/Glyphs-Scripts",
+    "source": "Smallcaps/Check Smallcap Consistency.py",
+    "source_sha256": "515a006343efe90ea922f63da932e9298224de31e12226a4cb242ed91c814ab0",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "scope": "Both modern and legacy report workflows: export census, missing and orphan counterparts, two-sided capital kerning groups. Correct Boolean counterpart logic; preserve alternate suffixes, ligatures and Unicode casing. Report legacy lowercase .sc-only gaps separately from modern .smcp acceptance. Export scope is public.skipExportGlyphs compatibility policy; SC case uses exact suffix particles. Disclose unknown mappings and ambiguous groups; refuse partial/stale reports.",
+    "native_acceptance": "pending",
+    "source_body_redistributed": false,
+    "app_source_commit": "f1624437365951dfbecf40e282a2c33a6c6144e3"
+  },
+  {
+    "title": "Case Coverage",
+    "key": "case_coverage",
+    "destination": "Scripts/Reports/Case Coverage.py",
+    "destination_sha256": "fdab954a270ea6f738085dd8ba826168cc58f6d39a8ade49215ffe365ac6278f",
+    "kind": "report-proof-adaptation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/mekkablue/Glyphs-Scripts",
+    "source": "Glyph Names, Notes and Unicode/Casefolding Report.py",
+    "source_sha256": "b9285d7bfdcbc8b21f368959705a786d931828d55ff33a153853898a4c4f25e7",
+    "license": "Apache-2.0",
+    "license_sha256": "bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec",
+    "scope": "Candidate full controls/analysis/current-all-font reports and exact proof target workflow. Canonical/encoded aliases, expansion compatibility, export asymmetry, Math/Ligature/unknown diagnostics and repeated source order. Explicit inactive-view chooser replaces unavailable Glyphs per-font MRU semantics. Typed text-block binding and actual native proof usability remain HELD; no native/full-port acceptance.",
+    "native_acceptance": "pending",
+    "source_body_redistributed": false,
+    "app_source_commit": "ba37d438f2330e1e0c61bb106b1527faa4d26b93"
   }
 ]

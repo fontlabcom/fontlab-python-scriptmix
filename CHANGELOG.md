@@ -228,6 +228,68 @@ priority before execution. G11 source suite82passed; native acceptance pending.
   edits and hash, docs pages. Offline tests: `tests/test_issue122_Z1.py` and
   the rewritten Master Metrics Table tests. Native verification pending.
 
+## 2026-10-22 — Common Glyphs review fix2 test dependency
+
+- Provision glyphsLib explicitly in test.sh so real production-metadata tests
+  run with an ordinary App wheel. Document the prepared environment requirement.
+  No App/menu/runtime requirement, assertion, hook or coverage change. Full
+  App/Fontport artifact compatibility and native/writer acceptance remain open.
+
+## 2026-10-22 — Common Glyphs review fix1
+
+- Classify GlyphData's sanitized fallback as unknown when a nonfinal component
+  production contains a dot or a component/base has no semantic production.
+  Preserve genuine unchanged `f_i`, final-component dots and known-base suffixes.
+  App source and all unrelated menu/provenance records stay unchanged. Full
+  all-font charcoal action and installed/native acceptance remain incomplete.
+
+## Common Glyphs report source repair (partial milestone)
+
+- Add explicit literal Copy Characters/Copy Original Report source actions through
+  existing App native MIME helpers; normalized human selection stays distinct.
+  New callbacks/panel/OS clipboard handoff remain native acceptance gates.
+
+- Replace the embedded comparison implementation with shared App capture,
+  source-faithful reports and owned lifecycle; use actual GlyphData production
+  metadata at this caller boundary with explicit unknowns. Restore first-open
+  primary strings, family order, one-font glyph order and exact trailing spaces;
+  retain alternative encodings and reusable slash-name text.
+- Expose default-off charcoal marking as visibly unavailable under FontLab issue
+  8564. The full all-open-font action remains unimplemented/unaccepted. This is a
+  partial source milestone, not full original-scope/native completion.
+- Change only the Common Glyphs menu/source pin and generated source page;
+  migrate obsolete embedded-engine tests to expanded App coverage while retaining
+  both menu files' original import/source contracts.
+
+## 2026-10-22 — Master Text Comparison review fix1 pin
+
+- Bind the shared App repair for native result-slot ownership, immediate-preset routing around unrelated custom holds, and cumulative bounded failed-panel recovery. Menu bytes are unchanged; native acceptance remains pending.
+
+
+## 2026-10-22 — Master Text Comparison workflow repair
+
+- Restore original blank custom/Side-by-side defaults, automatic optional local presets/four attributed fallback lists, Run/double-click precedence, full sanitation diagnostics and every final space/newline.
+- Share bounded opening-font capture, exact named-symbol staging/readback and retained sender/shape cleanup; persist only owned source controls after proof and geometry on Close. Native model binding, special text/IME, rendering and complete preservation remain pending (FontLab #8576).
+
+
+## 2026-10-22 — Case Coverage shared report fixes
+
+- Bind the reviewed App fix for unknown uncased all-clear feedback and automatic Details after completed-analysis proof errors. Menu source bytes and controls are unchanged; native proof usability remains held.
+
+## 2026-10-22 — Case Coverage candidate
+
+- Add full original controls, persistent owned settings, current/all-font detached case reports, explicit aliases/Unicode alternatives/Math/Ligature/unknown findings and multi-character compatibility fixes.
+- Add explicit exact-view target choices and source-backed proof mechanics with content verification and bounded retained cleanup. Native text-block binding and actual proof usability remain held; no native/full-port acceptance claimed.
+
+## 2026-10-22 — Separate legacy lowercase coverage
+
+- Report legacy lowercase-to-`.sc` gaps separately from modern `.sc`/`.smcp` acceptance; retain export filtering and font order. Correct the Scriptmix menu total to 241.
+
+## 2026-10-22 — Smallcap Consistency
+
+- Add complete modern/legacy smallcap reporting: export census, missing and orphan counterparts, capital/lowercase coverage and both kerning-group sides. Correct the original Boolean predicate and preserve Unicode/ligature/alternate names. Report unknown mappings and ambiguous groups.
+- Use detached facts and bounded lazy native capture; explicit public.skipExportGlyphs compatibility policy, no font changes. Installed native qualification remains pending.
+
 ## 2026-10-22 - Undefined marks no longer read as negative greys
 
 - Reports > Label Statistics and Names > Select by Mark label only marks 1000-1255 as greys, the range FontGate defines (`glyphs_write.cpp`). Marks 361-999 and above 1255 now read "Mark N" instead of "Grey -639". Revision records and docs pins are updated.

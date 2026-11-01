@@ -1,17 +1,17 @@
 # this_file: tests/test_issue122_G10.py
 # SPDX-License-Identifier: Apache-2.0
-"""Check independent master proofs and cross-font name reports with owned fakes."""
+"""Retain both master-menu source/import contracts after shared App extraction.
+
+Common Glyphs behavioral/capture/lifecycle cases now live in App's expanded
+common_glyphs tests; thin menu and actual metadata tests are in
+ test_common_glyphs_menu.py. Source assertions below retain their original scope.
+"""
 
 import ast
 import importlib.util
-import inspect
-import sys
 from pathlib import Path
 from types import ModuleType
-from types import SimpleNamespace as NS
 from typing import Any
-from unittest.mock import create_autospec
-
 import pytest
 from conftest import app_names_used, check_real_app_names
 

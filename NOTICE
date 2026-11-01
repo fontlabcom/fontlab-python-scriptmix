@@ -1296,9 +1296,12 @@ MIT and the README declares Apache-2.0; both notices are preserved:
 - Masters/Master Text Comparison: MasterBlaster/MasterBlaster.py.
 - Masters/Common Glyphs: CommonGlyphs.py.
 
-No source code or preset text was copied; the scripts reproduce the
-behaviour for FontLab. Source and licence SHA-256 values are in
-additional-tools.json and PORTING-BACKLOG.md.
+No original executable or preset resource file is shipped. Master Text
+Comparison retains only the four attributed fallback list VALUES as behavioral
+data in shared App; its code is independently implemented. The original preset
+resource SHA256 is 03cf0ac2d9f0149d9771bdc293d4778a60c533bd7141819781c030990a2c12a9.
+Source and licence SHA-256 values are retained in additional-tools.json and
+PORTING-BACKLOG.md; the complete MIT terms/copyright are preserved above.
 
 Anchors tools after Simon Cozens
 ================================
@@ -1508,3 +1511,39 @@ Masters backup extension from the author's own sample
   sample masters_backup_layer.py, Apache-2.0.
 
 Duplicate Current Layer also credits Pedro Arilla's Layers/Duplicate current layer.py.
+
+Smallcap Consistency (issue 123)
+------------------------------
+Reports/Smallcap Consistency.py reimplements the modern and legacy report
+workflows of mekkablue (Rainer Erich Scheichelbauer), Glyphs-Scripts,
+Smallcaps/Check Smallcap Consistency.py. Upstream repository:
+https://github.com/mekkablue/Glyphs-Scripts . Licensed under Apache License
+2.0 (LICENSE in this distribution). Original bodies are not redistributed.
+Source SHA-256: 515a006343efe90ea922f63da932e9298224de31e12226a4cb242ed91c814ab0
+Upstream LICENSE SHA-256: bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec
+Changes: detached FontLab capture and owned non-modal report; corrected
+Boolean counterpart test, complete suffix preservation and Unicode casing;
+unknown mappings and ambiguous group membership explicitly disclosed.
+Export scope uses public.skipExportGlyphs compatibility policy.
+
+Case Coverage (issue 123 P2 candidate)
+--------------------------------------
+Reimplements the controls, detached case analysis, diagnostics and proof-target
+workflow of mekkablue/Glyphs-Scripts/Glyph Names, Notes and Unicode/
+Casefolding Report.py, https://github.com/mekkablue/Glyphs-Scripts, Apache-2.0.
+Source SHA-256 b9285d7bfdcbc8b21f368959705a786d931828d55ff33a153853898a4c4f25e7.
+LICENSE SHA-256 bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec.
+No original body is redistributed. Corrected multi-character ord failure;
+retained i_dotaccentcomb→i and SS→Germandbls compatibility. Caller-supplied
+maintained GlyphData categories/canonical names stay outside generic App.
+Native exact text-block binding/proof usability remains unqualified; explicit
+inactive-view choice is a documented FontLab adaptation, not Glyphs MRU parity.
+
+Common Glyphs staged shared report
+==================================
+
+The practical Common Glyphs caller now supplies maintained GlyphData production
+metadata to independently implemented shared App report/capture/UI helpers. The
+Luke Prowse source identity and complete MIT/Apache notices above remain exact.
+The original optional all-font charcoal action is held under FontLab issue 8564;
+this staged report repair is not a complete equivalent of the original workflow.

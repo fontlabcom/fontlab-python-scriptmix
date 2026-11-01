@@ -329,6 +329,339 @@ passes. `script-hash-map.json` records exact old/new bytes for cross-repo pins.
   fontlab-python-scriptmix`; results in
   verification/issue-122/sdd/final/port-zones-report.md. No FontLab run.
 
+## Issue123 P4 fix2 — standard runner's real GlyphData test dependency
+
+- FIX_BASEdf247b4bfb0e4e992a78433c043b4e783e830c4b. App remains unchanged at
+  1a4bd809372ec50d3c4b78e357a7b83e60f6a900. Declare glyphsLib beside pytest in
+  test.sh's isolated uv requirements; update dependency/prepared-environment docs.
+  No product/helper/test/hook/coverage change or source override.
+- Consult public `rtk proxy /Users/adam/.local/bin/uv run --help` first: --with
+  installs requested requirements; UV_NO_CACHE=1 avoids cache reads/writes using
+  temporary storage. Use the requested ordinary built App wheel and actual Fly
+  source, explicitly unset App/Fontport source overrides and the active venv.
+- Exact standard-runner RED/GREEN command (cwd task Scriptmix; only log filename
+  differs, red-standard.log before source edit / green-standard.log after):
+  `rtk proxy env -u SCRIPTMIX_APP_SOURCE -u SCRIPTMIX_FONTPORT_SOURCE -u SCRIPTMIX_EXTRA_REQUIREMENTS -u VIRTUAL_ENV UV_NO_CACHE=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/tmp PATH=/Users/adam/.local/bin:/opt/homebrew/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=../fontlab-fly/src SCRIPTMIX_PYTHON=cpython-3.11-macos-aarch64-none SCRIPTMIX_APP_REQUIREMENT=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/common-glyphs/app-dist-r2/fontlab_fontlabapp-0.2.24.dev149+g1a4bd8093-py3-none-any.whl sh test.sh -k common_glyphs -p no:cacheprovider`
+  RED exit1:18failed/1passed,4295deselected, ModuleNotFoundError glyphsLib;
+  GREEN exit0:19passed,4295deselected in0.66s. Retained separate fix2 logs under
+  common-glyphs-research. No unchanged full suite or menu coverage rerun.
+- First attempt with the existing Fontport wheel exited1 before tests because
+  it requires App>=0.2.150.dev0, conflicting with the requested ordinary App wheel.
+  Retain red.log as a separate genuine integration/version gate. Focused runner
+  omits those unrelated extras; no version override/requirement weakening. Full
+  tuple artifact integration remains unaccepted. Root owns final normal full-hook
+  retry and re-review; full all-font writer/native/artifact gates remain open.
+- `rtk proxy sh -n test.sh` and scoped `git diff --check` exit0. App/menu/tests,
+  all173provenance rows, all242menus and hashes are unchanged from FIX_BASE.
+  No native/clipboard/live install/canonical/zone/root edit, push or descendants.
+
+## Issue123 P4 fix1 — production fallback provenance
+
+- FIX_BASE App1a4bd809372ec50d3c4b78e357a7b83e60f6a900 remains unchanged;
+  Scriptmix6be6f4fc996c0ca7550346038bf4db36b70e539d. Reviewer I1 is the sole
+  terminal finding. Inspect actual glyphsLib6.16.2 `_construct_production_name`:
+  nonfinal dotted productions deliberately punt; known components without an
+  explicit production or AGL meaning also take sanitized fallback. Use verified
+  entries/AGL meanings to prove derivation, retaining actual get_glyph output.
+- Tests first: exact public menu/real GlyphData regressions for idotaccent_a,
+  a_idotaccent_a, idotaccent_a.alt, CR_a, descender-cy_a and CR.alt. Retain f_i
+  unchanged, final-dot a_idotaccent, idotaccent.alt, Unicode A-cy_a controls.
+  Exact RED command/environment and original failures are in external fix1 report:
+  `rtk proxy env UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/tmp PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=../fontlab-fontlabapp/src:../fontlab-fly/src /Users/adam/.local/bin/uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with glyphslib python -B -m pytest -q -p no:cacheprovider tests/test_common_glyphs_menu.py`
+  RED exit1:6failed/13passed (red-complete.log); GREEN exit0:19passed (green.log).
+- Exact focused verification:
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/fix1/verify.sh menu`
+  exit0:25passed; changed menu38statements/10branches100%, no exclusions.
+  Same script `docs` exit0:10passed; `lint` exit0. Logs, commands and coverage
+  retained separately under common-glyphs-research/fix1, preserving prior receipts.
+  No other production-name tests exist outside this file; Case Coverage tests
+  concern Unicode categories/preferred proof names and were not rerun.
+- Only Common Glyphs menu and SHA pins/page change, with its source identity,
+  full licence and App pin exact; all172other records and241other menus remain
+  byte-exact. No App edit, full-suite rerun, native/clipboard call, installation,
+  canonical/zone/root edit, push or descendant. Full all-font writer/native and
+  artifact gates remain open. Earlier P4 checks below describe the pre-fix pair.
+
+## Issue123 P4 — partial Common Glyphs report milestone; full writer remains open
+
+- Current matching pair checks (supersede the earlier final/r2 receipts below):
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/verify.sh menu` exit0:16passed, current menu30statements/6branches100%, menu-final-source.log; `.../verify.sh docs` exit0:10passed, docs-final-source.log; `.../verify.sh lint` exit0 in both repos, lint-final-pair.log. AST/this_file/zero exclusions, exact source pins/all172other records and241other menu bytes and git diff --check are independently audited in final-source-audit-r2.json. No full baseline or site build/publication rerun.
+
+- Latest literal MIME stage: explicit Copy Characters/Copy Original Report actions use exact detached facts and genuine Qt-owned native MIME factory plus unchanged qt_literal_text adapters. Human selection normalization remains distinct. Owned-sink tests preserve all source payloads and retain unknown ownership/failures until proven resolution. No real clipboard/native call by this lane. App focused55passed (43Common+12boundary), aggregate99.35%, every changed module>=97.79%, zero exclusions. Root9792 eleven-vector helper-only receipt does not qualify new P4 callbacks/panel/OS handoff or full writer.
+
+- Unicode representation follow-up: visible panel/menu notices explicitly hold literal source-character copying/native rendering. Standalone Qt primary-copy normalization (NBSP->space, LS->newline), disclosed human NUL escape, non-BMP text and exact escaped-JSON characters/full-source_text roundtrips are tested in App46cases (34Common+12boundary), app-final-r5.log. This proves retained data representations, not literal copying or native acceptance.
+
+- Controller explicitly approved report repairs and a visible default-off unavailable
+  charcoal control while preserving the unchanged full report+all-font action goal.
+  Full optional writer is UNIMPLEMENTED/unaccepted under FontLab issue 8564. No
+  auto/locked/unencoded/nonexport narrowing, guessed method, cascading mark write,
+  native request, canonical change, live installation, merge, push or descendant.
+- Thin menu uses Fly/App; actual glyphsLib6.16.2 get_glyph.production_name supplies
+  verified database/alias/known-base/component mappings with explicit unknowns.
+  App stays Glyphs/UFO generic. Preserve first-open primary strings (not current
+  font/alternate concatenation), source one-font order, family order, all name/string
+  trailing spaces, complete per-font encodings and reusable slash-name proof text.
+- Final App source pin1a4bd809372ec50d3c4b78e357a7b83e60f6a900; menu SHA256
+  432d5f0e4cfcf28900c93b48e92ac3f46c93a4b39195a931960ea72da58def8f.
+  Original source/licence/attribution hashes remain exact. Direct final BASE audit
+  verifies all other172rows/pins and241menu bytes;173records/242menus total.
+- RED thin caller tests exited1:10 expected routing/metadata failures before menu
+  replacement, menu-red.log. Initial caller GREEN10passed, menu-green-r1.log.
+  Common-specific embedded G10 tests move to43 expanded App source/capture/real-Qt/
+  lifecycle cases; original G10 static/import assertions for both menus are retained.
+  Wrong current-font/all-encoding expectations are replaced by source first-font
+  primary-string expectations; no pin/source assertion was weakened.
+- Exact final command:
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/verify.sh menu`
+  exit0:16passed (10caller/metadata,4retained static/import,2source-integrity),
+  menu-final.log. Changed menu30statements/6branches100%, zero exclusions/pragmas.
+  This focused run explicitly uses SCRIPTMIX_APP_SOURCE/PYTHONPATH for reviewed App;
+  it is source/Fly identity evidence, not an installed artifact acceptance claim.
+- Exact docs command:
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/verify.sh docs`
+  exit0:10passed, docs-final.log; no site build/publication claim.
+- Exact lint command:
+  `rtk proxy /bin/bash /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/common-glyphs-research/verify.sh lint`
+  exit0 in both repositories (Ruff0.14.10 F821/F401), lint-final.log. Initial App
+  test-unused-import failure is retained in lint-r1.log and corrected. Python3.11
+  AST/this_file, zero pragma exclusions, manifest integrity and git diff --check pass.
+- Root owns artifact/full-hook and native acceptance; unchanged6711 App/4304 Mix
+  baselines were not rerun. Standalone Qt is not FontLab proof. Full future native
+  contract, root's measured9792 missing-binding receipt and complete command/log
+  evidence are external in sdd/common-glyphs-report.md/common-glyphs-research/.
+
+## Issue123 P3 fix1 — bind I1/I2/I3 source repairs
+
+- FIX_BASEdd76a7795fed649bb71dd5f155c683460e8dce71. Bind the unchanged Master Text Comparison menu to reviewed-fix candidate App291ee1120271e8d68071fe1f0e70decfb0cf10ac. Only this row's app_source_commit changes; all source/resource/licence/menu hashes and other172 records remain exact. All242 menu bodies remain byte-exact versus FIX_BASE.
+- App fix preserves native QDialog.result, routes immediate presets before unrelated custom holds without rewriting unreadable custom, and retains/fences every failed panel owner until explicit bounded recovery with complete error receipts. App focused73passed; changed modules controller100%,owners100%,panel94.92%,settings97.80%, zero exclusions/pragmas. No unchanged full suite repeated; root performs scoped re-review before corrected artifact/fullgate wave.
+- Candidate1 gates/artifacts remain retained PRE-FIX evidence, not acceptance. No native/canonical/install/merge/push/descendant work. Native #8576 and all rendering/settings/input/full-preservation/lifecycle holds remain open. Exact focused commands/receipts/source hashes are appended to the same external master-text-comparison-report.md.
+
+
+- Bounded Scriptmix verification (cwd this repository; external UV_CACHE_DIR/TMPDIR, PYTEST_DISABLE_PLUGIN_AUTOLOAD=1, PYTHONPATH=../fontlab-fontlabapp/src:../fontlab-fly/src): `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests/test_master_text_menu.py tests/test_reports.py::test_manifest_when_distributed_then_hashes_and_menu_paths_match tests/test_curated_delivery.py::test_active_menu_contains_only_indexed_practical_tools`; exit0,3passed, master-text-fix1-mix-focused.log. This is focused source/integrity evidence; the root's installed artifact/native/fullgate wave remains pending.
+- Direct exact FIX_BASE comparison:173records, only masters_text_comparison.app_source_commit changed; other172records/pins exact, all242menu bytes exact including repaired menu, every destination digest correct. `git diff --check` exit0. Candidate1 master-text-source-manifest.json/file-hashes and archives are retained unchanged; new fix1-specific source manifest/hashes accompany the appended report.
+
+## Issue123 P3 — Master Text Comparison source candidate
+
+- Independently implement the complete original workflow in shared App and one thin Fly menu. Preserve all other menu sources and provenance rows. Source defaults, sanitation, exact delimiters, real Qt double-click/settings/geometry and bounded preflight/cleanup are covered by focused tests.
+- Root-owned native binding/rendering/preservation remains OPEN (FontLab #8576); no native calls or owner installations were performed in this lane. Commands, receipts and full source mapping are external in `master-text-comparison-report.md`. Final exact gates/commits recorded below.
+
+
+- Final matching App pin: `61c5f5dca0533e53accff3ab4426c26ab6a9b78b`; changed menu SHA256 `a90920a023fcbc419da46bee88ca61f5cbc910fc561f2e9aa5e3238a4c467bdc`. Direct BASE equality checks prove all other172 original records/pins and all other241 menu source bodies unchanged;173 records/242 menus total. Frozen migration/revision/provenance manifests remain unchanged.
+- Corrected frozen gate (workspace root): `rtk proxy sh -c 'PATH=/opt/homebrew/bin:$PATH UV_NO_CACHE=1 .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-python-scriptmix fontlab-python-scriptmix > /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/master-text-mix-gate-final-r1.log 2>&1'`; exit0,4304 passed/6 existing skips, .metaswarm/runs/fontlab-python-scriptmix.9rpepx. Changed menu10statements/2branches100%, zero exclusions/pragmas. UV_NO_CACHE rebuilt the exact current App source wheel. The collection's unused-src coverage warning is expected; Scripts remain measured.
+- Pre-correction source gate4304/.R3okZo was completed and retained before actual controller/panel opening-deadline repair; it is superseded by this corrected Apppin gate. App final .nccqyN gate6698passed/76 existing warnings, every changed module>=92.25% combined. No unchanged baseline suite was rerun merely for another green.
+- Covering menu RED `tests/test_master_text_menu.py` failed1 before routing repair; GREEN menu entrypoints and retained Common/static G10 cases pass in the full installed-App gate. Thirteen obsolete Master-specific G10 functions/22cases move to60 expanded App cases plus the thin menu test;19 Common/static G10 cases remain. Equality/hash assertions were not weakened.
+- Final docs command (Scriptmix cwd, external UV_CACHE_DIR/TMPDIR, PYTEST_DISABLE_PLUGIN_AUTOLOAD=1, PATH=/opt/homebrew/bin:$PATH): `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs`; exit0,10passed, master-text-docs-final-r1.log. Initial docs attempt selected broken /usr/bin/git and failed3; failed log retained; no test/filter assertion changed. No site build/publication claim.
+- Final Ruff command with external cache/tmp: `uv run --no-project --python cpython-3.11-macos-aarch64-none --with ruff==0.14.10 ruff check --no-cache --target-version py311 --select F821,F401 "Scripts/Masters/Master Text Comparison.py" tests/test_master_text_menu.py tests/test_issue122_G10.py`; exit0. Python3.11 AST/this_file/zero-pragmas and git diff --check pass. The affected generated source page/snapshot uses the new menu digest; other pages/indexes remain exact.
+- Native #8576, exact delimiter/layer rendering, special text/IME, opaque QByteArray settings/geometry, complete font/cache/history preservation and native lifecycle remain OPEN. No native calls, original body/resource redistribution, owner installation edits, descendant, merge or push. Full report and receipts: `/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/master-text-comparison-report.md`.
+
+## Issue123 P2 fix round1 — shared App review fixes and source pin
+
+- Shared App fix `ba37d438f2330e1e0c61bb106b1527faa4d26b93` closes review I1
+  unknown encoded-uncased all-clear and I2 automatic Details after completed
+  analysis proof failures/target choices. Four controls/defaults unchanged.
+- Update only Case Coverage's app_source_commit pin. Menu bytes/SHA-256
+  fdab954a270ea6f738085dd8ba826168cc58f6d39a8ade49215ffe365ac6278f,
+  existing source page/indexes and all172prior records/pins/scripts unchanged.
+- Covering App tests59passed,exit0; changed engine96.99%/panel95.54%combined,
+  no exclusions/pragmas; exact commands/RED and GREEN receipts in App WORK
+  and the same external case-coverage-report.md append.
+- Scriptmix bounded command (cwd this repository; external cache/TMP,
+  PYTHONPATH=../fontlab-fontlabapp/src:../fontlab-fly/src,
+  PYTEST_DISABLE_PLUGIN_AUTOLOAD=1):
+  `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests/test_case_coverage.py tests/test_reports.py::test_manifest_when_distributed_then_hashes_and_menu_paths_match tests/test_curated_delivery.py::test_active_menu_contains_only_indexed_practical_tools`
+  exit0,6passed; case-coverage-fix1-provenance.log. Actual pin-to-App-head and
+  every prior manifest/script digest checked directly. No test assertions weakened.
+- No unchanged full suite/site build repeated; native proof route untouched.
+  Native active-item None calibration v2–v6 remains a material hold. No native
+  calls, descendants, owner/canonical edits, merges or pushes. M1 gate warning
+  work remains root tooling backlog; no gates/thresholds/warnings changed.
+
+## Issue 123 P2 — final Scriptmix source receipt
+
+- Final matching App commit: `9441886b10c54d9bf6998c2c528200afc4f21bbd`.
+  New Case Coverage source SHA-256:
+  `fdab954a270ea6f738085dd8ba826168cc58f6d39a8ade49215ffe365ac6278f`.
+  The new manifest row binds both; all172prior records/pins/scripts preserved.
+- Final frozen full command from workspace root:
+  `rtk proxy sh -c 'UV_NO_CACHE=1 .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-python-scriptmix fontlab-python-scriptmix > /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-mix-gate-final-r2.log 2>&1'`
+  exit0,4325passed/6skips, .metaswarm/runs/fontlab-python-scriptmix.OGZgm6;
+  menu35statements/10branches100%, zero exclusions/pragmas. Expected warning:
+  this menu collection has no imported src package; Scripts are measured.
+- Final docs tests: same exact arm64 docs command below, output
+  case-coverage-docs-final.log; exit0,10passed. Only new source page/indexes
+  changed; no full site build/publication claim.
+- Final F821 lint on new menu/test and adjusted G13 fake: exit0; final
+  Python3.11 AST/compile/annotations/docstrings and git diff --check exit0.
+- Real metadata probe command (Scriptmix cwd, external cache/TMP and App/Fly/
+  Glyport source PYTHONPATH):
+  `uv run --no-project --python cpython-3.11-macos-aarch64-none --with glyphslib python -B /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-metadata-probe.py`
+  exit0; glyphsLib6.16.2 actual glyphdata.py SHA-256
+  d695df716d88946ac6b83db5d659e83aa5e7a09f18905dc4bbbe04198ad2d23d;
+  actual Math/Ligature/known/unknown and expansion metadata verified, no
+  original corpus body executed and no native FontLab call.
+- DONE_WITH_CONCERNS candidate source only: exact native model binding and
+  proof usability remain root-owned acceptance holds. Final local commit tuple
+  and all source hashes are external in case-coverage-report.md and
+  case-coverage-source-manifest.json. No push, merge or canonical change.
+
+## Issue 123 P2 — final bounded-loop correction
+
+- Audited every P2 Python loop. Shared crossfont_anchors_capture.fonts now
+  accepts an optional checkpoint, checked inside registered package/font/master/
+  glyph-name loops while retaining default call behavior/order/filtering. P2
+  propagates action deadline (final minus0.5s) and cancellation through carriers,
+  alternative Unicode/fact validation/alias walks/caller metadata/proof staging,
+  dynamic target choices/status/cleanup and complete JSON serialization.
+- Regression RED: `tests/test_case_coverage_deadline_pass.py`, exit1, retained
+  case-coverage-deadline-pass-red.log. GREEN focused App+Reports+Crossfont:
+  same explicit arm64/external-cache pytest-cov command as below, adding
+  tests/test_crossfont_anchors_native.py, --cov=src/fontlabapp and external
+  case-coverage-deadline-focus.json; exit0,74passed. The bounded-loop audit is
+  issue123/sdd/case-coverage-deadline-loop-audit.md. No cap/truncation/exclusion.
+- Final frozen App gate:
+  `rtk proxy sh -c 'UV_NO_CACHE=1 .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-fontlabapp fontlab-fontlabapp > /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-app-gate-final-r2.log 2>&1'`
+  exit0,6627passed/76warnings; .metaswarm/runs/fontlab-fontlabapp.QHJ1hu.
+  All11changed modules pass80%combined with zero exclusions/pragmas. Coverage:
+  engine96.99,capture93.71,cleanup91.18,controller94.55,panel96.36,
+  proof90.91,settings100,targets100,views98.92,crossfontcapture97.11,reports100.
+- First Scriptmix gate exposed the old G13 show_report fake signature, exit1,
+  4323passed/6skips plus1failure. Updated only the fake's exact keyword-only
+  optional parameters/default objects; all parameter_shape/autospec/source/pin/
+  equality assertions remain intact. Focused contract exit0,5passed; subsequent
+  pre-deadline-correction full gate exit0,4324passed/6skips. These older receipts
+  remain history; final matching App/menu gate and source tuple are recorded in
+  issue123/sdd/case-coverage-report.md after terminal completion.
+- Still no native calls, canonical changes, live installation, merges or pushes.
+  Native typed text-block binding/proof usability remains unqualified. Root's
+  latest readonly host readiness is empty; no current owner-font blocker is
+  claimed. Native operations remain root-coordinated after artifact/source review.
+
+## Issue 123 P2 — Case Coverage candidate (2026-10-22)
+
+- Read complete original Casefolding Report and actual Apache-2.0 licence;
+  hashes match the brief. Retain original four controls/defaults/persistence,
+  current/all-font reports, explicit Unicode aliases/expansions, actual Math/
+  Ligature metadata, export asymmetry, complete diagnostics and ordered repeats.
+- Candidate proof workflow uses exact model ids, explicit inactive-view choices,
+  actual-content verification and bounded retained cleanup. Typed active-model
+  binding/native proof usability is HELD; source/mock success is not acceptance.
+- Self-review fixed loss of complete analysis on proof failure, stale Details
+  after new capture failure, and unbounded asdict/JSON serialization. Shared
+  reports.py optional budgets preserve default text/API behavior; check every
+  encoder chunk and before/after native show. No rows truncated.
+- TDD RED receipts for engine/capture/settings/panel/controller/targets/proof/
+  cleanup and alias/retained-report/budget regressions live externally under
+  issue123/sdd/case-coverage-*.log. Menu was source-first, then tested.
+- Final App full command from workspace root:
+  `rtk proxy sh -c 'UV_NO_CACHE=1 .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-fontlabapp fontlab-fontlabapp > /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-app-gate-final.log 2>&1'`
+  exit0,6624passed/76warnings; .metaswarm/runs/fontlab-fontlabapp.YkvI7A;
+  all10 changed modules >=80% combined, zero exclusions/pragmas. Earlier
+  6619pass/9module gate retained as pre-correction iteration, not final receipt.
+- Final focused App command (App cwd, external UV_CACHE_DIR/TMPDIR,
+  QT_QPA_PLATFORM=offscreen, PYTHONPATH=src, PYTEST_DISABLE_PLUGIN_AUTOLOAD=1,
+  external COVERAGE_FILE):
+  `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with pytest-cov --with PySide6-Essentials python -B -m pytest -q -p no:cacheprovider -p pytest_cov tests/test_case_coverage*.py tests/test_reports.py --cov=src/fontlabapp --cov-branch --cov-report=json:/Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-final-focus.json --cov-report=`
+  exit0,45passed; final-focus.log/json. Per-module final combined: engine97.08,
+  capture93.69, cleanup91.04, controller93.88, panel95.90, proof89.26,
+  settings100, targets100, views98.84, reports100.
+- Scriptmix source/menu/provenance focused exit0,16passed; corrected directory
+  coverage run3passed/22statements+8branches100%. Initial --cov=file collected
+  no data and is explicitly not coverage evidence. All172 prior manifest rows,
+  source pins and script hashes retained; new menu count242=69+173.
+- Existing docs catalogue generator wrote only the new source page/indexes.
+  Scriptmix docs command (same external cache/TMP; PATH=/opt/homebrew/bin:$PATH):
+  `uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs`
+  exit0,10passed; case-coverage-docs.log.
+- No native call, descendant, canonical edit, live install, merge or push.
+  Exact API/semantic/source-hash report and final Scriptmix/commit receipt:
+  /Volumes/Falstaff4T/fontlab-scripting-data/issue123/sdd/case-coverage-report.md.
+- Wait, but: exact flTextBlockItem model access and inactive multiple-block
+  activation remain capability-gated/native-held. A refusal does not finish the
+  practical native port. Root retains owned-fixture and final review gates.
+
+## Issue 123 P1 fix round 1 — independent legacy lowercase check
+
+- Review I1: modern `.sc`/`.smcp` acceptance omitted independent legacy
+  lowercase→`.sc` coverage. Add `legacy_lowercase_without_smallcaps` without
+  changing modern results. Its regression covers .smcp-only success with
+  separate legacy warning, excluded nonexporting .sc, font order and valid .sc.
+- Review M1: Scriptmix README leading tool total corrected 240→241.
+- RED, App: `PYTHONPATH=src PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest python -B -m pytest -q -p no:cacheprovider tests/test_smallcap_consistency.py::test_legacy_lowercase_when_smcp_only_then_modern_passes_and_legacy_warns`
+  exit1, missing result-key failure; sdd/smallcaps-fix1-red.log.
+- GREEN, App: `PYTHONPATH=src PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with pytest-cov python -B -m pytest -q -p no:cacheprovider -p pytest_cov tests/test_smallcap_consistency.py tests/test_smallcap_capture.py --cov=fontlabapp.smallcap_consistency --cov=fontlabapp.smallcap_capture --cov-branch --cov-report=term-missing`
+  exit0,33passed, engine100%, capture99.16% combined; sdd/smallcaps-fix1-green.log.
+- Scriptmix focused real-Fly menu/provenance command from the P1 verification
+  block: exit0,15passed, sdd/smallcaps-fix1-menu.log. Menu regression asserts
+  .smcp refresh still shows the independent legacy warning. Same docs command:
+  exit0,10passed, sdd/smallcaps-fix1-docs.log. App public-surface command:
+  exit0,90passed, sdd/smallcaps-fix1-readme.log. F821 lint on changed Python
+  files exit0. External UV_CACHE_DIR/TMPDIR as above; coverage file external.
+- New manifest record binds final App fix commit `f1624437365951dfbecf40e282a2c33a6c6144e3`; all prior 171 rows/pins are unchanged.
+- Existing source-page bytes need no regeneration: menu script bytes/hash do
+  not change; shared JSON report automatically includes the new named section.
+- Wait, but: focused proof closes the named review findings only. Parent owns
+  final full-suite pre-push-hook verification and native qualification. No
+  native request, broad refactor, merge or push performed.
+
+## Issue 123 P1 source binding follow-up
+
+- Bind Smallcap Consistency's App source record to final App commit
+  `85b8b34fad89f9549e6682044bf3b43f43599c7e`, whose only follow-up change
+  makes README testing paths portable for distribution privacy. Runtime
+  helper bytes are identical to the fully gated implementation commit.
+- Source/menu/manifest focused verification: 15passed, exit0; full gates
+  below remain the final unchanged runtime verification.
+
+## Issue 123 P1 — Smallcap Consistency (2026-10-22)
+
+- Read both modern and legacy upstream branches; verify source SHA-256
+  `515a006343efe90ea922f63da932e9298224de31e12226a4cb242ed91c814ab0`
+  and Apache-2.0 LICENSE SHA-256
+  `bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec`.
+- Add detached typed facts and full export/counterpart/orphan/legacy kerning
+  analysis; fix the upstream Boolean test, preserve Unicode, ligatures and
+  alternate suffixes. Unknown mappings and ambiguous groups remain visible.
+- Native capture reads CurrentFont().glyphs name/unicodes, fgNametable.unc,
+  packageLib public.skipExportGlyphs and master-pinned list_kerning_classes.
+  It never reads flGlyph.fgGlyph, changes a font, selection, preferences or
+  Output, or sends notifications. Three-second budget checks refuse partial
+  reports; synchronous native getters cannot be preempted and remain a native
+  timing gate. Export policy is explicitly not a binary-export guarantee.
+- TDD RED: focused pytest tests/test_smallcap_consistency.py before engine
+  creation: exit 2 (missing module, sdd/smallcaps-red.log). Capture RED:
+  tests/test_smallcap_capture.py exit 2 (missing module, retained tool output).
+  Menu RED: Scriptmix tests/test_smallcap_consistency.py exit 1, two missing-file
+  failures before the menu existed. GREEN: App focused 32 passed, exit 0;
+  real Fly menu focused two passed, exit 0. No exclusions/pragmas added.
+- Commands use external UV_CACHE_DIR/TMPDIR and Python
+  cpython-3.11-macos-aarch64-none. Exact full-gate commands and receipts below.
+- Wait, but: offline source/artifact evidence does not qualify installed
+  FontLab behavior. Native origins, timing, complete-font preservation,
+  repeated refresh and report destruction remain open. No native run,
+  canonical promotion, live install, merge or push performed.
+
+### P1 final verification commands and results
+
+- `rtk proxy bash .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-fontlabapp fontlab-fontlabapp`
+  exit 0: 6,586 passed, 76 existing warnings; engine 100.00%, capture 99.16%
+  combined statement+branch coverage. Receipt `.metaswarm/runs/fontlab-fontlabapp.6cOW1r`.
+- `rtk proxy env UV_NO_CACHE=1 bash .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/smallcaps/fontlab-python-scriptmix fontlab-python-scriptmix`
+  exit 0: 4,321 passed, 6 skipped; menu 100.00% combined coverage. Receipt
+  `.metaswarm/runs/fontlab-python-scriptmix.Uh6OIR`. UV_NO_CACHE forces the
+  matching App path build; the initial cached-wheel run failed collection,
+  retained in `sdd/smallcaps-mix-gate.log` (no production change to evade it).
+- Scriptmix docs: `PATH=/opt/homebrew/bin:$PATH PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs`
+  exit 0: 10 passed (`sdd/smallcaps-docs.log`).
+- Focused lint: `uv run --no-project --python cpython-3.11-macos-aarch64-none --with ruff==0.14.10 ruff check --no-cache --select F821` on the six new Python files, exit 0.
+- New helper availability is bound to App source commit `85b8b34fad89f9549e6682044bf3b43f43599c7e` in additional-tools.json; no published version floor is asserted.
+- Root's unrelated baseline correction is retained in Scriptmix
+  tests/test_cov_b_kerning_panels.py: expect zero UpdateAll calls, preserving
+  its exact selected-name assertion (fl#8537). Required inventory-only test
+  updates: test_reports.py/test_curated_delivery.py/test_contour_menu_integration.py
+  171→172; test_curated_delivery.py/test_contour_menu_integration.py/
+  test_public_docstrings.py 240→241. All previous manifest records and pins
+  remain identical; source-backed generator changes only new report/index pages.
+
 ## Final round F - owner decision D27 (2026-10-22)
 
 - Merge Cleaning into Cleanup and Reporters into Reports using plain file

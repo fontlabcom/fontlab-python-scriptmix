@@ -260,6 +260,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 ## Reports
 
 - [Bracket Layers and Components](reports/bracket-layers-and-components.md)
+- [Case Coverage](reports/case-coverage.md)
 - [Categories to XML Lib Key](reports/categories-to-xml-lib-key.md)
 - [Close But No Cigar](reports/close-but-no-cigar.md)
 - [Compare Open Font Revisions](reports/compare-open-font-revisions.md)
@@ -277,6 +278,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Point Counter (Master Layers)](reports/point-counter-master-layers.md)
 - [Point Counter](reports/point-counter.md)
 - [Sidebearing Direction Marker](reports/sidebearing-direction-marker.md)
+- [Smallcap Consistency](reports/smallcap-consistency.md)
 - [Unicode Coverage](reports/unicode-coverage.md)
 - [Vertical Metrics Reporter](reports/vertical-metrics-reporter.md)
 - [Why You Not Compatible](reports/why-you-not-compatible.md)

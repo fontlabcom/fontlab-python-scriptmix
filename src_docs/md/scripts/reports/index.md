@@ -1,6 +1,7 @@
 # Reports
 
 - [Bracket Layers and Components](bracket-layers-and-components.md)
+- [Case Coverage](case-coverage.md)
 - [Categories to XML Lib Key](categories-to-xml-lib-key.md)
 - [Close But No Cigar](close-but-no-cigar.md)
 - [Compare Open Font Revisions](compare-open-font-revisions.md)
@@ -18,6 +19,7 @@
 - [Point Counter (Master Layers)](point-counter-master-layers.md)
 - [Point Counter](point-counter.md)
 - [Sidebearing Direction Marker](sidebearing-direction-marker.md)
+- [Smallcap Consistency](smallcap-consistency.md)
 - [Unicode Coverage](unicode-coverage.md)
 - [Vertical Metrics Reporter](vertical-metrics-reporter.md)
 - [Why You Not Compatible](why-you-not-compatible.md)
