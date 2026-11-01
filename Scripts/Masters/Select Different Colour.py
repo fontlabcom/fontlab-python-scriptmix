@@ -5,7 +5,7 @@
 What it does:
     Read the mark colours of the selected glyphs. Then select, in addition,
     every glyph whose mark colour is none of those colours. Unmarked glyphs
-    count as one colour of their own.
+    count as one colour of their own. With no selection, do nothing.
 
 How it works:
     The script reads the Font window selection, collects the mark values of
@@ -19,7 +19,8 @@ Why this design:
     - It uses the shared selection helper, which refuses to write the selection
       while a Glyph window is active (FontLab bug fl#8528).
     - Difference to the Glyphs original: it works on all glyphs of the font. The
-      Font window filter of FontLab is not readable from a script.
+      displayed-list accessors are not exposed by the inspected PythonQt API.
+      Filtered-view equivalence remains unverified.
 
 How to use:
     Open the Font window. Select glyphs of the colour(s) to keep apart. Run the
@@ -44,12 +45,12 @@ def different_colour(marks: Sequence[tuple[str, int]], selected: Sequence[str]) 
     """Return names of glyphs whose mark differs from all selected glyphs.
 
     `marks` holds (glyph name, mark value) in font order. Mark 0 = no colour.
-    Raise ValueError when no listed glyph is selected.
+    Return no additions when no listed glyph is selected.
     """
     chosen = set(selected)
     kept = {mark for name, mark in marks if name in chosen}
     if not kept:
-        raise ValueError("Select at least one glyph in the Font window first.")
+        return []
     return [name for name, mark in marks if mark not in kept]
 
 
@@ -63,11 +64,16 @@ def run() -> str:
     )
 
     package = current_package()
+    if package is None:
+        raise ValueError("Open a font first.")
+    selected = names_font_window_selection()
+    if not selected:
+        return "No glyphs selected; nothing to add."
     font = ap.fontlab.CurrentFont()
-    if package is None or font is None:
+    if font is None:
         raise ValueError("Open a font first.")
     marks = [(str(g.name), int(g.mark or 0)) for g in font.glyphs]
-    names = different_colour(marks, names_font_window_selection())
+    names = different_colour(marks, selected)
     if not names:
         return "All glyphs have a colour of the selection; nothing to add."
     select_glyphs(names, package_id=int(package.id), add=True)

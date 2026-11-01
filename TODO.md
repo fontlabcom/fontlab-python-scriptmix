@@ -61,3 +61,5 @@ this_file: TODO.md
 - [ ] Resolve retained baseline provenance gate and qualify Cursive Sample parent/priority in the final native tuple.
 
 - [ ] Qualify both background menu panels in native FontLab: stacking, complete-font preservation, Undo/Redo and reopen. Installed standalone integration passes with App .158; source wording repair does not close native acceptance.
+
+- [ ] Complete Select Different Colour displayed-cell scope with a verified package-qualified chart snapshot, mark mapping and full native preservation; empty-selection and additive source repairs alone do not qualify the original.

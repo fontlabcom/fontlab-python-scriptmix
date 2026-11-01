@@ -1491,3 +1491,43 @@ Candidate cwd:
 The first archive check assumed242total files but found5extra historical .DS_Store
 entries. The final menus-final.tar includes exactly242Python menus and no others;
 no .DS_Store copied into the executed bundle. Failed setup logs retained.
+
+## 2026-11-01 — additive selection consumer contract
+
+Update Names consumer regression to require zero selection clears from App
+add=True while retaining result order and invalid/stale-input preservation.
+Menu bytes and pins unchanged. Native filtered-view and colour mapping remain open.
+
+Matching ordinary Appwheel/sdist0.2.26.dev159+gb1e905b61 each pass all39Names
+consumer tests (89combined). Full configured gate4SbhxE:58failed4403passed17skipped,
+exit1; exact58failed IDs equal retainedx6Yymo. No production script changed, no
+new coverage claim and no cohort acceptance. Evidence retained externally in
+issue123/additive-selection-20261101.
+
+## 2026-11-01 — different-colour empty-selection repair
+
+Restore source no-op for empty selection: no CurrentFont getter, glyph-mark reads,
+selection writes or history. Selected behavior stays additive. Pure comparison
+returns no additions without any selected colour. Source doc and generated page
+now qualify the captured API boundary instead of asserting universal inability.
+Additional-tools destination pin updated; all173pins,242archived menu scripts and
+generated source snapshot match. Scoped review clear.
+
+Focused baseline140passed after adding the missing Fly artifact to the isolated
+environment (initial2failed138passed). Four revised/new behavior cases failed
+before repair. Final181passed including39Names tests, also181from extracted menu
+archive with ordinary installed App0.2.26.dev159+gb1e905b61/Fly0.2.2.dev7. Full
+configured gatexxTuhA:58failed4405passed17skipped; all58failed node IDs equal4SbhxE.
+Complete changed menu95.56%combined coverage, unchanged80%gate. No native proof.
+
+Commands through rtk proxy (candidate cwd; extracted bundle for archive check):
+env -u PYTHONPATH -u SCRIPTMIX_APP_SOURCE PYTHONDONTWRITEBYTECODE=1
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/colour-selection-20261101/env/bin/python
+-I -B -m pytest -q -p no:cacheprovider tests/test_issue122_G1.py tests/test_names.py
+(exit0); root .metaswarm/quality.sh coverage candidate fontlab-python-scriptmix
+with normal PATH (exit1). Logs and exact archive hashes retained externally.
+
+Wait, but: the original uses displayed filtered cells. This candidate still uses
+all font glyphs for nonempty selection. No verified displayed-list binding was
+found in inspected C++/captured PythonQt/legacy FL/MCP interfaces; no substitute
+is declared equivalent. Mark mapping and complete native preservation stay open.

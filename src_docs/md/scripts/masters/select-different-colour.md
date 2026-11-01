@@ -11,7 +11,7 @@ Add to the Font window selection all glyphs of a different mark colour.
 What it does:
     Read the mark colours of the selected glyphs. Then select, in addition,
     every glyph whose mark colour is none of those colours. Unmarked glyphs
-    count as one colour of their own.
+    count as one colour of their own. With no selection, do nothing.
 
 How it works:
     The script reads the Font window selection, collects the mark values of
@@ -25,7 +25,8 @@ Why this design:
     - It uses the shared selection helper, which refuses to write the selection
       while a Glyph window is active (FontLab bug fl#8528).
     - Difference to the Glyphs original: it works on all glyphs of the font. The
-      Font window filter of FontLab is not readable from a script.
+      displayed-list accessors are not exposed by the inspected PythonQt API.
+      Filtered-view equivalence remains unverified.
 
 How to use:
     Open the Font window. Select glyphs of the colour(s) to keep apart. Run the
@@ -47,5 +48,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0985dea99226a35e07d67b814e8819e6d0695d2acfdac62b8a57bfc69848f22d.py)
+[Python source](../../../../.build/menu-sources/152b71523052068d0be979d282b62069e46507cbe8623dd52812b007b82c1a13.py)
 <!--/codeinclude-->
