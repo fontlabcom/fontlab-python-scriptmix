@@ -1695,3 +1695,10 @@ Full exit1:56failed4384passed19skipped. The obsolete Names expectation is the so
 Private .161 adds complete Jens Kutilek composite-difference and all-other-font glyph-set reports with source-defined reference/target/order/filepath policies and owned selectable output.
 
 Private .154: add complete first-selected-layer Perpendicular Guides action, including selected controls and transformed component centres; existing guide objects retained and one final history notification. Native qualification pending.
+
+
+- N240 private .150: complete original Raise Ascender controls and ordered node planner, staged native writer and per-occurrence history. Explicit unsupported native boundaries remain pending; no native acceptance.
+
+- N257 repair .155: stop retained error callbacks accessing deleted Raise Ascender controls after successful normal Close; preserve live failed-Close diagnostics/retry. Shared completion and original actions/native limits unchanged.
+
+- N263 repair .157: restore owned destruction tracking after a failed Close helper stopped completion, preserving live diagnosis/retry and inert late callbacks after parent death.
