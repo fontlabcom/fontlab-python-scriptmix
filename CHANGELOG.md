@@ -1521,8 +1521,10 @@ configured gatexxTuhA:58failed4405passed17skipped; all58failed node IDs equal4Sb
 Complete changed menu95.56%combined coverage, unchanged80%gate. No native proof.
 
 Commands through rtk proxy (candidate cwd; extracted bundle for archive check):
+Set ISSUE123_EVIDENCE to the private evidence root; exact local commands remain
+in the controller receipt.
 env -u PYTHONPATH -u SCRIPTMIX_APP_SOURCE PYTHONDONTWRITEBYTECODE=1
-PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/colour-selection-20261101/env/bin/python
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 "$ISSUE123_EVIDENCE/colour-selection-20261101/env/bin/python"
 -I -B -m pytest -q -p no:cacheprovider tests/test_issue122_G1.py tests/test_names.py
 (exit0); root .metaswarm/quality.sh coverage candidate fontlab-python-scriptmix
 with normal PATH (exit1). Logs and exact archive hashes retained externally.
