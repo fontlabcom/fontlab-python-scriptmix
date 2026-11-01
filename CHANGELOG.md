@@ -2,6 +2,33 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-01 — recover from figure preference read failures
+
+Independent review found213d687 could fail during partial panel construction,
+before launcher registry ownership. Match the original's usable-default behavior:
+finish construction at lining0 and display the read error after initial refresh.
+Do not overwrite saved data during fallback. A later choice can save normally;
+close still disconnects all owned signals. Family0 regression now makes an actual
+selection change instead of relying on the fake combo's unchanged-index signal.
+
+Three new panel-level regression cases failed before repair and pass afterward.
+Both ordinary App wheel/sdist environments:295focused tests pass. Docs10pass;
+all173current pins match; scoped Ruff and diff check pass. Configured full gate:
+58failed4396passed8skipped; exact failed-node set unchanged; all14changed modules
+exceed80%, Set Default Figures87.84%. Source re-review closes the finding.
+
+Commands through rtk proxy:
+- Candidate: env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/ordinary-artifacts/wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_settings.py -k restore_fails (before repair:exit1,3failed25deselected).
+- Same environment, tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py tests/test_issue122_G2.py tests/test_cov_a_writers.py:exit0,295passed; repeat with sdist-env/bin/python:exit0,295passed.
+- Workspace: .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/fontlab-python-scriptmix fontlab-python-scriptmix:exit1,stAX1h.
+- Candidate: env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs:exit0,10passed.
+- Candidate: ruff check 'Scripts/Components/Set Default Figures.py'; ruff check tests/test_default_figure_settings.py; git diff --check: each exit0.
+
+Wait, but: this is source/artifact evidence, not native acceptance. FontLab PID30373
+exists, localhost47400 has no listener. No restart or owner-state mutation.
+No push while full gate fails. Retained logs/review: external
+menu-message-priority-20261101/family-read-recovery-*.
+
 ## 2026-11-01 — remembered figure-family choice (isolated candidate)
 
 Set Default Figures now restores the four-way family choice before connecting

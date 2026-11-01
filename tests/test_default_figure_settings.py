@@ -44,6 +44,8 @@ def test_family_when_changed_then_reopened_instances_restore_without_writes(
     panel = tool["panel_type"](store)()
     assert store.fallbacks is False and panel.figure_family.currentIndex == 0
     assert not store.writes
+    if family == 0:
+        panel.figure_family.setCurrentIndex(1)
     panel.figure_family.setCurrentIndex(family)
     assert store.data == {"unrelated": "keep", "optionFigures": family}
     assert not panel.apply_button.enabled, (
@@ -107,3 +109,29 @@ def test_family_when_store_read_fails_then_no_panel_or_font_write(components: An
     with pytest.raises(RuntimeError, match="settings"):
         tool["load_family"](store)
     assert not store.writes and not components.notifications()
+
+
+@pytest.mark.parametrize("stage", ["sync", "status", "value"])
+def test_family_when_restore_fails_then_panel_opens_and_recovers(
+    components: Any, monkeypatch, stage
+):
+    tool = g2.load(g2.PATHS[3])
+    store = Settings({"optionFigures": 3, "unrelated": "keep"})
+    original = getattr(store, stage)
+
+    def fail(*args):
+        raise RuntimeError("settings unavailable")
+
+    monkeypatch.setattr(store, stage, fail)
+    panel = tool["panel_type"](store)()
+    assert panel.figure_family.currentIndex == 0
+    assert "settings unavailable" in panel.status.text
+    assert not store.writes, "Failed restoration must not overwrite the saved family"
+    assert not components.notifications()
+    monkeypatch.setattr(store, stage, original)
+    panel.figure_family.setCurrentIndex(2)
+    assert store.data == {"optionFigures": 2, "unrelated": "keep"}
+    panel.close()
+    assert not panel._connections, (
+        "A failed settings read must leave a fully owned, closable panel"
+    )

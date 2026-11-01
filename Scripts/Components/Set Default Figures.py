@@ -427,6 +427,14 @@ def panel_type(settings: Any = None) -> type:
         SCOPE, CONSENT, ALIGN = False, glyph_creation.REBUILD_LABEL, False
         HEADERS = ("Figure source", "Default cell", "Action")
 
+        def __init__(self, parent: Any = None) -> None:
+            self.settings_error = ""
+            super().__init__(parent)
+            if self.settings_error:
+                self.status.setText(
+                    "Saved figure family could not be loaded: " + self.settings_error
+                )
+
         def build_controls(self) -> None:
             self.figure_family = qt.QtGui.QComboBox()
             self.figure_family.addItems(list(CHOICES))
@@ -435,7 +443,14 @@ def panel_type(settings: Any = None) -> type:
                 if settings is not None
                 else qt.QtCore.QSettings("FontLab", "ScriptDefaultFigures", self)
             )
-            self.figure_family.setCurrentIndex(load_family(self.figure_settings))
+            try:
+                family = load_family(self.figure_settings)
+            except (
+                Exception
+            ) as error:  # Keep a fully built, closable panel on preference failure.
+                self.settings_error = str(error)
+                family = 0
+            self.figure_family.setCurrentIndex(family)
             self.replace_contours = qt.QtGui.QCheckBox("Replace own contours")
             self.replace_contours.setChecked(False)
             self.add_row("Family", self.figure_family)
