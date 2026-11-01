@@ -1714,3 +1714,7 @@ N208 .144 shared native-style repair: root9787calibration measured pin.style="Fr
 
 
 N186: add complete Science Gothic Kerning Symmetry writer, all configured pairs/non-Ctr masters, exact native zero deletion and class-order diagnostics. Shared whole-batch history repairs final-master-only notification. Native qualification pending.
+
+## .114 — master-layer Point Counter
+
+Independent complete Reza report: every selected occurrence, stored master layers, empty masters, own contour totals and fixed400×300 read-only window. Quadratic endpoints are included, correcting the original omission. Native qualification remains pending.

@@ -3474,5 +3474,22 @@
     "scope": "All glyphs/all foreground layers/own paths; raw wrapped four-node windows, all four finite control-axis probes, strict0.05, distinct exact-layer new tab and every per-curve finding. Ascending analytic curve-t ordering is explicit adaptation, not proven Glyphs equivalence.",
     "app_minimum": "0.2.117.dev0",
     "native_acceptance": "pending"
+  },
+  {
+    "title": "Point Counter (Master Layers)",
+    "key": "master-point-counter",
+    "destination": "Scripts/Reports/Point Counter (Master Layers).py",
+    "destination_sha256": "06aa01793ae146b8d35973288d985c17424029e0ee7fcf2b602d20aebea3a747",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/RezaBohloul/RezaBohloul",
+    "source_path": "Path/Point Counter.py",
+    "source_sha256": "d6eeb1c6ba156dc03208b2d82362295f0f376a389f1414477c8abb0539e6bb6c",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Every selected occurrence, stored master layers only, empty masters/repeats, own paths/handles/nodes, normal fixed400x300 readonly report; quadratic endpoints included as explicit source correction.",
+    "app_minimum": "0.2.114.dev0",
+    "native_acceptance": "pending"
   }
 ]
