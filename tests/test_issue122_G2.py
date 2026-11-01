@@ -18,6 +18,7 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
+from _figure_settings_support import settings_factory
 from _message_box_support import assert_owned_message, message_box_type
 from conftest import app_names_used, check_real_app_names
 
@@ -411,6 +412,7 @@ def make_qt() -> ModuleType:
         QAbstractItemView=NS(NoEditTriggers=0, NoSelection=0),
         QHeaderView=NS(Stretch=0, ResizeToContents=1),
     )
+    core.QSettings = settings_factory()
     qt.QtCore, qt.QtGui = core, gui
     return qt
 

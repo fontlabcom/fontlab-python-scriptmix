@@ -3029,7 +3029,7 @@
     "title": "Set Default Figures",
     "key": "components_default_figures",
     "destination": "Scripts/Components/Set Default Figures.py",
-    "destination_sha256": "b1dc5fc4f9a2f357b9827157f0c2b37cfe5b8ece8070f9b80cab4a437ff872ff",
+    "destination_sha256": "b4ad563f1f67c7a9edbc8db811277f4fd3f4971d6493231f955b733567396bef",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",

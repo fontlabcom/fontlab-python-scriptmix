@@ -21,6 +21,7 @@ from typing import Any
 from unittest.mock import MagicMock
 
 import pytest
+from _figure_settings_support import settings_factory
 
 ROOT = Path(__file__).resolve().parents[1]
 SIGNALS = frozenset(
@@ -435,6 +436,7 @@ def make_qt() -> NS:
         }
     )
     core = Namespace({})
+    core.QSettings = settings_factory()
     return NS(QtCore=core, QtGui=gui)
 
 

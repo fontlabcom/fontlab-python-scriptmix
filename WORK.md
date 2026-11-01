@@ -2,6 +2,39 @@
 this_file: WORK.md
 ---
 
+## 2026-11-01 — remembered figure-family choice (isolated candidate)
+
+Set Default Figures now restores the four-way family choice before connecting
+signals and saves it after refreshing the preview. Missing or invalid values
+select lining. Only optionFigures is written; unrelated keys stay, settings
+fallbacks are disabled, and Replace own contours remains unchecked on reopen.
+Read/write failures are reported without a font write. Window geometry,
+automatic alignment and native acceptance remain open.
+
+Configured gate yKdxzx:58failed4393passed8skipped, exit1; exact failed-node set
+unchanged from figures-default. Four additional skips are real-Qt tests in the
+minimal gate environment; all four run and pass separately under both Qt5 and
+Qt6. All14changed modules exceed80%; figure coverage87.43%. Command from workspace:
+`rtk proxy .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/fontlab-python-scriptmix fontlab-python-scriptmix`.
+
+Tests-first: 25 intended failures before implementation; an earlier fixture
+import error was corrected. Real Qt6 then caught instance-level NoError access;
+using the class enum fixes it. Fresh-process isolated INI checks pass on Qt5
+and Qt6 (four families each); no user preference domain was written by tests.
+Both ordinary App wheel and sdist environments pass292 focused tests. Docs10
+pass; all173current manifest pins match. New test files pass Ruff and diff check.
+
+Commands (rtk proxy, candidate cwd; all final commands exit0):
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/ordinary-artifacts/wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py tests/test_issue122_G2.py tests/test_cov_a_writers.py
+- Same command with sdist-env/bin/python:292passed.
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 FONTLABAPP_TEST_QT5=1 PYTHONPATH=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src:/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-fly/src /Volumes/Falstaff4T/fontlab-scripting-data/verification/issue-120/typed-date-z11/qt5-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_settings_runtime.py
+- env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs
+- ruff check tests/_figure_settings_support.py tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py
+
+Wait, but: standalone Qt and test doubles do not prove PythonQt/native panel
+lifecycle. No live installation or owner font changed. Full gate evidence is
+retained separately; no push while that gate fails.
+
 ## 2026-11-01 — Set Default Figures keeps own contours by default
 
 UI, apply_pairs and write_components now default to keeping existing contours.

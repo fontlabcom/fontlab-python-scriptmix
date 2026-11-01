@@ -7,7 +7,8 @@ oldstyle (.tosf) figures. Missing default digit cells are created. Existing own
 contours stay by default, so the new components can overlap the old drawing.
 Enable Replace own contours to remove those contours. Components, widths and
 kerning class memberships follow the chosen figures on every master. Existing
-anchors and Unicode assignments stay.
+anchors and Unicode assignments stay. The chosen family is remembered; Replace
+own contours starts unchecked each time.
 How: Preview exact base names and set explicit base and master-layer names. No
 automatic layer is made.
 Why: One complete set avoids mixing figure styles between glyphs or masters.
@@ -61,6 +62,28 @@ DIGITS = (
     "eight",
     "nine",
 )
+
+
+def load_family(settings: Any) -> int:
+    """Restore the tool's family; absent or malformed values select lining."""
+    settings.setFallbacksEnabled(False)
+    settings.sync()
+    if settings.status() != type(settings).NoError:
+        raise RuntimeError("Figure settings could not be read.")
+    value = str(settings.value("optionFigures", 0))
+    return int(value) if value in ("0", "1", "2", "3") else 0
+
+
+def save_family(settings: Any, option: int) -> None:
+    """Save only the chosen family; report unconfirmed writes without editing fonts."""
+    if type(option) is not int or option not in range(4):
+        raise ValueError("Choose one of the four figure sets.")
+    if not settings.isWritable():
+        raise RuntimeError("Figure settings are read-only.")
+    settings.setValue("optionFigures", option)
+    settings.sync()
+    if settings.status() != type(settings).NoError:
+        raise RuntimeError("Figure settings could not be saved.")
 
 
 def mappings(package: Any, option: int = 0) -> list[Pair]:
@@ -393,7 +416,7 @@ def apply_pairs(
     )
 
 
-def panel_type() -> type:
+def panel_type(settings: Any = None) -> type:
     """Use the App selection panel for the figure-family preview and controls."""
     from fly import qt
 
@@ -407,12 +430,23 @@ def panel_type() -> type:
         def build_controls(self) -> None:
             self.figure_family = qt.QtGui.QComboBox()
             self.figure_family.addItems(list(CHOICES))
+            self.figure_settings = (
+                settings
+                if settings is not None
+                else qt.QtCore.QSettings("FontLab", "ScriptDefaultFigures", self)
+            )
+            self.figure_family.setCurrentIndex(load_family(self.figure_settings))
             self.replace_contours = qt.QtGui.QCheckBox("Replace own contours")
             self.replace_contours.setChecked(False)
             self.add_row("Family", self.figure_family)
             self.add_row("", self.replace_contours)
-            self.watch(self.figure_family.currentIndexChanged)
+            self.watch(self.figure_family.currentIndexChanged, self.family_changed)
             self.watch(self.replace_contours.toggled)
+
+        def family_changed(self) -> None:
+            """Refresh first so a settings error cannot leave the previous preview."""
+            self.refresh()
+            save_family(self.figure_settings, int(self.figure_family.currentIndex))
 
         def plan(self) -> list[glyph_copies.Row]:
             package = self.font_package()
@@ -481,7 +515,12 @@ def main() -> Any:
         from fly.ap.qt_dialogs import run_standard_message_box
 
         run_standard_message_box(
-            qt, ap.fontlab.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok
+            qt,
+            ap.fontlab.MainWindow(),
+            TITLE,
+            str(error),
+            "Warning",
+            qt.QtGui.QMessageBox.Ok,
         )
         return None
 

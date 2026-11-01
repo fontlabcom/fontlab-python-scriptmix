@@ -13,7 +13,8 @@ oldstyle (.tosf) figures. Missing default digit cells are created. Existing own
 contours stay by default, so the new components can overlap the old drawing.
 Enable Replace own contours to remove those contours. Components, widths and
 kerning class memberships follow the chosen figures on every master. Existing
-anchors and Unicode assignments stay.
+anchors and Unicode assignments stay. The chosen family is remembered; Replace
+own contours starts unchecked each time.
 How: Preview exact base names and set explicit base and master-layer names. No
 automatic layer is made.
 Why: One complete set avoids mixing figure styles between glyphs or masters.
@@ -39,5 +40,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b1dc5fc4f9a2f357b9827157f0c2b37cfe5b8ece8070f9b80cab4a437ff872ff.py)
+[Python source](../../../../.build/menu-sources/b4ad563f1f67c7a9edbc8db811277f4fd3f4971d6493231f955b733567396bef.py)
 <!--/codeinclude-->
