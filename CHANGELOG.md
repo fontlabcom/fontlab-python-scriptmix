@@ -1693,3 +1693,5 @@ selection, complete preservation and full cohort acceptance remain open.
 Full exit1:56failed4384passed19skipped. The obsolete Names expectation is the sole removed failure; no new failure IDs. Remaining39zone and17provenance failures are unchanged. The full gate remains failing and cannot authorize promotion.
 
 Private .161 adds complete Jens Kutilek composite-difference and all-other-font glyph-set reports with source-defined reference/target/order/filepath policies and owned selectable output.
+
+Private .154: add complete first-selected-layer Perpendicular Guides action, including selected controls and transformed component centres; existing guide objects retained and one final history notification. Native qualification pending.
