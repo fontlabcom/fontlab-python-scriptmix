@@ -1780,7 +1780,7 @@ def test_unicase_preview_confirmation_and_race(
     assert len(calls) == 1 and "changed" in panel.status.text.lower()
 
 
-def test_figure_contour_switch_defaults_on_and_preserves_anchors(
+def test_figure_contour_switch_defaults_off_and_preserves_anchors(
     components: Any, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     w = components
@@ -1796,13 +1796,13 @@ def test_figure_contour_switch_defaults_on_and_preserves_anchors(
         lambda *args, **kwargs: calls.append(kwargs) or 20,
     )
     panel = ns["panel_type"]()()
-    assert panel.replace_contours.isChecked()
+    assert not panel.replace_contours.isChecked()
     panel.apply()
-    assert calls == [{"replace_contours": True, "allow_rebuild": False, "report": [], "disclosure": {"pending_updates": (), "pending_note": ""}}]
-    panel.replace_contours.setChecked(False)
+    assert calls == [{"replace_contours": False, "allow_rebuild": False, "report": [], "disclosure": {"pending_updates": (), "pending_note": ""}}]
+    panel.replace_contours.setChecked(True)
     panel.apply()
     assert calls[-1] == {
-        "replace_contours": False,
+        "replace_contours": True,
         "allow_rebuild": False,
         "report": [],
         "disclosure": {"pending_updates": (), "pending_note": ""},
@@ -2338,3 +2338,42 @@ def test_warning_failure_deletes_box_without_font_edit(
     assert caught.value is failure
     assert kind.instances[-1].events.count("delete") == 1
     assert not components.notifications()
+
+
+@pytest.mark.parametrize("option", range(4))
+@pytest.mark.parametrize("entry_point,replace_contours", [("apply_pairs", None), ("apply_pairs", False), ("apply_pairs", True), ("write_components", None)])
+def test_figures_when_applied_then_contours_are_removed_only_by_opt_in(
+    components: Any, option: int, entry_point: str, replace_contours: bool | None
+) -> None:
+    """Exercise all ten figures on both masters through the real figure writer."""
+    w = components
+    ns = load(PATHS[3])
+    suffix = ("lf", "osf", "tf", "tosf")[option]
+    originals = []
+    for index, name in enumerate(ns["DIGITS"]):
+        target = add_glyph(w, name, ord("0") + index)
+        base = add_glyph(w, f"{name}.{suffix}")
+        for layer_index, layer in enumerate(target.layers):
+            outline = layer.add(Shape(w, contours=[[(0, 0, 1), (100, 0, 1), (100, 100, 1)]]))
+            old_component = layer.add(Shape(w, f"{name}.{suffix}"))
+            layer.anchors = [f"anchor-{name}-{layer_index}"]
+            base.layers[layer_index].advanceWidth = 500 + index + layer_index / 2
+            originals.append((layer, outline, old_component, list(layer.anchors), base.layers[layer_index].advanceWidth))
+    prototype(w, f"zero.{suffix}")
+    for master in w.package.masters:
+        w.groups[master] = {"figures": ([f"zero.{suffix}"], "KernBothSide")}
+    codes_before = {name: tuple(codes) for name, codes in w.codes.items()}
+    options = {} if replace_contours is None else {"replace_contours": replace_contours}
+    assert ns[entry_point](w.package, ns["mappings"](w.package, option), **options) == 20
+    for layer, outline, old_component, anchors, width in originals:
+        assert (outline in layer.shapes) is (replace_contours is not True), "Only explicit replacement may remove own contours"
+        if replace_contours is not True:
+            assert [(node.x, node.y, node.nodeState) for node in outline.contours[0].nodes()] == [(0, 0, 1), (100, 0, 1), (100, 100, 1)], "Retained contour geometry and node flags stay exact"
+        assert layer.anchors == anchors, "Figure conversion must preserve anchors in both modes"
+        assert old_component not in layer.shapes, "The old component is replaced in both modes"
+        current = [shape for shape in layer.shapes if shape.isComponent]
+        assert len(current) == 1 and current[0].shapeData.componentGlyph == f"{layer.glyph}.{suffix}"
+        assert layer.advanceWidth == width, "Each master keeps the chosen source advance"
+    assert {name: tuple(codes) for name, codes in w.codes.items()} == codes_before, "Existing digit Unicode assignments stay unchanged"
+    assert all(w.groups[m]["figures"] == ([f"zero.{suffix}", "zero"], "KernBothSide") for m in w.package.masters)
+    assert len(w.notifications()) == 1, "Existing targets still use the shared history batch"

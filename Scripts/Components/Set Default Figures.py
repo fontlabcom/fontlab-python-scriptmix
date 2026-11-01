@@ -3,10 +3,11 @@
 """Set one figure family as components in the default digit cells.
 
 What: Choose lining (.lf), oldstyle (.osf), tabular lining (.tf), or tabular
-oldstyle (.tosf) figures. Missing default digit cells are created. With Replace
-own contours on, their old contours are removed; turn it off to
-keep them. Their components, widths and kerning class memberships follow
-the chosen figures on every master. Unicode assignments stay.
+oldstyle (.tosf) figures. Missing default digit cells are created. Existing own
+contours stay by default, so the new components can overlap the old drawing.
+Enable Replace own contours to remove those contours. Components, widths and
+kerning class memberships follow the chosen figures on every master. Existing
+anchors and Unicode assignments stay.
 How: Preview exact base names and set explicit base and master-layer names. No
 automatic layer is made.
 Why: One complete set avoids mixing figure styles between glyphs or masters.
@@ -199,7 +200,7 @@ def write_components(
     pairs: list[Pair],
     *,
     title: str = TITLE,
-    replace_contours: bool = True,
+    replace_contours: bool = False,
     clear_anchors: bool = True,
     allow_rebuild: bool = False,
     unicodes: dict[str, tuple[int, ...]] | None = None,
@@ -371,7 +372,7 @@ def apply_pairs(
     package: Any,
     pairs: list[Pair],
     *,
-    replace_contours: bool = True,
+    replace_contours: bool = False,
     allow_rebuild: bool = False,
     kept: list[str] | None = None,
     report: list[str] | None = None,
@@ -407,7 +408,7 @@ def panel_type() -> type:
             self.figure_family = qt.QtGui.QComboBox()
             self.figure_family.addItems(list(CHOICES))
             self.replace_contours = qt.QtGui.QCheckBox("Replace own contours")
-            self.replace_contours.setChecked(True)
+            self.replace_contours.setChecked(False)
             self.add_row("Family", self.figure_family)
             self.add_row("", self.replace_contours)
             self.watch(self.figure_family.currentIndexChanged)

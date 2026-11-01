@@ -2,6 +2,41 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-01 — Set Default Figures keeps own contours by default
+
+UI, apply_pairs and write_components now default to keeping existing contours.
+Explicit Replace own contours remains available. The script/doc page warn that
+retained outlines can overlap the newly installed component; advances and kerning
+memberships still follow the selected sources. Make Lower Unicase is byte-unchanged.
+The figure source pin and generated page are current; all173current pins match.
+Original source33dcbede... was read, not executed, and remains byte-unchanged.
+
+Baseline167G2tests passed. Before the fix, five regression assertions failed and
+eight explicit-option cases passed. Final183G2tests pass against each ordinary
+App.153 wheel/sdist installation. New16-case matrix covers all4families,10digits,
+2masters, public default/explicitFalse/explicitTrue plus raw writer omitted default.
+It checks contour/node retention, anchors, components, fractional advances, class
+membership, immutable Unicode snapshots and existing-target history enrollment.
+Independent review's missing raw-writer test was added and re-reviewed clean.
+
+Configured full gate:58failed/4368passed/4skipped; exact failed-node set equals the
+prior58. All14changed modules pass80%; figure module86.32%. Docs10passed. No new
+Ruff findings under identical filename/config comparisons; the first ad-hoc lint
+comparison used different configuration and was discarded, with logs retained.
+
+Commands through rtk proxy, cwd this isolated candidate:
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 <ordinary-artifacts/wheel-env>/bin/python -B -m pytest -q -p no:cacheprovider tests/test_issue122_G2.py: exit0 baseline167/final183.
+- Same command with -k 'contour_switch or contours_are_removed_only' before production edit: exit1,5failed8passed166deselected.
+- Same final G2 command using <ordinary-artifacts/sdist-env>/bin/python: exit0,183passed.
+- .metaswarm/quality.sh coverage <this-candidate> fontlab-python-scriptmix from workspace: exit1;1DbhPV retained in external figures-gate-evidence.
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs: exit0,10passed.
+
+Wait, but: these are source and installed-App checks. Automatic alignment,
+persisted family/window choice, full source domain and native Apply/Undo/Redo/save
+preservation remain open. No font or live installation changed; no full-gate push.
+Exact external logs use figures-* under menu-message-priority-20261101.
+
+
 ## Unreleased — report test compatibility
 
 G13 uses the real report signature for its autospecced double. Unsupported

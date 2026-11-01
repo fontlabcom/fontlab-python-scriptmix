@@ -9,10 +9,11 @@ categories: ["Components"]
 Set one figure family as components in the default digit cells.
 
 What: Choose lining (.lf), oldstyle (.osf), tabular lining (.tf), or tabular
-oldstyle (.tosf) figures. Missing default digit cells are created. With Replace
-own contours on, their old contours are removed; turn it off to
-keep them. Their components, widths and kerning class memberships follow
-the chosen figures on every master. Unicode assignments stay.
+oldstyle (.tosf) figures. Missing default digit cells are created. Existing own
+contours stay by default, so the new components can overlap the old drawing.
+Enable Replace own contours to remove those contours. Components, widths and
+kerning class memberships follow the chosen figures on every master. Existing
+anchors and Unicode assignments stay.
 How: Preview exact base names and set explicit base and master-layer names. No
 automatic layer is made.
 Why: One complete set avoids mixing figure styles between glyphs or masters.
@@ -38,5 +39,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ab9bdaddc1daf1be93a20da8a0d01d0ab72f36877ae605a0f6eddd90cfb128e0.py)
+[Python source](../../../../.build/menu-sources/b1dc5fc4f9a2f357b9827157f0c2b37cfe5b8ece8070f9b80cab4a437ff872ff.py)
 <!--/codeinclude-->

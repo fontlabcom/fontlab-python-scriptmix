@@ -3029,7 +3029,7 @@
     "title": "Set Default Figures",
     "key": "components_default_figures",
     "destination": "Scripts/Components/Set Default Figures.py",
-    "destination_sha256": "ab9bdaddc1daf1be93a20da8a0d01d0ab72f36877ae605a0f6eddd90cfb128e0",
+    "destination_sha256": "b1dc5fc4f9a2f357b9827157f0c2b37cfe5b8ece8070f9b80cab4a437ff872ff",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",
@@ -3041,7 +3041,7 @@
     "source_body_redistributed": false,
     "app_minimum": "0.2.150.dev0",
     "native_acceptance": "pending",
-    "scope": "Choose .lf, .osf, .tf or .tosf sources for every master. Missing default digit cells are created with components and Unicode assignments through Add Glyph. Existing targets without a safe plain component to copy are kept. Replace own contours defaults on and can be disabled. Existing anchors, images, stickers and Unicode stay. Copies advances and kerning memberships. Rebuild consent releases eligible automatic-composite bases. Reports created names and automatic rebuild diagnostics; consented work continues."
+    "scope": "Choose .lf, .osf, .tf or .tosf sources for every master. Missing default digit cells are created with components and Unicode assignments through Add Glyph. Existing targets without a safe plain component to copy are kept. Own contours stay by default and can overlap the new components; Replace own contours is an explicit opt-in. Existing anchors, images, stickers and Unicode stay. Copies advances and kerning memberships. Rebuild consent releases eligible automatic-composite bases. Reports created names and automatic rebuild diagnostics; consented work continues."
   },
   {
     "title": "Retract Handles",
