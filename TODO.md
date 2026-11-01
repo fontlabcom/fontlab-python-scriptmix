@@ -2,6 +2,9 @@
 this_file: TODO.md
 ---
 
+- [ ] Resolve the Reset original-workflow gaps recorded in PORTING-BACKLOG.md; dated static findings and candidate links do not establish equivalent or native-complete ports.
+
+
 
 
 ## Figures contour-preservation repair — 2026-11-01

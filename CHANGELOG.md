@@ -2,6 +2,25 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-01 — Reset source dispositions
+
+Correct18Reset backlog rows against the retained2026-10-22 full22-source review.
+Keep every original identity/hash and candidate menu link. Partial and unported
+statuses replace unsupported Ported/Duplicate/Retired claims; notes expose the
+specific missing behavior. Newer candidate changes still require evidence to
+clear those dated findings. No source bodies, menu scripts or manifest pins change.
+
+Verification: rehashed all18originals; row comparison preserves identity/hash/menu
+columns and all other table rows. Initial count19assertion failed before writes;
+correct count18(four audited originals have no backlog row). Exact test command:
+rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/current-cohort-20261101/env/bin/python
+-I -B -m pytest -o pythonpath=. -p no:cacheprovider -q
+tests/test_curated_delivery.py -k backlog:exit0,2passed6deselected.
+Initial pythonpath= command failed collection because menu_layout is root-local;
+no product failure inferred. git diff --check:exit0. Full source/native gates
+remain open; this is a backlog correction, not port completion.
+
 ## 2026-11-01 — figure window geometry and completion
 
 The isolated figure panel saves/restores geometry in its own settings store.
