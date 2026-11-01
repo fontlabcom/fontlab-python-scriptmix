@@ -279,6 +279,8 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Point Counter](reports/point-counter.md)
 - [Sidebearing Direction Marker](reports/sidebearing-direction-marker.md)
 - [Smallcap Consistency](reports/smallcap-consistency.md)
+- [Report Composite Differences](reports/report-composite-differences.md)
+- [Report Glyph Set Differences](reports/report-glyph-set-differences.md)
 - [Unicode Coverage](reports/unicode-coverage.md)
 - [Vertical Metrics Reporter](reports/vertical-metrics-reporter.md)
 - [Why You Not Compatible](reports/why-you-not-compatible.md)

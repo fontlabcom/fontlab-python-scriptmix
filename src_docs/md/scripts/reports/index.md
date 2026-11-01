@@ -20,6 +20,8 @@
 - [Point Counter](point-counter.md)
 - [Sidebearing Direction Marker](sidebearing-direction-marker.md)
 - [Smallcap Consistency](smallcap-consistency.md)
+- [Report Composite Differences](report-composite-differences.md)
+- [Report Glyph Set Differences](report-glyph-set-differences.md)
 - [Unicode Coverage](unicode-coverage.md)
 - [Vertical Metrics Reporter](vertical-metrics-reporter.md)
 - [Why You Not Compatible](why-you-not-compatible.md)

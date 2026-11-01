@@ -1547,3 +1547,27 @@ metadata to independently implemented shared App report/capture/UI helpers. The
 Luke Prowse source identity and complete MIT/Apache notices above remain exact.
 The original optional all-font charcoal action is held under FontLab issue 8564;
 this staged report repair is not a complete equivalent of the original workflow.
+
+Issue120 complete paired cross-font reports, adapted from Jens Kutilek Glyphs-Scripts.
+Original Components/Report Composite Differences.py SHA25691b90cf5c6f9827dcdd2712c952a335e396be1fc7d3e74cd7212b6b2e7647100; Font/Report Glyph Set Differences.py SHA2565d6df2609ebfa5df887833567151bb4f5bfc5290e3d494640ed11bdfe2795a87. Original bodies not bundled.
+MIT License
+
+Copyright (c) 2017 Jens Kutilek
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

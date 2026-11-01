@@ -1691,3 +1691,5 @@ No canonical edits, native calls, promotion or publication. Native filtered-view
 selection, complete preservation and full cohort acceptance remain open.
 
 Full exit1:56failed4384passed19skipped. The obsolete Names expectation is the sole removed failure; no new failure IDs. Remaining39zone and17provenance failures are unchanged. The full gate remains failing and cannot authorize promotion.
+
+Private .161 adds complete Jens Kutilek composite-difference and all-other-font glyph-set reports with source-defined reference/target/order/filepath policies and owned selectable output.
