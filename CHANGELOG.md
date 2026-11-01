@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — report test compatibility
+
+G13 uses the real report signature for its autospecced double. Unsupported
+arguments remain refused;106tests pass against both canonical and private App.
+No runtime change. Whole-cohort and native gates remain open.
+
+
 ## Unreleased — retained encoding chooser priority
 
 Paste Glyph Order Encoding reapplies priority on each show and retries safely

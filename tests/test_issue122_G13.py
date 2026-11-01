@@ -519,12 +519,13 @@ def test_report_main_report_no_font_refusal_and_exact_report(
         monkeypatch, batch, "snapshot_kerning", lambda package, *, typed=False: source
     )
     patch_app(monkeypatch, batch, "ensure_snapshot", lambda package, expected: source)
-    shown = patch_app(
-        monkeypatch,
-        reports,
-        "show_report",
-        lambda report, *, title="Report", key="json-report": report,
+    # Preserve the real signature, including optional report budget parameters.
+    shown = create_autospec(
+        reports.show_report, spec_set=True, side_effect=lambda report, **kwargs: report
     )
+    monkeypatch.setattr(reports, "show_report", shown)
+    with pytest.raises(TypeError):
+        shown({}, unsupported_option=True)
     report = tool.run()
     assert report["energy"] == 6400
     assert report["read_only"] is True and "effective_values" not in report

@@ -2,6 +2,34 @@
 this_file: WORK.md
 ---
 
+Final unchanged configured gate after the fixture repair:58failed/4352passed/4skipped,
+all14changed modules pass80%coverage (FiiH58). Exact failed-node comparison removes
+only the G13 report signature failure and adds none. Command through rtk proxy:
+`.metaswarm/quality.sh coverage <this-candidate> fontlab-python-scriptmix`, exit1.
+External report-fixture-final-gate.log, report-fixture-gate-evidence and
+report-fixture-receipt.json retain the complete result.
+
+
+## 2026-11-01 — compatible report test double
+
+The G13 report test used a fixed old show_report signature. The private report
+API adds optional deadline/clock/cancelled arguments; canonical App retains the
+old signature. Replace only this stale test double with create_autospec of the
+actual callable; an unsupported keyword must still raise TypeError. Runtime,
+report-content assertions and no-font/no-notification checks are unchanged.
+
+Regression before fix:1failed at exact signature comparison. After fix:106G13tests
+pass with installed genuine App.153 and106pass with explicit canonical App source.
+Ruff and diff whitespace checks pass. Commands through rtk proxy, cwd this tree:
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 <standard-message-priority-20261101/ordinary-artifacts/wheel-env>/bin/python -B -m pytest -q -p no:cacheprovider tests/test_issue122_G13.py: exit0.
+- Same command with SCRIPTMIX_APP_SOURCE=<canonical-App>/src/fontlabapp and PYTHONPATH=<canonical-App>/src: exit0. Canonical files were read only.
+- ruff check tests/test_issue122_G13.py: exit0.
+- git diff --check: exit0.
+
+Wait, but: the missing coherent zone dependency and owner provenance holds are
+separate. This fixture repair does not claim a passing whole Scriptmix cohort.
+
+
 ## 2026-11-01 — combined final source/artifact checks
 
 Configured gate:59failed/4351passed/4skipped, all14changed modules pass80%coverage
