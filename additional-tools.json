@@ -3440,5 +3440,22 @@
     "scope": "Complete seven smallcaps plus 21 Unicode targets; all 378 pair comparisons/reversals in source order on every original non-# / non-Ctr master. Original first-side classes, sequential aliases, zero deletion and ties-even fives. One complete shared history batch and owned full diagnostics; ordered stale-source refusal.",
     "app_minimum": "0.2.137.dev0",
     "native_acceptance": "pending"
+  },
+  {
+    "title": "Symmetry",
+    "key": "kerning-symmetry",
+    "destination": "Scripts/Kerning/Symmetry.py",
+    "destination_sha256": "e630b1f1552ccc59b12801934c84ea609e9ab9a85816b318876791e3543fc1be",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "upstream_repository": "https://github.com/googlefonts/science-gothic",
+    "source_path": "scripts/FontLab/sg-toolbox/SG-Font-Kerning-Symmetry.py",
+    "source_sha256": "6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c",
+    "source_license": "not declared in inspected source tree",
+    "source_body_redistributed": false,
+    "license": "Apache-2.0",
+    "scope": "Complete seven smallcaps plus 21 Unicode targets; all 378 pair comparisons/reversals in source order on every non-Ctr master. Original first-side classes, sequential aliases, zero deletion and ties-even fives. One complete shared history batch and owned full diagnostics; ordered stale-source refusal.",
+    "app_minimum": "0.2.133.dev0",
+    "native_acceptance": "pending"
   }
 ]

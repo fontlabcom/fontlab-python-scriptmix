@@ -227,4 +227,7 @@ __marimo__/
 /src_docs/md/print_page.md
 
 # Generated local documentation and menu-source snapshots
+.build/
+
+# Build outputs may be an owned external-storage symlink.
 .build

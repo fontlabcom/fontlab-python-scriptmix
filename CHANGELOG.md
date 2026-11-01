@@ -1711,3 +1711,6 @@ Exact commands/receipts: verification/issue-120/crossfont-anchors-z48 (workspace
 N208 (.140 private): repair integer advance fidelity, preserve exact native-derived caret cloud/mark expectations, and stage complete native insertion-name normalization with owned detached cleanup. Original variants and all options retained. RED-first failures and focused repairs retained; final artifacts/native calibration remain pending. Prior .134 revision2 is unchanged.
 
 N208 .144 shared native-style repair: root9787calibration measured pin.style="FreePosition". Preserve its actualscalar in shared anchor_duplicates_capture.pin_value; both AnchorDuplicates and Crossfont use the same correctedreader. Prior .140 remainsimmutable/held. Explicit single priorruntime exception; all otherpriorbytes retained. Six stringstyle/stale controls are RED against ordinary .140 then GREEN on sharedrepair; legacyintegercontrol also retained. Full .144 artifacts/gates and remainingnative naming/fullfont qualification pending.
+
+
+N186: add complete Science Gothic Kerning Symmetry writer, all configured pairs/non-Ctr masters, exact native zero deletion and class-order diagnostics. Shared whole-batch history repairs final-master-only notification. Native qualification pending.
