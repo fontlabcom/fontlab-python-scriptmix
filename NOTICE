@@ -1577,3 +1577,14 @@ Glyphs/Show All Layers.py (Apache-2.0), sourceSHA256 45e501e6b106f4dea12bea30d85
 Upstream https://github.com/slobzheninov/Glyphs-Scripts; licenseSHA256 bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec.
 Full ordered selected-parent/allforeground-layer proof with trailing newlines;
 original body not redistributed/executed. Native acceptance pending.
+
+
+Pedro Arilla — Select different colour (independent adaptation)
+-----------------------------------------------------------
+Copyright 2018–2022 Pedro Arilla. Apache License 2.0.
+Based on Select Different Color by Rainer Erich Scheichelbauer (mekkablue).
+Source: https://github.com/pedroarilla/glyphs-scripts
+Original: Labels/Select different colour.py
+Original SHA-256: cd7e0618b70cc82ef6b0e8b67f575fd12a4f4660070bab49bd01f3cbccad852c
+The original body is not copied into this package.
+Complete Apache terms: LICENSE.

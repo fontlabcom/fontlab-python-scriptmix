@@ -1720,3 +1720,8 @@ N186: add complete Science Gothic Kerning Symmetry writer, all configured pairs/
 Independent complete Reza report: every selected occurrence, stored master layers, empty masters, own contour totals and fixed400×300 read-only window. Quadratic endpoints are included, correcting the original omission. Native qualification remains pending.
 
 - N128/.110: complete Show All Layers proof candidate, preserving repeated selected parents, stored foreground layer order and trailing newlines. Native acceptance pending.
+
+
+## N55 original colour-selection candidate
+
+Add the complete Pedro additive different-colour Font-window selection workflow. Preserve initial colours and selection; delegate filtered cell mapping to native GID lookup. Native acceptance pending.

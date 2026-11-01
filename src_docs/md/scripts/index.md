@@ -225,6 +225,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Glyph Notes](names/glyph-notes.md)
 - [Glyph Tags](names/glyph-tags.md)
 - [Mark Color Palette](names/mark-color-palette.md)
+- [Select Different Mark Colours](names/select-different-mark-colours.md)
 - [Select by Mark](names/select-by-mark.md)
 - [Style Linker](names/style-linker.md)
 - [Suffix Tool](names/suffix-tool.md)
