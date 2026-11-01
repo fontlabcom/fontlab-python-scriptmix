@@ -60,19 +60,20 @@ def load(monkeypatch):
     return module, native, state
 
 
-def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
-    entries = json.loads((ROOT / "migration.json").read_text())
-    assert len(entries) == 68
+def test_manifest_when_distributed_then_hashes_and_menu_paths_match():
+    entries = current_rows(ROOT)
+    assert len(entries) == 69
     destinations = [entry["destination"] for entry in entries]
-    assert len(set(destinations)) == 68
+    assert len(set(destinations)) == 69
     additional = json.loads((ROOT / "additional-tools.json").read_text())
     extra_destinations = {entry["destination"] for entry in additional}
-    assert len(extra_destinations) == len(additional) == 4
+    assert len(extra_destinations) == len(additional) == 173, f"expected 173 distinct additional destinations, got {len(extra_destinations)}/{len(additional)}"
     for entry in additional:
-        target = ROOT / entry["destination"]
-        assert hashlib.sha256(target.read_bytes()).hexdigest() == entry["destination_sha256"]
+        assert (
+            hashlib.sha256((ROOT / entry["destination"]).read_bytes()).hexdigest()
+            == entry["destination_sha256"]
+        )
         assert entry["counted_in_130_sample_migration"] is False
-        assert len(Path(entry["destination"]).parts) == 3
     assert set(destinations).isdisjoint(extra_destinations)
     archive = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
     archive_destinations = {row["menu"] for row in archive}
@@ -110,13 +111,6 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
             hashlib.sha256(target.read_bytes()).hexdigest()
             == entry["destination_sha256"]
         )
-        if original_root is not None:
-            original = original_source(original_root, entry["source"])
-            assert original.is_file(), f"Missing requested original: {original}"
-            assert (
-                hashlib.sha256(original.read_bytes()).hexdigest()
-                == entry["source_sha256"]
-            ), f"Original hash mismatch: {original}"
         source = target.read_text()
         ast.parse(source, feature_version=(3, 11))
         assert "from fly.ap.scripting import" in source

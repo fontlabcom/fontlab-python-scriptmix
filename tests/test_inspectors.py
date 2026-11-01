@@ -6,7 +6,6 @@ from pathlib import Path
 from _migration_history import preserved_source
 
 import pytest
-from conftest import original_source
 
 ROOT = Path(__file__).parents[1]
 TOOLS = [
@@ -367,7 +366,7 @@ RELEASED_V1_0_6_MANIFEST_SHA256 = (
 
 def _assert_released45_invariant(rows: list[dict], root: Path) -> None:
     """Verify immutable released provenance and menu bytes without requiring Git."""
-    assert len(rows) == 68, "Expected all 68 current migration rows"
+    assert len(rows) == 69, "Expected all 69 current candidate migration rows"
     released = rows[:45]
     digest = hashlib.sha256(
         json.dumps(released, sort_keys=True, separators=(",", ":")).encode()
@@ -687,7 +686,7 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
         row = next(
             r for r in rows if r["destination"] == f"Scripts/{category}/{title}.py"
         )
-        before = ast.parse(original_source(root, row["source"]).read_text())
+        before = ast.parse(preserved_source(root, row["source"]).read_text())
         after = ast.parse((ROOT / row["destination"]).read_text())
         constants = lambda t: {
             n.targets[0].id: ast.literal_eval(n.value)

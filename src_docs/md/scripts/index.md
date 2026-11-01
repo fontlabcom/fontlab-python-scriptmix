@@ -25,11 +25,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Round To Grid](anchors/round-to-grid.md)
 - [Snap To Metrics](anchors/snap-to-metrics.md)
 
-## Cleaning
-
-- [Clear All Layer Backgrounds](cleaning/clear-all-layer-backgrounds.md)
-- [Clear Master Backgrounds](cleaning/clear-master-backgrounds.md)
-
 ## Cleanup
 
 - [Clear All Layer Backgrounds](cleanup/clear-all-layer-backgrounds.md)
@@ -284,10 +279,10 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Open Contours](reports/open-contours.md)
 - [Point Counter (Master Layers)](reports/point-counter-master-layers.md)
 - [Point Counter](reports/point-counter.md)
-- [Sidebearing Direction Marker](reports/sidebearing-direction-marker.md)
-- [Smallcap Consistency](reports/smallcap-consistency.md)
 - [Report Composite Differences](reports/report-composite-differences.md)
 - [Report Glyph Set Differences](reports/report-glyph-set-differences.md)
+- [Sidebearing Direction Marker](reports/sidebearing-direction-marker.md)
+- [Smallcap Consistency](reports/smallcap-consistency.md)
 - [Unicode Coverage](reports/unicode-coverage.md)
 - [Vertical Metrics Reporter](reports/vertical-metrics-reporter.md)
 - [Why You Not Compatible](reports/why-you-not-compatible.md)

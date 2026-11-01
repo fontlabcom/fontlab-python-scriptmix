@@ -61,11 +61,13 @@ def test_prior68_migration_rows_and_payloads_are_unchanged():
     import json
 
     path = ROOT / "migration.json"
+    rows = json.loads(path.read_text())
+    assert len(rows) == 69
     assert (
-        hashlib.sha256(path.read_bytes()).hexdigest()
+        hashlib.sha256((json.dumps(rows[:68], indent=2) + "\n").encode()).hexdigest()
         == "ef87bc7a69eef091a3061dfed5fee748631edca8576b6fdf0c2ebf9a99cff415"
     )
-    for row in json.loads(path.read_text()):
+    for row in rows:
         assert (
             hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
@@ -78,7 +80,6 @@ def test_additional_reporter_provenance_and_acceptance_cover_exact_new_menus():
     import json
 
     rows = json.loads((ROOT / "additional-tools.json").read_text())
-    rows = [row for row in rows if Path(row["destination"]).parts[1] == "Reporters"]
     rows = [row for row in rows if row["kind"] == "foreground-adaptation"]
     assert len(rows) == 2 and {row["title"] for row in rows} == {v[0] for v in CASES}
     for row in rows:

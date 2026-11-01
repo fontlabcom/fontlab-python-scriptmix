@@ -14,7 +14,7 @@ Close releases only this owned nonmodal report. No font/master activation,
 selection/history/preferences/Output/clipboard writer is called. Full native
 getter preservation and PythonQt literal-text/lifetime qualification are pending.
 Adapted from Jens Kutilek's MIT source; see NOTICE and additional-tools.json.
-Requires App>=0.2.161.dev0 through Fly in FontLab Python3.11.
+Requires App>=0.2.26.dev325 through Fly in FontLab Python3.11.
 
 Run **Reports > Report Composite Differences** from FontLab's Scripts menu.
 
@@ -23,5 +23,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/99e597283b43107559ecbb1f53fec858dba7065019af51bf302a953b99439f89.py)
+[Python source](../../../../.build/menu-sources/ee4c1fc68c6ebb54ca4856945dad7be7e9808eea6605f2f558163f3823f4ce8e.py)
 <!--/codeinclude-->

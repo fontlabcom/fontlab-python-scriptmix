@@ -652,7 +652,9 @@ def test_original_embedded_words_and_public_defaults_match_strict_sources(
     ):
         source = original_source(
             source_root,
-            "fontlab-python-examples/_old/part4/fontlab-samples/samples/" + stem + ".py",
+            "fontlab-python-examples/_old/part4/fontlab-samples/samples/"
+            + stem
+            + ".py",
         )
         tree = ast.parse(source.read_text())
         module = load.module(title)
