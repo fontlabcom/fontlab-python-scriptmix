@@ -3,6 +3,7 @@
 """Real panel slots with owned Qt-shaped timers and clipboard, without a host."""
 
 from _migration_history import before_contours_rename
+from menu_layout import released_bytes
 import hashlib
 import importlib.util
 import json
@@ -293,6 +294,6 @@ def test_every_released59_mapping_and_menu_remains_byte_exact():
     )
     for row in rows[:59]:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         ), row["destination"]

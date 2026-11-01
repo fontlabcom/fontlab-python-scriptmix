@@ -331,15 +331,15 @@
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/outlines_contour_order_view.py",
     "source_sha256": "b366af45f9cfdc1ed3adc45e9fdc9982ad0bdbbe2d21e4c45893f995367fda9c",
-    "destination": "Scripts/Contours/Contour Order View.py",
-    "destination_sha256": "ca39b81fa0a200b048ce1a18ec888717a8b4fb4ed8cab59d4bfc470e3b2739d4",
+    "destination": "Scripts/Outlines/Contour Order View.py",
+    "destination_sha256": "18bb4a44aa9a93fe31d96752495b96d98b215b4b4dbabbf28206337ecc98eecc",
     "license": "Apache-2.0"
   },
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples/samples/outlines_node_statistics.py",
     "source_sha256": "933c4948d63b6af180dc8e93ec26400bcae33ad9e4945aee7749d12150b5f6cd",
-    "destination": "Scripts/Contours/Node Statistics.py",
-    "destination_sha256": "7eff97dfbb7b7c2ea5e080dd3e413be96987aaf8cd64ae2961372252ba28b8ca",
+    "destination": "Scripts/Outlines/Node Statistics.py",
+    "destination_sha256": "1de5f0156457f5f11cea026651af0c5053b76826cf290acb30171f9673626990",
     "license": "Apache-2.0"
   },
   {
@@ -415,8 +415,8 @@
   {
     "source": "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/outlines_node_coordinates_panel.py",
     "source_sha256": "34ca1fb6722bb13a808b713ae1b78741f0a08da77313dbca358ec53b020b6082",
-    "destination": "Scripts/Contours/Node Coordinates Panel.py",
-    "destination_sha256": "4dc0d75c5aa4c73dce01988302edd14bb91b148b6bd84a7ec629701a0f262b63",
+    "destination": "Scripts/Outlines/Node Coordinates Panel.py",
+    "destination_sha256": "0139a8931e61151070974b2b03926e793fc603d946b829ec89bb671f4400ad38",
     "license": "Apache-2.0"
   },
   {

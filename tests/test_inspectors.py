@@ -4,6 +4,7 @@
 
 from pathlib import Path
 from _migration_history import preserved_source
+from menu_layout import current_rows, released_bytes
 
 import pytest
 
@@ -376,7 +377,7 @@ def _assert_released45_invariant(rows: list[dict], root: Path) -> None:
     )
     for row in released:
         assert (
-            hashlib.sha256((root / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(root, row)).hexdigest()
             == row["destination_sha256"]
         ), f"Changed released menu bytes: {row['destination']}"
 
@@ -681,7 +682,7 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
     root = request.config.getoption("--original-source-root")
     if root is None:
         pytest.skip("Original source audit requires --original-source-root")
-    rows = json.loads((ROOT / "migration.json").read_text())
+    rows = current_rows(ROOT)
     for category, title, klass in TOOLS:
         row = next(
             r for r in rows if r["destination"] == f"Scripts/{category}/{title}.py"

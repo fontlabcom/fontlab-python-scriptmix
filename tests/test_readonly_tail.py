@@ -3,6 +3,7 @@
 """Complete remaining static read-only panels and immutable released57 menus."""
 
 from _migration_history import before_contours_rename
+from menu_layout import released_bytes
 import hashlib
 import importlib.util
 import json
@@ -307,6 +308,6 @@ def test_readonly_tail_prior57_manifest_and_every_menu_byte_remain_immutable():
     )
     for row in rows[:57]:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         ), row["destination"]

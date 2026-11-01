@@ -3,6 +3,7 @@
 """The complete anchor-copy panel on owned Qt-shaped controls."""
 
 from _migration_history import before_contours_rename
+from menu_layout import released_bytes
 import importlib.util
 import sys
 from pathlib import Path
@@ -28,7 +29,7 @@ def test_all67_released_rows_and_menus_remain_byte_exact():
     assert digest == "fd69198872e2ac99337e7c8a1794ceb41f6cba973b63e97181cb23f5393eda2a"
     for row in rows[:67]:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         )
 

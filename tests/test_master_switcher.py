@@ -3,6 +3,7 @@
 """Real compact-panel construction and slots with owned Qt-shaped controls."""
 
 from _migration_history import before_contours_rename
+from menu_layout import released_bytes
 import hashlib
 import importlib.util
 import json
@@ -214,6 +215,6 @@ def test_all_released60_rows_and_menu_bytes_remain_immutable():
     )
     for row in rows[:60]:
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         ), row["destination"]
