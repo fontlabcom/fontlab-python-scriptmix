@@ -48,6 +48,7 @@ class Widget:
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self.enabled = True
         self.text = ""
+        self.flags = 0
 
     def __getattr__(self, name: str) -> Any:
         if name in SIGNALS:
@@ -59,6 +60,12 @@ class Widget:
         ):
             return lambda *args, **kwargs: None
         raise AttributeError(name)
+
+    def windowFlags(self) -> int:
+        return self.flags
+
+    def setWindowFlags(self, flags: int) -> None:
+        self.flags = flags
 
     def setEnabled(self, flag: bool) -> None:
         self.enabled = flag
@@ -300,6 +307,7 @@ def make_qt() -> ModuleType:
         QDateTime=NS(currentDateTimeUtc=lambda: "UTC stamp"),
         QTimer=Timer,
         Qt=NS(
+            WindowStaysOnTopHint=0x40000,
             Horizontal=1,
             AlignRight=2,
             ScrollBarAlwaysOff=3,
@@ -1462,12 +1470,15 @@ def test_sample_chooser_avoids_false_overwrite_confirmation(
     )
     settings = {}
 
-    def choose(gui: Any, configure: Any, title: str, directory: str) -> list[str]:
+    def choose(gui: Any, configure: Any, title: str, directory: str, parent_args: tuple) -> list[str]:
+        assert len(parent_args) == 1, "Chooser must have a FontLab parent"
         assert directory == str(Path.home()), (
             "Save chooser must start in the home folder"
         )
         kind = NS(AcceptSave=1, AnyFile=2, DontConfirmOverwrite=3)
         dialog = NS(
+            windowFlags=lambda: 0x1000,
+            setWindowFlags=lambda flags: settings.update(flags=flags),
             setAcceptMode=lambda value: settings.update(mode=value),
             setOption=lambda key, value: settings.update(option=(key, value)),
             setFileMode=lambda value: None,
@@ -1479,7 +1490,7 @@ def test_sample_chooser_avoids_false_overwrite_confirmation(
 
     monkeypatch.setattr(qt_dialogs, "run_file_dialog", choose)
     assert tool["main"]()["master"] == "Light"
-    assert settings == {"mode": 1, "option": (3, True)}
+    assert settings == {"mode": 1, "option": (3, True), "flags": 0x41000}
 
 
 def test_myanmar_bad_source_layer_is_a_note_and_other_master_runs(

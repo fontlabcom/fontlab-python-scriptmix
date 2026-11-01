@@ -101,6 +101,14 @@ SIGNALS = {"clicked", "toggled", "valueChanged", "currentIndexChanged", "timeout
 
 
 class Widget:
+    _window_flags = 0
+
+    def windowFlags(self) -> int:
+        return self._window_flags
+
+    def setWindowFlags(self, flags: int) -> None:
+        self._window_flags = flags
+
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self.enabled = True
         self.text = ""
@@ -280,6 +288,7 @@ class Table(Widget):
 
 
 class Dialog(Guarded):
+    _window_flags = 3  # Qt.Dialog
     registry: ClassVar[list[Any]] = []
     palette = Palette()
 
@@ -473,7 +482,7 @@ def make_qt() -> ModuleType:
     core = NS(
         QPointF=Point,
         QDateTime=NS(currentDateTimeUtc=lambda: "UTC stamp"),
-        Qt=NS(AlignRight=2, ScrollBarAlwaysOff=3, DashLine=4, NoPen=0),
+        Qt=NS(WindowStaysOnTopHint=0x40000, AlignRight=2, ScrollBarAlwaysOff=3, DashLine=4, NoPen=0),
     )
     gui = NS(
         QDialog=Dialog,

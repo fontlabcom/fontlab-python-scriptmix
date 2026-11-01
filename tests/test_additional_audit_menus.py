@@ -75,7 +75,7 @@ def shared(monkeypatch):
     gui.QPalette = NS(Text=1, WindowText=2)
     gui.QAbstractItemView = NS(NoEditTriggers=1, SelectRows=2, NoSelection=3)
     gui.QHeaderView = NS(ResizeToContents=1)
-    qt = NS(QtCore=NS(Qt=NS(ScrollBarAlwaysOff=0, ToolTipRole=3)), QtGui=gui)
+    qt = NS(QtCore=NS(Qt=NS(ScrollBarAlwaysOff=0, ToolTipRole=3, WindowStaysOnTopHint=0x40000)), QtGui=gui)
     parent = HostWidget()
     native = NS(MainWindow=lambda: parent, flWorkspace=NS(instance=lambda: NS(currentPackage=None, packages=list)))
     package = ModuleType("fontlabapp")

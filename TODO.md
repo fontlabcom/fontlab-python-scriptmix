@@ -44,3 +44,5 @@ this_file: TODO.md
 - [ ] Qualify the seven fact-reusing panels in FontLab: control changes, reselect/Refresh, stale-font refusal, fresh Apply facts, painting and Close.
 - [ ] Complete native milestone cases: new layers isMasterLayer=False/autoLayer=False after create/Redo/reopen; rounding preference read-back; Copy Layers From Font cross-font Undo/Redo; glyph-to-layer mark propagation; retained component history; in-place versus repaired-clone transforms; base-of-auto metadata state; __smart_selected persistence.
 - [x] `Reports/Label Statistics.py` (and Select by Mark) `mark_label`: marks 361-999 read as "Grey -639"; define the mark range explicitly.
+
+- [ ] Resolve retained baseline provenance gate and qualify Cursive Sample parent/priority in the final native tuple.

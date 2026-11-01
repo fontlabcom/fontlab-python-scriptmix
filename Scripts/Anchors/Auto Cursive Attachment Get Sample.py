@@ -159,7 +159,7 @@ def main() -> Any:
     import fly.ap.layer_selection as layer_selection  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
     import fly.ap.masters as masters  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
     import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-    from fly import qt
+    from fly import ap, qt
 
     try:
         selection = layer_selection.capture(monotonic() + 1.5)
@@ -176,21 +176,34 @@ def main() -> Any:
         document = sample_document(layer, master)
 
         def configure(kind: Any, dialog: Any) -> None:
+            dialog.setWindowFlags(
+                dialog.windowFlags() | qt.QtCore.Qt.WindowStaysOnTopHint
+            )
             dialog.setAcceptMode(kind.AcceptSave)
             dialog.setOption(kind.DontConfirmOverwrite, True)
             dialog.setFileMode(kind.AnyFile)
             dialog.setNameFilter("Cursive sample (*.json)")
             dialog.setDefaultSuffix("json")
 
-        paths = qt_dialogs.run_file_dialog(qt.QtGui, configure, TITLE, str(Path.home()))
+        paths = qt_dialogs.run_file_dialog(
+            qt.QtGui, configure, TITLE, str(Path.home()), (ap.fontlab.MainWindow(),)
+        )
         if not paths:
             return None
         save_document(paths[0], document)
         print("Saved cursive sample:", paths[0])
         return document
     except (ValueError, RuntimeError, OSError) as error:
-        box = qt_dialogs.create_message_box(qt.QtGui, TITLE, str(error), "Warning")
-        qt_dialogs.run_message_box(box, qt.QtGui.QMessageBox.Ok)
+        box = qt_dialogs.create_message_box(
+            qt.QtGui, TITLE, str(error), "Warning", (ap.fontlab.MainWindow(),)
+        )
+        def configure_warning(dialog: Any) -> None:
+            dialog.setWindowFlags(
+                dialog.windowFlags() | qt.QtCore.Qt.WindowStaysOnTopHint
+            )
+            dialog.setStandardButtons(qt.QtGui.QMessageBox.Ok)
+
+        qt_dialogs.run_owned_dialog(box, configure_warning, lambda current, result: result)
         return None
 
 

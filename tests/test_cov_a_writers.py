@@ -684,23 +684,31 @@ class Dialogs:
         self.paths = paths
         self.configured: list[tuple] = []
         self.messages: list[tuple] = []
+        self.parents: list[tuple] = []
+        self.flags: list[int] = []
 
-    def run_file_dialog(self, qt_gui: Any, configure: Any, title: str, start: str) -> list[str]:
+    def run_file_dialog(self, qt_gui: Any, configure: Any, title: str, start: str, parent_args: tuple = ()) -> list[str]:
+        self.parents.append(parent_args)
         calls: list[tuple] = []
         recorder = NS(**{n: (lambda *a, n=n: calls.append((n, *a))) for n in (
             "setAcceptMode", "setOption", "setFileMode", "setNameFilter", "setDefaultSuffix")})
+        recorder.windowFlags = lambda: 0x1000
+        recorder.setWindowFlags = self.flags.append
         kind = NS(AcceptSave=1, DontConfirmOverwrite=2, AnyFile=3)
         configure(kind, recorder)
         self.configured.append((title, start, calls))
         return self.paths
 
-    def create_message_box(self, qt_gui: Any, title: str, text: str, icon: str) -> NS:
-        box = NS(title=title, text=text, icon=icon)
+    def create_message_box(self, qt_gui: Any, title: str, text: str, icon: str, parent_args: tuple = ()) -> NS:
+        self.parents.append(parent_args)
+        box = NS(title=title, text=text, icon=icon, windowFlags=lambda: 0x1000, setWindowFlags=self.flags.append, setStandardButtons=lambda buttons: None)
         self.messages.append((title, text, icon))
         return box
 
-    def run_message_box(self, box: Any, ok: Any) -> None:
+    def run_owned_dialog(self, box: Any, configure: Any, read_result: Any) -> Any:
+        configure(box)
         self.messages.append(("ran", box.text))
+        return read_result(box, 1)
 
 
 def sample_main(host: Host, paths: list[str], occurrences: list | None = None, layer: NS | None = None, package: Any = "ok") -> tuple[Any, Dialogs]:
@@ -710,7 +718,7 @@ def sample_main(host: Host, paths: list[str], occurrences: list | None = None, l
     host.fake_ap("layer_selection", capture=lambda deadline: NS(occurrences=occ))
     host.fake_ap("anchor_writer", raw_point=lambda p: (p.x, p.y))
     dialogs = Dialogs(paths)
-    host.fake_ap("qt_dialogs", run_file_dialog=dialogs.run_file_dialog, create_message_box=dialogs.create_message_box, run_message_box=dialogs.run_message_box)
+    host.fake_ap("qt_dialogs", run_file_dialog=dialogs.run_file_dialog, create_message_box=dialogs.create_message_box, run_owned_dialog=dialogs.run_owned_dialog)
     host.qt.QtGui.QMessageBox = NS(Ok=1)
     host.package = NS(id=1, masters=["Regular", "Bold"]) if package == "ok" else package
     return tool, dialogs
@@ -785,3 +793,31 @@ def test_main_when_run_as_script_then_sampler_executes(host, tmp_path):
     sample_main(host, [str(target)])
     runpy.run_path(str(ROOT / "Scripts" / SAMPLE_PATH), run_name="__main__")
     assert target.is_file(), "The main guard runs the whole flow"
+
+
+@pytest.mark.parametrize("refused", [False, True])
+def test_sample_dialogs_when_shown_then_keep_flags_and_fontlab_parent(host, refused):
+    tool, dialogs = sample_main(host, [], occurrences=[] if refused else None)
+    assert tool.main() is None, "Cancel or invalid selection must leave the font untouched"
+    assert dialogs.parents == [(host.main_window,)], "Both chooser and warning must belong to FontLab"
+    assert dialogs.flags == [0x1000 | host.qt.QtCore.Qt.WindowStaysOnTopHint], "Priority must preserve existing window flags before execution"
+
+
+def test_sample_warning_when_priority_fails_then_owned_dialog_is_deleted(host):
+    from fontlabapp.qt_dialogs import run_owned_dialog
+
+    tool, dialogs = sample_main(host, [], occurrences=[])
+    failure = RuntimeError("priority failed")
+    deleted = []
+
+    def fail(flags):
+        raise failure
+
+    box = NS(windowFlags=lambda: 0x1000, setWindowFlags=fail,
+             deleteLater=lambda: deleted.append(True))
+    host.fake_ap("qt_dialogs", create_message_box=lambda *args: box,
+                 run_owned_dialog=run_owned_dialog)
+    with pytest.raises(RuntimeError) as raised:
+        tool.main()
+    assert raised.value is failure, "Keep the original priority failure"
+    assert deleted == [True], "Owned warning must be deleted when configuration fails"

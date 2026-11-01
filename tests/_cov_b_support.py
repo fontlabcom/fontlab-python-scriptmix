@@ -39,6 +39,8 @@ def enum_value(name: str) -> int:
 class EnumNamespace:
     """Namespace whose capitalised attributes are distinct stable integers."""
 
+    WindowStaysOnTopHint = 0x40000
+
     def __getattr__(self, name: str) -> int:
         if name.startswith("_"):
             raise AttributeError(name)
@@ -257,6 +259,14 @@ class Application(Base):
 class Widget(Base):
     """Common widget state: enabled flag, font, palette, geometry."""
 
+    _window_flags = 0
+
+    def windowFlags(self) -> int:
+        return self._window_flags
+
+    def setWindowFlags(self, flags: int) -> None:
+        self._window_flags = flags
+
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
         self.enabled = True
@@ -302,6 +312,7 @@ class Widget(Base):
 
 
 class Dialog(Widget):
+    _window_flags = 3  # Qt.Dialog
     SIGNALS = ("finished", "destroyed")
 
     def __init__(self, parent: Any = None, *args: Any) -> None:

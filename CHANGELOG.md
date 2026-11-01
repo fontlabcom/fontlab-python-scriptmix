@@ -1297,3 +1297,7 @@ N248 complete .153 union retains reviewed .148 and all four .149 proof workflows
 - Private .159 integrates complete Raise Ascender with reviewed .157 failed-Close lifetime repair; all original font/history domains remain pending.
 
 - Private .159 includes complete reviewed Perpendicular Guides: selected nodes and component centre guides, first-selected-layer scope, transformed geometry and retained carriers; native full-font/history acceptance remains pending.
+
+## Unreleased — Cursive sample window ownership
+
+Parent the sample chooser and warning to FontLab and preserve window flags while requesting panel priority. Retain owned cleanup on configuration failure; sampler and exclusive-create semantics unchanged. Qt test doubles now model priority flags. Full gate retains independently reproduced baseline provenance failures; no native or publication acceptance.

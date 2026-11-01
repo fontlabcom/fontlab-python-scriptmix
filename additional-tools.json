@@ -2353,7 +2353,7 @@
     "title": "Auto Cursive Attachment Get Sample",
     "key": "anchors_auto_cursive_attachment_get_sample",
     "destination": "Scripts/Anchors/Auto Cursive Attachment Get Sample.py",
-    "destination_sha256": "86c619e27f831522020b10fbfc9f69b9678c479da590b7966852908e4b09e87f",
+    "destination_sha256": "511304af8d78a591ad5ad59ef476f3d4432e16785b916a90cb368225ef604fd0",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/simoncozens/GlyphsScripts",

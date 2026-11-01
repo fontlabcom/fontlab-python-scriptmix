@@ -46,6 +46,8 @@ class Enum(int):
 
 def enum_value(name: str) -> Enum:
     """Return a stable, distinct integer for an enum name (flags can be OR-ed)."""
+    if name == "WindowStaysOnTopHint":
+        return Enum(0x40000)
     if name not in _ENUMS:
         _ENUMS[name] = 1 << len(_ENUMS) if len(_ENUMS) < 60 else 1000 + len(_ENUMS)
     return Enum(_ENUMS[name])
@@ -91,6 +93,14 @@ QT_METHODS = frozenset(
 
 class Widget(metaclass=_Meta):
     """Widget double: signals are real, Qt setters and listed methods are recorded mocks."""
+
+    _window_flags = 0
+
+    def windowFlags(self) -> int:
+        return self._window_flags
+
+    def setWindowFlags(self, flags: int) -> None:
+        self._window_flags = flags
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self.init_args = args
@@ -384,6 +394,7 @@ class Namespace:
 
 class Dialog(Widget):
     """QDialog base: lifecycle calls succeed, ``close`` honours ``close_result``."""
+    _window_flags = 3  # Qt.Dialog
 
     close_result = True
 

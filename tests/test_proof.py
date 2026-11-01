@@ -58,6 +58,14 @@ class Widget:
 
     instances: ClassVar[list] = []
 
+    _window_flags = 0
+
+    def windowFlags(self) -> int:
+        return self._window_flags
+
+    def setWindowFlags(self, flags: int) -> None:
+        self._window_flags = flags
+
     def __init__(self, *args):
         self.instances.append(self)
         self.text = args[0] if args and isinstance(args[0], str) else ""
@@ -236,6 +244,7 @@ def load(monkeypatch, app_sources):
     gui.QPainter = lambda owner: painter
     core = NS(
         Qt=NS(
+            WindowStaysOnTopHint=0x40000,
             Horizontal=1,
             AlignCenter=2,
             AlignRight=4,

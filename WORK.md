@@ -4166,3 +4166,38 @@ or repository Git-state change was performed.
 
 Complete caller, pin, file and gate evidence: `../s6-scratch/roundD-r1/`.
 No native retest, commits or repository Git-state changes.
+
+
+## Cursive sample dialog ownership/priority — 2026-11-01
+
+Both sample chooser and warning now use FontLab MainWindow as positional
+parent and preserve existing flags while adding WindowStaysOnTopHint. Flags
+are configured inside the existing owned-dialog cleanup boundary; failed
+warning configuration preserves the exception and deletes the owned box.
+Sampling/validation, cancel and exclusive-create file semantics unchanged.
+Updated additional-tools destination pin and its generated page hash.
+
+Tests first: new parent/priority cases failed2/2 before source change. Final
+root focused163tests pass (test_cov_a_writers.py,test_issue122_G11.py,
+test_public_docstrings.py). Exact prefix: `rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/example-priority-20261101/artifacts-bc3b3ab/env/bin/python -B -m pytest -q -p no:cacheprovider`.
+Initial narrower baseline6passed/71deselected. Initial integration161case run
+failed33 due new App flags absent in G11 doubles and a trial Fly alias import;
+final source uses existing `from fly import ap, qt` convention and all pass.
+A trial from-fly.ap import failed public-docstrings contract; corrected.
+
+Full source gate initial777failed/3593passed/4skipped;757failures were missing
+windowFlags in old Qt doubles. Ten fixture bases now retain per-instance
+flags and explicit native hint bit, with a new state test. Focused1039passed/
+1skipped plus433passed;39zone tests failed with old installed App151 missing
+outline_extent (not fixture failures; source-gate App includes it). Root added
+the missing Qt hint constant to additional-audit menus after second full run
+28failed/4353passed/4skipped. Its13tests now pass.
+
+Nineteen non-fixture provenance/archive failures reproduced on an untouched
+7edaafa worktree: all-nonflag-baseline.log and receipt under sibling external
+cursive-dialog-baseline-20261101. Frozen migration records and owner decisions
+D27/D29 are preserved. Do not call the full gate green or bypass push hooks.
+Independent review approves bounded C1 source/two pins/cleanup tests.
+No native run, canonical edit or FontLab site-packages change.
+
+Final full source gate exits1:4362passed/4skipped, exactly19failure node IDs also reproduced on untouched7edaafa. Changed sampler126statements50branches100%combined coverage. Evidence3xKV5H copied sibling gate-final-evidence; root receipt cursive-dialog-baseline-comparison-20261101.json. Commands use .metaswarm/quality.sh coverage with current worktree/fontlab-python-scriptmix, same PATH as initial gates. Local source checkpoint only; no push or bypass while full gate fails.

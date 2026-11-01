@@ -91,3 +91,7 @@ clone controls; base-of-auto metadata writes need complete dependent state;
 __smart_selected needs persistence checks. Include painting and Close. Use owned
 fixtures in a dedicated document-free session. No native qualification is
 claimed by the offline final-fix gates.
+
+## Dialog priority followup
+
+Cursive sampler parent/priority source and scoped cleanup tests are reviewed. Resolve owner-held baseline provenance failures, qualify final installed App/Scriptmix tuple and native chooser/cancel/stacking before delivery.

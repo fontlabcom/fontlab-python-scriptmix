@@ -72,6 +72,14 @@ SIGNALS = {
 
 
 class Widget:
+    _window_flags = 0
+
+    def windowFlags(self) -> int:
+        return self._window_flags
+
+    def setWindowFlags(self, flags: int) -> None:
+        self._window_flags = flags
+
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         self.enabled = True
         self.text = ""
@@ -297,6 +305,7 @@ class Timer(Widget):
 
 
 class Dialog(Widget):
+    _window_flags = 3  # Qt.Dialog
     registry: ClassVar[list[Any]] = []
 
     def __init__(self, parent: Any = None) -> None:
@@ -327,6 +336,7 @@ def make_qt() -> ModuleType:
         QDateTime=NS(currentDateTimeUtc=lambda: "UTC stamp"),
         QTimer=Timer,
         Qt=NS(
+            WindowStaysOnTopHint=0x40000,
             Horizontal=1,
             AlignRight=2,
             ScrollBarAlwaysOff=3,
