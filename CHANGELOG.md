@@ -1725,3 +1725,7 @@ Independent complete Reza report: every selected occurrence, stored master layer
 ## N55 original colour-selection candidate
 
 Add the complete Pedro additive different-colour Font-window selection workflow. Preserve initial colours and selection; delegate filtered cell mapping to native GID lookup. Native acceptance pending.
+
+## 2026-10-20 — contour selection candidate (native pending)
+
+Independent Pedro Arilla adaptations add Select Contours, Select Small Contours and Select Partial Contours through shared App immutable plans and lazy selection-only transport. Preserve original path/node order, offcurve inclusion, cross-contour toggles and strict unsigned analytic area. Owned input UI diagnoses invalid/nonfinite/stale sources without clearing selection. Full original/native acceptance, including mixed selection transport outside a single displayed glyph, remains open. Apache attribution and complete terms retained.
