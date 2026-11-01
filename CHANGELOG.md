@@ -2,6 +2,30 @@
 this_file: CHANGELOG.md
 ---
 
+## External original-source lookup repaired — 2026-11-01
+
+The historical inspector helper now honors FONTLAB_PRESERVED_ROOT before other
+copies and verifies the recorded SHA256 for every lookup route. Missing or
+corrupt explicitly selected archives fail instead of silently falling back.
+Only the shared test helper and its regression tests changed; frozen migration
+records, menu pins and production scripts remain unchanged.
+
+Full suite: 4404 passed, 56 failed, 6 skipped; exact failure IDs unchanged
+from latest-cohort baseline. Full command/exit1 recorded in commands.json.
+
+Seven regression cases: before fix 4 failed/3 passed; after fix 7 passed.
+Five real archive audits: 4 passed, 1 retained provenance failure in reports.
+All 69 recorded Scriptmix preserved sources match the external archive hashes.
+Original bodies were read/parsed only, never executed. Ruff checks passed.
+Evidence and exact audit/full-suite commands: original-byte-audit-20261101/
+commands.json under the external issue123 evidence root.
+Regression command (exit 0): rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/latest-cohort-20261101/env/bin/python
+-I -B -m pytest -o pythonpath=. -p no:cacheprovider -q tests/test_migration_history_sources.py
+Lint command (exit 0): rtk proxy ruff check --no-cache tests/test_migration_history_sources.py tests/_migration_history.py
+
+Native acceptance, provenance repair and zone integration remain open.
+
 ## 2026-11-01 — Reset source dispositions
 
 Correct18Reset backlog rows against the retained2026-10-22 full22-source review.

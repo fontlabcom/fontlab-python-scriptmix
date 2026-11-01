@@ -3,6 +3,7 @@
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).parents[1]
@@ -11,10 +12,12 @@ ROOT = Path(__file__).parents[1]
 def preserved_source(original_root, source):
     """Resolve exact historical input bytes after the owner-authorized relocation."""
     original = original_root / source
-    if original.is_file():
-        return original
     row = json.loads((ROOT / "rescue-index.json").read_text())["preserved_sources"][source]
-    target = ROOT / row["path"]
+    archive = os.environ.get("FONTLAB_PRESERVED_ROOT")
+    if archive:
+        target = Path(archive) / row["path"]
+    else:
+        target = original if original.is_file() else ROOT / row["path"]
     assert hashlib.sha256(target.read_bytes()).hexdigest() == row["sha256"], source
     return target
 
