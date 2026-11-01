@@ -1781,3 +1781,15 @@ Wait, but: the original uses displayed filtered cells. This candidate still uses
 all font glyphs for nonempty selection. No verified displayed-list binding was
 found in inspected C++/captured PythonQt/legacy FL/MCP interfaces; no substitute
 is declared equivalent. Mark mapping and complete native preservation stay open.
+
+### 2026-11-01 — Reconcile Common Glyphs status after consolidation
+
+Retained the pending status correction's essential finding: Common Glyphs is
+a partial candidate, not an accepted complete port. The consolidated code now
+contains the production-name and first-open-font text repairs that were absent
+from that earlier status worktree. The backlog therefore records the current
+remaining charcoal, native rendering, clipboard and preservation holds without
+reintroducing the stale missing-feature claims. No script, source identity or
+provenance hash changed. The original worktree and its historical notes remain
+untouched. Validation: exact source identity and one-row status check passed;
+the normal pre-push suite also runs for this documentation update.
