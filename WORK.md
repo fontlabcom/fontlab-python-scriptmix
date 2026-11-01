@@ -4473,3 +4473,32 @@ Independent review approves bounded C1 source/two pins/cleanup tests.
 No native run, canonical edit or FontLab site-packages change.
 
 Final full source gate exits1:4362passed/4skipped, exactly19failure node IDs also reproduced on untouched7edaafa. Changed sampler126statements50branches100%combined coverage. Evidence3xKV5H copied sibling gate-final-evidence; root receipt cursive-dialog-baseline-comparison-20261101.json. Commands use .metaswarm/quality.sh coverage with current worktree/fontlab-python-scriptmix, same PATH as initial gates. Local source checkpoint only; no push or bypass while full gate fails.
+
+## 2026-11-01 — background menus installed integration and scope wording
+
+Both actual background menu entry points pass11standalone integration cases through
+installed Fly0.2.2.dev7+g78cc4b348 and App0.2.26.dev158+g55fc09868. The installed
+backend and planner remain real; native objects/context use owned doubles. Qt6
+panels are actual widgets: priority flag, nonmodal visibility, preview before
+history, two scopes, no-op, stale/partial failure, warning once and owned deletion.
+Shared master/auxiliary masks pass all-layer mode and refuse master-only mode.
+Correct the all-layer menu docstring to match that measured source contract;
+refresh its additional-tools hash and generated catalogue page. No runtime change.
+New source SHA256 a4b1cb0bbfe4df66545bc282b9d85bdc4f97a979c24c5d726ab7d971e094b676.
+Historical hashes above remain historical evidence.
+
+All173additional pins and242archived Python menus match. Installed366App and1Fly
+runtime files match source bytes. Ten documentation tests pass. Independent
+read-only review finds no blockers. Native stacking/full-font history/reopen and
+full-cohort acceptance remain open. Existing58full-suite failures are not cleared;
+no full-suite rerun for docstring-only change, no push, publication or promotion.
+
+Evidence: external issue123/background-menu-20261101.
+Commands from that directory:
+- `rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 QT_QPA_PLATFORM=offscreen ./env/bin/python -I -B -m pytest -q -p no:cacheprovider tests/test_menus.py`: exit0,11passed.
+- `rtk proxy ./env/bin/python -I -B verify_bytes.py`: exit0.
+Candidate cwd:
+- `rtk proxy env UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python /opt/homebrew/bin/python3.11 --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs`: exit0,10passed.
+The first archive check assumed242total files but found5extra historical .DS_Store
+entries. The final menus-final.tar includes exactly242Python menus and no others;
+no .DS_Store copied into the executed bundle. Failed setup logs retained.

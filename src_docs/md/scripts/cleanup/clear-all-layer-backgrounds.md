@@ -11,13 +11,14 @@ Inspect every current-font glyph, then clear entire mapped backgrounds.
 What it does:
     All physical foreground layers are included. Refresh rereads the original
     font; Clear removes complete background objects in one history batch. Shared
-    master/auxiliary masks and automatic-layer dependencies refuse before writing.
+    master/auxiliary masks are removed once; automatic-layer dependencies refuse
+    before writing.
     See the background-cleaning guide for scope and supported background types.
 
 How it works:
     Delegate background inspection and removal to the shared App workflow. Map
-    every physical foreground layer and refuse unsafe shared masks or
-    automatic dependencies.
+    every physical foreground layer, deduplicate shared masks and refuse invalid
+    mappings or automatic dependencies.
 
 Why this design:
     Removing a complete background object differs from deleting only its
@@ -39,5 +40,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0cf8c953961d3bdf67d6669f422de97f4bc199bfd1021a6a64c4c6cd6ea631e8.py)
+[Python source](../../../../.build/menu-sources/a4b1cb0bbfe4df66545bc282b9d85bdc4f97a979c24c5d726ab7d971e094b676.py)
 <!--/codeinclude-->

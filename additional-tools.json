@@ -949,7 +949,7 @@
     "title": "Clear All Layer Backgrounds",
     "key": "background_clear_show_all",
     "destination": "Scripts/Cleanup/Clear All Layer Backgrounds.py",
-    "destination_sha256": "0cf8c953961d3bdf67d6669f422de97f4bc199bfd1021a6a64c4c6cd6ea631e8",
+    "destination_sha256": "a4b1cb0bbfe4df66545bc282b9d85bdc4f97a979c24c5d726ab7d971e094b676",
     "kind": "independent-original-writer-candidate",
     "counted_in_130_sample_migration": false,
     "upstream_repository": "https://github.com/pedroarilla/glyphs-scripts",

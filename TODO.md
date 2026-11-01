@@ -59,3 +59,5 @@ this_file: TODO.md
 - [x] `Reports/Label Statistics.py` (and Select by Mark) `mark_label`: marks 361-999 read as "Grey -639"; define the mark range explicitly.
 
 - [ ] Resolve retained baseline provenance gate and qualify Cursive Sample parent/priority in the final native tuple.
+
+- [ ] Qualify both background menu panels in native FontLab: stacking, complete-font preservation, Undo/Redo and reopen. Installed standalone integration passes with App .158; source wording repair does not close native acceptance.
