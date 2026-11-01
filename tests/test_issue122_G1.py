@@ -1034,9 +1034,8 @@ def test_different_colour_when_selection_then_other_marks_in_font_order() -> Non
 
 
 @pytest.mark.parametrize("selected", [[], ["unknown"]])
-def test_different_colour_when_no_listed_glyph_selected_then_value_error(selected: list[str]) -> None:
-    with pytest.raises(ValueError, match="Select at least one glyph"):
-        load("Select Different Colour").different_colour(MARKS, selected)
+def test_different_colour_when_no_listed_glyph_selected_then_noop(selected: list[str]) -> None:
+    assert load("Select Different Colour").different_colour(MARKS, selected) == [], "No selected colour means no additions"
 
 
 def test_run_when_selection_then_select_glyphs_adds_with_package_id(world: World) -> None:
@@ -1053,7 +1052,7 @@ def test_run_when_all_share_colour_then_nothing_added_and_main_prints(world: Wor
     assert world.selected_calls == []
     world.font_selection = []
     module.main()
-    assert "Select Different Colour: Select at least one glyph" in capsys.readouterr().out
+    assert "Select Different Colour: No glyphs selected; nothing to add." in capsys.readouterr().out
 
 
 def test_run_when_no_package_then_value_error(world: World) -> None:
@@ -1471,3 +1470,24 @@ def test_background_write_when_native_silently_loses_plan_then_reports_read_back
     with pytest.raises(RuntimeError, match=rf"did not store.*c.*{reason}.*Edit > Undo"):
         module.replace_backgrounds(module.make_plan())
     assert len(world.notifier.calls) == 1, "Close history before reporting a silent native mismatch"
+
+
+def test_different_colour_when_empty_selection_then_skips_font_getter_and_writes(world: World, monkeypatch: pytest.MonkeyPatch) -> None:
+    module = load("Select Different Colour")
+    world.font_selection = []
+
+    def forbidden():
+        raise AssertionError("Empty selection must not read CurrentFont or glyph marks")
+
+    monkeypatch.setattr(sys.modules["fly"].ap.fontlab, "CurrentFont", forbidden)
+    assert module.run() == "No glyphs selected; nothing to add."
+    assert world.selected_calls == [], "No-op must not change selection"
+    assert world.notifier.calls == [], "No-op must not create history"
+
+
+def test_different_colour_when_selected_but_font_missing_then_refuses(world: World, monkeypatch: pytest.MonkeyPatch) -> None:
+    world.font_selection = ["a"]
+    monkeypatch.setattr(sys.modules["fly"].ap.fontlab, "CurrentFont", lambda: None)
+    with pytest.raises(ValueError, match="Open a font"):
+        load("Select Different Colour").run()
+    assert world.selected_calls == [], "Missing font must not change selection"

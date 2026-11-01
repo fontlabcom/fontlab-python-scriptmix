@@ -1563,3 +1563,29 @@ limited to source/metadata consistency. `rtk proxy /opt/homebrew/bin/git diff
 Native proof, complete cohort integration, promotion and publication stay open.
 
 Full suite exit1:57failed4381passed19skipped; counts and all57failure IDs match base aa6740e in the same environment (failure-comparison.json). The full gate is still failing; matching IDs do not qualify its affected workflows.
+
+## 2026-11-01 — Complete retained selection integration
+
+Integrated the retained Select Different Colour fix: empty Font-window selection
+returns before CurrentFont/mark reads and selection/history writes. The original
+only adds selection when selected colour indices exist. Whole-font scope remains
+different from the original displayed-cell domain and is explicitly unqualified.
+Updated the additive-selection assertion to App159's no-clear contract, retaining
+selected-name, unknown-name and stale-package checks.
+
+Fresh RED:3colour cases fail before the menu fix. GREEN:181G1/Names tests pass.
+Command from this checkout: `rtk proxy sh -c 'PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/current-cohort-20261101/env/bin/python
+-B -m pytest -q -p no:cacheprovider tests/test_issue122_G1.py tests/test_names.py'`
+(exit0; focused.log). RED uses G1 with `-k different_colour` (exit1; red.log).
+Full command substitutes `tests` and is retained as full.log. Evidence directory:
+external issue123/selection-integration-20261101/.
+
+Independent bounded review approves source/test-contract changes with no blockers.
+All173additional pins verify; only this menu's hash changes, all139genuine floors
+and every other manifest field are unchanged. Docstring/source-page link matches.
+Diff check exit0. Original source only read/hashed, never executed.
+No canonical edits, native calls, promotion or publication. Native filtered-view
+selection, complete preservation and full cohort acceptance remain open.
+
+Full exit1:56failed4384passed19skipped. The obsolete Names expectation is the sole removed failure; no new failure IDs. Remaining39zone and17provenance failures are unchanged. The full gate remains failing and cannot authorize promotion.

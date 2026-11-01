@@ -190,20 +190,20 @@ def test_mark_group_order_and_labels(load):
     assert marks.mark_label(1005) == "Grey 5"
 
 
-def test_actual_selection_validates_all_names_and_identity_before_clearing(load):
+def test_actual_selection_validates_all_names_and_identity_before_writing(load):
     _, state, scripting, _ = load
     state.package.isNull = False
     state.glyphs = [NS(name=n) for n in ("A", "a", "b")]
     state.selected = {2}
     assert scripting.select_glyphs(["a"], package_id=7, add=True) == ["a", "b"]
-    assert state.clears == 1
+    assert state.clears == 0
     with pytest.raises(ValueError, match="Unknown"):
         scripting.select_glyphs(["missing"], package_id=7)
-    assert state.selected == {1, 2} and state.clears == 1
+    assert state.selected == {1, 2} and state.clears == 0
     state.package.id = 8
     with pytest.raises(ValueError, match="no longer current"):
         scripting.select_glyphs(["A"], package_id=7)
-    assert state.clears == 1
+    assert state.clears == 0
 
 
 def panel(shared, dialog=None):
