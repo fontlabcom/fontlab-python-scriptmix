@@ -14,6 +14,7 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
+from _message_box_support import assert_owned_message, message_box_type
 from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -900,7 +901,7 @@ def world(monkeypatch: pytest.MonkeyPatch, native_world: Any) -> Any:
         Shape, "addContours", lambda s, cs, flag: s._contours.extend(cs), raising=False
     )
     qt = sys.modules["PythonQt"]
-    qt.QtGui.QMessageBox = NS(
+    qt.QtGui.QMessageBox = message_box_type(
         warning=lambda *args: w.events.append(("warning", str(args[-1])))
     )
     import fly.ap.layer_selection as selection
@@ -1122,6 +1123,7 @@ def test_timeout_is_reported_by_main(
     monkeypatch.setattr(namespace["scripting"], "show_script_dialog", failure)
     assert namespace["main"]() is None
     assert world.events[-1] == ("warning", "selection capture deadline")
+    assert_owned_message(sys.modules["PythonQt"].QtGui.QMessageBox)
 
 
 @pytest.mark.parametrize("title", ["Node Duplicator"])

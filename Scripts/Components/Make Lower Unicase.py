@@ -485,10 +485,14 @@ def panel_type() -> type:
                 todo = [row for row in rows if not row.note]
                 count = len(todo)
                 message = f'Replace uppercase drawings in "{package.name}"?\n{count} glyphs, {count * len(package.masters)} layers.\n0 targets created; {count} targets replaced.'
-                answer = qt.QtGui.QMessageBox.question(
+                from fly.ap.qt_dialogs import run_standard_message_box
+
+                answer = run_standard_message_box(
+                    qt,
                     self,
                     TITLE,
                     message,
+                    "Question",
                     qt.QtGui.QMessageBox.StandardButtons(
                         qt.QtGui.QMessageBox.Yes | qt.QtGui.QMessageBox.No
                     ),
@@ -525,7 +529,11 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import ap, qt
 
-        qt.QtGui.QMessageBox.warning(ap.fontlab.MainWindow(), TITLE, str(error))
+        from fly.ap.qt_dialogs import run_standard_message_box
+
+        run_standard_message_box(
+            qt, ap.fontlab.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok
+        )
         return None
 
 

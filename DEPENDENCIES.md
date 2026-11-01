@@ -4,6 +4,11 @@ this_file: DEPENDENCIES.md
 
 # Dependencies
 
+The 2026-11-01 priority-message candidate requires App
+`qt_dialogs.run_standard_message_box`. App .152 does not contain this helper.
+The matching private candidate is `0.2.26.dev153+g44a0d90da`; no package-index
+release or native installation acceptance is claimed. No additional runtime dependency is added.
+
 Runtime: FontLab 9 Python 3.11 native APIs and PythonQt, fontlab-fly aliases,
 fontlab-fontlabapp scripting helpers. No new third-party runtime dependencies.
 Tests: pytest and an explicit current fontlab-fontlabapp requirement, supplied

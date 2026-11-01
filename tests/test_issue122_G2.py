@@ -18,6 +18,7 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
+from _message_box_support import assert_owned_message, message_box_type
 from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1025,6 +1026,7 @@ def components(components_world: Any, monkeypatch: pytest.MonkeyPatch) -> Any:
 
     qt.QtGui.QDialog = StrictDialog
     qt.QtCore.Qt.AlignVCenter = 4
+    qt.QtCore.Qt.WindowStaysOnTopHint = 0x40000
     w.answers = []
     w.questions = []
 
@@ -1038,13 +1040,8 @@ def components(components_world: Any, monkeypatch: pytest.MonkeyPatch) -> Any:
         w.questions.append(args)
         return w.answers.pop(0) if w.answers else 0
 
-    qt.QtGui.QMessageBox = NS(
-        Yes=1,
-        No=0,
-        StandardButtons=StandardButtons,
-        question=question,
-        warning=lambda *a: None,
-    )
+    qt.QtGui.QMessageBox = message_box_type(question=question)
+    qt.QtGui.QMessageBox.StandardButtons = StandardButtons
     import fly.ap.glyph_catalog as catalog
     import fly.ap.history as history  # noqa: PLR0402
 
@@ -1558,8 +1555,10 @@ def test_main_reports_startup_failure(
     error_type: type[Exception],
 ) -> None:
     ns = load(relative)
+    parent = sys.modules["fontlab"].MainWindow()
+    monkeypatch.setattr(sys.modules["fontlab"], "MainWindow", lambda: parent)
     seen = []
-    sys.modules["PythonQt"].QtGui.QMessageBox = NS(
+    sys.modules["PythonQt"].QtGui.QMessageBox = message_box_type(
         warning=lambda *args: seen.append(args)
     )
 
@@ -1569,6 +1568,10 @@ def test_main_reports_startup_failure(
     patch_app(monkeypatch, ns["scripting"], "show_script_dialog", fail)
     assert ns["main"]() is None
     assert seen[0][-1] == "injected startup failure"
+    box = assert_owned_message(sys.modules["PythonQt"].QtGui.QMessageBox)
+    assert box.title == ns["TITLE"]
+    assert box.parent is parent
+    assert not components.notifications()
 
 
 @pytest.mark.parametrize("relative", [PATHS[2]])
@@ -1633,7 +1636,8 @@ def test_reset_stickers_option_preserves_images_and_contours(components: Any) ->
     assert [shape.shapeType for shape in glyph.layers[0].shapes] == [1, 8]
 
 
-def test_reset_requires_preview_then_default_no_confirmation(components: Any) -> None:
+@pytest.mark.parametrize("answer", [0, 16, -1])
+def test_reset_requires_preview_then_default_no_confirmation(components: Any, answer: int) -> None:
     w = components
     glyph = add_glyph(w, "A")
     ns = load(PATHS[0])
@@ -1644,10 +1648,12 @@ def test_reset_requires_preview_then_default_no_confirmation(components: Any) ->
     assert not w.notifications() and not w.questions
     panel.inspect_scope()
     assert panel.clear_button.enabled
+    w.answers.append(answer)
     panel.execute()
     assert not w.notifications()
     assert "owned font" in w.questions[-1][2] and "1 glyphs" in w.questions[-1][2]
     assert w.questions[-1][-1] == 0
+    assert_owned_message(sys.modules["PythonQt"].QtGui.QMessageBox)
     w.answers.append(1)
     panel.execute()
     assert len(w.notifications()) == 1 and glyph.mark == 0
@@ -1736,8 +1742,9 @@ def test_unicase_duplicate_unicode_keeps_first_name(components: Any) -> None:
     assert any(row.source == "a.alt" and row.note.startswith("kept") for row in rows)
 
 
+@pytest.mark.parametrize("answer", [0, 16, -1])
 def test_unicase_preview_confirmation_and_race(
-    components: Any, monkeypatch: pytest.MonkeyPatch
+    components: Any, monkeypatch: pytest.MonkeyPatch, answer: int
 ) -> None:
     w = components
     add_glyph(w, "a", 0x61)
@@ -1753,7 +1760,9 @@ def test_unicase_preview_confirmation_and_race(
     panel.apply()
     assert not calls and not w.questions
     panel.preview()
+    w.answers.append(answer)
     panel.apply()
+    assert_owned_message(sys.modules["PythonQt"].QtGui.QMessageBox)
     assert not calls and w.questions[-1][-1] == 0
     assert "owned font" in w.questions[-1][2] and "1 glyphs" in w.questions[-1][2]
     w.answers.append(1)
@@ -2116,8 +2125,9 @@ def test_component_consent_releases_existing_auto_bases(
     assert all(layer not in w.notifications()[0][3] for layer in auto.layers)
 
 
+@pytest.mark.parametrize("answer", [0, 16, -1])
 def test_whole_font_stickers_require_preview_and_default_no_confirmation(
-    components: Any,
+    components: Any, answer: int,
 ) -> None:
     w = components
     glyph = add_glyph(w, "A")
@@ -2128,9 +2138,11 @@ def test_whole_font_stickers_require_preview_and_default_no_confirmation(
     panel.apply()
     assert not w.questions and shape in glyph.layers[0].shapes
     panel.preview()
+    w.answers.append(answer)
     panel.apply()
     assert shape in glyph.layers[0].shapes and not w.notifications()
     assert w.questions[-1][-1] == 0
+    assert_owned_message(sys.modules["PythonQt"].QtGui.QMessageBox)
     assert all(
         text in w.questions[-1][2]
         for text in ["owned font", "1 glyphs", "1 layers", "1 stickers"]
@@ -2301,3 +2313,28 @@ def test_component_panel_with_queued_id_writes_and_shows_one_note(components: An
     note = panel.last_result["pending_note"]
     assert "8537" in note and note in panel.status.text
     assert panel.status.text.count("8537") == 1, "The note must appear once per result"
+
+
+@pytest.mark.parametrize("relative", PATHS)
+@pytest.mark.parametrize("stage", ["setWindowFlags", "exec", "clickedButton"])
+def test_warning_failure_deletes_box_without_font_edit(
+    components: Any, monkeypatch: pytest.MonkeyPatch, relative: str, stage: str
+) -> None:
+    ns = load(relative)
+    kind = sys.modules["PythonQt"].QtGui.QMessageBox
+    failure = LookupError("injected message failure")
+
+    def fail(*args: Any) -> None:
+        raise failure
+
+    monkeypatch.setattr(kind, stage, fail)
+
+    def fail_start(dialog_type: type, key: str) -> None:
+        raise RuntimeError("startup refused")
+
+    patch_app(monkeypatch, ns["scripting"], "show_script_dialog", fail_start)
+    with pytest.raises(LookupError) as caught:
+        ns["main"]()
+    assert caught.value is failure
+    assert kind.instances[-1].events.count("delete") == 1
+    assert not components.notifications()

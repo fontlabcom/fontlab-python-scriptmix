@@ -422,10 +422,14 @@ def panel_type() -> type:
                 glyph_count = len({str(glyph.name) for glyph, _ in jobs})
                 labels = ", ".join(OPTIONS[key] for key in OPTIONS if key in options)
                 message = f'Clear {labels} in "{package.name}"?\n{glyph_count} glyphs, {len(jobs)} layers.'
-                answer = gui.QMessageBox.question(
+                from fly.ap.qt_dialogs import run_standard_message_box
+
+                answer = run_standard_message_box(
+                    qt,
                     self,
                     TITLE,
                     message,
+                    "Question",
                     gui.QMessageBox.StandardButtons(
                         gui.QMessageBox.Yes | gui.QMessageBox.No
                     ),
@@ -458,7 +462,11 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import ap, qt
 
-        qt.QtGui.QMessageBox.warning(ap.fontlab.MainWindow(), TITLE, str(error))
+        from fly.ap.qt_dialogs import run_standard_message_box
+
+        run_standard_message_box(
+            qt, ap.fontlab.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok
+        )
         return None
 
 

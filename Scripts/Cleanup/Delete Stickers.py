@@ -228,8 +228,11 @@ def panel_type() -> type:
                 count = sum(len(row.stickers) for row in ready)
                 message = f'Delete stickers in "{package.name}"?\n{glyphs} glyphs, {len(ready)} layers, {count} stickers.'
                 box = qt.QtGui.QMessageBox
-                answer = box.question(
-                    self, TITLE, message, box.StandardButtons(box.Yes | box.No), box.No
+                from fly.ap.qt_dialogs import run_standard_message_box
+
+                answer = run_standard_message_box(
+                    qt, self, TITLE, message, "Question",
+                    box.StandardButtons(box.Yes | box.No), box.No
                 )
                 if answer != box.Yes:
                     return {"stickers": 0, "layers": 0}
@@ -258,7 +261,11 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import ap, qt
 
-        qt.QtGui.QMessageBox.warning(ap.fontlab.MainWindow(), TITLE, str(error))
+        from fly.ap.qt_dialogs import run_standard_message_box
+
+        run_standard_message_box(
+            qt, ap.fontlab.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok
+        )
         return None
 
 

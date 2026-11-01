@@ -2,6 +2,28 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — retained encoding chooser priority
+
+Paste Glyph Order Encoding reapplies priority on each show and retries safely
+after a setter failure. All33 G8 tests pass. Native behavior remains unverified.
+
+
+## Unreleased — anchor chooser priority
+
+Two owned anchor file choosers retain their parent/type/filter and request
+priority before execution. G11 source suite82passed; native acceptance pending.
+
+
+## 2026-11-01 — owned menu warnings and confirmations
+
+- Route eleven warnings and three confirmation questions through App's owned
+  priority message helper; preserve parents, title/body, standard buttons,
+  default No, Yes-only edits and post-confirmation recapture.
+- Refresh eleven current menu hashes and generated pages without rewriting
+  historical provenance. Source verification: 382 focused tests and 10 docs
+  tests pass; full candidate results and inherited/cohort failures are in WORK.
+- Native FontLab and matching installed-artifact acceptance remain open.
+
 ## 2026-10-22 - Alignment zone tools; Master Metrics Table on the master writer
 
 - Metrics > Alignment Zones opens the shared App zone panel with the native

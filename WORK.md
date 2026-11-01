@@ -2,6 +2,118 @@
 this_file: WORK.md
 ---
 
+## 2026-11-01 — combined final source/artifact checks
+
+Configured gate:59failed/4351passed/4skipped, all14changed modules pass80%coverage
+(range80.24–100%). Exact root command through rtk proxy:
+`.metaswarm/quality.sh coverage <this-candidate> fontlab-python-scriptmix`, exit1;
+external final-configured-gate-r2.log and configured-gate-evidence retain output.
+Initial configured attempt lacked required sibling dependency paths; read-only
+symlinks were added and the unchanged gate rerun. No policy/hook bypass.
+Compared with prior58failure unconfigured run, two original-source audit tests
+are now enabled and fail; both independently fail on untouched f4e80ba baseline
+(configured-extra-baseline.log,2failed). The prior G3 missing App-name failure
+passes with the configured dependency tuple. The remaining failures retain provenance
+and zone/App surface holds. Concurrent zone/master code was untouched.
+
+Fresh changed G8+G11:115passed after final test import cleanup. Both independently
+installed genuine App0.2.26.dev153+g44a0d90da artifacts pass497menu tests each:
+`rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+<artifact-env>/bin/python -B -m pytest -q -p no:cacheprovider
+tests/test_issue122_G2.py tests/test_issue122_G4.py tests/test_issue122_G7.py
+tests/test_issue122_G8.py tests/test_issue122_G11.py tests/test_cov_a_writers.py`
+(exit0 each; installed-wheel-menus.log and installed-sdist-menus.log).
+No source-path override is used for these installed checks. Complete cohort and
+native acceptance remain open; no push of this failing full-gate candidate.
+
+
+## 2026-11-01 — retained encoding chooser
+
+Paste Glyph Order Encoding now ORs priority before every modeless show. Its
+owned parent, type/chrome, retained callback and no-overwrite/stale guards remain.
+Tests:31baseline passes,4expected regressions/29passes,33final passes. Setter
+failure leaves the same chooser and connection available for retry. Source and
+page pins match902134168141b0a84a092ff8946d9b400b5721f598157683881c158d465effd6.
+Exact rtk proxy commands, exit codes, Qt source reference and retained logs are in
+external menu-message-priority-20261101/paste-chooser-report.json. Ruff/diff pass.
+This source candidate does not qualify native chooser settings/global state.
+
+Root pin audit:173 Scriptmix current rows and207 Examples current rows match all
+available local menu bytes. The new G11 test unused import was removed; one
+pre-existing E731 at line541 remains. No source logic changed for that cleanup.
+
+
+## 2026-11-01 — anchor chooser priority follow-up
+
+Add Anchors From File and Auto Cursive Attachment Add Anchors preserve flags and
+OR WindowStaysOnTopHint inside run_file_dialog configuration. ExistingFile,
+filters, parent, selection and finally deletion are unchanged. Two regression
+assertions failed before implementation; final G11 suite82passed. Two current
+additional-tools pins and generated pages were refreshed; original-source hashes
+are untouched.
+
+Exact command through rtk proxy (cwd this candidate): env
+PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+SCRIPTMIX_APP_SOURCE=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src/fontlabapp
+PYTHONPATH=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/final-panel-priority-artifacts-20261101/wheel-env/bin/python
+-B -m pytest -q -p no:cacheprovider tests/test_issue122_G11.py: exit0.
+Initial full G11 run without SCRIPTMIX_APP_SOURCE:81passed/1failed, correctly
+rejecting mismatched source resolution; explicit candidate selection fixes this.
+
+Wait, but: this is source-only. The prior full-suite provenance/cohort failures
+and three asynchronous QFileDialog sheet routes remain open.
+
+
+## 2026-11-01 — owned priority messages (source candidate)
+
+Replace eleven static warnings and three static confirmation questions in eleven
+menu files with App `run_standard_message_box`. Preserve the original parent,
+window title, primary text, Warning/Ok or Question/Yes|No buttons, default No,
+exact Yes comparison and the post-Yes selection/plan recapture. The helper owns
+priority-before-exec and deletion, including setup/exec/result-read failures.
+No font-writing algorithm changed. File choosers and zone work are outside this
+change. Updated eleven current `additional-tools.json` hashes and eleven generated
+pages; historical source hashes and licences remain intact.
+
+Tests execute the actual menu routes and real candidate App helper over stateful
+Qt doubles. Baseline focused: 355 passed. Regression-first: 30 failed because the
+static calls never constructed an owned box. Final focused: 382 passed, covering
+all eleven warnings, all three questions with No/Cancel/interrupted exec followed
+by Yes, retained race recapture checks and 21 warning setup/exec/read failures.
+The boxes preserve their existing type/chrome flags and are deleted exactly once;
+refusal leaves font notification state untouched. This is source verification,
+not installed-artifact or native FontLab acceptance.
+
+Reproducible commands (external evidence: `menu-message-priority-20261101/`):
+
+```sh
+SCRIPT_TEST_PY=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/final-panel-priority-artifacts-20261101/wheel-env/bin/python
+APP_CANDIDATE=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src
+# Baseline before edits, and regression-first before menu edits: exit 0 / 1.
+rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 "$SCRIPT_TEST_PY" -B -m pytest -q -p no:cacheprovider tests/test_issue122_G2.py tests/test_issue122_G4.py tests/test_issue122_G7.py tests/test_cov_a_writers.py
+rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 "$SCRIPT_TEST_PY" -B -m pytest -q -p no:cacheprovider tests/test_issue122_G2.py tests/test_issue122_G4.py tests/test_issue122_G7.py -k 'startup_failure or timeout_is_reported or opening_fails or reset_requires'
+# Final focused: exit 0. Full tests: exit 1.
+rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH="$APP_CANDIDATE" SCRIPTMIX_APP_SOURCE="$APP_CANDIDATE/fontlabapp" "$SCRIPT_TEST_PY" -B -m pytest -q -p no:cacheprovider tests/test_issue122_G2.py tests/test_issue122_G4.py tests/test_issue122_G7.py tests/test_cov_a_writers.py
+rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH="$APP_CANDIDATE" SCRIPTMIX_APP_SOURCE="$APP_CANDIDATE/fontlabapp" "$SCRIPT_TEST_PY" -B -m pytest -q -p no:cacheprovider tests
+# Docs in ordinary disposable dependency environment: exit 0.
+rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/uv-cache uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs
+rtk proxy git diff --check
+```
+
+Full source result: 58 failed, 4348 passed, 6 skipped. Nineteen inherited provenance
+failures remain unmodified; 39 other failures concern unavailable App surfaces in
+this isolated source candidate (including `outline_extent` and zone modules).
+The full matching cohort gate remains required. Docs initially failed collection
+in the borrowed wheel environment because `codeinclude` was absent (exit 2);
+the disposable documented dependency invocation passed all 10 tests. Intermediate
+focused runs exposed incomplete Qt test doubles (41, then 27 failures), followed
+by test-parent identity/signature mistakes (42 failures); corrected the doubles
+and assertions without changing production behavior. Logs retain every attempt.
+Ruff comparison of six touched test files: 83 findings both at baseline and now,
+with no added findings after normalizing shifted line numbers. `git diff --check`
+passes. `script-hash-map.json` records exact old/new bytes for cross-repo pins.
+
 ## Issue 122 zones port (2026-10-22)
 
 - Add Metrics/Alignment Zones.py (shared App panel + zone_native.backend) and

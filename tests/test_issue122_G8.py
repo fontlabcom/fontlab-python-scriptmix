@@ -207,9 +207,10 @@ def test_widget_names_and_no_font_writes() -> None:
     )
 
 
+@pytest.mark.parametrize("flag_failure", [False, True])
 @pytest.mark.parametrize("clear_selection", [False, True])
 def test_panel_preview_save_error_and_close(
-    monkeypatch: pytest.MonkeyPatch, tmp_path: Path, clear_selection: bool
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path, clear_selection: bool, flag_failure: bool
 ) -> None:
     """Exercise panel actions against strict native-member and signal fakes."""
     import fly
@@ -221,6 +222,10 @@ def test_panel_preview_save_error_and_close(
         AcceptSave = 1
 
         def __init__(self, *args: Any) -> None:
+            self.owner = args[0] if args else None
+            self.flags = 0x1003
+            self.flag_failure = flag_failure
+            self.events = []
             self.text_value = ""
             self.text_writes = 0
             self.clicked = NS(connect=lambda slot: setattr(self, "button_slot", slot))
@@ -234,6 +239,20 @@ def test_panel_preview_save_error_and_close(
         def __setattr__(self, name: str, value: Any) -> None:
             assert name not in reserved, f"Native member collision: {name}"
             object.__setattr__(self, name, value)
+
+        def windowFlags(self) -> int:
+            return self.flags
+
+        def setWindowFlags(self, flags: int) -> None:
+            self.events.append("flags")
+            if self.flag_failure:
+                self.flag_failure = False
+                raise RuntimeError("priority setter refused")
+            self.flags = flags
+
+        def show(self) -> None:
+            assert self.flags & 0x40000, "Priority must be present before each show"
+            self.events.append("show")
 
         def setText(self, text: str) -> None:
             self.text_value = text
@@ -275,7 +294,7 @@ def test_panel_preview_save_error_and_close(
             Widget,
         )
     )
-    monkeypatch.setitem(fly.__dict__, "qt", NS(QtGui=gui))
+    monkeypatch.setitem(fly.__dict__, "qt", NS(QtGui=gui, QtCore=NS(Qt=NS(WindowStaysOnTopHint=0x40000))))
     monkeypatch.setattr(scripting, "show_script_dialog", fake_show)
     monkeypatch.setattr(scripting, "close_script_dialog", fake_close)
     module = load()
@@ -290,12 +309,28 @@ def test_panel_preview_save_error_and_close(
     assert len(panel.order_preview.toPlainText().splitlines()) == 200, (
         "Bound display only"
     )
+    if flag_failure:
+        panel.safe_action(panel.choose_file)
+        assert panel.status.text_value == "priority setter refused"
+        retained = panel.file_chooser
+        assert retained.events == ["flags"] and retained.flags == 0x1003
+        assert retained.owner is panel
     panel.choose_file()
+    chooser = panel.file_chooser
+    if flag_failure:
+        assert chooser is retained, "Retry must retain the same owned chooser"
+    assert chooser.owner is panel and chooser.flags == 0x41003
+    assert chooser.events[-2:] == ["flags", "show"]
+    callback = chooser.file_slot
+    chooser.flags = 0x2003
+    panel.choose_file()
+    assert panel.file_chooser is chooser and chooser.file_slot is callback
+    assert chooser.flags == 0x42003 and chooser.events[-2:] == ["flags", "show"]
     assert len(panel._connections) == 4, "Three buttons and one owned file chooser"
     if clear_selection:
         fake_selection.result = NS(occurrences=())
     selection_reads = len(fake_selection.calls)
-    panel.write_file(str(tmp_path / "full.enc"))
+    chooser.file_slot(str(tmp_path / "full.enc"))
     assert len(fake_selection.calls) == selection_reads, (
         "Saving reads names without selection"
     )

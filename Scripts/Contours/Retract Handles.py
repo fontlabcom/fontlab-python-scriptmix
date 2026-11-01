@@ -151,7 +151,11 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import ap, qt
 
-        qt.QtGui.QMessageBox.warning(ap.fontlab.MainWindow(), TITLE, str(error))
+        from fly.ap.qt_dialogs import run_standard_message_box
+
+        run_standard_message_box(
+            qt, ap.fontlab.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok
+        )
         return None
 
 

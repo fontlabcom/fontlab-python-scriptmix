@@ -13,6 +13,7 @@ from typing import Any
 
 import pytest
 from _cov_a_support import ROOT, Host, host  # noqa: F401
+from _message_box_support import message_box_type
 
 
 class PanelBase:
@@ -132,7 +133,7 @@ def test_serif_main_when_dialog_refused_then_warning_box_and_none(host, error):
 
     tool = serif_tool(host, show_script_dialog=refuse)
     warned: list[tuple] = []
-    host.qt.QtGui.QMessageBox = NS(warning=lambda *a: warned.append(a))
+    host.qt.QtGui.QMessageBox = message_box_type(warning=lambda *a: warned.append(a))
     assert tool.main() is None, 'serif main when dialog refused then warning box and none: expected tool.main() is None'
     assert warned == [(host.main_window, "Decompose Serif Components", str(error))], "serif main when dialog refused then warning box and none: unexpected result"
 
@@ -308,7 +309,7 @@ def test_retract_main_when_dialog_refused_then_warning_box_and_none(host, error)
 
     tool = retract_tool(host, show_script_dialog=refuse)
     warned: list[tuple] = []
-    host.qt.QtGui.QMessageBox = NS(warning=lambda *a: warned.append(a))
+    host.qt.QtGui.QMessageBox = message_box_type(warning=lambda *a: warned.append(a))
     assert tool.main() is None, 'retract main when dialog refused then warning box and none: expected tool.main() is None'
     assert warned == [(host.main_window, "Retract Handles", str(error))], "retract main when dialog refused then warning box and none: expected warned == [(host.main_window, 'Retract Handles', str(error))]"
 

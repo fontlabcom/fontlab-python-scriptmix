@@ -10,6 +10,7 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
+from _message_box_support import assert_owned_message, message_box_type
 from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -289,9 +290,9 @@ def world(monkeypatch: Any, real_app: Any) -> Any:
         MainWindow=lambda: None,
     )
     qt = ModuleType("PythonQt")
-    qt.QtCore = NS(QDateTime=NS(currentDateTimeUtc=lambda: "STAMP"))
+    qt.QtCore = NS(Qt=NS(WindowStaysOnTopHint=0x40000), QDateTime=NS(currentDateTimeUtc=lambda: "STAMP"))
     qt.QtGui = NS(
-        QMessageBox=NS(warning=lambda *args: calls.append(args)),
+        QMessageBox=message_box_type(warning=lambda *args: calls.append(args)),
         QDialog=QtWidget,
         QVBoxLayout=QtWidget,
         QHBoxLayout=QtWidget,
@@ -343,6 +344,7 @@ def world(monkeypatch: Any, real_app: Any) -> Any:
         fontlab=native,
         scripting=replacements,
         modules=(
+            "qt_dialogs",
             "guides",
             "history",
             "edit_guards",
@@ -458,6 +460,7 @@ def test_main_when_opening_fails_then_warning_is_shown(
     monkeypatch.setattr(world.app["scripting"], "show_script_dialog", fail)
     assert module.main() is None
     assert world.calls[-1][-1] == "fixture refusal"
+    assert_owned_message(sys.modules["PythonQt"].QtGui.QMessageBox)
 
 
 def test_native_constructors_when_optional_arguments_are_positional_then_rejected() -> (

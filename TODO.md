@@ -2,6 +2,12 @@
 this_file: TODO.md
 ---
 
+- [ ] Resolve and qualify priority through the macOS sheet transition for Glyph Table CSV, Glyph Order Preview and Export, and Pair List Browser; preserve open() asynchronous window modality and owned cleanup.
+
+
+- [ ] Verify the eleven warning and three confirmation routes with the matching
+  installed App/Scriptmix artifacts and native FontLab priority/lifetime protocol.
+
 # Open work
 
 - [ ] Qualify Italic Angle from the final installed files and independently downloaded release before increasing historical sample acceptance beyond 68 of 130.

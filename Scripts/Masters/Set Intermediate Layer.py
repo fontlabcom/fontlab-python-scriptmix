@@ -280,7 +280,11 @@ def main() -> Any:
     try:
         return scripting.show_script_dialog(IntermediatePanel, KEY)
     except (ValueError, RuntimeError, TimeoutError) as error:
-        qt.QtGui.QMessageBox.warning(fl.MainWindow(), TITLE, str(error))
+        from fly.ap.qt_dialogs import run_standard_message_box
+
+        run_standard_message_box(
+            qt, fl.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok
+        )
         return None
 
 

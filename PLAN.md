@@ -2,6 +2,16 @@
 this_file: PLAN.md
 ---
 
+- [ ] Resolve and qualify priority through the macOS sheet transition for Glyph Table CSV, Glyph Order Preview and Export, and Pair List Browser; preserve open() asynchronous window modality and owned cleanup.
+
+
+## Owned message source candidate — 2026-11-01
+
+The eleven-warning/three-question integration has focused source and generated
+page verification. Keep native stacking, matching installed artifacts and the
+full coherent App/Scriptmix cohort gate open; this candidate alone does not close
+window-priority acceptance. File chooser work is tracked separately.
+
 # Practical script plan
 
 Provide useful FontLab tools with shared, bounded native operations and simple

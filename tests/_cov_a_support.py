@@ -475,7 +475,7 @@ class Host:
             fontlab=self.native,
             scripting=shared,
             completion=lambda dialog, key: NS(),
-            modules=list(modules),
+            modules=["qt_dialogs", *modules],
         )
         for module_name, attributes in (patches or {}).items():
             for attribute, value in attributes.items():

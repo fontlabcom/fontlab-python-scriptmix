@@ -207,6 +207,9 @@ def main() -> Any:
                     self.file_chooser.fileSelected,
                     lambda path: self.safe_action(lambda: self.write_file(str(path))),
                 )
+            self.file_chooser.setWindowFlags(
+                self.file_chooser.windowFlags() | qt.QtCore.Qt.WindowStaysOnTopHint
+            )
             self.file_chooser.show()
 
         def write_file(self, path: str) -> None:

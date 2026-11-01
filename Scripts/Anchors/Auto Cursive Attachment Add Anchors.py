@@ -261,6 +261,9 @@ def panel_type() -> type:
             import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import
 
             def configure(kind: Any, dialog: Any) -> None:
+                dialog.setWindowFlags(
+                    dialog.windowFlags() | qt.QtCore.Qt.WindowStaysOnTopHint
+                )
                 dialog.setFileMode(kind.ExistingFile)
                 dialog.setNameFilter("Cursive sample (*.json)")
 

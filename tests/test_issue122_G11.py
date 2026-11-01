@@ -1134,12 +1134,41 @@ def test_csv_duplicate_target_names_refuse_before_history(
 def test_owned_file_picker_sets_path(
     world: Any, monkeypatch: pytest.MonkeyPatch, title: str, method: str, field: str
 ) -> None:
-    import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402
+    from fly import qt
 
     panel = load(title)["main"]()
-    monkeypatch.setattr(qt_dialogs, "run_file_dialog", lambda *args: ["/chosen/file"])
+    dialogs = []
+
+    class FileDialog(Widget):
+        ExistingFile = 1
+
+        def __init__(self, parent):
+            super().__init__()
+            self.parent, self.flags, self.deleted = parent, 3, False
+            dialogs.append(self)
+
+        def setFileMode(self, mode):
+            self.mode = mode
+
+        def setNameFilter(self, text):
+            self.filter = text
+
+        def exec(self):
+            assert self.flags == 3 | 0x40000, "Priority must preserve file-dialog type before exec"
+            return 1
+
+        def selectedFiles(self):
+            return ["/chosen/file"]
+
+        def deleteLater(self):
+            self.deleted = True
+
+    monkeypatch.setattr(qt.QtGui, "QFileDialog", FileDialog, raising=False)
     getattr(panel, method)()
     assert getattr(panel, field).text == "/chosen/file"
+    assert dialogs[0].parent is panel and dialogs[0].deleted, "Owned chooser must retain parent and be deleted"
+    assert dialogs[0].mode == FileDialog.ExistingFile, "Chooser must still require existing files"
+    assert dialogs[0].filter == ("Anchor table (*.csv)" if field == "csv_path" else "Cursive sample (*.json)")
 
 
 # Regression: a stack contributes its first mark for each attachment label.
