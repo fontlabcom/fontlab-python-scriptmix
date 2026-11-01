@@ -1571,3 +1571,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+N128 continuation: Show All Layers adapts Slobzheninov Glyphs-Scripts
+Glyphs/Show All Layers.py (Apache-2.0), sourceSHA256 45e501e6b106f4dea12bea30d85fd58fd61d76c03736112bb1ba846a4db9974a.
+Upstream https://github.com/slobzheninov/Glyphs-Scripts; licenseSHA256 bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec.
+Full ordered selected-parent/allforeground-layer proof with trailing newlines;
+original body not redistributed/executed. Native acceptance pending.

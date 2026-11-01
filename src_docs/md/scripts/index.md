@@ -256,6 +256,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Random Uppercase Words](proof/random-uppercase-words.md)
 - [Real English Text](proof/real-english-text.md)
 - [Real Spanish Text](proof/real-spanish-text.md)
+- [Show All Layers](proof/show-all-layers.md)
 - [Tallest and Shortest](proof/tallest-and-shortest.md)
 - [Text By Master](proof/text-by-master.md)
 - [Text Filter](proof/text-filter.md)

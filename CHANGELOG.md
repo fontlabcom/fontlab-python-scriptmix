@@ -1718,3 +1718,5 @@ N186: add complete Science Gothic Kerning Symmetry writer, all configured pairs/
 ## .114 — master-layer Point Counter
 
 Independent complete Reza report: every selected occurrence, stored master layers, empty masters, own contour totals and fixed400×300 read-only window. Quadratic endpoints are included, correcting the original omission. Native qualification remains pending.
+
+- N128/.110: complete Show All Layers proof candidate, preserving repeated selected parents, stored foreground layer order and trailing newlines. Native acceptance pending.

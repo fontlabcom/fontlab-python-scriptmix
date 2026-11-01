@@ -24,6 +24,7 @@
 - [Random Uppercase Words](random-uppercase-words.md)
 - [Real English Text](real-english-text.md)
 - [Real Spanish Text](real-spanish-text.md)
+- [Show All Layers](show-all-layers.md)
 - [Tallest and Shortest](tallest-and-shortest.md)
 - [Text By Master](text-by-master.md)
 - [Text Filter](text-filter.md)
