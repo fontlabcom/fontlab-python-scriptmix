@@ -1,0 +1,592 @@
+{
+  "this_file": "rescue-index.json",
+  "authority": "Owner D24, rescue before runtime improvement",
+  "preserved_source_root": "rescued",
+  "new_menu_count": 61,
+  "native_compatibility": "pending; relocated originals were not executed",
+  "menus": [
+    {
+      "menu": "Scripts/Metrics/Italic Sidebearings.py",
+      "target": "rescued/samples/metrics_italic_sidebearings.py",
+      "target_sha256": "61382637e8b0009a8dc5d701e0c81de3cf2562feb95df2622414148117441b96"
+    },
+    {
+      "menu": "Scripts/Metrics/Alignment Zones.py",
+      "target": "rescued/samples/metrics_zones_editor.py",
+      "target_sha256": "485bdb80fe2ea9afbc2822cf7a988dd7e47d56c91471c9016a3f37cec261527b"
+    },
+    {
+      "menu": "Scripts/Metrics/Round Advances.py",
+      "target": "rescued/samples/metrics_round_advances.py",
+      "target_sha256": "7b8e6f6af6b5c1b16c92a01cc3182763e3e1a02c136cf32796fbfe42e9602bb4"
+    },
+    {
+      "menu": "Scripts/Metrics/Centre In Advance.py",
+      "target": "rescued/samples/metrics_center_in_advance.py",
+      "target_sha256": "e1102b887555d975cca08b749709c746a9550219815f5e2359bba87021da58b8"
+    },
+    {
+      "menu": "Scripts/Metrics/Zero-Width Marks.py",
+      "target": "rescued/samples/metrics_zero_width_marks.py",
+      "target_sha256": "73e90660e6aa5c038f05d7d9fc98730943c940697f10a94a976ba3acbb29233a"
+    },
+    {
+      "menu": "Scripts/Metrics/Vertical Metrics.py",
+      "target": "rescued/samples/metrics_vertical_metrics_diagram.py",
+      "target_sha256": "e335d1e56b0e50239ebb0397d6389e43a7713b7794ec95f6cc96a2b8f96a0e55"
+    },
+    {
+      "menu": "Scripts/Metrics/Equalize Sidebearings.py",
+      "target": "rescued/samples/metrics_equalize_sidebearings.py",
+      "target_sha256": "b9ed28afc986f143e96ef9c5cffae5cb1d5ab08b505d205eab9532b08288f141"
+    },
+    {
+      "menu": "Scripts/Metrics/Tabular Width.py",
+      "target": "rescued/samples/metrics_tabular_width.py",
+      "target_sha256": "4e2a2ee075cae507a13b2cebbf26c3f477afbf80ec1496c3ddaf0ab88041a276"
+    },
+    {
+      "menu": "Scripts/Metrics/Scale Advances.py",
+      "target": "rescued/samples/metrics_scale_advances.py",
+      "target_sha256": "7bf3e47c35aeb313d3d020a374a5b025b1a20a0702ae73de8ea14e19b6f5a7ef"
+    },
+    {
+      "menu": "Scripts/Metrics/Sidebearings Tuner.py",
+      "target": "rescued/samples/metrics_sidebearings_tuner.py",
+      "target_sha256": "54b56de93420c9a99c38d7e6acaee95e08489672efd6936fd9892793f67f1d1e"
+    },
+    {
+      "menu": "Scripts/Metrics/Copy Metrics From Reference.py",
+      "target": "rescued/samples/metrics_copy_from_reference.py",
+      "target_sha256": "a95206e4630f4c69ab74802ad8e7ecd120f1eddad16373a3382c1b71e30d7c6c"
+    },
+    {
+      "menu": "Scripts/Names/Glyph Tags.py",
+      "target": "rescued/samples/names_glyph_tags.py",
+      "target_sha256": "1f0a7146ca1dbca8f3bd52bbf34d39f08b3b72bd3e9c88cbd9f1803056312274"
+    },
+    {
+      "menu": "Scripts/Names/Mark Color Palette.py",
+      "target": "rescued/samples/names_mark_color_palette.py",
+      "target_sha256": "7f029d7b32a6b2ea5cca1c7c80312cacb1a1468632c984f0332ead01cf690ab8"
+    },
+    {
+      "menu": "Scripts/Names/Duplicate Unicodes.py",
+      "target": "rescued/samples/names_duplicate_unicodes.py",
+      "target_sha256": "b42ab5f9a4bead19a4a0a042d9fe9fcffbfadfe650da6551b4f9ea3819ba865e"
+    },
+    {
+      "menu": "Scripts/Names/Suffix Tool.py",
+      "target": "rescued/samples/names_suffix_tool.py",
+      "target_sha256": "ef7c1a71a97c40c1cadaf706df7e9f29097345318955989a01bc8abaf9e1c387"
+    },
+    {
+      "menu": "Scripts/Names/Batch Rename.py",
+      "target": "rescued/samples/names_batch_rename.py",
+      "target_sha256": "2180f5d021fb8c65465c8b2ba51d239d01b8e6170ed9f1bdd399080f0162ffe6"
+    },
+    {
+      "menu": "Scripts/Names/Batch Glyph Notes.py",
+      "target": "rescued/samples/utility_batch_glyph_notes.py",
+      "target_sha256": "2bf1522bc105607e83378c0583b30b6d0fa3df9a15f9493b415cedba80ce19d0"
+    },
+    {
+      "menu": "Scripts/Names/Glyph Notes.py",
+      "target": "rescued/samples/names_glyph_notes.py",
+      "target_sha256": "b577a3e8128ac943dad23a2ee65c401388464c69469ef3ea5464a5824b58d074"
+    },
+    {
+      "menu": "Scripts/Names/Unicode From Names.py",
+      "target": "rescued/samples/names_unicode_from_names.py",
+      "target_sha256": "5f34b1655112f1d299d2b235b82fd3e947593a90845581bb1d3304de53dc1fb2"
+    },
+    {
+      "menu": "Scripts/Components/Build From Recipes.py",
+      "target": "rescued/samples/components_build_from_recipes.py",
+      "target_sha256": "2affcb5ba67ab445113c365f23f5b07b5baf76ee72881e9bbb085ab4996baaa9"
+    },
+    {
+      "menu": "Scripts/Components/Align By Anchor.py",
+      "target": "rescued/samples/components_align_by_anchor.py",
+      "target_sha256": "ade5fc6354d2257839380db846f0b2b4c4099b34b690433aca2952431f374e46"
+    },
+    {
+      "menu": "Scripts/Components/Decompose.py",
+      "target": "rescued/samples/components_decompose.py",
+      "target_sha256": "b1300909f4762da07e3e18a4f17fe8531b00f2e38ee84a5a9cf7e2171c8446f5"
+    },
+    {
+      "menu": "Scripts/Components/Replace Reference.py",
+      "target": "rescued/samples/components_replace_reference.py",
+      "target_sha256": "749dc1d7c4990b6f9436c21fee05be3274959946b034bbf61951f450a99c4cf0"
+    },
+    {
+      "menu": "Scripts/Components/Copy Offsets Between Masters.py",
+      "target": "rescued/samples/components_copy_offsets_between_masters.py",
+      "target_sha256": "75256a1e861494225e216ae0912fbebd8859b699d3162299238ae08edaa9ead8"
+    },
+    {
+      "menu": "Scripts/Components/Unlock Lock.py",
+      "target": "rescued/samples/components_unlock_lock.py",
+      "target_sha256": "080e76430584cdee016fa10ae2399590239896d2464d2de534da43af83670fa0"
+    },
+    {
+      "menu": "Scripts/Components/Nested Finder.py",
+      "target": "rescued/samples/components_nested_finder.py",
+      "target_sha256": "759a27f582a2df933d69431ef2cf9cf3d38149b5c5c8f800d8aa10c15daab9a0"
+    },
+    {
+      "menu": "Scripts/Cleanup/Empty Layers.py",
+      "target": "rescued/samples/cleanup_empty_layers.py",
+      "target_sha256": "5f9b9cafb2fce4033cf4590938fe2bade48159a2d3ba16180eea7c2f6834136c"
+    },
+    {
+      "menu": "Scripts/Guides/Suggest Zones From Overshoots.py",
+      "target": "rescued/samples/zones_from_glyphs.py",
+      "target_sha256": "351614aefe3c842978b3e232702102928ff73d8ee2b4da7c2e8c655efb5b62c0"
+    },
+    {
+      "menu": "Scripts/Contours/Round Coordinates.py",
+      "target": "rescued/samples/outlines_round_coordinates.py",
+      "target_sha256": "420311a1d89247cd0181145403004a59b5423cf012ea705985ea521a5d7c7893"
+    },
+    {
+      "menu": "Scripts/Contours/Autohint Selected Layers.py",
+      "target": "rescued/samples/hints_autohint.py",
+      "target_sha256": "16771122bcd630cb3a9624380cf10c95645e24bd7eed12c39f67435ce9112a17"
+    },
+    {
+      "menu": "Scripts/Contours/Placeholder Glyphs.py",
+      "target": "rescued/samples/generate_placeholder_glyphs.py",
+      "target_sha256": "c40406ac0793e1be5873f12924b75c9f94b609cf93078583d4395234156b4e0a"
+    },
+    {
+      "menu": "Scripts/Contours/Shadow Copy.py",
+      "target": "rescued/samples/generate_shadow.py",
+      "target_sha256": "4f30593e7d8ae8c90ba8a40b917e71068f781c6a14f672d66d4d5ec3e4d186df"
+    },
+    {
+      "menu": "Scripts/Contours/Remove Overlap.py",
+      "target": "rescued/samples/outlines_remove_overlap.py",
+      "target_sha256": "d5d37f762bfb619307ccb2a4d4e4d8796f14f59ef6d42f58fec614d8f8383098"
+    },
+    {
+      "menu": "Scripts/Contours/Add Extremes.py",
+      "target": "rescued/samples/outlines_add_extremes.py",
+      "target_sha256": "2a6d3aec7f38fc77a70422d1c27ab571742d8453ad4390712a97c149e934eea5"
+    },
+    {
+      "menu": "Scripts/Contours/Correct Contour Direction.py",
+      "target": "rescued/samples/outlines_correct_direction.py",
+      "target_sha256": "501257feb541c75c896f2f019be3e942450b67f0237e4c3bcac8138e4cfc2b32"
+    },
+    {
+      "menu": "Scripts/Contours/Remove PostScript Hints.py",
+      "target": "rescued/samples/hints_remove.py",
+      "target_sha256": "bdcd0798416cc08bc8968cdeda0c1634efd11a9f6462a558c51c9a7b5b077bf5"
+    },
+    {
+      "menu": "Scripts/Contours/Straighten Short Curves.py",
+      "target": "rescued/samples/outlines_straighten_short_curves.py",
+      "target_sha256": "00e02ad1a1a73aed1b14d3b182f1a3f97a4330174a8384efc509e7193ce737cc"
+    },
+    {
+      "menu": "Scripts/Contours/Optimize Start Points.py",
+      "target": "rescued/samples/outlines_optimize_start_points.py",
+      "target_sha256": "649926371dd2006927b0441f2b75d6a51c250bba6236a332af0051e5fb6909ac"
+    },
+    {
+      "menu": "Scripts/Contours/Delete Small Contours.py",
+      "target": "rescued/samples/outlines_delete_small_contours.py",
+      "target_sha256": "536562345914089038eb85b8912988ecdb2afd35eb4a4d12286e6b2699952508"
+    },
+    {
+      "menu": "Scripts/Contours/Transform.py",
+      "target": "rescued/samples/outlines_transform_dialog.py",
+      "target_sha256": "c592aa9501d4c01b4911f0ee4192d462a3d5ff187f85b29200bcc3afb039f677"
+    },
+    {
+      "menu": "Scripts/Contours/Tabular Figure Copies.py",
+      "target": "rescued/samples/generate_tabular_copies.py",
+      "target_sha256": "38c50a544abaff161c10a620002718ddf435493e15b3434adecd9598222d5052"
+    },
+    {
+      "menu": "Scripts/Contours/Outline Effect.py",
+      "target": "rescued/samples/generate_outline_effect.py",
+      "target_sha256": "1d64eab3dc92f8fc6e57be59450e9c62c688e2f59de1da38597ad1e11bde0a49"
+    },
+    {
+      "menu": "Scripts/Contours/Superior & Inferior Figures.py",
+      "target": "rescued/samples/generate_superiors.py",
+      "target_sha256": "708e4ab97b2daa3fbd55683358f2a41a6e7a2d4c5fde6cfe8cad3d4685903d99"
+    },
+    {
+      "menu": "Scripts/Contours/Fix Zero Handles.py",
+      "target": "rescued/samples/outlines_fix_zero_handles.py",
+      "target_sha256": "b5f546c576d97e4380f44b08e5cd0e0b003eecf9e8e9201c3e3d5f95cba2a81e"
+    },
+    {
+      "menu": "Scripts/Contours/Slant.py",
+      "target": "rescued/samples/outlines_slant.py",
+      "target_sha256": "206fef98f86f15bc83e825bc6a9f2a03791f734947d07cafa20078d27a023c22"
+    },
+    {
+      "menu": "Scripts/Contours/Small Caps From Capitals.py",
+      "target": "rescued/samples/generate_small_caps.py",
+      "target_sha256": "e4ed35d0b214195003dd3e91f5cfdbe602221554a2576e3af564eaa784e5b86c"
+    },
+    {
+      "menu": "Scripts/Contours/Delete Duplicate Contours.py",
+      "target": "rescued/samples/outlines_delete_duplicate_contours.py",
+      "target_sha256": "bd774472ea4d470916fef64828549fd476d7a3ad20c499a60bff50d94d863103"
+    },
+    {
+      "menu": "Scripts/Masters/Copy Outline To Mask.py",
+      "target": "rescued/samples/masters_copy_to_mask.py",
+      "target_sha256": "07f8b727e82f079a4edbb2114da3f98dea3f4237a48d7fce42db3a42d30b0f14"
+    },
+    {
+      "menu": "Scripts/Masters/Layer Cleanup.py",
+      "target": "rescued/samples/masters_layer_cleanup.py",
+      "target_sha256": "477f8d7a43d37ea920ab1ea11e1e4b1ab92c1ccad1b4f6916f55c4d9879a8ae9"
+    },
+    {
+      "menu": "Scripts/Masters/Sync Sidebearings.py",
+      "target": "rescued/samples/masters_sync_metrics.py",
+      "target_sha256": "c6812c8005a6ec7368cec8d8dfdd8d61f20f867171bfd0eb3f5405d3658e85ac"
+    },
+    {
+      "menu": "Scripts/Masters/Restore Backup Layer.py",
+      "target": "rescued/samples/masters_restore_backup.py",
+      "target_sha256": "953d9305fe2239de92ca70b36fbe95c35c95a3ebe73a108ac33140f7854bda99"
+    },
+    {
+      "menu": "Scripts/Masters/Copy Layer Between Masters.py",
+      "target": "rescued/samples/masters_copy_layer.py",
+      "target_sha256": "4bde9a0ab5f37c086eb2965ed7503adec538fa229f310a2f91bc36e72922a518"
+    },
+    {
+      "menu": "Scripts/Masters/Back Up Master Layers.py",
+      "target": "rescued/samples/masters_backup_layer.py",
+      "target_sha256": "2024b479f1ca16c6a18603f933861cbfaf0474be8fcffad5bca54ca6d45bdc78"
+    },
+    {
+      "menu": "Scripts/Anchors/Rename Bulk.py",
+      "target": "rescued/samples/anchors_rename_bulk.py",
+      "target_sha256": "495b5a864c163b13fbf88874002fb167cf62e7d75e8e1c92efe565c845312977"
+    },
+    {
+      "menu": "Scripts/Anchors/Center Horizontally.py",
+      "target": "rescued/samples/anchors_center_horizontally.py",
+      "target_sha256": "5df597a86e3c6c6ef74e38f9c47f4eede093d36ddc1fac17b0ef8193c2c0c84d"
+    },
+    {
+      "menu": "Scripts/Anchors/Place From Bounds.py",
+      "target": "rescued/samples/anchors_place_from_bounds.py",
+      "target_sha256": "58e1ddc94bbdf82fbc35dc4c50405f3ac7fb80cf5add4fe88bfe360f97c82767"
+    },
+    {
+      "menu": "Scripts/Anchors/Snap To Metrics.py",
+      "target": "rescued/samples/anchors_snap_to_metrics.py",
+      "target_sha256": "82134e7213c4495efe50b91034f811f0cfa12065026127177707ffef6d50aaff"
+    },
+    {
+      "menu": "Scripts/Anchors/Duplicates Finder.py",
+      "target": "rescued/samples/anchors_duplicates_finder.py",
+      "target_sha256": "7cda723f2e4499930aa49d701bb1dd1cca703bc92de44e5ec2a18876ff130f71"
+    },
+    {
+      "menu": "Scripts/Anchors/Round To Grid.py",
+      "target": "rescued/samples/anchors_round_to_grid.py",
+      "target_sha256": "89d28e2b809132d3ab2b4b79e782df7b6970601a0d8caf3f76d98e7b0d7bd792"
+    },
+    {
+      "menu": "Scripts/Anchors/Delete By Name.py",
+      "target": "rescued/samples/anchors_delete_by_name.py",
+      "target_sha256": "1a12557d32d5fb3253c499b64d4026c68d68edab4466054d9a45b25b5488f3f8"
+    },
+    {
+      "menu": "Scripts/Anchors/Mirror Across Masters.py",
+      "target": "rescued/samples/anchors_mirror_across_masters.py",
+      "target_sha256": "30f85695b4ae34217aa543b73d186ff6ce19f89aed88fc1e1030e757d4e939ba"
+    }
+  ],
+  "preserved_sources": {
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_empty_glyphs.py": {
+      "path": "rescued/samples/report_empty_glyphs.py",
+      "sha256": "bf8fe903b88aced87b32e968bce89d86f24c650c6b55c293c1bcadcdd982320b"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_open_contours.py": {
+      "path": "rescued/samples/report_open_contours.py",
+      "sha256": "3b558f6a22d17a4ecd1aac785d466928b57edee4062644f77c42781d1735bc3e"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_font_overview.py": {
+      "path": "rescued/samples/report_font_overview.py",
+      "sha256": "69ffb23a42cecae7cbbb29ad7718a85f312715d90379b9ac97eef7c17b952d69"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_glyph_info_live.py": {
+      "path": "rescued/samples/report_glyph_info_live.py",
+      "sha256": "ed3342486a7ee476d7ca41251682d3a713f4a88661fa0fa285ac9e8da5e99543"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_glyph_table_csv.py": {
+      "path": "rescued/samples/report_glyph_table_csv.py",
+      "sha256": "9e3539ac9bfe579a22d3c0187c6c2c74ce661b35ebda9bac39870833c1ad7993"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_label_statistics.py": {
+      "path": "rescued/samples/report_label_statistics.py",
+      "sha256": "a0b6bf699ea9f54ea79873205abde17697eb0402bdc7568ce682c1c8db25819d"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_nodes_near_zones.py": {
+      "path": "rescued/samples/report_nodes_near_zones.py",
+      "sha256": "cf86a42920f30e8258e67acb34c83154c688a84355681f9e06ec1138c2ef2613"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/report_unicode_coverage.py": {
+      "path": "rescued/samples/report_unicode_coverage.py",
+      "sha256": "ace84203d35947bdf3a23eeb5eac7181ce5aa5f4c35defd4b462b6770b6853a1"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_glyph_order_tool.py": {
+      "path": "rescued/samples/fontinfo_glyph_order_tool.py",
+      "sha256": "516de6e60b7f163855062a6cb7561f9383d611e72c534fd26ba82dbea3e2bf2f"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_master_metrics_table.py": {
+      "path": "rescued/samples/fontinfo_master_metrics_table.py",
+      "sha256": "1ef204ffb90ad88da181af66d60729bdc3e86cfb8c866cb8fbe2ddc44d006573"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_names_editor.py": {
+      "path": "rescued/samples/fontinfo_names_editor.py",
+      "sha256": "f133a43c9a9d796401900b998060ceea276c4738539d216aea8810d32846e0aa"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_unicode_ranges.py": {
+      "path": "rescued/samples/fontinfo_unicode_ranges.py",
+      "sha256": "d8ddb9048992be3e20ec1f5410070e0bfd2f8909d1625560bfe75ba932c8386b"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_version_bumper.py": {
+      "path": "rescued/samples/fontinfo_version_bumper.py",
+      "sha256": "0a518b94388dd3923170691c1b09293b054e74c84c07a647bc9dad0cdf6d32bc"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/fontinfo_vertical_metrics_calculator.py": {
+      "path": "rescued/samples/fontinfo_vertical_metrics_calculator.py",
+      "sha256": "fb5b32094fb5c242b06f56294f01e07eb50656341242a9911922a07bfd08e7d9"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_alternate_preview.py": {
+      "path": "rescued/samples/features_alternate_preview.py",
+      "sha256": "8005230d49193c541587f6eb78e2fdedebb379f17ef4b866d8d97ec79e7fc04a"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_build_substitution.py": {
+      "path": "rescued/samples/features_build_substitution.py",
+      "sha256": "23294f73a4936c77ad4c475e8900620c219d88f6d8df8467a6b1b21a695fc47f"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_classes_browser.py": {
+      "path": "rescued/samples/features_classes_browser.py",
+      "sha256": "75f08473ae0383b1c2c3d676ad80a90303e1cf214c6e4b898a7192b03d1733e5"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_code_viewer.py": {
+      "path": "rescued/samples/features_code_viewer.py",
+      "sha256": "d2de9d47c51a49b74b5817c4e6ce580d6901b48bc51c3f5fcfd0eb3638b1de97"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_ligature_finder.py": {
+      "path": "rescued/samples/features_ligature_finder.py",
+      "sha256": "9df82eb3fca73954df1010d0a20010fabc37ecf6a38171d6259938e4d3194b68"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/features_suffix_report.py": {
+      "path": "rescued/samples/features_suffix_report.py",
+      "sha256": "1656007da6d4a57a2e921dc104bd2e8afe327e6d6baee9de99652538f342f190"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_case_pairs.py": {
+      "path": "rescued/samples/names_case_pairs.py",
+      "sha256": "b7afe233095c7155806cf7f196f263fae1b17751a9bb8da06e38618dcc298a01"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_character_info.py": {
+      "path": "rescued/samples/names_character_info.py",
+      "sha256": "205679698769895a9b18ad06f792fe171be32038ef679fbe8b75f026b80885e1"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_charset_compare.py": {
+      "path": "rescued/samples/names_charset_compare.py",
+      "sha256": "222c77aef210f87f2cb327707b2b98100ca5133a8b48cd80a40428c2d9e23036"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_glyph_finder.py": {
+      "path": "rescued/samples/names_glyph_finder.py",
+      "sha256": "e5bb9a3fe49d1257e8fe92b523fc633668836504346180bf0804e3c7596448d9"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/names_select_by_mark.py": {
+      "path": "rescued/samples/names_select_by_mark.py",
+      "sha256": "5f058a947558f279bb7ebccb7cc82cd57c73d3811770f73a379960241c1d3323"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_classes_browser.py": {
+      "path": "rescued/samples/kerning_classes_browser.py",
+      "sha256": "9c41585f31449564540afe8bc52947437504b6330204cf9807da179ed868f80a"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_compare_masters.py": {
+      "path": "rescued/samples/kerning_compare_masters.py",
+      "sha256": "d0728097d89208bfb654cf97d09073628267388ebc7b0dca80ad185b805ca413"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_list_browser.py": {
+      "path": "rescued/samples/kerning_list_browser.py",
+      "sha256": "924d35fee20f5bbc26f45ee1470615998c5214fd1f0fe84159629f0ec81f66bf"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_missing_pairs.py": {
+      "path": "rescued/samples/kerning_missing_pairs.py",
+      "sha256": "5925dbb199d82f7e40c33e73d7ebba5205d7f514622f6b9b7e158bdbb2931d5f"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_text_preview.py": {
+      "path": "rescued/samples/kerning_text_preview.py",
+      "sha256": "1961db49fe7d76257991adf4a84cee7fe25d56b9677f22b736552e0f4883ae5f"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_copy_between_masters.py": {
+      "path": "rescued/samples/kerning_copy_between_masters.py",
+      "sha256": "6bef8dae54c1be82656a40b28f5cb694f08a34c6a5804110cac44f9996ffa512"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_pair_editor.py": {
+      "path": "rescued/samples/kerning_pair_editor.py",
+      "sha256": "513ed4180b9137028cdddb0eca5a357bc92eef58f9b43053f38092ce828b786c"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_scale_values.py": {
+      "path": "rescued/samples/kerning_scale_values.py",
+      "sha256": "780d9bf0db0b7f8f89ed381125a708c299a77322ff0af9ef4fa4556ec3a5e4c8"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_round_values.py": {
+      "path": "rescued/samples/kerning_round_values.py",
+      "sha256": "356fa81bbb3bbe11ab62c0d819675852a9197532adca2010f7a79c60f457ba86"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_remove_small.py": {
+      "path": "rescued/samples/kerning_remove_small.py",
+      "sha256": "f72727c86f289fb7364d99091ba440649cf3aba023646c1e1bd571be55f7d64e"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_exceptions_finder.py": {
+      "path": "rescued/samples/kerning_exceptions_finder.py",
+      "sha256": "068c1072825fb72df7ed5cccd3b842144219632183abe0f0122346967057f3ac"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/kerning_pairs_from_text.py": {
+      "path": "rescued/samples/kerning_pairs_from_text.py",
+      "sha256": "9929dcace05edd22dfbff2590ac7a913bd0d04cc03985ae7a396a67bb43ca03b"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/proof_glyph_grid.py": {
+      "path": "rescued/samples/proof_glyph_grid.py",
+      "sha256": "983ee040cfee4eed511232ef7fa3a80f2247746cfe9650923f18f42ecf231403"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/proof_text_by_master.py": {
+      "path": "rescued/samples/proof_text_by_master.py",
+      "sha256": "bf478dc6d23b3938b942211596cccf381769cc0330f8990c5c3f5416ab76fea9"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/proof_waterfall.py": {
+      "path": "rescued/samples/proof_waterfall.py",
+      "sha256": "b5e8c5dd2c300386546ad940f3f9f0f8182a99e2a3b728867f0798473e3371df"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/proof_word_finder.py": {
+      "path": "rescued/samples/proof_word_finder.py",
+      "sha256": "b10497f22fdd82bb24d78a7795f07f5c9bb33502e6a9d9beb1eac63ead756ad2"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_overview.py": {
+      "path": "rescued/samples/masters_overview.py",
+      "sha256": "91d8392b35f82758f7f85d9799d2aee1e666b781ea92799710d2dd733e1cba9f"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_width_chart.py": {
+      "path": "rescued/samples/masters_width_chart.py",
+      "sha256": "61fc783f152de37f625e1bd9b23815faf8526b57bd46fd650b9baa2e1413fb6d"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_glyph_weight_chart.py": {
+      "path": "rescued/samples/masters_glyph_weight_chart.py",
+      "sha256": "f397b4fb5d570bbd1bb5055caadbd3231ca7bf0beb8b4378a440e7a92de15ff9"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_compatibility_check.py": {
+      "path": "rescued/samples/masters_compatibility_check.py",
+      "sha256": "d39e4496e7bcf59a789b97d9fa88b9a637731e851999b4baa3bac5d937eb5c4f"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/metrics_spacing_string_preview.py": {
+      "path": "rescued/samples/metrics_spacing_string_preview.py",
+      "sha256": "8715a780c4d9c03cedabec2cf2c73ca367dc85b89eb3b2ad77761d4e886699f9"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/metrics_width_table.py": {
+      "path": "rescued/samples/metrics_width_table.py",
+      "sha256": "cc57d3317590e8701a8f12d8ba4e9817357435361c81486f3bb7b2dcfc6d2177"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/outlines_contour_order_view.py": {
+      "path": "rescued/samples/outlines_contour_order_view.py",
+      "sha256": "b366af45f9cfdc1ed3adc45e9fdc9982ad0bdbbe2d21e4c45893f995367fda9c"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/outlines_node_statistics.py": {
+      "path": "rescued/samples/outlines_node_statistics.py",
+      "sha256": "933c4948d63b6af180dc8e93ec26400bcae33ad9e4945aee7749d12150b5f6cd"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_compatibility.py": {
+      "path": "rescued/samples/components_compatibility.py",
+      "sha256": "fa3a00b93e110f7c3205cdc4e6135258d0a0765555629c2970392c9374bef887"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_count_badges.py": {
+      "path": "rescued/samples/components_count_badges.py",
+      "sha256": "e442337cfbf93e6ef05a42f130fc32d7114ce4f6ed0a883a6fc848f77eba6257"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_missing_bases.py": {
+      "path": "rescued/samples/components_missing_bases.py",
+      "sha256": "27bb6fc8a98c46582bd6a55dce97f8d2bb9902de230c3bfa1617b5531ebc1674"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_report.py": {
+      "path": "rescued/samples/components_report.py",
+      "sha256": "32426f97bf2bc4eccfc4406b8a0d02cba2b7a0cd19d6e73421f45bc5d80c8871"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/components_where_used.py": {
+      "path": "rescued/samples/components_where_used.py",
+      "sha256": "8a7983f919bd8074a2ccaf502dee0704aa51188dc3cdabcfc18b75c47b035180"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/anchors_cloud_view.py": {
+      "path": "rescued/samples/anchors_cloud_view.py",
+      "sha256": "5885402147ffe2572bf075aab5d990ced876acc195002fe8ca5933caf7d2cd56"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/anchors_compatibility_report.py": {
+      "path": "rescued/samples/anchors_compatibility_report.py",
+      "sha256": "430e803dac504a7f7e81348d4ca0080fb29d0b0fe41e3554d55f97f47275bd61"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/anchors_mark_attachment_preview.py": {
+      "path": "rescued/samples/anchors_mark_attachment_preview.py",
+      "sha256": "1aecb69d2abebbfc64d16cff871d6e33edce6e52120376a5674cbe6a401f8896"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-C4/samples/cleanup_unused_glyphs_report.py": {
+      "path": "rescued/samples/cleanup_unused_glyphs_report.py",
+      "sha256": "a2d640ec1a01d13a1a2332d75b5eefd748bc1b1047140856edecddccedf919c7"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/masters_interpolation_preview.py": {
+      "path": "rescued/samples/masters_interpolation_preview.py",
+      "sha256": "5018a343e9da00ba9abaf422a8805861e7d772e24a0e00eeee6a8c7d970182c9"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/outlines_node_coordinates_panel.py": {
+      "path": "rescued/samples/outlines_node_coordinates_panel.py",
+      "sha256": "34ca1fb6722bb13a808b713ae1b78741f0a08da77313dbca358ec53b020b6082"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_switcher_palette.py": {
+      "path": "rescued/samples/masters_switcher_palette.py",
+      "sha256": "bc538294e8998a8d45640e928a54b4ce6ae38c846921647d64ce3267b752c07b"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_font_guides_panel.py": {
+      "path": "rescued/samples/guides_font_guides_panel.py",
+      "sha256": "cd2c67cc3ffda766ffaa196f03e4eed752bb995b957946ec91def24d239ecb0f"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_grid_generator.py": {
+      "path": "rescued/samples/guides_grid_generator.py",
+      "sha256": "ad2b5bfa02bee6dabcc4c11827574dba71bcdd67d7c3443c6b1ee9709d3e0038"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_metric_lines.py": {
+      "path": "rescued/samples/guides_metric_lines.py",
+      "sha256": "24c60ef99fa26bc4018ed0652b00b0c5419e922f7ff0e8d651a3b2283349e8d9"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_clear.py": {
+      "path": "rescued/samples/guides_clear.py",
+      "sha256": "d33764e9267ba08c946d525d028d3d83e0e3cad3a2af4338c2373118ce4efce2"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_copy_between_masters.py": {
+      "path": "rescued/samples/guides_copy_between_masters.py",
+      "sha256": "967d72c8b3cf5e38e3d5e475c773dbf66fb08db55e3c6958d07ced203d4f8e5a"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/guides_list_editor.py": {
+      "path": "rescued/samples/guides_list_editor.py",
+      "sha256": "39ef5746559d858caa6970dc6c1500f681c562f5059d22bcf9056d7ad2e40df0"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/anchors_copy_from_glyph.py": {
+      "path": "rescued/samples/anchors_copy_from_glyph.py",
+      "sha256": "5a75bff7b933ab4f65d694d1e3c780e5a75cec3b52ec0875e038f308475da747"
+    },
+    "fontlab-python-examples/_old/part4/fontlab-samples/samples/masters_italic_angle.py": {
+      "path": "rescued/samples/masters_italic_angle.py",
+      "sha256": "a128519cb0930bf4f8cc0bb818472faa47ca7b70a473f5a4a37975dc4f92a36f"
+    }
+  }
+}

@@ -12,6 +12,8 @@ from types import SimpleNamespace as NS
 import pytest
 from conftest import original_source
 
+from menu_layout import current_rows
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -72,10 +74,13 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
         assert entry["counted_in_130_sample_migration"] is False
         assert len(Path(entry["destination"]).parts) == 3
     assert set(destinations).isdisjoint(extra_destinations)
+    archive = json.loads((ROOT / "rescue-index.json").read_text())["menus"]
+    archive_destinations = {row["menu"] for row in archive}
+    candidates = {row["rescued_original_menu"] for row in additional if row.get("rescued_original_menu")}
+    assert ((set(destinations) | extra_destinations) & archive_destinations) == candidates
     assert set(destinations) | extra_destinations == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }
-    original_root = request.config.getoption("--original-source-root")
     for entry in entries:
         target = ROOT / entry["destination"]
         path = Path(entry["destination"])
@@ -90,6 +95,7 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
             "Masters",
             "Metrics",
             "Outlines",
+            "Contours",
             "Components",
             "Anchors",
             "Cleanup",
@@ -116,6 +122,15 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match(request):
         assert "from fly.ap.scripting import" in source
         assert "exec(" not in source
         assert entry["license"] == "Apache-2.0"
+
+
+def test_external_original_hashes_when_requested_then_match(request):
+    original_root = request.config.getoption("--original-source-root")
+    if original_root is None:
+        pytest.skip("Original source-byte audit requires --original-source-root")
+    for entry in current_rows(ROOT):
+        original = original_source(original_root, entry["source"])
+        assert hashlib.sha256(original.read_bytes()).hexdigest() == entry["source_sha256"], entry["source"]
 
 
 def test_calculations_when_multiple_masters_then_real_report_results(load):

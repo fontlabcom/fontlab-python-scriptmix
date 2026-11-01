@@ -2,10 +2,28 @@
 # SPDX-License-Identifier: Apache-2.0
 """Copy a source glyph's anchors to selected glyphs, master by master.
 
-Type a source name with fontwide completion; choose merge/replace, width scaling
-and current/all masters. Automatic layers are skipped. Unsafe automatic
-dependants and stale source previews refuse the complete write before history.
-One Copy is one native Undo. Close disconnects every owned callback.
+What it does:
+    Type a source name with fontwide completion; choose merge/replace, width scaling
+    and current/all masters. Automatic layers are skipped. Unsafe automatic
+    dependants and stale source previews refuse the complete write before history.
+    One Copy is one native Undo. Close disconnects every owned callback.
+
+How it works:
+    Plan source anchors master by master through App. Apply merge or replace
+    with optional width scaling; retain automatic layers and refuse unsafe or
+    stale sources.
+
+Why this design:
+    A preview makes replacement and scaling decisions explicit before the
+    selected target anchor sets change.
+
+How to use:
+    Select target glyphs and run Anchors > Copy Anchors From Glyph. Enter the
+    source, choose scope and options, inspect the preview and press Copy.
+
+Benefit:
+    Reuse anchor placement across a selected set; Copy is recorded as one Undo
+    step.
 """
 
 from typing import Any
@@ -27,7 +45,8 @@ _api = anchor_copy_api()
 layer_of, anchor_points, plan = _api.layer_of, _api.anchor_points, _api.plan
 
 
-def fmt(point) -> str:
+def fmt(point: tuple[int, int] | None) -> str:
+    """Format a rounded anchor pair, or label an anchor removal."""
     return "removed" if point is None else f"{point[0]}, {point[1]}"
 
 
@@ -82,7 +101,8 @@ class CopyAnchors(anchor_copy_dialog_type()):
         self._connect(self.scale.toggled, lambda *a: self.refresh())
         self._connect(self.scope.currentIndexChanged, lambda *a: self.refresh())
 
-    def source_glyph(self):
+    def source_glyph(self) -> "fontlab.flGlyph | None":
+        """Return the named native glyph, or None without a source font or name."""
         name = self.source.text.strip()
         return self.package.findName(name) if self.package and name else None
 

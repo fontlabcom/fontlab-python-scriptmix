@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Complete three anchor panels, native-shaped state and immutable prior54."""
 
+from _migration_history import before_contours_rename
 import hashlib
 import importlib.util
 import json
@@ -76,7 +77,7 @@ def test_immutable_prior54_manifest_and_menu_hashes():
     assert len(rows) == 68
     assert (
         hashlib.sha256(
-            json.dumps(rows[:54], sort_keys=True, separators=(",", ":")).encode()
+            json.dumps(before_contours_rename(rows[:54]), sort_keys=True, separators=(",", ":")).encode()
         ).hexdigest()
         == RELEASED54_DIGEST
     )

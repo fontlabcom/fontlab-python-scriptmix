@@ -3,9 +3,29 @@
 # FLM: Components · Missing Bases
 """Find components that point to glyphs which do not exist, or to a base glyph without that master.
 
-Such components draw nothing and break exports. The tree groups the problems by
-the missing base glyph; expand a group to see the composites and masters affected.
-Select affected glyphs puts them in the Font window selection. Nothing is changed."""
+What it does:
+    Such components draw nothing and break exports. The tree groups the problems by
+    the missing base glyph; expand a group to see the composites and masters affected.
+    Select affected glyphs puts them in the Font window selection. Nothing is changed.
+
+How it works:
+    Read component references through App and group missing glyphs or missing
+    master layers by base name. Retain the affected owners for guarded
+    selection.
+
+Why this design:
+    A missing base can make several composite drawings disappear, so grouping
+    by base helps expose the common cause.
+
+How to use:
+    Run Components > Missing Bases. Expand a missing-base group, inspect the
+    composite and master entries and use Select affected glyphs to locate the
+    owners.
+
+Benefit:
+    Locate broken component dependencies without adding placeholder bases or
+    changing references.
+"""
 
 from typing import Any
 

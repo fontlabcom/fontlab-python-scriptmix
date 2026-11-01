@@ -2,7 +2,22 @@
 this_file: DEPENDENCIES.md
 ---
 
+## Current source requirements
+
+Current menu metadata uses App `0.2.26.dev159` as a conservative source baseline,
+with matching Fly and Fontport artifacts. Use the current README installation
+and testing instructions with genuine versions. Missing-zone integration, the
+full failing suite and native qualification remain open. The per-feature version
+labels, old setup recipes and release acceptance records below are historical;
+they are not installation instructions or acceptance for the current menu.
+
+
 # Dependencies
+
+The 2026-11-01 priority-message candidate requires App
+`qt_dialogs.run_standard_message_box`. App .152 does not contain this helper.
+The matching private candidate is `0.2.26.dev153+g44a0d90da`; no package-index
+release or native installation acceptance is claimed. No additional runtime dependency is added.
 
 Runtime: FontLab 9 Python 3.11 native APIs and PythonQt, fontlab-fly aliases,
 fontlab-fontlabapp scripting helpers. No new third-party runtime dependencies.
@@ -56,3 +71,44 @@ local pyflshape.cpp path getters and QtGui stubs were checked. Qt's QPainter.end
 and QPainterPath.addPath documentation supports the existing painter lifetime
 and compound-path model; Qt5 native acceptance remains separate from Qt6
 mathematical path tests in the external test environment.
+
+W1 adds no runtime dependency. Pending archived launchers need the exact local/private
+rescued snapshot identified by rescue-index.json. FONTLAB_PRESERVED_ROOT is a test-only
+byte-audit input; the snapshot is not included in public artifacts.
+
+Text Filter uses Fly and the reviewed unpublished App>=0.2.48.dev0 candidate.
+Its Apache-2.0 source attribution is retained in NOTICE/additional-tools.json.
+
+Z2 extrema menus require Fly and the reviewed unpublished App>=0.2.49.dev0
+candidate. MIT/Apache source attribution and hashes are in NOTICE/provenance.
+
+Z4 adds no dependency: stdlib immutable records plus existing native selection
+and owned snapshot dialog. Scriptmix requires unpublished reviewed App>=0.2.51.dev0
+via Fly. No required reverse package edge or third-party implementation is added.
+
+
+## Issue120 current documentation Z5
+
+No runtime dependency added. Locked ProperDocs/MaterialX and codeinclude are documentation-only. Plugin grammar regressions run under src_docs/tests in the docs environment.
+
+
+## Issue120 documentation quality Z7
+
+Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All1070runtime/root tests pass with1existing skip, plus4SDK tests. The fixed coverage scope now includes the complete src_docs production root and all prior Scripts; the accepted baseline commit is unchanged.
+
+These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.
+
+Z9 bracket-layer workflows add no runtime dependency: stdlib graph traversal, existing shared App report/tab controls and FontLab native APIs. Menus require the reviewed unpublished App>=0.2.53.dev0. Apache-2.0 source attribution is in NOTICE.
+
+## Issue120 Z24 frontend notices
+
+No build/runtime dependency changes. Existing locked ProperDocs/MaterialX/plugin versions remain. Browser notice texts record pinned npm/publisher sources and the captured shared-theme/font responses; the full transitive review remains open.
+
+N119 adds no dependency. Duplicate-anchor UI uses injected host Qt5/PythonQt and existing Fly/App ownership helpers; external PyQt5/PySide6 serve offline tests only.
+
+Duplicate Unicodes reuses App-owned glyph catalog facts, dependency analysis, exact signal ownership and completion lifecycle. No new runtime dependency; menu requires Fly and App0.2.121.dev0.
+
+Font Info/Trial Font Maker needs the public fontTools package in FontLab's Python
+site-packages (fontlab-fontport installs it as a dependency). FontLab's private
+fontTools namespace does not satisfy the import; without the package the tool
+shows an install hint for Settings > Python. No other dependency is added.

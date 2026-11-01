@@ -2,47 +2,71 @@
 this_file: TODO.md
 ---
 
-# Pending work
+- [ ] Resolve the Reset original-workflow gaps recorded in PORTING-BACKLOG.md; dated static findings and candidate links do not establish equivalent or native-complete ports.
 
 - [x] Verify first three reports in FontLab with owned fixtures (26 checks).
 - [x] Review first batch and migration hashes before committing (6e1b247).
 - [ ] Migrate and verify the remaining practical reports and tools from issue 111.
 - [ ] Reconcile the full archive cleanup, additional scripts/reporters and docs.
 
-- [x] Native-verify the five second-batch Reports scripts using original scenarios, screenshots and teardown receipts (42checks,9784).
-- [x] Share repeated dialog lifecycle through Fontlabapp; all eight original scenarios and actual Close destruction pass on9784.
 
-- [x] Native-verify all six Font Info tools, shared panels and full Undo/Redo/save/reopen for four mutators; verify no-op/stale-font safety and actual save choosers.
+## Figures contour-preservation repair — 2026-11-01
 
-- [x] Native-verify all six Features tools, original scenario oracles and actual Close destruction.
-- [x] Prove Build Suffix Substitution's feature-only full VFJ delta, one Undo, Redo and saved reopen.
+- [ ] Finish Set Default Figures automatic alignment, native window persistence, prototype-domain and native/history preservation. Source-default contour preservation is repaired and verified separately (figures-default-20261101 evidence); do not treat that bounded fix as complete port acceptance.
 
-- [x] Native-verify five Names tools, selection safety, outline proof and actual Close (tools25-v1).
 
-- [x] Review and native-verify the five read-only Kerning tools, actual chooser/proof/Close and saved-font/history invariance (tools30-v1).
+- [ ] Resolve and qualify priority through the macOS sheet transition for Glyph Table CSV, Glyph Order Preview and Export, and Pair List Browser; preserve open() asynchronous window modality and owned cleanup.
 
-- [x] Review and native-verify five Kerning editors, complete saved deltas/Undo/Redo/reopen, snapshot safety, explicit-zero insertion and actual Close (tools35-v1).
 
-- [x] Review and native-verify the two selected Kerning editors, exact complete-font deltas/Undo/Redo/reopen, manual checkboxes, no-op/stale safety and actual Close.
+- [ ] Verify the eleven warning and three confirmation routes with the matching
+  installed App/Scriptmix artifacts and native FontLab priority/lifetime protocol.
 
-- [x] Independently review four Proof menus and shared App helpers at frozen bytes.
-- [x] Native-verify unchanged Proof scenario oracles, real outlines/controls/screenshots, complete saved-font/history invariance, stale/read/paint safety and actual Close from installed artifacts; keep clipboard excluded by D8.
+# Open work
 
-- [x] Independently review the four complete Masters menus/shared helpers and both scoped fixes at frozen bytes.
-- [x] Audit built Masters artifacts and native-verify all four original scenarios, complete font/workspace/history preservation, axis coverage/paint settling, opening/stale safety and actual Close; preserve original post-launch seed baselines.
+- [ ] Qualify Italic Angle from the final installed files and independently downloaded release before increasing historical sample acceptance beyond 68 of 130.
+- [ ] Qualify Metrics writers on owned fonts: current/all masters, selected bases plus composites, automatic dependants, successive edits, full-font Undo/Redo and save/reopen.
+- [ ] Qualify Names editors, including Duplicate Unicodes, with Font-window guards, Unicode order, notes, marks, tags, stale previews and complete saved history.
+- [ ] Qualify Anchors writers, duplicate removal and two-font copying: exact collision rules, raw survivor state, origin refusals, dependencies and both fonts' history/reopen.
+- [ ] Qualify Components writers and glyph builders: retained removed objects, lock fields, decomposition, reference placement, per-layer builder history and full saved state.
+- [ ] Qualify Masters navigation, backup/copy/restore/cleanup and selection-to-background tools; check removed-shape ownership and retained component history.
+- [ ] Qualify Contours editors and generators: per-shape direction, open/reversed duplicates, partial selection, analytic area, hints, node flags, one outline history step and separate glyph-creation steps.
+- [ ] Qualify feature writes and typed Kerning editors, including sequential group aliases, explicit zero, master filters, replace confirmation and full-font history/reopen.
+- [ ] Qualify context, random, extrema, bracket, group and kerning-text proofs: exact named symbols, current master, empty/repeated input, ordered new tabs and complete preservation.
+- [ ] Qualify reports and canvas reporters: actual source getters, compatibility/count findings, exact layers, literal output, painting, timer/signal teardown and Close.
+- [ ] Qualify Text Filter and Text Holder: settings, Unicode selection/replacement, input methods, literal NUL refusal, persistence, window geometry and complete terminal lifecycle.
+- [ ] Qualify Raise Ascender and Perpendicular Guides: complete original controls, node/component scopes, native Undo/Redo, saved state and failure cleanup.
+- [ ] Resolve active/locked background removal domains and prove whole-mask metadata, automatic dependencies, full-font history and save/reopen.
+- [ ] Regress earlier accepted workflows on the final matching installed App/Fly/Fontport combination; preserve original controls and acceptance scope.
+- [x] Add a production App zone writer with all-master staging and one history commit; then port zone editing and overshoot suggestions (source and offline tests; native checks below).
+- [ ] Qualify Metrics > Alignment Zones, Guides > Suggest Zones From Overshoots and Font Info > Master Metrics Table on owned fonts: one Undo step per Apply, Undo/Redo, refusals in a Glyph window, row refusals, tags/lock of replaced zones, save/reopen; fl#8574 guide display after Undo.
+- [ ] Add a public App Font Info ttfautohint writer; then restore the stem tool.
+- [ ] Resolve App Metrics planning when a selected composite and its base both move; prove no double shift and measure Master Metrics Table capHeight writes.
+- [ ] Extend Round Advances to accept step 1; preserve the current step 2 to 100 behaviour and prove the added path.
+- [ ] Resolve App anchor read-back tolerance and sub-unit moves swallowed by native rounding.
+- [ ] Limit App kerning numeric validation to changed masters while preserving persistence-range checks.
+- [ ] Consolidate selected-editor-layer capture, font validation, scope mapping, selected-contour checks and coordinate/transform planning in App.
+- [ ] Consolidate repeated component-construction logic in App without loading sibling scripts.
+- [ ] Consolidate duplicate backup-job planning in plan()/plan_rows(); retain the shared App exact-case prefix rule and casefolded master-name exclusion.
+- [ ] Review deferred App lifecycle details: overlay detach after timer-stop errors, owned-menu lookup, menu failure while inside a slot, duplicated master/history traversal, warning output and notice wording.
+- [ ] Audit older public source comments and notices for stale status or unmeasured Undo claims; retain source identity and licence bytes.
+- [ ] Keep Examples destination hashes current after Scriptmix changes; repeat the cross-repository pin check at final delivery.
+- [ ] Resolve existing Ruff findings without unrelated historical-source rewrites.
+- [ ] Complete browser-asset transitive provenance, full notices and source-availability checks before site publication.
+- [ ] Verify the final source copy, installed dependencies, complete offline suite, documentation build and distribution payload; retain separate native results.
+- [ ] Obtain owner confirmation before canonical archive deletion, live installation, release delivery or site publication.
 
-- [x] Regress all41prior tools on the same fix2 wheel; combined45native gates pass379workflows/115preservation/166safety/116error controls/Close45.
-- [x] Complete reviewed integration and independent downloaded-tag acceptance for Masters (Appv0.2.11/Scriptmixv1.0.6); keep full Issue111/archive/held7Names work separate.
+- [ ] Move the four contour-selection NodeEditor/selected_contours/chosen_masters scaffolds and three SelectionEditor/selection_changes planners into App; retain script-specific transforms and controls.
+- [ ] Consolidate the five contour spans helpers (Make Compatible, Comb, Straighten All Curves, Superaligner, Curve All Straights) in App.
+- [ ] Replace glyph_records in the three Font Info tools (Unicode Ranges and Codepages, Glyph Order Preview and Export, Calculate Vertical Metrics) with a metadata-safe shared App catalogue read.
+- [ ] Qualify final App backup naming and restore helpers in the five layer tools plus both outline-copy tools: custom suffixes, legacy and overlapping names, active selection, contour names, notes, flags, complete Undo/Redo and saved/reopened fonts.
+- [ ] Qualify Selection To All Backgrounds on masks with components: retained shape/data/builder ownership, contour/component read-back diagnostics, complete-font history and save/reopen.
+- [ ] Qualify the seven fact-reusing panels in FontLab: control changes, reselect/Refresh, stale-font refusal, fresh Apply facts, painting and Close.
+- [ ] Complete native milestone cases: new layers isMasterLayer=False/autoLayer=False after create/Redo/reopen; rounding preference read-back; Copy Layers From Font cross-font Undo/Redo; glyph-to-layer mark propagation; retained component history; in-place versus repaired-clone transforms; base-of-auto metadata state; __smart_selected persistence.
+- [x] `Reports/Label Statistics.py` (and Select by Mark) `mark_label`: marks 361-999 read as "Grey -639"; define the mark range explicitly.
 
-- [x] Independently review the four inspector menus/shared helpers and address M1 with explicit skip reporting.
-- [x] Audit inspector artifacts and run all four unchanged native scenarios, complete preservation, exact post-seed Node baseline, actual painting/screenshots, safety and Close.
-- [x] Regress the prior 45 tools on the same inspector wheel; combined 49 native passes420 workflow/123 preservation/225 safety/150 error controls/Close 49.
-- [x] Complete reviewed integration, D17 tags and independent downloaded-tag R053 acceptance: App v0.2.12 / Scriptmix v1.0.8; 49/130 released, 81 pending (7 held Names + 74 unmigrated). All originals remain; full archive/additional-tools/reporters/docs work stays open.
+- [ ] Resolve retained baseline provenance gate and qualify Cursive Sample parent/priority in the final native tuple.
 
-- [x] Independently review the five complete read-only Components tools and built artifacts.
-- [x] Native-verify unchanged Components scenarios, full saved-font/workspace/history/master preservation, painting, opening/stale safety and actual Close.
-- [x] Regress prior49 tools on the same reviewed App artifact; keep full130 migration, held7Names, archive cleanup and broader docs goals open.
-- [x] Complete reviewed Components integration/D17 tags and independent downloaded-tag R053; keep full130/archive/held7Names work open.
+- [ ] Qualify both background menu panels in native FontLab: stacking, complete-font preservation, Undo/Redo and reopen. Installed standalone integration passes with App .158; source wording repair does not close native acceptance.
 
 - [x] Review three complete Anchors menus/shared helpers and built artifacts.
 - [x] Native-verify original Anchors scenarios, exact post-seed Compatibility preservation, full source/workspace/history safety, real painting and Close.

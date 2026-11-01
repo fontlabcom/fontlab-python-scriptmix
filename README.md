@@ -2,185 +2,198 @@
 this_file: README.md
 ---
 
-# fontlab-python-scriptmix
-Small and useful scripts for FontLab
+# FontLab practical scripts
 
-## Canvas reporters
+242 practical tools for FontLab 9: 69 sample adaptations and 173 additional
+tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
+PythonQt and shared App helpers. The menu has 14 one-level categories.
 
-Reporters contains Sidebearing Direction Marker and Duplicate Anchor Rings.
-Requires fontlab-fontlabapp 0.2.23 or newer and fontlab-fly.
-Open a Glyph window, run either script, then choose direction or handle size.
-Disable or Close removes its overlay. Reopen after switching font, master or
-Glyph window. Both panels can stay open together and change no font data.
+Current source includes Metrics, Names and Anchors editors; component writers;
+master navigation, backups and layer copying; contour editing, generators and
+hint tools; feature tools; kerning editors; proof texts; reports and drawing panels.
+The [porting backlog](PORTING-BACKLOG.md) records source dispositions and gaps.
 
-These are foreground adaptations across tools. Direction and handle size are
-explicit; Glyphs background ordering and automatic tool suppression are absent.
-Native geometry, pixels, clipping, lifecycle and preservation checks pass.
-The complete prior68 regression passes after the measured guide-date correction.
-App v0.2.23 and Scriptmix v1.0.18 pass downloaded-tag native and asset verification.
-`additional-tools.json` records their independent provenance and evidence.
-They do not increase the130sample migration denominator or its68accepted rows.
+New ports require native acceptance. Source tests do not establish correct
+FontLab Undo/Redo, saved font state or panel lifetime. Historical sample
+acceptance remains 68 of 130; the Italic Angle candidate and later ports retain
+their separate checks. Menu counts describe available source files.
 
-## Installation and Reports
+Writers disclose queued native glyph ids and the possible modification-date changes
+(FontLab issue 8537). They never clear the queue or normalise unrelated dates.
 
-Copy the contents of `Scripts` into your FontLab Scripts menu folder. Keep the category subfolders, such as `Reports` and `Font Info`; FontLab supports one folder level. Use FontLab 9's Python 3.11 with `fontlab-fly` and `fontlab-fontlabapp` (including `scripting`) available in its Python environment. No third-party UI package is needed.
+## Requirements and installation
 
-Open a font, then run Empty Glyphs, Open Contours or Font Overview from Reports. The dialogs are modeless: edit the font and Rescan/Refresh when needed. Empty Glyphs can hide intentional whitespace. Select chosen rows, or leave rows unselected to select all results. Selection refuses results after changing the current font; rescan first. Reports read all masters without changing geometry. Closing a report disconnects its signals. Re-running replaces its old window. Close also destroys the native dialog after its event finishes. All eight reports share this lifecycle code through `fly.ap.scripting`.
+Use FontLab 9 with embedded Python 3.11 arm64 on Apple Silicon. Keep matching
+versions of `fontlab-fly`, `fontlab-fontlabapp` and `fontlab-fontport` available
+to FontLab. Some tools use the App `fontui` extra. Trial Font Maker needs the
+public `fontTools` package; FontLab's private namespace does not supply it.
+Glyport supplies Glyphs-specific compatibility and category metadata where used.
 
-Sources stay archived until full reconciliation; `migration.json` records exact Apache-2.0 provenance/hashes and WORK.md retains native acceptance receipts.
+Every recorded `app_minimum` uses the conservative source baseline
+`0.2.26.dev159`, matching the genuine App development-version lineage. This is
+not an earliest historical per-tool minimum or proof of full compatibility.
+The tested App159 artifact still lacks the pending zone handoff, and the full
+Scriptmix gate remains failing. Native workflow acceptance and promotion remain
+open. Historical per-tool labels are retained in Git history and old receipts.
 
-A failed scan or table refresh invalidates selection until a complete rescan succeeds. Partial results are cleared; explicit selection calls also refuse them.
+Editable installation into FontLab is owner-managed. Do not install packages
+into FontLab, replace its Qt bindings or change its Python site-packages from
+a test command. This repository is a menu collection, not an installable
+runtime Python package. Its `pyproject.toml` configures documentation tools.
 
-## Reports: second migration batch
+After the owner provisions dependencies:
 
-Live Glyph Info follows the selected glyph twice a second, with per-master metrics, outline/component/anchor counts and Pause. Glyph Table CSV offers all or selected glyphs, sortable widths/counts, Copy CSV and a modeless UTF-8 CSV save chooser. Label Statistics shows mark colours and suffix groups; Add to selection preserves the current selection. Nodes Near Zones checks transformed on-curve nodes across masters with selection scope and a 1–30 unit tolerance. Unicode Coverage includes untouched-block filtering, progress bars and block selection. Explicit selection is bound to the font that supplied the rows.
+1. Open FontLab's Scripts folder from the application.
+2. Copy the category folders inside this repository's `Scripts/` into it.
+3. Keep the layout `Scripts/<Category>/<Tool>.py`; FontLab accepts only one
+   category level. Do not add a second nested folder.
+4. Open a copy of a font. Select the required glyphs and master, then choose
+   the tool in FontLab's Scripts menu. Read its source docstring for controls,
+   supported scopes and refusals.
 
-All five retain the original interactions and pass their original native scenarios, including the live timer and owned Close, on FontLab9.0.9784.
+Use a dedicated FontLab session and owned fonts for acceptance tests. Keep
+normal work and original fonts outside that session.
 
-## Font Info tools
+## Examples
 
-The Font Info menu includes Glyph Order Preview and Export, Master Metrics Table, Names and Credits, Unicode Ranges and Codepages, Bump Font Version and Calculate Vertical Metrics. All original controls, embedded Unicode data, assessment notices, export, previews and the metric diagram are retained.
+- **Metrics > Scale Advances**: select glyphs in the Font window, choose current
+  or all masters, enter a percentage, inspect the preview and press Apply.
+  The outline stays centred. Automatic layers and unsafe dependencies are kept
+  or refused. A failure after a write asks for Edit > Undo.
+- **Masters > Duplicate Current Layer**: back up the current master or all
+  masters of selected glyphs with a custom suffix. Existing backups appear in
+  an inventory. Names use `<master> backup <suffix>` with collision numbering.
+- **Masters > Copy Layer Between Masters**: select the source and tick target
+  masters. Changing the source selects all other masters again.
+- **Contours > Round Coordinates**: round nodes, component offsets and, by
+  default, anchors. Untick Anchors to keep their coordinates. Duplicate-anchor
+  layers and an anchor move to the origin are kept with a diagnosis.
+- **Names > Duplicate Unicodes**: scan the whole font, choose assignments to
+  keep or remove, close Glyph editors and activate the Font window before Apply.
+- **Proof > Text Filter**: simplify text with persistent input/output and regex
+  fields. Reset keeps input; New Tab uses the font captured when the tool opened.
+- **Utilities > Text Holder**: keep proof text in an editable persistent window;
+  Find and replacement operate on the selection or whole text. Save keeps the
+  panel open. See the [Text Holder guide](docs/text-holder.md).
 
-Names changes style on the original current master and credits font-wide. Master Metrics edits every displayed master. Version bump optionally appends a dated note to every master. Vertical Metrics defaults to hhea and Win; Typo is optional because it also moves FontLab's own ascender/descender lines. Its bounds
-are captured on open; reopen after outline changes. Glyph Order exports UTF-8
-text without reordering the font; Unicode coverage reports without editing it.
+Read-only tools can change selection, open tabs or show panels. Source getters
+also need native preservation checks. Writer history descriptions state the
+intended operation; new ports still need actual Undo/Redo and save/reopen proof.
 
-Apply uses the last complete preview, refuses closed/switched fonts and changed
-source values, validates the entire plan before writes, preserves the active
-master and rolls back attempted fields on failure. Failed previews disable Apply.
-Names and current-master vertical metrics also refuse a master switch. No-op plans add no history. The shared metadata helper notifies only the package and
-its master container. Fontport's existing history protocol may add an extra
-no-op Undo checkpoint. All six pass their original native scenarios on FontLab
-9.0.9784. All four editors pass one-step Undo, Redo, saved metadata reopening and
-complete font-data preservation. Native tests also verify no-op history and
-switched-font refusal. Shared panels load lazily through Fontlabapp; each tool
-keeps its own controls and actions. Glyph Order uses an owned modeless save
-chooser and reports the exported count and filename.
+## Files and modules
 
-## Feature tools
+| Path | Purpose |
+| --- | --- |
+| `Scripts/` | Practical menu entry points; typed Python 3.11, lazy Fly imports. |
+| `menu_layout.py` | Resolve current paths and verify historical release bytes. |
+| `migration.json` | Historical sample source/destination paths and hashes. |
+| `menu-moves.json`, `menu-revisions.json` | Explicit path and comment overlays. |
+| `additional-tools.json` | Additional tool provenance, current hashes and status. |
+| `rescue-index.json` | Retired launcher identities and external source hashes. |
+| `original-provenance.json` | Additional upstream source and resource identities. |
+| `PORTING-BACKLOG.md` | Ported, duplicate and unavailable behaviour dispositions. |
+| `tests/`, `test.sh` | Offline menu, helper, provenance and portability checks. |
+| `tests_docs/` | Documentation source-inclusion and licence distribution tests. |
+| `src_docs/build.py`, `src_docs/mkdocs.yml` | Catalogue generation and strict site build. |
+| `src_docs/md/` | Authored site pages and generated menu pages. |
+| `.build/menu-sources/`, `.build/site/` | Generated source snapshots and site output. |
+| `docs/` | Retained guides; some early examples use historical layouts. |
+| `NOTICE`, `LICENSE` | Attribution and licence terms. |
 
-Features contains Alternate Preview, Build Suffix Substitution, Classes Browser,
-Feature Code Viewer, Ligature Finder and Suffix Report. They preserve the
-original master proof, filters, selection, literal search/highlights and Copy
-controls. Proof rows use one outline scale per master and wrap large families.
+Shared code is supplied by sibling packages. General panels, native guards,
+planners and history helpers belong in `fontlabapp`, reached as `fly.ap`.
+Feature source uses `fly.fp.feature_blocks`. Fontport holds fontParts/UFO
+integration; Glyport holds Glyphs.app compatibility. Scripts do not load other
+menu scripts as libraries. No `lessons` package is shipped here.
 
-Build previews actual suffix substitutions and appends them to the requested
-feature, retaining prefix, ordered unrelated features and classes. Apply binds
-to the original font, complete feature source and referenced glyphs. It uses
-Fontport's existing ordered writer and Undo safety checks through App, skips
-no-ops and reports unexpected native failures as possibly partial. Install
-App's optional `fontedit` dependency for Build and Feature Code Viewer; native
-`fontpr` must be available. The viewer reads exact stored prefix/ordered blocks,
-rather than native iterator values or synthesized class-prefix text.
-It does not compile features: test the result in FontLab's Features panel.
+`migration.json` is a frozen v0.2.0 record, not current pins.
 
-These six tools pass their native scenarios and actual Close destruction.
-The builder passes complete feature-only saved deltas, one-step Undo, Redo and
-reopening. All20migrated tools pass183workflow checks together on FontLab9.0.9784.
-Clipboard operations remain host-free tested; native checks inspect the actual
-suffix preview under the owner's clipboard exclusion.
-No export chooser is needed: these six originals provide Copy, not file export.
+## Runtime tests
 
-## Host-free distribution checks
+Prerequisites: a prepared Python 3.11 arm64 test `.venv` with pytest and the
+matching App and Fontport packages installed, plus App test dependencies.
+Use the sibling Fly checkout on PYTHONPATH. Set
+`SCRIPTMIX_TEST_VENV` to that prepared environment's absolute path. It must be
+separate from the documentation `.venv`, which uses Python 3.12 or later.
+Run from this repository root:
 
-Run with Python 3.11 through uv and an explicit current App requirement:
 ```sh
-SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh
-# Proof needs App0.2.10 helpers; build the current checkout:
-uv build /path/to/app --out-dir /path/to/dist
-SCRIPTMIX_APP_REQUIREMENT=/path/to/dist/current-app.whl ./test.sh
+export PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+export UV_CACHE_DIR="$TMPDIR/fontlab-scriptmix-uv-cache"
+export PYTHONPATH="$(cd ../fontlab-fly/src && pwd)"
+unset SCRIPTMIX_APP_SOURCE SCRIPTMIX_FONTPORT_SOURCE
+VIRTUAL_ENV="$SCRIPTMIX_TEST_VENV" uv run --active --no-project \
+  --python cpython-3.11-macos-aarch64-none \
+  python -B -m pytest -q -p no:cacheprovider tests
 ```
 
-Cached uv requirements permit offline wheel tests. Sources resolve without native
-binaries; development may set `SCRIPTMIX_APP_SOURCE=/path/to/app/src/fontlabapp`
-alongside the explicit dependency. Missing helpers fail the run.
-
-Every default run checks all 54 destination hashes, exact menu paths/depth,
-Python 3.11 syntax and provenance metadata. It does not audit absent originals.
-To additionally check every original source hash, provide the workspace root
-containing the manifest's `fontlab-python-examples` paths:
+The full suite regenerates menu documentation in place. Run it when those
+outputs may be refreshed. To provision an isolated dependency set instead,
+`test.sh` accepts explicit App and Fontport wheels or checkouts:
 
 ```sh
-SCRIPTMIX_APP_REQUIREMENT=/path/to/current-app.whl ./test.sh --original-source-root /path/to/workspace
+export SCRIPTMIX_APP_REQUIREMENT="/absolute/path/to/fontlab_fontlabapp-0.2.26.dev159+gb1e905b61-py3-none-any.whl"
+export SCRIPTMIX_EXTRA_REQUIREMENTS="/absolute/path/to/fontlab_fontport-1.0.3.dev19+g3ddbd097f-py3-none-any.whl"
+export SCRIPTMIX_PYTHON="cpython-3.11-macos-aarch64-none"
+sh test.sh -p no:cacheprovider
 ```
 
-Missing or mismatched originals fail this requested audit. Original hashes and
-product script bytes are unchanged.
+Supply existing reviewed artifacts with genuine build metadata; do not override
+package versions. Use a freshly built matching wheel or an approved prepared environment when
+validating changed dependencies. Cached builds with the same development
+version can be stale. These tests do not modify the live FontLab installation.
 
-## Names inspection and selection tools
+Lint checks existing source without rewriting it. Ruff 0.14.10 reports 87
+existing findings across the paths below; fixes remain open:
 
-Names contains Case Pairs, Character Info, Character Set Compare, Glyph Finder
-and Select by Mark. Keep counterparts, add mark groups, use language presets,
-search names/globs/Unicode and copy characters or missing sets. Character Info
-follows selection every 500 ms and paints the current master outline beside
-system text; closing stops the timer. No Pause control existed in this original.
+```sh
+uv run --no-project --python cpython-3.11-macos-aarch64-none \
+  --with ruff==0.14.10 ruff check --no-cache --target-version py311 \
+  Scripts tests tests_docs menu_layout.py src_docs/build.py
+```
 
-These five use App0.2.6's lazy panel, tables, signals and selection helpers.
-Complete refreshes bind actions to their original font. Switched/closed fonts,
-missing names and failed scans refuse selection before clearing it. Native
-workflows, full saved-font/history invariance and owned Close pass. The live
-specimen fits tall accents/overhangs; clipboard has host-free proof only.
+## External original-source audits
 
-## Read-only Kerning tools
+Default tests verify recorded paths/hashes and current files without original
+source bytes. Historical `rescued/...` paths identify an external archive:
+`fontlab-python-scriptmix-rescued.tar.gz`, SHA-256
+`ffa611cfec3f2550400989abff51cea1a391d714a91ea4863ca0610711dd4b32`.
 
-Kerning contains Classes Browser, Compare Masters, Pair List Browser, Missing
-Pairs and Text Preview. Browse class members and all-master values, flag missing,
-sign-changing or jumping pairs, filter exact sides with `=T`, sort numerically,
-and export the actual shown order to UTF-8 CSV through an owned modeless chooser.
-Missing Pairs expands characters, names and @classes and retains Copy list.
-Text Preview draws actual transformed outlines and advances with native effective
-kerning, master/size controls, Kerning and Show values. Oversized proof fits its
-complete ink, including accents and overhangs. No font data is written.
+Restore it outside the repository. Set `FONTLAB_PRESERVED_ROOT` to the directory
+containing `rescued/`. To the prepared runtime pytest command, or to `test.sh`,
+append `--audit-rescued-sources --original-source-root /path/to/workspace`.
+The workspace path contains `fontlab-python-examples`; it enables the Masters,
+Proof, Reports and Inspectors original-source comparisons.
 
-These require App0.2.7 helpers. Native workflows, complete saved-font/history
-invariance, actual save-dialog export, live proof and Close destruction pass.
-Exceptions Finder and Pairs From Text are editing tools described below.
+An absent source root skips the corresponding optional byte audit. A present
+archive with a missing file or mismatched hash fails. The full archive audit
+collects all missing/mismatched entries before failing. Current-file checks
+remain mandatory. Audits read archived bytes; they do not execute originals.
 
-## Kerning editors
+## Documentation tests and build
 
-Copy Between Masters retains replace/missing/matching modes and checked targets.
-Pair Editor edits every master cell, adds either-side partners and deletes with
-blank cells; invalid text is ignored while other valid cells remain staged.
-Scale Values, Round Values and Remove Small Pairs retain current/all-master scope,
-zero options, sorted previews and exact original rounding rules.
+The documentation tests can run independently on arm64 Python 3.11. They need
+pytest, the real codeinclude plugin and PyYAML; this command supplies them.
+Put uv cache and temporary fixtures in external scratch space. Git distribution
+tests use temporary repositories and require a working Git executable on PATH.
 
-These tools require App0.2.8 helpers from a tag/current built wheel or the
-source override above; index publication is separate. The writer validates every master,
-uses one native history batch, preserves explicit zero/absence and refuses
-fractional source history and final values outside +/-2*positive finite UPM.
-Apply refuses changed pairs/classes/masters or a
-switched/closed font; Refresh recovers failed reads. Close shares owned cleanup.
-Allfive pass original native scenarios, complete saved-font deltas, firstUndo/Redo,
-reopen, safety andClose (receipts in WORK.md).
-The two additional editors need App0.2.9 helpers from that same wheel/source recipe.
-Exceptions Finder lists broader class overrides, offers Tick redundant/Untick all
-and removes exactly ticked rows. Pairs From Text resolves characters and /name
-words into unique adjacent pairs; Set/Add uses displayed effective kerning on
-current/all masters, marking explicit glyph values versus inherited class values.
-Both pass native controls, full-font Undo/Redo/reopen andClose. All37tools pass
-301workflow/99preservation/94safety checks; all37mappings pass. Full archive
-migration, cleanup, additional tools/reporters and docs remain open.
+```sh
+PATH="/opt/homebrew/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 \
+  PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
+  uv run --no-project --python cpython-3.11-macos-aarch64-none \
+  --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML \
+  python -B -m pytest -q -p no:cacheprovider tests_docs
+```
 
-## Proof tools (source milestone)
+The full site SDK requires Python 3.12 or later, as declared in `pyproject.toml`.
+It uses the locked ProperDocs/MaterialX stack in its own prepared `.venv`.
+`./build.sh --offline` syncs that environment, regenerates the catalogue and
+builds the site strictly. Offline builds require all locked dependencies cached.
+`./build.sh --serve --offline` starts a local preview. Generated output stays in
+`.build/site/`; authored guides in `docs/` are kept. Local tests and builds do
+not prove site publication or complete browser-asset licence review.
 
-Glyph Grid compares selected glyphs in font order on every master, with one
-scale fitted to full outline/component bounds, a zoom slider and Reload selection.
-Reload deliberately adopts the current font/selection; zoom stays bound to the
-original font. Text By Master preserves per-master advance-only widths, editable
-text and size/scroll controls. Waterfall keeps the selected master, ordered sizes
-(4–400px), /name tokens and red missing-glyph boxes. Neither text tool adds kerning.
-Word Finder retains the exact English/Latin list, case/length/required/allowed
-letter filters and Copy words. Native clipboard calls remain excluded by D8.
-
-Proof needs App0.2.10 from that wheel/source recipe; missing helpers fail.
-Ordinary refresh/paint/Copy refuses a closed or switched
-font and clears incomplete results. Opening native reads start after status/Close
-exist; failed initial scans stay empty, diagnosed and closable. Close clears view hooks
-and deletes the owned dialog. Native original oracles/painting/Close and exact
-font/workspace/history pass; all41core tools pass336workflow/107preservation checks.
-Full Issue111 migration, archive cleanup, additional tools/reporters/docs stay open.
-
-## Masters reports
+## Licence
 
 Masters contains Overview, Width Chart, Glyph Weight Chart and Compatibility Check.
 Overview shows ordered axis locations/metrics/angles, highlights differences and switches master on double-click.

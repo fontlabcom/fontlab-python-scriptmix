@@ -4,10 +4,28 @@
 # FLM: Names · Charset Compare
 """Paste a text or a character set and compare it with the font's encoded characters.
 
-Lists characters of the text the font lacks and characters the font has
-that the text does not use, with names from unicodedata. Language presets
-fill in common alphabets. Copy the missing set, or select the extra glyphs
-in the Font window. Nothing in the font changes.
+What it does:
+    Lists characters of the text the font lacks and characters the font has
+    that the text does not use, with names from unicodedata. Language presets
+    fill in common alphabets. Copy the missing set, or select the extra glyphs
+    in the Font window. Nothing in the font changes.
+
+How it works:
+    Compare distinct non-whitespace input characters with every encoded font
+    character. Show missing and extra sets with Unicode names and code points.
+
+Why this design:
+    A character-set comparison answers a repertoire question without confusing
+    unencoded alternates with encoded characters.
+
+How to use:
+    Run Names > Character Set Compare. Paste text or choose a language preset,
+    inspect both lists, then copy missing characters or select extra glyphs as
+    required.
+
+Benefit:
+    Prepare a character-coverage review while leaving encodings and glyph
+    membership intact.
 """
 
 import unicodedata

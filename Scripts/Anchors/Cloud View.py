@@ -3,9 +3,27 @@
 # FLM: Anchors · Cloud View
 """Overlay the selected glyphs faintly and show every anchor of one name as a cloud of dots, per master.
 
-A tight cloud means marks will sit consistently; a stray dot is a glyph whose anchor
-is off. Hover-free and read-only: the list under each panel gives the extreme values.
-Nothing in the font is changed."""
+What it does:
+    A tight cloud means marks will sit consistently; a stray dot is a glyph whose anchor
+    is off. Hover-free and read-only: the list under each panel gives the extreme values.
+    Nothing in the font is changed.
+
+How it works:
+    Read anchors of the chosen name from selected glyphs, grouped by master.
+    Overlay faint glyph paths and plot positions with their extreme values.
+
+Why this design:
+    A cloud reveals a stray anchor position that can be difficult to see by
+    opening glyphs one at a time.
+
+How to use:
+    Select glyphs in the Font window, run Anchors > Cloud View and choose an
+    anchor name. Compare the master panels and the position ranges below them.
+
+Benefit:
+    Find candidates for anchor correction while retaining all stored anchor
+    coordinates.
+"""
 
 from typing import Any
 

@@ -1,3 +1,4 @@
+# this_file: .gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -218,3 +219,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+/.venv/
+/.build/
+/.pytest_cache/
+/src_docs/md/topics/
+/src_docs/md/print_page.md
+
+# Generated local documentation and menu-source snapshots
+.build

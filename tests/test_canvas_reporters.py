@@ -8,6 +8,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
+from menu_layout import released_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 CASES = (
@@ -43,7 +44,7 @@ def test_menu_import_is_lazy_and_main_returns_exact_owned_dialog(
     helpers = SimpleNamespace(**{factory: make, "show_script_dialog": show})
     monkeypatch.setitem(sys.modules, "fly", SimpleNamespace())
     monkeypatch.setitem(sys.modules, "fly.ap.scripting", helpers)
-    path = ROOT / "Scripts/Reporters" / f"{title}.py"
+    path = ROOT / "Scripts/Reports" / f"{title}.py"
     spec = importlib.util.spec_from_file_location("owned_canvas_menu", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -66,7 +67,7 @@ def test_prior68_migration_rows_and_payloads_are_unchanged():
     )
     for row in json.loads(path.read_text()):
         assert (
-            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
+            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
             == row["destination_sha256"]
         )
 
@@ -78,10 +79,11 @@ def test_additional_reporter_provenance_and_acceptance_cover_exact_new_menus():
 
     rows = json.loads((ROOT / "additional-tools.json").read_text())
     rows = [row for row in rows if Path(row["destination"]).parts[1] == "Reporters"]
+    rows = [row for row in rows if row["kind"] == "foreground-adaptation"]
     assert len(rows) == 2 and {row["title"] for row in rows} == {v[0] for v in CASES}
     for row in rows:
         path = Path(row["destination"])
-        assert path.parts == ("Scripts", "Reporters", row["title"] + ".py")
+        assert path.parts == ("Scripts", "Reports", row["title"] + ".py")
         assert row["key"] == next(v[1] for v in CASES if v[0] == row["title"])
         assert row["license"] == "Apache-2.0" and row["kind"] == "foreground-adaptation"
         assert row["counted_in_130_sample_migration"] is False

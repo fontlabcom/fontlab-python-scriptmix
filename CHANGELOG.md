@@ -2,6 +2,588 @@
 this_file: CHANGELOG.md
 ---
 
+## External original-source lookup repaired — 2026-11-01
+
+The historical inspector helper now honors FONTLAB_PRESERVED_ROOT before other
+copies and verifies the recorded SHA256 for every lookup route. Missing or
+corrupt explicitly selected archives fail instead of silently falling back.
+Only the shared test helper and its regression tests changed; frozen migration
+records, menu pins and production scripts remain unchanged.
+
+Full suite: 4404 passed, 56 failed, 6 skipped; exact failure IDs unchanged
+from latest-cohort baseline. Full command/exit1 recorded in commands.json.
+
+Seven regression cases: before fix 4 failed/3 passed; after fix 7 passed.
+Five real archive audits: 4 passed, 1 retained provenance failure in reports.
+All 69 recorded Scriptmix preserved sources match the external archive hashes.
+Original bodies were read/parsed only, never executed. Ruff checks passed.
+Evidence and exact audit/full-suite commands: original-byte-audit-20261101/
+commands.json under the external issue123 evidence root.
+Regression command (exit 0): rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/latest-cohort-20261101/env/bin/python
+-I -B -m pytest -o pythonpath=. -p no:cacheprovider -q tests/test_migration_history_sources.py
+Lint command (exit 0): rtk proxy ruff check --no-cache tests/test_migration_history_sources.py tests/_migration_history.py
+
+Native acceptance, provenance repair and zone integration remain open.
+
+## 2026-11-01 — Reset source dispositions
+
+Correct18Reset backlog rows against the retained2026-10-22 full22-source review.
+Keep every original identity/hash and candidate menu link. Partial and unported
+statuses replace unsupported Ported/Duplicate/Retired claims; notes expose the
+specific missing behavior. Newer candidate changes still require evidence to
+clear those dated findings. No source bodies, menu scripts or manifest pins change.
+
+Verification: rehashed all18originals; row comparison preserves identity/hash/menu
+columns and all other table rows. Initial count19assertion failed before writes;
+correct count18(four audited originals have no backlog row). Exact test command:
+rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/current-cohort-20261101/env/bin/python
+-I -B -m pytest -o pythonpath=. -p no:cacheprovider -q
+tests/test_curated_delivery.py -k backlog:exit0,2passed6deselected.
+Initial pythonpath= command failed collection because menu_layout is root-local;
+no product failure inferred. git diff --check:exit0. Full source/native gates
+remain open; this is a backlog correction, not port completion.
+
+## 2026-11-01 — figure window geometry and completion
+
+The isolated figure panel saves/restores geometry in its own settings store.
+Restore runs after full construction and keeps malformed settings usable with a
+diagnostic. Close records save failures and always runs owned cleanup. Reuse
+App script_completion for reject/Escape and duplicate-launch closure; no custom
+reject recursion. Family/unrelated keys remain, contour replacement resets.
+Existing larger preview layout and stay-open Apply behavior remain explicit
+adaptation differences; automatic alignment and native preservation are open.
+
+Seven new full-selection-base fakeQt regressions failed before implementation.
+Final focused checks:311passed against each ordinary App wheel/sdist. Nine realQt
+subprocess cases pass on Qt5.15.19 and Qt6.12.0 using the production subclass,
+minimal QDialog selection base and actual App completion/cleanup/launcher helpers.
+They cover Close/button/reject/Escape/replacement, parent/flags/modality, geometry
+roundtrip, repeated completion, destruction, malformed data and write/sync/save
+failures. Qt5 uses source App; Qt6 uses installed App. No font/preferences touched.
+Close errors are retained in slot_error, not promised as user-visible feedback.
+
+Full configured gate x6Yymo:58failed4403passed17skipped, exit1; exact58failed-node
+set unchanged. Nine extra skips are the realQt tests absent from the minimal gate;
+they pass separately. All14modules exceed80%; figure module88.22%. Docs10pass,
+173current pins match, scoped Ruff/diff check pass. Independent source review
+finds no blocking issue. No push while the full gate fails; native remains open.
+
+Commands through rtk proxy:
+- Candidate: env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/ordinary-artifacts/wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_geometry.py (before production:exit1,7failed).
+- Same environment: tests/test_default_figure_geometry.py tests/test_default_figure_geometry_runtime.py tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py tests/test_issue122_G2.py tests/test_cov_a_writers.py:exit0,311passed; repeat sdist-env/bin/python:exit0,311passed.
+- Candidate: env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 FONTLABAPP_TEST_QT5=1 PYTHONPATH=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src:/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-fly/src /Volumes/Falstaff4T/fontlab-scripting-data/verification/issue-120/typed-date-z11/qt5-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_geometry_runtime.py:exit0,9passed.
+- Workspace: .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/fontlab-python-scriptmix fontlab-python-scriptmix:exit1.
+- Candidate: env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs:exit0,10passed.
+- Candidate: ruff check 'Scripts/Components/Set Default Figures.py' tests/test_default_figure_geometry.py tests/test_default_figure_geometry_runtime.py; git diff --check:each exit0.
+
+Wait, but: real standalone Qt is not native FontLab. Dedicated-host positioning,
+full native cleanup, Apply/history/save and original-domain acceptance remain.
+External evidence uses menu-message-priority-20261101/figure-geometry-*.
+
+## 2026-11-01 — recover from figure preference read failures
+
+Independent review found213d687 could fail during partial panel construction,
+before launcher registry ownership. Match the original's usable-default behavior:
+finish construction at lining0 and display the read error after initial refresh.
+Do not overwrite saved data during fallback. A later choice can save normally;
+close still disconnects all owned signals. Family0 regression now makes an actual
+selection change instead of relying on the fake combo's unchanged-index signal.
+
+Three new panel-level regression cases failed before repair and pass afterward.
+Both ordinary App wheel/sdist environments:295focused tests pass. Docs10pass;
+all173current pins match; scoped Ruff and diff check pass. Configured full gate:
+58failed4396passed8skipped; exact failed-node set unchanged; all14changed modules
+exceed80%, Set Default Figures87.84%. Source re-review closes the finding.
+
+Commands through rtk proxy:
+- Candidate: env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/ordinary-artifacts/wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_settings.py -k restore_fails (before repair:exit1,3failed25deselected).
+- Same environment, tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py tests/test_issue122_G2.py tests/test_cov_a_writers.py:exit0,295passed; repeat with sdist-env/bin/python:exit0,295passed.
+- Workspace: .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/fontlab-python-scriptmix fontlab-python-scriptmix:exit1,stAX1h.
+- Candidate: env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs:exit0,10passed.
+- Candidate: ruff check 'Scripts/Components/Set Default Figures.py'; ruff check tests/test_default_figure_settings.py; git diff --check: each exit0.
+
+Wait, but: this is source/artifact evidence, not native acceptance. FontLab PID30373
+exists, localhost47400 has no listener. No restart or owner-state mutation.
+No push while full gate fails. Retained logs/review: external
+menu-message-priority-20261101/family-read-recovery-*.
+
+## 2026-11-01 — remembered figure-family choice (isolated candidate)
+
+Set Default Figures now restores the four-way family choice before connecting
+signals and saves it after refreshing the preview. Missing or invalid values
+select lining. Only optionFigures is written; unrelated keys stay, settings
+fallbacks are disabled, and Replace own contours remains unchecked on reopen.
+Read/write failures are reported without a font write. Window geometry,
+automatic alignment and native acceptance remain open.
+
+Configured gate yKdxzx:58failed4393passed8skipped, exit1; exact failed-node set
+unchanged from figures-default. Four additional skips are real-Qt tests in the
+minimal gate environment; all four run and pass separately under both Qt5 and
+Qt6. All14changed modules exceed80%; figure coverage87.43%. Command from workspace:
+`rtk proxy .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/fontlab-python-scriptmix fontlab-python-scriptmix`.
+
+Tests-first: 25 intended failures before implementation; an earlier fixture
+import error was corrected. Real Qt6 then caught instance-level NoError access;
+using the class enum fixes it. Fresh-process isolated INI checks pass on Qt5
+and Qt6 (four families each); no user preference domain was written by tests.
+Both ordinary App wheel and sdist environments pass292 focused tests. Docs10
+pass; all173current manifest pins match. New test files pass Ruff and diff check.
+
+Commands (rtk proxy, candidate cwd; all final commands exit0):
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/ordinary-artifacts/wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py tests/test_issue122_G2.py tests/test_cov_a_writers.py
+- Same command with sdist-env/bin/python:292passed.
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 FONTLABAPP_TEST_QT5=1 PYTHONPATH=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src:/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-fly/src /Volumes/Falstaff4T/fontlab-scripting-data/verification/issue-120/typed-date-z11/qt5-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_settings_runtime.py
+- env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs
+- ruff check tests/_figure_settings_support.py tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py
+
+Wait, but: standalone Qt and test doubles do not prove PythonQt/native panel
+lifecycle. No live installation or owner font changed. Full gate evidence is
+retained separately; no push while that gate fails.
+
+## 2026-11-01 — Set Default Figures keeps own contours by default
+
+UI, apply_pairs and write_components now default to keeping existing contours.
+Explicit Replace own contours remains available. The script/doc page warn that
+retained outlines can overlap the newly installed component; advances and kerning
+memberships still follow the selected sources. Make Lower Unicase is byte-unchanged.
+The figure source pin and generated page are current; all173current pins match.
+Original source33dcbede... was read, not executed, and remains byte-unchanged.
+
+Baseline167G2tests passed. Before the fix, five regression assertions failed and
+eight explicit-option cases passed. Final183G2tests pass against each ordinary
+App.153 wheel/sdist installation. New16-case matrix covers all4families,10digits,
+2masters, public default/explicitFalse/explicitTrue plus raw writer omitted default.
+It checks contour/node retention, anchors, components, fractional advances, class
+membership, immutable Unicode snapshots and existing-target history enrollment.
+Independent review's missing raw-writer test was added and re-reviewed clean.
+
+Configured full gate:58failed/4368passed/4skipped; exact failed-node set equals the
+prior58. All14changed modules pass80%; figure module86.32%. Docs10passed. No new
+Ruff findings under identical filename/config comparisons; the first ad-hoc lint
+comparison used different configuration and was discarded, with logs retained.
+
+Commands through rtk proxy, cwd this isolated candidate:
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 <ordinary-artifacts/wheel-env>/bin/python -B -m pytest -q -p no:cacheprovider tests/test_issue122_G2.py: exit0 baseline167/final183.
+- Same command with -k 'contour_switch or contours_are_removed_only' before production edit: exit1,5failed8passed166deselected.
+- Same final G2 command using <ordinary-artifacts/sdist-env>/bin/python: exit0,183passed.
+- .metaswarm/quality.sh coverage <this-candidate> fontlab-python-scriptmix from workspace: exit1;1DbhPV retained in external figures-gate-evidence.
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs: exit0,10passed.
+
+Wait, but: these are source and installed-App checks. Automatic alignment,
+persisted family/window choice, full source domain and native Apply/Undo/Redo/save
+preservation remain open. No font or live installation changed; no full-gate push.
+Exact external logs use figures-* under menu-message-priority-20261101.
+
+
+## Unreleased — report test compatibility
+
+G13 uses the real report signature for its autospecced double. Unsupported
+arguments remain refused;106tests pass against both canonical and private App.
+No runtime change. Whole-cohort and native gates remain open.
+
+
+## Unreleased — retained encoding chooser priority
+
+Paste Glyph Order Encoding reapplies priority on each show and retries safely
+after a setter failure. All33 G8 tests pass. Native behavior remains unverified.
+
+
+## Unreleased — anchor chooser priority
+
+Two owned anchor file choosers retain their parent/type/filter and request
+priority before execution. G11 source suite82passed; native acceptance pending.
+
+
+## 2026-11-01 — owned menu warnings and confirmations
+
+- Route eleven warnings and three confirmation questions through App's owned
+  priority message helper; preserve parents, title/body, standard buttons,
+  default No, Yes-only edits and post-confirmation recapture.
+- Refresh eleven current menu hashes and generated pages without rewriting
+  historical provenance. Source verification: 382 focused tests and 10 docs
+  tests pass; full candidate results and inherited/cohort failures are in WORK.
+- Native FontLab and matching installed-artifact acceptance remain open.
+
+## 2026-10-22 - Alignment zone tools; Master Metrics Table on the master writer
+
+- Metrics > Alignment Zones opens the shared App zone panel with the native
+  zone backend: per-master zone table, add, remove and edit, Suggest from
+  o / O, staging for all masters and one Undo step per Apply. Docstring lists
+  what differs from the original sample (required unique names, whole-table
+  refusal of a bad cell, Font window only, re-created zone guides, fl#8574).
+- Guides > Suggest Zones From Overshoots previews baseline, x-height and caps
+  zones from H/O and x/o for the current or all masters. A zone at the same
+  position, else with the same name, is replaced and keeps its name, tags and
+  lock. Apply measures again, refuses a stale preview and writes through the
+  same backend as one Undo step. Refusals reach the status line.
+- Font Info > Master Metrics Table writes through the App master-metrics
+  writer (one Undo step, read-back, restore on failure) instead of the
+  Font Info plan writer. It reads the same per-master properties that the
+  writer reads back, refuses values that changed since the preview and shows
+  the queued-glyph note. Docstring adds fl#8574.
+- Records: two `additional-tools.json` rows (173 additional, 242 tools),
+  PORTING-BACKLOG statuses, NOTICE section, Master Metrics Table revision
+  edits and hash, docs pages. Offline tests: `tests/test_issue122_Z1.py` and
+  the rewritten Master Metrics Table tests. Native verification pending.
+
+## 2026-10-22 - Undefined marks no longer read as negative greys
+
+- Reports > Label Statistics and Names > Select by Mark label only marks 1000-1255 as greys, the range FontGate defines (`glyphs_write.cpp`). Marks 361-999 and above 1255 now read "Mark N" instead of "Grey -639". Revision records and docs pins are updated.
+
+## 2026-10-22 - Coverage tests for 39 scripts
+
+- `tests/test_cov_a_*.py` and `tests/test_cov_b_*.py` cover the Anchors, Components, Contours, Features, Font Info, Masters, Names, Kerning and Reports scripts below the 80% gate (now 98-100%). Script bytes and pins are unchanged; the fakes model PythonQt strictly.
+
+## 2026-10-22 - Menu folder merge
+
+- Merge the Cleaning menu into Cleanup and Reporters into Reports (owner decision).
+
+## 2026-10-22 - Glyph-window Undo scope and Refresh fixes
+
+- Selection To All Backgrounds: Refresh in a Glyph window reads the selection
+  again; when it fails (nothing selected, a mask layer) the plan is cleared and
+  Replace is off. Only outside a Glyph window does Refresh re-read the planned
+  contours. A closed or changed font now says so instead of "Switch to the
+  Font window". Docstring rewrapped and Refresh described.
+- Set Component Locations: say that Apply refuses in a Glyph window when the
+  edit includes glyphs the window does not show (App guard, FontLab issue
+  8573): keep Selected components edits to the shown glyphs and apply All
+  components from the Font window. Docs pages and destination hashes refreshed.
+
+## 2026-10-22 - Selection To All Backgrounds: font-wide Undo
+
+- Write only while the Font window is active. In a Glyph window FontLab
+  records the step for the shown glyph only, so one Undo left the other
+  backgrounds changed (measured on 9.0.9790). The refusal keeps the preview.
+- Plan in the Glyph window, then re-read the planned contours by layer name
+  and shape/contour index, with node coordinates and types in the signature.
+  Selection is not read again: the Font window shows the layer through
+  another wrapper without it. Refresh the docs page and destination hash.
+
+## 2026-10-22 - Complete queued-update disclosure
+
+- Complete default-writer status/console disclosure, including all custom
+  master, cleanup and unicase paths. Show the figures warning once.
+- Correct pending-update documentation and refresh generated pages and pins.
+
+## 2026-10-22 - Pending native update disclosure
+
+- Disclose pending native updates in writer results and status messages.
+- Refresh destination hashes and cover queued writes and empty interpolation.
+
+## Unreleased — Final script fixes (2026-10-22)
+
+- Use the corrected App backup resolver, custom-suffix naming, default suffix
+  and detached-shape repair APIs. Keep backup view state and now retain contour
+  names. Remove the repeated empty-job guard.
+- Reuse captured automatic-layer facts in six planning hooks; Tabular Figure
+  Copies inherits the corrected App hook. Keep fresh facts at write time.
+- Replace background shapes individually and retain component shape/data/builder
+  history before detachment. Add ownership and clone-metadata regressions.
+- Expand 79 short menu docstrings with What/How/Why/Usage/Benefit sections;
+  retain source credits and licence text. Replace public acceptance-status and
+  unmeasured Undo wording, normalize Fly module imports and type both remaining
+  unannotated entry points.
+- Refresh 76 additional-tool hashes, three moved-menu hashes and 68 reversible
+  documentation overlays. Keep migration.json as the frozen v0.2.0 record;
+  extend historical reconstruction to compose docstring edits with path moves.
+- Regenerate source-backed catalogue pages. Record remaining shared App
+  scaffolds and native milestone checks as open work in PLAN and TODO.
+- Keep backup prefixes and the temporary-layer marker case-sensitive, with
+  case-insensitive exclusion of master names; test case-twin master routing.
+- Use one uniform indented house layout for the 79 expanded docstrings;
+  remove residual qualification status, trailing spaces and long blank runs.
+- Read back every replaced background for its planned contour count and no
+  components. Report missing masks and silent native write mismatches with
+  the Undo hint after closing history.
+- Verification: requested runtime command, 3,812 passed / 6 skipped, exit 0;
+  full arm64 runtime suite, 3,812 passed / 6 skipped, exit 0; documentation
+  suite, 10 passed, exit 0; selected Ruff rules, 144 changed scripts clean,
+  exit 0; strict site build, exit 0. Native FontLab qualification remains open.
+
+## Unreleased — 2026-10-22 — Practical tools and shared helpers
+
+- Expand the practical menu to 240 tools: 69 sample adaptations and 171
+  additional tools, including Metrics, Names, Anchors, Components, Masters and
+  Contours editors and independent Glyphs-script rewrites.
+- Route common panels, edit guards, planners and history through App via Fly.
+  Route feature-source access through Fontport. Use FontGate font identities
+  for glyph-building and locking calls.
+- Extend master backups, all-master layer copying and coordinate rounding;
+  keep the shared backup recognition rule and explicit anchor refusals.
+- Bind third-party source identities to SHA-256 records. Keep historical
+  migration records and current destination hashes independently verifiable.
+- Make default tests independent of external original folders. Add explicit
+  source audits; a present partial or corrupt archive fails with all findings.
+- Restore the explicit permission to adapt the author's own Apache-2.0 FontLab
+  samples; keep the separate restriction on third-party original bodies.
+- Require installed matching App and Fontport packages for the complete suite;
+  keep only Fly on the sibling source path.
+- Offline checks on Python 3.11 arm64: complete runtime suite 3,747 passed,
+  6 skipped; documentation suite 10 passed. Both exit 0, with no failures.
+  Ruff 0.14.10 reports 87 existing findings across
+  Scripts, tests, documentation tests, menu_layout.py and src_docs/build.py.
+- Retain full source/licence attribution and source-backed menu documentation.
+  Earlier native receipts remain limited to their exact installed files;
+  new ports still require native acceptance.
+
+## Removal prep: review fixes, round 1 (2026-10-22)
+
+- Document both source-audit flags; simplify seven historical Names headers and
+  refresh their destination hashes and generated source includes.
+- Collect every missing/mismatched archive file before failure; test a copied
+  archive with one deletion and one corruption. Current-file checks stay intact.
+- Record Scriptmix-first landing order, then Examples forward pins (all 24
+  currently match). Prevent bytecode/pytest caches in gates; stage old caches
+  locally because the sandbox rejected the requested external discard directory.
+- Canonical suite: 3752 passed, 1 skipped; empty root: 3747 passed, 6 skipped;
+  docs: 10 passed each. Corrupt-copy audit: exit 1 expected, both faults reported.
+  Homebrew Ruff reproduces nine pre-existing findings; other edited files pass.
+
+
+## Issue 122 Task 1: removal preparation (2026-10-22)
+
+- Keep historical source path/hash checks independent of external rescued/ bytes;
+  source-byte/interface audits are explicit and skip absent archives clearly.
+  Current menu hashes, behaviour and release-byte checks remain mandatory.
+- Explain external archives and both archive SHA-256 values in NOTICE; correct
+  README/backlog/guide and historical Names source comments, retaining credits.
+  Refresh only seven current destination hashes and their catalogue pages.
+- Canonical suite: 3751 passed, 1 skipped; empty preserved root: 3746 passed,
+  6 skipped; documentation tests: 10 passed in each. Original uvx Ruff returned 0;
+  Homebrew Ruff 0.14.10 reports nine pre-existing findings (see fix round 1).
+  Full commands and limitations: WORK.md and .build/removal-prep/report.md.
+
+
+## Unreleased — 2026-10-22 — Backup, copy and rounding extensions
+
+Extend seven existing tools; the menu and its counts do not change.
+
+- Masters > Duplicate Current Layer backs up the current master layer or all
+  master layers of the selected glyphs, with a custom suffix, and lists the
+  existing backups (preview only). Each Apply is recorded as one Undo step.
+- Backups are named `<master> backup <suffix>`; a taken name gets (2), (3).
+  A name that equals a master, contains @, # or |temp|, or would read as
+  another master is refused.
+- Restore Backup Layer, Display Next Layer, Display Previous Layer and Layer
+  Cleanup share one backup rule: new names, legacy @ names and any layer named
+  `<master> <text>` (for example "Light Copy") resolve to the longest matching
+  master. Such layers now take part in the Next/Previous cycle and are classed
+  as backups in Layer Cleanup; nothing is ticked at the start, and "tick kind"
+  can select them.
+- Copy Layer Between Masters copies to the checked target masters in one Undo
+  step. Changing the source checks all other masters again; the target list
+  scrolls.
+- Contours > Round Coordinates rounds nodes, anchors and component offsets in
+  one Undo step. Anchors starts ticked; untick Anchors to round only nodes and
+  offsets. A layer with duplicate anchor names or an anchor that would move to
+  0, 0 is listed and kept.
+- Vertical Metrics Diagram stays read-only. Font Info > Master Metrics Table
+  edits the same four metrics with a selected-row diagram.
+- PORTING-BACKLOG.md records Alignment Zones and Suggest Zones From Overshoots
+  as duplicates of Font Info > Zones (Add and Remove zones; Auto-detect zones),
+  which work per master. A scripted all-master zone port waits for an App zone
+  writer. Back Up Master Layers is recorded as a duplicate of Duplicate Current
+  Layer, which now covers all masters.
+
+## Unreleased — 2026-10-22 — Contours tools and Glyphs-script rewrites
+
+Add 73 tools; the active menu grows from 167 to 240 (171 additional tools).
+57 of the 61 former archive launchers now have a port.
+
+- Contours, from the author's own samples: Round Coordinates, Remove Overlap,
+  Add Extremes, Correct Contour Direction, Straighten Short Curves, Optimize
+  Start Points, Delete Small Contours, Fix Zero Handles, Delete Duplicate
+  Contours, Transform and Slant, on the shared App outline panel and geometry
+  history. Each change is recorded as one Undo step and read back. Direction
+  follows same-shape nesting; open contours and reversed duplicates are kept.
+- Contours generators and hint tools, from the author's own samples:
+  Placeholder Glyphs, Shadow Copy, Tabular Figure Copies, Outline Effect,
+  Superior & Inferior Figures, Small Caps From Capitals, Autohint Selected
+  Layers and Remove PostScript Hints. Each Apply is recorded as one Undo step;
+  each new glyph is recorded as its own Undo step, and the outlines as one
+  more. Generators do not copy anchors.
+- Independent rewrites of Glyphs scripts; no source code is copied:
+  - after Pedro Arilla: Real English Text, Real Spanish Text, Delete Stickers,
+    Start From Scratch, Decompose Serif Components, Make Lower Unicase, Set
+    Default Figures, Retract Handles and Simplify Selected Nodes;
+  - after Reset Type Studio: Smart Slant, Node Duplicator, Decompose Named
+    Components, Set Component Locations and Trial Font Maker;
+  - after Reza Bohloul: Magic Remover and Set Intermediate Layer;
+  - after Alex Slobzheninov: Paste Glyph Order Encoding, Align And
+    Distribute, Rotate Selection, Reflect Horizontally, Reflect Vertically,
+    Overlap Nodes, Selection Layer Navigator, Delete Kerning Pair From All
+    Masters, Kern To Max, Steal Kerning From Next Pair, Generate Random
+    Alternates Feature, Reorder Shapes and Show All Layers;
+  - after Resistenza Type: Master Twins, Deliver Glyphs and Style Linker;
+  - after Luke Prowse: Master Text Comparison and Common Glyphs;
+  - after Simon Cozens: seven Anchors tools, eight Contours tools, Kerning
+    Energy Report, Unbundle Punctuation Kerning, Sansomatic, Myanmar Medial
+    Ra Maker and Nastaliq Connection Editor.
+- PORTING-BACKLOG.md has a new table with every third-party source and its
+  disposition: ported, covered by a FontLab command or an existing tool, or
+  without a FontLab counterpart.
+- Build From Recipes and Unlock Lock address fonts by their FontGate id.
+- Autohint Selected Layers and Remove PostScript Hints attribute the TrueType
+  and guideline statements to FontLab's source.
+- Trial Font Maker needs the public fontTools package (DEPENDENCIES.md).
+
+## Unreleased — 2026-10-21 — Metrics, Components, Masters and Cleanup tools
+
+Add 17 tools adapted from the author's own samples; the active menu grows from
+150 to 167 (98 additional tools). 38 of the 61 former archive launchers now
+have a port.
+
+- Metrics: Equalize Sidebearings, Sidebearings Tuner and Copy Metrics From
+  Reference, on the shared Metrics panel. Preview panels; Apply plans again
+  from the live font; outlines move in place; bases of auto glyphs are refused
+  unless overridden. Sidebearings Tuner opens on "Add 0", a preview that
+  changes nothing.
+- Metrics: Vertical Metrics Diagram, a read-only panel that draws H, x, b and p
+  of every master against its own metric lines; edit the values in Font Info >
+  Master Metrics Table. Alignment Zones stays unported until the App has a
+  native zone writer.
+- Components: Build From Recipes, Align By Anchor, Decompose, Replace
+  Reference, Copy Offsets Between Masters, Unlock Lock and Nested Finder, on
+  the App `component_writer` and `component_panel`. Edits are made in place,
+  with no shape clones. Decompose and Nested Finder eject one level, restore
+  raw flags, names and notes on the copies, and hand the removed components to
+  FontLab in the one notification; Edit > Undo of removed components depends
+  on FontLab (fl#7641). Shared element data and uncopyable bases are refused.
+  Build From Recipes uses FontLab's own builder and always builds plain
+  layers; Edit > Undo of a rebuilt existing layer depends on FontLab.
+- Masters: Copy Outline To Mask, Copy Layer Between Masters, Restore Backup
+  Layer, Layer Cleanup and Sync Sidebearings; Cleanup: Empty Layers (no
+  dialog). Shape clones are repaired, backups use FontLab's "@" naming, shown
+  and locked layers are kept, and an anchor move to 0, 0 skips the layer
+  (fl#8527). Back Up Master Layers stays unported: Duplicate Current Layer
+  backs up the current master. Suggest Zones From Overshoots waits for a
+  native zone writer.
+- Shared rules: every edit except Build From Recipes is recorded as one Undo
+  step with one final notification; auto layers are never notified; auto
+  owners and bases of auto composites are refused or listed and skipped;
+  queued glyph updates are refused; no
+  UpdateAll call (fl#8537); every write is read back.
+- Wording: the new docstrings carry no acceptance-status lines; the
+  Components docstrings use "is recorded as one Undo step".
+- Tracking: 17 rows in additional-tools.json, three NOTICE sections, 20 rows
+  in PORTING-BACKLOG.md, generated catalogue pages.
+
+## Unreleased — 2026-10-21 — Anchors scripts on the App anchor writer and panel
+
+- Anchors: Rename Bulk, Center Horizontally, Place From Bounds, Snap To
+  Metrics, Round To Grid, Delete By Name and Mirror Across Masters no longer
+  carry a private copy of the anchor kernel and the 291-line panel base. They
+  use `fly.ap.anchor_writer` (plan, safety checks, one-step write, read-back)
+  and `fly.ap.anchor_panel` (`panel_type()`, colour helpers); each keeps only
+  its planner, its panel subclass and `main` (146 to 190 lines, was 727 to
+  772). Changed behaviour: a "set" edit of a name that several anchors on the
+  layer carry is also refused at Apply (the planners already blocked it).
+  Destination hashes and scope texts of the seven rows are updated.
+- App floors: Clear All Layer Backgrounds, Clear Master Backgrounds (were
+  0.2.151.dev0) and Perpendicular Guides (was 0.2.154.dev0) now require
+  0.2.150.dev0, the App this branch builds. A test keeps every floor at or
+  below it.
+- Tests: `tests/test_issue122_S5.py` runs the scripts against the real App
+  `anchor_writer`, `anchor_panel` and `AnchorPanel`, and checks that no kernel
+  or panel name is defined in a script.
+
+## Unreleased — 2026-10-21 — scripts use the shared App and Fontport helpers
+
+- Features: Build Suffix Substitution and Feature Code Viewer read and write
+  feature source through `fly.fp.feature_blocks` (Fontport). The App functions
+  they used were removed. `menu-revisions.json` records the exact import edits,
+  so the released bytes stay verifiable. `test.sh` accepts
+  `SCRIPTMIX_EXTRA_REQUIREMENTS` (space-separated) to supply Fontport.
+- Metrics: the six advance editors use the App panel, plan model and one-step
+  write (`fly.ap.metrics_panel`, `fly.ap.history`); each script keeps only its
+  maths, planner and controls (122 to 218 lines, was 657 to 750). Changed
+  behaviour: a glyph that owns an auto layer is skipped as a whole; bases of
+  auto glyphs are also found through other composites; Apply is refused while
+  native glyph updates are pending (the earlier entry said Metrics had no such
+  check, which is no longer true); a failure after the write started reports
+  "use Edit > Undo"; the status says "N layers skipped (auto)".
+- Names: the seven editors scan, refuse and write through `fly.ap.names_edit`
+  (on `fly.ap.history`); Suffix Tool and Unicode From Names use the public
+  `fly.ap.edit_guards` instead of private App names. Changed behaviour: a base
+  of an auto glyph is also found through other composites; after a failed
+  write every planned glyph is still stamped and notified, and the message
+  says "use Edit > Undo".
+- Masters: Duplicate Current Layer, Use Layer As Master, Transform Background and
+  Selection To All Backgrounds write through `fly.ap.history.commit`; the four
+  layer scripts take the master name rule from `fly.ap.masters.associated_master`.
+  The refusal policy is now the App one (a glyph that owns an auto layer, or is
+  a base of one, also through other composites, is refused, or skipped by
+  Selection To All Backgrounds). Changed behaviour: the refusal, pending-updates
+  and failure messages are the App texts ("Refused. a: base of auto aacute.",
+  "Native glyph updates are pending", "... did not finish: ... use Edit > Undo").
+- Anchors: the seven anchor writers write through `fly.ap.history.commit`
+  (operation "geometry", with read-back) and check queued updates with
+  `fly.ap.edit_guards.require_settled`; the private history kernel, dependency
+  reader and settle check are gone. Each script keeps its planner and its panel;
+  the shared anchor panel base stays a private copy in each script (no App module
+  fits it). Changed behaviour: blocked rows say "has auto layers" or "base of auto
+  X"; the refusal, pending-updates and failure messages are the App texts.
+- Provenance: the Metrics and Anchors rows now say `source_body_redistributed:
+  true`, like the Names rows: these ports reuse parts of the author's own
+  Apache-2.0 samples. The README limits "not copied" to third-party and
+  Glyphs-corpus originals. The Anchors scope texts and docstrings say "adapted"
+  instead of "independent rewrite"; the Masters rows stay independent rewrites.
+  The Raise Ascender row's App floor is 0.2.150.dev0, like the 27 new rows. The
+  backlog lists Duplicate Unicodes as a source candidate, no longer unported.
+- Docstrings: 38 scripts lose process wording ("reviewed App", "reviewed
+  unpublished App ... candidate", "App helper"); they now say "Requires
+  App>=..." and "the shared module fly.ap...". The generated pages follow.
+
+## Unreleased — 2026-10-21 — Metrics, Names, Anchors and Masters editors
+
+Add 27 tools, 22 of them non-modal panels; the active menu grows from 123 to 150
+(81 additional tools). All are source candidates with offline tests; native
+FontLab acceptance is pending for every one.
+
+- Metrics: Italic Sidebearings, Round Advances, Centre In Advance, Zero-Width
+  Marks, Tabular Width and Scale Advances, adapted from the author's own
+  samples. Preview panels; Apply plans again from the live font; outlines move
+  in place; Scale Advances gives the odd unit to the right sidebearing.
+- Names: Glyph Tags, Mark Color Palette, Suffix Tool, Batch Rename, Batch Glyph
+  Notes, Glyph Notes and Unicode From Names, adapted from the author's own
+  samples. Every write rescans the font, never reads the fgGlyph getter and
+  reads each value back.
+- Anchors: Rename Bulk, Center Horizontally, Place From Bounds, Snap To Metrics,
+  Round To Grid, Delete By Name and Mirror Across Masters, adapted from the
+  author's own samples. Origin moves and duplicate names are refused; new pins
+  get the name-derived appearance.
+- Masters: Display Next Layer, Display Previous Layer, Duplicate Current Layer,
+  Use Layer As Master, Transform Background, Selection To All Backgrounds and
+  Select Different Colour, independent rewrites after Pedro Arilla's Glyphs
+  scripts (Apache-2.0). Transform Background and Selection To All Backgrounds
+  are panels; the other five run once from the menu.
+- Shared rules: one Undo step per font edit, auto layers never notified, bases
+  of auto layers refused where the operation could re-resolve them, and no
+  UpdateAll call (fl#8537). The Names, Anchors and Masters writers also refuse
+  while native glyph updates are pending.
+- Tracking: 27 rows in additional-tools.json, four NOTICE sections, 20 rows in
+  PORTING-BACKLOG.md marked as source candidates, and generated catalogue pages.
+
+## Unreleased — Categories to XML Lib Key candidate
+
+Add Simon Cozens' complete ordered Mark/base UFO lib fragment workflow using
+the existing Glyport category policy through Fly and a shared read-only App
+snapshot panel. Escape XML glyph names; reject observed source changes and
+incomplete captures. Source/artifact controls are tracked separately from pending
+native preservation, lifecycle and release acceptance.
+
+## Unreleased — complete Italic Angle candidate
+
+Add Masters > Italic Angle through the shared App editor. Retain ordered master
+spins, original ranges/precision, staged gauge, pending counts and helper/class
+interfaces. The candidate manifest has69rows; the preceding68rows and70existing
+menu payloads remain unchanged. Released scope remains68/130 until final gates.
+Known unsafe native blueScale history refuses changing batches before writes
+(fl#8531); no-op batches and the original safe multi-master workflow remain.
+
 ## v1.0.18 — 2026-10-18 — two additional foreground reporters
 
 Add Sidebearing Direction Marker and Duplicate Anchor Rings, requiring
@@ -28,6 +610,13 @@ requiring fontlab-fontlabapp0.2.25 or newer. All68original menus and the two
 released reporters remain exact. Native result/lifecycle and full prior68 gates
 pass; independent downloaded-tag acceptance follows release. Preserve the held
 Italic Angle prerelease and its assets separately from this accepted runtime.
+
+## .141 reviewed-source integration candidate
+
+Combine complete typed Symmetry/Cutoff with the current numeric workflows and
+the basic Character Map initial viewport. Preserve every prior runtime/menu and
+all original filters, pair order, type identities and existing native holds.
+Source/artifact evidence does not qualify native/font-history behavior.
 
 ## Unreleased — selection context test fixtures
 
@@ -592,3 +1181,451 @@ menus backed by shared Fontlabapp implementations. Include source/identity guard
 local result details and owned callback teardown. Preserve the68 original menus
 and the two released reporter records. Native candidate checks are retained;
 isolated artifact/regression/release acceptance remains pending.
+
+
+## Unreleased — issue120 tabular width report
+
+Add a practical Apache-2.0 Pedro Arilla tabular-width report through shared App
+and Fly. Compare actual selected active-master advances exactly; retain original
+row statuses, counts and time heading. Use a modeless read-only snapshot with
+Refresh and owned Close; diagnose empty, missing or changed sources. Preserve
+owner Output content. Source/consumer/artifact checks pass; native acceptance
+and release remain pending. This is additional to the130sample inventory.
+
+
+## Unreleased — component recipe report candidate
+
+Adapt Simon Cozens' MIT Recipe Dumper into shared App logic and a typed lazy
+Fly menu. Preserve ordered/duplicate layer and component records, mixed layers
+and original line endings; do not synthesize offsets or transforms. Native
+capture currently binds Font-window selection on the active master, with stale
+source/carrier/deadline guards. The owned modeless report supports Refresh,
+clear failure diagnosis and Close. Original editor-tab/repeated/multi-master
+selection and native acceptance remain open; the130sample count is unchanged.
+Angularizzle remains an explicitly unfinished named priority requirement.
+
+
+## Unreleased — Angularizzle workflow candidate
+
+- Add the original Min plane/Keep detail/Process/Cancel workflow with ordered
+  repeated selections, first-master targets, saved defaults and bound previews.
+- Refuse stale or unsupported source plans before history; retain diagnosed
+  recovery state after late native failures. Native acceptance remains pending.
+- Restore actual overwritten target paths on Cancel, repairing the original
+  cross-layer restoration defect. Closing keeps Process results.
+
+
+## Unreleased — Recipe Dumper selected-layer adapter
+
+Read actual ordered Font/Glyph-window layers through App’s shared selection
+provider, retaining repeated editor slots and their layer choices. Compare
+component reads and fence final selection/context before publishing. Native
+qualification and complete font preservation remain pending.
+
+
+## Unreleased — Tabular Width Checker selected layers
+
+Use the shared Font/Glyph-window selection reader. Preserve editor repeats and
+each slot’s layer choice; compare exact actual advances against the first
+occurrence. Fence source/selection/context under one deadline before reporting.
+Native selected-layer order/focus/preservation qualification remains pending.
+
+
+## Issue120 M1 candidate
+
+- Add licensed Slobzheninov Point Counter with complete foreground-layer/repeated-selection reports and explicit quadratic counting repair. Native acceptance remains pending.
+- Expose the report through a typed Fly menu; original69 migration records remain unchanged.
+
+
+Issue120 Q1 candidate: add all-open-font/all-master Vertical Metrics Reporter, eight exact stored values, unset/zero distinction, complete-source fences and owned Refresh/Close text panel. Native acceptance pending.
+
+Issue120 R1 candidate: seven complete random-proof generation/tab workflows; preserve all4,991dictionary entries, draw order, casing and whitespace. Explicit current-font repair; native acceptance pending.
+
+Issue120 T1 candidate: eight selected-glyph context proofs with exact order/repeats/contexts/blank lines, explicit native named symbols and a fresh-tab writer fence. Native qualification pending.
+
+Issue120 W1 integration candidate: 93 practical and 61 preserved-source menu facades consolidated without copying/executing archive bodies. Native and distribution acceptance remain pending.
+
+Issue120 Y2: verify current App completion hooks with accurate dialog-signal
+doubles and real host-free helper loading; four actual Proof completion controls.
+All practical/archive menus and provenance unchanged; no new native acceptance.
+
+Issue120 Z1: complete Text Simplifier candidate with regex-class filtering,
+input/read-only output/character fields, autosave/reopen, selective Reset,
+original-font optional proof tab, resizing/geometry and owned completion.
+Native PythonQt/settings/tab/whole-font-history qualification remains pending.
+
+Issue120 Z2: complete selected-master Tallest and Shortest and all-foreground
+Highest & Lowest Glyphs candidates share exact extrema/native capture and new
+per-symbol layer tabs. Stable ties/repeated winners/zero/large coordinates are
+preserved; missing layers are never created. All-layer coordinate results use an
+owned panel with Run Again and survive a diagnosed tab failure. Shared NamesDialog
+subtitle colour now follows palette changes. Native qualification remains pending.
+
+
+Issue120 Z4: complete Why You Not Compatible? report candidate compares every
+adjacent foreground-layer pair for each selected occurrence: ordered path/node
+counts/types plus anchor/component name sets. Keep repeated groups, master-first/
+auxiliary order and source messages; fix foreign first-glyph labels and global
+path suppression, and sort displayed name sets. Owned Refresh/Close replaces
+Output writes. These source checks are not an export-compatibility certificate.
+Actual native topology/order/read/cache/font/history/reopen acceptance is pending.
+
+
+## Issue120 current documentation Z5
+
+A source-backed catalogue documents all158 current menu scripts without importing them. Hash-named build snapshots retain complete sources even when filenames contain parentheses, accents or apostrophes. Runtime menu bytes are unchanged.
+
+
+## Issue120 documentation quality Z7
+
+Documentation SDK tests now live under tests_docs and run in the locked documentation environment. Runtime tests stay on Python3.11. The real push gate combines both measurements without exclusions or a reduced threshold. No runtime menu body changes. All1070runtime/root tests pass with1existing skip, plus4SDK tests. The fixed coverage scope now includes the complete src_docs production root and all prior Scripts; the accepted baseline commit is unchanged.
+
+These local gates do not establish native/font/history/reopen or site-publication acceptance. Exact commands and retained failures are in the parent verification/issue-120/docs-quality-z7/.
+
+
+## Issue120 Z9 — bracket-layer report and proof candidates
+
+Both Reset Type Studio source workflows now scan the complete current font's
+foreground layer names and transitive component dependencies. Shared App core,
+full-source observations and report/tab routes preserve both original groups.
+The report explains overlap and counts a distinct total; the proof sorts names
+and uses explicit glyph symbols, avoiding orphan slashes. Apache attribution
+and the full licence are retained. Source originals are never executed.
+
+Owned Qt6 controls and host-shaped boundary tests are offline evidence only.
+Native PythonQt, dependency/cache/read preservation, complete saved-font/history
+and actual symbol/layer mapping remain pending under D25. No native acceptance,
+canonical merge, live install, tag, release or site publication is claimed.
+
+## Issue120 Z24 — browser notices
+
+Add source-bound full texts and provenance for named frontend components, including transitive JavaScript dependencies, icons, shared theme inputs and external font responses. Keep the full transitive/publication review explicitly open; runtime assets and retained archives are unchanged.
+
+Z24 preservation found that the previous docs output path cleaned the authored integration guide in the isolated worktree. Restored the exact tracked guide, retained the earlier generated output in private evidence, and changed output to `.build/site/`. A tests-first regression rejects overlapping authored/output directories. No canonical source was changed. Fresh strict-build/preservation evidence is required below.
+
+## Issue120 Z26
+
+Preserve exact upstream notice bytes through Git filters, fresh checkout and archives; add a CRLF distribution regression. Source manifests and pending publication scope remain unchanged.
+
+## Unreleased — isolate temporary notice repositories
+
+- Clear Git's documented repository-local environment for temporary notice
+  distribution commands and bound each child call to10seconds.
+- Exercise inherited hook context with both default and alternate parent indexes;
+  require byte-exact preservation of parent config, refs, index, objects, files
+  and caller environment. Keep every notice/filter/checkout/archive assertion.
+- Preserve all upstream notice payloads and existing attributes/manifests.
+  Source-only correction awaits fresh independent review; no new commit/push.
+
+
+## 2026-10-20 — curated active menu
+
+Keep 99 practical tools in one-level Title Case menus. Retire 61 archive
+dispatchers from active Scripts; preserve every unfinished tool and source hash
+in the visible porting backlog. Prevent stale sibling bytecode in active menus.
+Regenerate the catalogue from actual menu sources. Native acceptance for new
+candidates, the original 130-sample migration and the broader scope remain open.
+
+
+Known already-current migration rows now resolve idempotently through the same
+reviewed move overlay as historical rows. Preserve manifest bytes and source
+metadata. Unknown or ambiguous routes and changed hashes/bodies are refused.
+
+
+## N48 — anchor-copy helper typing
+
+Declare the existing rounded integer-point and optional native-glyph types in
+Copy Anchors From Glyph. Add short purpose docstrings without changing executable
+statements or imports. The glyph annotation is quoted and uses the existing
+Fly-backed fontlab alias. Record the two exact source edits in menu-revisions.json;
+current menu hashes and exact historical release bytes remain independently
+verifiable. Historical migration rows and original-source hashes are unchanged.
+
+## 2026-10-21 — three contour tools in the curated menu candidate
+
+Add only the reviewed Select Contours, Select Small Contours and Select Partial
+Contours facades and their exact independent Pedro Arilla provenance. The
+curated source menu grows from99to102; its original99files remain byte-exact and
+all61archived dispatchers remain excluded. Preserve menu_layout.current_rows,
+owner-compatible manifest representations and every existing frontend notice.
+Native acceptance and the full retained Issue120 requirements remain pending.
+
+
+## N51 — combine reviewed contour menus and anchor typing
+
+Combine source-reviewed and independently pushed N39 contour menus with N48
+anchor helper annotations/docstrings. Retain the exact 99 N48 menu bytes and add
+exactly 3 N39 menus, with their existing attribution and pending-native scope.
+The source union introduces no additional runtime edits. The original 127 active
+origins remain retained; all sample/archive backlogs and native gates stay open.
+
+Full installed App0.2.73/Fly source checks pass 982 tests/one explicit skip plus
+10 documentation SDK tests. The unchanged quality gate reports 94.95% aggregate
+changed-production coverage above all configured 80% floors. A private owner
+overlay rehearsal retains the raw manifest, 13 literal files and 2 bounded historical/
+current-view test adapters plus 7 merged owner docs; it repeats 982/1 + 10 tests and
+the strict offline build. Canonical application and native acceptance remain
+controller-owned and pending. Exact receipts live outside the public tree.
+
+## Unreleased — complete reporting pair candidate
+Add first-master node compatibility counts/first differences and own-path SVG
+commands with shared Refresh/Close panels. Fix original false-compatible cases;
+retain unconditional Z policy and refuse unsupported whole reports. Native pending.
+
+
+## N68 Same Kerning Groups proof candidate
+
+Implement the complete first-selected-glyph left/right peer proof, independent class maps, font order, explicit named peers, literal labels and original empty/singleton diagnosis. Native acceptance pending.
+
+
+N68 repair round1 (.82): preserve first selected parent only, without layer or later slot/block-ID reads. Peer-side resolution is conditional on current groups; no-group diagnosis skips the peer inventory. Prior .79/N75 failures retained; 53 focused controls pass. Whole ordinary artifact/native qualification receipts: verification/issue-120/kerning-group-proof-z31/repair-round1/. Native acceptance remains pending.
+
+
+## N105 Close But No Cigar (.93 source candidate)
+
+Complete ordered all-selected-parent/first-layer near-angle, horizontal/vertical
+stem and six node-position checks, with explicit associated-master data and
+strict original boundaries/exclusions. Shared modeless Refresh/Close report;
+no Output/font/selection writers. Numeric cubic angle repaired; original curve
+sampling/open wrap preserved. Tests, source/API calibration and ordinary
+archive verification: workspace verification/issue-120/near-miss-z35/.
+Native acceptance, root review and delivery remain pending.
+
+## Issue120 N119 — complete duplicate-anchor source candidate
+
+Retain the complete original all-master duplicate removal workflow, exact first-in-layer/name-family/coincident policies, opening-selection scope and auto-layer skips. Direct original pin removals use preflight and one final layer/glyph notification; partial failures remain explicit for Undo. Native one-Undo, whole-font/history/dirty/save/reopen and lifetime acceptance remain pending. No native/live/canonical operation occurred.
+
+
+N97 Text Holder candidate (.91): full editable/resizable floating window; literal
+Find first/highlight; UTF16-correct selected-or-whole replacement; Save stays
+open, Save & Close, Ignore & Close; owned-path UTF8 persistence and window size.
+Source/licence disposition retained; no original body is copied or executed.
+No native calls or user-store validation. Native acceptance remains pending.
+
+N97 geometry repair: preserve initial content500×400 separately from source
+NS frame min500×400/max1200×800. Persist decorated frame sizes, restore client
+sizes by measured chrome and map literal Cocoa origin(0,500) through complete
+primary logical screen geometry/current frame height after first show; no
+availableGeometry, DPR scaling or silent clamp. Prior .91 commits/artifacts
+are retained in attempt2; no immutable final .91 freeze existed before repair.
+27 focused actualQt5 controls pass; independent geometry controls pass bothQt5
+andQt6. Native qualification remains pending on root final combined .92.
+
+N97 final source fidelity: use normal Qt.Window with stays-on-top and explicit
+title/system/close/minmax hints, matching original Vanilla Window/NSWindow
+role rather than Tool/NSPanel hide-on-deactivation behavior. Preserve literal
+button ampersands, full frame constraints, Cocoa origin and saved frame sizes.
+Producer28 actualQt5 controls and independent32controls perQt5/Qt6 pass;
+ordinary final .91 artifacts and full declared147/42 gates are bound separately.
+Native acceptance remains pending on root combined .92, never claimed for .91.
+
+N97 literal-Unicode repair revision4: frozen8433...candidate retained as failed
+source attempt after independent NBSP/LS/PS Find/Save counterexamples. Added
+text_holder_editor with undo-aware native block separator provenance; literal
+block.text reads preserve NBSP/LS and distinguish PS/LF. Controlled text ingress,
+local mime copy/paste, native Return, IME, selection merge and Undo/Redo preserve
+literal text; original disk universal-newline read remains unchanged. Four
+owned modules; complete App milestone scope grows148, Scriptmix stays42, no
+sample denominator changes. Qt5/Qt6 focused51controls each pass at this stage.
+Native acceptance remains pending on root combined.96 onto.94; .92 prep is
+historical and .91 remains a private source candidate, never native acceptance.
+
+N97 ownership repair revision5: independent pinned PythonQt virtual-return source
+identified an ownerless Python-QMimeData lifetime seam (host binary equivalence
+unproven). The copy factory now returns the explicit nativebase Qt-owned object;
+its lazy source fragment is materialized before clear/setText, preventing a
+later default MIME read from overwriting the literal payload. Constructor-route
+tripwire is RED on revision4 source/GREEN now.52producer Qt5/Qt6 controls pass.
+Revision4 ordinary archives eef6ac94.../305df303... and full148/42 gates remain
+retained as a prior source attempt, with no immutable candidate promotion.
+Fresh revision5 ordinary artifacts/full unchanged gates bind this repair.
+
+## N145 .118 Point Counter literal selection repair
+
+Import complete Reza master-layer report on reviewed .106, preserving its prior workflows.
+Reuse unchanged Text Holder literal editor read-only; preserve NBSP/LS/PS and UTF16 selections.
+F1 RED, complete artifacts/consumer/coverage results are recorded after verification. Native pending.
+
+N145 final .118 source/artifact gates:27focused controls pass source Qt5/Qt6
+and all4installed Qt/archive lanes;4actual public Fly/menu literal-MIME controls pass.
+Both complete7consumer graphs pass13752tests/3existing skips. Original whole scopes
+182App/45Scriptmix/70Examples pass80statement AND80branch perfile, zeroexclusions.
+Scriptmix15SDK/docs tests and strictbuild pass; unchanged .106 Examples docs coverage
+is reused byte-exact with explicit attribution, no write to that frozen tree.
+F1selection RED and readonly IME REDs retained. Literal helper byte-exact to .106;
+report-local IME ignores all preedit/commit. New report PythonQt/native probe pending.
+Exact commands/exits/archives/receipts: verification/issue-120/point-counter-repair-z43.
+No native/canonical/push/user-store/clipboard changes. Independent review required.
+
+Added complete Dangerous Offcurves full-font probe action and exact-layer proof tab; explicit fontTools analytic ordering adaptation.
+
+
+N157 finite-probe numerical repair (.120): exact control-hull exclusion prevents
+rounded solver hits for curves strictly beyond either finite probe endpoint.
+Exact endpoint coordinates replace rounded backend endpoint hits only when
+source fixed-coordinate equality and finite bounds prove the hit. All four
+probes, strict0.05 predicate, traversal, owned result and real-layer tab workflow
+remain. Ascending curve-time ordering stays an explicit adaptation; Glyphs
+engine equivalence and complete FontLab native acceptance remain pending.
+
+N160 retained first .120 artifacts as a failed attempt: an outside exact endpoint
+can round onto a finite probe even with overlapping hulls. Drop numerical t0/t1
+hits before restoring only valid exact source endpoints; interior roots survive.
+
+
+N162 combined source candidate: The combined App0.2.122.dev0 source candidate adds Reports > Point Counter (Master Layers) and Dangerous Offcurves, preserving all prior109menus and both complete original workflows. Dangerous Offcurves uses explicitly adapted ascending fontTools curve-time intersection order; opaque Glyphs engine equivalence remains unproved. Literal text is checked after publication; a lossy literal NUL is refused and remains a native host hold. Source/artifact verification does not complete native/font-history preservation acceptance.
+
+## Duplicate Unicodes .121 candidate
+
+Complete whole-font checkbox cleanup editor through shared App/Fly, preserving primary-owner defaults and ordered surviving assignments. Adds stale/preflight/partial-write handling and single final history notification; original native getter/UpdateAll paths are not used. Native qualification remains pending.
+
+
+
+N185 private source candidate: complete all-master Kerning Cutoff action retains inclusive[-250,100], explicit pair kinds and per-master counts; repairs earlier-master-only notification with the qualified batch writer. Native qualification pending.
+
+
+N193 test compatibility: the owned kerning fixture exposes the resolved package search path instead of preventing genuine shared helper imports. All menu bodies and runtime requirements unchanged.
+
+
+## Unreleased .137 — Complete typed kerning symmetry
+
+Add the complete Science Gothic 28-target/378-comparison Symmetry writer with lossless explicit glyph/group identities, sequential class aliases and zero deletion. Preserve original # and case-sensitive Ctr master exclusion. Cutoff retains its distinct all-native-master policy. Native qualification pending.
+
+N226: private .145 coherent union on reviewed .141; complete admitted CopyAnchors/shared scalar-style reader .144 and TextHolder/literal helper .139revision3 retained. Fresh artifacts/full consumer/Qt/whole-original coverage verification pending; full native qualification remains separate. No host/canonical/live install writes.
+
+N235: integrate complete reviewed literal TextHolder/anchor tools, both literal Find Files profiles and generic Qt table items without replacing prior workflows; host acceptance remains pending.
+
+## N236 — complete four kerning proofs
+
+Add Hoefler Lowercase, Hoefler Uppercase, KernKing and KernSym through shared App/Fly. Keep all five exact licensed texts and KernKing two-tab order. Preserve Output. Ordinary artifact/current consumer/whole-module verification follows; full native tabs/font/history acceptance remains pending.
+
+### N228 — paired whole-font background cleaning candidate
+
+- Add distinct all-layer and declared-master background removal tools through Fly/App.
+- Remove original whole mask objects; reject ambiguous mapping and automatic dependencies before history.
+- Contain partial native failures with one final notification and explicit Undo diagnosis. Native acceptance pending.
+
+### N239 — background failure and active-state repair candidate
+
+- Always attempt one final notification after attempted removal, aggregate individual pre/post stamp and notification errors.
+- Use nonassigning active resolver; active/locked backgrounds remain explicitly unsupported original-domain gates.
+- Prepare survivor identities in checked per-glyph passes before history, and fence final staged sources/queue.
+- No native acceptance or reconstructed background rollback.
+
+N248 complete .153 union retains reviewed .148 and all four .149 proof workflows/five licensed texts, both complete .151 background cleaners and final admitted .152 Character Map contrast. Preserve full original workflow/coverage denominators and all prior menus. Active/locked backgrounds remain UNACCEPTED; all native font/history/reopen gates stay open. No canonical/native/live installation/push.
+
+- Private .159 integrates complete Raise Ascender with reviewed .157 failed-Close lifetime repair; all original font/history domains remain pending.
+
+- Private .159 includes complete reviewed Perpendicular Guides: selected nodes and component centre guides, first-selected-layer scope, transformed geometry and retained carriers; native full-font/history acceptance remains pending.
+
+## Unreleased — Cursive sample window ownership
+
+Parent the sample chooser and warning to FontLab and preserve window flags while requesting panel priority. Retain owned cleanup on configuration failure; sampler and exclusive-create semantics unchanged. Qt test doubles now model priority flags. Full gate retains independently reproduced baseline provenance failures; no native or publication acceptance.
+
+## 2026-11-01 — background menus installed integration and scope wording
+
+Both actual background menu entry points pass11standalone integration cases through
+installed Fly0.2.2.dev7+g78cc4b348 and App0.2.26.dev158+g55fc09868. The installed
+backend and planner remain real; native objects/context use owned doubles. Qt6
+panels are actual widgets: priority flag, nonmodal visibility, preview before
+history, two scopes, no-op, stale/partial failure, warning once and owned deletion.
+Shared master/auxiliary masks pass all-layer mode and refuse master-only mode.
+Correct the all-layer menu docstring to match that measured source contract;
+refresh its additional-tools hash and generated catalogue page. No runtime change.
+New source SHA256 a4b1cb0bbfe4df66545bc282b9d85bdc4f97a979c24c5d726ab7d971e094b676.
+Historical hashes above remain historical evidence.
+
+All173additional pins and242archived Python menus match. Installed366App and1Fly
+runtime files match source bytes. Ten documentation tests pass. Independent
+read-only review finds no blockers. Native stacking/full-font history/reopen and
+full-cohort acceptance remain open. Existing58full-suite failures are not cleared;
+no full-suite rerun for docstring-only change, no push, publication or promotion.
+
+Evidence: external issue123/background-menu-20261101.
+Commands from that directory:
+- `rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 QT_QPA_PLATFORM=offscreen ./env/bin/python -I -B -m pytest -q -p no:cacheprovider tests/test_menus.py`: exit0,11passed.
+- `rtk proxy ./env/bin/python -I -B verify_bytes.py`: exit0.
+Candidate cwd:
+- `rtk proxy env UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python /opt/homebrew/bin/python3.11 --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs`: exit0,10passed.
+The first archive check assumed242total files but found5extra historical .DS_Store
+entries. The final menus-final.tar includes exactly242Python menus and no others;
+no .DS_Store copied into the executed bundle. Failed setup logs retained.
+
+## 2026-11-01 — Integrate reviewed Master Text menu
+
+The App159 candidate already contains the reviewed MasterBlaster workflow, but
+this Scriptmix branch still launched its old standalone implementation. Restored
+the exact reviewed a549976b menu and its focused routing test, corresponding G10
+test migration and documentation. All surviving G10 test functions have identical
+ASTs; former local-panel behavior is covered by73fresh shared App tests.
+Updated only its additional-tools row, preserving all172other rows; menu hash and
+docstring/source link match. Corrected backlog acceptance to native-pending.
+
+Evidence: external issue123/master-text-reconcile-20261101/. Initial routing test
+failed against the old menu (menu-red.log, exit1); final20scoped tests pass
+(menu-final.log, exit0). App73tests pass with standalone PySide6 (tests-qt.log,
+exit0); initial reused environment lacked PySide6 (tests.log, collection exit2).
+AST-only original-source extraction confirms all four fallback values exactly,
+without executing original code.
+
+Full Scriptmix current gate:57failed4381passed19skipped; preserve failures and
+compare the unchanged base in the same environment before promotion. No native
+acceptance, canonical promotion, push, site build or publication. A trial isolated
+App-minimum correction exposed the whole-cohort assertion, so the existing
+provisional0.2.150.dev0 field is retained unchanged and remains a release blocker.
+The tested installed dependency is genuine App0.2.26.dev159+gb1e905b61.
+
+Same-environment baseline6a769d2e:57failed4402passed19skipped; all57failure IDs match candidate exactly (failure-comparison.json). The21net fewer passing cases follow removal of22obsolete standalone-panel cases and addition of one shared-controller routing case; shared App retains73passing workflow tests. Neither full gate passes.
+
+## 2026-11-01 — Genuine App source baseline
+
+Replaced139active provisional App minima with conservative0.2.26.dev159. This
+is a current source baseline, not a claim of earliest historical per-tool support
+or whole-menu compatibility. App159 still lacks the pending zone handoff.
+Updated42menu docstrings, destination pins and mirrored source pages; executable
+ASTs remain identical. Frozen migration.json and original-source hashes unchanged.
+Removed the pretend-version testing recipe, supplied genuine wheel examples,
+updated test.sh guidance and qualified historical dependency/setup notes.
+
+The former branch-constant test passed against invented metadata. Its replacement
+compares every recorded floor with actual installed fontlab-fontlabapp metadata:
+RED1failed before repair (red.log, exit1), GREEN2floor checks (floor.log, exit0)
+using genuine0.2.26.dev159+gb1e905b61. Exact test command from this checkout:
+`rtk proxy sh -c 'PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/current-cohort-20261101/env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_curated_delivery.py -k app_floor'`.
+Full suite uses the same command with `tests` instead of the file/filter.
+Evidence root: external issue123/scriptmix-real-floor-20261101/.
+
+Invariants:242menus compile;173additional pins exact;139floor fields and42hash
+fields are the only manifest deltas;42page docstrings/source hashes match; all42
+runtime ASTs unchanged. Independent read-only review approved with no blockers,
+limited to source/metadata consistency. `rtk proxy /opt/homebrew/bin/git diff
+--check` exits0. No runtime dependency is added to the docs-only pyproject.
+Native proof, complete cohort integration, promotion and publication stay open.
+
+Full suite exit1:57failed4381passed19skipped; counts and all57failure IDs match base aa6740e in the same environment (failure-comparison.json). The full gate is still failing; matching IDs do not qualify its affected workflows.
+
+## 2026-11-01 — Complete retained selection integration
+
+Integrated the retained Select Different Colour fix: empty Font-window selection
+returns before CurrentFont/mark reads and selection/history writes. The original
+only adds selection when selected colour indices exist. Whole-font scope remains
+different from the original displayed-cell domain and is explicitly unqualified.
+Updated the additive-selection assertion to App159's no-clear contract, retaining
+selected-name, unknown-name and stale-package checks.
+
+Fresh RED:3colour cases fail before the menu fix. GREEN:181G1/Names tests pass.
+Command from this checkout: `rtk proxy sh -c 'PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/current-cohort-20261101/env/bin/python
+-B -m pytest -q -p no:cacheprovider tests/test_issue122_G1.py tests/test_names.py'`
+(exit0; focused.log). RED uses G1 with `-k different_colour` (exit1; red.log).
+Full command substitutes `tests` and is retained as full.log. Evidence directory:
+external issue123/selection-integration-20261101/.
+
+Independent bounded review approves source/test-contract changes with no blockers.
+All173additional pins verify; only this menu's hash changes, all139genuine floors
+and every other manifest field are unchanged. Docstring/source-page link matches.
+Diff check exit0. Original source only read/hashed, never executed.
+No canonical edits, native calls, promotion or publication. Native filtered-view
+selection, complete preservation and full cohort acceptance remain open.
+
+Full exit1:56failed4384passed19skipped. The obsolete Names expectation is the sole removed failure; no new failure IDs. Remaining39zone and17provenance failures are unchanged. The full gate remains failing and cannot authorize promotion.

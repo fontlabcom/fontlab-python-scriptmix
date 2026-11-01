@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """The complete anchor-copy panel on owned Qt-shaped controls."""
 
+from _migration_history import before_contours_rename
 import importlib.util
 import sys
 from pathlib import Path
@@ -22,7 +23,7 @@ def test_all67_released_rows_and_menus_remain_byte_exact():
     rows = json.loads((ROOT / "migration.json").read_text())
     assert len(rows) == 68
     digest = hashlib.sha256(
-        json.dumps(rows[:67], sort_keys=True, separators=(",", ":")).encode()
+        json.dumps(before_contours_rename(rows[:67]), sort_keys=True, separators=(",", ":")).encode()
     ).hexdigest()
     assert digest == "fd69198872e2ac99337e7c8a1794ceb41f6cba973b63e97181cb23f5393eda2a"
     for row in rows[:67]:

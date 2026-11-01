@@ -2,11 +2,30 @@
 # SPDX-License-Identifier: Apache-2.0
 """Choose the font's current master from a compact modeless palette.
 
-Run the script with a font open. Click a master button; its axis location appears
-below its name. The current master is checked and bold. Use the first nine button
-shortcuts while the palette has focus. The controls change the package master,
-using FontLab's native setMaster/UpdateAll behavior. Close releases owned signals.
-Reopen the palette after changing the font's masters or their locations.
+What it does:
+    Run the script with a font open. Click a master button; its axis location appears
+    below its name. The current master is checked and bold. Use the first nine button
+    shortcuts while the palette has focus. The controls change the package master,
+    using FontLab's native setMaster/UpdateAll behavior. Close releases owned signals.
+    Reopen the palette after changing the font's masters or their locations.
+
+How it works:
+    Use the shared App master-switcher panel with one exclusive button per
+    master. Show axis locations and highlight the current master after a
+    guarded switch.
+
+Why this design:
+    A compact palette keeps master navigation available without repeatedly
+    opening a larger font-info view.
+
+How to use:
+    Open a font and run Masters > Master Switcher. Click a master or use the
+    first nine shortcuts while the palette has focus. Reopen after changing
+    the masters list or locations.
+
+Benefit:
+    Navigate the family masters with visible current state while keeping
+    master definitions unchanged.
 """
 
 from typing import Any

@@ -4,9 +4,27 @@
 # FLM: Names · Select by Mark
 """Select glyphs in the Font window by their mark colour.
 
-Lists every mark colour used in the font (and unmarked glyphs) with a
-swatch and a count. Pick one or more rows and click Select, or double-click
-a row. Optionally add to the current selection. Nothing in the font changes.
+What it does:
+    Lists every mark colour used in the font (and unmarked glyphs) with a
+    swatch and a count. Pick one or more rows and click Select, or double-click
+    a row. Optionally add to the current selection. Nothing in the font changes.
+
+How it works:
+    Group the current font's glyphs by native mark value, then draw swatches
+    and counts. Selection goes through the shared Names panel source guard.
+
+Why this design:
+    Colour groups can identify a work batch without requiring a persistent
+    naming convention.
+
+How to use:
+    Run Names > Select by Mark. Pick one or more rows and press Select, or
+    double-click a row. Enable Add to the current selection when the old
+    selection must remain.
+
+Benefit:
+    Turn existing mark colours into a Font-window selection while keeping the
+    stored marks unchanged.
 """
 
 from typing import Any
@@ -65,8 +83,10 @@ def mark_label(mark: int) -> str:
     """Describe native mark hue or grey value; zero means unmarked."""
     if mark <= 0:
         return "Unmarked"
-    if mark > 360:
+    if 1000 <= mark <= 1255:
         return f"Grey {mark - 1000}"
+    if mark > 360:
+        return f"Mark {mark}"  # FontGate defines only hues 1-360 and greys 1000-1255.
     hue = mark - 1
     return (
         next(name for limit, name in HUES if hue < limit).capitalize()

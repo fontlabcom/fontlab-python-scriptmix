@@ -3,8 +3,27 @@
 # FLM: Features · Feature Code Viewer
 """Read-only feature source for the whole font. Choose a feature and search its code.
 
-Run with a font active. All original controls use the shared fly panel lifecycle.
-Feature data is font-wide; reopen after switching fonts or changing source.
+What it does:
+    Run with a font active. All original controls use the shared fly panel lifecycle.
+    Feature data is font-wide; reopen after switching fonts or changing source.
+
+How it works:
+    Read ordered prefix and feature blocks through Fontport. Keep empty blocks
+    and exact source; highlight literal search matches without compiling the
+    font.
+
+Why this design:
+    Direct source inspection avoids confusing generated classes with the code
+    that is actually stored.
+
+How to use:
+    Run Features > Feature Code Viewer with a font open. Choose the prefix or
+    a feature, enter search text and use the search action to move through its
+    matches.
+
+Benefit:
+    Locate a rule or language declaration while leaving feature source and
+    glyph data unchanged.
 """
 
 import html
@@ -13,11 +32,8 @@ from collections.abc import Iterable
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
-    features_dialog_type,
-    read_feature_blocks,
-    show_script_dialog,
-)
+from fly.ap.scripting import features_dialog_type, show_script_dialog
+from fly.fp.feature_blocks import read_feature_blocks
 
 fontlab = ap.fontlab
 QtCore, QtGui = (qt.QtCore, qt.QtGui)
@@ -35,7 +51,7 @@ def run(features: Iterable[tuple[str, str]]) -> list[tuple[str, str]]:
     """Copy ordered (tag, exact source) pairs from a VFJ-equivalent snapshot.
 
     Native feature iteration can yield positions rather than tags; raw prefix
-    access can synthesize class declarations. The caller must use App's exact
+    access can synthesize class declarations. The caller must use Fontport's exact
     read_feature_blocks snapshot so displayed source matches persisted source.
     Empty sources are retained, order is unchanged, and nothing is compiled.
     """

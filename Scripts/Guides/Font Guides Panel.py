@@ -2,11 +2,30 @@
 # SPDX-License-Identifier: Apache-2.0
 """List font-guide names and add named horizontal or vertical glyph guides.
 
-Select glyphs, run the script, name a guide and choose its position and master
-scope. Inspect every planned row, then use Add glyph guide. Existing matching
-guides and automatic layers are kept. Fonts whose automatic dependants cannot
-be restored by Undo are refused before editing. Close releases owned signals.
-This panel adds glyph guides; it does not add font-wide guides.
+What it does:
+    Select glyphs, run the script, name a guide and choose its position and master
+    scope. Inspect every planned row, then use Add glyph guide. Existing matching
+    guides and automatic layers are kept. Fonts whose automatic dependants cannot
+    be restored by Undo are refused before editing. Close releases owned signals.
+    This panel adds glyph guides; it does not add font-wide guides.
+
+How it works:
+    Read font-guide names for reference, then plan one named horizontal or
+    vertical glyph guide per chosen layer. Keep matching guides and automatic
+    layers.
+
+Why this design:
+    Listing font guides provides context without implying that this panel
+    edits font-wide guide objects.
+
+How to use:
+    Select glyphs and run Guides > Font Guides Panel. Enter a guide name,
+    direction and position, choose the master scope, inspect rows and press
+    Add glyph guide.
+
+Benefit:
+    Add a consistent named glyph reference while preserving existing guide
+    records and outlines.
 """
 
 from typing import Any

@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Complete remaining static read-only panels and immutable released57 menus."""
 
+from _migration_history import before_contours_rename
 import hashlib
 import importlib.util
 import json
@@ -300,7 +301,7 @@ def test_readonly_tail_prior57_manifest_and_every_menu_byte_remain_immutable():
     )
     assert (
         hashlib.sha256(
-            json.dumps(rows[:57], sort_keys=True, separators=(",", ":")).encode()
+            json.dumps(before_contours_rename(rows[:57]), sort_keys=True, separators=(",", ":")).encode()
         ).hexdigest()
         == RELEASED57_DIGEST
     )

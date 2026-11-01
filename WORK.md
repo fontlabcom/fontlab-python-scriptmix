@@ -2,9 +2,914 @@
 this_file: WORK.md
 ---
 
+## External original-source lookup repaired — 2026-11-01
+
+The historical inspector helper now honors FONTLAB_PRESERVED_ROOT before other
+copies and verifies the recorded SHA256 for every lookup route. Missing or
+corrupt explicitly selected archives fail instead of silently falling back.
+Only the shared test helper and its regression tests changed; frozen migration
+records, menu pins and production scripts remain unchanged.
+
+Full suite: 4404 passed, 56 failed, 6 skipped; exact failure IDs unchanged
+from latest-cohort baseline. Full command/exit1 recorded in commands.json.
+
+Seven regression cases: before fix 4 failed/3 passed; after fix 7 passed.
+Five real archive audits: 4 passed, 1 retained provenance failure in reports.
+All 69 recorded Scriptmix preserved sources match the external archive hashes.
+Original bodies were read/parsed only, never executed. Ruff checks passed.
+Evidence and exact audit/full-suite commands: original-byte-audit-20261101/
+commands.json under the external issue123 evidence root.
+Regression command (exit 0): rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/latest-cohort-20261101/env/bin/python
+-I -B -m pytest -o pythonpath=. -p no:cacheprovider -q tests/test_migration_history_sources.py
+Lint command (exit 0): rtk proxy ruff check --no-cache tests/test_migration_history_sources.py tests/_migration_history.py
+
+Native acceptance, provenance repair and zone integration remain open.
+
+## 2026-11-01 — Reset source dispositions
+
+Correct18Reset backlog rows against the retained2026-10-22 full22-source review.
+Keep every original identity/hash and candidate menu link. Partial and unported
+statuses replace unsupported Ported/Duplicate/Retired claims; notes expose the
+specific missing behavior. Newer candidate changes still require evidence to
+clear those dated findings. No source bodies, menu scripts or manifest pins change.
+
+Verification: rehashed all18originals; row comparison preserves identity/hash/menu
+columns and all other table rows. Initial count19assertion failed before writes;
+correct count18(four audited originals have no backlog row). Exact test command:
+rtk proxy env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/current-cohort-20261101/env/bin/python
+-I -B -m pytest -o pythonpath=. -p no:cacheprovider -q
+tests/test_curated_delivery.py -k backlog:exit0,2passed6deselected.
+Initial pythonpath= command failed collection because menu_layout is root-local;
+no product failure inferred. git diff --check:exit0. Full source/native gates
+remain open; this is a backlog correction, not port completion.
+
+## 2026-11-01 — figure window geometry and completion
+
+The isolated figure panel saves/restores geometry in its own settings store.
+Restore runs after full construction and keeps malformed settings usable with a
+diagnostic. Close records save failures and always runs owned cleanup. Reuse
+App script_completion for reject/Escape and duplicate-launch closure; no custom
+reject recursion. Family/unrelated keys remain, contour replacement resets.
+Existing larger preview layout and stay-open Apply behavior remain explicit
+adaptation differences; automatic alignment and native preservation are open.
+
+Seven new full-selection-base fakeQt regressions failed before implementation.
+Final focused checks:311passed against each ordinary App wheel/sdist. Nine realQt
+subprocess cases pass on Qt5.15.19 and Qt6.12.0 using the production subclass,
+minimal QDialog selection base and actual App completion/cleanup/launcher helpers.
+They cover Close/button/reject/Escape/replacement, parent/flags/modality, geometry
+roundtrip, repeated completion, destruction, malformed data and write/sync/save
+failures. Qt5 uses source App; Qt6 uses installed App. No font/preferences touched.
+Close errors are retained in slot_error, not promised as user-visible feedback.
+
+Full configured gate x6Yymo:58failed4403passed17skipped, exit1; exact58failed-node
+set unchanged. Nine extra skips are the realQt tests absent from the minimal gate;
+they pass separately. All14modules exceed80%; figure module88.22%. Docs10pass,
+173current pins match, scoped Ruff/diff check pass. Independent source review
+finds no blocking issue. No push while the full gate fails; native remains open.
+
+Commands through rtk proxy:
+- Candidate: env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/ordinary-artifacts/wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_geometry.py (before production:exit1,7failed).
+- Same environment: tests/test_default_figure_geometry.py tests/test_default_figure_geometry_runtime.py tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py tests/test_issue122_G2.py tests/test_cov_a_writers.py:exit0,311passed; repeat sdist-env/bin/python:exit0,311passed.
+- Candidate: env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 FONTLABAPP_TEST_QT5=1 PYTHONPATH=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src:/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-fly/src /Volumes/Falstaff4T/fontlab-scripting-data/verification/issue-120/typed-date-z11/qt5-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_geometry_runtime.py:exit0,9passed.
+- Workspace: .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/fontlab-python-scriptmix fontlab-python-scriptmix:exit1.
+- Candidate: env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs:exit0,10passed.
+- Candidate: ruff check 'Scripts/Components/Set Default Figures.py' tests/test_default_figure_geometry.py tests/test_default_figure_geometry_runtime.py; git diff --check:each exit0.
+
+Wait, but: real standalone Qt is not native FontLab. Dedicated-host positioning,
+full native cleanup, Apply/history/save and original-domain acceptance remain.
+External evidence uses menu-message-priority-20261101/figure-geometry-*.
+
+## 2026-11-01 — recover from figure preference read failures
+
+Independent review found213d687 could fail during partial panel construction,
+before launcher registry ownership. Match the original's usable-default behavior:
+finish construction at lining0 and display the read error after initial refresh.
+Do not overwrite saved data during fallback. A later choice can save normally;
+close still disconnects all owned signals. Family0 regression now makes an actual
+selection change instead of relying on the fake combo's unchanged-index signal.
+
+Three new panel-level regression cases failed before repair and pass afterward.
+Both ordinary App wheel/sdist environments:295focused tests pass. Docs10pass;
+all173current pins match; scoped Ruff and diff check pass. Configured full gate:
+58failed4396passed8skipped; exact failed-node set unchanged; all14changed modules
+exceed80%, Set Default Figures87.84%. Source re-review closes the finding.
+
+Commands through rtk proxy:
+- Candidate: env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/ordinary-artifacts/wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_settings.py -k restore_fails (before repair:exit1,3failed25deselected).
+- Same environment, tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py tests/test_issue122_G2.py tests/test_cov_a_writers.py:exit0,295passed; repeat with sdist-env/bin/python:exit0,295passed.
+- Workspace: .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/fontlab-python-scriptmix fontlab-python-scriptmix:exit1,stAX1h.
+- Candidate: env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs:exit0,10passed.
+- Candidate: ruff check 'Scripts/Components/Set Default Figures.py'; ruff check tests/test_default_figure_settings.py; git diff --check: each exit0.
+
+Wait, but: this is source/artifact evidence, not native acceptance. FontLab PID30373
+exists, localhost47400 has no listener. No restart or owner-state mutation.
+No push while full gate fails. Retained logs/review: external
+menu-message-priority-20261101/family-read-recovery-*.
+
+## 2026-11-01 — remembered figure-family choice (isolated candidate)
+
+Set Default Figures now restores the four-way family choice before connecting
+signals and saves it after refreshing the preview. Missing or invalid values
+select lining. Only optionFigures is written; unrelated keys stay, settings
+fallbacks are disabled, and Replace own contours remains unchecked on reopen.
+Read/write failures are reported without a font write. Window geometry,
+automatic alignment and native acceptance remain open.
+
+Configured gate yKdxzx:58failed4393passed8skipped, exit1; exact failed-node set
+unchanged from figures-default. Four additional skips are real-Qt tests in the
+minimal gate environment; all four run and pass separately under both Qt5 and
+Qt6. All14changed modules exceed80%; figure coverage87.43%. Command from workspace:
+`rtk proxy .metaswarm/quality.sh coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/fontlab-python-scriptmix fontlab-python-scriptmix`.
+
+Tests-first: 25 intended failures before implementation; an earlier fixture
+import error was corrected. Real Qt6 then caught instance-level NoError access;
+using the class enum fixes it. Fresh-process isolated INI checks pass on Qt5
+and Qt6 (four families each); no user preference domain was written by tests.
+Both ordinary App wheel and sdist environments pass292 focused tests. Docs10
+pass; all173current manifest pins match. New test files pass Ruff and diff check.
+
+Commands (rtk proxy, candidate cwd; all final commands exit0):
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 /Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/ordinary-artifacts/wheel-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py tests/test_issue122_G2.py tests/test_cov_a_writers.py
+- Same command with sdist-env/bin/python:292passed.
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 FONTLABAPP_TEST_QT5=1 PYTHONPATH=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src:/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-fly/src /Volumes/Falstaff4T/fontlab-scripting-data/verification/issue-120/typed-date-z11/qt5-env/bin/python -B -m pytest -q -p no:cacheprovider tests/test_default_figure_settings_runtime.py
+- env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs
+- ruff check tests/_figure_settings_support.py tests/test_default_figure_settings.py tests/test_default_figure_settings_runtime.py
+
+Wait, but: standalone Qt and test doubles do not prove PythonQt/native panel
+lifecycle. No live installation or owner font changed. Full gate evidence is
+retained separately; no push while that gate fails.
+
+## 2026-11-01 — Set Default Figures keeps own contours by default
+
+UI, apply_pairs and write_components now default to keeping existing contours.
+Explicit Replace own contours remains available. The script/doc page warn that
+retained outlines can overlap the newly installed component; advances and kerning
+memberships still follow the selected sources. Make Lower Unicase is byte-unchanged.
+The figure source pin and generated page are current; all173current pins match.
+Original source33dcbede... was read, not executed, and remains byte-unchanged.
+
+Baseline167G2tests passed. Before the fix, five regression assertions failed and
+eight explicit-option cases passed. Final183G2tests pass against each ordinary
+App.153 wheel/sdist installation. New16-case matrix covers all4families,10digits,
+2masters, public default/explicitFalse/explicitTrue plus raw writer omitted default.
+It checks contour/node retention, anchors, components, fractional advances, class
+membership, immutable Unicode snapshots and existing-target history enrollment.
+Independent review's missing raw-writer test was added and re-reviewed clean.
+
+Configured full gate:58failed/4368passed/4skipped; exact failed-node set equals the
+prior58. All14changed modules pass80%; figure module86.32%. Docs10passed. No new
+Ruff findings under identical filename/config comparisons; the first ad-hoc lint
+comparison used different configuration and was discarded, with logs retained.
+
+Commands through rtk proxy, cwd this isolated candidate:
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 <ordinary-artifacts/wheel-env>/bin/python -B -m pytest -q -p no:cacheprovider tests/test_issue122_G2.py: exit0 baseline167/final183.
+- Same command with -k 'contour_switch or contours_are_removed_only' before production edit: exit1,5failed8passed166deselected.
+- Same final G2 command using <ordinary-artifacts/sdist-env>/bin/python: exit0,183passed.
+- .metaswarm/quality.sh coverage <this-candidate> fontlab-python-scriptmix from workspace: exit1;1DbhPV retained in external figures-gate-evidence.
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs: exit0,10passed.
+
+Wait, but: these are source and installed-App checks. Automatic alignment,
+persisted family/window choice, full source domain and native Apply/Undo/Redo/save
+preservation remain open. No font or live installation changed; no full-gate push.
+Exact external logs use figures-* under menu-message-priority-20261101.
+
+
+Final unchanged configured gate after the fixture repair:58failed/4352passed/4skipped,
+all14changed modules pass80%coverage (FiiH58). Exact failed-node comparison removes
+only the G13 report signature failure and adds none. Command through rtk proxy:
+`.metaswarm/quality.sh coverage <this-candidate> fontlab-python-scriptmix`, exit1.
+External report-fixture-final-gate.log, report-fixture-gate-evidence and
+report-fixture-receipt.json retain the complete result.
+
+
+## 2026-11-01 — compatible report test double
+
+The G13 report test used a fixed old show_report signature. The private report
+API adds optional deadline/clock/cancelled arguments; canonical App retains the
+old signature. Replace only this stale test double with create_autospec of the
+actual callable; an unsupported keyword must still raise TypeError. Runtime,
+report-content assertions and no-font/no-notification checks are unchanged.
+
+Regression before fix:1failed at exact signature comparison. After fix:106G13tests
+pass with installed genuine App.153 and106pass with explicit canonical App source.
+Ruff and diff whitespace checks pass. Commands through rtk proxy, cwd this tree:
+- env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 <standard-message-priority-20261101/ordinary-artifacts/wheel-env>/bin/python -B -m pytest -q -p no:cacheprovider tests/test_issue122_G13.py: exit0.
+- Same command with SCRIPTMIX_APP_SOURCE=<canonical-App>/src/fontlabapp and PYTHONPATH=<canonical-App>/src: exit0. Canonical files were read only.
+- ruff check tests/test_issue122_G13.py: exit0.
+- git diff --check: exit0.
+
+Wait, but: the missing coherent zone dependency and owner provenance holds are
+separate. This fixture repair does not claim a passing whole Scriptmix cohort.
+
+
+## 2026-11-01 — combined final source/artifact checks
+
+Configured gate:59failed/4351passed/4skipped, all14changed modules pass80%coverage
+(range80.24–100%). Exact root command through rtk proxy:
+`.metaswarm/quality.sh coverage <this-candidate> fontlab-python-scriptmix`, exit1;
+external final-configured-gate-r2.log and configured-gate-evidence retain output.
+Initial configured attempt lacked required sibling dependency paths; read-only
+symlinks were added and the unchanged gate rerun. No policy/hook bypass.
+Compared with prior58failure unconfigured run, two original-source audit tests
+are now enabled and fail; both independently fail on untouched f4e80ba baseline
+(configured-extra-baseline.log,2failed). The prior G3 missing App-name failure
+passes with the configured dependency tuple. The remaining failures retain provenance
+and zone/App surface holds. Concurrent zone/master code was untouched.
+
+Fresh changed G8+G11:115passed after final test import cleanup. Both independently
+installed genuine App0.2.26.dev153+g44a0d90da artifacts pass497menu tests each:
+`rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+<artifact-env>/bin/python -B -m pytest -q -p no:cacheprovider
+tests/test_issue122_G2.py tests/test_issue122_G4.py tests/test_issue122_G7.py
+tests/test_issue122_G8.py tests/test_issue122_G11.py tests/test_cov_a_writers.py`
+(exit0 each; installed-wheel-menus.log and installed-sdist-menus.log).
+No source-path override is used for these installed checks. Complete cohort and
+native acceptance remain open; no push of this failing full-gate candidate.
+
+
+## 2026-11-01 — retained encoding chooser
+
+Paste Glyph Order Encoding now ORs priority before every modeless show. Its
+owned parent, type/chrome, retained callback and no-overwrite/stale guards remain.
+Tests:31baseline passes,4expected regressions/29passes,33final passes. Setter
+failure leaves the same chooser and connection available for retry. Source and
+page pins match902134168141b0a84a092ff8946d9b400b5721f598157683881c158d465effd6.
+Exact rtk proxy commands, exit codes, Qt source reference and retained logs are in
+external menu-message-priority-20261101/paste-chooser-report.json. Ruff/diff pass.
+This source candidate does not qualify native chooser settings/global state.
+
+Root pin audit:173 Scriptmix current rows and207 Examples current rows match all
+available local menu bytes. The new G11 test unused import was removed; one
+pre-existing E731 at line541 remains. No source logic changed for that cleanup.
+
+
+## 2026-11-01 — anchor chooser priority follow-up
+
+Add Anchors From File and Auto Cursive Attachment Add Anchors preserve flags and
+OR WindowStaysOnTopHint inside run_file_dialog configuration. ExistingFile,
+filters, parent, selection and finally deletion are unchanged. Two regression
+assertions failed before implementation; final G11 suite82passed. Two current
+additional-tools pins and generated pages were refreshed; original-source hashes
+are untouched.
+
+Exact command through rtk proxy (cwd this candidate): env
+PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+SCRIPTMIX_APP_SOURCE=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src/fontlabapp
+PYTHONPATH=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src
+/Volumes/Falstaff4T/fontlab-scripting-data/issue123/final-panel-priority-artifacts-20261101/wheel-env/bin/python
+-B -m pytest -q -p no:cacheprovider tests/test_issue122_G11.py: exit0.
+Initial full G11 run without SCRIPTMIX_APP_SOURCE:81passed/1failed, correctly
+rejecting mismatched source resolution; explicit candidate selection fixes this.
+
+Wait, but: this is source-only. The prior full-suite provenance/cohort failures
+and three asynchronous QFileDialog sheet routes remain open.
+
+
+## 2026-11-01 — owned priority messages (source candidate)
+
+Replace eleven static warnings and three static confirmation questions in eleven
+menu files with App `run_standard_message_box`. Preserve the original parent,
+window title, primary text, Warning/Ok or Question/Yes|No buttons, default No,
+exact Yes comparison and the post-Yes selection/plan recapture. The helper owns
+priority-before-exec and deletion, including setup/exec/result-read failures.
+No font-writing algorithm changed. File choosers and zone work are outside this
+change. Updated eleven current `additional-tools.json` hashes and eleven generated
+pages; historical source hashes and licences remain intact.
+
+Tests execute the actual menu routes and real candidate App helper over stateful
+Qt doubles. Baseline focused: 355 passed. Regression-first: 30 failed because the
+static calls never constructed an owned box. Final focused: 382 passed, covering
+all eleven warnings, all three questions with No/Cancel/interrupted exec followed
+by Yes, retained race recapture checks and 21 warning setup/exec/read failures.
+The boxes preserve their existing type/chrome flags and are deleted exactly once;
+refusal leaves font notification state untouched. This is source verification,
+not installed-artifact or native FontLab acceptance.
+
+Reproducible commands (external evidence: `menu-message-priority-20261101/`):
+
+```sh
+SCRIPT_TEST_PY=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/final-panel-priority-artifacts-20261101/wheel-env/bin/python
+APP_CANDIDATE=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/standard-message-priority-20261101/fontlab-fontlabapp/src
+# Baseline before edits, and regression-first before menu edits: exit 0 / 1.
+rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 "$SCRIPT_TEST_PY" -B -m pytest -q -p no:cacheprovider tests/test_issue122_G2.py tests/test_issue122_G4.py tests/test_issue122_G7.py tests/test_cov_a_writers.py
+rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 "$SCRIPT_TEST_PY" -B -m pytest -q -p no:cacheprovider tests/test_issue122_G2.py tests/test_issue122_G4.py tests/test_issue122_G7.py -k 'startup_failure or timeout_is_reported or opening_fails or reset_requires'
+# Final focused: exit 0. Full tests: exit 1.
+rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH="$APP_CANDIDATE" SCRIPTMIX_APP_SOURCE="$APP_CANDIDATE/fontlabapp" "$SCRIPT_TEST_PY" -B -m pytest -q -p no:cacheprovider tests/test_issue122_G2.py tests/test_issue122_G4.py tests/test_issue122_G7.py tests/test_cov_a_writers.py
+rtk proxy env PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH="$APP_CANDIDATE" SCRIPTMIX_APP_SOURCE="$APP_CANDIDATE/fontlabapp" "$SCRIPT_TEST_PY" -B -m pytest -q -p no:cacheprovider tests
+# Docs in ordinary disposable dependency environment: exit 0.
+rtk proxy env PATH=/opt/homebrew/bin:/Users/adam/.local/bin:/usr/bin:/bin PYTHONDONTWRITEBYTECODE=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/issue123/menu-message-priority-20261101/uv-cache uv run --no-project --python cpython-3.11-macos-aarch64-none --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML python -B -m pytest -q -p no:cacheprovider tests_docs
+rtk proxy git diff --check
+```
+
+Full source result: 58 failed, 4348 passed, 6 skipped. Nineteen inherited provenance
+failures remain unmodified; 39 other failures concern unavailable App surfaces in
+this isolated source candidate (including `outline_extent` and zone modules).
+The full matching cohort gate remains required. Docs initially failed collection
+in the borrowed wheel environment because `codeinclude` was absent (exit 2);
+the disposable documented dependency invocation passed all 10 tests. Intermediate
+focused runs exposed incomplete Qt test doubles (41, then 27 failures), followed
+by test-parent identity/signature mistakes (42 failures); corrected the doubles
+and assertions without changing production behavior. Logs retain every attempt.
+Ruff comparison of six touched test files: 83 findings both at baseline and now,
+with no added findings after normalizing shifted line numbers. `git diff --check`
+passes. `script-hash-map.json` records exact old/new bytes for cross-repo pins.
+
+## Issue 122 zones port (2026-10-22)
+
+- Add Metrics/Alignment Zones.py (shared App panel + zone_native.backend) and
+  Guides/Suggest Zones From Overshoots.py (pure H/O, x/o measurement and merge;
+  preview; Apply through the same backend). Master Metrics Table now writes
+  with master_metrics.write_master_metrics and reads `*_value` per master.
+- Records: additional-tools.json (173), menu-revisions.json MMT edits/hash,
+  PORTING-BACKLOG, README/PLAN counts, NOTICE, docs via build.py::catalogue.
+- Verification: `sh .metaswarm/quality.sh coverage <worktree>
+  fontlab-python-scriptmix`; results in
+  verification/issue-122/sdd/final/port-zones-report.md. No FontLab run.
+
+## Final round F - owner decision D27 (2026-10-22)
+
+- Merge Cleaning into Cleanup and Reporters into Reports using plain file
+  moves after a complete filename-collision check. Six menu sources and two
+  reporter __pycache__ files moved without overwriting; the old directories
+  are gone. The 240 scripts now occupy exactly 14 Title Case categories.
+- Update moved this_file headers, visible menu instructions, current manifest
+  routes, backlog destinations, notice destination labels, README/PLAN counts,
+  pre-integration guide, background guide and four path/layout tests. Preserve
+  third-party Cleaning source identities and all source/historical hashes.
+- Regenerate the source-backed catalogue with src_docs/build.py::catalogue:
+  move six pages, merge both section indexes and rebuild the catalogue index;
+  refresh the Layer Cleanup page. awesome-nav derives sections from these
+  directories, so the authored navigation needs no separate path edit.
+- The requested Examples path sweep found no matches; no Examples file edited.
+  No rescued content or Git state was changed; no Git command was invoked
+  directly. Docs distribution tests exercise their own scratch repositories.
+- Verification: MIX 3,831 passed / 2 skipped, EXIT=0; EX core 1,747 passed /
+  92 skipped plus R 496 passed / 7 skipped, EXIT=0/0; Scriptmix docs 10 passed,
+  exit 0. The supplied gates first failed at the unwritable configured uv
+  cache; rerun copies retain their complete bodies and override only cache/tmp
+  paths after env.sh (plus disable bytecode). Docs require Homebrew first on
+  PATH because /usr/bin/git fails in this host toolchain.
+- Wait, but: this is a menu-path/documentation change, with offline gate proof;
+  it adds no native FontLab behaviour claim. All 240 current destination pins,
+  merged documentation headers/links and the exact 14-folder set pass audit.
+  No unresolved item remains in this round.
+
+Moved menu sources:
+
+- `Scripts/Cleaning/Delete Stickers.py` -> `Scripts/Cleanup/Delete Stickers.py`
+- `Scripts/Cleaning/Clear Master Backgrounds.py` -> `Scripts/Cleanup/Clear Master Backgrounds.py`
+- `Scripts/Cleaning/Start From Scratch.py` -> `Scripts/Cleanup/Start From Scratch.py`
+- `Scripts/Cleaning/Clear All Layer Backgrounds.py` -> `Scripts/Cleanup/Clear All Layer Backgrounds.py`
+- `Scripts/Reporters/Duplicate Anchor Rings.py` -> `Scripts/Reports/Duplicate Anchor Rings.py`
+- `Scripts/Reporters/Sidebearing Direction Marker.py` -> `Scripts/Reports/Sidebearing Direction Marker.py`
+
+Refreshed `additional-tools.json` destination pins (the only changed pins):
+
+- `Scripts/Reports/Sidebearing Direction Marker.py`: `5202f5b21310833341a887b10e8a8bb36cf58272cd4a5ec058e58bd685f86944`
+- `Scripts/Reports/Duplicate Anchor Rings.py`: `667544aeb7e91ca306bc65b88073108a3a2e5c5d51339a63155bc005499e4566`
+- `Scripts/Cleanup/Clear All Layer Backgrounds.py`: `0cf8c953961d3bdf67d6669f422de97f4bc199bfd1021a6a64c4c6cd6ea631e8`
+- `Scripts/Cleanup/Clear Master Backgrounds.py`: `2057d0f8b04cf41146b4328247f417856a1da85a663147065eddf056ee177de5`
+- `Scripts/Masters/Layer Cleanup.py`: `2eaafb42ee474e65bd0eb028f03e68bd3c5e043f06c0ebdec405859c724511e8`
+- `Scripts/Cleanup/Start From Scratch.py`: `9d7ee77ef3f3becc3b00543225a814f1c48347b0346c8ae5d0d7af84887e8ff2`
+- `Scripts/Cleanup/Delete Stickers.py`: `d7edf968a9ea1df73db7d15d0f1e94001dd5d1e6c9c4af13fafd86c3d30e2492`
+
+## Scoped round-B re-review, fix round 1 (2026-10-22)
+
+- Read roundB-rereview.md and the corrected App masters/selection-panel code.
+  App is read-only. The earlier casefolded-prefix observation is superseded:
+  backup prefixes and the |temp| marker use exact case; exclusion of any
+  master name remains casefolded. Replaced the old lowercase-prefix assertion
+  and added 45 companion-tool case variants plus a case-twin naming test.
+  SelectionPanel refreshes facts before Apply planning; CopiesPanel writes
+  with that snapshot, as supplied by the corrected App.
+- M-1: reformatted the 79 module docstrings with a summary, uniform house
+  section headings and four-space section bodies, with one blank separator.
+  All prior content/credit/licence lines survive the indentation pass except
+  the requested status replacement and Master Switcher wording correction.
+- M-2/M-3: removed remaining qualification-status wording throughout Scripts,
+  retained concrete scope/failure limitations, stripped trailing spaces and
+  removed four-to-six blank-line runs. No new measured-native claim.
+- M-4: background replacement now reads back every target mask, checking
+  existence, the planned own-contour count and zero components. Mismatches
+  use the shared unstored_error with the shared Undo hint after history ends.
+  Four new regressions simulate ignored component/outline removal, ignored
+  addition and a disappeared mask. RED: 4 failed / 130 deselected, exit 1.
+  An intermediate run caught the missing Undo advice; the final focused
+  suite passes all 227 tests, exit 0.
+- Only Selection To All Backgrounds has an executable change in this fix.
+  The other 111 changed scripts retain identical executable ASTs. Refreshed
+  44 additional destination hashes, 68 current revision hashes/text overlays
+  and three moved destination hashes. Historical hashes, historical revision
+  fragments and migration.json are unchanged. Cumulative round-B changes
+  affect 144 scripts, including 76 additional-tool destination pins.
+- M-5: CHANGELOG now reports the actual final runs, rather than another
+  controller environment's counts. Requested runtime gate: 3,812 passed /
+  6 skipped, exit 0. Explicit arm64 runtime gate: 3,812 passed / 6 skipped,
+  exit 0. Documentation gate: 10 passed, exit 0. Ruff 0.14.10 rules
+  F821,F401,F811: all 144 round-B changed scripts clean, exit 0.
+- Regenerated the source-backed catalogue using the existing documentation
+  .venv and src_docs/build.py --offline. Strict site build: exit 0.
+  All 240 catalogue descriptions and content-addressed source snapshots match.
+  All 240 current destination pins match; all 69 frozen historical sources
+  reconstruct to their recorded digests. All 240 scripts compile as Python
+  3.11 and have module docstrings >=700 characters (minimum 721), exit 0.
+  All 79 house-layout checks pass. No trailing spaces or long blank runs.
+- Three final source greps are empty, each exit 1 as expected: original
+  forbidden patterns; residual qualification/status wording; and casefolded
+  backup-prefix wording. The read-back and prefix tests add 50 cases.
+- Gates retain the previously documented environment. UV_CACHE_DIR and TMPDIR
+  use permitted external OS scratch because the requested volume cache was
+  denied by the sandbox in the preceding round. Bytecode and pytest caches
+  are disabled. Exact runtime commands match the preceding gate recipe;
+  Ruff receives all 144 paths listed in the external receipt.
+- Receipts: external scriptmix-rereview-r1 scratch contains before.json,
+  changes.json, all-changed-scripts.json, red.log, focused-final.log,
+  runtime.log, runtime-arm64.log, docs.log, ruff.log, site-build.log and
+  final-audit.json. No source archive was executed or changed.
+- Wait, but: these checks prove source/offline behaviour and documentation,
+  not FontLab Apply/Undo/Redo or saved/reopened full-font state. The native
+  component/history/read-back checks remain open in TODO. No native item was
+  ticked, no App or sibling checkout was edited, and no git state changed.
+
+## Final script fixes, round B (2026-10-22)
+
+- Read both final review reports, the batch rules, workspace host landmines and
+  the corrected read-only App sources. All five layer scripts' pre-edit bytes
+  matched HEAD. No App, canonical checkout, branch, index or commit changes.
+- Five backup-rule adapters now call masters.backup_master. Duplicate Current
+  Layer delegates naming to backup_layer_name(base, taken, suffix, masters)
+  and time formatting to default_suffix. Four full-shape repair copies plus
+  the partial-contour background copy now call contour_copy.restore_shape;
+  Duplicate passes keep_view_state=True and the partial copy passes indexes.
+  Remove the second empty-job guard. Contour names are now retained.
+- Six plan_rows hooks reuse self.facts. Tabular Figure Copies already inherits
+  CopiesPanel.plan_rows and uses its corrected captured facts without a local
+  override. Existing write-time fresh scans remain. Seven planning-hook tests
+  change controls and forbid a whole-font scan.
+- Selection To All Backgrounds reads component_history before detachment,
+  removes each mask shape individually and passes retained shape/data/builder
+  objects to history.commit. A component-mask regression checks read order,
+  removal, retained notification order and deep-history flag.
+- Expanded all 79 listed short docstrings with What/How/Why/Usage/Benefit;
+  preserved existing credit/source/licence lines. Executable ASTs match the
+  saved originals, except the explicitly requested Text Holder return typing.
+  Added return typing to Symmetry without changing its return value.
+- Replaced all ten from-Fly-module imports. Removed public generic acceptance
+  status and unmeasured Undo claims; Metrics and Anchors describe a recorded
+  Undo step. Restated the one NOTICE process sentence in plain attribution.
+- Updated 59 additional-tool current hashes and three moved-menu hashes.
+  Extended 68 reversible docstring overlays in menu-revisions.json, preserving
+  every historical source/hash and migration.json byte. menu_layout composes
+  docstring overlays with historical path moves. Tests retain frozen hashes;
+  the AST comparison now excludes module docstrings as well as function docs.
+- README and AGENTS identify migration.json as the frozen v0.2.0 record.
+  PLAN/TODO leave all native checks open, with the four contour-selection
+  scaffolds, five spans helpers and three Font Info catalogue reads on the
+  App backlog. The sibling Examples forward pins are outside this write scope.
+- Initial RED regressions: 2 failed / 150 deselected, exit 1. The first full
+  runtime run found 23 failures / 3,738 passed / 6 skipped, exit 1. Fixed stale
+  wording/API assertions, historical-fixture overlays, tracked contour_copy
+  aliases in helper fakes, and the Trial Font panel's native font catalogue
+  fake for construction-time fact scanning. No production behaviour was
+  weakened to satisfy a fake. Focused arm64 rerun: 720 passed, exit 0.
+- Saved-HEAD differential checks: 73 cases passed, exit 0, for backup discovery,
+  custom suffixes/collisions/refusals and full/subset shape repair with both
+  view-state modes. All prior fields match; contour names are additionally
+  retained. Corrected casefold behaviour is tested through the App contract.
+- Requested runtime command: 3,762 passed / 6 skipped, exit 0. Plain 3.11
+  resolves to x86_64 on this Mac. Repeated the complete suite with explicit
+  cpython-3.11-macos-aarch64-none: 3,762 passed / 6 skipped, exit 0.
+- Documentation gate: 10 passed, exit 0. Ruff 0.14.10 selected rules
+  F821,F401,F811: 127 changed scripts, no findings, exit 0. No auto-fixes.
+- Regenerated all 240 source-backed catalogue pages with src_docs/build.py
+  using the existing documentation .venv; strict site build passed, exit 0.
+  Generated pages were not hand-edited. No dependency change or publication.
+- The requested UV_CACHE_DIR was rejected by the filesystem sandbox (exit 2).
+  Cache and TMPDIR therefore use a permitted external OS scratch directory;
+  all other requested gate exports are retained. Bytecode and pytest cache
+  writes are disabled. Full commands/logs and pin lists are retained in the
+  external scriptmix-round-b scratch receipt.
+- Final recheck after regeneration: 127 changed scripts pass Ruff, exit 0;
+  forbidden-source grep has zero matches, exit 1 as expected; the separate
+  "is pending" grep is also empty, exit 1. All 240 module docstrings meet
+  700 characters, exit 0; all 240 compile as Python 3.11. All 171 current
+  additional-tool pins and all 240 catalogue descriptions/snapshots match.
+  Documentation gate after regeneration: 10 passed, exit 0.
+- Wait, but: these are offline/source and documentation results. Real FontLab
+  Apply/Undo/Redo, saved/reopened full-font state, painting and Close remain
+  unverified for the changed tools and final dependency combination. No TODO
+  item was ticked and no historical native acceptance count was increased.
+
+Gate recipe (from this worktree; external scratch supplies cache and TMPDIR):
+
+```sh
+export UV_CACHE_DIR="$ROUND_B_SCRATCH/uv-cache-final"
+export TMPDIR="$ROUND_B_SCRATCH"
+export PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONDONTWRITEBYTECODE=1
+export SETUPTOOLS_SCM_PRETEND_VERSION=0.2.150.dev0
+export PYTHONPATH="$(cd ../fontlab-fly/src && pwd)"
+export FONTLAB_PRESERVED_ROOT=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-python-scriptmix
+rtk proxy uv run --no-project --python 3.11 --with pytest \
+  --with ../fontlab-fontlabapp --with ../fontlab-fontport \
+  python -m pytest -q -p no:cacheprovider tests
+rtk proxy uv run --no-project --python cpython-3.11-macos-aarch64-none \
+  --with pytest --with ../fontlab-fontlabapp --with ../fontlab-fontport \
+  python -B -m pytest -q -p no:cacheprovider tests
+rtk proxy uv run --no-project --python cpython-3.11-macos-aarch64-none \
+  --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML \
+  python -B -m pytest -q -p no:cacheprovider tests_docs
+rtk proxy uv run --no-project --with ruff==0.14.10 \
+  ruff check --no-cache --select F821,F401,F811 <127 changed Scripts paths>
+PATH="$PWD/.venv/bin:/opt/homebrew/bin:$PATH" \
+  rtk proxy .venv/bin/python -B src_docs/build.py --offline
+```
+
+## Removal prep review: Scriptmix fix round 1 (2026-10-22)
+
+- M4: README now shows both --audit-rescued-sources and
+  --original-source-root /path/to/workspace, defines the workspace root and lists
+  the four original-source comparison families. Explicit preserved root wins.
+- M7: removed parentheses from seven Names historical-source headers; refreshed
+  only their destination hashes and seven generated catalogue include references.
+  All seven ASTs and all historical source paths/hashes remain unchanged.
+- I2 ruling: Scriptmix must land first; Examples then pins its Scriptmix
+  destinations to the resulting Scriptmix worktree bytes. No reverse pin and no
+  Examples edits from this worktree. Read-only verification after header cleanup:
+  all 24 Examples forward pins already match current Scriptmix bytes. Batch Rename
+  is c65860e9b8e6f6c5fd643ebc73e072dccddeb125aa6c790b78258936baa07fc2.
+- I1 proof: Scriptmix already failed partial archives. Its full-archive audit now
+  collects missing-file and hash-mismatch failures before asserting. Added a
+  regression copying a valid owned archive, deleting one file and corrupting a
+  second; both errors must appear. A real 130-source canonical copy with the same
+  mutations also fails, reporting both paths. Source archives themselves untouched.
+- M5: gate now sets PYTHONDONTWRITEBYTECODE=1 and -p no:cacheprovider; docs gates
+  use both too. Removed 20 cache directories from source/test locations and staged
+  them at .build/removal-prep/discard. The requested external move was rejected
+  by the workspace sandbox (Operation not permitted); transfer to
+  /Volumes/Falstaff4T/fontlab-scripting-data/tmp/discard remains outstanding.
+  Ready command: .build/removal-prep/round1/move-staged-caches.sh. Subsequent gates
+  recreated no __pycache__ or .pytest_cache outside the .build scratch area.
+- M6: /opt/homebrew/bin/ruff 0.14.10, --no-cache --target-version py311, full edited
+  Python set: exit 1, 8 E402 + 1 E731 in test_masters.py/test_proof.py. Same nine
+  findings reproduced from the saved pre-removal baseline, consistent with review
+  evidence at HEAD. Remaining edited files: exit 0. No lint-driven code cleanup.
+- Canonical gate: `rtk proxy sh .build/removal-prep/gate.sh`: exit 0,
+  3752 passed / 1 skipped. Empty gate: same command plus
+  "$PWD/.removal-sim/empty": exit 0, 3747 passed / 6 skipped.
+- Partial-copy proof: `rtk proxy sh .build/removal-prep/round1/partial-audit.sh
+  "$PWD/.removal-sim/partial"`: exit 1 expected, 1 failed / 3752 deselected;
+  missing metrics_italic_sidebearings.py and mismatched metrics_zones_editor.py
+  are both reported. Initial broad partial run: 1 failed / 3747 passed / 5 skipped,
+  exit 1 expected; the final focused runner avoids running unrelated tests.
+- Documentation gates: 10 passed each, exit 0, with canonical and empty roots.
+  Full commands/logs and cache-transfer limitation: .build/removal-prep/round1/.
+  .removal-sim removed after verification. No repository Git state changes.
+
+
+## Issue 122 Task 1: external rescued archive removal preparation (2026-10-22)
+
+- Default tests now use immutable historical identities from rescue-index.json,
+  migration.json and additional-tools.json. All 130 rescue identities are pinned;
+  the 69 released sources are cross-checked against migration.json.
+- Source-byte hashing is opt-in with --audit-rescued-sources. Existing
+  --original-source-root comparisons remain optional and skip clearly when the
+  external folder is absent. Split Reports/Masters audits so skips cannot hide
+  current-file checks; Proof now reports its optional skip. An explicit
+  FONTLAB_PRESERVED_ROOT is authoritative: no canonical fallback. Partial restored
+  archives and bad hashes still fail. Added four resolver regression checks.
+- README, NOTICE, PORTING-BACKLOG and the historical guide describe external
+  archives; NOTICE records both owner-supplied archive SHA-256 values. Attribution
+  and licence terms retained. Seven Names tool comments now label historical
+  paths explicitly; only their destination hashes and generated catalogue include
+  references changed. Tool ASTs are identical. No preserved-source headers existed.
+- Adapted sdd/cmd/mix-archive.sh to run in this worktree: no Git export, no sibling
+  timestamp touches; UV_CACHE_DIR and TMPDIR under .build/removal-prep. Commands
+  and complete outputs are in .build/removal-prep/{gate.sh,report.md,*.log}.
+- Pre-change baseline: exit 0, 3744 passed / 1 skipped. Final canonical gate:
+  `rtk proxy sh .build/removal-prep/gate.sh`: exit 0, 3751 passed / 1 skipped.
+  Empty gate: `rtk proxy sh .build/removal-prep/gate.sh "$PWD/.removal-sim/empty"`:
+  exit 0, 3746 passed / 6 skipped (five optional source-byte audits plus the existing
+  Spacing Preview skip). Both included --original-source-root and the new opt-in
+  audit, exercising actual canonical bytes and absent-source handling respectively.
+- Documentation suite, `uv run --locked python -m pytest -q tests_docs`, with local
+  UV_PROJECT_ENVIRONMENT/cache/TMPDIR and each FONTLAB_PRESERVED_ROOT: exit 0,
+  10 passed each. First attempt: 7 passed / 3 failed because /usr/bin/git hits broken
+  xcrun; rerun with PATH=/opt/homebrew/bin:$PATH passed. Its Git distribution tests
+  use only isolated fixtures under .build/removal-prep/tmp, never this repo's state.
+- The original uvx Ruff invocation returned exit 0. This is tool-specific: Homebrew
+  Ruff 0.14.10 reports nine findings already present at HEAD (8 E402, 1 E731) in
+  test_masters.py and test_proof.py; the round-1 baseline comparison reproduces them. Historical ledgers byte-identical; only seven
+  destination_sha256 fields differ in additional-tools.json. Existing NOTICE
+  hashes and copyright lines retained. .removal-sim/ removed after both gates.
+- Historical rescued/ and /_old/ identifiers remain intentionally in ledgers,
+  attribution and optional audit code. No runtime/current-file check needs source
+  bytes. No lessons directory exists in this repository; tests_docs has no rescued
+  reads. No canonical source deletion, native execution, commit or Git state change.
+
+
+## Issue 122 T0 baseline
+
+- Suite MIX; pre-change worktree HEAD recorded below; branch `issue-122` confirmed.
+- Common env: `I=/Volumes/Falstaff4T/fontlab-scripting-data/issue122; export UV_CACHE_DIR=/Volumes/Falstaff4T/fontlab-scripting-data/uv-cache TMPDIR=/Volumes/Falstaff4T/fontlab-scripting-data/tmp PYTEST_DISABLE_PLUGIN_AUTOLOAD=1`
+- Command (working form): `SETUPTOOLS_SCM_PRETEND_VERSION=0.2.146.dev0; PYTHONPATH=$I/fontlab-fly/src; FONTLAB_PRESERVED_ROOT=/Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting/fontlab-python-scriptmix; cd $I/fontlab-python-scriptmix && SCRIPTMIX_APP_REQUIREMENT=$I/fontlab-fontlabapp rtk proxy sh test.sh --original-source-root /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting`
+- Result: **exit 0; 1016 passed, 0 failed, 1 skipped, 0 errors (2.3 s)**
+- Pre-existing failing test ids (working form): none
+- Attempts (including failed invocations):
+  - Designed command + `--original-source-root /Users/adam/Developer/vcs3/github.fontlabcom/fontlab-scripting` (workspace root; conftest maps `/_old/` to `/rescued/`) with no other env: exit 1, 70 failed / 946 passed / 1 skipped. 61x tests/test_rescued_menus.py::test_unported_source_is_preserved_without_an_active_dispatcher[...], tests/test_rescued_menus.py::test_complete_preserved_inventory_stays_unchanged, tests/test_curated_delivery.py::test_unported_sources_remain_a_complete_hashed_backlog (missing `rescued/` in the worktree: need FONTLAB_PRESERVED_ROOT), and 7 Fly-facade tests (ModuleNotFoundError: fly): test_anchor_duplicates_menu.py::test_complete_candidate_is_lazy_and_dispatches_through_fly; test_contour_selection_menus.py::test_actual_fly_facades_dispatch_public_app_actions (3 params); test_crossfont_anchors_menu.py::test_crossfont_anchor_menu_calls_actual_lazy_fly_facade; test_perpendicular_guides.py::test_direct_menu_execution_uses_same_complete_fly_writer; test_perpendicular_guides.py::test_public_menu_calls_complete_shared_action. Fix: FONTLAB_PRESERVED_ROOT to the canonical scriptmix checkout (read-only) and PYTHONPATH to Fly src.
+- Notes: SCRIPTMIX_APP_REQUIREMENT is the App worktree path (uv builds it; needs the generic pretend-version override only to satisfy later floors, kept for consistency). Canonical sources were read only.
+- Scope: offline tests only. This is not native FontLab proof.
+
+## Issue 122 Task 2 integration wave 4: C5 tool extensions, C4 zone ruling (2026-10-22)
+
+- Commits on `issue-122` (base 0e836a7): 801fd7a C5 (Duplicate Current Layer, Copy
+  Layer Between Masters, Restore Backup Layer, Display Next/Previous Layer, Layer
+  Cleanup, Round Coordinates; tests C5 new, G1/S6/S8 edited; 7 additional-tools.json
+  hashes and scopes, app_minimum 0.2.150.dev0 and native_acceptance pending kept;
+  NOTICE section; CHANGELOG; 7 regenerated docs pages); then this docs commit
+  (PORTING-BACKLOG zone rows per ruling "zones", Back Up Master Layers row, CHANGELOG,
+  WORK). Menu and tool counts unchanged (240 / 171).
+- All 11 file hashes equal batch-C5-fragment.md. Peers: App worktree 2937e3a built
+  fresh as 0.2.150.dev0; Fly worktree read only.
+- `uvx ruff check --no-cache --target-version py311` on the 7 tools and 4 tests:
+  EXIT=0.
+- `sh verification/issue-122/sdd/cmd/mix-archive.sh 801fd7a` from the workspace
+  root: 3744 passed, 0 failed, 1 skipped, EXIT=0 (base 3706; +38).
+- Docs: `git archive 801fd7a` into
+  `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-w4-docs/801fd7a`, `./build.sh
+  --offline`: EXIT=0; `diff -r` of `src_docs/md/scripts` against the commit: identical.
+- C3 replacement records: 68 rows written to the examples worktree
+  `_coverage/dispositions-C3-C5.json` with target hashes of the committed blobs.
+- Scope: offline tests only. No FontLab, Remopy or fl-native.sh call. Native
+  acceptance of the seven tools is pending.
+
+## Issue 122 Task 2 integration wave 3: T14i, S6, S7, G2-G18 (2026-10-22)
+
+- Commits on `issue-122` (base e87c2e3): fc7ea07 T14i fgId fix (Build From Recipes,
+  Unlock Lock, S4/S5 tests, 2 hashes); 7e9973b S6 (11 Contours writers); f787153 S7
+  (8 Contours generators/hint tools, re-review m2 wording); f851c59 G3; 3c616e1 G4;
+  05e17b9 G5; 6d62323 G6; 44ab5db G7; e74b1d7 G8; 89d70a6 G9; 5af9f4a G10; a0c34cc G11;
+  e17a9eb G12; 731ce48 G13; 0f2391f G14; d882a44 G15; f0ff8f4 G16; 9107e10 G17;
+  7651097 G18; fa00b53 G2 (ledger "Batch G2: approved" present when reached); then this
+  docs commit (README, CHANGELOG, WORK, generated `src_docs/md/scripts`). Each batch
+  commit carries its rows, NOTICE section, PORTING-BACKLOG statuses or dispositions and
+  shared count edits, so every commit passes alone. Counts 98/167 -> 171/240; reused
+  own-sample rows 37 -> 56; rescued launchers with a port 38 -> 57 (4 unported).
+- Peers: App worktree `fontlab-fontlabapp` 2937e3a (clean; built fresh as 0.2.150.dev0
+  by env.sh), Fly worktree `fontlab-fly`. All new rows carry app_minimum 0.2.150.dev0.
+- Test-local fix: `tests/test_issue122_G3.py` real-App test used the sibling App source
+  override (`syspath_prepend` + `SCRIPTMIX_APP_SOURCE`) and failed on the clean export
+  (1 failed). Changed to the G1 form (installed App, ruling G2 I5); amended into f851c59.
+- `uvx ruff check --no-cache --target-version py311` on every committed batch's scripts
+  and test file: EXIT=0 for each batch. (`tests/test_reports.py` has a pre-existing I001
+  import-order finding; not changed.)
+- Clean-export runs, `sh verification/issue-122/sdd/cmd/mix-archive.sh <sha>` from the
+  workspace root, all 0 failed, 1 skipped, EXIT=0: fc7ea07 1936; 7e9973b 2212 (+276);
+  f787153 2377 (+165); f851c59 2410 (+33; the first G3 commit 29df550 had 1 failed, see
+  above); 3c616e1 2466 (+56); 05e17b9 2530 (+64); 6d62323 2574 (+44); 44ab5db 2651
+  (+77); e74b1d7 2682 (+31); 89d70a6 2769 (+87); 5af9f4a 2810 (+41); a0c34cc 2892 (+82);
+  e17a9eb 3016 (+124); 731ce48 3122 (+106); 0f2391f 3223 (+101); d882a44 3299 (+76);
+  f0ff8f4 3415 (+116); 9107e10 3478 (+63); 7651097 3568 (+90); fa00b53 3706 (+138).
+  Every growth equals the batch's own test count.
+- `sh verification/issue-122/sdd/cmd/fly.sh`: 17 passed, EXIT=0.
+- Docs: `git archive fa00b53` into
+  `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-w3-docs/fa00b53`, `./build.sh
+  --offline` there: EXIT=0, 0 warnings, 257 catalogue pages; `src_docs/md/scripts`
+  copied back with `rsync -a` (no delete) and `diff -r` identical.
+- Docs commit d977c66: `mix-archive.sh d977c66` 3706 passed, 0 failed, 1 skipped,
+  EXIT=0.
+- Hash commit 6397d89: the third-party table gains a Source SHA-256 column (118
+  identities, each recomputed from the source file and matched to the fragments); 16
+  wave-3 NOTICE sections point to it. `mix-archive.sh 6397d89` 3706 passed, 0 failed,
+  1 skipped, EXIT=0.
+- Scope: offline tests only. No FontLab, Remopy or fl-native.sh call. Native acceptance
+  of all 73 new tools is pending.
+
+## Issue 122 Task 2 integration wave 2: Metrics, Components, Masters, Cleanup (2026-10-21)
+
+- Commits on `issue-122` (base 6786f2e): c397d89 Metrics (4 tools), d8e279a Components
+  (7), 645cdc3 Masters and Cleanup (6), then one docs/tracking commit (README, CHANGELOG,
+  WORK, generated `src_docs/md/scripts`). Each batch commit carries its own
+  additional-tools.json rows, NOTICE section, PORTING-BACKLOG statuses and shared count
+  edits, so every commit passes alone. The untracked Contours scripts and their tests
+  were not staged.
+- Peers: App worktree `fontlab-fontlabapp` de3a7a6 (clean; built fresh as 0.2.150.dev0,
+  env.sh touches pyproject.toml), Fly worktree `fontlab-fly`.
+- Wording (ruling "public wording"): the three Metrics writers lose "Native
+  Undo/Redo/reopen of in-place moves is pending."; the four in-place Components writers
+  lose "native Undo of this edit is not yet verified"; Decompose and Nested Finder say
+  "is recorded as one Undo step ... Edit > Undo of removed components depends on FontLab
+  (fl#7641)."; Build From Recipes says "Edit > Undo of a rebuilt existing layer depends
+  on FontLab". The S2 and S4 tests pin the new text. All 10 changed hashes recomputed.
+- Focused runs (workspace root): `sh verification/issue-122/sdd/cmd/mix-S2.sh` -> 72
+  passed, EXIT=0; `sh verification/issue-122/sdd/cmd/mix-S4.sh` -> 141 passed, EXIT=0.
+  `uvx ruff check --no-cache --target-version py311` on the 11 edited scripts and 2 tests:
+  EXIT=0.
+- Clean-export runs, `sh verification/issue-122/sdd/cmd/mix-archive.sh <sha>`
+  (`git archive` into `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-mix/tree-<sha>`,
+  `test.sh` with the mix.sh env): 6786f2e 1611 passed; c397d89 1683; d8e279a 1824;
+  645cdc3 1936; each 0 failed, 1 skipped, EXIT=0. Growth = 72 + 141 + 112 batch tests.
+- Counts: additional tools 81 -> 85 -> 92 -> 98; active menu 150 -> 154 -> 161 -> 167;
+  reused own-sample rows 20 -> 24 -> 31 -> 37; `NEW_TOOLS` floor check 28 -> 32 -> 39 -> 45.
+  The Masters no-reuse rule now covers only the Glyphs-corpus rewrites.
+- Docs: `git archive 645cdc3` into
+  `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-w2-docs/645cdc3`, then
+  `./build.sh --offline` there: EXIT=0 (strict build). Its `src_docs/md/scripts` was copied
+  back: 17 new pages and 5 index pages, no Contours page. It equals the catalogue that
+  the 645cdc3 mix-archive run generated (`diff -r`: identical).
+- Bytecode: 92 `*.pyc`, 15 `__pycache__` and 2 `.ruff_cache` folders removed from
+  `Scripts/`; none was tracked.
+- Docs commit e8fe485: `mix-archive.sh e8fe485` -> 1936 passed, 0 failed, 1 skipped,
+  EXIT=0; its regenerated catalogue equals the committed one (`diff -r`: identical).
+  `sh verification/issue-122/sdd/cmd/fly.sh` -> 17 passed, EXIT=0. This WORK record is
+  committed on its own and checked with `mix-archive.sh` again.
+- Scope: offline tests only. Native FontLab acceptance of all 17 tools is pending.
+
+## Issue 122 Task 2 integration: Metrics, Names, Masters, Anchors (2026-10-21)
+
+- Commits on `issue-122` (base 7063123): c09fa7d Metrics (6 tools), dda705c Names (7),
+  ad4ccde Masters (7), f819822 Anchors (7), then one docs/tracking commit (README,
+  CHANGELOG, WORK, PORTING-BACKLOG, generated `src_docs/md/scripts`). Batch scripts and
+  batch tests are unchanged from their approved bytes.
+- Peers used: App worktree `fontlab-fontlabapp` 033e0f2 (clean, built as 0.2.150.dev0),
+  Fly worktree `fontlab-fly` 6214776 (clean).
+- Command: `bash verification/issue-122/sdd/cmd/mix.sh` from the workspace root (same env
+  and `test.sh --original-source-root` form as the T0 block).
+- Before integration (27 scripts + 4 tests present, no shared edits): EXIT=1, 31 failed,
+  1542 passed, 1 skipped. 20 `test_rescued_menus` cases (menu exists without a candidate
+  row), 2 `test_curated_delivery`, 1 `test_contour_menu_integration`, 1 `test_reports`,
+  7 `test_features`.
+- T0 tree against the current App (`git archive 7063123`, same env): EXIT=1, 7 failed,
+  1009 passed, 1 skipped. The 7 are `tests/test_features.py` (Feature scripts still call
+  `fontlabapp.scripting.write_feature_blocks`, which moved to fontport; re-pointing is
+  pending). The T0 block's 1016 passed was measured with the App at T0.
+- After integration (worktree): EXIT=1, 7 failed, 1566 passed, 1 skipped. The failing ids
+  equal the T0-tree list exactly; no new failure.
+- Each commit alone: `sh verification/issue-122/sdd/cmd/mix-archive.sh <sha>...` (workspace
+  root; `git archive <sha>` into `/Volumes/Falstaff4T/fontlab-scripting-data/tmp/integ-mix/tree-<sha>`,
+  then `test.sh` with the mix.sh env): 7063123 1009 passed, c09fa7d 1096, dda705c 1291,
+  ad4ccde 1406, f819822 1566, 37ef60f 1566; each with the same 7 failed and 1 skipped
+  (EXIT=1). Failing-id lists compared with `cmp`: identical.
+- Follow-up commit corrects the CHANGELOG entry (22 of the 27 tools are panels; the
+  pending-update refusal applies to the Names, Anchors and Masters writers, not Metrics).
+- Count deltas (derived from the failing assertions): additional tools 54 -> 60 -> 67 ->
+  74 -> 81; active menu 123 -> 129 -> 136 -> 143 -> 150, in
+  `test_contour_menu_integration.py`, `test_curated_delivery.py` and `test_reports.py`.
+- `additional-tools.json`: 27 rows appended at the end; existing 54 rows unchanged
+  (file round-trips with `json.dumps(indent=2, ensure_ascii=False)`). destination_sha256
+  recomputed from disk (all equal the fragment values). `app_minimum` is 0.2.150.dev0 for
+  all 27 (the App build under test). Rescued ports use `complete-original-writer-candidate`
+  (required by `test_rescued_menus`); the Masters rows keep the `independent-*` kinds
+  used by the earlier Pedro Arilla rows.
+- Lint: `uvx ruff check --target-version py311` on the 27 scripts and 4 batch tests:
+  EXIT=0, all checks passed (check only, no fix or format).
+- Generated catalogue: regenerated by `tests/test_docs_site.py` (`catalogue()`) during the
+  full run; no new page contains process ids. 22 older pages still carry "reviewed App"
+  from older script docstrings (unchanged).
+- Scope: offline tests only. Native FontLab acceptance of all 27 tools is pending.
+
+## Issue 122 T16: scripts use the shared App and Fontport helpers (2026-10-21)
+
+- Base 56a0292. Peers: App worktree 033e0f2, Fontport worktree b085cf7, Fly 6214776.
+- Runner: `bash verification/issue-122/sdd/cmd/mix.sh` (workspace root). It now also
+  exports `SCRIPTMIX_EXTRA_REQUIREMENTS=$I/fontlab-fontport` (same edit in
+  `mix-archive.sh`); `test.sh` turns each entry into one `--with`.
+- uv cache trap: the App path build was cached as 0.2.146.dev0 (the T0 pretend
+  version); changing `SETUPTOOLS_SCM_PRETEND_VERSION` does not invalidate it, so the
+  earlier "built as 0.2.150.dev0" note was not true. Fontport needs App >=0.2.150.dev0,
+  so the first run failed to resolve (exit 1, "only fontlab-fontlabapp<0.2.150.dev0 is
+  available"). Fix used once: `uv run --no-project --python 3.11 --refresh-package
+  fontlab-fontlabapp --refresh-package fontlab-fontport --with $I/fontlab-fontlabapp
+  --with $I/fontlab-fontport python -c ...` (from the tmp volume) printed
+  `0.2.150.dev0 0.2.150.dev0`; later runs reuse that build.
+- Features (step 1):
+  - RED: focused copy of mix.sh plus `-p no:cacheprovider`, `tests/test_features.py`
+    against the unchanged scripts: EXIT=1, 4 failed (2 new identity tests, whitespace
+    run order, viewer snapshot), 1571 passed, 1 skipped.
+  - After re-pointing the imports: EXIT=1, 12 released-byte tests failed (Build Suffix
+    Substitution hash). Recorded both import edits (and one docstring word, "App's" ->
+    "Fontport's") in `menu-revisions.json` as kind `import-repoint`. Then 3 failed: two
+    harness tests built synthetic rows without `source_sha256` (test_components) or
+    copied the whole revision ledger into a one-row tree (test_anchor_menu_polish);
+    both now pass the real row / only that menu's revision. Assertions unchanged.
+  - GREEN: EXIT=0, 1575 passed, 1 skipped.
+  - Acceptance `rg -n "fontlabapp\.(vanilla|_qtsafe)|scripting\.(read|write)_feature_blocks|fly\.ap\.scripting import[^)]*feature_blocks|fontui\.(font_info|groups|kerning|transform)_editor|batch_panel|glyph_sequence" Scripts tests`:
+    exit 1 (no match).
+  - Verified, unchanged: `Reports/Categories to XML Lib Key.py:26`
+    (`fly.gp.glyphsapp.glyph_info.glyph_categories` exists in Glyport),
+    `Reports/Dangerous Offcurves.py:14` and `Contours/Select Small Contours.py:15`
+    (App still has the `[fontui]` extra). T5 was skipped, so the three poller scripts
+    need no change.
+  - Lint: `uvx ruff check --target-version py311` on the two Feature scripts: clean.
+- Metrics (step 2, six scripts onto `fly.ap.metrics_panel` / `fly.ap.history`):
+  - Test harness: new `real_app` fixture (tests/conftest.py) imports the real installed
+    App modules over the FontLab/Qt fakes (registered as `PythonQt`/`fontlab`) and
+    aliases them as `fly.ap.<module>`; `fontlabapp.*` is restored after each test.
+    `app_names_used` + `check_real_app_names` replace the hard-coded App/Fly paths
+    (installed App or `SCRIPTMIX_APP_SOURCE`; Fly from PYTHONPATH).
+  - RED: new and updated `tests/test_issue122_S1.py` on a `git archive HEAD` tree
+    (`/Volumes/Falstaff4T/fontlab-scripting-data/tmp/t16mix-red-s1`) with the old
+    scripts: 12 S1 failures (shared panel identity, real names, auto owner skipped
+    whole, transitive base, pending updates, PartialWriteError text, Undo order,
+    `metrics_panel.unit`). Same run in the worktree before the scripts changed:
+    EXIT=1, 7 failed, 1569 passed, 1 skipped.
+  - GREEN: focused mix.sh copy, full suite: EXIT=0, 1579 passed, 1 skipped (after
+    `destination_sha256` was recomputed for the six rows).
+  - Lint: `uvx ruff check --target-version py311` and `uvx ruff format` on the six
+    scripts: clean (the scripts were already ruff-formatted).
+- Names (step 3, seven scripts onto `fly.ap.names_edit` / `fly.ap.edit_guards`):
+  - RED: the updated `tests/test_issue122_S3.py` on a `git archive HEAD` tree
+    (`/Volumes/Falstaff4T/fontlab-scripting-data/tmp/t16mix-red-s3`, mix.sh env): 27 S3
+    failures (App module identity, no private copies, import without Qt/FontLab,
+    transitive base refusal, layers-first init order, real names).
+  - GREEN: focused mix.sh copy, full suite: EXIT=0, 1588 passed, 1 skipped (after
+    recomputing the seven `destination_sha256` values).
+  - Lint: `uvx ruff check --target-version py311` and `uvx ruff format` on the seven
+    scripts: clean.
+- Masters (step 4, six scripts onto `fly.ap.history` / `fly.ap.masters`):
+  - The four private `commit` copies and the `require_no_auto_dependants` / `auto_related`
+    guards were removed; Duplicate Current Layer, Use Layer As Master, Transform
+    Background and Selection To All Backgrounds call `history.commit(...,
+    operation="geometry", facts=history.scan_auto_facts(package))` (Duplicate returns
+    `.created`; Selection To All Backgrounds skips with `history.refusal` and keeps the
+    facts in its plan). The four `associated_master` copies use
+    `fly.ap.masters.associated_master`. `mask_name_for` stays private.
+  - Test harness: the G1 world keeps its font/selection/Qt fakes and loads the real App
+    `guides`, `history`, `masters`, `edit_guards` through `real_app`; the hard-coded
+    App path and process wording were removed.
+  - RED (worktree, old scripts, new tests; focused mix.sh copy, full suite): EXIT=1,
+    17 failed, 1580 passed, 1 skipped (App-sourced `associated_master`, no private copies,
+    real names, PartialWriteError, pending-update and auto-policy texts, transitive
+    base through a manual composite, auto owner refused; mostly message-text changes).
+  - GREEN: EXIT=0, 1597 passed, 1 skipped (after recomputing six `destination_sha256`
+    values); a second run left the regenerated catalogue unchanged.
+  - Lint: `uvx ruff check --target-version py311` on all Masters scripts and the test:
+    clean (three unused `Callable` imports removed). The G1 scripts are not
+    ruff-formatted; they were edited in place, not reformatted.
+- Anchors (step 5, seven scripts onto `fly.ap.history` / `fly.ap.edit_guards`):
+  - `apply_work(work, title, facts)` calls `history.commit(..., operation="geometry",
+    facts=facts, read_back=read_back)` with a named `def mutate() -> None`; mismatches
+    raise the script's own "did not store" error. `require_safe` keeps the origin
+    rule and uses `edit_guards.require_settled` + `history.refusals`; the panel keeps
+    `history.scan_auto_facts` instead of raw records. `stamp_all`, `commit`,
+    `dependency_records`, `unsafe_glyphs`, `require_settled` removed.
+  - AnchorPanel (the shared panel base, 291 identical lines per script) stays a
+    private copy: no App module holds an anchor panel. Scripts are 727 to 772 lines.
+  - RED (worktree, old scripts, new tests; focused mix.sh copy): EXIT=1, 141 failed,
+    1465 passed, 1 skipped. Most failures come from the shared `load()` helper, which
+    now asserts that each script binds the real `fontlabapp.history` and
+    `fontlabapp.edit_guards`; the rest are new message texts, the kernel AST test and
+    the real-names test.
+  - GREEN: EXIT=0, 1606 passed, 1 skipped (after recomputing seven `destination_sha256`
+    values); a second run left the catalogue unchanged.
+  - Lint: `uvx ruff check --target-version py311` and `uvx ruff format` on the seven
+    scripts and the test: clean.
+- Rows and wording (step 6):
+  - App floor: one value, `0.2.150.dev0` (the branch pretend version that mix.sh
+    builds), for the 27 new rows and Raise Ascender (was 0.2.157.dev0; it uses
+    `fly.ap.layer_selection` like the Masters rows). Older rows keep their own floors;
+    Clear All Layer/Master Backgrounds (0.2.151.dev0, pinned by
+    `tests/test_background_clear_menu.py`) and Perpendicular Guides (0.2.154.dev0) were
+    not part of the ruling and are unchanged.
+  - `source_body_redistributed: true` for the six Metrics and seven Anchors rows (Names
+    already true; Masters stay false). Anchors scope texts and the seven docstrings say
+    "adapted" instead of "independent rewrite" and name the shared history commit;
+    the Names scopes say "every planned glyph" instead of "attempted entries only".
+    README: "Third-party and Glyphs-corpus original bodies are not copied ...; the
+    author's own Apache-2.0 FontLab samples may be adapted". NOTICE already said
+    "adapt the author's own FontLab samples"; unchanged.
+  - PORTING-BACKLOG: the Duplicate Unicodes row is a source writer candidate (it has
+    an additional-tools row); 39 rows stay unported, matching the README count.
+  - RED: three new tests in `tests/test_curated_delivery.py` (reuse rows only own
+    Apache samples + README scope; no ported row marked unported; one App floor):
+    EXIT=1, 3 failed, 1606 passed, 1 skipped. GREEN: EXIT=0, 1609 passed, 1 skipped;
+    second run unchanged.
+- Process wording (step 7):
+  - Module docstrings of 38 scripts (the 22 older pages with "reviewed App", 16 more
+    with "reviewed unpublished App" or "App helper", including this branch's Names and
+    Masters text). "Requires reviewed App>=X" -> "Requires App>=X"; "the App helper
+    fly.ap.X" -> "the shared module fly.ap.X". Function docstrings were not touched.
+    "Refuse the whole batch" stays (plain English). All 38 are additional-tools rows
+    (no released menu bytes changed); 38 `destination_sha256` values recomputed.
+  - RED: new `test_script_docstrings_when_public_then_no_process_jargon` on a
+    `git archive HEAD` copy of Scripts
+    (`/Volumes/Falstaff4T/fontlab-scripting-data/tmp/t16mix-red-jargon`): 1 failed.
+    GREEN (focused mix.sh copy, full suite): EXIT=0, 1610 passed, 1 skipped; the
+    catalogue was regenerated by `tests/test_docs_site.py` (38 pages) and a second run
+    changed nothing. `grep -rl "reviewed App" src_docs`: no file.
+- Final checks (step 8):
+  - `bash verification/issue-122/sdd/cmd/mix.sh` (workspace root): EXIT=0, 1610 passed,
+    1 skipped, 0 failures.
+  - Acceptance rg over Scripts and tests: exit 1 (no match).
+  - `uvx ruff check --target-version py311` on all 62 Python files changed since
+    56a0292: one finding left, `tests/test_components.py` I001, which was already
+    present at 56a0292. An unused `panel` binding in the new S1 test was removed.
+
 ## 2026-10-18: Two additional foreground reporter candidates
 
-Added only two thin lazy Reporters menu scripts, separate additional-tools.json,
+Added only two thin lazy Reports menu scripts, separate additional-tools.json,
 scoped routing/provenance tests and documentation. Original migration.json SHA
 ef87bc7a69eef091a3061dfed5fee748631edca8576b6fdf0c2ebf9a99cff415 and all68
 payload hashes stay exact. Universe check is the strict disjoint union of68
@@ -483,6 +1388,47 @@ Controller reports native5acceptance:31workflow,10fullfont/history,7chooser/CSV,
 8staleclass-selection and Close5/5, with5screenshots inspected. This worker made
 no native calls, commits, pushes, owner installs or App source changes. Fix1 adds
 no new behavior requiring another native run; controller decides integration.
+
+## Issue 122 T14c: Anchors scripts on the App anchor writer and panel (2026-10-21)
+
+- Base 8d21675; App worktree at 8bd2299 (new `anchor_writer`, `anchor_panel`,
+  `_anchor_panel`). Other lanes had untracked S2/S4/S8 files in this worktree;
+  only T14c paths were staged.
+- uv cache trap: `--refresh-package` / `--reinstall-package` and
+  `uv cache clean fontlab-fontlabapp` still gave the old App build without the new
+  modules (134 x ModuleNotFoundError `fontlabapp.anchor_panel`). `touch` of the App
+  `pyproject.toml` (mtime only) made uv rebuild it.
+- Focus runner: scratchpad copy of `sdd/cmd/mix-S5.sh` with
+  `--refresh-package fontlab-fontlabapp` and `-p no:cacheprovider "$@"`.
+- RED `<focus> tests/test_issue122_S5.py tests/test_curated_delivery.py tests/test_background_clear_menu.py`
+  (old scripts, new tests, new App): exit 1, 146 failed / 33 passed. 133 x
+  `KeyError: 'anchor_writer'` (scripts do not use the App modules), 7 kernel-copy
+  AST failures, 2 background floor pins, the new floor test, and 2 count tests
+  caused by the other lanes' untracked scripts.
+- Re-point: kernel and panel block removed from the seven scripts, names qualified as
+  `anchor_writer.X` / `anchor_panel.X`, base class `anchor_panel.panel_type()`,
+  shared-part docstring sentence rewritten, unused imports and aliases removed.
+  `uvx ruff check --target-version py311` (fixed 31 F401) and `uvx ruff format`
+  on the seven files: all checks passed, formatted.
+- Manifest: seven `destination_sha256` values recomputed and scope texts name
+  `fly.ap.anchor_writer, fly.ap.anchor_panel`; three `app_minimum` values lowered to
+  0.2.150.dev0. The seven rows are unreleased candidates, so `menu-revisions.json`
+  has no records for them and is unchanged.
+- GREEN same focus command: exit 1, 2 failed / 177 passed; the 2 are
+  `test_curated_delivery` count tests failing only on the other lanes' untracked files.
+- MIX `bash verification/issue-122/sdd/cmd/mix.sh` (worktree, with the other lanes'
+  files): exit 1, 30 failed / 1864 passed / 1 skipped. All 30 are the other lanes' files
+  (10 `test_issue122_S2`, 16 `test_rescued_menus` cases for their new scripts, 2
+  `test_curated_delivery` counts, `test_contour_menu_integration` count,
+  `test_reports` manifest). The run regenerated the seven Anchors catalogue pages
+  (`src_docs/md/scripts/anchors/*.md`); index pages changed only by the other lanes'
+  scripts were not staged.
+- Clean export (the proof without the other lanes' files): App worktree clean at
+  8bd2299, `touch` of its `pyproject.toml`, then
+  `sh verification/issue-122/sdd/cmd/mix-archive.sh a48f977 8d21675`:
+  a48f977 **exit 0, 1611 passed, 1 skipped**; base 8d21675 exit 0, 1610 passed,
+  1 skipped. No failure in either tree.
+- Offline tests only; not native FontLab proof.
 
 ## 2026-10-17: Kerning native acceptance
 

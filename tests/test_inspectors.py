@@ -3,6 +3,7 @@
 """Complete original metrics and outline menu acceptance with native-shaped doubles."""
 
 from pathlib import Path
+from _migration_history import preserved_source
 
 import pytest
 from conftest import original_source
@@ -11,9 +12,26 @@ ROOT = Path(__file__).parents[1]
 TOOLS = [
     ("Metrics", "Spacing String Preview", "SpacingPreview"),
     ("Metrics", "Width Table", "WidthTable"),
-    ("Outlines", "Contour Order View", "ContourOrder"),
-    ("Outlines", "Node Statistics", "NodeStatistics"),
+    ("Contours", "Contour Order View", "ContourOrder"),
+    ("Contours", "Node Statistics", "NodeStatistics"),
 ]
+
+
+@pytest.mark.parametrize(
+    "title,klass", [("Contour Order View", "ContourOrder"), ("Node Statistics", "NodeStatistics")]
+)
+def test_contour_inspector_runs_from_its_renamed_menu_entry(inspectors, monkeypatch, title, klass):
+    import runpy
+
+    monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
+    inspectors.font()
+    namespace = runpy.run_path(
+        str(ROOT / "Scripts/Contours" / (title + ".py")), run_name="__main__"
+    )
+    dialog = sys._fontlab_samples[namespace["KEY"]]
+    assert isinstance(dialog, namespace[klass]), "File execution must show the complete editor"
+    dialog.close()
+    assert namespace["KEY"] not in sys._fontlab_samples, "Close must release the renamed menu"
 
 
 @pytest.mark.parametrize("category,title,klass", TOOLS)

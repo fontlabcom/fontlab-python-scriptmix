@@ -12,6 +12,21 @@ TITLES = ["Glyph Grid", "Text By Master", "Waterfall", "Word Finder"]
 
 
 @pytest.mark.parametrize("title", TITLES)
+def test_actual_proof_completion_runs_existing_full_cleanup(load, monkeypatch, title):
+    monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
+    module = load.module(title)
+    dialog = module.main()
+    dialog.finished.emit()
+    assert dialog.deleted and not dialog._connections, (
+        "Completion must run the full owned Close path"
+    )
+    assert dialog.package is None and dialog._bound_id is None, (
+        "Release captured source bindings"
+    )
+    assert not sys._fontlab_samples, "Remove only the completed owner"
+
+
+@pytest.mark.parametrize("title", TITLES)
 def test_requested_proof_menu_exists(title):
     assert (ROOT / "Scripts/Proof" / (title + ".py")).is_file(), (
         "Complete Proof menu missing"
@@ -43,6 +58,14 @@ class Widget:
 
     instances: ClassVar[list] = []
 
+    _window_flags = 0
+
+    def windowFlags(self) -> int:
+        return self._window_flags
+
+    def setWindowFlags(self, flags: int) -> None:
+        self._window_flags = flags
+
     def __init__(self, *args):
         self.instances.append(self)
         self.text = args[0] if args and isinstance(args[0], str) else ""
@@ -53,7 +76,14 @@ class Widget:
             pointSizeF=lambda: 12, setPointSizeF=lambda n: None, setBold=lambda b: None
         )
         self.palette = NS(color=lambda role: Color(), setColor=lambda *a: None)
-        for name in ["clicked", "textChanged", "valueChanged", "currentIndexChanged"]:
+        for name in [
+            "clicked",
+            "textChanged",
+            "valueChanged",
+            "currentIndexChanged",
+            "finished",
+            "destroyed",
+        ]:
             setattr(self, name, Signal())
 
     def __getattr__(self, name):
@@ -214,6 +244,7 @@ def load(monkeypatch, app_sources):
     gui.QPainter = lambda owner: painter
     core = NS(
         Qt=NS(
+            WindowStaysOnTopHint=0x40000,
             Horizontal=1,
             AlignCenter=2,
             AlignRight=4,
@@ -607,7 +638,7 @@ def test_original_embedded_words_and_public_defaults_match_strict_sources(
 ):
     source_root = request.config.getoption("--original-source-root")
     if source_root is None:
-        return  # Optional originals audit; portable default has no private checkout.
+        pytest.skip("Original source-byte audit requires --original-source-root")
     import ast
 
     for title, stem in zip(

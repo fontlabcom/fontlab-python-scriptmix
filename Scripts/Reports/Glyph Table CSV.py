@@ -2,10 +2,29 @@
 # SPDX-License-Identifier: Apache-2.0
 """A sortable table of glyphs (name, Unicode, width per master, contours, components) with CSV export.
 
-Pick all glyphs or the selection, review the table, then export it as a
-UTF-8 CSV file (choose the path first) or copy it to the clipboard for a
-spreadsheet. Contours count everything drawn, components included, on the
-current master. Nothing in the font changes.
+What it does:
+    Pick all glyphs or the selection, review the table, then export it as a
+    UTF-8 CSV file (choose the path first) or copy it to the clipboard for a
+    spreadsheet. Contours count everything drawn, components included, on the
+    current master. Nothing in the font changes.
+
+How it works:
+    Capture glyph names, encodings, master advances and current-master
+    contour/component counts. Encode rows with CSV quoting for clipboard or
+    UTF-8 file export.
+
+Why this design:
+    A spreadsheet-friendly snapshot supports external review while keeping the
+    font as the source of the measured values.
+
+How to use:
+    Run Reports > Glyph Table CSV. Choose all glyphs or selection, review the
+    columns and choose a path before Export, or use Copy for the computed CSV
+    text.
+
+Benefit:
+    Share a glyph inventory with widths across masters without writing any
+    font data.
 """
 
 import csv
