@@ -2,6 +2,9 @@
 this_file: TODO.md
 ---
 
+- [ ] Native-qualify all3distinct original Node Duplicator actions with all four fonts, complete preservation/history/Undo/Redo/reopen and actual TypeRig-priority/lifetime behavior after D30safety restoration.
+
+
 - [ ] Resolve the Reset original-workflow gaps recorded in PORTING-BACKLOG.md; dated static findings and candidate links do not establish equivalent or native-complete ports.
 
 - [x] Verify first three reports in FontLab with owned fixtures (26 checks).

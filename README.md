@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab practical scripts
 
-242 practical tools for FontLab 9: 69 sample adaptations and 173 additional
+251 practical tools for FontLab 9: 69 sample adaptations and 182 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 14 one-level categories.
 
@@ -29,12 +29,12 @@ to FontLab. Some tools use the App `fontui` extra. Trial Font Maker needs the
 public `fontTools` package; FontLab's private namespace does not supply it.
 Glyport supplies Glyphs-specific compatibility and category metadata where used.
 
-Every recorded `app_minimum` uses the conservative source baseline
-`0.2.26.dev159`, matching the genuine App development-version lineage. This is
-not an earliest historical per-tool minimum or proof of full compatibility.
-The tested App159 artifact still lacks the pending zone handoff, and the full
-Scriptmix gate remains failing. Native workflow acceptance and promotion remain
-open. Historical per-tool labels are retained in Git history and old receipts.
+Earlier tools retain their recorded conservative source baseline
+`0.2.26.dev159`. The three distinct original Node Duplicator actions require
+`0.2.26.dev333` and the new `duplicate_selected_nodes` entry point, which prevents
+them from silently calling the older rescued adapter. Use the matching reviewed
+App artifact; these source floors do not establish native compatibility or
+package-index availability. Native workflow acceptance and promotion remain open.
 
 Editable installation into FontLab is owner-managed. Do not install packages
 into FontLab, replace its Qt bindings or change its Python site-packages from

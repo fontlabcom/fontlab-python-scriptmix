@@ -2,6 +2,15 @@
 this_file: PLAN.md
 ---
 
+## Remaining original-node acceptance
+
+Qualify the three source/artifact/ordinary-tested actions in a dedicated FontLab
+session after access/safety restoration: all four fonts, full payload/cache/
+lifetime/date preservation, Apply/Undo/Redo/save-reopen and actual TypeRig-like
+window ownership/priority/Close. Keep the separate own-sample panel and all
+original Transform/full useful-script requirements. Verified source delivery is
+recorded in CHANGELOG.md; no native or promotion acceptance is inferred.
+
 # Report migration plan
 
 Preserve full practical report behaviour while sharing safe native access.
