@@ -82,6 +82,8 @@ intended operation; new ports still need actual Undo/Redo and save/reopen proof.
 
 ## Files and modules
 
+The Duplicate Anchor Rings script moved to fontlab-python-plugmix (reporter `duplicate_anchors`).
+
 | Path | Purpose |
 | --- | --- |
 | `Scripts/` | Practical menu entry points; typed Python 3.11, lazy Fly imports. |

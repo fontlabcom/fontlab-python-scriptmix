@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## Duplicate Anchor Rings removed — issue 201
+
+`Reports/Duplicate Anchor Rings.py` is gone; the feature now lives in fontlab-python-plugmix as the `duplicate_anchors` reporter.
+
 ## External original-source lookup repaired — 2026-11-01
 
 The historical inspector helper now honors FONTLAB_PRESERVED_ROOT before other
