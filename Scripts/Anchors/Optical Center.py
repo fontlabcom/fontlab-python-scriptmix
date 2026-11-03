@@ -101,7 +101,8 @@ def layer_estimate(layer: Any) -> int:
     rings: Rings = []
     for polygon in path.toSubpathPolygons():
         ring = []
-        for point in polygon:
+        # PythonQt QPolygonF is neither iterable nor subscriptable (native probe).
+        for point in (polygon.at(index) for index in range(polygon.size())):
             if monotonic() >= deadline:
                 raise TimeoutError("Optical centre layer time budget exceeded.")
             ring.append((float(point.x()), float(point.y())))

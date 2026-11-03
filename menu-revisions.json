@@ -1700,7 +1700,7 @@
     {
       "destination": "Scripts/Anchors/Auto Cursive Attachment Add Anchors.py",
       "historical_sha256": "b34d7d380b1d689e7ec78b47c070bd6770c46c11b0924efcafb0dec908279807",
-      "current_sha256": "6c637bb889d57f5eb36312e195fc1e9213035db13e268841d4b92bfbb645da54",
+      "current_sha256": "ba86abe9be3f263c8087a14911e89c35a0e8a97334b18e15b7b8807cbbbd2229",
       "source_sha256": "01c7bf31d49ca212d1e54dea7576b5fa945816e11e2f15ae227546674dabeaca",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -1728,13 +1728,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "                import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - Fly submodule import\n",
           "current": "                import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402 - Fly submodule import\n"
+        },
+        {
+          "kind": "issue-205-native-qpolygonf-index",
+          "historical": "            ring = [(float(point.x()), float(point.y())) for point in polygon]\n",
+          "current": "            # PythonQt QPolygonF is neither iterable nor subscriptable (native probe).\n            points = (polygon.at(index) for index in range(polygon.size()))\n            ring = [(float(point.x()), float(point.y())) for point in points]\n"
         }
       ]
     },
     {
       "destination": "Scripts/Anchors/Auto Cursive Attachment Get Sample.py",
       "historical_sha256": "511304af8d78a591ad5ad59ef476f3d4432e16785b916a90cb368225ef604fd0",
-      "current_sha256": "b7ebc177a4f865bbb97699e26fdc12fed0d03f5e1a3af977e8a7a3d4ae948043",
+      "current_sha256": "8e2734d66f895b9ccba17cfbac0144b1b4b98cb443e1c03abaa5569903de285b",
       "source_sha256": "34ef7bc2dac8d6a935560f760fed5706c58ef0678a274ae1d828131d5a204746",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -1752,6 +1757,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    import fly.ap.layer_selection as layer_selection  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup\n    import fly.ap.masters as masters  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup\n    import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup\n",
           "current": "    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup\n    import fly.ap.masters.inspect.model as masters  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup\n    import fly.ap.qt.dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup\n"
+        },
+        {
+          "kind": "issue-205-native-qpolygonf-index",
+          "historical": "            ring = [(float(point.x()), float(point.y())) for point in polygon]\n",
+          "current": "            # PythonQt QPolygonF is neither iterable nor subscriptable (native probe).\n            points = (polygon.at(index) for index in range(polygon.size()))\n            ring = [(float(point.x()), float(point.y())) for point in points]\n"
         }
       ]
     },
@@ -1901,7 +1911,7 @@
     {
       "destination": "Scripts/Anchors/Optical Center.py",
       "historical_sha256": "d9e0138ee91b794553ecefc2a1524d37602d21b6455db0d88972e6d1de42784c",
-      "current_sha256": "b439e5229076a05761bd0ca41bb3aaf7e3b157b794ade1089c6e9d52cc17a419",
+      "current_sha256": "1ce8cd70f9c46a3e7d9f2a76de026fb6eb616ee6e8af63857577e2ae5ed9fd3f",
       "source_sha256": "4ebce47fa6aa1f02d01e94aeae9c2f664be0324ab501f7089b4fbc22e83bb346",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -1914,6 +1924,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    import fly.ap.proof as proof  # noqa: PLR0402 - Fly submodule import\n",
           "current": "    import fly.ap.proof.inspect.model as proof  # noqa: PLR0402 - Fly submodule import\n"
+        },
+        {
+          "kind": "issue-205-native-qpolygonf-index",
+          "historical": "        for point in polygon:\n            if monotonic() >= deadline:",
+          "current": "        # PythonQt QPolygonF is neither iterable nor subscriptable (native probe).\n        for point in (polygon.at(index) for index in range(polygon.size())):\n            if monotonic() >= deadline:"
         }
       ]
     },

@@ -1369,7 +1369,8 @@ def test_optical_flattens_placed_components_once(
 
     def placed(layer: Any) -> Any:
         calls.append(layer)
-        return NS(toSubpathPolygons=lambda: [points])
+        # PythonQt QPolygonF: size()/at(i) only, not iterable.
+        return NS(toSubpathPolygons=lambda: [NS(size=lambda: len(points), at=points.__getitem__)])
 
     monkeypatch.setattr(proof, "layer_path", placed)
     layer = NS(shapes=[NS(isComponent=True)])

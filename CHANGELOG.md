@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-03 — PythonQt QPolygonF access
+
+- Auto Cursive Attachment Get Sample/Add Anchors and Optical Center read outline
+  polygons with size()/at(); FontLab's PythonQt QPolygonF is neither iterable nor
+  subscriptable. Revision edits, current hashes and doc source links updated; test
+  doubles model the native polygon.
+
 ## 2026-11-03 — Native sweep fix
 
 - Unbundle Punctuation Kerning reads code points from flGlyph.fgGlyph.unicodes;

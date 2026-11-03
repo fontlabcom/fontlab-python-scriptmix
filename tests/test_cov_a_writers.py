@@ -546,12 +546,27 @@ def point(x: float, y: float) -> NS:
     return NS(x=lambda: x, y=lambda: y)
 
 
+class Polygon:
+    """PythonQt QPolygonF shape: size()/at(i) only, neither iterable nor subscriptable."""
+
+    __iter__ = None
+
+    def __init__(self, points):
+        self._points = list(points)
+
+    def size(self):
+        return len(self._points)
+
+    def at(self, index):
+        return self._points[index]
+
+
 def closed_shape(*polygons: list[tuple[float, float]], composite: bool = False, affine: bool = True, open_empty: bool = True) -> NS:
     return NS(
         isComposite=composite,
         transform=NS(isAffine=lambda: affine),
         openedPath=NS(isEmpty=lambda: open_empty),
-        closedPath=NS(toSubpathPolygons=lambda transform: [[point(*p) for p in poly] for poly in polygons]),
+        closedPath=NS(toSubpathPolygons=lambda transform: [Polygon(point(*p) for p in poly) for poly in polygons]),
     )
 
 

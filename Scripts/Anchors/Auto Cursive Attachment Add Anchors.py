@@ -49,7 +49,9 @@ def outline_rings(layer: Any) -> Rings:
         ):
             raise ValueError("Use closed, decomposed outlines for cursive sampling.")
         for polygon in shape.closedPath.toSubpathPolygons(shape.transform):
-            ring = [(float(point.x()), float(point.y())) for point in polygon]
+            # PythonQt QPolygonF is neither iterable nor subscriptable (native probe).
+            points = (polygon.at(index) for index in range(polygon.size()))
+            ring = [(float(point.x()), float(point.y())) for point in points]
             if len(ring) >= 3:
                 if ring[0] != ring[-1]:
                     ring.append(ring[0])
