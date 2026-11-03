@@ -3,6 +3,11 @@ this_file: CHANGELOG.md
 ---
 
 <!-- workspace-handoff:2026-11-03 -->
+## 2026-11-03 — installer options, licence and cleanup
+
+- Added `install.vfpy`: copies `Scripts/` into FontLab's Scripts folder, merging with
+  other extensions; scripts only, no package. Verified inside FontLab 9.
+
 ## 2026-11-03 — documentation handoff for November 2–3
 
 Accepted feature faed9163 restores three original node actions. Local ABannotates49 nonreserved terminal controls and preserves two refused chooser owners.

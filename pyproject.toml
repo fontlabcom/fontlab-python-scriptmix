@@ -19,3 +19,9 @@ dependencies = [
 dev = ["pytest>=8", "playwright>=1.55"]
 [tool.uv]
 package = false
+
+[tool.fontlab-install]
+id = "com.fontlab.python-scriptmix"
+name = "fontlab-python-scriptmix"
+packages = []  # scripts only
+dependencies = ["fontlab-fly", "fonttools", "glyphslib"]  # not the docs toolchain above

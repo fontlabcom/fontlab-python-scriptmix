@@ -234,3 +234,4 @@ __marimo__/
 
 # Agent session state
 .omc/
+*.vfpyc
