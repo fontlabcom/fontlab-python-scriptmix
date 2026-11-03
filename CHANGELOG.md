@@ -2,6 +2,18 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-03 — Event Log and Live Glyph Info context
+
+- New Reports > Event Log: a small panel that prints to Output each switch of the
+  active font, window/tab, glyph, layer, master and glyph/node selection, plus tool
+  changes, undo/redo, saves, kerning, features, metrics, font info and clipboard
+  notifications. It listens to 29 FontLab notifications (31 connections with the
+  panel's own); closing the panel releases them all. Verified live in FontLab 9
+  with a buffer sink (not Output).
+- Live Glyph Info shows "Font · Glyph · Layer" under the glyph name. The change is
+  recorded in `menu-revisions.json`, so the released bytes can still be recovered.
+- Tests: 4468 passed, 19 skipped.
+
 <!-- workspace-handoff:2026-11-03 -->
 ## 2026-11-03 — installer options, licence and cleanup
 

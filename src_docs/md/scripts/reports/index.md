@@ -9,6 +9,7 @@
 - [Dump to Svg Path Commands](dump-to-svg-path-commands.md)
 - [Duplicate Anchor Rings](duplicate-anchor-rings.md)
 - [Empty Glyphs](empty-glyphs.md)
+- [Event Log](event-log.md)
 - [Font Overview](font-overview.md)
 - [Glyph Table CSV](glyph-table-csv.md)
 - [Label Statistics](label-statistics.md)

@@ -270,6 +270,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Dump to Svg Path Commands](reports/dump-to-svg-path-commands.md)
 - [Duplicate Anchor Rings](reports/duplicate-anchor-rings.md)
 - [Empty Glyphs](reports/empty-glyphs.md)
+- [Event Log](reports/event-log.md)
 - [Font Overview](reports/font-overview.md)
 - [Glyph Table CSV](reports/glyph-table-csv.md)
 - [Label Statistics](reports/label-statistics.md)

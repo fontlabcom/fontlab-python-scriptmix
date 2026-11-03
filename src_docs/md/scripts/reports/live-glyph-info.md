@@ -11,6 +11,7 @@ A live panel for the glyph you are working on: widths, side-bearings, bounds and
 What it does:
     It follows the first glyph selected in the Font window (or the glyph being
     edited) and re-reads it twice a second, so edits show up as you make them.
+    A line under the glyph name shows the active font, glyph and layer.
     Values that differ between masters stand out. Nothing in the font changes.
 
 How it works:
@@ -38,5 +39,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/099ae94f54c877799291208da323d96fd7d33ba942f2b7d5078a316a6e0df0bc.py)
+[Python source](../../../../.build/menu-sources/24990aff67865d3937edf8d788915eaa767b98bc8b9a13184d9e64bdc99cca02.py)
 <!--/codeinclude-->

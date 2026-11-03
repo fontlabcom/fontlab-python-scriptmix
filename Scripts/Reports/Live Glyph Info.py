@@ -5,6 +5,7 @@
 What it does:
     It follows the first glyph selected in the Font window (or the glyph being
     edited) and re-reads it twice a second, so edits show up as you make them.
+    A line under the glyph name shows the active font, glyph and layer.
     Values that differ between masters stand out. Nothing in the font changes.
 
 How it works:
@@ -154,6 +155,9 @@ class GlyphInfoLive(QtGui.QDialog):
             f"color: {self.palette.color(QtGui.QPalette.Link).name()};"
         )
         root.addWidget(self.glyph_label)
+        self.context = QtGui.QLabel()
+        self.context.setStyleSheet(f"color: {muted(self)};")
+        root.addWidget(self.context)
         self.table = QtGui.QTableWidget(0, len(COLUMNS))
         self.table.setHorizontalHeaderLabels(COLUMNS)
         self.table.verticalHeader().setVisible(False)
@@ -201,6 +205,7 @@ class GlyphInfoLive(QtGui.QDialog):
         self.shown_name = None
         self.rows = []
         self.glyph_label.setText("–")
+        self.context.setText("")
         self.table.setRowCount(0)
         try:
             package = current_package()
@@ -220,6 +225,9 @@ class GlyphInfoLive(QtGui.QDialog):
                 f"U+{c:04X}" for c in package.findName(name).fgGlyph.unicodes
             )
             self.glyph_label.setText(f"{name}  {codes}")
+            font = f"{package.info.familyName} {package.info.styleName}".strip()
+            layer = package.findName(name).activeLayer.name
+            self.context.setText(f"Font: {font} · Glyph: {name} · Layer: {layer}")
             self.subtitle.setText(
                 f"Follows the Font window selection · refreshes every {POLL_MS} ms · values that differ between masters are highlighted."
             )
@@ -250,6 +258,7 @@ class GlyphInfoLive(QtGui.QDialog):
             self.shown_name = None
             self.rows = []
             self.glyph_label.setText("–")
+            self.context.setText("")
             self.table.setRowCount(0)
             raise
 

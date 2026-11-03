@@ -1065,6 +1065,7 @@ class Glyph:
         self.layers = layers
         self.isNull = False
         self.fgGlyph = NS(unicodes=unicodes)
+        self.activeLayer = NS(name=list(layers)[-1] if layers else "")
 
     def findLayer(self, master: str) -> Layer | None:
         return self.layers.get(master)
@@ -1080,7 +1081,7 @@ class ReportPackage:
         self.masters = list(masters)
         self.master = masters[-1]
         self.upm = 1000.0
-        self.info = NS(familyName="Sample Sans")
+        self.info = NS(familyName="Sample Sans", styleName="Regular")
         self.glyphs = {g.name: g for g in glyphs}
         self._kern = {m: Kerning({("A", "V"): -50} if m == "Bold" else {}, {}) for m in masters}
 

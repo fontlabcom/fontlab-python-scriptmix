@@ -3221,5 +3221,16 @@
     "native_acceptance": "pending",
     "release_gate": "pending root review, installed native filtered/combined-window selection and preservation",
     "app_minimum": "0.2.26.dev332"
+  },
+  {
+    "title": "Event Log",
+    "key": "report_event_log",
+    "destination": "Scripts/Reports/Event Log.py",
+    "destination_sha256": "dc0dd46b2c7d8bef2c0d4b7477cc118c22f3bbd5bb3a9315f61a9b5d7a5b8cd9",
+    "kind": "original-read-only-tool",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "scope": "Print FontLab notifications and changes of the active font, window, glyph, layer, master and selection to Output; reads only.",
+    "native_acceptance": "pending"
   }
 ]

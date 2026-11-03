@@ -169,6 +169,7 @@ def test_refresh_when_missing_font_or_failure_then_invalidates_all_data(
         "subtitle",
         "status",
         "glyph_label",
+        "context",
         "scope",
         "tolerance",
         "select_button",
@@ -193,7 +194,10 @@ def test_refresh_when_missing_font_or_failure_then_invalidates_all_data(
             id=8,
             masters=["Regular"],
             master="Regular",
-            findName=lambda name: NS(fgGlyph=NS(unicodes=[65])),
+            info=NS(familyName="Sans", styleName="Regular"),
+            findName=lambda name: NS(
+                fgGlyph=NS(unicodes=[65]), activeLayer=NS(name="Regular")
+            ),
         )
     )
     native.CurrentFont = lambda: NS(glyphs=[NS(name="A", mark=89, unicodes=[65])])

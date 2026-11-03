@@ -399,6 +399,7 @@ def test_live_when_glyph_selected_then_every_master_row_is_shown(env):
     dialog = env.open("Reports", "Live Glyph Info", "GlyphInfoLive")
     check_clean(dialog)
     assert dialog.glyph_label.text == "A  U+0041", "expected: dialog.glyph_label.text == 'A U+0041'"
+    assert dialog.context.text == "Font: Sample Sans Regular · Glyph: A · Layer: Bold", dialog.context.text
     assert dialog.table.texts() == [
         ["Regular", "600", "50", "150", "50, 0, 400, 400", "1", "4", "–", "0"],
         ["Bold", "620", "50", "170", "50, 0, 400, 400", "2", "8", "–", "2"],
