@@ -462,8 +462,8 @@ def test_punctuation_panel_stages_one_complete_multimaster_batch(
     panel.build_controls()
     panel.names = ["period", "A", "missing"]
     glyphs = {
-        "period": NS(isNull=False, unicodes=[46]),
-        "A": NS(isNull=False, unicodes=[65]),
+        "period": NS(isNull=False, fgGlyph=NS(unicodes=[46])),
+        "A": NS(isNull=False, fgGlyph=NS(unicodes=[65])),
     }
     package = NS(findName=glyphs.get, masters=("Regular", "Bold"), upm=1000)
     source = NS(pairs={}, groups={})
@@ -616,7 +616,7 @@ def test_punctuation_ambiguous_glyph_kept_while_other_selection_plans(
     panel.build_controls()
     panel.names = ["period", "comma"]
     package = NS(
-        findName=lambda name: NS(isNull=False, unicodes=[46]),
+        findName=lambda name: NS(isNull=False, fgGlyph=NS(unicodes=[46])),
         masters=("Regular",),
         upm=1000,
     )
@@ -705,7 +705,7 @@ def test_punctuation_real_batch_writer_preserves_classes_and_explicit_zero(
     package.master, package.masters, package.upm = "Regular", tuple(containers), 1000
     package.kerning = containers.__getitem__
     package.findName = lambda name: NS(
-        isNull=False, unicodes=[46] if name == "period" else [65]
+        isNull=False, fgGlyph=NS(unicodes=[46] if name == "period" else [65])
     )
     master_container, kerning_container = object(), object()
     package.mastersContainer = lambda: master_container
@@ -890,7 +890,7 @@ def test_numeric_problem_blocks_package_write_even_on_unchosen_master(
     package = NS(
         masters=("Regular", "Bold"),
         upm=1000,
-        findName=lambda name: NS(isNull=False, unicodes=[46]),
+        findName=lambda name: NS(isNull=False, fgGlyph=NS(unicodes=[46])),
     )
     batch = host.modules["kerning_batch"]
     patch_app(
@@ -927,7 +927,7 @@ def test_stale_class_master_is_named_and_other_master_writes(
     package.findName = lambda name: (
         None
         if name == "missing_member"
-        else NS(isNull=False, unicodes=[46] if name == "period" else [65])
+        else NS(isNull=False, fgGlyph=NS(unicodes=[46] if name == "period" else [65]))
     )
     package.mastersContainer, package.kerningContainer = object, object
     batch = host.modules["kerning_batch"]
@@ -1005,7 +1005,7 @@ def test_unencoded_punctuation_alternate_uses_base_unicode(
     panel.build_controls()
     panel.names = ["period.case"]
     glyphs = {
-        name: NS(isNull=False, unicodes=codes)
+        name: NS(isNull=False, fgGlyph=NS(unicodes=codes))
         for name, codes in (("period", [46]), ("period.case", []), ("A", [65]))
     }
     package = NS(findName=glyphs.get, masters=("Regular",), upm=1000)

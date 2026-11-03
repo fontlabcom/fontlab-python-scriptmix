@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-03 — Native sweep fix
+
+- Unbundle Punctuation Kerning reads code points from flGlyph.fgGlyph.unicodes;
+  flGlyph has no unicodes in FontLab 9. Revision edit, current hash and doc
+  source link updated; test doubles model the native glyph.
+
 ## 2026-11-03 — App 1.2.0 minimum
 
 - Require App 1.2.0 for its domain module layout; update current metadata,

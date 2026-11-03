@@ -3689,7 +3689,7 @@
     {
       "destination": "Scripts/Kerning/Unbundle Punctuation Kerning.py",
       "historical_sha256": "d80bd67bb6b56336e48fe7507a6449f75a51148676576431ced0478f7955e9e8",
-      "current_sha256": "5e7b4c73fd5d48b5c25851a93bb69ebb2d4df1eecde77bb0b41ac8d3adf88652",
+      "current_sha256": "97894e162ebee70d9fbdbb5843d323f7af99e806b4fcfcad9a775c72a3d7ec93",
       "source_sha256": "1c12b26e4e936b5e02b74057bd38542785ce3da2061fd6531c2ebaa608ca0f62",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3712,6 +3712,16 @@
           "kind": "issue-205-import-path-update",
           "historical": "    import fly.ap.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule\n",
           "current": "    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule\n"
+        },
+        {
+          "kind": "issue-205-native-flglyph-unicodes",
+          "historical": "                codes = list(glyph.unicodes)\n",
+          "current": "                codes = list(glyph.fgGlyph.unicodes)\n"
+        },
+        {
+          "kind": "issue-205-native-flglyph-unicodes",
+          "historical": "                        codes = list(base.unicodes)\n",
+          "current": "                        codes = list(base.fgGlyph.unicodes)\n"
         }
       ]
     },

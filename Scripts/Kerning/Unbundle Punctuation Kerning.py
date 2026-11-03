@@ -203,11 +203,11 @@ def panel_type() -> type:
                         )
                     )
                     continue
-                codes = list(glyph.unicodes)
+                codes = list(glyph.fgGlyph.unicodes)
                 if not codes and "." in name:
                     base = package.findName(name.split(".", 1)[0])
                     if base is not None and not base.isNull:
-                        codes = list(base.unicodes)
+                        codes = list(base.fgGlyph.unicodes)
                 if self.punctuation_only.isChecked() and not is_punctuation(codes):
                     rows.append(
                         Row(
