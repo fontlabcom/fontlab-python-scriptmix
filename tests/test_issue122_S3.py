@@ -1703,9 +1703,9 @@ def test_real_fontlabapp_when_imported_then_every_name_the_scripts_use_exists():
 
 
 def test_real_names_dialog_when_parsed_then_has_the_hooks_the_panels_use():
-    from importlib.metadata import distribution
+    from conftest import installed_app_root
 
-    package = Path(distribution("fontlab-fontlabapp").locate_file("fontlabapp"))
+    package = installed_app_root()
     tree = ast.parse((package / "_names_dialog.py").read_text())
     cls = next(
         c for c in tree.body if isinstance(c, ast.ClassDef) and c.name == "NamesDialog"

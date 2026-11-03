@@ -2,12 +2,12 @@
 """Run real planning hooks with changing controls and a forbidden whole-font scan."""
 
 import ast
-import importlib.metadata
 from pathlib import Path
 from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
+from conftest import installed_app_root
 
 ROOT = Path(__file__).parents[1]
 TOOLS = ["Contours/Shadow Copy", "Contours/Outline Effect", "Contours/Autohint Selected Layers",
@@ -22,7 +22,7 @@ def test_controls_when_changed_then_planning_reuses_captured_facts(tool: str) ->
     if tool.endswith("Tabular Figure Copies"):
         # Tabular uses the installed App CopiesPanel hook without an override.
         assert not any(isinstance(n, ast.FunctionDef) and n.name == "plan_rows" for n in ast.walk(tree))
-        path = importlib.metadata.distribution("fontlab-fontlabapp").locate_file("fontlabapp/_selection_panel.py")
+        path = installed_app_root() / "_selection_panel.py"
         tree = ast.parse(Path(path).read_text())
         tree = next(n for n in tree.body if isinstance(n, ast.ClassDef) and n.name == "CopiesPanel")
     hook = next(n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef) and n.name == "plan_rows")

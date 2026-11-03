@@ -54,14 +54,26 @@ def rescued_source_root(request):
     return root
 
 
+def installed_app_root() -> Path:
+    """Find App's package folder for a regular or a path-based editable install."""
+    root = Path(distribution("fontlab-fontlabapp").locate_file("fontlabapp"))
+    if root.is_dir():
+        return root
+    # An editable install only adds its src folder to sys.path. PathFinder searches
+    # sys.path and ignores the module doubles that tests put in sys.modules.
+    from importlib.machinery import PathFinder
+
+    spec = PathFinder.find_spec("fontlabapp")
+    assert spec is not None and spec.submodule_search_locations, (
+        f"fontlab-fontlabapp is installed but its package folder was not found: {root}"
+    )
+    return Path(next(iter(spec.submodule_search_locations)))
+
+
 def resolve_app_sources(required_helpers=None):
     """Resolve before per-test module doubles replace fontlabapp."""
     override = os.environ.get("SCRIPTMIX_APP_SOURCE")
-    root = (
-        Path(override)
-        if override
-        else Path(distribution("fontlab-fontlabapp").locate_file("fontlabapp"))
-    )
+    root = Path(override) if override else installed_app_root()
     required_helpers = required_helpers or (
         "scripting",
         "_font_info_dialog",
