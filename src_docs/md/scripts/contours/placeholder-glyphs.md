@@ -23,7 +23,7 @@ How it works:
     what will happen. Existing glyphs, repeated entries and invalid names
     are listed and skipped. Create checks the font again. FontLab's own Add
     Glyph command makes each new glyph with a layer on every master, the
-    advance width and the code point (shared module fly.ap.glyph_creation).
+    advance width and the code point (shared module fly.ap.glyphs.creation).
     After the write the script reads every new glyph back, and checks that
     no automatic glyph of the font changed.
 
@@ -67,5 +67,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/978c4d39e08f6ea3e597adcec4c942ac145ba61036167ff79cd99e66a23e708c.py)
+[Python source](../../../../.build/menu-sources/304fb15b82621372041cf84a68a0ca332f8a99af2a40c9329b8297b8b3bf0d62.py)
 <!--/codeinclude-->

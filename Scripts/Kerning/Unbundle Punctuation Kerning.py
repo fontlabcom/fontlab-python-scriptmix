@@ -98,7 +98,7 @@ def numeric_problem(package: Any, master: str, pairs: dict) -> str:
     Whole-unit, finite and signed32 rules use the public writer helper. The
     writer exposes no public range validator, so repeat its small range rule.
     """
-    import fly.ap.kerning_edit as values
+    import fly.ap.kerning.edit.model as values
 
     upm = package.upm
     invalid_upm = f"{master}: invalid UPM; master kept"
@@ -125,7 +125,7 @@ def numeric_problem(package: Any, master: str, pairs: dict) -> str:
 
 def master_problem(package: Any, master: str, pairs: dict, groups: dict) -> str:
     """Check the writer's value limits and every existing glyph/class pair."""
-    import fly.ap.kerning_batch as batch
+    import fly.ap.kerning.batch as batch
 
     problem = numeric_problem(package, master, pairs)
     if problem:
@@ -152,8 +152,8 @@ class Row:
 
 def panel_type() -> type:
     """Use the shared modeless selection panel and guarded kerning batch writer."""
-    import fly.ap.kerning_batch as batch
-    import fly.ap.selection_panel as panels
+    import fly.ap.kerning.batch as batch
+    import fly.ap.contours.selection.panel.model as panels
     from fly import qt
 
     class PunctuationPanel(panels.panel_type()):
@@ -292,7 +292,7 @@ def panel_type() -> type:
 
 def run() -> Any:
     """Open the owned panel; the shared base binds the current font."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

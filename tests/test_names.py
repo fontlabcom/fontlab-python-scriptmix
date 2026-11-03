@@ -1,6 +1,7 @@
 # this_file: tests/test_names.py
 """Verify complete Names tools, calculations and selection safety without FontLab."""
 
+from conftest import app_module_name, app_namespace, app_source_path, register_app_module
 from pathlib import Path
 
 import pytest
@@ -29,7 +30,7 @@ from types import SimpleNamespace as NS
 
 @pytest.fixture
 def load(monkeypatch, app_sources):
-    assert (app_sources / "_names_dialog.py").is_file(), (
+    assert (app_sources / "glyphs/names/ui.py").is_file(), (
         "Current Names helper required; set SCRIPTMIX_APP_SOURCE or install the updated App wheel"
     )
     state = NS(package=NS(id=7), glyphs=[], selected=set(), clears=0)
@@ -71,15 +72,15 @@ def load(monkeypatch, app_sources):
     monkeypatch.setitem(sys.modules, "fontlabapp", NS(_native=modules.__getitem__))
     for name in ("scripting", "_names_dialog"):
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
-    scripting = sys.modules["fontlabapp.scripting"]
-    shared = sys.modules["fontlabapp._names_dialog"]
-    monkeypatch.setitem(sys.modules, "fly", NS(ap=NS(fontlab=native), qt=qt))
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", scripting)
+    scripting = sys.modules["fontlabapp.core.scripting"]
+    shared = sys.modules["fontlabapp.glyphs.names.ui"]
+    monkeypatch.setitem(sys.modules, "fly", NS(ap=app_namespace(fontlab=native), qt=qt))
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", scripting)
     for name, value in modules.items():
         monkeypatch.setitem(sys.modules, name, value)
 

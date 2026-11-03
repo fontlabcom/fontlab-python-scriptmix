@@ -1,11 +1,11 @@
 # this_file: tests/test_proof.py
 """Portable tests of the actual Proof menu interfaces and shared outlines."""
 
+from conftest import app_module_name, app_namespace, app_source_path, original_source, register_app_module
 from pathlib import Path
 from typing import ClassVar
 
 import pytest
-from conftest import original_source
 
 ROOT = Path(__file__).parents[1]
 TITLES = ["Glyph Grid", "Text By Master", "Waterfall", "Word Finder"]
@@ -268,17 +268,17 @@ def load(monkeypatch, app_sources):
         "_proof_views",
     ]:
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
         modules[name] = module
     api = modules["scripting"]
     monkeypatch.setitem(
-        sys.modules, "fly", NS(ap=NS(fontlab=native, scripting=api), qt=qt)
+        sys.modules, "fly", NS(ap=app_namespace(fontlab=native, scripting=api), qt=qt)
     )
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", api)
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", api)
 
     def module(title):
         spec = importlib.util.spec_from_file_location(

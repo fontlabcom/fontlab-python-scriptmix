@@ -31,15 +31,15 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import current_package
+from fly.ap.core.scripting import current_package
 
 QtCore, QtGui = qt.QtCore, qt.QtGui
-api = ap.scripting.node_coordinates_api()
+api = ap.core.scripting.node_coordinates_api()
 current_glyph, selected_nodes = api.current_glyph, api.selected_nodes
 measures, number, own_contours = api.measures, api.number, api.own_contours
-make_table = ap.scripting.masters_make_table
-fill_table = ap.scripting.masters_fill_table
-NamesDialog = ap.scripting.names_dialog_type()
+make_table = ap.core.scripting.masters_make_table
+fill_table = ap.core.scripting.masters_fill_table
+NamesDialog = ap.core.scripting.names_dialog_type()
 TITLE, KEY, INTERVAL_MS = "Node Coordinates", "outlines_node_coordinates_panel", 400
 
 
@@ -203,12 +203,12 @@ class NodePanel(NamesDialog):
         """Stop polling, disconnect signals, release the font and destroy this panel."""
         self._closed, self.package, self._bound_id = True, None, None
         self.invalidate()
-        ap.scripting.close_script_dialog(self, event, KEY, timers=(self.timer,))
+        ap.core.scripting.close_script_dialog(self, event, KEY, timers=(self.timer,))
 
 
 def main() -> Any:
     """Show one owned modeless panel through the existing script registry."""
-    return ap.scripting.show_script_dialog(NodePanel, KEY)
+    return ap.core.scripting.show_script_dialog(NodePanel, KEY)
 
 
 if __name__ == "__main__":

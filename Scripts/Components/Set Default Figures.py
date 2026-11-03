@@ -31,15 +31,15 @@ copied.
 
 from typing import Any
 
-import fly.ap.component_creation as component_creation  # noqa: PLR0402
-import fly.ap.component_writer as writer
-import fly.ap.edit_guards as edit_guards  # noqa: PLR0402
-import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
-import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402
-import fly.ap.history as history  # noqa: PLR0402
-import fly.ap.script_completion as script_completion  # noqa: PLR0402
-import fly.ap.scripting as scripting  # noqa: PLR0402
-import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
+import fly.ap.components.creation as component_creation  # noqa: PLR0402
+import fly.ap.components.writer as writer
+import fly.ap.core.edit_guards as edit_guards  # noqa: PLR0402
+import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
+import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402
+import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+import fly.ap.core.completion as script_completion  # noqa: PLR0402
+import fly.ap.core.scripting as scripting  # noqa: PLR0402
+import fly.ap.contours.selection.panel.model as selection_panel  # noqa: PLR0402
 
 Pair = tuple[str, str]  # target, base
 
@@ -554,7 +554,7 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import ap, qt
 
-        from fly.ap.qt_dialogs import run_standard_message_box
+        from fly.ap.qt.dialogs import run_standard_message_box
 
         run_standard_message_box(
             qt,

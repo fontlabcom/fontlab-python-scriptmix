@@ -35,7 +35,7 @@ If FontLab fails part-way, the error says that native changes may remain.
 The edit is recorded as one Undo step. The plan, the safety checks, the
 one-step
 write and the panel base are shared with the other anchor scripts
-(fly.ap.anchor_writer, fly.ap.anchor_panel); the planner and the controls
+(fly.ap.anchors.writer, fly.ap.anchors.panel.model); the planner and the controls
 belong to this script.
 
 Source: the author's own FontLab sample
@@ -49,5 +49,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9426786e5aa030e83566088736b6dce91745817b3216611953fa558c1827dead.py)
+[Python source](../../../../.build/menu-sources/d9d16c3aa0992f1a2b9136173e82f68a87e75895b3a7cd3f88116efb77e6e103.py)
 <!--/codeinclude-->

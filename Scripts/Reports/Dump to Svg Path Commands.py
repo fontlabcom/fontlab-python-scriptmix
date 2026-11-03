@@ -13,7 +13,7 @@ and App0.2.26.dev159 or later. Adapted from simoncozens--GlyphsScripts/Dump to S
 
 def main() -> None:
     """Open the complete original reporting workflow through shared Fly/App UI."""
-    from fly.ap.svg_path_commands import show
+    from fly.ap.contours.svg_path.model import show
 
     show()
 

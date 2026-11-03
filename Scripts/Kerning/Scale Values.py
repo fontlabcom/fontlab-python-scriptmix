@@ -30,20 +30,20 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_edit_dialog_type,
     kerning_editor_api,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_editor_apply as editor_apply,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_editor_make_table as make_table,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_editor_refresh as editor_refresh,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     names_muted as muted,
 )
 
@@ -52,8 +52,8 @@ QtCore, QtGui = qt.QtCore, qt.QtGui
 api = kerning_editor_api()
 KerningEditDialog = kerning_edit_dialog_type()
 native_side = api.native_side
-current_package = ap.scripting.current_package
-kerning_pairs = ap.scripting.kerning_pairs
+current_package = ap.core.scripting.current_package
+kerning_pairs = ap.core.scripting.kerning_pairs
 
 TITLE = "Scale Kerning"
 KEY = "kerning_scale_values"
@@ -159,7 +159,7 @@ class ScaleKerning(KerningEditDialog):
 
 def main() -> Any:
     """Replace only this tool's registry entry and show the owned modeless dialog."""
-    return ap.scripting.show_script_dialog(ScaleKerning, KEY)
+    return ap.core.scripting.show_script_dialog(ScaleKerning, KEY)
 
 
 if __name__ == "__main__":

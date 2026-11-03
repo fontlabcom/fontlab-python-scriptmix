@@ -14,7 +14,7 @@ How it works:
     The ink edges are the outline bounding box. New LSB and RSB are rounded
     half up to whole units. The script moves the layer by the LSB change and
     sets the advance width to new LSB + ink width + new RSB. The panel is the
-    shared Metrics panel (fly.ap.metrics_panel): a live preview table, the
+    shared Metrics panel (fly.ap.metrics.panel.model): a live preview table, the
     masters choice (the current master or all masters; the reference itself
     is never a target), one Undo step per Apply and a read-back of advance
     and outline edge.
@@ -48,9 +48,9 @@ Credit:
 
 from typing import Any
 
-import fly.ap.metrics_panel as metrics_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.metrics.panel.model as metrics_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import qt
-from fly.ap.scripting import connect_guarded, current_package, show_script_dialog
+from fly.ap.core.scripting import connect_guarded, current_package, show_script_dialog
 
 QtGui = qt.QtGui
 MetricsPanel = metrics_panel.panel_type()

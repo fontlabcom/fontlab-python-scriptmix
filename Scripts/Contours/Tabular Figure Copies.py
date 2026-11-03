@@ -15,14 +15,14 @@ How it works:
     A non-modal panel lists every selected glyph with its new name, or the
     reason why it is skipped. Create checks the font again. FontLab's own
     Add Glyph command makes each new glyph with its master layers and the
-    shared widths. Then one step through the shared module fly.ap.history
+    shared widths. Then one step through the shared module fly.ap.core.history.glyphs
     adds the centred copies to all new layers. The centring keeps the
     outline on whole units; an odd unit of white space goes to the right
     side. The copy keeps node names and raw node flags, which a FontLab
     contour copy can drop (fl#8569). After the write the script reads every
     new layer back, and checks that no automatic glyph of the font changed.
     The creation, the contour copy and the panel are shared
-    (fly.ap.glyph_copies, fly.ap.contour_copy).
+    (fly.ap.glyphs.copies, fly.ap.contours.copy).
 
 Copy limits:
     Anchors are not copied. Add the required anchors to the new glyphs before
@@ -88,14 +88,14 @@ def survey(
     package: Any, names: Sequence[str], facts: Any, allow_rebuild: bool = False
 ) -> list[Any]:
     """Plan one tabular copy per selected figure. Change nothing."""
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return glyph_copies.survey_with(package, names, naming, facts, allow_rebuild)
 
 
 def tabular_widths(rows: Sequence[Any], extra: int) -> dict[str, int]:
     """Map each master to the widest source advance (rounded half up) plus ``extra``."""
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     widths: dict[str, int] = {}
     for row in rows:
@@ -113,7 +113,7 @@ def centring_shift(layer: Any, width: int) -> int:
 
     The left side becomes (width - ink width) // 2; an odd unit goes right.
     """
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     box = layer.boundingBox
     left = glyph_copies.half_up(box.x())
@@ -123,7 +123,7 @@ def centring_shift(layer: Any, width: int) -> int:
 
 def prepare(rows: Sequence[Any], widths: dict[str, int]) -> list[Any]:
     """Return the jobs: centred contour copies and the shared width per master."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import qt
 
     jobs: list[Any] = []
@@ -144,7 +144,7 @@ def prepare(rows: Sequence[Any], widths: dict[str, int]) -> list[Any]:
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import qt
 
     QtGui = qt.QtGui
@@ -186,7 +186,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

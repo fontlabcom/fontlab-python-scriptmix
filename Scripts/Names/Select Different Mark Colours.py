@@ -17,7 +17,7 @@ Native acceptance, including filtered/combined Font views, remains pending.
 
 def main() -> tuple[str, ...]:
     """Run the complete additive colour-selection action through Fly."""
-    from fly.ap.mark_colour_selection import select_different_mark_colours
+    from fly.ap.glyphs.selection.mark_colors import select_different_mark_colours
 
     return select_different_mark_colours()
 

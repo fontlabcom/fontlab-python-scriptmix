@@ -22,7 +22,7 @@ from typing import Any
 
 def main() -> Any:
     """Open the complete shared tool; replacing it closes only its owned panel."""
-    from fly.ap.text_filter import show
+    from fly.ap.proof.text_filter.model import show
 
     return show()
 

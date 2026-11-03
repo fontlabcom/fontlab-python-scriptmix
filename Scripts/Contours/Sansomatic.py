@@ -141,7 +141,7 @@ def design(
 
 def layer_reason(layer: Any) -> str:
     """Keep authored layers; this generator fills empty manual layers only."""
-    import fly.ap.metrics_panel as metrics
+    import fly.ap.metrics.panel.model as metrics
 
     if layer.isLocked:
         return "locked layer, kept"
@@ -184,8 +184,8 @@ def build_path(commands: list[tuple]) -> Any:
 
 def editor_type() -> type:
     """Use the shared outline transaction; prepare all contours before history."""
-    import fly.ap.contour_copy as copies
-    import fly.ap.outline_writer as writer
+    import fly.ap.contours.copy as copies
+    import fly.ap.contours.writer as writer
     from fly import fl
 
     class CapitalEditor(writer.Editor):
@@ -227,8 +227,8 @@ def editor_type() -> type:
 
 def panel_type() -> type:
     """Build the owned modeless outline panel with explicit dimensions."""
-    import fly.ap.outline_panel as panels
-    import fly.ap.outline_writer as writer
+    import fly.ap.contours.panel.model as panels
+    import fly.ap.contours.writer as writer
 
     class CapitalPanel(panels.panel_type()):
         """Five numeric dimensions and a per-layer construction preview."""
@@ -292,7 +292,7 @@ def panel_type() -> type:
 
 def run() -> Any:
     """Open or replace the owned panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

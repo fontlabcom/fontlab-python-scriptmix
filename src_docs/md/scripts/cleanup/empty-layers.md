@@ -20,7 +20,7 @@ How it works:
     data fields above. Master layers, automatic, mask, service, image and
     temporary "|temp|" layers are never deleted on their own. The empty
     mask of a deleted layer is removed first, so no orphan mask stays. All
-    deletions run in one Undo step through the shared module fly.ap.history.
+    deletions run in one Undo step through the shared module fly.ap.core.history.glyphs.
     FontLab records the step only for layers plus their glyph, so the
     notification holds the first master layer of each glyph, which stays.
     Then the script checks by layer id that each deleted layer and mask is
@@ -60,5 +60,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6bb402b8524739ebdaafb242ee98c42e651b31ec8bdbef3da9f74bf8b4efb9c2.py)
+[Python source](../../../../.build/menu-sources/0072c4268c4239e68f427ddf73b98979d8eb2857452e6258fa7023645372d4e6.py)
 <!--/codeinclude-->

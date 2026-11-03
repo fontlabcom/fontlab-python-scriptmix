@@ -57,7 +57,7 @@ def different_colour(marks: Sequence[tuple[str, int]], selected: Sequence[str]) 
 def run() -> str:
     """Read marks and selection, add the glyphs, return a message."""
     from fly import ap
-    from fly.ap.scripting import (
+    from fly.ap.core.scripting import (
         current_package,
         names_font_window_selection,
         select_glyphs,

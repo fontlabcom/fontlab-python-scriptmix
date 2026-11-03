@@ -26,7 +26,7 @@ proof-text credits, resource hashes and licence are in NOTICE/additional-tools.j
 
 def main() -> None:
     """Open every source-defined proof tab through Fly and shared App ownership."""
-    from fly.ap.kerning_proofs import run
+    from fly.ap.kerning.proofs import run
 
     run('kernsym')
 

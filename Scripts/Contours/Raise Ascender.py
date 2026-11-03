@@ -31,7 +31,7 @@ Benefit:
 
 def main() -> object:
     """Open the complete two-action owned modeless workflow through Fly/App."""
-    from fly.ap.raise_ascender import show
+    from fly.ap.contours.raise_ascender.model import show
 
     return show()
 

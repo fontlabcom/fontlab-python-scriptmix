@@ -75,8 +75,8 @@ def proof_text() -> str:
 
 def run() -> None:
     """Build a proof only with an open font; delegate native tab ownership."""
-    import fly.ap.scripting as context
-    import fly.ap.text_tab as tabs
+    import fly.ap.core.scripting as context
+    import fly.ap.proof.tabs.text as tabs
 
     package = context.current_package()
     if package is None:

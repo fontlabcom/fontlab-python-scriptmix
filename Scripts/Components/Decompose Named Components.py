@@ -44,11 +44,11 @@ matched occurrences, so unrelated sibling components stay linked.
 
 from typing import Any
 
-import fly.ap.component_panel as component_panel  # noqa: PLR0402 - native facade
-import fly.ap.component_writer as component_writer  # noqa: PLR0402 - native facade
-import fly.ap.edit_guards as edit_guards  # noqa: PLR0402 - native facade
-import fly.ap.history as history  # noqa: PLR0402 - native facade
-import fly.ap.scripting as scripting  # noqa: PLR0402 - native facade
+import fly.ap.components.panel.model as component_panel  # noqa: PLR0402 - native facade
+import fly.ap.components.writer as component_writer  # noqa: PLR0402 - native facade
+import fly.ap.core.edit_guards as edit_guards  # noqa: PLR0402 - native facade
+import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - native facade
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - native facade
 from fly import qt
 
 TITLE = "Decompose Named Components"

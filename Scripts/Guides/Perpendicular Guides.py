@@ -31,7 +31,7 @@ Benefit:
 
 from typing import Any
 
-from fly.ap.perpendicular_guides import run
+from fly.ap.guides.perpendicular.model import run
 
 
 def main() -> dict[str, Any]:

@@ -17,7 +17,7 @@ glyph is not tied to an auto layer. The write is one Undo step. The rename and
 the optional Unicode removal use the font-owned FontGate record, never
 flGlyph.fgGlyph. After clearing Unicode the script reads the list back and
 compares it with the plan. The scan, the refusal policy and the one-step write
-come from the shared module fly.ap.names_edit. If a write fails part way, every
+come from the shared module fly.ap.glyphs.names.model. If a write fails part way, every
 planned glyph is still notified and stamped, and the message asks you to use
 Edit > Undo.
 
@@ -44,7 +44,7 @@ FontLab samples. The edit is recorded as one Undo step.
 import re
 from typing import Any
 
-import fly.ap.names_edit as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
 TITLE = "Suffix Tool"
 KEY = "names_suffix_tool"
@@ -133,9 +133,9 @@ def unicode_write_guard(package_id: int) -> None:
 
     A regular Font window must be active, and no Glyph editor may be open, even
     inactive (the host has a Unicode save-cache gap). The public App guards
-    (fly.ap.edit_guards) do both checks; the editor scan has a 2-second limit.
+    (fly.ap.core.edit_guards) do both checks; the editor scan has a 2-second limit.
     """
-    import fly.ap.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     edit_guards.require_selection_window(package_id)
     edit_guards.require_no_editors()
@@ -211,7 +211,7 @@ def apply_suffix(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(_done, disclosure)
     return renamed
 
@@ -220,7 +220,7 @@ def apply_suffix(
 def _dialog_type() -> type:
     """Build the panel class lazily. Import Qt and App code only inside FontLab."""
     from fly import ap, qt
-    from fly.ap.scripting import names_dialog_type, names_selected_names
+    from fly.ap.core.scripting import names_dialog_type, names_selected_names
 
     native = ap.fontlab
     QtCore, QtGui = qt.QtCore, qt.QtGui
@@ -391,7 +391,7 @@ def _dialog_type() -> type:
 
         def apply(self) -> None:
             """Rename the passing rows. One Undo step."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             clear = self.clear_unicode.isChecked() and self.mode_key() != "remove"
             renamed = apply_suffix(
@@ -416,7 +416,7 @@ def _dialog_type() -> type:
 
 def main() -> Any:
     """Open or replace the Suffix Tool panel."""
-    from fly.ap.scripting import show_script_dialog
+    from fly.ap.core.scripting import show_script_dialog
 
     return show_script_dialog(_dialog_type(), KEY)
 

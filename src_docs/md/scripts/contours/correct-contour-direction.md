@@ -54,8 +54,8 @@ changes.
 After the write, it reads every direction back. If FontLab fails part-way,
 the error says that native changes may remain. The change is recorded as one
 Undo step. The one-step write, the automatic-layer rule, the pending-update
-check and the panel are shared (fly.ap.outline_writer,
-fly.ap.outline_panel); the planner belongs to this script.
+check and the panel are shared (fly.ap.contours.writer,
+fly.ap.contours.panel.model); the planner belongs to this script.
 
 Source: the author's own FontLab sample outlines_correct_direction.py,
 Apache-2.0. Adapted for the current FontLab 9 API.
@@ -67,5 +67,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4c87a88043573f9d5eae7c3d5e313987844a0395acc0b0ad4ef87ef4af835515.py)
+[Python source](../../../../.build/menu-sources/c66dda7f51ad5724ff7232b989b5eb47bb6c08e4d6c149862f1d2e7ce600d982.py)
 <!--/codeinclude-->

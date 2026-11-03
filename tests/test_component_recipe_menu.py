@@ -16,13 +16,13 @@ def test_menu_defers_host_import_and_dispatches_exactly_once(monkeypatch):
         mod = ModuleType(name)
         mod.__path__ = []
         monkeypatch.setitem(sys.modules, name, mod)
-    helper = ModuleType("fly.ap.scripting")
+    helper = ModuleType("fly.ap.core.scripting")
     calls = []
     helper.component_recipes_dialog_type = lambda: type(
         "Panel", (), {"KEY": "component_recipes"}
     )
     helper.show_script_dialog = lambda kind, key: calls.append(key)
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", helper)
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", helper)
     namespace = runpy.run_path(str(MENU), run_name="inspection")
     assert calls == []
     namespace["main"]()

@@ -26,7 +26,7 @@ How it works:
     again and stops if anything changed. Then it removes the old background
     shapes, creates missing backgrounds, and adds clones of the selected
     contours. One notification covers the whole font: one Undo step in the
-    Font window. The shared module fly.ap.history decides which glyphs are
+    Font window. The shared module fly.ap.core.history.glyphs decides which glyphs are
     skipped and does the one-step write. Read-back checks every target
     background for the planned contour count and no components. A mismatch
     is reported with the Edit > Undo hint.
@@ -71,5 +71,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/388c35317e11b26a432c8405ff328e6ac90ae0dcd98a84cd22ba1ae774e24fee.py)
+[Python source](../../../../.build/menu-sources/b4d4450a5a193ab1780b74b4bb7d6c370acc4a9a0b8114dfe77082a893d42ddb.py)
 <!--/codeinclude-->

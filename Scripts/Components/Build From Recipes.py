@@ -45,8 +45,8 @@ script refuses, before any change, when:
 
 If a build fails part-way, the error names it; the layers built before it
 stay. The refusal rules and the panel are shared with other scripts
-(fly.ap.component_writer, fly.ap.component_panel, fly.ap.history,
-fly.ap.edit_guards); the recipe parser and the panel controls belong to
+(fly.ap.components.writer, fly.ap.components.panel.model, fly.ap.core.history.glyphs,
+fly.ap.core.edit_guards); the recipe parser and the panel controls belong to
 this script.
 
 Source: the author's own FontLab sample
@@ -58,12 +58,12 @@ import re
 from dataclasses import dataclass
 from typing import Any
 
-import fly.ap.component_panel as component_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.component_writer as component_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.components.panel.model as component_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.components.writer as component_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.core.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import ap, qt
-import fly.ap.scripting as scripting
+import fly.ap.core.scripting as scripting
 
 QtGui = qt.QtGui
 fontlab = ap.fontlab

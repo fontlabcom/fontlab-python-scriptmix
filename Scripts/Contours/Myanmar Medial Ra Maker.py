@@ -187,8 +187,8 @@ def point_bounds(
 
 def template_contours(layer: Any) -> tuple[list[Any], float]:
     """Copy five contours, verify piece roles and stretch sides, measure enclosure."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
     from fly import qt
 
     problem = glyph_copies.source_problem(layer)
@@ -314,7 +314,7 @@ def survey(
     package: Any, source: str, records: list[Any], count: int, facts: Any, consent: bool
 ) -> list[RaRow]:
     """Plan each target on every master. One failed master keeps the whole target."""
-    import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402
+    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402
 
     glyph = package.findName(source)
     layers, templates, problems, state = [], {}, [], []
@@ -415,7 +415,7 @@ def survey(
 
 def prepare(rows: list[RaRow]) -> list[Any]:
     """Prepare every master on detached contours before any Add Glyph command."""
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
 
     jobs = []
     for row in rows:
@@ -467,8 +467,8 @@ def preview_key(rows: list[RaRow]) -> tuple[Any, ...]:
 
 def panel_type() -> type:
     """Use the shared non-modal creation panel, with a complete multi-master preview."""
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
     from fly import ap, qt
 
     class MedialRaPanel(glyph_copies.panel_type()):
@@ -565,7 +565,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open or replace the owned generator panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

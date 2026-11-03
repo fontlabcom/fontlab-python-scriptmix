@@ -50,7 +50,7 @@ def generate(
     seed: int,
 ) -> str:
     """Build complete reproducible FEA; reject missing or unsafe references."""
-    import fly.ap.feature_code as feature_code  # noqa: PLR0402
+    import fly.ap.features.code as feature_code  # noqa: PLR0402
 
     if any(character in text for character in ("\x00", "\u00a0", "\u2028", "\u2029")):
         raise ValueError(
@@ -190,8 +190,8 @@ def write_feature(
 
 def panel_type() -> type:
     """Load PythonQt only when opening the owned modeless panel."""
-    import fly.ap.glyph_catalog as catalog
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.glyphs.catalog.model as catalog
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402
     from fly import qt
 
@@ -375,7 +375,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Replace this tool's panel through the shared lifetime registry."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     try:
         return scripting.show_script_dialog(panel_type(), KEY)

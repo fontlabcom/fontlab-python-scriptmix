@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Check insertion, FontLab encoding output and installed App names without a host."""
 
+from conftest import app_module_name, app_names_used, check_real_app_names
 import ast
 import importlib.util
 import inspect
@@ -11,8 +12,7 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-from conftest import app_names_used, check_real_app_names
-from fontlabapp.layer_selection import LayerSelection
+from fontlabapp.masters.layers.selection import LayerSelection
 
 SCRIPT = Path(__file__).parents[1] / "Scripts/Font Info/Paste Glyph Order Encoding.py"
 
@@ -58,7 +58,7 @@ APP_FAKES = (
 def test_app_fake_signature_matches_installed(
     module_name: str, name: str, fake: Any
 ) -> None:
-    module = __import__("fontlabapp." + module_name, fromlist=[name])
+    module = __import__(app_module_name(module_name), fromlist=[name])
     assert inspect.signature(fake) == inspect.signature(getattr(module, name)), (
         f"Fake signature drift: {module_name}.{name}"
     )
@@ -67,8 +67,8 @@ def test_app_fake_signature_matches_installed(
 def install_captures(
     monkeypatch: pytest.MonkeyPatch, rows: tuple, occurrences: tuple
 ) -> None:
-    import fly.ap.glyph_catalog as catalog
-    import fly.ap.layer_selection as selection
+    import fly.ap.glyphs.catalog.model as catalog
+    import fly.ap.masters.layers.selection as selection
 
     fake_catalog.result, fake_catalog.calls = NS(rows=rows), []
     fake_selection.result, fake_selection.calls = NS(occurrences=occurrences), []
@@ -161,8 +161,8 @@ def test_encoding_names_use_each_file_stem(tmp_path: Path) -> None:
 
 
 def test_capture_current_font_and_selection(monkeypatch: pytest.MonkeyPatch) -> None:
-    import fontlabapp.glyph_catalog as catalog
-    import fontlabapp.layer_selection as selection
+    import fontlabapp.glyphs.catalog.model as catalog
+    import fontlabapp.masters.layers.selection as selection
 
     originals = (catalog.capture, selection.capture)
     install_captures(monkeypatch, (("A", "", ""), ("B", "", "")), (NS(glyph_name="B"),))
@@ -214,7 +214,7 @@ def test_panel_preview_save_error_and_close(
 ) -> None:
     """Exercise panel actions against strict native-member and signal fakes."""
     import fly
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly module alias
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly module alias
 
     reserved = {"render", "size", "layout", "update", "font", "move", "statusBar"}
 

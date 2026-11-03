@@ -25,10 +25,10 @@ copied.
 
 from typing import Any
 
-import fly.ap.glyph_catalog as catalog
-import fly.ap.history as history  # noqa: PLR0402
-import fly.ap.masters as masters  # noqa: PLR0402
-import fly.ap.scripting as scripting  # noqa: PLR0402
+import fly.ap.glyphs.catalog.model as catalog
+import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+import fly.ap.masters.inspect.model as masters  # noqa: PLR0402
+import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
 TITLE = "Start From Scratch"
 KEY = "cleaning_start_from_scratch"
@@ -290,7 +290,7 @@ def clean(package: Any, jobs: list[Job], options: set[str], *, disclosure: dict[
         retain=retained,
         read_back=read_back,
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(result, disclosure)
     if result.mismatches:
         raise RuntimeError(
@@ -409,7 +409,7 @@ def panel_type() -> type:
                 self.status.setText(str(error))
 
         def execute(self) -> None:
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             try:
                 package, jobs, options = self.plan()
@@ -422,7 +422,7 @@ def panel_type() -> type:
                 glyph_count = len({str(glyph.name) for glyph, _ in jobs})
                 labels = ", ".join(OPTIONS[key] for key in OPTIONS if key in options)
                 message = f'Clear {labels} in "{package.name}"?\n{glyph_count} glyphs, {len(jobs)} layers.'
-                from fly.ap.qt_dialogs import run_standard_message_box
+                from fly.ap.qt.dialogs import run_standard_message_box
 
                 answer = run_standard_message_box(
                     qt,
@@ -462,7 +462,7 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import ap, qt
 
-        from fly.ap.qt_dialogs import run_standard_message_box
+        from fly.ap.qt.dialogs import run_standard_message_box
 
         run_standard_message_box(
             qt, ap.fontlab.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

@@ -4,11 +4,12 @@
 
 The scripts run unchanged. Only the native modules `fontlab`, `fontgate`,
 `FL` and `PythonQt` are fakes; `fly` and the App modules
-(`fontlabapp.scripting`, `history`, `edit_guards`, `affine`,
+(`fontlabapp.core.scripting`, `history`, `edit_guards`, `affine`,
 `contour_selection`) are the real packages.
 Offline results never prove native FontLab behaviour.
 """
 
+from conftest import app_module_name, app_names_used, check_real_app_names
 import ast
 import itertools
 import math
@@ -20,7 +21,6 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 ISOLATED = ("fly", "fontlabapp", "echopy")  # packages this file re-imports for itself
@@ -51,7 +51,7 @@ APP_MODULES = (
     "outline_transform",
 )
 # Kernel, panel and transform-writer names that live only in the App
-# (fly.ap.outline_writer, outline_panel, outline_transform), never in a script.
+# (fly.ap.contours.writer, outline_panel, outline_transform), never in a script.
 SHARED = {
     "Work", "Point", "MAX_ROWS", "EPSILON", "COMPATIBLE_LABEL", "BASES_LABEL", "Change",
     "Plan", "Planner", "plural", "fmt", "layer_of", "shown", "node_points", "translation",
@@ -1075,19 +1075,19 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
 def load(name: str) -> dict[str, Any]:
     namespace = runpy.run_path(str(FOLDER / f"{name}.py"), run_name="inspection")
     scripting = namespace["scripting"]
-    assert scripting.__name__ == "fontlabapp.scripting", "the real App helper"
-    assert scripting.__file__.endswith("fontlabapp/scripting.py")
+    assert scripting.__name__ == "fontlabapp.core.scripting", "the real App helper"
+    assert scripting.__file__.endswith("fontlabapp/core/scripting.py")
     for module in APP_MODULES:
         if module in namespace:
             found = namespace[module]
-            assert found.__name__ == f"fontlabapp.{module}", f"the real App {module}"
-            assert found.__file__.endswith(f"fontlabapp/{module}.py")
+            assert found.__name__ == app_module_name(module), f"the real App {module}"
+            assert found.__file__.endswith(app_module_name(module).replace(".", "/") + ".py")
     return namespace
 
 
 def app(name: str) -> Any:
     """The real App module (fly.ap.<name>) that the scripts of this run use."""
-    return sys.modules[f"fontlabapp.{name}"]
+    return sys.modules[app_module_name(name)]
 
 
 def panel_of(name: str) -> tuple[Any, dict[str, Any]]:
@@ -1317,23 +1317,23 @@ def test_panel_when_closed_then_disconnects_deletes_and_unregisters(
 def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> None:
     used = app_names_used([FOLDER / f"{name}.py" for name in NAMES])
     kernel = {"Change", "Editor", "Planner", "outline_shapes", "note_rows", "fmt"}
-    assert kernel <= used["fly.ap.outline_writer"]
+    assert kernel <= used["fly.ap.contours.writer"]
     assert {"node_points", "translation", "plural", "Point"} <= used[
-        "fly.ap.outline_writer"
+        "fly.ap.contours.writer"
     ]
-    assert used["fly.ap.outline_panel"] == {"panel_type"}
+    assert used["fly.ap.contours.panel.model"] == {"panel_type"}
     assert {"panel_type", "transform_changes", "TransformEditor"} <= used[
-        "fly.ap.outline_transform"
+        "fly.ap.contours.transform.model"
     ]
-    assert "unsigned_area" in used["fly.ap.contour_selection"]
-    assert {"concat", "rotation", "IDENTITY"} <= used["fly.ap.affine"]
+    assert "unsigned_area" in used["fly.ap.contours.selection.model"]
+    assert {"concat", "rotation", "IDENTITY"} <= used["fly.ap.contours.affine"]
     # The panel and the kernel write through these App names: they must exist too.
-    used["fly.ap.outline_writer"] |= {"collect", "apply_work", "require_safe"}
-    used["fly.ap.outline_transform"] |= {"bakes", "layer_outline", "outline_path"}
-    used.setdefault("fly.ap.history", set()).update(
+    used["fly.ap.contours.writer"] |= {"collect", "apply_work", "require_safe"}
+    used["fly.ap.contours.transform.model"] |= {"bakes", "layer_outline", "outline_path"}
+    used.setdefault("fly.ap.core.history.glyphs", set()).update(
         {"commit", "scan_auto_facts", "refusal", "auto_facts"}
     )
-    used.setdefault("fly.ap.layer_writer", set()).update({"apply_work", "Editor"})
+    used.setdefault("fly.ap.masters.layers.writer", set()).update({"apply_work", "Editor"})
     check_real_app_names(used)
 
 
@@ -2253,7 +2253,7 @@ def test_app_writer_when_read_then_preservation_is_strategy_specific(
     world: World,
 ) -> None:
     load("Round Coordinates")
-    writer = sys.modules["fontlabapp.layer_writer"]
+    writer = sys.modules["fontlabapp.masters.layers.writer"]
     assert "write strategy decides what is kept" in writer.apply_work.__doc__
     assert "names, notes and node flags stay" not in writer.apply_work.__doc__
 

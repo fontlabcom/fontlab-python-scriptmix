@@ -21,12 +21,12 @@ How it works:
     takes the usual preset (350 or -150 units), which you can change. Create
     checks the font again. FontLab's own Add Glyph command makes each new
     glyph with its master layers and widths (rounded half up). Then one step
-    through the shared module fly.ap.history adds the scaled copies to all
+    through the shared module fly.ap.core.history.glyphs adds the scaled copies to all
     new layers. The copy keeps node names and raw node flags, which a
     FontLab contour copy can drop (fl#8569). After the write the script
     reads every new layer back, and checks that no automatic glyph of the
     font changed. The creation, the contour copy and the panel are shared
-    (fly.ap.glyph_copies, fly.ap.contour_copy).
+    (fly.ap.glyphs.copies, fly.ap.contours.copy).
 
 Copy limits:
     Anchors are not copied. Add the required anchors to the new glyphs before
@@ -75,5 +75,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/08c5bfa009f53b847cd39283d2322eb04a6df63af7d80f0cfa614c3553b59fe2.py)
+[Python source](../../../../.build/menu-sources/fb4d8c118e38e968a2c2390729444ca7f07de250fb36bc07711ea3b86377e823.py)
 <!--/codeinclude-->

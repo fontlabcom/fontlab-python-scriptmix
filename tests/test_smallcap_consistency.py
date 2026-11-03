@@ -6,9 +6,9 @@ from pathlib import Path
 
 import pytest
 
-import fontlabapp.smallcap_capture as capture
-import fontlabapp.reports as reports
-from fontlabapp.smallcap_consistency import GlyphFact, analyze
+import fontlabapp.glyphs.smallcaps.capture as capture
+import fontlabapp.proof.reports.model as reports
+from fontlabapp.glyphs.smallcaps.model import GlyphFact, analyze
 
 SCRIPT = Path(__file__).resolve().parents[1] / "Scripts/Reports/Smallcap Consistency.py"
 

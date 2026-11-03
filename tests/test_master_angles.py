@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Complete italic-angle controls, source binding, painter boundary and Close."""
 
+from conftest import app_module_name, app_source_path, register_app_module
 import importlib.util
 import runpy
 import sys
@@ -50,10 +51,10 @@ def angles(masters, monkeypatch, app_sources):  # noqa: F811
     masters.qt.QtGui.QPainter.Antialiasing = 1
     for name in ("master_angles", "_master_angles_views", "_master_angles_dialog"):
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
         monkeypatch.setattr(sys.modules["fontlabapp"], name, module, raising=False)
         masters.modules[name] = module

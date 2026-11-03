@@ -32,10 +32,10 @@ Apache-2.0 declared in README.md; no separate LICENSE file. No code copied.
 import math
 from typing import Any
 
-import fly.ap.affine as affine  # noqa: PLR0402
-import fly.ap.outline_transform as outline_transform  # noqa: PLR0402
-import fly.ap.outline_writer as outline_writer  # noqa: PLR0402
-import fly.ap.scripting as scripting  # noqa: PLR0402
+import fly.ap.contours.affine as affine  # noqa: PLR0402
+import fly.ap.contours.transform.model as outline_transform  # noqa: PLR0402
+import fly.ap.contours.writer as outline_writer  # noqa: PLR0402
+import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
 TITLE, KEY = "Smart Slant", "contours_smart_slant"
 
@@ -231,7 +231,7 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import fl, qt
 
-        from fly.ap.qt_dialogs import run_standard_message_box
+        from fly.ap.qt.dialogs import run_standard_message_box
 
         run_standard_message_box(
             qt, fl.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

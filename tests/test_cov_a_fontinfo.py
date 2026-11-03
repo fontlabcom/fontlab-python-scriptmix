@@ -10,6 +10,7 @@ from typing import Any
 
 import pytest
 from _cov_a_support import ROOT, Host, host  # noqa: F401
+from _cov_b_support import SpinBox
 
 FONT_INFO = "Font Info/"
 
@@ -785,3 +786,48 @@ def test_order_main_when_run_as_script_then_window_opens(host):
     order_font(host)
     runpy.run_path(str(ROOT / "Scripts" / ORDER_PATH), run_name="__main__")
     assert "fontinfo_glyph_order_tool" in host.windows(), "order main when run as script then window opens: expected 'fontinfo_glyph_order_tool' in host.windows()"
+
+
+def test_calculator_when_controls_change_then_preview_and_selected_groups_apply(host):
+    writes: list = []
+    host.qt.QtGui.QSpinBox = SpinBox
+    tool = host.load(FONT_INFO + "Calculate Vertical Metrics.py", scripting=recorder(host, writes))
+    package = open_package(host, **dict.fromkeys(tool.METRIC_FIELDS, 0))
+    boxes = {"Regular": (-210.5, 710.2), "Bold": (-240.8, 780.1)}
+    layers = {name: NS(isNull=False, boundingBox=NS(
+        width=lambda: 500, y=lambda low=low: low,
+        height=lambda low=low, high=high: high - low,
+    )) for name, (low, high) in boxes.items()}
+    glyph = NS(name="A", fgGlyph=NS(unicodes=[65]), findLayer=layers.get)
+    host.FL.fl.font = [glyph]
+    package.findName = lambda name: glyph
+    dialog = tool.Dialog(None)
+    assert set(dialog.bounds) == set(boxes)
+    for master, (low, high) in boxes.items():
+        assert dialog.bounds[master] == pytest.approx((low, high, 1))
+    assert [check.isChecked() for check in dialog.group_checks] == [False, True, True]
+    assert dialog.table.rowCount == 5 and dialog.apply_button.isEnabled(), dialog.status.text
+    dialog.scope.setCurrentIndex(1)
+    dialog.padding.setValue(10)
+    dialog.gap.setValue(20)
+    assert dialog.table.rowCount == 10 and package.master == "Regular"
+    assert set(dialog._plan) == {
+        (master, field, 0, value)
+        for master, values in {"Regular": (721, -221, 20, 721, 221),
+                               "Bold": (791, -251, 20, 791, 251)}.items()
+        for field, value in zip(tool.METRIC_FIELDS[3:], values, strict=True)
+    }
+    dialog.apply()
+    assert len(writes) == 1 and writes[0][1] == tool.TITLE
+    assert package.infos["Bold"].openTypeOS2WinDescent == 251
+    assert all(getattr(info, key) == 0 for info in package.infos.values() for key in tool.METRIC_FIELDS[:3])
+    assert package.master == "Regular" and not dialog.apply_button.isEnabled()
+    assert dialog.status.text == "Applied 10 metric fields"
+
+
+def test_calculator_when_no_font_then_apply_disabled_and_no_bounds(host):
+    host.qt.QtGui.QSpinBox = SpinBox
+    tool = host.load(FONT_INFO + "Calculate Vertical Metrics.py")
+    dialog = tool.Dialog(None)
+    assert dialog.bounds == {} and not dialog.apply_button.isEnabled()
+    assert not dialog._preview_valid

@@ -19,7 +19,7 @@ from typing import Any
 
 def main() -> Any:
     """Invoke the complete shared layer-aware proof only when selected."""
-    from fly.ap.show_all_layers import run
+    from fly.ap.masters.layers.show_all.model import run
 
     return run()
 

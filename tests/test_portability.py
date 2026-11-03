@@ -5,7 +5,7 @@ import sys
 from types import SimpleNamespace
 
 import pytest
-from conftest import resolve_app_sources
+from conftest import app_source_path, resolve_app_sources
 
 
 def test_installed_sources_resolve_with_module_double(monkeypatch):
@@ -13,7 +13,7 @@ def test_installed_sources_resolve_with_module_double(monkeypatch):
     monkeypatch.setitem(sys.modules, "fontlabapp", SimpleNamespace())
     before = set(sys.modules)
     root = resolve_app_sources(required_helpers=("scripting",))
-    assert (root / "scripting.py").is_file(), "Installed helper must be real source"
+    assert (root / "core/scripting.py").is_file(), "Installed helper must be real source"
     assert not ({"fontlab", "PythonQt"} & (set(sys.modules) - before)), (
         "Resolution imported native binaries"
     )
@@ -39,7 +39,9 @@ def test_pre_kerning_source_tree_refused(monkeypatch, tmp_path):
         "feature_code",
         "_names_dialog",
     ):
-        (tmp_path / (name + ".py")).write_text("# Existing helper\n")
+        path = app_source_path(tmp_path, name)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text("# Existing helper\n")
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="_kerning_dialog"):
         resolve_app_sources()
@@ -55,7 +57,9 @@ def test_pre_editor_source_tree_refused(monkeypatch, tmp_path):
         "_names_dialog",
         "_kerning_dialog",
     ):
-        (tmp_path / (name + ".py")).write_text("# Previous helper\n")
+        path = app_source_path(tmp_path, name)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text("# Previous helper\n")
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="kerning_edit"):
         resolve_app_sources()
@@ -75,7 +79,9 @@ def test_pre_selected_editor_helper_set_refused(monkeypatch, tmp_path):
         "_kerning_edit_dialog",
         "_kerning_value_dialog",
     ):
-        (tmp_path / (name + ".py")).write_text("# Previous helper\n")
+        path = app_source_path(tmp_path, name)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text("# Previous helper\n")
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="kerning_selection"):
         resolve_app_sources()
@@ -83,9 +89,11 @@ def test_pre_selected_editor_helper_set_refused(monkeypatch, tmp_path):
 
 def test_pre_proof_helper_set_refused(monkeypatch, tmp_path, app_sources):
     """App0.2.9 cannot silently satisfy forthcoming Proof helpers."""
-    for path in app_sources.glob("*.py"):
-        if path.stem not in {"proof", "_proof_dialog", "_proof_views"}:
-            (tmp_path / path.name).write_text("# Previous helper\n")
+    for path in app_sources.rglob("*.py"):
+        if path not in {app_source_path(app_sources, name) for name in ('proof', '_proof_dialog', '_proof_views')}:
+            target = tmp_path / path.relative_to(app_sources)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text("# Previous helper\n")
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="Missing App helper.*proof"):
         resolve_app_sources()
@@ -93,9 +101,11 @@ def test_pre_proof_helper_set_refused(monkeypatch, tmp_path, app_sources):
 
 def test_pre_masters_helper_set_refused(monkeypatch, tmp_path, app_sources):
     """Released Proof helpers cannot silently satisfy the four new Masters tools."""
-    for path in app_sources.glob("*.py"):
-        if path.stem not in {"masters", "_masters_dialog", "_masters_views"}:
-            (tmp_path / path.name).write_text("# Previous helper\n")
+    for path in app_sources.rglob("*.py"):
+        if path not in {app_source_path(app_sources, name) for name in ('masters', '_masters_dialog', '_masters_views')}:
+            target = tmp_path / path.relative_to(app_sources)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text("# Previous helper\n")
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="Missing App helper.*masters"):
         resolve_app_sources()
@@ -103,9 +113,11 @@ def test_pre_masters_helper_set_refused(monkeypatch, tmp_path, app_sources):
 
 def test_pre_inspector_helper_set_refused(monkeypatch, tmp_path, app_sources):
     """Released Masters helpers cannot silently satisfy the inspector menus."""
-    for path in app_sources.glob("*.py"):
-        if path.stem not in {"inspectors", "_inspectors_dialog", "_inspectors_views"}:
-            (tmp_path / path.name).write_text("# Previous helper\n")
+    for path in app_sources.rglob("*.py"):
+        if path not in {app_source_path(app_sources, name) for name in ('inspectors', '_inspectors_dialog', '_inspectors_views')}:
+            target = tmp_path / path.relative_to(app_sources)
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text("# Previous helper\n")
     monkeypatch.setenv("SCRIPTMIX_APP_SOURCE", str(tmp_path))
     with pytest.raises(AssertionError, match="Missing App helper.*inspectors"):
         resolve_app_sources()

@@ -20,10 +20,10 @@ How it works:
     the reason why the layer is skipped. A layer without hints in the chosen
     directions is listed and skipped. Apply reads the font again and calls
     the native flLayer.removeHints(horizontal, vertical) on every planned
-    layer, all in one Undo step through the shared module fly.ap.history.
+    layer, all in one Undo step through the shared module fly.ap.core.history.glyphs.
     After the write it counts the hints again and reports any layer that
     still has hints in a chosen direction. The hint counts and the panel are
-    shared (fly.ap.hints, fly.ap.selection_panel).
+    shared (fly.ap.hints.postscript, fly.ap.contours.selection.panel.model).
 
 Why this design:
     - The removal is FontLab's own call, so hints are removed exactly as the
@@ -58,5 +58,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3eacc5e9c39e63085114eface9d667d68422114d4dde8f2f7225da7fe65c299a.py)
+[Python source](../../../../.build/menu-sources/e92210f7977e3625b41ab274c00e131a6046ec377c824c179d413b5cd9e13ce4.py)
 <!--/codeinclude-->

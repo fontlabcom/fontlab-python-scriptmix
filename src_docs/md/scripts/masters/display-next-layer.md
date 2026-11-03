@@ -23,7 +23,7 @@ How it works:
     gets a new active layer for its glyph.
 
 Why this design:
-    - fly.ap.masters.associated_master resolves native layer names; the same
+    - fly.ap.masters.inspect.model.associated_master resolves native layer names; the same
       backup resolver as Restore Backup Layer adds plain backup names.
     - All slots are planned first. One bad slot stops the run before any change.
     - The script writes no font data. No Undo step is needed.
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/512d1585fa16f6f1f9c3cdc6dfbde1cc3c5366b86b925adb44d28b201e440863.py)
+[Python source](../../../../.build/menu-sources/da6b423b0e3c8cec550e183a08b488138f2ddf8ab673126c73f8d3332f2b259f.py)
 <!--/codeinclude-->

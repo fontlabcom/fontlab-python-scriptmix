@@ -13,7 +13,7 @@ Requires App>=0.2.26.dev325 through Fly in FontLab Python3.11.
 
 def main() -> None:
     """Load the package-owned complete comparison lazily through Fly."""
-    from fly.ap.crossfont_reports import show
+    from fly.ap.proof.crossfont.model import show
     show(composites=False)
 
 if __name__ == "__main__":

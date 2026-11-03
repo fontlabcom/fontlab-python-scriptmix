@@ -4,8 +4,58 @@
 import os
 from importlib.metadata import distribution
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
+from fontlabapp._legacy import ALIASES
+
+
+def app_module_name(handle: str) -> str:
+    """Resolve a local fixture handle to the canonical App module, never an alias."""
+    name = "fontlabapp." + handle
+    return ALIASES.get(name, name)
+
+
+def app_source_path(root: Path, handle: str) -> Path:
+    """Locate the real implementation in either installed or explicit sources."""
+    return root.joinpath(*app_module_name(handle).split(".")[1:]).with_suffix(".py")
+
+
+def app_namespace(namespace=None, **modules):
+    """Build the domain tree for owned App doubles using local fixture handles."""
+    namespace = namespace if namespace is not None else SimpleNamespace()
+    for handle, module in modules.items():
+        parts = app_module_name(handle).split(".")[1:]
+        parent = namespace
+        for part in parts[:-1]:
+            if part not in vars(parent):
+                setattr(parent, part, SimpleNamespace())
+            parent = vars(parent)[part]
+        setattr(parent, parts[-1], module)
+    return namespace
+
+
+def register_app_module(patch, handle: str, module) -> None:
+    """Mirror importlib's parent bindings when a test loads a real file itself."""
+    import importlib.util
+    import sys
+
+    parts = app_module_name(handle).split(".")
+    parent = sys.modules["fontlabapp"]
+    root = resolve_app_sources()
+    for index in range(1, len(parts)):
+        fullname = ".".join(parts[:index + 1])
+        if index == len(parts) - 1:
+            child = module
+        else:
+            child = sys.modules.get(fullname)
+            if child is None:
+                spec = importlib.util.spec_from_loader(fullname, loader=None, is_package=True)
+                child = importlib.util.module_from_spec(spec)
+                child.__path__ = [str(root.joinpath(*parts[1:index + 1]))]
+        patch.setitem(sys.modules, fullname, child)
+        patch.setitem(vars(parent), parts[index], child)
+        parent = child
 
 
 def original_source(root: Path, relative: str) -> Path:
@@ -109,7 +159,8 @@ def resolve_app_sources(required_helpers=None):
         "script_completion",
     )
     for name in required_helpers:
-        assert (root / f"{name}.py").is_file(), f"Missing App helper: {root / name}"
+        path = app_source_path(root, name)
+        assert path.is_file(), f"Missing App helper: {name} ({path})"
     return root
 
 
@@ -122,8 +173,8 @@ def app_sources():
 
     root = resolve_app_sources()
     importlib.import_module("fontlabapp")
-    name = "fontlabapp.script_completion"
-    spec = importlib.util.spec_from_file_location(name, root / "script_completion.py")
+    name = "fontlabapp.core.completion"
+    spec = importlib.util.spec_from_file_location(name, app_source_path(root, "core.completion"))
     module = importlib.util.module_from_spec(spec)
     with pytest.MonkeyPatch.context() as patch:
         patch.setitem(sys.modules, name, module)
@@ -209,7 +260,7 @@ def real_app(monkeypatch):
     ``load`` imports fresh ``fontlabapp`` submodules after it registers the
     fakes as ``PythonQt`` and ``fontlab``, so App modules that bind Qt or
     scripting names at import see the fakes. ``scripting`` replaces named
-    ``fontlabapp.scripting`` functions (font and selection access, panel
+    ``fontlabapp.core.scripting`` functions (font and selection access, panel
     lifecycle). Each loaded module is also registered as ``fly.ap.<module>``,
     the same object, as Fly does. It returns ``{name: module}``.
 
@@ -228,18 +279,21 @@ def real_app(monkeypatch):
             del sys.modules[key]
         monkeypatch.setitem(sys.modules, "PythonQt", qt)
         monkeypatch.setitem(sys.modules, "fontlab", fontlab)
-        shared = importlib.import_module("fontlabapp.scripting")
+        shared = importlib.import_module("fontlabapp.core.scripting")
         for name, value in (scripting or {}).items():
-            assert hasattr(shared, name), f"fontlabapp.scripting has no {name}"
+            assert hasattr(shared, name), f"fontlabapp.core.scripting has no {name}"
             setattr(shared, name, value)
-        helper = importlib.import_module("fontlabapp.script_completion")
+        helper = importlib.import_module("fontlabapp.core.completion")
         if completion is not None:
             helper.install = completion
         loaded = {"scripting": shared, "script_completion": helper}
         for name in modules:
-            loaded[name] = importlib.import_module(f"fontlabapp.{name}")
+            loaded[name] = importlib.import_module(app_module_name(name))
         for name, module in loaded.items():
-            monkeypatch.setitem(sys.modules, f"fly.ap.{name}", module)
+            monkeypatch.setitem(sys.modules, app_module_name(name).replace("fontlabapp.", "fly.ap.", 1), module)
+        fly = sys.modules.get("fly")
+        if fly is not None and "ap" in vars(fly):
+            app_namespace(fly.ap, **loaded)
         return loaded
 
     yield load

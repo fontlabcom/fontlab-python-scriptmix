@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Complete original metrics and outline menu acceptance with native-shaped doubles."""
 
+from conftest import app_module_name, app_source_path, register_app_module
 from pathlib import Path
 from _migration_history import preserved_source
 from menu_layout import current_rows, released_bytes
@@ -99,10 +100,10 @@ def inspectors(masters, monkeypatch, app_sources):  # noqa: F811 - imported pyte
     masters.qt.QtCore.Qt.AlignTop = 128
     for name in ["inspectors", "_inspectors_views", "_inspectors_dialog"]:
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
         masters.modules[name] = module
 

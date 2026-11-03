@@ -50,7 +50,8 @@ stays a valid reference. After the write, the script reads the start nodes
 back. If FontLab fails part-way, the error says that native changes may
 remain. The change is recorded as one Undo step. The one-step write, the
 automatic-layer rule, the pending-update check and the panel are shared
-(fly.ap.outline_writer, fly.ap.outline_panel); the planner belongs to this
+(fly.ap.contours.writer, fly.ap.contours.panel.model); the planner belongs to
+this
 script.
 
 Source: the author's own FontLab sample outlines_optimize_start_points.py,
@@ -59,9 +60,9 @@ Apache-2.0. Adapted for the current FontLab 9 API.
 
 from typing import Any
 
-import fly.ap.outline_panel as outline_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.outline_writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import qt
 
 QtGui = qt.QtGui
@@ -75,7 +76,8 @@ RULES = (
 
 # ---------------------------------------------------------------- start point logic
 def bottom_left(points: list[outline_writer.Point]) -> int | None:
-    """Index of the lowest, then leftmost on-curve point; None if there is none."""
+    """Index of the lowest, then leftmost on-curve point; None if there is
+    none."""
     candidates = [(y, x, i) for i, (x, y, on) in enumerate(points) if on]
     return min(candidates)[2] if candidates else None
 

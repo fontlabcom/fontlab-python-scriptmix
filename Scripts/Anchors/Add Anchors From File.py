@@ -26,9 +26,9 @@ import math
 from pathlib import Path
 from typing import Any
 
-import fly.ap.anchor_panel as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.anchors.panel.model as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
 from fly import qt
 
 TITLE = "Add Anchors From File"
@@ -157,7 +157,7 @@ class AnchorFileImport(anchor_panel.panel_type()):
 
     def choose_csv(self) -> None:
         """Choose a CSV through one owned dialog, then load its complete preview."""
-        import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import
+        import fly.ap.qt.dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import
 
         def configure(kind: Any, dialog: Any) -> None:
             dialog.setWindowFlags(

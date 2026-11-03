@@ -43,7 +43,7 @@ def test_menu_import_is_lazy_and_main_returns_exact_owned_dialog(
 
     helpers = SimpleNamespace(**{factory: make, "show_script_dialog": show})
     monkeypatch.setitem(sys.modules, "fly", SimpleNamespace())
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", helpers)
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", helpers)
     path = ROOT / "Scripts/Reports" / f"{title}.py"
     spec = importlib.util.spec_from_file_location("owned_canvas_menu", path)
     module = importlib.util.module_from_spec(spec)

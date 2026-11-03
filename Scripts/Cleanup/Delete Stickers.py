@@ -21,10 +21,10 @@ https://github.com/pedroarilla/glyphs-scripts . No source code copied.
 from dataclasses import dataclass
 from typing import Any
 
-import fly.ap.glyph_catalog as glyph_catalog  # noqa: PLR0402
-import fly.ap.history as history  # noqa: PLR0402
-import fly.ap.scripting as scripting  # noqa: PLR0402
-import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
+import fly.ap.glyphs.catalog.model as glyph_catalog  # noqa: PLR0402
+import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+import fly.ap.core.scripting as scripting  # noqa: PLR0402
+import fly.ap.contours.selection.panel.model as selection_panel  # noqa: PLR0402
 
 TITLE = "Delete Stickers"
 KEY = "cleaning_delete_stickers"
@@ -228,7 +228,7 @@ def panel_type() -> type:
                 count = sum(len(row.stickers) for row in ready)
                 message = f'Delete stickers in "{package.name}"?\n{glyphs} glyphs, {len(ready)} layers, {count} stickers.'
                 box = qt.QtGui.QMessageBox
-                from fly.ap.qt_dialogs import run_standard_message_box
+                from fly.ap.qt.dialogs import run_standard_message_box
 
                 answer = run_standard_message_box(
                     qt, self, TITLE, message, "Question",
@@ -261,7 +261,7 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import ap, qt
 
-        from fly.ap.qt_dialogs import run_standard_message_box
+        from fly.ap.qt.dialogs import run_standard_message_box
 
         run_standard_message_box(
             qt, ap.fontlab.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

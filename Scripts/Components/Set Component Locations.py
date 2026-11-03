@@ -46,11 +46,11 @@ import math
 import re
 from typing import Any
 
-import fly.ap.component_panel as panels
-import fly.ap.component_writer as writer
-import fly.ap.edit_guards as guards
-import fly.ap.history as history  # noqa: PLR0402 - native facade
-import fly.ap.scripting as scripting  # noqa: PLR0402 - native facade
+import fly.ap.components.panel.model as panels
+import fly.ap.components.writer as writer
+import fly.ap.core.edit_guards as guards
+import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - native facade
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - native facade
 from fly import qt
 
 TITLE = "Set Component Locations"

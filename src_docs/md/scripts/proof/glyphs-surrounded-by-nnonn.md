@@ -40,5 +40,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c4f65f1b6b09ecd1296b970f9e705cbd310877870bcfe0fa274f960b8599087f.py)
+[Python source](../../../../.build/menu-sources/f295badbe2d3511d41f30de89c5f05981fac42c1fd7b0a2d83ced279c8b91828.py)
 <!--/codeinclude-->

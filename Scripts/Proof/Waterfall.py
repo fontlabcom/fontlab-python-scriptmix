@@ -31,7 +31,7 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     current_package,  # noqa: F401 - original public interface
     proof_api,
     proof_dialog_type,
@@ -39,7 +39,7 @@ from fly.ap.scripting import (
     proof_view_types,
     show_script_dialog,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     names_muted as muted,  # noqa: F401 - original public interface
 )
 

@@ -35,17 +35,17 @@ from fly import ap, qt
 fontlab = ap.fontlab
 QtCore, QtGui = qt.QtCore, qt.QtGui
 # The tiny facade stays lazy until a native menu script asks for its panel.
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_class_lists as class_lists,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_dialog_type,
     kerning_pairs,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_snapshot_refresh as snapshot_refresh,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     names_muted as muted,
 )
 
@@ -218,7 +218,7 @@ class MissingPairs(KerningDialog):
 
 def main() -> Any:
     """Replace the original registry window and show this owned modeless panel."""
-    return ap.scripting.show_script_dialog(MissingPairs, KEY)
+    return ap.core.scripting.show_script_dialog(MissingPairs, KEY)
 
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ OUTLINES = {
 def test_scripts_when_real_app_imported_then_every_used_name_exists():
     paths = [ROOT / "Scripts" / ZONES, ROOT / "Scripts" / SUGGEST, ROOT / "Scripts/Font Info/Master Metrics Table.py"]
     used = app_names_used(paths)
-    assert {"fly.ap.zone_editor", "fly.ap.zone_native", "fly.ap.master_metrics"} <= set(used), f"scripts: expected App names, got {sorted(used)}"
+    assert {"fly.ap.metrics.zones.editor", "fly.ap.metrics.zones.native", "fly.ap.metrics.master_writer"} <= set(used), f"scripts: expected App names, got {sorted(used)}"
     check_real_app_names(used)
 
 

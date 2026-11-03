@@ -2,6 +2,21 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-03 — Issue 205 App domain imports
+
+- Migrate all 249 menu scripts and their tests/docs to canonical App domain
+  paths. Retain `tools/migrate_app_paths.py`, a deterministic stdlib rewriter
+  driven by the sibling App alias oracle, with identifier-boundary checks.
+- Resolve real test helpers by canonical module and file path, preserving
+  identity and provenance assertions. Mirror the domain tree in owned doubles.
+- Refresh 180 additional-tool and three menu-move current pins. Extend 68
+  revision rows and add 181, recording 613 exact import edits. Frozen release
+  bytes and native-evidence fields remain unchanged and recoverable.
+- Verification: 4479 passed, 15 skipped; all 249 changed scripts pass the 80%
+  coverage gate. Docs tests: 10 passed. All scripts compile; current pins match
+  and all 69 historical migration payloads recover exactly. Native FontLab
+  acceptance was not rerun.
+
 ## 2026-11-03 — Event Log and Live Glyph Info context
 
 - New Reports > Event Log: a small panel that prints to Output each switch of the

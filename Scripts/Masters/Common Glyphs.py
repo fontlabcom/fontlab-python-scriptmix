@@ -41,8 +41,8 @@ Credits:
 
 from collections.abc import Callable
 from typing import Any
-import fly.ap.common_glyphs_controller as controller
-from fly.ap.common_glyphs import Production
+import fly.ap.glyphs.common.controller as controller
+from fly.ap.glyphs.common.model import Production
 
 
 def metadata(name: str, *, checkpoint: Callable = lambda: None) -> Production:

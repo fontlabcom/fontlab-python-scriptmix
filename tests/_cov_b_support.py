@@ -10,6 +10,7 @@ for unknown names, so absent optional widgets stay absent.
 
 from __future__ import annotations
 
+from conftest import app_namespace
 import importlib.util
 import sys
 from pathlib import Path
@@ -953,9 +954,9 @@ class Env:
         monkeypatch.setitem(
             sys.modules,
             "fly",
-            NS(ap=NS(fontlab=fontlab, scripting=self.scripting, FL=self.FL), qt=self.qt),
+            NS(ap=app_namespace(fontlab=fontlab, scripting=self.scripting, FL=self.FL), qt=self.qt),
         )
-        monkeypatch.setitem(sys.modules, "fly.ap.scripting", self.scripting)
+        monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", self.scripting)
         self.modules: dict[str, Any] = {}
 
     def _update_all(self) -> None:

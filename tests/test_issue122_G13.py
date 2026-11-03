@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Behaviour tests with owned data; these do not certify the native host."""
 
+from conftest import app_module_name, app_names_used, check_real_app_names
 import ast
 import importlib.util
 import inspect
@@ -13,7 +14,6 @@ from typing import Any
 from unittest.mock import create_autospec
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 FILES = {
@@ -785,8 +785,8 @@ def test_fakes_match_real_app_signatures(host: Any) -> None:
     import importlib
 
     host.qt.QtGui.QDialog = type("HostDialog", (), {})
-    selection = importlib.import_module("fontlabapp._selection_panel").SelectionPanel
-    outline = importlib.import_module("fontlabapp._outline_panel").OutlinePanel
+    selection = importlib.import_module("fontlabapp.contours.selection.panel.ui").SelectionPanel
+    outline = importlib.import_module("fontlabapp.contours.panel.ui").OutlinePanel
     for double, real in ((SelectionBase, selection), (OutlineBase, outline)):
         for name in ("watch", "add_row"):
             assert parameter_shape(getattr(double, name)) == parameter_shape(
@@ -809,7 +809,7 @@ def test_fakes_match_real_app_signatures(host: Any) -> None:
     for module_name, names in FAKED_APP_NAMES.items():
         targets.setdefault(module_name.removeprefix("fontlabapp."), set()).update(names)
     for module_name, names in targets.items():
-        module = importlib.import_module(f"fontlabapp.{module_name}")
+        module = importlib.import_module(app_module_name(module_name))
         for name in names:
             real = getattr(module, name)
             fake = create_autospec(real, spec_set=True)

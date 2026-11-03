@@ -21,14 +21,14 @@ How it works:
     A non-modal panel lists every selected glyph with its new name, or the
     reason why it is skipped. Create checks the font again. FontLab's own
     Add Glyph command makes each new glyph with its master layers and the
-    shared widths. Then one step through the shared module fly.ap.history
+    shared widths. Then one step through the shared module fly.ap.core.history.glyphs
     adds the centred copies to all new layers. The centring keeps the
     outline on whole units; an odd unit of white space goes to the right
     side. The copy keeps node names and raw node flags, which a FontLab
     contour copy can drop (fl#8569). After the write the script reads every
     new layer back, and checks that no automatic glyph of the font changed.
     The creation, the contour copy and the panel are shared
-    (fly.ap.glyph_copies, fly.ap.contour_copy).
+    (fly.ap.glyphs.copies, fly.ap.contours.copy).
 
 Copy limits:
     Anchors are not copied. Add the required anchors to the new glyphs before
@@ -75,5 +75,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/70daeec319fa71e210a609881da85239977f59430c187a6ff0edea39f483226b.py)
+[Python source](../../../../.build/menu-sources/b8dfa9eedfded808badf20ed2551fb9dff601af30ca9a50afd88fde13193afc2.py)
 <!--/codeinclude-->

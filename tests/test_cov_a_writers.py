@@ -805,7 +805,7 @@ def test_sample_dialogs_when_shown_then_keep_flags_and_fontlab_parent(host, refu
 
 
 def test_sample_warning_when_priority_fails_then_owned_dialog_is_deleted(host):
-    from fontlabapp.qt_dialogs import run_owned_dialog
+    from fontlabapp.qt.dialogs import run_owned_dialog
 
     tool, dialogs = sample_main(host, [], occurrences=[])
     failure = RuntimeError("priority failed")

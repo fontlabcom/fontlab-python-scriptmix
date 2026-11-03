@@ -23,7 +23,7 @@ def test_facade_direct_and_script_paths_use_shared_action(monkeypatch, result):
         calls.append(True)
         return result
 
-    monkeypatch.setitem(sys.modules, "fly.ap.kerning_group_proof", NS(run=run))
+    monkeypatch.setitem(sys.modules, "fly.ap.kerning.group_proof.model", NS(run=run))
     spec = importlib.util.spec_from_file_location("owned_same_groups", MENU)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)

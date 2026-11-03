@@ -29,7 +29,7 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     anchor_copy_api,
     anchor_copy_dialog_type,
     anchor_copy_snapshot_refresh,

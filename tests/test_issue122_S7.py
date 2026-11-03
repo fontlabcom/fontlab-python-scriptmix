@@ -17,6 +17,7 @@ the refusal paths, the rebuild consent, the glyph creation through fontpr
 layer). They do not prove native FontLab behaviour.
 """
 
+from conftest import app_module_name, app_names_used, app_namespace, check_real_app_names
 import ast
 import importlib.util
 import itertools
@@ -29,7 +30,6 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
 FOLDER = "Contours"
@@ -64,7 +64,7 @@ IN_PLACE = [
     "Autohint Selected Layers",
     "Remove PostScript Hints",
 ]
-# Names that live only in the App (fly.ap.layer_writer, hints, contour_copy,
+# Names that live only in the App (fly.ap.masters.layers.writer, hints, contour_copy,
 # glyph_creation, glyph_copies, selection_panel), never in a script.
 SHARED = {
     "SELECTED", "MAX_NAMES", "BASES_TEXT", "plural", "half_up", "outline_shapes",
@@ -828,8 +828,8 @@ def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
     Stroker.calls = []
     fly, ap = ModuleType("fly"), ModuleType("fly.ap")
     fly.__path__, ap.__path__ = [], []
-    scripting = ModuleType("fly.ap.scripting")
-    completion = ModuleType("fly.ap.script_completion")
+    scripting = ModuleType("fly.ap.core.scripting")
+    completion = ModuleType("fly.ap.core.completion")
     fontlab = ModuleType("fontlab")
     fontgate = ModuleType("fontgate")
     items = ModuleType("items")
@@ -917,7 +917,7 @@ def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
     fly.ap, fly.qt = ap, qt
     for name, module in {
         "fly": fly, "fly.ap": ap, "fly.qt": qt,
-        "fly.ap.scripting": scripting, "fly.ap.script_completion": completion,
+        "fly.ap.core.scripting": scripting, "fly.ap.core.completion": completion,
     }.items():  # fmt: skip
         monkeypatch.setitem(sys.modules, name, module)
     state.app = real_app(
@@ -958,14 +958,14 @@ def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
     monkeypatch.setattr(
         guards, "require_no_editors", lambda **kw: state.guards.append(("editors",))
     )
-    ap.scripting = state.app["scripting"]
+    app_namespace(ap, scripting=state.app["scripting"])
     return state
 
 
 def app(world: World, name: str) -> ModuleType:
     """Return the real App module ``fontlabapp.<name>`` that the scripts see as fly.ap.<name>."""
     module = world.app[name]
-    assert sys.modules[f"fly.ap.{name}"] is module
+    assert sys.modules[app_module_name(name).replace("fontlabapp.", "fly.ap.", 1)] is module
     return module
 
 
@@ -1123,25 +1123,25 @@ def test_panel_attributes_when_assigned_then_never_shadow_native_members(
 
 def test_scripts_when_checked_then_real_app_names_exist() -> None:
     used = app_names_used([path_of(t) for t in SOURCES])
-    assert {"commit", "scan_auto_facts", "refusal"} <= used["fly.ap.history"]
-    assert used["fly.ap.scripting"] == {
+    assert {"commit", "scan_auto_facts", "refusal"} <= used["fly.ap.core.history.glyphs"]
+    assert used["fly.ap.core.scripting"] == {
         "current_package", "connect_guarded", "close_script_dialog", "show_script_dialog",
-    }, "the selection and panel lifecycle live in fly.ap.selection_panel"  # fmt: skip
+    }, "the selection and panel lifecycle live in fly.ap.contours.selection.panel.model"  # fmt: skip
     assert {
         "NewGlyph",
         "create_glyphs",
         "auto_candidates",
         "rebuild_note",
         "REBUILD_LABEL",
-    } <= used["fly.ap.glyph_creation"]
-    assert {"survey_with", "half_up", "panel_type"} <= used["fly.ap.glyph_copies"]
+    } <= used["fly.ap.glyphs.creation"]
+    assert {"survey_with", "half_up", "panel_type"} <= used["fly.ap.glyphs.copies"]
     assert {"copy_contours", "contour_shapes", "path_contours"} <= used[
-        "fly.ap.contour_copy"
+        "fly.ap.contours.copy"
     ]
-    assert used["fly.ap.hints"] == {"hint_counts"}
-    assert used["fly.ap.selection_panel"] == {"panel_type"}
+    assert used["fly.ap.hints.postscript"] == {"hint_counts"}
+    assert used["fly.ap.contours.selection.panel.model"] == {"panel_type"}
     assert {"require_selection_window", "require_no_editors"} <= used[
-        "fly.ap.edit_guards"
+        "fly.ap.core.edit_guards"
     ]
     check_real_app_names(used)
 

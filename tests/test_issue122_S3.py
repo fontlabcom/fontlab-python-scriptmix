@@ -4,13 +4,14 @@
 
 Each script keeps its algorithm at module level and builds its panel lazily.
 The scan, refusal policy and one-step write are the real installed App module
-`fly.ap.names_edit` (with `fly.ap.history` and `fly.ap.edit_guards`), loaded
+`fly.ap.glyphs.names.model` (with `fly.ap.core.history.glyphs` and `fly.ap.core.edit_guards`), loaded
 over the fakes. So the tests load the script file, drive the core functions
 with exact values, and drive the panel slots with Qt-shaped fakes. The fake
 font logs every history call and every property write, so the one-Undo shape
 is asserted exactly. Offline results do not prove native FontLab behaviour.
 """
 
+from conftest import app_module_name, app_names_used, app_namespace, check_real_app_names
 import ast
 import importlib.util
 import re
@@ -21,7 +22,6 @@ from types import SimpleNamespace as NS
 from unittest.mock import MagicMock
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 NAMES = ROOT / "Scripts" / "Names"
@@ -227,7 +227,7 @@ def mods(monkeypatch):
 
 def app(name: str) -> ModuleType:
     """The real App module that the scripts reach as fly.ap.NAME."""
-    return sys.modules[f"fly.ap.{name}"]
+    return sys.modules[app_module_name(name).replace("fontlabapp.", "fly.ap.", 1)]
 
 
 def scan(world: "World"):
@@ -303,9 +303,9 @@ def fake_gui():
 
 @pytest.fixture(autouse=True)
 def env(world, monkeypatch, real_app):
-    """Install fake fly.ap, fly.ap.scripting and fly.qt. Return the shown dialogs."""
+    """Install fake fly.ap, fly.ap.core.scripting and fly.qt. Return the shown dialogs."""
     shown: list = []
-    scripting = ModuleType("fly.ap.scripting")
+    scripting = ModuleType("fly.ap.core.scripting")
     scripting.names_dialog_type = lambda: FakeBase
     scripting.names_selected_names = lambda: list(world.selected)
     scripting.select_glyphs = lambda names, *, package_id, add=False: world.log.append(
@@ -324,15 +324,15 @@ def env(world, monkeypatch, real_app):
             raise ValueError("Activate the Font window before selecting glyphs.")
 
     scripting._require_selection_window = require_font_window
-    capture = ModuleType("fly.ap.duplicate_unicodes_capture")
+    capture = ModuleType("fly.ap.glyphs.unicode.duplicates.capture")
 
     def require_no_editors(qt, deadline) -> None:
         if world.editors_open:
             raise ValueError("Close all Glyph editors first.")
 
     capture.require_no_editors = require_no_editors
-    ap = ModuleType("fly.ap")
-    ap.fontlab, ap.scripting = world.native, scripting
+    ap = app_namespace()
+    ap.fontlab, ap.core = world.native, NS(scripting=scripting)
     ap.duplicate_unicodes_capture = capture
     qt = NS(QtCore=MagicMock(), QtGui=fake_gui())
     qt.QtCore.QDateTime.currentDateTimeUtc.return_value = STAMP
@@ -341,8 +341,8 @@ def env(world, monkeypatch, real_app):
     for name, module in {
         "fly": fly,
         "fly.ap": ap,
-        "fly.ap.scripting": scripting,
-        "fly.ap.duplicate_unicodes_capture": capture,
+        "fly.ap.core.scripting": scripting,
+        "fly.ap.glyphs.unicode.duplicates.capture": capture,
     }.items():
         monkeypatch.setitem(sys.modules, name, module)
     loaded = real_app(
@@ -392,8 +392,8 @@ def test_script_when_parsed_then_follows_house_rules(name):
 
 @pytest.mark.parametrize("name", SCRIPTS)
 def test_script_when_imported_then_needs_no_qt_fontlab_or_scripting(name, monkeypatch):
-    """Import needs only the stdlib-only App helper fly.ap.names_edit."""
-    for key in ("fly.ap.scripting", "fly.ap.duplicate_unicodes_capture", "fly.qt"):
+    """Import needs only the stdlib-only App helper fly.ap.glyphs.names.model."""
+    for key in ("fly.ap.core.scripting", "fly.ap.glyphs.unicode.duplicates.capture", "fly.qt"):
         monkeypatch.delitem(sys.modules, key, raising=False)
     monkeypatch.delitem(sys.modules, "PythonQt")
     monkeypatch.delitem(sys.modules, "fontlab")
@@ -1695,9 +1695,9 @@ def test_script_text_when_read_then_no_internal_jargon_and_no_overclaims(name):
 def test_real_fontlabapp_when_imported_then_every_name_the_scripts_use_exists():
     """No fakes: the real Fly aliases give every App name that the scripts use."""
     used = app_names_used([NAMES / f"{name}.py" for name in SCRIPTS])
-    assert {"fly.ap.names_edit", "fly.ap.edit_guards", "fly.ap.scripting"} <= set(used)
+    assert {"fly.ap.glyphs.names.model", "fly.ap.core.edit_guards", "fly.ap.core.scripting"} <= set(used)
     assert {"scan", "fresh_facts", "editable", "refusal", "commit", "Facts"} <= used[
-        "fly.ap.names_edit"
+        "fly.ap.glyphs.names.model"
     ]
     check_real_app_names(used)
 
@@ -1706,7 +1706,7 @@ def test_real_names_dialog_when_parsed_then_has_the_hooks_the_panels_use():
     from importlib.metadata import distribution
 
     package = Path(distribution("fontlab-fontlabapp").locate_file("fontlabapp"))
-    tree = ast.parse((package / "_names_dialog.py").read_text())
+    tree = ast.parse((package / "glyphs/names/ui.py").read_text())
     cls = next(
         c for c in tree.body if isinstance(c, ast.ClassDef) and c.name == "NamesDialog"
     )

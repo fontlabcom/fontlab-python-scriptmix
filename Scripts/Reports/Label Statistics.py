@@ -28,7 +28,7 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import current_package, select_glyphs
+from fly.ap.core.scripting import current_package, select_glyphs
 
 fontlab = ap.fontlab
 (QtCore, QtGui) = (qt.QtCore, qt.QtGui)
@@ -210,7 +210,7 @@ class LabelStatistics(QtGui.QDialog):
 
     def _connect(self, signal: Any, slot: Any) -> None:
         """Connect through the shared guarded native lifecycle."""
-        ap.scripting.connect_guarded(self, signal, slot)
+        ap.core.scripting.connect_guarded(self, signal, slot)
 
     def fill(self, table: Any, groups: Any, label_of: Any, icon_of: Any = None) -> None:
         """Populate one statistics table with group labels, counts and swatches."""
@@ -285,12 +285,12 @@ class LabelStatistics(QtGui.QDialog):
 
     def closeEvent(self, event: Any) -> None:
         """Release the owned report and its connections."""
-        ap.scripting.close_script_dialog(self, event, KEY)
+        ap.core.scripting.close_script_dialog(self, event, KEY)
 
 
 def main() -> Any:
     """Show the persistent modeless report."""
-    return ap.scripting.show_script_dialog(LabelStatistics, KEY)
+    return ap.core.scripting.show_script_dialog(LabelStatistics, KEY)
 
 
 if __name__ == "__main__":

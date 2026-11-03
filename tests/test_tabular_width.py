@@ -17,12 +17,12 @@ def test_menu_is_lazy_typed_and_dispatches_once(monkeypatch):
         module = ModuleType(name)
         module.__path__ = []
         monkeypatch.setitem(sys.modules, name, module)
-    api = ModuleType("fly.ap.scripting")
+    api = ModuleType("fly.ap.core.scripting")
     api.tabular_width_dialog_type = lambda: type(
         "Panel", (), {"KEY": "check_tabular_widths"}
     )
     api.show_script_dialog = lambda kind, key: calls.append(key)
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", api)
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", api)
     namespace = runpy.run_path(str(MENU), run_name="inspection")
     assert calls == []
     namespace["main"]()

@@ -10,10 +10,10 @@ What it does:
     would read as another master are refused.
 
 How it works:
-    The non-modal panel uses fly.ap.selection_panel. Copies keep repaired shape
+    The non-modal panel uses fly.ap.contours.selection.panel.model. Copies keep repaired shape
     and node metadata (fl#8516, fl#8538). The shown layer stays active. Each
     Apply
-    is recorded as one Undo step through fly.ap.history and read back. Auto
+    is recorded as one Undo step through fly.ap.core.history.glyphs and read back. Auto
     owners and bases are listed and kept. Apply discloses queued ids and their
     possible date changes.
 
@@ -45,14 +45,14 @@ KEY = "masters_duplicate_current_layer"
 
 def backup_master(name: str, masters: Sequence[str]) -> str | None:
     """Resolve backup layers through the shared App rule."""
-    import fly.ap.masters as masters_api
+    import fly.ap.masters.inspect.model as masters_api
 
     return masters_api.backup_master(name, masters)
 
 
 def backup_name(base: str, taken: Collection[str], stamp: str, masters: Sequence[str]) -> str:
     """Return the shared unique plain backup name, or raise ValueError."""
-    import fly.ap.masters as masters_api
+    import fly.ap.masters.inspect.model as masters_api
 
     return masters_api.backup_layer_name(base, taken, stamp, masters)
 
@@ -62,10 +62,10 @@ def plan(all_masters: bool = False, suffix: str | None = None) -> list[tuple[Any
 
     A job is (glyph, layer, new name). Raise ValueError before any change.
     """
-    from fly.ap.layer_selection import capture
-    from fly.ap.masters import associated_master
-    import fly.ap.masters as masters_api
-    from fly.ap.scripting import current_package
+    from fly.ap.masters.layers.selection import capture
+    from fly.ap.masters.inspect.model import associated_master
+    import fly.ap.masters.inspect.model as masters_api
+    from fly.ap.core.scripting import current_package
 
     selection = capture(monotonic() + DEADLINE_SECONDS)
     package = current_package()
@@ -122,10 +122,10 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]], *, disclosure: dict[str, Any
     a glyph owns an automatic layer
     or is a base of one (also through manual composites).
     """
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.contour_copy as contour_copy
-    from fly.ap.masters import associated_master
-    from fly.ap.scripting import current_package
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.contours.copy as contour_copy
+    from fly.ap.masters.inspect.model import associated_master
+    from fly.ap.core.scripting import current_package
 
     if not jobs:
         return []
@@ -173,7 +173,7 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]], *, disclosure: dict[str, Any
         return missed
 
     done = history.commit(TITLE, [], glyphs, mutate, operation="geometry", facts=facts, read_back=read_back)
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(done, disclosure)
     if done.mismatches:
         raise history.unstored_error(done.mismatches)
@@ -183,7 +183,7 @@ def duplicate(jobs: Sequence[tuple[Any, Any, str]], *, disclosure: dict[str, Any
 def run(*, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Plan, then duplicate. Return one message per new layer."""
     jobs = plan()
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     captured = {"pending_updates": (), "pending_note": ""}
     duplicate(jobs, disclosure=captured)
     _guards.disclose(captured, disclosure)
@@ -192,9 +192,9 @@ def run(*, disclosure: dict[str, Any] | None = None) -> list[str]:
 
 def panel_type() -> type:
     """Use the shared non-modal selection panel with scope, suffix and inventory."""
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
-    import fly.ap.masters as masters_api
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.contours.selection.panel.model as selection_panel  # noqa: PLR0402
+    import fly.ap.masters.inspect.model as masters_api
     from fly import qt
 
     class BackupPanel(selection_panel.panel_type()):
@@ -249,7 +249,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the backup panel; print startup refusals."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     try:
         return scripting.show_script_dialog(panel_type(), KEY)

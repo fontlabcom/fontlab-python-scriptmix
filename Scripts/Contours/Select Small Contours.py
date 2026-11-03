@@ -20,7 +20,7 @@ from typing import Any
 
 def main() -> Any:
     """Open the owned source-bound numeric prompt through Fly."""
-    from fly.ap.contour_selection import show_small_contours
+    from fly.ap.contours.selection.model import show_small_contours
 
     return show_small_contours()
 

@@ -31,7 +31,7 @@ def test_menu_defers_all_host_work_and_runs_one_complete_source_mode(
         module = ModuleType(name)
         module.__path__ = []
         monkeypatch.setitem(sys.modules, name, module)
-    module = ModuleType("fly.ap.context_proofs")
+    module = ModuleType("fly.ap.proof.context")
     calls = []
 
     def run(value):

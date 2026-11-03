@@ -14,7 +14,7 @@ How it works:
     options: Anchors and Advance width. The table
     shows, per target layer, contours now and after, width now and after.
     Copy reads the font again and writes every target in one Undo step
-    through the shared module fly.ap.history. The old outline shapes of a
+    through the shared module fly.ap.core.history.glyphs. The old outline shapes of a
     target are removed (empty ones too) and repaired clones of the source
     outline shapes are added. After the write the script reads contour
     counts, widths and anchor positions back and reports any difference.
@@ -104,7 +104,7 @@ def contours_in(layer: Any) -> int:
 
 def clone_shape(shape: Any) -> Any:
     """Return a repaired clone of ``shape``. Raise RuntimeError on a lost contour."""
-    import fly.ap.contour_copy as contour_copy
+    import fly.ap.contours.copy as contour_copy
 
     copy = shape.clone()
     if len(copy.contours) != len(shape.contours):
@@ -188,7 +188,7 @@ def survey(
 
     A glyph without a source layer or without a target layer gives no row.
     """
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     pairs: list[Pair] = []
     for name in names:
@@ -214,7 +214,7 @@ def copy_pairs(pairs: Sequence[Pair], facts: Any) -> dict[str, Any]:
     ValueError; a failure after history started raises RuntimeError with
     the Undo hint.
     """
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import qt
 
     todo = [p for p in pairs if not p.note]
@@ -272,8 +272,8 @@ def plural(count: int, word: str) -> str:
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     from fly import qt
 
     QtGui, QtCore = qt.QtGui, qt.QtCore
@@ -452,7 +452,7 @@ def panel_type() -> type:
 
         def apply(self) -> None:
             """Plan again from the live font, then write. One Undo step."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             try:
                 pairs = self.plan()
                 result = copy_pairs(pairs, history.scan_auto_facts(self.font_package()))
@@ -478,7 +478,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

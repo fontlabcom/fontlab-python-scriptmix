@@ -42,7 +42,7 @@ after the write started says so and asks you to use Edit > Undo. It does not
 call UpdateAll (FontLab issue 8537).
 
 Shared parts: the panel, the plan model, the one-step write and the read-back
-come from the App module fly.ap.metrics_panel. This script holds its own
+come from the App module fly.ap.metrics.panel.model. This script holds its own
 rules, its planner and its controls.
 
 Benefit: symmetric spacing in all masters in one step, with a preview.
@@ -57,5 +57,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b55144e279944a16f5e662411f4b2bf02f29923af92d9e89509c8f12813c28b6.py)
+[Python source](../../../../.build/menu-sources/ce9ed0bf467a3c87fb3f38f225da2e1ef026c4a616640bba37e2229e01226769.py)
 <!--/codeinclude-->

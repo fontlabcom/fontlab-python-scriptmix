@@ -36,8 +36,8 @@ Credits:
 
 from typing import Any
 
-import fly.ap.reports as reports
-import fly.ap.smallcap_capture as smallcap_capture
+import fly.ap.proof.reports.model as reports
+import fly.ap.glyphs.smallcaps.capture as smallcap_capture
 
 
 def main() -> Any:

@@ -28,7 +28,7 @@ Benefit:
 
 from typing import Any
 
-from fly.ap.scripting import revision_compare_dialog_type, show_script_dialog
+from fly.ap.core.scripting import revision_compare_dialog_type, show_script_dialog
 
 KEY = "compare_open_font_revisions"
 

@@ -17,9 +17,9 @@ Repository: https://github.com/pedroarilla/glyphs-scripts . No source code copie
 
 from typing import Any
 
-import fly.ap.component_panel as panel
-import fly.ap.component_writer as writer
-import fly.ap.scripting as scripting  # noqa: PLR0402
+import fly.ap.components.panel.model as panel
+import fly.ap.components.writer as writer
+import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
 TITLE = "Decompose Serif Components"
 KEY = "components_decompose_serifs"
@@ -67,7 +67,7 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import ap, qt
 
-        from fly.ap.qt_dialogs import run_standard_message_box
+        from fly.ap.qt.dialogs import run_standard_message_box
 
         run_standard_message_box(
             qt, ap.fontlab.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

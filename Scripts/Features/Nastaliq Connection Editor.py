@@ -250,8 +250,8 @@ def save_pair(
 
 def panel_type() -> type:
     """Create the owned modeless editor and the shared attachment drawing."""
-    import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402
     from fly import qt
 
@@ -506,7 +506,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open or replace the connection editor through the shared registry."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

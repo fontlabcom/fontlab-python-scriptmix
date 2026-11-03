@@ -9,14 +9,14 @@ What it does:
     button. "Delete Ticked" removes the ticked layers.
 
 How it works:
-    The kind comes from the layer role, fly.ap.masters.associated_master,
+    The kind comes from the layer role, fly.ap.masters.inspect.model.associated_master,
     and the same backup resolver as Restore Backup Layer: "mask" for a
     background; "backup" for <master> backup <suffix> and legacy @ or
     space-prefixed backups; "alternate" for <master>#... layers, such as
     bracket
     layers; "other" for every other layer. Master layers, service layers,
     image layers and temporary "|temp|" layers are never listed. The delete
-    runs in one Undo step through the shared module fly.ap.history. FontLab
+    runs in one Undo step through the shared module fly.ap.core.history.glyphs. FontLab
     records the step only for layers plus their glyph, so the notification
     holds a layer that stays: the body layer of a deleted mask, else the
     first master layer. The script then checks by layer id that every
@@ -82,14 +82,14 @@ class Entry:
 
 def backup_master(name: str, masters: Sequence[str]) -> str | None:
     """Resolve backup layers through the shared App rule."""
-    import fly.ap.masters as masters_api
+    import fly.ap.masters.inspect.model as masters_api
 
     return masters_api.backup_master(name, masters)
 
 
 def kind(layer: Any, masters: Sequence[str]) -> str | None:
     """Return the kind of an extra layer, or None for a layer that is never listed."""
-    from fly.ap.masters import associated_master
+    from fly.ap.masters.inspect.model import associated_master
 
     name = str(layer.name)
     if layer.isMaskLayer:
@@ -116,7 +116,7 @@ def survey(package: Any, names: Sequence[str], masters: Sequence[str], facts: An
     Notes, in this order: a glyph the geometry policy refuses, a locked
     layer, the shown layer.
     """
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     entries: list[Entry] = []
     for name in names:
@@ -173,7 +173,7 @@ def delete_layers(entries: Sequence[Entry], masters: Sequence[str], facts: Any) 
     A kept entry raises ValueError before any change. Return
     ``{"layers", "glyphs", "deleted", "mismatches"}``.
     """
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     kept = [f"{e.glyph.name}/{e.name}: {e.note}" for e in entries if e.note]
     if kept:
@@ -211,8 +211,8 @@ def plural(count: int, word: str) -> str:
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     from fly import qt
 
     QtGui, QtCore = qt.QtGui, qt.QtCore
@@ -361,7 +361,7 @@ def panel_type() -> type:
 
         def apply(self) -> None:
             """Delete the ticked layers, read from a fresh survey. One Undo step."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             wanted = {(int(e.glyph.id), int(e.layer.id)) for e in self.ticked()}
             try:
                 fresh = [e for e in self.plan() if (int(e.glyph.id), int(e.layer.id)) in wanted]
@@ -390,7 +390,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

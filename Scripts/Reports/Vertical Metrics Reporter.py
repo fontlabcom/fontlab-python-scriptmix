@@ -25,7 +25,7 @@ and license are retained in NOTICE and additional-tools.json.
 
 def main() -> None:
     """Load the shared App report through Fly only when this menu is invoked."""
-    from fly.ap.scripting import show_script_dialog, vertical_metrics_dialog_type
+    from fly.ap.core.scripting import show_script_dialog, vertical_metrics_dialog_type
 
     panel = vertical_metrics_dialog_type()
     show_script_dialog(panel, panel.KEY)

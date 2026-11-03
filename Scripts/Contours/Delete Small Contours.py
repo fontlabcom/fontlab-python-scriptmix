@@ -8,7 +8,7 @@ What: For each selected glyph and master, the table lists every contour
 smaller than the threshold, with its area and position. Delete removes them.
 
 How: The area is the exact area of the curves in square font units, measured
-by fly.ap.contour_selection.unsigned_area (FontTools' area pen). Open
+by fly.ap.contours.selection.model.unsigned_area (FontTools' area pen). Open
 contours are listed as "open contour, kept" and are never deleted. A contour
 counts as small when its area is strictly below the threshold. This is the
 same rule as Contours > Select Small Contours, so you can select first and
@@ -42,7 +42,8 @@ line says so and nothing changes. After the write, the script reads the
 contour counts back. If FontLab fails part-way, the error says that native
 changes may remain. The change is recorded as one Undo step. The one-step
 write, the automatic-layer rule, the pending-update check and the panel are
-shared (fly.ap.outline_writer, fly.ap.outline_panel); the planner belongs to
+shared (fly.ap.contours.writer, fly.ap.contours.panel.model); the planner
+belongs to
 this script.
 
 Source: the author's own FontLab sample outlines_delete_small_contours.py,
@@ -52,10 +53,10 @@ Apache-2.0. Adapted for the current FontLab 9 API.
 from itertools import pairwise
 from typing import Any
 
-import fly.ap.contour_selection as contour_selection  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.outline_panel as outline_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.outline_writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.selection.model as contour_selection  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
 TITLE = "Delete Small Contours"
 KEY = "outlines_delete_small_contours"

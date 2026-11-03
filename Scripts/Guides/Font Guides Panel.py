@@ -31,7 +31,7 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     components_action,
     current_package,  # noqa: F401 - retain the original public helper.
     guides_api,

@@ -28,9 +28,9 @@ sys.modules['PythonQt'] = qt
 import fly
 fly.__dict__['qt'] = qt
 sys.modules['fly.qt'] = qt
-scripting = importlib.import_module('fontlabapp.scripting')
-completion = importlib.import_module('fontlabapp.script_completion')
-selection = importlib.import_module('fontlabapp.selection_panel')
+scripting = importlib.import_module('fontlabapp.core.scripting')
+completion = importlib.import_module('fontlabapp.core.completion')
+selection = importlib.import_module('fontlabapp.contours.selection.panel.model')
 assert completion.__file__ and scripting.__file__
 
 class Base(W.QDialog):

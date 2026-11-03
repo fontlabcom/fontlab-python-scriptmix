@@ -30,7 +30,7 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import current_package
+from fly.ap.core.scripting import current_package
 
 fontlab = ap.fontlab
 (QtCore, QtGui) = (qt.QtCore, qt.QtGui)
@@ -193,7 +193,7 @@ class GlyphInfoLive(QtGui.QDialog):
 
     def _connect(self, signal: Any, slot: Any) -> None:
         """Connect through the shared guarded native lifecycle."""
-        ap.scripting.connect_guarded(self, signal, slot)
+        ap.core.scripting.connect_guarded(self, signal, slot)
 
     def poll(self) -> None:
         """Refresh from the current font on each timer tick."""
@@ -264,12 +264,12 @@ class GlyphInfoLive(QtGui.QDialog):
 
     def closeEvent(self, event: Any) -> None:
         """Release the owned report and its connections."""
-        ap.scripting.close_script_dialog(self, event, KEY, timers=(self.timer,))
+        ap.core.scripting.close_script_dialog(self, event, KEY, timers=(self.timer,))
 
 
 def main() -> Any:
     """Show the persistent modeless report."""
-    return ap.scripting.show_script_dialog(GlyphInfoLive, KEY)
+    return ap.core.scripting.show_script_dialog(GlyphInfoLive, KEY)
 
 
 if __name__ == "__main__":

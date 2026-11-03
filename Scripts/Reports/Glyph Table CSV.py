@@ -33,7 +33,7 @@ import pathlib
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import current_package
+from fly.ap.core.scripting import current_package
 
 fontlab = ap.fontlab
 (QtCore, QtGui) = (qt.QtCore, qt.QtGui)
@@ -187,7 +187,7 @@ class GlyphTable(QtGui.QDialog):
 
     def _connect(self, signal: Any, slot: Any) -> None:
         """Connect through the shared guarded native lifecycle."""
-        ap.scripting.connect_guarded(self, signal, slot)
+        ap.core.scripting.connect_guarded(self, signal, slot)
 
     def refresh(self) -> None:
         """Rebuild the current snapshot and publish it only after display succeeds."""
@@ -290,7 +290,7 @@ class GlyphTable(QtGui.QDialog):
 
     def closeEvent(self, event: Any) -> None:
         """Release the owned report and its connections."""
-        ap.scripting.close_script_dialog(
+        ap.core.scripting.close_script_dialog(
             self,
             event,
             KEY,
@@ -301,7 +301,7 @@ class GlyphTable(QtGui.QDialog):
 
 def main() -> Any:
     """Show the persistent modeless report."""
-    return ap.scripting.show_script_dialog(GlyphTable, KEY)
+    return ap.core.scripting.show_script_dialog(GlyphTable, KEY)
 
 
 if __name__ == "__main__":

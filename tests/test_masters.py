@@ -1,10 +1,10 @@
 # this_file: tests/test_masters.py
 """Source-first checks of the four full Masters menus."""
 
+from conftest import app_module_name, app_source_path, original_source, register_app_module
 from pathlib import Path
 
 import pytest
-from conftest import original_source
 
 from menu_layout import released_bytes
 
@@ -176,10 +176,10 @@ def masters(monkeypatch, app_sources):
         "_masters_views",
     ]:
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
         base.modules[name] = module
 

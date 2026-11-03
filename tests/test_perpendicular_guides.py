@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 def test_public_menu_calls_complete_shared_action(monkeypatch, app_sources):
-    import fontlabapp.perpendicular_guides as api
+    import fontlabapp.guides.perpendicular.model as api
 
     seen = []
     monkeypatch.setattr(api, "run", lambda: seen.append("complete") or {"guides": 3})
@@ -22,11 +22,11 @@ def test_direct_menu_execution_uses_same_complete_fly_writer(monkeypatch, app_so
     import runpy
     import sys
 
-    import fontlabapp.perpendicular_guides as api
+    import fontlabapp.guides.perpendicular.model as api
 
     seen = []
     monkeypatch.setattr(api, "run", lambda: seen.append("whole action"))
-    monkeypatch.delitem(sys.modules, "fly.ap.perpendicular_guides", raising=False)
+    monkeypatch.delitem(sys.modules, "fly.ap.guides.perpendicular.model", raising=False)
     runpy.run_path(
         str(Path(__file__).parents[1] / "Scripts/Guides/Perpendicular Guides.py"),
         run_name="__main__",

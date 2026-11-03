@@ -50,8 +50,8 @@ script refuses, before any change, when:
 
 If a build fails part-way, the error names it; the layers built before it
 stay. The refusal rules and the panel are shared with other scripts
-(fly.ap.component_writer, fly.ap.component_panel, fly.ap.history,
-fly.ap.edit_guards); the recipe parser and the panel controls belong to
+(fly.ap.components.writer, fly.ap.components.panel.model, fly.ap.core.history.glyphs,
+fly.ap.core.edit_guards); the recipe parser and the panel controls belong to
 this script.
 
 Source: the author's own FontLab sample
@@ -65,5 +65,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3d7a8f0dcdcb34baf69f9d89e8745736448992339841c2a1ecdab70b0bec0ef2.py)
+[Python source](../../../../.build/menu-sources/27c15a82f0b2714ba8aee8ef66f1d0bb4f8c219f1a2c0dfe13ab43798e5a7479.py)
 <!--/codeinclude-->

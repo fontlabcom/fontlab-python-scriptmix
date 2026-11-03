@@ -1,6 +1,7 @@
 # this_file: tests/test_kerning_editors.py
 """Preserve five complete kerning editors and their owned-host behavior."""
 
+from conftest import app_module_name, app_source_path, register_app_module
 from pathlib import Path
 
 import pytest
@@ -42,13 +43,13 @@ def editors(load, monkeypatch, app_sources):
         "_kerning_value_dialog",
     ):
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         result = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, result)
+        register_app_module(monkeypatch, name, result)
         spec.loader.exec_module(result)
     state.package, _, _ = fixture_font()
-    return module, state, scripting, sys.modules["fontlabapp._kerning_edit_dialog"], qt
+    return module, state, scripting, sys.modules["fontlabapp.kerning.edit.ui"], qt
 
 
 def panel(editors, title):
@@ -67,7 +68,7 @@ def panel(editors, title):
     dialog.package = state.package
     dialog.masters = list(state.package.masters)
     dialog._snapshot_valid, dialog._scanned_id = True, state.package.id
-    batch = sys.modules["fontlabapp.kerning_batch"]
+    batch = sys.modules["fontlabapp.kerning.batch"]
     dialog._kerning_snapshot = batch.snapshot_kerning(state.package)
     dialog.staged, dialog.errors = {}, {}
     dialog.messages, dialog.enabled, dialog.table_sizes = [], [], []

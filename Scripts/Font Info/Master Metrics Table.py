@@ -42,7 +42,7 @@ import math
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     font_info_dialog_type,
     show_script_dialog,
 )
@@ -60,8 +60,8 @@ def write_changes(package: Any, changes: list[tuple]) -> dict[str, Any]:
     ``changes`` holds ``(master, field, previous, value)``. Refuse when a
     previous value differs from the font; write nothing when no value changes.
     """
-    import fly.ap.font_history as font_history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.master_metrics as master_metrics  # noqa: PLR0402 - same reason
+    import fly.ap.core.history.masters as font_history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.metrics.master_writer as master_metrics  # noqa: PLR0402 - same reason
 
     font_history.require_font_window(package)  # before master_values switches masters
     current = dict(master_values(package))
@@ -101,7 +101,7 @@ def validate_metrics(values: list[float]) -> list[float]:
 
 def master_values(package: Any) -> list[tuple[str, list[float]]]:
     """Read all master metrics, as the writer reads them back; restore the master."""
-    import fly.ap.master_metrics as master_metrics  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.metrics.master_writer as master_metrics  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     properties = [
         master_metrics.FIELDS[master_metrics.ALIASES.get(key, key)]

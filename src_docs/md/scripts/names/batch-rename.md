@@ -17,7 +17,7 @@ write. A row passes only when the new name is valid, does not exist, is not the
 target of another row, and the glyph is not tied to an auto layer. The write is
 one Undo step. The rename uses the font-owned FontGate record, never
 flGlyph.fgGlyph. The scan, the refusal policy and the one-step write come from
-the shared module fly.ap.names_edit. If a write fails part way, every planned
+the shared module fly.ap.glyphs.names.model. If a write fails part way, every planned
 glyph is still notified and stamped, and the message asks you to use Edit >
 Undo.
 
@@ -47,5 +47,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3c916d570d3d5bd71161001fb9c0c8e378cc42eac79e08d98798e32b92f7e401.py)
+[Python source](../../../../.build/menu-sources/4fcbcf5042ed54a1d1f42b7255f84d4de382b1200c1249870697118aed2b07c9.py)
 <!--/codeinclude-->

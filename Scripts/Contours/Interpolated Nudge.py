@@ -26,9 +26,9 @@ https://github.com/simoncozens/GlyphsScripts . No source code was copied.
 import math
 from typing import Any
 
-import fly.ap.outline_panel as outline_panel  # noqa: PLR0402 - native package lookup
-import fly.ap.outline_writer as writer
-import fly.ap.scripting as scripting  # noqa: PLR0402 - native package lookup
+import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402 - native package lookup
+import fly.ap.contours.writer as writer
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - native package lookup
 
 TITLE = "Interpolated Nudge"
 KEY = "cozens_interpolated_nudge"

@@ -31,7 +31,7 @@ TITLE = "Reorder Shapes"
 
 def ordered_ids(shapes: list[Any]) -> list[int]:
     """Return stable shape IDs without detaching, cloning or editing outlines."""
-    import fly.ap.component_writer as components
+    import fly.ap.components.writer as components
 
     def key(shape: Any) -> tuple:
         bounds = shape.boundingBox
@@ -45,7 +45,7 @@ def ordered_ids(shapes: list[Any]) -> list[int]:
 
 def shape_signature(shapes: list[Any]) -> tuple:
     """Match components and ordered contour node counts, without coordinates."""
-    import fly.ap.component_writer as components
+    import fly.ap.components.writer as components
 
     return tuple(
         ("component", components.base_of(shape))
@@ -93,9 +93,9 @@ def glyph_jobs(
 
 def run() -> dict:
     """Skip refused glyphs and apply one reference permutation to matching layers."""
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.layer_selection as selection
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as selection
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     captured = selection.capture(monotonic() + 2.0)
     package = scripting.current_package()
@@ -162,7 +162,7 @@ def run() -> dict:
 
 def main() -> None:
     """Report changed layer count or contain selection/history failures."""
-    import fly.ap.edit_guards as result_guards
+    import fly.ap.core.edit_guards as result_guards
     try:
         result = run()
         print(result_guards.append_note(f"{TITLE}: changed {result['changed']} layers.", result))

@@ -20,7 +20,7 @@ How it works:
     options: Anchors and Advance width. The table
     shows, per target layer, contours now and after, width now and after.
     Copy reads the font again and writes every target in one Undo step
-    through the shared module fly.ap.history. The old outline shapes of a
+    through the shared module fly.ap.core.history.glyphs. The old outline shapes of a
     target are removed (empty ones too) and repaired clones of the source
     outline shapes are added. After the write the script reads contour
     counts, widths and anchor positions back and reports any difference.
@@ -65,5 +65,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/bc4786a1ff1a5a645e86859d53dd9202c99799c9da03226108d5f314ba19ac24.py)
+[Python source](../../../../.build/menu-sources/2eec4fe73acf056b46091515fdc6550b0e8881614d6dfaa9af5cb1c91fc6da31.py)
 <!--/codeinclude-->

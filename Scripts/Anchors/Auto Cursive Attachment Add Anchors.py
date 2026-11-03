@@ -29,7 +29,7 @@ from pathlib import Path
 from time import monotonic
 from typing import Any
 
-import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
 
 TITLE = "Auto Cursive Attachment Add Anchors"
 KEY = "anchors_auto_cursive_attachment_add_anchors"
@@ -203,7 +203,7 @@ def read_sample(
 
 def cursive_changes(glyph: Any, layer: Any, profile: dict[str, float]) -> list[Any]:
     """Plan missing connections only, with deterministic near-edge searches."""
-    import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+    import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
 
     existing = {pin.name for pin in layer.anchors}
     wanted = [name for name in needed_connections(glyph.name) if name not in existing]
@@ -231,7 +231,7 @@ def cursive_changes(glyph: Any, layer: Any, profile: dict[str, float]) -> list[A
 
 def panel_type() -> type:
     """Build the non-modal preview only after the menu is invoked."""
-    import fly.ap.anchor_panel as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+    import fly.ap.anchors.panel.model as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
     from fly import qt
 
     class CursiveAnchorFit(anchor_panel.panel_type()):
@@ -258,7 +258,7 @@ def panel_type() -> type:
 
         def choose_profile(self) -> None:
             """Choose an existing sample; changing the path rebuilds the preview."""
-            import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import
+            import fly.ap.qt.dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import
 
             def configure(kind: Any, dialog: Any) -> None:
                 dialog.setWindowFlags(
@@ -289,7 +289,7 @@ def panel_type() -> type:
             )
 
             def changes(glyph: Any, master: str, layer: Any) -> list[Any]:
-                import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - Fly submodule import
+                import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402 - Fly submodule import
 
                 try:
                     return cursive_changes(glyph, layer, profile)

@@ -48,7 +48,7 @@ Credits:
 from typing import Any
 from collections.abc import Callable
 
-import fly.ap.case_coverage_controller as controller
+import fly.ap.glyphs.case_coverage.controller as controller
 from fly.gp.glyphsapp.glyph_info import glyph_categories
 
 

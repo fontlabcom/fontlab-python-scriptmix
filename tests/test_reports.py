@@ -1,6 +1,7 @@
 # this_file: tests/test_reports.py
 """Exercise real migrated calculations and stale-state handling with owned data."""
 
+from conftest import app_namespace, original_source
 import ast
 import hashlib
 import importlib.util
@@ -10,7 +11,6 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
-from conftest import original_source
 
 from menu_layout import current_rows
 
@@ -43,11 +43,11 @@ def load(monkeypatch):
         sys.modules,
         "fly",
         NS(
-            ap=NS(fontlab=native, scripting=helpers),
+            ap=app_namespace(fontlab=native, scripting=helpers),
             qt=NS(QtCore=NS(), QtGui=NS(QDialog=object)),
         ),
     )
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", helpers)
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", helpers)
 
     def module(title):
         spec = importlib.util.spec_from_file_location(
@@ -113,7 +113,7 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match():
         )
         source = target.read_text()
         ast.parse(source, feature_version=(3, 11))
-        assert "from fly.ap.scripting import" in source
+        assert "from fly.ap.core.scripting import" in source
         assert "exec(" not in source
         assert entry["license"] == "Apache-2.0"
 
@@ -303,5 +303,5 @@ def test_lifecycle_when_report_called_then_delegates_exact_objects(load, title, 
         assert (actual_type, key) == (dialog_type, mod.KEY)
         return sentinel
 
-    mod.ap.scripting.show_script_dialog = show
+    mod.ap.core.scripting.show_script_dialog = show
     assert mod.main() is sentinel, "Return the actual shared dialog"

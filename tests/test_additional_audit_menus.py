@@ -11,7 +11,7 @@ from types import ModuleType
 from types import SimpleNamespace as NS
 
 import pytest
-from conftest import resolve_app_sources
+from conftest import app_source_path, resolve_app_sources
 from test_proof import Color, Signal, Widget
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -82,12 +82,12 @@ def shared(monkeypatch):
     package.__path__ = [str(source)]
     package._native = {"PythonQt": qt, "fontlab": native}.__getitem__
     monkeypatch.setitem(sys.modules, "fontlabapp", package)
-    scripting = importlib.import_module("fontlabapp.scripting")
-    assert Path(scripting.__file__).parent == source
+    scripting = importlib.import_module("fontlabapp.core.scripting")
+    assert Path(scripting.__file__) == app_source_path(source, "core.scripting")
     fly, ap = ModuleType("fly"), ModuleType("fly.ap")
     fly.__path__, ap.__path__ = [], []
-    fly.ap, ap.scripting = ap, scripting
-    for name, module in (("fly", fly), ("fly.ap", ap), ("fly.ap.scripting", scripting)):
+    fly.ap, ap.core = ap, NS(scripting=scripting)
+    for name, module in (("fly", fly), ("fly.ap", ap), ("fly.ap.core.scripting", scripting)):
         monkeypatch.setitem(sys.modules, name, module)
     monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
 
@@ -113,7 +113,7 @@ def test_real_factory_no_font_panel_and_shared_owned_close(shared, relative, fac
     dialog = menu.main()
     actual_type = getattr(shared.scripting, factory)()
     assert type(dialog) is actual_type
-    assert Path(sys.modules[actual_type.__module__].__file__).parent == shared.source
+    assert Path(sys.modules[actual_type.__module__].__file__) == app_source_path(shared.source, actual_type.__module__.removeprefix("fontlabapp."))
     assert menu.KEY == dialog.KEY == key and sys._fontlab_samples[key] is dialog
     assert dialog.host_show_count == dialog.host_raise_count == 1 and dialog.close_button
     assert "font" in dialog.status.text.lower()

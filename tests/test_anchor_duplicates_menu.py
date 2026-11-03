@@ -13,7 +13,7 @@ def test_complete_candidate_is_lazy_and_dispatches_through_fly(monkeypatch):
     root = Path(__file__).resolve().parents[1]
     path = root / "Scripts/Anchors/Duplicates Finder.py"
     calls = []
-    module = ModuleType("fly.ap.anchor_duplicates")
+    module = ModuleType("fly.ap.anchors.duplicates.model")
     module.show = lambda: calls.append("complete writer")
     monkeypatch.setitem(sys.modules, module.__name__, module)
     loaded = runpy.run_path(str(path), run_name="inspection")

@@ -32,7 +32,7 @@ from datetime import date
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     font_info_dialog_type,
     show_script_dialog,
     write_font_info,

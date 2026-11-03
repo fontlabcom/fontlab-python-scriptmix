@@ -16,7 +16,7 @@ HOW: The script reads the selection through the shared App selection reader. It
 then scans the whole font once. For each edit it rescans, builds a plan, and
 writes the plan as one Undo step. After the write it reads each tag list back
 and compares it with the plan. The scan, the refusal policy and the one-step
-write come from the shared module fly.ap.names_edit. If a write fails part way,
+write come from the shared module fly.ap.glyphs.names.model. If a write fails part way,
 every planned glyph is still notified and stamped, and the message asks you to
 use Edit > Undo.
 
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9e56cdc339d9dc152b0bb7e456d3633379104d6bade7edf3247093912746cdf2.py)
+[Python source](../../../../.build/menu-sources/7c4823864e7f3de81227461b0db4950ca48357d337e9e3610dfe0f6e99bf190b.py)
 <!--/codeinclude-->

@@ -18,7 +18,7 @@ Undo step: layers and glyph in one notify list (a glyph alone adds no Undo
 step). It then reads the note back and compares it with the text. Double-click
 selection goes through the App selection helper, which checks that a regular
 Font window is active (fl#8528). The scan, the refusal policy and the one-step
-write come from the shared module fly.ap.names_edit. If a write fails part way,
+write come from the shared module fly.ap.glyphs.names.model. If a write fails part way,
 every planned glyph is still notified and stamped, and the message asks you to
 use Edit > Undo.
 
@@ -46,5 +46,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2e5636a4e20af47818dcde26c0ffce22ca1a18a16859f20b50ed632a00fc6de4.py)
+[Python source](../../../../.build/menu-sources/83a4baf2c009ff8a62905499373c848e4a68cf1524af1323fbd10b28dcdb1888.py)
 <!--/codeinclude-->

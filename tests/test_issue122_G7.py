@@ -310,7 +310,7 @@ def world(monkeypatch: Any, real_app: Any) -> Any:
     fly.ap, fly.fl, fly.qt = ap, native, qt
     monkeypatch.setitem(sys.modules, "fly", fly)
     monkeypatch.setitem(sys.modules, "fly.ap", ap)
-    import fontlabapp.scripting as real_scripting
+    import fontlabapp.core.scripting as real_scripting
 
     def current_package(expected_id: int | None = None) -> Any | None:
         return (
@@ -954,7 +954,7 @@ def test_panels_when_using_real_selection_panel_then_open_plan_and_apply(
     panel_type = module.MagicPanel if index == 0 else module.IntermediatePanel
     panel = panel_type()
     assert isinstance(panel, world.app["selection_panel"].panel_type())
-    assert type(panel).__mro__[1].__module__ == "fontlabapp._selection_panel"
+    assert type(panel).__mro__[1].__module__ == "fontlabapp.contours.selection.panel.ui"
     panel.show()
     assert panel.visible and panel.rows and panel.apply_button.enabled
     assert panel.table.row_count == len(panel.rows)

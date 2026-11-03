@@ -1053,8 +1053,8 @@ def components(components_world: Any, monkeypatch: pytest.MonkeyPatch) -> Any:
 
     qt.QtGui.QMessageBox = message_box_type(question=question)
     qt.QtGui.QMessageBox.StandardButtons = StandardButtons
-    import fly.ap.glyph_catalog as catalog
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.glyphs.catalog.model as catalog
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     patch_app(
         monkeypatch,
@@ -1948,7 +1948,7 @@ def test_new_digit_creation_sets_unicode_through_real_app(components: Any) -> No
 def test_app_double_signature_check_rejects_variadic_capture(
     components: Any, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    import fly.ap.glyph_catalog as catalog
+    import fly.ap.glyphs.catalog.model as catalog
 
     with pytest.raises(AssertionError, match="signature mismatch"):
         patch_app(monkeypatch, catalog, "capture", lambda **kw: None)

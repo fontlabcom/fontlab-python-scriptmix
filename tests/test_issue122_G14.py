@@ -384,7 +384,7 @@ def package_with_template() -> Any:
 def test_ra_survey_and_jobs_keep_existing_continue_others(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package, glyphs = package_with_template()
     glyphs["medial-ra.w300"] = Glyph("medial-ra.w300", Layer())
@@ -404,7 +404,7 @@ def test_ra_survey_and_jobs_keep_existing_continue_others(
 
 
 def test_ra_auto_candidates_need_consent(drawing_environment: Any) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     m = load(0)
     package, glyphs = package_with_template()
@@ -424,7 +424,7 @@ def test_ra_auto_candidates_need_consent(drawing_environment: Any) -> None:
 def test_ra_empty_consonant_set_still_makes_omission_variants(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package, _ = package_with_template()
     rows = load(0).survey(package, "ra", [], 5, history.auto_facts([]), False)
@@ -436,10 +436,10 @@ def test_ra_empty_consonant_set_still_makes_omission_variants(
 def test_ra_real_creation_and_geometry_history(
     drawing_environment: Any, monkeypatch: Any, write_fails: bool
 ) -> None:
-    import fly.ap.edit_guards as edit_guards  # noqa: PLR0402
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
-    import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.edit_guards as edit_guards  # noqa: PLR0402
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
+    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -687,8 +687,8 @@ class Widget:
 @pytest.fixture
 def connection_panel(monkeypatch: Any) -> Any:
     import fly
-    import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402
 
     layer = Layer()
@@ -824,7 +824,7 @@ def test_panel_deleted_glyph_refuses_with_reload_guidance(
 
 @pytest.mark.parametrize("index", range(2))
 def test_main_dispatches_through_owned_registry(index: int, monkeypatch: Any) -> None:
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     module = load(index)
     sentinel = object()
@@ -843,8 +843,8 @@ def test_creation_panel_uses_shared_hooks(
     monkeypatch: Any, drawing_environment: Any
 ) -> None:
     import fly
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     class Base(Widget):
         def add_row(self, *args: Any) -> Any:
@@ -1003,7 +1003,7 @@ def add_bold_master(package: Any, glyphs: dict[str, Any]) -> None:
 def test_multimaster_same_members_have_own_extension_and_advance(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1037,7 +1037,7 @@ def test_multimaster_same_members_have_own_extension_and_advance(
 def test_bad_master_keeps_every_target_glyph(
     drawing_environment: Any, damage: str
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1066,7 +1066,7 @@ def test_bad_master_keeps_every_target_glyph(
 def test_small_width_group_is_named_and_kept_not_silently_dropped(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package, glyphs = package_with_template()
     glyphs["ka"].layers[0].advanceWidth = 100
@@ -1088,7 +1088,7 @@ def test_small_width_group_is_named_and_kept_not_silently_dropped(
 def test_missing_consonant_in_one_master_keeps_group_only(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1108,7 +1108,7 @@ def test_missing_consonant_in_one_master_keeps_group_only(
 def test_current_master_membership_is_reused_after_other_master_order_changes(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1161,7 +1161,7 @@ def test_piece_roles_report_named_errors(drawing_environment: Any, damage: str) 
 
 
 def test_different_master_node_topology_keeps_targets(drawing_environment: Any) -> None:
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1243,14 +1243,14 @@ def test_all_faked_app_functions_have_installed_signatures() -> None:
         assert fake == real, f"{module}.{name}: {fake} != {real}"
     names = {(module, name) for module, name, _, _ in FAKED_SIGNATURES}
     assert {
-        ("fontlabapp.scripting", "show_script_dialog"),
-        ("fontlabapp.scripting", "features_dialog_type"),
-        ("fontlabapp.scripting", "anchors_view_types"),
+        ("fontlabapp.core.scripting", "show_script_dialog"),
+        ("fontlabapp.core.scripting", "features_dialog_type"),
+        ("fontlabapp.core.scripting", "anchors_view_types"),
         ("fontlab_fontport.feature_blocks", "read_feature_blocks"),
         ("fontlab_fontport.feature_blocks", "write_feature_blocks"),
-        ("fontlabapp.edit_guards", "pending_updates"),
-        ("fontlabapp.glyph_copies", "panel_type"),
-        ("fontlabapp.anchor_writer", "anchor_points"),
+        ("fontlabapp.core.edit_guards", "pending_updates"),
+        ("fontlabapp.glyphs.copies", "panel_type"),
+        ("fontlabapp.anchors.writer", "anchor_points"),
     }.issubset(names)
     # The wrapper enforces the real keyword-only reference and Undo arguments.
     import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402

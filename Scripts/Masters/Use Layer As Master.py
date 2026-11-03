@@ -28,7 +28,7 @@ Why this design:
     - Locked, mask, service, automatic and image layers are refused. So is a
       glyph that has an automatic layer, or is a base of one (also through
       manual composites): FontLab cannot undo it. Queued ids and their possible
-      date changes are disclosed. The shared module fly.ap.history does
+      date changes are disclosed. The shared module fly.ap.core.history.glyphs does
       these checks and the one-step write.
 
 How to use:
@@ -123,9 +123,9 @@ def _mask_of(layer: Any, masters: Sequence[str]) -> Any | None:
 
 def plan() -> list[dict[str, Any]]:
     """Check every selected layer and plan its swap. Raise before any change."""
-    from fly.ap.layer_selection import capture
-    from fly.ap.masters import associated_master
-    from fly.ap.scripting import current_package
+    from fly.ap.masters.layers.selection import capture
+    from fly.ap.masters.inspect.model import associated_master
+    from fly.ap.core.scripting import current_package
 
     selection = capture(monotonic() + DEADLINE_SECONDS)
     package = current_package()
@@ -175,8 +175,8 @@ def apply_renames(jobs: Sequence[dict[str, Any]], *, disclosure: dict[str, Any] 
     a glyph owns an automatic layer
     or is a base of one (also through manual composites).
     """
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    from fly.ap.scripting import current_package
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    from fly.ap.core.scripting import current_package
 
     layers = [t for job in jobs for t in job["targets"].values() if t is not None]
     glyphs = [job["glyph"] for job in jobs]
@@ -199,14 +199,14 @@ def apply_renames(jobs: Sequence[dict[str, Any]], *, disclosure: dict[str, Any] 
 
     facts = history.scan_auto_facts(current_package())
     _done = history.commit(TITLE, layers, glyphs, mutate, operation="geometry", facts=facts)
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(_done, disclosure)
 
 
 def run(*, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Plan all swaps, then apply them. Return one message per glyph."""
     jobs = plan()
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     captured = {"pending_updates": (), "pending_note": ""}
     apply_renames(jobs, disclosure=captured)
     _guards.disclose(captured, disclosure)

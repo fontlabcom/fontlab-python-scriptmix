@@ -20,10 +20,10 @@ How it works:
     A non-modal panel lists every glyph and master with its hint counts, or
     the reason why the layer is skipped. Apply reads the font again and
     calls the native flLayer.autohint() on every planned layer, all in one
-    Undo step through the shared module fly.ap.history. Read-back reports
+    Undo step through the shared module fly.ap.core.history.glyphs. Read-back reports
     a layer that has an outline but no PostScript hints after the call. The
-    hint counts and the panel are shared (fly.ap.hints,
-    fly.ap.selection_panel).
+    hint counts and the panel are shared (fly.ap.hints.postscript,
+    fly.ap.contours.selection.panel.model).
 
 Native call caveat:
     FontLab's source shows that autohint switches the package master
@@ -67,5 +67,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/15e0380dab0758e3706267f487f17a5d824ebf4b4deab5189526f53b562136f6.py)
+[Python source](../../../../.build/menu-sources/2c9564ba8fb3955cca12176fe48da0acd88c857e584bc0736b931580fb9cb072.py)
 <!--/codeinclude-->

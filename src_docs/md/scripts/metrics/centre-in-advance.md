@@ -38,7 +38,7 @@ after the write started says so and asks you to use Edit > Undo. It does not
 call UpdateAll (FontLab issue 8537).
 
 Shared parts: the panel, the plan model, the one-step write and the read-back
-come from the App module fly.ap.metrics_panel. This script holds its own
+come from the App module fly.ap.metrics.panel.model. This script holds its own
 maths, its planner and its controls.
 
 Benefit: exact centring in all masters in one step.
@@ -53,5 +53,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/43172cefe3e5a46a3e87b40a5576d536d642263bb88a887cda0fc4bcc79fa58b.py)
+[Python source](../../../../.build/menu-sources/cbe25fe960397e75c949be4ef74bb66384a185b3dadd9192f8fff4b8fee34498.py)
 <!--/codeinclude-->

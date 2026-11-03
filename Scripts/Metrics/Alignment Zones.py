@@ -60,8 +60,8 @@ TITLE = "Alignment Zones"
 
 def main() -> Any:
     """Open the shared zone panel with the native backend for the current font."""
-    import fly.ap.zone_editor as zone_editor  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.zone_native as zone_native  # noqa: PLR0402 - same reason
+    import fly.ap.metrics.zones.editor as zone_editor  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.metrics.zones.native as zone_native  # noqa: PLR0402 - same reason
 
     return zone_editor.show(zone_native.backend())
 

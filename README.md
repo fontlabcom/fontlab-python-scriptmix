@@ -86,6 +86,7 @@ intended operation; new ports still need actual Undo/Redo and save/reopen proof.
 | --- | --- |
 | `Scripts/` | Practical menu entry points; typed Python 3.11, lazy Fly imports. |
 | `menu_layout.py` | Resolve current paths and verify historical release bytes. |
+| `tools/migrate_app_paths.py` | Rewrite App paths from the sibling alias oracle; `--check` audits pending rewrites. |
 | `migration.json` | Historical sample source/destination paths and hashes. |
 | `menu-moves.json`, `menu-revisions.json` | Explicit path and comment overlays. |
 | `additional-tools.json` | Additional tool provenance, current hashes and status. |
@@ -102,6 +103,9 @@ intended operation; new ports still need actual Undo/Redo and save/reopen proof.
 
 Shared code is supplied by sibling packages. General panels, native guards,
 planners and history helpers belong in `fontlabapp`, reached as `fly.ap`.
+Use domain imports such as `fly.ap.core.scripting` and
+`fly.ap.masters.inspect.model`. These scripts require an App build with the
+domain layout.
 Feature source uses `fly.fp.feature_blocks`. Fontport holds fontParts/UFO
 integration; Glyport holds Glyphs.app compatibility. Scripts do not load other
 menu scripts as libraries. No `lessons` package is shipped here.

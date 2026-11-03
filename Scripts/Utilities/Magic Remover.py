@@ -35,11 +35,11 @@ from dataclasses import dataclass, field
 from time import monotonic
 from typing import Any
 
-import fly.ap.history as history  # noqa: PLR0402 - Fly resolves App modules lazily
-import fly.ap.layer_selection as selection
-import fly.ap.outline_writer as outlines
-import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly resolves App modules lazily
-import fly.ap.selection_panel as panels
+import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - Fly resolves App modules lazily
+import fly.ap.masters.layers.selection as selection
+import fly.ap.contours.writer as outlines
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly resolves App modules lazily
+import fly.ap.contours.selection.panel.model as panels
 
 TITLE = "Magic Remover"
 KEY = "utilities_magic_remover"
@@ -316,7 +316,7 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import fl, qt
 
-        from fly.ap.qt_dialogs import run_standard_message_box
+        from fly.ap.qt.dialogs import run_standard_message_box
 
         run_standard_message_box(
             qt, fl.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

@@ -17,7 +17,7 @@ def test_menu_is_lazy_and_direct_and_script_paths_open_complete_app_editor(monke
     calls = []
     result = object()
     monkeypatch.setitem(
-        sys.modules, "fly.ap.text_holder", NS(show=lambda: calls.append(True) or result)
+        sys.modules, "fly.ap.proof.text_holder.model", NS(show=lambda: calls.append(True) or result)
     )
     spec = importlib.util.spec_from_file_location("owned_text_holder", MENU)
     module = importlib.util.module_from_spec(spec)

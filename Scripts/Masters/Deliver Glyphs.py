@@ -108,7 +108,7 @@ def usable_layer(layer: Any) -> None:
 
 def copy_shapes(layer: Any) -> list[Any]:
     """Copy shapes; restore node names and raw flags through contour_copy only."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402
 
     output = []
     for shape in layer.shapes:
@@ -133,8 +133,8 @@ def delivery_plan(
     source: Any, target: Any, names: list[str], fallback: str, replace: bool
 ) -> list[dict[str, Any]]:
     """List each selected glyph as deliverable or kept; make no font changes."""
-    import fly.ap.anchor_writer as anchors
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.anchors.writer as anchors
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     if int(source.fgId) == int(target.fgId):
         raise ValueError("Activate a different destination font.")
@@ -222,8 +222,8 @@ def delivery_plan(
 
 def rebuild_rows(target: Any, jobs: list[dict[str, Any]]) -> dict[str, tuple[str, ...]]:
     """Use the shared suffix-scoped auto-candidate scan for new glyphs only."""
-    import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     return glyph_creation.auto_candidates(
         target,
@@ -234,13 +234,13 @@ def rebuild_rows(target: Any, jobs: list[dict[str, Any]]) -> dict[str, tuple[str
 
 def deliver(target: Any, jobs: list[dict[str, Any]], consent: bool) -> dict[str, Any]:
     """Add through glyph_creation; fill all eligible master layers in one action."""
-    import fly.ap.anchor_writer as anchors
-    import fly.ap.edit_guards as guards
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
-    import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.outline_writer as outlines
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.anchors.writer as anchors
+    import fly.ap.core.edit_guards as guards
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
+    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.contours.writer as outlines
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     current = scripting.current_package()
     if current is None or int(current.fgId) != int(target.fgId):
@@ -385,7 +385,7 @@ def preview_rows(
     jobs: list[dict[str, Any]], candidates: dict[str, tuple[str, ...]] | None = None
 ) -> list[tuple[str, str, str, str]]:
     """Keep a visible row for every selected glyph, including each refusal."""
-    import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402
+    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402
 
     rows = []
     for job in jobs:
@@ -415,9 +415,9 @@ def preview_rows(
 
 def panel_type() -> type:
     """Build a source-retaining panel; never switch the active font in code."""
-    import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402
-    import fly.ap.layer_selection as selection
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
+    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as selection
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
     from fly import fl, qt
 
     gui = qt.QtGui
@@ -557,7 +557,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel on the source selection; each target stays user-selected."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
 
     try:
         return scripting.show_script_dialog(panel_type(), KEY)

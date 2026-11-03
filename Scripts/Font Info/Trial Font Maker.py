@@ -280,7 +280,7 @@ def preview(
 
 def read_field(widget: Any) -> str:
     """Read literal Qt text and refuse characters that cannot round-trip safely."""
-    import fly.ap.qt_literal_text as literal_text
+    import fly.ap.qt.literal_text as literal_text
     from fly import qt
 
     text = literal_text.read_text(qt, widget.text)
@@ -291,7 +291,7 @@ def read_field(widget: Any) -> str:
 
 def panel_type() -> type:
     """Return a non-modal, font-bound export panel with explicit file previews."""
-    import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
+    import fly.ap.contours.selection.panel.model as selection_panel  # noqa: PLR0402
     from fly import qt
 
     base, gui = selection_panel.panel_type(), qt.QtGui
@@ -419,7 +419,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open or replace only this tool's font-bound panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     try:
         return scripting.show_script_dialog(panel_type(), KEY)

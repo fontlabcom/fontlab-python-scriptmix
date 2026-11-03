@@ -41,8 +41,9 @@ After the write, it reads transforms, a node per baked
 shape and the anchors back. If FontLab fails part-way, the error says that
 native changes may remain. The change is recorded as one Undo step. The
 one-step write, the automatic-layer rule, the pending-update check, the
-preview and the panel are shared (fly.ap.outline_writer,
-fly.ap.outline_transform); the matrix math is fly.ap.affine; the planner
+preview and the panel are shared (fly.ap.contours.writer,
+fly.ap.contours.transform.model); the matrix math is fly.ap.contours.affine; the
+planner
 belongs to this script.
 
 Source: the author's own FontLab sample outlines_slant.py, Apache-2.0.
@@ -52,9 +53,9 @@ Adapted for the current FontLab 9 API.
 import math
 from typing import Any
 
-import fly.ap.outline_transform as outline_transform  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.outline_writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.transform.model as outline_transform  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import ap, qt
 
 QtGui = qt.QtGui
@@ -88,7 +89,8 @@ def italic_angle(package: Any) -> float:
 
 
 class SlantOutlines(outline_transform.panel_type()):
-    """Angle, italic button, pivot, anchors and master scope; one row per layer."""
+    """Angle, italic button, pivot, anchors and master scope; one row per
+    layer."""
 
     TITLE, KEY, ACTION, DONE, UNIT = TITLE, KEY, "Slant", "Slanted", "layer item"
     HEADERS: tuple[str, ...] = ("Glyph · master", "Item", "Now", "Pivot y")

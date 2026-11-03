@@ -1,6 +1,7 @@
 # this_file: tests/test_font_info.py
 """Owned tests for complete Font Info migrations and safe edit plans."""
 
+from conftest import app_namespace
 import importlib.util
 import sys
 from pathlib import Path
@@ -51,19 +52,19 @@ def load(monkeypatch, app_sources):
         sys.modules,
         "fly",
         NS(
-            ap=NS(fontlab=native, FL=NS(), master_metrics=master_metrics),
+            ap=app_namespace(fontlab=native, FL=NS(), master_metrics=master_metrics),
             qt=NS(QtCore=NS(), QtGui=NS(QDialog=object, QWidget=object)),
         ),
     )
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", helpers)
-    monkeypatch.setitem(sys.modules, "fly.ap.master_metrics", master_metrics)
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", helpers)
+    monkeypatch.setitem(sys.modules, "fly.ap.metrics.master_writer", master_metrics)
     # Exercise the actual shared panel methods against owned import doubles.
-    shared_path = app_sources / "_font_info_dialog.py"
+    shared_path = app_sources / "fonts/info/ui.py"
     qt = sys.modules["fly"].qt
     monkeypatch.setitem(sys.modules, "fontlabapp", NS(_native=lambda name: qt))
-    monkeypatch.setitem(sys.modules, "fontlabapp.scripting", helpers)
+    monkeypatch.setitem(sys.modules, "fontlabapp.core.scripting", helpers)
     spec = importlib.util.spec_from_file_location(
-        "fontlabapp._font_info_dialog", shared_path
+        "fontlabapp.fonts.info.ui", shared_path
     )
     shared = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(shared)

@@ -30,7 +30,7 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     components_action,
     components_api,
     components_dialog_type,

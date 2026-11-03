@@ -53,8 +53,8 @@ changes.
 After the write, it reads node counts and handle positions back. If FontLab
 fails part-way, the error says that native changes may remain. The change is
 recorded as one Undo step. The one-step write, the automatic-layer rule, the
-pending-update check and the panel are shared (fly.ap.outline_writer,
-fly.ap.outline_panel); the planner belongs to this script.
+pending-update check and the panel are shared (fly.ap.contours.writer,
+fly.ap.contours.panel.model); the planner belongs to this script.
 
 Source: the author's own FontLab sample outlines_fix_zero_handles.py,
 Apache-2.0. Adapted for the current FontLab 9 API.
@@ -66,5 +66,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b3ba9315dd925529859e5b8464fcf10dc3a3cac1ec5f3bd5cbe0ce4e8e3aa8e8.py)
+[Python source](../../../../.build/menu-sources/cafcaccf1e80d73aa8ed01acf615b3c4a2be6ead59b9a437027be973d3b643b4.py)
 <!--/codeinclude-->

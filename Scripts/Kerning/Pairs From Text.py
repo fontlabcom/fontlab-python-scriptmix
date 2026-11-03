@@ -28,18 +28,18 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import kerning_edit_dialog_type, kerning_selection_api
-from fly.ap.scripting import kerning_editor_apply as editor_apply
-from fly.ap.scripting import kerning_editor_make_table as make_table
-from fly.ap.scripting import kerning_editor_refresh as editor_refresh
-from fly.ap.scripting import names_muted as muted
+from fly.ap.core.scripting import kerning_edit_dialog_type, kerning_selection_api
+from fly.ap.core.scripting import kerning_editor_apply as editor_apply
+from fly.ap.core.scripting import kerning_editor_make_table as make_table
+from fly.ap.core.scripting import kerning_editor_refresh as editor_refresh
+from fly.ap.core.scripting import names_muted as muted
 
 fontlab = ap.fontlab
 QtCore, QtGui = qt.QtCore, qt.QtGui
 api = kerning_selection_api()
 KerningEditDialog = kerning_edit_dialog_type()
-current_package = ap.scripting.current_package
-kerning_pairs = ap.scripting.kerning_pairs
+current_package = ap.core.scripting.current_package
+kerning_pairs = ap.core.scripting.kerning_pairs
 
 TITLE = "Kerning Pairs from Text"
 KEY = "kerning_pairs_from_text"
@@ -56,7 +56,7 @@ def write_kerning(
     package: Any, edits: dict[str, dict[tuple[str, str], int | None]]
 ) -> None:
     """Retain the original console interface through the shared preflight writer."""
-    ap.scripting.kerning_editor_api().write_kerning(package, edits, TITLE)
+    ap.core.scripting.kerning_editor_api().write_kerning(package, edits, TITLE)
 
 
 class PairsFromText(KerningEditDialog):
@@ -213,7 +213,7 @@ class PairsFromText(KerningEditDialog):
 
 def main() -> Any:
     """Replace only this tool's registry entry and show its owned modeless dialog."""
-    return ap.scripting.show_script_dialog(PairsFromText, KEY)
+    return ap.core.scripting.show_script_dialog(PairsFromText, KEY)
 
 
 if __name__ == "__main__":

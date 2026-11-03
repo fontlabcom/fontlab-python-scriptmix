@@ -28,7 +28,7 @@ def _moves(root: Path) -> dict[str, dict]:
 
 
 def released_bytes(root: Path, row: dict) -> bytes:
-    """Recover exact historical bytes only through a verified comment-header move."""
+    """Recover exact historical bytes through verified moves and recorded edits."""
     move = (
         _moves(root).get(row["destination"])
         if (root / "menu-moves.json").is_file()
@@ -40,7 +40,7 @@ def released_bytes(root: Path, row: dict) -> bytes:
         if revision is None:
             return raw
         if (
-            row["source_sha256"] != revision["source_sha256"]
+            row.get("source_sha256") != revision.get("source_sha256")
             or row["destination_sha256"] not in {
                 revision["historical_sha256"], revision["current_sha256"]
             }
@@ -125,8 +125,13 @@ def current_rows(root: Path) -> list[dict]:
                 }
             )
     revisions = _revisions(root)
-    if not revisions.keys() <= {row["destination"] for row in result}:
+    additional_path = root / "additional-tools.json"
+    additional = json.loads(additional_path.read_text()) if additional_path.is_file() else []
+    if not revisions.keys() <= {row["destination"] for row in [*result, *additional]}:
         raise ValueError("Menu revision has no known migration identity.")
+    for row in additional:
+        if row["destination"] in revisions:
+            released_bytes(root, row)
     for row in result:
         if row["destination"] in revisions:
             released_bytes(root, row)

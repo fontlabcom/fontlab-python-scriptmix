@@ -31,14 +31,14 @@ Benefit:
 from typing import Any, ClassVar
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     current_package,  # noqa: F401 - original public interface
     masters_api,
     masters_dialog_type,
     masters_snapshot_refresh,
     show_script_dialog,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     masters_make_table as make_table,  # noqa: F401 - original helper interface
 )
 

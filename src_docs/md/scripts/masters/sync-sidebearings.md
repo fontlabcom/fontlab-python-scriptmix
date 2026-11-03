@@ -20,7 +20,7 @@ How it works:
     The ink edges are the outline bounding box. New LSB and RSB are rounded
     half up to whole units. The script moves the layer by the LSB change and
     sets the advance width to new LSB + ink width + new RSB. The panel is the
-    shared Metrics panel (fly.ap.metrics_panel): a live preview table, the
+    shared Metrics panel (fly.ap.metrics.panel.model): a live preview table, the
     masters choice (the current master or all masters; the reference itself
     is never a target), one Undo step per Apply and a read-back of advance
     and outline edge.
@@ -58,5 +58,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/57fad459de7449071fa1e8d4db721af14e0d187c3f0a929c5cd28089999bd191.py)
+[Python source](../../../../.build/menu-sources/4c819ae022ba2e037b445a9a07dd29a579789a2d183624ed3e5f90ec4f22d6f4.py)
 <!--/codeinclude-->

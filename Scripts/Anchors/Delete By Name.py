@@ -30,7 +30,7 @@ If FontLab fails part-way, the error says that native changes may remain.
 The edit is recorded as one Undo step. The plan, the safety checks, the
 one-step
 write and the panel base are shared with the other anchor scripts
-(fly.ap.anchor_writer, fly.ap.anchor_panel); the planner and the controls
+(fly.ap.anchors.writer, fly.ap.anchors.panel.model); the planner and the controls
 belong to this script.
 
 Source: the author's own FontLab sample
@@ -41,10 +41,10 @@ Adapted for the current FontLab 9 API.
 from collections.abc import Iterable
 from typing import Any
 
-import fly.ap.anchor_panel as anchor_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.anchors.panel.model as anchor_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import qt
-import fly.ap.scripting as scripting
+import fly.ap.core.scripting as scripting
 
 QtCore, QtGui = qt.QtCore, qt.QtGui
 TITLE = "Delete Anchors by Name"

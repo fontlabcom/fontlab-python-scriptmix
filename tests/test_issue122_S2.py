@@ -3,13 +3,14 @@
 """Three sidebearing Metrics scripts, tested against owned fakes and the real App helpers.
 
 Equalize Sidebearings, Sidebearings Tuner and Copy Metrics From Reference sit on
-the shared App panel ``fly.ap.metrics_panel``. The fakes replace FontLab layers,
+the shared App panel ``fly.ap.metrics.panel.model``. The fakes replace FontLab layers,
 the ``fontlab`` module and Qt widgets; the real App modules (``metrics_panel``,
 ``history``) run over them, reached as ``fly.ap.<module>`` like inside FontLab.
 The tests prove the planning arithmetic, the refusal paths and the Undo shape
 (one notified list, no auto layers). They do not prove native FontLab behaviour.
 """
 
+from conftest import app_names_used, app_namespace, check_real_app_names
 import ast
 import importlib.util
 import sys
@@ -18,7 +19,6 @@ from types import ModuleType
 from typing import ClassVar
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
 METRICS = ROOT / "Scripts/Metrics"
@@ -653,9 +653,9 @@ def world(monkeypatch, real_app):
     state = World()
     LOG.clear()
     fly = ModuleType("fly")
-    ap = ModuleType("fly.ap")
-    scripting = ModuleType("fly.ap.scripting")
-    completion = ModuleType("fly.ap.script_completion")
+    ap = app_namespace()
+    scripting = ModuleType("fly.ap.core.scripting")
+    completion = ModuleType("fly.ap.core.completion")
     fontlab = ModuleType("fontlab")
     items = ModuleType("items")
 
@@ -722,8 +722,8 @@ def world(monkeypatch, real_app):
         "fly": fly,
         "fly.ap": ap,
         "fly.qt": qt,
-        "fly.ap.scripting": scripting,
-        "fly.ap.script_completion": completion,
+        "fly.ap.core.scripting": scripting,
+        "fly.ap.core.completion": completion,
     }.items():
         monkeypatch.setitem(sys.modules, name, module)
     state.app = real_app(
@@ -873,9 +873,9 @@ def test_script_file_when_listed_then_has_house_header_and_py311_syntax(name):
 def test_real_app_names_when_imported_from_installed_app_then_all_exist():
     """No fakes: the real Fly aliases give every App name that the scripts use."""
     used = app_names_used([METRICS / f"{name}.py" for name in [*NAMES, DIAGRAM]])
-    assert {"fly.ap.scripting", "fly.ap.metrics_panel"} <= set(used), used
+    assert {"fly.ap.core.scripting", "fly.ap.metrics.panel.model"} <= set(used), used
     assert {"panel_type", "make_plan", "ink_edges", "unit"} <= used[
-        "fly.ap.metrics_panel"
+        "fly.ap.metrics.panel.model"
     ]
     check_real_app_names(used)
 

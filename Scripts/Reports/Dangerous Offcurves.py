@@ -25,7 +25,7 @@ Apache-2.0; upstream attribution and exact source pin are retained in NOTICE.
 
 def main() -> None:
     """Run the complete all-font action through the lazy public Fly facade."""
-    from fly.ap.dangerous_offcurves import show
+    from fly.ap.contours.dangerous_offcurves.model import show
 
     show()
 

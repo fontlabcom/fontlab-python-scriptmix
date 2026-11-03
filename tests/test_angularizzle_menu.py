@@ -15,10 +15,10 @@ def test_angularizzle_menu_is_lazy_typed_and_dispatches_one_owned_panel(monkeypa
         module = ModuleType(name)
         module.__path__ = []
         monkeypatch.setitem(sys.modules, name, module)
-    helper, calls = ModuleType("fly.ap.scripting"), []
+    helper, calls = ModuleType("fly.ap.core.scripting"), []
     helper.angularizzle_dialog_type = lambda: type("Panel", (), {"KEY": "angularizzle"})
     helper.show_script_dialog = lambda panel, key: calls.append((panel.KEY, key))
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", helper)
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", helper)
     namespace = runpy.run_path(str(MENU), run_name="inspection")
     assert calls == [], "Importing the script must leave the host untouched"
     namespace["main"]()

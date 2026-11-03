@@ -27,7 +27,7 @@ Why this design:
     - A glyph that has an automatic layer, or is a base of one (also through
       manual composites), is refused: FontLab cannot undo an edit that reaches
       an automatic layer. So is a click while FontLab has pending glyph
-      updates. The shared module fly.ap.history does these checks and the
+      updates. The shared module fly.ap.core.history.glyphs does these checks and the
       one-step write.
     - Zero, negative, empty and non-finite scale values are refused. A scale of
       0 would destroy the background; a negative scale would mirror it.
@@ -89,10 +89,10 @@ def transform_backgrounds(action: str, matrix: Matrix, *, disclosure: dict[str, 
 
     Return a status message. Raise ValueError when nothing can be done.
     """
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import qt
-    from fly.ap.layer_selection import capture
-    from fly.ap.scripting import current_package
+    from fly.ap.masters.layers.selection import capture
+    from fly.ap.core.scripting import current_package
 
     selection = capture(monotonic() + DEADLINE_SECONDS)
     package = current_package()
@@ -131,7 +131,7 @@ def transform_backgrounds(action: str, matrix: Matrix, *, disclosure: dict[str, 
         operation="geometry",
         facts=history.scan_auto_facts(package),
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(_done, disclosure)
     return _guards.append_note(f"{action}: {len(masks)} background(s) in {len(owners)} glyph(s).", _done)
 
@@ -202,12 +202,12 @@ def panel_type(QtGui: Any) -> Any:
                 (self.shift_button.clicked, "shift"),
                 (self.shift_edit.returnPressed, "shift"),
             ):
-                ap.scripting.connect_guarded(self, signal, lambda *a, act=action: self.apply(act))
-            ap.scripting.connect_guarded(self, self.close_button.clicked, lambda *a: self.close())
+                ap.core.scripting.connect_guarded(self, signal, lambda *a, act=action: self.apply(act))
+            ap.core.scripting.connect_guarded(self, self.close_button.clicked, lambda *a: self.close())
 
         def apply(self, action: str) -> None:
             """Run one action and show its result or its refusal."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             try:
                 if action == "scale":
@@ -224,7 +224,7 @@ def panel_type(QtGui: Any) -> Any:
 
         def closeEvent(self, event: Any) -> None:
             """Release owned signals and delete the panel."""
-            ap.scripting.close_script_dialog(self, event, KEY)
+            ap.core.scripting.close_script_dialog(self, event, KEY)
 
     return Panel
 
@@ -233,7 +233,7 @@ def main() -> Any:
     """Open the panel (one instance, reused through the shared registry)."""
     from fly import ap, qt
 
-    return ap.scripting.show_script_dialog(panel_type(qt.QtGui), KEY)
+    return ap.core.scripting.show_script_dialog(panel_type(qt.QtGui), KEY)
 
 
 if __name__ == "__main__":

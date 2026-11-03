@@ -20,8 +20,8 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_actual_fly_facades_dispatch_public_app_actions(
     monkeypatch, title, function, result
 ):
-    import fly.ap.contour_selection as alias
-    import fontlabapp.contour_selection as canonical
+    import fly.ap.contours.selection.model as alias
+    import fontlabapp.contours.selection.model as canonical
 
     assert alias is canonical
     calls = []

@@ -2,6 +2,13 @@
 this_file: WORK.md
 ---
 
+## 2026-11-03 — Issue 205 App paths
+
+Canonical domain imports now cover all 249 scripts, test file loaders and docs.
+Current pins and exact revision edits are verified; historical bytes are retained.
+Equivalent coverage gate: 4479 passed, 15 skipped, all 249 modules above 80%.
+Docs: 10 passed. No native acceptance, staging or commit performed.
+
 ## External original-source lookup repaired — 2026-11-01
 
 The historical inspector helper now honors FONTLAB_PRESERVED_ROOT before other

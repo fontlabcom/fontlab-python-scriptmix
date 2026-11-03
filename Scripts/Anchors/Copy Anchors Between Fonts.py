@@ -32,7 +32,7 @@ Benefit:
 
 def main() -> object:
     """Open the complete owned copy dialog through Fly's application facade."""
-    from fly.ap.crossfont_anchors import show
+    from fly.ap.anchors.crossfont.model import show
 
     return show()
 

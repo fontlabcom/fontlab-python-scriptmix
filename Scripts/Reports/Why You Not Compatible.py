@@ -27,7 +27,7 @@ additional-tools.json for exact source and license provenance.
 
 def main() -> None:
     """Open or raise the shared complete report through the lazy Fly namespace."""
-    from fly.ap.layer_compatibility import show
+    from fly.ap.masters.layers.compatibility.model import show
 
     show()
 

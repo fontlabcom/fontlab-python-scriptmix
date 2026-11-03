@@ -36,7 +36,7 @@ from typing import Any
 
 def main() -> Any:
     """Open the complete shared editor through Fly without font mutation."""
-    from fly.ap.text_holder import show
+    from fly.ap.proof.text_holder.model import show
 
     return show()
 

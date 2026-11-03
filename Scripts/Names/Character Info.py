@@ -33,7 +33,7 @@ import unicodedata
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     names_dialog_type,
     names_muted,
     names_selected_names,

@@ -25,6 +25,8 @@ Practical FontLab tools; menu scripts call shared App helpers through Fly.
 
 - Target Python 3.11 arm64. Use `--python cpython-3.11-macos-aarch64-none`;
   plain `3.11` can select Intel Python on this Mac. Keep imports lazy.
+- Use canonical App domain paths such as `fly.ap.core.scripting` and
+  `fly.ap.masters.inspect.model`. The migration oracle is App's `_legacy.ALIASES`.
 - `Scripts/<Title Case Category>/<Tool>.py` is the only menu depth FontLab accepts.
 - General UI and shared native helpers belong in `fontlabapp`. Fontport holds
   fontParts/UFO code only; Glyport holds Glyphs.app code only. Use `fly.ap`

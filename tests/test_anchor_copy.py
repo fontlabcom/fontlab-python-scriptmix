@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """The complete anchor-copy panel on owned Qt-shaped controls."""
 
+from conftest import app_module_name, app_source_path, register_app_module
 from _migration_history import before_contours_rename
 from menu_layout import released_bytes
 import importlib.util
@@ -82,10 +83,10 @@ def copying(guides, monkeypatch, app_sources):  # noqa: F811
     )
     for name in ["anchors", "anchor_copy", "_anchor_copy_dialog"]:
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
         base.modules[name] = module
 

@@ -23,7 +23,7 @@ def test_each_menu_uses_its_complete_shared_scope_without_eager_host_access(
 ):
     calls = []
     fly, ap, helper = (
-        ModuleType(name) for name in ("fly", "fly.ap", "fly.ap.extrema_proof")
+        ModuleType(name) for name in ("fly", "fly.ap", "fly.ap.proof.extrema.model")
     )
     helper.run = lambda mode: calls.append(mode)
     helper.show_all = lambda: calls.append("all")
@@ -39,7 +39,7 @@ def test_each_menu_uses_its_complete_shared_scope_without_eager_host_access(
 
 
 def test_both_actual_helper_winners_keep_first_zero_and_nonmaster_layer(monkeypatch):
-    source = resolve_app_sources(("layer_extrema",)) / "layer_extrema.py"
+    source = resolve_app_sources(("layer_extrema",)) / "masters/layers/extrema/model.py"
     spec = importlib.util.spec_from_file_location("owned_layer_extrema", source)
     helper = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, spec.name, helper)

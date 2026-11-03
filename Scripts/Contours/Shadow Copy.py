@@ -13,12 +13,12 @@ How it works:
     A non-modal panel lists every glyph and master with its contour count, or
     the reason why the layer is skipped. Apply reads the font again and
     writes all layers in one Undo step through the shared module
-    fly.ap.history. The copy is made from each contour with its element
+    fly.ap.core.history.glyphs. The copy is made from each contour with its element
     transform applied; FontLab can drop node names and raw node flags in a
     contour copy (fl#8569), so the script copies them back and clears the
     selection bit. After the write it checks that every layer starts with the
     shadow element and reports any difference. The contour copy and the panel
-    are shared (fly.ap.contour_copy, fly.ap.selection_panel).
+    are shared (fly.ap.contours.copy, fly.ap.contours.selection.panel.model).
 
 Copy limits:
     Only node names and raw node flags are repaired (fl#8569); selection is
@@ -83,7 +83,7 @@ def _valid(layer: Any) -> bool:
 
 def layer_note(layer: Any, reason: str) -> str:
     """Return why ``layer`` gets no shadow, or "" when it can get one."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     if layer.autoLayer:
         return "auto layer (skipped)"
@@ -108,8 +108,8 @@ def survey(
     allow_bases: bool,
 ) -> list[Row]:
     """Plan every glyph/master. Change nothing."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     rows: list[Row] = []
     for name in names:
@@ -143,8 +143,8 @@ def add_shadows(
     returns zeros and makes no history call. A refusal raises ValueError; a
     failure after history started raises RuntimeError with the Undo hint.
     """
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
     from fly import ap, qt
 
     fontlab = ap.fontlab
@@ -193,9 +193,9 @@ def add_shadows(
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.layer_writer as layer_writer  # noqa: PLR0402
-    import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.masters.layers.writer as layer_writer  # noqa: PLR0402
+    import fly.ap.contours.selection.panel.model as selection_panel  # noqa: PLR0402
     from fly import qt
 
     QtGui = qt.QtGui
@@ -257,7 +257,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

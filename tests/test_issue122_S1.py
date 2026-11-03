@@ -3,12 +3,13 @@
 """Six Metrics scripts, tested against owned fakes and the real App helpers.
 
 The fakes replace FontLab layers, the `fontlab` module and Qt widgets. The real
-installed App modules (`fly.ap.metrics_panel`, `fly.ap.history`) run over them,
+installed App modules (`fly.ap.metrics.panel.model`, `fly.ap.core.history.glyphs`) run over them,
 reached as `fly.ap.<module>` like inside FontLab. The tests prove the planning
 arithmetic, the refusal paths and the Undo shape (one notified list, no auto
 layers). They do not prove native FontLab behaviour.
 """
 
+from conftest import app_names_used, app_namespace, check_real_app_names
 import ast
 import importlib
 import importlib.util
@@ -18,7 +19,6 @@ from pathlib import Path
 from types import ModuleType
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
 METRICS = ROOT / "Scripts/Metrics"
@@ -496,9 +496,9 @@ def world(monkeypatch, real_app):
     state = World()
     LOG.clear()
     fly = ModuleType("fly")
-    ap = ModuleType("fly.ap")
-    scripting = ModuleType("fly.ap.scripting")
-    completion = ModuleType("fly.ap.script_completion")
+    ap = app_namespace()
+    scripting = ModuleType("fly.ap.core.scripting")
+    completion = ModuleType("fly.ap.core.completion")
 
     fontlab = ModuleType("fontlab")
     items = ModuleType("items")
@@ -560,8 +560,8 @@ def world(monkeypatch, real_app):
         "fly": fly,
         "fly.ap": ap,
         "fly.qt": qt,
-        "fly.ap.scripting": scripting,
-        "fly.ap.script_completion": completion,
+        "fly.ap.core.scripting": scripting,
+        "fly.ap.core.completion": completion,
     }.items():
         monkeypatch.setitem(sys.modules, name, module)
     state.app = real_app(
@@ -654,8 +654,8 @@ def test_script_file_when_listed_then_has_house_header_and_py311_syntax(name):
 
 
 def test_real_app_helpers_when_scripts_import_them_then_signatures_exist():
-    scripting = importlib.import_module("fontlabapp.scripting")
-    completion = importlib.import_module("fontlabapp.script_completion")
+    scripting = importlib.import_module("fontlabapp.core.scripting")
+    completion = importlib.import_module("fontlabapp.core.completion")
     assert list(inspect.signature(scripting.connect_guarded).parameters)[:3] == [
         "dialog",
         "signal",
@@ -1184,9 +1184,9 @@ def test_panel_when_native_read_fails_then_error_shown_and_apply_off(world):
 def test_real_app_names_when_imported_from_installed_app_then_all_exist():
     """No fakes: the real Fly aliases give every App name that the scripts use."""
     used = app_names_used([METRICS / f"{name}.py" for name in NAMES])
-    assert {"fly.ap.scripting", "fly.ap.metrics_panel"} <= set(used), used
+    assert {"fly.ap.core.scripting", "fly.ap.metrics.panel.model"} <= set(used), used
     assert {"panel_type", "make_plan", "Planner", "LayerPlan"} <= used[
-        "fly.ap.metrics_panel"
+        "fly.ap.metrics.panel.model"
     ]
     check_real_app_names(used)
 

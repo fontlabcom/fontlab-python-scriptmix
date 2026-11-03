@@ -1,6 +1,7 @@
 # this_file: tests/test_features.py
 """Independent checks for the six complete feature tools and safe writes."""
 
+from conftest import app_module_name, app_namespace, app_source_path, register_app_module
 from pathlib import Path
 
 import pytest
@@ -60,18 +61,22 @@ def load(monkeypatch, app_sources):
     )
     native = NS(CurrentFont=lambda: NS(glyphs=[NS(name=n) for n in state.names]))
     qt = NS(QtCore=NS(), QtGui=NS(QDialog=object, QWidget=object))
-    app = NS(_native=lambda name: native if name == "fontlab" else qt)
+    app = importlib.util.module_from_spec(
+        importlib.util.spec_from_loader("fontlabapp", loader=None, is_package=True)
+    )
+    app.__path__ = [str(app_sources)]
+    app._native = lambda name: native if name == "fontlab" else qt
     monkeypatch.setitem(sys.modules, "fontlabapp", app)
     monkeypatch.setitem(sys.modules, "fontlab", native)
     spec = importlib.util.spec_from_file_location(
-        "fontlabapp.scripting",
-        app_sources / "scripting.py",
+        "fontlabapp.core.scripting",
+        app_sources / "core/scripting.py",
     )
     scripting = importlib.util.module_from_spec(spec)
-    monkeypatch.setitem(sys.modules, "fontlabapp.scripting", scripting)
+    register_app_module(monkeypatch, "core.scripting", scripting)
     spec.loader.exec_module(scripting)
-    # Fontport calls App through the module object ``fontlabapp.scripting``.
-    app.scripting = scripting
+    # Fontport calls App through the module object ``fontlabapp.core.scripting``.
+    app_namespace(app, scripting=scripting)
     monkeypatch.setattr(
         scripting,
         "current_package",
@@ -102,13 +107,19 @@ def load(monkeypatch, app_sources):
     monkeypatch.setitem(
         sys.modules, "fontlab_fontport.host", NS(NativeFontBackend=Backend)
     )
+    spec = importlib.util.spec_from_file_location(
+        "fontlabapp.fontui.feature_blocks", app_sources / "fontui/feature_blocks.py"
+    )
+    feature_source = importlib.util.module_from_spec(spec)
+    register_app_module(monkeypatch, "fontui.feature_blocks", feature_source)
+    spec.loader.exec_module(feature_source)
     for leaf in ("_font_info_dialog", "_features_dialog"):
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + leaf,
-            app_sources / (leaf + ".py"),
+            app_module_name(leaf),
+            app_source_path(app_sources, leaf),
         )
         shared = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + leaf, shared)
+        register_app_module(monkeypatch, leaf, shared)
         spec.loader.exec_module(shared)
     # The real Fontport module, loaded under its canonical name so that its
     # relative ``from .host import NativeFontBackend`` finds the Backend double.
@@ -119,16 +130,16 @@ def load(monkeypatch, app_sources):
     blocks = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, "fontlab_fontport.feature_blocks", blocks)
     spec.loader.exec_module(blocks)
-    monkeypatch.setitem(sys.modules, "fly", NS(ap=NS(fontlab=native), qt=qt))
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", scripting)
+    monkeypatch.setitem(sys.modules, "fly", NS(ap=app_namespace(fontlab=native), qt=qt))
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", scripting)
     # A Fly alias is the canonical module object itself.
     monkeypatch.setitem(sys.modules, "fly.fp.feature_blocks", blocks)
     spec = importlib.util.spec_from_file_location(
-        "fly.ap.feature_code",
-        app_sources / "feature_code.py",
+        "fly.ap.features.code",
+        app_sources / "features/code.py",
     )
     calculations = importlib.util.module_from_spec(spec)
-    monkeypatch.setitem(sys.modules, "fly.ap.feature_code", calculations)
+    monkeypatch.setitem(sys.modules, "fly.ap.features.code", calculations)
     spec.loader.exec_module(calculations)
 
     def module(title):
@@ -377,7 +388,7 @@ def test_proof_painter_contains_errors_and_always_ends(load):
 def test_suffix_consumers_use_same_actual_shared_calculations(load):
     module, _, _ = load
     build, report = module(TITLES[1]), module(TITLES[5])
-    shared = sys.modules["fly.ap.feature_code"]
+    shared = sys.modules["fly.ap.features.code"]
     assert build.suffix_pairs is report.suffix_pairs is shared.suffix_pairs
     assert build.feature_text is report.feature_text is shared.feature_text
     assert build.safe_name is module(TITLES[4]).safe_name is shared.safe_name

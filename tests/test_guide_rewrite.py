@@ -1,6 +1,7 @@
 # this_file: tests/test_guide_rewrite.py
 """Complete editable guide controls with owned Qt-shaped widget doubles."""
 
+from conftest import app_module_name, app_source_path, register_app_module
 import importlib.util
 import sys
 from copy import deepcopy
@@ -60,10 +61,10 @@ def rewrite(guides, monkeypatch, app_sources):  # noqa: F811
         "_guide_editor_dialog",
     ]:
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
         base.modules[name] = module
     native = base.modules["scripting"]._native("fontlab")

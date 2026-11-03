@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Complete remaining static read-only panels and immutable released57 menus."""
 
+from conftest import app_module_name, app_source_path, register_app_module
 from _migration_history import before_contours_rename
 from menu_layout import released_bytes
 import hashlib
@@ -76,10 +77,10 @@ def reviews(anchors, monkeypatch, app_sources):  # noqa: F811
         "_interpolation_view",
     ]:
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
         anchors.modules[name] = module
 

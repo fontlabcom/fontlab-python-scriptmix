@@ -904,7 +904,7 @@ def world(monkeypatch: pytest.MonkeyPatch, native_world: Any) -> Any:
     qt.QtGui.QMessageBox = message_box_type(
         warning=lambda *args: w.events.append(("warning", str(args[-1])))
     )
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     def capture(deadline: float) -> Any:
         assert isinstance(deadline, float) and deadline > monotonic()

@@ -32,7 +32,7 @@ from typing import Any
 
 def main() -> Any:
     """Open the complete nonmodal FontLab background-cleaning workflow."""
-    from fly.ap.background_clear import show_masters
+    from fly.ap.masters.background.clear.model import show_masters
 
     return show_masters()
 

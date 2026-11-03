@@ -14,7 +14,7 @@ MENU = ROOT / "Scripts/Contours/Raise Ascender.py"
 
 def test_menu_import_and_public_main_each_lazy_forward_once(monkeypatch):
     calls = []
-    module = ModuleType("fly.ap.raise_ascender")
+    module = ModuleType("fly.ap.contours.raise_ascender.model")
     module.show = lambda: calls.append(True) or "owned"
     monkeypatch.setitem(sys.modules, module.__name__, module)
     namespace = runpy.run_path(str(MENU))

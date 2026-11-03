@@ -4,7 +4,7 @@
 from pathlib import Path
 import runpy
 from unittest.mock import Mock
-import fontlabapp.master_text_controller as controller
+import fontlabapp.masters.text.controller as controller
 
 SCRIPT = (
     Path(__file__).resolve().parents[1] / "Scripts/Masters/Master Text Comparison.py"

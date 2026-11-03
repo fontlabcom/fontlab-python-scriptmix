@@ -21,7 +21,7 @@ X" (another glyph already owns the code, or an earlier row claims it), a
 refusal reason, or "assign". The write rescans, then sets the code points on
 the font-owned FontGate record as one Undo step. It reads each list back and
 compares it with the plan. The scan, the refusal policy and the one-step write
-come from the shared module fly.ap.names_edit. If a write fails part way, every
+come from the shared module fly.ap.glyphs.names.model. If a write fails part way, every
 planned glyph is still notified and stamped, and the message asks you to use
 Edit > Undo.
 
@@ -50,5 +50,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/417e49156ac2f70618ac2aa58f321b665b56e569752c9410fc431af796db400c.py)
+[Python source](../../../../.build/menu-sources/986e4c123b49a1f99501ba220a0155bc8a3ac7a99514f0d2c37aee917c10ed62.py)
 <!--/codeinclude-->

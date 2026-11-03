@@ -20,7 +20,7 @@ additional-tools.json and NOTICE.
 
 def main() -> None:
     """Load shared App support only when this menu command runs."""
-    from fly.ap.scripting import show_script_dialog, tabular_width_dialog_type
+    from fly.ap.core.scripting import show_script_dialog, tabular_width_dialog_type
 
     panel = tabular_width_dialog_type()
     show_script_dialog(panel, panel.KEY)

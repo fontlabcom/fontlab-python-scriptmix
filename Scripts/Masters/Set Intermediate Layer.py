@@ -30,10 +30,10 @@ import math
 from dataclasses import dataclass
 from typing import Any
 
-import fly.ap.edit_guards as guards
-import fly.ap.history as history  # noqa: PLR0402 - Fly resolves App modules lazily
-import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly resolves App modules lazily
-import fly.ap.selection_panel as panels
+import fly.ap.core.edit_guards as guards
+import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - Fly resolves App modules lazily
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly resolves App modules lazily
+import fly.ap.contours.selection.panel.model as panels
 from fly import fl, qt
 
 TITLE = "Set Intermediate Layer"
@@ -280,7 +280,7 @@ def main() -> Any:
     try:
         return scripting.show_script_dialog(IntermediatePanel, KEY)
     except (ValueError, RuntimeError, TimeoutError) as error:
-        from fly.ap.qt_dialogs import run_standard_message_box
+        from fly.ap.qt.dialogs import run_standard_message_box
 
         run_standard_message_box(
             qt, fl.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

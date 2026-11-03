@@ -47,8 +47,8 @@ changes.
 After the write, it reads the node counts back. If FontLab fails part-way,
 the error says that native changes may remain. The change is recorded as one
 Undo step. The one-step write, the automatic-layer rule, the pending-update
-check and the panel are shared (fly.ap.outline_writer,
-fly.ap.outline_panel); the planner belongs to this script.
+check and the panel are shared (fly.ap.contours.writer,
+fly.ap.contours.panel.model); the planner belongs to this script.
 
 Source: the author's own FontLab sample outlines_add_extremes.py,
 Apache-2.0. Adapted for the current FontLab 9 API.
@@ -60,5 +60,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9f81fad2e98ae162e8978d20b475b0f159d4bef5479eb03f5c9b75453a675e20.py)
+[Python source](../../../../.build/menu-sources/fdcd581785c3d30bb041b52a4b5394520a645be129cb449343a5dc6b9c583322.py)
 <!--/codeinclude-->

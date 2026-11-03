@@ -15,7 +15,7 @@ scans the whole font. For the write it rescans, plans, and writes as one Undo
 step: layers and glyph in one notify list (a glyph alone adds no Undo step).
 After the write it reads each note back and compares it with the plan. The
 scan, the refusal policy and the one-step write come from the shared module
-fly.ap.names_edit. If a write fails part way, every planned glyph is still
+fly.ap.glyphs.names.model. If a write fails part way, every planned glyph is still
 notified and stamped, and the message asks you to use Edit > Undo.
 
 WHY: A glyph note belongs to the glyph, not to a master. FontLab rebuilds
@@ -40,7 +40,7 @@ FontLab samples. The edit is recorded as one Undo step.
 
 from typing import Any
 
-import fly.ap.names_edit as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
 TITLE = "Batch Glyph Notes"
 KEY = "utility_batch_glyph_notes"
@@ -112,7 +112,7 @@ def apply_notes(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(_done, disclosure)
     return [entry.name for entry, _ in todo]
 
@@ -121,7 +121,7 @@ def apply_notes(
 def _dialog_type() -> type:
     """Build the panel class lazily. Import Qt and App code only inside FontLab."""
     from fly import ap, qt
-    from fly.ap.scripting import names_dialog_type, names_selected_names
+    from fly.ap.core.scripting import names_dialog_type, names_selected_names
 
     native = ap.fontlab
     QtCore, QtGui = qt.QtCore, qt.QtGui
@@ -229,7 +229,7 @@ def _dialog_type() -> type:
 
         def apply(self) -> None:
             """Write the note to the selected glyphs. One Undo step."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             changed = apply_notes(
                 native,
@@ -253,7 +253,7 @@ def _dialog_type() -> type:
 
 def main() -> Any:
     """Open or replace the Batch Glyph Notes panel."""
-    from fly.ap.scripting import show_script_dialog
+    from fly.ap.core.scripting import show_script_dialog
 
     return show_script_dialog(_dialog_type(), KEY)
 

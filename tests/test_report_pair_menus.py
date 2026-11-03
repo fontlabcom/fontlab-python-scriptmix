@@ -9,6 +9,7 @@ from pathlib import Path
 from types import ModuleType
 
 import pytest
+from conftest import app_module_name
 
 ROOT = Path(__file__).parents[1]
 
@@ -28,7 +29,7 @@ def test_menus_when_inspected_then_lazy_and_when_run_then_shared_show(
         mod = ModuleType(name)
         mod.__path__ = []
         monkeypatch.setitem(sys.modules, name, mod)
-    mod = ModuleType("fly.ap." + key)
+    mod = ModuleType(app_module_name(key).replace("fontlabapp.", "fly.ap.", 1))
     mod.show = lambda: calls.append(key)
     monkeypatch.setitem(sys.modules, mod.__name__, mod)
     path = ROOT / f"Scripts/Reports/{title}.py"

@@ -15,7 +15,7 @@ def test_facade_invokes_shared_writer_only_when_run(monkeypatch):
     calls = []
     monkeypatch.setitem(
         sys.modules,
-        "fly.ap.duplicate_unicodes",
+        "fly.ap.glyphs.unicode.duplicates.model",
         NS(show=lambda: calls.append("show") or "owned"),
     )
     module = runpy.run_path(str(ROOT / "Scripts/Names/Duplicate Unicodes.py"))

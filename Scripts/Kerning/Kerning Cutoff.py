@@ -21,7 +21,7 @@ licence; no original body is copied. Exact source attribution is in NOTICE.
 
 def main() -> dict[str, int]:
     """Run the complete all-master writer through the lazy public Fly facade."""
-    from fly.ap.kerning_cutoff import run
+    from fly.ap.kerning.cutoff import run
 
     return run()
 

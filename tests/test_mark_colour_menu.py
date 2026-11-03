@@ -25,7 +25,7 @@ def test_menu_delegates_exact_original_action(monkeypatch, result):
 
     monkeypatch.setitem(
         sys.modules,
-        "fly.ap.mark_colour_selection",
+        "fly.ap.glyphs.selection.mark_colors",
         NS(select_different_mark_colours=select),
     )
     spec = importlib.util.spec_from_file_location("owned_mark_colour_menu", MENU)

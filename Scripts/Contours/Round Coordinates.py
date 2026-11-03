@@ -17,7 +17,7 @@ Nodes are moved in place, which is meant to keep node names and flags
 
 Why: Scaling, interpolation and imports leave fractional or off-grid
 coordinates. They cost file size and can cause rendering noise. Optional
-anchor rounding uses fly.ap.anchor_writer in the same transaction. A layer
+anchor rounding uses fly.ap.anchors.writer in the same transaction. A layer
 with ambiguous anchor names or an existing anchor that would move to 0, 0
 is listed and kept (fl#8527).
 
@@ -46,8 +46,8 @@ changes.
 After the write, it reads every value back. If FontLab fails part-way, the
 error says that native changes may remain. The change is recorded as one
 Undo step. The one-step write, the automatic-layer rule, the pending-update
-check and the panel are shared (fly.ap.outline_writer,
-fly.ap.outline_panel); the planner belongs to this script.
+check and the panel are shared (fly.ap.contours.writer,
+fly.ap.contours.panel.model); the planner belongs to this script.
 
 Source: the author's own FontLab sample outlines_round_coordinates.py,
 Apache-2.0. Adapted for the current FontLab 9 API.
@@ -56,10 +56,10 @@ Apache-2.0. Adapted for the current FontLab 9 API.
 import math
 from typing import Any
 
-import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402
-import fly.ap.outline_panel as outline_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.outline_writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402
+import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import qt
 
 QtGui = qt.QtGui

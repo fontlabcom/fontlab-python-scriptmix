@@ -847,7 +847,7 @@ def one_step(world: World, title: str, layers: list[str], glyphs: list[str]) -> 
 @pytest.fixture
 def world(native_world: Any, monkeypatch: pytest.MonkeyPatch) -> Any:
     """Keep real App modules; provide only native selection and drawing objects."""
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     def capture(deadline: float) -> Any:
         if native_world.no_font:
@@ -1650,8 +1650,8 @@ def test_scripts_use_only_public_app_names() -> None:
 
 def test_panel_overrides_match_installed_public_hooks(world: Any) -> None:
     """Compare subclass calls with the installed base, using only native fakes."""
-    import fly.ap.layer_selection as layer_selection  # noqa: PLR0402
-    import fly.ap.outline_panel as outline_panel  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402
+    import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402
 
     with pytest.raises(TypeError):
         layer_selection.capture()

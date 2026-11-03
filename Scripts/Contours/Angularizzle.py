@@ -19,7 +19,7 @@ Requires matching App/Fly candidates. Adapted from NaN Angularizzle; see NOTICE.
 
 def main() -> None:
     """Load shared App controls through Fly when the menu is invoked."""
-    from fly.ap.scripting import angularizzle_dialog_type, show_script_dialog
+    from fly.ap.core.scripting import angularizzle_dialog_type, show_script_dialog
 
     panel = angularizzle_dialog_type()
     show_script_dialog(panel, panel.KEY)

@@ -16,7 +16,7 @@ Shared capture, painting and native ownership live in Fontlabapp. See its NOTICE
 
 from typing import Any
 
-from fly.ap.scripting import canvas_anchor_rings_dialog_type, show_script_dialog
+from fly.ap.core.scripting import canvas_anchor_rings_dialog_type, show_script_dialog
 
 TITLE, KEY = "Duplicate Anchor Rings", "canvas_duplicate_anchor_rings"
 

@@ -30,17 +30,17 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_edit_dialog_type,
     kerning_editor_api,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_editor_apply as editor_apply,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_editor_refresh as editor_refresh,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     names_muted as muted,
 )
 
@@ -49,8 +49,8 @@ QtCore, QtGui = qt.QtCore, qt.QtGui
 api = kerning_editor_api()
 KerningEditDialog = kerning_edit_dialog_type()
 native_side = api.native_side
-current_package = ap.scripting.current_package
-kerning_pairs = ap.scripting.kerning_pairs
+current_package = ap.core.scripting.current_package
+kerning_pairs = ap.core.scripting.kerning_pairs
 
 TITLE = "Kerning Pair Editor"
 KEY = "kerning_pair_editor"
@@ -68,7 +68,7 @@ class_sides, involving, parse_cell = api.class_sides, api.involving, api.parse_c
 
 def current_glyph_name(package: Any) -> str | None:
     """Keep the original Font-window selection, then current-glyph fallback."""
-    names = ap.scripting.names_selected_names() if package is not None else []
+    names = ap.core.scripting.names_selected_names() if package is not None else []
     return names[0] if names else None
 
 
@@ -273,7 +273,7 @@ class PairEditor(KerningEditDialog):
 
 def main() -> Any:
     """Replace only this tool's registry entry and show the owned modeless dialog."""
-    return ap.scripting.show_script_dialog(PairEditor, KEY)
+    return ap.core.scripting.show_script_dialog(PairEditor, KEY)
 
 
 if __name__ == "__main__":

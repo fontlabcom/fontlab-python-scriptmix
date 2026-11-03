@@ -23,7 +23,7 @@ How it works:
     temporary layers are never offered. A non-modal panel shows, per glyph,
     the master, contours and width (master now → after). Restore reads the
     font again and writes all master layers in one Undo step through the
-    shared module fly.ap.history, then reads contours, widths, anchors and
+    shared module fly.ap.core.history.glyphs, then reads contours, widths, anchors and
     deleted layers back.
 
 Why this design:
@@ -71,5 +71,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6e349a0a70228d6256009094bf0533dd55be09c21fee6144d12fe934f24eaf26.py)
+[Python source](../../../../.build/menu-sources/6d164d434489d714926a18c59fa8144e16e7dbd8623746102f025513474f0713.py)
 <!--/codeinclude-->

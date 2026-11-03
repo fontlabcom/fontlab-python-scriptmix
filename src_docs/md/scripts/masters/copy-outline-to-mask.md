@@ -19,7 +19,7 @@ How it works:
     contours in the outline, contours in the mask now (plus its components,
     which "Replace mask" also removes), contours in the mask after the copy.
     Apply reads the font again, then writes all masks in one Undo step
-    through the shared module fly.ap.history. Existing masks join the
+    through the shared module fly.ap.core.history.glyphs. Existing masks join the
     history list before the edit; new masks join the notification as
     created objects. "Replace mask" removes the old mask shapes one by one.
     The shape, shape data and builder of each removed component are read
@@ -67,5 +67,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0c326bc183ced9d824248080338aec041a858ec00e4a9f380683b9391383341e.py)
+[Python source](../../../../.build/menu-sources/d6b98a8137f211f0295fb47d4991248cc5807f3526224c909c040f42db6e9ace.py)
 <!--/codeinclude-->

@@ -1,6 +1,7 @@
 # this_file: tests/test_kerning.py
 """Owned kerning fixtures verify migrated inspection tools without a native host."""
 
+from conftest import app_module_name, app_namespace, app_source_path, register_app_module
 from pathlib import Path
 
 import pytest
@@ -55,18 +56,18 @@ def load(monkeypatch, app_sources):
     monkeypatch.setitem(sys.modules, "fontlabapp", package)
     for name in ("scripting", "_names_dialog", "_kerning_dialog"):
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
-    scripting = sys.modules["fontlabapp.scripting"]
-    shared = sys.modules["fontlabapp._kerning_dialog"]
+    scripting = sys.modules["fontlabapp.core.scripting"]
+    shared = sys.modules["fontlabapp.kerning.inspect.ui"]
     monkeypatch.setitem(
-        sys.modules, "fly", NS(ap=NS(fontlab=native, scripting=scripting), qt=qt)
+        sys.modules, "fly", NS(ap=app_namespace(fontlab=native, scripting=scripting), qt=qt)
     )
 
-    monkeypatch.setitem(sys.modules, "fly.ap.scripting", scripting)
+    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", scripting)
 
     def module(title):
         spec = importlib.util.spec_from_file_location(

@@ -46,8 +46,9 @@ After the write, it reads transforms, a node per baked
 shape and the anchors back. If FontLab fails part-way, the error says that
 native changes may remain. The change is recorded as one Undo step. The
 one-step write, the automatic-layer rule, the pending-update check, the
-preview and the panel are shared (fly.ap.outline_writer,
-fly.ap.outline_transform); the matrix math is fly.ap.affine; the planner
+preview and the panel are shared (fly.ap.contours.writer,
+fly.ap.contours.transform.model); the matrix math is fly.ap.contours.affine; the
+planner
 belongs to this script.
 
 Source: the author's own FontLab sample outlines_slant.py, Apache-2.0.
@@ -60,5 +61,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1e11ea389e5cf0e998a620a29f2d1adaa306d8be1d4e14542365020b9e79bf55.py)
+[Python source](../../../../.build/menu-sources/b11c8799610c475bd66a8fc3512977531577947f7cb44b7adda8c90986ba0f68.py)
 <!--/codeinclude-->

@@ -30,10 +30,10 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     current_package as current_package,  # noqa: PLC0414 - original public helper
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     inspectors_api,
     inspectors_dialog_type,
     inspectors_snapshot_refresh,

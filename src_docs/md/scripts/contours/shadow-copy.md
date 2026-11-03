@@ -19,12 +19,12 @@ How it works:
     A non-modal panel lists every glyph and master with its contour count, or
     the reason why the layer is skipped. Apply reads the font again and
     writes all layers in one Undo step through the shared module
-    fly.ap.history. The copy is made from each contour with its element
+    fly.ap.core.history.glyphs. The copy is made from each contour with its element
     transform applied; FontLab can drop node names and raw node flags in a
     contour copy (fl#8569), so the script copies them back and clears the
     selection bit. After the write it checks that every layer starts with the
     shadow element and reports any difference. The contour copy and the panel
-    are shared (fly.ap.contour_copy, fly.ap.selection_panel).
+    are shared (fly.ap.contours.copy, fly.ap.contours.selection.panel.model).
 
 Copy limits:
     Only node names and raw node flags are repaired (fl#8569); selection is
@@ -68,5 +68,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1883fe5a05be4c6f3dbeec219721657bc6a48489d308098568ba0dce936c8547.py)
+[Python source](../../../../.build/menu-sources/b0024ecd58f0863a8d4f8a36e1f68105b6bc2a383d21af47f4f0d67ec0dd591e.py)
 <!--/codeinclude-->

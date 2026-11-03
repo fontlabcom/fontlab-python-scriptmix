@@ -26,9 +26,9 @@ from itertools import pairwise
 from time import monotonic
 from typing import Any
 
-import fly.ap.anchor_panel as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.anchors.panel.model as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
 
 TITLE = "Optical Center"
 KEY = "anchors_optical_center"
@@ -94,7 +94,7 @@ def estimate_rings(rings: Rings, deadline: float) -> int:
 
 def layer_estimate(layer: Any) -> int:
     """Flatten the shared placed layer path once; give this layer its own budget."""
-    import fly.ap.proof as proof  # noqa: PLR0402 - Fly submodule import
+    import fly.ap.proof.inspect.model as proof  # noqa: PLR0402 - Fly submodule import
 
     deadline = monotonic() + 1.5
     path = proof.layer_path(layer)

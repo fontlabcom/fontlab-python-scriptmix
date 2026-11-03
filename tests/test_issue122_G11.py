@@ -776,7 +776,7 @@ def reject_native_member_assignments(monkeypatch: pytest.MonkeyPatch) -> None:
 
 
 def catalogue(monkeypatch: pytest.MonkeyPatch, rows: list) -> None:
-    import fly.ap.glyph_catalog as glyph_catalog  # noqa: PLR0402
+    import fly.ap.glyphs.catalog.model as glyph_catalog  # noqa: PLR0402
 
     monkeypatch.setattr(glyph_catalog, "capture", lambda: NS(rows=rows))
 
@@ -1012,8 +1012,8 @@ def test_preview_close_disconnects_and_deletes_owned_panel(
 def test_sample_main_saves_selected_layer_without_font_write(
     world: Any, monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
-    import fly.ap.layer_selection as layer_selection  # noqa: PLR0402
-    import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402
+    import fly.ap.qt.dialogs as qt_dialogs  # noqa: PLR0402
 
     tool = load(TITLES[-1])
     world.glyph("sample", anchors={"Light": [("entry", 50, 10)]})
@@ -1290,7 +1290,7 @@ def test_one_conflicting_base_does_not_remove_another_clean_base(world: Any) -> 
 def test_catalogue_is_captured_once_per_scan(
     world: Any, monkeypatch: pytest.MonkeyPatch, title: str
 ) -> None:
-    import fly.ap.glyph_catalog as glyph_catalog  # noqa: PLR0402
+    import fly.ap.glyphs.catalog.model as glyph_catalog  # noqa: PLR0402
 
     rows = [
         ("round", "U+101D", ""),
@@ -1360,7 +1360,7 @@ def test_optical_layer_timeout_becomes_note_and_other_layer_writes(
 def test_optical_flattens_placed_components_once(
     world: Any, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    import fly.ap.proof as proof  # noqa: PLR0402
+    import fly.ap.proof.inspect.model as proof  # noqa: PLR0402
 
     tool = load(TITLES[3])
     ring = [(100, 0), (140, 0), (140, 40), (100, 40), (100, 0)]
@@ -1483,8 +1483,8 @@ def test_conflict_note_does_not_disable_clean_base_writer(
 def test_sample_chooser_avoids_false_overwrite_confirmation(
     world: Any, monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
-    import fly.ap.layer_selection as layer_selection  # noqa: PLR0402
-    import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402
+    import fly.ap.qt.dialogs as qt_dialogs  # noqa: PLR0402
 
     tool = load(TITLES[-1])
     world.glyph("sample", anchors={"Light": [("entry", 50, 10)]})

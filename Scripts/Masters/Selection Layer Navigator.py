@@ -120,8 +120,8 @@ def positioned(package: Any, layers: list[Any]) -> list[tuple[str, tuple[float, 
 
 def display_slot(selection: Any, occurrence: Any, target: str, deadline: float) -> None:
     """Change only the selected slot; verify context and read the result back."""
-    import fly.ap.layer_selection as layer_selection
-    import fly.ap.qtsafe as qtsafe
+    import fly.ap.masters.layers.selection as layer_selection
+    import fly.ap.qt.safe as qtsafe
 
     if layer_selection.document_context(deadline) != selection.context:
         raise ValueError("Document changed; select the glyphs again.")
@@ -157,9 +157,9 @@ def display_slot(selection: Any, occurrence: Any, target: str, deadline: float) 
 
 def navigate(mode: str | None, step: int, expected_id: int | None) -> list[str]:
     """Plan from current data; keep individual refusals and continue the selection."""
-    import fly.ap.layer_selection as layer_selection
-    import fly.ap.master_switcher as master_switcher
-    import fly.ap.scripting as scripting
+    import fly.ap.masters.layers.selection as layer_selection
+    import fly.ap.masters.switcher.model as master_switcher
+    import fly.ap.core.scripting as scripting
 
     package = scripting.current_package()
     if package is None:
@@ -249,7 +249,7 @@ def navigate(mode: str | None, step: int, expected_id: int | None) -> list[str]:
 
 def panel_type() -> type:
     """Build a small modeless panel with native colours and owned signals."""
-    import fly.ap.scripting as scripting
+    import fly.ap.core.scripting as scripting
     from fly import qt
 
     class Navigator(qt.QtGui.QDialog):
@@ -326,7 +326,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Show one retained navigator through the shared App lifecycle."""
-    import fly.ap.scripting as scripting
+    import fly.ap.core.scripting as scripting
 
     try:
         return scripting.show_script_dialog(panel_type(), KEY)

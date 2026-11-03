@@ -1,6 +1,7 @@
 # this_file: tests/test_random_proof_menus.py
 """Check seven complete lazy proof entrypoints and fail-before-tab behavior."""
 
+from conftest import app_module_name
 import ast
 import runpy
 import sys
@@ -30,7 +31,7 @@ def host(monkeypatch):
         mod.__path__ = []
         monkeypatch.setitem(sys.modules, name, mod)
     for name in ("random_proof", "scripting", "text_tab"):
-        monkeypatch.setitem(sys.modules, "fly.ap." + name, ModuleType("fly.ap." + name))
+        monkeypatch.setitem(sys.modules, app_module_name(name).replace("fontlabapp.", "fly.ap.", 1), ModuleType(app_module_name(name).replace("fontlabapp.", "fly.ap.", 1)))
 
     def generate(mode):
         state.calls.append(("generate", mode))
@@ -43,9 +44,9 @@ def host(monkeypatch):
         if state.failure == "tab":
             raise RuntimeError("owned native failure")
 
-    sys.modules["fly.ap.random_proof"].generate = generate
-    sys.modules["fly.ap.scripting"].current_package = lambda: state.font
-    sys.modules["fly.ap.text_tab"].open_text_tab = open_tab
+    sys.modules["fly.ap.proof.random"].generate = generate
+    sys.modules["fly.ap.core.scripting"].current_package = lambda: state.font
+    sys.modules["fly.ap.proof.tabs.text"].open_text_tab = open_tab
     return state
 
 

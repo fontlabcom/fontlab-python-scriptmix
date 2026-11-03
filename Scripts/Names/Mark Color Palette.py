@@ -13,7 +13,7 @@ HOW: FontLab stores a mark as hue + 1 (1 to 360), grey as 1000 + level, and 0
 for none. The script rescans the font, plans the change, and writes it as one
 Undo step. It then reads each mark back and compares it with the plan. The
 scan, the refusal policy and the one-step write come from the shared module
-fly.ap.names_edit. If a write fails part way, every planned glyph is still
+fly.ap.glyphs.names.model. If a write fails part way, every planned glyph is still
 notified and stamped, and the message asks you to use Edit > Undo.
 
 WHY: FontLab rebuilds all auto layers when an auto layer is notified. Undo
@@ -38,7 +38,7 @@ FontLab samples. The edit is recorded as one Undo step.
 import colorsys
 from typing import Any
 
-import fly.ap.names_edit as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
 TITLE = "Mark Color Palette"
 KEY = "names_mark_color_palette"
@@ -146,7 +146,7 @@ def apply_mark(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(_done, disclosure)
     return [entry.name for entry in todo]
 
@@ -168,7 +168,7 @@ def swatch_style(mark: int, border_idle: str) -> str:
 def _dialog_type() -> type:
     """Build the panel class lazily. Import Qt and App code only inside FontLab."""
     from fly import ap, qt
-    from fly.ap.scripting import names_dialog_type, names_selected_names
+    from fly.ap.core.scripting import names_dialog_type, names_selected_names
 
     native = ap.fontlab
     QtCore, QtGui = qt.QtCore, qt.QtGui
@@ -302,7 +302,7 @@ def _dialog_type() -> type:
 
         def apply(self, mark: int) -> None:
             """Write MARK to the selected glyphs. One Undo step."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             changed = apply_mark(
                 native,
@@ -322,7 +322,7 @@ def _dialog_type() -> type:
 
 def main() -> Any:
     """Open or replace the Mark Color Palette panel."""
-    from fly.ap.scripting import show_script_dialog
+    from fly.ap.core.scripting import show_script_dialog
 
     return show_script_dialog(_dialog_type(), KEY)
 

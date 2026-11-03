@@ -756,7 +756,7 @@ class Package:
 @pytest.fixture
 def world(native_world: Any, monkeypatch: pytest.MonkeyPatch) -> Any:
     """Install selected-layer capture over the local native fakes."""
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     def capture(deadline: float) -> Any:
         rows = [
@@ -1047,7 +1047,7 @@ def test_additional_refusals(
             raise TimeoutError("Selection deadline exceeded")
 
         monkeypatch.setattr(
-            sys.modules["fontlabapp.history"], "scan_auto_facts", timeout
+            sys.modules["fontlabapp.core.history.glyphs"], "scan_auto_facts", timeout
         )
     press(panel)
     assert "Error" in panel.status.text
@@ -1102,7 +1102,7 @@ def test_auxiliary_editor_layer_uses_exact_selected_occurrence(
     world: Any, title: str, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     seed(world, title)
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     glyph = world.glyphs["A"]
     layer = glyph.by_master.pop("Light")
@@ -1146,7 +1146,7 @@ def test_mixed_editor_layers_do_not_edit_cross_product(
             contour.transform = Transform()
             for node in contour.nodes():
                 node.selected, node.smooth = True, True
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     rows = tuple(
         NS(
@@ -1215,7 +1215,7 @@ def test_overlap_auxiliary_own_master_angle(
     layer.marker = "A/" + layer.name
     glyph.by_master[layer.name] = layer
     layer.shapes[0].contours[0].nodes()[0].selected = True
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     monkeypatch.setattr(
         selection,
@@ -1239,7 +1239,7 @@ def test_overlap_unassociated_layer_is_refused(
     layer = glyph.by_master.pop("Light")
     layer.name = "Drawing"
     glyph.by_master[layer.name] = layer
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     monkeypatch.setattr(
         selection,
@@ -1289,8 +1289,8 @@ def test_scripts_use_only_public_app_names() -> None:
 @pytest.mark.parametrize("title", NAMES)
 def test_panel_overrides_match_installed_public_hooks(world: Any, title: str) -> None:
     """Compare subclass calls with the installed base, using only native fakes."""
-    import fly.ap.layer_selection as layer_selection  # noqa: PLR0402
-    import fly.ap.outline_panel as outline_panel  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402
+    import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402
 
     with pytest.raises(TypeError):
         layer_selection.capture()

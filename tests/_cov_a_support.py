@@ -11,6 +11,7 @@ doubles, so each script is exercised through its true panel lifecycle.
 """
 
 from __future__ import annotations
+from conftest import app_module_name, app_namespace
 
 import importlib.util
 import sys
@@ -490,7 +491,7 @@ class Host:
             for attribute, value in attributes.items():
                 self.mp.setattr(loaded[module_name], attribute, value)
         fly = ModuleType("fly")
-        fly.ap = NS(fontlab=self.native, FL=self.FL, **loaded)
+        fly.ap = app_namespace(fontlab=self.native, FL=self.FL, **loaded)
         fly.qt = self.qt
         self.mp.setitem(sys.modules, "fly", fly)
         self.mp.setitem(sys.modules, "fly.ap", fly.ap)
@@ -508,8 +509,8 @@ class Host:
     def fake_ap(self, name: str, **attributes: Any) -> NS:
         """Register fly.ap.<name> as a module double (import and attribute routes)."""
         module = NS(**attributes)
-        self.mp.setitem(sys.modules, f"fly.ap.{name}", module)
-        self.mp.setattr(self.fly.ap, name, module, raising=False)
+        self.mp.setitem(sys.modules, app_module_name(name).replace("fontlabapp.", "fly.ap.", 1), module)
+        app_namespace(self.fly.ap, **{name: module})
         return module
 
     def _current(self, expected_id: int | None) -> Any:

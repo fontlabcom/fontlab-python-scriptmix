@@ -29,8 +29,8 @@ TITLE = "Kern To Max"
 
 def selected_pair() -> tuple[Any, Any, Any]:
     """Refuse nonadjacent, cross-master and auxiliary occurrences."""
-    import fly.ap.layer_selection as selection
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as selection
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     captured = selection.capture(monotonic() + 2.0)
     package = scripting.current_package()
@@ -71,7 +71,7 @@ def pair_key(groups: dict, left: str, right: str) -> tuple:
 
 def run() -> dict:
     """Read the live pair and write a checked whole-number kerning value."""
-    import fly.ap.kerning_batch as kerning
+    import fly.ap.kerning.batch as kerning
 
     package, left, right = selected_pair()
     widths = [float(row.layer.advanceWidth) for row in (left, right)]

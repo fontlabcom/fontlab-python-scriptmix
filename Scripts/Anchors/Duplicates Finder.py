@@ -20,7 +20,7 @@ from typing import Any
 
 def main() -> Any:
     """Open the complete owned writer only when the menu is invoked."""
-    from fly.ap.anchor_duplicates import show
+    from fly.ap.anchors.duplicates.model import show
 
     return show()
 

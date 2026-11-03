@@ -968,7 +968,7 @@ def test_script_contract(title: str, world: Any) -> None:
 
 def test_real_app_imports() -> None:
     used = app_names_used([ROOT / "Scripts" / "Contours" / f"{t}.py" for t in TITLES])
-    used.setdefault("fly.ap.history", set()).update({"commit", "scan_auto_facts"})
+    used.setdefault("fly.ap.core.history.glyphs", set()).update({"commit", "scan_auto_facts"})
     check_real_app_names(used)
 
 
@@ -1055,7 +1055,7 @@ def native_extensions(world: Any, monkeypatch: pytest.MonkeyPatch) -> None:
     )
     import importlib
 
-    selection = importlib.import_module("fly.ap.layer_selection")
+    selection = importlib.import_module("fly.ap.masters.layers.selection")
     monkeypatch.setattr(
         selection,
         "capture",
@@ -1164,7 +1164,7 @@ def test_apply_when_valid_then_one_notification_with_layers_and_glyph(
     assert notify[1] == title
     assert notify[2][-1] == "a", notify
     assert all("/" in marker for marker in notify[2][:-1]), notify
-    assert ns["writer"].__name__ == "fontlabapp.outline_writer"
+    assert ns["writer"].__name__ == "fontlabapp.contours.writer"
 
 
 @pytest.mark.parametrize("title", TITLES)
@@ -1801,7 +1801,7 @@ def test_scripts_use_only_public_app_names() -> None:
 @pytest.mark.parametrize("title", TITLES)
 def test_panel_overrides_match_installed_public_hooks(world: Any, title: str) -> None:
     """Compare subclass calls with the installed base, using only native fakes."""
-    import fly.ap.outline_panel as outline_panel  # noqa: PLR0402
+    import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402
 
     panel = load(title)["ToolPanel"]
     base = outline_panel.panel_type()

@@ -18,10 +18,10 @@ MENU = ROOT / "Scripts/Reports/Why You Not Compatible.py"
 
 def test_menu_when_imported_then_lazy_and_exact_shared_dispatch(monkeypatch):
     calls = []
-    for name in ("fly", "fly.ap", "fly.ap.layer_compatibility"):
+    for name in ("fly", "fly.ap", "fly.ap.masters.layers.compatibility.model"):
         mod = ModuleType(name)
         monkeypatch.setitem(sys.modules, name, mod)
-    sys.modules["fly.ap.layer_compatibility"].show = lambda: calls.append("show")
+    sys.modules["fly.ap.masters.layers.compatibility.model"].show = lambda: calls.append("show")
     ns = runpy.run_path(str(MENU), run_name="inspection")
     assert not calls
     ns["main"]()
@@ -35,7 +35,7 @@ def test_menu_when_imported_then_lazy_and_exact_shared_dispatch(monkeypatch):
 def test_actual_core_when_later_path_differs_after_anchors_then_full_report(
     monkeypatch,
 ):
-    p = resolve_app_sources(("layer_compatibility",)) / "layer_compatibility.py"
+    p = resolve_app_sources(("layer_compatibility",)) / "masters/layers/compatibility/model.py"
     spec = importlib.util.spec_from_file_location("owned_compatibility_core", p)
     mod = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, spec.name, mod)

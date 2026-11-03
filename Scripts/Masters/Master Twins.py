@@ -55,7 +55,7 @@ class Content:
 
 def shape_copy(shape: Any, master: str) -> Any:
     """Copy names, note and transform; shared helper restores node names/flags."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402
 
     cloned = shape.clone()
     cloned.name = shape.name
@@ -87,7 +87,7 @@ def shape_problem(shape: Any) -> str:
 
 def anchor_edits(source: Any, target: Any) -> list[tuple[str, str, Any]]:
     """Plan a full anchor replacement through the public anchor writer."""
-    import fly.ap.anchor_writer as anchors
+    import fly.ap.anchors.writer as anchors
 
     for layer in (source, target):
         if anchors.duplicated(layer, [str(pin.name) for pin in layer.anchors]):
@@ -130,7 +130,7 @@ def copy_work(
     kept: list[tuple[str, str]] | None = None,
 ) -> list[Any]:
     """Check every pair before history. Return (glyph, layer, [source/options])."""
-    import fly.ap.history as history  # noqa: PLR0402 - lazy Fly module alias
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - lazy Fly module alias
 
     if (
         source == target
@@ -246,9 +246,9 @@ def check_component_graph(
 
 def editor_type() -> type:
     """Use the shared geometry and anchor kernels for one history action."""
-    import fly.ap.anchor_writer as anchors
-    import fly.ap.history as history  # noqa: PLR0402 - lazy Fly module alias
-    import fly.ap.outline_writer as outlines
+    import fly.ap.anchors.writer as anchors
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - lazy Fly module alias
+    import fly.ap.contours.writer as outlines
 
     class CopyContent(outlines.Editor):
         """Stage copies before history and keep removed component history alive."""
@@ -322,11 +322,11 @@ def editor_type() -> type:
 
 def panel_type() -> type:
     """Build a compact modeless panel with explicit content switches."""
-    import fly.ap.glyph_catalog as catalog
-    import fly.ap.history as history  # noqa: PLR0402 - lazy Fly module alias
-    import fly.ap.layer_selection as selection
-    import fly.ap.outline_writer as outlines
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
+    import fly.ap.glyphs.catalog.model as catalog
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - lazy Fly module alias
+    import fly.ap.masters.layers.selection as selection
+    import fly.ap.contours.writer as outlines
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
     from fly import qt
 
     gui = qt.QtGui
@@ -465,7 +465,7 @@ def panel_type() -> type:
 
         def write_content(self) -> None:
             """Plan again, prepare detached copies, then make one history action."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             try:
                 work, facts = self.build_work(fresh=True)
                 result = outlines.apply_work(work, TITLE, facts, editor_type()())
@@ -488,7 +488,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open one owned Master Twins panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
 
     try:
         return scripting.show_script_dialog(panel_type(), KEY)

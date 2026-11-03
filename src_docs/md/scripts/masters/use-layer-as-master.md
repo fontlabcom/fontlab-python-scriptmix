@@ -34,7 +34,7 @@ Why this design:
     - Locked, mask, service, automatic and image layers are refused. So is a
       glyph that has an automatic layer, or is a base of one (also through
       manual composites): FontLab cannot undo it. Queued ids and their possible
-      date changes are disclosed. The shared module fly.ap.history does
+      date changes are disclosed. The shared module fly.ap.core.history.glyphs does
       these checks and the one-step write.
 
 How to use:
@@ -56,5 +56,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3a06183b158ae7db8c4252e4d0e3282f19a71b2713eb8f5ec5029e6c6c4fb151.py)
+[Python source](../../../../.build/menu-sources/cb9a5ffffd1d501a50ea565dc66b2f1718d6f721e7369f101471a381dd4afdb9.py)
 <!--/codeinclude-->

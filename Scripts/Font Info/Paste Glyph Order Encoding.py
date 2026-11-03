@@ -84,14 +84,14 @@ def save_encoding(path: Path, names: tuple[str, ...]) -> tuple[str, ...]:
 
 def capture_names() -> tuple[str, ...]:
     """Read current font order with a fresh budget, without requiring selection."""
-    import fly.ap.glyph_catalog as catalog
+    import fly.ap.glyphs.catalog.model as catalog
 
     return tuple(row[0] for row in catalog.capture(deadline=monotonic() + 2.0).rows)
 
 
 def capture_order() -> tuple[tuple[str, ...], str]:
     """Read font order and the first selected glyph without writing selection."""
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
 
     names = capture_names()
     selected = selection.capture(deadline=monotonic() + 2.0).occurrences
@@ -105,7 +105,7 @@ def capture_order() -> tuple[tuple[str, ...], str]:
 
 def main() -> Any:
     """Open a modeless preview with guarded callbacks and owned signal cleanup."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly module alias
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly module alias
     from fly import qt
 
     gui = qt.QtGui

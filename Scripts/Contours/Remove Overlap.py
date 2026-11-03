@@ -50,8 +50,8 @@ changes.
 After the write, it reads the contour counts back. If FontLab fails
 part-way, the error says that native changes may remain. The change is
 recorded as one Undo step. The one-step write, the automatic-layer rule, the
-pending-update check and the panel are shared (fly.ap.outline_writer,
-fly.ap.outline_panel); the planner belongs to this script.
+pending-update check and the panel are shared (fly.ap.contours.writer,
+fly.ap.contours.panel.model); the planner belongs to this script.
 
 Source: the author's own FontLab sample outlines_remove_overlap.py,
 Apache-2.0. Adapted for the current FontLab 9 API.
@@ -59,9 +59,9 @@ Apache-2.0. Adapted for the current FontLab 9 API.
 
 from typing import Any
 
-import fly.ap.outline_panel as outline_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.outline_writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.contours.writer as outline_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import ap
 
 TITLE = "Remove Overlap"

@@ -15,12 +15,12 @@ How it works:
     takes the usual preset (350 or -150 units), which you can change. Create
     checks the font again. FontLab's own Add Glyph command makes each new
     glyph with its master layers and widths (rounded half up). Then one step
-    through the shared module fly.ap.history adds the scaled copies to all
+    through the shared module fly.ap.core.history.glyphs adds the scaled copies to all
     new layers. The copy keeps node names and raw node flags, which a
     FontLab contour copy can drop (fl#8569). After the write the script
     reads every new layer back, and checks that no automatic glyph of the
     font changed. The creation, the contour copy and the panel are shared
-    (fly.ap.glyph_copies, fly.ap.contour_copy).
+    (fly.ap.glyphs.copies, fly.ap.contours.copy).
 
 Copy limits:
     Anchors are not copied. Add the required anchors to the new glyphs before
@@ -102,7 +102,7 @@ def survey(
     allow_rebuild: bool = False,
 ) -> list[Any]:
     """Plan one sized copy per selected figure. Change nothing."""
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return glyph_copies.survey_with(
         package, names, naming_for(suffix), facts, allow_rebuild
@@ -111,8 +111,8 @@ def survey(
 
 def prepare(rows: Sequence[Any], scale: int, shift: int) -> list[Any]:
     """Return the jobs: copies scaled by ``scale`` percent about the origin, then shifted up."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
     from fly import qt
 
     factor = scale / 100
@@ -136,7 +136,7 @@ def prepare(rows: Sequence[Any], scale: int, shift: int) -> list[Any]:
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import qt
 
     QtGui = qt.QtGui
@@ -186,7 +186,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

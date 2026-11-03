@@ -40,8 +40,8 @@ After the write, the script reads the offsets back and reports any gap.
 If FontLab fails part-way, the error says that native changes may remain.
 Use Edit > Undo then. The
 one-step write, the panel, the automatic-layer rule and the pending-update
-check are shared with other scripts (fly.ap.component_writer,
-fly.ap.component_panel, fly.ap.history, fly.ap.edit_guards); the planner
+check are shared with other scripts (fly.ap.components.writer,
+fly.ap.components.panel.model, fly.ap.core.history.glyphs, fly.ap.core.edit_guards); the planner
 and the panel controls belong to this script.
 
 Source: the author's own FontLab sample
@@ -55,5 +55,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f81f9e7290a1539374aa4b789a907710df82830af6edb57bee165d6500c7cdef.py)
+[Python source](../../../../.build/menu-sources/db5bfc9568c585473b2508e0f46e91d123ad7f66b2ab6228e9ac180045e8f4ab.py)
 <!--/codeinclude-->

@@ -14,10 +14,10 @@ How it works:
     A non-modal panel lists every glyph and master with its hint counts, or
     the reason why the layer is skipped. Apply reads the font again and
     calls the native flLayer.autohint() on every planned layer, all in one
-    Undo step through the shared module fly.ap.history. Read-back reports
+    Undo step through the shared module fly.ap.core.history.glyphs. Read-back reports
     a layer that has an outline but no PostScript hints after the call. The
-    hint counts and the panel are shared (fly.ap.hints,
-    fly.ap.selection_panel).
+    hint counts and the panel are shared (fly.ap.hints.postscript,
+    fly.ap.contours.selection.panel.model).
 
 Native call caveat:
     FontLab's source shows that autohint switches the package master
@@ -105,8 +105,8 @@ def survey(
     allow_bases: bool,
 ) -> list[Row]:
     """Plan every glyph/master. Change nothing."""
-    import fly.ap.hints as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.hints.postscript as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     rows: list[Row] = []
     for name in names:
@@ -142,8 +142,8 @@ def autohint(rows: Sequence[Row], facts: Any, allow_bases: bool) -> dict[str, An
     outlined layers with no hints. Nothing to do returns zeros and makes no
     history call.
     """
-    import fly.ap.hints as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.hints.postscript as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     todo = [r for r in rows if not r.note]
     if not todo:
@@ -178,9 +178,9 @@ def autohint(rows: Sequence[Row], facts: Any, allow_bases: bool) -> dict[str, An
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.layer_writer as layer_writer  # noqa: PLR0402
-    import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.masters.layers.writer as layer_writer  # noqa: PLR0402
+    import fly.ap.contours.selection.panel.model as selection_panel  # noqa: PLR0402
 
     class AutohintPanel(selection_panel.panel_type()):
         """Masters, bases opt-in, hint count table, status and buttons."""
@@ -247,7 +247,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

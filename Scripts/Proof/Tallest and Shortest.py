@@ -23,7 +23,7 @@ from typing import Any
 
 def main() -> Any:
     """Run the complete source scope through the shared App/Fly workflow."""
-    from fly.ap.extrema_proof import run
+    from fly.ap.proof.extrema.model import run
 
     return run("current")
 

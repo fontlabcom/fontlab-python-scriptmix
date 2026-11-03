@@ -7,7 +7,7 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 from unittest.mock import Mock
 import pytest
-import fontlabapp.case_coverage_controller as controller
+import fontlabapp.glyphs.case_coverage.controller as controller
 
 SCRIPT = Path(__file__).resolve().parents[1] / "Scripts/Reports/Case Coverage.py"
 

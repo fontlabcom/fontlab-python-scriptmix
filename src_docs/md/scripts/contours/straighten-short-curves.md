@@ -44,8 +44,8 @@ changes.
 After the write, it reads the node counts back. If FontLab fails part-way,
 the error says that native changes may remain. The change is recorded as one
 Undo step. The one-step write, the automatic-layer rule, the pending-update
-check and the panel are shared (fly.ap.outline_writer,
-fly.ap.outline_panel); the planner belongs to this script.
+check and the panel are shared (fly.ap.contours.writer,
+fly.ap.contours.panel.model); the planner belongs to this script.
 
 Source: the author's own FontLab sample outlines_straighten_short_curves.py,
 Apache-2.0. Adapted for the current FontLab 9 API.
@@ -57,5 +57,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8cb89dc50a822132028d989d49846fc2f8857cc361ac7c40d44bf7b51caedada.py)
+[Python source](../../../../.build/menu-sources/baa7130b7ccd58db35e760d6e49c4d63ffd1d8ac3685f1dc918b24dad45321ba.py)
 <!--/codeinclude-->

@@ -43,7 +43,7 @@ after the write started says so and asks you to use Edit > Undo. It does not
 call UpdateAll (FontLab issue 8537).
 
 Shared parts: the panel, the plan model, the one-step write and the read-back
-come from the App module fly.ap.metrics_panel. This script holds its own
+come from the App module fly.ap.metrics.panel.model. This script holds its own
 maths, its planner and its controls.
 
 Benefit: exact sidebearing corrections on many glyphs and masters in one step,
@@ -59,5 +59,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/17a93adb15fdfb1e47e3e1f8bff1a4c0e27da5885f2f7d39d31669d19491a171.py)
+[Python source](../../../../.build/menu-sources/44aced6659c6e780ed00f1c792de1845866fa28face925e1659c19d5566adc9a.py)
 <!--/codeinclude-->

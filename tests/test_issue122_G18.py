@@ -49,6 +49,8 @@ def stub(monkeypatch: Any, name: str, **members: Any) -> ModuleType:
 @pytest.fixture
 def host(monkeypatch: Any) -> Any:
     """A current font and two adjacent master-layer occurrences."""
+    stub(monkeypatch, "fly", __path__=[])
+    stub(monkeypatch, "fly.ap", __path__=[])
     package = NS(id=7, master="Regular", masters=["Regular", "Bold"])
     rows = []
     for index, (name, width) in enumerate((("A", 601), ("V", 501))):
@@ -64,8 +66,8 @@ def host(monkeypatch: Any) -> Any:
             )
         )
     selection = NS(context=(7, "Regular", "editor"), occurrences=tuple(rows))
-    stub(monkeypatch, "fly.ap.layer_selection", capture=lambda deadline: selection)
-    stub(monkeypatch, "fly.ap.scripting", current_package=lambda: package)
+    stub(monkeypatch, "fly.ap.masters.layers.selection", capture=lambda deadline: selection)
+    stub(monkeypatch, "fly.ap.core.scripting", current_package=lambda: package)
     groups = {"AGroup": (("A",), "KernLeft"), "VGroup": (("V",), "KernRight")}
     pair = (("AGroup", "groupMode"), ("VGroup", "groupMode"))
     snapshot = NS(
@@ -75,7 +77,7 @@ def host(monkeypatch: Any) -> Any:
     writes = []
     stub(
         monkeypatch,
-        "fly.ap.kerning_batch",
+        "fly.ap.kerning.batch",
         snapshot_kerning=lambda p, typed: snapshot,
         write_kerning=lambda *a, **k: writes.append((a, k)) or True,
     )
@@ -192,7 +194,7 @@ def shape(ident: int, count: int, x: float, y: float, base: str = "") -> Any:
 
 
 def test_order_keeps_groups_and_components(monkeypatch: Any) -> None:
-    stub(monkeypatch, "fly.ap.component_writer", base_of=lambda s: s.base)
+    stub(monkeypatch, "fly.ap.components.writer", base_of=lambda s: s.base)
     items = [
         shape(4, 0, 0, 0, "z"),
         shape(3, 8, 0, 0),
@@ -215,7 +217,7 @@ def test_show_layers_preserves_occurrences_and_exact_names(
     calls = []
     stub(
         monkeypatch,
-        "fly.ap.named_tab",
+        "fly.ap.proof.tabs.named",
         open_layer_tab=lambda *a, **k: calls.append((a, k)),
     )
     load(4).run()
@@ -263,8 +265,7 @@ def reorder_host(host: Any, monkeypatch: Any, real_app: Any) -> Any:
     )
     facts = modules["history"].auto_facts([])
     monkeypatch.setattr(modules["history"], "scan_auto_facts", lambda p: facts)
-    stub(monkeypatch, "fly.ap.history", **vars(modules["history"]))
-    stub(monkeypatch, "fly.ap.component_writer", base_of=lambda s: s.base)
+    stub(monkeypatch, "fly.ap.components.writer", base_of=lambda s: s.base)
     shapes = [shape(2, 8, 0, 0), shape(1, 4, 0, 0)]
     layer = NS(
         name="Regular",
@@ -449,10 +450,10 @@ def test_feature_panel_preview_invalidation_and_copy(
             QPushButton=Widget,
         ),
     )
-    sys.modules["fly.ap.scripting"].features_dialog_type = lambda: PanelBase
+    sys.modules["fly.ap.core.scripting"].features_dialog_type = lambda: PanelBase
     rows = (("a", "U+0061", ""), ("a.ss01", "", ""))
     table = NS(rows=rows)
-    stub(monkeypatch, "fly.ap.glyph_catalog", capture=lambda: table)
+    stub(monkeypatch, "fly.ap.glyphs.catalog.model", capture=lambda: table)
     feature_writes = []
     feature_state = {"blocks": {"prefix": "", "features": []}}
 
@@ -537,7 +538,7 @@ def test_feature_entry_contains_panel_failure(host: Any, capsys: Any) -> None:
     def fail(*args: Any) -> None:
         raise TimeoutError("panel deadline")
 
-    sys.modules["fly.ap.scripting"].show_script_dialog = fail
+    sys.modules["fly.ap.core.scripting"].show_script_dialog = fail
     tool = load(2)
     tool.panel_type = lambda: object
     assert tool.main() is None
@@ -548,7 +549,7 @@ def test_show_empty_selection_opens_no_tab(host: Any, monkeypatch: Any) -> None:
     host.selection.occurrences = ()
     calls = []
     stub(
-        monkeypatch, "fly.ap.named_tab", open_layer_tab=lambda *a, **k: calls.append(a)
+        monkeypatch, "fly.ap.proof.tabs.named", open_layer_tab=lambda *a, **k: calls.append(a)
     )
     with pytest.raises(ValueError):
         load(4).run()
@@ -558,7 +559,7 @@ def test_show_empty_selection_opens_no_tab(host: Any, monkeypatch: Any) -> None:
 def test_reorder_auto_dependant_refuses_before_history(
     reorder_host: Any, monkeypatch: Any
 ) -> None:
-    history = sys.modules["fly.ap.history"]
+    history = sys.modules["fly.ap.core.history.glyphs"]
     facts = history.auto_facts([("Aacute", True, ("A",))])
     monkeypatch.setattr(history, "scan_auto_facts", lambda p: facts)
     result = load(3).run()
@@ -726,14 +727,14 @@ def four_slots(host: Any, monkeypatch: Any) -> Any:
         )
     host.selection.occurrences = tuple(host.rows)
     host.package.kerning = lambda master: NS(get=lambda pair: -25)
-    sys.modules["fly.ap.scripting"].kerning_pair_value = lambda kern, left, right: (
+    sys.modules["fly.ap.core.scripting"].kerning_pair_value = lambda kern, left, right: (
         kern.get((left, right))
     )
     for row in host.rows:
         row.layer.shapes = [NS(contours=[NS(isTT=False, closed=True)])]
     stub(
         monkeypatch,
-        "fly.ap.masters",
+        "fly.ap.masters.inspect.model",
         layer_contours=lambda layer: [
             [
                 (layer.edges[0], 0, True),
@@ -781,7 +782,7 @@ def test_steal_open_contours_are_skipped_and_named(
     four_slots: Any, monkeypatch: Any
 ) -> None:
     four_slots.rows[0].layer.shapes[0].contours.append(NS(isTT=False, closed=False))
-    masters = sys.modules["fly.ap.masters"]
+    masters = sys.modules["fly.ap.masters.inspect.model"]
     original = masters.layer_contours
     monkeypatch.setattr(
         masters,
@@ -865,14 +866,13 @@ def test_delete_real_kerning_writer_preserves_exception(
         checkInitHistoryState=lambda index: initialized.append(index),
     )
     native = NS(flItems=NS(notifyChangesApplied=lambda *a: calls.append(a)))
-    modules = real_app(
+    real_app(
         qt=NS(),
         fontlab=native,
         scripting={"current_package": lambda *a: package},
         modules=("kerning_batch",),
     )
-    stub(monkeypatch, "fly.ap.kerning_batch", **vars(modules["kerning_batch"]))
-    stub(monkeypatch, "fly.ap.scripting", current_package=lambda: package)
+    stub(monkeypatch, "fly.ap.core.scripting", current_package=lambda: package)
     result = load(0).run()
     assert result["removed"] == (1 if one_master else 2)
     for name, container in containers.items():
@@ -934,8 +934,7 @@ def test_steal_transformed_components_and_quadratic_crossings(
             return self.coords[1]
 
     qt = NS(QtCore=NS(QPointF=Point))
-    modules = real_app(qt=qt, fontlab=NS(), modules=("masters",))
-    stub(monkeypatch, "fly.ap.masters", **vars(modules["masters"]))
+    real_app(qt=qt, fontlab=NS(), modules=("masters",))
 
     def layer(points: list, quadratic: bool, offset: float) -> Any:
         contour = NS(
@@ -1031,7 +1030,7 @@ def test_steal_panel_half_xheight_preview_and_apply(
         "fly.qt",
         QtGui=NS(QLineEdit=Widget, QLabel=Widget, QPushButton=Widget),
     )
-    sys.modules["fly.ap.scripting"].font_info_dialog_type = lambda: Panel
+    sys.modules["fly.ap.core.scripting"].font_info_dialog_type = lambda: Panel
     panel = load(5).panel_type()()
     assert panel.height_edit.text == "275"
     assert metrics_calls == ["Regular"], "Default must use the shown master"
@@ -1106,7 +1105,7 @@ def test_layer_proof_budget_is_per_glyph(host: Any, monkeypatch: Any) -> None:
         row.glyph = NS(layers=SlowLayers())
     stub(
         monkeypatch,
-        "fly.ap.named_tab",
+        "fly.ap.proof.tabs.named",
         open_layer_tab=lambda *a, **k: calls.append((a, k)),
     )
     tool = load(4)

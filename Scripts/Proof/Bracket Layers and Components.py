@@ -26,7 +26,7 @@ Copyright2025 Fernando Díaz & Reset Type Studio. See NOTICE and additional-tool
 
 def main() -> None:
     """Run the complete shared workflow through the lazy Fly namespace."""
-    from fly.ap.bracket_layers import open_tab
+    from fly.ap.masters.layers.brackets.model import open_tab
 
     open_tab()
 

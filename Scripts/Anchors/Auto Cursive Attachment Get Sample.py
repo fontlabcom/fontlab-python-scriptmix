@@ -26,7 +26,7 @@ from pathlib import Path
 from time import monotonic
 from typing import Any
 
-import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
 
 TITLE = "Auto Cursive Attachment Get Sample"
 KEY = "anchors_auto_cursive_attachment_get_sample"
@@ -127,7 +127,7 @@ def validate_profile(data: Any) -> dict[str, float]:
 
 def sample_document(layer: Any, master: str) -> dict[str, Any]:
     """Capture the two named connection pins and package the portable profile."""
-    import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+    import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
 
     pins = [pin for pin in layer.anchors if pin.name in ("entry", "exit")]
     if len({pin.name for pin in pins}) != len(pins):
@@ -156,9 +156,9 @@ def save_document(path: str, document: dict[str, Any]) -> None:
 
 def main() -> Any:
     """Capture one layer, show one save chooser, and report a clear refusal."""
-    import fly.ap.layer_selection as layer_selection  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-    import fly.ap.masters as masters  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-    import fly.ap.qt_dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+    import fly.ap.masters.inspect.model as masters  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+    import fly.ap.qt.dialogs as qt_dialogs  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
     from fly import ap, qt
 
     try:

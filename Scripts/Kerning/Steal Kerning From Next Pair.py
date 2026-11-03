@@ -88,7 +88,7 @@ def extents(
     layer: Any, height: float, *, glyph_name: str = "", notices: list[str] | None = None
 ) -> tuple[float, float]:
     """Find the leftmost/rightmost scanline crossings of the decomposed outline."""
-    import fly.ap.masters as masters  # noqa: PLR0402
+    import fly.ap.masters.inspect.model as masters  # noqa: PLR0402
 
     contours = masters.layer_contours(layer)
     kinds = [
@@ -149,9 +149,9 @@ def target_key(groups: dict, records: dict, left: str, right: str) -> tuple:
 
 def plan(height: float, expected_id: int | None = None) -> dict:
     """Read four selected slots, their outline gaps and the complete kerning snapshot."""
-    import fly.ap.kerning_batch as kerning
-    import fly.ap.layer_selection as selection
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.kerning.batch as kerning
+    import fly.ap.masters.layers.selection as selection
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     if not math.isfinite(height):
         raise ValueError("Height must be a finite number.")
@@ -230,7 +230,7 @@ def plan(height: float, expected_id: int | None = None) -> dict:
 
 def write(preview: dict) -> dict:
     """Re-measure before writing; refuse stale selection, outlines or kerning."""
-    import fly.ap.kerning_batch as kerning
+    import fly.ap.kerning.batch as kerning
 
     current = plan(preview["height"], preview["package"].id)
     if current["fingerprint"] != preview["fingerprint"]:
@@ -257,7 +257,7 @@ def run(height: float) -> dict:
 
 def default_height(package: Any) -> float:
     """Use half the shown master's x-height, falling back to the current master."""
-    import fly.ap.layer_selection as selection
+    import fly.ap.masters.layers.selection as selection
     from fly import fl
 
     if package is None:
@@ -274,7 +274,7 @@ def default_height(package: Any) -> float:
 
 def panel_type() -> type:
     """Build a small owned non-modal panel using the shared font-bound shell."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     from fly import qt
 
     class GapPanel(scripting.font_info_dialog_type()):
@@ -357,7 +357,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open or replace this tool's shared-lifetime panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     try:
         return scripting.show_script_dialog(panel_type(), KEY)

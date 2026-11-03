@@ -121,9 +121,9 @@ def analyze(names: list[str], pairs: dict, groups: dict) -> dict:
 
 def run() -> Any:
     """Capture the current master and publish a detached read-only report."""
-    import fly.ap.kerning_batch as batch
-    import fly.ap.reports as reports  # noqa: PLR0402 - qualified Fly submodule
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule
+    import fly.ap.kerning.batch as batch
+    import fly.ap.proof.reports.model as reports  # noqa: PLR0402 - qualified Fly submodule
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule
 
     package = scripting.current_package()
     if package is None:

@@ -25,7 +25,7 @@ additional-tools.json for source identity and full license provenance.
 
 def main() -> None:
     """Load the shared report panel through Fly only when this menu runs."""
-    from fly.ap.scripting import point_counts_dialog_type, show_script_dialog
+    from fly.ap.core.scripting import point_counts_dialog_type, show_script_dialog
 
     panel = point_counts_dialog_type()
     show_script_dialog(panel, panel.KEY)

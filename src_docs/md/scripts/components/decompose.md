@@ -46,8 +46,8 @@ component, with its data and builder. Edit > Undo of removed components
 depends on FontLab (fl#7641). The copy, the base checks, the history write, the
 panel, the
 automatic-layer rule and the pending-update check are shared with other
-scripts (fly.ap.component_writer, fly.ap.component_panel, fly.ap.history,
-fly.ap.edit_guards); the planner and the panel controls belong to this
+scripts (fly.ap.components.writer, fly.ap.components.panel.model, fly.ap.core.history.glyphs,
+fly.ap.core.edit_guards); the planner and the panel controls belong to this
 script.
 
 Source: the author's own FontLab sample
@@ -61,5 +61,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0951ea66dea20dae967ca8164d62d7b2af8873cd94afd9cc9b15c21825250ef6.py)
+[Python source](../../../../.build/menu-sources/c6d22abcc892e0c64f53d03cc44f777f45441fe13a5c7dd6a926c2ef5d55fb6d.py)
 <!--/codeinclude-->

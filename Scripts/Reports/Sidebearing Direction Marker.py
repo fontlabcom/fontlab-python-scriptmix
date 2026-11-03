@@ -33,7 +33,7 @@ Benefit:
 
 from typing import Any
 
-from fly.ap.scripting import canvas_rsb_dialog_type, show_script_dialog
+from fly.ap.core.scripting import canvas_rsb_dialog_type, show_script_dialog
 
 TITLE, KEY = "Sidebearing Direction Marker", "canvas_right_sidebearing_line"
 

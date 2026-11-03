@@ -29,7 +29,7 @@ Complete source hashes, contract, fixes and licence are in NOTICE and provenance
 
 def main() -> None:
     """Open the shared owned report lazily, within FontLab's import deadline."""
-    from fly.ap.near_miss import show
+    from fly.ap.contours.near_miss.model import show
 
     show()
 

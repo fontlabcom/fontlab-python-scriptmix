@@ -38,10 +38,10 @@ def nodes(anchors, monkeypatch, app_sources):  # noqa: F811
 
     anchors.qt.QtCore.QTimer = Timer
     spec = importlib.util.spec_from_file_location(
-        "fontlabapp.node_coordinates", app_sources / "node_coordinates.py"
+        "fontlabapp.contours.nodes.coordinates", app_sources / "contours/nodes/coordinates.py"
     )
     api = importlib.util.module_from_spec(spec)
-    monkeypatch.setitem(sys.modules, "fontlabapp.node_coordinates", api)
+    monkeypatch.setitem(sys.modules, "fontlabapp.contours.nodes.coordinates", api)
     spec.loader.exec_module(api)
     spec = importlib.util.spec_from_file_location(
         "live_nodes", ROOT / "Scripts/Contours/Node Coordinates Panel.py"

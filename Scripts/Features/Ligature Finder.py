@@ -29,8 +29,8 @@ from collections.abc import Iterable
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.feature_code import safe_name
-from fly.ap.scripting import (
+from fly.ap.features.code import safe_name
+from fly.ap.core.scripting import (
     features_dialog_type,
     show_script_dialog,
 )

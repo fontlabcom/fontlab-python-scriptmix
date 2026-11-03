@@ -17,7 +17,7 @@ How it works:
     gets a new active layer for its glyph.
 
 Why this design:
-    - fly.ap.masters.associated_master resolves native layer names; the same
+    - fly.ap.masters.inspect.model.associated_master resolves native layer names; the same
       backup resolver as Restore Backup Layer adds plain backup names.
     - All slots are planned first. One bad slot stops the run before any change.
     - The script writes no font data. No Undo step is needed.
@@ -45,7 +45,7 @@ DEADLINE_SECONDS = 2.0
 
 def backup_master(name: str, masters: Sequence[str]) -> str | None:
     """Resolve backup layers through the shared App rule."""
-    import fly.ap.masters as masters_api
+    import fly.ap.masters.inspect.model as masters_api
 
     return masters_api.backup_master(name, masters)
 
@@ -58,7 +58,7 @@ def layer_cycle(
     `layers` holds (name, is_body) in glyph order. Mask and service layers
     have is_body False. Raise ValueError when `current` has no master.
     """
-    from fly.ap.masters import associated_master
+    from fly.ap.masters.inspect.model import associated_master
 
     master = associated_master(current, masters) or backup_master(current, masters)
     if master is None:
@@ -85,8 +85,8 @@ def plan(step: int) -> tuple[Any, list[tuple[Any, str, str]]]:
 
     Return (selection, [(occurrence, current name, target name)]).
     """
-    from fly.ap.layer_selection import capture
-    from fly.ap.scripting import current_package
+    from fly.ap.masters.layers.selection import capture
+    from fly.ap.core.scripting import current_package
 
     selection = capture(monotonic() + DEADLINE_SECONDS)
     if selection.context[2] != "editor":
@@ -110,7 +110,7 @@ def plan(step: int) -> tuple[Any, list[tuple[Any, str, str]]]:
 
 def show_layer(selection: Any, occurrence: Any, target: str) -> None:
     """Make one editor slot show layer `target` and prove that it did."""
-    from fly.ap.qtsafe import qt_list
+    from fly.ap.qt.safe import qt_list
 
     canvas = selection.carriers[0]
     blocks = qt_list(canvas.textBlocks)

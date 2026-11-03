@@ -16,7 +16,7 @@ def test_menu_preserves_category_policy_and_shared_panel(monkeypatch):
     policy = lambda *_: (None, None)
     info = ModuleType("fly.gp.glyphsapp.glyph_info")
     info.glyph_categories = policy
-    api = ModuleType("fly.ap.category_xml")
+    api = ModuleType("fly.ap.features.categories.model")
 
     def show(classifier):
         assert classifier is policy

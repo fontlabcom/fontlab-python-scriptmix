@@ -13,7 +13,7 @@ ROOT=Path(__file__).parents[1]
 @pytest.mark.parametrize('title,method',[('Clear All Layer Backgrounds','show_all'),('Clear Master Backgrounds','show_masters')])
 def test_complete_scope_dispatch_and_original_pins(monkeypatch,title,method):
     calls=[]
-    monkeypatch.setitem(sys.modules,'fly.ap.background_clear',S(**{method:lambda:calls.append(method) or 'owned'}))
+    monkeypatch.setitem(sys.modules,'fly.ap.masters.background.clear.model',S(**{method:lambda:calls.append(method) or 'owned'}))
     destination=f'Scripts/Cleanup/{title}.py'
     module=runpy.run_path(str(ROOT/destination));assert not calls
     assert module['main']()=='owned'

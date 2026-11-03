@@ -171,15 +171,15 @@ def host(monkeypatch: Any) -> Any:
     )
     stub(
         monkeypatch,
-        "fly.ap.layer_selection",
+        "fly.ap.masters.layers.selection",
         capture=lambda deadline: selection,
         document_context=lambda deadline: selection.context,
     )
-    stub(monkeypatch, "fly.ap.scripting", current_package=lambda: package)
-    stub(monkeypatch, "fly.ap.qtsafe", qt_list=list)
+    stub(monkeypatch, "fly.ap.core.scripting", current_package=lambda: package)
+    stub(monkeypatch, "fly.ap.qt.safe", qt_list=list)
     stub(
         monkeypatch,
-        "fly.ap.master_switcher",
+        "fly.ap.masters.switcher.model",
         switch=lambda p, name: p.setMaster(name, True),
     )
     return NS(
@@ -240,7 +240,7 @@ def test_context_refusals(host: Any, change: str, match: str) -> None:
     if change == "font":
         host.package.id = 99
     elif change == "none":
-        stub(host.patch, "fly.ap.scripting", current_package=lambda: None)
+        stub(host.patch, "fly.ap.core.scripting", current_package=lambda: None)
     elif change == "empty":
         host.selection.occurrences = ()
     elif change == "font-order":
@@ -262,7 +262,7 @@ def test_bad_occurrence_does_not_stop_other_slots(host: Any) -> None:
 def test_document_change_stops_before_display_writes(host: Any) -> None:
     stub(
         host.patch,
-        "fly.ap.layer_selection",
+        "fly.ap.masters.layers.selection",
         capture=lambda deadline: host.selection,
         document_context=lambda deadline: (99, "Light", "editor"),
     )
@@ -341,7 +341,7 @@ def test_write_failure_reports_possible_display_change(host: Any) -> None:
 
 def test_master_write_readback_failure_is_reported(host: Any) -> None:
     host.selection.context = (7, "Light", "font")
-    stub(host.patch, "fly.ap.master_switcher", switch=lambda *a: None)
+    stub(host.patch, "fly.ap.masters.switcher.model", switch=lambda *a: None)
     with pytest.raises(RuntimeError, match="did not switch"):
         load().navigate("wt", 1, 7)
 
@@ -350,7 +350,7 @@ def test_capture_timeout_is_reported(host: Any) -> None:
     def expire(deadline: float) -> None:
         raise TimeoutError("capture expired")
 
-    stub(host.patch, "fly.ap.layer_selection", capture=expire)
+    stub(host.patch, "fly.ap.masters.layers.selection", capture=expire)
     with pytest.raises(TimeoutError, match="expired"):
         load().navigate("wt", 1, 7)
     assert not host.calls
@@ -434,7 +434,7 @@ def ui(host: Any) -> Any:
         dialog._connections.clear()
         dialog.closed = True
 
-    module = sys.modules["fly.ap.scripting"]
+    module = sys.modules["fly.ap.core.scripting"]
     module.connect_guarded = connect
     module.close_script_dialog = close
     module.show_script_dialog = lambda cls, key: cls()
@@ -490,7 +490,7 @@ def test_panel_retains_current_font_binding_and_rebinds_explicitly(ui: Any) -> N
 
 
 def test_panel_no_font_and_axis_refusal_show_actionable_text(ui: Any) -> None:
-    sys.modules["fly.ap.scripting"].current_package = lambda: None
+    sys.modules["fly.ap.core.scripting"].current_package = lambda: None
     panel = ui.module.main()
     assert "Open a font" in panel.results.text_value
     panel.travel(1)
@@ -501,7 +501,7 @@ def test_main_reports_lifecycle_runtime_error(ui: Any, capsys: Any) -> None:
     def fail(*args: Any) -> None:
         raise RuntimeError("cannot open panel")
 
-    sys.modules["fly.ap.scripting"].show_script_dialog = fail
+    sys.modules["fly.ap.core.scripting"].show_script_dialog = fail
     assert ui.module.main() is None
     assert "cannot open panel" in capsys.readouterr().out
 

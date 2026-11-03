@@ -26,9 +26,9 @@ import math
 from time import monotonic
 from typing import Any
 
-import fly.ap.anchor_panel as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.anchors.panel.model as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
 
 TITLE = "Derive Anchors From Components"
 KEY = "anchors_derive_anchors_from_components"
@@ -182,7 +182,7 @@ class ComponentAnchorDerivation(anchor_panel.panel_type()):
             self.status.setText(str(error))
 
     def glyph_names(self) -> list[str]:
-        import fly.ap.glyph_catalog as glyph_catalog  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+        import fly.ap.glyphs.catalog.model as glyph_catalog  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
 
         self.catalog_names = [row[0] for row in glyph_catalog.capture().rows]
         return list(self.catalog_names)

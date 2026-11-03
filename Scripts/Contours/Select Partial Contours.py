@@ -34,7 +34,7 @@ Benefit:
 
 def main() -> int:
     """Apply the original cross-contour toggle algorithm through Fly."""
-    from fly.ap.contour_selection import select_partial_contours
+    from fly.ap.contours.selection.model import select_partial_contours
 
     count = select_partial_contours()
     print(f"{count} contours selected.")

@@ -20,12 +20,12 @@ How it works:
     turns the stroke into closed FontLab contours (cubic handles stay
     cubic), and FontGate's Remove Overlap cleans the small loops that the
     stroker leaves inside corners. Then it writes all layers in one Undo
-    step through the shared module fly.ap.history: each old contour element is
+    step through the shared module fly.ap.core.history.glyphs: each old contour element is
     removed and the ring is added as one new element. Images and empty
     elements stay in the layer. After the write it
     counts the contours again and reports any difference. The path-to-contour
-    step and the panel are shared (fly.ap.contour_copy,
-    fly.ap.selection_panel).
+    step and the panel are shared (fly.ap.contours.copy,
+    fly.ap.contours.selection.panel.model).
 
 Why this design:
     - FontLab has no Python call that strokes an outline, so the script uses
@@ -63,5 +63,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/62caf6c3dced1338b86c23ac52489178933d81534f78eaad48ef0ad99a301441.py)
+[Python source](../../../../.build/menu-sources/15373391084f19e1f6851cc63d60d3dc8a496e2f75ec177ca7fc423318fc1a8a.py)
 <!--/codeinclude-->

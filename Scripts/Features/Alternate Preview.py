@@ -29,7 +29,7 @@ Benefit:
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     features_dialog_type,
     show_script_dialog,
 )

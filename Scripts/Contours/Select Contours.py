@@ -31,7 +31,7 @@ Benefit:
 
 def main() -> int:
     """Run the shared native action through Fly and report selected contour count."""
-    from fly.ap.contour_selection import select_contours
+    from fly.ap.contours.selection.model import select_contours
 
     count = select_contours()
     print(f"{count} contours selected.")

@@ -5,7 +5,7 @@ from pathlib import Path
 import runpy
 from unittest.mock import Mock
 import pytest
-import fontlabapp.common_glyphs_controller as controller
+import fontlabapp.glyphs.common.controller as controller
 
 SCRIPT = Path(__file__).resolve().parents[1] / "Scripts/Masters/Common Glyphs.py"
 

@@ -13,7 +13,7 @@ from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
-from conftest import app_names_used, check_real_app_names
+from conftest import app_names_used, app_namespace, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Real English Text", "Real Spanish Text")
@@ -35,10 +35,15 @@ def load(title: str) -> ModuleType:
 def host(monkeypatch: Any) -> Any:
     """Provide only the two App APIs allowed for this read-only action."""
     state = SimpleNamespace(package=SimpleNamespace(id=37), calls=[], failure=None)
-    for name in ("fly", "fly.ap", "fly.ap.scripting", "fly.ap.text_tab"):
+    for name in ("fly", "fly.ap", "fly.ap.core.scripting", "fly.ap.proof.tabs.text"):
         module = ModuleType(name)
         module.__path__ = []
         monkeypatch.setitem(sys.modules, name, module)
+    sys.modules["fly"].ap = app_namespace(
+        sys.modules["fly.ap"],
+        scripting=sys.modules["fly.ap.core.scripting"],
+        text_tab=sys.modules["fly.ap.proof.tabs.text"],
+    )
 
     def open_tab(text: str, *, expected_id: int) -> None:
         state.calls.append((text, expected_id))
@@ -47,8 +52,8 @@ def host(monkeypatch: Any) -> Any:
         if state.package is None or expected_id != state.package.id:
             raise ValueError("The source font changed or closed")
 
-    sys.modules["fly.ap.scripting"].current_package = lambda: state.package
-    sys.modules["fly.ap.text_tab"].open_text_tab = open_tab
+    sys.modules["fly.ap.core.scripting"].current_package = lambda: state.package
+    sys.modules["fly.ap.proof.tabs.text"].open_text_tab = open_tab
     return state
 
 
@@ -198,15 +203,15 @@ def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> Non
     app_src = Path(distribution("fontlab-fontlabapp").locate_file("fontlabapp"))
     used = app_names_used(PATHS)
     assert used == {
-        "fly.ap.scripting": {"current_package"},
-        "fly.ap.text_tab": {"open_text_tab"},
+        "fly.ap.core.scripting": {"current_package"},
+        "fly.ap.proof.tabs.text": {"open_text_tab"},
     }, "Use public shared helpers for all native work"
     check_real_app_names(used)
     saved = {k: v for k, v in sys.modules.items() if k.split(".")[0] in {"fly", "fontlabapp"}}
     for name in saved:
         del sys.modules[name]
     try:
-        real_tabs = importlib.import_module("fly.ap.text_tab")
+        real_tabs = importlib.import_module("fly.ap.proof.tabs.text")
         assert Path(real_tabs.__file__).resolve().is_relative_to(app_src.resolve())
         signature = inspect.signature(real_tabs.open_text_tab)
         assert "expected_id" in signature.parameters, "Real App needs expected_id"

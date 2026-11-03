@@ -30,7 +30,7 @@ from typing import Any
 
 def main() -> Any:
     """Open the shared App workflow through Fly, containing startup refusals."""
-    import fly.ap.master_text_controller as comparison
+    import fly.ap.masters.text.controller as comparison
 
     try:
         return comparison.show()

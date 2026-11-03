@@ -12,6 +12,7 @@ planning numbers, the refusal paths, the clone repair and the Undo shape (one
 notified list, no auto layer). They do not prove native FontLab behaviour.
 """
 
+from conftest import app_names_used, app_namespace, check_real_app_names
 import ast
 import dataclasses
 import importlib.util
@@ -23,7 +24,6 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = {
@@ -596,8 +596,8 @@ def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
     Widget.registry = []
     fly, ap = ModuleType("fly"), ModuleType("fly.ap")
     fly.__path__, ap.__path__ = [], []
-    scripting = ModuleType("fly.ap.scripting")
-    completion = ModuleType("fly.ap.script_completion")
+    scripting = ModuleType("fly.ap.core.scripting")
+    completion = ModuleType("fly.ap.core.completion")
     fontlab = ModuleType("fontlab")
     items = ModuleType("items")
 
@@ -638,7 +638,7 @@ def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
     fly.ap, fly.qt = ap, qt
     for name, module in {
         "fly": fly, "fly.ap": ap, "fly.qt": qt,
-        "fly.ap.scripting": scripting, "fly.ap.script_completion": completion,
+        "fly.ap.core.scripting": scripting, "fly.ap.core.completion": completion,
     }.items():  # fmt: skip
         monkeypatch.setitem(sys.modules, name, module)
     state.app = real_app(
@@ -655,7 +655,7 @@ def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
         modules=["guides", "history", "masters", "edit_guards", "metrics_panel", "selection_panel", "contour_copy"],
     )
     monkeypatch.setattr(state.app["guides"], "dependency_values", lambda package: package.records())
-    ap.scripting = state.app["scripting"]
+    app_namespace(ap, scripting=state.app["scripting"])
     return state
 
 
@@ -736,9 +736,9 @@ def test_panel_attributes_when_assigned_then_never_shadow_native_members(title: 
 
 def test_scripts_when_checked_then_real_app_names_exist() -> None:
     used = app_names_used([path_of(t) for t in SCRIPTS])
-    assert "fly.ap.history" in used and {"commit", "scan_auto_facts", "refusal"} <= used["fly.ap.history"]
-    assert "associated_master" in used["fly.ap.masters"]
-    assert {"panel_type", "survey", "make_plan", "unit", "ink_edges"} <= used["fly.ap.metrics_panel"]
+    assert "fly.ap.core.history.glyphs" in used and {"commit", "scan_auto_facts", "refusal"} <= used["fly.ap.core.history.glyphs"]
+    assert "associated_master" in used["fly.ap.masters.inspect.model"]
+    assert {"panel_type", "survey", "make_plan", "unit", "ink_edges"} <= used["fly.ap.metrics.panel.model"]
     check_real_app_names(used)
 
 

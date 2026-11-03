@@ -32,7 +32,7 @@ from collections.abc import Iterable
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import features_dialog_type, show_script_dialog
+from fly.ap.core.scripting import features_dialog_type, show_script_dialog
 from fly.fp.feature_blocks import read_feature_blocks
 
 fontlab = ap.fontlab

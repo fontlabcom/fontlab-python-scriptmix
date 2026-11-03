@@ -338,7 +338,7 @@ def panels(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> Any:
     state = NS(active=package, selection=["A"], shown=[])
     import importlib
 
-    original = importlib.import_module("fontlabapp.scripting")
+    original = importlib.import_module("fontlabapp.core.scripting")
     app_names = (
         "current_package",
         "names_selected_names",

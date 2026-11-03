@@ -21,7 +21,7 @@ preservation remain pending acceptance.
 
 def main() -> None:
     """Load shared App support only when this menu runs."""
-    from fly.ap.scripting import component_recipes_dialog_type, show_script_dialog
+    from fly.ap.core.scripting import component_recipes_dialog_type, show_script_dialog
 
     panel = component_recipes_dialog_type()
     show_script_dialog(panel, panel.KEY)

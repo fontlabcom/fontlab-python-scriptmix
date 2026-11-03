@@ -13,7 +13,7 @@ What: For each selected glyph and master, the table lists every contour
 smaller than the threshold, with its area and position. Delete removes them.
 
 How: The area is the exact area of the curves in square font units, measured
-by fly.ap.contour_selection.unsigned_area (FontTools' area pen). Open
+by fly.ap.contours.selection.model.unsigned_area (FontTools' area pen). Open
 contours are listed as "open contour, kept" and are never deleted. A contour
 counts as small when its area is strictly below the threshold. This is the
 same rule as Contours > Select Small Contours, so you can select first and
@@ -47,7 +47,8 @@ line says so and nothing changes. After the write, the script reads the
 contour counts back. If FontLab fails part-way, the error says that native
 changes may remain. The change is recorded as one Undo step. The one-step
 write, the automatic-layer rule, the pending-update check and the panel are
-shared (fly.ap.outline_writer, fly.ap.outline_panel); the planner belongs to
+shared (fly.ap.contours.writer, fly.ap.contours.panel.model); the planner
+belongs to
 this script.
 
 Source: the author's own FontLab sample outlines_delete_small_contours.py,
@@ -60,5 +61,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e328dc163e8258666c5f0fb5b0fb1e22304eefd6141133c2cc311d76fc0fb606.py)
+[Python source](../../../../.build/menu-sources/1f9ff84e6a9954bbe9c438041577d9f2d305fb5974c45922596d9d65c0c0457f.py)
 <!--/codeinclude-->

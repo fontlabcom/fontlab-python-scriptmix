@@ -19,7 +19,7 @@ MENU = ROOT / "Scripts/Proof/Text Filter.py"
 def test_text_filter_menu_dispatch_is_lazy_and_uses_shared_fly_panel(monkeypatch):
     calls = []
     fly, ap, helper = (
-        ModuleType(name) for name in ("fly", "fly.ap", "fly.ap.text_filter")
+        ModuleType(name) for name in ("fly", "fly.ap", "fly.ap.proof.text_filter.model")
     )
     helper.show = lambda: calls.append("complete panel") or "panel"
     for module in (fly, ap, helper):
@@ -36,7 +36,7 @@ def test_text_filter_menu_dispatch_is_lazy_and_uses_shared_fly_panel(monkeypatch
 
 
 def test_text_filter_calls_actual_reviewed_host_free_filter(monkeypatch):
-    source = resolve_app_sources(("text_filter",)) / "text_filter.py"
+    source = resolve_app_sources(("text_filter",)) / "proof/text_filter/model.py"
     spec = importlib.util.spec_from_file_location("owned_text_filter", source)
     helper = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, spec.name, helper)

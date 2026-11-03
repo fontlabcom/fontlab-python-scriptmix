@@ -55,7 +55,8 @@ stays a valid reference. After the write, the script reads the start nodes
 back. If FontLab fails part-way, the error says that native changes may
 remain. The change is recorded as one Undo step. The one-step write, the
 automatic-layer rule, the pending-update check and the panel are shared
-(fly.ap.outline_writer, fly.ap.outline_panel); the planner belongs to this
+(fly.ap.contours.writer, fly.ap.contours.panel.model); the planner belongs to
+this
 script.
 
 Source: the author's own FontLab sample outlines_optimize_start_points.py,
@@ -68,5 +69,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/cbbd0e5748218bd193b831e928fb2177093ca01b63ff5cdae6393d2824e095f3.py)
+[Python source](../../../../.build/menu-sources/ab59cdcb37976cf0b265071dc3b919216282fdc7af54ee2e9e365c4d7823386f.py)
 <!--/codeinclude-->

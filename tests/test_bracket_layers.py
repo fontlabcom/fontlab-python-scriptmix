@@ -20,9 +20,9 @@ def test_menu_when_imported_and_run_then_lazy_exact_fly_dispatch(
 ):
     path = ROOT / "Scripts" / folder / "Bracket Layers and Components.py"
     calls = []
-    for name in ("fly", "fly.ap", "fly.ap.bracket_layers"):
+    for name in ("fly", "fly.ap", "fly.ap.masters.layers.brackets.model"):
         monkeypatch.setitem(sys.modules, name, ModuleType(name))
-    setattr(sys.modules["fly.ap.bracket_layers"], method, lambda: calls.append(method))
+    setattr(sys.modules["fly.ap.masters.layers.brackets.model"], method, lambda: calls.append(method))
     values = runpy.run_path(str(path), run_name="inspection")
     assert calls == [], "Importing a menu must not access the host"
     values["main"]()

@@ -30,8 +30,8 @@ TITLE = "Delete Kerning Pair From All Masters"
 
 def selected_pairs() -> tuple[Any, list[tuple[Any, Any]]]:
     """Require adjacent plain-master slots from the active owned font."""
-    import fly.ap.layer_selection as selection
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as selection
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     captured = selection.capture(monotonic() + 2.0)
     package = scripting.current_package()
@@ -75,7 +75,7 @@ def pair_key(groups: dict, left: str, right: str) -> tuple:
 
 def run() -> dict:
     """Delete existing records once; list exceptions that can override the result."""
-    import fly.ap.kerning_batch as kerning
+    import fly.ap.kerning.batch as kerning
 
     package, pairs = selected_pairs()
     before = kerning.snapshot_kerning(package, typed=True)

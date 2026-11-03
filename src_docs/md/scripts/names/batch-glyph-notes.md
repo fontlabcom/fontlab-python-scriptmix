@@ -18,7 +18,7 @@ scans the whole font. For the write it rescans, plans, and writes as one Undo
 step: layers and glyph in one notify list (a glyph alone adds no Undo step).
 After the write it reads each note back and compares it with the plan. The
 scan, the refusal policy and the one-step write come from the shared module
-fly.ap.names_edit. If a write fails part way, every planned glyph is still
+fly.ap.glyphs.names.model. If a write fails part way, every planned glyph is still
 notified and stamped, and the message asks you to use Edit > Undo.
 
 WHY: A glyph note belongs to the glyph, not to a master. FontLab rebuilds
@@ -47,5 +47,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7b33e8d2339e542e16585a0acbd07d5418ea65eaef322f93b7fd1deb899c1038.py)
+[Python source](../../../../.build/menu-sources/bcf36530a70ca572a43720e687629c71e49244b6f6efb71f7f283a74a7f39901.py)
 <!--/codeinclude-->

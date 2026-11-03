@@ -21,9 +21,9 @@ No source code copied. Per-contour indexing also handles open ends correctly.
 from itertools import pairwise
 from typing import Any
 
-import fly.ap.outline_panel as panel
-import fly.ap.outline_writer as writer
-import fly.ap.scripting as scripting  # noqa: PLR0402
+import fly.ap.contours.panel.model as panel
+import fly.ap.contours.writer as writer
+import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
 TITLE = "Retract Handles"
 KEY = "contours_retract_handles"
@@ -151,7 +151,7 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import ap, qt
 
-        from fly.ap.qt_dialogs import run_standard_message_box
+        from fly.ap.qt.dialogs import run_standard_message_box
 
         run_standard_message_box(
             qt, ap.fontlab.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

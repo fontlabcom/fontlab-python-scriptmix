@@ -38,10 +38,10 @@ Info > Master Metrics Table.
 from dataclasses import dataclass
 from typing import Any
 
-import fly.ap.metrics_panel as metrics_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.script_completion as script_completion  # noqa: PLR0402 - same reason
+import fly.ap.metrics.panel.model as metrics_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.core.completion as script_completion  # noqa: PLR0402 - same reason
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     close_script_dialog,
     connect_guarded,
     current_package,
@@ -53,7 +53,7 @@ QtCore, QtGui = qt.QtCore, qt.QtGui
 TITLE = "Vertical Metrics Diagram"
 KEY = "metrics_vertical_metrics_diagram"
 #: (line name, FontMetrics attribute); the attributes are documented in the
-#: Echopy stub fontlab.pyi (class FontMetrics) and used by fontlabapp.masters.
+#: Echopy stub fontlab.pyi (class FontMetrics) and used by fontlabapp.masters.inspect.model.
 FIELDS = [
     ("Ascender", "ascender"),
     ("Cap height", "capsHeight"),

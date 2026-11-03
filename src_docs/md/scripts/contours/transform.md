@@ -48,8 +48,9 @@ After the write, it reads transforms, a node per baked
 shape and the anchors back. If FontLab fails part-way, the error says that
 native changes may remain. The change is recorded as one Undo step. The
 one-step write, the automatic-layer rule, the pending-update check, the
-preview and the panel are shared (fly.ap.outline_writer,
-fly.ap.outline_transform); the matrix math is fly.ap.affine; the planner
+preview and the panel are shared (fly.ap.contours.writer,
+fly.ap.contours.transform.model); the matrix math is fly.ap.contours.affine; the
+planner
 belongs to this script.
 
 Source: the author's own FontLab sample outlines_transform_dialog.py,
@@ -62,5 +63,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/16eae9ea9e80bca75bcf66d4b07a7ccd27f26a41fd82880c9085af6c1de552ae.py)
+[Python source](../../../../.build/menu-sources/027d07ff32d8f0dc40070fe80d77af0da941a6c48aebd3977c8e2484617d2d41.py)
 <!--/codeinclude-->

@@ -35,7 +35,7 @@ from collections.abc import Callable
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     names_dialog_type,
     names_font_glyphs,
     names_muted,

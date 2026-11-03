@@ -34,16 +34,16 @@ from fly import ap, qt
 fontlab = ap.fontlab
 QtCore, QtGui = qt.QtCore, qt.QtGui
 # The tiny facade stays lazy until a native menu script asks for its panel.
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_dialog_type,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_layout as layout,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     kerning_snapshot_refresh as snapshot_refresh,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     names_muted as muted,
 )
 
@@ -155,7 +155,7 @@ class Canvas(QtGui.QWidget):
         for name, *_ in rows:
             box = owner.path(name).boundingRect()
             bounds[name] = (box.left(), box.top(), box.right(), box.bottom())
-        scale, positions = ap.scripting.kerning_proof_geometry(
+        scale, positions = ap.core.scripting.kerning_proof_geometry(
             rows,
             bounds,
             self.width - 2 * MARGIN,
@@ -306,7 +306,7 @@ class TextPreview(KerningDialog):
 
 def main() -> Any:
     """Replace the original registry window and show this owned modeless panel."""
-    return ap.scripting.show_script_dialog(TextPreview, KEY)
+    return ap.core.scripting.show_script_dialog(TextPreview, KEY)
 
 
 if __name__ == "__main__":

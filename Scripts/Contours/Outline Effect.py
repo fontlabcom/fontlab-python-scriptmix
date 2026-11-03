@@ -14,12 +14,12 @@ How it works:
     turns the stroke into closed FontLab contours (cubic handles stay
     cubic), and FontGate's Remove Overlap cleans the small loops that the
     stroker leaves inside corners. Then it writes all layers in one Undo
-    step through the shared module fly.ap.history: each old contour element is
+    step through the shared module fly.ap.core.history.glyphs: each old contour element is
     removed and the ring is added as one new element. Images and empty
     elements stay in the layer. After the write it
     counts the contours again and reports any difference. The path-to-contour
-    step and the panel are shared (fly.ap.contour_copy,
-    fly.ap.selection_panel).
+    step and the panel are shared (fly.ap.contours.copy,
+    fly.ap.contours.selection.panel.model).
 
 Why this design:
     - FontLab has no Python call that strokes an outline, so the script uses
@@ -77,7 +77,7 @@ def _valid(layer: Any) -> bool:
 
 def ring_shape(layer: Any, line: int) -> Any:
     """Return one flShape: the stroked outline of ``layer`` with join loops removed."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import ap, qt
 
     QtGui, QtCore = qt.QtGui, qt.QtCore
@@ -99,7 +99,7 @@ def ring_shape(layer: Any, line: int) -> Any:
 
 def layer_note(layer: Any, reason: str) -> str:
     """Return why ``layer`` gets no ring, or "" when it can get one."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     if layer.autoLayer:
         return "auto layer (skipped)"
@@ -122,8 +122,8 @@ def survey(
     allow_bases: bool,
 ) -> list[Row]:
     """Plan every glyph/master. Change nothing."""
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     rows: list[Row] = []
     for name in names:
@@ -158,8 +158,8 @@ def outline(
     call. A refusal raises ValueError; a failure after history started raises
     RuntimeError with the Undo hint.
     """
-    import fly.ap.contour_copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.contours.copy as contour_copy  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     todo = [r for r in rows if not r.note]
     if not todo:
@@ -205,9 +205,9 @@ def outline(
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.layer_writer as layer_writer  # noqa: PLR0402
-    import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.masters.layers.writer as layer_writer  # noqa: PLR0402
+    import fly.ap.contours.selection.panel.model as selection_panel  # noqa: PLR0402
     from fly import qt
 
     QtGui = qt.QtGui
@@ -272,7 +272,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

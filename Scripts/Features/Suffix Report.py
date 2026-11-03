@@ -31,12 +31,12 @@ from collections.abc import Iterable
 from typing import Any
 
 from fly import ap, qt
-from fly.ap.feature_code import (
+from fly.ap.features.code import (
     feature_text,
     safe_name,  # noqa: F401 - preserve sample helper interface
     suffix_pairs,
 )
-from fly.ap.scripting import (
+from fly.ap.core.scripting import (
     features_dialog_type,
     show_script_dialog,
 )

@@ -92,6 +92,35 @@ def test_unmoved_and_old_release_snapshots_require_no_overlay(tmp_path):
     assert current_rows(tmp_path) == [row]
 
 
+@pytest.mark.parametrize("corrupt", [False, True])
+def test_additional_revision_when_import_path_changes_then_exact_bytes_recover(tmp_path, corrupt):
+    old = b"import old.module\n"
+    new = b"import new.module\n"
+    destination = "Scripts/Plain/One.py"
+    path = tmp_path / destination
+    path.parent.mkdir(parents=True)
+    path.write_bytes(new)
+    digest = lambda value: hashlib.sha256(value).hexdigest()
+    row = {"destination": destination, "destination_sha256": digest(new)}
+    revision = {"destination": destination, "historical_sha256": digest(old),
+                "current_sha256": digest(new),
+                "edits": [{"kind": "issue-205-import-path-update",
+                           "historical": old.decode(), "current": new.decode()}]}
+    if corrupt:
+        revision["edits"][0]["historical"] = "wrong bytes"
+    (tmp_path / "migration.json").write_text("[]")
+    (tmp_path / "menu-moves.json").write_text('{"moves": []}')
+    (tmp_path / "additional-tools.json").write_text(json.dumps([row]))
+    (tmp_path / "menu-revisions.json").write_text(json.dumps({"revisions": [revision]}))
+    if corrupt:
+        with pytest.raises(ValueError, match="changed more"):
+            current_rows(tmp_path)
+    else:
+        assert current_rows(tmp_path) == []
+        assert released_bytes(tmp_path, row) == new
+        assert released_bytes(tmp_path, {**row, "destination_sha256": digest(old)}) == old
+
+
 def test_current_manifest_representation_retains_exact_routes_and_owner_bytes(tmp_path):
     old, new, original, move, path = fixture(tmp_path)
     expected = current_rows(tmp_path)

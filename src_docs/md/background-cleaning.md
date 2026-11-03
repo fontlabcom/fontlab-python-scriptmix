@@ -30,7 +30,7 @@ It never reconstructs deleted backgrounds or claims an exception rolled back.
 These are independent Python 3.11 FontLab implementations of Pedro Arilla's
 Apache-2.0 scripts **Clear background in all layers.py** and **Clear background
 in all master layers.py** from `pedroarilla/glyphs-scripts`, with shared logic
-available through `fly.ap.background_clear`. The originals remain in the
+available through `fly.ap.masters.background.clear.model`. The originals remain in the
 source corpus, unchanged. See NOTICE for attribution.
 
 ## Qualification

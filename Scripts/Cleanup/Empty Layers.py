@@ -14,7 +14,7 @@ How it works:
     data fields above. Master layers, automatic, mask, service, image and
     temporary "|temp|" layers are never deleted on their own. The empty
     mask of a deleted layer is removed first, so no orphan mask stays. All
-    deletions run in one Undo step through the shared module fly.ap.history.
+    deletions run in one Undo step through the shared module fly.ap.core.history.glyphs.
     FontLab records the step only for layers plus their glyph, so the
     notification holds the first master layer of each glyph, which stays.
     Then the script checks by layer id that each deleted layer and mask is
@@ -76,7 +76,7 @@ def is_empty_auxiliary(layer: Any, masters: Sequence[str]) -> bool:
 
 def plan(package: Any, names: Sequence[str], facts: Any) -> tuple[list[tuple[Any, Any]], list[str]]:
     """Return ([(glyph, layer)] to delete, [skip texts]). Change nothing."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     masters = [str(m) for m in package.masters]
     jobs: list[tuple[Any, Any]] = []
@@ -134,7 +134,7 @@ def undo_layer(glyph: Any, doomed: set[int], masters: Sequence[str]) -> Any:
 
 def remove(jobs: Sequence[tuple[Any, Any]], masters: Sequence[str], facts: Any, *, disclosure: dict[str, Any] | None = None) -> list[str]:
     """Delete the planned layers as ONE Undo step. Return the read-back mismatches."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     glyphs = list({str(g.name): g for g, _ in jobs}.values())
     names = doomed_layers(jobs)
@@ -153,7 +153,7 @@ def remove(jobs: Sequence[tuple[Any, Any]], masters: Sequence[str], facts: Any, 
         ]
 
     done = history.commit(TITLE, carriers, glyphs, mutate, operation="geometry", facts=facts, read_back=read_back)
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(done, disclosure)
     return list(done.mismatches)
 
@@ -165,8 +165,8 @@ def plural(count: int, word: str) -> str:
 
 def run(*, disclosure: dict[str, Any] | None = None) -> str:
     """Plan and delete. Return the result text. Raise ValueError for a refusal."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     package = scripting.current_package()
     if package is None:
@@ -178,7 +178,7 @@ def run(*, disclosure: dict[str, Any] | None = None) -> str:
     jobs, skipped = plan(package, names, facts)
     if not jobs:
         raise ValueError("No empty layer in the selected glyphs.")
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     captured = {"pending_updates": (), "pending_note": ""}
     mismatches = remove(jobs, [str(m) for m in package.masters], facts, disclosure=captured)
     _guards.disclose(captured, disclosure)

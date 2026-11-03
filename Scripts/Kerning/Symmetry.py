@@ -25,7 +25,7 @@ from typing import Any
 
 def main() -> Any:
     """Execute the complete writer and owned result through public Fly."""
-    from fly.ap.kerning_symmetry import show
+    from fly.ap.kerning.symmetry.model import show
     return show()
 
 

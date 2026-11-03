@@ -27,9 +27,9 @@ See NOTICE and additional-tools.json for source/data/license provenance.
 
 def main() -> None:
     """Generate a complete proof and open it through FontLab's native text-tab slot."""
-    from fly.ap.random_proof import generate
-    from fly.ap.scripting import current_package
-    from fly.ap.text_tab import open_text_tab
+    from fly.ap.proof.random import generate
+    from fly.ap.core.scripting import current_package
+    from fly.ap.proof.tabs.text import open_text_tab
 
     font = current_package()
     if font is None:

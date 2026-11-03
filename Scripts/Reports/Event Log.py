@@ -174,7 +174,7 @@ class EventLog(QtGui.QDialog):
 
     def _connect(self, signal: Any, slot: Any) -> None:
         """Connect through the shared guarded native lifecycle."""
-        ap.scripting.connect_guarded(self, signal, slot)
+        ap.core.scripting.connect_guarded(self, signal, slot)
 
     def _listen(self, items: Any, name: str, slot: Any) -> None:
         signal = getattr(items, name, None)
@@ -210,12 +210,12 @@ class EventLog(QtGui.QDialog):
     def closeEvent(self, event: Any) -> None:
         """Stop logging and release every connection."""
         self.say(f"{TITLE} stopped")
-        ap.scripting.close_script_dialog(self, event, KEY, timers=(self.timer,))
+        ap.core.scripting.close_script_dialog(self, event, KEY, timers=(self.timer,))
 
 
 def main() -> Any:
     """Show the logging panel; closing it stops the log."""
-    return ap.scripting.show_script_dialog(EventLog, KEY)
+    return ap.core.scripting.show_script_dialog(EventLog, KEY)
 
 
 if __name__ == "__main__":

@@ -17,7 +17,7 @@ How it works:
     what will happen. Existing glyphs, repeated entries and invalid names
     are listed and skipped. Create checks the font again. FontLab's own Add
     Glyph command makes each new glyph with a layer on every master, the
-    advance width and the code point (shared module fly.ap.glyph_creation).
+    advance width and the code point (shared module fly.ap.glyphs.creation).
     After the write the script reads every new glyph back, and checks that
     no automatic glyph of the font changed.
 
@@ -192,7 +192,7 @@ def gate(
     The row gets ``rebuild``; without ``allow_rebuild`` its problem is the
     "may rebuild auto ..." note, so it is skipped.
     """
-    import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     found = glyph_creation.auto_candidates(
         package, facts, [r.name for r in rows if not r.problem]
@@ -224,9 +224,9 @@ def create(
     window or with an open Glyph window, queued ids are disclosed with their possible date changes. A failure after the first glyph exists
     raises RuntimeError that names the new glyphs.
     """
-    import fly.ap.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.glyph_copies as glyph_copies  # noqa: PLR0402
-    import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402
+    import fly.ap.core.edit_guards as edit_guards  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
+    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402
     from fly import ap
 
     ready = [r for r in rows if not r.problem]
@@ -299,10 +299,10 @@ def create(
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.glyph_creation as glyph_creation  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.history as history  # noqa: PLR0402
-    import fly.ap.layer_writer as layer_writer  # noqa: PLR0402
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.masters.layers.writer as layer_writer  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     from fly import qt
 
     QtGui = qt.QtGui
@@ -490,7 +490,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

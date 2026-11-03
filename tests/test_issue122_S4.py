@@ -4,11 +4,12 @@
 
 The scripts run unchanged. Only the native modules `fontlab`, `FL`,
 `PythonQt` and FontLab's data tools (`echopy.fontpr`, reached as `fly.pr`)
-are fakes; `fly` and the App modules (`fontlabapp.scripting`, `history`,
+are fakes; `fly` and the App modules (`fontlabapp.core.scripting`, `history`,
 `edit_guards`) are the real packages.
 Offline results never prove native FontLab behaviour.
 """
 
+from conftest import app_module_name, app_names_used, check_real_app_names
 import ast
 import importlib
 import itertools
@@ -20,7 +21,6 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 ISOLATED = ("fly", "fontlabapp", "echopy")  # packages this file re-imports for itself
@@ -828,11 +828,11 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
 def load(name: str) -> dict[str, Any]:
     namespace = runpy.run_path(str(FOLDER / f"{name}.py"), run_name="inspection")
     scripting = namespace["scripting"]
-    assert scripting.__name__ == "fontlabapp.scripting", (
+    assert scripting.__name__ == "fontlabapp.core.scripting", (
         "the real App helper, not a copy"
     )
     assert scripting._native.__module__ == "fontlabapp", "unpatched native loader"
-    assert scripting.__file__.endswith("fontlabapp/scripting.py")
+    assert scripting.__file__.endswith("fontlabapp/core/scripting.py")
     for module in ("history", "edit_guards", "component_writer", "component_panel"):
         if module in namespace:  # only the App module, never a copy
             assert namespace[module] is app(module), module
@@ -842,15 +842,15 @@ def load(name: str) -> dict[str, Any]:
 
 def app(module: str) -> Any:
     """The real App module that the scripts of this test use (fresh per test)."""
-    return importlib.import_module(f"fontlabapp.{module}")
+    return importlib.import_module(app_module_name(module))
 
 
 def kernel(ns: dict[str, Any], key: str) -> Any:
-    """A kernel name from fly.ap.component_writer.
+    """A kernel name from fly.ap.components.writer.
 
     A script must not keep a private copy of a name that the App holds.
     """
-    assert key not in ns, f"{key} must come from fly.ap.component_writer"
+    assert key not in ns, f"{key} must come from fly.ap.components.writer"
     return getattr(ns["component_writer"], key)
 
 
@@ -1075,16 +1075,16 @@ def test_panel_when_closed_then_disconnects_deletes_and_unregisters(
 
 def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> None:
     used = app_names_used([FOLDER / f"{name}.py" for name in NAMES])
-    assert {"commit", "scan_auto_facts", "refusal"} <= used["fly.ap.history"]
-    assert used["fly.ap.edit_guards"] == {"pending_updates", "pending_note", "disclose"}
+    assert {"commit", "scan_auto_facts", "refusal"} <= used["fly.ap.core.history.glyphs"]
+    assert used["fly.ap.core.edit_guards"] == {"pending_updates", "pending_note", "disclose"}
     assert {
         "EjectEditor",
         "MoveEditor",
         "plain_move",
         "copy_problem",
         "Editor",
-    } <= used["fly.ap.component_writer"]
-    assert "panel_type" in used["fly.ap.component_panel"]
+    } <= used["fly.ap.components.writer"]
+    assert "panel_type" in used["fly.ap.components.panel.model"]
     check_real_app_names(used)
 
 
@@ -1105,12 +1105,12 @@ def test_script_when_loaded_then_kernel_and_panel_are_the_app_modules(
     world: World, name: str
 ) -> None:
     ns = load(name)
-    assert ns["component_writer"].__name__ == "fontlabapp.component_writer"
-    assert ns["component_writer"].__file__.endswith("fontlabapp/component_writer.py")
-    assert ns["component_panel"].__name__ == "fontlabapp.component_panel"
+    assert ns["component_writer"].__name__ == "fontlabapp.components.writer"
+    assert ns["component_writer"].__file__.endswith("fontlabapp/components/writer.py")
+    assert ns["component_panel"].__name__ == "fontlabapp.components.panel.model"
     panel = ns["main"]()
     base = ns["component_panel"].panel_type()
-    assert isinstance(panel, base) and base.__module__ == "fontlabapp._component_panel"
+    assert isinstance(panel, base) and base.__module__ == "fontlabapp.components.panel.ui"
     assert not SHARED & set(ns), f"private copies left: {SHARED & set(ns)}"
 
 

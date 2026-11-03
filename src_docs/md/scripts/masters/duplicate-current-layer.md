@@ -16,10 +16,10 @@ What it does:
     would read as another master are refused.
 
 How it works:
-    The non-modal panel uses fly.ap.selection_panel. Copies keep repaired shape
+    The non-modal panel uses fly.ap.contours.selection.panel.model. Copies keep repaired shape
     and node metadata (fl#8516, fl#8538). The shown layer stays active. Each
     Apply
-    is recorded as one Undo step through fly.ap.history and read back. Auto
+    is recorded as one Undo step through fly.ap.core.history.glyphs and read back. Auto
     owners and bases are listed and kept. Apply discloses queued ids and their
     possible date changes.
 
@@ -45,5 +45,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6c9027e0c81f1528bbac28c4d5987b52db305f4e51cd011bbec597c560621f93.py)
+[Python source](../../../../.build/menu-sources/a52430839d688fc55a49cf8016ae55c09bf3a7d61f39291c9c14efe786a13486.py)
 <!--/codeinclude-->

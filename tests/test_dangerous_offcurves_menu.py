@@ -19,7 +19,7 @@ def test_master_point_counter_menu_when_called_then_one_public_Fly_dispatch(
         module = ModuleType(name)
         module.__path__ = []
         monkeypatch.setitem(sys.modules, name, module)
-    module = ModuleType("fly.ap.dangerous_offcurves")
+    module = ModuleType("fly.ap.contours.dangerous_offcurves.model")
     module.show = lambda: calls.append(True)
     monkeypatch.setitem(sys.modules, module.__name__, module)
     ns = runpy.run_path(str(MENU), run_name="inspection")

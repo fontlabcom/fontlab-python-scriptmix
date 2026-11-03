@@ -45,8 +45,8 @@ component, with its data and builder. Edit > Undo of removed components
 depends on FontLab (fl#7641). The copy, the base checks, the history write, the
 panel, the
 automatic-layer rule and the pending-update check are shared with other
-scripts (fly.ap.component_writer, fly.ap.component_panel, fly.ap.history,
-fly.ap.edit_guards); the planner and the panel controls belong to this
+scripts (fly.ap.components.writer, fly.ap.components.panel.model, fly.ap.core.history.glyphs,
+fly.ap.core.edit_guards); the planner and the panel controls belong to this
 script.
 
 Source: the author's own FontLab sample
@@ -56,10 +56,10 @@ Adapted for the current FontLab 9 API.
 
 from typing import Any
 
-import fly.ap.component_panel as component_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.component_writer as component_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.components.panel.model as component_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.components.writer as component_writer  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import qt
-import fly.ap.scripting as scripting
+import fly.ap.core.scripting as scripting
 
 QtGui = qt.QtGui
 TITLE = "Nested Components"

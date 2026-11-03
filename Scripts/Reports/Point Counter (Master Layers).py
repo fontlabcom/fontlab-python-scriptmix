@@ -22,7 +22,7 @@ Points/Nodes, explicitly correcting the original omission.
 
 def main() -> None:
     """Load the complete shared master-only workflow through public Fly lazily."""
-    from fly.ap.master_point_counts import show
+    from fly.ap.masters.point_counts.model import show
 
     show()
 

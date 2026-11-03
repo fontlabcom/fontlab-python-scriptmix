@@ -27,7 +27,7 @@ Native tab/cursor/workspace and complete font/cache preservation remain pending.
 
 def main() -> object | None:
     """Run the complete named-glyph proof action through the shared App API."""
-    from fly.ap.kerning_group_proof import run
+    from fly.ap.kerning.group_proof.model import run
 
     return run()
 

@@ -15,7 +15,7 @@ MENU = ROOT / "Scripts/Kerning/Symmetry.py"
 
 def test_menu_import_has_no_action_and_both_entry_routes_forward_once(monkeypatch):
     calls = []
-    alias = ModuleType("fly.ap.kerning_symmetry")
+    alias = ModuleType("fly.ap.kerning.symmetry.model")
     alias.show = lambda: calls.append(True) or "owned-result"
     monkeypatch.setitem(sys.modules, alias.__name__, alias)
     spec = importlib.util.spec_from_file_location("symmetry_menu", MENU)

@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Behaviour checks for three Resistenza rewrites; no native acceptance claim."""
 
+from conftest import app_module_name, app_names_used, app_namespace, check_real_app_names
 import ast
 import copy
 import importlib.util
@@ -13,7 +14,6 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
 PATHS = {
@@ -781,8 +781,8 @@ def native_world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
     Widget.registry = []
     fly, ap = ModuleType("fly"), ModuleType("fly.ap")
     fly.__path__, ap.__path__ = [], []
-    scripting = ModuleType("fly.ap.scripting")
-    completion = ModuleType("fly.ap.script_completion")
+    scripting = ModuleType("fly.ap.core.scripting")
+    completion = ModuleType("fly.ap.core.completion")
     fontlab = ModuleType("fontlab")
     items = ModuleType("items")
 
@@ -829,7 +829,7 @@ def native_world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
     fly.ap, fly.qt = ap, qt
     for name, module in {
         "fly": fly, "fly.ap": ap, "fly.qt": qt,
-        "fly.ap.scripting": scripting, "fly.ap.script_completion": completion,
+        "fly.ap.core.scripting": scripting, "fly.ap.core.completion": completion,
     }.items():  # fmt: skip
         monkeypatch.setitem(sys.modules, name, module)
     state.app = real_app(
@@ -851,7 +851,7 @@ def native_world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
     monkeypatch.setattr(
         state.app["guides"], "dependency_values", lambda package: package.records()
     )
-    ap.scripting = state.app["scripting"]
+    app_namespace(ap, scripting=state.app["scripting"])
     return state
 
 
@@ -884,9 +884,10 @@ def world(native_world: Any, monkeypatch: pytest.MonkeyPatch) -> Any:
         "glyph_copies",
         "contour_copy",
     ):
-        module = importlib.import_module(f"fontlabapp.{name}")
-        monkeypatch.setitem(sys.modules, f"fly.ap.{name}", module)
+        module = importlib.import_module(app_module_name(name))
+        monkeypatch.setitem(sys.modules, app_module_name(name).replace("fontlabapp.", "fly.ap.", 1), module)
         state.app[name] = module
+        app_namespace(sys.modules["fly"].ap, **{name: module})
     qt = sys.modules["PythonQt"]
     native = sys.modules["fontlab"]
 
@@ -1510,7 +1511,7 @@ def test_close_disconnects_all_owned_signals_before_deletion(
 
     assert (
         scripting.close_script_dialog
-        is importlib.import_module("fontlabapp.scripting").close_script_dialog
+        is importlib.import_module("fontlabapp.core.scripting").close_script_dialog
     )
     assert inspect.isfunction(scripting.close_script_dialog)
     menu = load(title)

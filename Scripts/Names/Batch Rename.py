@@ -14,7 +14,7 @@ write. A row passes only when the new name is valid, does not exist, is not the
 target of another row, and the glyph is not tied to an auto layer. The write is
 one Undo step. The rename uses the font-owned FontGate record, never
 flGlyph.fgGlyph. The scan, the refusal policy and the one-step write come from
-the shared module fly.ap.names_edit. If a write fails part way, every planned
+the shared module fly.ap.glyphs.names.model. If a write fails part way, every planned
 glyph is still notified and stamped, and the message asks you to use Edit >
 Undo.
 
@@ -41,7 +41,7 @@ FontLab samples. The edit is recorded as one Undo step.
 import re
 from typing import Any
 
-import fly.ap.names_edit as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
 TITLE = "Batch Rename"
 KEY = "names_batch_rename"
@@ -126,7 +126,7 @@ def apply_renames(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(_done, disclosure)
     return renamed
 
@@ -135,7 +135,7 @@ def apply_renames(
 def _dialog_type() -> type:
     """Build the panel class lazily. Import Qt and App code only inside FontLab."""
     from fly import ap, qt
-    from fly.ap.scripting import names_dialog_type, names_selected_names
+    from fly.ap.core.scripting import names_dialog_type, names_selected_names
 
     native = ap.fontlab
     QtCore, QtGui = qt.QtCore, qt.QtGui
@@ -277,7 +277,7 @@ def _dialog_type() -> type:
 
         def apply(self) -> None:
             """Rename the passing rows. One Undo step."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             pairs = [(old, new) for old, new, _ in self.plan]
             renamed = apply_renames(
@@ -295,7 +295,7 @@ def _dialog_type() -> type:
 
 def main() -> Any:
     """Open or replace the Batch Rename panel."""
-    from fly.ap.scripting import show_script_dialog
+    from fly.ap.core.scripting import show_script_dialog
 
     return show_script_dialog(_dialog_type(), KEY)
 

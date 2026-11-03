@@ -60,15 +60,15 @@ from collections.abc import Callable, Mapping, Sequence
 from dataclasses import replace
 from typing import Any, NamedTuple
 
-import fly.ap.alignment_zones as alignment_zones  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-import fly.ap.font_history as font_history  # noqa: PLR0402 - same reason
-import fly.ap.outline_extent as outline_extent  # noqa: PLR0402 - same reason
-import fly.ap.zone_editor as zone_editor  # noqa: PLR0402 - same reason
-import fly.ap.zone_native as zone_native  # noqa: PLR0402 - same reason
-import fly.ap.zone_rows as zone_rows  # noqa: PLR0402 - same reason
+import fly.ap.metrics.zones.model as alignment_zones  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.core.history.masters as font_history  # noqa: PLR0402 - same reason
+import fly.ap.contours.extent as outline_extent  # noqa: PLR0402 - same reason
+import fly.ap.metrics.zones.editor as zone_editor  # noqa: PLR0402 - same reason
+import fly.ap.metrics.zones.native as zone_native  # noqa: PLR0402 - same reason
+import fly.ap.metrics.zones.rows as zone_rows  # noqa: PLR0402 - same reason
 from fly import qt
-from fly.ap.scripting import font_info_dialog_type, show_script_dialog
-from fly.ap.zone_data import Zone, Zones
+from fly.ap.core.scripting import font_info_dialog_type, show_script_dialog
+from fly.ap.metrics.zones.data import Zone, Zones
 
 QtGui = qt.QtGui
 

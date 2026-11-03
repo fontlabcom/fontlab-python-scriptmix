@@ -27,9 +27,9 @@ TITLE = "Show All Layers"
 
 def run() -> int:
     """Read exact foreground layers before opening a verified new proof tab."""
-    import fly.ap.layer_selection as selection
-    import fly.ap.named_tab as tabs
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as selection
+    import fly.ap.proof.tabs.named as tabs
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
     deadline = monotonic() + 2.0
     captured = selection.capture(deadline)

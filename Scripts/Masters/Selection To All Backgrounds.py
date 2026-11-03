@@ -20,7 +20,7 @@ How it works:
     again and stops if anything changed. Then it removes the old background
     shapes, creates missing backgrounds, and adds clones of the selected
     contours. One notification covers the whole font: one Undo step in the
-    Font window. The shared module fly.ap.history decides which glyphs are
+    Font window. The shared module fly.ap.core.history.glyphs decides which glyphs are
     skipped and does the one-step write. Read-back checks every target
     background for the planned contour count and no components. A mismatch
     is reported with the Edit > Undo hint.
@@ -143,8 +143,8 @@ def make_plan() -> Plan:
     Raise NotInGlyphWindow (a ValueError) when the selection context is not a
     Glyph window. Raise ValueError for every other refusal.
     """
-    from fly.ap.layer_selection import capture
-    from fly.ap.scripting import current_package
+    from fly.ap.masters.layers.selection import capture
+    from fly.ap.core.scripting import current_package
 
     deadline = monotonic() + PLAN_SECONDS
     selection = capture(deadline)
@@ -167,7 +167,7 @@ def replan(shown: Plan) -> Plan:
     the signature: an edited source no longer matches. Raise ValueError when
     the font, the source glyph or its layer is gone.
     """
-    from fly.ap.scripting import current_package
+    from fly.ap.core.scripting import current_package
 
     changed = ValueError("The selection or the font changed. Close the panel and run again.")
     package = current_package()
@@ -196,7 +196,7 @@ def plan_for(
     Without `chosen`, take the fully selected contours. With `chosen`
     ({shape index: contour indexes}), take those contours.
     """
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import ap
 
     if layer.isMaskLayer or layer.isService:
@@ -256,7 +256,7 @@ def plan_for(
 
 def selected_clone(shape: Any, keep: Sequence[int]) -> Any:
     """Clone `shape` and remove every contour that is not in `keep`."""
-    import fly.ap.contour_copy as contour_copy
+    import fly.ap.contours.copy as contour_copy
 
     clone = shape.clone()
     for index, contour in reversed(list(enumerate(tuple(clone.contours)))):
@@ -275,9 +275,9 @@ def replace_backgrounds(shown: Plan, *, disclosure: dict[str, Any] | None = None
     the current font. Raise WrongWindow (a ValueError) before reading the font
     when the Font window of the font is not active.
     """
-    import fly.ap.edit_guards as guards
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    from fly.ap.scripting import current_package
+    import fly.ap.core.edit_guards as guards
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    from fly.ap.core.scripting import current_package
 
     if current_package(shown.signature[0]) is None:
         raise ValueError(FONT_GONE)
@@ -338,7 +338,7 @@ def replace_backgrounds(shown: Plan, *, disclosure: dict[str, Any] | None = None
         TITLE, existing, owners, mutate, operation="geometry", facts=current.facts,
         retain=retain, read_back=read_back,
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(done, disclosure)
     if done.mismatches:
         raise history.unstored_error(done.mismatches, history.UNDO_HINT)
@@ -388,9 +388,9 @@ def panel_type(QtGui: Any) -> Any:
             for button in (self.go, self.refresh_button, self.close_button):
                 row.addWidget(button)
             root.addLayout(row)
-            ap.scripting.connect_guarded(self, self.go.clicked, lambda *a: self.replace())
-            ap.scripting.connect_guarded(self, self.refresh_button.clicked, lambda *a: self.refresh())
-            ap.scripting.connect_guarded(self, self.close_button.clicked, lambda *a: self.close())
+            ap.core.scripting.connect_guarded(self, self.go.clicked, lambda *a: self.replace())
+            ap.core.scripting.connect_guarded(self, self.refresh_button.clicked, lambda *a: self.refresh())
+            ap.core.scripting.connect_guarded(self, self.close_button.clicked, lambda *a: self.close())
             self.refresh()
 
         def refresh(self) -> None:
@@ -417,7 +417,7 @@ def panel_type(QtGui: Any) -> Any:
 
         def replace(self) -> None:
             """Apply the previewed plan once."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             if self.plan is None:
                 return
@@ -434,7 +434,7 @@ def panel_type(QtGui: Any) -> Any:
 
         def closeEvent(self, event: Any) -> None:
             """Release owned signals and delete the panel."""
-            ap.scripting.close_script_dialog(self, event, KEY)
+            ap.core.scripting.close_script_dialog(self, event, KEY)
 
     return Panel
 
@@ -443,7 +443,7 @@ def main() -> Any:
     """Open the preview panel (one instance, reused through the shared registry)."""
     from fly import ap, qt
 
-    return ap.scripting.show_script_dialog(panel_type(qt.QtGui), KEY)
+    return ap.core.scripting.show_script_dialog(panel_type(qt.QtGui), KEY)
 
 
 if __name__ == "__main__":

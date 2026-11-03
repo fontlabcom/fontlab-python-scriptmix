@@ -17,7 +17,7 @@ How it works:
     temporary layers are never offered. A non-modal panel shows, per glyph,
     the master, contours and width (master now → after). Restore reads the
     font again and writes all master layers in one Undo step through the
-    shared module fly.ap.history, then reads contours, widths, anchors and
+    shared module fly.ap.core.history.glyphs, then reads contours, widths, anchors and
     deleted layers back.
 
 Why this design:
@@ -97,7 +97,7 @@ class Job:
 
 def backup_master(name: str, masters: Sequence[str]) -> str | None:
     """Resolve backup layers through the shared App rule."""
-    import fly.ap.masters as masters_api
+    import fly.ap.masters.inspect.model as masters_api
 
     return masters_api.backup_master(name, masters)
 
@@ -131,7 +131,7 @@ def contours_in(layer: Any) -> int:
 
 def clone_shape(shape: Any) -> Any:
     """Return a repaired clone of ``shape``. Raise RuntimeError on a lost contour."""
-    import fly.ap.contour_copy as contour_copy
+    import fly.ap.contours.copy as contour_copy
 
     copy = shape.clone()
     if len(copy.contours) != len(shape.contours):
@@ -208,7 +208,7 @@ def _plan(glyph: Any, backup: Any, masters: Sequence[str], reason: str) -> Job:
 
 def survey(package: Any, names: Sequence[str], chosen: str, facts: Any) -> list[Job]:
     """Plan the restore of backup ``chosen`` for every glyph in ``names``. Change nothing."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     masters = [str(m) for m in package.masters]
     jobs: list[Job] = []
@@ -233,7 +233,7 @@ def restore(jobs: Sequence[Job], delete: bool, facts: Any) -> dict[str, Any]:
     notification (fl#7641). Nothing to do returns
     zeros and makes no history call.
     """
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
     from fly import qt
 
     todo = [j for j in jobs if not j.note]
@@ -303,8 +303,8 @@ def plural(count: int, word: str) -> str:
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     from fly import qt
 
     QtGui, QtCore = qt.QtGui, qt.QtCore
@@ -447,7 +447,7 @@ def panel_type() -> type:
 
         def apply(self) -> None:
             """Plan again from the live font, then write. One Undo step."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             try:
                 jobs = self.plan()
                 facts = history.scan_auto_facts(self.font_package())
@@ -479,7 +479,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

@@ -22,10 +22,10 @@ def test_requested_complete_editor_exists(title):
 @pytest.fixture
 def remaining(editors, monkeypatch, app_sources):  # noqa: F811 - pytest fixture
     spec = importlib.util.spec_from_file_location(
-        "fontlabapp.kerning_selection", app_sources / "kerning_selection.py"
+        "fontlabapp.kerning.selection", app_sources / "kerning/selection.py"
     )
     api = importlib.util.module_from_spec(spec)
-    monkeypatch.setitem(sys.modules, "fontlabapp.kerning_selection", api)
+    monkeypatch.setitem(sys.modules, "fontlabapp.kerning.selection", api)
     spec.loader.exec_module(api)
     return editors
 
@@ -43,7 +43,7 @@ def panel(remaining, title):
     dialog.masters = list(state.package.masters)
     dialog.current_master = state.package.master
     dialog._snapshot_valid, dialog._scanned_id = True, state.package.id
-    dialog._kerning_snapshot = sys.modules["fontlabapp.kerning_batch"].snapshot_kerning(
+    dialog._kerning_snapshot = sys.modules["fontlabapp.kerning.batch"].snapshot_kerning(
         state.package
     )
     dialog.messages, dialog.enabled = [], []

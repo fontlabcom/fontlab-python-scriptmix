@@ -28,7 +28,7 @@ Benefit:
 
 from typing import Any
 
-from fly.ap.scripting import kerning_persistence_dialog_type, show_script_dialog
+from fly.ap.core.scripting import kerning_persistence_dialog_type, show_script_dialog
 
 KEY = "kerning_persistence_audit"
 

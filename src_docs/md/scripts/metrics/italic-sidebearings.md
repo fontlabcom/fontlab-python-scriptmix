@@ -40,7 +40,7 @@ after the write started says so and asks you to use Edit > Undo. It does not
 call UpdateAll (FontLab issue 8537).
 
 Shared parts: the panel, the plan model, the one-step write and the read-back
-come from the App module fly.ap.metrics_panel. This script holds its own
+come from the App module fly.ap.metrics.panel.model. This script holds its own
 maths, its planner and its controls.
 
 Benefit: you space italics with the same method as upright designs.
@@ -55,5 +55,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b954b08c30624d38138083ba93c884877b9749b83ac15ccee0e71ab75b9065ef.py)
+[Python source](../../../../.build/menu-sources/ff0b82b0fbe1c639ad7bba2e7d5327164deed5f6259c52acd564f9c30598f62f.py)
 <!--/codeinclude-->

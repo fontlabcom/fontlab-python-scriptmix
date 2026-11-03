@@ -58,7 +58,7 @@ def instance_state(values: list[Any]) -> tuple[Any, ...]:
 
 def link_rows(values: list[Any]) -> list[tuple[int, str, int, str]]:
     """List every exportable style, including missing style text and kept rows."""
-    import fly.ap.instance_style_names as rules
+    import fly.ap.fonts.style_names as rules
 
     active = [(n, i) for n, i in enumerate(values) if i.exportable]
     styles = [str(i.tsn).strip() for _, i in active if str(i.tsn).strip()]
@@ -102,8 +102,8 @@ def apply_links(
     *, report: list[str] | None = None, disclosure: dict[str, Any] | None = None,
 ) -> int:
     """Check the preview and use the Font Info notification list and order."""
-    import fly.ap.edit_guards as guards
-    import fly.ap.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.edit_guards as guards
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402
     from fly import fl
 
     package = scripting.current_package()
@@ -157,7 +157,7 @@ def apply_links(
 
 def panel_type() -> type:
     """Build the non-modal preview with the shared owned-signal shell."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
     from fly import qt
 
     gui = qt.QtGui
@@ -234,7 +234,7 @@ def panel_type() -> type:
                 count = apply_links(self.package_id, self.expected, self.proposals, report=report, disclosure=disclosure)
                 self.read_font()
                 self.last_result = {"instances": count, **disclosure}
-                import fly.ap.edit_guards as guards
+                import fly.ap.core.edit_guards as guards
                 self.status.setText(guards.append_note(f"Updated {count} instances.", self.last_result))
             except (ValueError, RuntimeError, TimeoutError) as error:
                 self.status.setText(str(error))
@@ -244,7 +244,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open one owned Style Linker panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - lazy Fly module alias
 
     try:
         return scripting.show_script_dialog(panel_type(), KEY)

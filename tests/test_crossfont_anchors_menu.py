@@ -11,7 +11,7 @@ MENU = ROOT / "Scripts/Anchors/Copy Anchors Between Fonts.py"
 
 
 def test_crossfont_anchor_menu_calls_actual_lazy_fly_facade(monkeypatch):
-    import fontlabapp.crossfont_anchors as api
+    import fontlabapp.anchors.crossfont.model as api
 
     calls = []
     monkeypatch.setattr(api, "show", lambda: calls.append("complete dialog") or "owned")

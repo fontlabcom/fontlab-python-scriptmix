@@ -9,11 +9,11 @@ from types import ModuleType
 
 def test_menu_uses_complete_shared_proof_only_when_invoked(monkeypatch):
     calls = []
-    for name in ("fly", "fly.ap", "fly.ap.show_all_layers"):
+    for name in ("fly", "fly.ap", "fly.ap.masters.layers.show_all.model"):
         module = ModuleType(name)
         module.__path__ = []
         monkeypatch.setitem(sys.modules, name, module)
-    sys.modules["fly.ap.show_all_layers"].run = lambda: calls.append("layer-proof")
+    sys.modules["fly.ap.masters.layers.show_all.model"].run = lambda: calls.append("layer-proof")
     path = Path(__file__).parents[1] / "Scripts/Proof/Show All Layers.py"
     menu = runpy.run_path(str(path), run_name="inspect")
     assert not calls

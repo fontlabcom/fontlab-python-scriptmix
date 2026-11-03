@@ -42,7 +42,7 @@ after the write started says so and asks you to use Edit > Undo. It does not
 call UpdateAll (FontLab issue 8537).
 
 Shared parts: the panel, the plan model, the one-step write and the read-back
-come from the App module fly.ap.metrics_panel. This script holds its own
+come from the App module fly.ap.metrics.panel.model. This script holds its own
 maths, its planner and its controls.
 
 Benefit: consistent spacing groups in all masters in one step, with a preview.
@@ -53,9 +53,9 @@ sample, Apache-2.0.
 
 from typing import Any
 
-import fly.ap.metrics_panel as metrics_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.metrics.panel.model as metrics_panel  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 from fly import qt
-from fly.ap.scripting import names_font_glyphs, show_script_dialog
+from fly.ap.core.scripting import names_font_glyphs, show_script_dialog
 
 QtCore, QtGui = qt.QtCore, qt.QtGui
 MetricsPanel = metrics_panel.panel_type()

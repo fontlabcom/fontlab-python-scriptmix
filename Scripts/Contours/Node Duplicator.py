@@ -33,11 +33,11 @@ import math
 from time import monotonic
 from typing import Any
 
-import fly.ap.affine as affine  # noqa: PLR0402
-import fly.ap.layer_selection as layer_selection  # noqa: PLR0402
-import fly.ap.outline_panel as outline_panel  # noqa: PLR0402
-import fly.ap.outline_writer as outline_writer  # noqa: PLR0402
-import fly.ap.scripting as scripting  # noqa: PLR0402
+import fly.ap.contours.affine as affine  # noqa: PLR0402
+import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402
+import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402
+import fly.ap.contours.writer as outline_writer  # noqa: PLR0402
+import fly.ap.core.scripting as scripting  # noqa: PLR0402
 
 TITLE, KEY = "Node Duplicator", "contours_node_duplicator"
 CAPTURE_SECONDS = 2.0
@@ -260,7 +260,7 @@ def main() -> Any:
     except (ValueError, RuntimeError, TimeoutError) as error:
         from fly import fl, qt
 
-        from fly.ap.qt_dialogs import run_standard_message_box
+        from fly.ap.qt.dialogs import run_standard_message_box
 
         run_standard_message_box(
             qt, fl.MainWindow(), TITLE, str(error), "Warning", qt.QtGui.QMessageBox.Ok

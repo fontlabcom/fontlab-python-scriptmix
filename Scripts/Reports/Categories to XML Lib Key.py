@@ -22,7 +22,7 @@ Adapted from Simon Cozens' Categories to XML lib key.py; see NOTICE.
 
 def main() -> None:
     """Use Fly for shared UI and the existing foreign category policy."""
-    from fly.ap.category_xml import show
+    from fly.ap.features.categories.model import show
     from fly.gp.glyphsapp.glyph_info import glyph_categories
 
     show(glyph_categories)

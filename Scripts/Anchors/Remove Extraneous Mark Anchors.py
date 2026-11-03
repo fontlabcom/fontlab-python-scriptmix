@@ -19,9 +19,9 @@ code was copied.
 
 from typing import Any
 
-import fly.ap.anchor_panel as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-import fly.ap.anchor_writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
-import fly.ap.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.anchors.panel.model as anchor_panel  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
+import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly submodule import avoids native attribute lookup
 
 TITLE = "Remove Extraneous Mark Anchors"
 KEY = "anchors_remove_extraneous_mark_anchors"

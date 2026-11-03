@@ -19,7 +19,7 @@ from typing import Any
 
 def main() -> Any:
     """Open the complete owned editor lazily through the shared App utility."""
-    from fly.ap.duplicate_unicodes import show
+    from fly.ap.glyphs.unicode.duplicates.model import show
 
     return show()
 

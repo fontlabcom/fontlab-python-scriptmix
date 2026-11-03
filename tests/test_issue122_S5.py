@@ -3,7 +3,7 @@
 """Seven Anchors scripts on owned FontLab/Qt fakes.
 
 The scripts run unchanged. Only the native modules `fontlab`, `FL` and
-`PythonQt` are fakes; `fly` and the App modules (`fontlabapp.scripting`,
+`PythonQt` are fakes; `fly` and the App modules (`fontlabapp.core.scripting`,
 `anchor_writer`, `anchor_panel` with its `AnchorPanel`, `history`,
 `edit_guards`) are the real installed packages.
 Offline results never prove native FontLab behaviour.
@@ -605,17 +605,17 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
 def load(name: str) -> dict[str, Any]:
     namespace = runpy.run_path(str(FOLDER / f"{name}.py"), run_name="inspection")
     scripting = namespace["scripting"]
-    assert scripting.__name__ == "fontlabapp.scripting", (
+    assert scripting.__name__ == "fontlabapp.core.scripting", (
         "the real App helper, not a copy"
     )
     assert scripting._native.__module__ == "fontlabapp", "unpatched native loader"
-    assert scripting.__file__.endswith("fontlabapp/scripting.py")
+    assert scripting.__file__.endswith("fontlabapp/core/scripting.py")
     writer, panel = namespace["anchor_writer"], namespace["anchor_panel"]
-    assert writer.__name__ == "fontlabapp.anchor_writer", "the App anchor writer"
-    assert panel.__name__ == "fontlabapp.anchor_panel", "the App panel helpers"
-    assert writer.history is sys.modules["fontlabapp.history"], "the App history commit"
+    assert writer.__name__ == "fontlabapp.anchors.writer", "the App anchor writer"
+    assert panel.__name__ == "fontlabapp.anchors.panel.model", "the App panel helpers"
+    assert writer.history is sys.modules["fontlabapp.core.history.glyphs"], "the App history commit"
     assert not hasattr(writer, "edit_guards"), "No orphaned guard import in the writer"
-    base = sys.modules["fontlabapp._anchor_panel"].AnchorPanel
+    base = sys.modules["fontlabapp.anchors.panel.ui"].AnchorPanel
     panels = [v for v in namespace.values() if isinstance(v, type) and issubclass(v, base)]
     assert panels and all(v is not base for v in panels), "one script panel on the App base"
     return namespace
@@ -1791,8 +1791,8 @@ def test_script_when_parsed_then_kernel_and_panel_base_come_from_the_app(
         if isinstance(node, ast.Import)
         for alias in node.names
     }
-    assert {"fly.ap.anchor_writer", "fly.ap.anchor_panel"} <= imported, name
-    assert not imported & {"fly.ap.history", "fly.ap.edit_guards"}, name
+    assert {"fly.ap.anchors.writer", "fly.ap.anchors.panel.model"} <= imported, name
+    assert not imported & {"fly.ap.core.history.glyphs", "fly.ap.core.edit_guards"}, name
     bases = [
         ast.unparse(base)
         for node in tree.body
@@ -1805,7 +1805,7 @@ def test_script_when_parsed_then_kernel_and_panel_base_come_from_the_app(
 
 def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> None:
     used = app_names_used([FOLDER / f"{name}.py" for name in NAMES])
-    assert set(used) == {"fly.ap.anchor_writer", "fly.ap.anchor_panel", "fly.ap.scripting"}, sorted(used)
-    assert {"Change", "Planner", "fmt", "half_up"} <= used["fly.ap.anchor_writer"]
-    assert {"panel_type", "ink", "muted"} <= used["fly.ap.anchor_panel"]
+    assert set(used) == {"fly.ap.anchors.writer", "fly.ap.anchors.panel.model", "fly.ap.core.scripting"}, sorted(used)
+    assert {"Change", "Planner", "fmt", "half_up"} <= used["fly.ap.anchors.writer"]
+    assert {"panel_type", "ink", "muted"} <= used["fly.ap.anchors.panel.model"]
     check_real_app_names(used)

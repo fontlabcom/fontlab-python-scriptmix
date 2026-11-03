@@ -18,7 +18,7 @@ def test_lazy_public_route_preserves_complete_action_result(monkeypatch):
     result = {"Light": 1, "Bold": 0}
     monkeypatch.setitem(
         sys.modules,
-        "fly.ap.kerning_cutoff",
+        "fly.ap.kerning.cutoff",
         NS(run=lambda: calls.append(True) or result),
     )
     spec = importlib.util.spec_from_file_location("owned_kerning_cutoff", MENU)

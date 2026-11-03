@@ -13,7 +13,7 @@ HOW: The script reads the selection through the shared App selection reader. It
 then scans the whole font once. For each edit it rescans, builds a plan, and
 writes the plan as one Undo step. After the write it reads each tag list back
 and compares it with the plan. The scan, the refusal policy and the one-step
-write come from the shared module fly.ap.names_edit. If a write fails part way,
+write come from the shared module fly.ap.glyphs.names.model. If a write fails part way,
 every planned glyph is still notified and stamped, and the message asks you to
 use Edit > Undo.
 
@@ -41,7 +41,7 @@ import re
 from collections.abc import Sequence
 from typing import Any
 
-import fly.ap.names_edit as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+import fly.ap.glyphs.names.model as names_edit  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
 TITLE = "Glyph Tags"
 KEY = "names_glyph_tags"
@@ -132,7 +132,7 @@ def apply_tags(
         native=native,
         stamp=qtcore.QDateTime.currentDateTimeUtc(),
     )
-    import fly.ap.edit_guards as _guards
+    import fly.ap.core.edit_guards as _guards
     _guards.disclose(_done, disclosure)
     return [entry.name for entry, _ in plans]
 
@@ -141,7 +141,7 @@ def apply_tags(
 def _dialog_type() -> type:
     """Build the panel class lazily. Import Qt and App code only inside FontLab."""
     from fly import ap, qt
-    from fly.ap.scripting import names_dialog_type, names_selected_names
+    from fly.ap.core.scripting import names_dialog_type, names_selected_names
 
     native = ap.fontlab
     QtCore, QtGui = qt.QtCore, qt.QtGui
@@ -285,7 +285,7 @@ def _dialog_type() -> type:
 
         def _write(self, add: list[str], remove: list[str], message: str) -> None:
             """Write one plan. Reload from the font afterwards. Show MESSAGE."""
-            import fly.ap.edit_guards as result_guards
+            import fly.ap.core.edit_guards as result_guards
             disclosure = {"pending_updates": (), "pending_note": ""}
             changed = apply_tags(
                 native,
@@ -317,7 +317,7 @@ def _dialog_type() -> type:
 
 def main() -> Any:
     """Open or replace the Glyph Tags panel."""
-    from fly.ap.scripting import show_script_dialog
+    from fly.ap.core.scripting import show_script_dialog
 
     return show_script_dialog(_dialog_type(), KEY)
 

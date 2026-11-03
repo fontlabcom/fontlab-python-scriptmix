@@ -13,7 +13,7 @@ and App0.2.26.dev159 or later. Adapted from Reset-Type-Studio--Glyphs-Scripts/Pa
 
 def main() -> None:
     """Open the complete original reporting workflow through shared Fly/App UI."""
-    from fly.ap.master_node_report import show
+    from fly.ap.masters.node_report.model import show
 
     show()
 

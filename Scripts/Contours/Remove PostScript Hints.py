@@ -14,10 +14,10 @@ How it works:
     the reason why the layer is skipped. A layer without hints in the chosen
     directions is listed and skipped. Apply reads the font again and calls
     the native flLayer.removeHints(horizontal, vertical) on every planned
-    layer, all in one Undo step through the shared module fly.ap.history.
+    layer, all in one Undo step through the shared module fly.ap.core.history.glyphs.
     After the write it counts the hints again and reports any layer that
     still has hints in a chosen direction. The hint counts and the panel are
-    shared (fly.ap.hints, fly.ap.selection_panel).
+    shared (fly.ap.hints.postscript, fly.ap.contours.selection.panel.model).
 
 Why this design:
     - The removal is FontLab's own call, so hints are removed exactly as the
@@ -84,7 +84,7 @@ def direction_word(horizontal: bool, vertical: bool) -> str:
 
 def layer_note(layer: Any, reason: str, horizontal: bool, vertical: bool) -> str:
     """Return why ``layer`` keeps its hints, or "" when hints will be removed."""
-    import fly.ap.hints as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.hints.postscript as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     if layer.autoLayer:
         return "auto layer (skipped)"
@@ -107,8 +107,8 @@ def survey(
     vertical: bool = True,
 ) -> list[Row]:
     """Plan every glyph/master. Change nothing. No direction raises ValueError."""
-    import fly.ap.hints as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.hints.postscript as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     if not (horizontal or vertical):
         raise ValueError("Tick at least one hint direction.")
@@ -140,8 +140,8 @@ def remove_hints(
     returns zeros and makes no history call. A refusal raises ValueError; a
     failure after history started raises RuntimeError with the Undo hint.
     """
-    import fly.ap.hints as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.history as history  # noqa: PLR0402
+    import fly.ap.hints.postscript as hints  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
 
     todo = [r for r in rows if not r.note]
     if not todo:
@@ -183,9 +183,9 @@ def remove_hints(
 
 def panel_type() -> type:
     """Build the panel class once Qt is available (inside FontLab)."""
-    import fly.ap.history as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
-    import fly.ap.layer_writer as layer_writer  # noqa: PLR0402
-    import fly.ap.selection_panel as selection_panel  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.masters.layers.writer as layer_writer  # noqa: PLR0402
+    import fly.ap.contours.selection.panel.model as selection_panel  # noqa: PLR0402
     from fly import qt
 
     QtGui = qt.QtGui
@@ -263,7 +263,7 @@ def panel_type() -> type:
 
 def main() -> Any:
     """Open the panel. A second run replaces the first panel."""
-    import fly.ap.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - fontlabapp.__getattr__ is native
 
     return scripting.show_script_dialog(panel_type(), KEY)
 

@@ -9,6 +9,7 @@ loaded over those fakes. No FontLab or Qt is imported, so none of this proves
 native behaviour.
 """
 
+from conftest import app_names_used, app_namespace, check_real_app_names
 import ast
 import importlib.util
 import inspect
@@ -21,7 +22,6 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 FOLDER = ROOT / "Scripts" / "Masters"
@@ -232,14 +232,14 @@ class World:
             CurrentFont=lambda: NS(glyphs=[NS(name=n, mark=m) for n, m in self.marks or
                                            [(g.name, 0) for g in self.glyphs]]),
         )
-        scripting = ModuleType("fly.ap.scripting")
+        scripting = ModuleType("fly.ap.core.scripting")
         scripting.current_package = lambda *a: self.package
         scripting.names_font_window_selection = lambda: list(self.font_selection)
         scripting.select_glyphs = lambda names, **kw: self.selected_calls.append((list(names), kw))
         scripting.connect_guarded = lambda dialog, signal, cb: signal.connect(cb)
         scripting.close_script_dialog = lambda *a: self.selected_calls.append(("close", a[2]))
         scripting.show_script_dialog = lambda kind, key: (key, kind)
-        selection = ModuleType("fly.ap.layer_selection")
+        selection = ModuleType("fly.ap.masters.layers.selection")
         self.capture_error: Exception | None = None
 
         def capture(deadline: float) -> Any:
@@ -248,12 +248,12 @@ class World:
             return NS(context=self.context, occurrences=self.occurrences, carriers=self.carriers)
 
         selection.capture = capture
-        qtsafe = ModuleType("fly.ap.qtsafe")
+        qtsafe = ModuleType("fly.ap.qt.safe")
         qtsafe.qt_list = lambda call, *a: list(call(*a))
         self.records: tuple = ()  # (glyph name, is auto layer, base names)
-        ap = ModuleType("fly.ap")
+        ap = app_namespace()
         ap.__path__ = []
-        ap.fontlab, ap.scripting = native, scripting
+        ap.fontlab, ap.core = native, NS(scripting=scripting)
         ap.layer_selection = selection
         qt = ModuleType("fly.qt")
         qt.QtCore = NS(QDateTime=NS(currentDateTimeUtc=lambda: "UTC-STAMP"))
@@ -262,8 +262,8 @@ class World:
         fly.__path__ = []
         fly.ap, fly.qt = ap, qt
         for name, module in {
-            "fly": fly, "fly.ap": ap, "fly.qt": qt, "fly.ap.scripting": scripting,
-            "fly.ap.layer_selection": selection, "fly.ap.qtsafe": qtsafe,
+            "fly": fly, "fly.ap": ap, "fly.qt": qt, "fly.ap.core.scripting": scripting,
+            "fly.ap.masters.layers.selection": selection, "fly.ap.qt.safe": qtsafe,
         }.items():
             monkeypatch.setitem(sys.modules, name, module)
         # The real App helpers, over the same fakes; the auto-layer facts read `records`.
@@ -274,7 +274,7 @@ class World:
             modules=APP_MODULES,
         )
         monkeypatch.setattr(self.app["guides"], "dependency_values", lambda package: tuple(self.records))
-        ap.scripting = self.app["scripting"]
+        app_namespace(ap, scripting=self.app["scripting"])
 
     def occupy(self, glyph: Glyph, layer_name: str | None = None, block: int = 0, index: int = 0) -> Any:
         layer = glyph.layer(layer_name) if layer_name else glyph.layers[0]
@@ -350,7 +350,7 @@ def test_scripts_when_parsed_then_associated_master_comes_from_the_app(title: st
     imported = {
         alias.name
         for node in ast.walk(tree)
-        if isinstance(node, ast.ImportFrom) and node.module == "fly.ap.masters"
+        if isinstance(node, ast.ImportFrom) and node.module == "fly.ap.masters.inspect.model"
         for alias in node.names
     }
     assert "associated_master" not in defined and "associated_master" in imported, title
@@ -1270,12 +1270,12 @@ def test_transform_panel_hint_when_shown_then_names_the_origin() -> None:
 def test_used_app_names_when_parsed_then_cover_the_real_modules() -> None:
     names = app_names_used([FOLDER / f"{title}.py" for title in SCRIPTS])
     assert set(names) == {
-        "fly.ap.history", "fly.ap.masters", "fly.ap.layer_selection", "fly.ap.qtsafe", "fly.ap.scripting",
-        "fly.ap.selection_panel", "fly.ap.contour_copy", "fly.ap.edit_guards",
+        "fly.ap.core.history.glyphs", "fly.ap.masters.inspect.model", "fly.ap.masters.layers.selection", "fly.ap.qt.safe", "fly.ap.core.scripting",
+        "fly.ap.contours.selection.panel.model", "fly.ap.contours.copy", "fly.ap.core.edit_guards",
     }
-    assert {"commit", "scan_auto_facts", "refusal"} <= names["fly.ap.history"]
-    assert names["fly.ap.masters"] == {"associated_master", "backup_master", "backup_layer_name", "default_suffix"}
-    assert "capture" in names["fly.ap.layer_selection"] and "qt_list" in names["fly.ap.qtsafe"]
+    assert {"commit", "scan_auto_facts", "refusal"} <= names["fly.ap.core.history.glyphs"]
+    assert names["fly.ap.masters.inspect.model"] == {"associated_master", "backup_master", "backup_layer_name", "default_suffix"}
+    assert "capture" in names["fly.ap.masters.layers.selection"] and "qt_list" in names["fly.ap.qt.safe"]
 
 
 def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> None:
@@ -1387,7 +1387,7 @@ def test_duplicate_main_when_panel_startup_fails_then_printed_not_raised(
     world: World, monkeypatch: Any, capsys: Any, app_sources: Path, error: Exception,
 ) -> None:
     module = load("Duplicate Current Layer")
-    spec = importlib.util.spec_from_file_location("c5_installed_scripting", app_sources / "scripting.py")
+    spec = importlib.util.spec_from_file_location("c5_installed_scripting", app_sources / "core/scripting.py")
     real = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(real)
     def refuse(dialog_type: Callable[[Any], Any], key: str) -> Any:
@@ -1405,7 +1405,7 @@ def test_background_component_when_replaced_then_history_is_retained(world: Worl
     mask = glyphs["c"].layer("mask.Regular")
     component = Shape([], component=True)
     mask.shapes = [component]
-    import fly.ap.history as history
+    import fly.ap.core.history.glyphs as history
     component.shapeData.builder = object()
     retained = [component, component.shapeData, component.shapeData.builder]
     real_component_history = history.component_history

@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Complete three anchor panels, native-shaped state and immutable prior54."""
 
+from conftest import app_module_name, app_source_path, register_app_module
 from _migration_history import before_contours_rename
 from menu_layout import released_bytes
 import hashlib
@@ -122,10 +123,10 @@ def anchors(components, monkeypatch, app_sources):  # noqa: F811 - imported pyte
     )
     for name in ["anchors", "_anchors_views", "_anchors_dialog"]:
         spec = importlib.util.spec_from_file_location(
-            "fontlabapp." + name, app_sources / (name + ".py")
+            app_module_name(name), app_source_path(app_sources, name)
         )
         module = importlib.util.module_from_spec(spec)
-        monkeypatch.setitem(sys.modules, "fontlabapp." + name, module)
+        register_app_module(monkeypatch, name, module)
         spec.loader.exec_module(module)
         components.modules[name] = module
     previous_font = components.font

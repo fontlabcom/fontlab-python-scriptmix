@@ -31,7 +31,7 @@ See NOTICE and additional-tools.json for complete source/license provenance.
 
 def main() -> None:
     """Run the complete selected-glyph proof through the shared App helper."""
-    from fly.ap.context_proofs import run
+    from fly.ap.proof.context import run
 
     run('oldstyle')
 
