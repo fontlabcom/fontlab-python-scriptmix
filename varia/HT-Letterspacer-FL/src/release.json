@@ -1,0 +1,7 @@
+{
+  "product": "org.fontlab.htletterspacer.gateway",
+  "name": "HT Letterspacer for FontLab 9",
+  "version": "1.0.0",
+  "python_min": [3, 9],
+  "upstream_repository": "huertatipografica/HTLetterspacer"
+}

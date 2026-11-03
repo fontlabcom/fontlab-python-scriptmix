@@ -231,3 +231,6 @@ __marimo__/
 
 # Build outputs may be an owned external-storage symlink.
 .build
+
+# Agent session state
+.omc/

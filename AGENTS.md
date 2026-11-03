@@ -2,6 +2,23 @@
 this_file: AGENTS.md
 ---
 
+<!-- workspace-handoff:2026-11-03 -->
+## Workspace documentation handoff —2026-11-03
+
+Issue 123 implementation is paused by the owner. The present request authorizes
+only documentation maintenance; preserve all source, owner edits and branch state.
+Actionable FontLab scripts with preserved original provenance. Observed canonical checkout: `main` at `3acfce2ea893`. No source integration is performed by this update.
+
+Accepted feature faed9163 restores three original node actions. Local ABannotates49 nonreserved terminal controls and preserves two refused chooser owners.
+
+Task 2records605 affected passes plus one current-source pin failure; complete ABsuite/coverage/artifact acceptance is pending.
+
+Read workspace AGENTS/DECISIONS and local project guidance before later work.
+Use direct execution unless a new request explicitly authorizes agents. Product
+work stays isolated; this docs-only request does not authorize native actions,
+installs, merges, pushes, releases, generated-site updates or legacy retirement.
+<!-- /workspace-handoff -->
+
 # Scriptmix rules
 
 Practical FontLab tools; menu scripts call shared App helpers through Fly.

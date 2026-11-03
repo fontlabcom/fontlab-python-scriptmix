@@ -2,6 +2,21 @@
 this_file: PLAN.md
 ---
 
+<!-- workspace-handoff:2026-11-03 -->
+## Current workspace handoff —2026-11-03
+
+**Implementation paused.** Actionable FontLab scripts with preserved original provenance.
+
+Observed canonical checkout: `main` at `3acfce2ea893`. No source integration is performed by this update.
+
+Accepted feature faed9163 restores three original node actions. Local ABannotates49 nonreserved terminal controls and preserves two refused chooser owners.
+
+Task 2records605 affected passes plus one current-source pin failure; complete ABsuite/coverage/artifact acceptance is pending.
+
+1. Regenerate only reviewed current-source pins; never replace frozen historical hashes to make tests green.
+2. Finish full original Reset Transform and remaining practical/native workflows; preserveD31 reserved scripts.
+<!-- /workspace-handoff -->
+
 # Report migration plan
 
 Preserve full practical report behaviour while sharing safe native access.

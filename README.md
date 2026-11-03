@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab practical scripts
 
-242 practical tools for FontLab 9: 69 sample adaptations and 173 additional
+242 practical tools for FontLab 9: 69 sample adaptations and 173 additional **Workspace handoff (2026-11-03):** Issue 123 development is paused. Accepted feature faed9163 restores three original node actions. Local ABannotates49 nonreserved terminal controls and preserves two refused chooser owners. Task 2records605 affected passes plus one current-source pin failure; complete ABsuite/coverage/artifact acceptance is pending.
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 14 one-level categories.
 

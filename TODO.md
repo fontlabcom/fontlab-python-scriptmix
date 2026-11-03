@@ -2,6 +2,17 @@
 this_file: TODO.md
 ---
 
+<!-- workspace-handoff:2026-11-03 -->
+## Current workspace handoff —2026-11-03
+
+Issue 123 is paused. Accepted feature faed9163 restores three original node actions. Local ABannotates49 nonreserved terminal controls and preserves two refused chooser owners.
+
+Task 2records605 affected passes plus one current-source pin failure; complete ABsuite/coverage/artifact acceptance is pending.
+
+- [ ] Regenerate only reviewed current-source pins; never replace frozen historical hashes to make tests green.
+- [ ] Finish full original Reset Transform and remaining practical/native workflows; preserveD31 reserved scripts.
+<!-- /workspace-handoff -->
+
 - [ ] Resolve the Reset original-workflow gaps recorded in PORTING-BACKLOG.md; dated static findings and candidate links do not establish equivalent or native-complete ports.
 
 - [x] Verify first three reports in FontLab with owned fixtures (26 checks).

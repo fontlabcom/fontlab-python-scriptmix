@@ -1,0 +1,49 @@
+HT LETTERSPACER FOR FONTLAB 9 — 1.0.0
+
+INSTALL
+1. Unzip this download.
+2. Double-click "Install HT Letterspacer.vfpy". If another app opens it,
+   use Open With > FontLab 9, or drop the file onto FontLab 9.
+
+Installation starts automatically. It downloads and verifies the tested
+original HTLetterspacer source, then installs the gateway and its scripts.
+No Terminal, Git, administrator account, Glyphs or separate Python is needed.
+FontLab 9 must use Python 3.9 or newer (tested with its Python 3.11 runtime).
+An internet connection to GitHub is required during installation.
+
+USE
+Open Scripts > HT Letterspacer > HT Letterspacer. Select glyphs, set Area,
+Depth and Overshoot, and Apply. The default window is the compact palette.
+The optional HTLS Manager exposes rules, master overrides and previews.
+If Scripts does not refresh automatically, use Refresh Scripts or reopen
+FontLab. After updating an already loaded gateway, restart FontLab once.
+
+The installer asks FontLab for its actual Scripts location, including
+redirected Windows Documents folders. It never depends on the download
+folder or a Developer checkout. You can remove this download afterward.
+
+UPDATE OR REPAIR
+Run the new installer. Existing files are verified before the new version
+becomes active. Your font files and in-font settings are not changed.
+Only HTLS-owned launchers are replaced. A previous runtime is retained.
+
+UNINSTALL
+Scripts > HT Letterspacer > Uninstall HT Letterspacer.
+The runtime is moved to a recoverable backup under FontLab's Extensions
+folder. User fonts, their configurations and other scripts are preserved.
+
+WHAT WAS TESTED
+The installer and installed runtime are tested on macOS in FontLab 9.
+The same .vfpy supports Windows through FontLab's reported data path;
+Windows path handling is tested, but a native Windows run is still required
+before advertising Windows as independently certified.
+
+The current original algorithm matches the gateway to normal rounding
+in the tested upright and italic corpus. The historical v1 standalone
+script is a different algorithm. See the included source docs/PARITY.md.
+
+LICENSE / SOURCE
+GPL-3.0. See LICENSE.txt and NOTICES.txt. The full corresponding source ZIP
+is included with this download. Original upstream source and license are
+also retained in the installed runtime. This release is a FontLab gateway,
+not an installation of the plugin into Glyphs.

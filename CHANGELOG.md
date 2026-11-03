@@ -2,6 +2,23 @@
 this_file: CHANGELOG.md
 ---
 
+<!-- workspace-handoff:2026-11-03 -->
+## 2026-11-03 — documentation handoff for November 2–3
+
+Accepted feature faed9163 restores three original node actions. Local ABannotates49 nonreserved terminal controls and preserves two refused chooser owners.
+
+Task 2records605 affected passes plus one current-source pin failure; complete ABsuite/coverage/artifact acceptance is pending.
+
+Observed canonical checkout: `main` at `3acfce2ea893`. No source integration is performed by this update.
+
+Updated the requested AGENTS/TODO/PLAN/CHANGELOG/README documentation and
+recorded the paused state. Existing project text, examples and history remain;
+no runtime source, installation, native session, branch/ref, release or site was
+changed by this documentation maintenance. Source/archive/ordinary/native and
+promotion acceptance remain separate claims. Detailed workspace evidence is
+recorded in the root CHANGELOG and retained verification reports.
+<!-- /workspace-handoff -->
+
 ## External original-source lookup repaired — 2026-11-01
 
 The historical inspector helper now honors FONTLAB_PRESERVED_ROOT before other

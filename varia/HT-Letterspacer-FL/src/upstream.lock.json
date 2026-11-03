@@ -1,0 +1,14 @@
+{
+  "url": "https://github.com/huertatipografica/HTLetterspacer",
+  "commit": "b4ad60bd36284f87edf9f2145d38bbf87b2e9909",
+  "sha256": {
+    "config.py": "52e1c94afadc2eae1757cff4bb811ec5544684deba9fa6f6178829cd3adb4a4a",
+    "rules.py": "38f36b17a5288aa417e39c3b81a8e90c584b3096985806ed1d107d312a7a5b57",
+    "engine.py": "8c19b0d4a56ba03074e1fbfa89ba2fada48630333f4e61ea4da891ad9ee8c671"
+  },
+  "archive": {
+    "url": "https://codeload.github.com/huertatipografica/HTLetterspacer/zip/b4ad60bd36284f87edf9f2145d38bbf87b2e9909",
+    "sha256": "348152b07607d428278dfb54b03ab0365faa3b44cd0f491eb21ddab73596a627",
+    "bytes": 1214985
+  }
+}
