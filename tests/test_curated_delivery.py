@@ -136,7 +136,9 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
     wanted.append("Scripts/Contours/Raise Ascender.py")
     assert len(wanted) == 120, f"NEW_TOOLS plus Raise Ascender: expected 120 paths, got {len(wanted)}"
     floors = {path: rows[path]["app_minimum"] for path in wanted}
-    assert set(floors.values()) == {"0.2.26.dev159"}, floors
+    assert set(floors.values()) == {"1.2.0"}, floors
+    recorded = {row["app_minimum"] for row in rows.values() if "app_minimum" in row}
+    assert recorded == {"1.2.0"}, recorded
 
 
 def test_app_floor_when_installed_then_every_recorded_minimum_is_satisfied():

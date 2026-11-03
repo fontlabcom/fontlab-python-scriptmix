@@ -15,7 +15,7 @@ What it does:
 
     Independently implemented from Reza Bohloul, Window/Text holder.py.
     No original body is copied or executed; original licence is undeclared.
-    See NOTICE and additional-tools.json. Requires Fly and App 0.2.26.dev159.
+    See NOTICE and additional-tools.json. Requires Fly and App 1.2.0.
 
 How it works:
     Open the shared App text-holder editor through Fly. Use its persistent
@@ -42,5 +42,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/71d78aa8a72291fc10219c74089922d72c4fea4b2db4efd9af0866d1d450f637.py)
+[Python source](../../../../.build/menu-sources/63582be433e9a80fe5819c46b24ae9b4cab3204b54765fbe70573ff6e7909fba.py)
 <!--/codeinclude-->

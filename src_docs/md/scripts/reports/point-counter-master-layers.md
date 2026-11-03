@@ -17,7 +17,7 @@ A normal fixed400×300 Point Counter window shows the complete read-only text.
 Select and copy it normally; close and rerun for a fresh snapshot. No font,
 selection, history, preferences, clipboard or Output writer is called. Empty
 selection or no masters gives the original empty report. Read failures produce
-no partial window. Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.
+no partial window. Requires App>=1.2.0 and Fly in FontLab9 Python3.11.
 
 Independently implements Reza Bohloul's Path/Point Counter.py workflow; the
 inspected source declares no licence, so its body is not redistributed. Cubic
@@ -31,5 +31,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/04db8f8c6104df53100acca9e985fb576ef45324bd421be60582ec6b5a6f9890.py)
+[Python source](../../../../.build/menu-sources/f6ab4dde19f3b42e8b95abb53c933334af0d032766fc263800eefae0155b600c.py)
 <!--/codeinclude-->

@@ -26,7 +26,7 @@ handling, source-font binding and full data/history preservation remain pending.
 
 The port repairs the source's undefined Font global with explicit current-font
 lookup. It preserves Output instead of clearing it or printing status there.
-Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random Title words.py.
+Requires App>=1.2.0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random Title words.py.
 See NOTICE and additional-tools.json for source/data/license provenance.
 
 Run **Proof > Random Title Words** from FontLab's Scripts menu.
@@ -36,5 +36,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/94a27b3207a8eae255aa803183c49a11040c6cb1eb193a70f3f0d05fe22201d9.py)
+[Python source](../../../../.build/menu-sources/f60f53a3728c3827dc80ac178a72ac273e9fbe066e85ec2f21b0451fdab3928f.py)
 <!--/codeinclude-->

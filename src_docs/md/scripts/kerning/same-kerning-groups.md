@@ -26,7 +26,7 @@ the existing tab. No font data, selection, preferences, history or Output is edi
 
 Independent implementation of Reza Bohloul's Same Kerning Groups.py workflow.
 The inspected source has no licence declaration; its body is not redistributed.
-See NOTICE and additional-tools.json. Requires Fly and App0.2.26.dev159.
+See NOTICE and additional-tools.json. Requires Fly and App1.2.0.
 Native tab/cursor/workspace and complete font/cache preservation remain pending.
 
 Run **Kerning > Same Kerning Groups** from FontLab's Scripts menu.
@@ -36,5 +36,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/16a969f51eda5bfb6a619f9963d3d03e62b14206e85ce561f41520a2a205c540.py)
+[Python source](../../../../.build/menu-sources/c3211b629d2541ddf075830cf3baecd2a45e666462d04040749edd05ecc034cf.py)
 <!--/codeinclude-->

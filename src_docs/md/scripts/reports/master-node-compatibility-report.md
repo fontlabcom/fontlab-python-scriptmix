@@ -13,7 +13,7 @@ panel offers selectable text, Refresh and Close. Failures clear the entire old
 report; no partial prefix is shown. No font, file, clipboard, Output, selection,
 history or preference writers run. Actual native getter preservation and panel
 lifetime acceptance remain pending. Requires FontLab9 Python3.11, matching Fly
-and App0.2.26.dev159 or later. Adapted from Reset-Type-Studio--Glyphs-Scripts/Paths/Compatibility Check.py; see NOTICE.
+and App1.2.0 or later. Adapted from Reset-Type-Studio--Glyphs-Scripts/Paths/Compatibility Check.py; see NOTICE.
 
 Run **Reports > Master Node Compatibility Report** from FontLab's Scripts menu.
 
@@ -22,5 +22,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f49e9fbcb1b47f9aa02d397a5f82d317a04ad724a7e5be5d050ec607c6ad4d11.py)
+[Python source](../../../../.build/menu-sources/f50554adb4b03b9b3ecabb807d9f3af05b93b30100c70dc9dd0c3bd5fcd0cd4a.py)
 <!--/codeinclude-->

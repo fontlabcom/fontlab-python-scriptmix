@@ -6,7 +6,7 @@ this_file: src_docs/md/near-miss-report.md
 
 Select glyphs in a Font or Glyph window, then choose **Scripts → Reports → Close But No Cigar**. The modeless report has selectable text, **Refresh**, and **Close**. It reports suspicions; it does not move nodes or change stem values. It preserves the Output panel.
 
-The complete [menu source](scripts/reports/close-but-no-cigar.md) delegates lazily through `fly.ap.contours.near_miss.model` to App 0.2.26.dev159 or later. Native FontLab qualification remains pending. Python 3.11 source, ordinary archive installations, independent original-contract controls and standalone Qt checks are separate evidence.
+The complete [menu source](scripts/reports/close-but-no-cigar.md) delegates lazily through `fly.ap.contours.near_miss.model` to App 1.2.0 or later. Native FontLab qualification remains pending. Python 3.11 source, ordinary archive installations, independent original-contract controls and standalone Qt checks are separate evidence.
 
 ## Selection and master scope
 

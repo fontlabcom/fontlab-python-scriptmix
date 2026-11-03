@@ -17,7 +17,7 @@ How to use: activate the Font window, select one or more glyphs, then run this
 command. The new proof lists each parent's layers in stored order, so a repeated
 selection stays repeated and compatible masters can be compared side by side.
 Nothing in the font is edited, and no existing proof tab is replaced or reused.
-Requires Fly and App 0.2.26.dev325.
+Requires Fly and App 1.2.0 or later.
 
 Run **Proof > Show All Layers** from FontLab's Scripts menu.
 
@@ -26,5 +26,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e5d7c25c3e58187afbc19cac2c0da91d0d905b5b981b9adc7b1626ce2c2fe9ff.py)
+[Python source](../../../../.build/menu-sources/df44a608bff6ec335f6768333b69dc9101237cc727ee3ca7c61e99035012929f.py)
 <!--/codeinclude-->

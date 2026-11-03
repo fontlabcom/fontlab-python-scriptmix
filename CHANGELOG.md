@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-03 — App 1.2.0 minimum
+
+- Require App 1.2.0 for its domain module layout; update current metadata,
+  script notes, tests and installation guidance, with exact script revision
+  edits and matching current hashes. Preserve past release and native evidence.
+
 ## 2026-11-03 — Issue 205 App domain imports
 
 - Migrate all 249 menu scripts and their tests/docs to canonical App domain

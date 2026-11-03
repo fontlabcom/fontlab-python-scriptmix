@@ -5,7 +5,7 @@
 Expanded codepoint groups preserve font order and prefer the first primary owner
 as keeper. Untick any row to keep its code, or tick the keeper too. Rescan resets
 the preview; Remove ticked writes only the checked assignments and refreshes.
-Requires Fly and App0.2.26.dev159. No glyph geometry or selection is edited.
+Requires Fly and App1.2.0. No glyph geometry or selection is edited.
 
 Close all Glyph editors and activate the Font window before applying. Changed sources, pending native glyph
 updates, automatic targets/dependants or surviving repeated-code lists that the

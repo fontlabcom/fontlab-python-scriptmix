@@ -14,7 +14,7 @@ Close releases only this owned nonmodal report. No font/master activation,
 selection/history/preferences/Output/clipboard writer is called. Full native
 getter preservation and PythonQt literal-text/lifetime qualification are pending.
 Adapted from Jens Kutilek's MIT source; see NOTICE and additional-tools.json.
-Requires App>=0.2.26.dev325 through Fly in FontLab Python3.11.
+Requires App>=1.2.0 through Fly in FontLab Python3.11.
 
 Run **Reports > Report Glyph Set Differences** from FontLab's Scripts menu.
 
@@ -23,5 +23,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9fc47b0a582b7a65c47c4c4eb79634b0478e9f2def17d463c92acdf78d64a1ec.py)
+[Python source](../../../../.build/menu-sources/ce7cab5519bae22fb98ad8c155b8ca7ff3c2020b13f5a69d158982f78028fb2b.py)
 <!--/codeinclude-->

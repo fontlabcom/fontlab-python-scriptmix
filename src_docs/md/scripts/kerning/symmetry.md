@@ -22,7 +22,7 @@ use Undo as its diagnostic directs.
 
 Independent implementation of Vassil Kateliev / Karandash Type Foundry's
 SG-Font-Kerning-Symmetry.py (2025), Science Gothic. Original licence undeclared;
-no original body is copied. Requires App>=0.2.26.dev159 and public Fly.
+no original body is copied. Requires App>=1.2.0 and public Fly.
 
 Run **Kerning > Symmetry** from FontLab's Scripts menu.
 
@@ -31,5 +31,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5f9f9537a58154100fc34cec5b7588522893ff897b33b4d984f5a958ae9579cd.py)
+[Python source](../../../../.build/menu-sources/8b8001c1d327737a265ddfd5aee98e0cd149e8b13097c0f1d8d6dbb41e5001ce.py)
 <!--/codeinclude-->

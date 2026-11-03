@@ -23,7 +23,7 @@ a partial report.
 Refresh replaces the entire snapshot. Select and copy text normally. Close
 removes this owned modeless panel. This presentation replaces the source's
 Output clearing; no font, history, selection, preference or Output writer is
-called. Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.
+called. Requires App>=1.2.0 and Fly in FontLab9 Python3.11.
 Adapted from Pedro Arilla's Apache-2.0 Vertical metrics reporter.py; provenance
 and license are retained in NOTICE and additional-tools.json.
 
@@ -34,5 +34,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0c9782614794ad2d0637ec551619cbb4556c5dbe1f14e70f2a9483e798ae61d7.py)
+[Python source](../../../../.build/menu-sources/19cb6ceb2b119456ddf2b30ab7666ed473b4da37d67062cf7a174fa1cc308298.py)
 <!--/codeinclude-->

@@ -9,7 +9,7 @@ What it does:
 
     Adapted independently from Pedro Arilla's Paths/Select paths.py (2018–2022).
     See NOTICE and additional-tools.json for exact source hashes and Apache terms.
-    Requires fontlab-fly and App 0.2.26.dev159.
+    Requires fontlab-fly and App 1.2.0.
 
 How it works:
     Delegate contour expansion to App. Capture original node selection on the

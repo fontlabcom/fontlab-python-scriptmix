@@ -9,7 +9,7 @@ categories:
 # Install the scripts
 
 These scripts use FontLab 9's Python 3.11 and its PythonQt binding. Install
-`fontlab-fly` and a matching `fontlab-fontlabapp>=0.2.26.dev159` artifact in FontLab's Python
+`fontlab-fly` and a matching `fontlab-fontlabapp>=1.2.0` artifact in FontLab's Python
 environment. Feature editors also need App's `fontedit` extra and native `fontpr`.
 The documentation build uses a separate Python environment.
 

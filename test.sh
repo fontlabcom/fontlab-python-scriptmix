@@ -3,7 +3,7 @@
 set -eu
 cd "$(dirname "$0")"
 # Supply a wheel/path or published requirement; never guess a development checkout.
-: "${SCRIPTMIX_APP_REQUIREMENT:?Set SCRIPTMIX_APP_REQUIREMENT to an App wheel or fontlab-fontlabapp>=0.2.26.dev159}"
+: "${SCRIPTMIX_APP_REQUIREMENT:?Set SCRIPTMIX_APP_REQUIREMENT to an App wheel or fontlab-fontlabapp>=1.2.0}"
 # Optional: space-separated extra requirements, e.g. a Fontport wheel or checkout
 # for the feature source tests (fly.fp.feature_blocks).
 extra=""

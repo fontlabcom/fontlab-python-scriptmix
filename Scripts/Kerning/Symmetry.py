@@ -16,7 +16,7 @@ use Undo as its diagnostic directs.
 
 Independent implementation of Vassil Kateliev / Karandash Type Foundry's
 SG-Font-Kerning-Symmetry.py (2025), Science Gothic. Original licence undeclared;
-no original body is copied. Requires App>=0.2.26.dev159 and public Fly.
+no original body is copied. Requires App>=1.2.0 and public Fly.
 """
 
 

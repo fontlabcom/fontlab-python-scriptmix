@@ -17,7 +17,7 @@ The complete candidate uses direct pin removals and one final layer/glyph
 notification. Unsafe automatic dependants and changed sources refuse before
 history. A partial native failure is diagnosed for Edit > Undo; pins are never
 reconstructed as rollback. Refresh keeps the original opening selection.
-Requires Fly and App 0.2.26.dev159. Native PythonQt/full-font, genuine
+Requires Fly and App 1.2.0. Native PythonQt/full-font, genuine
 Undo/Redo, dirty state, saved/reopened preservation and lifetime remain pending.
 
 Run **Anchors > Duplicates Finder** from FontLab's Scripts menu.
@@ -27,5 +27,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/48b2c807c2d7f70f8716c04b2145dd85e365e754aa03a77a6fd468a49421da3e.py)
+[Python source](../../../../.build/menu-sources/ef2073682b849a48b338861fe47978e705cfa037667b7d378a52afd502766937.py)
 <!--/codeinclude-->

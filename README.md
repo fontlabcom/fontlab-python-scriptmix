@@ -29,12 +29,10 @@ to FontLab. Some tools use the App `fontui` extra. Trial Font Maker needs the
 public `fontTools` package; FontLab's private namespace does not supply it.
 Glyport supplies Glyphs-specific compatibility and category metadata where used.
 
-Every recorded `app_minimum` uses the conservative source baseline
-`0.2.26.dev159`, matching the genuine App development-version lineage. This is
-not an earliest historical per-tool minimum or proof of full compatibility.
-The tested App159 artifact still lacks the pending zone handoff, and the full
-Scriptmix gate remains failing. Native workflow acceptance and promotion remain
-open. Historical per-tool labels are retained in Git history and old receipts.
+The current App floor is `fontlab-fontlabapp>=1.2.0`: these scripts import
+the domain module layout introduced in App 1.2.0. Use matching 1.2.0
+package-set releases of Fly, App and Fontport. Native workflow acceptance
+and promotion remain separate from the source dependency floor.
 
 Editable installation into FontLab is owner-managed. Do not install packages
 into FontLab, replace its Qt bindings or change its Python site-packages from
@@ -136,8 +134,8 @@ outputs may be refreshed. To provision an isolated dependency set instead,
 `test.sh` accepts explicit App and Fontport wheels or checkouts:
 
 ```sh
-export SCRIPTMIX_APP_REQUIREMENT="/absolute/path/to/fontlab_fontlabapp-0.2.26.dev159+gb1e905b61-py3-none-any.whl"
-export SCRIPTMIX_EXTRA_REQUIREMENTS="/absolute/path/to/fontlab_fontport-1.0.3.dev19+g3ddbd097f-py3-none-any.whl"
+export SCRIPTMIX_APP_REQUIREMENT="/absolute/path/to/fontlab_fontlabapp-1.2.0-py3-none-any.whl"
+export SCRIPTMIX_EXTRA_REQUIREMENTS="/absolute/path/to/fontlab_fontport-1.2.0-py3-none-any.whl"
 export SCRIPTMIX_PYTHON="cpython-3.11-macos-aarch64-none"
 sh test.sh -p no:cacheprovider
 ```

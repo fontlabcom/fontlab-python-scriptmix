@@ -11,7 +11,7 @@ How to use: activate the Font window, select one or more glyphs, then run this
 command. The new proof lists each parent's layers in stored order, so a repeated
 selection stays repeated and compatible masters can be compared side by side.
 Nothing in the font is edited, and no existing proof tab is replaced or reused.
-Requires Fly and App 0.2.26.dev325.
+Requires Fly and App 1.2.0 or later.
 """
 
 from typing import Any

@@ -24,7 +24,7 @@ shape activation. No font geometry, kerning, history, preference or Output write
 is called. The source's undefined Font global is repaired by explicit lookup;
 its Output clearing/printing is omitted to preserve the user's existing Output.
 
-Requires App>=0.2.26.dev159 and Fly with FontLab Python3.11.
+Requires App>=1.2.0 and Fly with FontLab Python3.11.
 Adapted from Pedro Arilla's Apache-2.0 Kerning/KernKing.py. Complete original and
 proof-text credits, resource hashes and licence are in NOTICE/additional-tools.json.
 
@@ -35,5 +35,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/944f173364b38a46517e81edf7837182d5bf9f9ccd711d25595eb15f2bef8731.py)
+[Python source](../../../../.build/menu-sources/5074479a3550de54222901716ac54a19e21c6c78a9d2876f0cc6d692e6ee15e2.py)
 <!--/codeinclude-->

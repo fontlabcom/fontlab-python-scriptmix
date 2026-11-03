@@ -11,7 +11,7 @@ order, and show every per-curve finding in an owned selectable result window.
 No matches gives the complete original diagnosis. Close and rerun for a fresh
 scan. No font, selection, history, clipboard, preferences or Output writer runs.
 
-Requires App[fontui]>=0.2.26.dev159 and public Fly in FontLab9 Python3.11.
+Requires App[fontui]>=1.2.0 and public Fly in FontLab9 Python3.11.
 fontTools analytic intersections use ascending curve t for first-result choice,
 an explicit adaptation of unspecified Glyphs ordering. Exact endpoints and
 finite-line bounds use the shared geometry code; coincident intersections follow

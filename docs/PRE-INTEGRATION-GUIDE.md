@@ -4,12 +4,12 @@ this_file: docs/PRE-INTEGRATION-GUIDE.md
 
 ## Current source requirements
 
-Current menu metadata uses App `0.2.26.dev159` as a conservative source baseline,
-with matching Fly and Fontport artifacts. Use the current README installation
-and testing instructions with genuine versions. Missing-zone integration, the
-full failing suite and native qualification remain open. The per-feature version
-labels, old setup recipes and release acceptance records below are historical;
-they are not installation instructions or acceptance for the current menu.
+Current scripts require `fontlab-fontlabapp>=1.2.0` because they import the
+domain module layout introduced in App 1.2.0. Use matching 1.2.0 package-set
+artifacts and the current README installation and testing instructions. Native
+qualification remains separate. The per-feature version labels, old setup
+recipes and release acceptance records below are historical; they are not
+installation instructions or acceptance for the current menu.
 
 
 # fontlab-python-scriptmix

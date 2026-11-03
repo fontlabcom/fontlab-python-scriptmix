@@ -1858,7 +1858,7 @@
     {
       "destination": "Scripts/Anchors/Duplicates Finder.py",
       "historical_sha256": "96c167085b638162e90d2b74755056a19021f1517ea933c8361c24650ab8ef84",
-      "current_sha256": "48b2c807c2d7f70f8716c04b2145dd85e365e754aa03a77a6fd468a49421da3e",
+      "current_sha256": "ef2073682b849a48b338861fe47978e705cfa037667b7d378a52afd502766937",
       "source_sha256": "7cda723f2e4499930aa49d701bb1dd1cca703bc92de44e5ec2a18876ff130f71",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -1866,6 +1866,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.anchor_duplicates import show\n",
           "current": "    from fly.ap.anchors.duplicates.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires Fly and App 0.2.26.dev159. Native PythonQt/full-font, genuine\n",
+          "current": "Requires Fly and App 1.2.0. Native PythonQt/full-font, genuine\n"
         }
       ]
     },
@@ -3028,7 +3033,7 @@
     {
       "destination": "Scripts/Contours/Select Contours.py",
       "historical_sha256": "30b78148e9049c09c8144d9a01dcaec3f51e428d525ed60756b78cad81c2e1cb",
-      "current_sha256": "bd1b0643dbb4754812638c0e87d0f7d8e9c74f3278cd170a8ebc5212aae3af4c",
+      "current_sha256": "1b201dc96e6633d1314879e43f01e3a1e544afee69bd8686e94e3a53f30f70c4",
       "source_sha256": "d6814436e871cc1e80668d31bb3b15428107d5fd6cbdd3976d74643b3a3a2840",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3036,13 +3041,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.contour_selection import select_contours\n",
           "current": "    from fly.ap.contours.selection.model import select_contours\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "    Requires fontlab-fly and App 0.2.26.dev159.\n",
+          "current": "    Requires fontlab-fly and App 1.2.0.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Contours/Select Partial Contours.py",
       "historical_sha256": "38411a794d81792986729e5e479e3403d980f5933ce19c9462379f1d72f977f0",
-      "current_sha256": "0eeed3340642390d788fc12913bf6262409ddb43d673c4afb2a05855e2689d54",
+      "current_sha256": "6ade10ea8229d5fa4db3947f8ba4eee84cd29043800d2f9c603f7d6cdb6317ac",
       "source_sha256": "082e445b23e6085ace77ebc30ecb4025dc0210185d1646b854129630158dc444",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3050,13 +3060,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.contour_selection import select_partial_contours\n",
           "current": "    from fly.ap.contours.selection.model import select_partial_contours\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "    terms. Requires fontlab-fly and App 0.2.26.dev159.\n",
+          "current": "    terms. Requires fontlab-fly and App 1.2.0.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Contours/Select Small Contours.py",
       "historical_sha256": "a0da6134d7e5809512e64a5101d3ef6659759b91c0969dfc9ab0f51707909492",
-      "current_sha256": "ac4590d64718e02b74d05d8094b2e784bd236e15f730fd61afd01657763b58e3",
+      "current_sha256": "b7ba4a2b039ca9ed0a48940da123493b50648fec6048cd5e88bb58b1d5c2c56c",
       "source_sha256": "fe88203e787c5a5e9ada86c16b25e4f9da0a1afe29391a197b26b67fa8a15c20",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3064,6 +3079,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.contour_selection import show_small_contours\n",
           "current": "    from fly.ap.contours.selection.model import show_small_contours\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires fontlab-fly and fontlab-fontlabapp[fontui] 0.2.26.dev159.\n",
+          "current": "Requires fontlab-fly and fontlab-fontlabapp[fontui] 1.2.0.\n"
         }
       ]
     },
@@ -3545,7 +3565,7 @@
     {
       "destination": "Scripts/Kerning/Kerning Cutoff.py",
       "historical_sha256": "c76ca3e306df6f6bc71eed0ae7234d2c308d8b8d5a39d025564bdb86fbae5227",
-      "current_sha256": "1fa6a644969faeb032ab5b441fa0a4dc5bad0929b9d830276ae7c251b0db24b7",
+      "current_sha256": "a0b0e2fbe7c2f6c7cb82c63f8406a0b6ac926f627a1aaf53b24ce0ddcaeefc5d",
       "source_sha256": "b77e6799e748121e751f63ad01e8c0d5da881a71c4378684c92d45626636f8d5",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3553,6 +3573,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.kerning_cutoff import run\n",
           "current": "    from fly.ap.kerning.cutoff import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires Fontlabapp >=0.2.26.dev159 and Fly in FontLab9 Python3.11. The shared\n",
+          "current": "Requires Fontlabapp >=1.2.0 and Fly in FontLab9 Python3.11. The shared\n"
         }
       ]
     },
@@ -3587,7 +3612,7 @@
     {
       "destination": "Scripts/Kerning/Same Kerning Groups.py",
       "historical_sha256": "b929c1ca588c43c37cdc17bb61eba2279fef25c085b259c69ee761ffa53d7106",
-      "current_sha256": "16a969f51eda5bfb6a619f9963d3d03e62b14206e85ce561f41520a2a205c540",
+      "current_sha256": "c3211b629d2541ddf075830cf3baecd2a45e666462d04040749edd05ecc034cf",
       "source_sha256": "fc2e6b144d53388b7105498f9debf55edf2c65986c3f559683b106623fbb9544",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3595,6 +3620,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.kerning_group_proof import run\n",
           "current": "    from fly.ap.kerning.group_proof.model import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "See NOTICE and additional-tools.json. Requires Fly and App0.2.26.dev159.\n",
+          "current": "See NOTICE and additional-tools.json. Requires Fly and App1.2.0.\n"
         }
       ]
     },
@@ -3640,7 +3670,7 @@
     {
       "destination": "Scripts/Kerning/Symmetry.py",
       "historical_sha256": "1de7a5b93646f95d46925084f7a55aa0fdf8d9b571177f4696c438268c8f02af",
-      "current_sha256": "5f9f9537a58154100fc34cec5b7588522893ff897b33b4d984f5a958ae9579cd",
+      "current_sha256": "8b8001c1d327737a265ddfd5aee98e0cd149e8b13097c0f1d8d6dbb41e5001ce",
       "source_sha256": "6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3648,6 +3678,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.kerning_symmetry import show\n",
           "current": "    from fly.ap.kerning.symmetry.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "no original body is copied. Requires App>=0.2.26.dev159 and public Fly.\n",
+          "current": "no original body is copied. Requires App>=1.2.0 and public Fly.\n"
         }
       ]
     },
@@ -4426,7 +4461,7 @@
     {
       "destination": "Scripts/Metrics/Check Tabular Widths.py",
       "historical_sha256": "7ee3a883e5019ae68b03077a330b3255f53d6433f22498b75ea1dca0d4c9487d",
-      "current_sha256": "4b73b692e8b9efca6c8c2fe2c48e89734307c1d320eb94c29c76ea42576915b0",
+      "current_sha256": "12038e43a8cdc63c5fc5a7fbf68f8dcaa2db65f5fd56aeb0944df1ea6d34991f",
       "source_sha256": "6556dd53ce9f45cfb770b1744077ba26ab230805cd65eaf4dca518c2a3313f44",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -4434,6 +4469,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.scripting import show_script_dialog, tabular_width_dialog_type\n",
           "current": "    from fly.ap.core.scripting import show_script_dialog, tabular_width_dialog_type\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and fontlab-fly in FontLab9\n",
+          "current": "Requires App>=1.2.0 and fontlab-fly in FontLab9\n"
         }
       ]
     },
@@ -4734,7 +4774,7 @@
     {
       "destination": "Scripts/Names/Duplicate Unicodes.py",
       "historical_sha256": "48b1b56cc3efd4bb9b1c47ae42767bcf40bbae1a47750f01dc31c422a7a47812",
-      "current_sha256": "5e87735df8fda3d1b40f7f5e37c98242589b6a6aa64f13e5c5d06e5d8337e74c",
+      "current_sha256": "332e2442f99e8918c6c1fa3b8040443fb5b6c61f21952bf597347510ad7c8148",
       "source_sha256": "b42ab5f9a4bead19a4a0a042d9fe9fcffbfadfe650da6551b4f9ea3819ba865e",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -4742,6 +4782,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.duplicate_unicodes import show\n",
           "current": "    from fly.ap.glyphs.unicode.duplicates.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires Fly and App0.2.26.dev159. No glyph geometry or selection is edited.\n",
+          "current": "Requires Fly and App1.2.0. No glyph geometry or selection is edited.\n"
         }
       ]
     },
@@ -4865,7 +4910,7 @@
     {
       "destination": "Scripts/Names/Select Different Mark Colours.py",
       "historical_sha256": "b7ae9a80df16bdf93ab885dce5e52a17edd1ac518931673bb77283563689070c",
-      "current_sha256": "05f14b34fc1243947ff2b3b2e258f4994d0d2c51f91a3ec6d1d6f9deb4613bb5",
+      "current_sha256": "42fe45daf79850eb223950e6b440f86773a9849a8f4e622d6177caa422842770",
       "source_sha256": "cd7e0618b70cc82ef6b0e8b67f575fd12a4f4660070bab49bd01f3cbccad852c",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -4873,6 +4918,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.mark_colour_selection import select_different_mark_colours\n",
           "current": "    from fly.ap.glyphs.selection.mark_colors import select_different_mark_colours\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "source identity in additional-tools.json. Requires Fly and App 0.2.26.dev332.\n",
+          "current": "source identity in additional-tools.json. Requires Fly and App 1.2.0.\n"
         }
       ]
     },
@@ -5011,7 +5061,7 @@
     {
       "destination": "Scripts/Proof/Bracket Layers and Components.py",
       "historical_sha256": "193932cf6805cfa1aeb8d0fb800a4a838af10df8edb444b411eb631d7814a2e0",
-      "current_sha256": "146f3c1b46ef0c6e2658f8a42e8f5a53bda1621f5956d536753d2a5d988fa41a",
+      "current_sha256": "cea59f6bba23b2bce78e7e2dee8ee026a03137f6d24599ba73781d32395e740f",
       "source_sha256": "7f1788a0302d1df3640775b9b1ad1b5ac600a1412b47afae94556b732e5578c8",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5019,13 +5069,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.bracket_layers import open_tab\n",
           "current": "    from fly.ap.masters.layers.brackets.model import open_tab\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and FontLab9 Python3.11 with fontlab-fly.\n",
+          "current": "Requires App>=1.2.0 and FontLab9 Python3.11 with fontlab-fly.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Glyphs Between Lining Figures.py",
       "historical_sha256": "196192a7858d2f2359d69bf91c0708a589615e27dcb53850f72a13db81034d42",
-      "current_sha256": "17c4318c374728e16d432a1a0096a81a67de8e360448c6ab8549f4cbcdcbf2a0",
+      "current_sha256": "5d442ace5ab15ddd00997721648c1c0abfc5fd179600ef63186778be8beb1248",
       "source_sha256": "f1710f49eea4f8c7dd1679fadba44b7bd72f6c8d15cedfa39c6ead95f708fe77",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5033,13 +5088,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.context_proofs import run\n",
           "current": "    from fly.ap.proof.context import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Glyphs Between Lowercase.py",
       "historical_sha256": "8318e61f74c4d03baa7db7f153444027e3304bd25b723ca6d47c395cd6d7b143",
-      "current_sha256": "c0e503018c8848030151a9230070a1914fb45075239b2897cb5d4e4d3519c30c",
+      "current_sha256": "13201ca8c7d7b15b16724578506d826adcbbf1fcbc77b36dcdee7d9a369081e3",
       "source_sha256": "bc188daa1f6942893bea903bff5771500ae60afb091f0ce6ea3dedb5bd6f3ac0",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5047,13 +5107,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.context_proofs import run\n",
           "current": "    from fly.ap.proof.context import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Glyphs Between Oldstyle Figures.py",
       "historical_sha256": "2fcc6177e60560e458de31293dac2b7b977c2a7ee0a2d32c8587454b2a65f788",
-      "current_sha256": "0b08d1c874b851d51d645a9f39bdc383ff79eba843f160d94037fe0cb589bbaa",
+      "current_sha256": "803d6dcf30d8c5a50696c26713a99410e683b863dc2ac50cc2ace10af0f67124",
       "source_sha256": "f650332c064710b6e82d64b7fa0c8b9eda9e47b302411f6f9f0c22903ddf2594",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5061,13 +5126,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.context_proofs import run\n",
           "current": "    from fly.ap.proof.context import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Glyphs Between Uppercase.py",
       "historical_sha256": "d86fcbf841ffa593e290e2cff377dbc6964cd7b5e4a95c15ad74450e48d4d00e",
-      "current_sha256": "1fc9176afafd8e4d7d45d91fc3ddcf97375b7f40d603259299ea584aab399714",
+      "current_sha256": "d7ec7d19f195a89a9a71c7ffd9f9e43b003ca72278c4f8fa439d74faaebc15a2",
       "source_sha256": "84ab0fa1b3f23fe383353fe716e55ca1a86873cbfe2af44c38db5f9d50a81e41",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5075,13 +5145,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.context_proofs import run\n",
           "current": "    from fly.ap.proof.context import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Glyphs Surrounded by H.py",
       "historical_sha256": "490f93dccfdcc8d0dfe58017614686e174e87fec02f1b4aebfe59721d2d3d8a9",
-      "current_sha256": "759f269c14c2ecc20e2a1224255a97097d32f8431993f06ce18c97a88ec0d106",
+      "current_sha256": "6632c375ec7e03686e0f60545ce2ebc641c33e81937f6da8021498cd237ff0ba",
       "source_sha256": "1e30198199ca8e9998e413de0abebf80e27c176636d423f360721a054c6a431b",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5089,13 +5164,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.context_proofs import run\n",
           "current": "    from fly.ap.proof.context import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Glyphs Surrounded by HHOHH.py",
       "historical_sha256": "6b27df5c1cd3be9817e22abea14a71479abac0a8aea138643e5101e2f3e4e2d9",
-      "current_sha256": "f17245ba6a8bb255f1931a538aabf923a0c0ae02fcf029156089d79a97387143",
+      "current_sha256": "354314573cda22d30675da6fbe36a44881d56c62331df3bd28b46ea7c599cfdb",
       "source_sha256": "ad4e98cf1629b3c4be432d1ce6541fa354dbc3ce28536dee858f0837ad12f9d9",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5103,13 +5183,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.context_proofs import run\n",
           "current": "    from fly.ap.proof.context import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Glyphs Surrounded by I.py",
       "historical_sha256": "4bea801587c5c86c8c813baf3bcb5b62a1bfd52f2a41cf4c6b9e2ea0e7297534",
-      "current_sha256": "e5c7ebec57d29877011a266ff7bad00b01b8e8cb0d8884112bf5534a30dc315b",
+      "current_sha256": "f070ee75a03c556d1c3ca6a10ddf960c98c79eed3c36c529654181663d595950",
       "source_sha256": "c73df32e26b5c370e0bef8bf18ddfb4d45e91028b482d8f4477c263614eadb0e",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5117,13 +5202,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.context_proofs import run\n",
           "current": "    from fly.ap.proof.context import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Glyphs Surrounded by Nnonn.py",
       "historical_sha256": "c4f65f1b6b09ecd1296b970f9e705cbd310877870bcfe0fa274f960b8599087f",
-      "current_sha256": "f295badbe2d3511d41f30de89c5f05981fac42c1fd7b0a2d83ced279c8b91828",
+      "current_sha256": "74d1f14969eb63bb691c894d50c63324412ec6e716fff8d8f86927f3b41c452c",
       "source_sha256": "bc192f96c06f4b598e739b729405c3d933e2dcc0dd73e89b3409d625ef5708b4",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5131,13 +5221,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.context_proofs import run\n",
           "current": "    from fly.ap.proof.context import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Highest & Lowest Glyphs.py",
       "historical_sha256": "7a774534a4c6905a5123fdb6c15ba9b39d81947d8de8dc7b6422827c58e675dc",
-      "current_sha256": "7039c606c6875ae817e5c4e4492550f2ec81efe6a1c30c09156594cf0ae9014c",
+      "current_sha256": "9635679e4e0b0dbff2c2631a76bb78713d6aa1f5fac37e974a9bde67f786fa6b",
       "source_sha256": "1356cc33cdb9fa8ef4676fffe376558c9ce72647ae94dfd0fa075bcc5c9999f4",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5145,13 +5240,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.extrema_proof import show_all\n",
           "current": "    from fly.ap.proof.extrema.model import show_all\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9/Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9/Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Hoefler Lowercase.py",
       "historical_sha256": "3e0ea88318e69f9b84561a95d727c58f33eb4846baa4fd4d7e0aa86fae35f08f",
-      "current_sha256": "a0b975eed6698e031bf992f8f035231b853c56cb2810f2adae3d2b8d11ebf148",
+      "current_sha256": "b405f57793af421b7ba3f19d2c94096a6db0901de46940423cb0e4a0ca4f7a21",
       "source_sha256": "fb4c261c58395e4e7a2bf847324793e25adb05e19b6b628d04f64af84e5fddf6",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5159,13 +5259,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.kerning_proofs import run\n",
           "current": "    from fly.ap.kerning.proofs import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly with FontLab Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly with FontLab Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Hoefler Uppercase.py",
       "historical_sha256": "f83fc7f395dda186908f6ef5be938013abdd61fb85aa1f1cc1e0c5df3f0ca9da",
-      "current_sha256": "ebfee58bbab73763b13703cac8e3345e600784a51d3b1e7c53c829a4c5e92887",
+      "current_sha256": "430c448e3fb5e747d1dd43e9d35bfc54cf2da67e96e7b61b7e67149f116ee9f7",
       "source_sha256": "974e766b7ce3de73f05cd2b88e2ebf74dffd9372b3ffa3ed4e9c3d0f1de0641c",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5173,13 +5278,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.kerning_proofs import run\n",
           "current": "    from fly.ap.kerning.proofs import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly with FontLab Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly with FontLab Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/KernKing.py",
       "historical_sha256": "39e2d446595ca8c5b1d815bff67d921d428be341b212ad8d0bf88f0cfd130050",
-      "current_sha256": "944f173364b38a46517e81edf7837182d5bf9f9ccd711d25595eb15f2bef8731",
+      "current_sha256": "5074479a3550de54222901716ac54a19e21c6c78a9d2876f0cc6d692e6ee15e2",
       "source_sha256": "eb57f380919efb42c5cd7d88eb321da0ed5b08d3b43717b309b9187b15a5b857",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5187,13 +5297,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.kerning_proofs import run\n",
           "current": "    from fly.ap.kerning.proofs import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly with FontLab Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly with FontLab Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/KernSym.py",
       "historical_sha256": "828da9db071c7150e0942c57e0c9e55c86024672a6e5205e0da340960dfc3aef",
-      "current_sha256": "c231f6b10351426a06eb846320d8a2289b41cdc3e988d7ad1eee0c8a4b9f2e9c",
+      "current_sha256": "793716f7677b3cd1c1b717a3e5cee8d793042fbf578191ba0914d2e7d61f463a",
       "source_sha256": "b9bdc90cfbb887724b53159e00614b78b75ca68c97c7eca2697af087b159df95",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5201,13 +5316,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.kerning_proofs import run\n",
           "current": "    from fly.ap.kerning.proofs import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly with FontLab Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly with FontLab Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Random Lowercase Nontext.py",
       "historical_sha256": "ae85f58dc5a9a98415439bc16247527ca4fcd91e4f6f02313f54dc11e1e14786",
-      "current_sha256": "e82c12e843f85f6d9be13e64dc7da1f4da3ccf44a60fe72da4b2990a955d025c",
+      "current_sha256": "cff78b81474d97f95f5ec30e67a12b2800fac265833b337576e9ad3a0fc6d8d5",
       "source_sha256": "650f3a8698238d5c233c5ddbc4480ad12ebfffad9530e9ff553c2a6b7f95774d",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5215,13 +5335,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.random_proof import generate\n    from fly.ap.scripting import current_package\n    from fly.ap.text_tab import open_text_tab\n",
           "current": "    from fly.ap.proof.random import generate\n    from fly.ap.core.scripting import current_package\n    from fly.ap.proof.tabs.text import open_text_tab\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random lowercase non-text.py.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random lowercase non-text.py.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Random Lowercase Words.py",
       "historical_sha256": "505aa0881c0c14fc68a0e27739f2be562151919ebe2962a8d9b86becc8e75f8f",
-      "current_sha256": "1c1b5a17b12257a0eedfbe847ff0e4a23a9c37c9a1076e341af0e8ce13eb0ac3",
+      "current_sha256": "738d900f6f20f6fa850b5f36048c07520e4e06163ddc9fe75ad8e728664da9c3",
       "source_sha256": "1fb400ece636df93f3f8737d4f2da96951316351b3c8db133c4723addfdada40",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5229,13 +5354,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.random_proof import generate\n    from fly.ap.scripting import current_package\n    from fly.ap.text_tab import open_text_tab\n",
           "current": "    from fly.ap.proof.random import generate\n    from fly.ap.core.scripting import current_package\n    from fly.ap.proof.tabs.text import open_text_tab\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random lowercase words.py.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random lowercase words.py.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Random Numbers.py",
       "historical_sha256": "558771f1e3765bfb4f85a5f22c6c7d8a7943fe4cfba662b40b73d1e1b3fed3df",
-      "current_sha256": "7cd6027c9e8ab42741d0cbefee17b0fd4f69217314ea3611bc559ad452473644",
+      "current_sha256": "8e6522ae2d0d07be74f92528b8b61123359b8582520b4edfe2eba883f03e280a",
       "source_sha256": "9d014b11d4ba70487c26980b55270b61a33e41fc808cea3f1f5f050a57f989a4",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5243,13 +5373,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.random_proof import generate\n    from fly.ap.scripting import current_package\n    from fly.ap.text_tab import open_text_tab\n",
           "current": "    from fly.ap.proof.random import generate\n    from fly.ap.core.scripting import current_package\n    from fly.ap.proof.tabs.text import open_text_tab\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random 123.py.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random 123.py.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Random Title Nontext.py",
       "historical_sha256": "0bb7637b351916aef0f4106e9045030af0d4d1a161de178637248656ed678a2d",
-      "current_sha256": "f5a8e77e6897222ffcd72829991c80d531a517af7b7d07a47c09a0d867af8f18",
+      "current_sha256": "f7562404619b1331ce24816740a3cebc496a39b123e7d0feba072909c78c8ef0",
       "source_sha256": "4aa509831baa1955d59b684082499ac068ee3afbc4d90dc328318303677223a2",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5257,13 +5392,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.random_proof import generate\n    from fly.ap.scripting import current_package\n    from fly.ap.text_tab import open_text_tab\n",
           "current": "    from fly.ap.proof.random import generate\n    from fly.ap.core.scripting import current_package\n    from fly.ap.proof.tabs.text import open_text_tab\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random Title non-text.py.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random Title non-text.py.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Random Title Words.py",
       "historical_sha256": "0146c24ca847de4fb70520e078b9e180fcd7038f25fb10a6a4d31cf8ed34ef09",
-      "current_sha256": "94a27b3207a8eae255aa803183c49a11040c6cb1eb193a70f3f0d05fe22201d9",
+      "current_sha256": "f60f53a3728c3827dc80ac178a72ac273e9fbe066e85ec2f21b0451fdab3928f",
       "source_sha256": "961a4df1780d6f30676c7064e6c313ddf5da3005065bcc1f7f929901dd500203",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5271,13 +5411,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.random_proof import generate\n    from fly.ap.scripting import current_package\n    from fly.ap.text_tab import open_text_tab\n",
           "current": "    from fly.ap.proof.random import generate\n    from fly.ap.core.scripting import current_package\n    from fly.ap.proof.tabs.text import open_text_tab\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random Title words.py.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random Title words.py.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Random Uppercase Nontext.py",
       "historical_sha256": "4de453a380540682b87f6c779cac2d1043c5d523f334a204ecb30656574543c9",
-      "current_sha256": "740b2f0b7411813478235b9871810dc47f5d9d3255218ee15be540790634df9a",
+      "current_sha256": "2b95cbdb7ba90741c8fdbeeced3e6d8c128323cbab7721588f956d6e6e097a10",
       "source_sha256": "8fcdb9f5cee991ea7929ab2c11e7b2755f157a68348e0608fa29258bdd575ef2",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5285,13 +5430,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.random_proof import generate\n    from fly.ap.scripting import current_package\n    from fly.ap.text_tab import open_text_tab\n",
           "current": "    from fly.ap.proof.random import generate\n    from fly.ap.core.scripting import current_package\n    from fly.ap.proof.tabs.text import open_text_tab\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random UPPERCASE non-text.py.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random UPPERCASE non-text.py.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Random Uppercase Words.py",
       "historical_sha256": "bca6a0f7efe597e961a2ad7950448ea684d1da45806f555735a67f05132be22d",
-      "current_sha256": "9cb477a1cd91610bc6b12c29ef3cfa31766675bcfe9dd761a52ffb3e8a043d56",
+      "current_sha256": "10bf14742502136dd2c12639386a7c651d2d0d385e8dc7664b807d0aac451669",
       "source_sha256": "c54795c526aa5a3452d3aa805afac5cae6266c5603bd9e499fd2b773a7212f3c",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5299,6 +5449,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.random_proof import generate\n    from fly.ap.scripting import current_package\n    from fly.ap.text_tab import open_text_tab\n",
           "current": "    from fly.ap.proof.random import generate\n    from fly.ap.core.scripting import current_package\n    from fly.ap.proof.tabs.text import open_text_tab\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random UPPERCASE words.py.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9 Python3.11. Adapted from Pedro Arilla's Apache-2.0 Random/Random UPPERCASE words.py.\n"
         }
       ]
     },
@@ -5333,7 +5488,7 @@
     {
       "destination": "Scripts/Proof/Show All Layers.py",
       "historical_sha256": "d3f538f7e0236c508f297cb8f0719b161e70243f9a4abfe531283c6c48f8611d",
-      "current_sha256": "e5d7c25c3e58187afbc19cac2c0da91d0d905b5b981b9adc7b1626ce2c2fe9ff",
+      "current_sha256": "df44a608bff6ec335f6768333b69dc9101237cc727ee3ca7c61e99035012929f",
       "source_sha256": "45e501e6b106f4dea12bea30d85fd58fd61d76c03736112bb1ba846a4db9974a",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5341,13 +5496,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.show_all_layers import run\n",
           "current": "    from fly.ap.masters.layers.show_all.model import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires Fly and App 0.2.26.dev325.\n",
+          "current": "Requires Fly and App 1.2.0 or later.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Tallest and Shortest.py",
       "historical_sha256": "0991d387da230fe6ee87a8c98dbabc90b37c5156d988b2d5e885d8b0027f49cb",
-      "current_sha256": "c2103b0d79c14a2c396035c23afcb88ca2396b7e3aa6a66d920b81f9f48e2cf8",
+      "current_sha256": "f0fdfde46c8868670b5f84430cf2105e9f6fb7ab0ff868685cd57efb40a16498",
       "source_sha256": "00719459ee2c987046ae14cf04aafce2e18bfdffee0689e7bc2e250bf1e2f26b",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5355,13 +5515,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.extrema_proof import run\n",
           "current": "    from fly.ap.proof.extrema.model import run\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9/Python3.11.\n",
+          "current": "Requires App>=1.2.0 and Fly in FontLab9/Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Proof/Text Filter.py",
       "historical_sha256": "19b763704e3157b7d6ee26d55c88721723ebf92ff569c818919fc43c83469ca6",
-      "current_sha256": "14de716d677b68d6bb52ec42ecce5280cc716762a58533063ad4ad4b651ce5b9",
+      "current_sha256": "03f50bea0a05a1d51a1a5880e295695c038aaf44e4c12b0a55083b77e951e699",
       "source_sha256": "44e0ac6f376518937449bd92470683ffc45ed059e8ddeafb3d4c0518188c4d46",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5369,13 +5534,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.text_filter import show\n",
           "current": "    from fly.ap.proof.text_filter.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and Fly.\n",
+          "current": "Requires App>=1.2.0 and Fly.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Reports/Bracket Layers and Components.py",
       "historical_sha256": "142738e5fa8d4a9b657069958f438097a578af79c7907f769c85458766816911",
-      "current_sha256": "16c128928c7212ad8414406c5e3da00da7f7a9023db430a6c71b72f26dea8f85",
+      "current_sha256": "9e1fd16e500ad842265491d162c751e258c4d66dd498adc8c54c42826b43e93f",
       "source_sha256": "bc5712fa1ff4e185613eb1533e1f2ab36be41b6bed2eca0f8841e57e4beecf90",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5383,6 +5553,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.bracket_layers import show\n",
           "current": "    from fly.ap.masters.layers.brackets.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and FontLab9 Python3.11 with fontlab-fly.\n",
+          "current": "Requires App>=1.2.0 and FontLab9 Python3.11 with fontlab-fly.\n"
         }
       ]
     },
@@ -5417,7 +5592,7 @@
     {
       "destination": "Scripts/Reports/Close But No Cigar.py",
       "historical_sha256": "29ff35e0f154f429cdac652bae909f858224f854a909953ba635da4a8ac391c9",
-      "current_sha256": "4aa2919db18f1ba636b9f77ca2d3672a6aa36082291d1d1f0e24dfce0bb5a4ef",
+      "current_sha256": "4b8fbbaba0f400880ca38201782b107e1af4654cbef4f59686ab66cdbd233d00",
       "source_sha256": "bcf9ec870ac1a36ed5fb65f0f863c826ea80e6049f072d4891f0d2daa52084ed",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5425,6 +5600,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.near_miss import show\n",
           "current": "    from fly.ap.contours.near_miss.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires FontLab 9 Python 3.11, Fly and App 0.2.26.dev159 or later.\n",
+          "current": "Requires FontLab 9 Python 3.11, Fly and App 1.2.0 or later.\n"
         }
       ]
     },
@@ -5445,7 +5625,7 @@
     {
       "destination": "Scripts/Reports/Dangerous Offcurves.py",
       "historical_sha256": "094319b2155bc5bf10024282bfffd9063388e36ec356918e99e446c700ff5989",
-      "current_sha256": "ecb71c140710423f7b8296a0e70e19de8bc6b599c54b38dfc87488a076b8fe3d",
+      "current_sha256": "d8987dd79c1d1ca4edee6e680f9a3d77149ac9f037a16e715f999a8cae87b9cd",
       "source_sha256": "b4278e37d164357b16051cdec642b19554199e3561246b9016ad56792884816a",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5453,13 +5633,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.dangerous_offcurves import show\n",
           "current": "    from fly.ap.contours.dangerous_offcurves.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App[fontui]>=0.2.26.dev159 and public Fly in FontLab9 Python3.11.\n",
+          "current": "Requires App[fontui]>=1.2.0 and public Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Reports/Dump to Svg Path Commands.py",
       "historical_sha256": "e93030cb93c103beefb66e96ac910e8455d1575fae19513ff356fe961c8540b5",
-      "current_sha256": "a9001162e284cd4f15ef70b62f1eae3704b95e31b107c793d93983e177c5cb95",
+      "current_sha256": "a94c19667467f20cb0f996e77315b563d8604948c3ebcf66b68ff5f5476c64f9",
       "source_sha256": "c94229a19becf671b56295cc61bb2154a43d5bb77455cc76aacecde4a0746975",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5467,6 +5652,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.svg_path_commands import show\n",
           "current": "    from fly.ap.contours.svg_path.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "and App0.2.26.dev159 or later. Adapted from simoncozens--GlyphsScripts/Dump to SVG.py; see NOTICE.\n",
+          "current": "and App1.2.0 or later. Adapted from simoncozens--GlyphsScripts/Dump to SVG.py; see NOTICE.\n"
         }
       ]
     },
@@ -5511,7 +5701,7 @@
     {
       "destination": "Scripts/Reports/Master Node Compatibility Report.py",
       "historical_sha256": "f9c5d29d7bcd3152f5fb101aa79683f2c8a0cf98acf28683e649d3afa7138f93",
-      "current_sha256": "f49e9fbcb1b47f9aa02d397a5f82d317a04ad724a7e5be5d050ec607c6ad4d11",
+      "current_sha256": "f50554adb4b03b9b3ecabb807d9f3af05b93b30100c70dc9dd0c3bd5fcd0cd4a",
       "source_sha256": "f7aed35a6a64d601124fe933ad72b04192fdc5e97a898d7a02d5a53cc2506420",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5519,13 +5709,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.master_node_report import show\n",
           "current": "    from fly.ap.masters.node_report.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "and App0.2.26.dev159 or later. Adapted from Reset-Type-Studio--Glyphs-Scripts/Paths/Compatibility Check.py; see NOTICE.\n",
+          "current": "and App1.2.0 or later. Adapted from Reset-Type-Studio--Glyphs-Scripts/Paths/Compatibility Check.py; see NOTICE.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Reports/Point Counter (Master Layers).py",
       "historical_sha256": "80bfa4e3db9c366d1c0e2be8a6556227692760901f6a69729d981e7bc1d0a4f1",
-      "current_sha256": "04db8f8c6104df53100acca9e985fb576ef45324bd421be60582ec6b5a6f9890",
+      "current_sha256": "f6ab4dde19f3b42e8b95abb53c933334af0d032766fc263800eefae0155b600c",
       "source_sha256": "d6eeb1c6ba156dc03208b2d82362295f0f376a389f1414477c8abb0539e6bb6c",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5533,13 +5728,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.master_point_counts import show\n",
           "current": "    from fly.ap.masters.point_counts.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "no partial window. Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "no partial window. Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Reports/Point Counter.py",
       "historical_sha256": "7566b7a194efebf36af04aaeb9173bd04e4b9ff18d394b7c425565d87e57a193",
-      "current_sha256": "64e71737116d36cb840e4cc624e10c0086e00b8914298009e8d385c8ce3eef33",
+      "current_sha256": "a36c0a3a0ddf8432dda7118a3f91b662f84898ab5942bb0c130cbf873f7d8ee6",
       "source_sha256": "fd0dd22423a8e2772513436bec48692bcb41989bab06b98b779e37c64f3ea819",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5547,13 +5747,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.scripting import point_counts_dialog_type, show_script_dialog\n",
           "current": "    from fly.ap.core.scripting import point_counts_dialog_type, show_script_dialog\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and fontlab-fly in FontLab9 Python3.11.\n",
+          "current": "Requires App>=1.2.0 and fontlab-fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Reports/Report Composite Differences.py",
       "historical_sha256": "ee4c1fc68c6ebb54ca4856945dad7be7e9808eea6605f2f558163f3823f4ce8e",
-      "current_sha256": "1e1e37861770b55681b3eaadaa37d3cf3316450c7cf0c16f3c105e52847ddeba",
+      "current_sha256": "7a7709373a95a0e54bac32d880aa62234ceade238e1062bb2961b0157d17d428",
       "source_sha256": "91b90cf5c6f9827dcdd2712c952a335e396be1fc7d3e74cd7212b6b2e7647100",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5561,13 +5766,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.crossfont_reports import show\n",
           "current": "    from fly.ap.proof.crossfont.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev325 through Fly in FontLab Python3.11.\n",
+          "current": "Requires App>=1.2.0 through Fly in FontLab Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Reports/Report Glyph Set Differences.py",
       "historical_sha256": "5f48da740badc886f1f5060aab4df0a2597ff03b9fff2224888ea3f04098ecbf",
-      "current_sha256": "9fc47b0a582b7a65c47c4c4eb79634b0478e9f2def17d463c92acdf78d64a1ec",
+      "current_sha256": "ce7cab5519bae22fb98ad8c155b8ca7ff3c2020b13f5a69d158982f78028fb2b",
       "source_sha256": "5d6df2609ebfa5df887833567151bb4f5bfc5290e3d494640ed11bdfe2795a87",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5575,6 +5785,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.crossfont_reports import show\n",
           "current": "    from fly.ap.proof.crossfont.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev325 through Fly in FontLab Python3.11.\n",
+          "current": "Requires App>=1.2.0 through Fly in FontLab Python3.11.\n"
         }
       ]
     },
@@ -5609,7 +5824,7 @@
     {
       "destination": "Scripts/Reports/Vertical Metrics Reporter.py",
       "historical_sha256": "dee6fe507900cb334dded3b1e3db87d884c14edc18ab8e52a3013b2ea97c18e4",
-      "current_sha256": "0c9782614794ad2d0637ec551619cbb4556c5dbe1f14e70f2a9483e798ae61d7",
+      "current_sha256": "19cb6ceb2b119456ddf2b30ab7666ed473b4da37d67062cf7a174fa1cc308298",
       "source_sha256": "56c26ee9f72196129214ee6d030140ffe48d7fadee9d985f1c2e144763af8b22",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5617,13 +5832,18 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.scripting import show_script_dialog, vertical_metrics_dialog_type\n",
           "current": "    from fly.ap.core.scripting import show_script_dialog, vertical_metrics_dialog_type\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "called. Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.\n",
+          "current": "called. Requires App>=1.2.0 and Fly in FontLab9 Python3.11.\n"
         }
       ]
     },
     {
       "destination": "Scripts/Reports/Why You Not Compatible.py",
       "historical_sha256": "cc1bf2861af45e722cc855088569921e890c7067cc1158b1f240c0e5c4a5cd04",
-      "current_sha256": "a756cd42f66ac42fe726cbb527b9f4d22fec43456ac8aefe70faca46cd51c191",
+      "current_sha256": "42ce9e74232f0fa59b733f12e1af658fcc9754177af004777c0a8dc4d11a3ef2",
       "source_sha256": "1234a335d2284ad38773e7b9bb4cb3310f90f50e618ac2b8ef4fa96656757a5c",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5631,6 +5851,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.layer_compatibility import show\n",
           "current": "    from fly.ap.masters.layers.compatibility.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "Requires App>=0.2.26.dev159 and FontLab9 Python3.11 with fontlab-fly.\n",
+          "current": "Requires App>=1.2.0 and FontLab9 Python3.11 with fontlab-fly.\n"
         }
       ]
     },
@@ -5656,7 +5881,7 @@
     {
       "destination": "Scripts/Utilities/Text Holder.py",
       "historical_sha256": "53728ccdcee112c49575c0a37065b8fcc84dfd15931c6149f6e256aee678d95c",
-      "current_sha256": "71d78aa8a72291fc10219c74089922d72c4fea4b2db4efd9af0866d1d450f637",
+      "current_sha256": "63582be433e9a80fe5819c46b24ae9b4cab3204b54765fbe70573ff6e7909fba",
       "source_sha256": "182c1c2486d79729632ea08ddc45c4c3aab8ccb19508ddb0276498a43c8c1410",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5664,6 +5889,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.text_holder import show\n",
           "current": "    from fly.ap.proof.text_holder.model import show\n"
+        },
+        {
+          "kind": "issue-205-app-floor-1.2.0",
+          "historical": "    See NOTICE and additional-tools.json. Requires Fly and App 0.2.26.dev159.\n",
+          "current": "    See NOTICE and additional-tools.json. Requires Fly and App 1.2.0.\n"
         }
       ]
     }

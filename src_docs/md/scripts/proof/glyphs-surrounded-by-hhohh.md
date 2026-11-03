@@ -29,7 +29,7 @@ rollback is claimed. The owned native sender is disconnected and deleted.
 
 This adaptation preserves Output instead of clearing/printing status. It calls
 no glyph geometry, history, preference or master writer.
-Requires App>=0.2.26.dev159 and Fly in FontLab9 Python3.11.
+Requires App>=1.2.0 and Fly in FontLab9 Python3.11.
 Adapted from Pedro Arilla's Apache-2.0 Glyphs between/Glyphs surrounded by HHOHH.py.
 See NOTICE and additional-tools.json for complete source/license provenance.
 
@@ -40,5 +40,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f17245ba6a8bb255f1931a538aabf923a0c0ae02fcf029156089d79a97387143.py)
+[Python source](../../../../.build/menu-sources/354314573cda22d30675da6fbe36a44881d56c62331df3bd28b46ea7c599cfdb.py)
 <!--/codeinclude-->
