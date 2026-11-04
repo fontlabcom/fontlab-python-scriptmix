@@ -4,18 +4,21 @@ this_file: CHANGELOG.md
 
 ## Unreleased — Issue 208 tools for App features the menu did not reach
 
-- Add eight read-only tools that open shared App panels through Fly, so 259 menu
+- Add eight tools that write no font data and open shared App panels through Fly, so 259 menu
   tools now ship (69 samples, 190 additional): Anchors > Duplicate Anchor
   Rings; Components > Component Graph; Metrics >
   Sidebearing Offset Preview; Names > Glyph Metadata Tree and Glyph Name Completion;
   Proof > Character Map; Utilities > Find Font Files and
   Reference Image Viewer. Character Map writes the clipboard only when its Copy
   button is pressed; Find Font Files opens a result only on an explicit
-  activation.
-- Skipped: the three anchor coordinate panels (Center
-  Horizontally, Round To Grid and Snap To Metrics define their own panels with the titles and
-  keys of the App panels, so a new tool would collide on the window key); also the Waterfall character map (it uses the proof inspect model) and
-  Vertical Metrics Diagram completion (it uses core.completion).
+  activation; Reference Image Viewer prints only on an explicit Print, and Qt's
+  print dialog can write a PDF to any path the user picks.
+- Skipped: the three anchor coordinate panels (Center Horizontally, Round To
+  Grid and Snap To Metrics define their own panels with the titles and keys of
+  the App panels, so a new tool would collide on the window key).
+- Not already reached: Character Map and Glyph Name Completion were added
+  because Waterfall (it uses the proof inspect model) and Vertical Metrics
+  Diagram (it uses core.completion) do not reach those App panels.
 - Native FontLab acceptance is pending for all eight tools; the offline tests
   check only which App entry point each script calls. Pinned counts in the
   delivery tests and README change 182/251 to 190/259; every new row in

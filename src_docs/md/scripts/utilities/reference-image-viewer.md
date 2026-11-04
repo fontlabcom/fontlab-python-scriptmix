@@ -21,9 +21,10 @@ Print only when you want a paper copy. Close the window when you are done.
 Safety: The viewer reads the image file you choose and writes nothing to it.
 It does not read or write font data, selection, history, preferences,
 clipboard or Output text. Printing happens only when you choose Print and
-confirm the printer dialog. If printing needs a scratch file, it is created in
-a private temporary folder owned by the viewer, and the viewer removes that
-folder when it closes. Open, print and help dialogs are asynchronous and
+confirm the printer dialog. Qt's print dialog can send the image to a printer
+or write a PDF to any path you pick there. If printing needs a scratch file,
+it is created in a private temporary folder owned by the viewer, and the
+viewer removes that folder when it closes. Open, print and help dialogs are asynchronous and
 belong to the viewer.
 
 Source: Original workflow built on the shared App image viewer
@@ -37,5 +38,5 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 ## Source
 
 <!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ab26c01c6ae4b275dd3952063dc331ac6a4d4a6f2037a1160db3a5072ffea7ca.py)
+[Python source](../../../../.build/menu-sources/457e2b3ccec7b7c6261d7c3100ca8db9264208a85c8f7730f27d6df906e065fe.py)
 <!--/codeinclude-->

@@ -3347,12 +3347,12 @@
     "title": "Reference Image Viewer",
     "key": "utilities_reference_image_viewer",
     "destination": "Scripts/Utilities/Reference Image Viewer.py",
-    "destination_sha256": "ab26c01c6ae4b275dd3952063dc331ac6a4d4a6f2037a1160db3a5072ffea7ca",
+    "destination_sha256": "457e2b3ccec7b7c6261d7c3100ca8db9264208a85c8f7730f27d6df906e065fe",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "license": "Apache-2.0",
     "source_body_redistributed": false,
-    "scope": "Local reference image viewer with zoom, fit and printing on explicit command. No font access.",
+    "scope": "Local reference image viewer with zoom, fit and printing on explicit command. PDF output only where you choose. No font access.",
     "native_acceptance": "pending",
     "app_minimum": "1.2.0"
   }
