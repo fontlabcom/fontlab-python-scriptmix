@@ -16,6 +16,14 @@ Task 2records605 affected passes plus one current-source pin failure; complete A
 1. Regenerate only reviewed current-source pins; never replace frozen historical hashes to make tests green.
 2. Finish full original Reset Transform and remaining practical/native workflows; preserveD31 reserved scripts.
 <!-- /workspace-handoff -->
+## Remaining original-node acceptance
+
+Qualify the three source/artifact/ordinary-tested actions in a dedicated FontLab
+session after access/safety restoration: all four fonts, full payload/cache/
+lifetime/date preservation, Apply/Undo/Redo/save-reopen and actual TypeRig-like
+window ownership/priority/Close. Keep the separate own-sample panel and all
+original Transform/full useful-script requirements. Verified source delivery is
+recorded in CHANGELOG.md; no native or promotion acceptance is inferred.
 
 # Report migration plan
 

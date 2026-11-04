@@ -72,6 +72,36 @@ recorded in the root CHANGELOG and retained verification reports.
 ## Duplicate Anchor Rings removed — issue 201
 
 `Reports/Duplicate Anchor Rings.py` is gone; the feature now lives in fontlab-python-plugmix as the `duplicate_anchors` reporter.
+## Three original Node Duplicator actions verified — 2026-11-02
+
+All-foreground, current-first-layer and two-handle actions call the guarded App
+entry point from genuine0.2.26.dev333+g362e36bf1. Fifteen new owned integration
+cases cover real capture/planning/staging/write/readback, file entry points,
+copy metadata/fractions, repeated parents, duplicate auxiliary names, first-only
+scope, missing/empty selection and refusal of older rescued adapters.
+
+Normal4496pass/1existing Spacing Preview skip; all3new modules100% combined coverage.
+Both ordinary direct/rebuilt-wheel tuples pass7485App/4496Scriptmix(+1oldskip)/
+600Echo and4new guide experiments;46installed dependencies are compatible and
+990provider/RECORD hashes stay unchanged per suite. App's complete764-source
+sdist reproduces the whole wheel. Standalone Qt proof is separate from FontLab.
+
+All248old menu bodies,179prior provenance-row values, frozen migration/menu-move/
+rescue records and111unchanged inherited test paths are exact. Four inherited
+inventory tests change only179->182/248->251 and matching diagnostic strings.
+Menu total251=69samples+182additional. Three provenance rows retain independent
+source/licence/copyright identities without redistributing original bodies.
+
+Commands: rtk proxy /bin/sh .metaswarm/quality.sh coverage <this-checkout>
+fontlab-python-scriptmix, exit0; exact environment/argv and80%gate receipts are in
+external original-workflows-20261102/scriptmix-final-normal-quality. Ordinary
+commands are recorded in wheel-ordinary-scriptmix-serial-command.json and
+sdist-ordinary-scriptmix-command.json, both exit0. The initial parallel wheel
+catalogue collision is retained; serialize tests that rebuild this shared tree.
+No product/test change was needed to resolve that runner error.
+
+Native four-font full preservation/history/Undo/Redo/save-reopen, actual TypeRig
+window priority/lifetime, original Transform and release/promotion remain open.
 
 ## External original-source lookup repaired — 2026-11-01
 
