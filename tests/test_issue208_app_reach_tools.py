@@ -10,8 +10,9 @@ from pathlib import Path
 from types import ModuleType
 
 import pytest
+from conftest import app_names_used, app_source_path, resolve_app_sources
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT =Path(__file__).resolve().parents[1]
 
 # script -> (App module path under fly.ap, entry point it must call)
 SHOW_TOOLS = {
@@ -101,3 +102,32 @@ def test_row_when_indexed_then_matches_the_final_script_bytes(script):
     assert row["native_acceptance"] == "pending" and row["app_minimum"] == "1.2.0"
     assert row["counted_in_130_sample_migration"] is False
     assert row["license"] == "Apache-2.0" and row["source_body_redistributed"] is False
+
+
+def top_level_names(path: Path) -> set[str]:
+    """Names a module file binds at top level; parsed only, so no PythonQt import."""
+    names: set[str] = set()
+    for node in ast.parse(path.read_text()).body:
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
+            names.add(node.name)
+        elif isinstance(node, (ast.Assign, ast.AnnAssign)):
+            targets = node.targets if isinstance(node, ast.Assign) else [node.target]
+            names.update(n.id for t in targets for n in ast.walk(t) if isinstance(n, ast.Name))
+        elif isinstance(node, (ast.Import, ast.ImportFrom)):
+            names.update((a.asname or a.name).split(".")[0] for a in node.names)
+    return names
+
+
+@pytest.mark.parametrize("script", ALL_TOOLS)
+def test_entry_points_when_app_scanned_then_every_name_the_tool_calls_is_defined(script):
+    """Names come from the script's own imports, so an edited tool is rechecked."""
+    used = app_names_used([ROOT / script])
+    assert used and all(used.values()), f"{script}: no fly.ap names found to check"
+    root = resolve_app_sources()  # SCRIPTMIX_APP_SOURCE, else the installed App
+    for module, wanted in used.items():
+        path = app_source_path(root, module.removeprefix("fly.ap."))
+        if not path.is_file():
+            path = path.with_suffix("") / "__init__.py"
+        assert path.is_file(), f"{script}: App has no module {module}"
+        missing = wanted - top_level_names(path)
+        assert not missing, f"{script}: {module} does not define {sorted(missing)} ({path})"
