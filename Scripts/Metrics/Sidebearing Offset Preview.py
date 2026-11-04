@@ -1,0 +1,42 @@
+# this_file: Scripts/Metrics/Sidebearing Offset Preview.py
+# SPDX-License-Identifier: Apache-2.0
+"""Preview how a sidebearing offset would shift the selected glyphs.
+
+What: Opens a modeless panel with offset controls: a minimum, a maximum and a
+value, plus a choice of horizontal or vertical orientation and two invert
+options for the control itself. For every selected glyph layer the report
+shows what the geometric sidebearings would become if the ink moved by the
+chosen offset: the left sidebearing grows by the offset, the right shrinks by
+it and the advance width stays the same. Values are whole font units from
+-100 to 100.
+
+Use: Select glyphs in a Font window, or glyph layers in a Glyph window. Run
+Metrics > Sidebearing Offset Preview. Move the offset control and read the
+report. Press Refresh Selection after you change the selection, the master or
+the outlines. Close the panel when you are done. With nothing selected the
+report asks you to refresh after selecting glyph layers.
+
+Safety: Read-only preview. The panel says that font data is unchanged, and it
+is. The tool reads the selected layers, their advances and their ink extent.
+It writes no font data, metrics, selection, history, preference, clipboard or
+Output text. Nothing is applied; use the Metrics editors to set sidebearings.
+If the font or selection changes while the tool reads it, it refuses to publish
+a partial result.
+
+Source: Original workflow built on the shared App spacing offset preview
+(fly.ap.metrics.offset.model), Apache-2.0.
+Requires App>=1.2.0 and fontlab-fly in FontLab 9 Python 3.11.
+"""
+
+from typing import Any
+
+
+def main() -> Any:
+    """Open the shared offset preview panel, or replace the one already open."""
+    from fly.ap.metrics.offset.model import show
+
+    return show()
+
+
+if __name__ == "__main__":
+    main()

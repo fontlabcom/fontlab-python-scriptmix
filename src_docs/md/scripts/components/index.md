@@ -3,6 +3,7 @@
 - [Align By Anchor](align-by-anchor.md)
 - [Build From Recipes](build-from-recipes.md)
 - [Compatibility](compatibility.md)
+- [Component Graph](component-graph.md)
 - [Copy Offsets Between Masters](copy-offsets-between-masters.md)
 - [Count Badges](count-badges.md)
 - [Decompose Named Components](decompose-named-components.md)

@@ -11,6 +11,7 @@
 - [Copy Myanmar Anchors](copy-myanmar-anchors.md)
 - [Delete By Name](delete-by-name.md)
 - [Derive Anchors From Components](derive-anchors-from-components.md)
+- [Duplicate Anchor Rings](duplicate-anchor-rings.md)
 - [Duplicates Finder](duplicates-finder.md)
 - [Mark Attachment Preview](mark-attachment-preview.md)
 - [Mirror Across Masters](mirror-across-masters.md)

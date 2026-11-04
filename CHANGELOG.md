@@ -2,6 +2,25 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased — Issue 208 tools for App features the menu did not reach
+
+- Add ten read-only tools that open shared App panels through Fly, so 261 menu
+  tools now ship (69 samples, 192 additional): Anchors > Duplicate Anchor
+  Rings; Components > Component Graph; Metrics > Spacing Worksheet and Sidebearing
+  Offset Preview; Names > Glyph Metadata Tree and Glyph Name Completion;
+  Proof > Character Map and Numeric Worksheet; Utilities > Find Font Files and
+  Reference Image Viewer. Character Map writes the clipboard only when its Copy
+  button is pressed; Find Font Files opens a result only on an explicit
+  activation.
+- Skipped as already reached: the three anchor coordinate panels (Center
+  Horizontally, Round To Grid and Snap To Metrics already use their titles and
+  keys), the Waterfall character map (it uses the proof inspect model) and
+  Vertical Metrics Diagram completion (it uses core.completion).
+- Native FontLab acceptance is pending for all ten tools; the offline tests
+  check only which App entry point each script calls. Pinned counts in the
+  delivery tests and README change 182/251 to 192/261; every new row in
+  additional-tools.json carries the hash of the final script bytes.
+
 ## 2026-11-03 — PythonQt QPolygonF access
 
 - Auto Cursive Attachment Get Sample/Add Anchors and Optical Center read outline

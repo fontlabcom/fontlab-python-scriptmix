@@ -15,6 +15,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Copy Myanmar Anchors](anchors/copy-myanmar-anchors.md)
 - [Delete By Name](anchors/delete-by-name.md)
 - [Derive Anchors From Components](anchors/derive-anchors-from-components.md)
+- [Duplicate Anchor Rings](anchors/duplicate-anchor-rings.md)
 - [Duplicates Finder](anchors/duplicates-finder.md)
 - [Mark Attachment Preview](anchors/mark-attachment-preview.md)
 - [Mirror Across Masters](anchors/mirror-across-masters.md)
@@ -39,6 +40,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Align By Anchor](components/align-by-anchor.md)
 - [Build From Recipes](components/build-from-recipes.md)
 - [Compatibility](components/compatibility.md)
+- [Component Graph](components/component-graph.md)
 - [Copy Offsets Between Masters](components/copy-offsets-between-masters.md)
 - [Count Badges](components/count-badges.md)
 - [Decompose Named Components](components/decompose-named-components.md)
@@ -204,8 +206,10 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Italic Sidebearings](metrics/italic-sidebearings.md)
 - [Round Advances](metrics/round-advances.md)
 - [Scale Advances](metrics/scale-advances.md)
+- [Sidebearing Offset Preview](metrics/sidebearing-offset-preview.md)
 - [Sidebearings Tuner](metrics/sidebearings-tuner.md)
 - [Spacing String Preview](metrics/spacing-string-preview.md)
+- [Spacing Worksheet](metrics/spacing-worksheet.md)
 - [Tabular Width](metrics/tabular-width.md)
 - [Vertical Metrics Diagram](metrics/vertical-metrics-diagram.md)
 - [Width Table](metrics/width-table.md)
@@ -220,6 +224,8 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Character Set Compare](names/character-set-compare.md)
 - [Duplicate Unicodes](names/duplicate-unicodes.md)
 - [Glyph Finder](names/glyph-finder.md)
+- [Glyph Metadata Tree](names/glyph-metadata-tree.md)
+- [Glyph Name Completion](names/glyph-name-completion.md)
 - [Glyph Notes](names/glyph-notes.md)
 - [Glyph Tags](names/glyph-tags.md)
 - [Mark Color Palette](names/mark-color-palette.md)
@@ -232,6 +238,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 ## Proof
 
 - [Bracket Layers and Components](proof/bracket-layers-and-components.md)
+- [Character Map](proof/character-map.md)
 - [Glyph Grid](proof/glyph-grid.md)
 - [Glyphs Between Lining Figures](proof/glyphs-between-lining-figures.md)
 - [Glyphs Between Lowercase](proof/glyphs-between-lowercase.md)
@@ -246,6 +253,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Hoefler Uppercase](proof/hoefler-uppercase.md)
 - [KernKing](proof/kernking.md)
 - [KernSym](proof/kernsym.md)
+- [Numeric Worksheet](proof/numeric-worksheet.md)
 - [Random Lowercase Nontext](proof/random-lowercase-nontext.md)
 - [Random Lowercase Words](proof/random-lowercase-words.md)
 - [Random Numbers](proof/random-numbers.md)
@@ -292,5 +300,7 @@ Choose a category, then a script. Each page includes its actual menu source.
 
 ## Utilities
 
+- [Find Font Files](utilities/find-font-files.md)
 - [Magic Remover](utilities/magic-remover.md)
+- [Reference Image Viewer](utilities/reference-image-viewer.md)
 - [Text Holder](utilities/text-holder.md)

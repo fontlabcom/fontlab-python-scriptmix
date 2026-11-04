@@ -1,6 +1,7 @@
 # Proof
 
 - [Bracket Layers and Components](bracket-layers-and-components.md)
+- [Character Map](character-map.md)
 - [Glyph Grid](glyph-grid.md)
 - [Glyphs Between Lining Figures](glyphs-between-lining-figures.md)
 - [Glyphs Between Lowercase](glyphs-between-lowercase.md)
@@ -15,6 +16,7 @@
 - [Hoefler Uppercase](hoefler-uppercase.md)
 - [KernKing](kernking.md)
 - [KernSym](kernsym.md)
+- [Numeric Worksheet](numeric-worksheet.md)
 - [Random Lowercase Nontext](random-lowercase-nontext.md)
 - [Random Lowercase Words](random-lowercase-words.md)
 - [Random Numbers](random-numbers.md)
