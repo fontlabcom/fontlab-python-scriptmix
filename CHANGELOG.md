@@ -20,7 +20,8 @@ this_file: CHANGELOG.md
   because Waterfall (it uses the proof inspect model) and Vertical Metrics
   Diagram (it uses core.completion) do not reach those App panels.
 - Native FontLab acceptance is pending for all eight tools; the offline tests
-  check only which App entry point each script calls. Pinned counts in the
+  read each script's own `fly.ap` calls and check by AST that every entry point
+  they name exists in the resolved App source. Pinned counts in the
   delivery tests and README change 182/251 to 190/259; every new row in
   additional-tools.json carries the hash of the final script bytes.
 
