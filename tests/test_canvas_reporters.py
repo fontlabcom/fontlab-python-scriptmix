@@ -17,11 +17,6 @@ CASES = (
         "canvas_right_sidebearing_line",
         "canvas_rsb_dialog_type",
     ),
-    (
-        "Duplicate Anchor Rings",
-        "canvas_duplicate_anchor_rings",
-        "canvas_anchor_rings_dialog_type",
-    ),
 )
 
 
@@ -81,7 +76,7 @@ def test_additional_reporter_provenance_and_acceptance_cover_exact_new_menus():
 
     rows = json.loads((ROOT / "additional-tools.json").read_text())
     rows = [row for row in rows if row["kind"] == "foreground-adaptation"]
-    assert len(rows) == 2 and {row["title"] for row in rows} == {v[0] for v in CASES}
+    assert len(rows) == 1 and {row["title"] for row in rows} == {v[0] for v in CASES}
     for row in rows:
         path = Path(row["destination"])
         assert path.parts == ("Scripts", "Reports", row["title"] + ".py")

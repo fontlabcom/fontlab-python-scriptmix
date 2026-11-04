@@ -268,7 +268,6 @@ Choose a category, then a script. Each page includes its actual menu source.
 - [Compare Open Font Revisions](reports/compare-open-font-revisions.md)
 - [Dangerous Offcurves](reports/dangerous-offcurves.md)
 - [Dump to Svg Path Commands](reports/dump-to-svg-path-commands.md)
-- [Duplicate Anchor Rings](reports/duplicate-anchor-rings.md)
 - [Empty Glyphs](reports/empty-glyphs.md)
 - [Event Log](reports/event-log.md)
 - [Font Overview](reports/font-overview.md)

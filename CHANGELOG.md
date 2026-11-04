@@ -69,6 +69,9 @@ changed by this documentation maintenance. Source/archive/ordinary/native and
 promotion acceptance remain separate claims. Detailed workspace evidence is
 recorded in the root CHANGELOG and retained verification reports.
 <!-- /workspace-handoff -->
+## Duplicate Anchor Rings removed — issue 201
+
+`Reports/Duplicate Anchor Rings.py` is gone; the feature now lives in fontlab-python-plugmix as the `duplicate_anchors` reporter.
 
 ## External original-source lookup repaired — 2026-11-01
 

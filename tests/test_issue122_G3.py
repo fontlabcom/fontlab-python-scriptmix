@@ -7,13 +7,12 @@ import importlib.util
 import inspect
 import runpy
 import sys
-from importlib.metadata import distribution
 from pathlib import Path
 from types import ModuleType, SimpleNamespace
 from typing import Any
 
 import pytest
-from conftest import app_names_used, app_namespace, check_real_app_names
+from conftest import app_names_used, app_namespace, check_real_app_names, installed_app_root
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Real English Text", "Real Spanish Text")
@@ -200,7 +199,7 @@ def test_real_app_names_when_imported_from_installed_app_then_all_exist() -> Non
 
     The App is the one the gate installs; no App-source override (G1 form).
     """
-    app_src = Path(distribution("fontlab-fontlabapp").locate_file("fontlabapp"))
+    app_src = installed_app_root()
     used = app_names_used(PATHS)
     assert used == {
         "fly.ap.core.scripting": {"current_package"},

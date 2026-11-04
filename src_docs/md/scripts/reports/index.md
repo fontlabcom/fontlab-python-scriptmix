@@ -7,7 +7,6 @@
 - [Compare Open Font Revisions](compare-open-font-revisions.md)
 - [Dangerous Offcurves](dangerous-offcurves.md)
 - [Dump to Svg Path Commands](dump-to-svg-path-commands.md)
-- [Duplicate Anchor Rings](duplicate-anchor-rings.md)
 - [Empty Glyphs](empty-glyphs.md)
 - [Event Log](event-log.md)
 - [Font Overview](font-overview.md)

@@ -1703,7 +1703,7 @@ def test_real_fontlabapp_when_imported_then_every_name_the_scripts_use_exists():
 
 
 def test_real_names_dialog_when_parsed_then_has_the_hooks_the_panels_use():
-    from importlib.metadata import distribution
+    from conftest import installed_app_root
 
     package = Path(distribution("fontlab-fontlabapp").locate_file("fontlabapp"))
     tree = ast.parse((package / "glyphs/names/ui.py").read_text())

@@ -2,12 +2,12 @@
 """Run real planning hooks with changing controls and a forbidden whole-font scan."""
 
 import ast
-import importlib.metadata
 from pathlib import Path
 from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
+from conftest import installed_app_root
 
 ROOT = Path(__file__).parents[1]
 TOOLS = ["Contours/Shadow Copy", "Contours/Outline Effect", "Contours/Autohint Selected Layers",
