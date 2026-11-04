@@ -3207,7 +3207,7 @@
     "copyright": "2025 Fernando Díaz & Reset Type Studio",
     "source_body_redistributed": false,
     "execution_profile": "all",
-    "app_minimum": "0.2.26.dev333",
+    "app_minimum": "1.2.0",
     "native_acceptance": "pending",
     "release_gate": "pending: reviewed matching App artifact and owned native workflows",
     "scope": "Read on-curve indices from the first selected layer. Apply those fixed indices to every stored foreground layer of every selected parent occurrence, including auxiliary layers with duplicate names. A parent selected twice is processed twice. Targets do not need their own selected nodes. Missing path/node indices are listed rather than substituted. Background, mask and service layers are not targets."
@@ -3227,7 +3227,7 @@
     "copyright": "2025 Fernando Díaz & Reset Type Studio",
     "source_body_redistributed": false,
     "execution_profile": "current",
-    "app_minimum": "0.2.26.dev333",
+    "app_minimum": "1.2.0",
     "native_acceptance": "pending",
     "release_gate": "pending: reviewed matching App artifact and owned native workflows",
     "scope": "Duplicate only the selected on-curve nodes of the first selected layer. Other selected layers and glyphs remain outside this action. The captured original selection identities survive index shifts as copies are inserted in reverse order. Each copy becomes a line endpoint, keeping the target node's coordinates, name, raw connection flags and explicitly preserved copy properties."
@@ -3247,7 +3247,7 @@
     "copyright": "2025 Fernando Díaz & Reset Type Studio",
     "source_body_redistributed": false,
     "execution_profile": "handles",
-    "app_minimum": "0.2.26.dev333",
+    "app_minimum": "1.2.0",
     "native_acceptance": "pending",
     "release_gate": "pending: reviewed matching App artifact and owned native workflows",
     "scope": "Use only the first selected layer, matching the source implementation despite its historical all-masters filename. For each selected on-curve, insert two new coincident cubic controls and a copy of that target node as the following curve endpoint. Selected node identities are processed in their captured order. The controls are fresh; the endpoint retains the target's copied metadata."

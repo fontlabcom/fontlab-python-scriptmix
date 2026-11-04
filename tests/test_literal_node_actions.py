@@ -117,7 +117,7 @@ def test_original_action_provenance_when_indexed_then_keeps_each_source_and_defa
     default = indexed["Scripts/Contours/Node Duplicator.py"]
     assert (
         default["destination_sha256"]
-        == "e1f7bc2d7c33cbdbaa550d27d87a65e273db6963338e9e99c148560200f0116a"
+        == "1bd5b65bd847d09160284b85597f51b77158e3a7d78707fb9b782b66518a3ad1"
     )
     assert (
         hashlib.sha256((ROOT / default["destination"]).read_bytes()).hexdigest()
