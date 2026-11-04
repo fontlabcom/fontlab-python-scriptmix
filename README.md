@@ -4,7 +4,7 @@ this_file: README.md
 
 # FontLab practical scripts
 
-261 practical tools for FontLab 9: 69 sample adaptations and 192 additional
+259 practical tools for FontLab 9: 69 sample adaptations and 190 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 14 one-level categories.
 

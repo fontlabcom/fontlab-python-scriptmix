@@ -11,7 +11,6 @@
 - [Sidebearing Offset Preview](sidebearing-offset-preview.md)
 - [Sidebearings Tuner](sidebearings-tuner.md)
 - [Spacing String Preview](spacing-string-preview.md)
-- [Spacing Worksheet](spacing-worksheet.md)
 - [Tabular Width](tabular-width.md)
 - [Vertical Metrics Diagram](vertical-metrics-diagram.md)
 - [Width Table](width-table.md)

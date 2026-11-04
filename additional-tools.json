@@ -3305,19 +3305,6 @@
     "app_minimum": "1.2.0"
   },
   {
-    "title": "Spacing Worksheet",
-    "key": "metrics_spacing_worksheet",
-    "destination": "Scripts/Metrics/Spacing Worksheet.py",
-    "destination_sha256": "0323bfb6616875022874056592e0e3f016ea2457dffa373aa5eea4dce74051f6",
-    "kind": "independent-original-workflow-implementation",
-    "counted_in_130_sample_migration": false,
-    "license": "Apache-2.0",
-    "source_body_redistributed": false,
-    "scope": "Local A x B candidate advances for the selected glyph layers. Candidates are never applied.",
-    "native_acceptance": "pending",
-    "app_minimum": "1.2.0"
-  },
-  {
     "title": "Sidebearing Offset Preview",
     "key": "metrics_offset_preview",
     "destination": "Scripts/Metrics/Sidebearing Offset Preview.py",
@@ -3327,19 +3314,6 @@
     "license": "Apache-2.0",
     "source_body_redistributed": false,
     "scope": "Preview of sidebearings shifted by an offset for the selected glyph layers. Font data is unchanged.",
-    "native_acceptance": "pending",
-    "app_minimum": "1.2.0"
-  },
-  {
-    "title": "Numeric Worksheet",
-    "key": "proof_numeric_worksheet",
-    "destination": "Scripts/Proof/Numeric Worksheet.py",
-    "destination_sha256": "8f8d8726801c15c5b7b071f8266a360464e057dc835087e084476657f49794f5",
-    "kind": "independent-original-workflow-implementation",
-    "counted_in_130_sample_migration": false,
-    "license": "Apache-2.0",
-    "source_body_redistributed": false,
-    "scope": "Local proof-width and quote estimates for the selected layers plus whole-font revision cutoffs. Read-only.",
     "native_acceptance": "pending",
     "app_minimum": "1.2.0"
   },
