@@ -12,7 +12,7 @@ from types import ModuleType
 import pytest
 from conftest import app_names_used, app_source_path, resolve_app_sources
 
-ROOT =Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1]
 
 # script -> (App module path under fly.ap, entry point it must call)
 SHOW_TOOLS = {
