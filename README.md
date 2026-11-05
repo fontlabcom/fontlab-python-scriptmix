@@ -2,6 +2,22 @@
 this_file: README.md
 ---
 
+## Development status — 2026-11-05
+
+Canonical source inspected for this proposal: `852976b71613`. This is a dated source observation, not an installed or native acceptance claim.
+
+Retain current Issue 208/M12 user tools and frozen provenance while reconciling Issue 207 cleanup and current App APIs.
+
+Qualify the complete original tool denominator and owned native/history/lifetime checks; distinguish the 350-script classified offline smoke from actual native acceptance.
+
+## Repository and development
+
+`Scripts/` contains user actions; `tests/` checks source contracts/provenance; `docs/` and `src_docs/` hold documentation; `tests_docs/` checks its build. Frozen manifests identify original source pairs.
+
+Use README prepared arm64 Python 3.11 runtime-cohort recipe, or set `SCRIPTMIX_APP_REQUIREMENT` to a reviewed App wheel/checkout before `sh test.sh`. Add matching peers with `SCRIPTMIX_EXTRA_REQUIREMENTS`. Run `tests_docs` separately with pytest, mkdocs-codeinclude-plugin 0.3.1 and PyYAML.
+
+Keep runtime, ordinary installed artifacts, native workflows and published documentation as separate acceptance results. Track open checks in [TODO.md](TODO.md), the implementation route in [PLAN.md](PLAN.md), and dated evidence in [CHANGELOG.md](CHANGELOG.md).
+
 # FontLab practical scripts
 
 259 practical tools for FontLab 9: 69 sample adaptations and 190 additional

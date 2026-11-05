@@ -2,22 +2,21 @@
 this_file: AGENTS.md
 ---
 
-<!-- workspace-handoff:2026-11-03 -->
-## Workspace documentation handoff —2026-11-03
+## Current scope — 2026-11-05
 
-Issue 123 implementation is paused by the owner. The present request authorizes
-only documentation maintenance; preserve all source, owner edits and branch state.
-Actionable FontLab scripts with preserved original provenance. Observed canonical checkout: `main` at `3acfce2ea893`. No source integration is performed by this update.
+Issue 230 documentation reconciliation is current. Issue 123 remains paused. The qualified Issue 207 isolated candidate is separate from canonical source, installed artifacts, native acceptance and publication. Reconcile that candidate with later work before integration. Issue 210 specifies future architecture; Issue 211 retains unfinished follow-up checks. Retained dated receipts describe their original source and acceptance surface only.
 
-Accepted feature faed9163 restores three original node actions. Local ABannotates49 nonreserved terminal controls and preserves two refused chooser owners.
+Canonical source inspected for this proposal: `852976b71613`. This is a dated source observation, not an installed or native acceptance claim.
 
-Task 2records605 affected passes plus one current-source pin failure; complete ABsuite/coverage/artifact acceptance is pending.
+Retain current Issue 208/M12 user tools and frozen provenance while reconciling Issue 207 cleanup and current App APIs.
 
-Read workspace AGENTS/DECISIONS and local project guidance before later work.
-Use direct execution unless a new request explicitly authorizes agents. Product
-work stays isolated; this docs-only request does not authorize native actions,
-installs, merges, pushes, releases, generated-site updates or legacy retirement.
-<!-- /workspace-handoff -->
+Qualify the complete original tool denominator and owned native/history/lifetime checks; distinguish the 350-script classified offline smoke from actual native acceptance.
+
+## Organization and checks
+
+`Scripts/` contains user actions; `tests/` checks source contracts/provenance; `docs/` and `src_docs/` hold documentation; `tests_docs/` checks its build. Frozen manifests identify original source pairs.
+
+Use README prepared arm64 Python 3.11 runtime-cohort recipe, or set `SCRIPTMIX_APP_REQUIREMENT` to a reviewed App wheel/checkout before `sh test.sh`. Add matching peers with `SCRIPTMIX_EXTRA_REQUIREMENTS`. Run `tests_docs` separately with pytest, mkdocs-codeinclude-plugin 0.3.1 and PyYAML.
 
 # Scriptmix rules
 
@@ -89,3 +88,26 @@ request. Preserve historical paths, hashes and full licence notices. Never
 execute or redistribute third-party reference bodies during inspection. Use
 external scratch space; never write temporary files in the repository root or
 `/private/tmp`. Archive deletion requires owner confirmation.
+
+## Milestones and delivery
+
+Read [PLAN.md](PLAN.md), [TODO.md](TODO.md) and [WORK.md](WORK.md) before work.
+Make the smallest complete MVP for one named acceptance task. Find all callers,
+tests, fixtures, exports and documentation first. Use graph impact before source
+symbol edits; confirm stale or unknown graph results against current source.
+Keep product work in isolated successors and preserve the owner's checkout.
+
+Run this repository's exact checks and the unchanged 80% gate for each complete
+changed production module. Use an independent review before a milestone commit.
+Under the current owner task, commit and push reviewed, passing milestones;
+verify remote heads rather than inferring delivery from local tracking refs.
+Before main integration, reconcile concurrent work and all consumers, run graph
+change analysis and repeat the required acceptance on the combined source.
+
+Before removing obsolete branches or files, prove integration, retain recoverable
+unique work and check fresh owner/worktree attachments. Preserve sealed reports,
+licences, archives and private data. Do not rewrite history by implication.
+Remove verified completed work from PLAN/TODO and record scoped evidence in
+CHANGELOG. Keep implemented-only native/artifact checks open in TODO. Issue 123
+remains paused; no instruction here authorizes driving the owner's FontLab,
+installing into its user folder or publishing a site.

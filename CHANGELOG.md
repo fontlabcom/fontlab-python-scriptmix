@@ -2,6 +2,80 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-05 — independently approved documentation applied
+
+[Task 2 final review](../verification/issue-230/task-2-fix2-review.md) records
+SPEC PASS / QUALITY APPROVED. The [78-file application receipt](../verification/issue-230/task-2-apply.json)
+includes this repository's six guides and preserves all 21 repository heads,
+branches, indexes and non-selected diffs. This is applied documentation evidence,
+not a new product test, installed artifact, native result or publication.
+
+The complete earlier handoff/history below retains its proposal-stage statements
+and dated source pins. Later review, application and delivery status belong in the
+[live workspace ledger](../verification/issue-230/progress.md). Original future,
+native, artifact and preservation contracts remain binding.
+
+## 2026-11-05 — documentation reconciliation proposal
+
+Prepared repository-specific organization, test and MVP/delivery guidance from current source/test configuration and retained Issue 207–211 evidence. Distinguished current canonical layout from qualified candidates, future plugin ownership and unfinished native/artifact gates. Preserved all prior work and changelog evidence; no runtime completion, installation or publication is claimed. Completed historical task rows were removed from the active checklist and consolidated below from existing local CHANGELOG/WORK receipts. Unfinished native, artifact and integration checks remain open.
+
+## Retained scoped completion receipts — corrected evidence map
+
+These are dated results at the stated source/version and acceptance surface. They do not establish current integrated, installed, native or published acceptance. Full receipts and hashes are indexed in the workspace Issue 230 task-2 manifest. Canonical-preimage line ranges below refer to the unchanged historical documents, before these new entries.
+
+- First3reports FontLab9.0.9784:26original scenario checks;11host-free;reviewed screens/cleanup.
+  Historical receipt: CHANGELOG.md:1103–1106; WORK.md:1301–1310.
+
+- Issue122zones final fix4:source port and production App route-A writer;Scriptmix4366passes/6skips,3modules100%;App6584passes with outline_extent/zone_native100% and dialog99.47%. Native checks remain open; earlier failing stage retained.
+  Historical receipt: CHANGELOG.md:333–358; workspace verification/issue-122/sdd/final/port-zones-report.md, final fix4 gates (lines1–58).
+
+- Mark labels now reserve1000–1255 for grey;361–999/above1255 read Mark N;source/pin update only.
+  Historical receipt: CHANGELOG.md:417–419.
+
+- Read-only Anchors App512/Scriptmix684+1skip;195tests per wheel/sdist;72runtime bytes;source/controller review and artifacts pass.
+  Historical receipt: WORK.md:2982–3008.
+
+- Anchors FontLab9784 original3scenarios=20workflow/6preservation/Close3;exactH/Lightpostseed;paint/fault/hash/lifetime checks pass.
+  Historical receipt: WORK.md:2992–3008.
+
+- Anchors release App0.2.14/Scriptmix1.0.10:prior54samebyte;downloadedR05320workflows/6preservation/Close3;57released historical.
+  Historical receipt: WORK.md:3015–3048.
+
+- Unreferenced/Interpolation final fix1:source/fault/independent395glyph oracle;root176/Ruff;10original native workflows+4preservation/Close2;prior57pass.
+  Historical receipt: WORK.md:3105–3151.
+
+- Two-review artifact audit:App533;Scriptmix707+1skip;Gitfree706+2skips;216perwheel/sdist;76runtime bytes;82/130payloads/privacy pass.
+  Historical receipt: WORK.md:3129–3151.
+
+- Two-review FontLab9784:10original/4preservation/Close2;paint/fault/safety;prior57pass;86hashes/restored paths.
+  Historical receipt: WORK.md:3117–3151.
+
+- Reviews release App0.2.15/Scriptmix1.0.11:downloaded R05310original/4preservation/Close2;59original pairs;prior57;historical59released.
+  Historical receipt: WORK.md:3153–3187.
+
+- NodeCoordinates release App0.2.16/Scriptmix1.0.12:downloadedR053;timer/Copy/fault/source/original/native/prior59 receipts;historical60released.
+  Historical receipt: WORK.md:3241–3261.
+
+- MasterSwitcher release App0.2.17/Scriptmix1.0.13:downloadedR0535original/2preservation/43controls/Close1;prior60pass;61released;selected-bold-text image differences retained; cause not established; no image equality claimed.
+  Historical receipt: WORK.md:3313–3333.
+
+- GuidePanels release App0.2.18/Scriptmix1.0.14:downloadedR05327original/21history/167controls/Close3;prior61pass;64released.
+  Historical receipt: WORK.md:3407–3422.
+
+- GuideRewriters release App0.2.19/Scriptmix1.0.15:downloadedR05319original/21postseedhistory/162controls/Close3;prior64pass.
+  Historical receipt: WORK.md:3491–3507.
+
+- CopyAnchors replacement App0.2.21/Scriptmix1.0.17:downloadedR05311original/7history/133controls/Close1;prior67pass;rejected0.2.20/1.0.16retained.
+  Historical receipt: WORK.md:3609–3626.
+
+## 2026-11-05 — planning chronology reconciliation
+
+Dated41/45/49/54/57/59/60/61/64/67/68release and pending-candidate paragraphs are successive historical states. Exact release/R053 receipts supersede earlier pending wording for those same stages only. Preserve all130stems, other collections, seven Names editors and current unmet tool/native contracts. ForthcomingApp0.2.11 and old base-only branch commands are obsolete operating instructions; qualify actual matching providers/lineage instead. Historical passing results retain their dated source and acceptance scope in the entries above and original history below. This documentation change creates no new runtime acceptance.
+
+---
+this_file: CHANGELOG.md
+---
+
 ## Unreleased — Issue 208 tools for App features the menu did not reach
 
 - Add eight tools that write no font data and open shared App panels through Fly, so 259 menu

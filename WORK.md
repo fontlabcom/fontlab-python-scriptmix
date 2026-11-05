@@ -2,6 +2,43 @@
 this_file: WORK.md
 ---
 
+## 2026-11-05 — independently approved documentation applied
+
+[Task 2 final review](../verification/issue-230/task-2-fix2-review.md) records
+SPEC PASS / QUALITY APPROVED. The [78-file application receipt](../verification/issue-230/task-2-apply.json)
+includes this repository's six guides and preserves all 21 repository heads,
+branches, indexes and non-selected diffs. This is applied documentation evidence,
+not a new product test, installed artifact, native result or publication.
+
+The complete earlier handoff/history below retains its proposal-stage statements
+and dated source pins. Later review, application and delivery status belong in the
+[live workspace ledger](../verification/issue-230/progress.md). Original future,
+native, artifact and preservation contracts remain binding.
+
+# Current handoff — 2026-11-05
+
+Issue 230 documentation reconciliation is current. Issue 123 remains paused. The qualified Issue 207 isolated candidate is separate from canonical source, installed artifacts, native acceptance and publication. Reconcile that candidate with later work before integration. Issue 210 specifies future architecture; Issue 211 retains unfinished follow-up checks. Retained dated receipts describe their original source and acceptance surface only.
+
+Canonical source inspected for this proposal: `852976b71613`. This is a dated source observation, not an installed or native acceptance claim.
+
+`Scripts/` contains user actions; `tests/` checks source contracts/provenance; `docs/` and `src_docs/` hold documentation; `tests_docs/` checks its build. Frozen manifests identify original source pairs.
+
+Next: Retain current Issue 208/M12 user tools and frozen provenance while reconciling Issue 207 cleanup and current App APIs. Qualify the complete original tool denominator and owned native/history/lifetime checks; distinguish the 350-script classified offline smoke from actual native acceptance.
+
+Checks for the next implementation milestone: Use README prepared arm64 Python 3.11 runtime-cohort recipe, or set `SCRIPTMIX_APP_REQUIREMENT` to a reviewed App wheel/checkout before `sh test.sh`. Add matching peers with `SCRIPTMIX_EXTRA_REQUIREMENTS`. Run `tests_docs` separately with pytest, mkdocs-codeinclude-plugin 0.3.1 and PyYAML.
+
+This Issue 230 proposal changes documentation only. No product suite, native process, installer, remote fetch, generated site, push or retirement was run. Exact proposal preimages and checks are recorded in the workspace Issue 230 task-2 report.
+
+## Fix 1 documentation disposition
+
+The forward plan now separates current work from dated source/release receipts. The task-2 manifest binds each historical checkbox to an exact retained receipt or restores its unsupported part to TODO. This is a documentation repair, not a new runtime or native acceptance.
+
+## Retained work history
+
+---
+this_file: WORK.md
+---
+
 ## 2026-11-03 — Issue 205 App paths
 
 Canonical domain imports now cover all 249 scripts, test file loaders and docs.
