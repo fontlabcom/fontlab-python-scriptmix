@@ -2006,3 +2006,10 @@ reintroducing the stale missing-feature claims. No script, source identity or
 provenance hash changed. The original worktree and its historical notes remain
 untouched. Validation: exact source identity and one-row status check passed;
 the normal pre-push suite also runs for this documentation update.
+
+
+## 2026-11-07 — current icon path-tuple inventory correction
+
+Correct the current icon metadata to 45 observed ordered SVG path tuples: 43 exact installed MaterialX icon path-tuple matches and two unmatched Lucide tuples attributed by the existing pinned SCSS references. The additional installed match is Font Awesome's version caret-down. Its unchanged CSS header identifies Font Awesome Free 7.1.0, Fonticons and CC-BY-4.0 icon terms; the full notice already exists. The official NPM caret SVG has different raw path bytes, so no unmodified-primary SVG, whole-geometry or optimizer-recipe equivalence is claimed. The old known-candidate 42-match review remains historical.
+
+A new regression derives the tuple set from actual HTML/CSS, scans the four installed icon families, checks the unmatched CSS references and caret header, and compares source/generated inventories. It failed against the prior 44 count, then passed with the corrected metadata. All 42 current pipeline tests and complete strict/independent exact-lock output byte/mode checks pass. No runtime, menu hash, generator, dependency, vendor asset, full notice or historical source pin changed. Normal delivery hooks, independent review, actual source/main/output CI and eligible live publication remain separate; no native or installed-product acceptance is added.

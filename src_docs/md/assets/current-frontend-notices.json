@@ -2031,16 +2031,32 @@
       "Lucide1.11.0"
     ],
     "path_tuple_scope": {
-      "observed": 44,
-      "exact_installed_matches": 42,
+      "observed": 45,
+      "exact_installed_matches": 43,
       "optimized_css_refs": {
         "lucide/focus.svg": "--md-code-select-icon",
         "lucide/download.svg": "--md-code-download-icon"
+      },
+      "css_header_attributions": {
+        "--md-version-icon": {
+          "asset": "assets/stylesheets/main.314bbef5.min.css",
+          "asset_sha256": "314bbef5bf9ab3a776c5b1bb3ae42f0db5de636bfe2b1ddd6e67de3d35384d8b",
+          "installed_icon": "fontawesome/solid/caret-down.svg",
+          "exact_path_tuple_match": true,
+          "component": "@fortawesome/fontawesome-free",
+          "version": "7.1.0",
+          "icon_terms": "CC-BY-4.0",
+          "header": "<!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.-->",
+          "primary_archive_member": "package/svgs/solid/caret-down.svg",
+          "primary_member_sha256": "d42356885311683ae3f2e7234a9f419668f5f8893d97d227b3103a7bb0c37d00",
+          "raw_primary_path_tuple_match": false,
+          "source_limit": "The official Font Awesome 7.1.0 NPM member has different path bytes from the installed MaterialX icon and CSS. No unchanged-primary, whole-geometry or optimizer-recipe equivalence is claimed."
+        }
       }
     },
     "source_url": "https://github.com/jaywhj/mkdocs-materialx/blob/9822de7fce387ed951366a78074879f0424e1aed/src/templates/assets/stylesheets/main/components/_code.scss",
     "source_sha256": "b8730169d00959bd9edbba7961bfd71210d693fdc118907dfdb17841b0453b29",
-    "limit": "Path tuples are not all geometry. Two optimized tuples are bound by exact SCSS source references, not falsely claimed byte-identical geometry."
+    "limit": "Ordered path d tuples are not all SVG geometry. Forty-three tuples match installed icons, including the header-attributed Font Awesome version caret. The two remaining optimized Lucide tuples are bound by exact SCSS source references; no whole-geometry equivalence is claimed."
   },
   "external_services": {
     "fltheme26": "HTTPS includes use the external FontLab service; its implementation bytes are not copied into this payload. Retained notices do not freeze later service responses.",
