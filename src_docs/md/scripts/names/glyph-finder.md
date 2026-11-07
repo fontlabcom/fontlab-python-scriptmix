@@ -36,8 +36,8 @@ Run **Names > Glyph Finder** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/95a772ac6847f4831f937e0d422f5abc05624a3b66a55d64f50e840e70bec856.py)
-<!--/codeinclude-->
+SHA256: `95a772ac6847f4831f937e0d422f5abc05624a3b66a55d64f50e840e70bec856`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Glyph%20Finder.py)

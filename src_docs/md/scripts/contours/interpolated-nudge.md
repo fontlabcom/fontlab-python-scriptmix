@@ -32,8 +32,8 @@ Run **Contours > Interpolated Nudge** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/fdd6fd4dcc70a3c7dbd08f19a2ad88d6dbaf7c1b3a617da4946e68712ffd20ff.py)
-<!--/codeinclude-->
+SHA256: `fdd6fd4dcc70a3c7dbd08f19a2ad88d6dbaf7c1b3a617da4946e68712ffd20ff`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Interpolated%20Nudge.py)

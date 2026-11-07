@@ -61,8 +61,8 @@ Run **Contours > Round Coordinates** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7b0f85d35d89bfd6d714596f76e48b9a5ff9b50322cbc87ae35e1da318faac76.py)
-<!--/codeinclude-->
+SHA256: `7b0f85d35d89bfd6d714596f76e48b9a5ff9b50322cbc87ae35e1da318faac76`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Round%20Coordinates.py)

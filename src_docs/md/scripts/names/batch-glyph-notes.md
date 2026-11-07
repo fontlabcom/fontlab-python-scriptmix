@@ -44,8 +44,8 @@ Run **Names > Batch Glyph Notes** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/bcf36530a70ca572a43720e687629c71e49244b6f6efb71f7f283a74a7f39901.py)
-<!--/codeinclude-->
+SHA256: `bcf36530a70ca572a43720e687629c71e49244b6f6efb71f7f283a74a7f39901`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Batch%20Glyph%20Notes.py)

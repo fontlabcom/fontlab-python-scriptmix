@@ -33,8 +33,8 @@ Run **Proof > Random Numbers** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8e6522ae2d0d07be74f92528b8b61123359b8582520b4edfe2eba883f03e280a.py)
-<!--/codeinclude-->
+SHA256: `8e6522ae2d0d07be74f92528b8b61123359b8582520b4edfe2eba883f03e280a`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Random%20Numbers.py)

@@ -29,8 +29,8 @@ Run **Contours > Sandblast** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5eb830bdacbff9445bd3b0cc83805fb705afe505d35cb649ce38c1fa00540adb.py)
-<!--/codeinclude-->
+SHA256: `5eb830bdacbff9445bd3b0cc83805fb705afe505d35cb649ce38c1fa00540adb`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Sandblast.py)

@@ -35,8 +35,8 @@ Run **Contours > Contour Order View** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3a3f25a3102a59d617fcabf7a7a8fbd82595e4444a0409a55061ac26cdefcd74.py)
-<!--/codeinclude-->
+SHA256: `3a3f25a3102a59d617fcabf7a7a8fbd82595e4444a0409a55061ac26cdefcd74`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Contour%20Order%20View.py)

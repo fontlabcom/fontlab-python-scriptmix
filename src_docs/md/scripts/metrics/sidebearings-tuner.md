@@ -56,8 +56,8 @@ Run **Metrics > Sidebearings Tuner** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/44aced6659c6e780ed00f1c792de1845866fa28face925e1659c19d5566adc9a.py)
-<!--/codeinclude-->
+SHA256: `44aced6659c6e780ed00f1c792de1845866fa28face925e1659c19d5566adc9a`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Metrics/Sidebearings%20Tuner.py)

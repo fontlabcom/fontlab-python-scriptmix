@@ -72,8 +72,8 @@ Run **Contours > Tabular Figure Copies** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b8dfa9eedfded808badf20ed2551fb9dff601af30ca9a50afd88fde13193afc2.py)
-<!--/codeinclude-->
+SHA256: `b8dfa9eedfded808badf20ed2551fb9dff601af30ca9a50afd88fde13193afc2`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Tabular%20Figure%20Copies.py)

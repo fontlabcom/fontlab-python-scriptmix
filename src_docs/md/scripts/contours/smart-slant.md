@@ -37,8 +37,8 @@ Run **Contours > Smart Slant** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b5f6cac94e69e88afbad7c554a6521593d4fbf469018385a32c9304a7a4c785f.py)
-<!--/codeinclude-->
+SHA256: `b5f6cac94e69e88afbad7c554a6521593d4fbf469018385a32c9304a7a4c785f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Smart%20Slant.py)

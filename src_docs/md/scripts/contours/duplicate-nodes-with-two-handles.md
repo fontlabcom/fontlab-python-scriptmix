@@ -38,8 +38,8 @@ Run **Contours > Duplicate Nodes with Two Handles** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2dac129fa3e2ed63062717b313da79f585107a97cda330c0c8e541efab46b3c9.py)
-<!--/codeinclude-->
+SHA256: `2dac129fa3e2ed63062717b313da79f585107a97cda330c0c8e541efab46b3c9`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Duplicate%20Nodes%20with%20Two%20Handles.py)

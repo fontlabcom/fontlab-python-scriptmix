@@ -31,8 +31,8 @@ Run **Reports > Vertical Metrics Reporter** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/19cb6ceb2b119456ddf2b30ab7666ed473b4da37d67062cf7a174fa1cc308298.py)
-<!--/codeinclude-->
+SHA256: `19cb6ceb2b119456ddf2b30ab7666ed473b4da37d67062cf7a174fa1cc308298`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Reports/Vertical%20Metrics%20Reporter.py)

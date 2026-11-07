@@ -32,8 +32,8 @@ Run **Cleanup > Start From Scratch** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/19c453a8da6f294df2c7848285fa8211dd721f505c15e302a5366a41ee744609.py)
-<!--/codeinclude-->
+SHA256: `19c453a8da6f294df2c7848285fa8211dd721f505c15e302a5366a41ee744609`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Cleanup/Start%20From%20Scratch.py)

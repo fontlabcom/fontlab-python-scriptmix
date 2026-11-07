@@ -1,6 +1,6 @@
 # Script catalogue
 
-Choose a category, then a script. Each page includes its actual menu source.
+Choose a category, then a script. Each page retains its usage and exact source identity.
 
 ## Anchors
 

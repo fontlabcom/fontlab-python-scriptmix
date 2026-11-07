@@ -35,8 +35,8 @@ Run **Anchors > Copy Anchors From Glyph** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0965587509f7942c8b55b5a62b425ebffe162bdbcda7859a18c0fe86a1f62aab.py)
-<!--/codeinclude-->
+SHA256: `0965587509f7942c8b55b5a62b425ebffe162bdbcda7859a18c0fe86a1f62aab`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Copy%20Anchors%20From%20Glyph.py)

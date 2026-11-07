@@ -36,8 +36,8 @@ Run **Proof > Waterfall** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a019aec9cf77088904935933c1f6e2aea6ba588248709661c5666af77d32b2a2.py)
-<!--/codeinclude-->
+SHA256: `a019aec9cf77088904935933c1f6e2aea6ba588248709661c5666af77d32b2a2`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Waterfall.py)

@@ -36,8 +36,8 @@ Run **Kerning > Exceptions Finder** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/897c73e3d1cb15cbb67e29663782a279b2232c869933b8909aed7d1772f06387.py)
-<!--/codeinclude-->
+SHA256: `897c73e3d1cb15cbb67e29663782a279b2232c869933b8909aed7d1772f06387`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Exceptions%20Finder.py)

@@ -43,8 +43,8 @@ Run **Names > Glyph Notes** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/83a4baf2c009ff8a62905499373c848e4a68cf1524af1323fbd10b28dcdb1888.py)
-<!--/codeinclude-->
+SHA256: `83a4baf2c009ff8a62905499373c848e4a68cf1524af1323fbd10b28dcdb1888`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Glyph%20Notes.py)

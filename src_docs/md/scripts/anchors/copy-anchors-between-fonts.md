@@ -38,8 +38,8 @@ Run **Anchors > Copy Anchors Between Fonts** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7a0ca8c692ab932510e8ba2b33e3f33589791203f312cfa348d2e5a57f274d21.py)
-<!--/codeinclude-->
+SHA256: `7a0ca8c692ab932510e8ba2b33e3f33589791203f312cfa348d2e5a57f274d21`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Copy%20Anchors%20Between%20Fonts.py)

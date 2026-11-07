@@ -34,8 +34,8 @@ Run **Proof > Glyph Grid** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/49a2a92fe9d27e135e2195ed2cbb6cdb5955ebf7408f3cc3650caf1f35386d4d.py)
-<!--/codeinclude-->
+SHA256: `49a2a92fe9d27e135e2195ed2cbb6cdb5955ebf7408f3cc3650caf1f35386d4d`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Glyph%20Grid.py)

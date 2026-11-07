@@ -36,8 +36,8 @@ Run **Font Info > Bump Font Version** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/98b2a1a721c4ad5b4b6a6851cf10a9f3aa20f31774fa4bf66244cd628aa48e53.py)
-<!--/codeinclude-->
+SHA256: `98b2a1a721c4ad5b4b6a6851cf10a9f3aa20f31774fa4bf66244cd628aa48e53`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Font%20Info/Bump%20Font%20Version.py)

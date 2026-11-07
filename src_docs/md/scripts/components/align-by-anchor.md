@@ -52,8 +52,8 @@ Run **Components > Align By Anchor** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/db5bfc9568c585473b2508e0f46e91d123ad7f66b2ab6228e9ac180045e8f4ab.py)
-<!--/codeinclude-->
+SHA256: `db5bfc9568c585473b2508e0f46e91d123ad7f66b2ab6228e9ac180045e8f4ab`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Components/Align%20By%20Anchor.py)

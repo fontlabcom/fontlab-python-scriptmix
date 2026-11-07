@@ -28,8 +28,8 @@ Run **Kerning > Kerning Energy Report** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6555393db13425025dee6fcba78101661a6a19c9e08c6319319c2c0edb29a688.py)
-<!--/codeinclude-->
+SHA256: `6555393db13425025dee6fcba78101661a6a19c9e08c6319319c2c0edb29a688`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Kerning%20Energy%20Report.py)

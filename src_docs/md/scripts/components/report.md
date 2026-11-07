@@ -34,8 +34,8 @@ Run **Components > Report** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/dbbd09a48862c959febd88a34868d22c1037f2e3b7c5cfa24879be6ead6590fa.py)
-<!--/codeinclude-->
+SHA256: `dbbd09a48862c959febd88a34868d22c1037f2e3b7c5cfa24879be6ead6590fa`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Components/Report.py)

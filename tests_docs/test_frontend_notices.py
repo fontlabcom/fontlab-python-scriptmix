@@ -37,7 +37,7 @@ def test_build_output_when_authored_guides_exist_then_keeps_source_directory_sep
     import yaml
     config = yaml.safe_load((ROOT / "src_docs/mkdocs.yml").read_text())
     output = (ROOT / "src_docs" / config["site_dir"]).resolve()
-    authored = (ROOT / "docs").resolve()
+    authored = (ROOT / "source_guides").resolve()
     assert output != authored, "A strict build must never clean authored guides"
     assert output not in authored.parents, "Generated output must not contain the authored guide directory"
     assert (authored / "PRE-INTEGRATION-GUIDE.md").is_file(), "Preserve the integration guide"

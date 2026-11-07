@@ -34,8 +34,8 @@ Run **Names > Select by Mark** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/917a1b23e4f71791d0ed508c91470c1bfb9fd42549440070d32395d70916e8f8.py)
-<!--/codeinclude-->
+SHA256: `917a1b23e4f71791d0ed508c91470c1bfb9fd42549440070d32395d70916e8f8`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Select%20by%20Mark.py)

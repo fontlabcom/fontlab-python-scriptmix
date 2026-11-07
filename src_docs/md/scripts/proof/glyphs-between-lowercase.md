@@ -37,8 +37,8 @@ Run **Proof > Glyphs Between Lowercase** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/13201ca8c7d7b15b16724578506d826adcbbf1fcbc77b36dcdee7d9a369081e3.py)
-<!--/codeinclude-->
+SHA256: `13201ca8c7d7b15b16724578506d826adcbbf1fcbc77b36dcdee7d9a369081e3`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Glyphs%20Between%20Lowercase.py)

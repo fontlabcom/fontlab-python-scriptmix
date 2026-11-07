@@ -28,8 +28,8 @@ Run **Reports > Point Counter (Master Layers)** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f6ab4dde19f3b42e8b95abb53c933334af0d032766fc263800eefae0155b600c.py)
-<!--/codeinclude-->
+SHA256: `f6ab4dde19f3b42e8b95abb53c933334af0d032766fc263800eefae0155b600c`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Reports/Point%20Counter%20%28Master%20Layers%29.py)

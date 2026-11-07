@@ -46,8 +46,8 @@ Run **Font Info > Master Metrics Table** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/227270400c504febeb813c695b97a8c301f1dd658742f270ce2dada456f97f4f.py)
-<!--/codeinclude-->
+SHA256: `227270400c504febeb813c695b97a8c301f1dd658742f270ce2dada456f97f4f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Font%20Info/Master%20Metrics%20Table.py)

@@ -47,8 +47,8 @@ Run **Names > Unicode From Names** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/986e4c123b49a1f99501ba220a0155bc8a3ac7a99514f0d2c37aee917c10ed62.py)
-<!--/codeinclude-->
+SHA256: `986e4c123b49a1f99501ba220a0155bc8a3ac7a99514f0d2c37aee917c10ed62`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Unicode%20From%20Names.py)

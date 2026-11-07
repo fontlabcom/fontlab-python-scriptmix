@@ -62,8 +62,8 @@ Run **Masters > Copy Layer Between Masters** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2eec4fe73acf056b46091515fdc6550b0e8881614d6dfaa9af5cb1c91fc6da31.py)
-<!--/codeinclude-->
+SHA256: `2eec4fe73acf056b46091515fdc6550b0e8881614d6dfaa9af5cb1c91fc6da31`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Copy%20Layer%20Between%20Masters.py)

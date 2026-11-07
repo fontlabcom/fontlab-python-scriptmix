@@ -37,8 +37,8 @@ Run **Proof > Glyphs Surrounded by H** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6632c375ec7e03686e0f60545ce2ebc641c33e81937f6da8021498cd237ff0ba.py)
-<!--/codeinclude-->
+SHA256: `6632c375ec7e03686e0f60545ce2ebc641c33e81937f6da8021498cd237ff0ba`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Glyphs%20Surrounded%20by%20H.py)

@@ -40,8 +40,8 @@ Run **Names > Style Linker** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/30465e121d48ba68820aa745b11f184ac73a8518406441aacb3ed0fb236e3782.py)
-<!--/codeinclude-->
+SHA256: `30465e121d48ba68820aa745b11f184ac73a8518406441aacb3ed0fb236e3782`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Style%20Linker.py)

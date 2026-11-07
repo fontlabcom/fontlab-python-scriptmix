@@ -54,8 +54,8 @@ Run **Metrics > Equalize Sidebearings** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ce9ed0bf467a3c87fb3f38f225da2e1ef026c4a616640bba37e2229e01226769.py)
-<!--/codeinclude-->
+SHA256: `ce9ed0bf467a3c87fb3f38f225da2e1ef026c4a616640bba37e2229e01226769`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Metrics/Equalize%20Sidebearings.py)

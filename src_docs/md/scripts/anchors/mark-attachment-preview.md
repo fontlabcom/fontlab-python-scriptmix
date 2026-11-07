@@ -33,8 +33,8 @@ Run **Anchors > Mark Attachment Preview** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a42f01c194b451765ee990eab8628836e15a350e5f602ee70d875c3ca4228185.py)
-<!--/codeinclude-->
+SHA256: `a42f01c194b451765ee990eab8628836e15a350e5f602ee70d875c3ca4228185`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Mark%20Attachment%20Preview.py)

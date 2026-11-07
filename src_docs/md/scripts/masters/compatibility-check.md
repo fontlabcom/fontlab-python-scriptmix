@@ -36,8 +36,8 @@ Run **Masters > Compatibility Check** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/536a54227e6d654684d4eace3494d01cd0f106d2a7df0a7d8ad227633cbaec00.py)
-<!--/codeinclude-->
+SHA256: `536a54227e6d654684d4eace3494d01cd0f106d2a7df0a7d8ad227633cbaec00`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Compatibility%20Check.py)

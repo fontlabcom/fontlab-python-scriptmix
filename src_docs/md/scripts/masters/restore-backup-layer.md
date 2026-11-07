@@ -68,8 +68,8 @@ Run **Masters > Restore Backup Layer** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6d164d434489d714926a18c59fa8144e16e7dbd8623746102f025513474f0713.py)
-<!--/codeinclude-->
+SHA256: `6d164d434489d714926a18c59fa8144e16e7dbd8623746102f025513474f0713`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Restore%20Backup%20Layer.py)

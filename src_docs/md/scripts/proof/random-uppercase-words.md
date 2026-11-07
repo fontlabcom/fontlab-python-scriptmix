@@ -33,8 +33,8 @@ Run **Proof > Random Uppercase Words** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/10bf14742502136dd2c12639386a7c651d2d0d385e8dc7664b807d0aac451669.py)
-<!--/codeinclude-->
+SHA256: `10bf14742502136dd2c12639386a7c651d2d0d385e8dc7664b807d0aac451669`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Random%20Uppercase%20Words.py)

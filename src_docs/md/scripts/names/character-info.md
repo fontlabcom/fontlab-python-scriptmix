@@ -36,8 +36,8 @@ Run **Names > Character Info** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/13590a61617a3415dd79c04d2c174fe10ac66e0d36e5c3912b08e25d6b236ff8.py)
-<!--/codeinclude-->
+SHA256: `13590a61617a3415dd79c04d2c174fe10ac66e0d36e5c3912b08e25d6b236ff8`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Character%20Info.py)

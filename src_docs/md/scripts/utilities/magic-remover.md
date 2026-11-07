@@ -40,8 +40,8 @@ Run **Utilities > Magic Remover** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e24e7839c0b7fe6ad37bbd83c6414597dc871b2959e57e29d9e3a83476262a19.py)
-<!--/codeinclude-->
+SHA256: `e24e7839c0b7fe6ad37bbd83c6414597dc871b2959e57e29d9e3a83476262a19`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Utilities/Magic%20Remover.py)

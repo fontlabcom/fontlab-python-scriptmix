@@ -30,8 +30,8 @@ Run **Contours > Straighten All Curves** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/65ad56cc05102b7ef1f8eedfe1c80831d6d0fcc08bc97efe3bda95d9418a9edf.py)
-<!--/codeinclude-->
+SHA256: `65ad56cc05102b7ef1f8eedfe1c80831d6d0fcc08bc97efe3bda95d9418a9edf`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Straighten%20All%20Curves.py)

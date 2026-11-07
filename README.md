@@ -3,21 +3,17 @@ this_file: README.md
 ---
 
 # FontLab practical scripts
-
 259 practical tools for FontLab 9: 69 sample adaptations and 190 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 14 one-level categories.
-
 Current source includes Metrics, Names and Anchors editors; component writers;
 master navigation, backups and layer copying; contour editing, generators and
 hint tools; feature tools; kerning editors; proof texts; reports and drawing panels.
 The [porting backlog](PORTING-BACKLOG.md) records source dispositions and gaps.
-
 New ports require native acceptance. Source tests do not establish correct
 FontLab Undo/Redo, saved font state or panel lifetime. Historical sample
 acceptance remains 68 of 130; the Italic Angle candidate and later ports retain
 their separate checks. Menu counts describe available source files.
-
 Writers disclose queued native glyph ids and the possible modification-date changes
 (FontLab issue 8537). They never clear the queue or normalise unrelated dates.
 
@@ -75,7 +71,7 @@ normal work and original fonts outside that session.
   fields. Reset keeps input; New Tab uses the font captured when the tool opened.
 - **Utilities > Text Holder**: keep proof text in an editable persistent window;
   Find and replacement operate on the selection or whole text. Save keeps the
-  panel open. See the [Text Holder guide](docs/text-holder.md).
+  panel open. See the [Text Holder guide](src_docs/md/guides/text-holder.md).
 
 Read-only tools can change selection, open tabs or show panels. Source getters
 also need native preservation checks. Writer history descriptions state the
@@ -179,26 +175,18 @@ remain mandatory. Audits read archived bytes; they do not execute originals.
 
 ## Documentation tests and build
 
-The documentation tests can run independently on arm64 Python 3.11. They need
-pytest, the real codeinclude plugin and PyYAML; this command supplies them.
-Put uv cache and temporary fixtures in external scratch space. Git distribution
-tests use temporary repositories and require a working Git executable on PATH.
+The site uses Python 3.13 and the 31-package hash lock in `src_docs/requirements.txt`:
 
 ```sh
-PATH="/opt/homebrew/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 \
-  PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
-  uv run --no-project --python cpython-3.11-macos-aarch64-none \
-  --with pytest --with mkdocs-codeinclude-plugin==0.3.1 --with PyYAML \
-  python -B -m pytest -q -p no:cacheprovider tests_docs
+uv venv --python 3.13 .docs-venv
+uv pip install --python .docs-venv/bin/python --require-hashes -r src_docs/requirements.txt
+PATH="$PWD/.docs-venv/bin:/opt/homebrew/bin:$PATH" sh src_docs/build.sh
+.docs-venv/bin/python -m unittest discover -s tests_docs -p 'test_pipeline_*.py' -v
 ```
 
-The full site SDK requires Python 3.12 or later, as declared in `pyproject.toml`.
-It uses the locked ProperDocs/MaterialX stack in its own prepared `.venv`.
-`./build.sh --offline` syncs that environment, regenerates the catalogue and
-builds the site strictly. Offline builds require all locked dependencies cached.
-`./build.sh --serve --offline` starts a local preview. Generated output stays in
-`.build/site/`; authored guides in `docs/` are kept. Local tests and builds do
-not prove site publication or complete browser-asset licence review.
+Legacy pytest documentation checks additionally require pytest in a separate test environment. The older root `uv.lock` is retained for historical tooling; it is not the site's publication lock. Every push to `main` builds the site and verifies immutable generated output, source identity, parentage and source epoch before requesting public Pages. Configure `main:/docs` only after independent privacy, licence, build and settings qualification. A local build does not establish publication.
+
+`./build.sh`, `./build.sh --offline` and `./build.sh --serve` use the same lock. Historical authored guides remain byte-exact under `source_guides/`; only generated output belongs in `docs/`.
 
 ## Licence
 

@@ -57,8 +57,8 @@ Run **Contours > Add Extremes** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/fdcd581785c3d30bb041b52a4b5394520a645be129cb449343a5dc6b9c583322.py)
-<!--/codeinclude-->
+SHA256: `fdcd581785c3d30bb041b52a4b5394520a645be129cb449343a5dc6b9c583322`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Add%20Extremes.py)

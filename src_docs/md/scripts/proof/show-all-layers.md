@@ -23,8 +23,8 @@ Run **Proof > Show All Layers** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/df44a608bff6ec335f6768333b69dc9101237cc727ee3ca7c61e99035012929f.py)
-<!--/codeinclude-->
+SHA256: `df44a608bff6ec335f6768333b69dc9101237cc727ee3ca7c61e99035012929f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Show%20All%20Layers.py)

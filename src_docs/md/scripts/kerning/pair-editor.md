@@ -35,8 +35,8 @@ Run **Kerning > Pair Editor** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3ae4e4bdb1fdfd377ed521ee054fcd1eee843e024fbd0d994dc9755f3a0c13ab.py)
-<!--/codeinclude-->
+SHA256: `3ae4e4bdb1fdfd377ed521ee054fcd1eee843e024fbd0d994dc9755f3a0c13ab`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Pair%20Editor.py)

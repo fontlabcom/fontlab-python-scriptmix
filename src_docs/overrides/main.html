@@ -2,5 +2,15 @@
 {% extends "base.html" %}
 {% block extrahead %}
   {{ super() }}
-  <meta name="fltheme-site" content="documentation">
+  <script src="https://i.fontlab.com/menu/fontlab.js" defer></script>
+{% endblock %}
+{% block header %}
+  <fontlab-menu mode="light" site-label="{{ config.site_name | e }}"
+                site-url="{{ config.site_url | e }}"
+                mobile-menu="materialx" mobile-search="materialx"></fontlab-menu>
+  {{ super() }}
+{% endblock %}
+{% block footer %}
+  {{ super() }}
+  <fontlab-footer mode="light"></fontlab-footer>
 {% endblock %}

@@ -44,8 +44,8 @@ Run **Metrics > Vertical Metrics Diagram** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a8f0ed78a12db894982c7b8127a5455913d65a0aacfc79743f931064777b2035.py)
-<!--/codeinclude-->
+SHA256: `a8f0ed78a12db894982c7b8127a5455913d65a0aacfc79743f931064777b2035`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Metrics/Vertical%20Metrics%20Diagram.py)

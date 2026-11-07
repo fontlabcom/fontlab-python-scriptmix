@@ -33,8 +33,8 @@ Run **Anchors > Cloud View** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/10b30156f65b17f1a46bb37bdeb651f8e2ecc6784d815cd22bb0b22665f51f9e.py)
-<!--/codeinclude-->
+SHA256: `10b30156f65b17f1a46bb37bdeb651f8e2ecc6784d815cd22bb0b22665f51f9e`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Cloud%20View.py)

@@ -37,8 +37,8 @@ Run **Contours > Raise Ascender** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ecc32fc081c412c2d44d5dd836a68ebfea2b607cdceb055b28286c880cdde330.py)
-<!--/codeinclude-->
+SHA256: `ecc32fc081c412c2d44d5dd836a68ebfea2b607cdceb055b28286c880cdde330`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Raise%20Ascender.py)

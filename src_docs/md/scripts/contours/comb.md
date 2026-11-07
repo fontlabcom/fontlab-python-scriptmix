@@ -29,8 +29,8 @@ Run **Contours > Comb** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5b04d1c4f70cf7e4378c4a90219af93997abd2182e76a9b60d55f10208fc2229.py)
-<!--/codeinclude-->
+SHA256: `5b04d1c4f70cf7e4378c4a90219af93997abd2182e76a9b60d55f10208fc2229`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Comb.py)

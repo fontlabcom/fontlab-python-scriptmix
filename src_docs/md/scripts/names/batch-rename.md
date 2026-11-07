@@ -44,8 +44,8 @@ Run **Names > Batch Rename** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4fcbcf5042ed54a1d1f42b7255f84d4de382b1200c1249870697118aed2b07c9.py)
-<!--/codeinclude-->
+SHA256: `4fcbcf5042ed54a1d1f42b7255f84d4de382b1200c1249870697118aed2b07c9`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Batch%20Rename.py)

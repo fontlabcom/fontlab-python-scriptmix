@@ -32,8 +32,8 @@ Run **Proof > KernKing** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5074479a3550de54222901716ac54a19e21c6c78a9d2876f0cc6d692e6ee15e2.py)
-<!--/codeinclude-->
+SHA256: `5074479a3550de54222901716ac54a19e21c6c78a9d2876f0cc6d692e6ee15e2`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/KernKing.py)

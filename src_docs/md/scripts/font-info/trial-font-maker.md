@@ -48,8 +48,8 @@ Run **Font Info > Trial Font Maker** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/4a3f416df2e51d3f77d514681c0b86e5029817d8156015a6626b4ce78602ce0f.py)
-<!--/codeinclude-->
+SHA256: `4a3f416df2e51d3f77d514681c0b86e5029817d8156015a6626b4ce78602ce0f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Font%20Info/Trial%20Font%20Maker.py)

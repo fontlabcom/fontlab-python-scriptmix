@@ -235,3 +235,6 @@ __marimo__/
 # Agent session state
 .omc/
 *.vfpyc
+
+# Isolated documentation runtime
+.docs-venv/

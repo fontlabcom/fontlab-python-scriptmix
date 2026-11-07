@@ -37,8 +37,8 @@ Run **Proof > Glyphs Between Lining Figures** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5d442ace5ab15ddd00997721648c1c0abfc5fd179600ef63186778be8beb1248.py)
-<!--/codeinclude-->
+SHA256: `5d442ace5ab15ddd00997721648c1c0abfc5fd179600ef63186778be8beb1248`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Glyphs%20Between%20Lining%20Figures.py)

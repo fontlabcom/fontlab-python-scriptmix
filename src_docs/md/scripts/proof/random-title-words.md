@@ -33,8 +33,8 @@ Run **Proof > Random Title Words** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f60f53a3728c3827dc80ac178a72ac273e9fbe066e85ec2f21b0451fdab3928f.py)
-<!--/codeinclude-->
+SHA256: `f60f53a3728c3827dc80ac178a72ac273e9fbe066e85ec2f21b0451fdab3928f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Random%20Title%20Words.py)

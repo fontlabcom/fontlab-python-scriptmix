@@ -27,8 +27,8 @@ Run **Proof > Highest & Lowest Glyphs** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9635679e4e0b0dbff2c2631a76bb78713d6aa1f5fac37e974a9bde67f786fa6b.py)
-<!--/codeinclude-->
+SHA256: `9635679e4e0b0dbff2c2631a76bb78713d6aa1f5fac37e974a9bde67f786fa6b`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Highest%20%26%20Lowest%20Glyphs.py)

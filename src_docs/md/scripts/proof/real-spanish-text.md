@@ -41,8 +41,8 @@ Run **Proof > Real Spanish Text** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6cb895cbdc85bf1c5c83e0a8c86f10d341a6101d8acea2a9849de89fbb3a619b.py)
-<!--/codeinclude-->
+SHA256: `6cb895cbdc85bf1c5c83e0a8c86f10d341a6101d8acea2a9849de89fbb3a619b`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Real%20Spanish%20Text.py)

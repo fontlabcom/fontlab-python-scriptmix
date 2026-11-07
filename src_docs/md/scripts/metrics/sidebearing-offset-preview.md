@@ -37,8 +37,8 @@ Run **Metrics > Sidebearing Offset Preview** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/aebd0335756696d5f766d9ccbf33c3497bb97b4530ddf91ca19fc562788c3b75.py)
-<!--/codeinclude-->
+SHA256: `aebd0335756696d5f766d9ccbf33c3497bb97b4530ddf91ca19fc562788c3b75`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Metrics/Sidebearing%20Offset%20Preview.py)

@@ -38,8 +38,8 @@ Run **Guides > Perpendicular Guides** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a221b9b7a01f96d394a878982d88f590775adf5bdd5836b7c26796461306cbee.py)
-<!--/codeinclude-->
+SHA256: `a221b9b7a01f96d394a878982d88f590775adf5bdd5836b7c26796461306cbee`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Guides/Perpendicular%20Guides.py)

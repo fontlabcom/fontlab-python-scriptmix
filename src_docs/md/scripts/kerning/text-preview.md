@@ -35,8 +35,8 @@ Run **Kerning > Text Preview** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/45add8abbaba88ea6c200d58707c3f13cd479bfa2824ff7a1b00bfc6748f9c29.py)
-<!--/codeinclude-->
+SHA256: `45add8abbaba88ea6c200d58707c3f13cd479bfa2824ff7a1b00bfc6748f9c29`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Text%20Preview.py)

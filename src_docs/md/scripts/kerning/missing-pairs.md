@@ -36,8 +36,8 @@ Run **Kerning > Missing Pairs** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/856f37a6e26ceba142c93e78a4f275e530cff2629a8f7de9efdc3fe58d6c6648.py)
-<!--/codeinclude-->
+SHA256: `856f37a6e26ceba142c93e78a4f275e530cff2629a8f7de9efdc3fe58d6c6648`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Missing%20Pairs.py)

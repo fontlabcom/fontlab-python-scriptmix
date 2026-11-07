@@ -50,8 +50,8 @@ Run **Metrics > Round Advances** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/66cc77b0ba02e46a696b0464a078d181fd6ca6604671cdcf5efe26f59a0a1c49.py)
-<!--/codeinclude-->
+SHA256: `66cc77b0ba02e46a696b0464a078d181fd6ca6604671cdcf5efe26f59a0a1c49`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Metrics/Round%20Advances.py)

@@ -39,8 +39,8 @@ Run **Contours > Overlap Nodes** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/aff5b5ba8ff836fdf9be49550a101da798430d7ac096e6513a10a7a4789a68e3.py)
-<!--/codeinclude-->
+SHA256: `aff5b5ba8ff836fdf9be49550a101da798430d7ac096e6513a10a7a4789a68e3`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Overlap%20Nodes.py)

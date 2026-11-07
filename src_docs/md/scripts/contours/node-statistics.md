@@ -35,8 +35,8 @@ Run **Contours > Node Statistics** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8abe2e2384676c82dfd0740e099aa242a089592bb1d21eb7be495e55a2583515.py)
-<!--/codeinclude-->
+SHA256: `8abe2e2384676c82dfd0740e099aa242a089592bb1d21eb7be495e55a2583515`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Node%20Statistics.py)

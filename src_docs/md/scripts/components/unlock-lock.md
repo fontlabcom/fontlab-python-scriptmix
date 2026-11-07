@@ -52,8 +52,8 @@ Run **Components > Unlock Lock** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/6843ba684bfaea21376959452c2dbc678fc16b75a58bced14bbbf493d62fb8fc.py)
-<!--/codeinclude-->
+SHA256: `6843ba684bfaea21376959452c2dbc678fc16b75a58bced14bbbf493d62fb8fc`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Components/Unlock%20Lock.py)

@@ -52,8 +52,8 @@ Run **Metrics > Italic Sidebearings** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ff0b82b0fbe1c639ad7bba2e7d5327164deed5f6259c52acd564f9c30598f62f.py)
-<!--/codeinclude-->
+SHA256: `ff0b82b0fbe1c639ad7bba2e7d5327164deed5f6259c52acd564f9c30598f62f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Metrics/Italic%20Sidebearings.py)

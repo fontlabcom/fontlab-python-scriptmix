@@ -1,11 +1,7 @@
 ---
 this_file: src_docs/md/tags.md
-tags:
-- Python
-categories:
-- Guides
 ---
 
-# Find pages by tag
+# Browse by category
 
-<!-- material/tags -->
+The complete [script catalogue](scripts/index.md) groups every current menu by its FontLab category.

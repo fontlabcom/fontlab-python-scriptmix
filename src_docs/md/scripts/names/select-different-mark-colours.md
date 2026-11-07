@@ -23,8 +23,8 @@ Run **Names > Select Different Mark Colours** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/42fe45daf79850eb223950e6b440f86773a9849a8f4e622d6177caa422842770.py)
-<!--/codeinclude-->
+SHA256: `42fe45daf79850eb223950e6b440f86773a9849a8f4e622d6177caa422842770`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Select%20Different%20Mark%20Colours.py)

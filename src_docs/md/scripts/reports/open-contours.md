@@ -36,8 +36,8 @@ Run **Reports > Open Contours** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a0712c8d9f242ceae05745b752da7e9621523827e504ebb4abe53f32b9775f0f.py)
-<!--/codeinclude-->
+SHA256: `a0712c8d9f242ceae05745b752da7e9621523827e504ebb4abe53f32b9775f0f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Reports/Open%20Contours.py)

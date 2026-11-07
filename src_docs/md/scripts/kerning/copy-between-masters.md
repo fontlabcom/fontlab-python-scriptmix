@@ -35,8 +35,8 @@ Run **Kerning > Copy Between Masters** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8a1d271a7e9d75dee66e1e6756643632960be43ca4a8f20f46acc4aaea999d07.py)
-<!--/codeinclude-->
+SHA256: `8a1d271a7e9d75dee66e1e6756643632960be43ca4a8f20f46acc4aaea999d07`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Copy%20Between%20Masters.py)

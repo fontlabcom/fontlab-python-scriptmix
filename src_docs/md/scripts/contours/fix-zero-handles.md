@@ -63,8 +63,8 @@ Run **Contours > Fix Zero Handles** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/cafcaccf1e80d73aa8ed01acf615b3c4a2be6ead59b9a437027be973d3b643b4.py)
-<!--/codeinclude-->
+SHA256: `cafcaccf1e80d73aa8ed01acf615b3c4a2be6ead59b9a437027be973d3b643b4`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Fix%20Zero%20Handles.py)

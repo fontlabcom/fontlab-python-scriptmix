@@ -34,8 +34,8 @@ Run **Font Info > Glyph Order Preview and Export** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/da3d34aaa6f1665591530edda75507155fde3f55c986b10035ee33d2e1cad30c.py)
-<!--/codeinclude-->
+SHA256: `da3d34aaa6f1665591530edda75507155fde3f55c986b10035ee33d2e1cad30c`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Font%20Info/Glyph%20Order%20Preview%20and%20Export.py)

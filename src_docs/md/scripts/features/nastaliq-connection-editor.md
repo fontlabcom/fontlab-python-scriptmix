@@ -33,8 +33,8 @@ Run **Features > Nastaliq Connection Editor** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7ae2c8ae1b20e39a2c54573a1621030631533ed635b5caec5b807c7b401f448b.py)
-<!--/codeinclude-->
+SHA256: `7ae2c8ae1b20e39a2c54573a1621030631533ed635b5caec5b807c7b401f448b`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Features/Nastaliq%20Connection%20Editor.py)

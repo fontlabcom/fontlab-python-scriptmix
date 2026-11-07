@@ -28,8 +28,8 @@ Run **Anchors > Add Anchors From File** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/775f5dab7c9a5d7dcb68cbb6b900815fa0a79d366e6c75cdb5dfacb8e40ce6bc.py)
-<!--/codeinclude-->
+SHA256: `775f5dab7c9a5d7dcb68cbb6b900815fa0a79d366e6c75cdb5dfacb8e40ce6bc`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Add%20Anchors%20From%20File.py)

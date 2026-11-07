@@ -49,8 +49,8 @@ Run **Anchors > Round To Grid** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d4d3a6448900e471ec5a905a96338c0c6fd2d491693cbb5315fb2366f0b1a39c.py)
-<!--/codeinclude-->
+SHA256: `d4d3a6448900e471ec5a905a96338c0c6fd2d491693cbb5315fb2366f0b1a39c`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Round%20To%20Grid.py)

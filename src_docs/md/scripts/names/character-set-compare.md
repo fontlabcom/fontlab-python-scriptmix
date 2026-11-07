@@ -35,8 +35,8 @@ Run **Names > Character Set Compare** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/867a8f2f4151ca3c3c8ba2fe0a5f9b01578b46e61440daa3afb160e41cf816b3.py)
-<!--/codeinclude-->
+SHA256: `867a8f2f4151ca3c3c8ba2fe0a5f9b01578b46e61440daa3afb160e41cf816b3`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Character%20Set%20Compare.py)

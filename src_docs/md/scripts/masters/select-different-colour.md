@@ -45,8 +45,8 @@ Run **Masters > Select Different Colour** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7d7129b5e015c70edfc9cc39bda93f103abfaefa4f748a30d55179f6c51e9f80.py)
-<!--/codeinclude-->
+SHA256: `7d7129b5e015c70edfc9cc39bda93f103abfaefa4f748a30d55179f6c51e9f80`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Select%20Different%20Colour.py)

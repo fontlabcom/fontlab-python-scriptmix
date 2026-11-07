@@ -36,8 +36,8 @@ Run **Guides > Metric Reference Lines** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/288c80a3f2e60341f73130f63fcb4ad68f6f9917b88ed9b6f1b17326f25071bb.py)
-<!--/codeinclude-->
+SHA256: `288c80a3f2e60341f73130f63fcb4ad68f6f9917b88ed9b6f1b17326f25071bb`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Guides/Metric%20Reference%20Lines.py)

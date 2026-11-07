@@ -53,8 +53,8 @@ Run **Masters > Deliver Glyphs** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/deb66c49ca44df494593a6fcd5ed71279b2acca17b7ddf33ad349a6b505ed5f6.py)
-<!--/codeinclude-->
+SHA256: `deb66c49ca44df494593a6fcd5ed71279b2acca17b7ddf33ad349a6b505ed5f6`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Deliver%20Glyphs.py)

@@ -33,8 +33,8 @@ Run **Proof > Random Title Nontext** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f7562404619b1331ce24816740a3cebc496a39b123e7d0feba072909c78c8ef0.py)
-<!--/codeinclude-->
+SHA256: `f7562404619b1331ce24816740a3cebc496a39b123e7d0feba072909c78c8ef0`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Random%20Title%20Nontext.py)

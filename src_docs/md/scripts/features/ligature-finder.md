@@ -33,8 +33,8 @@ Run **Features > Ligature Finder** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d32962796bd77e830609b7687d3aff15a59381ffc06767f86a2748725717764d.py)
-<!--/codeinclude-->
+SHA256: `d32962796bd77e830609b7687d3aff15a59381ffc06767f86a2748725717764d`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Features/Ligature%20Finder.py)

@@ -37,8 +37,8 @@ Run **Masters > Master Switcher** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b32b5c95aa434995d8b99c66cba75e19cf7b7fbfe678c7aec43e028f6d25f938.py)
-<!--/codeinclude-->
+SHA256: `b32b5c95aa434995d8b99c66cba75e19cf7b7fbfe678c7aec43e028f6d25f938`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Master%20Switcher.py)

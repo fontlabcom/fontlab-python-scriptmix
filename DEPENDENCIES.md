@@ -132,3 +132,7 @@ fallbacks remain explicit. This policy lives in the Scriptmix caller; generic Ap
 imports no Glyphs database or peer. Runtime package/version requirements remain
 unchanged; test.sh explicitly provisions glyphsLib for the actual metadata tests
 instead of relying on it being installed transitively by another optional peer.
+
+## Current documentation dependencies
+
+Python 3.13 runs the exact 31-package hash lock in `src_docs/requirements.txt`: ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and Pymdown Extensions 11.0.1. Search uses MkDocs' bundled plugin. No API renderer or source-body inclusion plugin is used. The shared fltheme26/1.0.0 menu/footer is light. Installed licence bytes and 44 generated asset identities are recorded in `src_docs/md/assets/current-docs-inventory.json`; its transitive review remains incomplete. Runtime dependencies and package metadata are unchanged.

@@ -34,8 +34,8 @@ Run **Kerning > Steal Kerning From Next Pair** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1f39494601cac658e2ba8900484749639b825b0ac065beb9779f24ae1c5bb18c.py)
-<!--/codeinclude-->
+SHA256: `1f39494601cac658e2ba8900484749639b825b0ac065beb9779f24ae1c5bb18c`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Steal%20Kerning%20From%20Next%20Pair.py)

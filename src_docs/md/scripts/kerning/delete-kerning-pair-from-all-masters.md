@@ -30,8 +30,8 @@ Run **Kerning > Delete Kerning Pair From All Masters** from FontLab's Scripts me
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0f252998a0e1e32786fd173e80a9807cf1e33f2d15915942004f7fdc6627f75a.py)
-<!--/codeinclude-->
+SHA256: `0f252998a0e1e32786fd173e80a9807cf1e33f2d15915942004f7fdc6627f75a`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Delete%20Kerning%20Pair%20From%20All%20Masters.py)

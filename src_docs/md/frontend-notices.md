@@ -3,6 +3,8 @@ this_file: src_docs/md/frontend-notices.md
 ---
 # Browser asset notices
 
+The table and machine-readable notice list below retain the earlier MaterialX 10.1.5 review and its unresolved findings. The current-build inventory at the end records the separate 10.1.8 package facts.
+
 These notices cover the named browser components below. The complete transitive
 inventory is **still being reviewed**. This page does not qualify the site for
 publication or change the licence of example code, API documentation or packages.
@@ -59,3 +61,46 @@ licence for every bundled library or dictionary.
 
 The Lunr browser source header carries a 2020 copyright; its npm archive
 retains a 2013 licence notice. Both are preserved above.
+
+## Current documentation build inventory
+
+The [current installed-distribution inventory](assets/current-docs-inventory.json) records all 31 packages in the exact build lock, their installed licence texts, and the 44 generated browser assets matched byte for byte to their installed distributions. The current builder uses ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and Pymdown Extensions 11.0.1. This scoped inventory does not close the embedded-component or external-response review.
+
+## Current English browser payload
+
+The [current browser-component record](assets/current-frontend-notices.json) binds the actual retained MaterialX10.1.8 browser payload to exact package archives, full notices and source maps. The historical partial inventory above remains unchanged; its old pending language-helper/source review is not asserted to qualify these current bytes.
+
+The [English-only omission manifest](assets/english-search-omissions.json) records all35 exact unused lunr-languages1.20.0 helpers removed from the generated site, including Wordcut and TinySegmenter. The build fails on theme/search-language, search-index, vendor-set/hash or local HTML-reference drift. Nine original core vendor assets remain byte-exact; all36 notice files from31 locked Python distributions remain. No language-helper implementation is distributed by the current output, and the historical44-asset packet is preserved as evidence.
+
+The main JavaScript source map retains211 preferred sources;128 external component sources match the exact NPM archives byte for byte. The worker map retains13 sources, including exact Lunr2.3.9. Clipboard's exact upstream distribution embeds its nested dependencies; the publisher lock and the exact select/good-listener/delegate README License sections retain the MIT link and Zeno Rocha attribution. No missing standalone LICENSE or copyright year is invented. CSS source maps list source names rather than embedded preferred-source bytes.
+
+Material Design icons retain the Pictogrammers notice and Apache2.0 icon terms (or any specifically stated underlying terms), while code is MIT. Font Awesome Free icons carry Fonticons attribution and CC-BY4.0 terms; Octicons retain GitHub's MIT notice; Lucide retains its ISC and inherited icon notices. Forty-two observed SVG path tuples match installed icons; the two optimized CSS paths are identified by the pinned SCSS references to lucide/focus.svg and lucide/download.svg. This is source attribution, not an unproved all-geometry equivalence claim.
+
+FontLab's shared theme scripts/styles and Google Fonts remain external HTTPS services; their implementation/font bytes are not copied into this site's payload. Corresponding retained notices remain available. A local build does not freeze future external responses or establish live publication.
+
+| Component / retained terms | Version | Exact full notice or upstream README licence section |
+| --- | --- | --- |
+| clipboard | 2.0.11 | [LICENSE.txt](assets/current-frontend/clipboard/LICENSE.txt) |
+| tiny-emitter | 2.1.0 | [LICENSE.txt](assets/current-frontend/tiny-emitter/LICENSE.txt) |
+| escape-html | 1.0.3 | [LICENSE.txt](assets/current-frontend/escape-html/LICENSE.txt) |
+| focus-visible | 5.2.1 | [LICENSE.md.txt](assets/current-frontend/focus-visible/LICENSE.md.txt) |
+| rxjs | 7.8.2 | [LICENSE.txt.txt](assets/current-frontend/rxjs/LICENSE.txt.txt) |
+| tslib | 2.7.0 | [LICENSE.txt.txt](assets/current-frontend/tslib/LICENSE.txt.txt); [CopyrightNotice.txt.txt](assets/current-frontend/tslib/CopyrightNotice.txt.txt) |
+| lunr | 2.3.9 | [LICENSE.txt](assets/current-frontend/lunr/LICENSE.txt) |
+| material-design-color | 2.3.2 | [LICENSE.txt](assets/current-frontend/material-design-color/LICENSE.txt) |
+| @mdi/svg | 7.4.47 | [LICENSE.txt](assets/current-frontend/@mdi-svg/LICENSE.txt) |
+| @fortawesome/fontawesome-free | 7.1.0 | [LICENSE.txt.txt](assets/current-frontend/@fortawesome-fontawesome-free/LICENSE.txt.txt) |
+| @primer/octicons | 19.25.0 | [LICENSE.txt](assets/current-frontend/@primer-octicons/LICENSE.txt) |
+| lucide-static | 1.11.0 | [LICENSE.txt](assets/current-frontend/lucide-static/LICENSE.txt) |
+| select | 1.1.2 | [readme.md.txt](assets/current-frontend/select/readme.md.txt) |
+| good-listener | 1.2.2 | [readme.md.txt](assets/current-frontend/good-listener/readme.md.txt) |
+| delegate | 3.2.0 | [readme.md.txt](assets/current-frontend/delegate/readme.md.txt) |
+| MaterialX10.1.8 | retained terms | [materialx-10.1.8-LICENSE.txt](assets/current-frontend/retained/materialx-10.1.8-LICENSE.txt) |
+| Retained corresponding terms | retained terms | [apache-2.0.txt.txt](assets/current-frontend/retained/apache-2.0.txt.txt) |
+| Retained corresponding terms | retained terms | [cc-by-4.0.txt.txt](assets/current-frontend/retained/cc-by-4.0.txt.txt) |
+| Retained corresponding terms | retained terms | [w3c-focus-visible.txt.txt](assets/current-frontend/retained/w3c-focus-visible.txt.txt) |
+| Retained corresponding terms | retained terms | [mit-basecoat-css.txt.txt](assets/current-frontend/retained/mit-basecoat-css.txt.txt) |
+| Retained corresponding terms | retained terms | [mit-daisyui.txt.txt](assets/current-frontend/retained/mit-daisyui.txt.txt) |
+| Retained corresponding terms | retained terms | [mit-tailwindcss.txt.txt](assets/current-frontend/retained/mit-tailwindcss.txt.txt) |
+| Retained corresponding terms | retained terms | [ofl-roboto.txt.txt](assets/current-frontend/retained/ofl-roboto.txt.txt) |
+| Retained corresponding terms | retained terms | [ofl-robotomono.txt.txt](assets/current-frontend/retained/ofl-robotomono.txt.txt) |

@@ -59,8 +59,8 @@ Run **Contours > Delete Duplicate Contours** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d2efd700219d2d771343353d26695553e2809d364818e055cbe8003f83aa4aff.py)
-<!--/codeinclude-->
+SHA256: `d2efd700219d2d771343353d26695553e2809d364818e055cbe8003f83aa4aff`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Delete%20Duplicate%20Contours.py)

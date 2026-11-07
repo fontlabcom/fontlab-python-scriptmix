@@ -29,8 +29,8 @@ Run **Masters > Show All Layers** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/00a725ea75d964ea77fa620c3a2c09a0ff988f149575f2b897e5dd4e5aba2f8d.py)
-<!--/codeinclude-->
+SHA256: `00a725ea75d964ea77fa620c3a2c09a0ff988f149575f2b897e5dd4e5aba2f8d`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Show%20All%20Layers.py)

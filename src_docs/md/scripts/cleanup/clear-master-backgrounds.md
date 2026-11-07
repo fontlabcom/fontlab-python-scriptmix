@@ -36,8 +36,8 @@ Run **Cleanup > Clear Master Backgrounds** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/10e44ef3e8e121b2000dee22ec143d86d18edc10bb7f054622eb98cb77e56169.py)
-<!--/codeinclude-->
+SHA256: `10e44ef3e8e121b2000dee22ec143d86d18edc10bb7f054622eb98cb77e56169`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Cleanup/Clear%20Master%20Backgrounds.py)

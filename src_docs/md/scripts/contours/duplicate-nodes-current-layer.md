@@ -38,8 +38,8 @@ Run **Contours > Duplicate Nodes Current Layer** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f5fa53d87345852d41ddd4474404f6bc38f52b25a25f772e6cdc463b224b9436.py)
-<!--/codeinclude-->
+SHA256: `f5fa53d87345852d41ddd4474404f6bc38f52b25a25f772e6cdc463b224b9436`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Duplicate%20Nodes%20Current%20Layer.py)

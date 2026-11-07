@@ -1,11 +1,7 @@
 ---
 this_file: src_docs/md/topics.md
-tags:
-- Python
-categories:
-- Guides
 ---
 
-# Find pages by topic
+# Browse by category
 
-Browse the [generated topic index](topics/index.md).
+The complete [script catalogue](scripts/index.md) groups every current menu by its FontLab category.

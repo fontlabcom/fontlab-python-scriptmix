@@ -35,8 +35,8 @@ Run **Kerning > Scale Values** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5161c1b6f0249f39a6345115cfa083f7d68bf0832752eab7d66952085959738b.py)
-<!--/codeinclude-->
+SHA256: `5161c1b6f0249f39a6345115cfa083f7d68bf0832752eab7d66952085959738b`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Scale%20Values.py)

@@ -32,8 +32,8 @@ Run **Proof > Bracket Layers and Components** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/cea59f6bba23b2bce78e7e2dee8ee026a03137f6d24599ba73781d32395e740f.py)
-<!--/codeinclude-->
+SHA256: `cea59f6bba23b2bce78e7e2dee8ee026a03137f6d24599ba73781d32395e740f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Bracket%20Layers%20and%20Components.py)

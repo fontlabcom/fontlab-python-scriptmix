@@ -66,8 +66,8 @@ Run **Masters > Layer Cleanup** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5a240c54715580d83d5d65687b7aabbb3502e58878dbd70ab91680049601f013.py)
-<!--/codeinclude-->
+SHA256: `5a240c54715580d83d5d65687b7aabbb3502e58878dbd70ab91680049601f013`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Layer%20Cleanup.py)

@@ -40,8 +40,8 @@ Run **Contours > Reflect Vertically** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/dec288cd87dc461cf6344ca90d7d2a81cec3614e5e8509dd673ea1e81a566f25.py)
-<!--/codeinclude-->
+SHA256: `dec288cd87dc461cf6344ca90d7d2a81cec3614e5e8509dd673ea1e81a566f25`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Reflect%20Vertically.py)

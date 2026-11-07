@@ -37,8 +37,8 @@ Run **Contours > Select Contours** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1b201dc96e6633d1314879e43f01e3a1e544afee69bd8686e94e3a53f30f70c4.py)
-<!--/codeinclude-->
+SHA256: `1b201dc96e6633d1314879e43f01e3a1e544afee69bd8686e94e3a53f30f70c4`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Select%20Contours.py)

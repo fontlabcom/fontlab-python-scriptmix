@@ -38,8 +38,8 @@ Run **Contours > Duplicate Nodes All Foreground Layers** from FontLab's Scripts 
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d5dd5df84c493dbe78f6d28db2e8e6404fa19dac8a41c7226ff7043338d8a240.py)
-<!--/codeinclude-->
+SHA256: `d5dd5df84c493dbe78f6d28db2e8e6404fa19dac8a41c7226ff7043338d8a240`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Duplicate%20Nodes%20All%20Foreground%20Layers.py)

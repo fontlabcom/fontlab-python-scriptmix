@@ -37,8 +37,8 @@ Run **Guides > Guide List Editor** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7d706fa180e98dfbf5b64177f501fb0cbe121b722ca1039f489f384d4c893a89.py)
-<!--/codeinclude-->
+SHA256: `7d706fa180e98dfbf5b64177f501fb0cbe121b722ca1039f489f384d4c893a89`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Guides/Guide%20List%20Editor.py)

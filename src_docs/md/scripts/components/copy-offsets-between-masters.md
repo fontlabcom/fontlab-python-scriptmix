@@ -51,8 +51,8 @@ Run **Components > Copy Offsets Between Masters** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ce9019d53270c6c8d070be4eb143ea0f5891dec824e07aa22a16eee2f3a56a20.py)
-<!--/codeinclude-->
+SHA256: `ce9019d53270c6c8d070be4eb143ea0f5891dec824e07aa22a16eee2f3a56a20`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Components/Copy%20Offsets%20Between%20Masters.py)

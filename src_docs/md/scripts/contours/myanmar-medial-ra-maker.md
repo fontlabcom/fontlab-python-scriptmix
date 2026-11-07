@@ -35,8 +35,8 @@ Run **Contours > Myanmar Medial Ra Maker** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/61690c07f8852a18c2fbeba9b4d242e4e834cfc86fed9a1501c35642abc7db35.py)
-<!--/codeinclude-->
+SHA256: `61690c07f8852a18c2fbeba9b4d242e4e834cfc86fed9a1501c35642abc7db35`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Myanmar%20Medial%20Ra%20Maker.py)

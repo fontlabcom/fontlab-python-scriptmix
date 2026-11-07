@@ -60,8 +60,8 @@ Run **Contours > Outline Effect** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/15373391084f19e1f6851cc63d60d3dc8a496e2f75ec177ca7fc423318fc1a8a.py)
-<!--/codeinclude-->
+SHA256: `15373391084f19e1f6851cc63d60d3dc8a496e2f75ec177ca7fc423318fc1a8a`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Outline%20Effect.py)

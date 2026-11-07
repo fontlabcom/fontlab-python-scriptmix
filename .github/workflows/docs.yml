@@ -1,0 +1,96 @@
+# this_file: .github/workflows/docs.yml
+name: Documentation
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.publish.outputs.sha }}
+      epoch: ${{ steps.epoch.outputs.value }}
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - id: epoch
+        run: |
+          epoch=$(git show -s --format=%ct HEAD)
+          printf 'value=%s\n' "$epoch" >> "$GITHUB_OUTPUT"
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7.6.0
+        with:
+          version: '0.13.7'
+          python-version: '3.13'
+          enable-cache: false
+      - name: Prepare locked docs environment
+        run: |
+          uv venv .docs-venv
+          uv pip install --python .docs-venv/bin/python --require-hashes -r src_docs/requirements.txt
+          echo "$PWD/.docs-venv/bin" >> "$GITHUB_PATH"
+      - run: sh src_docs/build.sh
+        env:
+          SOURCE_DATE_EPOCH: ${{ steps.epoch.outputs.value }}
+      - run: python -m unittest discover -s tests_docs -p 'test_pipeline_*.py' -v
+      - id: publish
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: sh src_docs/publish.sh "$SOURCE_SHA"
+  qualify-generated-output:
+    needs: build
+    if: needs.build.outputs.sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: ${{ needs.build.outputs.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify immutable output lineage
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          OUTPUT_SHA: ${{ needs.build.outputs.sha }}
+          SOURCE_DATE_EPOCH: ${{ needs.build.outputs.epoch }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$OUTPUT_SHA"
+          if test "$OUTPUT_SHA" != "$SOURCE_SHA"; then
+            test "$(git show -s --format=%P HEAD)" = "$SOURCE_SHA"
+            test -z "$(git diff --name-only "$SOURCE_SHA" HEAD -- . ':!docs')"
+            test -n "$(git diff --name-only "$SOURCE_SHA" HEAD -- docs)"
+          fi
+          test "$(git show -s --format=%ct "$SOURCE_SHA")" = "$SOURCE_DATE_EPOCH"
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7.6.0
+        with:
+          version: '0.13.7'
+          python-version: '3.13'
+          enable-cache: false
+      - name: Prepare locked docs environment
+        run: |
+          uv venv .docs-venv
+          uv pip install --python .docs-venv/bin/python --require-hashes -r src_docs/requirements.txt
+          echo "$PWD/.docs-venv/bin" >> "$GITHUB_PATH"
+      - run: sh src_docs/build.sh
+        env:
+          SOURCE_DATE_EPOCH: ${{ needs.build.outputs.epoch }}
+      - run: python -m unittest discover -s tests_docs -p 'test_pipeline_*.py' -v
+      - name: Require committed output parity
+        run: |
+          git diff --exit-code HEAD -- docs
+          test -z "$(git ls-files --others -- docs)"
+      - name: Request branch-source Pages build
+        if: github.event_name == 'workflow_dispatch' || needs.build.outputs.sha != github.sha
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          OUTPUT_SHA: ${{ needs.build.outputs.sha }}
+        run: sh src_docs/request-pages.sh "$OUTPUT_SHA"

@@ -34,8 +34,8 @@ Run **Features > Build Suffix Substitution** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3f61189977ac6ae20fc48c373295c96d20ec4b310c521ebc8863d8764d4757f5.py)
-<!--/codeinclude-->
+SHA256: `3f61189977ac6ae20fc48c373295c96d20ec4b310c521ebc8863d8764d4757f5`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Features/Build%20Suffix%20Substitution.py)

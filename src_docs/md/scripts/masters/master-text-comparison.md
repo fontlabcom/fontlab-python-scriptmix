@@ -34,8 +34,8 @@ Run **Masters > Master Text Comparison** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/67c34bfb3d06258bd010eea73ff285c5c214901593c47199aadf2b8b5129a61f.py)
-<!--/codeinclude-->
+SHA256: `67c34bfb3d06258bd010eea73ff285c5c214901593c47199aadf2b8b5129a61f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Master%20Text%20Comparison.py)

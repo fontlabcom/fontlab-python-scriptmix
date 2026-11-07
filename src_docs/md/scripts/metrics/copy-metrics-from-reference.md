@@ -60,8 +60,8 @@ Run **Metrics > Copy Metrics From Reference** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7d1dcbdd9a53638a7ac869e8def838f5b24682110764560ff4537ce1556020a1.py)
-<!--/codeinclude-->
+SHA256: `7d1dcbdd9a53638a7ac869e8def838f5b24682110764560ff4537ce1556020a1`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Metrics/Copy%20Metrics%20From%20Reference.py)

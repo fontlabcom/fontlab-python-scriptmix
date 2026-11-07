@@ -36,8 +36,8 @@ Run **Font Info > Unicode Ranges and Codepages** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/1cece3e6b233d1f909534262cb55d7199ea84bc303db50b3936c06e8493a7478.py)
-<!--/codeinclude-->
+SHA256: `1cece3e6b233d1f909534262cb55d7199ea84bc303db50b3936c06e8493a7478`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Font%20Info/Unicode%20Ranges%20and%20Codepages.py)

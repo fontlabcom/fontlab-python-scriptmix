@@ -32,8 +32,8 @@ Run **Proof > Hoefler Uppercase** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/430c448e3fb5e747d1dd43e9d35bfc54cf2da67e96e7b61b7e67149f116ee9f7.py)
-<!--/codeinclude-->
+SHA256: `430c448e3fb5e747d1dd43e9d35bfc54cf2da67e96e7b61b7e67149f116ee9f7`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Hoefler%20Uppercase.py)

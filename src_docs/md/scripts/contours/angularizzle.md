@@ -25,8 +25,8 @@ Run **Contours > Angularizzle** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a08ea56a473da5814a549a27e74f089e43e3d15450bf87bbc722e51631b8958b.py)
-<!--/codeinclude-->
+SHA256: `a08ea56a473da5814a549a27e74f089e43e3d15450bf87bbc722e51631b8958b`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Angularizzle.py)

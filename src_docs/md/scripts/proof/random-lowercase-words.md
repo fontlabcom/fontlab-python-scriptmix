@@ -33,8 +33,8 @@ Run **Proof > Random Lowercase Words** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/738d900f6f20f6fa850b5f36048c07520e4e06163ddc9fe75ad8e728664da9c3.py)
-<!--/codeinclude-->
+SHA256: `738d900f6f20f6fa850b5f36048c07520e4e06163ddc9fe75ad8e728664da9c3`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Random%20Lowercase%20Words.py)

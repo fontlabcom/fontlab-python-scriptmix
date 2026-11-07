@@ -35,8 +35,8 @@ Run **Guides > Copy Guides Between Masters** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/221f489ff22572c7c0ac867f086db03d259219991d7c36d0af4730859e86ce15.py)
-<!--/codeinclude-->
+SHA256: `221f489ff22572c7c0ac867f086db03d259219991d7c36d0af4730859e86ce15`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Guides/Copy%20Guides%20Between%20Masters.py)

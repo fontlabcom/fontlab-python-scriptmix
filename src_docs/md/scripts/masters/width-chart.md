@@ -34,8 +34,8 @@ Run **Masters > Width Chart** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ceb3ff28466c781fa0129eea8a506dbdb5d9787385b1a072435e8187f69f795e.py)
-<!--/codeinclude-->
+SHA256: `ceb3ff28466c781fa0129eea8a506dbdb5d9787385b1a072435e8187f69f795e`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Width%20Chart.py)

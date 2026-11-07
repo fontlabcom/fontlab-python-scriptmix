@@ -2,3 +2,8 @@
 
 # Preserve complete upstream notice bytes, including original CRLF endings.
 /src_docs/md/licenses/** -text
+
+# Keep upstream legal bytes, retained guide bytes and published output exact.
+/src_docs/md/assets/** -text
+/source_guides/** -text
+/docs/** -text

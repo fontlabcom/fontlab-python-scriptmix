@@ -48,8 +48,8 @@ Run **Masters > Common Glyphs** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e33465af702a32d55c3f0ea20a550ab7912c61ec37603befe7a441d703d0f1e6.py)
-<!--/codeinclude-->
+SHA256: `e33465af702a32d55c3f0ea20a550ab7912c61ec37603befe7a441d703d0f1e6`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Common%20Glyphs.py)

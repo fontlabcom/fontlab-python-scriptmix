@@ -35,8 +35,8 @@ Run **Masters > Interpolation Preview** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5e496815615ef150072c68a5bd66cfc11aac402e83280adcb285a92768d15a2e.py)
-<!--/codeinclude-->
+SHA256: `5e496815615ef150072c68a5bd66cfc11aac402e83280adcb285a92768d15a2e`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Interpolation%20Preview.py)

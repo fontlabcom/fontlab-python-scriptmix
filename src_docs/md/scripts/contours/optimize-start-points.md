@@ -66,8 +66,8 @@ Run **Contours > Optimize Start Points** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ab59cdcb37976cf0b265071dc3b919216282fdc7af54ee2e9e365c4d7823386f.py)
-<!--/codeinclude-->
+SHA256: `ab59cdcb37976cf0b265071dc3b919216282fdc7af54ee2e9e365c4d7823386f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Optimize%20Start%20Points.py)

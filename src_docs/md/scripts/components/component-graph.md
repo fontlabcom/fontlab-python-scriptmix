@@ -36,8 +36,8 @@ Run **Components > Component Graph** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/890762f22f39f64455ec29dcd0fe3a3bd919266d6b62de3026e9daab525d4725.py)
-<!--/codeinclude-->
+SHA256: `890762f22f39f64455ec29dcd0fe3a3bd919266d6b62de3026e9daab525d4725`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Components/Component%20Graph.py)

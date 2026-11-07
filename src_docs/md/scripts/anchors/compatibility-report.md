@@ -35,8 +35,8 @@ Run **Anchors > Compatibility Report** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f82b3024ab2402469bb11df09ee38567a22c3928441d67736a930ae080377afd.py)
-<!--/codeinclude-->
+SHA256: `f82b3024ab2402469bb11df09ee38567a22c3928441d67736a930ae080377afd`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Compatibility%20Report.py)

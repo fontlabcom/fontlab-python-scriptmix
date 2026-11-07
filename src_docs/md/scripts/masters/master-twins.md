@@ -43,8 +43,8 @@ Run **Masters > Master Twins** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/e3899161a755076b5e735ee5db7def3d45730acc7e7b6259ace72b201f2309b9.py)
-<!--/codeinclude-->
+SHA256: `e3899161a755076b5e735ee5db7def3d45730acc7e7b6259ace72b201f2309b9`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Master%20Twins.py)

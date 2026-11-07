@@ -33,8 +33,8 @@ Run **Masters > Italic Angle** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/c886ced09f78812bb00b330840870ed5f6285b6ad5ce403f7a789bec1d4ced30.py)
-<!--/codeinclude-->
+SHA256: `c886ced09f78812bb00b330840870ed5f6285b6ad5ce403f7a789bec1d4ced30`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Italic%20Angle.py)

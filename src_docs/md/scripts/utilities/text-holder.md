@@ -39,8 +39,8 @@ Run **Utilities > Text Holder** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/63582be433e9a80fe5819c46b24ae9b4cab3204b54765fbe70573ff6e7909fba.py)
-<!--/codeinclude-->
+SHA256: `63582be433e9a80fe5819c46b24ae9b4cab3204b54765fbe70573ff6e7909fba`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Utilities/Text%20Holder.py)

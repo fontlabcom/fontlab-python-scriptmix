@@ -43,8 +43,8 @@ Run **Masters > Display Next Layer** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/da6b423b0e3c8cec550e183a08b488138f2ddf8ab673126c73f8d3332f2b259f.py)
-<!--/codeinclude-->
+SHA256: `da6b423b0e3c8cec550e183a08b488138f2ddf8ab673126c73f8d3332f2b259f`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Display%20Next%20Layer.py)

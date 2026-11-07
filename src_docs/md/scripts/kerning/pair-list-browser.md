@@ -34,8 +34,8 @@ Run **Kerning > Pair List Browser** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/86852956ccea8b279eb360b16f74762916920ac004b952276ca433be4c54adc1.py)
-<!--/codeinclude-->
+SHA256: `86852956ccea8b279eb360b16f74762916920ac004b952276ca433be4c54adc1`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Kerning/Pair%20List%20Browser.py)

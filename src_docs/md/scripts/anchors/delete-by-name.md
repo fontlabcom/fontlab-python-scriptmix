@@ -46,8 +46,8 @@ Run **Anchors > Delete By Name** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/d9d16c3aa0992f1a2b9136173e82f68a87e75895b3a7cd3f88116efb77e6e103.py)
-<!--/codeinclude-->
+SHA256: `d9d16c3aa0992f1a2b9136173e82f68a87e75895b3a7cd3f88116efb77e6e103`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Delete%20By%20Name.py)

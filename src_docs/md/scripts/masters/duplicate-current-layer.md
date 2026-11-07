@@ -42,8 +42,8 @@ Run **Masters > Duplicate Current Layer** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a52430839d688fc55a49cf8016ae55c09bf3a7d61f39291c9c14efe786a13486.py)
-<!--/codeinclude-->
+SHA256: `a52430839d688fc55a49cf8016ae55c09bf3a7d61f39291c9c14efe786a13486`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Duplicate%20Current%20Layer.py)

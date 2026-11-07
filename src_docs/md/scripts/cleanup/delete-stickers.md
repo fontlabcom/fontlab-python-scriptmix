@@ -27,8 +27,8 @@ Run **Cleanup > Delete Stickers** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/fc4aae77c9e7fd9b9598fb8c6e794521033216313da52a1cc5994a06ec5f25ae.py)
-<!--/codeinclude-->
+SHA256: `fc4aae77c9e7fd9b9598fb8c6e794521033216313da52a1cc5994a06ec5f25ae`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Cleanup/Delete%20Stickers.py)

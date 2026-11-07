@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "scope": "English-only current site output; the original 44-asset inventory remains historical evidence.",
+  "theme_language": "en",
+  "search_languages": [
+    "en"
+  ],
+  "upstream_helpers": {
+    "name": "lunr-languages",
+    "version": "1.20.0",
+    "source_url": "https://registry.npmjs.org/lunr-languages/-/lunr-languages-1.20.0.tgz",
+    "archive_sha256": "b51d724caada60e72e9f2349de697b06ad27577848a26f2253be3347c1b76938"
+  },
+  "reason": "MaterialX English search uses built-in Lunr English support; the exact 35 additional-language helpers are not loaded. Configuration, corpus language, references and all vendor hashes are checked before omission.",
+  "omitted": [
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ar.min.js",
+      "sha256": "89a1dcb094a8491d968c151ab254a03195c87ff2adaa2408c769928284847125",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ar.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.da.min.js",
+      "sha256": "12355dc52f49ec9cfd6e2b0fd63ee497a29b81c3f6407dc8127606c4acd19871",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.da.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.de.min.js",
+      "sha256": "9682b22880003b6e5a4211448f1317d55236a9b891cce6624647e111e8bf82e0",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.de.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.du.min.js",
+      "sha256": "13e6571fe0be66528ae3c9303f4acaf0ab9e82263b75bf2ef29585ab4a82a57a",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.du.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.el.min.js",
+      "sha256": "a6fd5cbbb21d127407bc31c6c4298bf92ec7e1496a1ea83d5e4add14325a0c21",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.el.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.es.min.js",
+      "sha256": "e3ecaf6091dfecf3ac77b268ef7439b0c0e5cb6155bd23eb077100101c5188cb",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.es.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.fi.min.js",
+      "sha256": "ca86d20ce4ab1a51d273d5fe8f24510437a5ed69051ccfb7b2e2e3925434d71d",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.fi.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.fr.min.js",
+      "sha256": "5250df248926dfed58b99bd3a980e19e95bf8d8735248ee471f61858c6afee80",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.fr.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.he.min.js",
+      "sha256": "38ce33dee0d65cbf3678e42e5986c554b7900bee8f1f9e0f8136dfd700c633c8",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.he.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.hi.min.js",
+      "sha256": "631fff52e3623f2dfba35af076c6b8b5a450eeffe30a5cfac7458dab77cbe0a6",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.hi.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.hu.min.js",
+      "sha256": "caa4f98730e32b7d711558a7c77d7c6b5d2855789a8cfd09deb52ec2f2d4a157",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.hu.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.hy.min.js",
+      "sha256": "0efbcb902bdb7ec0dddffa5e2ba347b74c49ffc5f43fd73ffed83528eba12e95",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.hy.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.it.min.js",
+      "sha256": "a6b99eb8f9fb1c1898ef2b2a25e71421d1b754b67ad6a096bba644d83d319e3a",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.it.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ja.min.js",
+      "sha256": "c4fded308f633681a6ed53b6c10d8ca5916fdfd50f6b82ec914d725be0cb8bd6",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ja.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.jp.min.js",
+      "sha256": "04114edc36dc114edce5afbb3c7f795f45c77d8673c1edcdca5675ddab5d5199",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.jp.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.kn.min.js",
+      "sha256": "a064d0d7438334957a442b626140fb72f4ede8ebe17eb5c4e25682d87c88bbf8",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.kn.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ko.min.js",
+      "sha256": "73d1bdb1de4aef6c5920f516924c5ab1c440db50a6f5c6126bd0fb7cf5d37664",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ko.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.multi.min.js",
+      "sha256": "ffaee7f1e07179595fe8a4b7c469761f90999470e1f04dcb0a94dc2c1cb44f9c",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.multi.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.nl.min.js",
+      "sha256": "dbebf0651a067e32a8fa473a832c6ade3a9322a2aaf15637591234a3902e37f3",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.nl.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.no.min.js",
+      "sha256": "acd8db242abb7f751000b259df6a670082e7b0c5ea7d59b496a43de401071963",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.no.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.pl.min.js",
+      "sha256": "0402e9e885b05b0203b6ea35b54b572cedf74d65d0fec595c8b4cc7a6b646eeb",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.pl.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.pt.min.js",
+      "sha256": "225f097191a13f371dcbb3749358b37a70a3578e2f8d5d5051710dfe7e21be4e",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.pt.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ro.min.js",
+      "sha256": "6d6701f14d8a510a36e2d7313e7ffd95697699cfcdaea0f285b8cc28311b03f9",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ro.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ru.min.js",
+      "sha256": "a6d6a514a1acd902fab619e8ba55ff90ceb5cece128b60c0b6199de58bfc2acd",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ru.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.sa.min.js",
+      "sha256": "41c558a4355c3eae8f0a27ae870712738f14b0bd88038042ac8ab8b411e5817f",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.sa.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.stemmer.support.min.js",
+      "sha256": "5ff7b6bd53462911fc1311c09f654085b748338aced249e719c0b16fda0b90fb",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.stemmer.support.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.sv.min.js",
+      "sha256": "0c426be6a744a5cb0f8557f036a7d6988f0215fce0916d9138f95d1cc47e4e64",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.sv.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ta.min.js",
+      "sha256": "17a32dc49c27c9d27945625a7e8d066d42f64ea1ce5a5b34de427723fbf9ae2a",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ta.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.te.min.js",
+      "sha256": "079c8fcf028aeef388e98ec8607c8ea50ba9660c46797c8a119d05f8f8205838",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.te.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.th.min.js",
+      "sha256": "348461266843e316b26820004a96d3fd87a1579829d244ce510c17293eef0439",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.th.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.tr.min.js",
+      "sha256": "b5d0675dcb5e0f699c0a04931b81e0637679bfef5f151db8168c636ae92781e4",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.tr.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.vi.min.js",
+      "sha256": "2e39c3fd7305f6e66fc0424796a7696cb8e36dc0f5c3a83ea1bc44dfe3fecb56",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.vi.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.zh.min.js",
+      "sha256": "2f61041574bd677c382c16a2edfe4767b1007e1ea3572e6b149bd159ff591a47",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.zh.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/tinyseg.js",
+      "sha256": "1b044c239610ef65fceff6039567442bb1692d413f5ee8686fee81b1a3067761",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/tinyseg.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/wordcut.js",
+      "sha256": "3d38fde68af348915288e45eeb338af8256c8611fa2cfef307e6ab95808b3567",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/wordcut.js"
+        }
+      ]
+    }
+  ],
+  "retained": [
+    {
+      "path": "assets/images/favicon.png",
+      "sha256": "023854c43fc4b25b795ee4951c8019e3de0593ffeb6f918b5d1f2a9b47a57cfe",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/images/favicon.png"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/bundle.fc193f93.min.js",
+      "sha256": "7b735958817d926da1b4c8adcd291e61396cda91f66587ad525583018dfe3f6b",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/bundle.fc193f93.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/bundle.fc193f93.min.js.map",
+      "sha256": "f64a23e60a091176c443f85433a37159d74473844bbc714a776d2ac8eee36496",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/bundle.fc193f93.min.js.map"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/workers/search.2c215733.min.js",
+      "sha256": "cfb35333fafd6d2eb148eba21452849fb7fbde32fdfbf986836573f963106188",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/workers/search.2c215733.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/workers/search.2c215733.min.js.map",
+      "sha256": "780dccece24891aa19da6285715e2c7d0cd884237a87a3a9be6684823584921f",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/workers/search.2c215733.min.js.map"
+        }
+      ]
+    },
+    {
+      "path": "assets/stylesheets/main.314bbef5.min.css",
+      "sha256": "314bbef5bf9ab3a776c5b1bb3ae42f0db5de636bfe2b1ddd6e67de3d35384d8b",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/stylesheets/main.314bbef5.min.css"
+        }
+      ]
+    },
+    {
+      "path": "assets/stylesheets/main.314bbef5.min.css.map",
+      "sha256": "e7ce84a82ecb2dd5bbb7914feb98086920f576c1164f24c5e1b52df4c979383b",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/stylesheets/main.314bbef5.min.css.map"
+        }
+      ]
+    },
+    {
+      "path": "assets/stylesheets/palette.a45159b5.min.css",
+      "sha256": "a45159b56103e8b1ad8240a01ec0235924a2bd19e00572efaf4243e82128792d",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/stylesheets/palette.a45159b5.min.css"
+        }
+      ]
+    },
+    {
+      "path": "assets/stylesheets/palette.a45159b5.min.css.map",
+      "sha256": "3e55b1e2a9d12b0c7ed73ff64501a5855e8dfc8b2b62e855da04bd663fcf7ccd",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/stylesheets/palette.a45159b5.min.css.map"
+        }
+      ]
+    }
+  ]
+}

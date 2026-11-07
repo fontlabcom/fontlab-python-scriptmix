@@ -65,8 +65,8 @@ Run **Contours > Remove Overlap** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/7b6f775d90984c19bfa3fd80bfb9294cd32256a43e42b41fbd34740c3b03320d.py)
-<!--/codeinclude-->
+SHA256: `7b6f775d90984c19bfa3fd80bfb9294cd32256a43e42b41fbd34740c3b03320d`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Remove%20Overlap.py)

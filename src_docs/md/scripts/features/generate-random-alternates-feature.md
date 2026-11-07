@@ -38,8 +38,8 @@ Run **Features > Generate Random Alternates Feature** from FontLab's Scripts men
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3150c3b959f68211bd6dadd588e3cb242a1d08041489e114ec3f743dc2bf69a0.py)
-<!--/codeinclude-->
+SHA256: `3150c3b959f68211bd6dadd588e3cb242a1d08041489e114ec3f743dc2bf69a0`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Features/Generate%20Random%20Alternates%20Feature.py)

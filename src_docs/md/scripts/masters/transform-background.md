@@ -54,8 +54,8 @@ Run **Masters > Transform Background** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/ed84f3238cb1ac81b20c0bee308c1b1aae70ad3e2c796da4e2eaf26ab9d91d7b.py)
-<!--/codeinclude-->
+SHA256: `ed84f3238cb1ac81b20c0bee308c1b1aae70ad3e2c796da4e2eaf26ab9d91d7b`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Transform%20Background.py)

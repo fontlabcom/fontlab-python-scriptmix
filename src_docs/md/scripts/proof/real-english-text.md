@@ -41,8 +41,8 @@ Run **Proof > Real English Text** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3e4e6c2db6b98d24d9ca0516522c735714b719ef590f730b3879d4cc04964af5.py)
-<!--/codeinclude-->
+SHA256: `3e4e6c2db6b98d24d9ca0516522c735714b719ef590f730b3879d4cc04964af5`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Real%20English%20Text.py)

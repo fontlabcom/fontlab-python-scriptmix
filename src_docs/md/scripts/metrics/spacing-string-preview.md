@@ -35,8 +35,8 @@ Run **Metrics > Spacing String Preview** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/48c3240f5aa1c920679ca3722171da565a3be2c282b14a5f301736d7808ef3c5.py)
-<!--/codeinclude-->
+SHA256: `48c3240f5aa1c920679ca3722171da565a3be2c282b14a5f301736d7808ef3c5`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Metrics/Spacing%20String%20Preview.py)

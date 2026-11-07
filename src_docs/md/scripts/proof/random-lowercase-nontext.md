@@ -33,8 +33,8 @@ Run **Proof > Random Lowercase Nontext** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/cff78b81474d97f95f5ec30e67a12b2800fac265833b337576e9ad3a0fc6d8d5.py)
-<!--/codeinclude-->
+SHA256: `cff78b81474d97f95f5ec30e67a12b2800fac265833b337576e9ad3a0fc6d8d5`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Random%20Lowercase%20Nontext.py)

@@ -37,8 +37,8 @@ Run **Proof > Glyphs Surrounded by I** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/f070ee75a03c556d1c3ca6a10ddf960c98c79eed3c36c529654181663d595950.py)
-<!--/codeinclude-->
+SHA256: `f070ee75a03c556d1c3ca6a10ddf960c98c79eed3c36c529654181663d595950`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Glyphs%20Surrounded%20by%20I.py)

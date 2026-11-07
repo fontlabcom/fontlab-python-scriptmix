@@ -47,8 +47,8 @@ Run **Names > Suffix Tool** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/67fab137c995d22a14bbb0b5d2a961f40af914581f6a88eadee65fb9d1492855.py)
-<!--/codeinclude-->
+SHA256: `67fab137c995d22a14bbb0b5d2a961f40af914581f6a88eadee65fb9d1492855`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Suffix%20Tool.py)

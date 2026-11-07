@@ -23,8 +23,8 @@ Run **Names > Duplicate Unicodes** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/332e2442f99e8918c6c1fa3b8040443fb5b6c61f21952bf597347510ad7c8148.py)
-<!--/codeinclude-->
+SHA256: `332e2442f99e8918c6c1fa3b8040443fb5b6c61f21952bf597347510ad7c8148`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Duplicate%20Unicodes.py)

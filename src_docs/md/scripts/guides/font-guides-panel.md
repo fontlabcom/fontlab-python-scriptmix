@@ -37,8 +37,8 @@ Run **Guides > Font Guides Panel** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/5ebf7188897e7bd285f3a2408a486d1bb9fd2bbbc1d7e540b45b05f3dc11e09a.py)
-<!--/codeinclude-->
+SHA256: `5ebf7188897e7bd285f3a2408a486d1bb9fd2bbbc1d7e540b45b05f3dc11e09a`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Guides/Font%20Guides%20Panel.py)

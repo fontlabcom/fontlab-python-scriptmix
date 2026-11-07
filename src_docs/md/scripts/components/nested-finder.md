@@ -62,8 +62,8 @@ Run **Components > Nested Finder** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/0ae15ec6b25aefba241459e79226cc7ecce0a890a60f63a626215741a36365d9.py)
-<!--/codeinclude-->
+SHA256: `0ae15ec6b25aefba241459e79226cc7ecce0a890a60f63a626215741a36365d9`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Components/Nested%20Finder.py)

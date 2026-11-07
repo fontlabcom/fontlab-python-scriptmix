@@ -30,8 +30,8 @@ Run **Contours > Make Compatible** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b101c41dc8381b61322148c9b87dc6fbb34ac17e0422dd7bd152d2041a57e35c.py)
-<!--/codeinclude-->
+SHA256: `b101c41dc8381b61322148c9b87dc6fbb34ac17e0422dd7bd152d2041a57e35c`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Make%20Compatible.py)

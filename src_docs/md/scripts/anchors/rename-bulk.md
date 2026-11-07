@@ -49,8 +49,8 @@ Run **Anchors > Rename Bulk** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/8a1d87b5e40323e00a6ca2872bae7ccc88faf4cb4a7aa9f1b832ca1ea4c2ac1a.py)
-<!--/codeinclude-->
+SHA256: `8a1d87b5e40323e00a6ca2872bae7ccc88faf4cb4a7aa9f1b832ca1ea4c2ac1a`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Rename%20Bulk.py)

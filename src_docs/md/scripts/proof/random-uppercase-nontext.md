@@ -33,8 +33,8 @@ Run **Proof > Random Uppercase Nontext** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/2b95cbdb7ba90741c8fdbeeced3e6d8c128323cbab7721588f956d6e6e097a10.py)
-<!--/codeinclude-->
+SHA256: `2b95cbdb7ba90741c8fdbeeced3e6d8c128323cbab7721588f956d6e6e097a10`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Proof/Random%20Uppercase%20Nontext.py)

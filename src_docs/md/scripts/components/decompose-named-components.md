@@ -50,8 +50,8 @@ Run **Components > Decompose Named Components** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/bc54acbfa9efc4c9001f61f3afd7ec906d1bdd8d8218e036a12102c1efdab84e.py)
-<!--/codeinclude-->
+SHA256: `bc54acbfa9efc4c9001f61f3afd7ec906d1bdd8d8218e036a12102c1efdab84e`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Components/Decompose%20Named%20Components.py)

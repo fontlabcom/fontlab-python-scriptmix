@@ -54,8 +54,8 @@ Run **Reports > Case Coverage** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/45022a5562681d2125179e28e50e75340baf7bfd9f923cc8924f03dc3013398c.py)
-<!--/codeinclude-->
+SHA256: `45022a5562681d2125179e28e50e75340baf7bfd9f923cc8924f03dc3013398c`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Reports/Case%20Coverage.py)

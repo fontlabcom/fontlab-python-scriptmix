@@ -51,8 +51,8 @@ Run **Anchors > Mirror Across Masters** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/12b6534913326199952c8dd7a1406c93c24c3245dd50981139f510649593a5e0.py)
-<!--/codeinclude-->
+SHA256: `12b6534913326199952c8dd7a1406c93c24c3245dd50981139f510649593a5e0`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Mirror%20Across%20Masters.py)

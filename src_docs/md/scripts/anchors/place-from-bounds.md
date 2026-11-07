@@ -51,8 +51,8 @@ Run **Anchors > Place From Bounds** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/9c9005e716f70ca9cc29511690fa0297bcc4376e137730ab63dca16a64412d04.py)
-<!--/codeinclude-->
+SHA256: `9c9005e716f70ca9cc29511690fa0297bcc4376e137730ab63dca16a64412d04`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Place%20From%20Bounds.py)

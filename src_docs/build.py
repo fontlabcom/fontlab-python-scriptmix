@@ -5,11 +5,11 @@ import argparse
 import ast
 import hashlib
 import json
-import os
 import re
 import shutil
 import subprocess
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -18,8 +18,14 @@ def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
-def catalogue(root: Path) -> None:
-    """Replace only the generated catalogue; include every current menu source."""
+def catalogue(root: Path, *, revision: str | None = None) -> None:
+    """Retain every menu description, exact source hash and immutable source link."""
+    if revision is None:
+        revision = subprocess.check_output(
+            ["git", "log", "-1", "--format=%H", "--", "Scripts"], cwd=root, text=True
+        ).strip()
+    if not re.fullmatch(r"[0-9a-f]{40}", revision):
+        raise ValueError("A complete source commit is required")
     output = root / "src_docs/md/scripts"
     if output.exists():
         shutil.rmtree(output)
@@ -31,7 +37,7 @@ def catalogue(root: Path) -> None:
     index = [
         "# Script catalogue",
         "",
-        "Choose a category, then a script. Each page includes its actual menu source.",
+        "Choose a category, then a script. Each page retains its usage and exact source identity.",
         "",
     ]
     for folder in sorted((root / "Scripts").iterdir()):
@@ -65,9 +71,10 @@ def catalogue(root: Path) -> None:
             text += f"Run **{folder.name} > {source.stem}** from FontLab's Scripts menu.\n\n"
             text += "Read [installation](../../install.md) and [working with scripts](../../use.md) before use.\n\n"
             text += (
-                "## Source\n\n<!--codeinclude-->\n[Python source]("
-                + os.path.relpath(snapshot, target.parent)
-                + ")\n<!--/codeinclude-->\n"
+                "## Source identity\n\n"
+                + f"SHA256: `{hashlib.sha256(data).hexdigest()}`\n\n"
+                + f"[Python source at `{revision[:12]}`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/"
+                + revision + "/" + quote(source.relative_to(root).as_posix(), safe="/") + ")\n"
             )
             target.write_text(text)
             lines.append(f"- [{source.stem}]({target.name})")

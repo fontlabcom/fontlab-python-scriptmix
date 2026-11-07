@@ -50,8 +50,8 @@ Run **Metrics > Centre In Advance** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/cbe25fe960397e75c949be4ef74bb66384a185b3dadd9192f8fff4b8fee34498.py)
-<!--/codeinclude-->
+SHA256: `cbe25fe960397e75c949be4ef74bb66384a185b3dadd9192f8fff4b8fee34498`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Metrics/Centre%20In%20Advance.py)

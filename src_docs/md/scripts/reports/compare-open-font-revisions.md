@@ -34,8 +34,8 @@ Run **Reports > Compare Open Font Revisions** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/3a970598cba29b7dae7fa9c3d6606e4b3488a1d9e84e86bf68051dc74ff449f0.py)
-<!--/codeinclude-->
+SHA256: `3a970598cba29b7dae7fa9c3d6606e4b3488a1d9e84e86bf68051dc74ff449f0`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Reports/Compare%20Open%20Font%20Revisions.py)

@@ -33,8 +33,8 @@ Run **Names > Glyph Metadata Tree** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/b79472aaf93c41ac1d5d2bc252fc2e1b58a697438c0204b7f3fb80603018fb39.py)
-<!--/codeinclude-->
+SHA256: `b79472aaf93c41ac1d5d2bc252fc2e1b58a697438c0204b7f3fb80603018fb39`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Names/Glyph%20Metadata%20Tree.py)

@@ -19,8 +19,8 @@ Run **Reports > Dump to Svg Path Commands** from FontLab's Scripts menu.
 
 Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
 
-## Source
+## Source identity
 
-<!--codeinclude-->
-[Python source](../../../../.build/menu-sources/a94c19667467f20cb0f996e77315b563d8604948c3ebcf66b68ff5f5476c64f9.py)
-<!--/codeinclude-->
+SHA256: `a94c19667467f20cb0f996e77315b563d8604948c3ebcf66b68ff5f5476c64f9`
+
+[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Reports/Dump%20to%20Svg%20Path%20Commands.py)
