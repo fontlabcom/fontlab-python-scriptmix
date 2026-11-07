@@ -1,0 +1,1110 @@
+{
+  "schema_version": 1,
+  "scope": "Installed exact-lock documentation distributions and byte-matched generated assets. Not a complete transitive browser-licence review.",
+  "complete_transitive_inventory": false,
+  "publication_qualified": false,
+  "lock_sha256": "961b3ec6b8ffde319473d3c17325d1699915c236a657a91baef77b5527215070",
+  "distributions": [
+    {
+      "name": "babel",
+      "version": "2.18.0",
+      "source_url": "https://pypi.org/project/babel/2.18.0/",
+      "licence_expression": null,
+      "licence_metadata": "BSD-3-Clause",
+      "project_urls": [
+        "Source, https://github.com/python-babel/babel"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/babel/LICENSE.txt",
+          "sha256": "86bad5758c7859ba06251f8f12eee885eca31369923dfb2b87a7c13c3634d870",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "backrefs",
+      "version": "8.2",
+      "source_url": "https://pypi.org/project/backrefs/8.2/",
+      "licence_expression": "MIT",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://github.com/facelessuser/backrefs"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/backrefs/LICENSE.md.txt",
+          "sha256": "c1127b4363b735b7898a7127396ff7e4faa48e58d221c5d9dc616533f811a25c",
+          "distribution_notice_basename": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "source_url": "https://pypi.org/project/certifi/2026.10.23/",
+      "licence_expression": null,
+      "licence_metadata": "MPL-2.0",
+      "project_urls": [
+        "Source, https://github.com/certifi/python-certifi"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/certifi/LICENSE.txt",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "source_url": "https://pypi.org/project/charset-normalizer/3.5.2/",
+      "licence_expression": null,
+      "licence_metadata": "MIT",
+      "project_urls": [
+        "Changelog, https://github.com/jawah/charset_normalizer/blob/master/CHANGELOG.md",
+        "Documentation, https://charset-normalizer.readthedocs.io/",
+        "Code, https://github.com/jawah/charset_normalizer",
+        "Issue tracker, https://github.com/jawah/charset_normalizer/issues"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/charset-normalizer/LICENSE.txt",
+          "sha256": "6d0d41bfe170ac6c7dc248c9a63e254d0fb45a60d50a8257d0af92c6e249b887",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "source_url": "https://pypi.org/project/click/8.5.0/",
+      "licence_expression": "BSD-3-Clause",
+      "licence_metadata": null,
+      "project_urls": [
+        "Changes, https://click.palletsprojects.com/page/changes/",
+        "Chat, https://discord.gg/pallets",
+        "Documentation, https://click.palletsprojects.com/",
+        "Donate, https://palletsprojects.com/donate",
+        "Source, https://github.com/pallets/click/"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/click/LICENSE.txt.txt",
+          "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d",
+          "distribution_notice_basename": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6",
+      "source_url": "https://pypi.org/project/colorama/0.4.6/",
+      "licence_expression": null,
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://github.com/tartley/colorama"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/colorama/LICENSE.txt.txt",
+          "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318",
+          "distribution_notice_basename": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "name": "ghp-import",
+      "version": "2.1.0",
+      "source_url": "https://pypi.org/project/ghp-import/2.1.0/",
+      "licence_expression": null,
+      "licence_metadata": "Apache Software License",
+      "project_urls": [],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/ghp-import/LICENSE.txt",
+          "sha256": "0bc8ffb45f26edd1cd0de4f50425ae2cb46c58c6d8ac113984d4120be355afa9",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "source_url": "https://pypi.org/project/idna/3.20/",
+      "licence_expression": "BSD-3-Clause",
+      "licence_metadata": null,
+      "project_urls": [
+        "Changelog, https://github.com/kjd/idna/blob/master/HISTORY.md",
+        "Issue tracker, https://github.com/kjd/idna/issues",
+        "Source, https://github.com/kjd/idna"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/idna/LICENSE.md.txt",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+          "distribution_notice_basename": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "source_url": "https://pypi.org/project/Jinja2/3.1.6/",
+      "licence_expression": null,
+      "licence_metadata": null,
+      "project_urls": [
+        "Changes, https://jinja.palletsprojects.com/changes/",
+        "Chat, https://discord.gg/pallets",
+        "Documentation, https://jinja.palletsprojects.com/",
+        "Donate, https://palletsprojects.com/donate",
+        "Source, https://github.com/pallets/jinja/"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/jinja2/LICENSE.txt.txt",
+          "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b",
+          "distribution_notice_basename": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "name": "Markdown",
+      "version": "3.11.3",
+      "source_url": "https://pypi.org/project/Markdown/3.11.3/",
+      "licence_expression": "BSD-3-Clause",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://Python-Markdown.github.io/",
+        "Documentation, https://Python-Markdown.github.io/",
+        "Repository, https://github.com/Python-Markdown/markdown",
+        "Issue Tracker, https://github.com/Python-Markdown/markdown/issues",
+        "Changelog, https://python-markdown.github.io/changelog/"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/markdown/LICENSE.md.txt",
+          "sha256": "7ba4eb6d10b32b2d11dce13821340351cdbbb30ba8ccc67841db2ffd86e79aca",
+          "distribution_notice_basename": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.4",
+      "source_url": "https://pypi.org/project/MarkupSafe/3.0.4/",
+      "licence_expression": "BSD-3-Clause",
+      "licence_metadata": null,
+      "project_urls": [
+        "Donate, https://palletsprojects.com/donate",
+        "Documentation, https://markupsafe.palletsprojects.com/",
+        "Changes, https://markupsafe.palletsprojects.com/page/changes/",
+        "Source, https://github.com/pallets/markupsafe/",
+        "Chat, https://discord.gg/pallets"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/markupsafe/LICENSE.txt.txt",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+          "distribution_notice_basename": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "name": "mergedeep",
+      "version": "1.3.4",
+      "source_url": "https://pypi.org/project/mergedeep/1.3.4/",
+      "licence_expression": null,
+      "licence_metadata": "UNKNOWN",
+      "project_urls": [],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/mergedeep/LICENSE.txt",
+          "sha256": "11592bd9d56693c987da849c075d636690916d01a47ca234a14bbcf0fe176b37",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "mkdocs",
+      "version": "1.6.1",
+      "source_url": "https://pypi.org/project/mkdocs/1.6.1/",
+      "licence_expression": "BSD-2-Clause",
+      "licence_metadata": null,
+      "project_urls": [
+        "Documentation, https://www.mkdocs.org/",
+        "Source, https://github.com/mkdocs/mkdocs",
+        "Issues, https://github.com/mkdocs/mkdocs/issues",
+        "History, https://www.mkdocs.org/about/release-notes/"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/mkdocs/LICENSE.txt",
+          "sha256": "26041bd625fc39411dc4b32748216236931c904adb90c2b3e0ba697090a5d54e",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "mkdocs-document-dates",
+      "version": "3.8.7",
+      "source_url": "https://pypi.org/project/mkdocs-document-dates/3.8.7/",
+      "licence_expression": "MIT",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://github.com/jaywhj/mkdocs-document-dates",
+        "Repository, https://github.com/jaywhj/mkdocs-document-dates",
+        "Documentation, https://jaywhj.netlify.app/document-dates-en"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/mkdocs-document-dates/LICENSE.txt",
+          "sha256": "f4ade7c806d68e92207838ed6c8abb1a1a209848c0babf511b575c29c9053bbe",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "mkdocs-get-deps",
+      "version": "0.2.2",
+      "source_url": "https://pypi.org/project/mkdocs-get-deps/0.2.2/",
+      "licence_expression": "MIT",
+      "licence_metadata": null,
+      "project_urls": [
+        "Source, https://github.com/mkdocs/get-deps",
+        "Issues, https://github.com/mkdocs/get-deps/issues",
+        "History, https://github.com/mkdocs/get-deps/releases"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/mkdocs-get-deps/LICENSE.md.txt",
+          "sha256": "e5024bae9b4ecadda35184e20282a81cb25164620d2ffb0261e6da3249aab7b2",
+          "distribution_notice_basename": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "name": "mkdocs-material-extensions",
+      "version": "1.3.1",
+      "source_url": "https://pypi.org/project/mkdocs-material-extensions/1.3.1/",
+      "licence_expression": "MIT",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://github.com/facelessuser/mkdocs-material-extensions"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/mkdocs-material-extensions/LICENSE.md.txt",
+          "sha256": "b3cc149031d83ec272ace499e62217c5066e0200a5560d818d90cdc7bc05403c",
+          "distribution_notice_basename": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "name": "mkdocs-materialx",
+      "version": "10.1.8",
+      "source_url": "https://pypi.org/project/mkdocs-materialx/10.1.8/",
+      "licence_expression": "MIT",
+      "licence_metadata": null,
+      "project_urls": [
+        "Documentation, https://jaywhj.github.io/mkdocs-materialx/",
+        "Source, https://github.com/jaywhj/mkdocs-materialx",
+        "Changelog, https://jaywhj.github.io/mkdocs-materialx/changelog/index",
+        "Issues, https://github.com/jaywhj/mkdocs-materialx/issues"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/mkdocs-materialx/LICENSE.txt",
+          "sha256": "e1150f26b4c0f872627b39fda49ae3bd850304f2f7f3171ae0531c1f8f4dd078",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "source_url": "https://pypi.org/project/packaging/26.3/",
+      "licence_expression": "Apache-2.0 OR BSD-2-Clause",
+      "licence_metadata": null,
+      "project_urls": [
+        "Documentation, https://packaging.pypa.io/",
+        "Source, https://github.com/pypa/packaging"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/packaging/LICENSE.txt",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+          "distribution_notice_basename": "LICENSE"
+        },
+        {
+          "path": "assets/current-docs-licences/packaging/LICENSE.APACHE.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "distribution_notice_basename": "LICENSE.APACHE"
+        },
+        {
+          "path": "assets/current-docs-licences/packaging/LICENSE.BSD.txt",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+          "distribution_notice_basename": "LICENSE.BSD"
+        }
+      ]
+    },
+    {
+      "name": "paginate",
+      "version": "0.5.7",
+      "source_url": "https://pypi.org/project/paginate/0.5.7/",
+      "licence_expression": null,
+      "licence_metadata": "MIT",
+      "project_urls": [],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/paginate/LICENSE.txt",
+          "sha256": "352e5b276922f2e362931bbed2dcd2e94331a45b6a41a1b465a8300addcc1553",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "pathspec",
+      "version": "1.1.1",
+      "source_url": "https://pypi.org/project/pathspec/1.1.1/",
+      "licence_expression": null,
+      "licence_metadata": null,
+      "project_urls": [
+        "Change Log, https://python-path-specification.readthedocs.io/en/latest/changes.html",
+        "Documentation, https://python-path-specification.readthedocs.io/en/latest/index.html",
+        "Issue Tracker, https://github.com/cpburnz/python-pathspec/issues",
+        "Source Code, https://github.com/cpburnz/python-pathspec"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/pathspec/LICENSE.txt",
+          "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "platformdirs",
+      "version": "4.14.5",
+      "source_url": "https://pypi.org/project/platformdirs/4.14.5/",
+      "licence_expression": "MIT",
+      "licence_metadata": null,
+      "project_urls": [
+        "Changelog, https://platformdirs.readthedocs.io/en/latest/changelog.html",
+        "Documentation, https://platformdirs.readthedocs.io",
+        "Homepage, https://github.com/tox-dev/platformdirs",
+        "Source, https://github.com/tox-dev/platformdirs",
+        "Tracker, https://github.com/tox-dev/platformdirs/issues"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/platformdirs/LICENSE.txt",
+          "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "properdocs",
+      "version": "1.6.7",
+      "source_url": "https://pypi.org/project/properdocs/1.6.7/",
+      "licence_expression": "BSD-2-Clause",
+      "licence_metadata": null,
+      "project_urls": [
+        "Documentation, https://properdocs.org/",
+        "Source, https://github.com/properdocs/properdocs",
+        "Issues, https://github.com/properdocs/properdocs/issues",
+        "History, https://github.com/properdocs/properdocs/releases"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/properdocs/LICENSE.txt",
+          "sha256": "26041bd625fc39411dc4b32748216236931c904adb90c2b3e0ba697090a5d54e",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "source_url": "https://pypi.org/project/Pygments/2.21.0/",
+      "licence_expression": "BSD-2-Clause",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://pygments.org",
+        "Documentation, https://pygments.org/docs",
+        "Source, https://github.com/pygments/pygments",
+        "Bug Tracker, https://github.com/pygments/pygments/issues",
+        "Changelog, https://github.com/pygments/pygments/blob/master/CHANGES"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/pygments/LICENSE.txt",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "pymdown-extensions",
+      "version": "11.0.1",
+      "source_url": "https://pypi.org/project/pymdown-extensions/11.0.1/",
+      "licence_expression": "MIT",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://github.com/facelessuser/pymdown-extensions"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/pymdown-extensions/LICENSE.md.txt",
+          "sha256": "e6645f914fbae5bc557419fcafbeab9e375897e8274c54e2b177953e9354f93e",
+          "distribution_notice_basename": "LICENSE.md"
+        }
+      ]
+    },
+    {
+      "name": "python-dateutil",
+      "version": "4.0.0",
+      "source_url": "https://pypi.org/project/python-dateutil/4.0.0/",
+      "licence_expression": "BSD-3-Clause",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://github.com/dateutil/dateutil",
+        "Documentation, https://dateutil.readthedocs.io/en/stable/",
+        "Source, https://github.com/dateutil/dateutil"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/python-dateutil/LICENSE.txt",
+          "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "source_url": "https://pypi.org/project/PyYAML/6.0.3/",
+      "licence_expression": null,
+      "licence_metadata": "MIT",
+      "project_urls": [
+        "Bug Tracker, https://github.com/yaml/pyyaml/issues",
+        "CI, https://github.com/yaml/pyyaml/actions",
+        "Documentation, https://pyyaml.org/wiki/PyYAMLDocumentation",
+        "Mailing lists, http://lists.sourceforge.net/lists/listinfo/yaml-core",
+        "Source Code, https://github.com/yaml/pyyaml"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/pyyaml/LICENSE.txt",
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "pyyaml_env_tag",
+      "version": "1.1",
+      "source_url": "https://pypi.org/project/pyyaml_env_tag/1.1/",
+      "licence_expression": "MIT",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://github.com/waylan/pyyaml-env-tag",
+        "Repository, https://github.com/waylan/pyyaml-env-tag",
+        "Bug Tracker, https://github.com/waylan/pyyaml-env-tag/issues"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/pyyaml-env-tag/LICENSE.txt",
+          "sha256": "75a5994afa284b67e6e66d7f83d2d39e729736511491b3d309ea7a064cbde3ce",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "source_url": "https://pypi.org/project/requests/2.34.2/",
+      "licence_expression": null,
+      "licence_metadata": "Apache-2.0",
+      "project_urls": [
+        "Documentation, https://requests.readthedocs.io",
+        "Source, https://github.com/psf/requests"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/requests/LICENSE.txt",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "distribution_notice_basename": "LICENSE"
+        },
+        {
+          "path": "assets/current-docs-licences/requests/NOTICE.txt",
+          "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc",
+          "distribution_notice_basename": "NOTICE"
+        }
+      ]
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.6",
+      "source_url": "https://pypi.org/project/tzdata/2026.6/",
+      "licence_expression": null,
+      "licence_metadata": "Apache-2.0",
+      "project_urls": [
+        "Bug Reports, https://github.com/python/tzdata/issues",
+        "Source, https://github.com/python/tzdata",
+        "Documentation, https://tzdata.python.org"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/tzdata/LICENSE.txt",
+          "sha256": "df58f69ea88683035d720b5375bcef0cf5aeaa98a1d098d572e0992c378deb46",
+          "distribution_notice_basename": "LICENSE"
+        },
+        {
+          "path": "assets/current-docs-licences/tzdata/LICENSE_APACHE.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "distribution_notice_basename": "LICENSE_APACHE"
+        }
+      ]
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "source_url": "https://pypi.org/project/urllib3/2.8.0/",
+      "licence_expression": "MIT",
+      "licence_metadata": null,
+      "project_urls": [
+        "Changelog, https://github.com/urllib3/urllib3/blob/main/CHANGES.rst",
+        "Documentation, https://urllib3.readthedocs.io",
+        "Code, https://github.com/urllib3/urllib3",
+        "Issue tracker, https://github.com/urllib3/urllib3/issues",
+        "Security policy, https://urllib3.readthedocs.io/en/latest/security.html"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/urllib3/LICENSE.txt.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+          "distribution_notice_basename": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "name": "watchdog",
+      "version": "7.1.0",
+      "source_url": "https://pypi.org/project/watchdog/7.1.0/",
+      "licence_expression": null,
+      "licence_metadata": "Apache-2.0",
+      "project_urls": [
+        "Documentation, https://python-watchdog.readthedocs.io/en/stable/",
+        "Source, https://github.com/gorakhargosh/watchdog/",
+        "Issues, https://github.com/gorakhargosh/watchdog/issues",
+        "Changelog, https://github.com/gorakhargosh/watchdog/blob/master/changelog.rst"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/watchdog/COPYING.txt",
+          "sha256": "8dfd87df299f156db7dd6387dd025f914568419b10db3e074d224e67d7621d2d",
+          "distribution_notice_basename": "COPYING"
+        },
+        {
+          "path": "assets/current-docs-licences/watchdog/LICENSE.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    }
+  ],
+  "generated_vendor_assets": [
+    {
+      "path": "assets/images/favicon.png",
+      "sha256": "023854c43fc4b25b795ee4951c8019e3de0593ffeb6f918b5d1f2a9b47a57cfe",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/images/favicon.png"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/bundle.fc193f93.min.js",
+      "sha256": "7b735958817d926da1b4c8adcd291e61396cda91f66587ad525583018dfe3f6b",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/bundle.fc193f93.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/bundle.fc193f93.min.js.map",
+      "sha256": "f64a23e60a091176c443f85433a37159d74473844bbc714a776d2ac8eee36496",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/bundle.fc193f93.min.js.map"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ar.min.js",
+      "sha256": "89a1dcb094a8491d968c151ab254a03195c87ff2adaa2408c769928284847125",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ar.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.da.min.js",
+      "sha256": "12355dc52f49ec9cfd6e2b0fd63ee497a29b81c3f6407dc8127606c4acd19871",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.da.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.de.min.js",
+      "sha256": "9682b22880003b6e5a4211448f1317d55236a9b891cce6624647e111e8bf82e0",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.de.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.du.min.js",
+      "sha256": "13e6571fe0be66528ae3c9303f4acaf0ab9e82263b75bf2ef29585ab4a82a57a",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.du.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.el.min.js",
+      "sha256": "a6fd5cbbb21d127407bc31c6c4298bf92ec7e1496a1ea83d5e4add14325a0c21",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.el.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.es.min.js",
+      "sha256": "e3ecaf6091dfecf3ac77b268ef7439b0c0e5cb6155bd23eb077100101c5188cb",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.es.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.fi.min.js",
+      "sha256": "ca86d20ce4ab1a51d273d5fe8f24510437a5ed69051ccfb7b2e2e3925434d71d",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.fi.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.fr.min.js",
+      "sha256": "5250df248926dfed58b99bd3a980e19e95bf8d8735248ee471f61858c6afee80",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.fr.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.he.min.js",
+      "sha256": "38ce33dee0d65cbf3678e42e5986c554b7900bee8f1f9e0f8136dfd700c633c8",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.he.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.hi.min.js",
+      "sha256": "631fff52e3623f2dfba35af076c6b8b5a450eeffe30a5cfac7458dab77cbe0a6",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.hi.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.hu.min.js",
+      "sha256": "caa4f98730e32b7d711558a7c77d7c6b5d2855789a8cfd09deb52ec2f2d4a157",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.hu.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.hy.min.js",
+      "sha256": "0efbcb902bdb7ec0dddffa5e2ba347b74c49ffc5f43fd73ffed83528eba12e95",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.hy.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.it.min.js",
+      "sha256": "a6b99eb8f9fb1c1898ef2b2a25e71421d1b754b67ad6a096bba644d83d319e3a",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.it.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ja.min.js",
+      "sha256": "c4fded308f633681a6ed53b6c10d8ca5916fdfd50f6b82ec914d725be0cb8bd6",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ja.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.jp.min.js",
+      "sha256": "04114edc36dc114edce5afbb3c7f795f45c77d8673c1edcdca5675ddab5d5199",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.jp.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.kn.min.js",
+      "sha256": "a064d0d7438334957a442b626140fb72f4ede8ebe17eb5c4e25682d87c88bbf8",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.kn.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ko.min.js",
+      "sha256": "73d1bdb1de4aef6c5920f516924c5ab1c440db50a6f5c6126bd0fb7cf5d37664",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ko.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.multi.min.js",
+      "sha256": "ffaee7f1e07179595fe8a4b7c469761f90999470e1f04dcb0a94dc2c1cb44f9c",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.multi.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.nl.min.js",
+      "sha256": "dbebf0651a067e32a8fa473a832c6ade3a9322a2aaf15637591234a3902e37f3",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.nl.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.no.min.js",
+      "sha256": "acd8db242abb7f751000b259df6a670082e7b0c5ea7d59b496a43de401071963",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.no.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.pl.min.js",
+      "sha256": "0402e9e885b05b0203b6ea35b54b572cedf74d65d0fec595c8b4cc7a6b646eeb",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.pl.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.pt.min.js",
+      "sha256": "225f097191a13f371dcbb3749358b37a70a3578e2f8d5d5051710dfe7e21be4e",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.pt.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ro.min.js",
+      "sha256": "6d6701f14d8a510a36e2d7313e7ffd95697699cfcdaea0f285b8cc28311b03f9",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ro.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ru.min.js",
+      "sha256": "a6d6a514a1acd902fab619e8ba55ff90ceb5cece128b60c0b6199de58bfc2acd",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ru.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.sa.min.js",
+      "sha256": "41c558a4355c3eae8f0a27ae870712738f14b0bd88038042ac8ab8b411e5817f",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.sa.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.stemmer.support.min.js",
+      "sha256": "5ff7b6bd53462911fc1311c09f654085b748338aced249e719c0b16fda0b90fb",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.stemmer.support.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.sv.min.js",
+      "sha256": "0c426be6a744a5cb0f8557f036a7d6988f0215fce0916d9138f95d1cc47e4e64",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.sv.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.ta.min.js",
+      "sha256": "17a32dc49c27c9d27945625a7e8d066d42f64ea1ce5a5b34de427723fbf9ae2a",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.ta.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.te.min.js",
+      "sha256": "079c8fcf028aeef388e98ec8607c8ea50ba9660c46797c8a119d05f8f8205838",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.te.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.th.min.js",
+      "sha256": "348461266843e316b26820004a96d3fd87a1579829d244ce510c17293eef0439",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.th.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.tr.min.js",
+      "sha256": "b5d0675dcb5e0f699c0a04931b81e0637679bfef5f151db8168c636ae92781e4",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.tr.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.vi.min.js",
+      "sha256": "2e39c3fd7305f6e66fc0424796a7696cb8e36dc0f5c3a83ea1bc44dfe3fecb56",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.vi.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/min/lunr.zh.min.js",
+      "sha256": "2f61041574bd677c382c16a2edfe4767b1007e1ea3572e6b149bd159ff591a47",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/min/lunr.zh.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/tinyseg.js",
+      "sha256": "1b044c239610ef65fceff6039567442bb1692d413f5ee8686fee81b1a3067761",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/tinyseg.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/lunr/wordcut.js",
+      "sha256": "3d38fde68af348915288e45eeb338af8256c8611fa2cfef307e6ab95808b3567",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/lunr/wordcut.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/workers/search.2c215733.min.js",
+      "sha256": "cfb35333fafd6d2eb148eba21452849fb7fbde32fdfbf986836573f963106188",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/workers/search.2c215733.min.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/javascripts/workers/search.2c215733.min.js.map",
+      "sha256": "780dccece24891aa19da6285715e2c7d0cd884237a87a3a9be6684823584921f",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/javascripts/workers/search.2c215733.min.js.map"
+        }
+      ]
+    },
+    {
+      "path": "assets/stylesheets/main.314bbef5.min.css",
+      "sha256": "314bbef5bf9ab3a776c5b1bb3ae42f0db5de636bfe2b1ddd6e67de3d35384d8b",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/stylesheets/main.314bbef5.min.css"
+        }
+      ]
+    },
+    {
+      "path": "assets/stylesheets/main.314bbef5.min.css.map",
+      "sha256": "e7ce84a82ecb2dd5bbb7914feb98086920f576c1164f24c5e1b52df4c979383b",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/stylesheets/main.314bbef5.min.css.map"
+        }
+      ]
+    },
+    {
+      "path": "assets/stylesheets/palette.a45159b5.min.css",
+      "sha256": "a45159b56103e8b1ad8240a01ec0235924a2bd19e00572efaf4243e82128792d",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/stylesheets/palette.a45159b5.min.css"
+        }
+      ]
+    },
+    {
+      "path": "assets/stylesheets/palette.a45159b5.min.css.map",
+      "sha256": "3e55b1e2a9d12b0c7ed73ff64501a5855e8dfc8b2b62e855da04bd663fcf7ccd",
+      "installed_distribution_sources": [
+        {
+          "distribution": "mkdocs-materialx",
+          "version": "10.1.8",
+          "path": "material/templates/assets/stylesheets/palette.a45159b5.min.css.map"
+        }
+      ]
+    }
+  ],
+  "remaining_review": [
+    "Embedded browser dependencies and source-availability obligations",
+    "External fltheme26 and font response provenance",
+    "Historical pending groups remain in frontend-notices.json; this inventory does not supersede them"
+  ]
+}

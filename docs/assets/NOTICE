@@ -1,0 +1,1510 @@
+this_file: NOTICE
+
+Historical source locations
+===========================
+Paths beginning rescued/ or containing /_old/ name historical sources archived
+outside this repository, not files a reader can open here; the scriptmix archive
+fontlab-python-scriptmix-rescued.tar.gz has SHA-256
+ffa611cfec3f2550400989abff51cea1a391d714a91ea4863ca0610711dd4b32,
+and the examples archive fontlab-python-examples-rescued.tar.gz has SHA-256
+f49848d39bdac1a6a973864500afe56af635871e5001ae94ee36cd95370a8266.
+Source paths and SHA-256 identifiers in the JSON ledgers remain historical records.
+
+The Kerning category adapts five Apache-2.0 fontlab-samples scripts historically identified in
+fontlab-python-examples/_old/part4/fontlab-samples/samples/:
+kerning_classes_browser.py, kerning_compare_masters.py, kerning_list_browser.py,
+kerning_missing_pairs.py and kerning_text_preview.py. Source and destination
+SHA-256 mappings are recorded in migration.json. Native access and shared
+lifecycle adaptations live in fontlab-fontlabapp (see its NOTICE). Every original
+control is retained; error containment and complete-ink proof fitting are added.
+See LICENSE for the Apache License, Version 2.0. Original source identities remain recorded.
+
+Five additional Kerning editors adapt these Apache-2.0 sources from the same
+historical samples directory: kerning_copy_between_masters.py,
+kerning_pair_editor.py, kerning_scale_values.py, kerning_round_values.py and
+kerning_remove_small.py. All controls/actions and original interfaces are
+retained. Shared calculations, multi-master preflight/writing and common UI
+rendering now live in App. Snapshot refusal, explicit-zero insertion and Refresh
+recovery are added. The five original source/destination hashes are appended to
+migration.json without changing prior mappings. Native acceptance is pending.
+
+Selected Kerning editors adapt Apache-2.0 kerning_exceptions_finder.py and
+kerning_pairs_from_text.py from the same historical fontlab-samples archive.
+App's kerning_selection.py shares exception precedence, word parsing, explicit/
+effective previews and ticked plans; the existing complete batch writer and
+owned dialog shell provide snapshot guards, Refresh and history. Scriptmix
+migration.json appends both source/destination hashes; original source identities remain recorded.
+
+Proof tools adapt the Apache-2.0 fontlab-samples proof_glyph_grid.py,
+proof_text_by_master.py, proof_waterfall.py and proof_word_finder.py from the
+same historical archive. App proof.py shares exact embedded words, Unicode/slash
+parsing, ordered sizes, advance-only runs and transformed outline assembly;
+_proof_views.py preserves the three actual native painters, and _proof_dialog.py
+reuses owned dialog lifecycle with stale-font/failed-read/paint guards. Scriptmix
+retains original controls/classes/keys/globals and appends exact original/menu
+SHA-256 mappings. No source archive input was modified or removed.
+
+Masters report provenance
+=========================
+
+The four Masters tools adapt Apache-2.0 masters_overview.py,
+masters_width_chart.py, masters_glyph_weight_chart.py and
+masters_compatibility_check.py from historical fontlab-samples sources.
+App masters.py shares actual reads, twelve-step transformed contour areas,
+counter nesting and own-contour structural signatures; _masters_views.py
+retains original labelled lines/grouped bars. _masters_dialog.py extends the
+existing Proof/Names shell and paint boundary, with complete initial UI,
+source-bound actions and owned cleanup. Scriptmix retains every original
+control, class, key and native scenario interface; migration.json appends four
+exact source/destination SHA-256 pairs. Original source identities remain recorded.
+
+Metrics and outline inspector provenance
+=======================================
+
+The four read-only tools adapt Apache-2.0 metrics_spacing_string_preview.py,
+metrics_width_table.py, outlines_contour_order_view.py and
+outlines_node_statistics.py from the historical fontlab-samples archive.
+App inspectors.py preserves original parsing, missing/zero/auto rules, rounded
+width progressions, raw node-polygon winding and contour/node statistics; actual
+transformed paths and repeated reads reuse accepted Proof/Masters helpers.
+_inspectors_views.py retains the complete original spacing and contour diagrams
+on the existing safe painter boundary. _inspectors_dialog.py reuses the owned
+Masters/Proof/Names lifecycle and selection guards. Scriptmix migration.json
+retains exact original/menu SHA-256 pairs; all original source identities remain recorded.
+
+Read-only Components provenance
+==============================
+
+Five complete inspectors adapt Apache-2.0 components_compatibility.py,
+components_count_badges.py, components_missing_bases.py, components_report.py and
+components_where_used.py from fontlab-python-examples/_old/part4/fontlab-samples-L1/samples/.
+App components.py shares ordered component/count/offset/missing/reverse-index
+reads, plain source snapshots and existing native-verified placed outline paths.
+_components_dialog.py extends existing Proof/Names binding, signal and Close
+lifecycle; _components_views.py retains the complete original badge-card painter.
+Scriptmix retains original controls/class/key/helper/scenario interfaces and
+appends exact source/destination hashes to migration.json. Originals remain
+unchanged. Reviewed Appv0.2.13/Scriptmixv1.0.9 native/artifact acceptance is
+recorded in WORK.md.
+
+Read-only Anchors provenance
+===========================
+
+Anchor Cloud, Anchor Compatibility and Mark Attachment Preview adapt the
+Apache-2.0 anchors_cloud_view.py, anchors_compatibility_report.py and
+anchors_mark_attachment_preview.py from historical fontlab-samples-L1 sources.
+App anchors.py preserves original frequency/order, auto-layer exclusions, raw
+anchor snapshots and rounded attachment arithmetic. Existing Components/Proof
+helpers supply placed outlines, source guards, owned lifecycle and the exact
+None-error painter adapter. _anchors_views.py retains both complete original
+diagrams. Scriptmix keeps every original control/class/key/helper/scenario
+interface and appends exact original/menu SHA-256 pairs. All originals remain;
+reviewed Appv0.2.14/Scriptmixv1.0.10 artifact/native and independent downloaded-tag
+acceptance are recorded in WORK.md.
+
+Read-only glyph review provenance
+=================================
+
+Select Unreferenced Glyphs adapts Apache-2.0 cleanup_unused_glyphs_report.py
+from historical fontlab-samples-C4; four original copies are byte-identical.
+Interpolation Preview adapts Apache-2.0 masters_interpolation_preview.py from
+historical fontlab-samples-L1, retaining the defensive QColor/palette fixes.
+Nine copies match L1; L2 only removes those protections. Complete calculations,
+controls, diagram and public helper interfaces remain. Shared lifecycle/painter
+boundaries come from existing App helpers. migration.json retains original and
+menu SHA-256 pairs. All inputs remain; reviewed Appv0.2.15/Scriptmixv1.0.11
+artifact/native and independent downloaded-tag acceptance are recorded in WORK.md.
+
+Live Node Coordinates provenance
+================================
+
+Node Coordinates Panel adapts Apache-2.0 outlines_node_coordinates_panel.py
+from historical fontlab-samples-L1. Nine original copies match; L2 only removes
+palette protections. App node_coordinates.py retains complete own-node order,
+consecutive measurements and formatting. CurrentGlyph resolves actual active
+context with explicit None checks. Shared Names heading/lifecycle and Masters
+tables supply the UI; timer/Copy guards clear incomplete or stale values.
+Original sources remain. Reviewed Appv0.2.16/Scriptmixv1.0.12 pass artifact/native
+and independent downloaded-tag acceptance; receipts are recorded in WORK.md.
+
+Compact Master Switcher provenance
+=================================
+
+Master Switcher adapts Apache-2.0 masters_switcher_palette.py from historical
+fontlab-samples sources. Nine copies match central; L2 removes palette safeguards.
+Original location formatting and existing master_order calculation are retained.
+MastersDialog supplies owned theme/binding/refresh/Close; added guards verify the
+actual master choices and visible labels before an explicit target switch.
+Three columns retain the three-master row while wrapping larger master sets.
+All originals remain. Reviewed Appv0.2.17/Scriptmixv1.0.13 pass source/artifact/native/prior60 and
+independent downloaded-tag acceptance, recorded in WORK.md.
+
+Guide tools provenance
+======================
+
+Font Guides Panel, Grid Generator and Metric Reference Lines adapt Apache-2.0
+fontlab-samples sources. Eight copies of each match central; L2 only removes
+text contrast styling. The complete guide controls and grid painter are retained
+on shared owned UI/painter boundaries. Native-history safeguards refuse entire
+unsafe batches before notification. All originals remain. Reviewed Appv0.2.18/
+Scriptmixv1.0.14 pass source/artifact/native/prior61 and independent downloaded-tag
+acceptance, recorded in WORK.md.
+
+Guide rewrite editors provenance
+===============================
+
+Clear Glyph Guides, Copy Guides Between Masters and Guide List Editor adapt
+retained Apache-2.0 fontlab-samples sources. Complete filters, target controls,
+width scaling and editable rows are retained on the owned guide lifecycle.
+Native guide copies preserve retained geometry, colour and tags; hints remain.
+Shared preflight refuses unsafe automatic dependants before any batch mutation.
+All originals remain. Reviewed Appv0.2.19/Scriptmixv1.0.15 pass source/artifact/
+native/prior64 and independent downloaded-tag acceptance, recorded in WORK.md.
+
+Copy Anchors From Glyph provenance
+=================================
+
+Adapted from the historical Apache-2.0 fontlab-samples-L1 anchor-copy source.
+Preserves complete source completion, merge/replace, width scaling and master
+controls. Shared App support adds late native binding, raw source guards,
+preconstructed writes and measured native-history safeguards. Existing pins
+retain native style; new pins use FontLab name-derived appearance defaults.
+The original source identity and independent L1 scenario remain recorded. Candidate
+acceptance and the pending release/fresh-tag gates are recorded in WORK.md.
+
+Copy Anchors acceptance update: reviewed Appv0.2.21/Scriptmixv1.0.17 pass all
+source/artifact/native/prior67 and downloaded-tag R053 gates, including settled
+refusal-layout geometry. Earlier candidate tags are retained with their failed
+visual receipt. No original source is removed. See WORK.md for exact evidence.
+
+Italic Angle provenance
+=======================
+
+Masters/Italic Angle.py adapts the historical Apache-2.0 fontlab-samples
+masters_italic_angle.py through shared App helpers, preserving the original
+controls, helper/class names, slant gauge and independent native scenario.
+The exact source/destination pair is recorded in migration.json. Original
+source identities remain recorded. This candidate does not claim broader archive cleanup.
+
+
+Tabular width checker adaptation
+===============================
+
+Pedro Arilla, glyphs-scripts/Testing/Tabular width checker.py, Apache-2.0.
+Source SHA-256: 6556dd53ce9f45cfb770b1744077ba26ab230805cd65eaf4dca518c2a3313f44
+License SHA-256: ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37
+https://github.com/pedroarilla/glyphs-scripts
+The App tabular_width and _tabular_width_dialog modules and Scriptmix
+Scripts/Metrics/Check Tabular Widths.py preserve exact comparison, row statuses,
+same/different totals and time heading. Native font-order selection defines the
+reference. The modeless report preserves owner Output content. Native acceptance
+is pending; no release or 130-sample acceptance increment is claimed.
+
+
+Component recipe report provenance
+=================================
+
+Behavior adapted from Simon Cozens, GlyphsScripts/Recipe Dumper.py.
+https://github.com/simoncozens/GlyphsScripts
+Source SHA-256: 500126d3fcc965c0a93991be4253fce7ed33f56eb3513b202ba8a1049e2e7edd
+MIT license SHA-256: 6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5
+
+The adaptation preserves ordered layer/component records, repeated component
+names, mixed layers and original base+base=target output. Native Font-window
+active-master selection is a bounded candidate; original editor-tab/repeated/
+multi-master layer selection and native acceptance remain pending. Original
+source resources and reference bodies are not redistributed or executed.
+New host adapter/UI code also uses the workspace Apache-2.0 terms.
+
+Complete upstream MIT notice:
+
+MIT License
+
+Copyright (c) 2017 Simon Cozens
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+Angularizzle workflow adaptation
+================================
+
+src/fontlabapp/angularizzle.py adapts the numerical methods of Angularizzle
+by Luke Prowse (2019), NaN-xyz/GlyphsApp-Scripts, Angularizzle/Angularizzle.py.
+The repository README declares Apache-2.0; its root LICENSE supplies the MIT
+terms reproduced below. Both notices are preserved. See LICENSE-APACHE-2.0.
+Source SHA256: 082f0317e4e92ebc962d5b581fe6f99d789eeb35d521f6d3c1e4e8081806125a
+
+MIT License
+
+Copyright (c) 2019 LukeProwse
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+Recipe Dumper selected-layer update: the current candidate reads ordered
+Font/Glyph-window occurrences, including repeats and per-slot layer choices.
+Font-window selection uses the current master. Native9787focus/selection and
+complete preservation remain pending. Earlier Font-window-only descriptions
+record the preceding bounded adapter. Original MIT attribution remains above.
+
+
+Tabular Width Checker now reads ordered Font/Glyph-window selected layers,
+including repeated editor slots and their layer choices. Font-window rows use
+the current master. Exact widths, first-occurrence reference and original
+counts/time heading remain. Native9787order/focus/preservation is pending.
+Earlier Font-window-only descriptions record the preceding adapter.
+
+
+Slobzheninov Point Counter
+========================
+point_counts.py, point_counts_native.py and the Point Counter menu/report adapt
+Bug fixing/Point Counter.py, https://github.com/slobzheninov/Glyphs-Scripts .
+Copyright 2020 Alex Slobzheninov (upstream README). Apache-2.0; complete terms
+are retained in LICENSE-APACHE-2.0.
+Source SHA256:fd0dd22423a8e2772513436bec48692bcb41989bab06b98b779e37c64f3ea819
+License SHA256:bb28c48e3e078166e91cfc2b6db7ffebb8a0973b9e23b3df060561292d8d69ec
+Changes: typed immutable reports, native selected occurrences and foreground
+layers, two-read/context/deadline guards, and an owned Refresh/Close text panel
+instead of clearing owner Output. Count quadratic on-curves as curves (source
+omits them). Preserve repeated groups, empty rows, source text and the previous
+two-row mismatch marker. Components stay undecomposed. Foreground-role mapping,
+getter preservation and native lifecycle acceptance remain pending.
+
+
+Pedro Arilla Vertical metrics reporter
+=====================================
+vertical_metrics.py, vertical_metrics_native.py and the Vertical Metrics Reporter
+menu adapt Testing/Vertical metrics reporter.py from
+https://github.com/pedroarilla/glyphs-scripts . Source credits Pedro Arilla.
+Apache-2.0; complete terms retained in LICENSE-APACHE-2.0.
+Source SHA256:56c26ee9f72196129214ee6d030140ffe48d7fadee9d985f1c2e144763af8b22
+License SHA256:ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37
+Changes: typed immutable eight-value rows, stored native all-master metadata
+reader, source/deadline fences and an owned Refresh/Close report instead of
+clearing Output. Reject the source's misleading empty-domain success report.
+Native schema, metric mapping/order and complete preservation qualification
+remain pending. No exported/automatically derived metric claim.
+
+
+Pedro Arilla random proof scripts
+================================
+random_proof.py, random_proof_words.json and the seven Random Proof menus adapt
+Random/Random 123.py and Random/{lowercase,Title,UPPERCASE} {non-text,words}.py
+from https://github.com/pedroarilla/glyphs-scripts . Source credits Pedro Arilla.
+Apache-2.0; full terms retained in LICENSE-APACHE-2.0.
+License SHA256:ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37
+Random/Random 123.py SHA256:9d014b11d4ba70487c26980b55270b61a33e41fc808cea3f1f5f050a57f989a4
+Random/Random lowercase non-text.py SHA256:650f3a8698238d5c233c5ddbc4480ad12ebfffad9530e9ff553c2a6b7f95774d
+Random/Random Title non-text.py SHA256:4aa509831baa1955d59b684082499ac068ee3afbc4d90dc328318303677223a2
+Random/Random UPPERCASE non-text.py SHA256:8fcdb9f5cee991ea7929ab2c11e7b2755f157a68348e0608fa29258bdd575ef2
+Random/Random lowercase words.py SHA256:1fb400ece636df93f3f8737d4f2da96951316351b3c8db133c4723addfdada40
+Random/Random Title words.py SHA256:961a4df1780d6f30676c7064e6c313ddf5da3005065bcc1f7f929901dd500203
+Random/Random UPPERCASE words.py SHA256:c54795c526aa5a3452d3aa805afac5cae6266c5603bd9e499fd2b773a7212f3c
+Changes: shared typed generation, exact literal word data in one JSON resource,
+explicit current-font lookup instead of undefined Font, and native literal-text Glyph tab
+through Fly/App. Preserve every draw, case transform and whitespace. Output
+clearing/status removed to preserve the user's Output. Native workflow and
+complete data/history preservation qualification remain pending.
+
+
+Pedro Arilla selected-glyph context proofs
+=========================================
+context_proofs.py and eight Proof menus adapt the Glyphs between scripts from
+https://github.com/pedroarilla/glyphs-scripts . Source credits Pedro Arilla.
+Apache-2.0; complete terms retained in LICENSE-APACHE-2.0.
+License SHA256:ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37
+Glyphs between/Glyphs between lowercase.py SHA256:bc188daa1f6942893bea903bff5771500ae60afb091f0ce6ea3dedb5bd6f3ac0
+Glyphs between/Glyphs between UPPERCASE.py SHA256:84ab0fa1b3f23fe383353fe716e55ca1a86873cbfe2af44c38db5f9d50a81e41
+Glyphs between/Glyphs between figures_lining.py SHA256:f1710f49eea4f8c7dd1679fadba44b7bd72f6c8d15cedfa39c6ead95f708fe77
+Glyphs between/Glyphs between figures_old.py SHA256:f650332c064710b6e82d64b7fa0c8b9eda9e47b302411f6f9f0c22903ddf2594
+Glyphs between/Glyphs surrounded by H.py SHA256:1e30198199ca8e9998e413de0abebf80e27c176636d423f360721a054c6a431b
+Glyphs between/Glyphs surrounded by I.py SHA256:c73df32e26b5c370e0bef8bf18ddfb4d45e91028b482d8f4477c263614eadb0e
+Glyphs between/Glyphs surrounded by HHOHH.py SHA256:ad4e98cf1629b3c4be432d1ce6541fa354dbc3ce28536dee858f0837ad12f9d9
+Glyphs between/Glyphs surrounded by nnonn.py SHA256:bc192f96c06f4b598e739b729405c3d933e2dcc0dd73e89b3409d625ef5708b4
+Changes: shared typed named-glyph rows, bounded actual selected-layer capture,
+source fences, and named native symbols sent only to a verified new target tab.
+Keep original order, repeats, contexts, current-master behavior, empty-selection
+results and blank lines. Output clearing/status removed to preserve user Output.
+Native content, missing names and complete preservation qualification pending.
+
+Text Filter / Text Simplifier
+=============================
+
+Adapted from Slobzheninov/Glyphs-Scripts, Testing/Text Filter.py, licensed under
+the Apache License, Version2.0 (see LICENSE-APACHE-2.0). Upstream project:
+https://github.com/slobzheninov/Glyphs-Scripts . Modified for Python3.11/FontLab:
+shared App filtering and owned Qt controls, dedicated tool settings, complete
+Reset and original-font proof-tab routing through Fly. The source body and
+resources are not distributed. Original SHA256:
+44e0ac6f376518937449bd92470683ffc45ed059e8ddeafb3d4c0518188c4d46
+
+Layer extrema proofs
+===================
+
+The layer extrema model/native capture and exact-layer proof menus adapt:
+- Simon Cozens/GlyphsScripts: Tallest And Shortest.py (MIT).
+- Slobzheninov/Glyphs-Scripts: Testing/Highest & Lowest Glyphs.py (Apache-2.0;
+  see LICENSE-APACHE-2.0).
+
+Modified for Python3.11/FontLab: explicit current-font lookup, complete selected-
+master/all-foreground scopes, zero/sentinel repairs, stable ordered ties, exact
+glyph/layer symbols, bounded source fences and owned numerical reporting instead
+of Output writes. Original bodies/resources are not distributed. Exact source
+and licence hashes are retained in the menu provenance manifest.
+
+The Simon Cozens source licence follows:
+
+MIT License
+
+Copyright (c) 2017 Simon Cozens
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Why You Not Compatible? provenance
+==================================
+
+Behavior adapted from Simon Cozens/GlyphsScripts, Why You Not Compatible.py.
+Source SHA256: 1234a335d2284ad38773e7b9bb4cb3310f90f50e618ac2b8ef4fa96656757a5c
+MIT licence SHA256: 6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5
+Copyright (c) 2017 Simon Cozens. The complete MIT licence retained above for
+Recipe Dumper and Tallest And Shortest applies to this adaptation too.
+Original bytes are neither executed nor distributed. Own-glyph labels, complete
+adjacent-pair checking and deterministic name-set text repair source defects.
+The owned modeless report replaces direct Output writes; native acceptance is pending.
+
+
+Bracket-layer report and proof
+=============================
+
+Copyright2025 Fernando Díaz & Reset Type Studio.
+Adapted from Reset-Type-Studio/Glyphs-Scripts, licensed Apache-2.0 by README.md
+lines104-111 (SHA256:b2277e28b737406bc33675768a216f2b2260c5f177e635d4874a10b46652863d).
+Complete terms retained in LICENSE-APACHE-2.0.
+https://github.com/Reset-Type-Studio/Glyphs-Scripts
+Bracket Layers/Report Glyphs containing BL.py:
+bc5712fa1ff4e185613eb1533e1f2ab36be41b6bed2eca0f8841e57e4beecf90
+Bracket Layers/New Tab with Glyphs containing BL.py:
+7f1788a0302d1df3640775b9b1ad1b5ac600a1412b47afae94556b732e5578c8
+Changes: shared Python3.11 full-font graph, immutable observations and bounded
+source/context fences; owned read-only Refresh/Close report and explicit named
+fresh-tab symbols. Preserve both complete groups; explain overlapping membership
+and count distinct total, sort proof groups deterministically and remove empty-
+section orphan slashes. Original bodies/resources are neither run nor distributed.
+Native behavior and full preservation qualification remain pending.
+
+Pedro Arilla contour selection adaptations
+=========================================
+
+Copyright 2018–2022 Pedro Arilla. Apache-2.0; complete terms in LICENSE.
+https://github.com/pedroarilla/glyphs-scripts
+Independent FontLab adaptation; original source bodies are not distributed.
+LICENSE.txt: ae039abae8aafe6656ae754a0d45f10f5209351d6cc18546e868db906eedff37
+Paths/Select partial path.py: 082e445b23e6085ace77ebc30ecb4025dc0210185d1646b854129630158dc444
+Paths/Select paths.py: d6814436e871cc1e80668d31bb3b15428107d5fd6cbdd3976d74643b3a3a2840
+Paths/Select small paths.py: fe88203e787c5a5e9ada86c16b25e4f9da0a1afe29391a197b26b67fa8a15c20
+README.md: 238d8ebe63284fff91c98f89d2ad1ab9b1b795c2225837bb9aff6a499b006918
+Changes: first-selected-layer immutable plans; stored-order node expansion and
+cross-contour toggles; finite numeric modeless input; analytic unsigned FontTools
+area (can differ from Glyphs flattening); explicit stale-source checks and
+best-effort flag rollback. Mixed non-node clearing requires a single displayed
+glyph and supported native visual kinds. No Output clearing or geometry Undo.
+Native workflows, complete selection transport and preservation remain pending.
+
+Categories to XML Lib Key (issue120 candidate): behavior adapted from Simon
+Cozens/GlyphsScripts/Categories to XML lib key.py. Copyright (c) 2017 Simon
+Cozens. MIT licence: the complete Simon Cozens MIT terms retained above apply.
+Modified for a FontLab all-glyph snapshot, XML escaping and owned Refresh/Close
+panel. Category policy remains Glyport's GSGlyph.category implementation.
+Native qualification pending.
+
+Issue120 reporting pair adaptations
+- Fernando Díaz & Reset Type Studio, Copyright 2025, Paths/Compatibility Check.py,
+  Apache-2.0 as declared in upstream README.md License section. Full Apache terms
+  are retained in LICENSE-APACHE-2.0 (App) / LICENSE (Scriptmix).
+- Simon Cozens, Dump to SVG.py, MIT; existing Simon Cozens MIT terms above apply.
+  Preserve own-path command scope and unconditional Z; native qualification pending.
+
+
+Reza Bohloul — Same Kerning Groups (independent implementation)
+-----------------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: Kerning/Same Kerning Groups.py
+Original SHA-256: fc2e6b144d53388b7105498f9debf55edf2c65986c3f559683b106623fbb9544
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. This independently written
+implementation is Apache-2.0; complete terms are in LICENSE.
+
+
+Close But No Cigar provenance
+============================
+Behavior adapted from Simon Cozens, GlyphsScripts/Close But No Cigar.py
+and glyphmonkey.py. https://github.com/simoncozens/GlyphsScripts
+Original SHA-256: bcf9ec870ac1a36ed5fb65f0f863c826ea80e6049f072d4891f0d2daa52084ed
+Helper SHA-256: 26f0f745b72f7a275ced449f4a82e14ab1be60df7f20abacb973f6c5f240a105
+Licence SHA-256: 6463ad87fde6016bb3bc48dc58fdf2c8fa82ba33fbefb995038eb90a5b0b93a5
+All selected parent occurrences; literal first layer, associated named-master
+PostScript stems/four metrics; all strict angle/stem/six node tests. Preserves
+original open-path wrap and sub-one 50-step cubic length. Repairs numeric cubic
+angle and empty contours. TrueType controls, malformed topology, generated or
+projective shapes and unknown association refuse the whole report. No source
+bodies or assets copied/executed. Native acceptance remains pending. Host/UI
+adaptation also uses Apache-2.0. Complete original MIT terms follow.
+
+MIT License
+
+Copyright (c) 2017 Simon Cozens
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+N119 Anchors/Duplicates Finder adapts the complete Apache-2.0 rescued sample
+anchors_duplicates_finder.py, SHA2567cda723f2e4499930aa49d701bb1dd1cca703bc92de44e5ec2a18876ff130f71.
+The historical rescue ledger retains the original source identity. Native
+one-Undo/full-font/history/dirty/save/reopen acceptance remains pending.
+
+
+Reza Bohloul — Text Holder (independent implementation)
+----------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: Window/Text holder.py
+Original SHA-256: 182c1c2486d79729632ea08ddc45c4c3aab8ccb19508ddb0276498a43c8c1410
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. This independently written
+implementation is Apache-2.0; complete terms are in LICENSE.
+
+
+Reza Bohloul Point Counter (master layers)
+========================================
+Independent implementation of the inspected RezaBohloul/RezaBohloul
+Path/Point Counter.py workflow, source SHA256 d6eeb1c6ba156dc03208b2d82362295f0f376a389f1414477c8abb0539e6bb6c.
+No licence is declared in the inspected source tree; no original body is
+redistributed. New implementation is Apache-2.0 under this project licence.
+Quadratic endpoints are included explicitly, correcting the original omission.
+
+Dangerous Offcurves workflow
+---------------------------
+Alex Slobzheninov, https://github.com/slobzheninov/Glyphs-Scripts
+Original Bug fixing/Dangerous Offcurves.py, Apache License 2.0.
+SHA256 b4278e37d164357b16051cdec642b19554199e3561246b9016ad56792884816a.
+Independent FontLab implementation; original body is not redistributed.
+The complete four finite-probe policy is retained. Ascending fontTools curve-t
+ordering adapts unspecified Glyphs ordering; exact engine equivalence and native
+font-read/tab preservation remain unqualified. No original bug-fix claim.
+
+Duplicate Unicodes complete editor
+=================================
+Apache-2.0 FontLab sample rescued/samples/names_duplicate_unicodes.py
+SHA256 b42ab5f9a4bead19a4a0a042d9fe9fcffbfadfe650da6551b4f9ea3819ba865e.
+The original remains untouched in Scriptmix. Shared App model/native/UI and Fly
+facade preserve complete scan, keeper, checkbox, Rescan, removal and Close flow.
+Unsafe getter/UpdateAll/double-notification behavior is replaced by font-owned
+Unicode records, precise preflight, one final history batch and partial errors.
+Native FontLab/history/full-font/reopen qualification remains pending.
+
+
+N185 — Science Gothic Kerning Cutoff
+Independent implementation of Vassil Kateliev and Karandash Type Foundry (2025),
+SG-Font-Kerning-Cutoff.py v1.1, retained PythonQt Science Gothic reference.
+Original SHA256 b77e6799e748121e751f63ad01e8c0d5da881a71c4378684c92d45626636f8d5.
+No licence is declared in the inspected source tree. No original body is copied,
+executed or distributed; Apache-2.0 applies only to this new implementation.
+All-master explicit-pair inclusive[-250,100] action; repair final-master-only
+notification through the existing complete snapshot-bound kerning batch writer.
+Native full-font/history/save/reopen qualification remains pending.
+
+Kerning Symmetry: independent behavior implementation of Vassil Kateliev /
+Karandash Type Foundry (2025), Science Gothic,
+https://github.com/googlefonts/science-gothic ,
+scripts/FontLab/sg-toolbox/SG-Font-Kerning-Symmetry.py.
+Original SHA-256 6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c.
+No licence declared in the inspected original tree; original body is neither
+copied nor redistributed. New independent implementation: Apache-2.0.
+
+Cross-font Copy Anchors: independent Apache-2.0 implementation of the complete
+TypeRig TR-CopyAnchors 2.3 workflow, copyright Vassil Kateliev, 2022–2023.
+Upstream source SHA25660e2fd0c872276538d8d21a443a06e9a0282ada5b8a90b96c81da8e52bf19cdf.
+Upstream TypeRig is MPL-2.0; no upstream source body or dependency is redistributed.
+The full upstream licence follows for attribution; it does not relicense these
+independent additions. Source and maintained TypeRig remain read-only.
+
+Mozilla Public License Version 2.0
+==================================
+
+1. Definitions
+--------------
+
+1.1. "Contributor"
+    means each individual or legal entity that creates, contributes to
+    the creation of, or owns Covered Software.
+
+1.2. "Contributor Version"
+    means the combination of the Contributions of others (if any) used
+    by a Contributor and that particular Contributor's Contribution.
+
+1.3. "Contribution"
+    means Covered Software of a particular Contributor.
+
+1.4. "Covered Software"
+    means Source Code Form to which the initial Contributor has attached
+    the notice in Exhibit A, the Executable Form of such Source Code
+    Form, and Modifications of such Source Code Form, in each case
+    including portions thereof.
+
+1.5. "Incompatible With Secondary Licenses"
+    means
+
+    (a) that the initial Contributor has attached the notice described
+        in Exhibit B to the Covered Software; or
+
+    (b) that the Covered Software was made available under the terms of
+        version 1.1 or earlier of the License, but not also under the
+        terms of a Secondary License.
+
+1.6. "Executable Form"
+    means any form of the work other than Source Code Form.
+
+1.7. "Larger Work"
+    means a work that combines Covered Software with other material, in
+    a separate file or files, that is not Covered Software.
+
+1.8. "License"
+    means this document.
+
+1.9. "Licensable"
+    means having the right to grant, to the maximum extent possible,
+    whether at the time of the initial grant or subsequently, any and
+    all of the rights conveyed by this License.
+
+1.10. "Modifications"
+    means any of the following:
+
+    (a) any file in Source Code Form that results from an addition to,
+        deletion from, or modification of the contents of Covered
+        Software; or
+
+    (b) any new file in Source Code Form that contains any Covered
+        Software.
+
+1.11. "Patent Claims" of a Contributor
+    means any patent claim(s), including without limitation, method,
+    process, and apparatus claims, in any patent Licensable by such
+    Contributor that would be infringed, but for the grant of the
+    License, by the making, using, selling, offering for sale, having
+    made, import, or transfer of either its Contributions or its
+    Contributor Version.
+
+1.12. "Secondary License"
+    means either the GNU General Public License, Version 2.0, the GNU
+    Lesser General Public License, Version 2.1, the GNU Affero General
+    Public License, Version 3.0, or any later versions of those
+    licenses.
+
+1.13. "Source Code Form"
+    means the form of the work preferred for making modifications.
+
+1.14. "You" (or "Your")
+    means an individual or a legal entity exercising rights under this
+    License. For legal entities, "You" includes any entity that
+    controls, is controlled by, or is under common control with You. For
+    purposes of this definition, "control" means (a) the power, direct
+    or indirect, to cause the direction or management of such entity,
+    whether by contract or otherwise, or (b) ownership of more than
+    fifty percent (50%) of the outstanding shares or beneficial
+    ownership of such entity.
+
+2. License Grants and Conditions
+--------------------------------
+
+2.1. Grants
+
+Each Contributor hereby grants You a world-wide, royalty-free,
+non-exclusive license:
+
+(a) under intellectual property rights (other than patent or trademark)
+    Licensable by such Contributor to use, reproduce, make available,
+    modify, display, perform, distribute, and otherwise exploit its
+    Contributions, either on an unmodified basis, with Modifications, or
+    as part of a Larger Work; and
+
+(b) under Patent Claims of such Contributor to make, use, sell, offer
+    for sale, have made, import, and otherwise transfer either its
+    Contributions or its Contributor Version.
+
+2.2. Effective Date
+
+The licenses granted in Section 2.1 with respect to any Contribution
+become effective for each Contribution on the date the Contributor first
+distributes such Contribution.
+
+2.3. Limitations on Grant Scope
+
+The licenses granted in this Section 2 are the only rights granted under
+this License. No additional rights or licenses will be implied from the
+distribution or licensing of Covered Software under this License.
+Notwithstanding Section 2.1(b) above, no patent license is granted by a
+Contributor:
+
+(a) for any code that a Contributor has removed from Covered Software;
+    or
+
+(b) for infringements caused by: (i) Your and any other third party's
+    modifications of Covered Software, or (ii) the combination of its
+    Contributions with other software (except as part of its Contributor
+    Version); or
+
+(c) under Patent Claims infringed by Covered Software in the absence of
+    its Contributions.
+
+This License does not grant any rights in the trademarks, service marks,
+or logos of any Contributor (except as may be necessary to comply with
+the notice requirements in Section 3.4).
+
+2.4. Subsequent Licenses
+
+No Contributor makes additional grants as a result of Your choice to
+distribute the Covered Software under a subsequent version of this
+License (see Section 10.2) or under the terms of a Secondary License (if
+permitted under the terms of Section 3.3).
+
+2.5. Representation
+
+Each Contributor represents that the Contributor believes its
+Contributions are its original creation(s) or it has sufficient rights
+to grant the rights to its Contributions conveyed by this License.
+
+2.6. Fair Use
+
+This License is not intended to limit any rights You have under
+applicable copyright doctrines of fair use, fair dealing, or other
+equivalents.
+
+2.7. Conditions
+
+Sections 3.1, 3.2, 3.3, and 3.4 are conditions of the licenses granted
+in Section 2.1.
+
+3. Responsibilities
+-------------------
+
+3.1. Distribution of Source Form
+
+All distribution of Covered Software in Source Code Form, including any
+Modifications that You create or to which You contribute, must be under
+the terms of this License. You must inform recipients that the Source
+Code Form of the Covered Software is governed by the terms of this
+License, and how they can obtain a copy of this License. You may not
+attempt to alter or restrict the recipients' rights in the Source Code
+Form.
+
+3.2. Distribution of Executable Form
+
+If You distribute Covered Software in Executable Form then:
+
+(a) such Covered Software must also be made available in Source Code
+    Form, as described in Section 3.1, and You must inform recipients of
+    the Executable Form how they can obtain a copy of such Source Code
+    Form by reasonable means in a timely manner, at a charge no more
+    than the cost of distribution to the recipient; and
+
+(b) You may distribute such Executable Form under the terms of this
+    License, or sublicense it under different terms, provided that the
+    license for the Executable Form does not attempt to limit or alter
+    the recipients' rights in the Source Code Form under this License.
+
+3.3. Distribution of a Larger Work
+
+You may create and distribute a Larger Work under terms of Your choice,
+provided that You also comply with the requirements of this License for
+the Covered Software. If the Larger Work is a combination of Covered
+Software with a work governed by one or more Secondary Licenses, and the
+Covered Software is not Incompatible With Secondary Licenses, this
+License permits You to additionally distribute such Covered Software
+under the terms of such Secondary License(s), so that the recipient of
+the Larger Work may, at their option, further distribute the Covered
+Software under the terms of either this License or such Secondary
+License(s).
+
+3.4. Notices
+
+You may not remove or alter the substance of any license notices
+(including copyright notices, patent notices, disclaimers of warranty,
+or limitations of liability) contained within the Source Code Form of
+the Covered Software, except that You may alter any license notices to
+the extent required to remedy known factual inaccuracies.
+
+3.5. Application of Additional Terms
+
+You may choose to offer, and to charge a fee for, warranty, support,
+indemnity or liability obligations to one or more recipients of Covered
+Software. However, You may do so only on Your own behalf, and not on
+behalf of any Contributor. You must make it absolutely clear that any
+such warranty, support, indemnity, or liability obligation is offered by
+You alone, and You hereby agree to indemnify every Contributor for any
+liability incurred by such Contributor as a result of warranty, support,
+indemnity or liability terms You offer. You may include additional
+disclaimers of warranty and limitations of liability specific to any
+jurisdiction.
+
+4. Inability to Comply Due to Statute or Regulation
+---------------------------------------------------
+
+If it is impossible for You to comply with any of the terms of this
+License with respect to some or all of the Covered Software due to
+statute, judicial order, or regulation then You must: (a) comply with
+the terms of this License to the maximum extent possible; and (b)
+describe the limitations and the code they affect. Such description must
+be placed in a text file included with all distributions of the Covered
+Software under this License. Except to the extent prohibited by statute
+or regulation, such description must be sufficiently detailed for a
+recipient of ordinary skill to be able to understand it.
+
+5. Termination
+--------------
+
+5.1. The rights granted under this License will terminate automatically
+if You fail to comply with any of its terms. However, if You become
+compliant, then the rights granted under this License from a particular
+Contributor are reinstated (a) provisionally, unless and until such
+Contributor explicitly and finally terminates Your grants, and (b) on an
+ongoing basis, if such Contributor fails to notify You of the
+non-compliance by some reasonable means prior to 60 days after You have
+come back into compliance. Moreover, Your grants from a particular
+Contributor are reinstated on an ongoing basis if such Contributor
+notifies You of the non-compliance by some reasonable means, this is the
+first time You have received notice of non-compliance with this License
+from such Contributor, and You become compliant prior to 30 days after
+Your receipt of the notice.
+
+5.2. If You initiate litigation against any entity by asserting a patent
+infringement claim (excluding declaratory judgment actions,
+counter-claims, and cross-claims) alleging that a Contributor Version
+directly or indirectly infringes any patent, then the rights granted to
+You by any and all Contributors for the Covered Software under Section
+2.1 of this License shall terminate.
+
+5.3. In the event of termination under Sections 5.1 or 5.2 above, all
+end user license agreements (excluding distributors and resellers) which
+have been validly granted by You or Your distributors under this License
+prior to termination shall survive termination.
+
+************************************************************************
+*                                                                      *
+*  6. Disclaimer of Warranty                                           *
+*  -------------------------                                           *
+*                                                                      *
+*  Covered Software is provided under this License on an "as is"       *
+*  basis, without warranty of any kind, either expressed, implied, or  *
+*  statutory, including, without limitation, warranties that the       *
+*  Covered Software is free of defects, merchantable, fit for a        *
+*  particular purpose or non-infringing. The entire risk as to the     *
+*  quality and performance of the Covered Software is with You.        *
+*  Should any Covered Software prove defective in any respect, You     *
+*  (not any Contributor) assume the cost of any necessary servicing,   *
+*  repair, or correction. This disclaimer of warranty constitutes an   *
+*  essential part of this License. No use of any Covered Software is   *
+*  authorized under this License except under this disclaimer.         *
+*                                                                      *
+************************************************************************
+
+************************************************************************
+*                                                                      *
+*  7. Limitation of Liability                                          *
+*  --------------------------                                          *
+*                                                                      *
+*  Under no circumstances and under no legal theory, whether tort      *
+*  (including negligence), contract, or otherwise, shall any           *
+*  Contributor, or anyone who distributes Covered Software as          *
+*  permitted above, be liable to You for any direct, indirect,         *
+*  special, incidental, or consequential damages of any character      *
+*  including, without limitation, damages for lost profits, loss of    *
+*  goodwill, work stoppage, computer failure or malfunction, or any    *
+*  and all other commercial damages or losses, even if such party      *
+*  shall have been informed of the possibility of such damages. This   *
+*  limitation of liability shall not apply to liability for death or   *
+*  personal injury resulting from such party's negligence to the       *
+*  extent applicable law prohibits such limitation. Some               *
+*  jurisdictions do not allow the exclusion or limitation of           *
+*  incidental or consequential damages, so this exclusion and          *
+*  limitation may not apply to You.                                    *
+*                                                                      *
+************************************************************************
+
+8. Litigation
+-------------
+
+Any litigation relating to this License may be brought only in the
+courts of a jurisdiction where the defendant maintains its principal
+place of business and such litigation shall be governed by laws of that
+jurisdiction, without reference to its conflict-of-law provisions.
+Nothing in this Section shall prevent a party's ability to bring
+cross-claims or counter-claims.
+
+9. Miscellaneous
+----------------
+
+This License represents the complete agreement concerning the subject
+matter hereof. If any provision of this License is held to be
+unenforceable, such provision shall be reformed only to the extent
+necessary to make it enforceable. Any law or regulation which provides
+that the language of a contract shall be construed against the drafter
+shall not be used to construe this License against a Contributor.
+
+10. Versions of the License
+---------------------------
+
+10.1. New Versions
+
+Mozilla Foundation is the license steward. Except as provided in Section
+10.3, no one other than the license steward has the right to modify or
+publish new versions of this License. Each version will be given a
+distinguishing version number.
+
+10.2. Effect of New Versions
+
+You may distribute the Covered Software under the terms of the version
+of the License under which You originally received the Covered Software,
+or under the terms of any subsequent version published by the license
+steward.
+
+10.3. Modified Versions
+
+If you create software not governed by this License, and you want to
+create a new license for such software, you may create and use a
+modified version of this License if you rename the license and remove
+any references to the name of the license steward (except to note that
+such modified license differs from this License).
+
+10.4. Distributing Source Code Form that is Incompatible With Secondary
+Licenses
+
+If You choose to distribute Source Code Form that is Incompatible With
+Secondary Licenses under the terms of this version of the License, the
+notice described in Exhibit B of this License must be attached.
+
+Exhibit A - Source Code Form License Notice
+-------------------------------------------
+
+  This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+If it is not possible or desirable to put the notice in a particular
+file, then You may include the notice in a location (such as a LICENSE
+file in a relevant directory) where a recipient would be likely to look
+for such a notice.
+
+You may add additional accurate notices of copyright ownership.
+
+Exhibit B - "Incompatible With Secondary Licenses" Notice
+---------------------------------------------------------
+
+  This Source Code Form is "Incompatible With Secondary Licenses", as
+  defined by the Mozilla Public License, v. 2.0.
+
+
+
+N236 — Pedro Arilla complete kerning proof family (Apache-2.0)
+Copyright 2017 Pedro Arilla. Adapted from pedroarilla/glyphs-scripts:
+Kerning/Hoefler Lowercase.py, Hoefler Uppercase.py, KernKing.py and KernSym.py.
+All five proof text values are retained byte-for-byte in UTF-8; no corpus script
+body is executed or redistributed. The upstream proof-content attributions remain:
+Hoefler&Co.: https://www.typography.com/blog/text-for-proofing-fonts
+KernKing: http://logofontandlettering.com/kernking.html
+KernSym: https://www.dropbox.com/s/atjf1k6cz7jix4x/check-kerning.txt?dl=0
+Source/licence/text SHA256 values are retained in the paired Scriptmix
+additional-tools.json and original-provenance.json. Changes: typed shared App/Fly
+entrypoints, explicit current font/master, retained complete native-tab payloads,
+shared deadline/ownership and preservation of user Output. Native qualification
+remains pending; no proof text is rewritten, reordered, filtered or shortened.
+
+Paired Background Cleaning
+Independent implementations of Pedro Arilla’s “Clear background in all layers.py”
+and “Clear background in all master layers.py”, pedroarilla/glyphs-scripts,
+Apache License 2.0. Original source bodies are not redistributed.
+
+
+Raise Ascender: behavior adapted from Simon Cozens, GlyphsScripts/Raise Ascender.py.
+Copyright (c) 2017 Simon Cozens. https://github.com/simoncozens/GlyphsScripts
+MIT terms retained in full above apply. Independent FontLab adaptation; no original body redistribution.
+
+Perpendicular Guides: independent implementation of the complete Guides/Perpendicular Guides.py workflow by Fernando Díaz / Reset Type Studio, copyright 2025, Apache-2.0 (upstream README licence). Source SHA256 4a634c17f65d75f7c79b5167d7cd575e59251874bd8a9995573f6c1cd3b931d3. No original source body redistributed. The nearest-two distinct node rule, stable ties, selected controls and independent component branches are retained. FontLab guide angles use radians; transformed native component bounds and complete native history preservation require owned-host qualification.
+
+Metrics editors from the author's own samples
+=============================================
+
+Metrics/Italic Sidebearings, Round Advances, Centre In Advance, Zero-Width
+Marks, Tabular Width and Scale Advances adapt the author's own FontLab samples
+(Apache-2.0), historically identified under rescued/samples/ as metrics_italic_sidebearings.py,
+metrics_round_advances.py, metrics_center_in_advance.py,
+metrics_zero_width_marks.py, metrics_tabular_width.py and
+metrics_scale_advances.py. Controls, names and parts of the calculations are
+reused under that licence; the panels and the write path are new. Source and
+destination SHA-256 values are in additional-tools.json and rescue-index.json.
+The historical source identities remain recorded. Native FontLab acceptance is pending.
+
+Metrics sidebearing editors and diagram from the author's own samples
+=====================================================================
+
+Metrics/Equalize Sidebearings, Sidebearings Tuner, Copy Metrics From Reference
+and Vertical Metrics Diagram adapt the author's own FontLab samples
+(Apache-2.0), historically identified under rescued/samples/ as metrics_equalize_sidebearings.py,
+metrics_sidebearings_tuner.py, metrics_copy_from_reference.py and
+metrics_vertical_metrics_diagram.py. Controls, names and parts of the
+calculations and drawing are reused under that licence; the panels and the
+write path are new, and the diagram only reads the font. Source and
+destination SHA-256 values are in additional-tools.json and rescue-index.json.
+The historical source identities remain recorded.
+
+Alignment zone tools from the author's own samples
+==================================================
+
+Metrics/Alignment Zones and Guides/Suggest Zones From Overshoots adapt the
+author's own FontLab samples (Apache-2.0), historically identified under
+rescued/samples/ as metrics_zones_editor.py and zones_from_glyphs.py. The zone
+table, its controls and the o/O rules are reused under that licence in the
+shared App panel, which Alignment Zones opens. The overshoot rules, the
+replacement rule and the preview columns of zones_from_glyphs.py are rewritten
+in Suggest Zones From Overshoots. Both write through the App zone backend.
+Source and destination SHA-256 values are in additional-tools.json and
+rescue-index.json. The historical source identities remain recorded. Native
+FontLab acceptance is pending.
+
+Names editors from the author's own samples
+===========================================
+
+Names/Glyph Tags, Mark Color Palette, Suffix Tool, Batch Rename, Batch Glyph
+Notes, Glyph Notes and Unicode From Names adapt the author's own FontLab samples
+(Apache-2.0), historically identified under rescued/samples/ as names_glyph_tags.py,
+names_mark_color_palette.py, names_suffix_tool.py, names_batch_rename.py,
+utility_batch_glyph_notes.py, names_glyph_notes.py and
+names_unicode_from_names.py. Controls, calculations and the glyph-name table
+are reused under that licence; the rescan, refusal and write path are new.
+Source and destination SHA-256 values are in additional-tools.json and
+rescue-index.json. The historical source identities remain recorded. Native FontLab acceptance
+is pending.
+
+Masters layer tools after Pedro Arilla
+======================================
+
+Independent rewrites of scripts by Pedro Arilla, pedroarilla/glyphs-scripts,
+copyright 2018-2022 Pedro Arilla, Apache License 2.0
+(https://github.com/pedroarilla/glyphs-scripts):
+
+- Masters/Display Next Layer and Display Previous Layer: Layers/Display next
+  layer.py and Display previous layer.py.
+- Masters/Duplicate Current Layer: Layers/Duplicate current layer.py.
+- Masters/Use Layer As Master: Layers/Use layer as master.py.
+- Masters/Transform Background: Background/Scale background in selected
+  glyphs.py and Background/Shift background in selected glyphs.py.
+- Masters/Selection To All Backgrounds: Background/Selection to all the
+  backgrounds.py.
+- Masters/Select Different Colour: Labels/Select different colour.py, which
+  credits Select Different Color by Rainer Erich Scheichelbauer (mekkablue,
+  Apache-2.0).
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json. Native FontLab
+acceptance is pending.
+
+Anchors editors from the author's own samples
+=============================================
+
+Anchors/Rename Bulk, Center Horizontally, Place From Bounds, Snap To Metrics,
+Round To Grid, Delete By Name and Mirror Across Masters adapt the author's own
+FontLab samples (Apache-2.0), historically identified under rescued/samples/ as
+anchors_rename_bulk.py, anchors_center_horizontally.py,
+anchors_place_from_bounds.py, anchors_snap_to_metrics.py,
+anchors_round_to_grid.py, anchors_delete_by_name.py and
+anchors_mirror_across_masters.py. Controls, names and parts of the arithmetic
+are reused under that licence; the panels, refusals and write path are new.
+Source and destination SHA-256 values are in additional-tools.json and
+rescue-index.json. The historical source identities remain recorded. Native FontLab acceptance
+is pending.
+
+Components writers from the author's own samples
+================================================
+
+Components/Build From Recipes, Align By Anchor, Decompose, Replace Reference,
+Copy Offsets Between Masters, Unlock Lock and Nested Finder adapt the author's
+own FontLab samples (Apache-2.0), historically identified under rescued/samples/ as
+components_build_from_recipes.py, components_align_by_anchor.py,
+components_decompose.py, components_replace_reference.py,
+components_copy_offsets_between_masters.py, components_unlock_lock.py and
+components_nested_finder.py. The recipe syntax, controls and parts of the
+arithmetic are reused under that licence; the panels, refusals and write path
+are new. Source and destination SHA-256 values are in additional-tools.json
+and rescue-index.json. The historical source identities remain recorded.
+
+Layer and master tools from the author's own samples
+====================================================
+
+Masters/Copy Outline To Mask, Copy Layer Between Masters, Restore Backup
+Layer, Layer Cleanup and Sync Sidebearings, and Cleanup/Empty Layers adapt the
+author's own FontLab samples (Apache-2.0), historically identified under rescued/samples/ as
+masters_copy_to_mask.py, masters_copy_layer.py, masters_restore_backup.py,
+masters_layer_cleanup.py, masters_sync_metrics.py and cleanup_empty_layers.py.
+Controls, names and parts of the layer rules are reused under that licence;
+the panels, refusals and write path are new. Source and destination SHA-256
+values are in additional-tools.json and rescue-index.json. The historical source identities
+remain recorded.
+
+Contours writers from the author's own samples
+==============================================
+
+Contours/Round Coordinates, Remove Overlap, Add Extremes, Correct Contour
+Direction, Straighten Short Curves, Optimize Start Points, Delete Small
+Contours, Fix Zero Handles, Delete Duplicate Contours, Transform and Slant
+adapt the author's own FontLab samples (Apache-2.0), historically identified under
+rescued/samples/ as outlines_round_coordinates.py, outlines_remove_overlap.py,
+outlines_add_extremes.py, outlines_correct_direction.py,
+outlines_straighten_short_curves.py, outlines_optimize_start_points.py,
+outlines_delete_small_contours.py, outlines_fix_zero_handles.py,
+outlines_delete_duplicate_contours.py, outlines_transform_dialog.py and
+outlines_slant.py. Controls, names and parts of the geometry are reused under
+that licence; the panels, refusals and write path are new. No third-party or
+Glyphs-corpus code is included. Source and destination SHA-256 values are in
+additional-tools.json and rescue-index.json. The historical source identities remain
+recorded.
+
+Contours generators and hint tools from the author's own samples
+================================================================
+
+Contours/Placeholder Glyphs, Shadow Copy, Tabular Figure Copies, Outline
+Effect, Superior & Inferior Figures, Small Caps From Capitals, Autohint
+Selected Layers and Remove PostScript Hints adapt the author's own FontLab
+samples (Apache-2.0), historically identified under rescued/samples/ as
+generate_placeholder_glyphs.py, generate_shadow.py, generate_tabular_copies.py,
+generate_outline_effect.py, generate_superiors.py, generate_small_caps.py,
+hints_autohint.py and hints_remove.py. Controls, names and parts of the
+arithmetic are reused under that licence; the previews, glyph creation,
+refusals and write path are new. Source and destination SHA-256 values are in
+additional-tools.json and rescue-index.json. The historical source identities remain
+recorded.
+
+Proof text tools after Pedro Arilla
+===================================
+
+Independent rewrites of scripts by Pedro Arilla, pedroarilla/glyphs-scripts,
+copyright 2018-2022 Pedro Arilla, Apache License 2.0
+(https://github.com/pedroarilla/glyphs-scripts):
+
+- Proof/Real English Text: Real* text/Real* English text.py.
+- Proof/Real Spanish Text: Real* text/Real* Spanish text.py.
+
+No source code or source corpus was copied. Each tool contains 24 original
+proof passages under Apache-2.0; the upstream third-party excerpts are not
+redistributed. Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Contours tools after Reset Type Studio
+======================================
+
+Independent rewrites of scripts by Fernando Díaz & Reset Type Studio,
+Reset-Type-Studio/Glyphs-Scripts, copyright 2025, Apache License 2.0 as
+declared in its README.md; the repository has no separate LICENSE file
+(https://github.com/Reset-Type-Studio/Glyphs-Scripts):
+
+- Contours/Smart Slant: Paths/Smart Slant.py.
+- Contours/Node Duplicator: Paths/Node Duplicator (all masters).py, Node
+  Duplicator (current layer).py and Node Duplicator + 2 Handles (all
+  masters).py, combined in one tool.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Components tools after Reset Type Studio
+========================================
+
+Independent rewrites of scripts by Fernando Díaz & Reset Type Studio,
+Reset-Type-Studio/Glyphs-Scripts, Copyright 2025 Fernando Díaz & Reset Type
+Studio, Apache License 2.0 as declared in its README.md
+(https://github.com/Reset-Type-Studio/Glyphs-Scripts):
+
+- Components/Decompose Named Components: Components/Decompose Specific
+  Components (all masters).py. Only matched subtrees are flattened;
+  unrelated sibling components stay linked.
+- Components/Set Component Locations: Smart Components/Values for Smart
+  Components.py. Its Reset action also covers Smart Components/Selected to
+  Normal Components.py: it sets Base layer name to the host master layer.
+
+Components/Component Swapper (all masters).py is covered by
+Components/Replace Reference. Smart Components/Selected to Smart
+Components.py needs no FontLab counterpart: a multi-master base already
+answers font-axis locations, and glyph-specific axes use source-layer
+locations, which Masters/Set Intermediate Layer creates.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Font Info tool after Reset Type Studio
+======================================
+
+Independent rewrite of a script by Fernando Díaz & Reset Type Studio,
+Reset-Type-Studio/Glyphs-Scripts, Copyright 2025 Fernando Díaz & Reset Type
+Studio, Apache License 2.0 as declared in its README.md
+(https://github.com/Reset-Type-Studio/Glyphs-Scripts):
+
+- Font Info/Trial Font Maker: Exports/Trial Font Maker.py.
+
+The same repository's FontInfo/Axis Coordinates to Location (Custom
+Parameter).py, Layers/Delete 'Empty' Layers.py, KernOn/Delete KernOn.py and
+Bracket Layers/Bracket Layers to Alternate Glyphs method.py are covered by
+FontLab and by existing tools, and FontInfo/Set TTFAutohint Options
+Automatically.py has no counterpart here; see PORTING-BACKLOG.md.
+
+No source code was copied; the script reproduces the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Reza Bohloul — Magic Remover (independent implementation)
+------------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: Edit/Magic Remover.py
+Original SHA-256: e5aa9f72395cf6e354cf2d640399d770997a43ec258c960ba1bcd5d8994b7b7b
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. This independently written
+implementation is Apache-2.0; complete terms are in LICENSE.
+Destination: Scripts/Utilities/Magic Remover.py
+
+Reza Bohloul — Set Intermediate Layer (independent implementation)
+---------------------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: Glyph/Set Intermediate Layer.py
+Original SHA-256: 64155690415236040d32fdbdb38845191883cfbd3e660db27fa61c53d9ff27c4
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. This independently written
+implementation is Apache-2.0; complete terms are in LICENSE.
+Destination: Scripts/Masters/Set Intermediate Layer.py
+
+Reza Bohloul — Toggle automatic alignment (native equivalent)
+-----------------------------------------------------------
+Source: https://github.com/RezaBohloul/RezaBohloul
+Original path: component/Toggle automatic alignment.py
+Original SHA-256: 2740f6b923cb12c7068b120b42eac5d419c030c975b6f54905a76cb173fa73cc
+No licence declaration was found in the inspected source tree. No original
+body is copied, executed or redistributed. The equivalent native command
+is FontLab Element > Anchored, with matching operations.
+
+Font Info tool after Alex Slobzheninov
+======================================
+
+Independent rewrite of a script by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, Copyright 2020 Alex Slobzheninov (upstream
+README), Apache License 2.0 (https://github.com/slobzheninov/Glyphs-Scripts):
+
+- Font Info/Paste Glyph Order Encoding: Font Info/glyphOrder - Paste.py. The
+  FontLab tool saves the ordered names as an encoding file.
+
+The same repository's App/Export To All Formats.py and Font Info/Demo
+Instance Generator.py, Set Vertical Metrics.py, Preferred Names - Clean.py
+and Preferred Names - Set.py, and Reza Bohloul's
+RezaBohloul/RezaBohloul Export/Export To All Formats Light.py and Export To
+All Formats with Options.py (no licence declared,
+https://github.com/RezaBohloul/RezaBohloul), are covered by FontLab and by
+existing tools or have no counterpart here; see PORTING-BACKLOG.md.
+
+No source code was copied; the script reproduces the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Masters and Names tools after Resistenza Type
+=============================================
+
+Independent rewrites of scripts by Giuseppe Salerno / Resistenza Type,
+rsztype/Scripts, copyright 2026 (repository README), Apache License 2.0
+(LICENSE.txt; https://github.com/rsztype/Scripts):
+
+- Masters/Master Twins: MasterTwins.py.
+- Masters/Deliver Glyphs: Postino.py.
+- Names/Style Linker: StyleLinker.py.
+
+ShortNames.py has no FontLab counterpart: FontLab generates instance
+PostScript names and output file names, and PostScript names are set per
+master.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Masters proof tools after Luke Prowse
+=====================================
+
+Independent rewrites of scripts by Luke Prowse (LukeProwse),
+NaN-xyz/GlyphsApp-Scripts, copyright 2019
+(https://github.com/NaN-xyz/GlyphsApp-Scripts). The root LICENSE declares
+MIT and the README declares Apache-2.0; both notices are preserved:
+
+- Masters/Master Text Comparison: MasterBlaster/MasterBlaster.py.
+- Masters/Common Glyphs: CommonGlyphs.py.
+
+No source code or preset text was copied; the scripts reproduce the
+behaviour for FontLab. Source and licence SHA-256 values are in
+additional-tools.json and PORTING-BACKLOG.md.
+
+Anchors tools after Simon Cozens
+================================
+
+Independent rewrites of scripts by Simon Cozens, simoncozens/GlyphsScripts,
+copyright 2017 Simon Cozens, MIT License
+(https://github.com/simoncozens/GlyphsScripts):
+
+- Anchors/Add Anchors From File: Add Anchors From File.py.
+- Anchors/Auto Cursive Attachment Add Anchors: AutoCursiveAttachment - Add
+  Anchors.py.
+- Anchors/Auto Cursive Attachment Get Sample: AutoCursiveAttachment - Get
+  Sample.py.
+- Anchors/Copy Myanmar Anchors: Copy Myanmar Anchors.py.
+- Anchors/Derive Anchors From Components: Derive Anchors From Components.py.
+- Anchors/Optical Center: Optical Center.py.
+- Anchors/Remove Extraneous Mark Anchors: Remove Extraneous Mark Anchors.py.
+
+Copy Anchor Context.py and Reset Anchors.py have no FontLab counterpart:
+FontLab feature output has no per-anchor contextual positioning, and its
+Python API has no default-anchor regeneration.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab
+and are Apache-2.0. Source and licence SHA-256 values are in
+additional-tools.json and PORTING-BACKLOG.md.
+
+Contours tools after Simon Cozens
+=================================
+
+Independent rewrites of scripts by Simon Cozens, simoncozens/GlyphsScripts,
+copyright 2017 Simon Cozens, MIT License
+(https://github.com/simoncozens/GlyphsScripts). The FontLab scripts are
+also MIT:
+
+- Contours/Comb: Comb.py.
+- Contours/Curve All Straights: Curve All Straights.py.
+- Contours/Delete Close Points: Delete Close Points.py.
+- Contours/Make Compatible: Make Compatible.py.
+- Contours/Sandblast: Sandblast.py.
+- Contours/Straighten All Curves: Straighten All Curves.py.
+- Contours/Superaligner: Superaligner.py.
+- Contours/Interpolated Nudge: Interpolated Nudge.py.
+
+Make bottom-left node first.py is covered by Contours/Optimize Start Points
+(which puts Y before X and can match a reference master), and Round
+Everything.py by Contours/Round Coordinates, Anchors/Round To Grid and
+Metrics/Round Advances. glyphmonkey.py is a helper module with no menu
+action.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Kerning and Contours tools after Simon Cozens
+=============================================
+
+Independent rewrites of scripts by Simon Cozens, simoncozens/GlyphsScripts,
+copyright 2017 Simon Cozens, MIT License
+(https://github.com/simoncozens/GlyphsScripts). The FontLab scripts are
+also MIT:
+
+- Kerning/Kerning Energy Report: Kern Optimizer.py.
+- Kerning/Unbundle Punctuation Kerning: Unbundle Punctuation Kerning.py.
+- Contours/Sansomatic: Sansomatic.py.
+
+Autokern.py is covered by FontLab's Pairs panel > Autokern selected pairs
+(Neural mode), LightSpace.py by Font > Metrics > Autospace, and Cadence
+Grid.py by Guides/Grid Generator.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Script tools after Simon Cozens
+===============================
+
+Independent rewrites of scripts by Simon Cozens, simoncozens/GlyphsScripts,
+copyright 2017 Simon Cozens, MIT License
+(https://github.com/simoncozens/GlyphsScripts):
+
+- Contours/Myanmar Medial Ra Maker: Myanmar Medial Ra Maker.py.
+- Features/Nastaliq Connection Editor: Nastaliq Connection Editor.py.
+
+componentize.py, Clean Classes.py and Rename To Glyphs Default Names.py are
+covered by FontLab commands (Font > Detect Composites, Classes panel > Clean
+Up Selected Classes, and Font > Rename Glyphs); no alias table is
+redistributed.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab
+and are Apache-2.0. Source and licence SHA-256 values are in
+additional-tools.json and PORTING-BACKLOG.md.
+
+Contours alignment tool after Alex Slobzheninov
+===============================================
+
+Independent rewrite of scripts by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, Apache License 2.0
+(https://github.com/slobzheninov/Glyphs-Scripts); the alignment and
+distribution sources also credit Rainer Erich Scheichelbauer (mekkablue,
+Apache-2.0):
+
+- Contours/Align And Distribute: Align/Align Top.py, Align Bottom.py, Align
+  Left.py, Align Right.py, Align Horizontal Center.py, Align Vertical
+  Center.py, Distribute Nodes Horizontally.py and Distribute Nodes
+  Vertically.py, combined in one tool.
+
+Align/Center Selected Glyphs.py is covered by Metrics/Centre In Advance.
+
+No source code was copied; the script reproduces the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Contours transform tools after Alex Slobzheninov
+================================================
+
+Independent rewrites of scripts by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, copyright 2020, Apache License 2.0
+(https://github.com/slobzheninov/Glyphs-Scripts):
+
+- Contours/Rotate Selection: Rotate/Rotate.py, Rotate 1 CCW.py, Rotate 1
+  CW.py, Rotate 10 CCW.py, Rotate 10 CW.py, Rotate 45 CCW.py and Rotate 45
+  CW.py, combined in one tool.
+- Contours/Reflect Horizontally: Reflect/Reflect Horizontally.py.
+- Contours/Reflect Vertically: Reflect/Reflect Vertically.py.
+- Contours/Overlap Nodes: Overlap nodes.py, which credits Rainer Erich
+  Scheichelbauer (mekkablue) for the italic-coordinate idea.
+
+G2 Harmonize.py is covered by FontLab's Contour > Harmonize.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Masters layer navigator after Alex Slobzheninov
+===============================================
+
+Independent rewrite of scripts by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, copyright 2020 Alex Slobzheninov, Apache
+License 2.0 (https://github.com/slobzheninov/Glyphs-Scripts):
+
+- Masters/Selection Layer Navigator: App/Next Layer in Selection.py,
+  Previous Layer in Selection.py, Toggle Axis 1.py, Toggle Axis 2.py, Toggle
+  Axis 3.py, Toggle Axis 4.py, Toggle Italic.py and ToggleAxis.py, combined
+  in one tool.
+
+App/Fit Zoom.py, DarkMode.py and Floating Macro Panel.py are covered by
+FontLab: View > Zoom (Fit Content on Screen, Fit Selection, Fit Text on
+Screen), Preferences > Glyph window > Dark preview, and Window > Panels >
+Python.
+
+No source code was copied; the script reproduces the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Kerning, Features and Masters tools after Alex Slobzheninov
+===========================================================
+
+Independent rewrites of scripts by Alex Slobzheninov,
+slobzheninov/Glyphs-Scripts, copyright 2020, Apache License 2.0
+(https://github.com/slobzheninov/Glyphs-Scripts):
+
+- Kerning/Delete Kerning Pair From All Masters: Kerning/Delete Kerning Pair
+  From All Masters.py.
+- Kerning/Kern To Max: Kerning/Kern to max.py.
+- Kerning/Steal Kerning From Next Pair: Kerning/Steal Kerning From Next Pair
+  at Cursor's Y.py.
+- Features/Generate Random Alternates Feature: Features/Generate Random
+  Alternates Feature.py.
+- Masters/Reorder Shapes: Glyphs/Reorder Shapes.py.
+- Masters/Show All Layers: Glyphs/Show All Layers.py.
+
+The base report of Bug fixing/Report Compatibility.py is covered by
+Masters/Compatibility Check. Its export-flatten and overlap-filter states,
+and Glyphs/Copy Missing Special Layers.py, have no FontLab counterpart:
+FontLab has no Glyphs special-layer conditions or corner and cap component
+export states.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Cleanup, Components and Contours tools after Pedro Arilla
+==========================================================
+
+Independent rewrites of scripts by Pedro Arilla, pedroarilla/glyphs-scripts,
+copyright 2017 (LICENSE.txt) and 2018-2022 (README) Pedro Arilla, Apache
+License 2.0 (https://github.com/pedroarilla/glyphs-scripts):
+
+- Cleanup/Delete Stickers: Cleaning/Delete annotations in all layers.py and
+  Delete annotations in all master layers.py.
+- Cleanup/Start From Scratch: Cleaning/Start-from-scratch.py.
+- Components/Decompose Serif Components: Components/Decompose all serif
+  components.py.
+- Components/Make Lower Unicase: Components/Make lower-unicase font.py, based
+  on Georg Seifert's Make Unicase Font idea.
+- Components/Set Default Figures: Components/Set default figures.py.
+- Contours/Retract Handles: Paths/Make zero handles selected glyphs.py and
+  Make zero handles selected nodes.py.
+- Contours/Simplify Selected Nodes: Paths/Simplify selection.py.
+
+Components/Make component glyph for all masters.py is covered by FontLab's
+Font > Build Glyphs (Characters mode, Rebuild existing glyphs, All masters).
+Components/Decompose all corner components.py has no counterpart: FontLab
+has no named corner-component attachment model.
+
+No source code was copied; the scripts reproduce the behaviour for FontLab.
+Source and licence SHA-256 values are in additional-tools.json and PORTING-BACKLOG.md.
+
+Masters backup extension from the author's own sample
+=====================================================
+
+- Masters/Duplicate Current Layer: extended from the author's own FontLab
+  sample masters_backup_layer.py, Apache-2.0.
+
+Duplicate Current Layer also credits Pedro Arilla's Layers/Duplicate current layer.py.
