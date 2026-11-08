@@ -106,6 +106,7 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Straighten Short Curves](contours/straighten-short-curves.md)
 - [Superaligner](contours/superaligner.md)
 - [Superior & Inferior Figures](contours/superior-inferior-figures.md)
+- [TGlyph Window](contours/tglyph-window.md)
 - [Tabular Figure Copies](contours/tabular-figure-copies.md)
 - [Transform](contours/transform.md)
 
@@ -209,6 +210,7 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Sidebearing Offset Preview](metrics/sidebearing-offset-preview.md)
 - [Sidebearings Tuner](metrics/sidebearings-tuner.md)
 - [Spacing String Preview](metrics/spacing-string-preview.md)
+- [TMetrics Window](metrics/tmetrics-window.md)
 - [Tabular Width](metrics/tabular-width.md)
 - [Vertical Metrics Diagram](metrics/vertical-metrics-diagram.md)
 - [Width Table](metrics/width-table.md)

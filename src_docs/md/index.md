@@ -21,4 +21,4 @@ this site from the checked-out source.
 
 ## Catalogue and acceptance scope
 
-The practical catalogue contains all 259 current menus. The broader classified offline smoke covers 350 scripts; that classification is separate from native acceptance. The original native denominator remains 130, with only the historically qualified 68 smokes retained. New documentation renews none of those native results. Read the full [porting backlog](backlog.md), [historical integration guide](guides/pre-integration.md) and [Text Holder guide](guides/text-holder.md).
+The practical catalogue contains all 261 current menus. The broader classified offline smoke covers 350 scripts; that classification is separate from native acceptance. The original native denominator remains 130, with only the historically qualified 68 smokes retained. New documentation renews none of those native results. Read the full [porting backlog](backlog.md), [historical integration guide](guides/pre-integration.md) and [Text Holder guide](guides/text-holder.md).

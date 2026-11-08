@@ -47,5 +47,6 @@
 - [Straighten Short Curves](straighten-short-curves.md)
 - [Superaligner](superaligner.md)
 - [Superior & Inferior Figures](superior-inferior-figures.md)
+- [TGlyph Window](tglyph-window.md)
 - [Tabular Figure Copies](tabular-figure-copies.md)
 - [Transform](transform.md)

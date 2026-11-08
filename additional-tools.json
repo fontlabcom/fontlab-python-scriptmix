@@ -3355,5 +3355,31 @@
     "scope": "Local reference image viewer with zoom, fit and printing on explicit command. PDF output only where you choose. No font access.",
     "native_acceptance": "pending",
     "app_minimum": "1.2.0"
+  },
+  {
+    "title": "TMetrics Window",
+    "key": "metrics_tmetrics_window",
+    "destination": "Scripts/Metrics/TMetrics Window.py",
+    "destination_sha256": "c7708e75efcd47a79f05aff96b13ab6230db7163b145d1f63cf17da527fe7b79",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "scope": "Text setting window over the current font with optional HarfBuzz shaping; writes sidebearings, width and pair kerning you change, one undo step each.",
+    "native_acceptance": "pending",
+    "app_minimum": "1.2.0"
+  },
+  {
+    "title": "TGlyph Window",
+    "key": "contours_tglyph_window",
+    "destination": "Scripts/Contours/TGlyph Window.py",
+    "destination_sha256": "4f13070e09c8adea609c4c36ac46e9eaad85b2c1dd51daa77515de1fd64d2529",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "scope": "Single-glyph view and point editor on an explicit layer; writes only the shown layer, one undo step per gesture.",
+    "native_acceptance": "pending",
+    "app_minimum": "1.2.0"
   }
 ]

@@ -2,6 +2,21 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-08 — TMetrics and TGlyph windows (Issue 241)
+
+Added two menu tools that open the new App windows: Metrics > TMetrics Window
+(`fly.ap.fontui.tmetrics.show_tmetrics`) sets text in the current font and
+writes the sidebearings, widths and pair kerning you change; Contours > TGlyph
+Window (`fly.ap.fontui.tglyph.show_tglyph`) shows and edits one glyph on an
+explicit layer. Both import App lazily and print an install hint instead of a
+traceback when App or Fly is missing; App reports a missing Fontport or font
+itself. Two `additional-tools.json` rows pin the exact script bytes with
+native acceptance pending. The catalogue grows from 190 to 192 additional tools
+and from 259 to 261 menus; the README, site index, generated category pages
+and count tests follow. New tests stub the App entry points and check the
+install hints, lazy imports, rows and App entry names. Live FontLab behaviour
+of both windows is not verified.
+
 ## 2026-11-07 — public site review corrections
 
 Both catalogue workflow jobs now fetch full history where catalogue generation needs the last Scripts commit. Genuine depth-one/depth-two checkouts with docs-only children reproduce the previous error and recover all immutable catalogue links after fetching history. The explicit English build validates all 44 historical vendor hashes and references before omitting exactly 35 unused language helpers. The remaining nine vendor assets retain their original bytes. The current component manifest binds primary package notices, embedded preferred sources and CSS/icon provenance; all 36 notice files from 31 locked Python distributions remain. Historical incomplete inventory records remain historical.

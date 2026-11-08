@@ -11,6 +11,7 @@
 - [Sidebearing Offset Preview](sidebearing-offset-preview.md)
 - [Sidebearings Tuner](sidebearings-tuner.md)
 - [Spacing String Preview](spacing-string-preview.md)
+- [TMetrics Window](tmetrics-window.md)
 - [Tabular Width](tabular-width.md)
 - [Vertical Metrics Diagram](vertical-metrics-diagram.md)
 - [Width Table](width-table.md)
