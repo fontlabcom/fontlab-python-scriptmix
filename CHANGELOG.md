@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-08 — Version-floor note for the Issue 241 windows
+
+- Recorded in PLAN and TODO that the TMetrics and TGlyph scripts need App after v1.2.7 while `app_minimum` stays "1.2.0". Generated `docs/` was not regenerated: the locked docs environment needs network access.
+
 ## 2026-11-08 — TMetrics and TGlyph windows (Issue 241)
 
 Added two menu tools that open the new App windows: Metrics > TMetrics Window

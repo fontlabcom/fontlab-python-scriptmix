@@ -51,3 +51,7 @@ Use the detailed open tasks in [TODO.md](TODO.md) as the acceptance checklist. C
 ## Public site qualification
 
 Retain all 259 practical tools, the 350 classified source rows and the historical 68-of-130 native boundary. Source identity links and hashes must remain exact. Keep authored retained guides outside generated `docs/`. Follow README for the current exact-lock build. Independent source/privacy/legal review, actual main CI, immutable generated-output verification, settings readback and live browser checks remain required. Review the current nine-asset English payload and its primary-source notices separately from the retained historical 44-asset inventory. The build rejects language, reference or asset drift before omitting the 35 unused language helpers; 36 licence files from the 31 locked Python distributions remain distributed.
+
+## App version floor for the Issue 241 windows
+
+`Scripts/Metrics/TMetrics Window.py` and the TGlyph script need `fontlabapp.fontui.tmetrics` and `fontlabapp.fontui.tglyph`, which exist only after App v1.2.7. Their `app_minimum` in `additional-tools.json` stays "1.2.0" because `tests/test_curated_delivery.py` pins it and no release tag exists yet. At the next App release, raise the floor for these rows or add per-row support to that test. The generated `docs/` also awaits regeneration with the locked docs environment.
