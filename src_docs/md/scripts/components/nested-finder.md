@@ -66,4 +66,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `0ae15ec6b25aefba241459e79226cc7ecce0a890a60f63a626215741a36365d9`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Components/Nested%20Finder.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Components/Nested%20Finder.py)

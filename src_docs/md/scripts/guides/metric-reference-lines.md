@@ -40,4 +40,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `288c80a3f2e60341f73130f63fcb4ad68f6f9917b88ed9b6f1b17326f25071bb`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Guides/Metric%20Reference%20Lines.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Guides/Metric%20Reference%20Lines.py)

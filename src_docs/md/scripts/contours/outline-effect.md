@@ -64,4 +64,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `15373391084f19e1f6851cc63d60d3dc8a496e2f75ec177ca7fc423318fc1a8a`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Outline%20Effect.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Contours/Outline%20Effect.py)

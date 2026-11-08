@@ -68,4 +68,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `2c9564ba8fb3955cca12176fe48da0acd88c857e584bc0736b931580fb9cb072`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Autohint%20Selected%20Layers.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Contours/Autohint%20Selected%20Layers.py)

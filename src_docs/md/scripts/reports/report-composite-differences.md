@@ -24,4 +24,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `7a7709373a95a0e54bac32d880aa62234ceade238e1062bb2961b0157d17d428`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Reports/Report%20Composite%20Differences.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Reports/Report%20Composite%20Differences.py)

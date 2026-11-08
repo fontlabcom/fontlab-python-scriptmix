@@ -53,4 +53,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `d4d3a6448900e471ec5a905a96338c0c6fd2d491693cbb5315fb2366f0b1a39c`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Round%20To%20Grid.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Anchors/Round%20To%20Grid.py)

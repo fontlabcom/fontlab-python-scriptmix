@@ -58,4 +58,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `ed84f3238cb1ac81b20c0bee308c1b1aae70ad3e2c796da4e2eaf26ab9d91d7b`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Transform%20Background.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Masters/Transform%20Background.py)

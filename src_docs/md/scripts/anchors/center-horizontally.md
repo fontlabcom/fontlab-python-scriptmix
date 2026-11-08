@@ -58,4 +58,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `d56a67a6cca4c6a9d168fe93cba394e8a925d520a1c17d83c27a858003a11183`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Anchors/Center%20Horizontally.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Anchors/Center%20Horizontally.py)

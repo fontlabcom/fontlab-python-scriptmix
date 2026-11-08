@@ -28,4 +28,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b7ba4a2b039ca9ed0a48940da123493b50648fec6048cd5e88bb58b1d5c2c56c`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Select%20Small%20Contours.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Contours/Select%20Small%20Contours.py)

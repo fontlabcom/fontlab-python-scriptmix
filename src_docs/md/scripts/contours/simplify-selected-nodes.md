@@ -30,4 +30,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `dbda8985434b56bebdd0fda00cc41ee7a5a4b0a261686be04a0e0985f812593b`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Simplify%20Selected%20Nodes.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Contours/Simplify%20Selected%20Nodes.py)

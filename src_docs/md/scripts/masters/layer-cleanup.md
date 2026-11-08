@@ -70,4 +70,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `5a240c54715580d83d5d65687b7aabbb3502e58878dbd70ab91680049601f013`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Masters/Layer%20Cleanup.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Masters/Layer%20Cleanup.py)

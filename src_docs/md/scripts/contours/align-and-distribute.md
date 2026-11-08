@@ -59,4 +59,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `9f75b37714c3e7041563d182142a409e239724284be6e592903d1b250d80093b`
 
-[Python source at `c2b34988556c`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/c2b34988556c9214a67f800f68565b7a32df832a/Scripts/Contours/Align%20And%20Distribute.py)
+[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Contours/Align%20And%20Distribute.py)

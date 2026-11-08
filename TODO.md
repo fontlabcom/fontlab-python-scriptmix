@@ -103,5 +103,4 @@ this_file: TODO.md
 
 - [ ] Independently review the full public-site candidate, verify the current nine-asset English payload and exact primary-source notices, qualify actual main CI/generated output and verify Pages settings/live routes.
 
-- [ ] Regenerate `docs/` with `sh build.sh` (needs network for the hash-locked docs environment) so it includes the TMetrics Window and TGlyph Window pages; commit only the generated delta.
 - [ ] Raise `app_minimum` for the TMetrics Window and TGlyph scripts in `additional-tools.json`: they need `fontlabapp.fontui.tmetrics` and `fontlabapp.fontui.tglyph`, which exist only after App v1.2.7. The value stays "1.2.0" because `tests/test_curated_delivery.py` pins it; at the next App release raise the floor for these rows or add per-row support to that test.
