@@ -2,8 +2,6 @@
 this_file: TODO.md
 ---
 
-- [ ] Commit the independently reviewed Scriptmix docs correction additively after post-change graph checks; rerun the strict build and complete 42 pipeline unittest cases and 14 legacy pytest checks at the genuine X2 commit, then verify normal hooked push and exact-commit CI.
-
 - [ ] Qualify Detached Transform Preview genuine archives/distributions/two ordinary prefixes, native owned-font/history/lifetime behavior and truthful containing-commit/generated-doc links; preserve all 8,723 obligations and the minimum eighteen workflows.
 
 

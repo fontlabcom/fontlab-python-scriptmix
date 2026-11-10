@@ -2,10 +2,6 @@
 this_file: PLAN.md
 ---
 
-## Documentation delivery after candidate verification
-
-Create the reviewed additive documentation fix commit, then rerun the strict Scriptmix build and complete 42 pipeline unittest cases and 14 legacy pytest checks from its genuine X2 source/epoch in an owned full-history copy. Candidate X1 overlay checks pass; they do not replace commit-bound verification. Complete independent fix review and post-change graph checks before staging, then retain normal hooked push and exact-commit CI gates. Ordinary/native acceptance and publication holds remain separate.
-
 ## Detached Transform Preview remaining qualification
 
 Carry the independently source-qualified explicit-target composition through genuine archives/distributions/two ordinary prefixes and native owned-font/history/lifetime checks. Preserve the qualified editor/two-proof composition, demo/menu dispatch, refusal/reentrancy/cleanup and common final before-model preservation (M1). Generate immutable menu links only from a genuine reviewed containing commit. The source floor is eight; retain all 8,723 obligations and the minimum eighteen workflows, with full workflow parity at zero and native acceptance still open.

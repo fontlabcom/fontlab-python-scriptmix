@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — reviewed main and documentation delivery verified
+
+The additive [X2 source commit](https://github.com/fontlabcom/fontlab-python-scriptmix/commit/3c2ecd387ba13b7cdeaa5f8e03f82dde56fed281) passed its genuine commit-bound strict documentation build and all 42 documentation unittest cases; Scriptmix also passed all 14 legacy pytest checks. Independent source/fix and graph reviews passed before normal push. The qualified installed pre-push gate passed 24 core tests with four existing opt-in skips. [Exact-X2 CI](https://github.com/fontlabcom/fontlab-python-scriptmix/actions/runs/42783723417) succeeded, and the direct [documentation-only successor](https://github.com/fontlabcom/fontlab-python-scriptmix/commit/a8a14021a3477f8a0ad11bf19b83d96c1ab282bd) preserved all non-docs source while delivering 410 generated files byte-for-byte equal to the commit-bound build.
+
+Across App, Fontport and Scriptmix, all 524 delivered generated files match. Scriptmix's 271 differing tracked catalogue Markdown intermediates are historical source-link revisions: the build regenerates them as inputs and commits only rendered docs. This is not a claim that all 695 Scriptmix output/intermediate files match. The public Scriptmix Font UI Lab category and all eight new menu routes passed live checks, including immutable source links and source hashes. Private App/Fontport Pages operations remain held.
+
+This closes the recorded X2 documentation, reviewed combined-main source, normal-push and exact-commit CI tasks. Earlier candidate and failure entries remain historical evidence. Source qualification remains eight workflows, full workflow parity zero, all 8,723 obligations and the minimum eighteen-workflow scope retained. Genuine archives/distributions/two ordinary prefixes, native/history/reopen, literal paragraph-separator editing, canonical adoption and remaining publication gates are not closed by this delivery.
+
 ## 2026-11-10 — Scriptmix documentation candidate corrected
 
 Corrected menu/page counts from 261 to 269, generated output count from 401 to 410 and added exactly nine literal search routes. All 261 original script bodies, 401 prior output paths, complete-set equality, source identities and cross-date byte checks remain. Removed only the two pre-existing unused test lines exposed by pinned lint.
