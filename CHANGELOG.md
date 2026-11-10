@@ -5,8 +5,8 @@ this_file: CHANGELOG.md
 ## 2026-11-10 — Round Advances accepts step 1
 
 - `Scripts/Metrics/Round Advances.py`: the step spinner now runs 1 to 100 units (was 2 to 100); the docstring and published page say so. Rounding maths is unchanged; step 2 behaviour is retained and tested alongside the new step-1 case (`test_round_advances_when_step_is_one_then_whole_unit_advances`).
-- Provenance: `menu-revisions.json` records the two new exact edits and the new current hash; `additional-tools.json` and the reviewed old-rows digest in `tests/test_font_ui_lab_menus.py` take the new hash (reverting only that hash reproduces the previous digest). Frozen historical hashes are untouched.
-- Result: 4575 passed, 25 failed, 6 skipped with three App-helper modules ignored. The same run without this change gave 24 failed (this venv's App tree lacks the newer `fontui` helpers); after updating the pin the failure set is identical.
+- Provenance: `menu-revisions.json` records the two new exact edits and the new current hash; `additional-tools.json` and the reviewed old-rows and menus digests in `tests/test_font_ui_lab_menus.py` take the new hash (reverting only that hash reproduces the previous digest). Frozen historical hashes are untouched.
+- Result: official gate 4618 passed, 2 skipped, 0 failed.
 
 ## 2026-11-10 — live font editing rule (Issue 250, D44)
 
