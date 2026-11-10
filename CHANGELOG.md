@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — Ruff baseline reconciled
+
+The documented Ruff 0.14.10 count of 87 was stale. Re-measured with the exact guide command (py311, `Scripts tests tests_docs menu_layout.py src_docs/build.py`): 420 existing findings (F811 310, E402 55, E731 20, E741 13, E702 10, F841 9, F401 1, E701 1, E401 1; Scripts 26, tests 393, tests_docs 1, menu_layout.py and src_docs/build.py 0). AGENTS.md and README.md now state the measured figure; no script or test was changed to alter it, and no automatic fixes were applied. Per-file triage remains available via `--output-format concise`.
+
 ## 2026-11-10 — Round Advances accepts step 1
 
 - `Scripts/Metrics/Round Advances.py`: the step spinner now runs 1 to 100 units (was 2 to 100); the docstring and published page say so. Rounding maths is unchanged; step 2 behaviour is retained and tested alongside the new step-1 case (`test_round_advances_when_step_is_one_then_whole_unit_advances`).
