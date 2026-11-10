@@ -9,7 +9,7 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-from _cov_a_support import ROOT, Host, host  # noqa: F401
+from _cov_a_support import ROOT, Host, host as host_fixture  # noqa: F401
 
 FEATURE_MODULES = ("feature_code",)
 PACKAGE = NS(id=11, fgId=101, master="Regular", masters=["Regular", "Bold"])

@@ -16,6 +16,14 @@ cache preservation and ordinary installed artifacts remain open in PLAN/TODO.
 An existing batch-recipe close/cancellation test failed in an earlier App full run
 and passed the final run; its receipt and separate investigation remain open.
 
+## 2026-11-11 — C12 tests-only Ruff cleanup
+
+- Removed all 349 requested test findings (F811 310, F841 9, E731 20, E702 10). Explicit fixture names and aliased imports retain the same host/boundary implementations and scopes; unused assignments retain their calls, lambdas become local functions, and compound statements are split.
+- Cleared 26 adjacent mechanical findings (E402 22, E741 3, E401 1) so all 30 changed test/helper files pass Ruff 0.14.10. No assertions, test identities, skip conditions or existing oracles were removed or weakened.
+- Measured full-scope baseline: 45 findings (E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0). README, AGENTS and PLAN agree; TODO row 106 remains open.
+- Official arm64 Python 3.11 runtime gate: before and after both 4,619 passed, 2 existing skips, 0 failures. All 4,621 sorted collected node IDs are identical. Independent code review approved; 2,857 assertion ASTs retained with only intentional variable renames normalized.
+- All 288 protected script/JSON hashes match. Generated documentation drift from the suite was restored; no production module changed, so production line/branch coverage is not applicable. No native acceptance or delivery is claimed. See C12-REPORT.md for commands and remaining checks.
+
 ## 2026-11-10 — Issue 234 master browser menus 1, 4 and 5
 
 Added Open Fonts and Master Overview, Master Compatibility Browser and Node
@@ -32,7 +40,9 @@ complete menu modules reached 100% line and branch coverage (6 statements and
 2 branches each). Ruff 0.14.10 passed all nine changed Python files. The lander
 reran the exact metaswarm recipe on the combined origin/main tree (with C1):
 4,637 passed, two retained skips; the three menu modules pass the coverage
-gate. Native PythonQt, ordinary artifacts
+gate. The docs pipeline oracles (`tests_docs/test_pipeline_*`) now pin
+415 generated files, 274 menus/pages and the three new search pages; the locked
+ProperDocs build and 43 pipeline units pass. Native PythonQt, ordinary artifacts
 and reviewed-commit documentation links remain open.
 
 ## 2026-11-10 — Issue 241 existing demo entry points verified

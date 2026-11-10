@@ -8,6 +8,12 @@ import pytest
 
 from menu_layout import released_bytes
 
+import importlib.util
+import sys
+from types import SimpleNamespace as NS
+from test_proof import Box, Color, Signal, Widget
+from test_proof import load as proof_load
+
 ROOT = Path(__file__).parents[1]
 TOOLS = [
     ("Overview", "Overview"),
@@ -22,14 +28,6 @@ def test_complete_masters_menu_exists(title, klass):
     assert (ROOT / "Scripts/Masters" / (title + ".py")).is_file(), (
         "Missing complete Masters menu"
     )
-
-
-import importlib.util
-import sys
-from types import SimpleNamespace as NS
-
-from test_proof import Box, Color, Signal, Widget
-from test_proof import load as proof_load
 
 
 class MasterWidget(Widget):
@@ -449,15 +447,18 @@ def test_external_original_defaults_and_signals_when_requested_then_match(reques
         row = next(r for r in now if r["destination"] == f"Scripts/Masters/{title}.py")
         before = ast.parse(original_source(source_root, row["source"]).read_text())
         after = ast.parse((ROOT / row["destination"]).read_text())
-        constants = lambda tree: {
-            n.targets[0].id: ast.literal_eval(n.value)
-            for n in tree.body
-            if isinstance(n, ast.Assign)
-            and isinstance(n.targets[0], ast.Name)
-            and not isinstance(n.value, ast.Attribute)
-            and n.targets[0].id
-            in {"TITLE", "KEY", "METRICS", "STEPS", "MAX_GLYPHS", "MAX_SERIES"}
-        }
+
+        def constants(tree):
+            return {
+                n.targets[0].id: ast.literal_eval(n.value)
+                for n in tree.body
+                if isinstance(n, ast.Assign)
+                and isinstance(n.targets[0], ast.Name)
+                and not isinstance(n.value, ast.Attribute)
+                and n.targets[0].id
+                in {"TITLE", "KEY", "METRICS", "STEPS", "MAX_GLYPHS", "MAX_SERIES"}
+            }
+
         assert constants(before) == constants(after)
 
         def connections(tree, klass=klass):

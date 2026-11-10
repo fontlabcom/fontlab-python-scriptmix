@@ -516,7 +516,7 @@ def test_run_when_pending_updates_or_no_selection_then_value_error(world: World,
     glyph = Glyph("a", ["Regular"])
     world.occupy(glyph, "Regular")
     world.pending = (3,)
-    result = module.run()
+    module.run()
     assert len(glyph.layers) == 2 and world.pending == (3,) and world.notifier.calls
     output = capsys.readouterr().out
     assert "(3,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output
@@ -1233,7 +1233,7 @@ def test_transform_backgrounds_when_pending_updates_then_writes_and_keeps_queue(
     module = load("Transform Background")
     (a,) = with_backgrounds(world, ("a",))
     world.pending = (9,)
-    result = module.transform_backgrounds("Scale", module.scale_matrix(90))
+    module.transform_backgrounds("Scale", module.scale_matrix(90))
     assert world.pending == (9,) and world.notifier.calls
     output = capsys.readouterr().out
     assert "(9,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output

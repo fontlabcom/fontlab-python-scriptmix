@@ -54,4 +54,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `9b7e790969514bc1c5075e79f3bd10cd6fb5d6be3cc90b610a845b4a2651a7e8`
 
-[Python source at `1e4c2b2dd9bc`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1e4c2b2dd9bccfd04b38e70ed3dcaaa52242835d/Scripts/Metrics/Round%20Advances.py)
+[Python source at `66a2fdada6fc`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/66a2fdada6fcf7acc37d05f8e46efca2b9e2eeae/Scripts/Metrics/Round%20Advances.py)

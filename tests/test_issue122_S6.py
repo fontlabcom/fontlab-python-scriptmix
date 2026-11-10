@@ -1034,7 +1034,10 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.FontMetrics = lambda package, master: NS(xHeight=w.x_height)
     fontgate = ModuleType("fontgate")
     fontgate.fgShape = FgShape
-    names = lambda: list(w.glyphs)
+
+    def names():
+        return list(w.glyphs)
+
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:

@@ -64,4 +64,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `027d07ff32d8f0dc40070fe80d77af0da941a6c48aebd3977c8e2484617d2d41`
 
-[Python source at `1e4c2b2dd9bc`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1e4c2b2dd9bccfd04b38e70ed3dcaaa52242835d/Scripts/Contours/Transform.py)
+[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Contours/Transform.py)

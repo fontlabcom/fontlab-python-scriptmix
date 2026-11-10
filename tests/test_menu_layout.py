@@ -13,7 +13,10 @@ def fixture(tmp_path):
     new = old.replace(b"Scripts/Old/", b"Scripts/New/").replace(
         b"# FLM: Old", b"# FLM: New"
     )
-    sha = lambda value: hashlib.sha256(value).hexdigest()
+
+    def sha(value):
+        return hashlib.sha256(value).hexdigest()
+
     row = {
         "destination": "Scripts/Old/One.py",
         "destination_sha256": sha(old),
@@ -100,7 +103,10 @@ def test_additional_revision_when_import_path_changes_then_exact_bytes_recover(t
     path = tmp_path / destination
     path.parent.mkdir(parents=True)
     path.write_bytes(new)
-    digest = lambda value: hashlib.sha256(value).hexdigest()
+
+    def digest(value):
+        return hashlib.sha256(value).hexdigest()
+
     row = {"destination": destination, "destination_sha256": digest(new)}
     revision = {"destination": destination, "historical_sha256": digest(old),
                 "current_sha256": digest(new),
@@ -158,7 +164,10 @@ def test_moved_menu_when_docstring_overlay_then_recovers_frozen_bytes(tmp_path, 
     old, moved, row, move, path = fixture(tmp_path)
     current = moved.replace(b"value=1", b'"""Documented menu."""\nvalue=1')
     path.write_bytes(current)
-    digest = lambda data: hashlib.sha256(data).hexdigest()
+
+    def digest(data):
+        return hashlib.sha256(data).hexdigest()
+
     move["destination_sha256"] = digest(current)
     revision = {
         "destination": move["destination"], "historical_sha256": digest(moved),

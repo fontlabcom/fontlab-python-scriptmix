@@ -716,7 +716,22 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/master-compatibility-browser.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/master-width-comparison.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/node-counts-across-masters.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/open-fonts-and-master-overview.html</loc>
         <lastmod>2026-11-10</lastmod>
         <changefreq>daily</changefreq>
     </url>

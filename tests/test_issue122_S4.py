@@ -782,7 +782,10 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.MainWindow = lambda: NS(palette=Palette())
     fontlab.UpdateAll = lambda: w.events.append(("update-all",))
     fontlab.flGlyph = NS(updatedFgGlyphs=lambda: tuple(w.pending))
-    names = lambda: list(w.glyphs)
+
+    def names():
+        return list(w.glyphs)
+
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:
@@ -1721,7 +1724,7 @@ def test_parse_when_lines_given_then_names_both_anchors_and_flags_problems(
         "Adot = A + dot@top[_top]\n"
         "nb = A\xa0+ acute\n"
     )
-    assert [(l.number, l.target, l.recipe, l.problem) for l in lines] == [
+    assert [(line.number, line.target, line.recipe, line.problem) for line in lines] == [
         (1, "Aacute.alt", "=A+acute@acute[_acute]", ""),
         (3, "fi", "=f&i", ""),
         (4, "bad line", "", "use: target = base + mark@anchor"),

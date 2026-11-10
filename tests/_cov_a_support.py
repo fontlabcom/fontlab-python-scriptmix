@@ -525,7 +525,7 @@ class Host:
         return sys._fontlab_samples  # noqa: SLF001 - the documented registry
 
 
-@pytest.fixture
+@pytest.fixture(name="host")
 def host(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> Host:
     """Provide a fresh owned FontLab session double for one test."""
     return Host(monkeypatch, real_app)

@@ -935,7 +935,10 @@ def components_world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.MainWindow = lambda: NS(palette=Palette())
     fontlab.UpdateAll = lambda: w.events.append(("update-all",))
     fontlab.flGlyph = NS(updatedFgGlyphs=lambda: tuple(w.pending))
-    names = lambda: list(w.glyphs)
+
+    def names():
+        return list(w.glyphs)
+
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:
@@ -1328,7 +1331,7 @@ def test_pending_updates_allow_component_write(
     ns = load(relative)
     prototype(w)
     w.pending = [5]
-    result = ns["apply_pairs"](w.package, [("A", "a")])
+    ns["apply_pairs"](w.package, [("A", "a")])
     assert w.pending == [5] and w.notifications()
     output = capsys.readouterr().out
     assert "(5,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output

@@ -107,7 +107,7 @@ this_file: TODO.md
 
 - [ ] Keep Examples destination hashes current after Scriptmix changes; repeat the cross-repository pin check at final delivery.
 
-- [ ] Resolve existing Ruff findings without unrelated historical-source rewrites.
+- [ ] Resolve the remaining 45 Ruff 0.14.10 findings without unrelated historical-source rewrites (Scripts 26, tests 18, tests_docs 1). C12 completed the tests-only mechanical subset; keep row 106 open for the hash-pinned Scripts remainder and remaining test findings, with separate provenance review before script edits.
 
 - [ ] Complete browser-asset transitive provenance, full notices and source-availability checks before site publication.
 
