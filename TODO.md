@@ -2,13 +2,14 @@
 this_file: TODO.md
 ---
 
-- [ ] Qualify the full Detached Transform Preview source port with actual composition/demo/menu behavior, M1 final before-model preservation, focused/full source suites, affected Fontport tests, whole-module coverage and independent review; retain source floor seven until qualification.
+- [ ] Commit the independently reviewed Scriptmix docs correction additively after post-change graph checks; rerun the strict build and complete 42 pipeline unittest cases and 14 legacy pytest checks at the genuine X2 commit, then verify normal hooked push and exact-commit CI.
+
 - [ ] Qualify Detached Transform Preview genuine archives/distributions/two ordinary prefixes, native owned-font/history/lifetime behavior and truthful containing-commit/generated-doc links; preserve all 8,723 obligations and the minimum eighteen workflows.
 
 
-- [ ] Qualify exact UFO feature-source integration and linked source/proof workflow through independent source review, complete controlled suites, ordinary artifacts and owned native/history/reopen checks; full literal paragraph-separator editing remains separate.
+- [ ] Qualify ordinary artifacts and owned native/history/reopen behavior for the source-qualified exact UFO feature-source integration and linked source/proof workflow; full literal paragraph-separator editing remains separate.
 
-- [ ] Qualify Feature Source and Proof exact whole-source/all-CR preservation, independent review, frozen full suites, and separate A1 artifact/ordinary/native/history/reopen/canonical/publication gates.
+- [ ] Qualify the separate A1 artifact/ordinary/native/history/reopen/canonical/publication gates for source-qualified Feature Source and Proof, retaining exact whole-source/all-CR preservation.
 
 
 

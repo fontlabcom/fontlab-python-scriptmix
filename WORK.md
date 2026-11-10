@@ -2,6 +2,22 @@
 this_file: WORK.md
 ---
 
+## 2026-11-10 — Scriptmix documentation candidate corrected
+
+Corrected menu/page counts from 261 to 269, generated output count from 401 to 410 and added exactly nine literal search routes. All 261 original script bodies, 401 prior output paths, complete-set equality, source identities and cross-date byte checks remain. Removed only the two pre-existing unused test lines exposed by pinned lint.
+
+The strict build and 42 pipeline unittest cases and 14 legacy pytest checks pass in owned full-history X1 copies with the admitted documentation-only overlay. Pinned Ruff 0.14.10 F/py313 passes all four changed docs test files. The earlier failures remain retained. All 42 production source hashes and their full-suite/coverage bindings remain unchanged.
+
+The completed source-only Detached Transform Preview TODO and stale source-pending clauses for Feature Source and Proof are reconciled with independent source qualification: source floor eight, full workflow parity zero. Genuine archives/distributions/two ordinary installs, native history/lifetime/reopen, literal paragraph-separator editing and canonical/publication requirements remain open.
+
+This closes the candidate correction only. Independent fix review, post-change graph checks, an additive X2 commit and fresh X2 commit-bound documentation checks remain before normal hooked push and exact-commit CI. Generated-output promotion, full ordinary-product/native acceptance and private publication remain separate; source floor eight and zero full workflow parity are unchanged.
+
+## 2026-11-10 — scriptmix documentation gates require a bounded correction
+
+Source commit `09a09447df23d87373a8e4a3fa13381dc946d337` remains intact. The strict documentation build passes, but the 42-test pipeline suite has four failures: the old 401-output and 261-menu expectations and literal search routes omit eight Font UI Lab tools and their category page. The separate documented legacy pytest checks pass all 14 cases.
+
+Prove preservation of all old routes and source bodies; update only the exact 261-to-269 menu/page counts, 401-to-410 output count and nine literal search routes, retaining source identities, complete-set equality and cross-date byte parity. These are pending documentation corrections, not completed fixes. Test/source edits await exact scope and pre-edit impacts; all failed receipts remain retained. Verify in genuine commit-bound copies, then record closure in CHANGELOG. No push or generated-output promotion has occurred, and main CI/full ordinary/native acceptance remain pending.
+
 ## 2026-11-10 — combined main-source verification
 
 The reconciled App, Fontport and Scriptmix source passed the complete suites:

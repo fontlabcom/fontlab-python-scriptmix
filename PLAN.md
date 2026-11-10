@@ -2,26 +2,22 @@
 this_file: PLAN.md
 ---
 
+## Documentation delivery after candidate verification
+
+Create the reviewed additive documentation fix commit, then rerun the strict Scriptmix build and complete 42 pipeline unittest cases and 14 legacy pytest checks from its genuine X2 source/epoch in an owned full-history copy. Candidate X1 overlay checks pass; they do not replace commit-bound verification. Complete independent fix review and post-change graph checks before staging, then retain normal hooked push and exact-commit CI gates. Ordinary/native acceptance and publication holds remain separate.
+
 ## Detached Transform Preview remaining qualification
 
-Qualify the full explicit-target source port, actual editor/two-proof composition,
-real demo/menu dispatch, constructor/refusal/reentrancy/cleanup matrix and common
-final before-model preservation (M1). Require focused and full App/isolated Scriptmix
-suites, affected Fontport tests, whole new-module coverage and independent review.
-The source floor remains seven until that review qualifies this workflow. Then
-carry the matched source through genuine archives/distributions/two ordinary prefixes
-and native owned-font/history/lifetime checks. Generate immutable menu links only
-from a genuine reviewed containing commit. Keep all 8,723 obligations and the
-minimum eighteen workflows; no full-parity or native completion is inferred.
+Carry the independently source-qualified explicit-target composition through genuine archives/distributions/two ordinary prefixes and native owned-font/history/lifetime checks. Preserve the qualified editor/two-proof composition, demo/menu dispatch, refusal/reentrancy/cleanup and common final before-model preservation (M1). Generate immutable menu links only from a genuine reviewed containing commit. The source floor is eight; retain all 8,723 obligations and the minimum eighteen workflows, with full workflow parity at zero and native acceptance still open.
 
 
 ## Exact feature source continuation
 
-Qualify exact UFO feature-source integration and linked source/proof workflow through independent source review, complete controlled suites, ordinary artifacts and owned native/history/reopen checks; full literal paragraph-separator editing remains separate.
+Carry the independently source-qualified exact UFO feature-source integration and linked source/proof workflow through ordinary artifacts and owned native/history/reopen checks; full literal paragraph-separator editing remains separate.
 
 ## Feature Source and Proof qualification
 
-Complete independent combined-source qualification and the full Fontport, App and fresh isolated Scriptmix source suites. Retain all 8,723 obligations and the minimum eighteen workflows; six prior source implementations are not six complete accepted workflows. A1 archives, genuine artifacts/two ordinary installs, native history/reopen and canonical/publication gates remain separate.
+Carry the independently qualified combined source through A1 archives, genuine artifacts/two ordinary installs, native history/reopen and canonical/publication gates. Retain all 8,723 obligations and the minimum eighteen workflows; the source floor of eight does not establish complete workflow acceptance. Full literal paragraph-separator editing remains a separate gate.
 
 
 
