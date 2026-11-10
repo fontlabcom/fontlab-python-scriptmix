@@ -9,7 +9,7 @@ categories: ["Metrics"]
 Round advance widths to a step. Outlines stay where they are.
 
 What it does: rounds the advance width of each target glyph to a multiple of
-the step (2 to 100 units). Choose the nearest multiple, the next one up, or the
+the step (1 to 100 units). Choose the nearest multiple, the next one up, or the
 next one down. A half step goes up for "nearest".
 
 How it works: the right sidebearing takes the whole change. The left
@@ -52,6 +52,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `66cc77b0ba02e46a696b0464a078d181fd6ca6604671cdcf5efe26f59a0a1c49`
+SHA256: `9b7e790969514bc1c5075e79f3bd10cd6fb5d6be3cc90b610a845b4a2651a7e8`
 
-[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Metrics/Round%20Advances.py)
+[Python source at `66a2fdada6fc`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/66a2fdada6fcf7acc37d05f8e46efca2b9e2eeae/Scripts/Metrics/Round%20Advances.py)

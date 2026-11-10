@@ -4577,7 +4577,7 @@
     {
       "destination": "Scripts/Metrics/Round Advances.py",
       "historical_sha256": "256008b4f607690d946a1826d5f56e5cf5a7e79ec16fc15540a7b775b3132a8a",
-      "current_sha256": "66cc77b0ba02e46a696b0464a078d181fd6ca6604671cdcf5efe26f59a0a1c49",
+      "current_sha256": "9b7e790969514bc1c5075e79f3bd10cd6fb5d6be3cc90b610a845b4a2651a7e8",
       "source_sha256": "7b8e6f6af6b5c1b16c92a01cc3182763e3e1a02c136cf32796fbfe42e9602bb4",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -4595,6 +4595,16 @@
           "kind": "issue-205-import-path-update",
           "historical": "from fly.ap.scripting import names_font_glyphs, show_script_dialog\n",
           "current": "from fly.ap.core.scripting import names_font_glyphs, show_script_dialog\n"
+        },
+        {
+          "kind": "issue-250-round-advances-step-one",
+          "historical": "the step (2 to 100 units)",
+          "current": "the step (1 to 100 units)"
+        },
+        {
+          "kind": "issue-250-round-advances-step-one",
+          "historical": "self.spin(2, 100, STEP_DEFAULT",
+          "current": "self.spin(1, 100, STEP_DEFAULT"
         }
       ]
     },
