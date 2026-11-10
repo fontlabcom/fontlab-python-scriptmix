@@ -2,6 +2,18 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — Issue 241 existing demo entry points verified
+
+Retained the two existing TMetrics/TGlyph menu demos and their catalogue hashes.
+The paired App entry points remain lazy and take their current-font defaults.
+Focused menu tests passed 16 cases; each complete wrapper covers 11 statements
+and both branches (100%). The prepared arm64 Python 3.11 Scriptmix environment
+passed 4,617 tests with two retained skips. Ruff 0.16.7 passed on both wrappers
+and their focused test. The exact metaswarm recipe later passed on the combined
+origin/main tree: 4,617 passed, two retained skips.
+Native bidirectional editing, history/reopen and current installed artifacts
+remain open; no release or live acceptance is claimed.
+
 ## 2026-11-10 — live font editing rule (Issue 250, D44)
 
 - AGENTS.md: agents test and edit the font open in FontLab 9, starting from the Desktop VFJs, and may save them.

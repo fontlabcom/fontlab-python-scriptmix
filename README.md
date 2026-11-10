@@ -62,6 +62,29 @@ After the owner provisions dependencies:
 Use a dedicated FontLab session and owned fonts for acceptance tests. Keep
 normal work and original fonts outside that session.
 
+## TMetrics and TGlyph demos
+
+Run **Metrics > TMetrics Window** or **Contours > TGlyph Window** with a
+matching App build providing `fontlabapp.fontui.tmetrics.show_tmetrics` and
+`fontlabapp.fontui.tglyph.show_tglyph`. The two existing menu scripts remain
+the demonstrations; their catalogue identities are unchanged.
+
+TMetrics has a **Master / layer** selector for the outlines and spacing being
+shown and edited. Kerning preview and writes require the selected layer to be
+the FontLab current master; other choices disable kerning and explain why.
+Press Return in Text to send literal Unicode to an accessible matching FontLab Glyph window. If text
+is unavailable or uses a named-glyph slash stream, it stays local and the
+status explains why. Polling follows accessible external literal text without
+replacing an unsubmitted draft including before the first synchronization.
+
+TGlyph keeps its layer selector and move/add/delete/pen tools. Press **O** to
+toggle selected on/off-curve points; open-contour endpoints cannot become
+controls and each contour must retain an on-curve point.
+
+The menu entry points pass offline tests. Native bidirectional updates, actual
+PythonQt painting, Undo/Redo, save/reopen and window cleanup still require
+FontLab qualification; no installed-version floor is inferred.
+
 ## Examples
 
 - **Metrics > Scale Advances**: select glyphs in the Font window, choose current

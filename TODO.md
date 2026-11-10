@@ -116,6 +116,7 @@ this_file: TODO.md
 
 - [ ] Independently review the full public-site candidate, verify the current nine-asset English payload and exact primary-source notices, qualify actual main CI/generated output and verify Pages settings/live routes.
 - [ ] Qualify the TMetrics and TGlyph windows with installed App builds providing `fontlabapp.fontui.tmetrics` and `fontlabapp.fontui.tglyph`, the `fontport` extra and matching Fly/Fontport; verify native lifetime/history/save-reopen and the new exact-source publication separately. No numeric release floor is established for these two windows.
+- [ ] Verify Issue 241 live round trips for outlines, advance/sidebearings, kerning and accessible Glyph-window text in both directions, including master/layer switching, O-key point toggles, Undo/Redo, saved reopen and timer/signal cleanup under native PythonQt.
 
 - [ ] Qualify truthful containing commits, immutable source links, native workflows and later integrated tuples for the eight source-qualified implementations without treating them as eight fully accepted workflows; preserve finite accepted A0/I1 ordinary evidence for its exact older bytes.
 - [ ] Qualify whole Task12/native teardown and complete owned-font/history preservation; finite A0/I1 source and ordinary cleanup evidence does not close the native gate.

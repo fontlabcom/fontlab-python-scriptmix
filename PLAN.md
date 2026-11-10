@@ -79,6 +79,8 @@ Retain all 269 practical tools, the 350 classified source rows and the historica
 
 ## Issue 241 window qualification
 
+Reuse the existing Metrics > TMetrics Window and Contours > TGlyph Window demos; their lazy no-argument App entry points and provenance remain unchanged. Qualify the matching App implementation with live outline/spacing/kerning/text round trips, explicit master/layer targeting, point toggles and native lifetime/history/reopen checks. Standalone Qt and fake-host coverage do not close these gates.
+
 Qualify TMetrics Window with a FontLabApp build providing `fontlabapp.fontui.tmetrics` and TGlyph Window with `fontlabapp.fontui.tglyph`, both with the `fontport` extra and matching Fly/Fontport. The unsupported1.2.0 claims are removed; no numeric replacement floor is inferred. Keep installed-module checks, actual native window/history/save-reopen and current source/output/Pages/artifact/live acceptance separate.
 
 ## Issue234 Font UI inspection acceptance
