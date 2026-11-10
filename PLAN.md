@@ -81,9 +81,9 @@ source through one matched archive/artifact/two-prefix ordinary batch; a dirty
 genuine-version artifact does not establish a containing commit or release floor.
 Keep native painting, lifetime, complete font/history preservation, Undo/Redo and
 saved/reopened evidence separate. Retain all 8,723 obligations, Tasks 6–11/13/14,
-full parity at zero and the 18-or-more workflow floor. Implement source for the
-ten compositions still without source in the minimum set, starting with A1 #17
-Batch UFO Recipe Workbench before later A2 work.
+full parity at zero and the 18-or-more workflow floor. Close the remaining source-qualification gates for the
+ten not-yet-qualified compositions in the minimum set, starting with A1 #17
+Batch UFO Recipe Workbench's integration gates before later A2 work.
 
 Retain both the controller-approved lifecycle-origin record path and SHA at
 installed consumer boundaries, original behavior assertions/test identities and
@@ -179,12 +179,23 @@ The common final before-model digest is already source-qualified; retain it in
 combined-source regressions, including failures and parent destruction. A new
 target still requires an explicit new snapshot. No full native workflow is claimed.
 
-For #17, reproduce output containment with owned files: no planned destination
-may lie within any input UFO tree, including another input or a symlink-resolved
-tree. Preserve every complete input tree and existing overwrite/duplicate checks;
-require exact helper impact and a separate finite repair amendment if reproduced.
-Use the actual TransformEditor recipe controls with no font and explicit no-preview
-state, plus BatchPanel per-file log/progress/status, external Python selection and
-BatchRunner. Do not infer geometry preview, reopened-artifact proof or an implicit
-host font. Implement #17 next. Its helper concerns still require their own reproduction,
-exact impact and a finite source admission before edits.
+For #17 P2, complete the post-change graph, ledger review and separate source
+qualification gates before recording the workflow. Refresh actual upstream main,
+reconcile any intervening changes without losing teammate work, and review the
+exact staged delta. Create genuine source commits, qualify commit-bound strict
+documentation builds and required tests, then use the normal qualified pre-push
+gate and verify each exact main commit's CI and generated-output lineage.
+Retain the recipe-only No Font behavior, explicit external Python selection,
+independent reopened whole-font geometry/resource oracles, complete unchanged
+inputs, and delivered P1 case/Unicode containment and no-overwrite regressions.
+Retain distinct editor _close_complete and panel _batch_close["complete"] ACKs;
+require actual terminal child/stdout/scratch cleanup beyond supervision transfer.
+Keep the unchanged READ_BYTES budget, first-EAGAIN stop and next-poll no-loss
+controls, active-window isolation and dispatch/scheduling retry regressions.
+Qualify #17's matching ordinary artifacts, two fresh prefixes and complete
+archives, then its actual consumer/native/history/Undo/Redo/reopen checks.
+Separately retain the wider literal-U+2029 feature-editing qualification,
+canonical adoption, publication and private Pages holds; these are not added
+recipe-workbench features. Until the separate controller qualification, retain
+source floor eight, full parity zero, all 8,723 obligations and the minimum
+eighteen workflows.

@@ -3488,5 +3488,19 @@
     "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/detached_transform.py; no release floor is asserted.",
     "destination_sha256": "8c8b631a35fab00f4af7403e7df3b44b1e276b3c39b494d9480554a131f28e83",
     "scope": "Explicit captured font/layer/glyph; detached backend-stored dependency snapshot, affine editor and before/after proofs. Refresh rereads that source; no font Apply/save/export. Native resource completeness remains unqualified."
+  },
+  {
+    "title": "Batch UFO Recipe Workbench",
+    "key": "font_ui_lab_batch_recipes",
+    "destination": "Scripts/Font UI Lab/Batch UFO Recipe Workbench.py",
+    "destination_sha256": "d0aa003d17259c5fc7705e300f2061d55d528af55b371f6f4c07bf5b6c598223",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.batch_recipes.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/batch_recipes.py; no release floor is asserted.",
+    "scope": "Real recipe-only controls and explicit external-Python batch UFO execution, per-file results, no implicit font or geometry preview; no overwrite and cooperative cancellation."
   }
 ]

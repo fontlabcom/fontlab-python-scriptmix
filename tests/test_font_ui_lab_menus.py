@@ -81,6 +81,7 @@ def test_new_rows_when_added_then_old_259_bodies_and_190_rows_are_exact():
         "Scripts/Font UI Lab/Kerning Group Explorer.py",
         "Scripts/Font UI Lab/Feature Source and Proof.py",
         "Scripts/Font UI Lab/Detached Transform Preview.py",
+        "Scripts/Font UI Lab/Batch UFO Recipe Workbench.py",
         "Scripts/Metrics/TMetrics Window.py",
         "Scripts/Contours/TGlyph Window.py",
     }
@@ -106,7 +107,7 @@ def test_new_rows_when_added_then_old_259_bodies_and_190_rows_are_exact():
         hashlib.sha256(json.dumps(payload, separators=(",", ":")).encode()).hexdigest()
         == OLD_MENUS_SHA
     )
-    assert len(rows) == 200 and len(list((ROOT / "Scripts").glob("*/*.py"))) == 269
+    assert len(rows) == 201 and len(list((ROOT / "Scripts").glob("*/*.py"))) == 270
     for title, module, key, digest in CASES:
         matching = [r for r in rows if r["key"] == key]
         assert len(matching) == 1

@@ -2,6 +2,77 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — P2 source/test review passed; integration gates remain
+
+Added the actual Batch UFO Recipe Workbench menu entry and catalogue row using
+the shared App composition; existing frozen catalogue oracles remain unchanged.
+
+The independently reviewed fix closes in-flight close/nested-provider acquisition
+and scheduling-failure retry defects. New real-Qt regressions cover complete
+fractional reopened geometry and component conjugation across layers, font/glyph
+guides and metadata/resources; connected Add/Start and captured-run stability;
+active-window cancellation/isolation and the existing supervisor's actual
+terminate/kill/terminal cleanup; and retained primary/cleanup errors with retry
+only for unacknowledged owners. Shared helpers and worker policy are unchanged.
+
+Final source checks passed: App 12,212 cases with no skips; Scriptmix 4,609 with
+six unchanged skips; affected App 524; targeted Fontport 92; pinned Ruff on all
+15 changed Python files. Complete workbench coverage is 187/202 statement-plus-
+branch obligations (92.5743%); demo and menu each cover 7/7 (100%), all with zero
+exclusions. Independent scoped specification/quality review passed F1–F3.
+Retain the original close/reentry and queue REDs, the initial missing-shaping
+runtime epoch and setup failures. The new font-guideline assertion correction
+compares against independently transformed info while preserving all 107 other
+info fields and the complete original test prefix.
+
+These results close the implementation and source-test portions only. Post-change
+graph, ledger/controller source qualification, genuine-commit documentation,
+normal main integration and exact-commit CI remain open. No new commit, push,
+ordinary installation, native result or publication is claimed. Source floor
+eight, full parity zero, all 8,723 obligations and the minimum eighteen workflows
+remain unchanged; ordinary artifacts/two prefixes/archives and native history,
+Undo/Redo/reopen, literal U+2029, canonical adoption and private Pages holds remain
+separate. Earlier history and its Scriptmix intermediate-file correction stand.
+
+
+## 2026-11-10 — P1 containment round delivered; P2 remains next
+
+The reviewed [P1 round commit](https://github.com/fontlabcom/fontlab-python-scriptmix/commit/f0e7d423c4b486bd1f9f1556e444ff155cb168fe)
+reached main through the normal qualified pre-push gate (24 core passes and four
+retained opt-in skips). Its [exact-commit Actions run](https://github.com/fontlabcom/fontlab-python-scriptmix/actions/runs/42803269964)
+succeeded. Fontport's filesystem-identity containment fix and App regressions
+resolved [issue 8624](https://github.com/Fontlab/fl/issues/8624), now closed with
+[verified resolution evidence](https://github.com/Fontlab/fl/issues/8624#issuecomment-6765750168).
+This completes the former P1 reproduction, source-review and main-delivery tasks;
+it does not implement the P2 recipe-workbench composition.
+
+Retained source gates are Fontport 5,076 passes plus one existing corpus skip,
+271 affected App passes and 96.9231% complete batch-module combined coverage with
+zero exclusions, including the unchanged covered 0.5-second startup check.
+The commit-bound documentation gates passed three strict builds, 114 unit checks
+and 14 legacy checks. All 524 rendered files match (App 54, Fontport 60,
+Scriptmix 410). Fontport's [generated docs child](https://github.com/fontlabcom/fontlab-fontport/commit/c06b0b4d68dc11853e36e3b2e5db5daa8adae242)
+is a direct child of its source commit and changes only two generated docs files.
+Scriptmix's [public Pages run](https://github.com/fontlabcom/fontlab-python-scriptmix/actions/runs/42803269873)
+succeeded; its unchanged 410 rendered files retain the earlier nine-route browser
+proof. No new browser run or native qualification is claimed.
+
+Correction to the earlier catalogue-intermediate shorthand: of 285 Scriptmix
+Markdown intermediates, 14 match, 262 tracked files differ and nine generated
+files are absent from the committed tree. The 271 differences are not all tracked
+revision changes. The generator uses the last commit affecting the Scripts tree
+(`git log -1 --format=%H -- Scripts`), currently
+`09a09447df23d87373a8e4a3fa13381dc946d337`, not the whole source commit or a per-file
+revision. The qualified publication is the 410 rendered files; this is not a
+695-file parity claim or a waiver for missing generated intermediates.
+
+P2 planning now targets actual recipe-only controls plus BatchPanel results,
+with no implicit font or geometry preview. Source floor eight, full parity zero,
+all 8,723 obligations and the minimum eighteen workflows remain unchanged.
+Ordinary artifacts/two-prefix installation, native/history/reopen, U+2029,
+archives, canonical adoption and other publication gates remain open.
+
+
 ## 2026-11-10 — reviewed main and documentation delivery verified
 
 The additive [X2 source commit](https://github.com/fontlabcom/fontlab-python-scriptmix/commit/3c2ecd387ba13b7cdeaa5f8e03f82dde56fed281) passed its genuine commit-bound strict documentation build and all 42 documentation unittest cases; Scriptmix also passed all 14 legacy pytest checks. Independent source/fix and graph reviews passed before normal push. The qualified installed pre-push gate passed 24 core tests with four existing opt-in skips. [Exact-X2 CI](https://github.com/fontlabcom/fontlab-python-scriptmix/actions/runs/42783723417) succeeded, and the direct [documentation-only successor](https://github.com/fontlabcom/fontlab-python-scriptmix/commit/a8a14021a3477f8a0ad11bf19b83d96c1ab282bd) preserved all non-docs source while delivering 410 generated files byte-for-byte equal to the commit-bound build.
