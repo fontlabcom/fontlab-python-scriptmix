@@ -138,14 +138,6 @@ and publication remain separate gates. Preserve the 196 additional records and
 8,723 compatibility obligations, the 18-or-more workflow floor and full workflow
 acceptance open.
 
-## Lint baseline reconciliation
-
-Reconcile the documented Ruff 0.14.10 baseline of 87 findings with the measured
-420 findings from the current complete guide scope. Retain the exact tool
-version, target Python and path list, classify existing findings and update the
-baseline with evidence before considering individual cleanup changes. Do not
-apply automatic fixes across historical scripts as part of audit delivery.
-
 ## Catalogue source-link verification
 
 Fix the measured catalogue provenance defect separately: the generator selects

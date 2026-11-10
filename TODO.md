@@ -95,7 +95,7 @@ this_file: TODO.md
 
 - [ ] Consolidate repeated component-construction logic in App without loading sibling scripts.
 
-- [ ] Consolidate duplicate backup-job planning in plan()/plan_rows(); retain the shared App exact-case prefix rule and casefolded master-name exclusion.
+- [ ] Consolidate duplicate backup-job planning in plan()/plan_rows(); retain the shared App exact-case prefix rule and casefolded master-name exclusion. Next check: dedup is blocked by the AST-parity pins on `backup_master`, `backup_name`, `backups_of` and `backup_names` (App `tests/_layer_manager_originals.py`, `test_studio_layer_manager.py::test_originals_when_ported_then_pure_functions_match_the_script_ast`); re-baselining them is an owner decision.
 
 - [ ] Review deferred App lifecycle details: overlay detach after timer-stop errors, owned-menu lookup, menu failure while inside a slot, duplicated master/history traversal, warning output and notice wording.
 
@@ -126,8 +126,6 @@ this_file: TODO.md
 
 - [ ] Bind the accepted A0/I1 payload to reviewed containing commits and truthful source links; requalify any later changed payload.
 - [ ] Qualify Tabular Width Audit native painting, history, cleanup and whole-font preservation in an admitted owned lane.
-
-- [ ] Reconcile the documented Ruff 0.14.10 baseline of 87 findings with the measured 420 complete-scope findings; retain exact scopes and triage existing scripts without automatic cleanup.
 
 - [ ] Fix catalogue immutable-link validation by checking committed menu paths and bytes, with dirty/untracked-menu regressions; refuse or defer false links without adding a new generator framework.
 
