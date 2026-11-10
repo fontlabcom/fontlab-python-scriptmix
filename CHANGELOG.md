@@ -2,7 +2,6 @@
 this_file: CHANGELOG.md
 ---
 
-<<<<<<< HEAD
 ## 2026-11-11 — C12 tests-only Ruff cleanup
 
 - Removed all 349 requested test findings (F811 310, F841 9, E731 20, E702 10). Explicit fixture names and aliased imports retain the same host/boundary implementations and scopes; unused assignments retain their calls, lambdas become local functions, and compound statements are split.
@@ -10,7 +9,7 @@ this_file: CHANGELOG.md
 - Measured full-scope baseline: 45 findings (E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0). README, AGENTS and PLAN agree; TODO row 106 remains open.
 - Official arm64 Python 3.11 runtime gate: before and after both 4,619 passed, 2 existing skips, 0 failures. All 4,621 sorted collected node IDs are identical. Independent code review approved; 2,857 assertion ASTs retained with only intentional variable renames normalized.
 - All 288 protected script/JSON hashes match. Generated documentation drift from the suite was restored; no production module changed, so production line/branch coverage is not applicable. No native acceptance or delivery is claimed. See C12-REPORT.md for commands and remaining checks.
-=======
+
 ## 2026-11-10 — Issue 234 master browser menus 1, 4 and 5
 
 Added Open Fonts and Master Overview, Master Compatibility Browser and Node
@@ -41,7 +40,6 @@ and their focused test. The exact metaswarm recipe later passed on the combined
 origin/main tree (base 4c2f6f8): 4,617 passed, two retained skips.
 Native bidirectional editing, history/reopen and current installed artifacts
 remain open; no release or live acceptance is claimed.
->>>>>>> origin/main
 
 ## 2026-11-10 — Ruff baseline reconciled
 
