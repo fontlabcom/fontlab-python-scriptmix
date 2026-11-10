@@ -9342,6 +9342,9 @@
 <p>These scripts use FontLab 9's Python 3.11 and its PythonQt binding. Install
 <code>fontlab-fly</code> and a matching <code>fontlab-fontlabapp&gt;=1.2.0</code> artifact in FontLab's Python
 environment. Feature editors also need App's <code>fontedit</code> extra and native <code>fontpr</code>.
+TMetrics Window requires a FontLabApp build providing <code>fontlabapp.fontui.tmetrics</code>;
+TGlyph Window requires <code>fontlabapp.fontui.tglyph</code>. Both also need App's <code>fontport</code>
+extra. These two windows have no verified numeric release floor.
 The documentation build uses a separate Python environment.</p>
 <ol>
 <li>Open FontLab's Scripts folder.</li>

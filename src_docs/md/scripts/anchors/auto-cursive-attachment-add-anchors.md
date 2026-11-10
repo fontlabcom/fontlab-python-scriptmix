@@ -33,4 +33,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `ba86abe9be3f263c8087a14911e89c35a0e8a97334b18e15b7b8807cbbbd2229`
 
-[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Anchors/Auto%20Cursive%20Attachment%20Add%20Anchors.py)
+[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Anchors/Auto%20Cursive%20Attachment%20Add%20Anchors.py)

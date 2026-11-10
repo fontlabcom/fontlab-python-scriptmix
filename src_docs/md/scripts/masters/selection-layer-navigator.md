@@ -54,4 +54,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `a174b2d3739e711bc6d8776235a0b870c9ed13280007b60d38c6f1b06d97ba98`
 
-[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Masters/Selection%20Layer%20Navigator.py)
+[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Masters/Selection%20Layer%20Navigator.py)

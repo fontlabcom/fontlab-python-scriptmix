@@ -36,8 +36,8 @@ natively; try it on a copy first.
 
 Source: Original workflow built on the shared App TGlyph window
 (fly.ap.fontui.tglyph), Apache-2.0.
-Requires App>=1.2.0 with its fontport extra and fontlab-fly in FontLab 9
-Python 3.11.
+Requires a FontLabApp build providing fontlabapp.fontui.tglyph,
+with its fontport extra and fontlab-fly in FontLab 9 Python 3.11.
 
 Run **Contours > TGlyph Window** from FontLab's Scripts menu.
 
@@ -45,6 +45,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `4f13070e09c8adea609c4c36ac46e9eaad85b2c1dd51daa77515de1fd64d2529`
+SHA256: `e2e36a8244fe8cbd29917feb1ffc70bb4e0078663d2f6ec61f8f739091fc625c`
 
-[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Contours/TGlyph%20Window.py)
+[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Contours/TGlyph%20Window.py)

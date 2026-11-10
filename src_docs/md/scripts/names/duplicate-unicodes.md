@@ -27,4 +27,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `332e2442f99e8918c6c1fa3b8040443fb5b6c61f21952bf597347510ad7c8148`
 
-[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Names/Duplicate%20Unicodes.py)
+[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Names/Duplicate%20Unicodes.py)

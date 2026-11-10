@@ -32,4 +32,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `8b8001c1d327737a265ddfd5aee98e0cd149e8b13097c0f1d8d6dbb41e5001ce`
 
-[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Kerning/Symmetry.py)
+[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Kerning/Symmetry.py)

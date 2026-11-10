@@ -66,4 +66,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `27c15a82f0b2714ba8aee8ef66f1d0bb4f8c219f1a2c0dfe13ab43798e5a7479`
 
-[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Components/Build%20From%20Recipes.py)
+[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Components/Build%20From%20Recipes.py)

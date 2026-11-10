@@ -47,4 +47,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `da6b423b0e3c8cec550e183a08b488138f2ddf8ab673126c73f8d3332f2b259f`
 
-[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Masters/Display%20Next%20Layer.py)
+[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Masters/Display%20Next%20Layer.py)

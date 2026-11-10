@@ -33,8 +33,8 @@ yet verified natively; try it on a copy first.
 
 Source: Original workflow built on the shared App TMetrics window
 (fly.ap.fontui.tmetrics), Apache-2.0.
-Requires App>=1.2.0 with its fontport extra and fontlab-fly in FontLab 9
-Python 3.11.
+Requires a FontLabApp build providing fontlabapp.fontui.tmetrics,
+with its fontport extra and fontlab-fly in FontLab 9 Python 3.11.
 
 Run **Metrics > TMetrics Window** from FontLab's Scripts menu.
 
@@ -42,6 +42,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `c7708e75efcd47a79f05aff96b13ab6230db7163b145d1f63cf17da527fe7b79`
+SHA256: `3a844099f2fb1b49f1c8dfcefb60f84a21dc496d624bcf030f569ecc8cb6181b`
 
-[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Metrics/TMetrics%20Window.py)
+[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Metrics/TMetrics%20Window.py)

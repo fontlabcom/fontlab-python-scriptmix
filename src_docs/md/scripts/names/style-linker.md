@@ -44,4 +44,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `30465e121d48ba68820aa745b11f184ac73a8518406441aacb3ed0fb236e3782`
 
-[Python source at `1fddaa75b7e6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1fddaa75b7e644ddcb3764909f3dd231cc78528e/Scripts/Names/Style%20Linker.py)
+[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Names/Style%20Linker.py)
