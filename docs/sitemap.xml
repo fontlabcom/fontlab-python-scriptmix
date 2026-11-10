@@ -676,6 +676,51 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/index.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/anchor-and-component-inspector.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/detached-transform-preview.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/feature-source-and-proof.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/glyph-browser-and-metrics.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/kerning-group-explorer.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/kerning-proof-workbench.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/tabular-width-audit.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/unicode-and-glyph-order-explorer.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/guides/index.html</loc>
         <lastmod>2026-11-10</lastmod>
         <changefreq>daily</changefreq>
