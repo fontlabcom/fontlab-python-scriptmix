@@ -18,7 +18,9 @@ complete menu modules reached 100% line and branch coverage (6 statements and
 2 branches each). Ruff 0.14.10 passed all nine changed Python files. The lander
 reran the exact metaswarm recipe on the combined origin/main tree (with C1):
 4,637 passed, two retained skips; the three menu modules pass the coverage
-gate. Native PythonQt, ordinary artifacts
+gate. The docs pipeline oracles (`tests_docs/test_pipeline_*`) now pin
+415 generated files, 274 menus/pages and the three new search pages; the locked
+ProperDocs build and 43 pipeline units pass. Native PythonQt, ordinary artifacts
 and reviewed-commit documentation links remain open.
 
 ## 2026-11-10 — Issue 241 existing demo entry points verified
