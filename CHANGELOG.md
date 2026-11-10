@@ -35,6 +35,15 @@ and reviewed-commit documentation links remain open.
 
 `src_docs/build.py` now compares each menu's bytes with the blob committed at the link revision (`git ls-tree`, git blob id) and offers the immutable GitHub link only when they match. A dirty or untracked menu keeps its page and SHA256 but states it is not committed at that revision and gets no link. Fixture roots that are not git checkouts are unchanged. No generator framework added. New tests in `tests_docs/test_source_snapshot.py`: committed, dirty and untracked menus (11 pass; `build.py` coverage 83%). Official gate with `tests_docs/test_source_snapshot.py`: 4630 passed, 2 skipped, 0 failed. Against the real checkout all 271 committed Scripts match their blobs.
 
+## 2026-11-10 — Issue 250 live rows 85, 87 and 90 checked
+
+Measured against the running FontLab 9 on Desktop copies: the Font Info
+ttfautohint writer is impossible per font (global export options); the Metrics
+composite and base move leaves the composite unchanged and Master Metrics
+capHeight reads back exactly; native anchors round to integers on every step
+(all masters). The three TODO rows now state the evidence and the remaining
+concrete checks. No code changed.
+
 ## 2026-11-10 — Issue 241 existing demo entry points verified
 
 Retained the two existing TMetrics/TGlyph menu demos and their catalogue hashes.
