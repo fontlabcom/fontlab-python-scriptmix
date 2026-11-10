@@ -686,6 +686,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/batch-ufo-recipe-workbench.html</loc>
+        <lastmod>2026-11-10</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/detached-transform-preview.html</loc>
         <lastmod>2026-11-10</lastmod>
         <changefreq>daily</changefreq>
