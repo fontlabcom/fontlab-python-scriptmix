@@ -3,6 +3,7 @@
 
 import builtins
 import hashlib
+import html
 import json
 import runpy
 import sys
@@ -18,6 +19,27 @@ DEMOS = {
     "Scripts/Metrics/TMetrics Window.py": ("fontui.tmetrics", "show_tmetrics"),
     "Scripts/Contours/TGlyph Window.py": ("fontui.tglyph", "show_tglyph"),
 }
+
+
+@pytest.mark.parametrize("script", DEMOS)
+def test_requirements_when_published_then_name_the_required_app_module(script):
+    module = "fontlabapp." + DEMOS[script][0]
+    page = str(Path(script).relative_to("Scripts").with_suffix("")).lower().replace(" ", "-")
+    for relative in (
+        script,
+        f"src_docs/md/scripts/{page}.md",
+        f"docs/scripts/{page}.html",
+    ):
+        text = html.unescape((ROOT / relative).read_text())
+        assert "App>=1.2.0" not in text, f"{relative}: no unproved numeric floor"
+        assert module in text, f"{relative}: name the App module this tool requires"
+        assert hashlib.sha256((ROOT / script).read_bytes()).hexdigest() in text or relative == script
+    row = next(r for r in json.loads((ROOT / "additional-tools.json").read_text()) if r["destination"] == script)
+    assert "app_minimum" not in row, "These module requirements have no verified release floor"
+    assert module in row["scope"]
+    assert module in runpy.run_path(str(ROOT / script), run_name="inspection")["INSTALL_HINT"]
+    for relative in ("README.md", "src_docs/md/install.md", "docs/install.html"):
+        assert module in (ROOT / relative).read_text(), f"{relative}: retain the window exception"
 
 
 def stub_entry(monkeypatch, module: str, entry: str) -> tuple[list, object]:

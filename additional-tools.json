@@ -3360,26 +3360,24 @@
     "title": "TMetrics Window",
     "key": "metrics_tmetrics_window",
     "destination": "Scripts/Metrics/TMetrics Window.py",
-    "destination_sha256": "c7708e75efcd47a79f05aff96b13ab6230db7163b145d1f63cf17da527fe7b79",
+    "destination_sha256": "3a844099f2fb1b49f1c8dfcefb60f84a21dc496d624bcf030f569ecc8cb6181b",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "license": "Apache-2.0",
     "source_body_redistributed": false,
-    "scope": "Text setting window over the current font with optional HarfBuzz shaping; writes sidebearings, width and pair kerning you change, one undo step each.",
-    "native_acceptance": "pending",
-    "app_minimum": "1.2.0"
+    "scope": "Text setting window over the current font with optional HarfBuzz shaping; writes sidebearings, width and pair kerning you change, one undo step each. Requires fontlabapp.fontui.tmetrics and App's fontport extra.",
+    "native_acceptance": "pending"
   },
   {
     "title": "TGlyph Window",
     "key": "contours_tglyph_window",
     "destination": "Scripts/Contours/TGlyph Window.py",
-    "destination_sha256": "4f13070e09c8adea609c4c36ac46e9eaad85b2c1dd51daa77515de1fd64d2529",
+    "destination_sha256": "e2e36a8244fe8cbd29917feb1ffc70bb4e0078663d2f6ec61f8f739091fc625c",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "license": "Apache-2.0",
     "source_body_redistributed": false,
-    "scope": "Single-glyph view and point editor on an explicit layer; writes only the shown layer, one undo step per gesture.",
-    "native_acceptance": "pending",
-    "app_minimum": "1.2.0"
+    "scope": "Single-glyph view and point editor on an explicit layer; writes only the shown layer, one undo step per gesture. Requires fontlabapp.fontui.tglyph and App's fontport extra.",
+    "native_acceptance": "pending"
   }
 ]

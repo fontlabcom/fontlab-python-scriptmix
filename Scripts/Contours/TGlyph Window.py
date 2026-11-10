@@ -30,14 +30,15 @@ natively; try it on a copy first.
 
 Source: Original workflow built on the shared App TGlyph window
 (fly.ap.fontui.tglyph), Apache-2.0.
-Requires App>=1.2.0 with its fontport extra and fontlab-fly in FontLab 9
-Python 3.11.
+Requires a FontLabApp build providing fontlabapp.fontui.tglyph,
+with its fontport extra and fontlab-fly in FontLab 9 Python 3.11.
 """
 
 from typing import Any
 
 INSTALL_HINT = (
-    "TGlyph Window needs fontlab-fontlabapp with Fontport and fontlab-fly: "
+    "TGlyph Window needs a FontLabApp build providing fontlabapp.fontui.tglyph, "
+    "with Fontport and fontlab-fly: "
     "install 'fontlab-fontlabapp[fontport]' and fontlab-fly into FontLab's Python."
 )
 

@@ -2,6 +2,40 @@
 this_file: WORK.md
 ---
 
+## 2026-11-10 — Correct the two window capability requirements
+
+TMetrics Window requires an App build providing `fontlabapp.fontui.tmetrics`;
+TGlyph Window requires `fontlabapp.fontui.tglyph`. Both retain the `fontport`
+extra, Fly, FontLab9/Python3.11 and their unverified-native caveats. Removed
+only these two unsupported1.2.0 metadata floors and refreshed their source hashes.
+The existing missing-dependency messages name the respective module. Imports,
+branches and calls are unchanged. README/install guidance now states the exception;
+the older120 pinned numeric floors and all261 menus/350 classifications remain.
+
+Regression: both old claims fail; corrected focused suite24passes. The first full
+prepared-cohort run retains4547passes/6unchangedskips/11missing-sibling-fixture
+setup errors. The initial docs run has42methods:41pass and one history method
+with two failed subtests because its origin was shallow. Those failures remain.
+
+An independently reviewed named, full-history source cohort corrects setup only.
+The two previously affected test files pass all15tests, including the11 earlier
+setup-error cases. The complete corrected source run passes4558tests with six
+unchanged skips in104.97seconds, using the verified read-only arm64Python3.11
+prepared ordinary cohort and matching Fly source. Its installed App is the dated
+d82 build; this is not new normal-prepush/current-peer-install acceptance.
+Both complete changed scripts cover11/11statements+2/2branches,100%,zero exclusions.
+The locked31-packagePython3.13 strict build and all42pipeline tests pass;
+legacy notice/source-snapshot checks pass separately. Changed-file Ruff passes.
+
+The initial shallow preview used25c86 links. The named full-history preview
+uses the earlier Scripts commit1fddaa75b7e6 while its window hashes describe
+current uncommitted bytes; both previews remain unqualified.
+Review/source-only localX1, actualX1-bound regeneration/localX2, the unchanged
+normal full gate, reviewed main delivery and exact newCI/artifact/HTTP/browser
+remain separate. No native/owner install, numeric release-floor proof, commit,
+push or POST follows from these candidate checks. No existing floor/hash oracle
+was relaxed; all120 older named floors and261menus/350classifications remain.
+
 ## 2026-11-07 — public site review corrections
 
 Both catalogue workflow jobs now fetch full history where catalogue generation needs the last Scripts commit. Genuine depth-one/depth-two checkouts with docs-only children reproduce the previous error and recover all immutable catalogue links after fetching history. The explicit English build validates all 44 historical vendor hashes and references before omitting exactly 35 unused language helpers. The remaining nine vendor assets retain their original bytes. The current component manifest binds primary package notices, embedded preferred sources and CSS/icon provenance; all 36 notice files from 31 locked Python distributions remain. Historical incomplete inventory records remain historical.

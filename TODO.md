@@ -102,5 +102,4 @@ this_file: TODO.md
 - [ ] Verify the first Reports batch review and migration-hash receipt specifically against `6e1b247`; the general three-report native/review receipt does not identify that commit.
 
 - [ ] Independently review the full public-site candidate, verify the current nine-asset English payload and exact primary-source notices, qualify actual main CI/generated output and verify Pages settings/live routes.
-
-- [ ] Raise `app_minimum` for the TMetrics Window and TGlyph scripts in `additional-tools.json`: they need `fontlabapp.fontui.tmetrics` and `fontlabapp.fontui.tglyph`, which exist only after App v1.2.7. The value stays "1.2.0" because `tests/test_curated_delivery.py` pins it; at the next App release raise the floor for these rows or add per-row support to that test.
+- [ ] Qualify the TMetrics and TGlyph windows with installed App builds providing `fontlabapp.fontui.tmetrics` and `fontlabapp.fontui.tglyph`, the `fontport` extra and matching Fly/Fontport; verify native lifetime/history/save-reopen and the new exact-source publication separately. No numeric release floor is established for these two windows.

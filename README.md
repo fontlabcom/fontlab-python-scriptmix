@@ -25,10 +25,12 @@ to FontLab. Some tools use the App `fontui` extra. Trial Font Maker needs the
 public `fontTools` package; FontLab's private namespace does not supply it.
 Glyport supplies Glyphs-specific compatibility and category metadata where used.
 
-The current App floor is `fontlab-fontlabapp>=1.2.0`: these scripts import
-the domain module layout introduced in App 1.2.0. Use matching 1.2.0
-package-set releases of Fly, App and Fontport. Native workflow acceptance
-and promotion remain separate from the source dependency floor.
+The base App floor is `fontlab-fontlabapp>=1.2.0` for its domain module
+layout. TMetrics Window additionally requires a build providing
+`fontlabapp.fontui.tmetrics`; TGlyph Window requires `fontlabapp.fontui.tglyph`.
+Both windows need App's `fontport` extra and matching Fly and Fontport packages.
+No numeric release floor is verified for these two windows. Native workflow
+acceptance and promotion remain separate from these source requirements.
 The three original Node Duplicator actions call App's guarded
 `duplicate_selected_nodes` entry point, so they never fall back to the older
 rescued adapter.
