@@ -124,10 +124,13 @@ def test_revision_preserves_historical_source_and_all_executable_ast():
     # executable trees; every other executable change still fails this check.
     from tools.migrate_app_paths import rewrite
     from conftest import ALIASES as aliases
-    normalize = lambda data: ast.dump(
-        Executable().visit(ast.parse(rewrite(data.decode(), aliases), feature_version=(3, 11))),
-        include_attributes=False,
-    )
+
+    def normalize(data):
+        return ast.dump(
+            Executable().visit(ast.parse(rewrite(data.decode(), aliases), feature_version=(3, 11))),
+            include_attributes=False,
+        )
+
     assert normalize(historical) == normalize(MENU.read_bytes()), (
         "Only annotations and module/function docstrings may change"
     )

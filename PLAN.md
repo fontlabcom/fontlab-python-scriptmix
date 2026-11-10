@@ -67,6 +67,8 @@ Finish current source copy/dependencies, full offline and docs suites, unchanged
 
 ## Development checks
 
+The remaining Ruff 0.14.10 baseline is 45 findings: E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0 (2026-11-11). Continue TODO row 106 with the remaining findings, preserving script hashes and manifests; script changes require separate provenance review. The C12 tests-only mechanical subset is complete.
+
 Use README prepared arm64 Python 3.11 runtime-cohort recipe, or set `SCRIPTMIX_APP_REQUIREMENT` to a reviewed App wheel/checkout before `sh test.sh`. Add matching peers with `SCRIPTMIX_EXTRA_REQUIREMENTS`. Run docs pipeline tests with the separate Python 3.13 hash lock; legacy docs checks additionally use pytest.
 
 ## Review, integration and cleanup

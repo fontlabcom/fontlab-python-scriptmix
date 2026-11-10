@@ -37,7 +37,8 @@ def test_entry_when_once_captured_then_actual_world_and_composition(scene, monke
     from fontlab_fontport.memory import UFOBackend
     from ufoLib2 import Font
 
-    parent = QMainWindow(); scene.parents.append(parent)
+    parent = QMainWindow()
+    scene.parents.append(parent)
     items = QObject(parent)
     monkeypatch.setitem(sys.modules, 'fontlab', SimpleNamespace(
         MainWindow=lambda: parent,
@@ -61,7 +62,8 @@ def test_entry_when_once_captured_then_actual_world_and_composition(scene, monke
         owner = next(item for item in scene.module._HANDLES if item not in before)
     else:
         spec = importlib.util.spec_from_file_location('source_entry', ENTRY)
-        module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
         owner = module.main()
     scene.owners.append(owner)
     assert calls == [selected[0]]

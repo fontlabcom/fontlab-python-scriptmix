@@ -4,7 +4,7 @@
 from copy import deepcopy
 from types import SimpleNamespace as NS
 
-from test_literal_node_actions import boundary, load_menu  # noqa: F401 - pytest fixture
+from test_literal_node_actions import boundary as boundary_fixture, load_menu  # noqa: F401 - pytest fixture
 
 
 def test_all_action_when_parents_repeat_then_broadcasts_first_reference_to_all_layer_identities(

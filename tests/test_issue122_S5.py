@@ -567,7 +567,10 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.MainWindow = lambda: NS(palette=Palette())
     fontlab.UpdateAll = lambda: w.events.append(("update-all",))
     fontlab.flGlyph = NS(updatedFgGlyphs=lambda: tuple(w.pending))
-    names = lambda: list(w.glyphs)
+
+    def names():
+        return list(w.glyphs)
+
     fl = NS(
         font=NS(),
         Selected=lambda index: names()[index] in w.selected,
@@ -813,7 +816,7 @@ def test_panel_when_glyph_updates_are_queued_then_discloses_and_never_clears_the
         panel.find.setText("top")
         panel.replace.setText("up")
     world.pending.append(41)
-    result = panel.apply()
+    panel.apply()
     assert world.pending == [41]
     assert panel.last_result["pending_updates"] == (41,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
 
@@ -834,7 +837,7 @@ def test_collect_when_layer_is_auto_then_listed_skipped_and_never_written(
 
     plan = ns["anchor_writer"].collect([glyph], ["Light", "Bold"], planner)
     assert plan.skipped == ["a/Bold"]
-    assert [l.master for _, l, _ in plan.work] == ["Light"], (
+    assert [layer.master for _, layer, _ in plan.work] == ["Light"], (
         "auto layer must not enter the write list"
     )
     assert ("a · Bold" in [label for label, _ in plan.rows]) and plan.rows[-1][

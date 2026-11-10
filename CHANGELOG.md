@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — C12 tests-only Ruff cleanup
+
+- Removed all 349 requested test findings (F811 310, F841 9, E731 20, E702 10). Explicit fixture names and aliased imports retain the same host/boundary implementations and scopes; unused assignments retain their calls, lambdas become local functions, and compound statements are split.
+- Cleared 26 adjacent mechanical findings (E402 22, E741 3, E401 1) so all 30 changed test/helper files pass Ruff 0.14.10. No assertions, test identities, skip conditions or existing oracles were removed or weakened.
+- Measured full-scope baseline: 45 findings (E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0). README, AGENTS and PLAN agree; TODO row 106 remains open.
+- Official arm64 Python 3.11 runtime gate: before and after both 4,619 passed, 2 existing skips, 0 failures. All 4,621 sorted collected node IDs are identical. Independent code review approved; 2,857 assertion ASTs retained with only intentional variable renames normalized.
+- All 288 protected script/JSON hashes match. Generated documentation drift from the suite was restored; no production module changed, so production line/branch coverage is not applicable. No native acceptance or delivery is claimed. See C12-REPORT.md for commands and remaining checks.
+
 ## 2026-11-10 — Ruff baseline reconciled
 
 The documented Ruff 0.14.10 count of 87 was stale. Re-measured with the exact guide command (py311, `Scripts tests tests_docs menu_layout.py src_docs/build.py`): 420 existing findings (F811 310, E402 55, E731 20, E741 13, E702 10, F841 9, F401 1, E701 1, E401 1; Scripts 26, tests 393, tests_docs 1, menu_layout.py and src_docs/build.py 0). AGENTS.md and README.md now state the measured figure; no script or test was changed to alter it, and no automatic fixes were applied. Per-file triage remains available via `--output-format concise`.

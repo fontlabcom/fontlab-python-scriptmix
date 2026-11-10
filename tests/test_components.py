@@ -10,6 +10,13 @@ from pathlib import Path
 import pytest
 from menu_layout import released_bytes
 
+import importlib.util
+import sys
+from types import SimpleNamespace as NS
+from test_inspectors import Check, Combo
+from test_masters import Item, MasterWidget, masters  # noqa: F401
+from test_proof import Box, Signal
+
 ROOT = Path(__file__).parents[1]
 TOOLS = [
     ("Compatibility", "Compatibility"),
@@ -98,15 +105,6 @@ def assert_released49(root, rows):
 
 def test_immutable_released49_manifest_and_every_menu_byte():
     assert_released49(ROOT, json.loads((ROOT / "migration.json").read_text()))
-
-
-import importlib.util
-import sys
-from types import SimpleNamespace as NS
-
-from test_inspectors import Check, Combo
-from test_masters import Item, MasterWidget, masters  # noqa: F401
-from test_proof import Box, Signal
 
 
 class ComponentWidget(MasterWidget):
@@ -242,15 +240,18 @@ def components(masters, monkeypatch, app_sources):  # noqa: F811
                     shape.getContours = lambda shape=shape: shape.contours
                     for contour in shape.contours:
                         contour.closed = True
-        transform = lambda x=0: NS(
-            isIdentity=lambda: True,
-            m11=lambda: 1,
-            m12=lambda: 0,
-            m21=lambda: 0,
-            m22=lambda: 1,
-            dx=lambda: x,
-            dy=lambda: 0,
-        )
+
+        def transform(x=0):
+            return NS(
+                isIdentity=lambda: True,
+                m11=lambda: 1,
+                m12=lambda: 0,
+                m21=lambda: 0,
+                m22=lambda: 1,
+                dx=lambda: x,
+                dy=lambda: 0,
+            )
+
         for master in package.masters:
             # O references H twice, n has different lists across masters.
             for name, bases in [
@@ -325,7 +326,10 @@ def test_complete_original_rows_cards_trees_and_controls(components, title, klas
         assert components.painter.calls[-1][0] == "end"
     elif klass == "MissingBases":
         assert dialog.groups == {} and not dialog.select_button.enabled
-        predicate = lambda name, master: name != "H"
+
+        def predicate(name, master):
+            return name != "H"
+
         dialog.rescan(exists=predicate)
         assert list(dialog.groups) == ["H"]
         assert len(dialog.groups["H"]) == 5 and len(dialog.tree.children) == 1
@@ -608,7 +612,10 @@ def test_badges_missing_zero_auto_odd_and_geometry_refusal(components):
 def test_explicit_rescan_preserves_domain_and_clears_simulation_on_failure(components):
     package, _layers = components.font()
     dialog = components.module("Missing Bases").MissingBases()
-    predicate = lambda name, master: False
+
+    def predicate(name, master):
+        return False
+
     dialog.rescan(exists=predicate)
     assert dialog._exists is predicate and dialog.groups
     package.master = "Light"

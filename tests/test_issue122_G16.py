@@ -674,7 +674,10 @@ def native_world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.flGlyph = NS(updatedFgGlyphs=lambda: tuple(w.pending))
     fontlab.FontMetrics = lambda package, master: NS(xHeight=w.x_height)
     fontgate = ModuleType("fontgate")
-    names = lambda: list(w.glyphs)
+
+    def names():
+        return list(w.glyphs)
+
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:

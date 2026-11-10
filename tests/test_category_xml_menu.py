@@ -13,7 +13,10 @@ def test_menu_preserves_category_policy_and_shared_panel(monkeypatch):
         module = ModuleType(name)
         module.__path__ = []
         monkeypatch.setitem(sys.modules, name, module)
-    policy = lambda *_: (None, None)
+
+    def policy(*_):
+        return (None, None)
+
     info = ModuleType("fly.gp.glyphsapp.glyph_info")
     info.glyph_categories = policy
     api = ModuleType("fly.ap.features.categories.model")

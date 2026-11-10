@@ -12,7 +12,7 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-from _cov_a_support import ROOT, Host, host  # noqa: F401
+from _cov_a_support import ROOT, Host, host as host_fixture  # noqa: F401
 from _message_box_support import message_box_type
 
 

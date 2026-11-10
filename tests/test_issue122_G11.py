@@ -538,7 +538,10 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.MainWindow = lambda: NS(palette=Palette())
     fontlab.UpdateAll = lambda: w.events.append(("update-all",))
     fontlab.flGlyph = NS(updatedFgGlyphs=lambda: tuple(w.pending))
-    names = lambda: list(w.glyphs)
+
+    def names():
+        return list(w.glyphs)
+
     fl = NS(
         font=NS(),
         Selected=lambda index: names()[index] in w.selected,

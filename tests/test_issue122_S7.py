@@ -1357,8 +1357,8 @@ def test_placeholder_create_when_pending_updates_then_writes_and_keeps_queue(
     world: World,
 ) -> None:
     module = load("Placeholder Glyphs")
-    package = world.use([Glyph("A", {"Light": {}})])
-    rows = placeholder_rows(module, world, "B")
+    world.use([Glyph("A", {"Light": {}})])
+    placeholder_rows(module, world, "B")
     world.updates = [3]
     panel = module.panel_type()(None)
     panel.names.setPlainText("B")
@@ -1726,7 +1726,7 @@ def test_generator_create_when_pending_updates_then_writes_and_keeps_queue(
 ) -> None:
     module = load(title)
     package, source = single_source(world, title)
-    jobs = generator_jobs(
+    generator_jobs(
         module, title, module.survey(package, [source], world.facts())
     )
     world.updates = [1]
