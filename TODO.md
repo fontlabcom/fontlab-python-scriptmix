@@ -2,6 +2,8 @@
 this_file: TODO.md
 ---
 
+- [ ] Native-qualify workflow #6 Interpolation Preview: installed origins, designspace location changes, endpoint/mixed outlines, unsupported-location diagnostics, captured-font identity, complete font/history/selection/cache/dirty preservation and repeated Close; qualify ordinary artifacts separately.
+
 - [ ] Independently review and deliver the verified batch recipe filename-literal correction, qualify genuine-commit docs and exact CI/generated parity, then recheck the public literal; retain ordinary/native gates.
 
 

@@ -2,6 +2,10 @@
 this_file: PLAN.md
 ---
 
+## Interpolation Preview remaining qualification
+
+Qualify workflow #6 with matching ordinary installed App/Scriptmix artifacts and native FontLab PythonQt: location controls, interpolation rendering, refusal diagnostics, captured-font identity and repeated Close. Compare complete font/history/selection/cache/dirty state before and after. Keep source/fake-font evidence separate from native acceptance; no font writes are part of this workflow.
+
 ## Batch recipe filename documentation delivery
 
 Independently review the verified filename-literal correction, then deliver

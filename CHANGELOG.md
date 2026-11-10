@@ -2,6 +2,20 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — Issue 234 workflow 6 Interpolation Preview (C6)
+
+Added the read-only designspace-location/two-master preview composition, paired
+App demo and Scriptmix menu, fake-font dispatch/lifecycle tests and catalogue/API
+entries. Reuses existing designspace controls and interpolation model/painter;
+unsupported off-segment locations and incompatible outlines remain explicit.
+No font writes, Fontport changes, commits or publication.
+
+Scriptmix full suite on the landed tree (origin/main 99025d2 plus this change; additional tools 202 to 203, menu scripts 271 to 272, recounted from the combined tree): 4,628 passed, 2 skipped. Changed-file Ruff passes. Preview module 98% lines (158 statements, one missed) and 54 branches; sequence 100%; both launchers reach 100% of both.
+Graph change analysis (detect-changes, task-owned storage): risk low, zero affected processes, not partial. Independent source review passed. Native PythonQt rendering, whole-font/history/
+cache preservation and ordinary installed artifacts remain open in PLAN/TODO.
+An existing batch-recipe close/cancellation test failed in an earlier App full run
+and passed the final run; its receipt and separate investigation remain open.
+
 ## 2026-11-10 — Issue 241 existing demo entry points verified
 
 Retained the two existing TMetrics/TGlyph menu demos and their catalogue hashes.

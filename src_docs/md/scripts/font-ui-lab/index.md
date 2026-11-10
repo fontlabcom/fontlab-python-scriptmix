@@ -5,6 +5,7 @@
 - [Detached Transform Preview](detached-transform-preview.md)
 - [Feature Source and Proof](feature-source-and-proof.md)
 - [Glyph Browser and Metrics](glyph-browser-and-metrics.md)
+- [Interpolation Preview](interpolation-preview.md)
 - [Kerning Group Explorer](kerning-group-explorer.md)
 - [Kerning Proof Workbench](kerning-proof-workbench.md)
 - [Master Width Comparison](master-width-comparison.md)
