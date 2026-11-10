@@ -18,8 +18,12 @@ reverse-domain form (e.g. com.fontlab.fly). FontLab reports its user data folder
 - Extensions/<id>/install.log: one JSON object per line, appended on every
   install or uninstall; the last line lists every file the install created.
 - Scripts: files from this folder's Scripts/ (and from folders listed in
-  [tool.fontlab-install] scripts, as Scripts/<folder>) are copied in; folders
-  shared with other extensions merge, and nobody else's file is overwritten.
+  [tool.fontlab-install] scripts, as Scripts/<folder>) are copied in afresh on
+  every install, replacing any file at the same path; folders shared with other
+  extensions merge.
+- Dependencies are installed on every run: a required package whose checkout
+  sits beside this folder (with its own install.vfpy) is installed from there
+  first, since these are not on PyPI; uv installs the rest.
 - Scripts/Extensions/: "List Extensions" and "Uninstall <id>" launchers. They
   import this same file, installed as site-packages/fontlab_install.py.
 
@@ -34,6 +38,7 @@ import json
 import os
 import platform
 import re
+import runpy
 import shutil
 import subprocess
 import sys
@@ -46,6 +51,7 @@ from pathlib import Path
 SOURCE = Path(__file__).resolve().parent
 MODULE = "fontlab_install"  # name of this file when installed into site-packages
 LOG = "install.log"
+ACTIVE = "FONTLAB_INSTALL_ACTIVE"  # checkouts already installed in this run, shared by nested installers
 VENV = ".venv"
 VENV_DIRS = ("bin", "share", "include")  # where wheels put scripts, data and headers
 MARKER = ".fontlab-install.json"  # marks copied folders this installer owns
@@ -356,23 +362,41 @@ def script_sources(listed):
 
 
 def check_scripts(scripts, pairs, owned):
-    """Refuse, before changing anything, to overwrite a script this extension did not put there."""
+    """Refuse, before changing anything, only where a real folder or file blocks a script's path.
+
+    Existing files at a script's path are replaced and folder links are replaced
+    by real folders (see place_scripts); a real folder cannot become a file.
+    """
     for _, rel in pairs:
         for depth in range(1, len(rel.parts) + 1):
             path = scripts.joinpath(*rel.parts[:depth])
-            if str(path) in owned:
-                break  # ours from the last install (a file, or an old folder link); it gets replaced
-            if path.is_symlink() or (depth == len(rel.parts) and path.exists()):
-                raise RuntimeError("Refusing to replace %s: another package or you put it there." % path)
+            if path.is_symlink() or str(path) in owned:
+                continue
+            last = depth == len(rel.parts)
+            if (last and path.is_dir()) or (not last and path.exists() and not path.is_dir()):
+                raise RuntimeError("Refusing to replace %s: a script needs that path." % path)
+
+
+def unlink_folder_links(scripts, rel):
+    """Replace links on a script's folder path by real folders; never write through a link."""
+    for depth in range(1, len(rel.parts)):
+        path = scripts.joinpath(*rel.parts[:depth])
+        if path.is_symlink():
+            path.unlink()  # removes the link only; its target is untouched
+            print("Replaced the folder link %s with a real folder." % path)
 
 
 def place_scripts(scripts, pairs):
-    """Copy script files into FontLab's Scripts, merging with folders that already exist there."""
+    """Copy every script file afresh into FontLab's Scripts, replacing what is at its path."""
     placed = []
     for source, rel in pairs:
         if source.suffix in (".py", ".vfpy"):
             compile(source.read_bytes(), str(source), "exec")
         target = scripts / rel
+        unlink_folder_links(scripts, rel)
+        if target.is_symlink() or target.exists():
+            print("Replaced %s." % target)
+            remove_path(target, scripts.parent)  # also drops stale compiled copies and empty folders
         target.parent.mkdir(parents=True, exist_ok=True)
         stage = target.with_name(".%s.new-%s" % (target.name, uuid.uuid4().hex[:8]))
         shutil.copy2(str(source), str(stage))
@@ -439,7 +463,7 @@ def write_tools(data, site, ext_id):
 
 
 def missing(requires):
-    # shortcut: checks presence only, not version ranges; uv enforces ranges when it installs.
+    # No-uv fallback: checks presence only, not versions, markers or extras.
     result = []
     for req in requires:
         try:
@@ -456,15 +480,57 @@ def find_uv():
     return None
 
 
+def req_name(req):
+    return norm(re.match(r"\s*([A-Za-z0-9._-]+)", req).group(1))
+
+
+def siblings():
+    """{distribution name: folder} for checkouts beside this one that this installer can install."""
+    found = {}
+    for folder in sorted(SOURCE.parent.iterdir()):
+        toml = folder / "pyproject.toml"
+        if folder == SOURCE or not (folder / "install.vfpy").is_file() or not toml.is_file():
+            continue
+        try:
+            project = tomllib.loads(toml.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        config = project.get("tool", {}).get("fontlab-install", {})
+        if ID_PATTERN.match(str(config.get("id", ""))):  # another installer would ignore our contract
+            for name in {config.get("name"), project.get("project", {}).get("name")} - {None}:
+                found.setdefault(norm(name), folder)
+    return found
+
+
+def active():
+    return [p for p in os.environ.get(ACTIVE, "").split(os.pathsep) if p]
+
+
+def install_siblings(requires):
+    """Install required checkouts found beside this one (once per run); return the other requirements."""
+    local, rest = siblings(), []
+    for req in requires:
+        folder = local.get(req_name(req))
+        if folder is None:
+            rest.append(req)
+        elif str(folder.resolve()) not in active():  # already done, or in progress (a cycle)
+            print("Installing dependency %s from %s" % (req, folder))
+            runpy.run_path(str(folder / "install.vfpy"), run_name="fontlab_install_dependency")
+    return rest
+
+
 def install_dependencies(site, requires, uv, python):
-    needed = missing(requires)
-    if not needed:
-        return
+    """Install every requirement on each run: sibling checkouts first, then all the rest with uv (it enforces versions)."""
+    remote = install_siblings(requires)
     if not uv:
-        print("Missing dependencies (install uv, then run this again):\n  " + "\n  ".join(needed))
+        needed = missing(remote)
+        if needed:
+            print("Missing dependencies (install uv, then run this again):\n  " + "\n  ".join(needed))
+        return
+    if not remote:
         return
     where = ["--python", str(python)] if python else ["--python", python_requests()[1], "--target", str(site)]
-    command = [uv, "pip", "install", "--link-mode=copy"] + where + needed
+    command = [uv, "pip", "install", "--link-mode=copy"] + where + remote
     print("Installing dependencies: " + " ".join(command))
     result = run(command)
     print(result.stdout)
@@ -490,6 +556,8 @@ def main():
     name, ver = config.get("name", project["project"]["name"]), version(project)
     data = data_dir()
     home = extension_home(data, ext_id)
+    outer = not active()
+    os.environ[ACTIVE] = os.pathsep.join(active() + [str(SOURCE)])
     try:
         install(project, config, data, home, ext_id, scripts, name, ver)
     except Exception:
@@ -498,6 +566,9 @@ def main():
                           "source": str(SOURCE), "error": traceback.format_exc()})
         print("Install FAILED; details in %s" % (home / LOG))
         raise
+    finally:
+        if outer:
+            os.environ.pop(ACTIVE, None)
 
 
 def install(project, config, data, home, ext_id, scripts, name, ver):

@@ -2,6 +2,20 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — install.vfpy always reinstalls scripts and dependencies
+
+- Every install copies all files from `Scripts/` afresh and replaces any file
+  already at the same path. A symlinked script folder is replaced by a real
+  folder; the link target is never written. A directory where a script file
+  belongs is still refused.
+- Required packages are installed on every run. Packages that no package
+  index carries (the fontlab-* packages, pythonqtside) are installed from
+  checkouts beside this one through their own `install.vfpy`, once per run
+  and safe against cycles. uv receives every other requirement, so version
+  ranges, markers and extras are enforced. Without uv, sibling checkouts are
+  still installed and only the remaining missing requirements are reported.
+- The installer is byte-identical across all eleven installer repositories.
+
 ## 2026-11-10 — Correct the two window capability requirements
 
 TMetrics Window requires an App build providing `fontlabapp.fontui.tmetrics`;
