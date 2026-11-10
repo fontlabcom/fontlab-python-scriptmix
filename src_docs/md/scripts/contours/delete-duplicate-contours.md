@@ -63,4 +63,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `d2efd700219d2d771343353d26695553e2809d364818e055cbe8003f83aa4aff`
 
-[Python source at `83142fd0a0ef`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/83142fd0a0efad5aec2ed5ca10642beb376d3f0f/Scripts/Contours/Delete%20Duplicate%20Contours.py)
+[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Contours/Delete%20Duplicate%20Contours.py)

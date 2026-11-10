@@ -132,6 +132,19 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Trial Font Maker](font-info/trial-font-maker.md)
 - [Unicode Ranges and Codepages](font-info/unicode-ranges-and-codepages.md)
 
+## Font UI Lab
+
+- [Anchor and Component Inspector](font-ui-lab/anchor-and-component-inspector.md)
+- [Batch UFO Recipe Workbench](font-ui-lab/batch-ufo-recipe-workbench.md)
+- [Detached Transform Preview](font-ui-lab/detached-transform-preview.md)
+- [Feature Source and Proof](font-ui-lab/feature-source-and-proof.md)
+- [Glyph Browser and Metrics](font-ui-lab/glyph-browser-and-metrics.md)
+- [Kerning Group Explorer](font-ui-lab/kerning-group-explorer.md)
+- [Kerning Proof Workbench](font-ui-lab/kerning-proof-workbench.md)
+- [Master Width Comparison](font-ui-lab/master-width-comparison.md)
+- [Tabular Width Audit](font-ui-lab/tabular-width-audit.md)
+- [Unicode and Glyph Order Explorer](font-ui-lab/unicode-and-glyph-order-explorer.md)
+
 ## Guides
 
 - [Clear Glyph Guides](guides/clear-glyph-guides.md)

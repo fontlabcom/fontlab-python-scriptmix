@@ -3502,5 +3502,19 @@
     "app_api": "fontlabapp.fontui.batch_recipes.show",
     "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/batch_recipes.py; no release floor is asserted.",
     "scope": "Real recipe-only controls and explicit external-Python batch UFO execution, per-file results, no implicit font or geometry preview; no overwrite and cooperative cancellation."
+  },
+  {
+    "title": "Master Width Comparison",
+    "key": "font_ui_lab_master_width_comparison",
+    "destination": "Scripts/Font UI Lab/Master Width Comparison.py",
+    "destination_sha256": "120567cd7662c6be1c6802510e70bd3b8c40508826c2f20c0d3e2f636f7a6929",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.master_width_comparison.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/master_width_comparison.py; no release floor is asserted.",
+    "scope": "Read-only widths for one captured registered FontLab font, explicit selected glyph occurrence and native master identities; stored backend state, not unfinished wrapper edits."
   }
 ]

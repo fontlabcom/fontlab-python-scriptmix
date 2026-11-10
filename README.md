@@ -12,7 +12,7 @@ Feature Source and Proof is available through `fontlabapp.fontui.feature_proof.s
 
 
 # FontLab practical scripts
-270 practical tools for FontLab 9: 69 sample adaptations and 201 additional
+271 practical tools for FontLab 9: 69 sample adaptations and 202 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 15 one-level categories.
 Current source includes Metrics, Names and Anchors editors; component writers;
@@ -259,3 +259,5 @@ actions write only that captured font; closing does not save or close it. Native
 edits follow its current master. Source review, controlled full suites, matched
 A1 artifacts/ordinary installs and native history/save-reopen remain separate
 qualification gates; this addition asserts no release floor.
+
+Master Width Comparison captures the current registered FontLab font once when the menu or demo opens. Select an occurrence in the real glyph sequence to compare fractional master widths; missing layers remain explicit. The window reads stored backend state through its own borrowed view, preserving unfinished edits held by other wrappers. It never switches or closes the source font. Ordinary UFO fonts receive a visible refusal. Source checks do not establish native history, reopen or ordinary installed acceptance.
