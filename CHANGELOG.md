@@ -2,6 +2,25 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — Issue 234 master browser menus 1, 4 and 5
+
+Added Open Fonts and Master Overview, Master Compatibility Browser and Node
+Counts Across Masters to Font UI Lab. Each menu lazily calls the shared App
+composition without importing Fly. The overview passes one borrowed FontWorld;
+the other two capture CurrentFont once. Catalogue hashes and additive menu
+counts now cover 274 tools; the original 259 bodies and 190 catalogue rows keep
+their exact hash oracles. Existing generated pages retain their previous source
+links; new pages disclose that a reviewed containing commit is still required.
+
+Prepared arm64 Python 3.11 fallback: 4,635 passed, two retained optional audit
+skips; focused menu/report checks: 90 passed, one optional audit skip. All three
+complete menu modules reached 100% line and branch coverage (6 statements and
+2 branches each). Ruff 0.14.10 passed all nine changed Python files. The lander
+reran the exact metaswarm recipe on the combined origin/main tree (with C1):
+4,637 passed, two retained skips; the three menu modules pass the coverage
+gate. Native PythonQt, ordinary artifacts
+and reviewed-commit documentation links remain open.
+
 ## 2026-11-10 — Issue 241 existing demo entry points verified
 
 Retained the two existing TMetrics/TGlyph menu demos and their catalogue hashes.

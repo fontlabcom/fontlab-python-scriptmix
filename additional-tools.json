@@ -3516,5 +3516,47 @@
     "app_api": "fontlabapp.fontui.master_width_comparison.show",
     "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/master_width_comparison.py; no release floor is asserted.",
     "scope": "Read-only widths for one captured registered FontLab font, explicit selected glyph occurrence and native master identities; stored backend state, not unfinished wrapper edits."
+  },
+  {
+    "title": "Open Fonts and Master Overview",
+    "key": "font_ui_lab_open_fonts_overview",
+    "destination": "Scripts/Font UI Lab/Open Fonts and Master Overview.py",
+    "destination_sha256": "888ebbf8f485d7c807fa776ac430d6905d69f39c75cde5be30904e7c9ab79dd9",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.open_fonts_overview.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/open_fonts_overview.py; no release floor is asserted.",
+    "scope": "Browse every currently open font and inspect its current master metrics."
+  },
+  {
+    "title": "Master Compatibility Browser",
+    "key": "font_ui_lab_master_compatibility",
+    "destination": "Scripts/Font UI Lab/Master Compatibility Browser.py",
+    "destination_sha256": "f50a63982f8ff078f0590f659d69b512bf4021028f420def788235062c526322",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.master_compatibility.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/master_compatibility.py; no release floor is asserted.",
+    "scope": "Browse glyphs and inspect their existing master-layer compatibility report."
+  },
+  {
+    "title": "Node Counts Across Masters",
+    "key": "font_ui_lab_node_counts_masters",
+    "destination": "Scripts/Font UI Lab/Node Counts Across Masters.py",
+    "destination_sha256": "8bb75a78041139a865e73fd5c113270ed29985fdbbbed0587a6d930f58ea5e42",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.node_counts_masters.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/node_counts_masters.py; no release floor is asserted.",
+    "scope": "Compare glyph point counts across the captured font masters."
   }
 ]
