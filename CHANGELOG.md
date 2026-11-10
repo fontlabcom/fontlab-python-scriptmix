@@ -2,6 +2,7 @@
 this_file: CHANGELOG.md
 ---
 
+<<<<<<< HEAD
 ## 2026-11-11 — C12 tests-only Ruff cleanup
 
 - Removed all 349 requested test findings (F811 310, F841 9, E731 20, E702 10). Explicit fixture names and aliased imports retain the same host/boundary implementations and scopes; unused assignments retain their calls, lambdas become local functions, and compound statements are split.
@@ -9,10 +10,42 @@ this_file: CHANGELOG.md
 - Measured full-scope baseline: 45 findings (E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0). README, AGENTS and PLAN agree; TODO row 106 remains open.
 - Official arm64 Python 3.11 runtime gate: before and after both 4,619 passed, 2 existing skips, 0 failures. All 4,621 sorted collected node IDs are identical. Independent code review approved; 2,857 assertion ASTs retained with only intentional variable renames normalized.
 - All 288 protected script/JSON hashes match. Generated documentation drift from the suite was restored; no production module changed, so production line/branch coverage is not applicable. No native acceptance or delivery is claimed. See C12-REPORT.md for commands and remaining checks.
+=======
+## 2026-11-10 — Issue 234 master browser menus 1, 4 and 5
+
+Added Open Fonts and Master Overview, Master Compatibility Browser and Node
+Counts Across Masters to Font UI Lab. Each menu lazily calls the shared App
+composition without importing Fly. The overview passes one borrowed FontWorld;
+the other two capture CurrentFont once. Catalogue hashes and additive menu
+counts now cover 274 tools; the original 259 bodies and 190 catalogue rows keep
+their exact hash oracles. Existing generated pages retain their previous source
+links; new pages disclose that a reviewed containing commit is still required.
+
+Prepared arm64 Python 3.11 fallback: 4,635 passed, two retained optional audit
+skips; focused menu/report checks: 90 passed, one optional audit skip. All three
+complete menu modules reached 100% line and branch coverage (6 statements and
+2 branches each). Ruff 0.14.10 passed all nine changed Python files. The lander
+reran the exact metaswarm recipe on the combined origin/main tree (with C1):
+4,637 passed, two retained skips; the three menu modules pass the coverage
+gate. Native PythonQt, ordinary artifacts
+and reviewed-commit documentation links remain open.
+
+## 2026-11-10 — Issue 241 existing demo entry points verified
+
+Retained the two existing TMetrics/TGlyph menu demos and their catalogue hashes.
+The paired App entry points remain lazy and take their current-font defaults.
+Focused menu tests passed 16 cases; each complete wrapper covers 11 statements
+and both branches (100%). The prepared arm64 Python 3.11 Scriptmix environment
+passed 4,617 tests with two retained skips. Ruff 0.16.7 passed on both wrappers
+and their focused test. The exact metaswarm recipe later passed on the combined
+origin/main tree (base 4c2f6f8): 4,617 passed, two retained skips.
+Native bidirectional editing, history/reopen and current installed artifacts
+remain open; no release or live acceptance is claimed.
+>>>>>>> origin/main
 
 ## 2026-11-10 — Ruff baseline reconciled
 
-The documented Ruff 0.14.10 count of 87 was stale. Re-measured with the exact guide command (py311, `Scripts tests tests_docs menu_layout.py src_docs/build.py`): 420 existing findings (F811 310, E402 55, E731 20, E741 13, E702 10, F841 9, F401 1, E701 1, E401 1; Scripts 26, tests 393, tests_docs 1, menu_layout.py and src_docs/build.py 0). AGENTS.md and README.md now state the measured figure; no script or test was changed to alter it, and no automatic fixes were applied. Per-file triage remains available via `--output-format concise`.
+The documented Ruff 0.14.10 count of 87 was stale. Re-measured with the exact guide command (py311, `Scripts tests tests_docs menu_layout.py src_docs/build.py`): 420 existing findings (F811 310, E402 55, E731 20, E741 13, E702 10, F841 9, F401 1, E701 1, E401 1; Scripts 26, tests 393, tests_docs 1, menu_layout.py and src_docs/build.py 0). AGENTS.md and README.md now state the measured figure; no script or test was changed to alter it, and no automatic fixes were applied. Per-file triage remains available via `--output-format concise`. Installed pre-push gate at landing (18936e4): 4,619 passed, 2 skipped.
 
 ## 2026-11-10 — Round Advances accepts step 1
 
