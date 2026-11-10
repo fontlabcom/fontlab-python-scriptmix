@@ -2,6 +2,10 @@
 this_file: TODO.md
 ---
 
+- [ ] Independently review and deliver the verified batch recipe filename-literal correction, qualify genuine-commit docs and exact CI/generated parity, then recheck the public literal; retain ordinary/native gates.
+
+
+
 - [ ] Qualify Detached Transform Preview genuine archives/distributions/two ordinary prefixes, native owned-font/history/lifetime behavior and truthful containing-commit/generated-doc links; preserve all 8,723 obligations and the minimum eighteen workflows.
 
 

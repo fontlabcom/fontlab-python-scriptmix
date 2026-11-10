@@ -3493,7 +3493,7 @@
     "title": "Batch UFO Recipe Workbench",
     "key": "font_ui_lab_batch_recipes",
     "destination": "Scripts/Font UI Lab/Batch UFO Recipe Workbench.py",
-    "destination_sha256": "d0aa003d17259c5fc7705e300f2061d55d528af55b371f6f4c07bf5b6c598223",
+    "destination_sha256": "f69d82804d107ad008a26ad95c4d0acf0bf3260999104808406860fa6f9b4d06",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "license": "Apache-2.0",

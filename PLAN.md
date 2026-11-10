@@ -2,6 +2,16 @@
 this_file: PLAN.md
 ---
 
+## Batch recipe filename documentation delivery
+
+Independently review the verified filename-literal correction, then deliver
+additive commits through normal hooks. Rebuild/test documentation at each genuine
+containing commit, verify exact-commit CI/generated parity and recheck the full
+filename template on the public page. Candidate source/build checks are complete;
+live correction, ordinary artifacts and native history/reopen remain separate.
+
+
+
 ## Detached Transform Preview remaining qualification
 
 Carry the independently source-qualified explicit-target composition through genuine archives/distributions/two ordinary prefixes and native owned-font/history/lifetime checks. Preserve the qualified editor/two-proof composition, demo/menu dispatch, refusal/reentrancy/cleanup and common final before-model preservation (M1). Generate immutable menu links only from a genuine reviewed containing commit. The source floor is eight; retain all 8,723 obligations and the minimum eighteen workflows, with full workflow parity at zero and native acceptance still open.

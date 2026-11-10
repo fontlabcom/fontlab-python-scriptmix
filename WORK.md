@@ -2,6 +2,42 @@
 this_file: WORK.md
 ---
 
+## 2026-11-10 — Batch recipe filename literal passes candidate checks
+
+Quoted the filename template in both paired demo/menu docstrings and updated
+only the new Scriptmix catalogue row's source hash. Executable script ASTs and
+all old tests remain unchanged; the other 200 catalogue records are exact. The
+new rendered-HTML regression reuses the existing parser and now sees the full
+`<source-name>-transformed.ufo` literal, after the retained genuine-HTML RED.
+
+Candidate checks passed: App demo three cases, Scriptmix menu three; both complete
+scripts cover 7/7 statement-plus-branch obligations (100%, zero exclusions). The
+complete Scriptmix suite passed 4,609 cases with the same six retained skips.
+Both strict documentation builds passed, followed by App 36 and Scriptmix 43
+documentation units, 14 legacy checks and pinned Ruff on the three changed Python
+files. These are explicit uncommitted candidate-copy checks, not a new containing
+commit or live-site result. The original public rendering failure remains open
+until reviewed additive delivery, genuine-commit docs, exact CI/generated parity
+and a new public browser check. Source floor eight and ordinary/native/history/
+reopen qualification remain unchanged. Prior diagnosis and histories are retained.
+
+
+
+## 2026-11-10 — Batch recipe public literal defect diagnosed
+
+P2 source commits reached main through normal hooks and exact-commit CI; the
+reviewed generated outputs match all 525 rendered files. The actual public
+workbench page nevertheless hides the angle-bracket filename placeholder: its
+source says `<source-name>-transformed.ufo`, while visible text loses the prefix.
+A private regression using the existing HTML parser fails against genuine
+committed HTML (one assertion failure, no errors/skips). The correction is pending:
+quote the literal in both paired docstrings, update only the new catalogue row's
+source hash and add one rendered-HTML regression. All prior source/runtime and
+live failure evidence remains retained. Normal fix delivery, exact CI and a new
+public check are still required; no ordinary/native or source-floor promotion.
+
+
+
 ## 2026-11-10 — P2 source/test review passed; integration gates remain
 
 Added the actual Batch UFO Recipe Workbench menu entry and catalogue row using

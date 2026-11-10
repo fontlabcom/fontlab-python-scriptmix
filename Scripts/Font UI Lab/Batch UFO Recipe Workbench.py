@@ -10,7 +10,7 @@ panel shows the actual per-file log, progress and status from its external worke
 Use: Select source UFO directories and an output directory. Configure an external
 Python 3.11 or newer with Fontport through FONTLABAPP_BATCH_PYTHON before starting.
 The shared show(parent=None, python=None) API also accepts an explicit interpreter.
-Click Start to write <source-name>-transformed.ufo outputs. Editing controls or
+Click Start to write `<source-name>-transformed.ufo` outputs. Editing controls or
 opening this window does not start a batch. Invalid recipes and paths refuse Start.
 
 Safety: Existing outputs are never overwritten, and outputs inside any selected
