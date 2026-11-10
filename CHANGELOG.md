@@ -1376,6 +1376,11 @@ the130sample denominator. Downloaded-tag verification follows this release.
 
 # Changelog
 
+## 2026-11-10 — Issue 250 documentation round
+
+- AGENTS.md describes the delegation, integration and release workflow.
+- WORK.md reset to the current round; the earlier bytes are archived on the owner's workspace data volume, not public.
+
 ## v1.0.20 — 2026-10-18 — two additional read-only tools
 
 Add Kerning > Persistence Audit and Reports > Compare Open Font Revisions,
