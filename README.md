@@ -12,7 +12,7 @@ Feature Source and Proof is available through `fontlabapp.fontui.feature_proof.s
 
 
 # FontLab practical scripts
-272 practical tools for FontLab 9: 69 sample adaptations and 203 additional
+275 practical tools for FontLab 9: 69 sample adaptations and 206 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 15 one-level categories.
 Current source includes Metrics, Names and Anchors editors; component writers;

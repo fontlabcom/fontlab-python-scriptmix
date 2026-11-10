@@ -34,4 +34,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `069d4ccba0484e420c4f905cbe3528471f917a7f1b189e5e3cf5f183cb2abcb6`
 
-[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Font%20UI%20Lab/Glyph%20Browser%20and%20Metrics.py)
+[Python source at `1e4c2b2dd9bc`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1e4c2b2dd9bccfd04b38e70ed3dcaaa52242835d/Scripts/Font%20UI%20Lab/Glyph%20Browser%20and%20Metrics.py)

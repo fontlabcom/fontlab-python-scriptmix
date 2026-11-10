@@ -10,11 +10,30 @@ entries. Reuses existing designspace controls and interpolation model/painter;
 unsupported off-segment locations and incompatible outlines remain explicit.
 No font writes, Fontport changes, commits or publication.
 
-Scriptmix full suite on the landed tree (origin/main 99025d2 plus this change; additional tools 202 to 203, menu scripts 271 to 272, recounted from the combined tree): 4,628 passed, 2 skipped. Changed-file Ruff passes. Preview module 98% lines (158 statements, one missed) and 54 branches; sequence 100%; both launchers reach 100% of both.
+Scriptmix full suite on the merged tree (origin/main b795215 plus this change; additional tools 205 to 206, menu scripts 274 to 275, recounted from the combined tree): 4,643 passed, 2 skipped, 3 failed. The three failures are tests/test_fontui_master_browsers_menus.py paired-App checks for the master-browser menus already on main: their App modules (fontui.open_fonts_overview, master_compatibility, node_counts_masters) are not on App main yet, so they fail on origin/main in this sibling layout too and are unrelated to this change. Changed-file Ruff passes. Preview module 98% lines (158 statements, one missed) and 54 branches; sequence 100%; both launchers reach 100% of both.
 Graph change analysis (detect-changes, task-owned storage): risk low, zero affected processes, not partial. Independent source review passed. Native PythonQt rendering, whole-font/history/
 cache preservation and ordinary installed artifacts remain open in PLAN/TODO.
 An existing batch-recipe close/cancellation test failed in an earlier App full run
 and passed the final run; its receipt and separate investigation remain open.
+
+## 2026-11-10 — Issue 234 master browser menus 1, 4 and 5
+
+Added Open Fonts and Master Overview, Master Compatibility Browser and Node
+Counts Across Masters to Font UI Lab. Each menu lazily calls the shared App
+composition without importing Fly. The overview passes one borrowed FontWorld;
+the other two capture CurrentFont once. Catalogue hashes and additive menu
+counts now cover 274 tools; the original 259 bodies and 190 catalogue rows keep
+their exact hash oracles. Existing generated pages retain their previous source
+links; new pages disclose that a reviewed containing commit is still required.
+
+Prepared arm64 Python 3.11 fallback: 4,635 passed, two retained optional audit
+skips; focused menu/report checks: 90 passed, one optional audit skip. All three
+complete menu modules reached 100% line and branch coverage (6 statements and
+2 branches each). Ruff 0.14.10 passed all nine changed Python files. The lander
+reran the exact metaswarm recipe on the combined origin/main tree (with C1):
+4,637 passed, two retained skips; the three menu modules pass the coverage
+gate. Native PythonQt, ordinary artifacts
+and reviewed-commit documentation links remain open.
 
 ## 2026-11-10 — Issue 241 existing demo entry points verified
 
@@ -30,7 +49,7 @@ remain open; no release or live acceptance is claimed.
 
 ## 2026-11-10 — Ruff baseline reconciled
 
-The documented Ruff 0.14.10 count of 87 was stale. Re-measured with the exact guide command (py311, `Scripts tests tests_docs menu_layout.py src_docs/build.py`): 420 existing findings (F811 310, E402 55, E731 20, E741 13, E702 10, F841 9, F401 1, E701 1, E401 1; Scripts 26, tests 393, tests_docs 1, menu_layout.py and src_docs/build.py 0). AGENTS.md and README.md now state the measured figure; no script or test was changed to alter it, and no automatic fixes were applied. Per-file triage remains available via `--output-format concise`.
+The documented Ruff 0.14.10 count of 87 was stale. Re-measured with the exact guide command (py311, `Scripts tests tests_docs menu_layout.py src_docs/build.py`): 420 existing findings (F811 310, E402 55, E731 20, E741 13, E702 10, F841 9, F401 1, E701 1, E401 1; Scripts 26, tests 393, tests_docs 1, menu_layout.py and src_docs/build.py 0). AGENTS.md and README.md now state the measured figure; no script or test was changed to alter it, and no automatic fixes were applied. Per-file triage remains available via `--output-format concise`. Installed pre-push gate at landing (18936e4): 4,619 passed, 2 skipped.
 
 ## 2026-11-10 — Round Advances accepts step 1
 

@@ -17,6 +17,27 @@ are recorded in the lane's C6-REPORT.md (App repository); the orchestrator owns 
 Earlier WORK.md (351,871 bytes, SHA256 `184a196981e6f26ac94f24b9f222de1fc72a39e81ebf74acbf683a103304305e`) is archived on the owner's workspace data volume (not public) under `issue250/work-archives/` (Issue 250). Completed work is in CHANGELOG.md; open work is in TODO.md and PLAN.md.
 
 
+## Current round — Issue 234 workflows 1, 4 and 5
+
+Completed the three Scriptmix dispatches, catalogue records, source documentation
+and fake-font menu tests. Verified the complete fallback runtime suite (4,635
+passes, two retained optional audit skips), focused menu/report checks (90 passes,
+one optional audit skip), 100% line/branch coverage per new menu and pinned Ruff.
+Exact dependency provisioning was blocked by PyPI DNS in the lane; the lander's
+exact recipe on the combined origin/main tree passed 4,637 with two skips. Rechecked existing source
+and catalogue hash oracles; no original menu body changed. Remaining ordinary
+installation, native lifetime/preservation and source-link checks are in TODO.
+
+Retained failed attempts: exact provisioning stopped before tests at hatch-vcs
+resolution (PyPI DNS). An initial prepared fallback used the mismatched canonical
+pens checkout: 26 failed, 4,588 passed, two skipped, three errors; a lane-Fontport
+retry still had that pens mismatch (25 failed, 4,607 passed, two skipped, three
+errors). Focused attempts with those pens recorded 18 failures (47 and then 53
+passes). Matching the prepared environment's read-only pens source left one
+additive catalogue count failure: 4,634 passed, two skipped, one failed; its
+202-to-205 correction produced the final complete passing result above. No test
+was disabled and no original hash oracle changed.
+
 ## Issue 241 — demo verification
 
 Scope: retain the existing two menu scripts and exact source catalogue records;

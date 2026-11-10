@@ -65,4 +65,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `7b0f85d35d89bfd6d714596f76e48b9a5ff9b50322cbc87ae35e1da318faac76`
 
-[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Contours/Round%20Coordinates.py)
+[Python source at `1e4c2b2dd9bc`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/1e4c2b2dd9bccfd04b38e70ed3dcaaa52242835d/Scripts/Contours/Round%20Coordinates.py)

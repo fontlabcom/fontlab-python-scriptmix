@@ -6,6 +6,16 @@ this_file: PLAN.md
 
 Qualify workflow #6 with matching ordinary installed App/Scriptmix artifacts and native FontLab PythonQt: location controls, interpolation rendering, refusal diagnostics, captured-font identity and repeated Close. Compare complete font/history/selection/cache/dirty state before and after. Keep source/fake-font evidence separate from native acceptance; no font writes are part of this workflow.
 
+## Issue 234 workflows 1, 4 and 5 remaining qualification
+
+Qualify the three Font UI Lab menus with matching ordinary installed App and
+Fontport artifacts and native PythonQt: open-font enumeration/current-master
+metrics, selected-glyph compatibility/preview, reference-master point counts,
+empty/stale documents, callbacks and repeated Close. Preserve complete font,
+selection, cache and history state. Re-run the exact runtime recipe when its
+build dependencies can be resolved; the prepared-environment fallback is source
+evidence only. Publish source links only from a reviewed containing commit.
+
 ## Batch recipe filename documentation delivery
 
 Independently review the verified filename-literal correction, then deliver

@@ -142,7 +142,10 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Interpolation Preview](font-ui-lab/interpolation-preview.md)
 - [Kerning Group Explorer](font-ui-lab/kerning-group-explorer.md)
 - [Kerning Proof Workbench](font-ui-lab/kerning-proof-workbench.md)
+- [Master Compatibility Browser](font-ui-lab/master-compatibility-browser.md)
 - [Master Width Comparison](font-ui-lab/master-width-comparison.md)
+- [Node Counts Across Masters](font-ui-lab/node-counts-across-masters.md)
+- [Open Fonts and Master Overview](font-ui-lab/open-fonts-and-master-overview.md)
 - [Tabular Width Audit](font-ui-lab/tabular-width-audit.md)
 - [Unicode and Glyph Order Explorer](font-ui-lab/unicode-and-glyph-order-explorer.md)
 
