@@ -16,7 +16,7 @@ remain open; no release or live acceptance is claimed.
 
 ## 2026-11-10 — Ruff baseline reconciled
 
-The documented Ruff 0.14.10 count of 87 was stale. Re-measured with the exact guide command (py311, `Scripts tests tests_docs menu_layout.py src_docs/build.py`): 420 existing findings (F811 310, E402 55, E731 20, E741 13, E702 10, F841 9, F401 1, E701 1, E401 1; Scripts 26, tests 393, tests_docs 1, menu_layout.py and src_docs/build.py 0). AGENTS.md and README.md now state the measured figure; no script or test was changed to alter it, and no automatic fixes were applied. Per-file triage remains available via `--output-format concise`.
+The documented Ruff 0.14.10 count of 87 was stale. Re-measured with the exact guide command (py311, `Scripts tests tests_docs menu_layout.py src_docs/build.py`): 420 existing findings (F811 310, E402 55, E731 20, E741 13, E702 10, F841 9, F401 1, E701 1, E401 1; Scripts 26, tests 393, tests_docs 1, menu_layout.py and src_docs/build.py 0). AGENTS.md and README.md now state the measured figure; no script or test was changed to alter it, and no automatic fixes were applied. Per-file triage remains available via `--output-format concise`. Installed pre-push gate at landing (18936e4): 4,619 passed, 2 skipped.
 
 ## 2026-11-10 — Round Advances accepts step 1
 
