@@ -3,7 +3,7 @@
 """Round advance widths to a step. Outlines stay where they are.
 
 What it does: rounds the advance width of each target glyph to a multiple of
-the step (2 to 100 units). Choose the nearest multiple, the next one up, or the
+the step (1 to 100 units). Choose the nearest multiple, the next one up, or the
 next one down. A half step goes up for "nearest".
 
 How it works: the right sidebearing takes the whole change. The left
@@ -91,7 +91,7 @@ class RoundAdvances(MetricsPanel):
 
     def build(self) -> None:
         """Create step, direction and source controls."""
-        self.step = self.spin(2, 100, STEP_DEFAULT, " units")
+        self.step = self.spin(1, 100, STEP_DEFAULT, " units")
         self.direction = QtGui.QComboBox()
         for label, _ in DIRECTIONS:
             self.direction.addItem(label)

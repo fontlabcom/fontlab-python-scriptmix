@@ -86,7 +86,6 @@ this_file: TODO.md
 
 - [ ] Resolve App Metrics planning when a selected composite and its base both move; prove no double shift and measure Master Metrics Table capHeight writes.
 
-- [ ] Extend Round Advances to accept step 1; preserve the current step 2 to 100 behaviour and prove the added path.
 
 - [ ] Resolve App anchor read-back tolerance and sub-unit moves swallowed by native rounding.
 

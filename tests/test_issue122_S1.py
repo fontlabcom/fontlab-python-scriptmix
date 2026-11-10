@@ -930,6 +930,18 @@ def test_round_advances_when_all_glyphs_source_then_uses_font_list(world):
     assert panel.entries[0].plan.width == 100, panel.entries[0].plan
 
 
+def test_round_advances_when_step_is_one_then_whole_unit_advances(world):
+    n = two_master_glyph("n", (101.4, 10, 90), (126.5, 12, 108))
+    world.font_names = ["n"]
+    _, panel = open_panel(world, "Round Advances", [n], selection=[])
+    panel.source.pick(1)
+    assert panel.step.range == (1, 100), "step 1 to 100"
+    panel.step.setValue(1)
+    assert [e.plan.width for e in panel.entries] == [101], "step 1 rounds to the whole unit"
+    panel.step.setValue(2)
+    assert [e.plan.width for e in panel.entries] == [102], "step 2 unchanged"
+
+
 def test_scale_advances_when_applied_then_centred_change(world):
     n = two_master_glyph("n", (100, 10, 90), (200, 20, 180))
     edited(
