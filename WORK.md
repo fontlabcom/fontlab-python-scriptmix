@@ -2,6 +2,369 @@
 this_file: WORK.md
 ---
 
+## 2026-11-10 — combined main-source verification
+
+The reconciled App, Fontport and Scriptmix source passed the complete suites:
+App 12,133 tests with no skips; Fontport 5,047 with one retained corpus skip;
+Scriptmix 4,606 with six retained skips. The 42 complete changed production
+modules reached 89.3023–100% combined coverage with zero excluded lines.
+Pinned Ruff passed all 88 scoped Python files. Paired installed Plugmix consumers
+passed 100 tests; the strict installed reader/lifecycle checks passed 31.
+
+These results qualify the recorded source-test epoch only. They do not establish
+full ordinary-product or native acceptance. Independent combined review, a main
+commit, normal push and exact-commit remote CI remain pending. Tracked-change
+graph analysis reports CRITICAL, HIGH and LOW risks; the separate staged graph
+gate for 49 new paths remains pending. Documentation builds and generated-output
+lineage remain separate delivery gates. Source floor eight, ten remaining source
+workflows, zero full workflow parity and all 8,723 retained obligations are
+unchanged. Existing ordinary/native and private-publication holds remain.
+
+## 2026-11-10 — qualified source carried into main reconciliation
+
+Feature Source and Proof (#10) is independently source-qualified, including
+lossless supported UFO source, ordinary code view and safe refusals. Its retained
+full suites passed App 10,377, Fontport 5,017 with one existing corpus skip, and
+Scriptmix 4,583 with six existing skips. Detached Transform Preview (#15) is also
+independently source-qualified; its retained full App run passed 10,544 and
+Scriptmix passed 4,590 with six existing skips. The common final before-model
+digest is included in the qualified #15 source fixture.
+
+The minimum source floor is eight of eighteen; ten compositions still lack source,
+full workflow parity remains zero and all 8,723 obligations remain. These are
+retained source-epoch results, not tests of this new main union. Combined-source
+tests, independent integration review, containing commits, exact-SHA remote CI,
+matching ordinary artifacts, native/history/reopen and publication gates remain
+open. Full literal-U+2029 editing remains pending; safe refusal is not successful
+editing. Existing history below is preserved.
+
+
+## 2026-11-10 — Detached Transform Preview source candidate
+
+Port the independently reviewed detached snapshot composition with explicit target
+selection, real before/after proofs, early invalidation, reentrant target handling
+and owned cleanup. Source tests and independent product review are pending; the
+source floor remains seven and full parity remains unqualified. Ordinary artifacts,
+native FontLab and delivery remain separate.
+
+Reconcile current #10 status: Feature Source and Proof is source-qualified with
+App 10,377 passing tests, Fontport 5,017 plus one existing GetGo corpus skip and
+Scriptmix 4,583 plus six existing conditional skips. Retain ordinary code view and
+safe refusals; ordinary artifacts, native PythonQt5/history/reopen and full literal
+U+2029 editing remain pending. Earlier entries below retain their historical scope.
+
+
+## 2026-11-09 — Current feature-source documentation
+
+Reconcile the current feature-source overview and remaining qualification plan with the passed independent code/focused review. Focused UFO source preservation and duplicate inspection are implemented; complete source suites and ordinary/native qualification remain pending. Correct current catalogue totals to 266 tools and 197 additional rows; retain the prior 196/265 baseline references.
+
+## 2026-11-09 — Exact UFO source continuation
+
+Final focused additions: the consolidated UFO source module passed 157 cases; seven targeted App refresh/sibling cases passed; the retained 93-case regression cohort plus nine GetGo checks passed 102 cases, with all 99 read-only corpus file hashes preserved. Scriptmix affected cohorts passed 72 cases with one inherited external-source audit skip. Pinned Ruff F/py311 passed. Source review and Root full suites remain pending.
+
+Focused source evidence: 215 Fontport tests and 127 App tests passed; an expanded 469-test Fontport cohort covers complete memory.py at 177/181 and the new helper at 191/191 statement-plus-branch units, with zero exclusions. App features.py is 218/218. The actual LF sibling edit preserves untouched CR source with one logical request, one raw write and one callback, and compares two complete owned fonts. Duplicate inspection and reason reset are covered. Full controlled suites, independent review and ordinary/native acceptance remain pending.
+
+## 2026-11-09 — Feature Source and Proof integration candidate
+
+Feature Source and Proof is available through `fontlabapp.fontui.feature_proof.show(font, parent=None)`. It keeps the ordinary code view, refuses unsupported input before selection loss, and quarantines opaque document changes until explicit Revert. Accepted source Apply refreshes the independent Unicode/kerning sequence once; it does not compile or shape OpenType features. The window captures one borrowed font. External changes retain dirty drafts with a warning; explicit Apply can overwrite newer source. Refresh proof retries only the view. Original paragraph separators are inspect-only. Exact all-CR source preservation remains under investigation; this candidate is not yet source-qualified. Native PythonQt/FontLab, full literal paragraph-separator editing and broader clipboard routes remain unqualified.
+
+The mixed-EOL draft-switch loss was reproduced before repair. The existing two feature suites pass with real guarded text controls. All 183 inherited boundary controls execute on the actual new module. The actual fresh owned offscreen product run qualifies safe and unsafe Paste through native paste, standard key and native menu, plus Enter: safe source applies once, unsafe source retains the pre-call selection, and two complete fonts are checked. The source/proof controller retains both child acknowledgements and retries cleanup without replaying source writes.
+
+Focused failures remain retained: all-CR reader synthesis can rewrite an untouched sibling, and old current-count/fake-text view tests need finite amendments. No full suite, source acceptance, installed artifact, native FontLab, canonical promotion, commit or publication is claimed. Earlier history remains unchanged below.
+
+
+
+## 2026-11-09 — Feature-source corruption reproduced; repair pending
+
+An independently reviewed run of 19 real Qt6/editor/RFont/UFO-backend cases
+confirmed nine stored-source discrepancies: NBSP became space and U+2028/U+2029
+became LF in no-op, small-edit and block-switch cases. Six cases wrote unexpectedly;
+the run made 12 actual writes in total and exited 0. Unrelated first-font data,
+the second font and UI teardown were preserved within the bounded checks.
+Ordinary Unicode/CRLF cases preserved their expected source; lone-CR-boundary
+and mixed-ending edits refused without writes. Stale-source warnings retained
+drafts; explicit Apply overwrote external source, while Revert reloaded it.
+
+The chosen direction keeps ordinary code view and adds qualified safe refusals;
+full literal-U+2029 editing remains pending. The input-boundary/refused-draft
+contract is still open: newly pasted/inserted separators and selection switching
+must be covered before a repair can qualify. This choice does not approve an
+all-JSON editor or ignoring new input. No product source fix is implemented yet.
+
+Six source implementations and twelve still without source in the minimum
+eighteen remain unchanged, as do all 8,723 obligations and the prior #9 full-suite
+results below. Complete-source archives, genuine matched A1 artifacts, two ordinary
+prefixes, native PythonQt5/whole-font/history/Undo/Redo/reopen, containing revision,
+canonical/owner installation, remote delivery and publication remain separate.
+
+## 2026-11-09 — Kerning Group Explorer finite source acceptance
+
+Independent final review and controller verification accepted #9 source and
+closed both cleanup findings. Public release fences both editors/previews and
+Apply callbacks immediately, then queues cleanup until actual acknowledgements;
+queued interruptions retain the original exception and owners for explicit retry.
+Real editor/preview callbacks and complete two-font preservation remain covered.
+Arbitrary nested Qt event loops and native painting remain unqualified.
+
+The controlled full App suite passed 10,291 tests with 100 warnings and zero
+skips/errors/failures. Full isolated Scriptmix passed 4,576 with six inherited
+skips and zero errors/failures. Both exited 0. The skips retain four original-source
+audits requiring their explicit source root, one external rescued-source audit
+requiring opt-in, and Spacing Preview's absent selection read; none is new to #9.
+Generated catalogue output remains isolated test evidence. All 21 source-bound
+whole-module gates remain >=80% combined with zero exclusions; the corrected
+controller retains 238/244 points (97.54%).
+
+Six source implementations (#2, #7, #13, #12, #8 and #9) leave twelve without source
+in the minimum eighteen; this does not mean six fully accepted workflows. All
+8,723 obligations and the 18-or-more floor remain. Complete-source archives,
+genuine matched A1 wheel/sdist/rebuilt-wheel artifacts and two ordinary prefixes
+remain batched after the remaining A1 source increments. Native whole-font/history,
+Undo/Redo/reopen, containing revision, canonical/owner installation, remote delivery
+and publication remain separate. Earlier results, failures and wrapper provenance
+limits below retain their original scope and are not retroactively changed.
+
+## 2026-11-09 — Kerning Group Explorer callback cleanup fix candidate
+
+Public release now fences both editors, both previews and Apply callbacks
+immediately, queues one cleanup attempt and returns False until real cleanup
+acknowledgements complete. The previous synchronous cleanup entry remains
+private for the unwound constructor and direct failure/retry checks. Actual
+standalone Kerning Apply and Sequence update callbacks retain their children
+until callback return. Queued cleanup contains KeyboardInterrupt/SystemExit,
+retains the same exception and owners, and waits for explicit retry after failure.
+
+Eight new failing cases reproduced the two review findings; four terminal-signal
+cases already passed. All 1,488 tests in the affected 22-file App cohort now pass,
+exit 0, including the twelve new cases and prior font/error/owner/ACK oracles.
+One old immediate-success assertion was explicitly adapted to queued completion;
+its failed run remains evidence. Complete controller coverage is 238/244 combined
+points (97.54%), with zero exclusions. The other twenty exact-source module gates
+remain retained, for twenty-one total. Pinned Python 3.11 Ruff checks pass.
+
+This is a fix candidate for independent re-review. Root's controlled frozen full
+App/Scriptmix pair remains pending; no full suite was rerun here. Earlier counts
+and failures below remain historical. Arbitrary nested Qt event loops and native
+painting are unqualified. All 8,723 obligations, the minimum eighteen workflows,
+batched A1 archives/genuine artifacts/two ordinary installs, native/history/reopen,
+containing revision, canonical and publication gates remain separate.
+
+## 2026-11-09 — Kerning Group Explorer source candidate
+
+Add a thin retained window with the actual GroupsEditor and KerningEditor and
+their distinct previews over one captured borrowed font. Use-left/right stages
+the selected group through one existing inspect route, preserving the opposite
+key/value draft. Accepted group readback calls only the existing draft-preserving
+kerning refresh callback. First-member proof uses its actual effective kerning;
+an explicit member pair can override the group-row value. No existing App
+helper, App test, Fontport implementation or dependency changed.
+
+Real two-font tests captured six initial behavioral failures, then constructor
+fencing and duplicate deferred-cleanup failures. The new controller fences all
+four owners and callbacks before cleanup, holds the first editor fenced during
+the second factory, preserves partial owners/primary errors, and retries positive
+ACKs without duplicating queued cleanup. Initial new-fixture setup/oracle errors
+remain recorded: group tuples and original key identity for complete pickle
+comparison, explicit member override, truthful missing-glyph occurrences, real
+cleanup refusal and the demo's explicit owned parent. Existing oracles remain
+unchanged; no helper defect or native repair is inferred.
+
+The final affected 22-file App cohort passes 1,476 tests, exit 0. Seven unchanged
+Fontport files pass 87 tests, exit 0. Five finite Scriptmix files in a fresh
+genuine isolated copy pass 65 tests with one inherited source-audit skip, exit 0.
+Whole-module combined coverage is 231/234 for the controller and 9/9 for both
+the App demo and menu, with zero exclusions. All eighteen retained source-bound
+gates remain exact: twenty-one unique gates now apply. Pinned Ruff checks pass.
+The actual inventory is 196 additional records, 265 menus, 95 App demos and 624
+App modules; frozen 190/259 identities and original 350 classifications remain.
+
+Independent source review and the controller's single frozen full App/Scriptmix
+pair remain pending. Earlier full-suite results below belong to the accepted
+parent. Five earlier source implementations are qualified; this sixth candidate
+leaves twelve minimum compositions without source, and establishes no additional
+fully accepted workflow. Matched A1 complete archives, genuine wheel/sdist and
+two ordinary prefixes remain batched and pending, as do containing commits,
+native target/master/whole-font/history/Undo/Redo/save-reopen, canonical adoption,
+owner installation, delivery and publication. All 8,723 obligations and the
+18-or-more workflow floor remain required.
+
+## 2026-11-09 — Kerning Proof Workbench source accepted
+
+Independent review and controller verification accept the finite Kerning Proof
+Workbench source, real App demo, lazy menu and R2 repair. Both review findings
+are closed: direct release fences editor/Sequence work before fallible cleanup,
+and refresh captures the empty-key branch before callbacks can change it.
+
+The controlled full App run passes 10,165 tests with 100 warnings, zero failures,
+errors or skips, and exit 0. The corrected full Scriptmix run passes 4,569 tests
+with six inherited skips, zero failures/errors and exit 0. Its first isolated
+run remains recorded as 4,546 passes, six skips and 23 setup errors, exit 1.
+The existing documented Fontport source override and a fresh isolated copy
+resolved that setup issue without production or test changes. The earlier App
+run's missing command/exit provenance remains historical; the new controlled
+result does not retroactively reconstruct it.
+
+The current coverage inventory has 18 unique complete-module gates, each at
+least 80% combined statements/branches with zero exclusions: the fourteen prior
+paths with kerning's metric replaced, plus Sequence, the window, App demo and
+menu. The five current kerning-workflow results are 236/237, 249/249, 149/154,
+9/9 and 9/9; the unchanged menu reuses its exact prior measurement.
+
+Five compositions have source implementations (#2, #7, #13, #12 and #8);
+thirteen of the minimum eighteen remain without source implementation. This
+is not five fully accepted workflows. Next is the separately reviewed #9
+Kerning Group Explorer source preparation, followed by the remaining A1 work.
+Complete private archives, genuine wheel/sdist and two fresh ordinary install
+checks remain pending for one reviewed matched A1 batch. Earlier A0 artifacts
+qualify only their exact older bytes. Containing commits, truthful source links,
+native master/whole-font/history/Undo/Redo/save-reopen, canonical adoption,
+owner installation, delivery and publication remain separate. All 8,723
+obligations and the 18-or-more workflow floor remain required.
+
+
+## 2026-11-09 — Kerning Proof Workbench review fixes
+
+Fence the real editor and Sequence and clear the Apply callback before any
+fallible direct release cleanup, including refusal and interruption. Retained
+owners remain available for cleanup retry. Capture the actual empty-key inspect
+branch before its update callback can change the controls, preventing a second
+layout/read/publication pass. Keep inspect, public signatures, the original
+selection identity loop and borrowed-font lifetime unchanged.
+
+Seven new real-backend regressions first failed; the six release cases also
+triggered the complete-font preservation oracle after prohibited writes. All
+seven now pass. The affected 33-module cohort passes 1,894 tests with 24 existing
+warnings and terminal exit 0. Whole-module combined coverage is 236/237 for
+kerning, 249/249 for Sequence, 149/154 for the window and 9/9 for the App demo,
+with zero exclusions; the unchanged menu retains its prior 9/9 evidence.
+Pinned Ruff checks pass. An initial affected-cohort collection ordering conflict
+was resolved by collecting its existing GUI fixture first, without editing
+those tests. Independent re-review and controlled full App/isolated Scriptmix
+verification remain pending. Earlier full-suite counts are historical evidence
+for their recorded source bytes; the final prior App run's command/exit gap
+remains disclosed. No artifact, installed, native, canonical or publication gate
+is accepted. All 8,723 obligations and the 18-or-more workflow floor remain.
+
+## 2026-11-09 — Kerning Proof Workbench source candidate
+
+Add the retained App workbench, real direct-import demo and thin lazy Scriptmix
+route over one captured borrowed font. Repair the reproduced R2 temporal gap by
+invalidating proof before the first fallible read and preserving only the pending
+selected occurrence. Keep the original selection identity loop, guarded writer,
+readback and callback semantics. No R1 inspect repair or native defect is claimed.
+
+The initial real-backend workflow checks recorded four temporal failures and
+two passing sequential-empty cases; the absent window also failed as expected.
+The repaired full App suite passes 10,158 tests with no failure or skip (100
+existing warnings). The isolated Scriptmix finite cohort passes 58 tests with
+one inherited optional-source skip; unchanged Fontport regressions pass 80.
+Whole-module combined statement/branch coverage is 235/236 for kerning,
+249/249 for Sequence, 146/152 for the new window and 9/9 for each entry script,
+with zero excluded statements. Pinned Ruff checks pass. Full Scriptmix execution
+and independent source review remain separate pending gates.
+The menu count is now 195 additional records / 264 tools; frozen original
+provenance remains unchanged. No artifact, installed, native, canonical or
+publication acceptance follows. All 8,723 obligations and the 18-or-more workflow
+floor remain required.
+
+
+## 2026-11-09 — A0/I1 paired ordinary milestone and A1 preflight
+
+The finite A0/I1 qualification is accepted: the fresh wheel and rebuilt-sdist
+prefixes each passed 1,508 App/auxiliary tests with zero skips, plus 51 Scriptmix
+checks and one exact inherited conditional skip. Genuine artifacts and complete
+private source archives are accepted for that payload. The full source results
+remain 10,089 App passes with no failure, error or skip and 4,562 isolated
+Scriptmix passes with six inherited conditional skips; these were not rerun for
+the preflight. Containing commits, truthful immutable links, native workflows,
+canonical promotion and publication remain open.
+
+Prepared a contract-only proposal for the next A1 Kerning Proof Workbench,
+reusing the integrated editor, exact borrowed-font route and retained window
+ownership. Source inspection identified possible stale-preview boundaries for
+owned reproduction; no runtime defect, shared repair or upstream defect is
+claimed. No new product implementation or test acceptance follows from the
+preflight. Four source compositions exist; fourteen remain, with all 8,723
+obligations and the 18-or-more workflow floor unchanged.
+
+## 2026-11-09 — Isolated complete Scriptmix source verification
+
+The complete Scriptmix source suite passed 4,562 tests with six inherited skips
+and no failures or errors in 83.79 seconds. It ran through the documented uv
+wrapper in a genuine isolated Git clone overlaid with the complete current
+source; the prepared App editable, Fontport package and Fly source origins were
+verified. The copied App sibling supplied the literal node fixture only.
+All 2,845 original source files, path sets, Git endpoints and frozen 190/259
+catalogue records remained unchanged. The clone retains all 542 generated
+catalogue/snapshot files; their unqualified commit links are test output only.
+
+The subsequent progress-only documentation update changes no runtime, tests,
+menus or dependencies. App's 10,089-test result and complete-module coverage
+remain bound to unchanged Python bytes. Independent source review, truthful
+containing commits, fresh artifacts and ordinary origins, native qualification
+and the remaining compositions stay separate. No new installation or native
+acceptance is claimed.
+
+## 2026-11-09 — Catalogue provenance defect recorded
+
+The catalogue generator selects the last Scripts commit without verifying that
+it contains each current menu and matching bytes. Four Font UI Lab menus are
+absent from that revision and current HEAD, so their generated immutable links
+are false. A separate planned fix will validate committed paths and bytes and
+cover dirty/untracked menus. The generator is unchanged in this audit work;
+isolated generated pages remain test evidence, not delivered documentation.
+
+## 2026-11-09 — Existing lint baseline discrepancy
+
+The exact Ruff 0.14.10 guide scope reports 420 existing findings, compared with
+87 recorded in the guide. The six changed Scriptmix Python paths pass the
+corresponding scoped lint check. No historical script was changed to hide or
+remove unrelated findings; exact-scope reconciliation remains planned work.
+
+## 2026-11-09 — Audit provider ownership recovery
+
+The App provider now retains failed nested owners separately from its outer
+dialog, including simultaneous refusal and interrupted construction. The fresh
+Scriptmix Font UI Lab menu cohort passes 20 tests. The earlier complete suite
+result remains historical until a paired catalogue generation and recovery run
+is admitted and executed. Generated pages with links to absent commit paths were
+archived and their six source deltas recovered; they are not delivered docs.
+A genuine reviewed containing App commit, independent review, matching ordinary
+installations and native qualification remain open.
+
+## 2026-11-09 — Tabular Width Audit source checks
+
+The new real import and __main__ dispatch, Fly route and provenance cases pass
+4 tests. The five coupled catalogue/menu cohorts pass 51 tests with one inherited
+opt-in source-audit skip. The complete runtime suite passes 4,562 tests with six
+existing skips: Spacing Preview selection and five external original-source
+audits. Frozen old 190 records and 259 menu bodies retain their exact hashes.
+The source consumer uses matching App/Fly editables and the qualified ordinary
+Fontport dependency; this is not evidence for newly built A0 distributions.
+
+Ruff 0.14.10 passes every changed Scriptmix path. Its full documented repository
+scope reports 420 findings outside these changed files; no adjacent lint cleanup
+was performed. The App shared-constructor recovery defect, required App demo,
+independent review and immutable reviewed App source link remain open. No
+release floor, installation, native acceptance or publication is asserted.
+
+
+## 2026-11-07 — Issue234 first three linked inspections
+
+Task12a adds three distinct read-only compositions and a detached in-memory
+three-window demo. Real callback RED precedes the repair; missing-API, fixture,
+count, documentation and prior full-suite failures remain retained. The final
+complete App recipe passes 9749 tests with 100 existing warnings; the complete
+Scriptmix rehearsal passes 4558 with 6 existing skips. Whole-module combined
+coverage is 98.40% Browser, 100% Sequence, 94.15% metrics, 92% anchor/component,
+89.33% Unicode/order and 100% for the demo and each new menu. Formatting precedes
+these source-bound results. Original 259 menu bodies/190 rows and documentation
+thresholds remain exact. The earlier batch-output 10s timeout remains unresolved
+timing history; no deadline or unrelated source fix is claimed. Complete archives,
+ordinary origins, independent review and native acceptance are separate receipts.
+Actual partial child-cleanup exceptions retain/refuse their owners; the wider
+shared lifecycle repair and all remaining workflows remain required.
+
 ## 2026-11-10 — Correct the two window capability requirements
 
 TMetrics Window requires an App build providing `fontlabapp.fontui.tmetrics`;

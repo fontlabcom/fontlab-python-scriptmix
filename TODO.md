@@ -2,6 +2,16 @@
 this_file: TODO.md
 ---
 
+- [ ] Qualify the full Detached Transform Preview source port with actual composition/demo/menu behavior, M1 final before-model preservation, focused/full source suites, affected Fontport tests, whole-module coverage and independent review; retain source floor seven until qualification.
+- [ ] Qualify Detached Transform Preview genuine archives/distributions/two ordinary prefixes, native owned-font/history/lifetime behavior and truthful containing-commit/generated-doc links; preserve all 8,723 obligations and the minimum eighteen workflows.
+
+
+- [ ] Qualify exact UFO feature-source integration and linked source/proof workflow through independent source review, complete controlled suites, ordinary artifacts and owned native/history/reopen checks; full literal paragraph-separator editing remains separate.
+
+- [ ] Qualify Feature Source and Proof exact whole-source/all-CR preservation, independent review, frozen full suites, and separate A1 artifact/ordinary/native/history/reopen/canonical/publication gates.
+
+
+
 # Open tasks
 
 - [ ] Retain current Issue 208/M12 user tools and frozen provenance while reconciling Issue 207 cleanup and current App APIs.
@@ -103,3 +113,26 @@ this_file: TODO.md
 
 - [ ] Independently review the full public-site candidate, verify the current nine-asset English payload and exact primary-source notices, qualify actual main CI/generated output and verify Pages settings/live routes.
 - [ ] Qualify the TMetrics and TGlyph windows with installed App builds providing `fontlabapp.fontui.tmetrics` and `fontlabapp.fontui.tglyph`, the `fontport` extra and matching Fly/Fontport; verify native lifetime/history/save-reopen and the new exact-source publication separately. No numeric release floor is established for these two windows.
+
+- [ ] Qualify truthful containing commits, immutable source links, native workflows and later integrated tuples for the eight source-qualified implementations without treating them as eight fully accepted workflows; preserve finite accepted A0/I1 ordinary evidence for its exact older bytes.
+- [ ] Qualify whole Task12/native teardown and complete owned-font/history preservation; finite A0/I1 source and ordinary cleanup evidence does not close the native gate.
+- [ ] Implement source for the remaining ten compositions in the minimum eighteen, in reviewed A1–A4 order; qualify all workflows and retain all 8,723 compatibility obligations and the 18-or-more floor.
+- [ ] Generate and qualify new catalogue pages at a genuine committed source revision; no old-SHA links to new uncommitted paths.
+
+- [ ] For a reproduced upstream FontLab gap in these workflows, retain a privacy-safe reproducer, file or extend the fl issue and link a required fix PR in the proven responsible Proteus, FontGate or pyfontgate repository; preserve native safety and ownership gates.
+
+- [ ] Bind the accepted A0/I1 payload to reviewed containing commits and truthful source links; requalify any later changed payload.
+- [ ] Qualify Tabular Width Audit native painting, history, cleanup and whole-font preservation in an admitted owned lane.
+
+- [ ] Reconcile the documented Ruff 0.14.10 baseline of 87 findings with the measured 420 complete-scope findings; retain exact scopes and triage existing scripts without automatic cleanup.
+
+- [ ] Fix catalogue immutable-link validation by checking committed menu paths and bytes, with dirty/untracked-menu regressions; refuse or defer false links without adding a new generator framework.
+
+- [ ] Qualify one matched A1 batch of complete private archives, genuine wheel/sdist and two fresh ordinary prefixes, including real installed Kerning Proof and Kerning Group Explorer workflows, exact origins/RECORD and retained regression/coverage gates; keep #8/#9 ordinary acceptance pending until then.
+- [ ] Qualify Kerning Proof native target/master, painting, whole-font and unrelated-font preservation, history, Undo/Redo, save/reopen and cleanup in an admitted owned lane; retain separate containing-commit, canonical, owner-installation, delivery and publication gates.
+- [ ] Qualify Kerning Group Explorer native captured-font/current-master behavior, both previews, group-policy refusals, exact Apply/readback, four-owner cleanup, whole-font/history preservation, Undo/Redo and save/reopen; retain separate containing-commit, canonical and publication gates.
+- [ ] Qualify full literal-U+2029 editing separately; do not count refusal as a successful edit or standalone Qt6 as native PythonQt5 acceptance.
+- [ ] Qualify the source-accepted #15 backend-visible snapshot and current-recipe proof in matching installed and native consumers, retaining captured-target/generation checks, resources, borrowed caches/pending edits, three-owner ACK cleanup and the common final before-model digest; keep native history/reopen and publication separate.
+- [ ] Reproduce #17 all-input output containment with owned UFO files, including other input trees and symlink-resolved trees, while preserving complete inputs and overwrite/duplicate checks; require separate exact helper impact and a finite repair amendment if needed.
+- [ ] Implement #17 next using real TransformEditor recipe controls without a font, explicit no-preview state and BatchPanel per-file log/progress/status with actual external Python selection/BatchRunner; do not claim geometry preview, reopened-artifact proof or an implicit host font.
+- [ ] Requalify source-accepted #10 and #15 on the combined main tree and matching ordinary artifacts; preserve exact feature-source/refusal/proof/lifetime oracles, independent review and all complete-module coverage gates before delivery.

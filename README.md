@@ -2,10 +2,17 @@
 this_file: README.md
 ---
 
+Detached Transform Preview is available through `fontlabapp.fontui.detached_transform.show(font, parent=None)`. Run **Font UI Lab > Detached Transform Preview**. Choose an explicit layer and glyph, then Capture to compare the backend-stored snapshot with an affine result. Refresh reads the same captured font; borrowed caches and pending edits remain untouched. Settings Save creates only a chosen new JSON file, and Show script displays text without executing it. No font Apply/save/export is provided. This workflow is independently source-qualified. Combined-main review, matching ordinary installation and native behavior remain pending.
+
+
+Feature Source and Proof is available through `fontlabapp.fontui.feature_proof.show(font, parent=None)`. It keeps the ordinary code view, refuses unsupported input before selection loss, and quarantines opaque document changes until explicit Revert. Accepted source Apply refreshes the independent Unicode/kerning sequence once; it does not compile or shape OpenType features. The window captures one borrowed font. External changes retain dirty drafts with a warning; explicit Apply can overwrite newer source. Refresh proof retries only the view. Original paragraph separators are inspect-only. Focused checks confirm exact UFO source preservation through the backend and editor for CR, CRLF, mixed endings and absent final newlines, including untouched siblings; duplicate feature tags are inspect-only. This workflow is source-qualified by complete App, Fontport and Scriptmix suites; ordinary artifacts, native history/reopen and full literal-U+2029 editing remain separate pending gates. Native PythonQt/FontLab, full literal paragraph-separator editing and broader clipboard routes remain unqualified.
+
+
+
 # FontLab practical scripts
-261 practical tools for FontLab 9: 69 sample adaptations and 192 additional
+269 practical tools for FontLab 9: 69 sample adaptations and 200 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
-PythonQt and shared App helpers. The menu has 14 one-level categories.
+PythonQt and shared App helpers. The menu has 15 one-level categories.
 Current source includes Metrics, Names and Anchors editors; component writers;
 master navigation, backups and layer copying; contour editing, generators and
 hint tools; feature tools; kerning editors; proof texts; reports and drawing panels.
@@ -199,3 +206,54 @@ The author's own Apache-2.0 FontLab samples may be adapted;
 `source_body_redistributed` records such use.
 Browser assets have separate terms in the documentation notices. Preserve all
 source identities and licence texts when distributing the collection.
+
+## Font UI Lab
+
+Three read-only tools combine glyph browsing with metrics, direct anchor/component
+details, or Unicode/glyph-order sequence occurrences. They use the current font
+without editing or closing it; no font opens an explicit empty view. Use matching
+App builds providing `fontui.glyph_metrics.show`, `fontui.anchor_components.show`
+and `fontui.unicode_order.show`, plus Fontport and Fly. The older global1.2.0
+source-layout floor does not attest these new APIs; the paired build is checked
+by actual imports. Native UI acceptance and independent review of the shared cleanup repair remain
+pending. All259 older payloads and190 original additional-tool rows stay exact.
+
+## Tabular Width Audit
+
+The source candidate adds a borrowed-font chooser and exact selected-advance
+report through `fontlabapp.fontui.tabular_audit.show(world, parent=None)`.
+The first selected browser row supplies the reference; every selected advance
+remains unrounded. Refresh discovers open fonts through the supplied FontWorld.
+Source tests, matching ordinary distributions and native qualification are
+separate gates. The implemented shared constructor recovery remains under independent review.
+
+## Kerning Proof Workbench
+
+Font UI Lab > Kerning Proof Workbench captures the current borrowed font once
+and opens the integrated editor and proof. Select a pair or type glyph/group
+names. Apply writes a value; Delete removes an explicit pair, exposing group
+fallback. Zero is distinct from absence. Reload rereads the same font, and
+closing the window leaves that font open. Switching active fonts does not
+retarget it; native edits use the captured font's current master.
+
+Use a matching App build providing `fontlabapp.fontui.kerning_proof.show`. The
+older global dependency floor does not attest this API. Source and ordinary
+checks do not establish native history, Undo/Redo or saved-font behavior.
+
+
+## Kerning Group Explorer
+
+`fontlabapp.fontui.kerning_groups.show(font, parent=None)` retains the existing
+groups and kerning editors over the exact borrowed font. Select a group and use
+it as the left or right key; the opposite key and value draft stay unchanged.
+Accepted group actions refresh the pair through the existing editor. Renaming
+or deleting a group does not rewrite stored kerning keys. The member preview
+and pair proof are distinct. The proof uses first members and their effective
+kerning, which can differ from the selected group row's value.
+
+The [menu](Scripts/Font%20UI%20Lab/Kerning%20Group%20Explorer.py) captures the current font once.
+Changing the active font does not retarget the window. Apply/Delete and group
+actions write only that captured font; closing does not save or close it. Native
+edits follow its current master. Source review, controlled full suites, matched
+A1 artifacts/ordinary installs and native history/save-reopen remain separate
+qualification gates; this addition asserts no release floor.

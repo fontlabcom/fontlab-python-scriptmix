@@ -2,6 +2,29 @@
 this_file: PLAN.md
 ---
 
+## Detached Transform Preview remaining qualification
+
+Qualify the full explicit-target source port, actual editor/two-proof composition,
+real demo/menu dispatch, constructor/refusal/reentrancy/cleanup matrix and common
+final before-model preservation (M1). Require focused and full App/isolated Scriptmix
+suites, affected Fontport tests, whole new-module coverage and independent review.
+The source floor remains seven until that review qualifies this workflow. Then
+carry the matched source through genuine archives/distributions/two ordinary prefixes
+and native owned-font/history/lifetime checks. Generate immutable menu links only
+from a genuine reviewed containing commit. Keep all 8,723 obligations and the
+minimum eighteen workflows; no full-parity or native completion is inferred.
+
+
+## Exact feature source continuation
+
+Qualify exact UFO feature-source integration and linked source/proof workflow through independent source review, complete controlled suites, ordinary artifacts and owned native/history/reopen checks; full literal paragraph-separator editing remains separate.
+
+## Feature Source and Proof qualification
+
+Complete independent combined-source qualification and the full Fontport, App and fresh isolated Scriptmix source suites. Retain all 8,723 obligations and the minimum eighteen workflows; six prior source implementations are not six complete accepted workflows. A1 archives, genuine artifacts/two ordinary installs, native history/reopen and canonical/publication gates remain separate.
+
+
+
 # Forward plan
 
 Issue 230 reconciliation is current. Issue 123 implementation remains paused; its acceptance backlog below is preserved, not resumed. Keep qualified Issue 207 candidates distinct from canonical source, ordinary installed artifacts, native acceptance and publication. Issue 210 defines the future plugin split; Issue 211 retains follow-up checks. The owner corrected the preparation catalogue reference to Issue 214.
@@ -50,8 +73,126 @@ Use the detailed open tasks in [TODO.md](TODO.md) as the acceptance checklist. C
 
 ## Public site qualification
 
-Retain all 261 practical tools, the 350 classified source rows and the historical 68-of-130 native boundary. Source identity links and hashes must remain exact. Keep authored retained guides outside generated `docs/`. Follow README for the current exact-lock build. Independent source/privacy/legal review, actual main CI, immutable generated-output verification, settings readback and live browser checks remain required. Review the current nine-asset English payload and its primary-source notices separately from the retained historical 44-asset inventory. The build rejects language, reference or asset drift before omitting the 35 unused language helpers; 36 licence files from the 31 locked Python distributions remain distributed.
+Retain all 269 practical tools, the 350 classified source rows and the historical 68-of-130 native boundary. Source identity links and hashes must remain exact. Keep authored retained guides outside generated `docs/`. Follow README for the current exact-lock build. Independent source/privacy/legal review, actual main CI, immutable generated-output verification, settings readback and live browser checks remain required. Review the current nine-asset English payload and its primary-source notices separately from the retained historical 44-asset inventory. The build rejects language, reference or asset drift before omitting the 35 unused language helpers; 36 licence files from the 31 locked Python distributions remain distributed.
 
 ## Issue 241 window qualification
 
 Qualify TMetrics Window with a FontLabApp build providing `fontlabapp.fontui.tmetrics` and TGlyph Window with `fontlabapp.fontui.tglyph`, both with the `fontport` extra and matching Fly/Fontport. The unsupported1.2.0 claims are removed; no numeric replacement floor is inferred. Keep installed-module checks, actual native window/history/save-reopen and current source/output/Pages/artifact/live acceptance separate.
+
+## Issue234 Font UI inspection acceptance
+
+Qualify truthful containing commits and immutable catalogue links for all eight
+source-qualified implementations (#2, #7, #13, #12, #8, #9, #10 and #15). Complete
+workflow acceptance remains pending. Preserve the accepted finite A0/I1 source
+and paired ordinary evidence for its exact older payload. Carry the reviewed A1
+source through one matched archive/artifact/two-prefix ordinary batch; a dirty
+genuine-version artifact does not establish a containing commit or release floor.
+Keep native painting, lifetime, complete font/history preservation, Undo/Redo and
+saved/reopened evidence separate. Retain all 8,723 obligations, Tasks 6–11/13/14,
+full parity at zero and the 18-or-more workflow floor. Implement source for the
+ten compositions still without source in the minimum set, starting with A1 #17
+Batch UFO Recipe Workbench before later A2 work.
+
+Retain both the controller-approved lifecycle-origin record path and SHA at
+installed consumer boundaries, original behavior assertions/test identities and
+all twenty-one complete-production-module coverage gates at 80%
+or above, with zero exclusions; retain historical eleven/fourteen inventories
+as evidence for their original epochs.
+Keep shared provider repairs in App or Fontport under finite review; record
+verified menu changes cumulatively and preserve full repository test recipes.
+
+For a reproduced FontLab upstream gap, file or extend an evidence-backed [fl issue](https://github.com/fontlab/fl/issues/) and link any required fix PR in [Proteus](https://github.com/Fontlab/Proteus) (application), [FontGate](https://github.com/Fontlab/FontGate) (core), or [pyfontgate](https://github.com/Fontlab/pyfontgate) (Python bindings), according to the proven cause. Keep private data out of the reproducer; a pending capability or an offline refusal alone does not establish an upstream defect.
+
+## Tabular Width Audit remaining qualification
+
+Bind the accepted A0/I1 payload to reviewed containing commits and truthful
+source links. Preserve its accepted complete private archives and two fresh
+ordinary prefixes; requalify changed payloads when later integration changes
+bytes. Qualify native painting, history, cleanup and complete owned-font
+preservation only in an admitted lane. Canonical promotion, owner installation,
+publication and whole-task acceptance remain separate.
+
+## Kerning Proof Workbench remaining qualification
+
+Carry the accepted kerning source into one reviewed matched A1 batch after the
+remaining A1 source increments. Create complete private source archives, build
+a genuine wheel and sdist plus a wheel from that sdist, then verify two fresh
+ordinary prefixes. Check complete source/RECORD hashes, actual App/Fontport/Fly
+origins and real shipped workflow callbacks, Apply/readback, no-op/refusal,
+selection and cleanup behavior. Retain all previous regression obligations,
+the original identity loop, frozen helpers and complete-module coverage gates.
+Keep the #8 archive/ordinary gate pending until that exact batch qualifies;
+build earlier only if a dependent installed/native/canonical surface needs it.
+
+Bind containing commits and truthful source links without inventing a release
+floor. Qualify native target/current-master behavior, painting, whole-font and
+unrelated-font preservation, history, Undo/Redo and save/reopen separately.
+Preserve the bounded passing R1 observations without claiming an inspect repair
+or an upstream native defect. Canonical adoption, owner installation, delivery
+and publication remain separate gates. Preserve the 196 additional records and
+265 tools, frozen 190/259 identities and original 350 classifications. Keep all
+8,723 compatibility obligations, the 18-or-more workflow floor and full workflow
+acceptance open.
+
+## Lint baseline reconciliation
+
+Reconcile the documented Ruff 0.14.10 baseline of 87 findings with the measured
+420 findings from the current complete guide scope. Retain the exact tool
+version, target Python and path list, classify existing findings and update the
+baseline with evidence before considering individual cleanup changes. Do not
+apply automatic fixes across historical scripts as part of audit delivery.
+
+## Catalogue source-link verification
+
+Fix the measured catalogue provenance defect separately: the generator selects
+the last Scripts commit and emits immutable links even when a new menu is absent
+from that commit or working bytes differ. Four current Font UI Lab menus are
+absent from both the selected Scripts commit and current HEAD. Require the actual
+committed path and bytes to match before emitting a link; otherwise refuse or
+defer that link. Cover dirty and untracked menus with regressions. Keep current
+generator outputs as test evidence until truthful containing commits qualify.
+
+
+## Kerning Group Explorer remaining qualification
+
+Preserve all 21 unique whole-module gates and actual two-font group/kerning writes, representative-member overrides, one-inspect Use
+actions and four-owner fencing/ACK retry, including partial construction. Keep
+all earlier source and ordinary evidence bound to its original bytes.
+
+Carry #9 with #8 and remaining A1 increments into the matched complete-source
+archive, genuine direct-wheel/sdist/rebuilt-wheel and two ordinary-prefix batch.
+Qualify actual shipped callbacks, origins/RECORD and source preservation. Then
+qualify native captured-font/current-master painting, group-policy refusals,
+whole-font/history preservation, Undo/Redo and save/reopen in the admitted lane.
+Containing commits, canonical adoption, owner installation, remote delivery and
+publication remain separate. Eight source implementations do not establish eight
+fully accepted workflows. Preserve all 8,723 obligations and the minimum eighteen-workflow scope.
+
+## Remaining A1 source work
+
+Carry the source-qualified #10 Feature Source and Proof and #15 Detached
+Transform Preview through combined-main regression and complete-module coverage,
+independent integration review, genuine containing commits and matching ordinary
+artifacts. Retain the ordinary feature-code view and qualified safe refusals;
+full literal-U+2029 editing remains pending and a refusal is not a successful edit.
+Qualify native PythonQt5 ingress, target/master behavior, painting, lifetime,
+whole-font/history preservation, Undo/Redo and saved/reopened results separately.
+Keep explicit Apply overwrite disclosure and exact supported-source readback.
+
+For #15, qualify the shipped backend-visible snapshot and current-recipe proof
+through matched installed and native consumers. Preserve pending wrapper edits,
+cold/populated borrowed caches, explicit layer and captured target, complete
+resources, generation/refusal fencing and the three-owner cleanup ACK contract.
+The common final before-model digest is already source-qualified; retain it in
+combined-source regressions, including failures and parent destruction. A new
+target still requires an explicit new snapshot. No full native workflow is claimed.
+
+For #17, reproduce output containment with owned files: no planned destination
+may lie within any input UFO tree, including another input or a symlink-resolved
+tree. Preserve every complete input tree and existing overwrite/duplicate checks;
+require exact helper impact and a separate finite repair amendment if reproduced.
+Use the actual TransformEditor recipe controls with no font and explicit no-preview
+state, plus BatchPanel per-file log/progress/status, external Python selection and
+BatchRunner. Do not infer geometry preview, reopened-artifact proof or an implicit
+host font. Implement #17 next. Its helper concerns still require their own reproduction,
+exact impact and a finite source admission before edits.

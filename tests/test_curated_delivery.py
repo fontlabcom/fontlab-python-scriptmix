@@ -17,15 +17,15 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 192 and len(actual) == 261, (len(rows), len(extra), len(actual), "expected 69 samples + 192 additional = 261 menu tools")
+    assert len(rows) == 69 and len(extra) == 200 and len(actual) == 269, (len(rows), len(extra), len(actual), "expected 69 samples + 200 additional = 269 menu tools")
     assert {path.parent.name for path in (ROOT / "Scripts").glob("*/*.py")} == {
         "Anchors", "Cleanup", "Components", "Contours", "Features", "Font Info",
-        "Guides", "Kerning", "Masters", "Metrics", "Names", "Proof", "Reports", "Utilities",
-    }, "The menu must contain exactly the 14 merged categories"
+        "Guides", "Kerning", "Masters", "Metrics", "Names", "Proof", "Reports", "Utilities", "Font UI Lab",
+    }, "The menu must contain exactly the 15 merged categories"
     for relative in actual:
         path = ROOT / relative
         assert len(Path(relative).parts) == 3, relative
-        assert path.parent.name == path.parent.name.title(), relative
+        assert path.parent.name == "Font UI Lab" or path.parent.name == path.parent.name.title(), relative
         source = path.read_text()
         ast.parse(source, filename=relative, feature_version=(3, 11))
         assert "rescued_examples" not in source, relative

@@ -1,0 +1,34 @@
+# this_file: Scripts/Font UI Lab/Glyph Browser and Metrics.py
+# SPDX-License-Identifier: Apache-2.0
+"""Browse glyphs with linked outlines, geometric sidebearings and selected advance comparisons.
+
+Use: Open this window with a font available, filter the glyph list by name and
+select one or more glyphs. The outline and metric table describe the first
+selected glyph. The advance comparison uses every selected glyph and reports
+their actual widths, including fractional values. It helps identify unequal
+advances in a set intended to have tabular spacing without changing any widths.
+
+The table shows advance, outline bounds, geometric left sidebearing and geometric
+right sidebearing. Component outlines use their transformations when calculating
+bounds. An empty outline has no geometric sidebearings; it can still have a useful
+advance. These measurements describe geometry, rather than a spacing policy or a
+promise that visually similar glyphs will have identical apparent margins.
+
+Safety: This is a read-only inspection of the current borrowed font. It does not
+edit outlines, spacing, selection data or font contents, save a file, or close the
+font. Missing fonts and unreadable glyph data clear the displayed measurements
+and preview instead of leaving another glyph's values on screen. Close the
+inspection window when finished."""
+
+
+def main():
+    """Open the inspection window for the current borrowed font."""
+    from fly.ap.fontui.glyph_metrics import show
+    from fly.fp.world import FontWorld
+
+    world = FontWorld()
+    return show(world.CurrentFont())
+
+
+if __name__ == "__main__":
+    main()

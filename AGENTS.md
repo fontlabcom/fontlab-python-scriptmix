@@ -125,3 +125,12 @@ checks on the merged result, then push to `origin main`. Record the change in
 CHANGELOG.md, move verified-solved TODO.md items into CHANGELOG.md, update
 PLAN.md, and continue with the next TODO.md item until the list is clear.
 `install.vfpy` is shared: keep it byte-identical in every installer repository.
+
+
+## Verified rounds, upstream main and continuing work
+
+After each important implementation round, independently review and verify the complete affected scope. Reconcile the exact reviewed changes with fresh upstream `main` and concurrent team work in an isolated successor, then integrate and push the qualified milestone to upstream `main`. Preserve owner checkouts, indexes, refs and unrelated changes. Resolve conflicts from the common base while keeping both sides' valid intent; never overwrite teammate work or rewrite shared history. Re-run affected regression tests, whole-module coverage and required complete checks on the combined source before delivery.
+
+Keep required graph and installed pre-push gates active. Invoke a package-specific gate in its qualified package context; never bypass hooks with an API ref update, `--no-verify` or force push. Verify the resulting upstream SHA and required CI for that exact commit. A main build does not authorize held private Pages deployment. Use linked pull requests where the upstream contribution policy requires them.
+
+Move only verified solved TODO items into cumulative CHANGELOG evidence, update PLAN to the remaining work, and continue the next actionable TODO until the in-scope backlog is verified clear. Preserve unsolved requirements and history when reconciling both sides. Keep partially verified, native, artifact, ordinary-installation, history and reopen obligations explicit; source acceptance is not full workflow or whole-goal acceptance. Carry this guidance into every allowed AGENTS.md used subsequently. Exclusions, explicit pauses, native-lane and owner-installation restrictions remain in force.
