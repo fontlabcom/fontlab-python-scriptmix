@@ -130,7 +130,6 @@ this_file: TODO.md
 - [ ] Bind the accepted A0/I1 payload to reviewed containing commits and truthful source links; requalify any later changed payload.
 - [ ] Qualify Tabular Width Audit native painting, history, cleanup and whole-font preservation in an admitted owned lane.
 
-- [ ] Fix catalogue immutable-link validation by checking committed menu paths and bytes, with dirty/untracked-menu regressions; refuse or defer false links without adding a new generator framework.
 
 - [ ] Qualify one matched A1 batch of complete private archives, genuine wheel/sdist and two fresh ordinary prefixes, including real installed Kerning Proof and Kerning Group Explorer workflows, exact origins/RECORD and retained regression/coverage gates; keep #8/#9 ordinary acceptance pending until then.
 - [ ] Qualify Kerning Proof native target/master, painting, whole-font and unrelated-font preservation, history, Undo/Redo, save/reopen and cleanup in an admitted owned lane; retain separate containing-commit, canonical, owner-installation, delivery and publication gates.

@@ -18,6 +18,31 @@ def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
+def committed_blobs(root: Path, revision: str) -> dict[str, str] | None:
+    """Map each committed Scripts path at ``revision`` to its git blob id.
+
+    Returns None when ``root`` is not itself a git checkout (fixtures), where no
+    claim about commits can be checked.
+    """
+    top = subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"], cwd=root, capture_output=True, text=True, check=False
+    )
+    if top.returncode or Path(top.stdout.strip()).resolve() != root.resolve():
+        return None
+    listing = subprocess.check_output(
+        ["git", "ls-tree", "-r", "-z", revision, "--", "Scripts"], cwd=root, text=True
+    )
+    blobs = {}
+    for entry in filter(None, listing.split("\0")):
+        meta, path = entry.split("\t", 1)
+        blobs[path] = meta.split()[2]
+    return blobs
+
+
+def blob_id(data: bytes) -> str:
+    return hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+
+
 def catalogue(root: Path, *, revision: str | None = None) -> None:
     """Retain every menu description, exact source hash and immutable source link."""
     if revision is None:
@@ -26,6 +51,7 @@ def catalogue(root: Path, *, revision: str | None = None) -> None:
         ).strip()
     if not re.fullmatch(r"[0-9a-f]{40}", revision):
         raise ValueError("A complete source commit is required")
+    blobs = committed_blobs(root, revision)
     output = root / "src_docs/md/scripts"
     if output.exists():
         shutil.rmtree(output)
@@ -70,12 +96,16 @@ def catalogue(root: Path, *, revision: str | None = None) -> None:
             text = f"---\n{header}---\n\n# {source.stem}\n\n{description}\n\n"
             text += f"Run **{folder.name} > {source.stem}** from FontLab's Scripts menu.\n\n"
             text += "Read [installation](../../install.md) and [working with scripts](../../use.md) before use.\n\n"
-            text += (
-                "## Source identity\n\n"
-                + f"SHA256: `{hashlib.sha256(data).hexdigest()}`\n\n"
-                + f"[Python source at `{revision[:12]}`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/"
-                + revision + "/" + quote(source.relative_to(root).as_posix(), safe="/") + ")\n"
-            )
+            relative = source.relative_to(root).as_posix()
+            text += "## Source identity\n\n" + f"SHA256: `{hashlib.sha256(data).hexdigest()}`\n\n"
+            if blobs is None or blobs.get(relative) == blob_id(data):
+                text += (
+                    f"[Python source at `{revision[:12]}`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/"
+                    + revision + "/" + quote(relative, safe="/") + ")\n"
+                )
+            else:
+                # The bytes hashed above are not those committed at ``revision``.
+                text += f"This source is not committed at `{revision[:12]}`; no immutable link is offered.\n"
             target.write_text(text)
             lines.append(f"- [{source.stem}]({target.name})")
             index.append(f"- [{source.stem}]({slug(folder.name)}/{target.name})")
