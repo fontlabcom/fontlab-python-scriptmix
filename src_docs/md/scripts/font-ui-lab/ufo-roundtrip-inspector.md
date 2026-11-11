@@ -29,4 +29,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `5e4e39d4eadb8fed8ba12308ced2525024a03fa1357bc864a04bc21fddd30beb`
 
-Immutable source link pending a reviewed containing commit.
+[Python source at `75235791e388`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/75235791e3880a7bc761f4bbc9c5dccc08813705/Scripts/Font%20UI%20Lab/UFO%20Roundtrip%20Inspector.py)

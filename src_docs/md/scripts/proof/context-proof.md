@@ -31,4 +31,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b567f12a41602c1852e7bf56aa780b7b895900442dfaf3b05d8716c24a7747af`
 
-Source path: `Scripts/Proof/Context Proof.py` (candidate launcher). Immutable source link pending a reviewed containing commit.
+[Python source at `75235791e388`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/75235791e3880a7bc761f4bbc9c5dccc08813705/Scripts/Proof/Context%20Proof.py)

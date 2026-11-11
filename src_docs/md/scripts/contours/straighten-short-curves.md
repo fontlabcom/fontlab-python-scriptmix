@@ -58,4 +58,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `baa7130b7ccd58db35e760d6e49c4d63ffd1d8ac3685f1dc918b24dad45321ba`
 
-[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Contours/Straighten%20Short%20Curves.py)
+[Python source at `75235791e388`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/75235791e3880a7bc761f4bbc9c5dccc08813705/Scripts/Contours/Straighten%20Short%20Curves.py)

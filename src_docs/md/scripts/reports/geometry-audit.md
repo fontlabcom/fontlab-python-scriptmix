@@ -32,4 +32,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `22445f159aa9f819592c6a0678e8a98f8f41d8e674a47893191b974f74b740f0`
 
-Source path: `Scripts/Reports/Geometry Audit.py` (candidate launcher). Immutable source link pending a reviewed containing commit.
+[Python source at `75235791e388`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/75235791e3880a7bc761f4bbc9c5dccc08813705/Scripts/Reports/Geometry%20Audit.py)

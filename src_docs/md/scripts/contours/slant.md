@@ -62,4 +62,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b11c8799610c475bd66a8fc3512977531577947f7cb44b7adda8c90986ba0f68`
 
-[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Contours/Slant.py)
+[Python source at `75235791e388`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/75235791e3880a7bc761f4bbc9c5dccc08813705/Scripts/Contours/Slant.py)

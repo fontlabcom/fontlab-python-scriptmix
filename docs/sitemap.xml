@@ -56,6 +56,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/retirement-decisions.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/tags.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
@@ -1246,6 +1251,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/proof/context-proof.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/proof/glyph-grid.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
@@ -1441,7 +1451,17 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/font-audit.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/font-overview.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/geometry-audit.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -1462,6 +1482,11 @@
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/master-node-compatibility-report.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/master-structure-audit.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -1532,6 +1557,11 @@
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/utilities/magic-remover.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/utilities/reference-image-viewer-app.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>

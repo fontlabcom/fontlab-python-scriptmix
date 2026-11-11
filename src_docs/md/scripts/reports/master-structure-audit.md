@@ -32,4 +32,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `a4f9085767c0037720123cccb2b0b1432050cf333a5b7c99a3c9d358cbbc7e5a`
 
-Source path: `Scripts/Reports/Master Structure Audit.py` (candidate launcher). Immutable source link pending a reviewed containing commit.
+[Python source at `75235791e388`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/75235791e3880a7bc761f4bbc9c5dccc08813705/Scripts/Reports/Master%20Structure%20Audit.py)

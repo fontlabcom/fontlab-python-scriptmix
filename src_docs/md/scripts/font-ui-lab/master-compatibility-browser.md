@@ -29,4 +29,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `f50a63982f8ff078f0590f659d69b512bf4021028f420def788235062c526322`
 
-Source link awaits a reviewed commit containing this new menu script.
+[Python source at `75235791e388`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/75235791e3880a7bc761f4bbc9c5dccc08813705/Scripts/Font%20UI%20Lab/Master%20Compatibility%20Browser.py)

@@ -33,4 +33,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `531d0489346bd551a76b8b57e30b2324594eed3614512eeb78debe3bce01f907`
 
-Source path: `Scripts/Utilities/Reference Image Viewer App.py` (candidate launcher). Immutable source link pending a reviewed containing commit.
+[Python source at `75235791e388`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/75235791e3880a7bc761f4bbc9c5dccc08813705/Scripts/Utilities/Reference%20Image%20Viewer%20App.py)

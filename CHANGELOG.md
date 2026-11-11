@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — WP08c review fix I-1 completion
+
+Search-index test now lists the five new catalogue pages and retirement-decisions; regenerated `src_docs/md` and `docs` from the final launcher commit 7523579 and ran tests_docs against the fresh build (43 OK).
+
 ## 2026-11-11 — WP08c review fix I-1: catalogue pages and docs pins
 
 Added the five missing catalogue pages (Context Proof, Font Audit, Reference
