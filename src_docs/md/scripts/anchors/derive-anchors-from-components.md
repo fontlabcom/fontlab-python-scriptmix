@@ -34,4 +34,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `e9a37c38870c7e0c2f6f2294791824a582ca6dc3b5a92853919913d7dd41f538`
 
-[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Anchors/Derive%20Anchors%20From%20Components.py)
+[Python source at `cb3a95057641`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cb3a95057641f3b2382a887172fab524dbc4901a/Scripts/Anchors/Derive%20Anchors%20From%20Components.py)
