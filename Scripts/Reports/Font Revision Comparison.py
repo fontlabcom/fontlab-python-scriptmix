@@ -15,7 +15,7 @@ Safety: Reports are read-only. They do not change glyphs, layers, selection,
 history, preferences or the clipboard unless you choose to copy text. Run it
 from the main UI thread; the window owns its dialogs and releases them on close.
 
-Source: Original workflows on shared App report providers, Apache-2.0
+Source: Adapted from Jens Kutilek's MIT Glyphs-Scripts (Copyright (c) 2017 Jens Kutilek) on shared App report providers; FontLab additions Apache-2.0.
 (fly.ap.fontui.font_revision_comparison). Requires the App with WP08 S62 assembly and
 fontlab-fly in FontLab 9 Python 3.11.
 """

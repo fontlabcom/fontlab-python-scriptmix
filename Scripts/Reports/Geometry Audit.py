@@ -15,7 +15,7 @@ Safety: Reports are read-only. They do not change glyphs, layers, selection,
 history, preferences or the clipboard unless you choose to copy text. Run it
 from the main UI thread; the window owns its dialogs and releases them on close.
 
-Source: Original workflows on shared App report providers, Apache-2.0
+Source: Adapted from Simon Cozens (MIT: Close But No Cigar, Dump to SVG), Alex Slobzheninov (Apache-2.0: Dangerous Offcurves, Point Counter) and Reza Bohloul (independent implementation, no licence declared: Point Counter (Master Layers)) on shared App report providers; FontLab additions Apache-2.0.
 (fly.ap.fontui.geometry_audit). Requires the App with WP08 S60 assembly and
 fontlab-fly in FontLab 9 Python 3.11.
 """

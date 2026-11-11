@@ -15,7 +15,7 @@ Safety: Reports are read-only. They do not change glyphs, layers, selection,
 history, preferences or the clipboard unless you choose to copy text. Run it
 from the main UI thread; the window owns its dialogs and releases them on close.
 
-Source: Original workflows on shared App report providers, Apache-2.0
+Source: Adapted from Fernando Diaz and Reset Type Studio (Apache-2.0, 2025: Master Node Compatibility Report) and Simon Cozens (MIT: Why You Not Compatible) on shared App report providers; FontLab additions Apache-2.0.
 (fly.ap.fontui.master_structure_audit). Requires the App with WP08 S61 assembly and
 fontlab-fly in FontLab 9 Python 3.11.
 """
