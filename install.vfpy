@@ -24,6 +24,8 @@ reverse-domain form (e.g. com.fontlab.fly). FontLab reports its user data folder
 - Dependencies are installed on every run: a required package whose checkout
   sits beside this folder (with its own install.vfpy) is installed from there
   first, since these are not on PyPI; uv installs the rest.
+- App only: one marked initScript.py block boots the plugin core at launch;
+  uninstall removes only that block, preserving the rest of the startup file.
 - Scripts/Extensions/: "List Extensions" and "Uninstall <id>" launchers. They
   import this same file, installed as site-packages/fontlab_install.py.
 
@@ -33,7 +35,9 @@ FontLab: name (the distribution record), packages (folders with __init__.py;
 
 Restart FontLab afterwards.
 """
+import base64
 import datetime
+import hashlib
 import json
 import os
 import platform
@@ -51,6 +55,7 @@ from pathlib import Path
 SOURCE = Path(__file__).resolve().parent
 MODULE = "fontlab_install"  # name of this file when installed into site-packages
 LOG = "install.log"
+DRY_RUN = "FONTLAB_INSTALL_DRY_RUN"
 ACTIVE = "FONTLAB_INSTALL_ACTIVE"  # checkouts already installed in this run, shared by nested installers
 VENV = ".venv"
 VENV_DIRS = ("bin", "share", "include")  # where wheels put scripts, data and headers
@@ -151,6 +156,176 @@ def remove_path(path, data):
         parent = parent.parent
 
 
+# --- superseded scripts ----------------------------------------------------
+
+
+def file_sha256(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+LEDGER = "menu-consolidations.json"
+
+
+def ledger_hashes(source):
+    """sha256 of every old route the package's consolidation ledger lists (source.sha256), else empty.
+
+    The ledger is optional: a missing or malformed one only means the fallback matches nothing.
+    """
+    try:
+        rows = json.loads((Path(source) / LEDGER).read_text(encoding="utf-8"))
+        rows = rows["rows"] if isinstance(rows, dict) else rows
+        return {row["source"]["sha256"] for row in rows}
+    except (OSError, ValueError, KeyError, TypeError):
+        return set()
+
+
+def linked_parent(path, top):
+    """True when any directory between top and path, or top (the data folder) itself, is a symlink.
+
+    path itself is not checked."""
+    current = path.parent
+    while current != top and top in current.parents:
+        if current.is_symlink():
+            return True
+        current = current.parent
+    return current.is_symlink()
+
+
+def plan_superseded(previous, scripts, new_targets, ledger=frozenset()):
+    """Classify the last install's scripts that the new package no longer ships.
+
+    Returns {"remove": [...], "kept": [(path, reason)], "refused": [(path, reason)]}.
+    A file is removed only when its sha256 still equals the one logged at install (or, for
+    an older log without hashes, a hash in the shipped ledger). A link is removed only when
+    the log recorded it as ours ("links") and it still points there. Entries below a linked
+    folder are refused. Edited, unknown and unrecorded things are never touched.
+    """
+    plan = {"remove": [], "kept": [], "refused": []}
+    hashes = (previous or {}).get("hashes", {})
+    links = (previous or {}).get("links", {})
+    # "kept" entries are only re-examined (so they are reported again); uninstall never removes them.
+    for entry in list((previous or {}).get("files", [])) + list((previous or {}).get("kept", [])):
+        path = Path(os.path.abspath(str(entry)))
+        if ".." in Path(str(entry)).parts or scripts.parent not in path.parents:
+            plan["refused"].append((str(entry), "outside FontLab's data folder or uses .."))
+            continue
+        if scripts not in path.parents:
+            continue  # lib/site-packages entries are handled by the stale sweep
+        if path in new_targets:
+            continue  # replaced afresh by place_scripts
+        if linked_parent(path, scripts.parent):
+            plan["refused"].append((str(path), "a parent folder is a link"))
+        elif path.is_symlink():
+            if str(path) in links and os.readlink(str(path)) == links[str(path)]:
+                plan["remove"].append(path)  # a link we created, unchanged; its target is untouched
+            else:
+                plan["kept"].append((str(path), "link not recorded as ours or changed"))
+        elif not path.exists():
+            continue
+        elif not path.is_file():
+            plan["kept"].append((str(path), "folder, not a logged file"))
+        elif str(path) in hashes:
+            if file_sha256(path) == hashes[str(path)]:
+                plan["remove"].append(path)
+            else:
+                plan["kept"].append((str(path), "edited since install"))
+        elif file_sha256(path) in ledger:
+            plan["remove"].append(path)  # older log: the ledger proves these exact bytes were ours
+        else:
+            plan["kept"].append((str(path), "no logged hash and not in the ledger (older install.log)"))
+    return plan
+
+
+def report_superseded(plan):
+    for path in plan["remove"]:
+        print("Superseded, unmodified, removed: %s" % path)
+    for path, why in plan["kept"]:
+        print("Superseded but kept (%s): %s" % (why, path))
+    for path, why in plan["refused"]:
+        print("Refused (%s): %s" % (why, path))
+
+
+def safe_last_state(home):
+    """last_state, or None with a report when install.log is unreadable (nothing is then removed)."""
+    try:
+        return last_state(home)
+    except (ValueError, KeyError, TypeError) as error:
+        print("install.log is unreadable (%s); no superseded script is removed." % error)
+        return None
+
+
+def plan_uninstall(state, data):
+    """{"remove": [...], "kept": [(path, reason)]} for the last install's "files".
+
+    Under Scripts/ a file is removed only if its sha256 equals the one logged at install and
+    a link only if it still points where the log recorded (or, with no record in an older log, still into our lib/ or checkout); edited, re-pointed or unrecorded
+    entries (older logs) are kept and reported. Other entries (lib/ folders we created) are
+    removed as before; kept entries of the install are never touched.
+    """
+    plan = {"remove": [], "kept": []}
+    hashes, links = state.get("hashes", {}), state.get("links", {})
+    scripts = data / "Scripts"
+    for entry in state["files"]:
+        path = Path(os.path.abspath(str(entry)))
+        if not os.path.lexists(str(path)):
+            continue
+        if path.is_symlink():
+            if str(entry) in links:
+                ours = os.readlink(str(path)) == links[str(entry)]
+            else:  # older logs recorded no links: ours only if it still points into our lib/ or checkout
+                ours = points_into(path, [data / "Extensions" / str(state.get("id", "")) / "lib", state.get("source")])
+            if ours:
+                plan["remove"].append(entry)
+            else:
+                plan["kept"].append((str(entry), "link not recorded as ours or changed"))
+        elif path.is_dir():
+            if scripts in path.parents:
+                if not any(path.iterdir()):
+                    plan["remove"].append(entry)  # only an empty folder; its scripts are judged one by one
+                else:
+                    plan["kept"].append((str(entry), "folder is not empty"))
+            elif owns_folder(path, state):
+                plan["remove"].append(entry)
+            else:
+                plan["kept"].append((str(entry), "folder not proven ours (no installer marker)"))
+        elif scripts not in path.parents:
+            plan["kept"].append((str(entry), "file not proven ours"))
+        elif str(entry) not in hashes:
+            plan["kept"].append((str(entry), "no logged hash (older install.log)"))
+        elif file_sha256(path) == hashes[str(entry)]:
+            plan["remove"].append(entry)
+        else:
+            plan["kept"].append((str(entry), "edited since install"))
+    return plan
+
+
+def points_into(link, roots):
+    """True if the symlink resolves to or below one of the (existing) root paths."""
+    try:
+        target = os.path.realpath(str(link))
+        for root in roots:
+            if root:
+                base = os.path.realpath(str(root))
+                if target == base or target.startswith(base + os.sep):
+                    return True
+    except (OSError, ValueError):
+        pass
+    return False
+
+
+def owns_folder(path, state):
+    """True if the installer's own marker is inside: lib/ (id marker) or a .dist-info (INSTALLER)."""
+    try:
+        marker = path / MARKER
+        if marker.is_file() and not marker.is_symlink():
+            return json.loads(marker.read_text(encoding="utf-8")).get("id") == state.get("id")
+        installer = path / "INSTALLER"
+        return (path.name.endswith(".dist-info") and installer.is_file()
+                and installer.read_text(encoding="utf-8") == "install.vfpy\n")
+    except (OSError, ValueError, AttributeError):
+        return False
+
+
 def uninstall(ext_id, data=None):
     """Remove everything the last install created; keep install.log as history."""
     data = data or data_dir()
@@ -158,9 +333,26 @@ def uninstall(ext_id, data=None):
     state = last_state(home)
     if not state or state["action"] != "install":
         raise RuntimeError("%s is not installed." % ext_id)
-    for path in state["files"]:
-        remove_path(path, data)
-    append_log(home, {"action": "uninstall", "id": ext_id, "name": state["name"], "time": now()})
+    if ext_id == "com.fontlab.fontlabapp" and not state.get("startup_removed"):
+        plugin_startup(data, remove=True)
+        append_log(home, dict(state, startup_removed=True))
+    plan = plan_uninstall(state, data)
+    failure = None
+    for index, path in enumerate(plan["remove"]):
+        try:
+            remove_path(path, data)
+        except Exception as error:  # stop (the generated launcher must survive for a retry), log, re-raise
+            plan["kept"] += [(str(p), "removal failed: %s" % error if p == path else "not reached after a failure")
+                             for p in plan["remove"][index:]]
+            failure = error
+            break
+    for path, why in plan["kept"]:
+        print("Kept (%s): %s" % (why, path))
+    record = {"id": ext_id, "name": state["name"], "time": now(), "kept": [path for path, _ in plan["kept"]]}
+    if failure:  # history only (last_state ignores it), so the uninstall stays retryable
+        append_log(home, dict(record, action="uninstall-failed", error=str(failure)))
+        raise failure
+    append_log(home, dict(record, action="uninstall"))
     print("Uninstalled %s. Restart FontLab to unload it; %s keeps the history." % (ext_id, home / LOG))
 
 
@@ -386,10 +578,36 @@ def unlink_folder_links(scripts, rel):
             print("Replaced the folder link %s with a real folder." % path)
 
 
-def place_scripts(scripts, pairs):
+def logged_hashes(home):
+    """{path: sha256} from every install record, newest wins (survives an uninstall record)."""
+    result = {}
+    for record in read_log(home):
+        if record["action"] == "install":
+            result.update(record.get("hashes", {}))
+    return result
+
+
+def edited_targets(scripts, pairs, home):
+    """Existing script targets that are not provably ours: [(path, reason)], never overwritten."""
+    known, ledger, kept = logged_hashes(home), ledger_hashes(SOURCE), []
+    for source, rel in pairs:
+        target = scripts / rel
+        if target.is_symlink() or not target.is_file():
+            continue
+        digest = file_sha256(target)
+        if digest == file_sha256(source) or digest == known.get(str(target)) or digest in ledger:
+            continue
+        reason = "edited since install" if str(target) in known else "no logged hash, differs from this release"
+        kept.append((target, reason))
+    return kept
+
+
+def place_scripts(scripts, pairs, skip=frozenset()):
     """Copy every script file afresh into FontLab's Scripts, replacing what is at its path."""
     placed = []
     for source, rel in pairs:
+        if scripts / rel in skip:
+            continue
         if source.suffix in (".py", ".vfpy"):
             compile(source.read_bytes(), str(source), "exec")
         target = scripts / rel
@@ -405,19 +623,119 @@ def place_scripts(scripts, pairs):
     return placed
 
 
-def remove_old_dist(site, name):
-    """Remove an earlier install of this distribution (ours, uv or pip) using its RECORD."""
+def record_rows(info):
+    """(relative path, sha256 text) for each safe RECORD row of a dist-info."""
+    record = info / "RECORD"
+    rows = []
+    for line in (record.read_text(encoding="utf-8").splitlines() if record.is_file() else []):
+        parts = line.rsplit(",", 2)
+        rel = Path(parts[0]) if parts[0] else None
+        if rel and not rel.is_absolute() and ".." not in rel.parts:
+            rows.append((rel, parts[1] if len(parts) == 3 else ""))
+    return rows
+
+
+def is_ours(info):
+    installer = info / "INSTALLER"
+    return installer.is_file() and installer.read_text(encoding="utf-8").strip() == "install.vfpy"
+
+
+def row_matches(path, digest):
+    """True if a foreign RECORD row's sha256=<urlsafe b64> still matches the file on disk."""
+    if not digest.startswith("sha256=") or path.is_symlink() or not path.is_file():
+        return False
+    raw = hashlib.sha256(path.read_bytes()).digest()
+    return base64.urlsafe_b64encode(raw).rstrip(b"=").decode() == digest[7:]
+
+
+def plan_old_dist(site, name):
+    """Plan removing earlier installs of this distribution: (paths to delete, top-level names left in place,
+    site-relative files or folders that are not provably ours and so block a replace).
+
+    Our own dist-info (INSTALLER install.vfpy): RECORD entries, but a real folder only with our MARKER (a user's
+    replacement is never ours). A foreign one (uv, pip): only RECORD files whose sha256 still matches, and
+    folders only when nothing else is left in them (edited or unlisted files keep the folder)."""
+    delete, blocked, held = [], set(), set()
     for info in site.glob(norm(name) + "-*.dist-info"):
-        record = info / "RECORD"
-        rows = record.read_text(encoding="utf-8").splitlines() if record.is_file() else []
-        tops = {Path(row.split(",")[0]).parts[0] for row in rows if row.split(",")[0]}
-        for top in tops - {"..", info.name}:  # ".." entries are scripts outside site-packages
+        rows = record_rows(info)
+        if is_ours(info):
+            for rel, _ in rows:
+                path = site / rel.parts[0]
+                if rel.parts[0] == info.name:
+                    continue
+                if path.is_dir() and not path.is_symlink() and not (path / MARKER).is_file():
+                    blocked.add(rel.parts[0])
+                    held.add(rel.parts[0])
+                elif path not in delete:
+                    delete.append(path)
+            continue
+        listed = [(site / rel, digest) for rel, digest in rows if rel.parts[0] != info.name]
+        gone = {path for path, digest in listed if row_matches(path, digest)}
+        delete += sorted(gone)
+        held.update(str(path.relative_to(site)) for path, _ in listed
+                    if path not in gone and (path.is_file() or path.is_symlink())
+                    and "__pycache__" not in path.parts and path.suffix != ".pyc")
+        for top in {rel.parts[0] for rel, _ in rows if rel.parts[0] != info.name}:
             path = site / top
-            if path.is_symlink() or path.is_file():
-                path.unlink()
-            elif path.is_dir():
-                shutil.rmtree(str(path))
+            if path.is_dir() and not path.is_symlink():
+                left = [f for f in path.rglob("*") if (f.is_file() or f.is_symlink()) and f not in gone
+                        and "__pycache__" not in f.parts]
+                if left:
+                    blocked.add(top)
+                    held.update(str(f.relative_to(site)) for f in left)
+    return delete, blocked, held
+
+
+def remove_old_dist(site, name):
+    """Remove an earlier install of this distribution that plan_old_dist proves ours; keeps anything else
+    (a user's replacement folder, edited files) in place. It refuses, before changing anything, when any such
+    entry exists, so the dist-info is never dropped while files it listed stay behind unowned."""
+    delete, blocked, held = plan_old_dist(site, name)
+    if held:
+        raise RuntimeError(refusal(name, held))
+    for path in delete:
+        if path.name in blocked and path.parent == site:
+            continue
+        if path.is_symlink() or path.is_file():
+            path.unlink()
+        elif path.is_dir():
+            shutil.rmtree(str(path))
+    for path in sorted({d for p in delete for d in p.parents if site in d.parents}, key=lambda d: -len(d.parts)):
+        if path.is_dir() and all(c.name == "__pycache__" for c in path.iterdir()):
+            for cache in path.iterdir():
+                shutil.rmtree(str(cache), ignore_errors=True)
+            path.rmdir()
+    for info in site.glob(norm(name) + "-*.dist-info"):
         shutil.rmtree(str(info))
+
+
+def refusal(name, held):
+    return ("Refusing to replace an earlier install of %s: another distribution owns it (not removable: %s). Nothing was changed. "
+            "Move or restore these files, or uninstall %s with pip or uv first, then reinstall."
+            % (name, ", ".join(sorted(held)[:5]), name))
+
+
+def check_site_free(site, name, dirs):
+    """Refuse before changing anything if anything the old install listed, or a package folder in
+    site-packages, is not ours to replace."""
+    delete, blocked, held = plan_old_dist(site, name)
+    if held:
+        raise RuntimeError(refusal(name, held))
+    gone = set(delete)
+    for target in dirs:
+        link = site / target.name
+        if not link.exists() or link.is_symlink():
+            continue
+        leftover = [f for f in link.rglob("*") if (f.is_file() or f.is_symlink()) and f not in gone
+                    and "__pycache__" not in f.parts]
+        owned = link in gone or (not leftover and target.name not in blocked and any(
+            p == link or link in p.parents for p in gone))
+        if not owned:
+            files = ", ".join(str(f.relative_to(site)) for f in sorted(leftover)[:5]) or link.name
+            raise RuntimeError(
+                "Refusing to replace %s: another distribution owns it (not removable: %s). Nothing was changed. "
+                "Move or restore these files, or uninstall %s with pip or uv first, then reinstall."
+                % (link, files, name))
 
 
 def write_record(site, name, ver, packages, requires):
@@ -434,6 +752,7 @@ def write_record(site, name, ver, packages, requires):
             os.symlink(str(target), str(link), target_is_directory=True)
         except OSError:  # e.g. Windows without symlink rights: a copy is not editable
             shutil.copytree(str(target), str(link), ignore=IGNORE)
+            (link / MARKER).write_text(json.dumps({"id": name}) + "\n", encoding="utf-8")
         placed.append(link)
     info = site / ("%s-%s.dist-info" % (norm(name), ver))
     info.mkdir()
@@ -458,7 +777,19 @@ def write_tools(data, site, ext_id):
     (menu / MARKER).write_text(json.dumps({"id": MODULE}) + "\n", encoding="utf-8")
     (menu / "List Extensions.py").write_text(LAUNCHER % ("List Extensions", "list_extensions()"), encoding="utf-8")
     uninstaller = menu / ("Uninstall %s.py" % ext_id)
-    uninstaller.write_text(LAUNCHER % ("Uninstall " + ext_id, "uninstall(%r)" % ext_id), encoding="utf-8")
+    launcher = LAUNCHER % ("Uninstall " + ext_id, "uninstall(%r)" % ext_id)
+    if ext_id == "com.fontlab.fontlabapp":
+        # Other packages can replace the shared installer with an older copy.
+        launcher = launcher.replace("fontlab_install.uninstall(",
+            "_data = fontlab_install.data_dir()\n"
+            "_home = _data / 'Extensions' / 'com.fontlab.fontlabapp'\n"
+            "_state = fontlab_install.last_state(_home)\n"
+            "if _state and _state['action'] == 'install' and not _state.get('startup_removed'):\n"
+            "    from fontlabapp.plugins.startup import update_startup\n"
+            "    update_startup(_data, remove=True)\n"
+            "    fontlab_install.append_log(_home, dict(_state, startup_removed=True))\n"
+            "fontlab_install.uninstall(")
+    uninstaller.write_text(launcher, encoding="utf-8")
     return [uninstaller]
 
 
@@ -571,24 +902,42 @@ def main():
             os.environ.pop(ACTIVE, None)
 
 
+def plugin_startup(data, remove=False):
+    """Run the installed stdlib helper without importing the native runtime."""
+    helper = site_dir(data) / "fontlabapp" / "plugins" / "startup.py"
+    runpy.run_path(str(helper))["update_startup"](data, remove=remove)
+
+
 def install(project, config, data, home, ext_id, scripts, name, ver):
+    previous = safe_last_state(home)
+    old_hashes = (previous or {}).get("hashes", {})
+    old_links = (previous or {}).get("links", {})
+    owned = set(previous["files"]) if previous and previous["action"] == "install" else set()
+    script_dir = data / "Scripts"
+    pairs = script_sources(scripts)
+    check_scripts(script_dir, pairs, owned)
+    new_targets = {Path(os.path.abspath(str(script_dir / rel))) for _, rel in pairs}
+    plan = plan_superseded(previous if owned else None, script_dir, new_targets, ledger_hashes(SOURCE))
+    report_superseded(plan)
+    held = edited_targets(script_dir, pairs, home)
+    for path, why in held:
+        print("Kept (%s, not overwritten): %s" % (why, path))
+    old_hashes = dict(logged_hashes(home), **old_hashes)
+    if os.environ.get(DRY_RUN):
+        print("Dry run: nothing changed.")
+        return
     requires = config.get("dependencies", project["project"].get("dependencies", []))
+    dirs = package_dirs(project, config)
+    check_site_free(site_dir(data), name, dirs)  # before prepare_site can migrate anything
     site = prepare_site(data)
     uv = find_uv()
     python = ensure_venv(data, site, uv) if uv else None
     if not uv:
         print("uv not found: no venv was set up. Install uv from https://docs.astral.sh/uv/ for dependencies.")
-    dirs = package_dirs(project, config)
     editable = (SOURCE / ".git").exists()
-    previous = last_state(home)
-    owned = set(previous["files"]) if previous and previous["action"] == "install" else set()
-    script_dir = data / "Scripts"
-    pairs = script_sources(scripts)
-    check_scripts(script_dir, pairs, owned)
-    old_scripts = {old for old in owned if script_dir in Path(old).parents}
-    for old in sorted(old_scripts):  # last install's scripts; this install copies them afresh
+    for old in plan["remove"]:
         remove_path(old, data)
-    owned -= old_scripts  # else an old folder link's path would be swept again after the copy
+    owned = {o for o in owned if script_dir not in Path(os.path.abspath(o)).parents}  # scripts are settled above
     files = []
     if editable or not dirs:
         packages = dirs
@@ -596,18 +945,33 @@ def install(project, config, data, home, ext_id, scripts, name, ver):
         copy_tree(dirs, home / "lib", ext_id)
         packages = [home / "lib" / d.name for d in dirs]
         files.append(home / "lib")
-    files += place_scripts(script_dir, pairs)
+    files += place_scripts(script_dir, pairs, {path for path, _ in held})
     if packages:  # scripts-only extensions need no distribution record
         files += write_record(site, name, ver, packages, requires)
     files += write_tools(data, site, ext_id)
+    # Superseded but kept (files, folders, links): logged under "kept" (with their old hash/link records) so they
+    # are reported again, but never in "files": uninstall removes only what this install created.
+    fresh = {str(f) for f in files}
+    kept = [Path(path) for path, _ in plan["kept"]
+            if os.path.lexists(path) and str(path) not in fresh] + [path for path, _ in held]
     for stale in owned - {str(f) for f in files}:  # e.g. copied -> linked leaves lib/ behind
         remove_path(stale, data)
     append_log(home, {
         "action": "install", "id": ext_id, "name": name, "version": ver, "time": now(),
         "mode": "linked" if editable else "copied", "source": str(SOURCE),
         "requires": requires, "files": [str(f) for f in files],
+        "kept": [str(f) for f in kept],
+        "hashes": dict(
+            {str(f): file_sha256(f) for f in files if Path(f).is_file() and not Path(f).is_symlink()
+             and script_dir in Path(os.path.abspath(str(f))).parents},
+            **{str(f): old_hashes[str(f)] for f in kept if str(f) in old_hashes}),  # never re-bless an edit
+        "links": dict(
+            {str(f): os.readlink(str(f)) for f in files if Path(f).is_symlink()},
+            **{str(f): old_links[str(f)] for f in kept if str(f) in old_links}),  # never adopt a user's link
     })
     install_dependencies(site, requires, uv, python)
+    if ext_id == "com.fontlab.fontlabapp":
+        plugin_startup(data)
     loaded = [d.name for d in dirs if d.name in sys.modules]
     print("Installed %s %s as %s (%s); log: %s" % (name, ver, ext_id, "linked" if editable else "copied", home / LOG))
     if python:
