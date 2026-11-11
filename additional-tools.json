@@ -3698,5 +3698,19 @@
     "app_api": "fontlabapp.fontui.metric_reports.show",
     "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
     "scope": "One read-only vertical metrics report in one shared App shell with About and retryable Close."
+  },
+  {
+    "title": "Open Contours App",
+    "key": "wp08_open_contours",
+    "destination": "Scripts/Reports/Open Contours App.py",
+    "destination_sha256": "fceb33b529d4b4923d8f17a6f4f1a61aa2f27a406ad452c12b60b552708b29f7",
+    "kind": "candidate-consolidation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0 AND MIT",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.open_contours.show",
+    "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
+    "scope": "One open-contour report with a Select glyphs action in one shared App shell with About and retryable Close."
   }
 ]

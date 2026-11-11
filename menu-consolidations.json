@@ -6611,6 +6611,17 @@
       "test_routes": [
         "tests/test_wp08_metric_reports_menu.py"
       ]
+    },
+    {
+      "path": "Scripts/Reports/Open Contours App.py",
+      "sha256": "fceb33b529d4b4923d8f17a6f4f1a61aa2f27a406ad452c12b60b552708b29f7",
+      "state": "candidate",
+      "containing_commit": null,
+      "behavior_parity": false,
+      "native": false,
+      "test_routes": [
+        "tests/test_wp08_open_contours_menu.py"
+      ]
     }
   ]
 }
