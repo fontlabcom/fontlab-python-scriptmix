@@ -23,4 +23,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `a94c19667467f20cb0f996e77315b563d8604948c3ebcf66b68ff5f5476c64f9`
 
-[Python source at `bf9287c6130a`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/bf9287c6130a3083b3c1047050305dfceecbee2b/Scripts/Reports/Dump%20to%20Svg%20Path%20Commands.py)
+[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Reports/Dump%20to%20Svg%20Path%20Commands.py)

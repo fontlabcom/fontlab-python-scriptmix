@@ -1506,6 +1506,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/open-contours-app.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/open-contours.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>

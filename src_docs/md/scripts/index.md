@@ -312,6 +312,7 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Master Structure Audit](reports/master-structure-audit.md)
 - [Metric Reports](reports/metric-reports.md)
 - [Nodes Near Zones](reports/nodes-near-zones.md)
+- [Open Contours App](reports/open-contours-app.md)
 - [Open Contours](reports/open-contours.md)
 - [Point Counter (Master Layers)](reports/point-counter-master-layers.md)
 - [Point Counter](reports/point-counter.md)

@@ -50,4 +50,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `d9d16c3aa0992f1a2b9136173e82f68a87e75895b3a7cd3f88116efb77e6e103`
 
-[Python source at `bf9287c6130a`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/bf9287c6130a3083b3c1047050305dfceecbee2b/Scripts/Anchors/Delete%20By%20Name.py)
+[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Anchors/Delete%20By%20Name.py)

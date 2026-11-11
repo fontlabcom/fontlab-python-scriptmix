@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — WP08c S65 docs
+
+Regenerated `src_docs/md` and `docs` from launcher commit dc797fff (one new catalogue page); tests_docs pins 285 menus/pages/history, 427 built files, search index lists the new page.
+
 ## 2026-11-11 — WP08c S65 Open Contours App launcher
 
 Added candidate launcher `Scripts/Reports/Open Contours App.py` over `fly.ap.fontui.open_contours` (report plus Select glyphs), with test, ledger rows and pins (216 tools, 285 scripts, 8 candidates). The original `Open Contours.py` is untouched.

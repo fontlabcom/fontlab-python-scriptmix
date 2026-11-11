@@ -57,4 +57,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `15438d3983d0542075caf940af3e4231c56ebe2b3f1f94728e429b52be9f63b5`
 
-[Python source at `bf9287c6130a`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/bf9287c6130a3083b3c1047050305dfceecbee2b/Scripts/Metrics/Tabular%20Width.py)
+[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Metrics/Tabular%20Width.py)

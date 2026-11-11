@@ -48,4 +48,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `4fcbcf5042ed54a1d1f42b7255f84d4de382b1200c1249870697118aed2b07c9`
 
-[Python source at `bf9287c6130a`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/bf9287c6130a3083b3c1047050305dfceecbee2b/Scripts/Names/Batch%20Rename.py)
+[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Names/Batch%20Rename.py)
