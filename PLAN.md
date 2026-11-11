@@ -2,6 +2,23 @@
 this_file: PLAN.md
 ---
 
+## WP08 remaining practical-menu work
+
+Context Proof and Font Audit are indexed candidate launchers, not accepted
+menu transitions. The WPF inventory repair retains all 277 committed sources;
+two candidate records add no fabricated containing commit or acceptance. After
+canonical matched-cohort gates, review old/new full hashes, migrate active topology separately
+from frozen identity oracles and move original behavioral cases to callable
+owners. Remove old launchers only after that review; do not execute archived
+bodies or delete assertions to obtain passing tests.
+
+Adopt S27 only after its launcher/pin review. Complete S28–S36, S56–S58 and
+S60–S64, including the three explicit retirements. Event Log and Find Font
+Files keep active behavioral tests until their retirement contract is resolved;
+Bracket Layers and Components needs both report contracts retained in S58.
+Preserve exact containing-commit documentation and installation/native holds,
+the ten missing composition implementations and all 8,723 obligations.
+
 ## WP01 follow-up and later consolidation packages
 
 The proposed transition ledger now accounts for all 277 current-main sources

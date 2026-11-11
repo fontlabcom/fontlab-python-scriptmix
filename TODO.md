@@ -2,7 +2,23 @@
 this_file: TODO.md
 ---
 
+- [ ] WP08C: orchestrator must stage resolved CHANGELOG/TODO/WORK conflicts; sandbox denies the linked worktree index outside this lane.
+- [ ] WP08C: qualify canonical arm64 matched-cohort gates; supplied offline venv is Python 3.11.16 x86_64.
+- [ ] WP08C/WP11/WP12: verify candidate containing commits, generated catalogue links, ordinary artifacts and native FontLab behavior before acceptance or old-menu removal.
+
+The older WP08 rows below are retained historical follow-up records. Candidate
+indexing and the WPF source-inventory repair are now verified separately; their
+remaining acceptance, source-link and native obligations stay open.
+
 - [ ] Run canonical G-Examples/G-Scriptmix wrappers in an authorized environment before controller integration; WP01 independent review and the full prepared Scriptmix suite passed, but wrapper writes remain outside this lane. Preserve all original 371 sources, six added Scriptmix routes and frozen manifests.
+
+- [ ] WP08: run canonical matched-cohort gates after dependency provisioning and the externally owned WP01 inventory repair.
+- [ ] WP08: review/index the Context Proof and Font Audit candidates, adopt S27, migrate original callable-route oracles and record honest hash transitions before removing old menus.
+- [ ] WP08: complete S28–S36, S56–S58 and S60–S64; preserve existing owners and the ten missing composition obligations.
+- [ ] WP08: resolve Event Log/Find Font Files retirement test contracts without archived execution or assertion loss; retain both bracket-report contracts before S58 retirement.
+- [ ] WP08 native: qualify actual PythonQt launchers/tabs, rendering, captured context, sort/resize/close, whole-font preservation and applicable Undo/Redo/save-reopen.
+
+- [ ] Run canonical G-Examples/G-Scriptmix wrappers in an authorized environment before controller integration; WP01 independent review and the full prepared Scriptmix suite passed, but wrapper writes remain outside this lane. Preserve all 371 sources and frozen manifests.
 - [ ] Implement and review later Scriptmix consolidation destinations/tabs before changing proposed acceptance or removing any old launcher; retain all 8,723 compatibility obligations and the minimum eighteen workflows.
 - [ ] Before a Git-less distribution removes menus, provision and audit its explicit hash-verified external menu archive; full inventory certification still requires Git.
 - [ ] Native: qualify later consolidated tools in real FontLab PythonQt, including full-font/history/Undo/Redo/save-reopen and installed origins; WP01 host tests do not close these checks.
@@ -148,3 +164,15 @@ this_file: TODO.md
 - [ ] Complete #17 P2 post-change graph, exact ledger/source qualification and staged review; refresh actual main, reconcile intervening changes, qualify genuine-commit docs, then verify normal hooked main delivery, exact-commit CI and generated-output lineage.
 - [ ] Qualify #17 P2 matching ordinary artifacts, two fresh prefixes and archives, then its actual consumer/native/history/Undo/Redo/reopen checks; retain recipe-only No Font, complete input/output preservation, distinct cleanup ACKs and actual terminal worker cleanup. Keep wider literal-U+2029 feature editing, canonical adoption, publication and private Pages holds as separate workflow gates.
 - [ ] Requalify source-accepted #10 and #15 on the combined main tree and matching ordinary artifacts; preserve exact feature-source/refusal/proof/lifetime oracles, independent review and all complete-module coverage gates before delivery.
+
+## Retained prior-lane follow-up evidence
+
+- [ ] Add a public App Font Info ttfautohint writer; then restore the stem tool.
+
+- [ ] Resolve App Metrics planning when a selected composite and its base both move; prove no double shift and measure Master Metrics Table capHeight writes.
+
+- [ ] Resolve App anchor read-back tolerance and sub-unit moves swallowed by native rounding.
+
+- [ ] Resolve existing Ruff findings without unrelated historical-source rewrites.
+
+- [ ] Fix catalogue immutable-link validation by checking committed menu paths and bytes, with dirty/untracked-menu regressions; refuse or defer false links without adding a new generator framework.

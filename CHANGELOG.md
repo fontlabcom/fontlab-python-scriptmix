@@ -24,6 +24,30 @@ outside-lane writes. Canonical provisioning remains an explicit qualification li
 Restored all 277 regenerated catalogue files to their pre-suite bytes. Native
 PythonQt, ordinary installed artifacts and later consolidation remain open.
 
+## 2026-11-11 — WP08 candidate launchers and retirement evidence
+
+Final prepared Scriptmix full suite: **4,679 passed, six inventory failures,
+two existing skips**. A one-test Context Proof coverage append passes; both
+new launchers have 100% line/branch coverage. The full suite remains failed.
+
+Added candidate Context Proof and Font Audit launchers for the first reviewed
+App assemblies. Both retain lazy dispatch; Font Audit preserves the original
+GlyphData classification and case-name policies. Original menus, manifests and
+hash pins remain unchanged. The new targets are not yet accepted in the active
+inventory: no menu reduction or completed consolidation is claimed.
+
+Font Audit launcher/policy checks: seven passed, 35/35 lines and 10/10 branches.
+Context Proof launcher checks: three passed, 5/5 lines and 2/2 branches.
+Retirement/history and retained behavior checks: 63 passed, including two new
+non-executing source-identity checks. Authored retirement-decisions.md records
+exact bytes/licences and unresolved Event Log/Find Font Files removal contracts.
+The duplicate bracket report still awaits S58 parity review.
+
+WP08 remains blocked at the required full gates. Exact provisioning failed on
+PyPI DNS; the known WP01 inventory finding belongs to another lane. Candidate
+menu inventory failures remain visible rather than weakening existing tests.
+Retain the ten missing compositions, all 8,723 obligations and native checks.
+
 ## 2026-11-11 — WP01 proposed consolidation and historical-byte recovery
 
 Added an additive 271-source transition ledger: 268 sources map to 64 proposed

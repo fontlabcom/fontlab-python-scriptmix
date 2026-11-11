@@ -130,9 +130,9 @@ class SiteTests(unittest.TestCase):
         import ast
         from urllib.parse import quote
         menus = sorted((ROOT / 'Scripts').glob('*/*.py'))
-        self.assertEqual(len(menus), 277)
+        self.assertEqual(len(menus), 279)
         pages = [p for p in (ROOT / 'src_docs/md/scripts').glob('*/*.md') if p.name != 'index.md']
-        self.assertEqual(len(pages), 277)
+        self.assertEqual(len(pages), 279)
         for source in menus:
             data = source.read_bytes()
             description = ast.get_docstring(ast.parse(data))

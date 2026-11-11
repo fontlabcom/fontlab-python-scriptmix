@@ -3600,5 +3600,33 @@
     "app_api": "fontlabapp.fontui.interpolation_preview.show",
     "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/interpolation_preview.py; no release floor is asserted.",
     "scope": "Captured-font designspace location controls and existing read-only two-master linear interpolation preview; no font writes or instance creation."
+  },
+  {
+    "title": "Context Proof",
+    "key": "wp08_context_proof",
+    "destination": "Scripts/Proof/Context Proof.py",
+    "destination_sha256": "b567f12a41602c1852e7bf56aa780b7b895900442dfaf3b05d8716c24a7747af",
+    "kind": "candidate-consolidation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.studios.proof_studio.practical.show_context",
+    "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
+    "scope": "Eight named context-proof modes preserving original text and repetitions."
+  },
+  {
+    "title": "Font Audit",
+    "key": "wp08_font_audit",
+    "destination": "Scripts/Reports/Font Audit.py",
+    "destination_sha256": "e61b5781959bf8211a00b7c58b132df7b9a434531b2b3b6b16d9b9f9dfe49cb8",
+    "kind": "candidate-consolidation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0 AND MIT",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.studios.font_audit.practical.show",
+    "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
+    "scope": "Eight report tabs preserving original classification and case-name policies."
   }
 ]

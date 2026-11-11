@@ -14,6 +14,14 @@ Controller full Scriptmix gate: 4,631 passed, two retained skips. Independent
 review found no remaining source blocker. Generated documentation retains only
 the two new pages and index additions; immutable links await a containing commit. Native and ordinary artifact checks remain in TODO.
 
+## WP08 current lane
+
+Candidate launchers and retirement evidence are present; original menus and
+frozen provenance remain intact. Full acceptance is blocked and old-menu
+removal has not begun. Exact commands, coverage and failed inventory gates are
+retained in the lane WP08-REPORT.md and .wp08-evidence/gates/; no tests were
+weakened or skipped. The orchestrator owns integration and the WP01 fix.
+
 # Work in progress
 
 ## Lane C6 — workflow 6 Interpolation Preview
@@ -78,3 +86,82 @@ No new wrappers, dependencies or menu categories are needed.
   the full test run to their initial bytes; source hashes remain unchanged.
 
 Native PythonQt/FontLab behavior and ordinary installed artifacts were not tested.
+
+## Retained prior-lane WP01 evidence
+
+## WP01 — truthful transitions (2026-11-11)
+
+Scope: additive source accounting and historical-byte resolution only. No Scripts
+bytes, immutable manifests/pins, Git refs/index, FontLab installations or native state
+changed. All 271 source identities use containing commit
+`4c2f6f81dabe9fe75b432fe2dfe50bfb10bf69c9`; source hashes are verified against Git,
+not merely against the worktree. A shared destination is valid with distinct
+(tab, optional action) identities. Every acceptance remains proposed, with false
+behavior/native parity. Sixty-four targets and three proposed retirements are
+future routing decisions, not an active-menu reduction.
+
+Tests first: existing menu-layout/history suite passed 25. Added regressions then
+failed as expected (18 existing passed, 1 failed, 23 setup errors for absent APIs).
+After implementation the focused suite passed 78 with zero failures/skips:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 QT_QPA_PLATFORM=offscreen PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 COVERAGE_FILE=../.wp01-evidence/scriptmix-focused.coverage /Volumes/Falstaff4T/fontlab-scripting-data/issue250/venv-smx/bin/python -B -m pytest -q -p no:cacheprovider -p pytest_cov --cov=menu_layout --cov-branch --cov-report=json:../.wp01-evidence/scriptmix-focused.json tests/test_menu_layout.py tests/test_migration_history_sources.py tests/test_curated_delivery.py tests/test_components.py::test_released49_rejects_changed_menu_bytes tests/test_inspectors.py::test_released45_fixed_manifest_rejects_changed_menu_bytes
+/opt/homebrew/bin/ruff check --no-cache menu_layout.py tests/test_menu_layout.py tests/_migration_history.py tests/test_curated_delivery.py tests/test_migration_history_sources.py
+```
+
+Complete production module `menu_layout.py`: 176/182 statements (96.70%),
+95/102 branches (93.14%); no exclusions. Ruff clean. Existing three lambda
+assignments in the changed menu-layout test became equivalent local functions to
+meet the changed-file Ruff rule; no oracle was weakened. The controller owns the
+full exact gates and independent review evidence. Initial `uvx` attempts failed
+on prohibited default tool-cache writes and unavailable isolated offline metadata;
+the installed Ruff binary supplied the focused lint check.
+
+Archive decision: `pyproject.toml` declares a scripts-only installation, no runtime
+package (`packages=[]`, uv `package=false`). Existing `rescue-index.json` tracks
+private historical input bodies, not the reviewed current menu payloads; generated
+`.build/menu-sources` is not a durable archive. Reuse the existing external
+preserved-source approach with an explicit `FONTLAB_MENU_ARCHIVE` directory of
+`<full-sha256>.bin` data. No corpus or archive payload is shipped by WP01. Future
+packaging must audit/provision this archive before removing menus in Git-less
+installs. `source_bytes` and `released_bytes` verify every recovered payload and
+never execute it. `consolidation_rows` additionally certifies the full inventory
+against Git and refuses certification when Git is unavailable; a single recovered
+historical payload does not imply inventory, implementation or native acceptance.
+
+Open: controller full gates/review, later source-route parity, genuine archive
+packaging and real FontLab PythonQt acceptance. No commits or source removals.
+
+Full-suite feedback retained two legacy corruption-oracle failures: new bare-menu
+hash validation raised ValueError before the old callers could assert their
+historical error contract. Scoped that new refusal to explicit consolidation
+ledgers; no-ledger raw-byte behavior remains unchanged. Both original tests are
+unchanged and pass in the final focused 78-case run. The controller repeats the
+full suite after this fix.
+
+### Final complete prepared suite
+
+From the WP01 lane root:
+
+```sh
+sh .wp01-gates/prepared-suite.sh fontlab-python-scriptmix final-rerun
+```
+
+Result: **4,662 passed, two existing skips, zero failures**, 95.23 seconds. The
+unchanged repository `repos.sh` `run_suite` arguments ran through prepared
+environment provisioning. Evidence is in
+`.wp01-gates/fontlab-python-scriptmix-final-rerun/suite.log` at the lane root.
+Full `menu_layout.py` coverage: 178/182 statements (97.80%), 97/102 branches
+(95.10%), zero exclusions. Changed historical test helper coverage is 34/34
+statements (100%) and 7/8 branches (87.50%). The gate owner restored 270 generated
+catalogue pages after verifying unchanged Scripts bytes; these generated changes
+are not delivered as WP01 source-link edits. Independent review approved the
+implementation and the preserved legacy corruption-oracle contract.
+
+The canonical `quality.sh coverage` wrapper was **not run**: it hardcodes writes
+to evidence/cache locations outside this lane. The full prepared suite is an
+explicit provisioning equivalent, not a canonical G-Scriptmix pass. The gate
+also built and installed an App wheel into lane-local test storage; no FontLab
+installation changed. Canonical wrapper qualification remains a controller task.
+Native/live acceptance, future archive packaging and later tool-route parity
+remain open. No test was weakened, skipped or removed to obtain this result.

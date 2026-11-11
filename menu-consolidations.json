@@ -6533,5 +6533,29 @@
         "native": false
       }
     }
+  ],
+  "candidates": [
+    {
+      "path": "Scripts/Proof/Context Proof.py",
+      "sha256": "b567f12a41602c1852e7bf56aa780b7b895900442dfaf3b05d8716c24a7747af",
+      "state": "candidate",
+      "containing_commit": null,
+      "behavior_parity": false,
+      "native": false,
+      "test_routes": [
+        "tests/test_wp08_context_menu.py"
+      ]
+    },
+    {
+      "path": "Scripts/Reports/Font Audit.py",
+      "sha256": "e61b5781959bf8211a00b7c58b132df7b9a434531b2b3b6b16d9b9f9dfe49cb8",
+      "state": "candidate",
+      "containing_commit": null,
+      "behavior_parity": false,
+      "native": false,
+      "test_routes": [
+        "tests/test_wp08_font_audit_menu.py"
+      ]
+    }
   ]
 }

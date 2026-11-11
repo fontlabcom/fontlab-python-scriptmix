@@ -17,7 +17,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 208 and len(actual) == 277, (len(rows), len(extra), len(actual), "expected 69 samples + 208 additional = 277 menu tools")
+    assert len(rows) == 69 and len(extra) == 210 and len(actual) == 279, (len(rows), len(extra), len(actual), "expected 69 samples + 210 additional = 279 menu tools")
     assert {path.parent.name for path in (ROOT / "Scripts").glob("*/*.py")} == {
         "Anchors", "Cleanup", "Components", "Contours", "Features", "Font Info",
         "Guides", "Kerning", "Masters", "Metrics", "Names", "Proof", "Reports", "Utilities", "Font UI Lab",
@@ -171,7 +171,13 @@ def test_proposed_consolidations_account_for_all_original_menus_without_removing
 
     rows = consolidation_rows(ROOT)
     assert len(rows) == 277
-    assert {row["source"]["path"] for row in rows} == {
+    candidates = json.loads((ROOT / "menu-consolidations.json").read_text())["candidates"]
+    assert {row["source"]["path"] for row in rows}.isdisjoint(
+        row["path"] for row in candidates
+    )
+    assert {row["source"]["path"] for row in rows} | {
+        row["path"] for row in candidates
+    } == {
         str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").glob("*/*.py")
     }
     assert len({row["destination"]["path"] for row in rows if row["destination"]}) == 70
