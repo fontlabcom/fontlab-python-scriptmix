@@ -11,7 +11,7 @@ from types import SimpleNamespace as NS
 
 import pytest
 from conftest import app_namespace, original_source
-from menu_layout import active_menu_paths, current_rows, released_bytes
+from menu_layout import current_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -69,7 +69,7 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match():
     assert len(extra_destinations) == len(additional) == 210, f"expected 210 distinct additional destinations, got {len(extra_destinations)}/{len(additional)}"
     for entry in additional:
         assert (
-            hashlib.sha256(released_bytes(ROOT, entry)).hexdigest()
+            hashlib.sha256((ROOT / entry["destination"]).read_bytes()).hexdigest()
             == entry["destination_sha256"]
         )
         assert entry["counted_in_130_sample_migration"] is False
@@ -78,12 +78,11 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match():
     archive_destinations = {row["menu"] for row in archive}
     candidates = {row["rescued_original_menu"] for row in additional if row.get("rescued_original_menu")}
     assert ((set(destinations) | extra_destinations) & archive_destinations) == candidates
-    assert len(set(destinations) | extra_destinations) == 279
-    assert active_menu_paths(ROOT) == {
+    assert set(destinations) | extra_destinations == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }
     for entry in entries:
-        payload = released_bytes(ROOT, entry)
+        target = ROOT / entry["destination"]
         path = Path(entry["destination"])
         assert path.parts[0] == "Scripts" and len(path.parts) == 3
         assert path.parts[1] in {
@@ -108,10 +107,10 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match():
         assert entry["source"].startswith("fontlab-python-examples/_old/")
         assert ".." not in Path(entry["source"]).parts
         assert (
-            hashlib.sha256(payload).hexdigest()
+            hashlib.sha256(target.read_bytes()).hexdigest()
             == entry["destination_sha256"]
         )
-        source = payload.decode()
+        source = target.read_text()
         ast.parse(source, feature_version=(3, 11))
         assert "from fly.ap.core.scripting import" in source
         assert "exec(" not in source

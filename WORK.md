@@ -16,23 +16,6 @@ the two new pages and index additions; immutable links await a containing commit
 
 # Work in progress
 
-## Issue 250 WP05 — outline editing
-
-Implemented and independently reviewed all ten tools and their exact callable
-routes; removed 49 old menus with verified historical-byte recovery. Final full
-prepared App gate: 12,473 passed / 28 existing skips. Final full prepared
-Scriptmix gate: 4,792 passed / two existing skips. All 88 changed production
-modules meet 80% lines and branches separately, with zero exclusions; all ten
-launchers reach 100% of both. Pinned and uvx default-scope Ruff pass 139 files.
-Exact commands, earlier failures, every changed path and per-module coverage are
-in the lane's `WP05-REPORT.md` and `.wp05-gates/` evidence.
-
-Canonical wrapper writes and fresh dependency provisioning remain blocked;
-prepared results are explicitly separate. Native FontLab, ordinary artifacts,
-Git-less archive/installer migration, graph integration and genuine-commit
-catalogue/site generation remain open. No Git refs, owner installs or native
-fonts changed. The previously observed batch-recipe Close race remains open.
-
 ## Lane C6 — workflow 6 Interpolation Preview
 
 Implemented the owned, read-only two-master designspace preview and both launchers.

@@ -7,7 +7,6 @@ from __future__ import annotations
 import json
 import math
 import runpy
-from _wp05_outline_routes import route_path
 from pathlib import Path
 from types import SimpleNamespace as NS
 from typing import Any
@@ -15,7 +14,6 @@ from typing import Any
 import pytest
 from _cov_a_support import ROOT, Host, host as host_fixture  # noqa: F401
 from _message_box_support import message_box_type
-
 
 
 class PanelBase:
@@ -320,7 +318,7 @@ def test_retract_main_when_dialog_opens_then_returned_and_script_guard_runs(host
     tool = retract_tool(host, show_script_dialog=lambda dialog_type, key: host.windows().setdefault(key, dialog_type))
     assert tool.main() is tool.RetractPanel, 'retract main when dialog opens then returned and script guard runs: expected tool.main() is tool.RetractPanel'
     host.windows().clear()
-    runpy.run_path(str(route_path("Retract Handles")), run_name="__main__")
+    runpy.run_path(str(ROOT / "Scripts/Contours/Retract Handles.py"), run_name="__main__")
     assert "contours_retract_handles" in host.windows(), "retract main when dialog opens then returned and script guard runs: expected 'contours_retract_handles' in host.windows()"
 
 
