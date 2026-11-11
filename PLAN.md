@@ -2,6 +2,10 @@
 this_file: PLAN.md
 ---
 
+## C5 remaining qualification
+
+Qualify workflows 11 and 14 with matching installed App/Scriptmix artifacts in native FontLab. Verify captured source identity, report refresh, selection, painting and owned teardown; for Font Info also verify explicit Apply, Undo/Redo and saved reopen. Source/layer comparison does not load external designspace sources or interpolate outlines.
+
 ## Issue 234 workflows 1, 4 and 5 remaining qualification
 
 Qualify the three Font UI Lab menus with matching ordinary installed App and

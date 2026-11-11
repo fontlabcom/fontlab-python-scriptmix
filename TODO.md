@@ -2,6 +2,9 @@
 this_file: TODO.md
 ---
 
+- [ ] Native-qualify Font Info and Vertical Metrics with matched artifacts: captured font, explicit Apply/readback, report refresh, Undo/Redo, saved reopen and owned teardown.
+- [ ] Native-qualify Designspace Source Comparison with matched artifacts: explicit source/layer selection, metrics and compatibility summaries, complete font preservation and owned teardown.
+
 - [ ] Qualify Issue 234 Open Fonts and Master Overview, Master Compatibility Browser and Node Counts Across Masters with matching installed artifacts and native PythonQt, including empty/stale fonts, preview, chooser changes, Close and complete font/history preservation.
 - [ ] Re-run the exact Issue 234 Scriptmix runtime recipe after build dependency resolution is available; rebuild the three new menu source links at their reviewed containing commit.
 

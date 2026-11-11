@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — Issue 234 compositions 11 and 14 (C5)
+
+Added Font Info and Vertical Metrics and Designspace Source Comparison compositions with captured-font ownership and paired Scriptmix menu entries. Full offline suite: 4,621 passed and 2 existing skips; both new menus reach 100% line/branch coverage. Verification is recorded in WORK.md; native FontLab and installed-artifact qualification remain open.
+
 ## 2026-11-10 — Issue 234 master browser menus 1, 4 and 5
 
 Added Open Fonts and Master Overview, Master Compatibility Browser and Node

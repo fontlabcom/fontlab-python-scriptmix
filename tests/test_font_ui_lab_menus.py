@@ -8,6 +8,7 @@ import runpy
 import sys
 from pathlib import Path
 from types import ModuleType
+
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -41,7 +42,7 @@ OLD_MENUS_SHA = "4db55d8dbbe6f223ba7fa0e4e7b07333c9dc62e7c62ece1b5e831df0c79f2a0
 def test_real_menu_when_dispatched_then_one_world_and_exact_show(
     monkeypatch, case, font, route
 ):
-    title, module, key, digest = case
+    title, module, _key, digest = case
     path = ROOT / "Scripts/Font UI Lab" / f"{title}.py"
     calls = []
     sentinel = object()
@@ -86,6 +87,8 @@ def test_new_rows_when_added_then_old_259_bodies_and_190_rows_are_exact():
         "Scripts/Font UI Lab/Open Fonts and Master Overview.py",
         "Scripts/Font UI Lab/Master Compatibility Browser.py",
         "Scripts/Font UI Lab/Node Counts Across Masters.py",
+        "Scripts/Font UI Lab/Font Info and Vertical Metrics.py",
+        "Scripts/Font UI Lab/Designspace Source Comparison.py",
         "Scripts/Metrics/TMetrics Window.py",
         "Scripts/Contours/TGlyph Window.py",
     }
@@ -111,7 +114,7 @@ def test_new_rows_when_added_then_old_259_bodies_and_190_rows_are_exact():
         hashlib.sha256(json.dumps(payload, separators=(",", ":")).encode()).hexdigest()
         == OLD_MENUS_SHA
     )
-    assert len(rows) == 205 and len(list((ROOT / "Scripts").glob("*/*.py"))) == 274
+    assert len(rows) == 207 and len(list((ROOT / "Scripts").glob("*/*.py"))) == 276
     for title, module, key, digest in CASES:
         matching = [r for r in rows if r["key"] == key]
         assert len(matching) == 1
@@ -138,7 +141,7 @@ def test_new_rows_when_added_then_old_259_bodies_and_190_rows_are_exact():
 def test_actual_paired_app_when_resolved_through_fly_then_show_exists(case):
     import importlib
 
-    title, module, key, digest = case
+    _title, module, _key, _digest = case
     loaded = importlib.import_module("fly.ap.fontui." + module)
     assert callable(loaded.show)
     assert set(loaded.__all__) == {
@@ -211,6 +214,7 @@ def test_tabular_audit_when_catalogued_then_exact_source_and_pending_provenance(
 @pytest.mark.parametrize("route", ["inspection", "__main__"])
 def test_kerning_menu_when_real_world_then_capture_once(monkeypatch, active, route):
     import importlib
+
     from fontlab_fontport import application
     from fontlab_fontport.live import RFont
     from fontlab_fontport.memory import UFOBackend
@@ -272,6 +276,7 @@ def test_kerning_menu_when_catalogued_then_exact_source_pending_native_and_prove
 @pytest.mark.parametrize("route", ["inspection", "__main__"])
 def test_groups_menu_when_real_world_then_capture_once(monkeypatch, active, route):
     import importlib
+
     from fontlab_fontport import application
     from fontlab_fontport.live import RFont
     from fontlab_fontport.memory import UFOBackend
@@ -333,6 +338,7 @@ def test_groups_menu_when_catalogued_then_exact_source_pending_native_and_proven
 @pytest.mark.parametrize("route", ["inspection", "__main__"])
 def test_feature_menu_when_real_world_then_capture_once(monkeypatch, active, route):
     import importlib
+
     from fontlab_fontport import application
     from fontlab_fontport.live import RFont
     from fontlab_fontport.memory import UFOBackend

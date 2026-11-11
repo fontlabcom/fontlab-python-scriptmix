@@ -13,3 +13,6 @@
 - [Open Fonts and Master Overview](open-fonts-and-master-overview.md)
 - [Tabular Width Audit](tabular-width-audit.md)
 - [Unicode and Glyph Order Explorer](unicode-and-glyph-order-explorer.md)
+
+- [Font Info and Vertical Metrics](font-info-and-vertical-metrics.md)
+- [Designspace Source Comparison](designspace-source-comparison.md)
