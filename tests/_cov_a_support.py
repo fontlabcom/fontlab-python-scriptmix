@@ -23,7 +23,6 @@ from unittest.mock import MagicMock
 
 import pytest
 from _figure_settings_support import settings_factory
-from _wp05_outline_routes import route_path
 
 ROOT = Path(__file__).resolve().parents[1]
 SIGNALS = frozenset(
@@ -501,8 +500,7 @@ class Host:
             self.mp.setitem(sys.modules, "fly.fp.feature_blocks", fp_blocks)
         self.loaded = loaded
         self.fly = fly
-        source = route_path(Path(relative).stem) if relative.startswith("Contours/") else ROOT / "Scripts" / relative
-        spec = importlib.util.spec_from_file_location(name, source)
+        spec = importlib.util.spec_from_file_location(name, ROOT / "Scripts" / relative)
         assert spec is not None and spec.loader is not None, f"No loader for {relative}"
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)

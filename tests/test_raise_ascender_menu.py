@@ -2,7 +2,6 @@
 """Practical one-category Fly facade, exact original attribution, no eager action."""
 
 import hashlib
-from menu_layout import _menu_bytes
 import json
 import runpy
 import sys
@@ -10,12 +9,12 @@ from pathlib import Path
 from types import ModuleType
 
 ROOT = Path(__file__).resolve().parents[1]
-MENU = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/fontui/outline_routes/raise_ascender.py"
+MENU = ROOT / "Scripts/Contours/Raise Ascender.py"
 
 
 def test_menu_import_and_public_main_each_lazy_forward_once(monkeypatch):
     calls = []
-    module = ModuleType("fontlabapp.contours.raise_ascender.model")
+    module = ModuleType("fly.ap.contours.raise_ascender.model")
     module.show = lambda: calls.append(True) or "owned"
     monkeypatch.setitem(sys.modules, module.__name__, module)
     namespace = runpy.run_path(str(MENU))
@@ -31,7 +30,7 @@ def test_original_scope_and_provenance_are_not_native_completion():
         for row in json.loads((ROOT / "additional-tools.json").read_text())
         if row["key"] == "raise_ascender"
     )
-    assert row["destination_sha256"] == hashlib.sha256(_menu_bytes(ROOT, "Scripts/Contours/Raise Ascender.py")).hexdigest()
+    assert row["destination_sha256"] == hashlib.sha256(MENU.read_bytes()).hexdigest()
     assert (
         row["source_sha256"]
         == "a6bba363ea8c22660f3f3a02f67a2cd14748afc7a683303c9acffacd85d671f2"

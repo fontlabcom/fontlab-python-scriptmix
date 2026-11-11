@@ -9,8 +9,6 @@ The scripts run unchanged. Only the native modules `fontlab`, `fontgate`,
 Offline results never prove native FontLab behaviour.
 """
 
-from conftest import app_module_name, app_names_used, check_real_app_names, resolve_app_sources
-from menu_layout import _menu_bytes
 import ast
 import itertools
 import math
@@ -1038,8 +1036,10 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.FontMetrics = lambda package, master: NS(xHeight=w.x_height)
     fontgate = ModuleType("fontgate")
     fontgate.fgShape = FgShape
+
     def names():
         return list(w.glyphs)
+
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:
@@ -1077,19 +1077,8 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
         del sys.modules[key]
 
 
-def route_path(name: str) -> Path:
-    return resolve_app_sources() / "fontui/outline_routes" / (name.lower().replace(" ", "_") + ".py")
-
-
-def source_text(name: str) -> str:
-    return _menu_bytes(ROOT, f"Scripts/Contours/{name}.py").decode()
-
-
 def load(name: str) -> dict[str, Any]:
-    namespace = runpy.run_module(
-        "fontlabapp.fontui.outline_routes." + name.lower().replace(" ", "_"),
-        run_name="inspection",
-    )
+    namespace = runpy.run_path(str(FOLDER / f"{name}.py"), run_name="inspection")
     scripting = namespace["scripting"]
     assert scripting.__name__ == "fontlabapp.core.scripting", "the real App helper"
     assert scripting.__file__.endswith("fontlabapp/core/scripting.py")
@@ -1203,7 +1192,7 @@ JARGON = [
 def test_script_when_parsed_then_python311_syntax_header_and_sections(
     name: str,
 ) -> None:
-    source = source_text(name)
+    source = (FOLDER / f"{name}.py").read_text()
     tree = ast.parse(source, feature_version=(3, 11))
     lines = source.splitlines()
     assert lines[0] == f"# this_file: Scripts/Contours/{name}.py", "this_file header"
@@ -1236,7 +1225,7 @@ def test_script_when_parsed_then_python311_syntax_header_and_sections(
 
 @pytest.mark.parametrize("name", NAMES)
 def test_public_text_when_read_then_has_no_internal_process_wording(name: str) -> None:
-    source = source_text(name)
+    source = (FOLDER / f"{name}.py").read_text()
     found = [word for word in JARGON if word in source]
     assert not found, f"{name}: internal wording {found}"
     assert "fl#" not in source.replace("fl#8527", "").replace("fl#8537", "").replace(
@@ -1245,11 +1234,10 @@ def test_public_text_when_read_then_has_no_internal_process_wording(name: str) -
 
 
 @pytest.mark.parametrize("name", NAMES)
-@pytest.mark.parametrize("current", [False, True])
 def test_panel_attributes_when_assigned_then_never_shadow_native_members(
-    name: str, current: bool,
+    name: str,
 ) -> None:
-    tree = ast.parse(route_path(name).read_text() if current else source_text(name))
+    tree = ast.parse((FOLDER / f"{name}.py").read_text())
     widgets = [
         cls
         for cls in ast.walk(tree)
@@ -2160,7 +2148,7 @@ def test_direction_when_separate_element_inside_then_left_with_note(
 
 @pytest.mark.parametrize("name", NAMES)
 def test_docstrings_when_reflowed_then_within_eighty_columns(name: str) -> None:
-    tree = ast.parse(source_text(name))
+    tree = ast.parse((FOLDER / f"{name}.py").read_text())
     for node in ast.walk(tree):
         if isinstance(node, (ast.Module, ast.FunctionDef, ast.ClassDef)):
             doc = ast.get_docstring(node, clean=False)
@@ -2199,7 +2187,7 @@ def test_safety_text_when_reviewed_then_states_native_limits(
     name: str, phrases: list[str]
 ) -> None:
     doc = " ".join(
-        ast.get_docstring(ast.parse(source_text(name))).split()
+        ast.get_docstring(ast.parse((FOLDER / f"{name}.py").read_text())).split()
     )
     assert all(p in doc for p in phrases), f"{name}: missing native safety rule"
 
@@ -2256,13 +2244,13 @@ def test_direction_when_truetype_implied_nodes_then_native_segments_used(
 
 @pytest.mark.parametrize("name", NAMES)
 def test_undo_text_when_read_then_no_unmeasured_restoration_claim(name: str) -> None:
-    source = source_text(name)
+    source = (FOLDER / f"{name}.py").read_text()
     assert "recorded as one" in source
     assert "Undo restores" not in source and "Undo brings back" not in source
 
 
 def test_small_dependency_when_documented_then_fontui_named() -> None:
-    source = source_text("Delete Small Contours")
+    source = (FOLDER / "Delete Small Contours.py").read_text()
     assert "fontlab-fontlabapp[fontui]" in source, "M8 already documents the dependency"
 
 
@@ -2364,27 +2352,3 @@ def test_round_when_anchor_setter_fails_then_one_notification_and_undo_hint(worl
     press(panel)
     assert "Native changes may remain; use Edit > Undo" in panel.status.text
     assert len(world.notifications()) == 1
-
-
-@pytest.mark.parametrize("name", NAMES)
-def test_migrated_route_retains_current_source_safety(name: str) -> None:
-    tree = ast.parse(route_path(name).read_text(), feature_version=(3, 11))
-    calls = {getattr(n.func, "attr", "") for n in ast.walk(tree) if isinstance(n, ast.Call)}
-    assert "UpdateAll" not in calls, "no global update after writes"
-    assert not calls & {"clone", "cloneCustom", "removeAllShapes"}, "no shape clones"
-    functions = [n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)]
-    assert all((f.returns is not None or f.name == "__init__")
-               and all(a.annotation is not None for a in f.args.args if a.arg != "self")
-               for f in functions), "Migrated functions retain full type hints"
-
-
-@pytest.mark.parametrize("choice,expected", [
-    (0, (30, 110)), (1, (-20, 10)), (2, (0, 0)), (3, (300.25, 0)),
-])
-def test_transform_origins_use_outline_bounds_and_unrounded_advance(
-    world: World, choice: int, expected: tuple[float, float],
-) -> None:
-    layer = NS(advanceWidth=600.5, boundingBox=NS(
-        x=lambda: -20, y=lambda: 10, width=lambda: 100, height=lambda: 200,
-    ))
-    assert load("Transform")["origin_of"](layer, choice) == expected

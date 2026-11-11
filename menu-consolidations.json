@@ -1093,18 +1093,16 @@
       "destination": {
         "path": "Scripts/Contours/Outline Doctor.py",
         "tab": "Add Extremes",
-        "sha256": "aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1118,20 +1116,17 @@
       "destination": {
         "path": "Scripts/Contours/Align and Nudge.py",
         "tab": "Align And Distribute",
-        "sha256": "70ff92140aff5b50cdf2590a0d38e5c59234e4e2353537a747b1d5fd79a553ba"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_issue122_G15.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1145,21 +1140,17 @@
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
         "tab": "Angularizzle",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_angularizzle_menu.py",
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1172,18 +1163,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Hint Tools.py",
-        "tab": "Autohint",
-        "sha256": "aed7f248d6285e1bf06d96f24137d1aa0cb22266eb30a05465927c7f98b15770"
+        "tab": "Autohint Selected Layers",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_wp05_hint_models.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1197,20 +1187,16 @@
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
         "tab": "Comb",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1224,20 +1210,17 @@
       "destination": {
         "path": "Scripts/Contours/Outline Compatibility.py",
         "tab": "Contour Order View",
-        "sha256": "40c5d904321910384646a62892f6454dd8f41718b215ae7234aaa0ed4ca9c438"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py",
-        "tests/test_wp05_outline_compatibility_menu.py",
-        "tests/test_inspectors.py",
-        "tests/test_issue122_G12.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1251,18 +1234,16 @@
       "destination": {
         "path": "Scripts/Contours/Outline Doctor.py",
         "tab": "Correct Contour Direction",
-        "sha256": "aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1276,18 +1257,16 @@
       "destination": {
         "path": "Scripts/Contours/Curve Editor.py",
         "tab": "Curve All Straights",
-        "sha256": "5faa60d22549ac454d2ad9e433631cc31ea1a7f4e9b0e53aeeb888310172e2af"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1301,18 +1280,16 @@
       "destination": {
         "path": "Scripts/Contours/Outline Doctor.py",
         "tab": "Delete Close Points",
-        "sha256": "aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1326,18 +1303,16 @@
       "destination": {
         "path": "Scripts/Contours/Outline Doctor.py",
         "tab": "Delete Duplicate Contours",
-        "sha256": "aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1351,18 +1326,17 @@
       "destination": {
         "path": "Scripts/Contours/Outline Doctor.py",
         "tab": "Delete Small Contours",
-        "sha256": "aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_issue122_S6.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1375,19 +1349,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Node Editor.py",
-        "tab": "All Foreground Layers",
-        "sha256": "1c2bbaf68856b789b53540f747d685b81a130dde32c7f8dcf2911aa6e117c7c2"
+        "tab": "Duplicate Nodes All Foreground Layers",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_G4.py",
-        "tests/test_live_nodes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1400,19 +1372,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Node Editor.py",
-        "tab": "Current Layer",
-        "sha256": "1c2bbaf68856b789b53540f747d685b81a130dde32c7f8dcf2911aa6e117c7c2"
+        "tab": "Duplicate Nodes Current Layer",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_G4.py",
-        "tests/test_live_nodes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1425,19 +1395,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Node Editor.py",
-        "tab": "Two Handles",
-        "sha256": "1c2bbaf68856b789b53540f747d685b81a130dde32c7f8dcf2911aa6e117c7c2"
+        "tab": "Duplicate Nodes with Two Handles",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_G4.py",
-        "tests/test_live_nodes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1451,18 +1419,16 @@
       "destination": {
         "path": "Scripts/Contours/Outline Doctor.py",
         "tab": "Fix Zero Handles",
-        "sha256": "aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1476,20 +1442,16 @@
       "destination": {
         "path": "Scripts/Contours/Align and Nudge.py",
         "tab": "Interpolated Nudge",
-        "sha256": "70ff92140aff5b50cdf2590a0d38e5c59234e4e2353537a747b1d5fd79a553ba"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1503,19 +1465,16 @@
       "destination": {
         "path": "Scripts/Contours/Outline Compatibility.py",
         "tab": "Make Compatible",
-        "sha256": "40c5d904321910384646a62892f6454dd8f41718b215ae7234aaa0ed4ca9c438"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_wp05_outline_compatibility_menu.py",
-        "tests/test_inspectors.py",
-        "tests/test_issue122_G12.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1528,21 +1487,18 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
-        "tab": "Myanmar Medial Ra",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "tab": "Myanmar Medial Ra Maker",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G14.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py"
+        "tests/test_issue122_G14.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1555,19 +1511,18 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Node Editor.py",
-        "tab": "Coordinates",
-        "sha256": "1c2bbaf68856b789b53540f747d685b81a130dde32c7f8dcf2911aa6e117c7c2"
+        "tab": "Node Coordinates Panel",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_live_nodes.py",
-        "tests/test_issue122_G4.py"
+        "tests/test_live_nodes.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1580,20 +1535,18 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Node Editor.py",
-        "tab": "Per-glyph Duplicator",
-        "sha256": "1c2bbaf68856b789b53540f747d685b81a130dde32c7f8dcf2911aa6e117c7c2"
+        "tab": "Node Duplicator",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_literal_node_actions.py",
-        "tests/test_issue122_G4.py",
-        "tests/test_live_nodes.py"
+        "tests/test_literal_node_actions.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1607,20 +1560,17 @@
       "destination": {
         "path": "Scripts/Contours/Outline Compatibility.py",
         "tab": "Node Statistics",
-        "sha256": "40c5d904321910384646a62892f6454dd8f41718b215ae7234aaa0ed4ca9c438"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py",
-        "tests/test_wp05_outline_compatibility_menu.py",
-        "tests/test_inspectors.py",
-        "tests/test_issue122_G12.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1634,18 +1584,16 @@
       "destination": {
         "path": "Scripts/Contours/Outline Doctor.py",
         "tab": "Optimize Start Points",
-        "sha256": "aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1659,20 +1607,16 @@
       "destination": {
         "path": "Scripts/Contours/Derived Glyphs.py",
         "tab": "Outline Effect",
-        "sha256": "b17b7cf95e3c49ec7bde85d461b18e9a9ce661242b8e75dcaa65da84e87c5f88"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1686,20 +1630,16 @@
       "destination": {
         "path": "Scripts/Contours/Align and Nudge.py",
         "tab": "Overlap Nodes",
-        "sha256": "70ff92140aff5b50cdf2590a0d38e5c59234e4e2353537a747b1d5fd79a553ba"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1712,21 +1652,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Derived Glyphs.py",
-        "tab": "Placeholders",
-        "sha256": "b17b7cf95e3c49ec7bde85d461b18e9a9ce661242b8e75dcaa65da84e87c5f88"
+        "tab": "Placeholder Glyphs",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1740,21 +1676,17 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Raise Ascender",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_raise_ascender_menu.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_raise_ascender_menu.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1768,20 +1700,16 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Reflect Horizontally",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1795,20 +1723,16 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Reflect Vertically",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1822,18 +1746,16 @@
       "destination": {
         "path": "Scripts/Contours/Outline Doctor.py",
         "tab": "Remove Overlap",
-        "sha256": "aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1846,18 +1768,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Hint Tools.py",
-        "tab": "Remove PostScript hints",
-        "sha256": "aed7f248d6285e1bf06d96f24137d1aa0cb22266eb30a05465927c7f98b15770"
+        "tab": "Remove PostScript Hints",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_wp05_hint_models.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1871,20 +1792,18 @@
       "destination": {
         "path": "Scripts/Contours/Curve Editor.py",
         "tab": "Retract Handles",
-        "sha256": "5faa60d22549ac454d2ad9e433631cc31ea1a7f4e9b0e53aeeb888310172e2af"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_cov_a_writers.py",
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G2.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_issue122_G2.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1898,20 +1817,16 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Rotate Selection",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1925,18 +1840,16 @@
       "destination": {
         "path": "Scripts/Contours/Outline Doctor.py",
         "tab": "Round Coordinates",
-        "sha256": "aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1950,20 +1863,16 @@
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
         "tab": "Sandblast",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -1977,20 +1886,17 @@
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
         "tab": "Sansomatic",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_issue122_G13.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2004,17 +1910,16 @@
       "destination": {
         "path": "Scripts/Contours/Contour Selection.py",
         "tab": "Select Contours",
-        "sha256": "c806bdb567d2c28f3793607ca20638f40c7136cfdaab214f135a1406c9ed0395"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_contour_selection_menus.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2028,17 +1933,16 @@
       "destination": {
         "path": "Scripts/Contours/Contour Selection.py",
         "tab": "Select Partial Contours",
-        "sha256": "c806bdb567d2c28f3793607ca20638f40c7136cfdaab214f135a1406c9ed0395"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_contour_selection_menus.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2052,17 +1956,16 @@
       "destination": {
         "path": "Scripts/Contours/Contour Selection.py",
         "tab": "Select Small Contours",
-        "sha256": "c806bdb567d2c28f3793607ca20638f40c7136cfdaab214f135a1406c9ed0395"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_contour_selection_menus.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2075,21 +1978,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Derived Glyphs.py",
-        "tab": "Shadow",
-        "sha256": "b17b7cf95e3c49ec7bde85d461b18e9a9ce661242b8e75dcaa65da84e87c5f88"
+        "tab": "Shadow Copy",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2103,19 +2002,17 @@
       "destination": {
         "path": "Scripts/Contours/Curve Editor.py",
         "tab": "Simplify Selected Nodes",
-        "sha256": "5faa60d22549ac454d2ad9e433631cc31ea1a7f4e9b0e53aeeb888310172e2af"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G2.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_issue122_G2.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2129,20 +2026,16 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Slant",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2155,21 +2048,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Derived Glyphs.py",
-        "tab": "Small Caps",
-        "sha256": "b17b7cf95e3c49ec7bde85d461b18e9a9ce661242b8e75dcaa65da84e87c5f88"
+        "tab": "Small Caps From Capitals",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2183,20 +2072,16 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Smart Slant",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2210,19 +2095,17 @@
       "destination": {
         "path": "Scripts/Contours/Curve Editor.py",
         "tab": "Straighten All Curves",
-        "sha256": "5faa60d22549ac454d2ad9e433631cc31ea1a7f4e9b0e53aeeb888310172e2af"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_issue122_G12.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2236,18 +2119,16 @@
       "destination": {
         "path": "Scripts/Contours/Curve Editor.py",
         "tab": "Straighten Short Curves",
-        "sha256": "5faa60d22549ac454d2ad9e433631cc31ea1a7f4e9b0e53aeeb888310172e2af"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_wp05_outline_routes.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2261,20 +2142,16 @@
       "destination": {
         "path": "Scripts/Contours/Align and Nudge.py",
         "tab": "Superaligner",
-        "sha256": "70ff92140aff5b50cdf2590a0d38e5c59234e4e2353537a747b1d5fd79a553ba"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2287,21 +2164,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Derived Glyphs.py",
-        "tab": "Superior & Inferior",
-        "sha256": "b17b7cf95e3c49ec7bde85d461b18e9a9ce661242b8e75dcaa65da84e87c5f88"
+        "tab": "Superior & Inferior Figures",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2339,21 +2212,17 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Contours/Derived Glyphs.py",
-        "tab": "Tabular Figures",
-        "sha256": "b17b7cf95e3c49ec7bde85d461b18e9a9ce661242b8e75dcaa65da84e87c5f88"
+        "tab": "Tabular Figure Copies",
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S7.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G13.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },
@@ -2367,20 +2236,16 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Transform",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": null
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py",
-        "tests/test_issue122_S6.py",
-        "tests/test_issue122_G12.py",
-        "tests/test_issue122_G15.py",
-        "tests/test_issue122_G16.py"
+        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
-        "state": "implemented",
+        "state": "proposed",
         "date": "2026-11-11",
-        "behavior_parity": true,
+        "behavior_parity": false,
         "native": false
       }
     },

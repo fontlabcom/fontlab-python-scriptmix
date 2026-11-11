@@ -5,7 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from menu_layout import _menu_bytes, active_menu_paths, consolidation_rows, current_rows, released_bytes
+from menu_layout import current_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ("Select Contours", "Select Partial Contours", "Select Small Contours")
@@ -17,16 +17,12 @@ def test_three_contour_candidates_extend_curated_menu_without_archive_dispatcher
     menus = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert len(sample_rows) == 69
     assert len(additional) == 210, f"expected 210 additional tools, got {len(additional)}"
-    historical = {row["destination"] for row in sample_rows + additional}
-    assert len(historical) == 279
-    assert menus == active_menu_paths(ROOT)
+    assert len(menus) == 279, f"expected 279 menu scripts, got {len(menus)}"
+    assert menus == {row["destination"] for row in sample_rows + additional}
     archive = json.loads((ROOT / "rescue-index.json").read_text())
     assert len(archive["menus"]) == 61
     candidates = {row["rescued_original_menu"] for row in additional if row.get("rescued_original_menu")}
-    implemented = {row["source"]["path"] for row in consolidation_rows(ROOT)
-                   if row["acceptance"]["state"] == "implemented"}
-    assert historical.intersection(row["menu"] for row in archive["menus"]) == candidates
-    assert menus.intersection(row["menu"] for row in archive["menus"]) == candidates - implemented
+    assert menus.intersection(row["menu"] for row in archive["menus"]) == candidates
     selected = [row for row in additional if row["title"] in TITLES]
     assert {row["title"] for row in selected} == set(TITLES)
     for row in selected:
@@ -34,7 +30,7 @@ def test_three_contour_candidates_extend_curated_menu_without_archive_dispatcher
         assert row["native_acceptance"] == "pending"
         assert row["license"] == "Apache-2.0"
         assert (
-            hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
+            hashlib.sha256((ROOT / row["destination"]).read_bytes()).hexdigest()
             == row["destination_sha256"]
         )
 
@@ -44,9 +40,10 @@ def test_current_rows_accepts_already_current_owner_routes_without_rewriting(tmp
     for name in ("menu-moves.json", "menu-revisions.json", "migration.json", "additional-tools.json"):
         (tmp_path / name).write_bytes((ROOT / name).read_bytes())
     for move in [*current_rows(ROOT), *json.loads((ROOT / "additional-tools.json").read_text())]:
+        source = ROOT / move["destination"]
         target = tmp_path / move["destination"]
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes(_menu_bytes(ROOT, move["destination"]))
+        target.write_bytes(source.read_bytes())
     original = (tmp_path / "migration.json").read_bytes()
     resolved = current_rows(tmp_path)
     assert (tmp_path / "migration.json").read_bytes() == original
