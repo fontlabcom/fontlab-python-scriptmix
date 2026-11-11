@@ -2,6 +2,11 @@
 """Preserve five complete kerning editors and their owned-host behavior."""
 
 from conftest import app_module_name, app_source_path, register_app_module
+import importlib.util
+import sys
+from types import SimpleNamespace as NS
+from test_kerning import fixture_font
+from test_kerning import load as native_load
 from pathlib import Path
 
 import pytest
@@ -22,13 +27,6 @@ def test_requested_complete_editor_exists(title):
         "Requested kerning editor is missing"
     )
 
-
-import importlib.util
-import sys
-from types import SimpleNamespace as NS
-
-from test_kerning import fixture_font
-from test_kerning import load as native_load
 
 load = native_load
 

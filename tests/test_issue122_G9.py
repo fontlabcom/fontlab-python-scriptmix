@@ -1235,7 +1235,7 @@ def test_delivery_new_glyph_creation_and_one_outline_action(
         data = kwargs["glyph_data"]
         made = fakes.Glyph(
             data["name"],
-            {l["name"]: {"width": l["advanceWidth"]} for l in data["layers"]},
+            {layer["name"]: {"width": layer["advanceWidth"]} for layer in data["layers"]},
         )
         made.metricsLeft = made.metricsRight = made.metricsWidth = ""
         target.glyphs[data["name"]] = made

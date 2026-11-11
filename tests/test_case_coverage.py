@@ -73,7 +73,8 @@ def test_caller_metadata_and_preferred_names_propagate_cooperative_cancellation(
     calls=[]
     def cancel():
         calls.append(1)
-        if len(calls)==4:raise InterruptedError("caller cancelled")
+        if len(calls)==4:
+            raise InterruptedError("caller cancelled")
     with pytest.raises(InterruptedError,match="caller"):
         module["metadata"]("A",(65,)*100,checkpoint=cancel)
     assert not categories.called

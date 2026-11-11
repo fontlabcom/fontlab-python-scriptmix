@@ -94,7 +94,7 @@ class EnglishSearchTests(unittest.TestCase):
         self.assertFalse((self.site / 'assets/javascripts/lunr/wordcut.js').exists())
 
     def test_real_properdocs_materialx_configuration_uses_the_expected_search_plugin(self):
-        import properdocs.replacement
+        import properdocs.replacement  # noqa: F401  (import side effect: the config load below needs it)
         from properdocs.config import load_config
         config = load_config(str(ROOT / 'src_docs/mkdocs.yml'))
         self.assertIs(english_search.on_config(config), config)

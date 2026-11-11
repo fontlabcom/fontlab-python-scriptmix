@@ -138,7 +138,7 @@ remaining acceptance, source-link and native obligations stay open.
 
 - [ ] Keep Examples destination hashes current after Scriptmix changes; repeat the cross-repository pin check at final delivery.
 
-- [ ] Resolve the remaining 45 Ruff 0.14.10 findings without unrelated historical-source rewrites (Scripts 26, tests 18, tests_docs 1). C12 completed the tests-only mechanical subset; keep row 106 open for the hash-pinned Scripts remainder and remaining test findings, with separate provenance review before script edits.
+- [ ] 26 findings in 8 pinned Scripts. Each edit needs a manifest revision record and a sha update; E402 may be deliberate. Next check: map each pin test to its file, then decide per file whether to fix or add a noqa with a reason.
 
 - [ ] Complete browser-asset transitive provenance, full notices and source-availability checks before site publication.
 
@@ -180,6 +180,5 @@ remaining acceptance, source-link and native obligations stay open.
 
 - [ ] Resolve App anchor read-back tolerance and sub-unit moves swallowed by native rounding.
 
-- [ ] Resolve existing Ruff findings without unrelated historical-source rewrites.
 
 - [ ] Fix catalogue immutable-link validation by checking committed menu paths and bytes, with dirty/untracked-menu regressions; refuse or defer false links without adding a new generator framework.
