@@ -29,4 +29,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `fceb33b529d4b4923d8f17a6f4f1a61aa2f27a406ad452c12b60b552708b29f7`
 
-[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Reports/Open%20Contours%20App.py)
+[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Reports/Open%20Contours%20App.py)

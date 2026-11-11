@@ -58,4 +58,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `45022a5562681d2125179e28e50e75340baf7bfd9f923cc8924f03dc3013398c`
 
-[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Reports/Case%20Coverage.py)
+[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Reports/Case%20Coverage.py)

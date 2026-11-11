@@ -27,4 +27,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `df44a608bff6ec335f6768333b69dc9101237cc727ee3ca7c61e99035012929f`
 
-[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/Show%20All%20Layers.py)
+[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Proof/Show%20All%20Layers.py)

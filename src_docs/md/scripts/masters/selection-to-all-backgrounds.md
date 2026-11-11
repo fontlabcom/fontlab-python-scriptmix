@@ -72,4 +72,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b4d4450a5a193ab1780b74b4bb7d6c370acc4a9a0b8114dfe77082a893d42ddb`
 
-[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Masters/Selection%20To%20All%20Backgrounds.py)
+[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Masters/Selection%20To%20All%20Backgrounds.py)

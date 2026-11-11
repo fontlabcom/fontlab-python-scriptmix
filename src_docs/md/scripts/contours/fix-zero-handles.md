@@ -67,4 +67,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `cafcaccf1e80d73aa8ed01acf615b3c4a2be6ead59b9a437027be973d3b643b4`
 
-[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Fix%20Zero%20Handles.py)
+[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Contours/Fix%20Zero%20Handles.py)

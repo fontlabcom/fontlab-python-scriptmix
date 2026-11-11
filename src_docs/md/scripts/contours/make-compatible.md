@@ -34,4 +34,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b101c41dc8381b61322148c9b87dc6fbb34ac17e0422dd7bd152d2041a57e35c`
 
-[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Make%20Compatible.py)
+[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Contours/Make%20Compatible.py)
