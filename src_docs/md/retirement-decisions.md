@@ -10,7 +10,7 @@ Retirement is a product decision, not evidence of equivalent replacement or
 native acceptance. This authored record lives outside the generated catalogue.
 
 The reconciled WP01 ledger verifies both unchanged source hashes at containing
-commit `f21e0ee471ab4fc4b0de9b803a80cf2058e66e51`. The original WP08 commit
+commit `8022be9c4fc59e87bfcb8ca21724be55ea79ebb5`. The original WP08 commit
 identities below remain historical evidence.
 
 ## Event Log
