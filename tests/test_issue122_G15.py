@@ -16,6 +16,7 @@ from unittest.mock import create_autospec
 
 import pytest
 from _wp05_outline_routes import route_path, source_text
+from _fgpackage_support import fg_package
 
 try:
     from .conftest import app_names_used, check_real_app_names
@@ -711,6 +712,7 @@ class World:
             master=self.master,
             italicAngle_value=-12.0,
             findName=lambda name: self.glyphs.get(name),
+            fgPackage=fg_package(self.glyphs),
         )
 
     def glyph(
@@ -1652,8 +1654,8 @@ def test_scripts_use_only_public_app_names() -> None:
 
 def test_panel_overrides_match_installed_public_hooks(world: Any) -> None:
     """Compare subclass calls with the installed base, using only native fakes."""
-    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402
     import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402
 
     with pytest.raises(TypeError):
         layer_selection.capture()

@@ -1,18 +1,23 @@
 # this_file: tests/test_masters.py
 """Source-first checks of the four full Masters menus."""
 
-from conftest import app_module_name, app_source_path, original_source, register_app_module
-from pathlib import Path
-
-import pytest
-
-from menu_layout import released_bytes
-
 import importlib.util
 import sys
+from pathlib import Path
 from types import SimpleNamespace as NS
+
+import pytest
+from _fgpackage_support import fg_package
+from conftest import (
+    app_module_name,
+    app_source_path,
+    original_source,
+    register_app_module,
+)
 from test_proof import Box, Color, Signal, Widget
 from test_proof import load as proof_load
+
+from menu_layout import released_bytes
 
 ROOT = Path(__file__).parents[1]
 TOOLS = [
@@ -226,8 +231,11 @@ def masters(monkeypatch, app_sources):
             master="Bold",
             axes=[NS(shortName="Weight", tag="wght", name="Weight")],
             findName=glyphs.get,
+            fgPackage=fg_package(glyphs),
             location=lambda m: {"Weight": 0 if m == "Light" else 1},
         )
+        for glyph in glyphs.values():
+            glyph.package = package  # a real flGlyph knows its owner package
         package.setMaster = lambda name, *a: setattr(package, "master", name)
         package.italicAngle_value = -10
         base.modules["scripting"]._native("fontlab").FontMetrics = lambda p, m: NS(

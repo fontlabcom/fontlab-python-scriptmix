@@ -9,7 +9,6 @@ arithmetic, the refusal paths and the Undo shape (one notified list, no auto
 layers). They do not prove native FontLab behaviour.
 """
 
-from conftest import app_names_used, app_namespace, check_real_app_names
 import ast
 import importlib
 import importlib.util
@@ -19,6 +18,8 @@ from pathlib import Path
 from types import ModuleType
 
 import pytest
+from _fgpackage_support import fg_package
+from conftest import app_names_used, app_namespace, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
 METRICS = ROOT / "Scripts/Metrics"
@@ -467,6 +468,7 @@ class Package:
     def __init__(self, glyphs, masters=("Light", "Bold"), ident=7):
         self.id, self.master, self.masters = ident, masters[0], list(masters)
         self.glyphs = {g.name: g for g in glyphs}
+        self.fgPackage = fg_package(self.glyphs)
         self.italicAngle_value = -10.0
         self.xHeight_value = 500
 
