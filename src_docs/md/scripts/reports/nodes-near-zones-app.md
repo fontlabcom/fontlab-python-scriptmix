@@ -6,7 +6,7 @@ categories: ["Reports"]
 
 # Nodes Near Zones App
 
-Report open contours of every master with a Select glyphs action in one window.
+Report nodes that sit just off a vertical zone, with a Select glyphs action in one window.
 
 What: The Nodes Near Zones report: on-curve nodes of the selected glyphs (or all glyphs) that sit 1 to 30 units off the baseline, x-height, cap height, ascender or descender
 (glyph, master, zone, node, offset), as a tab of one shared App window with a tolerance control, a Select glyphs button, an About tab and a Close button.
@@ -27,6 +27,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `05000cc94966a28b6c3efc0c7e80a2ef684fa378f71436e469a038221d3c2f13`
+SHA256: `04ac8624bf8553f4a1202408857c222c7f2e13f5827991179ef93889c56ed7d9`
 
-[Python source at `168b57cbfbaf`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/168b57cbfbaf1b00b43f4aa06ba26d2e01ba12e1/Scripts/Reports/Nodes%20Near%20Zones%20App.py)
+[Python source at `3dc87d8a0e3d`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3dc87d8a0e3dec803dc9255436da39eb19abefb2/Scripts/Reports/Nodes%20Near%20Zones%20App.py)
