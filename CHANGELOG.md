@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Feature tests follow App's newline-terminated feature code (Issue 250)
+
+App 45ef5bc (S67-F) now terminates feature code with a newline before Fontport staging, so `tests/test_features.py` (`test_shared_writer_reuses_backend_preserves_blocks_and_noop`, `test_existing_source_whitespace_and_run_order_preserved`) expect `...smcp;\n` and `unrelated\n`. Combined WP05 re-land gate against App d81d7f2: 4819 passed, 2 skipped.
+
 ## 2026-11-11 — Live evidence from A2 reports 16 and 17
 
 - Copy Layer Between Masters, Restore Backup Layer and Layer Cleanup passed live on an owned fixture with Apply/Undo/Redo and saved/reopened equality (report 17).
