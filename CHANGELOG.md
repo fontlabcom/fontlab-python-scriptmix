@@ -8,7 +8,7 @@ Added Font UI Lab entries for UFO Roundtrip Inspector and Representation and
 Notification Explorer. Both lazily capture the current borrowed Fontport font
 once and return the App-owned inspector; neither imports Fly. The two catalogue
 rows retain source hashes and pending native acceptance, bringing this lane to
-277 menus / 208 additional tools. Historical 259-script and 190-row hashes remain
+277 menus / 208 additional tools. Merged-tree Scriptmix gate: 4,660 passed, 2 skipped; tests_docs pipeline 43 OK; graph compare against origin/main: risk low, 0 affected processes. Historical 259-script and 190-row hashes remain
 unchanged. Focused menu/catalogue regression: 81 passed, one retained skip;
 both new scripts reached 100% statement-plus-branch coverage. Four paired menu
 cases additionally invoke the real App compositions, staging/report callbacks,
