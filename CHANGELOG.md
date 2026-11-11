@@ -12,6 +12,13 @@ this_file: CHANGELOG.md
 ## 2026-11-11 — Round Advances step 1 verified by a mutant (Issue 250)
 
 - Rechecked the closed row "Extend Round Advances to accept step 1" (66a2fdad). `test_round_advances_when_step_is_one_then_whole_unit_advances` in `tests/test_issue122_S1.py` checks the control, not the docstring: it asserts the spinner range is (1, 100), sets 1 and expects width 101.4 to plan 101, then sets 2 and expects 102. With `self.spin(2, 100, ...)` restored in `Scripts/Metrics/Round Advances.py` the test fails (`assert (2, 100) == (1, 100)`); unchanged, all 4 Round Advances tests pass. The App helper `MetricsPanel.spin` passes `low` to `QSpinBox.setRange`, so the real control accepts 1. Native FontLab use stays with the Metrics qualification rows.
+
+## 2026-11-11 — Nodes Near Zones App verified live; launcher docstring corrected (A2 live report 27, Issue 250)
+
+- The S66 Nodes Near Zones App launcher (c4b0bfb4, with App 7f96170) passes a live FontLab 9.0.9809 smoke from source on an owned fixture: it opens with tabs Nodes Near Zones and About; tolerance 4 reports no near nodes (3 glyphs x 3 masters); tolerance 30 rescans by itself (14 near misses in 2 glyphs); tolerance 12 keeps 5 rows; Select glyphs selects the listed glyph; scope "All glyphs" at 30 units finds 1060 near misses in 102 glyphs and selects each glyph once; Undo stays disabled, the font is not dirtied, and Close works.
+- Fixed the launcher docstring's first line, which had been copied from Open Contours ("Report open contours of every master"); it now describes nodes near vertical zones. The menu title was already correct. The launcher bytes changed, so the pinned `sha256` in `additional-tools.json` and `menu-consolidations.json` is updated and the generated page and `docs/` are rebuilt.
+- Still open: the report text pane and the table show the same rows (duplicate output).
+
 ## 2026-11-11 — Tests and tests_docs Ruff 0.14.10 findings cleared (Issue 250)
 
 - Ruff 0.14.10 (AGENTS.md scope) goes 45 -> 26 findings: all 18 in `tests` and the one in `tests_docs` are fixed, with no `Scripts` change (provenance-pinned). `tests/test_features.py`, `test_kerning.py`, `test_kerning_editors.py` and `test_proof.py` move their mid-file imports (E402) to the top; `test_case_coverage.py:76` splits an E701 one-liner; `test_issue122_G9.py:1238` renames `l` to `layer` (E741). In `tests_docs/test_pipeline_english.py` the `import properdocs.replacement` is kept with a `noqa: F401` and a reason: deleting it (Ruff's autofix) made the real-config test fail, so the import has a side effect.

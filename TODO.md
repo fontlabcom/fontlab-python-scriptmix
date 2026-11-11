@@ -2,6 +2,7 @@
 this_file: TODO.md
 ---
 
+- [ ] Nodes Near Zones App shows its results twice (text pane and table). Next check: drop the text pane or the table, keeping Select glyphs and the About tab, and repeat the live smoke.
 - [ ] WP05: run canonical App/Scriptmix wrappers with authorized evidence directories and resolved dependencies; the reviewed 49-to-ten migration, full prepared suites and per-module coverage pass.
 - [ ] WP05 native: qualify the ten consolidated outline tools with installed FontLab PythonQt, complete font/history preservation, actual controls, Undo/Redo and saved reopen.
 - [ ] WP05/WP11: generate source links from genuine containing commits and audit hash-verified historical recovery for Git-less installations before distribution.

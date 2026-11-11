@@ -51,4 +51,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `67fab137c995d22a14bbb0b5d2a961f40af914581f6a88eadee65fb9d1492855`
 
-[Python source at `168b57cbfbaf`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/168b57cbfbaf1b00b43f4aa06ba26d2e01ba12e1/Scripts/Names/Suffix%20Tool.py)
+[Python source at `3dc87d8a0e3d`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3dc87d8a0e3dec803dc9255436da39eb19abefb2/Scripts/Names/Suffix%20Tool.py)
