@@ -44,4 +44,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `6ade10ea8229d5fa4db3947f8ba4eee84cd29043800d2f9c603f7d6cdb6317ac`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Select%20Partial%20Contours.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Select%20Partial%20Contours.py)

@@ -65,4 +65,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `8508a52f2e11a7fac5fcf0fd43be2ef5802c45c40f8dbeecb4b8a865c10fb746`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Metrics/Alignment%20Zones.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Metrics/Alignment%20Zones.py)

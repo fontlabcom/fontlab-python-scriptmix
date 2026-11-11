@@ -40,4 +40,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `10e44ef3e8e121b2000dee22ec143d86d18edc10bb7f054622eb98cb77e56169`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Cleanup/Clear%20Master%20Backgrounds.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Cleanup/Clear%20Master%20Backgrounds.py)

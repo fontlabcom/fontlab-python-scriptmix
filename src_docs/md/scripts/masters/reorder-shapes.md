@@ -36,4 +36,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `d1fba58063b9941abc1c73bd775fa0ca3156e2070023cdc878436e9f2c3680fa`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Masters/Reorder%20Shapes.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Masters/Reorder%20Shapes.py)

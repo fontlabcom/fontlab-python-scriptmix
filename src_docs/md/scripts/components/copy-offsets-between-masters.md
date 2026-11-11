@@ -55,4 +55,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `ce9019d53270c6c8d070be4eb143ea0f5891dec824e07aa22a16eee2f3a56a20`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Components/Copy%20Offsets%20Between%20Masters.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Components/Copy%20Offsets%20Between%20Masters.py)

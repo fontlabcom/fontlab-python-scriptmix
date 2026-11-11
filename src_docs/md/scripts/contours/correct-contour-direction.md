@@ -68,4 +68,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `c66dda7f51ad5724ff7232b989b5eb47bb6c08e4d6c149862f1d2e7ce600d982`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Correct%20Contour%20Direction.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Correct%20Contour%20Direction.py)

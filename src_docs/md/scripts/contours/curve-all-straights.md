@@ -34,4 +34,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `c89c3ce42d661afee21dd8d65a859f6e6d830232f714020ba97ceacec79e5cdf`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Curve%20All%20Straights.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Curve%20All%20Straights.py)

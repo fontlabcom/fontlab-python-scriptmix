@@ -31,4 +31,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `8a026f36648a16928f8b8608dc45638309d11ba9fe6396f6faa05fccd239ec11`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Delete%20Close%20Points.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Delete%20Close%20Points.py)

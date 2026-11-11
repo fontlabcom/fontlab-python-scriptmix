@@ -44,4 +44,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `2e0ddbdf50d28e5b44b3aa753aa7d3d30a6ba635ef888488aaf5e2f24d6c415c`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Reports/Sidebearing%20Direction%20Marker.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Reports/Sidebearing%20Direction%20Marker.py)

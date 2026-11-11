@@ -34,4 +34,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `bcad7f3760c86d6678cf77c9c0b1237306843cd74495f45c2dca7f316cad397e`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Font%20UI%20Lab/Anchor%20and%20Component%20Inspector.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Font%20UI%20Lab/Anchor%20and%20Component%20Inspector.py)

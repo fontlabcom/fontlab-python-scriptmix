@@ -36,4 +36,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `9e1fd16e500ad842265491d162c751e258c4d66dd498adc8c54c42826b43e93f`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Reports/Bracket%20Layers%20and%20Components.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Reports/Bracket%20Layers%20and%20Components.py)

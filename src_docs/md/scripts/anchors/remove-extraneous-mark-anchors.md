@@ -29,4 +29,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `064d9c35c8505171e47508d5f33651ad476033965b58e818b1618c7f69152d49`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Anchors/Remove%20Extraneous%20Mark%20Anchors.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Anchors/Remove%20Extraneous%20Mark%20Anchors.py)

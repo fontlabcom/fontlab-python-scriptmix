@@ -38,4 +38,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `028522d2d33d899ae1e910d42bcb0ab3289b07e4971908ebfb4f32cea5c8890a`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Components/Compatibility.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Components/Compatibility.py)

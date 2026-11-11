@@ -39,4 +39,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `61690c07f8852a18c2fbeba9b4d242e4e834cfc86fed9a1501c35642abc7db35`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Myanmar%20Medial%20Ra%20Maker.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Myanmar%20Medial%20Ra%20Maker.py)

@@ -61,4 +61,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `fdcd581785c3d30bb041b52a4b5394520a645be129cb449343a5dc6b9c583322`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Add%20Extremes.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Add%20Extremes.py)

@@ -36,4 +36,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `793716f7677b3cd1c1b717a3e5cee8d793042fbf578191ba0914d2e7d61f463a`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Proof/KernSym.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/KernSym.py)

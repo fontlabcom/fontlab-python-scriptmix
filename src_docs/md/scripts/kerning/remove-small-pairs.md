@@ -40,4 +40,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `7b722c2fea65efa91e09985e213f4b2db0a2536fa59d6eb861151de6d3338eb0`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Kerning/Remove%20Small%20Pairs.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Kerning/Remove%20Small%20Pairs.py)

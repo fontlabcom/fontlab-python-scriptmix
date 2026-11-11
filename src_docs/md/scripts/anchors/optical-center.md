@@ -33,4 +33,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `1ce8cd70f9c46a3e7d9f2a76de026fb6eb616ee6e8af63857577e2ae5ed9fd3f`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Anchors/Optical%20Center.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Anchors/Optical%20Center.py)

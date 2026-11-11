@@ -61,4 +61,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `917f4830be09b763e3f6adc4be813e5118d6e3e78c23ef7fb899b570c2091086`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Components/Replace%20Reference.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Components/Replace%20Reference.py)

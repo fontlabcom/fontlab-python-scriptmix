@@ -43,4 +43,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `5a9edeea69d1941b7c59f18fbb9496d82b5e0de370a8fd5a1fcf0368b9520448`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Reports/Event%20Log.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Reports/Event%20Log.py)

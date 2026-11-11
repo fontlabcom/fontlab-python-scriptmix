@@ -70,4 +70,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `ab59cdcb37976cf0b265071dc3b919216282fdc7af54ee2e9e365c4d7823386f`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Optimize%20Start%20Points.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Optimize%20Start%20Points.py)

@@ -35,4 +35,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `d8987dd79c1d1ca4edee6e680f9a3d77149ac9f037a16e715f999a8cae87b9cd`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Reports/Dangerous%20Offcurves.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Reports/Dangerous%20Offcurves.py)

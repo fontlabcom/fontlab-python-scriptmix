@@ -38,4 +38,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `ca37dd92318fbbbfa70f98ff606534de4d63d6593670a7a99739dbef039ba222`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Kerning/Round%20Values.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Kerning/Round%20Values.py)

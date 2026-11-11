@@ -33,4 +33,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b29b820eafbdfd05a2760d8dd1dc6b4b8774e278fd0e913874b3f6170a5ae3cd`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Kerning/Kern%20To%20Max.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Kerning/Kern%20To%20Max.py)

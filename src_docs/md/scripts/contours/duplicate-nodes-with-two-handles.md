@@ -42,4 +42,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `2dac129fa3e2ed63062717b313da79f585107a97cda330c0c8e541efab46b3c9`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Duplicate%20Nodes%20with%20Two%20Handles.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Duplicate%20Nodes%20with%20Two%20Handles.py)

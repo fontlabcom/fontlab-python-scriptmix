@@ -39,4 +39,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `221f489ff22572c7c0ac867f086db03d259219991d7c36d0af4730859e86ce15`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Guides/Copy%20Guides%20Between%20Masters.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Guides/Copy%20Guides%20Between%20Masters.py)

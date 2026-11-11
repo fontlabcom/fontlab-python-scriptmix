@@ -37,4 +37,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b79472aaf93c41ac1d5d2bc252fc2e1b58a697438c0204b7f3fb80603018fb39`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Names/Glyph%20Metadata%20Tree.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Names/Glyph%20Metadata%20Tree.py)

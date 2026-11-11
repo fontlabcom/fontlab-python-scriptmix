@@ -41,4 +41,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `74d1f14969eb63bb691c894d50c63324412ec6e716fff8d8f86927f3b41c452c`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Proof/Glyphs%20Surrounded%20by%20Nnonn.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/Glyphs%20Surrounded%20by%20Nnonn.py)

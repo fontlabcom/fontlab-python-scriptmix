@@ -31,4 +31,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b567f12a41602c1852e7bf56aa780b7b895900442dfaf3b05d8716c24a7747af`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Proof/Context%20Proof.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/Context%20Proof.py)

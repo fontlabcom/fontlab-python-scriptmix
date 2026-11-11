@@ -43,4 +43,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `63582be433e9a80fe5819c46b24ae9b4cab3204b54765fbe70573ff6e7909fba`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Utilities/Text%20Holder.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Utilities/Text%20Holder.py)

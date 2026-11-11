@@ -31,4 +31,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `8e46590e3f3d2400156c54be82f4ef9b5855c1d2a3c92c4fb832bf5ce69d6bc5`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Components/Dump%20Component%20Recipes.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Components/Dump%20Component%20Recipes.py)

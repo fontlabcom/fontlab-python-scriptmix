@@ -41,4 +41,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `13201ca8c7d7b15b16724578506d826adcbbf1fcbc77b36dcdee7d9a369081e3`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Proof/Glyphs%20Between%20Lowercase.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/Glyphs%20Between%20Lowercase.py)

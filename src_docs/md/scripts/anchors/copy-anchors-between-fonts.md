@@ -42,4 +42,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `7a0ca8c692ab932510e8ba2b33e3f33589791203f312cfa348d2e5a57f274d21`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Anchors/Copy%20Anchors%20Between%20Fonts.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Anchors/Copy%20Anchors%20Between%20Fonts.py)

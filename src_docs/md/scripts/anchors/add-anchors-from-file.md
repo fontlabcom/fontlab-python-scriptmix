@@ -32,4 +32,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `775f5dab7c9a5d7dcb68cbb6b900815fa0a79d366e6c75cdb5dfacb8e40ce6bc`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Anchors/Add%20Anchors%20From%20File.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Anchors/Add%20Anchors%20From%20File.py)

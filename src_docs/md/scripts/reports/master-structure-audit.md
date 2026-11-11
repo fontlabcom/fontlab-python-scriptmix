@@ -20,7 +20,7 @@ Safety: Reports are read-only. They do not change glyphs, layers, selection,
 history, preferences or the clipboard unless you choose to copy text. Run it
 from the main UI thread; the window owns its dialogs and releases them on close.
 
-Source: Original workflows on shared App report providers, Apache-2.0
+Source: Adapted from Fernando Diaz and Reset Type Studio (Apache-2.0, 2025: Master Node Compatibility Report) and Simon Cozens (MIT: Why You Not Compatible) on shared App report providers; FontLab additions Apache-2.0.
 (fly.ap.fontui.master_structure_audit). Requires the App with WP08 S61 assembly and
 fontlab-fly in FontLab 9 Python 3.11.
 
@@ -30,6 +30,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `a4f9085767c0037720123cccb2b0b1432050cf333a5b7c99a3c9d358cbbc7e5a`
+SHA256: `b6d19a38339e9eb77a940bab00bead27ffc4646f10c03bc2b2c401dfd9649194`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Reports/Master%20Structure%20Audit.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Reports/Master%20Structure%20Audit.py)

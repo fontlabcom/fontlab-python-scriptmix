@@ -62,4 +62,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `1f9ff84e6a9954bbe9c438041577d9f2d305fb5974c45922596d9d65c0c0457f`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Delete%20Small%20Contours.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Delete%20Small%20Contours.py)

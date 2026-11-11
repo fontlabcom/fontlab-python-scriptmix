@@ -37,4 +37,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `10bf14742502136dd2c12639386a7c651d2d0d385e8dc7664b807d0aac451669`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Proof/Random%20Uppercase%20Words.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/Random%20Uppercase%20Words.py)

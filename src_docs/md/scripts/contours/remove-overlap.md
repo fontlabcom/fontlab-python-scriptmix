@@ -69,4 +69,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `7b6f775d90984c19bfa3fd80bfb9294cd32256a43e42b41fbd34740c3b03320d`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Remove%20Overlap.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Remove%20Overlap.py)

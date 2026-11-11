@@ -26,4 +26,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `171957f5d1a73eb8f5e75b7831e372754790865b6cf13f0de4ec87740c303c26`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Font%20Info/Calculate%20Vertical%20Metrics.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Font%20Info/Calculate%20Vertical%20Metrics.py)

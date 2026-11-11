@@ -33,4 +33,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `5b04d1c4f70cf7e4378c4a90219af93997abd2182e76a9b60d55f10208fc2229`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Comb.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/Comb.py)

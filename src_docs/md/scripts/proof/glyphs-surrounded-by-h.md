@@ -41,4 +41,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `6632c375ec7e03686e0f60545ce2ebc641c33e81937f6da8021498cd237ff0ba`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Proof/Glyphs%20Surrounded%20by%20H.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/Glyphs%20Surrounded%20by%20H.py)

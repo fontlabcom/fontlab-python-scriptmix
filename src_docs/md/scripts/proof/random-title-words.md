@@ -37,4 +37,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `f60f53a3728c3827dc80ac178a72ac273e9fbe066e85ec2f21b0451fdab3928f`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Proof/Random%20Title%20Words.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/Random%20Title%20Words.py)

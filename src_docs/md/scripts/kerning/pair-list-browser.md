@@ -38,4 +38,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `86852956ccea8b279eb360b16f74762916920ac004b952276ca433be4c54adc1`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Kerning/Pair%20List%20Browser.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Kerning/Pair%20List%20Browser.py)

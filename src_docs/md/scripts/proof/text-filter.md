@@ -30,4 +30,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `03f50bea0a05a1d51a1a5880e295695c038aaf44e4c12b0a55083b77e951e699`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Proof/Text%20Filter.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/Text%20Filter.py)

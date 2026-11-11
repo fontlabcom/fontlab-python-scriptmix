@@ -38,4 +38,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `a11d2f2b6283f5bd560b0cf852f098ec44599b7a78494d7cdeb125cfd1d1b70d`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Proof/Word%20Finder.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Proof/Word%20Finder.py)

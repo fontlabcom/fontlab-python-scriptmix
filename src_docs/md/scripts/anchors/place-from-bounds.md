@@ -55,4 +55,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `9c9005e716f70ca9cc29511690fa0297bcc4376e137730ab63dca16a64412d04`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Anchors/Place%20From%20Bounds.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Anchors/Place%20From%20Bounds.py)

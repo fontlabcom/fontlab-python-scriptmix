@@ -39,4 +39,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `efcbe437478e425332c3f561d8d080bfe1977dd219dddfd98afa7f2bdd3fd09e`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Guides/Grid%20Generator.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Guides/Grid%20Generator.py)

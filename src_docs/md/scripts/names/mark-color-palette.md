@@ -45,4 +45,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `1422d94005e382f3e4f22b87111f2431806a8dcca2313827d1ec5de96318b7da`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Names/Mark%20Color%20Palette.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Names/Mark%20Color%20Palette.py)

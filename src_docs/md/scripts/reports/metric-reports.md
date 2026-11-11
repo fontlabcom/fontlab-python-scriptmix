@@ -19,7 +19,7 @@ Safety: Reports are read-only. They do not change glyphs, layers, selection,
 history, preferences or the clipboard unless you choose to copy text. Run it
 from the main UI thread; the window owns its dialogs and releases them on close.
 
-Source: Original workflows on shared App report providers, Apache-2.0
+Source: Vertical Metrics Reporter adapted from Pedro Arilla's Apache-2.0 glyphs-scripts on shared App report providers; FontLab additions Apache-2.0.
 (fly.ap.fontui.metric_reports). Requires the App with WP08 S63 assembly and
 fontlab-fly in FontLab 9 Python 3.11.
 
@@ -29,6 +29,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `3c07761900f6774e89efe91daa3503e546e365145e232326859b8c371b682fdc`
+SHA256: `06826d396dbe31ac42af2feac08d12e5d22ba36aeddbcecae88007559ce00e13`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Reports/Metric%20Reports.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Reports/Metric%20Reports.py)

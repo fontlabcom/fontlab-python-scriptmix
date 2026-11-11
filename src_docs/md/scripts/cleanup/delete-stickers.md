@@ -31,4 +31,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `fc4aae77c9e7fd9b9598fb8c6e794521033216313da52a1cc5994a06ec5f25ae`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Cleanup/Delete%20Stickers.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Cleanup/Delete%20Stickers.py)

@@ -47,4 +47,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `e2e36a8244fe8cbd29917feb1ffc70bb4e0078663d2f6ec61f8f739091fc625c`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/TGlyph%20Window.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Contours/TGlyph%20Window.py)

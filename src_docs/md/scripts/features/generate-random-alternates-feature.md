@@ -42,4 +42,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `3150c3b959f68211bd6dadd588e3cb242a1d08041489e114ec3f743dc2bf69a0`
 
-[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Features/Generate%20Random%20Alternates%20Feature.py)
+[Python source at `6b1048c4f1db`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6b1048c4f1dbc64ebe49d419db9193ccb3d9a9f0/Scripts/Features/Generate%20Random%20Alternates%20Feature.py)
