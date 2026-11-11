@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "source_commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
-  "source_count": 277,
+  "source_commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+  "source_count": 279,
   "transitions": [
     {
       "source": {
         "path": "Scripts/Anchors/Add Anchors From File.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "775f5dab7c9a5d7dcb68cbb6b900815fa0a79d366e6c75cdb5dfacb8e40ce6bc"
       },
       "disposition": "absorbed",
@@ -29,7 +29,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Auto Cursive Attachment Add Anchors.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ba86abe9be3f263c8087a14911e89c35a0e8a97334b18e15b7b8807cbbbd2229"
       },
       "disposition": "absorbed",
@@ -52,7 +52,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Auto Cursive Attachment Get Sample.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8e2734d66f895b9ccba17cfbac0144b1b4b98cb443e1c03abaa5569903de285b"
       },
       "disposition": "absorbed",
@@ -76,7 +76,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Center Horizontally.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d56a67a6cca4c6a9d168fe93cba394e8a925d520a1c17d83c27a858003a11183"
       },
       "disposition": "absorbed",
@@ -99,7 +99,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Cloud View.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "10b30156f65b17f1a46bb37bdeb651f8e2ecc6784d815cd22bb0b22665f51f9e"
       },
       "disposition": "absorbed",
@@ -122,7 +122,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Compatibility Report.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f82b3024ab2402469bb11df09ee38567a22c3928441d67736a930ae080377afd"
       },
       "disposition": "absorbed",
@@ -145,7 +145,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Copy Anchors Between Fonts.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7a0ca8c692ab932510e8ba2b33e3f33589791203f312cfa348d2e5a57f274d21"
       },
       "disposition": "absorbed",
@@ -169,7 +169,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Copy Anchors From Glyph.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "0965587509f7942c8b55b5a62b425ebffe162bdbcda7859a18c0fe86a1f62aab"
       },
       "disposition": "absorbed",
@@ -194,7 +194,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Copy Myanmar Anchors.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "4717fdb08d2ba0cb3cce706775150bf6b9dca17676a7fe6e2561b564dd321c52"
       },
       "disposition": "absorbed",
@@ -217,7 +217,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Delete By Name.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d9d16c3aa0992f1a2b9136173e82f68a87e75895b3a7cd3f88116efb77e6e103"
       },
       "disposition": "absorbed",
@@ -240,7 +240,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Derive Anchors From Components.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "e9a37c38870c7e0c2f6f2294791824a582ca6dc3b5a92853919913d7dd41f538"
       },
       "disposition": "absorbed",
@@ -263,7 +263,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Duplicate Anchor Rings.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "519d0ef143ea90fa1b2e4dde8b2a2b9053530b1dfa0fd6b678788941b31d55f6"
       },
       "disposition": "absorbed",
@@ -287,7 +287,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Duplicates Finder.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ef2073682b849a48b338861fe47978e705cfa037667b7d378a52afd502766937"
       },
       "disposition": "absorbed",
@@ -311,7 +311,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Mark Attachment Preview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a42f01c194b451765ee990eab8628836e15a350e5f602ee70d875c3ca4228185"
       },
       "disposition": "absorbed",
@@ -334,7 +334,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Mirror Across Masters.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "12b6534913326199952c8dd7a1406c93c24c3245dd50981139f510649593a5e0"
       },
       "disposition": "absorbed",
@@ -357,7 +357,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Optical Center.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1ce8cd70f9c46a3e7d9f2a76de026fb6eb616ee6e8af63857577e2ae5ed9fd3f"
       },
       "disposition": "absorbed",
@@ -380,7 +380,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Place From Bounds.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "9c9005e716f70ca9cc29511690fa0297bcc4376e137730ab63dca16a64412d04"
       },
       "disposition": "absorbed",
@@ -403,7 +403,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Remove Extraneous Mark Anchors.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "064d9c35c8505171e47508d5f33651ad476033965b58e818b1618c7f69152d49"
       },
       "disposition": "absorbed",
@@ -426,7 +426,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Rename Bulk.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8a1d87b5e40323e00a6ca2872bae7ccc88faf4cb4a7aa9f1b832ca1ea4c2ac1a"
       },
       "disposition": "absorbed",
@@ -449,7 +449,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Round To Grid.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d4d3a6448900e471ec5a905a96338c0c6fd2d491693cbb5315fb2366f0b1a39c"
       },
       "disposition": "absorbed",
@@ -472,7 +472,7 @@
     {
       "source": {
         "path": "Scripts/Anchors/Snap To Metrics.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "34ae7acd284e426fea309a782a3b271b9eb8f526c9bdb34cf4e2eebf053fdaf6"
       },
       "disposition": "absorbed",
@@ -495,7 +495,7 @@
     {
       "source": {
         "path": "Scripts/Cleanup/Clear All Layer Backgrounds.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "3dadebc2cabfc82b102e2c35ec3135ff578943a39e4d76eb8f54422305eba673"
       },
       "disposition": "absorbed",
@@ -518,7 +518,7 @@
     {
       "source": {
         "path": "Scripts/Cleanup/Clear Master Backgrounds.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "10e44ef3e8e121b2000dee22ec143d86d18edc10bb7f054622eb98cb77e56169"
       },
       "disposition": "absorbed",
@@ -541,7 +541,7 @@
     {
       "source": {
         "path": "Scripts/Cleanup/Delete Stickers.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "fc4aae77c9e7fd9b9598fb8c6e794521033216313da52a1cc5994a06ec5f25ae"
       },
       "disposition": "absorbed",
@@ -565,7 +565,7 @@
     {
       "source": {
         "path": "Scripts/Cleanup/Empty Layers.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "0072c4268c4239e68f427ddf73b98979d8eb2857452e6258fa7023645372d4e6"
       },
       "disposition": "absorbed",
@@ -588,7 +588,7 @@
     {
       "source": {
         "path": "Scripts/Cleanup/Select Unreferenced Glyphs.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "08df5f311d812924ff634883cf52b7cc3b214843679d6b2b98d5d33eaf5fd7ae"
       },
       "disposition": "absorbed",
@@ -612,7 +612,7 @@
     {
       "source": {
         "path": "Scripts/Cleanup/Start From Scratch.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "19c453a8da6f294df2c7848285fa8211dd721f505c15e302a5366a41ee744609"
       },
       "disposition": "absorbed",
@@ -636,7 +636,7 @@
     {
       "source": {
         "path": "Scripts/Components/Align By Anchor.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "db5bfc9568c585473b2508e0f46e91d123ad7f66b2ab6228e9ac180045e8f4ab"
       },
       "disposition": "absorbed",
@@ -659,7 +659,7 @@
     {
       "source": {
         "path": "Scripts/Components/Build From Recipes.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "27c15a82f0b2714ba8aee8ef66f1d0bb4f8c219f1a2c0dfe13ab43798e5a7479"
       },
       "disposition": "absorbed",
@@ -682,7 +682,7 @@
     {
       "source": {
         "path": "Scripts/Components/Compatibility.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "028522d2d33d899ae1e910d42bcb0ab3289b07e4971908ebfb4f32cea5c8890a"
       },
       "disposition": "absorbed",
@@ -705,7 +705,7 @@
     {
       "source": {
         "path": "Scripts/Components/Component Graph.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "890762f22f39f64455ec29dcd0fe3a3bd919266d6b62de3026e9daab525d4725"
       },
       "disposition": "absorbed",
@@ -729,7 +729,7 @@
     {
       "source": {
         "path": "Scripts/Components/Copy Offsets Between Masters.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ce9019d53270c6c8d070be4eb143ea0f5891dec824e07aa22a16eee2f3a56a20"
       },
       "disposition": "absorbed",
@@ -752,7 +752,7 @@
     {
       "source": {
         "path": "Scripts/Components/Count Badges.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "86e4a5c9f53906b45501249d7c3ebf08e723fa668c92006078197a75f6f69e51"
       },
       "disposition": "absorbed",
@@ -775,7 +775,7 @@
     {
       "source": {
         "path": "Scripts/Components/Decompose Named Components.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "bc54acbfa9efc4c9001f61f3afd7ec906d1bdd8d8218e036a12102c1efdab84e"
       },
       "disposition": "absorbed",
@@ -799,7 +799,7 @@
     {
       "source": {
         "path": "Scripts/Components/Decompose Serif Components.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "2b080c061236321280bbbbee21dee8a5cbcfafe4bc50861acc3f4a1d5c651bd2"
       },
       "disposition": "absorbed",
@@ -824,7 +824,7 @@
     {
       "source": {
         "path": "Scripts/Components/Decompose.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "c6d22abcc892e0c64f53d03cc44f777f45441fe13a5c7dd6a926c2ef5d55fb6d"
       },
       "disposition": "absorbed",
@@ -847,7 +847,7 @@
     {
       "source": {
         "path": "Scripts/Components/Dump Component Recipes.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8e46590e3f3d2400156c54be82f4ef9b5855c1d2a3c92c4fb832bf5ce69d6bc5"
       },
       "disposition": "absorbed",
@@ -871,7 +871,7 @@
     {
       "source": {
         "path": "Scripts/Components/Make Lower Unicase.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "9a0d8543dacea929c9e68ffa4f932a170649a68e35ec2e1701d4582bb8e2dcf8"
       },
       "disposition": "absorbed",
@@ -895,7 +895,7 @@
     {
       "source": {
         "path": "Scripts/Components/Missing Bases.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1fccc9cd53cef65a37cfbbb83055135b5a69225162359ce01d0c37d86ba6c3fa"
       },
       "disposition": "absorbed",
@@ -918,7 +918,7 @@
     {
       "source": {
         "path": "Scripts/Components/Nested Finder.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "0ae15ec6b25aefba241459e79226cc7ecce0a890a60f63a626215741a36365d9"
       },
       "disposition": "absorbed",
@@ -941,7 +941,7 @@
     {
       "source": {
         "path": "Scripts/Components/Replace Reference.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "917f4830be09b763e3f6adc4be813e5118d6e3e78c23ef7fb899b570c2091086"
       },
       "disposition": "absorbed",
@@ -964,7 +964,7 @@
     {
       "source": {
         "path": "Scripts/Components/Report.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "dbbd09a48862c959febd88a34868d22c1037f2e3b7c5cfa24879be6ead6590fa"
       },
       "disposition": "absorbed",
@@ -990,7 +990,7 @@
     {
       "source": {
         "path": "Scripts/Components/Set Component Locations.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f33b1ce4628e23d326c3dcdeeb914097e994542de4119b0d4dedab5ab9fb5484"
       },
       "disposition": "absorbed",
@@ -1014,7 +1014,7 @@
     {
       "source": {
         "path": "Scripts/Components/Set Default Figures.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5c85f757a55663252e39bb53006b7b6db95f612374efca5f91bf32169ab26a78"
       },
       "disposition": "absorbed",
@@ -1040,7 +1040,7 @@
     {
       "source": {
         "path": "Scripts/Components/Unlock Lock.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "6843ba684bfaea21376959452c2dbc678fc16b75a58bced14bbbf493d62fb8fc"
       },
       "disposition": "absorbed",
@@ -1063,7 +1063,7 @@
     {
       "source": {
         "path": "Scripts/Components/Where Used.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "e0f97c011212d6ccedae4c14c19e6d0ae16a3d5f375d729b63e531595d6472b3"
       },
       "disposition": "absorbed",
@@ -1086,7 +1086,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Add Extremes.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "fdcd581785c3d30bb041b52a4b5394520a645be129cb449343a5dc6b9c583322"
       },
       "disposition": "absorbed",
@@ -1109,7 +1109,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Align And Distribute.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "9f75b37714c3e7041563d182142a409e239724284be6e592903d1b250d80093b"
       },
       "disposition": "absorbed",
@@ -1133,7 +1133,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Angularizzle.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a08ea56a473da5814a549a27e74f089e43e3d15450bf87bbc722e51631b8958b"
       },
       "disposition": "absorbed",
@@ -1157,7 +1157,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Autohint Selected Layers.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "2c9564ba8fb3955cca12176fe48da0acd88c857e584bc0736b931580fb9cb072"
       },
       "disposition": "absorbed",
@@ -1180,7 +1180,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Comb.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5b04d1c4f70cf7e4378c4a90219af93997abd2182e76a9b60d55f10208fc2229"
       },
       "disposition": "absorbed",
@@ -1203,7 +1203,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Contour Order View.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "3a3f25a3102a59d617fcabf7a7a8fbd82595e4444a0409a55061ac26cdefcd74"
       },
       "disposition": "absorbed",
@@ -1227,7 +1227,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Correct Contour Direction.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "c66dda7f51ad5724ff7232b989b5eb47bb6c08e4d6c149862f1d2e7ce600d982"
       },
       "disposition": "absorbed",
@@ -1250,7 +1250,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Curve All Straights.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "c89c3ce42d661afee21dd8d65a859f6e6d830232f714020ba97ceacec79e5cdf"
       },
       "disposition": "absorbed",
@@ -1273,7 +1273,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Delete Close Points.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8a026f36648a16928f8b8608dc45638309d11ba9fe6396f6faa05fccd239ec11"
       },
       "disposition": "absorbed",
@@ -1296,7 +1296,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Delete Duplicate Contours.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d2efd700219d2d771343353d26695553e2809d364818e055cbe8003f83aa4aff"
       },
       "disposition": "absorbed",
@@ -1319,7 +1319,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Delete Small Contours.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1f9ff84e6a9954bbe9c438041577d9f2d305fb5974c45922596d9d65c0c0457f"
       },
       "disposition": "absorbed",
@@ -1343,7 +1343,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Duplicate Nodes All Foreground Layers.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d5dd5df84c493dbe78f6d28db2e8e6404fa19dac8a41c7226ff7043338d8a240"
       },
       "disposition": "absorbed",
@@ -1366,7 +1366,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Duplicate Nodes Current Layer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f5fa53d87345852d41ddd4474404f6bc38f52b25a25f772e6cdc463b224b9436"
       },
       "disposition": "absorbed",
@@ -1389,7 +1389,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Duplicate Nodes with Two Handles.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "2dac129fa3e2ed63062717b313da79f585107a97cda330c0c8e541efab46b3c9"
       },
       "disposition": "absorbed",
@@ -1412,7 +1412,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Fix Zero Handles.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "cafcaccf1e80d73aa8ed01acf615b3c4a2be6ead59b9a437027be973d3b643b4"
       },
       "disposition": "absorbed",
@@ -1435,7 +1435,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Interpolated Nudge.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "fdd6fd4dcc70a3c7dbd08f19a2ad88d6dbaf7c1b3a617da4946e68712ffd20ff"
       },
       "disposition": "absorbed",
@@ -1458,7 +1458,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Make Compatible.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b101c41dc8381b61322148c9b87dc6fbb34ac17e0422dd7bd152d2041a57e35c"
       },
       "disposition": "absorbed",
@@ -1481,7 +1481,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Myanmar Medial Ra Maker.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "61690c07f8852a18c2fbeba9b4d242e4e834cfc86fed9a1501c35642abc7db35"
       },
       "disposition": "absorbed",
@@ -1505,7 +1505,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Node Coordinates Panel.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "e27b8ee2c76c42f13e28171405b2e7c93e6436f21444ff040f32625400ab67d4"
       },
       "disposition": "absorbed",
@@ -1529,7 +1529,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Node Duplicator.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1bd5b65bd847d09160284b85597f51b77158e3a7d78707fb9b782b66518a3ad1"
       },
       "disposition": "absorbed",
@@ -1553,7 +1553,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Node Statistics.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8abe2e2384676c82dfd0740e099aa242a089592bb1d21eb7be495e55a2583515"
       },
       "disposition": "absorbed",
@@ -1577,7 +1577,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Optimize Start Points.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ab59cdcb37976cf0b265071dc3b919216282fdc7af54ee2e9e365c4d7823386f"
       },
       "disposition": "absorbed",
@@ -1600,7 +1600,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Outline Effect.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "15373391084f19e1f6851cc63d60d3dc8a496e2f75ec177ca7fc423318fc1a8a"
       },
       "disposition": "absorbed",
@@ -1623,7 +1623,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Overlap Nodes.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "aff5b5ba8ff836fdf9be49550a101da798430d7ac096e6513a10a7a4789a68e3"
       },
       "disposition": "absorbed",
@@ -1646,7 +1646,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Placeholder Glyphs.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "304fb15b82621372041cf84a68a0ca332f8a99af2a40c9329b8297b8b3bf0d62"
       },
       "disposition": "absorbed",
@@ -1669,7 +1669,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Raise Ascender.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ecc32fc081c412c2d44d5dd836a68ebfea2b607cdceb055b28286c880cdde330"
       },
       "disposition": "absorbed",
@@ -1693,7 +1693,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Reflect Horizontally.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "42d40f633234a89585e1181c5ee3c191357feec18cdca8fe543caeb3e3e022ae"
       },
       "disposition": "absorbed",
@@ -1716,7 +1716,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Reflect Vertically.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "dec288cd87dc461cf6344ca90d7d2a81cec3614e5e8509dd673ea1e81a566f25"
       },
       "disposition": "absorbed",
@@ -1739,7 +1739,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Remove Overlap.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7b6f775d90984c19bfa3fd80bfb9294cd32256a43e42b41fbd34740c3b03320d"
       },
       "disposition": "absorbed",
@@ -1762,7 +1762,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Remove PostScript Hints.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "e92210f7977e3625b41ab274c00e131a6046ec377c824c179d413b5cd9e13ce4"
       },
       "disposition": "absorbed",
@@ -1785,7 +1785,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Retract Handles.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "bcf4c252db651691e66a7e88d18be911625a467f9590e2c904d3fec5e6e3f57c"
       },
       "disposition": "absorbed",
@@ -1810,7 +1810,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Rotate Selection.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8f12c640949c2e9178a1955151c4a94c28f2c7869c6d9f78b217f2d64f8987d6"
       },
       "disposition": "absorbed",
@@ -1833,7 +1833,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Round Coordinates.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7b0f85d35d89bfd6d714596f76e48b9a5ff9b50322cbc87ae35e1da318faac76"
       },
       "disposition": "absorbed",
@@ -1856,7 +1856,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Sandblast.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5eb830bdacbff9445bd3b0cc83805fb705afe505d35cb649ce38c1fa00540adb"
       },
       "disposition": "absorbed",
@@ -1879,7 +1879,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Sansomatic.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "23ea27b5fd467cfd8a80c10974f25703f25ed0055f10ae71e93f1336cc0c358e"
       },
       "disposition": "absorbed",
@@ -1903,7 +1903,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Select Contours.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1b201dc96e6633d1314879e43f01e3a1e544afee69bd8686e94e3a53f30f70c4"
       },
       "disposition": "absorbed",
@@ -1926,7 +1926,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Select Partial Contours.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "6ade10ea8229d5fa4db3947f8ba4eee84cd29043800d2f9c603f7d6cdb6317ac"
       },
       "disposition": "absorbed",
@@ -1949,7 +1949,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Select Small Contours.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b7ba4a2b039ca9ed0a48940da123493b50648fec6048cd5e88bb58b1d5c2c56c"
       },
       "disposition": "absorbed",
@@ -1972,7 +1972,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Shadow Copy.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b0024ecd58f0863a8d4f8a36e1f68105b6bc2a383d21af47f4f0d67ec0dd591e"
       },
       "disposition": "absorbed",
@@ -1995,7 +1995,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Simplify Selected Nodes.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "dbda8985434b56bebdd0fda00cc41ee7a5a4b0a261686be04a0e0985f812593b"
       },
       "disposition": "absorbed",
@@ -2019,7 +2019,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Slant.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b11c8799610c475bd66a8fc3512977531577947f7cb44b7adda8c90986ba0f68"
       },
       "disposition": "absorbed",
@@ -2042,7 +2042,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Small Caps From Capitals.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f39816aa5d04c428223ff2cbb90b480e10ed8053225fc17ebc82c1a9d3de2b89"
       },
       "disposition": "absorbed",
@@ -2065,7 +2065,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Smart Slant.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b5f6cac94e69e88afbad7c554a6521593d4fbf469018385a32c9304a7a4c785f"
       },
       "disposition": "absorbed",
@@ -2088,7 +2088,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Straighten All Curves.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "65ad56cc05102b7ef1f8eedfe1c80831d6d0fcc08bc97efe3bda95d9418a9edf"
       },
       "disposition": "absorbed",
@@ -2112,7 +2112,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Straighten Short Curves.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "baa7130b7ccd58db35e760d6e49c4d63ffd1d8ac3685f1dc918b24dad45321ba"
       },
       "disposition": "absorbed",
@@ -2135,7 +2135,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Superaligner.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f43e31cb5d62486e9c7362ea41febc982c0ab830f213c2232aa8365e4b503e05"
       },
       "disposition": "absorbed",
@@ -2158,7 +2158,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Superior & Inferior Figures.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "fb4d8c118e38e968a2c2390729444ca7f07de250fb36bc07711ea3b86377e823"
       },
       "disposition": "absorbed",
@@ -2181,7 +2181,7 @@
     {
       "source": {
         "path": "Scripts/Contours/TGlyph Window.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "e2e36a8244fe8cbd29917feb1ffc70bb4e0078663d2f6ec61f8f739091fc625c"
       },
       "disposition": "absorbed",
@@ -2206,7 +2206,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Tabular Figure Copies.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b8dfa9eedfded808badf20ed2551fb9dff601af30ca9a50afd88fde13193afc2"
       },
       "disposition": "absorbed",
@@ -2229,7 +2229,7 @@
     {
       "source": {
         "path": "Scripts/Contours/Transform.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "027d07ff32d8f0dc40070fe80d77af0da941a6c48aebd3977c8e2484617d2d41"
       },
       "disposition": "absorbed",
@@ -2252,7 +2252,7 @@
     {
       "source": {
         "path": "Scripts/Features/Alternate Preview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ee331b1a0e0d9f3529ac41275b5c18ff8366afd114eba2398d396e69b3280f35"
       },
       "disposition": "absorbed",
@@ -2277,7 +2277,7 @@
     {
       "source": {
         "path": "Scripts/Features/Build Suffix Substitution.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "3f61189977ac6ae20fc48c373295c96d20ec4b310c521ebc8863d8764d4757f5"
       },
       "disposition": "absorbed",
@@ -2302,7 +2302,7 @@
     {
       "source": {
         "path": "Scripts/Features/Classes Browser.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a896a353e2d9ccc0ac4b6af74f4e6e6cfa47287aabd726188b78f55d16592ee9"
       },
       "disposition": "absorbed",
@@ -2327,7 +2327,7 @@
     {
       "source": {
         "path": "Scripts/Features/Feature Code Viewer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "78bcce4cb4f7fc5090c30709fb1e5ebd77452e42fdced4931ea482232fb124c9"
       },
       "disposition": "absorbed",
@@ -2352,7 +2352,7 @@
     {
       "source": {
         "path": "Scripts/Features/Generate Random Alternates Feature.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "3150c3b959f68211bd6dadd588e3cb242a1d08041489e114ec3f743dc2bf69a0"
       },
       "disposition": "absorbed",
@@ -2375,7 +2375,7 @@
     {
       "source": {
         "path": "Scripts/Features/Ligature Finder.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d32962796bd77e830609b7687d3aff15a59381ffc06767f86a2748725717764d"
       },
       "disposition": "absorbed",
@@ -2400,7 +2400,7 @@
     {
       "source": {
         "path": "Scripts/Features/Nastaliq Connection Editor.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7ae2c8ae1b20e39a2c54573a1621030631533ed635b5caec5b807c7b401f448b"
       },
       "disposition": "absorbed",
@@ -2424,7 +2424,7 @@
     {
       "source": {
         "path": "Scripts/Features/Suffix Report.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ce705a74019336af6541ae02ddfb705741a680fc60c43a1e52f08c8de0b865d9"
       },
       "disposition": "absorbed",
@@ -2449,7 +2449,7 @@
     {
       "source": {
         "path": "Scripts/Font Info/Bump Font Version.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "98b2a1a721c4ad5b4b6a6851cf10a9f3aa20f31774fa4bf66244cd628aa48e53"
       },
       "disposition": "absorbed",
@@ -2474,7 +2474,7 @@
     {
       "source": {
         "path": "Scripts/Font Info/Calculate Vertical Metrics.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "171957f5d1a73eb8f5e75b7831e372754790865b6cf13f0de4ec87740c303c26"
       },
       "disposition": "absorbed",
@@ -2499,7 +2499,7 @@
     {
       "source": {
         "path": "Scripts/Font Info/Glyph Order Preview and Export.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "da3d34aaa6f1665591530edda75507155fde3f55c986b10035ee33d2e1cad30c"
       },
       "disposition": "absorbed",
@@ -2524,7 +2524,7 @@
     {
       "source": {
         "path": "Scripts/Font Info/Master Metrics Table.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "227270400c504febeb813c695b97a8c301f1dd658742f270ce2dada456f97f4f"
       },
       "disposition": "absorbed",
@@ -2550,7 +2550,7 @@
     {
       "source": {
         "path": "Scripts/Font Info/Names and Credits.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "504f56070a5741e45718fd78bf97b2e1b239bec27d6c558171d8a2a2bc5cd9d0"
       },
       "disposition": "absorbed",
@@ -2575,7 +2575,7 @@
     {
       "source": {
         "path": "Scripts/Font Info/Paste Glyph Order Encoding.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "58dd0938d020cc42eb18d3c5c246e26414b97beda26ed3e2247042ef8d370317"
       },
       "disposition": "absorbed",
@@ -2599,7 +2599,7 @@
     {
       "source": {
         "path": "Scripts/Font Info/Trial Font Maker.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "4a3f416df2e51d3f77d514681c0b86e5029817d8156015a6626b4ce78602ce0f"
       },
       "disposition": "absorbed",
@@ -2622,7 +2622,7 @@
     {
       "source": {
         "path": "Scripts/Font Info/Unicode Ranges and Codepages.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1cece3e6b233d1f909534262cb55d7199ea84bc303db50b3936c06e8493a7478"
       },
       "disposition": "absorbed",
@@ -2646,7 +2646,7 @@
     {
       "source": {
         "path": "Scripts/Font UI Lab/Anchor and Component Inspector.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "bcad7f3760c86d6678cf77c9c0b1237306843cd74495f45c2dca7f316cad397e"
       },
       "disposition": "retained",
@@ -2669,7 +2669,7 @@
     {
       "source": {
         "path": "Scripts/Font UI Lab/Batch UFO Recipe Workbench.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f69d82804d107ad008a26ad95c4d0acf0bf3260999104808406860fa6f9b4d06"
       },
       "disposition": "retained",
@@ -2693,8 +2693,31 @@
     },
     {
       "source": {
+        "path": "Scripts/Font UI Lab/Designspace Source Comparison.py",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+        "sha256": "01c2a0f5e87f70ecd7e1fffd9da707fb4afb48b0e7bb2a3f15e911408f6b67b7"
+      },
+      "disposition": "retained",
+      "destination": {
+        "path": "Scripts/Font UI Lab/Designspace Source Comparison.py",
+        "tab": "Designspace Source Comparison",
+        "sha256": null
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_delivery.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
         "path": "Scripts/Font UI Lab/Detached Transform Preview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8c8b631a35fab00f4af7403e7df3b44b1e276b3c39b494d9480554a131f28e83"
       },
       "disposition": "retained",
@@ -2719,7 +2742,7 @@
     {
       "source": {
         "path": "Scripts/Font UI Lab/Feature Source and Proof.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7dabf6b6e6ccd024a7011442f7456597f7eaed31038fadb02fc1b0aeff144a7d"
       },
       "disposition": "retained",
@@ -2742,8 +2765,31 @@
     },
     {
       "source": {
+        "path": "Scripts/Font UI Lab/Font Info and Vertical Metrics.py",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+        "sha256": "d18230cca1f0372b45bd63af11cde1ff491d720a9feeb4eb09da5d19f2d2cbc0"
+      },
+      "disposition": "retained",
+      "destination": {
+        "path": "Scripts/Font UI Lab/Font Info and Vertical Metrics.py",
+        "tab": "Font Info and Vertical Metrics",
+        "sha256": null
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_curated_delivery.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
         "path": "Scripts/Font UI Lab/Glyph Browser and Metrics.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "069d4ccba0484e420c4f905cbe3528471f917a7f1b189e5e3cf5f183cb2abcb6"
       },
       "disposition": "retained",
@@ -2765,8 +2811,32 @@
     },
     {
       "source": {
+        "path": "Scripts/Font UI Lab/Interpolation Preview.py",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+        "sha256": "9e761eae1faaee19eddaeb896f7b0c13a55aa596d3752d19069643686cec09fa"
+      },
+      "disposition": "retained",
+      "destination": {
+        "path": "Scripts/Font UI Lab/Interpolation Preview.py",
+        "tab": "Interpolation Preview",
+        "sha256": null
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_fontui_interpolation_preview_menu.py",
+        "tests/test_curated_delivery.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
         "path": "Scripts/Font UI Lab/Kerning Group Explorer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "36d93e8e94b8efd68c173db5e7503ec36b6581b2637e2fb91c9e38914df91b8c"
       },
       "disposition": "retained",
@@ -2790,7 +2860,7 @@
     {
       "source": {
         "path": "Scripts/Font UI Lab/Kerning Proof Workbench.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1e4c233d5097162af29142ae505877f562900d3969b2f1c6b30c79541559b8f9"
       },
       "disposition": "retained",
@@ -2813,8 +2883,32 @@
     },
     {
       "source": {
+        "path": "Scripts/Font UI Lab/Master Compatibility Browser.py",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+        "sha256": "f50a63982f8ff078f0590f659d69b512bf4021028f420def788235062c526322"
+      },
+      "disposition": "retained",
+      "destination": {
+        "path": "Scripts/Font UI Lab/Master Compatibility Browser.py",
+        "tab": "Master Compatibility Browser",
+        "sha256": null
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_fontui_master_browsers_menus.py",
+        "tests/test_curated_delivery.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
         "path": "Scripts/Font UI Lab/Master Width Comparison.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "120567cd7662c6be1c6802510e70bd3b8c40508826c2f20c0d3e2f636f7a6929"
       },
       "disposition": "retained",
@@ -2838,8 +2932,80 @@
     },
     {
       "source": {
+        "path": "Scripts/Font UI Lab/Node Counts Across Masters.py",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+        "sha256": "8bb75a78041139a865e73fd5c113270ed29985fdbbbed0587a6d930f58ea5e42"
+      },
+      "disposition": "retained",
+      "destination": {
+        "path": "Scripts/Font UI Lab/Node Counts Across Masters.py",
+        "tab": "Node Counts Across Masters",
+        "sha256": null
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_fontui_master_browsers_menus.py",
+        "tests/test_curated_delivery.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Font UI Lab/Open Fonts and Master Overview.py",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+        "sha256": "888ebbf8f485d7c807fa776ac430d6905d69f39c75cde5be30904e7c9ab79dd9"
+      },
+      "disposition": "retained",
+      "destination": {
+        "path": "Scripts/Font UI Lab/Open Fonts and Master Overview.py",
+        "tab": "Open Fonts and Master Overview",
+        "sha256": null
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_fontui_master_browsers_menus.py",
+        "tests/test_curated_delivery.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
+        "path": "Scripts/Font UI Lab/Representation and Notification Explorer.py",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+        "sha256": "5d3c5aea2891ca3c803e9b7e52fd9e7ac89cafc13c35cf3028853eb5f8efe06e"
+      },
+      "disposition": "retained",
+      "destination": {
+        "path": "Scripts/Font UI Lab/Representation and Notification Explorer.py",
+        "tab": "Representation and Notification Explorer",
+        "sha256": null
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_fontui_inspector_menus.py",
+        "tests/test_curated_delivery.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
         "path": "Scripts/Font UI Lab/Tabular Width Audit.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "58fca5c31786f1ab0d95e83c7066964f1889ebf96635ce7844212dd7869a99d2"
       },
       "disposition": "retained",
@@ -2862,8 +3028,32 @@
     },
     {
       "source": {
+        "path": "Scripts/Font UI Lab/UFO Roundtrip Inspector.py",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
+        "sha256": "5e4e39d4eadb8fed8ba12308ced2525024a03fa1357bc864a04bc21fddd30beb"
+      },
+      "disposition": "retained",
+      "destination": {
+        "path": "Scripts/Font UI Lab/UFO Roundtrip Inspector.py",
+        "tab": "UFO Roundtrip Inspector",
+        "sha256": null
+      },
+      "retirement_reason": null,
+      "test_routes": [
+        "tests/test_fontui_inspector_menus.py",
+        "tests/test_curated_delivery.py"
+      ],
+      "acceptance": {
+        "state": "proposed",
+        "date": "2026-11-11",
+        "behavior_parity": false,
+        "native": false
+      }
+    },
+    {
+      "source": {
         "path": "Scripts/Font UI Lab/Unicode and Glyph Order Explorer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d4715f1721dc5d9b1401ba0b2ee0ef1ae671be242409c649c7733495c976a4fa"
       },
       "disposition": "retained",
@@ -2886,7 +3076,7 @@
     {
       "source": {
         "path": "Scripts/Guides/Clear Glyph Guides.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "bc6ba292bb59f8d57760d3b155e6d1c33e8c6cd6d05cb1b5ddd7522c97db7706"
       },
       "disposition": "absorbed",
@@ -2909,7 +3099,7 @@
     {
       "source": {
         "path": "Scripts/Guides/Copy Guides Between Masters.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "221f489ff22572c7c0ac867f086db03d259219991d7c36d0af4730859e86ce15"
       },
       "disposition": "absorbed",
@@ -2932,7 +3122,7 @@
     {
       "source": {
         "path": "Scripts/Guides/Font Guides Panel.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5ebf7188897e7bd285f3a2408a486d1bb9fd2bbbc1d7e540b45b05f3dc11e09a"
       },
       "disposition": "absorbed",
@@ -2955,7 +3145,7 @@
     {
       "source": {
         "path": "Scripts/Guides/Grid Generator.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "efcbe437478e425332c3f561d8d080bfe1977dd219dddfd98afa7f2bdd3fd09e"
       },
       "disposition": "absorbed",
@@ -2978,7 +3168,7 @@
     {
       "source": {
         "path": "Scripts/Guides/Guide List Editor.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7d706fa180e98dfbf5b64177f501fb0cbe121b722ca1039f489f384d4c893a89"
       },
       "disposition": "absorbed",
@@ -3001,7 +3191,7 @@
     {
       "source": {
         "path": "Scripts/Guides/Metric Reference Lines.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "288c80a3f2e60341f73130f63fcb4ad68f6f9917b88ed9b6f1b17326f25071bb"
       },
       "disposition": "absorbed",
@@ -3024,7 +3214,7 @@
     {
       "source": {
         "path": "Scripts/Guides/Perpendicular Guides.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a221b9b7a01f96d394a878982d88f590775adf5bdd5836b7c26796461306cbee"
       },
       "disposition": "absorbed",
@@ -3048,7 +3238,7 @@
     {
       "source": {
         "path": "Scripts/Guides/Suggest Zones From Overshoots.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "0f8890a6e7c7c6b35886ff9319db939cf78be1d72fbbbde11f1b9eb12ebfe2fc"
       },
       "disposition": "absorbed",
@@ -3072,7 +3262,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Classes Browser.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "2310828bc23c47c0eb3b749f71edfdd8b467b49d12c89a0fede7d49e41002962"
       },
       "disposition": "absorbed",
@@ -3097,7 +3287,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Compare Masters.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "c1b547cc45e9dfddae55c4021d184e6f5109af2556b7f17faa4e255d5ad5ada2"
       },
       "disposition": "absorbed",
@@ -3121,7 +3311,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Copy Between Masters.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8a1d271a7e9d75dee66e1e6756643632960be43ca4a8f20f46acc4aaea999d07"
       },
       "disposition": "absorbed",
@@ -3145,7 +3335,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Delete Kerning Pair From All Masters.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "0f252998a0e1e32786fd173e80a9807cf1e33f2d15915942004f7fdc6627f75a"
       },
       "disposition": "absorbed",
@@ -3168,7 +3358,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Exceptions Finder.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "897c73e3d1cb15cbb67e29663782a279b2232c869933b8909aed7d1772f06387"
       },
       "disposition": "absorbed",
@@ -3192,7 +3382,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Kern To Max.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b29b820eafbdfd05a2760d8dd1dc6b4b8774e278fd0e913874b3f6170a5ae3cd"
       },
       "disposition": "absorbed",
@@ -3215,7 +3405,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Kerning Cutoff.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a0b0e2fbe7c2f6c7cb82c63f8406a0b6ac926f627a1aaf53b24ce0ddcaeefc5d"
       },
       "disposition": "absorbed",
@@ -3239,7 +3429,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Kerning Energy Report.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "6555393db13425025dee6fcba78101661a6a19c9e08c6319319c2c0edb29a688"
       },
       "disposition": "absorbed",
@@ -3263,7 +3453,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Missing Pairs.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "856f37a6e26ceba142c93e78a4f275e530cff2629a8f7de9efdc3fe58d6c6648"
       },
       "disposition": "absorbed",
@@ -3287,7 +3477,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Pair Editor.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "3ae4e4bdb1fdfd377ed521ee054fcd1eee843e024fbd0d994dc9755f3a0c13ab"
       },
       "disposition": "absorbed",
@@ -3311,7 +3501,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Pair List Browser.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "86852956ccea8b279eb360b16f74762916920ac004b952276ca433be4c54adc1"
       },
       "disposition": "absorbed",
@@ -3335,7 +3525,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Pairs From Text.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "0dbe9a5444a761f393baee12d98bb9ccb44509b71cb55976e71ff0435441ffcc"
       },
       "disposition": "absorbed",
@@ -3359,7 +3549,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Persistence Audit.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "c8f49143594412c52d77f811147a441dcf855bb49c5897c560533480d1653d87"
       },
       "disposition": "absorbed",
@@ -3383,7 +3573,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Remove Small Pairs.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7b722c2fea65efa91e09985e213f4b2db0a2536fa59d6eb861151de6d3338eb0"
       },
       "disposition": "absorbed",
@@ -3407,7 +3597,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Round Values.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ca37dd92318fbbbfa70f98ff606534de4d63d6593670a7a99739dbef039ba222"
       },
       "disposition": "absorbed",
@@ -3431,7 +3621,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Same Kerning Groups.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "c3211b629d2541ddf075830cf3baecd2a45e666462d04040749edd05ecc034cf"
       },
       "disposition": "absorbed",
@@ -3455,7 +3645,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Scale Values.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5161c1b6f0249f39a6345115cfa083f7d68bf0832752eab7d66952085959738b"
       },
       "disposition": "absorbed",
@@ -3479,7 +3669,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Steal Kerning From Next Pair.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1f39494601cac658e2ba8900484749639b825b0ac065beb9779f24ae1c5bb18c"
       },
       "disposition": "absorbed",
@@ -3502,7 +3692,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Symmetry.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8b8001c1d327737a265ddfd5aee98e0cd149e8b13097c0f1d8d6dbb41e5001ce"
       },
       "disposition": "absorbed",
@@ -3526,7 +3716,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Text Preview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "45add8abbaba88ea6c200d58707c3f13cd479bfa2824ff7a1b00bfc6748f9c29"
       },
       "disposition": "absorbed",
@@ -3550,7 +3740,7 @@
     {
       "source": {
         "path": "Scripts/Kerning/Unbundle Punctuation Kerning.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "97894e162ebee70d9fbdbb5843d323f7af99e806b4fcfcad9a775c72a3d7ec93"
       },
       "disposition": "absorbed",
@@ -3574,7 +3764,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Common Glyphs.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "e33465af702a32d55c3f0ea20a550ab7912c61ec37603befe7a441d703d0f1e6"
       },
       "disposition": "absorbed",
@@ -3598,7 +3788,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Compatibility Check.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "536a54227e6d654684d4eace3494d01cd0f106d2a7df0a7d8ad227633cbaec00"
       },
       "disposition": "absorbed",
@@ -3622,7 +3812,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Copy Layer Between Masters.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "2eec4fe73acf056b46091515fdc6550b0e8881614d6dfaa9af5cb1c91fc6da31"
       },
       "disposition": "absorbed",
@@ -3645,7 +3835,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Copy Outline To Mask.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d6b98a8137f211f0295fb47d4991248cc5807f3526224c909c040f42db6e9ace"
       },
       "disposition": "absorbed",
@@ -3668,7 +3858,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Deliver Glyphs.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "deb66c49ca44df494593a6fcd5ed71279b2acca17b7ddf33ad349a6b505ed5f6"
       },
       "disposition": "absorbed",
@@ -3692,7 +3882,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Display Next Layer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "da6b423b0e3c8cec550e183a08b488138f2ddf8ab673126c73f8d3332f2b259f"
       },
       "disposition": "absorbed",
@@ -3715,7 +3905,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Display Previous Layer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "3331bdaece5f15c49d130e0c4cb457cbc4e48f107846c704d37b7f69affdcb7b"
       },
       "disposition": "absorbed",
@@ -3739,7 +3929,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Duplicate Current Layer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a52430839d688fc55a49cf8016ae55c09bf3a7d61f39291c9c14efe786a13486"
       },
       "disposition": "absorbed",
@@ -3763,7 +3953,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Glyph Weight Chart.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "669f80b1f2513054216347fb76f39bc6db71fd4077810ed8378aaa436711fb6d"
       },
       "disposition": "absorbed",
@@ -3787,7 +3977,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Interpolation Preview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5e496815615ef150072c68a5bd66cfc11aac402e83280adcb285a92768d15a2e"
       },
       "disposition": "absorbed",
@@ -3811,7 +4001,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Italic Angle.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "c886ced09f78812bb00b330840870ed5f6285b6ad5ce403f7a789bec1d4ced30"
       },
       "disposition": "absorbed",
@@ -3835,7 +4025,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Layer Cleanup.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5a240c54715580d83d5d65687b7aabbb3502e58878dbd70ab91680049601f013"
       },
       "disposition": "absorbed",
@@ -3858,7 +4048,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Master Switcher.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b32b5c95aa434995d8b99c66cba75e19cf7b7fbfe678c7aec43e028f6d25f938"
       },
       "disposition": "absorbed",
@@ -3882,7 +4072,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Master Text Comparison.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "67c34bfb3d06258bd010eea73ff285c5c214901593c47199aadf2b8b5129a61f"
       },
       "disposition": "absorbed",
@@ -3906,7 +4096,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Master Twins.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "e3899161a755076b5e735ee5db7def3d45730acc7e7b6259ace72b201f2309b9"
       },
       "disposition": "absorbed",
@@ -3930,7 +4120,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Overview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8941501701b629d0a2deccd90187f9dd22e1532ef393e4fb9a3382527efc1209"
       },
       "disposition": "absorbed",
@@ -3954,7 +4144,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Reorder Shapes.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d1fba58063b9941abc1c73bd775fa0ca3156e2070023cdc878436e9f2c3680fa"
       },
       "disposition": "absorbed",
@@ -3977,7 +4167,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Restore Backup Layer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "6d164d434489d714926a18c59fa8144e16e7dbd8623746102f025513474f0713"
       },
       "disposition": "absorbed",
@@ -4000,7 +4190,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Select Different Colour.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7d7129b5e015c70edfc9cc39bda93f103abfaefa4f748a30d55179f6c51e9f80"
       },
       "disposition": "absorbed",
@@ -4024,7 +4214,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Selection Layer Navigator.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a174b2d3739e711bc6d8776235a0b870c9ed13280007b60d38c6f1b06d97ba98"
       },
       "disposition": "absorbed",
@@ -4048,7 +4238,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Selection To All Backgrounds.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b4d4450a5a193ab1780b74b4bb7d6c370acc4a9a0b8114dfe77082a893d42ddb"
       },
       "disposition": "absorbed",
@@ -4071,7 +4261,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Set Intermediate Layer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1e751e9f4d541cebdc3aed8d4069c01ae0421d5cb8e528fbb9e2c66bcb711f2b"
       },
       "disposition": "absorbed",
@@ -4095,7 +4285,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Show All Layers.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "00a725ea75d964ea77fa620c3a2c09a0ff988f149575f2b897e5dd4e5aba2f8d"
       },
       "disposition": "absorbed",
@@ -4119,7 +4309,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Sync Sidebearings.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "4c819ae022ba2e037b445a9a07dd29a579789a2d183624ed3e5f90ec4f22d6f4"
       },
       "disposition": "absorbed",
@@ -4142,7 +4332,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Transform Background.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ed84f3238cb1ac81b20c0bee308c1b1aae70ad3e2c796da4e2eaf26ab9d91d7b"
       },
       "disposition": "absorbed",
@@ -4166,7 +4356,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Use Layer As Master.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "cb9a5ffffd1d501a50ea565dc66b2f1718d6f721e7369f101471a381dd4afdb9"
       },
       "disposition": "absorbed",
@@ -4189,7 +4379,7 @@
     {
       "source": {
         "path": "Scripts/Masters/Width Chart.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ceb3ff28466c781fa0129eea8a506dbdb5d9787385b1a072435e8187f69f795e"
       },
       "disposition": "absorbed",
@@ -4213,7 +4403,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Alignment Zones.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8508a52f2e11a7fac5fcf0fd43be2ef5802c45c40f8dbeecb4b8a865c10fb746"
       },
       "disposition": "absorbed",
@@ -4237,7 +4427,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Centre In Advance.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "cbe25fe960397e75c949be4ef74bb66384a185b3dadd9192f8fff4b8fee34498"
       },
       "disposition": "absorbed",
@@ -4260,7 +4450,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Check Tabular Widths.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "12038e43a8cdc63c5fc5a7fbf68f8dcaa2db65f5fd56aeb0944df1ea6d34991f"
       },
       "disposition": "absorbed",
@@ -4284,7 +4474,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Copy Metrics From Reference.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7d1dcbdd9a53638a7ac869e8def838f5b24682110764560ff4537ce1556020a1"
       },
       "disposition": "absorbed",
@@ -4307,7 +4497,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Equalize Sidebearings.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ce9ed0bf467a3c87fb3f38f225da2e1ef026c4a616640bba37e2229e01226769"
       },
       "disposition": "absorbed",
@@ -4330,7 +4520,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Italic Sidebearings.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ff0b82b0fbe1c639ad7bba2e7d5327164deed5f6259c52acd564f9c30598f62f"
       },
       "disposition": "absorbed",
@@ -4353,7 +4543,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Round Advances.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "9b7e790969514bc1c5075e79f3bd10cd6fb5d6be3cc90b610a845b4a2651a7e8"
       },
       "disposition": "absorbed",
@@ -4376,7 +4566,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Scale Advances.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8df2c4722b7b5aaedf41da3626cc6a438f8dc61713aa30178ae733b179ec7364"
       },
       "disposition": "absorbed",
@@ -4399,7 +4589,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Sidebearing Offset Preview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "aebd0335756696d5f766d9ccbf33c3497bb97b4530ddf91ca19fc562788c3b75"
       },
       "disposition": "absorbed",
@@ -4423,7 +4613,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Sidebearings Tuner.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "44aced6659c6e780ed00f1c792de1845866fa28face925e1659c19d5566adc9a"
       },
       "disposition": "absorbed",
@@ -4446,7 +4636,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Spacing String Preview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "48c3240f5aa1c920679ca3722171da565a3be2c282b14a5f301736d7808ef3c5"
       },
       "disposition": "absorbed",
@@ -4470,7 +4660,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/TMetrics Window.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "3a844099f2fb1b49f1c8dfcefb60f84a21dc496d624bcf030f569ecc8cb6181b"
       },
       "disposition": "absorbed",
@@ -4495,7 +4685,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Tabular Width.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "15438d3983d0542075caf940af3e4231c56ebe2b3f1f94728e429b52be9f63b5"
       },
       "disposition": "absorbed",
@@ -4518,7 +4708,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Vertical Metrics Diagram.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a8f0ed78a12db894982c7b8127a5455913d65a0aacfc79743f931064777b2035"
       },
       "disposition": "absorbed",
@@ -4541,7 +4731,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Width Table.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "90161123b9eba41209b1ca1336371d7c23af2e69bae764d8dff59ffe08bd4458"
       },
       "disposition": "absorbed",
@@ -4565,7 +4755,7 @@
     {
       "source": {
         "path": "Scripts/Metrics/Zero-Width Marks.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "6649cf1d94d50c1100acaf0300335bfa4d25768f3c5ffbe31c425f9cc804c7df"
       },
       "disposition": "absorbed",
@@ -4588,7 +4778,7 @@
     {
       "source": {
         "path": "Scripts/Names/Batch Glyph Notes.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "bcf36530a70ca572a43720e687629c71e49244b6f6efb71f7f283a74a7f39901"
       },
       "disposition": "absorbed",
@@ -4611,7 +4801,7 @@
     {
       "source": {
         "path": "Scripts/Names/Batch Rename.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "4fcbcf5042ed54a1d1f42b7255f84d4de382b1200c1249870697118aed2b07c9"
       },
       "disposition": "absorbed",
@@ -4634,7 +4824,7 @@
     {
       "source": {
         "path": "Scripts/Names/Case Pairs.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f2492ce06095cf761ad9d05d08368cf424062bc2e161367e500133f72d2bf00e"
       },
       "disposition": "absorbed",
@@ -4659,7 +4849,7 @@
     {
       "source": {
         "path": "Scripts/Names/Character Info.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "13590a61617a3415dd79c04d2c174fe10ac66e0d36e5c3912b08e25d6b236ff8"
       },
       "disposition": "absorbed",
@@ -4684,7 +4874,7 @@
     {
       "source": {
         "path": "Scripts/Names/Character Set Compare.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "867a8f2f4151ca3c3c8ba2fe0a5f9b01578b46e61440daa3afb160e41cf816b3"
       },
       "disposition": "absorbed",
@@ -4709,7 +4899,7 @@
     {
       "source": {
         "path": "Scripts/Names/Duplicate Unicodes.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "332e2442f99e8918c6c1fa3b8040443fb5b6c61f21952bf597347510ad7c8148"
       },
       "disposition": "absorbed",
@@ -4733,7 +4923,7 @@
     {
       "source": {
         "path": "Scripts/Names/Glyph Finder.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "95a772ac6847f4831f937e0d422f5abc05624a3b66a55d64f50e840e70bec856"
       },
       "disposition": "absorbed",
@@ -4758,7 +4948,7 @@
     {
       "source": {
         "path": "Scripts/Names/Glyph Metadata Tree.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b79472aaf93c41ac1d5d2bc252fc2e1b58a697438c0204b7f3fb80603018fb39"
       },
       "disposition": "absorbed",
@@ -4782,7 +4972,7 @@
     {
       "source": {
         "path": "Scripts/Names/Glyph Name Completion.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b9a5198a8063ce7b4536ad9717538375dc9f14900cd5a93b7105a1041963ae72"
       },
       "disposition": "absorbed",
@@ -4806,7 +4996,7 @@
     {
       "source": {
         "path": "Scripts/Names/Glyph Notes.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "83a4baf2c009ff8a62905499373c848e4a68cf1524af1323fbd10b28dcdb1888"
       },
       "disposition": "absorbed",
@@ -4829,7 +5019,7 @@
     {
       "source": {
         "path": "Scripts/Names/Glyph Tags.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7c4823864e7f3de81227461b0db4950ca48357d337e9e3610dfe0f6e99bf190b"
       },
       "disposition": "absorbed",
@@ -4852,7 +5042,7 @@
     {
       "source": {
         "path": "Scripts/Names/Mark Color Palette.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "1422d94005e382f3e4f22b87111f2431806a8dcca2313827d1ec5de96318b7da"
       },
       "disposition": "absorbed",
@@ -4875,7 +5065,7 @@
     {
       "source": {
         "path": "Scripts/Names/Select Different Mark Colours.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "42fe45daf79850eb223950e6b440f86773a9849a8f4e622d6177caa422842770"
       },
       "disposition": "absorbed",
@@ -4899,7 +5089,7 @@
     {
       "source": {
         "path": "Scripts/Names/Select by Mark.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "917a1b23e4f71791d0ed508c91470c1bfb9fd42549440070d32395d70916e8f8"
       },
       "disposition": "absorbed",
@@ -4924,7 +5114,7 @@
     {
       "source": {
         "path": "Scripts/Names/Style Linker.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "30465e121d48ba68820aa745b11f184ac73a8518406441aacb3ed0fb236e3782"
       },
       "disposition": "absorbed",
@@ -4948,7 +5138,7 @@
     {
       "source": {
         "path": "Scripts/Names/Suffix Tool.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "67fab137c995d22a14bbb0b5d2a961f40af914581f6a88eadee65fb9d1492855"
       },
       "disposition": "absorbed",
@@ -4971,7 +5161,7 @@
     {
       "source": {
         "path": "Scripts/Names/Unicode From Names.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "986e4c123b49a1f99501ba220a0155bc8a3ac7a99514f0d2c37aee917c10ed62"
       },
       "disposition": "absorbed",
@@ -4994,7 +5184,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Bracket Layers and Components.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "cea59f6bba23b2bce78e7e2dee8ee026a03137f6d24599ba73781d32395e740f"
       },
       "disposition": "absorbed",
@@ -5018,7 +5208,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Character Map.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d0b7b74b0f88902a0b6191f7fb9fa4d89cc62df906905bd44dc7a6d9734fde2e"
       },
       "disposition": "absorbed",
@@ -5042,7 +5232,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Glyph Grid.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "49a2a92fe9d27e135e2195ed2cbb6cdb5955ebf7408f3cc3650caf1f35386d4d"
       },
       "disposition": "absorbed",
@@ -5066,7 +5256,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Glyphs Between Lining Figures.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5d442ace5ab15ddd00997721648c1c0abfc5fd179600ef63186778be8beb1248"
       },
       "disposition": "absorbed",
@@ -5089,7 +5279,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Glyphs Between Lowercase.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "13201ca8c7d7b15b16724578506d826adcbbf1fcbc77b36dcdee7d9a369081e3"
       },
       "disposition": "absorbed",
@@ -5112,7 +5302,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Glyphs Between Oldstyle Figures.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "803d6dcf30d8c5a50696c26713a99410e683b863dc2ac50cc2ace10af0f67124"
       },
       "disposition": "absorbed",
@@ -5135,7 +5325,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Glyphs Between Uppercase.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d7ec7d19f195a89a9a71c7ffd9f9e43b003ca72278c4f8fa439d74faaebc15a2"
       },
       "disposition": "absorbed",
@@ -5158,7 +5348,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Glyphs Surrounded by H.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "6632c375ec7e03686e0f60545ce2ebc641c33e81937f6da8021498cd237ff0ba"
       },
       "disposition": "absorbed",
@@ -5181,7 +5371,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Glyphs Surrounded by HHOHH.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "354314573cda22d30675da6fbe36a44881d56c62331df3bd28b46ea7c599cfdb"
       },
       "disposition": "absorbed",
@@ -5204,7 +5394,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Glyphs Surrounded by I.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f070ee75a03c556d1c3ca6a10ddf960c98c79eed3c36c529654181663d595950"
       },
       "disposition": "absorbed",
@@ -5227,7 +5417,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Glyphs Surrounded by Nnonn.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "74d1f14969eb63bb691c894d50c63324412ec6e716fff8d8f86927f3b41c452c"
       },
       "disposition": "absorbed",
@@ -5250,7 +5440,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Highest & Lowest Glyphs.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "9635679e4e0b0dbff2c2631a76bb78713d6aa1f5fac37e974a9bde67f786fa6b"
       },
       "disposition": "absorbed",
@@ -5274,7 +5464,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Hoefler Lowercase.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "b405f57793af421b7ba3f19d2c94096a6db0901de46940423cb0e4a0ca4f7a21"
       },
       "disposition": "absorbed",
@@ -5297,7 +5487,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Hoefler Uppercase.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "430c448e3fb5e747d1dd43e9d35bfc54cf2da67e96e7b61b7e67149f116ee9f7"
       },
       "disposition": "absorbed",
@@ -5320,7 +5510,7 @@
     {
       "source": {
         "path": "Scripts/Proof/KernKing.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5074479a3550de54222901716ac54a19e21c6c78a9d2876f0cc6d692e6ee15e2"
       },
       "disposition": "absorbed",
@@ -5343,7 +5533,7 @@
     {
       "source": {
         "path": "Scripts/Proof/KernSym.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "793716f7677b3cd1c1b717a3e5cee8d793042fbf578191ba0914d2e7d61f463a"
       },
       "disposition": "absorbed",
@@ -5366,7 +5556,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Random Lowercase Nontext.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "cff78b81474d97f95f5ec30e67a12b2800fac265833b337576e9ad3a0fc6d8d5"
       },
       "disposition": "absorbed",
@@ -5389,7 +5579,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Random Lowercase Words.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "738d900f6f20f6fa850b5f36048c07520e4e06163ddc9fe75ad8e728664da9c3"
       },
       "disposition": "absorbed",
@@ -5412,7 +5602,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Random Numbers.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "8e6522ae2d0d07be74f92528b8b61123359b8582520b4edfe2eba883f03e280a"
       },
       "disposition": "absorbed",
@@ -5435,7 +5625,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Random Title Nontext.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f7562404619b1331ce24816740a3cebc496a39b123e7d0feba072909c78c8ef0"
       },
       "disposition": "absorbed",
@@ -5458,7 +5648,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Random Title Words.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f60f53a3728c3827dc80ac178a72ac273e9fbe066e85ec2f21b0451fdab3928f"
       },
       "disposition": "absorbed",
@@ -5481,7 +5671,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Random Uppercase Nontext.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "2b95cbdb7ba90741c8fdbeeced3e6d8c128323cbab7721588f956d6e6e097a10"
       },
       "disposition": "absorbed",
@@ -5504,7 +5694,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Random Uppercase Words.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "10bf14742502136dd2c12639386a7c651d2d0d385e8dc7664b807d0aac451669"
       },
       "disposition": "absorbed",
@@ -5527,7 +5717,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Real English Text.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "3e4e6c2db6b98d24d9ca0516522c735714b719ef590f730b3879d4cc04964af5"
       },
       "disposition": "absorbed",
@@ -5550,7 +5740,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Real Spanish Text.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "6cb895cbdc85bf1c5c83e0a8c86f10d341a6101d8acea2a9849de89fbb3a619b"
       },
       "disposition": "absorbed",
@@ -5573,7 +5763,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Show All Layers.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "df44a608bff6ec335f6768333b69dc9101237cc727ee3ca7c61e99035012929f"
       },
       "disposition": "absorbed",
@@ -5597,7 +5787,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Tallest and Shortest.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f0fdfde46c8868670b5f84430cf2105e9f6fb7ab0ff868685cd57efb40a16498"
       },
       "disposition": "absorbed",
@@ -5621,7 +5811,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Text By Master.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "e6261f5d2603bab4036d179e80f17b9cb2c028e63c740bff4886e38d8d77af01"
       },
       "disposition": "absorbed",
@@ -5645,7 +5835,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Text Filter.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "03f50bea0a05a1d51a1a5880e295695c038aaf44e4c12b0a55083b77e951e699"
       },
       "disposition": "absorbed",
@@ -5669,7 +5859,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Waterfall.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a019aec9cf77088904935933c1f6e2aea6ba588248709661c5666af77d32b2a2"
       },
       "disposition": "absorbed",
@@ -5693,7 +5883,7 @@
     {
       "source": {
         "path": "Scripts/Proof/Word Finder.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a11d2f2b6283f5bd560b0cf852f098ec44599b7a78494d7cdeb125cfd1d1b70d"
       },
       "disposition": "absorbed",
@@ -5717,7 +5907,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Bracket Layers and Components.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "9e1fd16e500ad842265491d162c751e258c4d66dd498adc8c54c42826b43e93f"
       },
       "disposition": "retired",
@@ -5736,7 +5926,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Case Coverage.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "45022a5562681d2125179e28e50e75340baf7bfd9f923cc8924f03dc3013398c"
       },
       "disposition": "absorbed",
@@ -5760,7 +5950,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Categories to XML Lib Key.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ec200352ebc1139ebdd8b5ea21c25ad073994412e62b2a83f9f9a8b463de9177"
       },
       "disposition": "absorbed",
@@ -5784,7 +5974,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Close But No Cigar.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "4b8fbbaba0f400880ca38201782b107e1af4654cbef4f59686ab66cdbd233d00"
       },
       "disposition": "absorbed",
@@ -5807,7 +5997,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Compare Open Font Revisions.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "3a970598cba29b7dae7fa9c3d6606e4b3488a1d9e84e86bf68051dc74ff449f0"
       },
       "disposition": "absorbed",
@@ -5831,7 +6021,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Dangerous Offcurves.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "d8987dd79c1d1ca4edee6e680f9a3d77149ac9f037a16e715f999a8cae87b9cd"
       },
       "disposition": "absorbed",
@@ -5855,7 +6045,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Dump to Svg Path Commands.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a94c19667467f20cb0f996e77315b563d8604948c3ebcf66b68ff5f5476c64f9"
       },
       "disposition": "absorbed",
@@ -5878,7 +6068,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Empty Glyphs.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "dad6b49302f0ee0d76d663b83bd0769e61f4b5ffd999a5e5094065b815674581"
       },
       "disposition": "absorbed",
@@ -5902,7 +6092,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Event Log.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "5a9edeea69d1941b7c59f18fbb9496d82b5e0de370a8fd5a1fcf0368b9520448"
       },
       "disposition": "retired",
@@ -5921,7 +6111,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Font Overview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7801721daf5b5866fbcc4cbc9f768855ee9b9a1d0d10e97046dd44d2d63b2976"
       },
       "disposition": "absorbed",
@@ -5945,7 +6135,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Glyph Table CSV.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7e5642249b14d7cdb4d17088ee8789585f91a471fe143eb6aefd05948982adec"
       },
       "disposition": "absorbed",
@@ -5969,7 +6159,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Label Statistics.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "45ddd1ff6208ee65cc0d7451fa7bc812778f88aef7874b7bf33507d1e7a9e304"
       },
       "disposition": "absorbed",
@@ -5993,7 +6183,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Live Glyph Info.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "cff55f51dc0905472bcb3edb342be32c0f128e44ab0e880572e7f6fb92c40ad7"
       },
       "disposition": "absorbed",
@@ -6017,7 +6207,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Master Node Compatibility Report.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f50554adb4b03b9b3ecabb807d9f3af05b93b30100c70dc9dd0c3bd5fcd0cd4a"
       },
       "disposition": "absorbed",
@@ -6040,7 +6230,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Nodes Near Zones.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "34a607b4ae608b007dcfea051eae1c4e3d6a749e413bf7601fc4cafbd399d69b"
       },
       "disposition": "absorbed",
@@ -6064,7 +6254,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Open Contours.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a0712c8d9f242ceae05745b752da7e9621523827e504ebb4abe53f32b9775f0f"
       },
       "disposition": "absorbed",
@@ -6088,7 +6278,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Point Counter (Master Layers).py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "f6ab4dde19f3b42e8b95abb53c933334af0d032766fc263800eefae0155b600c"
       },
       "disposition": "absorbed",
@@ -6112,7 +6302,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Point Counter.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "a36c0a3a0ddf8432dda7118a3f91b662f84898ab5942bb0c130cbf873f7d8ee6"
       },
       "disposition": "absorbed",
@@ -6136,7 +6326,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Report Composite Differences.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "7a7709373a95a0e54bac32d880aa62234ceade238e1062bb2961b0157d17d428"
       },
       "disposition": "absorbed",
@@ -6159,7 +6349,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Report Glyph Set Differences.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "ce7cab5519bae22fb98ad8c155b8ca7ff3c2020b13f5a69d158982f78028fb2b"
       },
       "disposition": "absorbed",
@@ -6182,7 +6372,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Sidebearing Direction Marker.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "2e0ddbdf50d28e5b44b3aa753aa7d3d30a6ba635ef888488aaf5e2f24d6c415c"
       },
       "disposition": "absorbed",
@@ -6205,7 +6395,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Smallcap Consistency.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "9bc4fe033f5cf0d2643a0f5026ac6d9a7bf0bb01066a2a2622e9ea8fd26b9736"
       },
       "disposition": "absorbed",
@@ -6229,7 +6419,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Unicode Coverage.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "74c02fdcafa4d45122df5bfb97b804e2c28f5dd6e297df85d234136e35c67dfd"
       },
       "disposition": "absorbed",
@@ -6253,7 +6443,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Vertical Metrics Reporter.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "19cb6ceb2b119456ddf2b30ab7666ed473b4da37d67062cf7a174fa1cc308298"
       },
       "disposition": "absorbed",
@@ -6277,7 +6467,7 @@
     {
       "source": {
         "path": "Scripts/Reports/Why You Not Compatible.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "42ce9e74232f0fa59b733f12e1af658fcc9754177af004777c0a8dc4d11a3ef2"
       },
       "disposition": "absorbed",
@@ -6301,7 +6491,7 @@
     {
       "source": {
         "path": "Scripts/Utilities/Find Font Files.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "56f6ae7e336ac0bb220a9b7ed87631b1a52292237ad52216269ddcb483d1e529"
       },
       "disposition": "retired",
@@ -6320,7 +6510,7 @@
     {
       "source": {
         "path": "Scripts/Utilities/Magic Remover.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "e24e7839c0b7fe6ad37bbd83c6414597dc871b2959e57e29d9e3a83476262a19"
       },
       "disposition": "absorbed",
@@ -6344,7 +6534,7 @@
     {
       "source": {
         "path": "Scripts/Utilities/Reference Image Viewer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "457e2b3ccec7b7c6261d7c3100ca8db9264208a85c8f7730f27d6df906e065fe"
       },
       "disposition": "retained",
@@ -6368,7 +6558,7 @@
     {
       "source": {
         "path": "Scripts/Utilities/Text Holder.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
+        "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
         "sha256": "63582be433e9a80fe5819c46b24ae9b4cab3204b54765fbe70573ff6e7909fba"
       },
       "disposition": "absorbed",
@@ -6381,150 +6571,6 @@
       "test_routes": [
         "tests/test_curated_delivery.py",
         "tests/test_text_holder_menu.py"
-      ],
-      "acceptance": {
-        "state": "proposed",
-        "date": "2026-11-11",
-        "behavior_parity": false,
-        "native": false
-      }
-    },
-    {
-      "source": {
-        "path": "Scripts/Font UI Lab/Interpolation Preview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
-        "sha256": "9e761eae1faaee19eddaeb896f7b0c13a55aa596d3752d19069643686cec09fa"
-      },
-      "disposition": "retained",
-      "destination": {
-        "path": "Scripts/Font UI Lab/Interpolation Preview.py",
-        "tab": "Interpolation Preview",
-        "sha256": null
-      },
-      "retirement_reason": null,
-      "test_routes": [
-        "tests/test_fontui_interpolation_preview_menu.py",
-        "tests/test_curated_delivery.py"
-      ],
-      "acceptance": {
-        "state": "proposed",
-        "date": "2026-11-11",
-        "behavior_parity": false,
-        "native": false
-      }
-    },
-    {
-      "source": {
-        "path": "Scripts/Font UI Lab/Master Compatibility Browser.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
-        "sha256": "f50a63982f8ff078f0590f659d69b512bf4021028f420def788235062c526322"
-      },
-      "disposition": "retained",
-      "destination": {
-        "path": "Scripts/Font UI Lab/Master Compatibility Browser.py",
-        "tab": "Master Compatibility Browser",
-        "sha256": null
-      },
-      "retirement_reason": null,
-      "test_routes": [
-        "tests/test_fontui_master_browsers_menus.py",
-        "tests/test_curated_delivery.py"
-      ],
-      "acceptance": {
-        "state": "proposed",
-        "date": "2026-11-11",
-        "behavior_parity": false,
-        "native": false
-      }
-    },
-    {
-      "source": {
-        "path": "Scripts/Font UI Lab/Node Counts Across Masters.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
-        "sha256": "8bb75a78041139a865e73fd5c113270ed29985fdbbbed0587a6d930f58ea5e42"
-      },
-      "disposition": "retained",
-      "destination": {
-        "path": "Scripts/Font UI Lab/Node Counts Across Masters.py",
-        "tab": "Node Counts Across Masters",
-        "sha256": null
-      },
-      "retirement_reason": null,
-      "test_routes": [
-        "tests/test_fontui_master_browsers_menus.py",
-        "tests/test_curated_delivery.py"
-      ],
-      "acceptance": {
-        "state": "proposed",
-        "date": "2026-11-11",
-        "behavior_parity": false,
-        "native": false
-      }
-    },
-    {
-      "source": {
-        "path": "Scripts/Font UI Lab/Open Fonts and Master Overview.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
-        "sha256": "888ebbf8f485d7c807fa776ac430d6905d69f39c75cde5be30904e7c9ab79dd9"
-      },
-      "disposition": "retained",
-      "destination": {
-        "path": "Scripts/Font UI Lab/Open Fonts and Master Overview.py",
-        "tab": "Open Fonts and Master Overview",
-        "sha256": null
-      },
-      "retirement_reason": null,
-      "test_routes": [
-        "tests/test_fontui_master_browsers_menus.py",
-        "tests/test_curated_delivery.py"
-      ],
-      "acceptance": {
-        "state": "proposed",
-        "date": "2026-11-11",
-        "behavior_parity": false,
-        "native": false
-      }
-    },
-    {
-      "source": {
-        "path": "Scripts/Font UI Lab/Representation and Notification Explorer.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
-        "sha256": "5d3c5aea2891ca3c803e9b7e52fd9e7ac89cafc13c35cf3028853eb5f8efe06e"
-      },
-      "disposition": "retained",
-      "destination": {
-        "path": "Scripts/Font UI Lab/Representation and Notification Explorer.py",
-        "tab": "Representation and Notification Explorer",
-        "sha256": null
-      },
-      "retirement_reason": null,
-      "test_routes": [
-        "tests/test_fontui_inspector_menus.py",
-        "tests/test_curated_delivery.py"
-      ],
-      "acceptance": {
-        "state": "proposed",
-        "date": "2026-11-11",
-        "behavior_parity": false,
-        "native": false
-      }
-    },
-    {
-      "source": {
-        "path": "Scripts/Font UI Lab/UFO Roundtrip Inspector.py",
-        "commit": "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51",
-        "sha256": "5e4e39d4eadb8fed8ba12308ced2525024a03fa1357bc864a04bc21fddd30beb"
-      },
-      "disposition": "retained",
-      "destination": {
-        "path": "Scripts/Font UI Lab/UFO Roundtrip Inspector.py",
-        "tab": "UFO Roundtrip Inspector",
-        "sha256": null
-      },
-      "retirement_reason": null,
-      "test_routes": [
-        "tests/test_fontui_inspector_menus.py",
-        "tests/test_curated_delivery.py"
       ],
       "acceptance": {
         "state": "proposed",

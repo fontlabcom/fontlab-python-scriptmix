@@ -171,11 +171,11 @@ def test_proposed_consolidations_account_for_all_original_menus_without_removing
     from menu_layout import consolidation_rows
 
     rows = consolidation_rows(ROOT)
-    assert len(rows) == 277
+    assert len(rows) == 279
     assert {row["source"]["path"] for row in rows} == {
         str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").glob("*/*.py")
     }
-    assert len({row["destination"]["path"] for row in rows if row["destination"]}) == 70
+    assert len({row["destination"]["path"] for row in rows if row["destination"]}) == 72
     assert sum(row["disposition"] == "retired" for row in rows) == 3
     assert all(row["acceptance"] == {
         "state": "proposed", "date": "2026-11-11", "behavior_parity": False, "native": False,

@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — WP01 ledger recounted to 279 after merging main (WPF)
+
+Main added Font Info and Vertical Metrics and Designspace Source Comparison. `menu-consolidations.json` now pins source commit 8022be9 (all 277 earlier source hashes verified unchanged there), adds both as retained proposed rows, and counts 279 sources and 72 destinations; `tests/test_curated_delivery.py` updated to match.
+
 ## 2026-11-11 — WP01 current-main inventory integration (WPF)
 
 Resolved the current-main/WP01 documentation and menu-layout test conflicts,

@@ -4,7 +4,7 @@ this_file: PLAN.md
 
 ## WP01 follow-up and later consolidation packages
 
-The proposed transition ledger now accounts for all 277 current-main sources
+The proposed transition ledger now accounts for all 279 current-main sources
 without removing menus or replacing immutable provenance. The original 271
 mappings remain, plus six explicitly retained routes. The complete prepared
 Scriptmix suite passed (4,703 tests, two existing skips); current-main source
