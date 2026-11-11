@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Behaviour tests with owned data; these do not certify the native host."""
 
+from conftest import app_module_name, app_names_used, check_real_app_names
 import ast
 import importlib.util
 import inspect
@@ -13,8 +14,6 @@ from typing import Any
 from unittest.mock import create_autospec
 
 import pytest
-from conftest import app_module_name, app_names_used, check_real_app_names
-from menu_layout import _menu_bytes
 
 ROOT = Path(__file__).parents[1]
 FILES = {
@@ -42,8 +41,7 @@ def patch_app(monkeypatch: Any, module: Any, name: str, action: Any) -> Any:
 
 def load(key: str) -> Any:
     """Load only the new independent script, without native imports."""
-    source = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/shape_generators/sansomatic.py" if key == "sans" else FILES[key]
-    spec = importlib.util.spec_from_file_location("g13_" + key, source)
+    spec = importlib.util.spec_from_file_location("g13_" + key, FILES[key])
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
@@ -56,7 +54,7 @@ def test_installed_app_names() -> None:
 
 @pytest.mark.parametrize("key", FILES)
 def test_public_structure(key: str) -> None:
-    tree = ast.parse(_menu_bytes(ROOT, str(FILES[key].relative_to(ROOT))).decode())
+    tree = ast.parse(FILES[key].read_text())
     doc = ast.get_docstring(tree)
     assert "Simon Cozens" in doc and "MIT" in doc
     assert "https://github.com/simoncozens/GlyphsScripts" in doc
@@ -108,7 +106,7 @@ def test_public_structure(key: str) -> None:
                         if isinstance(n, ast.Name)
                     )
     assert not forbidden.intersection(defined)
-    assert "# SPDX-License-Identifier: MIT" in _menu_bytes(ROOT, str(FILES[key].relative_to(ROOT))).decode().splitlines()[:3]
+    assert "# SPDX-License-Identifier: MIT" in FILES[key].read_text().splitlines()[:3]
     assert not any(
         isinstance(n, ast.ImportFrom) and n.module == "fly.ap" for n in ast.walk(tree)
     )
@@ -1035,9 +1033,3 @@ def test_sans_unsupported_glyph_is_named(host: Any, monkeypatch: Any) -> None:
     panel.build_controls()
     row = panel.planner()(NS(name="Aacute", unicodes=[193]), "Regular", Layer())[0]
     assert row.edit is None and "Aacute" in row.new and "kept" in row.new
-
-
-def test_current_sansomatic_keeps_public_safety_contract(monkeypatch):
-    current = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/shape_generators/sansomatic.py"
-    monkeypatch.setitem(globals(), "_menu_bytes", lambda root, path: current.read_bytes())
-    test_public_structure("sans")

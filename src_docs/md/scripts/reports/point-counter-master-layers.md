@@ -32,4 +32,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `f6ab4dde19f3b42e8b95abb53c933334af0d032766fc263800eefae0155b600c`
 
-[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Reports/Point%20Counter%20%28Master%20Layers%29.py)
+[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Reports/Point%20Counter%20%28Master%20Layers%29.py)

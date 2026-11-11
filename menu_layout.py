@@ -146,17 +146,6 @@ def current_rows(root: Path) -> list[dict]:
     return result
 
 
-def active_menu_paths(root: Path) -> set[str]:
-    """Project validated transitions without replacing immutable historical rows."""
-    transitions = consolidation_rows(root)
-    additional = json.loads((root / "additional-tools.json").read_text())
-    paths = {row["destination"] for row in [*current_rows(root), *additional]}
-    implemented = [row for row in transitions if row["acceptance"]["state"] == "implemented"]
-    paths.difference_update(row["source"]["path"] for row in implemented)
-    paths.update(row["destination"]["path"] for row in implemented if row["destination"])
-    return paths
-
-
 def _inside(root: Path, relative: str, *, menu: bool = True) -> Path:
     """Reject traversal and symlink escapes before reading a recorded identity."""
     path = Path(relative)

@@ -19,8 +19,6 @@ from typing import Any, ClassVar
 
 import pytest
 from _figure_settings_support import settings_factory
-from _wp05_outline_routes import route_path
-from menu_layout import _menu_bytes
 from _message_box_support import assert_owned_message, message_box_type
 from conftest import app_names_used, check_real_app_names
 
@@ -937,8 +935,10 @@ def components_world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.MainWindow = lambda: NS(palette=Palette())
     fontlab.UpdateAll = lambda: w.events.append(("update-all",))
     fontlab.flGlyph = NS(updatedFgGlyphs=lambda: tuple(w.pending))
-    def names() -> list[str]:
+
+    def names():
         return list(w.glyphs)
+
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:
@@ -991,14 +991,8 @@ def contours_world(components_world: Any) -> Any:
     return components_world
 
 
-def current_path(relative: str) -> Path:
-    """Current callable source; consolidated contour routes live in App."""
-    return route_path(Path(relative).stem) if relative.startswith("Contours/") else ROOT / "Scripts" / relative
-
-
 def load(relative: str) -> dict[str, Any]:
-    name = "fontlabapp.fontui.outline_routes.g2_test" if relative.startswith("Contours/") else "g2_test"
-    return runpy.run_path(str(current_path(relative)), run_name=name)
+    return runpy.run_path(str(ROOT / "Scripts" / relative), run_name="g2_test")
 
 
 @pytest.fixture
@@ -1134,7 +1128,7 @@ def prototype(w: Any, base: str = "a") -> Any:
 
 @pytest.mark.parametrize("relative", PATHS)
 def test_headers_public_words_and_annotations(relative: str) -> None:
-    source = _menu_bytes(ROOT, "Scripts/" + relative).decode()
+    source = (ROOT / "Scripts" / relative).read_text()
     tree = ast.parse(source, feature_version=(3, 11))
     assert f"this_file: Scripts/{relative}" in source
     doc = ast.get_docstring(tree)
@@ -1419,7 +1413,7 @@ def test_custom_panel_lifetime_and_native_members(
 
 @pytest.mark.parametrize("relative", PATHS)
 def test_panel_classes_do_not_shadow_native_members(relative: str) -> None:
-    tree = ast.parse(current_path(relative).read_text())
+    tree = ast.parse((ROOT / "Scripts" / relative).read_text())
     prohibited = {
         "render",
         "size",
@@ -1847,7 +1841,7 @@ def test_component_tools_keep_existing_targets_without_prototype(
 
 def test_no_script_uses_raw_glyph_insertion() -> None:
     for relative in PATHS:
-        tree = ast.parse(current_path(relative).read_text())
+        tree = ast.parse((ROOT / "Scripts" / relative).read_text())
         assert not any(
             isinstance(node, ast.Attribute) and node.attr == "addGlyph"
             for node in ast.walk(tree)
@@ -1965,7 +1959,7 @@ def test_app_double_signature_check_rejects_variadic_capture(
 
 def test_component_scripts_do_not_clone_or_retarget_components_privately() -> None:
     for relative in PATHS[2:4]:
-        tree = ast.parse(current_path(relative).read_text())
+        tree = ast.parse((ROOT / "Scripts" / relative).read_text())
         assert not any(
             isinstance(n, ast.Attribute) and n.attr == "clone" for n in ast.walk(tree)
         )
@@ -2397,11 +2391,3 @@ def test_figures_when_applied_then_contours_are_removed_only_by_opt_in(
     assert {name: tuple(codes) for name, codes in w.codes.items()} == codes_before, "Existing digit Unicode assignments stay unchanged"
     assert all(w.groups[m]["figures"] == ([f"zero.{suffix}", "zero"], "KernBothSide") for m in w.package.masters)
     assert len(w.notifications()) == 1, "Existing targets still use the shared history batch"
-
-
-def test_migrated_simplify_direct_module_entry_opens_retained_panel(contours_world, monkeypatch):
-    import fontlabapp.core.scripting as scripting
-    opened = []
-    monkeypatch.setattr(scripting, 'show_script_dialog', lambda panel, key: opened.append((panel, key)))
-    namespace = runpy.run_module('fontlabapp.fontui.outline_routes.simplify_selected_nodes', run_name='__main__')
-    assert opened == [(namespace['SimplifyPanel'], 'contours_simplify_selected_nodes')]

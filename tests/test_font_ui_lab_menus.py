@@ -10,7 +10,6 @@ from pathlib import Path
 from types import ModuleType
 
 import pytest
-from menu_layout import _menu_bytes, active_menu_paths, current_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 CASES = [
@@ -104,19 +103,21 @@ def test_new_rows_when_added_then_old_259_bodies_and_190_rows_are_exact():
         ).hexdigest()
         == OLD_ROWS_SHA
     )
-    historical = current_rows(ROOT) + rows
-    old = sorted(row["destination"] for row in historical if row["destination"] not in paths)
+    old = sorted(
+        p
+        for p in (ROOT / "Scripts").glob("*/*.py")
+        if str(p.relative_to(ROOT)) not in paths
+    )
     assert len(old) == 259
     payload = [
-        (p, hashlib.sha256(_menu_bytes(ROOT, p)).hexdigest())
+        (str(p.relative_to(ROOT)), hashlib.sha256(p.read_bytes()).hexdigest())
         for p in old
     ]
     assert (
         hashlib.sha256(json.dumps(payload, separators=(",", ":")).encode()).hexdigest()
         == OLD_MENUS_SHA
     )
-    assert len(rows) == 210 and len(historical) == 279
-    assert {str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").glob("*/*.py")} == active_menu_paths(ROOT)
+    assert len(rows) == 210 and len(list((ROOT / "Scripts").glob("*/*.py"))) == 279
     for title, module, key, digest in CASES:
         matching = [r for r in rows if r["key"] == key]
         assert len(matching) == 1

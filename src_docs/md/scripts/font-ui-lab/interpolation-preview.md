@@ -30,4 +30,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `9e761eae1faaee19eddaeb896f7b0c13a55aa596d3752d19069643686cec09fa`
 
-[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Font%20UI%20Lab/Interpolation%20Preview.py)
+Immutable source link pending a reviewed containing commit.

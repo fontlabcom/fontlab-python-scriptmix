@@ -29,4 +29,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `8bb75a78041139a865e73fd5c113270ed29985fdbbbed0587a6d930f58ea5e42`
 
-[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Font%20UI%20Lab/Node%20Counts%20Across%20Masters.py)
+Source link awaits a reviewed commit containing this new menu script.
