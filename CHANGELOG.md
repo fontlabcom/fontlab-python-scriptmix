@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Live evidence from A2 reports 16 and 17
+
+- Copy Layer Between Masters, Restore Backup Layer and Layer Cleanup passed live on an owned fixture with Apply/Undo/Redo and saved/reopened equality (report 17).
+- Copy Kerning Between Masters passed live (report 17). Build Suffix Substitution failed: see TODO S67-F.
+- New layers report isMasterLayer=False and autoLayer=False after create, Redo and reopen, and Copy Layers From Font cross-font Undo/Redo is proven (report 17; closes those parts of the milestone TODO row).
+- Anchor rounding: native rounding to integers confirmed; a +0.6/-0.6 round trip does not drift (report 16).
+
 ## 2026-11-11 — Package fakes expose `fgPackage` (Issue 250)
 
 App `dependency_values` now reads `package.fgPackage.glyphs` (App e4b69da), which 504 tests with owned package fakes could not provide (`AttributeError: ... 'fgPackage'`). New `tests/_fgpackage_support.py` supplies a live `fgPackage` view whose `.glyphs` holds the fake's glyphs in order; the `test_issue122_*` and `test_masters.py` fakes use it. `test_guides.py` and `test_guide_rewrite.py` also load the real `qt.safe`, because App `canvas_glyphs` imports it and the fixtures' stub `fontlabapp` is not a package. No assertion changed. Gate: 504 failed before, 4664 passed and 2 skipped after.

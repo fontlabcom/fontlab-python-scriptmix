@@ -62,9 +62,10 @@ this_file: TODO.md
 - [ ] Qualify Names editors, including Duplicate Unicodes, with Font-window guards, Unicode order, notes, marks, tags, stale previews and complete saved history.
 - [ ] Qualify Anchors writers, duplicate removal and two-font copying: exact collision rules, raw survivor state, origin refusals, dependencies and both fonts' history/reopen.
 - [ ] Qualify Components writers and glyph builders: retained removed objects, lock fields, decomposition, reference placement, per-layer builder history and full saved state.
-- [ ] Qualify Masters navigation, backup/copy/restore/cleanup and selection-to-background tools; check removed-shape ownership and retained component history.
+- [ ] Qualify Masters Selection To All Backgrounds and Duplicate Current Layer natively; both need a Glyph-window selection (owner-run). Copy Layer Between Masters, Restore Backup Layer and Layer Cleanup passed live (CHANGELOG 2026-11-11, A2 report 17).
 - [ ] Qualify Contours editors and generators: per-shape direction, open/reversed duplicates, partial selection, analytic area, hints, node flags, one outline history step and separate glyph-creation steps.
-- [ ] Qualify feature writes and typed Kerning editors, including sequential group aliases, explicit zero, master filters, replace confirmation and full-font history/reopen.
+- [ ] Qualify the remaining feature writes and typed Kerning editors (Copy Kerning Between Masters passed live, A2 report 17): sequential group aliases, explicit zero, master filters, replace confirmation and full-font history/reopen.
+- [ ] S67-F: Build Suffix Substitution fails live: Scriptmix `append_code` returns App features/code.py `feature_text()` with no trailing newline, and Fontport `native_features.stage_blocks` refuses "Feature block ss01: history code differs". Fix either in Scriptmix (append a newline), App `write_feature_blocks` (normalise) or `stage_blocks` (compare modulo newline); then rerun live (lander2 is fixing).
 - [ ] Qualify context, random, extrema, bracket, group and kerning-text proofs: exact named symbols, current master, empty/repeated input, ordered new tabs and complete preservation.
 - [ ] Qualify reports and canvas reporters: actual source getters, compatibility/count findings, exact layers, literal output, painting, timer/signal teardown and Close.
 - [ ] Qualify Text Filter and Text Holder: settings, Unicode selection/replacement, input methods, literal NUL refusal, persistence, window geometry and complete terminal lifecycle.
@@ -78,7 +79,7 @@ this_file: TODO.md
 - [ ] Qualify final App backup naming and restore helpers in the five layer tools plus both outline-copy tools: custom suffixes, legacy and overlapping names, active selection, contour names, notes, flags, complete Undo/Redo and saved/reopened fonts.
 - [ ] Qualify Selection To All Backgrounds on masks with components: retained shape/data/builder ownership, contour/component read-back diagnostics, complete-font history and save/reopen.
 - [ ] Qualify the seven fact-reusing panels in FontLab: control changes, reselect/Refresh, stale-font refusal, fresh Apply facts, painting and Close.
-- [ ] Complete native milestone cases: new layers isMasterLayer=False/autoLayer=False after create/Redo/reopen; rounding preference read-back; Copy Layers From Font cross-font Undo/Redo; glyph-to-layer mark propagation; retained component history; in-place versus repaired-clone transforms; base-of-auto metadata state; __smart_selected persistence.
+- [ ] Complete native milestone cases: rounding preference read-back; glyph-to-layer mark propagation; retained component history; in-place versus repaired-clone transforms; base-of-auto metadata state; __smart_selected persistence.
 
 - [ ] Resolve retained baseline provenance gate and qualify Cursive Sample parent/priority in the final native tuple.
 
@@ -102,7 +103,7 @@ this_file: TODO.md
 
 
 
-- [ ] Anchor rounding: live on Lato A, all masters, native anchors round to integers on every `applyTransform`: +0.4 and +0.2 steps are swallowed, a y +0.6 step rounds up, and a +0.6/-0.6 round trip drifts x by -1. `READ_BACK_TOLERANCE` is 0.5 and the Metrics panel passes only integer dx, so no defect is open there. Remaining: pin that fractional dx is never passed to `shift_and_set` (add a test) and decide whether the read-back should report the drift.
+- [ ] Anchor rounding: live on Lato A, all masters, native anchors round to integers on every `applyTransform` (+0.4 and +0.2 steps swallowed, y +0.6 rounds up). A +0.6/-0.6 round trip does not drift (A2 report 16). `READ_BACK_TOLERANCE` is 0.5 and the Metrics panel passes only integer dx. Remaining: add a test pinning that fractional dx is never passed to `shift_and_set`.
 
 - [ ] Limit App kerning numeric validation to changed masters while preserving persistence-range checks.
 
