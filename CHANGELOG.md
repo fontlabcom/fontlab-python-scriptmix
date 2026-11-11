@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Package fakes expose `fgPackage` (Issue 250)
+
+App `dependency_values` now reads `package.fgPackage.glyphs` (App e4b69da), which 504 tests with owned package fakes could not provide (`AttributeError: ... 'fgPackage'`). New `tests/_fgpackage_support.py` supplies a live `fgPackage` view whose `.glyphs` holds the fake's glyphs in order; the `test_issue122_*` and `test_masters.py` fakes use it. `test_guides.py` and `test_guide_rewrite.py` also load the real `qt.safe`, because App `canvas_glyphs` imports it and the fixtures' stub `fontlabapp` is not a package. No assertion changed. Gate: 504 failed before, 4664 passed and 2 skipped after.
+
 ## 2026-11-11 — Metrics composite shift Undo/Redo verified live (Issue 250)
 
 The Metrics composite-shift TODO row is closed. Live in FontLab 9 on the owned Lato copy fixture, through the real panel model (`survey` then `commit`, glyph A, dx +7 and width +7, both masters): the commit made one Undo step, Undo and Redo restored the native bbox and advance exactly (A Hairline 42/1274 to 49/1281 and back), Aacute's components followed without a double shift (advance unchanged), and the saved VFJ readback matched in all three states. Evidence: `issue250/reports/a5-implementer2-report-12.md`, `live-tests/i2/r87f-live.json`. Scope limit: only glyph A and the metrics edit were tested; the broader "Qualify Metrics writers" row (all scopes, successive edits, full-font Undo/Redo, save/reopen) stays open.

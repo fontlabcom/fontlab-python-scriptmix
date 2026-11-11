@@ -14,6 +14,7 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
+from _fgpackage_support import fg_package
 from _message_box_support import assert_owned_message, message_box_type
 from conftest import app_names_used, check_real_app_names
 
@@ -714,6 +715,7 @@ class World:
             master=self.master,
             italicAngle_value=-12.0,
             findName=lambda name: self.glyphs.get(name),
+            fgPackage=fg_package(self.glyphs),
         )
 
     def glyph(

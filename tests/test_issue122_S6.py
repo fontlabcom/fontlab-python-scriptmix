@@ -9,7 +9,6 @@ The scripts run unchanged. Only the native modules `fontlab`, `fontgate`,
 Offline results never prove native FontLab behaviour.
 """
 
-from conftest import app_module_name, app_names_used, check_real_app_names
 import ast
 import itertools
 import math
@@ -21,6 +20,8 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
+from _fgpackage_support import fg_package
+from conftest import app_module_name, app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 ISOLATED = ("fly", "fontlabapp", "echopy")  # packages this file re-imports for itself
@@ -955,6 +956,7 @@ class World:
             master=self.master,
             italicAngle_value=-12.0,
             findName=lambda name: self.glyphs.get(name),
+            fgPackage=fg_package(self.glyphs),
         )
 
     def glyph(
