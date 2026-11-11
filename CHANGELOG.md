@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Round Advances step 1 verified by a mutant (Issue 250)
+
+- Rechecked the closed row "Extend Round Advances to accept step 1" (66a2fdad). `test_round_advances_when_step_is_one_then_whole_unit_advances` in `tests/test_issue122_S1.py` checks the control, not the docstring: it asserts the spinner range is (1, 100), sets 1 and expects width 101.4 to plan 101, then sets 2 and expects 102. With `self.spin(2, 100, ...)` restored in `Scripts/Metrics/Round Advances.py` the test fails (`assert (2, 100) == (1, 100)`); unchanged, all 4 Round Advances tests pass. The App helper `MetricsPanel.spin` passes `low` to `QSpinBox.setRange`, so the real control accepts 1. Native FontLab use stays with the Metrics qualification rows.
+
 ## 2026-11-11 — UFO Roundtrip Inspector verified live (A2 live report 21, Issue 250)
 
 - `Font UI Lab/UFO Roundtrip Inspector.py` main() plus run gives the same result as the App route (Scriptmix 107d61ba, App 6a6d35c): read-only, history clean, handles released, the Transform error is gone. Failure-path staging cleanup and repeated Close stay open in TODO.
