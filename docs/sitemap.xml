@@ -341,242 +341,47 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/add-extremes.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/align-and-nudge.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/align-and-distribute.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/contour-selection.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/angularizzle.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/curve-editor.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/autohint-selected-layers.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/derived-glyphs.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/comb.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/hint-tools.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/contour-order-view.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/node-editor.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/correct-contour-direction.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/outline-compatibility.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/curve-all-straights.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/outline-doctor.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/delete-close-points.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/delete-duplicate-contours.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/delete-small-contours.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/duplicate-nodes-all-foreground-layers.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/duplicate-nodes-current-layer.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/duplicate-nodes-with-two-handles.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/fix-zero-handles.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/interpolated-nudge.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/make-compatible.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/myanmar-medial-ra-maker.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/node-coordinates-panel.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/node-duplicator.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/node-statistics.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/optimize-start-points.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/outline-effect.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/overlap-nodes.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/placeholder-glyphs.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/raise-ascender.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/reflect-horizontally.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/reflect-vertically.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/remove-overlap.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/remove-postscript-hints.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/retract-handles.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/rotate-selection.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/round-coordinates.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/sandblast.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/sansomatic.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/select-contours.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/select-partial-contours.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/select-small-contours.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/shadow-copy.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/simplify-selected-nodes.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/slant.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/small-caps-from-capitals.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/smart-slant.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/straighten-all-curves.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/straighten-short-curves.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/superaligner.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/superior-inferior-figures.html</loc>
-        <lastmod>2026-11-11</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/tabular-figure-copies.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/shape-generators.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -586,7 +391,7 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/transform.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/contours/transform-studio.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>

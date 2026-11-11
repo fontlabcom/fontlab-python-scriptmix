@@ -2,6 +2,49 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Live evidence from A2 live reports 18 and 19 (Issue 250)
+
+- S67-F Build Suffix Substitution passes live without the newline workaround (report 19, App d81d7f2, Scriptmix aa24d72): writes `ss01`, two pre/post notify rows, the first Undo removes `ss01`, reopen clean.
+- Kerning Cutoff and Symmetry pass live (report 18 W3): one Undo row, exact Undo/Redo, saved reopen.
+
+## 2026-11-11 — Feature tests follow App's newline-terminated feature code (Issue 250)
+
+App 45ef5bc (S67-F) now terminates feature code with a newline before Fontport staging, so `tests/test_features.py` (`test_shared_writer_reuses_backend_preserves_blocks_and_noop`, `test_existing_source_whitespace_and_run_order_preserved`) expect `...smcp;\n` and `unrelated\n`. Combined WP05 re-land gate against App d81d7f2: 4819 passed, 2 skipped.
+
+## 2026-11-11 — Live evidence from A2 reports 16 and 17
+
+- Copy Layer Between Masters, Restore Backup Layer and Layer Cleanup passed live on an owned fixture with Apply/Undo/Redo and saved/reopened equality (report 17).
+- Copy Kerning Between Masters passed live (report 17). Build Suffix Substitution failed: see TODO S67-F.
+- New layers report isMasterLayer=False and autoLayer=False after create, Redo and reopen, and Copy Layers From Font cross-font Undo/Redo is proven (report 17; closes those parts of the milestone TODO row).
+- Anchor rounding: native rounding to integers confirmed; a +0.6/-0.6 round trip does not drift (report 16).
+
+
+## 2026-11-11 — Issue 250 WP05: ten consolidated outline tools
+
+Replaced 49 S11–S20 menus with ten App-backed tools, leaving 240 active menus.
+Preserved the frozen 69 sample and 210 additional identities, the 271-source
+ledger and its three later additions. All 49 transitions retain source commits
+and hashes, record exact destination hashes/tabs and remain native-unaccepted.
+The six immutable provenance manifests are byte-identical. Historical 259-body
+and 190-row aggregate hash oracles remain intact; behavioral tests now exercise
+the current App implementations rather than executing archived scripts.
+
+Full prepared arm64 Python 3.11 gates: Scriptmix **4,792 passed, two existing
+skips**; App **12,473 passed, 28 existing skips**. The final migration checks
+passed **74 tests with one existing optional skip**. All ten launchers reach
+100% lines/branches; the complete changed resolver reaches **186/190 lines
+(97.89%) and 97/102 branches (95.10%)**, without exclusions. All 77 changed App
+modules also meet 80% lines and branches separately. Pinned Ruff 0.14.10 and
+uvx with the same default rule scope pass all 139 changed Python files.
+Independent implementation, migration and final coverage review completed.
+
+Restored test-generated catalogue churn instead of retaining false immutable
+links to uncommitted launchers. WP11 must produce genuine containing-commit
+pages, Git-less historical archives and installed-menu cleanup. Canonical
+quality wrappers remain unavailable because they write outside this lane;
+fresh dependency provisioning failed on PyPI DNS. Prepared gates do not imply
+native, ordinary-installation or publication acceptance. No Git mutations or
+native font edits were performed.
 ## 2026-11-11 — WP08c S66 Nodes Near Zones App launcher
 
 Added candidate launcher `Scripts/Reports/Nodes Near Zones App.py` over `fly.ap.fontui.nodes_near_zones` (tolerance rescan plus Select glyphs), with test, ledger rows and pins (217 tools, 286 scripts, 9 candidates). The original `Nodes Near Zones.py` is untouched.
@@ -128,6 +171,10 @@ outside-lane writes; the prepared equivalent is reported separately, not as a
 canonical gate pass. No native or installed FontLab acceptance is claimed. Full
 inventory certification requires Git; individual historical-byte recovery also
 supports an explicit external archive without Git.
+
+## 2026-11-11 — Stale immutable source link fixed and guarded (Issue 250, WP11A)
+
+`master-width-comparison.md` linked `8e06999`, a commit where `Master Width Comparison.py` does not exist. The page is regenerated at `ba6f2dfbe4d6` (the generator already refuses links for uncommitted bytes). New `test_committed_pages_when_linked_then_blob_exists_at_revision_with_page_hash` checks every committed page: `git show <rev>:<path>` must hash to the page's SHA256. `tests_docs`: 13 environment failures (ProperDocs/Material not installed) are identical before and after.
 
 ## 2026-11-11 — Metrics composite shift Undo/Redo verified live (Issue 250)
 
@@ -1608,6 +1655,10 @@ the130sample denominator. Downloaded-tag verification follows this release.
   Release/downloaded-tag verification remains pending;68/130 stays unchanged.
 
 # Changelog
+
+## 2026-11-11 — install.vfpy synced to the App WP11A installer (Issue 250)
+
+- `install.vfpy` is now byte-identical to fontlab-fontlabapp 79f7485 (WP11A): it records file hashes in `install.log`, removes only superseded files whose current hash matches the logged hash, keeps edited ones and reports them, refuses entries with `..` or outside the data folder and any unowned entry in the old RECORD, and supports `FONTLAB_INSTALL_DRY_RUN`. Verify with `tools/check_install_copies.py` in the App repository. The native reinstall check is owner-run and stays open in the App TODO.
 
 ## 2026-11-10 — Issue 250 documentation round
 

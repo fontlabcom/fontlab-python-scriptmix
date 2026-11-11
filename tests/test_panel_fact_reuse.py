@@ -18,6 +18,14 @@ TOOLS = ["Contours/Shadow Copy", "Contours/Outline Effect", "Contours/Autohint S
 @pytest.mark.parametrize("tool", TOOLS)
 def test_controls_when_changed_then_planning_reuses_captured_facts(tool: str) -> None:
     source = ROOT / "Scripts" / (tool + ".py")
+    ports = {"Contours/Autohint Selected Layers": "hint_autohint",
+             "Contours/Remove PostScript Hints": "hint_removal"}
+    if tool in ports:
+        source = installed_app_root() / "fontui" / f"{ports[tool]}.py"
+    migrated = {"Contours/Shadow Copy": "shadow", "Contours/Outline Effect": "effect",
+                "Contours/Tabular Figure Copies": "compat_tabular"}
+    if tool in migrated:
+        source = installed_app_root() / "studios/derived_glyphs" / f"{migrated[tool]}.py"
     tree = ast.parse(source.read_text())
     if tool.endswith("Tabular Figure Copies"):
         # Tabular uses the installed App CopiesPanel hook without an override.
@@ -42,7 +50,7 @@ def test_controls_when_changed_then_planning_reuses_captured_facts(tool: str) ->
     ns = {"survey": survey, "history": NS(scan_auto_facts=scan, refusal=refusal),
           "backup_name": lambda *args: "Regular backup draft", "backups_of": lambda *args: []}
     module = ast.Module(body=[ast.ImportFrom(module="__future__", names=[ast.alias(name="annotations")], level=0), hook], type_ignores=[])
-    exec(compile(ast.fix_missing_locations(module), str(source), "exec"), ns)
+    exec(compile(ast.fix_missing_locations(module), str(source), "exec"), ns)  # noqa: S102 - execute the tracked production AST hook against owned facts
     layer = NS(name="Regular", isNull=False, autoLayer=False, isMaskLayer=False, isService=False)
     glyph = NS(isNull=False, layers=[layer], findLayer=lambda master: layer)
     package = NS(masters=["Regular"], findName=lambda name: glyph)

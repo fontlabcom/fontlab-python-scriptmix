@@ -2,6 +2,14 @@
 this_file: PLAN.md
 ---
 
+## WP05 outline editing
+
+The 49 source routes now map to ten independently reviewed tools; 235 menus
+remain. Full prepared suites and per-module line/branch coverage pass. Run the
+canonical wrappers with authorized evidence locations and available dependencies.
+WP11 must supply truthful containing-commit catalogue links, Git-less historical
+archives and installed-menu cleanup; qualify installed/native behavior separately.
+Preserve the frozen identities and the three later master-browser menus.
 ## WP08 remaining practical-menu work
 
 Context Proof and Font Audit are indexed candidate launchers, not accepted

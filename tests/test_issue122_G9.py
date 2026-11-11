@@ -969,7 +969,7 @@ def world(native_world: Any, monkeypatch: pytest.MonkeyPatch) -> Any:
     monkeypatch.setattr(
         state.app["edit_guards"], "require_selection_window", require_window
     )
-    monkeypatch.setattr(state.app["edit_guards"], "require_no_editors", lambda: None)
+    monkeypatch.setattr(state.app["edit_guards"], "require_no_editors", lambda **_: None)
     monkeypatch.setattr(
         state.app["layer_selection"],
         "capture",

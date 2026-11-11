@@ -17,7 +17,6 @@ the refusal paths, the rebuild consent, the glyph creation through fontpr
 layer). They do not prove native FontLab behaviour.
 """
 
-from conftest import app_module_name, app_names_used, app_namespace, check_real_app_names
 import ast
 import importlib.util
 import itertools
@@ -30,6 +29,12 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
+from conftest import (
+    app_module_name,
+    app_names_used,
+    app_namespace,
+    check_real_app_names,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 FOLDER = "Contours"
@@ -88,10 +93,24 @@ def path_of(title: str) -> Path:
     return ROOT / "Scripts" / FOLDER / f"{title}.py"
 
 
+def source_text(title: str) -> str:
+    """Static historical source oracles retain exact menu bytes after consolidation."""
+    from menu_layout import _menu_bytes
+
+    return _menu_bytes(ROOT, str(path_of(title).relative_to(ROOT))).decode()
+
+
 def load(title: str) -> ModuleType:
     """Execute one script file as a fresh module; leave no .pyc and no sys.modules entry."""
     stem = re.sub(r"\W+", "_", title)
-    spec = importlib.util.spec_from_file_location("s7_" + stem, path_of(title))
+    ports = {"Shadow Copy": "shadow", "Outline Effect": "effect", "Placeholder Glyphs": "compat_placeholders", "Tabular Figure Copies": "compat_tabular", "Superior & Inferior Figures": "compat_sups_subs", "Small Caps From Capitals": "compat_small_caps"}
+    source = path_of(title)
+    if title in ports:
+        source = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/derived_glyphs" / f"{ports[title]}.py"
+    if title in {"Autohint Selected Layers", "Remove PostScript Hints"}:
+        suffix = "autohint" if title == "Autohint Selected Layers" else "removal"
+        source = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/fontui" / f"hint_{suffix}.py"
+    spec = importlib.util.spec_from_file_location("s7_" + stem, source)
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     previous, sys.dont_write_bytecode = sys.dont_write_bytecode, True
@@ -888,6 +907,7 @@ def world(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> World:
     )
     fontgate.fgShape = FgShape
     ap.fontlab, ap.fontgate = fontlab, fontgate
+    monkeypatch.setitem(sys.modules, "fontgate", fontgate)
     scripting.current_package = lambda expected_id=None: state.package
     scripting.names_selected_names = lambda: list(state.selection)
 
@@ -980,7 +1000,7 @@ def edits() -> list[Any]:
 # ---------------------------------------------------------------- generic checks
 @pytest.mark.parametrize("title", list(SOURCES))
 def test_script_when_parsed_then_py311_typed_headed_and_documented(title: str) -> None:
-    text = path_of(title).read_text()
+    text = source_text(title)
     tree = ast.parse(text, feature_version=(3, 11))
     assert text.startswith(
         f"# this_file: Scripts/{FOLDER}/{title}.py\n# SPDX-License-Identifier: Apache-2.0\n"
@@ -1019,7 +1039,7 @@ def test_script_when_parsed_then_py311_typed_headed_and_documented(title: str) -
 
 @pytest.mark.parametrize("title", list(SOURCES))
 def test_script_when_imported_then_fly_only_inside_functions(title: str) -> None:
-    tree = ast.parse(path_of(title).read_text())
+    tree = ast.parse(source_text(title))
     top = [n for n in tree.body if isinstance(n, ast.Import | ast.ImportFrom)]
     for node in top:
         names = (
@@ -1038,7 +1058,7 @@ def test_script_when_imported_then_fly_only_inside_functions(title: str) -> None
 
 @pytest.mark.parametrize("title", list(SOURCES))
 def test_script_when_scanned_then_no_unsafe_host_calls(title: str) -> None:
-    text = path_of(title).read_text()
+    text = source_text(title)
     code = "\n".join(line.split("#", 1)[0] for line in text.splitlines())
     body = code.split('"""', 2)[2]  # skip the module docstring
     for pattern in (
@@ -1053,7 +1073,7 @@ def test_script_when_scanned_then_no_unsafe_host_calls(title: str) -> None:
 def test_script_when_documented_then_ruled_undo_text(title: str) -> None:
     """S7 I1/I3: the docstring states the recorded Undo steps and claims nothing Undo restores."""
     doc = " ".join(
-        (ast.get_docstring(ast.parse(path_of(title).read_text())) or "").split()
+        (ast.get_docstring(ast.parse(source_text(title))) or "").split()
     )
     for word in (
         "Edit > Undo restores",
@@ -1105,7 +1125,7 @@ def test_script_when_loaded_then_no_shared_name_defined_and_panel_from_app(
 def test_panel_attributes_when_assigned_then_never_shadow_native_members(
     title: str,
 ) -> None:
-    tree = ast.parse(path_of(title).read_text())
+    tree = ast.parse(source_text(title))
     assigned = {
         n.attr for n in ast.walk(tree)
         if isinstance(n, ast.Attribute) and isinstance(n.ctx, ast.Store)
@@ -1161,7 +1181,7 @@ def test_real_app_package_when_native_names_read_then_served(
     used = {
         node.attr
         for title in SOURCES
-        for node in ast.walk(ast.parse(path_of(title).read_text()))
+        for node in ast.walk(ast.parse(source_text(title)))
         if isinstance(node, ast.Attribute)
         and isinstance(node.value, ast.Name)
         and node.value.id == "ap"
@@ -2385,7 +2405,7 @@ def test_placeholder_docstring_when_single_ascii_then_describes_actual_mapping(
         ("&", "invalid name"),
         ("1", "invalid name"),
     ]
-    text = path_of("Placeholder Glyphs").read_text()
+    text = source_text("Placeholder Glyphs")
     assert all(char not in text for char in ("\u00a0", "\u2028", "\u2029")), (
         "use visible Unicode escapes"
     )
@@ -2417,3 +2437,24 @@ def test_autohint_when_no_planned_layers_then_no_history(world: World) -> None:
         "mismatches": [],
     }
     assert not LOG and not world.notifications(), "empty plans must not start history"
+
+
+@pytest.mark.parametrize('module', ['shadow', 'effect', 'compat_placeholders', 'compat_tabular', 'compat_sups_subs', 'compat_small_caps'])
+def test_migrated_route_keeps_current_host_safety_oracles(module, monkeypatch):
+    source = ROOT.parent / 'fontlab-fontlabapp/src/fontlabapp/studios/derived_glyphs' / f'{module}.py'
+    tree = ast.parse(source.read_text())
+    body = ast.unparse(ast.Module(body=tree.body[1:], type_ignores=[]))
+    canonical = '"""Current migrated route."""\n' + body
+    monkeypatch.setitem(globals(), 'source_text', lambda title: canonical)
+    test_script_when_scanned_then_no_unsafe_host_calls(module)
+    test_panel_attributes_when_assigned_then_never_shadow_native_members(module)
+
+
+def test_placeholder_compatibility_types_are_real_model_types(world: World) -> None:
+    module = load("Placeholder Glyphs")
+    from fontlabapp.studios.derived_glyphs import placeholders
+
+    assert module.Entry is placeholders.Entry
+    assert module.Row is placeholders.Row
+    with pytest.raises(AttributeError, match="unknown_contract"):
+        _ = module.unknown_contract

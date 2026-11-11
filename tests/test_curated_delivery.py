@@ -5,7 +5,7 @@ import ast
 import json
 from pathlib import Path
 
-from menu_layout import current_rows
+from menu_layout import active_menu_paths, consolidation_rows, current_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -14,10 +14,15 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_active_menu_contains_only_indexed_practical_tools():
     rows = current_rows(ROOT)
     extra = json.loads((ROOT / "additional-tools.json").read_text())
-    expected = {row["destination"] for row in rows + extra}
+    expected = active_menu_paths(ROOT)
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 219 and len(actual) == 288, (len(rows), len(extra), len(actual), "expected 69 samples + 219 additional = 288 menu tools")
+    historical = {row["destination"] for row in rows + extra}
+    assert (len(rows), len(extra), len(historical)) == (69, 210, 279)
+    implemented = [row for row in consolidation_rows(ROOT) if row["acceptance"]["state"] == "implemented"]
+    removed = {row["source"]["path"] for row in implemented}
+    destinations = {row["destination"]["path"] for row in implemented if row["destination"]}
+    assert len(actual) == 279 - len(removed) + len(destinations - (historical - removed))
     assert {path.parent.name for path in (ROOT / "Scripts").glob("*/*.py")} == {
         "Anchors", "Cleanup", "Components", "Contours", "Features", "Font Info",
         "Guides", "Kerning", "Masters", "Metrics", "Names", "Proof", "Reports", "Utilities", "Font UI Lab",
@@ -167,22 +172,18 @@ def test_script_docstrings_when_public_then_no_process_jargon():
     assert not found, found
 
 
-def test_proposed_consolidations_account_for_all_original_menus_without_removing_any():
-    from menu_layout import consolidation_rows
-
+def test_consolidations_preserve_all_original_identities_and_later_additions():
     rows = consolidation_rows(ROOT)
     assert len(rows) == 279
-    candidates = json.loads((ROOT / "menu-consolidations.json").read_text())["candidates"]
-    assert {row["source"]["path"] for row in rows}.isdisjoint(
-        row["path"] for row in candidates
-    )
-    assert {row["source"]["path"] for row in rows} | {
-        row["path"] for row in candidates
-    } == {
-        str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").glob("*/*.py")
+    historical = {
+        row["destination"] for row in current_rows(ROOT)
+        + json.loads((ROOT / "additional-tools.json").read_text())
     }
+    sources = {row["source"]["path"] for row in rows}
+    assert len(historical) == 279 and sources == historical
     assert len({row["destination"]["path"] for row in rows if row["destination"]}) == 72
     assert sum(row["disposition"] == "retired" for row in rows) == 3
+    assert all(row["acceptance"]["native"] is False for row in rows)
     assert all(row["acceptance"] == {
         "state": "proposed", "date": "2026-11-11", "behavior_parity": False, "native": False,
-    } for row in rows)
+    } for row in rows if row["acceptance"]["state"] == "proposed")

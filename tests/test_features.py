@@ -232,7 +232,7 @@ def test_shared_writer_reuses_backend_preserves_blocks_and_noop(load):
     new = {
         "prefix": old["prefix"],
         "features": old["features"]
-        + [("smcp", "feature smcp { sub a by a.sc; } smcp;")],
+        + [("smcp", "feature smcp { sub a by a.sc; } smcp;\n")],
     }
     assert blocks.write_feature_blocks(
         state.package, old, new, references=["a", "a.sc"], undo_name="Build"
@@ -308,7 +308,7 @@ def test_existing_source_whitespace_and_run_order_preserved(load):
         expected_blocks=state.blocks,
         references=["a", "a.sc"],
     )
-    assert state.blocks["features"] == [("smcp", new), ("liga", "unrelated")]
+    assert state.blocks["features"] == [("smcp", new), ("liga", "unrelated\n")]
     assert state.blocks["prefix"] == "languagesystem DFLT dflt;\n"
 
 

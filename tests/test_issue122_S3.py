@@ -326,7 +326,9 @@ def env(world, monkeypatch, real_app):
     scripting._require_selection_window = require_font_window
     capture = ModuleType("fly.ap.glyphs.unicode.duplicates.capture")
 
-    def require_no_editors(qt, deadline) -> None:
+    def require_no_editors(
+        qt, deadline, action: str = "removing Unicode assignments"
+    ) -> None:
         if world.editors_open:
             raise ValueError("Close all Glyph editors first.")
 
