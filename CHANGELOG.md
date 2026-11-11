@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — WP08c S64 Reference Image Viewer App launcher (candidate)
+
+New candidate launcher `Scripts/Utilities/Reference Image Viewer App.py` opens the
+App shell viewer; the original launcher is unchanged and remains the accepted
+transition. Candidate indexed in `additional-tools.json` and
+`menu-consolidations.json`; menu pins now 211 additional tools / 280 scripts.
+Native acceptance and committed source links remain open.
+
 ## 2026-11-11 — WP01 current-main inventory integration (WPF)
 
 Resolved the current-main/WP01 documentation and menu-layout test conflicts,

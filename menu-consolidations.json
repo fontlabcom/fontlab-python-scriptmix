@@ -6556,6 +6556,17 @@
       "test_routes": [
         "tests/test_wp08_font_audit_menu.py"
       ]
+    },
+    {
+      "path": "Scripts/Utilities/Reference Image Viewer App.py",
+      "sha256": "531d0489346bd551a76b8b57e30b2324594eed3614512eeb78debe3bce01f907",
+      "state": "candidate",
+      "containing_commit": null,
+      "behavior_parity": false,
+      "native": false,
+      "test_routes": [
+        "tests/test_wp08_reference_image_menu.py"
+      ]
     }
   ]
 }
