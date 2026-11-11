@@ -8,6 +8,12 @@ this_file: CHANGELOG.md
 - Fixed the launcher docstring's first line, which had been copied from Open Contours ("Report open contours of every master"); it now describes nodes near vertical zones. The menu title was already correct. The launcher bytes changed, so the pinned `sha256` in `additional-tools.json` and `menu-consolidations.json` is updated and the generated page and `docs/` are rebuilt.
 - Still open: the report text pane and the table show the same rows (duplicate output).
 
+## 2026-11-11 — Tests and tests_docs Ruff 0.14.10 findings cleared (Issue 250)
+
+- Ruff 0.14.10 (AGENTS.md scope) goes 45 -> 26 findings: all 18 in `tests` and the one in `tests_docs` are fixed, with no `Scripts` change (provenance-pinned). `tests/test_features.py`, `test_kerning.py`, `test_kerning_editors.py` and `test_proof.py` move their mid-file imports (E402) to the top; `test_case_coverage.py:76` splits an E701 one-liner; `test_issue122_G9.py:1238` renames `l` to `layer` (E741). In `tests_docs/test_pipeline_english.py` the `import properdocs.replacement` is kept with a `noqa: F401` and a reason: deleting it (Ruff's autofix) made the real-config test fail, so the import has a side effect.
+- README.md and AGENTS.md quote the same baseline (26); `tests/test_lint_baseline_docs.py` pins that.
+- Test counts are unchanged: 4861 collected in `tests` before and after; `tests_docs` shows the same two pre-existing missing-`pytest` import errors before and after. The remaining 26 are in 8 hash-pinned Scripts; TODO rows 141 and 183 are merged into one row with a next check.
+
 ## 2026-11-11 — UFO Roundtrip Inspector verified live (A2 live report 21, Issue 250)
 
 - `Font UI Lab/UFO Roundtrip Inspector.py` main() plus run gives the same result as the App route (Scriptmix 107d61ba, App 6a6d35c): read-only, history clean, handles released, the Transform error is gone. Failure-path staging cleanup and repeated Close stay open in TODO.

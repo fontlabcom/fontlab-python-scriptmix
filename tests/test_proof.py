@@ -2,6 +2,9 @@
 """Portable tests of the actual Proof menu interfaces and shared outlines."""
 
 from conftest import app_module_name, app_namespace, app_source_path, original_source, register_app_module
+import importlib.util
+import sys
+from types import SimpleNamespace as NS
 from pathlib import Path
 from typing import ClassVar
 
@@ -31,11 +34,6 @@ def test_requested_proof_menu_exists(title):
     assert (ROOT / "Scripts/Proof" / (title + ".py")).is_file(), (
         "Complete Proof menu missing"
     )
-
-
-import importlib.util
-import sys
-from types import SimpleNamespace as NS
 
 
 class Signal:
