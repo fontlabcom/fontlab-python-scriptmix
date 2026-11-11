@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — UFO Roundtrip Inspector verified live (A2 live report 21, Issue 250)
+
+- `Font UI Lab/UFO Roundtrip Inspector.py` main() plus run gives the same result as the App route (Scriptmix 107d61ba, App 6a6d35c): read-only, history clean, handles released, the Transform error is gone. Failure-path staging cleanup and repeated Close stay open in TODO.
+
 ## 2026-11-11 — Live evidence from A2 live reports 18 and 19 (Issue 250)
 
 - S67-F Build Suffix Substitution passes live without the newline workaround (report 19, App d81d7f2, Scriptmix aa24d72): writes `ss01`, two pre/post notify rows, the first Undo removes `ss01`, reopen clean.
