@@ -95,6 +95,10 @@ canonical gate pass. No native or installed FontLab acceptance is claimed. Full
 inventory certification requires Git; individual historical-byte recovery also
 supports an explicit external archive without Git.
 
+## 2026-11-11 — Stale immutable source link fixed and guarded (Issue 250, WP11A)
+
+`master-width-comparison.md` linked `8e06999`, a commit where `Master Width Comparison.py` does not exist. The page is regenerated at `ba6f2dfbe4d6` (the generator already refuses links for uncommitted bytes). New `test_committed_pages_when_linked_then_blob_exists_at_revision_with_page_hash` checks every committed page: `git show <rev>:<path>` must hash to the page's SHA256. `tests_docs`: 13 environment failures (ProperDocs/Material not installed) are identical before and after.
+
 ## 2026-11-11 — Metrics composite shift Undo/Redo verified live (Issue 250)
 
 The Metrics composite-shift TODO row is closed. Live in FontLab 9 on the owned Lato copy fixture, through the real panel model (`survey` then `commit`, glyph A, dx +7 and width +7, both masters): the commit made one Undo step, Undo and Redo restored the native bbox and advance exactly (A Hairline 42/1274 to 49/1281 and back), Aacute's components followed without a double shift (advance unchanged), and the saved VFJ readback matched in all three states. Evidence: `issue250/reports/a5-implementer2-report-12.md`, `live-tests/i2/r87f-live.json`. Scope limit: only glyph A and the metrics edit were tested; the broader "Qualify Metrics writers" row (all scopes, successive edits, full-font Undo/Redo, save/reopen) stays open.

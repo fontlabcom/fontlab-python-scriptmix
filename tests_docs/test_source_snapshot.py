@@ -98,3 +98,27 @@ def test_catalogue_when_menu_is_untracked_then_no_false_immutable_link(tmp_path)
     _build_module().catalogue(tmp_path, revision=head)
     page = (tmp_path / "src_docs/md/scripts/reports/fresh.md").read_text()
     assert "/blob/" not in page and "not committed at" in page
+
+
+def test_committed_pages_when_linked_then_blob_exists_at_revision_with_page_hash():
+    """Every committed immutable link resolves to the exact bytes whose SHA256 the page states."""
+    import re
+    import subprocess
+    from urllib.parse import unquote
+
+    root = Path(__file__).resolve().parents[1]
+    pattern = re.compile(r"/blob/([0-9a-f]{40})/(\S+?)\)")
+    problems = []
+    for page in sorted((root / "src_docs/md/scripts").rglob("*.md")):
+        text = page.read_text()
+        link = pattern.search(text)
+        if not link:
+            continue
+        revision, path = link.group(1), unquote(link.group(2))
+        shown = subprocess.run(
+            ["git", "show", f"{revision}:{path}"], cwd=root, capture_output=True, check=False
+        )
+        digest = re.search(r"SHA256: `([0-9a-f]{64})`", text)
+        if shown.returncode or not digest or hashlib.sha256(shown.stdout).hexdigest() != digest.group(1):
+            problems.append(f"{page.relative_to(root)} -> {revision[:12]}:{path}")
+    assert not problems, "Stale immutable links:\n" + "\n".join(problems)
