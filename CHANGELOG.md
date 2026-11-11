@@ -2,6 +2,11 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Live evidence from A2 live reports 18 and 19 (Issue 250)
+
+- S67-F Build Suffix Substitution passes live without the newline workaround (report 19, App d81d7f2, Scriptmix aa24d72): writes `ss01`, two pre/post notify rows, the first Undo removes `ss01`, reopen clean.
+- Kerning Cutoff and Symmetry pass live (report 18 W3): one Undo row, exact Undo/Redo, saved reopen.
+
 ## 2026-11-11 — Feature tests follow App's newline-terminated feature code (Issue 250)
 
 App 45ef5bc (S67-F) now terminates feature code with a newline before Fontport staging, so `tests/test_features.py` (`test_shared_writer_reuses_backend_preserves_blocks_and_noop`, `test_existing_source_whitespace_and_run_order_preserved`) expect `...smcp;\n` and `unrelated\n`. Combined WP05 re-land gate against App d81d7f2: 4819 passed, 2 skipped.
