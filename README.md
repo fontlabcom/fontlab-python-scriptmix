@@ -2,6 +2,14 @@
 this_file: README.md
 ---
 
+UFO Roundtrip Inspector and Representation and Notification Explorer are in
+**Font UI Lab**. Both capture the current borrowed font once. The roundtrip
+inspector stages export/import in its own temporary directory and reports
+semantic differences without overwriting the source. The representation
+explorer displays selected glyph representations and observed notification/cache
+status. Native FontLab preservation, cleanup and installed-artifact checks remain
+pending; source tests do not establish native acceptance.
+
 Batch UFO Recipe Workbench is available through `fontlabapp.fontui.batch_recipes.show(parent=None, python=None)`. Use the real affine recipe controls without opening a font or geometry preview, then explicitly select UFO sources, an output directory and Python 3.11+ with Fontport. Start writes new outputs; existing files and destinations inside any input UFO are refused. The actual panel shows per-file results, progress and failures. Cancel stops between files and retains completed outputs. Closing transfers an active run to supervision; terminal cleanup and independently reopened outputs are separate observations. Source review, ordinary artifacts and native qualification remain distinct.
 
 Detached Transform Preview is available through `fontlabapp.fontui.detached_transform.show(font, parent=None)`. Run **Font UI Lab > Detached Transform Preview**. Choose an explicit layer and glyph, then Capture to compare the backend-stored snapshot with an affine result. Refresh reads the same captured font; borrowed caches and pending edits remain untouched. Settings Save creates only a chosen new JSON file, and Show script displays text without executing it. No font Apply/save/export is provided. This workflow is independently source-qualified. Combined-main review, matching ordinary installation and native behavior remain pending.
@@ -12,7 +20,7 @@ Feature Source and Proof is available through `fontlabapp.fontui.feature_proof.s
 
 
 # FontLab practical scripts
-277 practical tools for FontLab 9: 69 sample adaptations and 208 additional
+279 practical tools for FontLab 9: 69 sample adaptations and 210 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 15 one-level categories.
 Current source includes Metrics, Names and Anchors editors; component writers;

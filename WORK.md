@@ -2,6 +2,18 @@
 this_file: WORK.md
 ---
 
+## C7 inspector menus — current round
+
+Added workflows #16 and #18 with lazy direct App/Fontport imports and capture-once
+fake-font dispatch tests. Catalogue changes append two rows; existing historical
+hash oracles stay unchanged. Baseline focused cohort: 71 passed, one retained
+skip. Changed focused cohort: 81 passed, one retained skip; new scripts each
+100% statements and branches. Added four paired real-composition menu tests;
+menu/composition/public-docstring cohort: 15 passed. Pinned Ruff 0.14.10 is clean.
+Controller full Scriptmix gate: 4,631 passed, two retained skips. Independent
+review found no remaining source blocker. Generated documentation retains only
+the two new pages and index additions; immutable links await a containing commit. Native and ordinary artifact checks remain in TODO.
+
 # Work in progress
 
 ## Lane C6 — workflow 6 Interpolation Preview

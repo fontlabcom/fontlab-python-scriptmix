@@ -3518,6 +3518,34 @@
     "scope": "Read-only widths for one captured registered FontLab font, explicit selected glyph occurrence and native master identities; stored backend state, not unfinished wrapper edits."
   },
   {
+    "title": "UFO Roundtrip Inspector",
+    "key": "font_ui_lab_ufo_roundtrip",
+    "destination": "Scripts/Font UI Lab/UFO Roundtrip Inspector.py",
+    "destination_sha256": "5e4e39d4eadb8fed8ba12308ced2525024a03fa1357bc864a04bc21fddd30beb",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.ufo_roundtrip.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/ufo_roundtrip.py; no release floor is asserted.",
+    "scope": "Stage a borrowed font in a private temporary directory and inspect its roundtrip."
+  },
+  {
+    "title": "Representation and Notification Explorer",
+    "key": "font_ui_lab_representation_notifications",
+    "destination": "Scripts/Font UI Lab/Representation and Notification Explorer.py",
+    "destination_sha256": "5d3c5aea2891ca3c803e9b7e52fd9e7ac89cafc13c35cf3028853eb5f8efe06e",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.representation_notifications.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/representation_notifications.py; no release floor is asserted.",
+    "scope": "Inspect selected glyph representations and observed cache refresh notifications."
+  },
+  {
     "title": "Open Fonts and Master Overview",
     "key": "font_ui_lab_open_fonts_overview",
     "destination": "Scripts/Font UI Lab/Open Fonts and Master Overview.py",

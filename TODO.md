@@ -9,6 +9,9 @@ this_file: TODO.md
 
 - [ ] Qualify Issue 234 Open Fonts and Master Overview, Master Compatibility Browser and Node Counts Across Masters with matching installed artifacts and native PythonQt, including empty/stale fonts, preview, chooser changes, Close and complete font/history preservation.
 - [ ] Re-run the exact Issue 234 Scriptmix runtime recipe after build dependency resolution is available; rebuild the three new menu source links at their reviewed containing commit.
+- [ ] Native-qualify UFO Roundtrip Inspector with matching App/Fontport: temporary export/import, complete semantic report, source/history preservation and staging cleanup on Close/failure.
+- [ ] Native-qualify Representation and Notification Explorer: selected glyph representations, actual notification/cache status, source preservation and callback cleanup on Close.
+- [ ] Verify both inspector menus from ordinary installed artifacts and genuine containing-commit documentation links.
 
 - [ ] Independently review and deliver the verified batch recipe filename-literal correction, qualify genuine-commit docs and exact CI/generated parity, then recheck the public literal; retain ordinary/native gates.
 

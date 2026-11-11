@@ -2,6 +2,21 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — Issue 234 inspector menu compositions (#16 and #18)
+
+Added Font UI Lab entries for UFO Roundtrip Inspector and Representation and
+Notification Explorer. Both lazily capture the current borrowed Fontport font
+once and return the App-owned inspector; neither imports Fly. The two catalogue
+rows retain source hashes and pending native acceptance, bringing this lane to
+277 menus / 208 additional tools. Merged-tree Scriptmix gate: 4,660 passed, 2 skipped; tests_docs pipeline 43 OK; graph compare against origin/main: risk low, 0 affected processes. Historical 259-script and 190-row hashes remain
+unchanged. Focused menu/catalogue regression: 81 passed, one retained skip;
+both new scripts reached 100% statement-plus-branch coverage. Four paired menu
+cases additionally invoke the real App compositions, staging/report callbacks,
+notifications and cleanup; the menu/composition/documentation cohort passed all
+15 cases. The complete Scriptmix gate passed 4,631 tests with two retained skips.
+Independent review found no remaining source blocker. Native FontLab and ordinary
+installed-artifact acceptance remain open.
+
 ## 2026-11-10 — Issue 234 workflow 6 Interpolation Preview (C6)
 
 Added the read-only designspace-location/two-master preview composition, paired
@@ -83,6 +98,7 @@ The documented Ruff 0.14.10 count of 87 was stale. Re-measured with the exact gu
 - `Scripts/Metrics/Round Advances.py`: the step spinner now runs 1 to 100 units (was 2 to 100); the docstring and published page say so. Rounding maths is unchanged; step 2 behaviour is retained and tested alongside the new step-1 case (`test_round_advances_when_step_is_one_then_whole_unit_advances`).
 - Provenance: `menu-revisions.json` records the two new exact edits and the new current hash; `additional-tools.json` and the reviewed old-rows and menus digests in `tests/test_font_ui_lab_menus.py` take the new hash (reverting only that hash reproduces the previous digest). Frozen historical hashes are untouched.
 - Result: official gate 4618 passed, 2 skipped, 0 failed.
+
 
 ## 2026-11-10 — live font editing rule (Issue 250, D44)
 
