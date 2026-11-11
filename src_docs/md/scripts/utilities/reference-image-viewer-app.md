@@ -33,4 +33,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `531d0489346bd551a76b8b57e30b2324594eed3614512eeb78debe3bce01f907`
 
-[Python source at `75235791e388`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/75235791e3880a7bc761f4bbc9c5dccc08813705/Scripts/Utilities/Reference%20Image%20Viewer%20App.py)
+[Python source at `bf9287c6130a`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/bf9287c6130a3083b3c1047050305dfceecbee2b/Scripts/Utilities/Reference%20Image%20Viewer%20App.py)

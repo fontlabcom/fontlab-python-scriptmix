@@ -1461,6 +1461,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/font-revision-comparison.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/geometry-audit.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
@@ -1487,6 +1492,11 @@
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/master-structure-audit.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/metric-reports.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
