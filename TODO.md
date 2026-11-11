@@ -88,7 +88,7 @@ this_file: TODO.md
 
 - [ ] Font Info ttfautohint writer: live check (2026-11-10) found the claim stands; `Info` has no ttfautohint attributes and the options are global export options (`fgOpt_TTFAutohint`), so a per-font writer is impossible without a native per-font route. Ask Fontlab/fl for one, then restore the stem tool.
 
-- [ ] Metrics composite shift: App `survey()` skips a composite whose base moves (tested) and Master Metrics `capHeight` writes read back exactly (690.0 to 697.0). Live on Lato Aacute, moving base A by +7 left the composite's bbox and advance unchanged, and the real VFJ saved with `save_font` still holds Aacute as the two components A and acute.case (acute.case offset 237, no outline copied, advance 1274) while A moved. Remaining: check Undo/Redo of the Metrics panel's own write on a composite base (the bare `shift_and_set` creates no Undo step).
+- [ ] Metrics composite shift: only the saved-VFJ readback is live-proven (bare `shift_and_set` +7 on Lato A; Aacute's components, offset and advance unchanged; bbox readback may be stale). The panel's own write path and its Undo/Redo are not verified and are tracked by row 48 (Metrics writers) and App TODO row 71.
 
 
 - [ ] Anchor rounding: live on Lato A, all masters, native anchors round to integers on every `applyTransform`: +0.4 and +0.2 steps are swallowed, a y +0.6 step rounds up, and a +0.6/-0.6 round trip drifts x by -1. `READ_BACK_TOLERANCE` is 0.5 and the Metrics panel passes only integer dx, so no defect is open there. Remaining: pin that fractional dx is never passed to `shift_and_set` (add a test) and decide whether the read-back should report the drift.
