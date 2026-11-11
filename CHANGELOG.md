@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — App kerning range checks limited to changed masters: verified (Issue 250)
+
+- The TODO row "Limit App kerning numeric validation to changed masters while preserving persistence-range checks" was this file's TODO:80 when App 885ba0b (2026-11-09) cited "Scriptmix TODO:80"; Scriptmix 25c86b4d, the main commit at that time, has the same text on line 80.
+- App origin/main 7f96170 implements it: `src/fontlabapp/kerning/batch.py:148-157` builds `changed` (masters whose desired pairs differ from the read-back) and passes only `changed` to `_validate_persistence_range`. `tests/test_kerning_batch.py:404` (`test_untouched_master_outside_range_when_other_master_written_then_allowed`) and `:413` (`test_changed_master_with_existing_outside_value_when_other_pair_written_then_refused`) cover both sides; 63 passed.
+- Mutant: passing `desired` (all masters) instead of `changed` fails `:404` (1 failed, 62 passed). Row closed.
+
 ## 2026-11-11 — Round Advances step 1 verified by a mutant (Issue 250)
 
 - Rechecked the closed row "Extend Round Advances to accept step 1" (66a2fdad). `test_round_advances_when_step_is_one_then_whole_unit_advances` in `tests/test_issue122_S1.py` checks the control, not the docstring: it asserts the spinner range is (1, 100), sets 1 and expects width 101.4 to plan 101, then sets 2 and expects 102. With `self.spin(2, 100, ...)` restored in `Scripts/Metrics/Round Advances.py` the test fails (`assert (2, 100) == (1, 100)`); unchanged, all 4 Round Advances tests pass. The App helper `MetricsPanel.spin` passes `low` to `QSpinBox.setRange`, so the real control accepts 1. Native FontLab use stays with the Metrics qualification rows.

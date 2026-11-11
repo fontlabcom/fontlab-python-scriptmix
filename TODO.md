@@ -124,7 +124,6 @@ remaining acceptance, source-link and native obligations stay open.
 
 - [ ] Anchor rounding: live on Lato A, all masters, native anchors round to integers on every `applyTransform` (+0.4 and +0.2 steps swallowed, y +0.6 rounds up). A +0.6/-0.6 round trip does not drift (A2 report 16). `READ_BACK_TOLERANCE` is 0.5 and the Metrics panel passes only integer dx. Remaining: add a test pinning that fractional dx is never passed to `shift_and_set`.
 
-- [ ] Limit App kerning numeric validation to changed masters while preserving persistence-range checks.
 
 - [ ] Consolidate selected-editor-layer capture, font validation, scope mapping, selected-contour checks and coordinate/transform planning in App.
 
