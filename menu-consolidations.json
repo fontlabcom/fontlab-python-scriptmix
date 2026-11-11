@@ -6589,6 +6589,28 @@
       "test_routes": [
         "tests/test_wp08_master_structure_audit_menu.py"
       ]
+    },
+    {
+      "path": "Scripts/Reports/Font Revision Comparison.py",
+      "sha256": "9db4551948243d12c11ddad7b545754c71a3a9c3d92dc59e3a6a5fab74aae3b2",
+      "state": "candidate",
+      "containing_commit": null,
+      "behavior_parity": false,
+      "native": false,
+      "test_routes": [
+        "tests/test_wp08_font_revision_comparison_menu.py"
+      ]
+    },
+    {
+      "path": "Scripts/Reports/Metric Reports.py",
+      "sha256": "3c07761900f6774e89efe91daa3503e546e365145e232326859b8c371b682fdc",
+      "state": "candidate",
+      "containing_commit": null,
+      "behavior_parity": false,
+      "native": false,
+      "test_routes": [
+        "tests/test_wp08_metric_reports_menu.py"
+      ]
     }
   ]
 }

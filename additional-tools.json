@@ -3670,5 +3670,33 @@
     "app_api": "fontlabapp.fontui.master_structure_audit.show",
     "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
     "scope": "Two read-only master compatibility reports in one shared App shell with About and retryable Close."
+  },
+  {
+    "title": "Font Revision Comparison",
+    "key": "wp08_font_revision_comparison",
+    "destination": "Scripts/Reports/Font Revision Comparison.py",
+    "destination_sha256": "9db4551948243d12c11ddad7b545754c71a3a9c3d92dc59e3a6a5fab74aae3b2",
+    "kind": "candidate-consolidation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0 AND MIT",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.font_revision_comparison.show",
+    "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
+    "scope": "Two read-only cross-font difference reports in one shared App shell with About and retryable Close."
+  },
+  {
+    "title": "Metric Reports",
+    "key": "wp08_metric_reports",
+    "destination": "Scripts/Reports/Metric Reports.py",
+    "destination_sha256": "3c07761900f6774e89efe91daa3503e546e365145e232326859b8c371b682fdc",
+    "kind": "candidate-consolidation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0 AND MIT",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.metric_reports.show",
+    "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
+    "scope": "One read-only vertical metrics report in one shared App shell with About and retryable Close."
   }
 ]

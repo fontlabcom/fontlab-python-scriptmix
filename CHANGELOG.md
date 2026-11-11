@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — WP08c S62/S63 candidate launchers
+
+Added `Scripts/Reports/Font Revision Comparison.py` (Report Composite Differences, Report Glyph Set Differences) and `Scripts/Reports/Metric Reports.py` (Vertical Metrics Reporter) over `fly.ap.fontui.font_revision_comparison` / `metric_reports`, with tests, ledger rows and pins (215 tools, 284 scripts, 7 candidates). Originals are untouched; Compare Open Font Revisions and Sidebearing Direction Marker stay unabsorbed.
+
 ## 2026-11-11 — WP08c review fix I-1 completion
 
 Search-index test now lists the five new catalogue pages and retirement-decisions; regenerated `src_docs/md` and `docs` from the final launcher commit 7523579 and ran tests_docs against the fresh build (43 OK).
