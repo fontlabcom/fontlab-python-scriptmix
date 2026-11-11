@@ -2,6 +2,22 @@
 this_file: PLAN.md
 ---
 
+## WP01 follow-up and later consolidation packages
+
+The proposed transition ledger now accounts for all 279 current-main sources
+without removing menus or replacing immutable provenance. The original 271
+mappings remain, plus six explicitly retained routes. The complete prepared
+Scriptmix suite passed (4,703 tests, two existing skips); current-main source
+identities were verified against their containing commit.
+The controller must qualify the canonical G-Examples/G-Scriptmix wrappers in an
+authorized environment before adopting this prerequisite; their hardcoded
+outside-lane writes remain unavailable in WP01.
+Later WP03–WP08 owners must implement each named destination/tab, record reviewed
+full destination hashes and evidence, preserve historical compatibility oracles,
+and qualify native behavior separately. Proposed retirement is not accepted parity.
+WP11 must package a reviewed archive before any Git-less distribution removes
+menus; WP12 retains installed/native/history/reopen qualification.
+
 ## Interpolation Preview remaining qualification
 
 Qualify workflow #6 with matching ordinary installed App/Scriptmix artifacts and native FontLab PythonQt: location controls, interpolation rendering, refusal diagnostics, captured-font identity and repeated Close. Compare complete font/history/selection/cache/dirty state before and after. Keep source/fake-font evidence separate from native acceptance; no font writes are part of this workflow.

@@ -6,6 +6,57 @@ this_file: CHANGELOG.md
 
 App `dependency_values` now reads `package.fgPackage.glyphs` (App e4b69da), which 504 tests with owned package fakes could not provide (`AttributeError: ... 'fgPackage'`). New `tests/_fgpackage_support.py` supplies a live `fgPackage` view whose `.glyphs` holds the fake's glyphs in order; the `test_issue122_*` and `test_masters.py` fakes use it. `test_guides.py` and `test_guide_rewrite.py` also load the real `qt.safe`, because App `canvas_glyphs` imports it and the fixtures' stub `fontlabapp` is not a package. No assertion changed. Gate: 504 failed before, 4664 passed and 2 skipped after.
 
+## 2026-11-11 — WP01 ledger recounted to 279 after merging main (WPF)
+
+Main added Font Info and Vertical Metrics and Designspace Source Comparison. `menu-consolidations.json` now pins source commit 8022be9 (all 277 earlier source hashes verified unchanged there), adds both as retained proposed rows, and counts 279 sources and 72 destinations; `tests/test_curated_delivery.py` updated to match.
+
+## 2026-11-11 — WP01 current-main inventory integration (WPF)
+
+Resolved the current-main/WP01 documentation and menu-layout test conflicts,
+retaining both sides' intent. Recounted 277 tracked menus at
+`f21e0ee471ab4fc4b0de9b803a80cf2058e66e51`: the original 271 mappings keep
+their SHA256 values, destinations, dispositions and acceptance; six later Font UI
+Lab routes are explicitly retained. All source identities now use that verified
+containing commit, as required by the unchanged single-inventory validator.
+The proposed ledger has 274 mapped sources, 70 destinations and three proposed
+retirements. All 277 launchers and immutable historical manifests are unchanged.
+
+The existing current-inventory oracle failed before reconciliation and passed
+afterward (one test each). Full prepared arm64 Python 3.11 suite: **4,703 passed,
+2 existing skips, 0 failures**. Complete `menu_layout.py` coverage is 178/182 lines
+(97.80%) and 97/102 branches (95.10%), with no exclusions. Changed-file installed
+Ruff 0.14.10, offline `uvx ruff==0.14.10` and whitespace checks pass. The exact
+`repos.sh` provisioning and initial `uvx` attempts could not resolve PyPI DNS;
+Ruff succeeded using the verified lane-local cache. The canonical wrapper requires
+outside-lane writes. Canonical provisioning remains an explicit qualification limit.
+Restored all 277 regenerated catalogue files to their pre-suite bytes. Native
+PythonQt, ordinary installed artifacts and later consolidation remain open.
+
+## 2026-11-11 — WP01 proposed consolidation and historical-byte recovery
+
+Added an additive 271-source transition ledger: 268 sources map to 64 proposed
+targets and three carry explicit proposed retirement reasons. All 271 launchers
+remain present. Existing migration, move, revision, rescue and additional-tool
+manifests remain byte-identical; retirement never counts as behavior parity.
+The validator checks the complete committed inventory and exact source bytes,
+unique source/action identities, paths, test routes, hashes and dated acceptance.
+`released_bytes` retains reversible move/revision reconstruction, rejects unknown
+consolidation-ledger hashes and recovers implemented removed sources from committed bytes
+or a hash-verified external archive. Historical contour-header tests use the same
+resolver; archived bodies are data and are never imported or executed.
+
+Focused validation: 78 passed, zero failures/skips; complete `menu_layout.py`
+coverage 176/182 statements (96.70%) and 95/102 branches (93.14%), no exclusions.
+Changed-file Ruff and independent implementation review passed. The complete
+unchanged `repos.sh` Scriptmix suite, using prepared environment provisioning,
+passed 4,662 tests with two existing skips and zero failures. Full-suite production
+coverage is 178/182 statements (97.80%) and 97/102 branches (95.10%), no exclusions.
+The canonical G-Scriptmix `quality.sh` wrapper remains blocked by its hardcoded
+outside-lane writes; the prepared equivalent is reported separately, not as a
+canonical gate pass. No native or installed FontLab acceptance is claimed. Full
+inventory certification requires Git; individual historical-byte recovery also
+supports an explicit external archive without Git.
+
 ## 2026-11-11 — Metrics composite shift Undo/Redo verified live (Issue 250)
 
 The Metrics composite-shift TODO row is closed. Live in FontLab 9 on the owned Lato copy fixture, through the real panel model (`survey` then `commit`, glyph A, dx +7 and width +7, both masters): the commit made one Undo step, Undo and Redo restored the native bbox and advance exactly (A Hairline 42/1274 to 49/1281 and back), Aacute's components followed without a double shift (advance unchanged), and the saved VFJ readback matched in all three states. Evidence: `issue250/reports/a5-implementer2-report-12.md`, `live-tests/i2/r87f-live.json`. Scope limit: only glyph A and the metrics edit were tested; the broader "Qualify Metrics writers" row (all scopes, successive edits, full-font Undo/Redo, save/reopen) stays open.
