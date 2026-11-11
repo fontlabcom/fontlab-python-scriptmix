@@ -20,6 +20,18 @@ dev = ["pytest>=8", "playwright>=1.55"]
 [tool.uv]
 package = false
 
+[tool.ruff.lint.per-file-ignores]
+# Frozen provenance pins: these eight proposed sources must stay byte-identical to
+# menu-consolidations.json source_commit 8022be9c (see menu_layout.consolidation_rows).
+"Scripts/Anchors/Cloud View.py" = ["E741"]
+"Scripts/Components/Count Badges.py" = ["E741"]
+"Scripts/Kerning/Classes Browser.py" = ["E402", "E741"]
+"Scripts/Kerning/Compare Masters.py" = ["E402"]
+"Scripts/Kerning/Missing Pairs.py" = ["E402", "E741"]
+"Scripts/Kerning/Pair List Browser.py" = ["E402", "E741"]
+"Scripts/Kerning/Remove Small Pairs.py" = ["E741"]
+"Scripts/Kerning/Text Preview.py" = ["E402"]
+
 [tool.fontlab-install]
 id = "com.fontlab.python-scriptmix"
 name = "fontlab-python-scriptmix"

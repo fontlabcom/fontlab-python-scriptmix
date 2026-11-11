@@ -48,7 +48,7 @@ uv run --no-project --python cpython-3.11-macos-aarch64-none \
   Scripts tests tests_docs menu_layout.py src_docs/build.py
 ```
 
-Ruff 0.14.10 reports 26 existing findings in this scope (E402 17, E741 9), all in Scripts; tests, tests_docs, menu_layout.py and src_docs/build.py are clean (measured 2026-11-11, was 45). Do not apply automatic
+Ruff 0.14.10 reports 0 existing findings in this scope (measured 2026-11-11; was 45, then 26). The 26 remaining findings (E402 17, E741 9) sit in eight frozen provenance-pinned Scripts and are suppressed by exact-path `[tool.ruff.lint.per-file-ignores]` in `pyproject.toml`, not fixed; tests, tests_docs, menu_layout.py and src_docs/build.py are clean. Do not apply automatic
 fixes to historical scripts. Export an external `UV_CACHE_DIR` as in README.
 
 `migration.json` is a frozen v0.2.0 record, not current pins.

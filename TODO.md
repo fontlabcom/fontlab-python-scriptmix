@@ -138,7 +138,7 @@ remaining acceptance, source-link and native obligations stay open.
 
 - [ ] Keep Examples destination hashes current after Scriptmix changes; repeat the cross-repository pin check at final delivery.
 
-- [ ] 26 findings in 8 pinned Scripts. Each edit needs a manifest revision record and a sha update; E402 may be deliberate. Next check: map each pin test to its file, then decide per file whether to fix or add a noqa with a reason.
+- [ ] Owner-level: the 26 Ruff E402/E741 findings in 8 pinned Scripts (Kerning: Missing Pairs, Pair List Browser, Text Preview, Classes Browser, Compare Masters, Remove Small Pairs; Components/Count Badges; Anchors/Cloud View) are suppressed, not fixed. Fixing needs option B: change `menu_layout.consolidation_rows` and `menu-consolidations.json` so a `proposed` source may be a revised head of its `menu-revisions.json` chain (today it must equal `git show 8022be9c:<path>`), then extend each file's single revision row. Next check: owner decision, then App/Examples parity tests (`_kerning_tools_originals.py`, `_smx_components.py`, `_smx_anchors.py`, `test_issue122_R1b.py`).
 
 - [ ] Complete browser-asset transitive provenance, full notices and source-availability checks before site publication.
 

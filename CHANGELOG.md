@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Ruff baseline 26 to 0 for pinned Scripts by exact-path ignores (Issue 250)
+
+- `pyproject.toml` gains `[tool.ruff.lint.per-file-ignores]` for exactly eight Scripts, each only the codes it raises (E402 and/or E741). No Script byte changes: sha256 of all eight identical before and after.
+- Why not fix: all eight are `proposed` transitions in `menu-consolidations.json`; `consolidation_rows` requires the file to equal `git show 8022be9c:<path>`, and `menu-revisions.json` allows one row per destination. AGENTS.md already forbids fixing historical scripts.
+- Proof: Ruff 0.14.10 on `Scripts tests tests_docs menu_layout.py src_docs/build.py`: 27 lines (26 findings) before, "All checks passed!" after; removing one path's code resurfaces its finding (negative control). README and AGENTS counts now say 0.
+- Open (TODO, owner-level): option B, a validator change allowing revised proposed sources, so the findings could be fixed.
+
 ## 2026-11-11 — App kerning range checks limited to changed masters: verified (Issue 250)
 
 - The TODO row "Limit App kerning numeric validation to changed masters while preserving persistence-range checks" was this file's TODO:80 when App 885ba0b (2026-11-09) cited "Scriptmix TODO:80"; Scriptmix 25c86b4d, the main commit at that time, has the same text on line 80.

@@ -198,7 +198,7 @@ validating changed dependencies. Cached builds with the same development
 version can be stale. These tests do not modify the live FontLab installation.
 
 Lint checks existing source without rewriting it. Ruff 0.14.10 reports
-26 existing findings (E402 17, E741 9, all in Scripts; tests, tests_docs, menu_layout.py and src_docs/build.py are clean) across the paths below; fixes remain open:
+0 existing findings across the paths below. Eight frozen provenance-pinned Scripts (26 E402/E741 findings) are suppressed by exact-path `per-file-ignores` in `pyproject.toml`; their bytes stay unchanged:
 
 ```sh
 uv run --no-project --python cpython-3.11-macos-aarch64-none \
