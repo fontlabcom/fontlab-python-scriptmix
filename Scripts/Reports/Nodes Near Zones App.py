@@ -1,7 +1,7 @@
 # this_file: Scripts/Reports/Nodes Near Zones App.py
 # SPDX-License-Identifier: Apache-2.0
 # FLM: Reports · Nodes Near Zones App
-"""Report open contours of every master with a Select glyphs action in one window.
+"""Report nodes that sit just off a vertical zone, with a Select glyphs action in one window.
 
 What: The Nodes Near Zones report: on-curve nodes of the selected glyphs (or all glyphs) that sit 1 to 30 units off the baseline, x-height, cap height, ascender or descender
 (glyph, master, zone, node, offset), as a tab of one shared App window with a tolerance control, a Select glyphs button, an About tab and a Close button.

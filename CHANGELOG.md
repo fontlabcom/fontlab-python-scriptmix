@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Nodes Near Zones App verified live; launcher docstring corrected (A2 live report 27, Issue 250)
+
+- The S66 Nodes Near Zones App launcher (c4b0bfb4, with App 7f96170) passes a live FontLab 9.0.9809 smoke from source on an owned fixture: it opens with tabs Nodes Near Zones and About; tolerance 4 reports no near nodes (3 glyphs x 3 masters); tolerance 30 rescans by itself (14 near misses in 2 glyphs); tolerance 12 keeps 5 rows; Select glyphs selects the listed glyph; scope "All glyphs" at 30 units finds 1060 near misses in 102 glyphs and selects each glyph once; Undo stays disabled, the font is not dirtied, and Close works.
+- Fixed the launcher docstring's first line, which had been copied from Open Contours ("Report open contours of every master"); it now describes nodes near vertical zones. The menu title was already correct. The launcher bytes changed, so the pinned `sha256` in `additional-tools.json` and `menu-consolidations.json` is updated and the generated page and `docs/` are rebuilt.
+- Still open: the report text pane and the table show the same rows (duplicate output).
+
 ## 2026-11-11 — UFO Roundtrip Inspector verified live (A2 live report 21, Issue 250)
 
 - `Font UI Lab/UFO Roundtrip Inspector.py` main() plus run gives the same result as the App route (Scriptmix 107d61ba, App 6a6d35c): read-only, history clean, handles released, the Transform error is gone. Failure-path staging cleanup and repeated Close stay open in TODO.
