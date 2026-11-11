@@ -60,4 +60,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `44aced6659c6e780ed00f1c792de1845866fa28face925e1659c19d5566adc9a`
 
-[Python source at `370bf9829bc1`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/370bf9829bc141c1c9f88be0018cbc285b502a5d/Scripts/Metrics/Sidebearings%20Tuner.py)
+[Python source at `168b57cbfbaf`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/168b57cbfbaf1b00b43f4aa06ba26d2e01ba12e1/Scripts/Metrics/Sidebearings%20Tuner.py)

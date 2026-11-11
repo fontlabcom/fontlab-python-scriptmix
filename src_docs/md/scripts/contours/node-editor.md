@@ -38,4 +38,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `1c2bbaf68856b789b53540f747d685b81a130dde32c7f8dcf2911aa6e117c7c2`
 
-This source is not committed at `370bf9829bc1`; no immutable link is offered.
+[Python source at `168b57cbfbaf`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/168b57cbfbaf1b00b43f4aa06ba26d2e01ba12e1/Scripts/Contours/Node%20Editor.py)

@@ -43,4 +43,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `40c5d904321910384646a62892f6454dd8f41718b215ae7234aaa0ed4ca9c438`
 
-This source is not committed at `370bf9829bc1`; no immutable link is offered.
+[Python source at `168b57cbfbaf`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/168b57cbfbaf1b00b43f4aa06ba26d2e01ba12e1/Scripts/Contours/Outline%20Compatibility.py)
