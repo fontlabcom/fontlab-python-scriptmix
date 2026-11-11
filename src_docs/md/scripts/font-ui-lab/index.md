@@ -16,3 +16,6 @@
 - [Tabular Width Audit](tabular-width-audit.md)
 - [UFO Roundtrip Inspector](ufo-roundtrip-inspector.md)
 - [Unicode and Glyph Order Explorer](unicode-and-glyph-order-explorer.md)
+
+- [Font Info and Vertical Metrics](font-info-and-vertical-metrics.md)
+- [Designspace Source Comparison](designspace-source-comparison.md)

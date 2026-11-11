@@ -3600,5 +3600,33 @@
     "app_api": "fontlabapp.fontui.interpolation_preview.show",
     "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/interpolation_preview.py; no release floor is asserted.",
     "scope": "Captured-font designspace location controls and existing read-only two-master linear interpolation preview; no font writes or instance creation."
+  },
+  {
+    "title": "Font Info and Vertical Metrics",
+    "key": "font_ui_lab_font_info_metrics",
+    "destination": "Scripts/Font UI Lab/Font Info and Vertical Metrics.py",
+    "destination_sha256": "d18230cca1f0372b45bd63af11cde1ff491d720a9feeb4eb09da5d19f2d2cbc0",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.font_info_metrics.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/font_info_metrics.py; no release floor is asserted.",
+    "scope": "Captured Font Info editor, explicit Apply and refresh of the existing vertical metrics report."
+  },
+  {
+    "title": "Designspace Source Comparison",
+    "key": "font_ui_lab_source_comparison",
+    "destination": "Scripts/Font UI Lab/Designspace Source Comparison.py",
+    "destination_sha256": "01c2a0f5e87f70ecd7e1fffd9da707fb4afb48b0e7bb2a3f15e911408f6b67b7",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.source_comparison.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/source_comparison.py; no release floor is asserted.",
+    "scope": "Explicit captured-font layer/source and glyph selection with widths and structural compatibility summary; no interpolation or external source loading."
   }
 ]

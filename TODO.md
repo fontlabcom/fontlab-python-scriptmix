@@ -8,6 +8,10 @@ this_file: TODO.md
 - [ ] Native: qualify later consolidated tools in real FontLab PythonQt, including full-font/history/Undo/Redo/save-reopen and installed origins; WP01 host tests do not close these checks.
 
 - [ ] Native-qualify workflow #6 Interpolation Preview: installed origins, designspace location changes, endpoint/mixed outlines, unsupported-location diagnostics, captured-font identity, complete font/history/selection/cache/dirty preservation and repeated Close; qualify ordinary artifacts separately.
+
+- [ ] Native-qualify Font Info and Vertical Metrics with matched artifacts: captured font, explicit Apply/readback, report refresh, Undo/Redo, saved reopen and owned teardown.
+- [ ] Native-qualify Designspace Source Comparison with matched artifacts: explicit source/layer selection, metrics and compatibility summaries, complete font preservation and owned teardown.
+
 - [ ] Qualify Issue 234 Open Fonts and Master Overview, Master Compatibility Browser and Node Counts Across Masters with matching installed artifacts and native PythonQt, including empty/stale fonts, preview, chooser changes, Close and complete font/history preservation.
 - [ ] Re-run the exact Issue 234 Scriptmix runtime recipe after build dependency resolution is available; rebuild the three new menu source links at their reviewed containing commit.
 - [ ] Native-qualify UFO Roundtrip Inspector with matching App/Fontport: temporary export/import, complete semantic report, source/history preservation and staging cleanup on Close/failure.
@@ -96,7 +100,6 @@ this_file: TODO.md
 
 - [ ] Font Info ttfautohint writer: live check (2026-11-10) found the claim stands; `Info` has no ttfautohint attributes and the options are global export options (`fgOpt_TTFAutohint`), so a per-font writer is impossible without a native per-font route. Ask Fontlab/fl for one, then restore the stem tool.
 
-- [ ] Metrics composite shift: only the saved-VFJ readback is live-proven (bare `shift_and_set` +7 on Lato A; Aacute's components, offset and advance unchanged; bbox readback may be stale). The panel's own write path and its Undo/Redo are not verified and are tracked by row 48 (Metrics writers) and the App TODO row "Native: Undo/Redo of the Metrics panel capHeight/composite write".
 
 
 - [ ] Anchor rounding: live on Lato A, all masters, native anchors round to integers on every `applyTransform`: +0.4 and +0.2 steps are swallowed, a y +0.6 step rounds up, and a +0.6/-0.6 round trip drifts x by -1. `READ_BACK_TOLERANCE` is 0.5 and the Metrics panel passes only integer dx, so no defect is open there. Remaining: pin that fractional dx is never passed to `shift_and_set` (add a test) and decide whether the read-back should report the drift.
