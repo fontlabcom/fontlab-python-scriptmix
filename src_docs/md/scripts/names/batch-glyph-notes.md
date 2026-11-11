@@ -48,4 +48,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `bcf36530a70ca572a43720e687629c71e49244b6f6efb71f7f283a74a7f39901`
 
-[Python source at `ba6f2dfbe4d6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/ba6f2dfbe4d6759bc53d77827e64a3d6ccee96e3/Scripts/Names/Batch%20Glyph%20Notes.py)
+[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Names/Batch%20Glyph%20Notes.py)

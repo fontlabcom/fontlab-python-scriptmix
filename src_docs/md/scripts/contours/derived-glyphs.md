@@ -29,4 +29,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b17b7cf95e3c49ec7bde85d461b18e9a9ce661242b8e75dcaa65da84e87c5f88`
 
-This source is not committed at `ba6f2dfbe4d6`; no immutable link is offered.
+[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Contours/Derived%20Glyphs.py)

@@ -35,4 +35,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `5faa60d22549ac454d2ad9e433631cc31ea1a7f4e9b0e53aeeb888310172e2af`
 
-This source is not committed at `ba6f2dfbe4d6`; no immutable link is offered.
+[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Contours/Curve%20Editor.py)
