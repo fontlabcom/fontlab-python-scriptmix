@@ -1501,6 +1501,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/nodes-near-zones-app.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/reports/nodes-near-zones.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>

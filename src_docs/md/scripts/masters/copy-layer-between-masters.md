@@ -66,4 +66,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `2eec4fe73acf056b46091515fdc6550b0e8881614d6dfaa9af5cb1c91fc6da31`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Masters/Copy%20Layer%20Between%20Masters.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Masters/Copy%20Layer%20Between%20Masters.py)

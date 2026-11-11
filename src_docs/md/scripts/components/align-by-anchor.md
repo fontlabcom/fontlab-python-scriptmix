@@ -56,4 +56,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `db5bfc9568c585473b2508e0f46e91d123ad7f66b2ab6228e9ac180045e8f4ab`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Components/Align%20By%20Anchor.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Components/Align%20By%20Anchor.py)

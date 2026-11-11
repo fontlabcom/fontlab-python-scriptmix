@@ -43,4 +43,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `aff5b5ba8ff836fdf9be49550a101da798430d7ac096e6513a10a7a4789a68e3`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Contours/Overlap%20Nodes.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Overlap%20Nodes.py)

@@ -42,4 +42,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `d5dd5df84c493dbe78f6d28db2e8e6404fa19dac8a41c7226ff7043338d8a240`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Contours/Duplicate%20Nodes%20All%20Foreground%20Layers.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Duplicate%20Nodes%20All%20Foreground%20Layers.py)

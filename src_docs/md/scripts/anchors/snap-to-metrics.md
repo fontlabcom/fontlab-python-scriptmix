@@ -52,4 +52,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `34ae7acd284e426fea309a782a3b271b9eb8f526c9bdb34cf4e2eebf053fdaf6`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Anchors/Snap%20To%20Metrics.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Anchors/Snap%20To%20Metrics.py)

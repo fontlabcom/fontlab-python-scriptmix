@@ -19,6 +19,7 @@
 - [Master Node Compatibility Report](master-node-compatibility-report.md)
 - [Master Structure Audit](master-structure-audit.md)
 - [Metric Reports](metric-reports.md)
+- [Nodes Near Zones App](nodes-near-zones-app.md)
 - [Nodes Near Zones](nodes-near-zones.md)
 - [Open Contours App](open-contours-app.md)
 - [Open Contours](open-contours.md)

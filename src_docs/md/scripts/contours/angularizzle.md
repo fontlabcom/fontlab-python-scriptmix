@@ -29,4 +29,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `a08ea56a473da5814a549a27e74f089e43e3d15450bf87bbc722e51631b8958b`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Contours/Angularizzle.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Angularizzle.py)

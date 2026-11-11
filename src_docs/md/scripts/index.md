@@ -311,6 +311,7 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Master Node Compatibility Report](reports/master-node-compatibility-report.md)
 - [Master Structure Audit](reports/master-structure-audit.md)
 - [Metric Reports](reports/metric-reports.md)
+- [Nodes Near Zones App](reports/nodes-near-zones-app.md)
 - [Nodes Near Zones](reports/nodes-near-zones.md)
 - [Open Contours App](reports/open-contours-app.md)
 - [Open Contours](reports/open-contours.md)

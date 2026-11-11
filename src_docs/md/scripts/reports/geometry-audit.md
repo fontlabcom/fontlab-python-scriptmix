@@ -32,4 +32,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `22445f159aa9f819592c6a0678e8a98f8f41d8e674a47893191b974f74b740f0`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Reports/Geometry%20Audit.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Reports/Geometry%20Audit.py)

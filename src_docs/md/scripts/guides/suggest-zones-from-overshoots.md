@@ -68,4 +68,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `0f8890a6e7c7c6b35886ff9319db939cf78be1d72fbbbde11f1b9eb12ebfe2fc`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Guides/Suggest%20Zones%20From%20Overshoots.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Guides/Suggest%20Zones%20From%20Overshoots.py)

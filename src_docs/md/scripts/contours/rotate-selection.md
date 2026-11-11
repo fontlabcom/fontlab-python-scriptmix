@@ -45,4 +45,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `8f12c640949c2e9178a1955151c4a94c28f2c7869c6d9f78b217f2d64f8987d6`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Contours/Rotate%20Selection.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Rotate%20Selection.py)

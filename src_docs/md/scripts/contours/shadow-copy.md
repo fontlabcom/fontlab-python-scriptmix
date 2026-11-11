@@ -69,4 +69,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `b0024ecd58f0863a8d4f8a36e1f68105b6bc2a383d21af47f4f0d67ec0dd591e`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Contours/Shadow%20Copy.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Contours/Shadow%20Copy.py)

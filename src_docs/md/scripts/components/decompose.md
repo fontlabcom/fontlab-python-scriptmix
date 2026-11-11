@@ -62,4 +62,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `c6d22abcc892e0c64f53d03cc44f777f45441fe13a5c7dd6a926c2ef5d55fb6d`
 
-[Python source at `dc797fffaa31`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/dc797fffaa31fa6c47959870966e2642fe1df6f7/Scripts/Components/Decompose.py)
+[Python source at `4bab81718f97`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/4bab81718f976cbdb0cf33c249fc85b5df530a9a/Scripts/Components/Decompose.py)
