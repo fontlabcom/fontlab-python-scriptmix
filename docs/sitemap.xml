@@ -706,6 +706,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/interpolation-preview.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/kerning-group-explorer.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
