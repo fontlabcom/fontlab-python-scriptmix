@@ -16,6 +16,15 @@ selection, cache and history state. Re-run the exact runtime recipe when its
 build dependencies can be resolved; the prepared-environment fallback is source
 evidence only. Publish source links only from a reviewed containing commit.
 
+## Issue 234 inspector compositions remaining qualification
+
+Qualify UFO Roundtrip Inspector and Representation and Notification Explorer
+against matching ordinary App/Fontport installations and native FontLab. Verify
+private staging cleanup and complete semantic diagnostics, selected-glyph
+representation results, notification delivery/cache refresh status, source
+preservation and Close lifetime. Retain every other workflow obligation.
+
+
 ## Batch recipe filename documentation delivery
 
 Independently review the verified filename-literal correction, then deliver

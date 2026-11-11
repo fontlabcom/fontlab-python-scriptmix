@@ -146,7 +146,9 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Master Width Comparison](font-ui-lab/master-width-comparison.md)
 - [Node Counts Across Masters](font-ui-lab/node-counts-across-masters.md)
 - [Open Fonts and Master Overview](font-ui-lab/open-fonts-and-master-overview.md)
+- [Representation and Notification Explorer](font-ui-lab/representation-and-notification-explorer.md)
 - [Tabular Width Audit](font-ui-lab/tabular-width-audit.md)
+- [UFO Roundtrip Inspector](font-ui-lab/ufo-roundtrip-inspector.md)
 - [Unicode and Glyph Order Explorer](font-ui-lab/unicode-and-glyph-order-explorer.md)
 
 ## Guides

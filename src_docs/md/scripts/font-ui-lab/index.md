@@ -12,5 +12,7 @@
 - [Master Width Comparison](master-width-comparison.md)
 - [Node Counts Across Masters](node-counts-across-masters.md)
 - [Open Fonts and Master Overview](open-fonts-and-master-overview.md)
+- [Representation and Notification Explorer](representation-and-notification-explorer.md)
 - [Tabular Width Audit](tabular-width-audit.md)
+- [UFO Roundtrip Inspector](ufo-roundtrip-inspector.md)
 - [Unicode and Glyph Order Explorer](unicode-and-glyph-order-explorer.md)
