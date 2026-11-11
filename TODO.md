@@ -58,7 +58,7 @@ this_file: TODO.md
 - [ ] Qualify installed Smallcap Consistency: export-policy/case disclosures, complete modern and legacy findings, both kerning-group sides, deadline/stale refusal, repeat refresh and destruction, complete-font preservation.
 
 - [ ] Qualify Italic Angle from the final installed files and independently downloaded release before increasing historical sample acceptance beyond 68 of 130.
-- [ ] Qualify Metrics writers on owned fonts: current/all masters, selected bases plus composites, automatic dependants, successive edits, full-font Undo/Redo and save/reopen.
+- [ ] Qualify Metrics writers on owned fonts: proven so far, capHeight master write through `vertical_metrics.table.write_changes` with one row, Undo x2/Redo x2 and save/reopen (A2 report 14 section 4); still open: current/all masters beyond capHeight, selected bases plus composites, automatic dependants, successive edits, full-font Undo/Redo and save/reopen.
 - [ ] Qualify Names editors, including Duplicate Unicodes, with Font-window guards, Unicode order, notes, marks, tags, stale previews and complete saved history.
 - [ ] Qualify Anchors writers, duplicate removal and two-font copying: exact collision rules, raw survivor state, origin refusals, dependencies and both fonts' history/reopen.
 - [ ] Qualify Components writers and glyph builders: retained removed objects, lock fields, decomposition, reference placement, per-layer builder history and full saved state.
