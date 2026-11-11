@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — WP08c S66 Nodes Near Zones App launcher
+
+Added candidate launcher `Scripts/Reports/Nodes Near Zones App.py` over `fly.ap.fontui.nodes_near_zones` (tolerance rescan plus Select glyphs), with test, ledger rows and pins (217 tools, 286 scripts, 9 candidates). The original `Nodes Near Zones.py` is untouched.
+
 ## 2026-11-11 — WP08c S65 docs
 
 Regenerated `src_docs/md` and `docs` from launcher commit dc797fff (one new catalogue page); tests_docs pins 285 menus/pages/history, 427 built files, search index lists the new page.

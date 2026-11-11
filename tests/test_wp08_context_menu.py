@@ -37,9 +37,9 @@ def test_candidates_when_indexed_then_do_not_promote_committed_transitions():
         "Scripts/Utilities/Reference Image Viewer App.py",
         "Scripts/Reports/Geometry Audit.py",
         "Scripts/Reports/Master Structure Audit.py",
-        "Scripts/Reports/Font Revision Comparison.py", "Scripts/Reports/Metric Reports.py", "Scripts/Reports/Open Contours App.py",
+        "Scripts/Reports/Font Revision Comparison.py", "Scripts/Reports/Metric Reports.py", "Scripts/Reports/Open Contours App.py", "Scripts/Reports/Nodes Near Zones App.py",
     }
-    assert len(candidates) == 8
+    assert len(candidates) == 9
     assert ledger["source_count"] == len(ledger["transitions"]) == 277
     assert ledger["source_commit"] == "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51"
     for candidate in candidates:

@@ -3712,5 +3712,19 @@
     "app_api": "fontlabapp.fontui.open_contours.show",
     "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
     "scope": "One open-contour report with a Select glyphs action in one shared App shell with About and retryable Close."
+  },
+  {
+    "title": "Nodes Near Zones App",
+    "key": "wp08_nodes_near_zones",
+    "destination": "Scripts/Reports/Nodes Near Zones App.py",
+    "destination_sha256": "05000cc94966a28b6c3efc0c7e80a2ef684fa378f71436e469a038221d3c2f13",
+    "kind": "candidate-consolidation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0 AND MIT",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.nodes_near_zones.show",
+    "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
+    "scope": "One tolerance-controlled nodes-near-zones report with a Select glyphs action in one shared App shell with About and retryable Close."
   }
 ]

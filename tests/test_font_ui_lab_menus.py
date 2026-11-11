@@ -99,6 +99,7 @@ def test_new_rows_when_added_then_old_259_bodies_and_190_rows_are_exact():
         "Scripts/Reports/Font Revision Comparison.py",
         "Scripts/Reports/Metric Reports.py",
         "Scripts/Reports/Open Contours App.py",
+        "Scripts/Reports/Nodes Near Zones App.py",
     }
     previous = [r for r in rows if r["destination"] not in paths]
     assert len(previous) == 190
@@ -122,7 +123,7 @@ def test_new_rows_when_added_then_old_259_bodies_and_190_rows_are_exact():
         hashlib.sha256(json.dumps(payload, separators=(",", ":")).encode()).hexdigest()
         == OLD_MENUS_SHA
     )
-    assert len(rows) == 216 and len(list((ROOT / "Scripts").glob("*/*.py"))) == 285
+    assert len(rows) == 217 and len(list((ROOT / "Scripts").glob("*/*.py"))) == 286
     for title, module, key, digest in CASES:
         matching = [r for r in rows if r["key"] == key]
         assert len(matching) == 1
