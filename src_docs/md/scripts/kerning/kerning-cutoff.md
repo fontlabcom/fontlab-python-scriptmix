@@ -31,4 +31,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `a0b0e2fbe7c2f6c7cb82c63f8406a0b6ac926f627a1aaf53b24ce0ddcaeefc5d`
 
-[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Kerning/Kerning%20Cutoff.py)
+[Python source at `370bf9829bc1`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/370bf9829bc141c1c9f88be0018cbc285b502a5d/Scripts/Kerning/Kerning%20Cutoff.py)

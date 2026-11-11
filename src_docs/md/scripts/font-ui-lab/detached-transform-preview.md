@@ -30,4 +30,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `8c8b631a35fab00f4af7403e7df3b44b1e276b3c39b494d9480554a131f28e83`
 
-[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Font%20UI%20Lab/Detached%20Transform%20Preview.py)
+[Python source at `370bf9829bc1`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/370bf9829bc141c1c9f88be0018cbc285b502a5d/Scripts/Font%20UI%20Lab/Detached%20Transform%20Preview.py)

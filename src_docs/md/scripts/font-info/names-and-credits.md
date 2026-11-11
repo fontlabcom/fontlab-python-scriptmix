@@ -44,4 +44,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `504f56070a5741e45718fd78bf97b2e1b239bec27d6c558171d8a2a2bc5cd9d0`
 
-[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Font%20Info/Names%20and%20Credits.py)
+[Python source at `370bf9829bc1`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/370bf9829bc141c1c9f88be0018cbc285b502a5d/Scripts/Font%20Info/Names%20and%20Credits.py)

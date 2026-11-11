@@ -46,4 +46,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `a52430839d688fc55a49cf8016ae55c09bf3a7d61f39291c9c14efe786a13486`
 
-[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Masters/Duplicate%20Current%20Layer.py)
+[Python source at `370bf9829bc1`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/370bf9829bc141c1c9f88be0018cbc285b502a5d/Scripts/Masters/Duplicate%20Current%20Layer.py)

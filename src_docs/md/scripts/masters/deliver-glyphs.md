@@ -57,4 +57,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `deb66c49ca44df494593a6fcd5ed71279b2acca17b7ddf33ad349a6b505ed5f6`
 
-[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Masters/Deliver%20Glyphs.py)
+[Python source at `370bf9829bc1`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/370bf9829bc141c1c9f88be0018cbc285b502a5d/Scripts/Masters/Deliver%20Glyphs.py)

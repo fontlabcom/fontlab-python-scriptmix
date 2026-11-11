@@ -52,4 +52,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `e33465af702a32d55c3f0ea20a550ab7912c61ec37603befe7a441d703d0f1e6`
 
-[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Masters/Common%20Glyphs.py)
+[Python source at `370bf9829bc1`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/370bf9829bc141c1c9f88be0018cbc285b502a5d/Scripts/Masters/Common%20Glyphs.py)

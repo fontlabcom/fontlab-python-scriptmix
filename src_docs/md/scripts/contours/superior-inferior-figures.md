@@ -76,4 +76,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `fb4d8c118e38e968a2c2390729444ca7f07de250fb36bc07711ea3b86377e823`
 
-[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Contours/Superior%20%26%20Inferior%20Figures.py)
+[Python source at `370bf9829bc1`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/370bf9829bc141c1c9f88be0018cbc285b502a5d/Scripts/Contours/Superior%20%26%20Inferior%20Figures.py)

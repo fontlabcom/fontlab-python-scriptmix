@@ -55,4 +55,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `12b6534913326199952c8dd7a1406c93c24c3245dd50981139f510649593a5e0`
 
-[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Anchors/Mirror%20Across%20Masters.py)
+[Python source at `370bf9829bc1`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/370bf9829bc141c1c9f88be0018cbc285b502a5d/Scripts/Anchors/Mirror%20Across%20Masters.py)
