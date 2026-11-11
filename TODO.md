@@ -2,6 +2,11 @@
 this_file: TODO.md
 ---
 
+- [ ] Run canonical G-Examples/G-Scriptmix wrappers in an authorized environment before controller integration; WP01 independent review and the full prepared Scriptmix suite passed, but wrapper writes remain outside this lane. Preserve all original 371 sources, six added Scriptmix routes and frozen manifests.
+- [ ] Implement and review later Scriptmix consolidation destinations/tabs before changing proposed acceptance or removing any old launcher; retain all 8,723 compatibility obligations and the minimum eighteen workflows.
+- [ ] Before a Git-less distribution removes menus, provision and audit its explicit hash-verified external menu archive; full inventory certification still requires Git.
+- [ ] Native: qualify later consolidated tools in real FontLab PythonQt, including full-font/history/Undo/Redo/save-reopen and installed origins; WP01 host tests do not close these checks.
+
 - [ ] Native-qualify workflow #6 Interpolation Preview: installed origins, designspace location changes, endpoint/mixed outlines, unsupported-location diagnostics, captured-font identity, complete font/history/selection/cache/dirty preservation and repeated Close; qualify ordinary artifacts separately.
 - [ ] Qualify Issue 234 Open Fonts and Master Overview, Master Compatibility Browser and Node Counts Across Masters with matching installed artifacts and native PythonQt, including empty/stale fonts, preview, chooser changes, Close and complete font/history preservation.
 - [ ] Re-run the exact Issue 234 Scriptmix runtime recipe after build dependency resolution is available; rebuild the three new menu source links at their reviewed containing commit.

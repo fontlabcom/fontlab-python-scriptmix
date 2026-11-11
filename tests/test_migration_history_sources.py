@@ -54,3 +54,32 @@ def test_explicit_missing_archive_never_falls_back_to_another_copy(inputs, monke
     monkeypatch.setenv("FONTLAB_PRESERVED_ROOT", str(archive))
     with pytest.raises(FileNotFoundError):
         history.preserved_source(original, source)
+
+
+def test_previous_payload_when_current_menu_removed_then_recovers_archived_header(tmp_path, monkeypatch):
+    import menu_layout
+
+    destination = "Scripts/Contours/One.py"
+    payload = b"# this_file: Scripts/Contours/One.py\n# FLM: Contours One\nvalue=1\n"
+    digest = hashlib.sha256(payload).hexdigest()
+    (tmp_path / "menu-consolidations.json").write_text(json.dumps({"transitions": [
+        {"source": {"path": destination, "commit": "a" * 40, "sha256": digest},
+         "acceptance": {"state": "implemented"}},
+    ]}))
+    archive = tmp_path / "archive"
+    archive.mkdir()
+    (archive / (digest + ".bin")).write_bytes(payload)
+    monkeypatch.setenv("FONTLAB_MENU_ARCHIVE", str(archive))
+
+    def no_git(*args, **kwargs):
+        raise FileNotFoundError("Git unavailable")
+
+    monkeypatch.setattr(menu_layout.subprocess, "run", no_git)
+    expected = payload.replace(b"Contours", b"Outlines")
+    assert history.previous_payload("Scripts/Outlines/One.py", tmp_path) == expected
+    assert history.before_contours_rename([
+        {"destination": destination, "destination_sha256": digest},
+    ], tmp_path) == [{
+        "destination": "Scripts/Outlines/One.py",
+        "destination_sha256": hashlib.sha256(expected).hexdigest(),
+    }]

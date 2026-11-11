@@ -6,6 +6,8 @@ import json
 import os
 from pathlib import Path
 
+from menu_layout import _menu_bytes
+
 ROOT = Path(__file__).parents[1]
 
 
@@ -25,7 +27,7 @@ def preserved_source(original_root, source):
 def previous_payload(destination, root=ROOT):
     """Read a historical menu while reversing only its recorded path header."""
     current = destination.replace("Scripts/Outlines/", "Scripts/Contours/")
-    payload = (root / current).read_bytes()
+    payload = _menu_bytes(root, current)
     if current != destination:
         old = f"# this_file: {destination}\n".encode()
         new = f"# this_file: {current}\n".encode()
@@ -40,7 +42,7 @@ def before_contours_rename(rows, root=ROOT):
     for row in rows:
         item = dict(row)
         if item["destination"].startswith("Scripts/Contours/"):
-            assert hashlib.sha256((root / item["destination"]).read_bytes()).hexdigest() == item["destination_sha256"], "Released manifest changed"
+            assert hashlib.sha256(_menu_bytes(root, item["destination"])).hexdigest() == item["destination_sha256"], "Released manifest changed"
             item["destination"] = item["destination"].replace(
                 "Scripts/Contours/", "Scripts/Outlines/", 1
             )

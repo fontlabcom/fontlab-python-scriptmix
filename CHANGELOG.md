@@ -2,6 +2,53 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — WP01 current-main inventory integration (WPF)
+
+Resolved the current-main/WP01 documentation and menu-layout test conflicts,
+retaining both sides' intent. Recounted 277 tracked menus at
+`f21e0ee471ab4fc4b0de9b803a80cf2058e66e51`: the original 271 mappings keep
+their SHA256 values, destinations, dispositions and acceptance; six later Font UI
+Lab routes are explicitly retained. All source identities now use that verified
+containing commit, as required by the unchanged single-inventory validator.
+The proposed ledger has 274 mapped sources, 70 destinations and three proposed
+retirements. All 277 launchers and immutable historical manifests are unchanged.
+
+The existing current-inventory oracle failed before reconciliation and passed
+afterward (one test each). Full prepared arm64 Python 3.11 suite: **4,703 passed,
+2 existing skips, 0 failures**. Complete `menu_layout.py` coverage is 178/182 lines
+(97.80%) and 97/102 branches (95.10%), with no exclusions. Changed-file installed
+Ruff 0.14.10, offline `uvx ruff==0.14.10` and whitespace checks pass. The exact
+`repos.sh` provisioning and initial `uvx` attempts could not resolve PyPI DNS;
+Ruff succeeded using the verified lane-local cache. The canonical wrapper requires
+outside-lane writes. Canonical provisioning remains an explicit qualification limit.
+Restored all 277 regenerated catalogue files to their pre-suite bytes. Native
+PythonQt, ordinary installed artifacts and later consolidation remain open.
+
+## 2026-11-11 — WP01 proposed consolidation and historical-byte recovery
+
+Added an additive 271-source transition ledger: 268 sources map to 64 proposed
+targets and three carry explicit proposed retirement reasons. All 271 launchers
+remain present. Existing migration, move, revision, rescue and additional-tool
+manifests remain byte-identical; retirement never counts as behavior parity.
+The validator checks the complete committed inventory and exact source bytes,
+unique source/action identities, paths, test routes, hashes and dated acceptance.
+`released_bytes` retains reversible move/revision reconstruction, rejects unknown
+consolidation-ledger hashes and recovers implemented removed sources from committed bytes
+or a hash-verified external archive. Historical contour-header tests use the same
+resolver; archived bodies are data and are never imported or executed.
+
+Focused validation: 78 passed, zero failures/skips; complete `menu_layout.py`
+coverage 176/182 statements (96.70%) and 95/102 branches (93.14%), no exclusions.
+Changed-file Ruff and independent implementation review passed. The complete
+unchanged `repos.sh` Scriptmix suite, using prepared environment provisioning,
+passed 4,662 tests with two existing skips and zero failures. Full-suite production
+coverage is 178/182 statements (97.80%) and 97/102 branches (95.10%), no exclusions.
+The canonical G-Scriptmix `quality.sh` wrapper remains blocked by its hardcoded
+outside-lane writes; the prepared equivalent is reported separately, not as a
+canonical gate pass. No native or installed FontLab acceptance is claimed. Full
+inventory certification requires Git; individual historical-byte recovery also
+supports an explicit external archive without Git.
+
 ## 2026-11-10 — Issue 234 inspector menu compositions (#16 and #18)
 
 Added Font UI Lab entries for UFO Roundtrip Inspector and Representation and

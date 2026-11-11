@@ -164,3 +164,18 @@ def test_script_docstrings_when_public_then_no_process_jargon():
         doc = ast.get_docstring(ast.parse(path.read_text())) or ""
         found += [f"{path.relative_to(ROOT)}: {word}" for word in PROCESS_WORDS if word in doc]
     assert not found, found
+
+
+def test_proposed_consolidations_account_for_all_original_menus_without_removing_any():
+    from menu_layout import consolidation_rows
+
+    rows = consolidation_rows(ROOT)
+    assert len(rows) == 277
+    assert {row["source"]["path"] for row in rows} == {
+        str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").glob("*/*.py")
+    }
+    assert len({row["destination"]["path"] for row in rows if row["destination"]}) == 70
+    assert sum(row["disposition"] == "retired" for row in rows) == 3
+    assert all(row["acceptance"] == {
+        "state": "proposed", "date": "2026-11-11", "behavior_parity": False, "native": False,
+    } for row in rows)
