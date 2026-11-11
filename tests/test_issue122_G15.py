@@ -15,6 +15,7 @@ from typing import Any, ClassVar
 from unittest.mock import create_autospec
 
 import pytest
+from _wp05_outline_routes import route_path, source_text
 from _fgpackage_support import fg_package
 
 try:
@@ -790,10 +791,8 @@ def native_world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.flGlyph = NS(updatedFgGlyphs=lambda: tuple(w.pending))
     fontlab.FontMetrics = lambda package, master: NS(xHeight=w.x_height)
     fontgate = ModuleType("fontgate")
-
     def names():
         return list(w.glyphs)
-
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:
@@ -876,7 +875,7 @@ def world(native_world: Any, monkeypatch: pytest.MonkeyPatch) -> Any:
 
 def load() -> dict[str, Any]:
     """Load the menu without executing main."""
-    return runpy.run_path(str(SCRIPT), run_name="inspection")
+    return runpy.run_path(str(route_path("Align And Distribute")), run_name="inspection")
 
 
 def write_rows(module: dict[str, Any], layer: Any, rows: list[Any]) -> None:
@@ -908,7 +907,7 @@ def test_real_app_names() -> None:
 
 
 def test_public_contract() -> None:
-    text = SCRIPT.read_text()
+    text = source_text("Align And Distribute")
     tree = ast.parse(text, feature_version=(3, 11))
     assert text.startswith("# this_file: Scripts/Contours/Align And Distribute.py\n")
     for word in (
@@ -1674,14 +1673,14 @@ def test_panel_overrides_match_installed_public_hooks(world: Any) -> None:
         ] == [
             (p.name, p.kind, p.default) for p in expected.parameters.values()
         ], (name, actual, expected)
-    for node in ast.walk(ast.parse((SCRIPT).read_text())):
+    for node in ast.walk(ast.parse(source_text("Align And Distribute"))):
         if isinstance(node, ast.Attribute) and isinstance(node.value, ast.Name):
             assert not (node.value.id == "self" and node.attr.startswith("_")), node.attr
 
 
 def test_explicit_fly_app_paths_have_no_private_names() -> None:
     """Also catch full fly.ap.module._member paths without import aliases."""
-    for path in [SCRIPT]:
+    for path in [route_path("Align And Distribute")]:
         for node in ast.walk(ast.parse(path.read_text())):
             if not isinstance(node, ast.Attribute):
                 continue

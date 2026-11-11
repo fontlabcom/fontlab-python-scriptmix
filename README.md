@@ -20,13 +20,22 @@ Feature Source and Proof is available through `fontlabapp.fontui.feature_proof.s
 
 
 # FontLab practical scripts
-279 practical tools for FontLab 9: 69 sample adaptations and 210 additional
-tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
+240 active tools for FontLab 9. The immutable inventory retains 69 sample
+adaptations and 210 additional identities: WP05 combines 49 outline menus into
+ten tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 15 one-level categories.
 Current source includes Metrics, Names and Anchors editors; component writers;
 master navigation, backups and layer copying; contour editing, generators and
 hint tools; feature tools; kerning editors; proof texts; reports and drawing panels.
 The [porting backlog](PORTING-BACKLOG.md) records source dispositions and gaps.
+Contours now contains Outline Doctor, Curve Editor, Transform Studio, Align and
+Nudge, Node Editor, Contour Selection, Outline Compatibility, Derived Glyphs,
+Shape Generators and Hint Tools. These require the matching App build containing
+the WP05 compositions and WP02 read-only preview/shell APIs; no released numeric
+minimum is asserted. Preview and accept the captured targets before Apply.
+Historical menu hashes and route identities remain in `menu-consolidations.json`;
+Git-less historical recovery and installed-menu cleanup require the separate
+archive/installer migration before distribution.
 New ports require native acceptance. Source tests do not establish correct
 FontLab Undo/Redo, saved font state or panel lifetime. Historical sample
 acceptance remains 68 of 130; the Italic Angle candidate and later ports retain
@@ -104,7 +113,7 @@ FontLab qualification; no installed-version floor is inferred.
   an inventory. Names use `<master> backup <suffix>` with collision numbering.
 - **Masters > Copy Layer Between Masters**: select the source and tick target
   masters. Changing the source selects all other masters again.
-- **Contours > Round Coordinates**: round nodes, component offsets and, by
+- **Contours > Outline Doctor > Round Coordinates**: round nodes, component offsets and, by
   default, anchors. Untick Anchors to keep their coordinates. Duplicate-anchor
   layers and an anchor move to the origin are kept with a diagnosis.
 - **Names > Duplicate Unicodes**: scan the whole font, choose assignments to

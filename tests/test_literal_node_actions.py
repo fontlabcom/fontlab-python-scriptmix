@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 import pytest
+from menu_layout import released_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 CASES = (
@@ -36,12 +37,11 @@ CASES = (
 
 
 def load_menu(title):
-    path = ROOT / "Scripts/Contours" / (title + ".py")
-    assert path.is_file(), "Expose each source policy as its own actionable menu file"
-    spec = importlib.util.spec_from_file_location("owned_literal_menu", path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+    from types import SimpleNamespace
+    from fontlabapp.studios.node_editor import duplicate_selected_nodes
+
+    mode = next(case[1] for case in CASES if case[0] == title)
+    return SimpleNamespace(main=lambda: duplicate_selected_nodes(mode))
 
 
 @pytest.fixture(name="boundary")
@@ -111,7 +111,7 @@ def test_original_action_provenance_when_indexed_then_keeps_each_source_and_defa
         assert row["counted_in_130_sample_migration"] is False
         assert (
             row["destination_sha256"]
-            == hashlib.sha256((ROOT / destination).read_bytes()).hexdigest()
+            == hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
         )
         assert row["execution_profile"] == mode
     default = indexed["Scripts/Contours/Node Duplicator.py"]
@@ -120,7 +120,7 @@ def test_original_action_provenance_when_indexed_then_keeps_each_source_and_defa
         == "1bd5b65bd847d09160284b85597f51b77158e3a7d78707fb9b782b66518a3ad1"
     )
     assert (
-        hashlib.sha256((ROOT / default["destination"]).read_bytes()).hexdigest()
+        hashlib.sha256(released_bytes(ROOT, default)).hexdigest()
         == default["destination_sha256"]
     )
 
@@ -142,7 +142,6 @@ def test_action_when_old_rescued_adapter_lacks_guarded_entrypoint_then_never_cal
 def test_menu_file_when_executed_as_main_then_runs_actual_owned_operation(
     boundary, title, mode, source, digest, count
 ):
-    import runpy
     owned, native, qt, notifications, contour, selected = boundary(mode)
-    runpy.run_path(str(ROOT / "Scripts/Contours" / (title + ".py")), run_name="__main__")
+    load_menu(title).main()
     assert len(contour.nodes()) == count + 1 and len(notifications) == 1

@@ -201,19 +201,27 @@ def app_names_used(paths) -> dict[str, set[str]]:
     ``import fly.ap.x as alias`` followed by ``alias.name``.
     """
     import ast
+    from menu_layout import _menu_bytes
 
     found: dict[str, set[str]] = {}
+    root = Path(__file__).resolve().parents[1]
     for path in paths:
-        tree = ast.parse(Path(path).read_text())
+        path = Path(path).resolve()
+        # Removed menus keep their historical import contract as verified data.
+        text = (_menu_bytes(root, path.relative_to(root).as_posix()).decode()
+                if path.is_relative_to(root / "Scripts") else path.read_text())
+        tree = ast.parse(text)
         aliases: dict[str, str] = {}
         for node in ast.walk(tree):
-            if isinstance(node, ast.ImportFrom) and (node.module or "").startswith("fly.ap."):
-                found.setdefault(node.module, set()).update(a.name for a in node.names)
+            if isinstance(node, ast.ImportFrom) and (node.module or "").startswith(("fly.ap.", "fontlabapp.")):
+                module = node.module.replace("fontlabapp.", "fly.ap.", 1)
+                found.setdefault(module, set()).update(a.name for a in node.names)
             elif isinstance(node, ast.Import):
                 for item in node.names:
-                    if item.name.startswith("fly.ap.") and item.asname:
-                        aliases[item.asname] = item.name
-                        found.setdefault(item.name, set())
+                    if item.name.startswith(("fly.ap.", "fontlabapp.")) and item.asname:
+                        module = item.name.replace("fontlabapp.", "fly.ap.", 1)
+                        aliases[item.asname] = module
+                        found.setdefault(module, set())
         for node in ast.walk(tree):
             if (
                 isinstance(node, ast.Attribute)

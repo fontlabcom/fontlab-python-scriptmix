@@ -16,6 +16,7 @@ from typing import Any, ClassVar
 import pytest
 from _fgpackage_support import fg_package
 from conftest import app_names_used, check_real_app_names
+from menu_layout import _menu_bytes
 
 ISOLATED = ("fly", "fontlabapp", "echopy")
 
@@ -875,10 +876,8 @@ def world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.FontMetrics = lambda package, master: NS(xHeight=w.x_height)
     fontgate = ModuleType("fontgate")
     fontgate.fgShape = FgShape
-
     def names():
         return list(w.glyphs)
-
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:
@@ -943,14 +942,23 @@ TITLES = (
 )
 
 
+def route_path(title: str) -> Path:
+    moved = {"Make Compatible": "fontui/outline_compatibility_routes/compatible.py",
+             "Superaligner": "fontui/superaligner.py",
+             "Comb": "studios/shape_generators/comb.py",
+             "Sandblast": "studios/shape_generators/sandblast.py"}
+    relative = moved.get(title, "fontui/outline_routes/" + title.lower().replace(" ", "_") + ".py")
+    return ROOT.parent / "fontlab-fontlabapp/src/fontlabapp" / relative
+
+
 def load(title: str) -> dict[str, Any]:
-    return runpy.run_path(str(ROOT / "Scripts" / "Contours" / f"{title}.py"))
+    return runpy.run_path(str(route_path(title)))
 
 
 @pytest.mark.parametrize("title", TITLES)
 def test_script_contract(title: str, world: Any) -> None:
     path = ROOT / "Scripts" / "Contours" / f"{title}.py"
-    text = path.read_text()
+    text = _menu_bytes(ROOT, path.relative_to(ROOT).as_posix()).decode()
     tree = ast.parse(text, feature_version=(3, 11))
     doc = ast.get_docstring(tree)
     assert all(
@@ -958,6 +966,7 @@ def test_script_contract(title: str, world: Any) -> None:
         for word in ("What:", "How:", "Why:", "Use:", "Benefit:", "Simon Cozens", "MIT")
     )
     assert "# this_file: " + str(path.relative_to(ROOT)) in text
+    tree = ast.parse(route_path(title).read_text(), feature_version=(3, 11))
     for node in ast.walk(tree):
         if isinstance(node, ast.ClassDef) and node.name == "ToolPanel":
             assert (
@@ -973,6 +982,8 @@ def test_script_contract(title: str, world: Any) -> None:
 
 def test_real_app_imports() -> None:
     used = app_names_used([ROOT / "Scripts" / "Contours" / f"{t}.py" for t in TITLES])
+    for module, names in app_names_used([route_path(t) for t in TITLES]).items():
+        used.setdefault(module, set()).update(names)
     used.setdefault("fly.ap.core.history.glyphs", set()).update({"commit", "scan_auto_facts"})
     check_real_app_names(used)
 
@@ -1619,7 +1630,7 @@ def test_panel_instance_assignments_when_parsed_then_no_native_member_collisions
     world: Any,
 ) -> None:
     for title in TITLES:
-        tree = ast.parse((ROOT / "Scripts/Contours" / f"{title}.py").read_text())
+        tree = ast.parse(route_path(title).read_text())
         attributes = {
             n.attr
             for n in ast.walk(tree)
@@ -1751,7 +1762,7 @@ def test_straighten_docstring_when_read_then_states_current_layer_selection_rule
     world: Any,
 ) -> None:
     doc = ast.get_docstring(
-        ast.parse((ROOT / "Scripts/Contours/Straighten All Curves.py").read_text())
+        ast.parse(route_path("Straighten All Curves").read_text())
     )
     assert (
         "Select nodes in the current layer to choose whole contours, or leave nodes unselected for all contours."
@@ -1822,14 +1833,14 @@ def test_panel_overrides_match_installed_public_hooks(world: Any, title: str) ->
         ] == [
             (p.name, p.kind, p.default) for p in expected.parameters.values()
         ], (name, actual, expected)
-    for node in ast.walk(ast.parse((ROOT / "Scripts/Contours" / f"{title}.py").read_text())):
+    for node in ast.walk(ast.parse(route_path(title).read_text())):
         if isinstance(node, ast.Attribute) and isinstance(node.value, ast.Name):
             assert not (node.value.id == "self" and node.attr.startswith("_")), node.attr
 
 
 def test_explicit_fly_app_paths_have_no_private_names() -> None:
     """Also catch full fly.ap.module._member paths without import aliases."""
-    for path in [ROOT / "Scripts/Contours" / f"{title}.py" for title in TITLES]:
+    for path in [route_path(title) for title in TITLES]:
         for node in ast.walk(ast.parse(path.read_text())):
             if not isinstance(node, ast.Attribute):
                 continue
@@ -1839,4 +1850,6 @@ def test_explicit_fly_app_paths_have_no_private_names() -> None:
                 parts.insert(0, current.attr)
                 current = current.value
             if isinstance(current, ast.Name) and current.id == "fly" and parts[0] == "ap":
+                assert all(not part.startswith("_") for part in parts), (path, parts)
+            if isinstance(current, ast.Name) and current.id == "fontlabapp":
                 assert all(not part.startswith("_") for part in parts), (path, parts)

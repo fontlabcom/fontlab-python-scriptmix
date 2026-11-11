@@ -2,6 +2,10 @@
 this_file: TODO.md
 ---
 
+- [ ] WP05: run canonical App/Scriptmix wrappers with authorized evidence directories and resolved dependencies; the reviewed 49-to-ten migration, full prepared suites and per-module coverage pass.
+- [ ] WP05 native: qualify the ten consolidated outline tools with installed FontLab PythonQt, complete font/history preservation, actual controls, Undo/Redo and saved reopen.
+- [ ] WP05/WP11: generate source links from genuine containing commits and audit hash-verified historical recovery for Git-less installations before distribution.
+- [ ] Run canonical G-Examples/G-Scriptmix wrappers in an authorized environment before controller integration; WP01 independent review and the full prepared Scriptmix suite passed, but wrapper writes remain outside this lane. Preserve all 371 sources and frozen manifests.
 - [ ] Run canonical G-Examples/G-Scriptmix wrappers in an authorized environment before controller integration; WP01 independent review and the full prepared Scriptmix suite passed, but wrapper writes remain outside this lane. Preserve all original 371 sources, six added Scriptmix routes and frozen manifests.
 - [ ] Implement and review later Scriptmix consolidation destinations/tabs before changing proposed acceptance or removing any old launcher; retain all 8,723 compatibility obligations and the minimum eighteen workflows.
 - [ ] Before a Git-less distribution removes menus, provision and audit its explicit hash-verified external menu archive; full inventory certification still requires Git.

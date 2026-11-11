@@ -44,7 +44,7 @@ def nodes(anchors, monkeypatch, app_sources):  # noqa: F811
     monkeypatch.setitem(sys.modules, "fontlabapp.contours.nodes.coordinates", api)
     spec.loader.exec_module(api)
     spec = importlib.util.spec_from_file_location(
-        "live_nodes", ROOT / "Scripts/Contours/Node Coordinates Panel.py"
+        "live_nodes", app_sources / "fontui/node_editor/coordinates.py"
     )
     menu = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(menu)
@@ -89,14 +89,14 @@ def test_no_font_is_diagnosed_complete_and_owned_close_disconnects_timer(
     assert all(slot not in signal.slots for signal, slot in connections)
 
 
-def test_renamed_node_menu_file_execution_starts_and_closes_its_owned_timer(nodes, monkeypatch):
+def test_renamed_node_menu_file_execution_starts_and_closes_its_owned_timer(nodes, monkeypatch, app_sources):
     import runpy
 
     monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
     _package, layers = nodes.font()
     selected(layers)
     namespace = runpy.run_path(
-        str(ROOT / "Scripts/Contours/Node Coordinates Panel.py"), run_name="__main__"
+        str(app_sources / "fontui/node_editor/coordinates.py"), run_name="__main__"
     )
     dialog = sys._fontlab_samples[namespace["KEY"]]
     assert dialog.timer.isActive(), "Running the menu file must start its owned live view"
