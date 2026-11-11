@@ -20,7 +20,7 @@ Safety: Reports are read-only. They do not change glyphs, layers, selection,
 history, preferences or the clipboard unless you choose to copy text. Run it
 from the main UI thread; the window owns its dialogs and releases them on close.
 
-Source: Adapted from Simon Cozens (MIT: Close But No Cigar, Dump to SVG), Alex Slobzheninov (Apache-2.0: Dangerous Offcurves, Point Counter) and Reza Bohloul (independent implementation, no licence declared: Point Counter (Master Layers)) on shared App report providers; FontLab additions Apache-2.0.
+Source: Adapted from Simon Cozens (MIT: Close But No Cigar, Dump to SVG), Alex Slobzheninov (Apache-2.0: Dangerous Offcurves, Point Counter) and an independent implementation inspired by Reza Bohloul (no licence declared, no code copied: Point Counter (Master Layers)) on shared App report providers; FontLab additions Apache-2.0.
 (fly.ap.fontui.geometry_audit). Requires the App with WP08 S60 assembly and
 fontlab-fly in FontLab 9 Python 3.11.
 
@@ -30,6 +30,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `429e5483b5f02dabd7041241e984e9730adf47f242c7b0bee78623be908e6521`
+SHA256: `9e0b55809ef1ac284f0b5248eba38fbe3ba4c089e19af74962115aa88ead778f`
 
-[Python source at `8852124d9fe2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8852124d9fe2b69cf663e1c6db8d6db4bf5e8454/Scripts/Reports/Geometry%20Audit.py)
+This source is not committed at `8852124d9fe2`; no immutable link is offered.
