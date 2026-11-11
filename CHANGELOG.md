@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Live evidence from A2 reports 16 and 17
+
+- Copy Layer Between Masters, Restore Backup Layer and Layer Cleanup passed live on an owned fixture with Apply/Undo/Redo and saved/reopened equality (report 17).
+- Copy Kerning Between Masters passed live (report 17). Build Suffix Substitution failed: see TODO S67-F.
+- New layers report isMasterLayer=False and autoLayer=False after create, Redo and reopen, and Copy Layers From Font cross-font Undo/Redo is proven (report 17; closes those parts of the milestone TODO row).
+- Anchor rounding: native rounding to integers confirmed; a +0.6/-0.6 round trip does not drift (report 16).
+
+
 ## 2026-11-11 — Issue 250 WP05: ten consolidated outline tools
 
 Replaced 49 S11–S20 menus with ten App-backed tools, leaving 240 active menus.
