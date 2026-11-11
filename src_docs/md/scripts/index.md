@@ -136,8 +136,10 @@ Choose a category, then a script. Each page retains its usage and exact source i
 
 - [Anchor and Component Inspector](font-ui-lab/anchor-and-component-inspector.md)
 - [Batch UFO Recipe Workbench](font-ui-lab/batch-ufo-recipe-workbench.md)
+- [Designspace Source Comparison](font-ui-lab/designspace-source-comparison.md)
 - [Detached Transform Preview](font-ui-lab/detached-transform-preview.md)
 - [Feature Source and Proof](font-ui-lab/feature-source-and-proof.md)
+- [Font Info and Vertical Metrics](font-ui-lab/font-info-and-vertical-metrics.md)
 - [Glyph Browser and Metrics](font-ui-lab/glyph-browser-and-metrics.md)
 - [Interpolation Preview](font-ui-lab/interpolation-preview.md)
 - [Kerning Group Explorer](font-ui-lab/kerning-group-explorer.md)

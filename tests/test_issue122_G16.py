@@ -15,6 +15,7 @@ from typing import Any, ClassVar
 from unittest.mock import create_autospec
 
 import pytest
+from _fgpackage_support import fg_package
 from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
@@ -737,6 +738,7 @@ class Package:
         self.owner, self.id, self.isNull = owner, 7, False
         self.masters, self.master = owner.masters, owner.master
         self.angles = {name: -12.0 for name in self.masters}
+        self.fgPackage = fg_package(owner.glyphs)
         self.switches: list[str] = []
 
     @property
@@ -1292,8 +1294,8 @@ def test_scripts_use_only_public_app_names() -> None:
 @pytest.mark.parametrize("title", NAMES)
 def test_panel_overrides_match_installed_public_hooks(world: Any, title: str) -> None:
     """Compare subclass calls with the installed base, using only native fakes."""
-    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402
     import fly.ap.contours.panel.model as outline_panel  # noqa: PLR0402
+    import fly.ap.masters.layers.selection as layer_selection  # noqa: PLR0402
 
     with pytest.raises(TypeError):
         layer_selection.capture()

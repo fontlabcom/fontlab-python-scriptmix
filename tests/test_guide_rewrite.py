@@ -1,17 +1,18 @@
 # this_file: tests/test_guide_rewrite.py
 """Complete editable guide controls with owned Qt-shaped widget doubles."""
 
-from conftest import app_module_name, app_source_path, register_app_module
 import importlib.util
 import sys
 from copy import deepcopy
 from types import SimpleNamespace as NS
 
 import pytest
-from menu_layout import released_bytes
+from conftest import app_module_name, app_source_path, register_app_module
 from test_components import components  # noqa: F401
 from test_guides import guides  # noqa: F401
 from test_masters import masters  # noqa: F401
+
+from menu_layout import released_bytes
 
 TOOLS = [
     ("Clear Glyph Guides", "ClearGuides"),
@@ -54,6 +55,7 @@ def rewrite(guides, monkeypatch, app_sources):  # noqa: F811
     base.qt.QtCore.Qt.ItemIsEditable = 2
     base.qt.QtCore.Qt.AlignTop = 32
     for name in [
+        "qt.safe",
         "edit_guards",
         "guide_records",
         "guide_rewrite",

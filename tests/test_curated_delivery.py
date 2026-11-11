@@ -17,7 +17,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 217 and len(actual) == 286, (len(rows), len(extra), len(actual), "expected 69 samples + 214 additional = 286 menu tools")
+    assert len(rows) == 69 and len(extra) == 219 and len(actual) == 288, (len(rows), len(extra), len(actual), "expected 69 samples + 219 additional = 288 menu tools")
     assert {path.parent.name for path in (ROOT / "Scripts").glob("*/*.py")} == {
         "Anchors", "Cleanup", "Components", "Contours", "Features", "Font Info",
         "Guides", "Kerning", "Masters", "Metrics", "Names", "Proof", "Reports", "Utilities", "Font UI Lab",
@@ -143,6 +143,7 @@ def test_app_floor_when_new_tools_or_layer_selection_then_one_value():
 
 def test_app_floor_when_installed_then_every_recorded_minimum_is_satisfied():
     from importlib.metadata import version
+
     from packaging.version import Version
 
     installed = Version(version("fontlab-fontlabapp"))
@@ -170,7 +171,7 @@ def test_proposed_consolidations_account_for_all_original_menus_without_removing
     from menu_layout import consolidation_rows
 
     rows = consolidation_rows(ROOT)
-    assert len(rows) == 277
+    assert len(rows) == 279
     candidates = json.loads((ROOT / "menu-consolidations.json").read_text())["candidates"]
     assert {row["source"]["path"] for row in rows}.isdisjoint(
         row["path"] for row in candidates
@@ -180,7 +181,7 @@ def test_proposed_consolidations_account_for_all_original_menus_without_removing
     } == {
         str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").glob("*/*.py")
     }
-    assert len({row["destination"]["path"] for row in rows if row["destination"]}) == 70
+    assert len({row["destination"]["path"] for row in rows if row["destination"]}) == 72
     assert sum(row["disposition"] == "retired" for row in rows) == 3
     assert all(row["acceptance"] == {
         "state": "proposed", "date": "2026-11-11", "behavior_parity": False, "native": False,

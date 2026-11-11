@@ -21,7 +21,7 @@ the ten missing composition implementations and all 8,723 obligations.
 
 ## WP01 follow-up and later consolidation packages
 
-The proposed transition ledger now accounts for all 277 current-main sources
+The proposed transition ledger now accounts for all 279 current-main sources
 without removing menus or replacing immutable provenance. The original 271
 mappings remain, plus six explicitly retained routes. The complete prepared
 Scriptmix suite passed (4,703 tests, two existing skips); current-main source
@@ -38,6 +38,10 @@ menus; WP12 retains installed/native/history/reopen qualification.
 ## Interpolation Preview remaining qualification
 
 Qualify workflow #6 with matching ordinary installed App/Scriptmix artifacts and native FontLab PythonQt: location controls, interpolation rendering, refusal diagnostics, captured-font identity and repeated Close. Compare complete font/history/selection/cache/dirty state before and after. Keep source/fake-font evidence separate from native acceptance; no font writes are part of this workflow.
+
+## C5 remaining qualification
+
+Qualify workflows 11 and 14 with matching installed App/Scriptmix artifacts in native FontLab. Verify captured source identity, report refresh, selection, painting and owned teardown; for Font Info also verify explicit Apply, Undo/Redo and saved reopen. Source/layer comparison does not load external designspace sources or interpolate outlines.
 
 ## Issue 234 workflows 1, 4 and 5 remaining qualification
 

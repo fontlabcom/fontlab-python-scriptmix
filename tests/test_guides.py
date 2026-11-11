@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: Apache-2.0
 """Actual guide-panel construction and controls with owned Qt-shaped widgets."""
 
-from conftest import app_module_name, app_source_path, register_app_module
 import importlib.util
 import math
 import sys
@@ -10,9 +9,11 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
-from menu_layout import released_bytes
+from conftest import app_module_name, app_source_path, register_app_module
 from test_components import components  # noqa: F401
 from test_masters import masters  # noqa: F401
+
+from menu_layout import released_bytes
 
 ROOT = Path(__file__).parents[1]
 
@@ -28,6 +29,7 @@ def guides(components, monkeypatch, app_sources):  # noqa: F811
 
     base.qt.QtGui.QComboBox = Combo
     for name in [
+        "qt.safe",
         "edit_guards",
         "_masters_dialog",
         "_guides_sources",

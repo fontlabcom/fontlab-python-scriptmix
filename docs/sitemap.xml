@@ -696,12 +696,22 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/designspace-source-comparison.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/detached-transform-preview.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/feature-source-and-proof.html</loc>
+        <lastmod>2026-11-11</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-ui-lab/font-info-and-vertical-metrics.html</loc>
         <lastmod>2026-11-11</lastmod>
         <changefreq>daily</changefreq>
     </url>

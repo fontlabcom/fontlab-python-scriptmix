@@ -36,6 +36,12 @@ are recorded in the lane's C6-REPORT.md (App repository); the orchestrator owns 
 
 Earlier WORK.md (351,871 bytes, SHA256 `184a196981e6f26ac94f24b9f222de1fc72a39e81ebf74acbf683a103304305e`) is archived on the owner's workspace data volume (not public) under `issue250/work-archives/` (Issue 250). Completed work is in CHANGELOG.md; open work is in TODO.md and PLAN.md.
 
+Final exact Scriptmix full suite: 4,621 passed, 2 existing skips in 57.76s. Catalogue counts/hashes and minimum menu documentation checks pass. Unrelated generated source pages restored; only the two new pages and their category links retained.
+
+
+## C5 current round
+
+Workflows 11 and 14 compose existing editors/reports and owned lifecycle with fake-font tests and Scriptmix menus. Paired menu tests: 4 passed, both new scripts 100% line and branch coverage. Changed Python files pass Ruff. Native checks remain in TODO.md; the final full-suite result is recorded below.
 
 ## Current round — Issue 234 workflows 1, 4 and 5
 

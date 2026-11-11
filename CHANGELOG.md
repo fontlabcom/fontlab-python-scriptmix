@@ -50,6 +50,14 @@ transition. Candidate indexed in `additional-tools.json` and
 `menu-consolidations.json`; menu pins now 211 additional tools / 280 scripts.
 Native acceptance and committed source links remain open.
 
+## 2026-11-11 — Package fakes expose `fgPackage` (Issue 250)
+
+App `dependency_values` now reads `package.fgPackage.glyphs` (App e4b69da), which 504 tests with owned package fakes could not provide (`AttributeError: ... 'fgPackage'`). New `tests/_fgpackage_support.py` supplies a live `fgPackage` view whose `.glyphs` holds the fake's glyphs in order; the `test_issue122_*` and `test_masters.py` fakes use it. `test_guides.py` and `test_guide_rewrite.py` also load the real `qt.safe`, because App `canvas_glyphs` imports it and the fixtures' stub `fontlabapp` is not a package. No assertion changed. Gate: 504 failed before, 4664 passed and 2 skipped after.
+
+## 2026-11-11 — WP01 ledger recounted to 279 after merging main (WPF)
+
+Main added Font Info and Vertical Metrics and Designspace Source Comparison. `menu-consolidations.json` now pins source commit 8022be9 (all 277 earlier source hashes verified unchanged there), adds both as retained proposed rows, and counts 279 sources and 72 destinations; `tests/test_curated_delivery.py` updated to match.
+
 ## 2026-11-11 — WP01 current-main inventory integration (WPF)
 
 Resolved the current-main/WP01 documentation and menu-layout test conflicts,
@@ -121,6 +129,10 @@ canonical gate pass. No native or installed FontLab acceptance is claimed. Full
 inventory certification requires Git; individual historical-byte recovery also
 supports an explicit external archive without Git.
 
+## 2026-11-11 — Metrics composite shift Undo/Redo verified live (Issue 250)
+
+The Metrics composite-shift TODO row is closed. Live in FontLab 9 on the owned Lato copy fixture, through the real panel model (`survey` then `commit`, glyph A, dx +7 and width +7, both masters): the commit made one Undo step, Undo and Redo restored the native bbox and advance exactly (A Hairline 42/1274 to 49/1281 and back), Aacute's components followed without a double shift (advance unchanged), and the saved VFJ readback matched in all three states. Evidence: `issue250/reports/a5-implementer2-report-12.md`, `live-tests/i2/r87f-live.json`. Scope limit: only glyph A and the metrics edit were tested; the broader "Qualify Metrics writers" row (all scopes, successive edits, full-font Undo/Redo, save/reopen) stays open.
+
 ## 2026-11-10 — Issue 234 inspector menu compositions (#16 and #18)
 
 Added Font UI Lab entries for UFO Roundtrip Inspector and Representation and
@@ -157,6 +169,10 @@ and passed the final run; its receipt and separate investigation remain open.
 - Measured full-scope baseline: 45 findings (E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0). README, AGENTS and PLAN agree; TODO row 106 remains open.
 - Official arm64 Python 3.11 runtime gate: before and after both 4,619 passed, 2 existing skips, 0 failures. All 4,621 sorted collected node IDs are identical. Independent code review approved; 2,857 assertion ASTs retained with only intentional variable renames normalized.
 - All 288 protected script/JSON hashes match. Generated documentation drift from the suite was restored; no production module changed, so production line/branch coverage is not applicable. No native acceptance or delivery is claimed. See C12-REPORT.md for commands and remaining checks.
+
+## 2026-11-10 — Issue 234 compositions 11 and 14 (C5)
+
+Added Font Info and Vertical Metrics and Designspace Source Comparison compositions with captured-font ownership and paired Scriptmix menu entries. Full offline suite: 4,621 passed and 2 existing skips; both new menus reach 100% line/branch coverage. Verification is recorded in WORK.md; native FontLab and installed-artifact qualification remain open.
 
 ## 2026-11-10 — Issue 234 master browser menus 1, 4 and 5
 

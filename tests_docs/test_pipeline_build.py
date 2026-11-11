@@ -47,7 +47,7 @@ cli()
             result = subprocess.run(['sh', str(root / 'src_docs/build.sh')], env=env, text=True, capture_output=True, check=False)
             self.assertEqual(result.returncode, 0, result.stderr)
             first = {str(p.relative_to(root / 'docs')): hashlib.sha256(p.read_bytes()).hexdigest() for p in (root / 'docs').rglob('*') if p.is_file()}
-            self.assertEqual(len(first), 428)
+            self.assertEqual(len(first), 430)
             self.assertTrue({
                 "scripts/proof/context-proof.html",
                 "scripts/reports/font-audit.html",

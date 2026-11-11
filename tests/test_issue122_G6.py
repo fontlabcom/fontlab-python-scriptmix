@@ -331,6 +331,7 @@ def panels(monkeypatch: pytest.MonkeyPatch, real_app: Any) -> Any:
         fgId=100,
         master="Regular",
         masters=["Regular"],
+        fgPackage=NS(glyphs=[]),
         info=NS(familyName="Example", unitsPerEm=1000, postscriptStemSnapV=[80]),
     )
     package.setMaster = lambda master: setattr(package, "master", master)
