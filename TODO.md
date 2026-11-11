@@ -34,7 +34,7 @@ remaining acceptance, source-link and native obligations stay open.
 
 - [ ] Qualify Issue 234 Open Fonts and Master Overview, Master Compatibility Browser and Node Counts Across Masters with matching installed artifacts and native PythonQt, including empty/stale fonts, preview, chooser changes, Close and complete font/history preservation.
 - [ ] Re-run the exact Issue 234 Scriptmix runtime recipe after build dependency resolution is available; rebuild the three new menu source links at their reviewed containing commit.
-- [ ] Native-qualify UFO Roundtrip Inspector with matching App/Fontport: temporary export/import, complete semantic report, source/history preservation and staging cleanup on Close/failure.
+- [ ] Native-qualify UFO Roundtrip Inspector failure paths: pending-edit preservation (not tested), staging cleanup on Close/failure (deadline or error) and repeated Close. The success path passed live (A2 report 21).
 - [ ] Native-qualify Representation and Notification Explorer: selected glyph representations, actual notification/cache status, source preservation and callback cleanup on Close.
 - [ ] Verify both inspector menus from ordinary installed artifacts and genuine containing-commit documentation links.
 
