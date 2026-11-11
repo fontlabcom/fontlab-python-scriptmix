@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — WP08c review fix I-1: catalogue pages and docs pins
+
+Added the five missing catalogue pages (Context Proof, Font Audit, Reference
+Image Viewer App, Geometry Audit, Master Structure Audit) with "Immutable source
+link pending a reviewed containing commit." instead of a link to an unpushed
+commit. `tests_docs` now pins the true 282 menus / 282 pages, 282 history
+fixtures and 424 built files; pending pages must not carry a blob link.
+
 ## 2026-11-11 — WP08c S60/S61 Geometry Audit and Master Structure Audit launchers (candidates)
 
 New candidate launchers `Scripts/Reports/Geometry Audit.py` and

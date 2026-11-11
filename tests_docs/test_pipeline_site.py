@@ -130,9 +130,9 @@ class SiteTests(unittest.TestCase):
         import ast
         from urllib.parse import quote
         menus = sorted((ROOT / 'Scripts').glob('*/*.py'))
-        self.assertEqual(len(menus), 279)
+        self.assertEqual(len(menus), 282)
         pages = [p for p in (ROOT / 'src_docs/md/scripts').glob('*/*.md') if p.name != 'index.md']
-        self.assertEqual(len(pages), 279)
+        self.assertEqual(len(pages), 282)
         for source in menus:
             data = source.read_bytes()
             description = ast.get_docstring(ast.parse(data))
@@ -142,6 +142,12 @@ class SiteTests(unittest.TestCase):
             self.assertEqual(len(matches), 1, source)
             text = matches[0].read_text()
             self.assertIn(description, text)
-            self.assertIn(quote(source.relative_to(ROOT).as_posix(), safe='/'), text)
+            relative = source.relative_to(ROOT).as_posix()
+            if ('Immutable source link pending a reviewed containing commit.' in text
+                    or 'Source link awaits a reviewed commit containing this new menu script.' in text):
+                # Candidate launchers carry no immutable link until a reviewed commit contains them.
+                self.assertNotRegex(text, r'/blob/[0-9a-f]{40}/')
+                continue
+            self.assertIn(quote(relative, safe='/'), text)
             self.assertRegex(text, r'/blob/[0-9a-f]{40}/')
             self.assertNotIn('codeinclude', text)
