@@ -37,4 +37,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `2b95cbdb7ba90741c8fdbeeced3e6d8c128323cbab7721588f956d6e6e097a10`
 
-[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Proof/Random%20Uppercase%20Nontext.py)
+[Python source at `ba6f2dfbe4d6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/ba6f2dfbe4d6759bc53d77827e64a3d6ccee96e3/Scripts/Proof/Random%20Uppercase%20Nontext.py)

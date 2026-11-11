@@ -42,4 +42,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `a221b9b7a01f96d394a878982d88f590775adf5bdd5836b7c26796461306cbee`
 
-[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Guides/Perpendicular%20Guides.py)
+[Python source at `ba6f2dfbe4d6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/ba6f2dfbe4d6759bc53d77827e64a3d6ccee96e3/Scripts/Guides/Perpendicular%20Guides.py)

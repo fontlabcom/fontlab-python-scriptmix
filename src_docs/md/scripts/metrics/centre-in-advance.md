@@ -54,4 +54,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `cbe25fe960397e75c949be4ef74bb66384a185b3dadd9192f8fff4b8fee34498`
 
-[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Metrics/Centre%20In%20Advance.py)
+[Python source at `ba6f2dfbe4d6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/ba6f2dfbe4d6759bc53d77827e64a3d6ccee96e3/Scripts/Metrics/Centre%20In%20Advance.py)

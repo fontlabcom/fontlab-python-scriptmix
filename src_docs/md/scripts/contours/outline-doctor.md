@@ -36,4 +36,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `aa245a80c122a259203c257192df856b8e8dd18e3e78614837a53cbfcd58a043`
 
-[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Contours/Outline%20Doctor.py)
+This source is not committed at `ba6f2dfbe4d6`; no immutable link is offered.
