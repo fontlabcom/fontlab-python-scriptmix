@@ -35,8 +35,10 @@ def test_candidates_when_indexed_then_do_not_promote_committed_transitions():
     assert {row["path"] for row in candidates} == {
         "Scripts/Proof/Context Proof.py", "Scripts/Reports/Font Audit.py",
         "Scripts/Utilities/Reference Image Viewer App.py",
+        "Scripts/Reports/Geometry Audit.py",
+        "Scripts/Reports/Master Structure Audit.py",
     }
-    assert len(candidates) == 3
+    assert len(candidates) == 5
     assert ledger["source_count"] == len(ledger["transitions"]) == 277
     assert ledger["source_commit"] == "f21e0ee471ab4fc4b0de9b803a80cf2058e66e51"
     for candidate in candidates:

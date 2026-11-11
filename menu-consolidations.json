@@ -6567,6 +6567,28 @@
       "test_routes": [
         "tests/test_wp08_reference_image_menu.py"
       ]
+    },
+    {
+      "path": "Scripts/Reports/Geometry Audit.py",
+      "sha256": "22445f159aa9f819592c6a0678e8a98f8f41d8e674a47893191b974f74b740f0",
+      "state": "candidate",
+      "containing_commit": null,
+      "behavior_parity": false,
+      "native": false,
+      "test_routes": [
+        "tests/test_wp08_geometry_audit_menu.py"
+      ]
+    },
+    {
+      "path": "Scripts/Reports/Master Structure Audit.py",
+      "sha256": "a4f9085767c0037720123cccb2b0b1432050cf333a5b7c99a3c9d358cbbc7e5a",
+      "state": "candidate",
+      "containing_commit": null,
+      "behavior_parity": false,
+      "native": false,
+      "test_routes": [
+        "tests/test_wp08_master_structure_audit_menu.py"
+      ]
     }
   ]
 }

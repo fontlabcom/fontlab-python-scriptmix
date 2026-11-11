@@ -16,8 +16,8 @@ def test_three_contour_candidates_extend_curated_menu_without_archive_dispatcher
     additional = json.loads((ROOT / "additional-tools.json").read_text())
     menus = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert len(sample_rows) == 69
-    assert len(additional) == 211, f"expected 211 additional tools, got {len(additional)}"
-    assert len(menus) == 280, f"expected 280 menu scripts, got {len(menus)}"
+    assert len(additional) == 213, f"expected 213 additional tools, got {len(additional)}"
+    assert len(menus) == 282, f"expected 282 menu scripts, got {len(menus)}"
     assert menus == {row["destination"] for row in sample_rows + additional}
     archive = json.loads((ROOT / "rescue-index.json").read_text())
     assert len(archive["menus"]) == 61

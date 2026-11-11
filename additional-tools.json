@@ -3642,5 +3642,33 @@
     "app_api": "fontlabapp.fontui.reference_images.show",
     "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
     "scope": "Original read-only image viewer in the shared App shell with About and retryable Close."
+  },
+  {
+    "title": "Geometry Audit",
+    "key": "wp08_geometry_audit",
+    "destination": "Scripts/Reports/Geometry Audit.py",
+    "destination_sha256": "22445f159aa9f819592c6a0678e8a98f8f41d8e674a47893191b974f74b740f0",
+    "kind": "candidate-consolidation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0 AND MIT",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.geometry_audit.show",
+    "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
+    "scope": "Five read-only geometry reports in one shared App shell with About and retryable Close."
+  },
+  {
+    "title": "Master Structure Audit",
+    "key": "wp08_master_structure_audit",
+    "destination": "Scripts/Reports/Master Structure Audit.py",
+    "destination_sha256": "a4f9085767c0037720123cccb2b0b1432050cf333a5b7c99a3c9d358cbbc7e5a",
+    "kind": "candidate-consolidation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0 AND MIT",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.master_structure_audit.show",
+    "provenance_pending": "Immutable source links require a reviewed commit containing this candidate and its App assembly; no release floor or accepted transition is asserted.",
+    "scope": "Two read-only master compatibility reports in one shared App shell with About and retryable Close."
   }
 ]

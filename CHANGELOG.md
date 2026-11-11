@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — WP08c S60/S61 Geometry Audit and Master Structure Audit launchers (candidates)
+
+New candidate launchers `Scripts/Reports/Geometry Audit.py` and
+`Scripts/Reports/Master Structure Audit.py`; the seven absorbed originals are
+unchanged. Indexed in `additional-tools.json` and `menu-consolidations.json`;
+pins now 213 additional tools / 282 scripts. Native acceptance and committed
+source links remain open.
+
 ## 2026-11-11 — WP08c S64 Reference Image Viewer App launcher (candidate)
 
 New candidate launcher `Scripts/Utilities/Reference Image Viewer App.py` opens the
