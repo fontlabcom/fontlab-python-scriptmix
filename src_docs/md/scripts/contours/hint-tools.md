@@ -27,4 +27,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `aed7f248d6285e1bf06d96f24137d1aa0cb22266eb30a05465927c7f98b15770`
 
-This source is not committed at `ba6f2dfbe4d6`; no immutable link is offered.
+[Python source at `6064e3e08a50`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/6064e3e08a50137c10a3e1789855917be9874916/Scripts/Contours/Hint%20Tools.py)

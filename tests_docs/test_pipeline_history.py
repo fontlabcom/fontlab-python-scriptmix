@@ -14,7 +14,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 GENERATOR = "src_docs/build.py"
 OUTPUT = "src_docs/md/scripts"
-COUNT = 279
+COUNT = 240
 
 
 class SourceHistoryTests(unittest.TestCase):
