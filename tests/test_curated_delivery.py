@@ -18,11 +18,11 @@ def test_active_menu_contains_only_indexed_practical_tools():
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
     historical = {row["destination"] for row in rows + extra}
-    assert (len(rows), len(extra), len(historical)) == (69, 210, 279)
+    assert (len(rows), len(extra), len(historical)) == (69, 219, 288)
     implemented = [row for row in consolidation_rows(ROOT) if row["acceptance"]["state"] == "implemented"]
     removed = {row["source"]["path"] for row in implemented}
     destinations = {row["destination"]["path"] for row in implemented if row["destination"]}
-    assert len(actual) == 279 - len(removed) + len(destinations - (historical - removed))
+    assert len(actual) == 288 - len(removed) + len(destinations - (historical - removed))
     assert {path.parent.name for path in (ROOT / "Scripts").glob("*/*.py")} == {
         "Anchors", "Cleanup", "Components", "Contours", "Features", "Font Info",
         "Guides", "Kerning", "Masters", "Metrics", "Names", "Proof", "Reports", "Utilities", "Font UI Lab",
@@ -175,12 +175,13 @@ def test_script_docstrings_when_public_then_no_process_jargon():
 def test_consolidations_preserve_all_original_identities_and_later_additions():
     rows = consolidation_rows(ROOT)
     assert len(rows) == 279
+    candidates = {row["path"] for row in json.loads((ROOT / "menu-consolidations.json").read_text())["candidates"]}
     historical = {
         row["destination"] for row in current_rows(ROOT)
         + json.loads((ROOT / "additional-tools.json").read_text())
     }
     sources = {row["source"]["path"] for row in rows}
-    assert len(historical) == 279 and sources == historical
+    assert len(historical) == 288 and sources == historical - candidates and candidates <= historical
     assert len({row["destination"]["path"] for row in rows if row["destination"]}) == 72
     assert sum(row["disposition"] == "retired" for row in rows) == 3
     assert all(row["acceptance"]["native"] is False for row in rows)

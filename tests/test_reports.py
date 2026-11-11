@@ -78,7 +78,7 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match():
     archive_destinations = {row["menu"] for row in archive}
     candidates = {row["rescued_original_menu"] for row in additional if row.get("rescued_original_menu")}
     assert ((set(destinations) | extra_destinations) & archive_destinations) == candidates
-    assert len(set(destinations) | extra_destinations) == 279
+    assert len(set(destinations) | extra_destinations) == 288
     assert active_menu_paths(ROOT) == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }

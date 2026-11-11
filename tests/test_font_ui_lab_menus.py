@@ -124,7 +124,7 @@ def test_new_rows_when_added_then_old_259_bodies_and_190_rows_are_exact():
         hashlib.sha256(json.dumps(payload, separators=(",", ":")).encode()).hexdigest()
         == OLD_MENUS_SHA
     )
-    assert len(rows) == 210 and len(historical) == 279
+    assert len(rows) == 219 and len(historical) == 288
     assert {str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").glob("*/*.py")} == active_menu_paths(ROOT)
     for title, module, key, digest in CASES:
         matching = [r for r in rows if r["key"] == key]
