@@ -3560,6 +3560,20 @@
     "scope": "Compare glyph point counts across the captured font masters."
   },
   {
+    "title": "Interpolation Preview",
+    "key": "font_ui_lab_interpolation_preview",
+    "destination": "Scripts/Font UI Lab/Interpolation Preview.py",
+    "destination_sha256": "9e761eae1faaee19eddaeb896f7b0c13a55aa596d3752d19069643686cec09fa",
+    "kind": "independent-original-workflow-implementation",
+    "counted_in_130_sample_migration": false,
+    "license": "Apache-2.0",
+    "source_body_redistributed": false,
+    "native_acceptance": "pending",
+    "app_api": "fontlabapp.fontui.interpolation_preview.show",
+    "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/interpolation_preview.py; no release floor is asserted.",
+    "scope": "Captured-font designspace location controls and existing read-only two-master linear interpolation preview; no font writes or instance creation."
+  },
+  {
     "title": "Font Info and Vertical Metrics",
     "key": "font_ui_lab_font_info_metrics",
     "destination": "Scripts/Font UI Lab/Font Info and Vertical Metrics.py",

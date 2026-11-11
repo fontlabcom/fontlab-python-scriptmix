@@ -12,7 +12,7 @@ Feature Source and Proof is available through `fontlabapp.fontui.feature_proof.s
 
 
 # FontLab practical scripts
-271 practical tools for FontLab 9: 69 sample adaptations and 202 additional
+277 practical tools for FontLab 9: 69 sample adaptations and 208 additional
 tools. Scripts inspect, proof and edit fonts through FontLab's native APIs,
 PythonQt and shared App helpers. The menu has 15 one-level categories.
 Current source includes Metrics, Names and Anchors editors; component writers;
@@ -181,7 +181,7 @@ validating changed dependencies. Cached builds with the same development
 version can be stale. These tests do not modify the live FontLab installation.
 
 Lint checks existing source without rewriting it. Ruff 0.14.10 reports
-420 existing findings (F811 310, E402 55, E731 20, E741 13, E702 10, F841 9, F401 1, E701 1, E401 1; Scripts 26, tests 393, tests_docs 1, menu_layout.py and src_docs/build.py 0) across the paths below; fixes remain open:
+45 existing findings (E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0) across the paths below; fixes remain open:
 
 ```sh
 uv run --no-project --python cpython-3.11-macos-aarch64-none \
@@ -284,3 +284,5 @@ A1 artifacts/ordinary installs and native history/save-reopen remain separate
 qualification gates; this addition asserts no release floor.
 
 Master Width Comparison captures the current registered FontLab font once when the menu or demo opens. Select an occurrence in the real glyph sequence to compare fractional master widths; missing layers remain explicit. The window reads stored backend state through its own borrowed view, preserving unfinished edits held by other wrappers. It never switches or closes the source font. Ordinary UFO fonts receive a visible refusal. Source checks do not establish native history, reopen or ordinary installed acceptance.
+
+Interpolation Preview combines designspace location controls with the existing read-only two-master outline preview. Run **Font UI Lab > Interpolation Preview**, enter a glyph name, choose two source masters and move the location controls along their segment. It reads the captured font without writing it; unsupported locations and incompatible outlines show a diagnostic. Native rendering, preservation and lifetime qualification remain pending.

@@ -2,6 +2,28 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-10 — Issue 234 workflow 6 Interpolation Preview (C6)
+
+Added the read-only designspace-location/two-master preview composition, paired
+App demo and Scriptmix menu, fake-font dispatch/lifecycle tests and catalogue/API
+entries. Reuses existing designspace controls and interpolation model/painter;
+unsupported off-segment locations and incompatible outlines remain explicit.
+No font writes, Fontport changes, commits or publication.
+
+Scriptmix full suite on the merged tree (origin/main 8e4738b plus this change, with App main 9826731-era siblings that carry the C2 modules; additional tools 205 to 206, menu scripts 274 to 275, recounted from the combined tree): 4,646 passed, 2 skipped, 0 failed. The pipeline pins in tests_docs (menu count 274 to 275, site files 415 to 416) were recounted. After merging origin/main 8e4738b the tests_docs suite passes (45 tests; the two modules needing pytest were not importable in the docs venv).Graph change analysis: risk low. Changed-file Ruff passes. Preview module 98% lines (158 statements, one missed) and 54 branches; sequence 100%; both launchers reach 100% of both.
+Graph change analysis (detect-changes, task-owned storage): risk low, zero affected processes, not partial. Independent source review passed. Native PythonQt rendering, whole-font/history/
+cache preservation and ordinary installed artifacts remain open in PLAN/TODO.
+An existing batch-recipe close/cancellation test failed in an earlier App full run
+and passed the final run; its receipt and separate investigation remain open.
+
+## 2026-11-11 — C12 tests-only Ruff cleanup
+
+- Removed all 349 requested test findings (F811 310, F841 9, E731 20, E702 10). Explicit fixture names and aliased imports retain the same host/boundary implementations and scopes; unused assignments retain their calls, lambdas become local functions, and compound statements are split.
+- Cleared 26 adjacent mechanical findings (E402 22, E741 3, E401 1) so all 30 changed test/helper files pass Ruff 0.14.10. No assertions, test identities, skip conditions or existing oracles were removed or weakened.
+- Measured full-scope baseline: 45 findings (E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0). README, AGENTS and PLAN agree; TODO row 106 remains open.
+- Official arm64 Python 3.11 runtime gate: before and after both 4,619 passed, 2 existing skips, 0 failures. All 4,621 sorted collected node IDs are identical. Independent code review approved; 2,857 assertion ASTs retained with only intentional variable renames normalized.
+- All 288 protected script/JSON hashes match. Generated documentation drift from the suite was restored; no production module changed, so production line/branch coverage is not applicable. No native acceptance or delivery is claimed. See C12-REPORT.md for commands and remaining checks.
+
 ## 2026-11-10 — Issue 234 compositions 11 and 14 (C5)
 
 Added Font Info and Vertical Metrics and Designspace Source Comparison compositions with captured-font ownership and paired Scriptmix menu entries. Full offline suite: 4,621 passed and 2 existing skips; both new menus reach 100% line/branch coverage. Verification is recorded in WORK.md; native FontLab and installed-artifact qualification remain open.
@@ -26,6 +48,19 @@ gate. The docs pipeline oracles (`tests_docs/test_pipeline_*`) now pin
 415 generated files, 274 menus/pages and the three new search pages; the locked
 ProperDocs build and 43 pipeline units pass. Native PythonQt, ordinary artifacts
 and reviewed-commit documentation links remain open.
+
+## 2026-11-11 — Catalogue immutable links are validated (Issue 250)
+
+`src_docs/build.py` now compares each menu's bytes with the blob committed at the link revision (`git ls-tree`, git blob id) and offers the immutable GitHub link only when they match. A dirty or untracked menu keeps its page and SHA256 but states it is not committed at that revision and gets no link. Fixture roots that are not git checkouts are unchanged. No generator framework added. New tests in `tests_docs/test_source_snapshot.py`: committed, dirty and untracked menus (11 pass; `build.py` coverage 83%). Official gate with `tests_docs/test_source_snapshot.py`: 4630 passed, 2 skipped, 0 failed. Against the real checkout all 271 committed Scripts match their blobs.
+
+## 2026-11-10 — Issue 250 live rows 85, 87 and 90 checked
+
+Measured against the running FontLab 9 on Desktop copies: the Font Info
+ttfautohint writer is impossible per font (global export options); the Metrics
+composite and base move leaves the composite unchanged and Master Metrics
+capHeight reads back exactly; native anchors round to integers on every step
+(all masters). The three TODO rows now state the evidence and the remaining
+concrete checks. No code changed.
 
 ## 2026-11-10 — Issue 241 existing demo entry points verified
 

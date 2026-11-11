@@ -906,7 +906,7 @@ def test_copy_to_masks_when_pending_updates_then_writes_and_keeps_queue(world: W
     module = load("Copy Outline To Mask")
     package = mask_font(world)
     facts = world.facts()
-    rows = module.survey(package, ["a"], ["Light"], True, facts)
+    module.survey(package, ["a"], ["Light"], True, facts)
     world.updates = [1]
     world.selection = ["a"]
     panel = module.panel_type()(None)
@@ -1548,7 +1548,7 @@ def test_run_when_pending_updates_then_writes_and_keeps_queue(world: World, caps
     empty_font(world)
     world.selection = ["a"]
     world.updates = [3]
-    result = module.run()
+    module.run()
     assert world.updates == [3] and LOG
     output = capsys.readouterr().out
     assert "(3,)" in output and "Queued glyph ids:" in output and "8537" in output and "modification dates" in output

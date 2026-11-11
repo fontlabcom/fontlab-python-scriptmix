@@ -2,6 +2,10 @@
 this_file: PLAN.md
 ---
 
+## Interpolation Preview remaining qualification
+
+Qualify workflow #6 with matching ordinary installed App/Scriptmix artifacts and native FontLab PythonQt: location controls, interpolation rendering, refusal diagnostics, captured-font identity and repeated Close. Compare complete font/history/selection/cache/dirty state before and after. Keep source/fake-font evidence separate from native acceptance; no font writes are part of this workflow.
+
 ## C5 remaining qualification
 
 Qualify workflows 11 and 14 with matching installed App/Scriptmix artifacts in native FontLab. Verify captured source identity, report refresh, selection, painting and owned teardown; for Font Info also verify explicit Apply, Undo/Redo and saved reopen. Source/layer comparison does not load external designspace sources or interpolate outlines.
@@ -80,6 +84,8 @@ Reconcile the isolated two-read-only-tool lineage with actual reviewed main rath
 Finish current source copy/dependencies, full offline and docs suites, unchanged frozen-pair/provenance checks, genuine distribution/privacy/licence audit and Examples destination pins. Retain optional archive/source-audit gaps until exact recoverable originals exist. Browser assets/transitive notices/source availability, live installation, native checks and site publication remain separate delivery claims. Current Issue230 authorizes reviewed scoped commits/pushes/integration; preserve owner installation/publication and destructive recovery gates.
 
 ## Development checks
+
+The remaining Ruff 0.14.10 baseline is 45 findings: E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0 (2026-11-11). Continue TODO row 106 with the remaining findings, preserving script hashes and manifests; script changes require separate provenance review. The C12 tests-only mechanical subset is complete.
 
 Use README prepared arm64 Python 3.11 runtime-cohort recipe, or set `SCRIPTMIX_APP_REQUIREMENT` to a reviewed App wheel/checkout before `sh test.sh`. Add matching peers with `SCRIPTMIX_EXTRA_REQUIREMENTS`. Run docs pipeline tests with the separate Python 3.13 hash lock; legacy docs checks additionally use pytest.
 

@@ -9,6 +9,19 @@ from menu_layout import current_rows, released_bytes
 
 import pytest
 
+import ast
+import hashlib
+import importlib.util
+import json
+import sys
+from types import SimpleNamespace as NS
+from test_masters import (
+    Item,
+    MasterWidget,
+    masters,  # noqa: F401
+)
+from test_proof import Box, Signal, Widget
+
 ROOT = Path(__file__).parents[1]
 TOOLS = [
     ("Metrics", "Spacing String Preview", "SpacingPreview"),
@@ -40,21 +53,6 @@ def test_complete_original_inspector_menu_exists(category, title, klass):
     assert (ROOT / "Scripts" / category / (title + ".py")).is_file(), (
         "Complete inspector missing"
     )
-
-
-import ast
-import hashlib
-import importlib.util
-import json
-import sys
-from types import SimpleNamespace as NS
-
-from test_masters import (
-    Item,
-    MasterWidget,
-    masters,  # noqa: F401
-)
-from test_proof import Box, Signal, Widget
 
 
 class Check(MasterWidget):
@@ -538,11 +536,11 @@ class GeometryBox(Box):
     def united(self, other):
         if not self.width() and not self.height():
             return other
-        l, t = min(self.left(), other.left()), min(self.top(), other.top())
+        left, t = min(self.left(), other.left()), min(self.top(), other.top())
         return GeometryBox(
-            l,
+            left,
             t,
-            max(self.right(), other.right()) - l,
+            max(self.right(), other.right()) - left,
             max(self.bottom(), other.bottom()) - t,
         )
 
@@ -690,13 +688,16 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
         )
         before = ast.parse(preserved_source(root, row["source"]).read_text())
         after = ast.parse((ROOT / row["destination"]).read_text())
-        constants = lambda t: {
-            n.targets[0].id: ast.literal_eval(n.value)
-            for n in t.body
-            if isinstance(n, ast.Assign)
-            and isinstance(n.targets[0], ast.Name)
-            and n.targets[0].id in ["TITLE", "KEY", "DEFAULT_TEXT", "MARGIN"]
-        }
+
+        def constants(t):
+            return {
+                n.targets[0].id: ast.literal_eval(n.value)
+                for n in t.body
+                if isinstance(n, ast.Assign)
+                and isinstance(n.targets[0], ast.Name)
+                and n.targets[0].id in ["TITLE", "KEY", "DEFAULT_TEXT", "MARGIN"]
+            }
+
         assert constants(before) == constants(after)
         before_names = {
             n.name

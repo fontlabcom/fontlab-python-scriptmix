@@ -139,6 +139,7 @@ Choose a category, then a script. Each page retains its usage and exact source i
 - [Detached Transform Preview](font-ui-lab/detached-transform-preview.md)
 - [Feature Source and Proof](font-ui-lab/feature-source-and-proof.md)
 - [Glyph Browser and Metrics](font-ui-lab/glyph-browser-and-metrics.md)
+- [Interpolation Preview](font-ui-lab/interpolation-preview.md)
 - [Kerning Group Explorer](font-ui-lab/kerning-group-explorer.md)
 - [Kerning Proof Workbench](font-ui-lab/kerning-proof-workbench.md)
 - [Master Compatibility Browser](font-ui-lab/master-compatibility-browser.md)

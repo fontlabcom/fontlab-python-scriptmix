@@ -4,6 +4,16 @@ this_file: WORK.md
 
 # Work in progress
 
+## Lane C6 — workflow 6 Interpolation Preview
+
+Implemented the owned, read-only two-master designspace preview and both launchers.
+Independent review passed, including the full-suite API-map/demo convention fixes.
+Scriptmix full suite: 4,626 passed, 2 skipped. Changed-file Ruff and whitespace checks pass.
+Coverage: preview 99.37% lines / 94.44% branches; sequence and both demos 100%.
+Native FontLab and ordinary-artifact qualification remain open. No Git mutations,
+Fontport writes or native operations. Exact commands, earlier failures and evidence
+are recorded in the lane's C6-REPORT.md (App repository); the orchestrator owns delivery.
+
 Earlier WORK.md (351,871 bytes, SHA256 `184a196981e6f26ac94f24b9f222de1fc72a39e81ebf74acbf683a103304305e`) is archived on the owner's workspace data volume (not public) under `issue250/work-archives/` (Issue 250). Completed work is in CHANGELOG.md; open work is in TODO.md and PLAN.md.
 
 Final exact Scriptmix full suite: 4,621 passed, 2 existing skips in 57.76s. Catalogue counts/hashes and minimum menu documentation checks pass. Unrelated generated source pages restored; only the two new pages and their category links retained.

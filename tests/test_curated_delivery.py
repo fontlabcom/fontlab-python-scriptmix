@@ -17,7 +17,7 @@ def test_active_menu_contains_only_indexed_practical_tools():
     expected = {row["destination"] for row in rows + extra}
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").rglob("*.py")}
     assert actual == expected, "Only practical indexed tools belong in the active menu"
-    assert len(rows) == 69 and len(extra) == 207 and len(actual) == 276, (len(rows), len(extra), len(actual), "expected 69 samples + 207 additional = 276 menu tools")
+    assert len(rows) == 69 and len(extra) == 208 and len(actual) == 277, (len(rows), len(extra), len(actual), "expected 69 samples + 208 additional = 277 menu tools")
     assert {path.parent.name for path in (ROOT / "Scripts").glob("*/*.py")} == {
         "Anchors", "Cleanup", "Components", "Contours", "Features", "Font Info",
         "Guides", "Kerning", "Masters", "Metrics", "Names", "Proof", "Reports", "Utilities", "Font UI Lab",

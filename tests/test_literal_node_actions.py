@@ -44,7 +44,7 @@ def load_menu(title):
     return module
 
 
-@pytest.fixture
+@pytest.fixture(name="boundary")
 def boundary(monkeypatch):
     path = ROOT.parent / "fontlab-fontlabapp/tests/test_node_duplicator_native.py"
     spec = importlib.util.spec_from_file_location("owned_node_fixtures", path)

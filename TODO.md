@@ -2,6 +2,8 @@
 this_file: TODO.md
 ---
 
+- [ ] Native-qualify workflow #6 Interpolation Preview: installed origins, designspace location changes, endpoint/mixed outlines, unsupported-location diagnostics, captured-font identity, complete font/history/selection/cache/dirty preservation and repeated Close; qualify ordinary artifacts separately.
+
 - [ ] Native-qualify Font Info and Vertical Metrics with matched artifacts: captured font, explicit Apply/readback, report refresh, Undo/Redo, saved reopen and owned teardown.
 - [ ] Native-qualify Designspace Source Comparison with matched artifacts: explicit source/layer selection, metrics and compatibility summaries, complete font preservation and owned teardown.
 
@@ -88,12 +90,12 @@ this_file: TODO.md
 
 - [ ] Qualify Metrics > Alignment Zones, Guides > Suggest Zones From Overshoots and Font Info > Master Metrics Table on owned fonts: one Undo step per Apply, Undo/Redo, refusals in a Glyph window, row refusals, tags/lock of replaced zones, save/reopen; fl#8574 guide display after Undo.
 
-- [ ] Add a public App Font Info ttfautohint writer; then restore the stem tool.
+- [ ] Font Info ttfautohint writer: live check (2026-11-10) found the claim stands; `Info` has no ttfautohint attributes and the options are global export options (`fgOpt_TTFAutohint`), so a per-font writer is impossible without a native per-font route. Ask Fontlab/fl for one, then restore the stem tool.
 
-- [ ] Resolve App Metrics planning when a selected composite and its base both move; prove no double shift and measure Master Metrics Table capHeight writes.
+- [ ] Metrics composite shift: only the saved-VFJ readback is live-proven (bare `shift_and_set` +7 on Lato A; Aacute's components, offset and advance unchanged; bbox readback may be stale). The panel's own write path and its Undo/Redo are not verified and are tracked by row 48 (Metrics writers) and App TODO row 71.
 
 
-- [ ] Resolve App anchor read-back tolerance and sub-unit moves swallowed by native rounding.
+- [ ] Anchor rounding: live on Lato A, all masters, native anchors round to integers on every `applyTransform`: +0.4 and +0.2 steps are swallowed, a y +0.6 step rounds up, and a +0.6/-0.6 round trip drifts x by -1. `READ_BACK_TOLERANCE` is 0.5 and the Metrics panel passes only integer dx, so no defect is open there. Remaining: pin that fractional dx is never passed to `shift_and_set` (add a test) and decide whether the read-back should report the drift.
 
 - [ ] Limit App kerning numeric validation to changed masters while preserving persistence-range checks.
 
@@ -109,7 +111,7 @@ this_file: TODO.md
 
 - [ ] Keep Examples destination hashes current after Scriptmix changes; repeat the cross-repository pin check at final delivery.
 
-- [ ] Resolve existing Ruff findings without unrelated historical-source rewrites.
+- [ ] Resolve the remaining 45 Ruff 0.14.10 findings without unrelated historical-source rewrites (Scripts 26, tests 18, tests_docs 1). C12 completed the tests-only mechanical subset; keep row 106 open for the hash-pinned Scripts remainder and remaining test findings, with separate provenance review before script edits.
 
 - [ ] Complete browser-asset transitive provenance, full notices and source-availability checks before site publication.
 
@@ -133,7 +135,6 @@ this_file: TODO.md
 - [ ] Bind the accepted A0/I1 payload to reviewed containing commits and truthful source links; requalify any later changed payload.
 - [ ] Qualify Tabular Width Audit native painting, history, cleanup and whole-font preservation in an admitted owned lane.
 
-- [ ] Fix catalogue immutable-link validation by checking committed menu paths and bytes, with dirty/untracked-menu regressions; refuse or defer false links without adding a new generator framework.
 
 - [ ] Qualify one matched A1 batch of complete private archives, genuine wheel/sdist and two fresh ordinary prefixes, including real installed Kerning Proof and Kerning Group Explorer workflows, exact origins/RECORD and retained regression/coverage gates; keep #8/#9 ordinary acceptance pending until then.
 - [ ] Qualify Kerning Proof native target/master, painting, whole-font and unrelated-font preservation, history, Undo/Redo, save/reopen and cleanup in an admitted owned lane; retain separate containing-commit, canonical, owner-installation, delivery and publication gates.

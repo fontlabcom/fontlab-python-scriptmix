@@ -6,6 +6,10 @@ from pathlib import Path
 
 import pytest
 
+import importlib.util
+import sys
+from types import SimpleNamespace as NS
+
 ROOT = Path(__file__).parents[1]
 TITLES = [
     "Case Pairs",
@@ -21,11 +25,6 @@ def test_requested_names_tool_exists(title):
     assert (ROOT / "Scripts/Names" / (title + ".py")).is_file(), (
         "Requested Names tool missing"
     )
-
-
-import importlib.util
-import sys
-from types import SimpleNamespace as NS
 
 
 @pytest.fixture
@@ -499,7 +498,10 @@ def test_specimen_draw_fits_tall_accents_and_side_overhang_inside_proof(
     )
     specimen.path = NS(boundingRect=lambda: rect)
     transforms, lines, labels = {}, [], []
-    noop = lambda *args: None
+
+    def noop(*args):
+        return None
+
     painter = NS(
         setRenderHint=noop,
         setPen=noop,
