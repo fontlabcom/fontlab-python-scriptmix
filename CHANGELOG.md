@@ -7,10 +7,16 @@ this_file: CHANGELOG.md
 - The TODO row "Limit App kerning numeric validation to changed masters while preserving persistence-range checks" was this file's TODO:80 when App 885ba0b (2026-11-09) cited "Scriptmix TODO:80"; Scriptmix 25c86b4d, the main commit at that time, has the same text on line 80.
 - App origin/main 7f96170 implements it: `src/fontlabapp/kerning/batch.py:148-157` builds `changed` (masters whose desired pairs differ from the read-back) and passes only `changed` to `_validate_persistence_range`. `tests/test_kerning_batch.py:404` (`test_untouched_master_outside_range_when_other_master_written_then_allowed`) and `:413` (`test_changed_master_with_existing_outside_value_when_other_pair_written_then_refused`) cover both sides; 63 passed.
 - Mutant: passing `desired` (all masters) instead of `changed` fails `:404` (1 failed, 62 passed). Row closed.
+- Scope note (reviewer2): only the persistence-range check is limited to changed masters; the whole-number check still runs on all masters.
 
 ## 2026-11-11 — Round Advances step 1 verified by a mutant (Issue 250)
 
 - Rechecked the closed row "Extend Round Advances to accept step 1" (66a2fdad). `test_round_advances_when_step_is_one_then_whole_unit_advances` in `tests/test_issue122_S1.py` checks the control, not the docstring: it asserts the spinner range is (1, 100), sets 1 and expects width 101.4 to plan 101, then sets 2 and expects 102. With `self.spin(2, 100, ...)` restored in `Scripts/Metrics/Round Advances.py` the test fails (`assert (2, 100) == (1, 100)`); unchanged, all 4 Round Advances tests pass. The App helper `MetricsPanel.spin` passes `low` to `QSpinBox.setRange`, so the real control accepts 1. Native FontLab use stays with the Metrics qualification rows.
+## 2026-11-11 — Tests and tests_docs Ruff 0.14.10 findings cleared (Issue 250)
+
+- Ruff 0.14.10 (AGENTS.md scope) goes 45 -> 26 findings: all 18 in `tests` and the one in `tests_docs` are fixed, with no `Scripts` change (provenance-pinned). `tests/test_features.py`, `test_kerning.py`, `test_kerning_editors.py` and `test_proof.py` move their mid-file imports (E402) to the top; `test_case_coverage.py:76` splits an E701 one-liner; `test_issue122_G9.py:1238` renames `l` to `layer` (E741). In `tests_docs/test_pipeline_english.py` the `import properdocs.replacement` is kept with a `noqa: F401` and a reason: deleting it (Ruff's autofix) made the real-config test fail, so the import has a side effect.
+- README.md and AGENTS.md quote the same baseline (26); `tests/test_lint_baseline_docs.py` pins that.
+- Test counts are unchanged: 4861 collected in `tests` before and after; `tests_docs` shows the same two pre-existing missing-`pytest` import errors before and after. The remaining 26 are in 8 hash-pinned Scripts; TODO rows 141 and 183 are merged into one row with a next check.
 
 ## 2026-11-11 — UFO Roundtrip Inspector verified live (A2 live report 21, Issue 250)
 

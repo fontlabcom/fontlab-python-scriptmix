@@ -2,6 +2,11 @@
 """Independent checks for the six complete feature tools and safe writes."""
 
 from conftest import app_module_name, app_namespace, app_source_path, register_app_module
+import importlib.util
+import os
+import sys
+from importlib.metadata import PackageNotFoundError, distribution
+from types import SimpleNamespace as NS
 from pathlib import Path
 
 import pytest
@@ -22,13 +27,6 @@ def test_requested_tool_exists(title):
     assert (ROOT / "Scripts/Features" / (title + ".py")).is_file(), (
         "Requested complete feature tool missing"
     )
-
-
-import importlib.util
-import os
-import sys
-from importlib.metadata import PackageNotFoundError, distribution
-from types import SimpleNamespace as NS
 
 
 def fontport_sources() -> Path:
