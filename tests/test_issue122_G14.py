@@ -14,6 +14,7 @@ from unittest.mock import create_autospec
 
 import pytest
 from conftest import app_names_used, check_real_app_names
+from menu_layout import _menu_bytes
 
 ROOT = Path(__file__).parents[1]
 PATHS = [
@@ -46,7 +47,8 @@ def patch_api(monkeypatch: Any, module: Any, name: str, implementation: Any) -> 
 
 
 def load(index: int) -> Any:
-    spec = importlib.util.spec_from_file_location(f"g14_{index}", PATHS[index])
+    source = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/shape_generators/myanmar.py" if index == 0 else PATHS[index]
+    spec = importlib.util.spec_from_file_location(f"g14_{index}", source)
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
@@ -67,7 +69,7 @@ def test_scripts_use_only_public_app_names() -> None:
 
 @pytest.mark.parametrize("index", range(2))
 def test_public_contract(index: Any) -> None:
-    tree = ast.parse(PATHS[index].read_text(), feature_version=(3, 11))
+    tree = ast.parse(_menu_bytes(ROOT, str(PATHS[index].relative_to(ROOT))).decode(), feature_version=(3, 11))
     doc = ast.get_docstring(tree)
     assert "Simon Cozens" in doc and "MIT" in doc
     assert "https://github.com/simoncozens/GlyphsScripts" in doc
@@ -336,7 +338,9 @@ def template(master: str = "Regular", right: float = 200, advance: float = 50) -
 def drawing_environment(monkeypatch: Any) -> Any:
     import fly
 
-    monkeypatch.setitem(fly.__dict__, "qt", NS(QtGui=NS(QTransform=Matrix)))
+    qt = NS(QtGui=NS(QTransform=Matrix))
+    monkeypatch.setitem(fly.__dict__, "qt", qt)
+    monkeypatch.setitem(sys.modules, "PythonQt", qt)
 
 
 def test_template_measure_and_copy_preserve_source(drawing_environment: Any) -> None:
@@ -384,7 +388,7 @@ def package_with_template() -> Any:
 def test_ra_survey_and_jobs_keep_existing_continue_others(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
 
     package, glyphs = package_with_template()
     glyphs["medial-ra.w300"] = Glyph("medial-ra.w300", Layer())
@@ -404,7 +408,7 @@ def test_ra_survey_and_jobs_keep_existing_continue_others(
 
 
 def test_ra_auto_candidates_need_consent(drawing_environment: Any) -> None:
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
 
     m = load(0)
     package, glyphs = package_with_template()
@@ -424,7 +428,7 @@ def test_ra_auto_candidates_need_consent(drawing_environment: Any) -> None:
 def test_ra_empty_consonant_set_still_makes_omission_variants(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
 
     package, _ = package_with_template()
     rows = load(0).survey(package, "ra", [], 5, history.auto_facts([]), False)
@@ -436,10 +440,10 @@ def test_ra_empty_consonant_set_still_makes_omission_variants(
 def test_ra_real_creation_and_geometry_history(
     drawing_environment: Any, monkeypatch: Any, write_fails: bool
 ) -> None:
-    import fly.ap.core.edit_guards as edit_guards  # noqa: PLR0402
-    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
-    import fly.ap.glyphs.creation as glyph_creation  # noqa: PLR0402
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.edit_guards as edit_guards  # noqa: PLR0402 - avoid native parent fallback
+    import fly.ap.core.history.glyphs as history
+    import fly.ap.glyphs.copies as glyph_copies
+    import fly.ap.glyphs.creation as glyph_creation
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -514,7 +518,7 @@ def test_ra_real_creation_and_geometry_history(
 def test_save_connection_uses_source_snapshot_and_exact_references(
     monkeypatch: Any,
 ) -> None:
-    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402
+    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402 - avoid native parent fallback
 
     m = load(1)
     package = object()
@@ -537,7 +541,7 @@ def test_save_connection_uses_source_snapshot_and_exact_references(
 
 
 def test_save_failure_names_undo_recovery(monkeypatch: Any) -> None:
-    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402
+    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402 - avoid native parent fallback
 
     def broken(*args: Any, **kwargs: Any) -> Any:
         raise RuntimeError("write failed")
@@ -687,9 +691,9 @@ class Widget:
 @pytest.fixture
 def connection_panel(monkeypatch: Any) -> Any:
     import fly
-    import fly.ap.anchors.writer as anchor_writer  # noqa: PLR0402
-    import fly.ap.core.scripting as scripting  # noqa: PLR0402
-    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402
+    import fly.ap.anchors.writer as anchor_writer
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - avoid native parent fallback
+    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402 - avoid native parent fallback
 
     layer = Layer()
     layer.preview_anchors = {"entry": (100, 200), "exit": (40, 70)}
@@ -824,7 +828,7 @@ def test_panel_deleted_glyph_refuses_with_reload_guidance(
 
 @pytest.mark.parametrize("index", range(2))
 def test_main_dispatches_through_owned_registry(index: int, monkeypatch: Any) -> None:
-    import fly.ap.core.scripting as scripting  # noqa: PLR0402
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - avoid native parent fallback
 
     module = load(index)
     sentinel = object()
@@ -843,8 +847,8 @@ def test_creation_panel_uses_shared_hooks(
     monkeypatch: Any, drawing_environment: Any
 ) -> None:
     import fly
-    import fly.ap.glyphs.copies as glyph_copies  # noqa: PLR0402
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
+    import fly.ap.glyphs.copies as glyph_copies
 
     class Base(Widget):
         def add_row(self, *args: Any) -> Any:
@@ -880,6 +884,8 @@ def test_creation_panel_uses_shared_hooks(
             NS(name="ka", unicodes=[0x1000]), NS(name="ra", unicodes=[0x103C])
         ])),
     )
+    monkeypatch.setitem(sys.modules, "PythonQt", fly.qt)
+    monkeypatch.setitem(sys.modules, "fontlab", sys.modules["fontlabapp"].fontlab)
     ra = load(0).panel_type()()
     ra.names = ["ra"]
     ra.build_controls()
@@ -1003,7 +1009,7 @@ def add_bold_master(package: Any, glyphs: dict[str, Any]) -> None:
 def test_multimaster_same_members_have_own_extension_and_advance(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1037,7 +1043,7 @@ def test_multimaster_same_members_have_own_extension_and_advance(
 def test_bad_master_keeps_every_target_glyph(
     drawing_environment: Any, damage: str
 ) -> None:
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1066,7 +1072,7 @@ def test_bad_master_keeps_every_target_glyph(
 def test_small_width_group_is_named_and_kept_not_silently_dropped(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
 
     package, glyphs = package_with_template()
     glyphs["ka"].layers[0].advanceWidth = 100
@@ -1088,7 +1094,7 @@ def test_small_width_group_is_named_and_kept_not_silently_dropped(
 def test_missing_consonant_in_one_master_keeps_group_only(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1108,7 +1114,7 @@ def test_missing_consonant_in_one_master_keeps_group_only(
 def test_current_master_membership_is_reused_after_other_master_order_changes(
     drawing_environment: Any,
 ) -> None:
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1161,7 +1167,7 @@ def test_piece_roles_report_named_errors(drawing_environment: Any, damage: str) 
 
 
 def test_different_master_node_topology_keeps_targets(drawing_environment: Any) -> None:
-    import fly.ap.core.history.glyphs as history  # noqa: PLR0402
+    import fly.ap.core.history.glyphs as history
 
     package, glyphs = package_with_template()
     add_bold_master(package, glyphs)
@@ -1253,7 +1259,7 @@ def test_all_faked_app_functions_have_installed_signatures() -> None:
         ("fontlabapp.anchors.writer", "anchor_points"),
     }.issubset(names)
     # The wrapper enforces the real keyword-only reference and Undo arguments.
-    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402
+    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402 - avoid native parent fallback
 
     fake = create_autospec(feature_blocks.write_feature_blocks, spec_set=True)
     assert inspect.signature(fake) == inspect.signature(
@@ -1266,7 +1272,7 @@ def test_all_faked_app_functions_have_installed_signatures() -> None:
 def test_explicit_fly_app_paths_have_no_private_names() -> None:
     """Also catch full fly.ap.module._member paths without import aliases."""
     for path in PATHS:
-        for node in ast.walk(ast.parse(path.read_text())):
+        for node in ast.walk(ast.parse(_menu_bytes(ROOT, str(path.relative_to(ROOT))).decode())):
             if not isinstance(node, ast.Attribute):
                 continue
             parts = []
@@ -1276,3 +1282,10 @@ def test_explicit_fly_app_paths_have_no_private_names() -> None:
                 current = current.value
             if isinstance(current, ast.Name) and current.id == "fly" and parts[0] == "ap":
                 assert all(not part.startswith("_") for part in parts), (path, parts)
+
+
+def test_current_medial_keeps_public_safety_contract(monkeypatch):
+    current = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/shape_generators/myanmar.py"
+    monkeypatch.setitem(globals(), "_menu_bytes", lambda root, path: current.read_bytes())
+    test_public_contract(0)
+    test_explicit_fly_app_paths_have_no_private_names()

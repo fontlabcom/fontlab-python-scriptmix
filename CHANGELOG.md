@@ -2,6 +2,33 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-11 — Issue 250 WP05: ten consolidated outline tools
+
+Replaced 49 S11–S20 menus with ten App-backed tools, leaving 240 active menus.
+Preserved the frozen 69 sample and 210 additional identities, the 271-source
+ledger and its three later additions. All 49 transitions retain source commits
+and hashes, record exact destination hashes/tabs and remain native-unaccepted.
+The six immutable provenance manifests are byte-identical. Historical 259-body
+and 190-row aggregate hash oracles remain intact; behavioral tests now exercise
+the current App implementations rather than executing archived scripts.
+
+Full prepared arm64 Python 3.11 gates: Scriptmix **4,792 passed, two existing
+skips**; App **12,473 passed, 28 existing skips**. The final migration checks
+passed **74 tests with one existing optional skip**. All ten launchers reach
+100% lines/branches; the complete changed resolver reaches **186/190 lines
+(97.89%) and 97/102 branches (95.10%)**, without exclusions. All 77 changed App
+modules also meet 80% lines and branches separately. Pinned Ruff 0.14.10 and
+uvx with the same default rule scope pass all 139 changed Python files.
+Independent implementation, migration and final coverage review completed.
+
+Restored test-generated catalogue churn instead of retaining false immutable
+links to uncommitted launchers. WP11 must produce genuine containing-commit
+pages, Git-less historical archives and installed-menu cleanup. Canonical
+quality wrappers remain unavailable because they write outside this lane;
+fresh dependency provisioning failed on PyPI DNS. Prepared gates do not imply
+native, ordinary-installation or publication acceptance. No Git mutations or
+native font edits were performed.
+
 ## 2026-11-11 — WP01 ledger recounted to 279 after merging main (WPF)
 
 Main added Font Info and Vertical Metrics and Designspace Source Comparison. `menu-consolidations.json` now pins source commit 8022be9 (all 277 earlier source hashes verified unchanged there), adds both as retained proposed rows, and counts 279 sources and 72 destinations; `tests/test_curated_delivery.py` updated to match.

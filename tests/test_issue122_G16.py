@@ -16,6 +16,7 @@ from unittest.mock import create_autospec
 
 import pytest
 from conftest import app_names_used, check_real_app_names
+from _wp05_outline_routes import route_path, source_text
 
 ROOT = Path(__file__).parents[1]
 FOLDER = ROOT / "Scripts/Contours"
@@ -29,7 +30,7 @@ NAMES = (
 
 def load(title: str) -> dict[str, Any]:
     """Load one menu without running main."""
-    return runpy.run_path(str(FOLDER / f"{title}.py"), run_name="inspection")
+    return runpy.run_path(str(route_path(title)), run_name="inspection")
 
 
 ISOLATED = ("fly", "fontlabapp", "echopy")  # packages this file re-imports for itself
@@ -674,10 +675,8 @@ def native_world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.flGlyph = NS(updatedFgGlyphs=lambda: tuple(w.pending))
     fontlab.FontMetrics = lambda package, master: NS(xHeight=w.x_height)
     fontgate = ModuleType("fontgate")
-
     def names():
         return list(w.glyphs)
-
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:
@@ -803,7 +802,7 @@ def seed(world: Any, title: str) -> list[Any]:
 
 @pytest.mark.parametrize("title", NAMES)
 def test_public_contract(title: str) -> None:
-    source = (FOLDER / f"{title}.py").read_text()
+    source = source_text(title)
     tree = ast.parse(source, feature_version=(3, 11))
     assert source.startswith(f"# this_file: Scripts/Contours/{title}.py\n")
     doc = ast.get_docstring(tree)
@@ -1092,7 +1091,7 @@ def test_overlap_previous_side_translation_and_zero_angle(world: Any) -> None:
 @pytest.mark.parametrize("title", NAMES)
 def test_fresh_main_guard_and_close_releases_signals(world: Any, title: str) -> None:
     seed(world, title)
-    ns = runpy.run_path(str(FOLDER / f"{title}.py"), run_name="__main__")
+    ns = runpy.run_path(str(route_path(title)), run_name="__main__")
     import sys
 
     panel = sys._fontlab_samples[ns["KEY"]]
@@ -1311,14 +1310,14 @@ def test_panel_overrides_match_installed_public_hooks(world: Any, title: str) ->
         ] == [
             (p.name, p.kind, p.default) for p in expected.parameters.values()
         ], (name, actual, expected)
-    for node in ast.walk(ast.parse((FOLDER / f"{title}.py").read_text())):
+    for node in ast.walk(ast.parse(source_text(title))):
         if isinstance(node, ast.Attribute) and isinstance(node.value, ast.Name):
             assert not (node.value.id == "self" and node.attr.startswith("_")), node.attr
 
 
 def test_explicit_fly_app_paths_have_no_private_names() -> None:
     """Also catch full fly.ap.module._member paths without import aliases."""
-    for path in [FOLDER / f"{title}.py" for title in NAMES]:
+    for path in [route_path(title) for title in NAMES]:
         for node in ast.walk(ast.parse(path.read_text())):
             if not isinstance(node, ast.Attribute):
                 continue

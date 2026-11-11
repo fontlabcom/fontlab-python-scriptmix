@@ -14,6 +14,8 @@ from types import SimpleNamespace as NS
 from typing import Any, ClassVar
 
 import pytest
+from menu_layout import released_bytes
+import json
 from _message_box_support import assert_owned_message, message_box_type
 from conftest import app_names_used, check_real_app_names
 
@@ -792,10 +794,8 @@ def native_world(monkeypatch: pytest.MonkeyPatch) -> World:
     fontlab.flGlyph = NS(updatedFgGlyphs=lambda: tuple(w.pending))
     fontlab.FontMetrics = lambda package, master: NS(xHeight=w.x_height)
     fontgate = ModuleType("fontgate")
-
     def names():
         return list(w.glyphs)
-
     fl = NS(Selected=lambda index: names()[index] in w.selected)
 
     class FLFont:
@@ -850,13 +850,20 @@ def square(x: float, y: float, size: float, clockwise: bool = False) -> Spec:
 
 @pytest.mark.parametrize("title", TITLES)
 def test_menu_file_exists(title: str) -> None:
-    assert (ROOT / "Scripts" / "Contours" / f"{title}.py").is_file()
+    target = "Node Editor" if title == "Node Duplicator" else "Transform Studio"
+    assert (ROOT / "Scripts" / "Contours" / f"{target}.py").is_file()
+
+
+def historical_text(title):
+    rows = json.loads((ROOT / "additional-tools.json").read_text())
+    row = next(row for row in rows if row["destination"] == f"Scripts/Contours/{title}.py")
+    return released_bytes(ROOT, row).decode()
 
 
 def load(title: str) -> dict[str, Any]:
-    return runpy.run_path(
-        str(ROOT / "Scripts/Contours" / f"{title}.py"), run_name="inspection"
-    )
+    if title == "Node Duplicator":
+        return runpy.run_path(str(ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/fontui/node_editor/duplicate.py"), run_name="inspection")
+    return runpy.run_module("fontlabapp.fontui.outline_routes.smart_slant", run_name="inspection")
 
 
 @pytest.fixture
@@ -936,8 +943,12 @@ def panel(title: str) -> Any:
 
 
 @pytest.mark.parametrize("title", TITLES)
-def test_real_fly_app_names(title: str) -> None:
-    check_real_app_names(app_names_used([ROOT / "Scripts/Contours" / f"{title}.py"]))
+def test_real_fly_app_names(title: str, tmp_path) -> None:
+    source = tmp_path / f"{title}.py"
+    source.write_text(historical_text(title))
+    check_real_app_names(app_names_used([source]))
+    target = "Node Editor" if title == "Node Duplicator" else "Transform Studio"
+    check_real_app_names(app_names_used([ROOT / "Scripts/Contours" / f"{target}.py"]))
 
 
 @pytest.mark.parametrize("title", TITLES)
@@ -1012,7 +1023,7 @@ def test_ignored_native_write_is_detected(world: Any, title: str) -> None:
 
 @pytest.mark.parametrize("title", TITLES)
 def test_public_text_and_native_member_names(title: str) -> None:
-    text = (ROOT / "Scripts/Contours" / f"{title}.py").read_text()
+    text = historical_text(title)
     tree = ast.parse(text)
     for node in ast.walk(tree):
         if isinstance(node, ast.ClassDef):
@@ -1258,7 +1269,7 @@ def test_capture_is_once_per_plan_and_shared_between_scope_and_planner(
 
 @pytest.mark.parametrize("title", TITLES)
 def test_menu_header_is_present(title: str) -> None:
-    source = (ROOT / "Scripts/Contours" / f"{title}.py").read_text()
+    source = historical_text(title)
     assert source.splitlines()[2] == f"# FLM: Contours · {title}"
 
 

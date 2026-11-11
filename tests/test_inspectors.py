@@ -5,7 +5,7 @@
 from conftest import app_module_name, app_source_path, register_app_module
 from pathlib import Path
 from _migration_history import preserved_source
-from menu_layout import current_rows, released_bytes
+from menu_layout import _menu_bytes, current_rows, released_bytes
 
 import pytest
 
@@ -15,12 +15,14 @@ import importlib.util
 import json
 import sys
 from types import SimpleNamespace as NS
+
 from test_masters import (
     Item,
     MasterWidget,
     masters,  # noqa: F401
 )
 from test_proof import Box, Signal, Widget
+
 
 ROOT = Path(__file__).parents[1]
 TOOLS = [
@@ -29,6 +31,13 @@ TOOLS = [
     ("Contours", "Contour Order View", "ContourOrder"),
     ("Contours", "Node Statistics", "NodeStatistics"),
 ]
+
+
+def inspector_path(category, title):
+    moved = {"Contour Order View": "order", "Node Statistics": "statistics"}
+    if title in moved:
+        return ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/fontui/outline_compatibility_routes" / (moved[title] + ".py")
+    return ROOT / "Scripts" / category / (title + ".py")
 
 
 @pytest.mark.parametrize(
@@ -40,7 +49,7 @@ def test_contour_inspector_runs_from_its_renamed_menu_entry(inspectors, monkeypa
     monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
     inspectors.font()
     namespace = runpy.run_path(
-        str(ROOT / "Scripts/Contours" / (title + ".py")), run_name="__main__"
+        str(inspector_path("Contours", title)), run_name="__main__"
     )
     dialog = sys._fontlab_samples[namespace["KEY"]]
     assert isinstance(dialog, namespace[klass]), "File execution must show the complete editor"
@@ -50,9 +59,10 @@ def test_contour_inspector_runs_from_its_renamed_menu_entry(inspectors, monkeypa
 
 @pytest.mark.parametrize("category,title,klass", TOOLS)
 def test_complete_original_inspector_menu_exists(category, title, klass):
-    assert (ROOT / "Scripts" / category / (title + ".py")).is_file(), (
+    assert inspector_path(category, title).is_file(), (
         "Complete inspector missing"
     )
+
 
 
 class Check(MasterWidget):
@@ -108,7 +118,7 @@ def inspectors(masters, monkeypatch, app_sources):  # noqa: F811 - imported pyte
     def module(title):
         category = next(cat for cat, t, _ in TOOLS if t == title)
         spec = importlib.util.spec_from_file_location(
-            title, ROOT / "Scripts" / category / (title + ".py")
+            title, inspector_path(category, title)
         )
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -536,12 +546,12 @@ class GeometryBox(Box):
     def united(self, other):
         if not self.width() and not self.height():
             return other
-        left, t = min(self.left(), other.left()), min(self.top(), other.top())
+        left, top = min(self.left(), other.left()), min(self.top(), other.top())
         return GeometryBox(
             left,
-            t,
+            top,
             max(self.right(), other.right()) - left,
-            max(self.bottom(), other.bottom()) - t,
+            max(self.bottom(), other.bottom()) - top,
         )
 
 
@@ -687,17 +697,15 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
             r for r in rows if r["destination"] == f"Scripts/{category}/{title}.py"
         )
         before = ast.parse(preserved_source(root, row["source"]).read_text())
-        after = ast.parse((ROOT / row["destination"]).read_text())
-
-        def constants(t):
+        after = ast.parse(inspector_path(category, title).read_text())
+        def constants(tree):
             return {
                 n.targets[0].id: ast.literal_eval(n.value)
-                for n in t.body
+                for n in tree.body
                 if isinstance(n, ast.Assign)
                 and isinstance(n.targets[0], ast.Name)
                 and n.targets[0].id in ["TITLE", "KEY", "DEFAULT_TEXT", "MARGIN"]
             }
-
         assert constants(before) == constants(after)
         before_names = {
             n.name
@@ -789,7 +797,7 @@ def test_released45_fixed_manifest_rejects_changed_menu_bytes(tmp_path):
     for row in rows[:45]:
         destination = tmp_path / row["destination"]
         destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_bytes((ROOT / row["destination"]).read_bytes())
+        destination.write_bytes(_menu_bytes(ROOT, row["destination"]))
     (tmp_path / rows[0]["destination"]).write_bytes(b"# changed menu\n")
     with pytest.raises(AssertionError, match="released menu bytes"):
         _assert_released45_invariant(rows, tmp_path)

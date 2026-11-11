@@ -34,4 +34,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `d4715f1721dc5d9b1401ba0b2ee0ef1ae671be242409c649c7733495c976a4fa`
 
-[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Font%20UI%20Lab/Unicode%20and%20Glyph%20Order%20Explorer.py)
+[Python source at `ba6f2dfbe4d6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/ba6f2dfbe4d6759bc53d77827e64a3d6ccee96e3/Scripts/Font%20UI%20Lab/Unicode%20and%20Glyph%20Order%20Explorer.py)

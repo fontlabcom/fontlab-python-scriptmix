@@ -50,4 +50,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `227270400c504febeb813c695b97a8c301f1dd658742f270ce2dada456f97f4f`
 
-[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Font%20Info/Master%20Metrics%20Table.py)
+[Python source at `ba6f2dfbe4d6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/ba6f2dfbe4d6759bc53d77827e64a3d6ccee96e3/Scripts/Font%20Info/Master%20Metrics%20Table.py)

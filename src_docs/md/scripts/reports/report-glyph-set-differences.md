@@ -24,4 +24,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `ce7cab5519bae22fb98ad8c155b8ca7ff3c2020b13f5a69d158982f78028fb2b`
 
-[Python source at `8e06999ef5a2`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/8e06999ef5a237c79364b4efd0758bf8fbd5dee8/Scripts/Reports/Report%20Glyph%20Set%20Differences.py)
+[Python source at `ba6f2dfbe4d6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/ba6f2dfbe4d6759bc53d77827e64a3d6ccee96e3/Scripts/Reports/Report%20Glyph%20Set%20Differences.py)

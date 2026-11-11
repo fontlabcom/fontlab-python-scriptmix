@@ -34,5 +34,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `01c2a0f5e87f70ecd7e1fffd9da707fb4afb48b0e7bb2a3f15e911408f6b67b7`
 
-
-Immutable source links await a reviewed commit containing this menu. Native FontLab qualification remains pending.
+[Python source at `ba6f2dfbe4d6`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/ba6f2dfbe4d6759bc53d77827e64a3d6ccee96e3/Scripts/Font%20UI%20Lab/Designspace%20Source%20Comparison.py)
