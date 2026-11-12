@@ -8,6 +8,7 @@ this_file: CHANGELOG.md
 - Zero-Width Marks stays proposed with its launcher (revised_sha256 `91427e4c...`, D36-1/F43-1). The ledger cannot record a post-source revision on an implemented row, and `menu_layout.py` is unchanged. The App Marks tab carries both fixes: Unicode values are read from `package.fgPackage` and a glyph FontGate lacks gives the named refusal.
 - Lost-fix audit: only Zero-Width Marks had changed on main since the lane base (see the audit file in the evidence directory).
 - Tests: `tests/test_issue122_G13.py` loads the consolidated App modules; historical bytes come from the ledger commit. The inspector and metrics fixtures give fake packages a realistic `fgPackage`. Contour Order View and Node Statistics resolve to their App routes. The archived rescue menu name `Vertical Metrics` is allowed to coincide with its new consolidated launcher. Full run: 4953 passed, 6 skipped (arm64 Python 3.11.18).
+
 ## 2026-11-12 — Font Info and Vertical Metrics native-qualified (A2 report 48, Issue 250)
 
 - `Scripts/Font UI Lab/Font Info and Vertical Metrics.py` (Scriptmix 411b293 with App 405ba2c, FontLab 9.0.9809, owned plum-var1 copy): captured font, explicit Apply with readback (one history row, native and Fontport 780 plus note), report refresh, Undo/Redo with fields and report following at once, saved reopen (ascender 780, Light/Bold 765, note kept) and owned teardown all pass. Closes the Native-qualify row.
@@ -119,6 +120,7 @@ quality wrappers remain unavailable because they write outside this lane;
 fresh dependency provisioning failed on PyPI DNS. Prepared gates do not imply
 native, ordinary-installation or publication acceptance. No Git mutations or
 native font edits were performed.
+
 ## 2026-11-11 — WP08c S66 Nodes Near Zones App launcher
 
 Added candidate launcher `Scripts/Reports/Nodes Near Zones App.py` over `fly.ap.fontui.nodes_near_zones` (tolerance rescan plus Select glyphs), with test, ledger rows and pins (217 tools, 286 scripts, 9 candidates). The original `Nodes Near Zones.py` is untouched.
@@ -1013,6 +1015,7 @@ this_file: CHANGELOG.md
 - Tests: 4468 passed, 19 skipped.
 
 <!-- workspace-handoff:2026-11-03 -->
+
 ## 2026-11-03 — installer options, licence and cleanup
 
 - Added `install.vfpy`: copies `Scripts/` into FontLab's Scripts folder, merging with
