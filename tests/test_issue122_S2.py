@@ -1108,7 +1108,7 @@ def test_equalize_when_applied_on_all_masters_then_one_undo_and_auto_skipped(wor
         "auto layer (skipped)",
         "glyph has auto layers (skipped)",
     ]
-    assert panel.status.text.startswith("Changed 2 layers in 1 glyphs"), (
+    assert panel.status.text.startswith("Changed 2 layers in 1 glyph"), (
         panel.status.text
     )
 

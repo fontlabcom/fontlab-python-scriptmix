@@ -13,6 +13,10 @@ this_file: CHANGELOG.md
 - `Scripts/Kerning/Kerning Energy Report.py` and `Scripts/Kerning/Unbundle Punctuation Kerning.py` are retired by WP03; not relicensed in place. The Sansomatic copies stay MIT until the App relicence lands, so `tests/test_issue122_G13.py` is unchanged.
 
 
+## 2026-11-12 - Round Advances and Equalize tests follow the App status wording (Issue 250)
+
+App 3083abe made the Metrics status line singular ("Changed 2 layers in 1 glyph", "Changed 1 layer in 1 glyph") and added an Undo hint. `tests/test_issue122_S1.py:919,1131` and `tests/test_issue122_S2.py:1111` still expected "1 glyphs"/"1 layers", so Scriptmix main failed 3 tests against App main 885e040. Expectations updated to the new wording; no production change. The two `real_app_names` tests pass in a full sibling setup (the earlier failures were a missing sibling in a temp checkout). The App 3083abe push log (gate output) shows only App and App-docs test results and no Scriptmix test run, so no cross-repo consumer check covered the wording change. Full Scriptmix suite with `--original-source-root` (as `.metaswarm/repos.sh` runs it): 5004 passed, 2 skipped, same as the last push.
+
 ## 2026-11-12 - Docs site test covers every authored page (Issue 250)
 
 `tests_docs/test_pipeline_site.py` used a hand-written `PAGES` list that left 29 built pages out of the
