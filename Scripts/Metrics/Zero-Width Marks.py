@@ -61,14 +61,18 @@ MAX_CODE_POINT = 0x10FFFF
 
 
 # ---------------------------------------------------------------- core
-def is_mark(glyph: Any) -> bool:
-    """True for a name that ends in "comb" or any code point of category Mn or Me."""
+def is_mark(glyph: Any, unicodes: Any = ()) -> bool:
+    """True for a name that ends in "comb" or any code point of category Mn or Me.
+
+    ``flGlyph`` has no Unicode binding; callers pass
+    ``package.fgPackage[str(glyph.name)].unicodes`` (as App ``glyphs.identity.read``).
+    """
     if glyph.name.split(".")[0].endswith("comb"):
         return True
     return any(
-        0 <= code <= MAX_CODE_POINT
-        and unicodedata.category(chr(code)) in MARK_CATEGORIES
-        for code in glyph.unicodes
+        0 <= int(code) <= MAX_CODE_POINT
+        and unicodedata.category(chr(int(code))) in MARK_CATEGORIES
+        for code in unicodes
     )
 
 
@@ -118,7 +122,9 @@ class ZeroWidthMarks(MetricsPanel):
         """Selected glyphs, filtered to marks when the box is ticked."""
         glyphs = MetricsPanel.target_glyphs(self, package)
         if self.only_marks.isChecked():
-            glyphs = [g for g in glyphs if is_mark(g)]
+            glyphs = [
+                g for g in glyphs if is_mark(g, package.fgPackage[str(g.name)].unicodes)
+            ]
         return glyphs
 
     def empty_message(self) -> str:

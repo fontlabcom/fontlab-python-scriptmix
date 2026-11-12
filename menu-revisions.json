@@ -4707,7 +4707,7 @@
     {
       "destination": "Scripts/Metrics/Zero-Width Marks.py",
       "historical_sha256": "19ee7c5bf4b92af394f3af39b74c25d7e73fc9da48049075a5beae0ca5ada11c",
-      "current_sha256": "6649cf1d94d50c1100acaf0300335bfa4d25768f3c5ffbe31c425f9cc804c7df",
+      "current_sha256": "14e4194bc93ec46a70b0f9f878c32776d310d1349f4b2aed5465c059525a6d15",
       "source_sha256": "73e90660e6aa5c038f05d7d9fc98730943c940697f10a94a976ba3acbb29233a",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -4725,6 +4725,21 @@
           "kind": "issue-205-import-path-update",
           "historical": "from fly.ap.scripting import show_script_dialog\n",
           "current": "from fly.ap.core.scripting import show_script_dialog\n"
+        },
+        {
+          "kind": "issue-250-zero-width-marks-fgpackage-unicodes",
+          "historical": "def is_mark(glyph: Any) -> bool:\n    \"\"\"True for a name that ends in \"comb\" or any code point of category Mn or Me.\"\"\"\n",
+          "current": "def is_mark(glyph: Any, unicodes: Any = ()) -> bool:\n    \"\"\"True for a name that ends in \"comb\" or any code point of category Mn or Me.\n\n    ``flGlyph`` has no Unicode binding; callers pass\n    ``package.fgPackage[str(glyph.name)].unicodes`` (as App ``glyphs.identity.read``).\n    \"\"\"\n"
+        },
+        {
+          "kind": "issue-250-zero-width-marks-fgpackage-unicodes",
+          "historical": "        0 <= code <= MAX_CODE_POINT\n        and unicodedata.category(chr(code)) in MARK_CATEGORIES\n        for code in glyph.unicodes\n",
+          "current": "        0 <= int(code) <= MAX_CODE_POINT\n        and unicodedata.category(chr(int(code))) in MARK_CATEGORIES\n        for code in unicodes\n"
+        },
+        {
+          "kind": "issue-250-zero-width-marks-fgpackage-unicodes",
+          "historical": "            glyphs = [g for g in glyphs if is_mark(g)]\n",
+          "current": "            glyphs = [\n                g for g in glyphs if is_mark(g, package.fgPackage[str(g.name)].unicodes)\n            ]\n"
         }
       ]
     },

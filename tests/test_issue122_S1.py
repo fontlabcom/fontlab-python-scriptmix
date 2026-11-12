@@ -439,7 +439,7 @@ class Glyph:
 
     def __init__(self, name, layers, codes=None):
         self.name, self.layers_by_master = name, layers
-        self.unicodes = list(codes or [])
+        self.codes = list(codes or [])  # read via fgPackage[name].unicodes only
         self.init_calls = []
         self._stamp = None
 
@@ -759,25 +759,29 @@ def test_italic_planner_when_set_then_dx_and_width_follow_italic_values(world):
 
 def test_is_mark_when_category_or_name_then_true(world):
     module = load("Zero-Width Marks")
-    assert module.is_mark(Glyph("anything", {}, [0x0301])), "Mn"
-    assert module.is_mark(Glyph("enclose", {}, [0x20DD])), "Me"
-    assert module.is_mark(Glyph("multi", {}, [0x41, 0x0301])), "any code point counts"
-    assert module.is_mark(Glyph("acutecomb", {}, None)), "name"
-    assert module.is_mark(Glyph("gravecomb.case", {}, None)), "suffix on name"
-    assert not module.is_mark(Glyph("A", {}, [65])), "letter"
-    assert not module.is_mark(Glyph("A", {}, None)), "no code point"
-    assert not module.is_mark(Glyph("big", {}, [0x110000])), "out of Unicode range"
-    assert not module.is_mark(Glyph("neg", {}, [-1])), "negative value"
+    assert module.is_mark(Glyph("anything", {}), [0x0301]), "Mn"
+    assert module.is_mark(Glyph("enclose", {}), [0x20DD]), "Me"
+    assert module.is_mark(Glyph("multi", {}), [0x41, 0x0301]), "any code point counts"
+    assert module.is_mark(Glyph("acutecomb", {})), "name"
+    assert module.is_mark(Glyph("gravecomb.case", {})), "suffix on name"
+    assert not module.is_mark(Glyph("A", {}), [65]), "letter"
+    assert not module.is_mark(Glyph("A", {})), "no code point"
+    assert not module.is_mark(Glyph("big", {}), [0x110000]), "out of Unicode range"
+    assert not module.is_mark(Glyph("neg", {}), [-1]), "negative value"
 
 
-def test_is_mark_when_unicodes_missing_then_error_surfaces(world):
+def test_zero_width_marks_when_unicode_only_mark_then_kept_via_fgpackage(world):
+    glyphs = [Glyph("acute", {"Light": Layer(300, rect(1, 2))}, [0x0301]), two_master_glyph("n")]
+    _, panel = open_panel(world, "Zero-Width Marks", glyphs)
+    assert [e.glyph.name for e in panel.entries] == ["acute"], "Mn without comb in name"
+
+
+def test_zero_width_marks_when_no_fgpackage_entry_then_error_surfaces(world):
     module = load("Zero-Width Marks")
-
-    class NoCodes:
-        name = "x"
-
-    with pytest.raises(AttributeError):
-        module.is_mark(NoCodes())
+    _, panel = open_panel(world, "Zero-Width Marks", [two_master_glyph("n")])
+    world.package.fgPackage = type("Empty", (), {"__getitem__": lambda s, k: {}[k]})()
+    with pytest.raises(KeyError):
+        panel.target_glyphs(world.package)
 
 
 @pytest.mark.parametrize(
