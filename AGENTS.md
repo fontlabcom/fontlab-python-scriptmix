@@ -20,6 +20,19 @@ Use README prepared arm64 Python 3.11 runtime-cohort recipe, or set `SCRIPTMIX_A
 
 # Scriptmix rules
 
+## Live font testing in FontLab (owner instruction, 2026-11-10)
+
+Test, verify and edit in the font that is open in FontLab 9. Don't hold back
+because the owner might be working on it. Just work in it. If no font is open,
+open a VFJ from `~/Desktop` first (File > Open, or `fontlab.flPackage(path)`
+and `flWorkspace.instance().addPackage`). Those VFJs are for agents. Add glyphs,
+kerning pairs, elements, contours, masters or anything else the test needs,
+and save the files when that helps. This replaces older rules that required an
+empty FontLab session or forbade editing open fonts. `fl-native.sh --mutating`
+now runs with fonts open (`FL_REQUIRE_EMPTY=1` restores the old check). The
+serialized lock still applies: one native run at a time. Don't quit or restart
+FontLab, and don't close fonts from Python, because that has crashed the host.
+
 Practical FontLab tools; menu scripts call shared App helpers through Fly.
 
 - Target Python 3.11 arm64. Use `--python cpython-3.11-macos-aarch64-none`;
