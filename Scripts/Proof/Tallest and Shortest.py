@@ -1,5 +1,5 @@
 # this_file: Scripts/Proof/Tallest and Shortest.py
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: Apache-2.0
 """Open the exact highest and lowest current-master layers in a fresh FontLab tab.
 
 Run this Proof command with a font open. Scan only the selected master.

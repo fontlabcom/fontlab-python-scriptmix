@@ -68,4 +68,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `d6b98a8137f211f0295fb47d4991248cc5807f3526224c909c040f42db6e9ace`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Masters/Copy%20Outline%20To%20Mask.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Masters/Copy%20Outline%20To%20Mask.py)

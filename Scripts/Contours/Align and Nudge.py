@@ -1,5 +1,5 @@
 # this_file: Scripts/Contours/Align and Nudge.py
-# SPDX-License-Identifier: MIT AND Apache-2.0
+# SPDX-License-Identifier: Apache-2.0
 # FLM: Contours · Align and Nudge
 """Align and Nudge: review outline edits in one modeless window.
 

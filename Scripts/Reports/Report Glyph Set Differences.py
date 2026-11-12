@@ -1,5 +1,5 @@
 # this_file: Scripts/Reports/Report Glyph Set Differences.py
-# SPDX-License-Identifier: MIT AND Apache-2.0
+# SPDX-License-Identifier: Apache-2.0
 """Report Glyph Set Differences using the current font as the original reference.
 
 Open a current reference font; with no other open font the report is empty. Every other open font is compared. Raw filepath headings, target-order extra glyphs and reference-order missing glyphs are preserved.

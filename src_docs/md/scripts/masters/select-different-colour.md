@@ -49,4 +49,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `7d7129b5e015c70edfc9cc39bda93f103abfaefa4f748a30d55179f6c51e9f80`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Masters/Select%20Different%20Colour.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Masters/Select%20Different%20Colour.py)

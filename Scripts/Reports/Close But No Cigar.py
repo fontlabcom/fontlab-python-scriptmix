@@ -1,5 +1,5 @@
 # this_file: Scripts/Reports/Close But No Cigar.py
-# SPDX-License-Identifier: MIT AND Apache-2.0
+# SPDX-License-Identifier: Apache-2.0
 """Report nearly correct angles, stem lengths and node positions in every selected glyph's first layer.
 
 Select glyphs in a Font or Glyph window, then run this script. The modeless,

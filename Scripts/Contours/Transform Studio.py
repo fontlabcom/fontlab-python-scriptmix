@@ -1,5 +1,5 @@
 # this_file: Scripts/Contours/Transform Studio.py
-# SPDX-License-Identifier: MIT AND Apache-2.0
+# SPDX-License-Identifier: Apache-2.0
 # FLM: Contours · Transform Studio
 """Transform Studio: review outline edits in one modeless window.
 

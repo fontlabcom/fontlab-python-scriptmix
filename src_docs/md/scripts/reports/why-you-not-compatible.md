@@ -35,6 +35,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `42ce9e74232f0fa59b733f12e1af658fcc9754177af004777c0a8dc4d11a3ef2`
+SHA256: `cad13ca55e2a63896e5c3c0500d407d733af91c413efe8b038032b72efea0f1b`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Reports/Why%20You%20Not%20Compatible.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Reports/Why%20You%20Not%20Compatible.py)

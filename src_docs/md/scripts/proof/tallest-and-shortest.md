@@ -29,6 +29,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `f0fdfde46c8868670b5f84430cf2105e9f6fb7ab0ff868685cd57efb40a16498`
+SHA256: `2b3e218162600ba1cd9c0cb701088b5df28f8902fc76afd3c481b6e3d4830289`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Proof/Tallest%20and%20Shortest.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Proof/Tallest%20and%20Shortest.py)

@@ -1,5 +1,5 @@
 # this_file: Scripts/Reports/Report Composite Differences.py
-# SPDX-License-Identifier: MIT AND Apache-2.0
+# SPDX-License-Identifier: Apache-2.0
 """Report Composite Differences using the current font as the original reference.
 
 Open two or more fonts. Only the first other open font is compared, using each font selected named master. Ordered component names and source-order missing glyphs are reported; only exact .sc/.pcap suffixes are excluded from missing rows.

@@ -43,4 +43,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `40c5d904321910384646a62892f6454dd8f41718b215ae7234aaa0ed4ca9c438`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Contours/Outline%20Compatibility.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Contours/Outline%20Compatibility.py)

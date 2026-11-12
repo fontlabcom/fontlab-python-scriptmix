@@ -123,6 +123,6 @@ This is a tested first adapter release, not a claim of exhaustive Glyphs/FontLab
 
 ## License and attribution
 
-This adapter is distributed under GPL-3.0; see `LICENSE`. HTLetterspacer is by Huerta Tipográfica and its contributors; see the installed original source's `AUTHORS.txt` and `CONTRIBUTORS.txt`. The installer stores an unchanged upstream snapshot; the gateway loads its engine directly without rewriting it.
+This adapter is distributed under Apache-2.0; see `LICENSE`. The upstream HTLetterspacer it downloads at install time stays under its own GPL-3.0 terms and is not redistributed here. HTLetterspacer is by Huerta Tipográfica and its contributors; see the installed original source's `AUTHORS.txt` and `CONTRIBUTORS.txt`. The installer stores an unchanged upstream snapshot; the gateway loads its engine directly without rewriting it.
 
 The included GlyphsInfo XML classification data comes from glyphsLib 6.16.2, copyright Georg Seifert, under MIT; its full license is in `htls_fontlab/data/GlyphData_LICENSE`. The adapter has no runtime dependency on glyphsLib.

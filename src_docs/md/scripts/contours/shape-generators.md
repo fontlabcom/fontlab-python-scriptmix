@@ -29,6 +29,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9`
+SHA256: `2d046bb661fd4b4a5651c614ee71ee5968ec7e6de2273ab86cf4e1749b1f32c0`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Contours/Shape%20Generators.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Contours/Shape%20Generators.py)

@@ -34,4 +34,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `01c2a0f5e87f70ecd7e1fffd9da707fb4afb48b0e7bb2a3f15e911408f6b67b7`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Font%20UI%20Lab/Designspace%20Source%20Comparison.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Font%20UI%20Lab/Designspace%20Source%20Comparison.py)

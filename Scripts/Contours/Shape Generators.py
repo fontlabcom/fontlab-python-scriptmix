@@ -1,5 +1,5 @@
 # this_file: Scripts/Contours/Shape Generators.py
-# SPDX-License-Identifier: Apache-2.0 AND MIT
+# SPDX-License-Identifier: Apache-2.0
 # FLM: Contours · Shape Generators
 """Build specialized outlines with the original algorithms in five task tabs.
 

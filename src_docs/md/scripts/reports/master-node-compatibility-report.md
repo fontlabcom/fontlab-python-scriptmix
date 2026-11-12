@@ -23,4 +23,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `f50554adb4b03b9b3ecabb807d9f3af05b93b30100c70dc9dd0c3bd5fcd0cd4a`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Reports/Master%20Node%20Compatibility%20Report.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Reports/Master%20Node%20Compatibility%20Report.py)

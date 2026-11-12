@@ -43,7 +43,7 @@ in the tested upright and italic corpus. The historical v1 standalone
 script is a different algorithm. See the included source docs/PARITY.md.
 
 LICENSE / SOURCE
-GPL-3.0. See LICENSE.txt and NOTICES.txt. The full corresponding source ZIP
+Apache-2.0 (the gateway). See LICENSE.txt and NOTICES.txt. The full corresponding source ZIP
 is included with this download. Original upstream source and license are
 also retained in the installed runtime. This release is a FontLab gateway,
 not an installation of the plugin into Glyphs.

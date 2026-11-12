@@ -29,4 +29,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `8bb75a78041139a865e73fd5c113270ed29985fdbbbed0587a6d930f58ea5e42`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Font%20UI%20Lab/Node%20Counts%20Across%20Masters.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Font%20UI%20Lab/Node%20Counts%20Across%20Masters.py)

@@ -30,6 +30,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `ec200352ebc1139ebdd8b5ea21c25ad073994412e62b2a83f9f9a8b463de9177`
+SHA256: `ef2a8477b38bfab31df83a69f0be7940677d18cf13548380e2bcbf78984c6eac`
 
-[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Reports/Categories%20to%20XML%20Lib%20Key.py)
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Reports/Categories%20to%20XML%20Lib%20Key.py)

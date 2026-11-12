@@ -866,7 +866,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "76b638aa5ec2c4067250ebeb1f9076e1e729b50fa4764cfdbbf8588c4ecacf7b"
     },
     {
       "source": {
@@ -1118,7 +1119,7 @@
       "destination": {
         "path": "Scripts/Contours/Align and Nudge.py",
         "tab": "Align And Distribute",
-        "sha256": "70ff92140aff5b50cdf2590a0d38e5c59234e4e2353537a747b1d5fd79a553ba"
+        "sha256": "34ef373ba3bc1410c9bd982e470fef480d85b2fe9b8077bc80969b4bb2700e18"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1145,7 +1146,7 @@
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
         "tab": "Angularizzle",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "sha256": "2d046bb661fd4b4a5651c614ee71ee5968ec7e6de2273ab86cf4e1749b1f32c0"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1197,7 +1198,7 @@
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
         "tab": "Comb",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "sha256": "2d046bb661fd4b4a5651c614ee71ee5968ec7e6de2273ab86cf4e1749b1f32c0"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1476,7 +1477,7 @@
       "destination": {
         "path": "Scripts/Contours/Align and Nudge.py",
         "tab": "Interpolated Nudge",
-        "sha256": "70ff92140aff5b50cdf2590a0d38e5c59234e4e2353537a747b1d5fd79a553ba"
+        "sha256": "34ef373ba3bc1410c9bd982e470fef480d85b2fe9b8077bc80969b4bb2700e18"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1529,7 +1530,7 @@
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
         "tab": "Myanmar Medial Ra",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "sha256": "2d046bb661fd4b4a5651c614ee71ee5968ec7e6de2273ab86cf4e1749b1f32c0"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1686,7 +1687,7 @@
       "destination": {
         "path": "Scripts/Contours/Align and Nudge.py",
         "tab": "Overlap Nodes",
-        "sha256": "70ff92140aff5b50cdf2590a0d38e5c59234e4e2353537a747b1d5fd79a553ba"
+        "sha256": "34ef373ba3bc1410c9bd982e470fef480d85b2fe9b8077bc80969b4bb2700e18"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1740,7 +1741,7 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Raise Ascender",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": "a6350b4da5fcaa774ae4fd35801591bf48437dff18cb165670971af0edaa0a1a"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1768,7 +1769,7 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Reflect Horizontally",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": "a6350b4da5fcaa774ae4fd35801591bf48437dff18cb165670971af0edaa0a1a"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1795,7 +1796,7 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Reflect Vertically",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": "a6350b4da5fcaa774ae4fd35801591bf48437dff18cb165670971af0edaa0a1a"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1898,7 +1899,7 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Rotate Selection",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": "a6350b4da5fcaa774ae4fd35801591bf48437dff18cb165670971af0edaa0a1a"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1950,7 +1951,7 @@
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
         "tab": "Sandblast",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "sha256": "2d046bb661fd4b4a5651c614ee71ee5968ec7e6de2273ab86cf4e1749b1f32c0"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -1977,7 +1978,7 @@
       "destination": {
         "path": "Scripts/Contours/Shape Generators.py",
         "tab": "Sansomatic",
-        "sha256": "1be7bd665d08a098ffae745d4be5c3329a1195bf7fc4d6393a1ecae6a4ade7c9"
+        "sha256": "2d046bb661fd4b4a5651c614ee71ee5968ec7e6de2273ab86cf4e1749b1f32c0"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -2129,7 +2130,7 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Slant",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": "a6350b4da5fcaa774ae4fd35801591bf48437dff18cb165670971af0edaa0a1a"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -2183,7 +2184,7 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Smart Slant",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": "a6350b4da5fcaa774ae4fd35801591bf48437dff18cb165670971af0edaa0a1a"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -2261,7 +2262,7 @@
       "destination": {
         "path": "Scripts/Contours/Align and Nudge.py",
         "tab": "Superaligner",
-        "sha256": "70ff92140aff5b50cdf2590a0d38e5c59234e4e2353537a747b1d5fd79a553ba"
+        "sha256": "34ef373ba3bc1410c9bd982e470fef480d85b2fe9b8077bc80969b4bb2700e18"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -2367,7 +2368,7 @@
       "destination": {
         "path": "Scripts/Contours/Transform Studio.py",
         "tab": "Transform",
-        "sha256": "e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb"
+        "sha256": "a6350b4da5fcaa774ae4fd35801591bf48437dff18cb165670971af0edaa0a1a"
       },
       "retirement_reason": null,
       "test_routes": [
@@ -6028,7 +6029,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "2b3e218162600ba1cd9c0cb701088b5df28f8902fc76afd3c481b6e3d4830289"
     },
     {
       "source": {
@@ -6191,7 +6193,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "ef2a8477b38bfab31df83a69f0be7940677d18cf13548380e2bcbf78984c6eac"
     },
     {
       "source": {
@@ -6214,7 +6217,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "e644f7e0738a4d253dd7c38f2edbffd3368da7c9e1112a44ccd122b5b1072224"
     },
     {
       "source": {
@@ -6285,7 +6289,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "ced329c0ed464ac53f5d9bd3282c6f01b4b7cf18ce6e4fd3593d8aad31de4c06"
     },
     {
       "source": {
@@ -6566,7 +6571,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "b0adc37383493640eeffa2a3efd0985dea1053bc1d86a48d50ca7b34d1ac1fce"
     },
     {
       "source": {
@@ -6589,7 +6595,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "6e3ca96f20b12320ec9e5ae720ad51260edbd20a324523125f2e253d9a1232cd"
     },
     {
       "source": {
@@ -6708,7 +6715,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "cad13ca55e2a63896e5c3c0500d407d733af91c413efe8b038032b72efea0f1b"
     },
     {
       "source": {
@@ -6816,7 +6824,7 @@
     },
     {
       "path": "Scripts/Reports/Font Audit.py",
-      "sha256": "e61b5781959bf8211a00b7c58b132df7b9a434531b2b3b6b16d9b9f9dfe49cb8",
+      "sha256": "c9e841a026e79192a99ba924e153088fb658eb12b14189b10da03ffaa37f84ea",
       "state": "candidate",
       "containing_commit": null,
       "behavior_parity": false,

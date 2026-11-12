@@ -5,13 +5,14 @@ a replacement Glyphs plugin and does not install anything into Glyphs itself.
 The original project and its authors are credited at:
 https://github.com/huertatipografica/HTLetterspacer
 
-Gateway source and installer: GNU General Public License, version 3.
+Gateway source and installer: Apache License, Version 2.0.
 See LICENSE. Corresponding source, including the build tools, accompanies
 every customer ZIP as HT-Letterspacer-FontLab-1.0.0-source.zip. The .vfpy also
 contains its runtime source and a complete corresponding-source ZIP, including
 the installer and build tools.
 
-Original HTLetterspacer: the installer downloads the unchanged repository
+Original HTLetterspacer (GNU General Public License, version 3, under its
+own terms): the installer downloads the unchanged repository
 at commit b4ad60bd36284f87edf9f2145d38bbf87b2e9909. It retains the original
 source ZIP, LICENSE, AUTHORS.txt and CONTRIBUTORS.txt in the installed
 runtime. GitHub is used only for this pinned download. No fonts, settings,

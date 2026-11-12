@@ -52,6 +52,6 @@ def test_actual_core_when_later_path_differs_after_anchors_then_full_report(
 def test_new_provenance_when_added_then_hash_license_and_original_denominator():
     rows = json.loads((ROOT / "additional-tools.json").read_text())
     row = next(v for v in rows if v["key"] == "layer_compatibility")
-    assert row["license"] == "MIT" and row["native_acceptance"] == "pending"
+    assert row["license"] == "Apache-2.0" and row["native_acceptance"] == "pending"
     assert row["counted_in_130_sample_migration"] is False
     assert row["destination_sha256"] == hashlib.sha256(MENU.read_bytes()).hexdigest()

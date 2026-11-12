@@ -4,6 +4,7 @@ this_file: TODO.md
 
 - [ ] Retire Zero-Width Marks after the ledger supports post-source revisions (or re-baseline source_commit); the App port carries D36-1/F43-1.
 - [ ] WP03 native: qualify the eight consolidated spacing, kerning and metrics launchers in installed FontLab (complete font and history preservation, Undo/Redo, saved/reopened).
+- [ ] Font Audit carries mekkablue Apache-2.0 attribution but ledger `upstream_repository` is None. Identify the exact source script in mekkablue/Glyphs-Scripts, then set `upstream_repository` and `upstream_license=Apache-2.0` with evidence.
 - [ ] Repeat the live smoke on the F41-1 fix SHA (App `GlyphTableTab` now hides the duplicate text pane; the table is the only visible result list), including Nodes Near Zones, Open Contours and Font Audit.
 - [ ] WP05: run canonical App/Scriptmix wrappers with authorized evidence directories and resolved dependencies; the reviewed 49-to-ten migration, full prepared suites and per-module coverage pass.
 - [ ] WP05 native: qualify the ten consolidated outline tools with installed FontLab PythonQt, complete font/history preservation, actual controls, Undo/Redo and saved reopen.
