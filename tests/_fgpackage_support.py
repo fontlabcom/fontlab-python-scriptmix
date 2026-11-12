@@ -19,8 +19,13 @@ class FgPackage:
         self._glyphs = glyphs
 
     def __getitem__(self, name: str) -> Any:
-        """Return the package's own glyph record: it alone carries ``unicodes``."""
-        glyph = self._glyphs[name]
+        """Return the package's own glyph record: it alone carries ``unicodes``.
+
+        Native ``fgPackage[missing]`` returns ``None`` instead of raising (A2 report 43).
+        """
+        glyph = self._glyphs.get(name)
+        if glyph is None:
+            return None
         return SimpleNamespace(name=name, unicodes=list(glyph.codes))
 
     @property

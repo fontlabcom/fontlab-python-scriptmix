@@ -36,7 +36,6 @@ remaining acceptance, source-link and native obligations stay open.
 - [ ] Qualify Issue 234 Open Fonts and Master Overview, Master Compatibility Browser and Node Counts Across Masters with matching installed artifacts and native PythonQt, including empty/stale fonts, preview, chooser changes, Close and complete font/history preservation.
 - [ ] Re-run the exact Issue 234 Scriptmix runtime recipe after build dependency resolution is available; rebuild the three new menu source links at their reviewed containing commit.
 - [ ] Native-qualify UFO Roundtrip Inspector failure paths: pending-edit preservation (not tested), staging cleanup on Close/failure (deadline or error) and repeated Close. The success path passed live (A2 report 21).
-- [ ] Native-qualify Representation and Notification Explorer: selected glyph representations, actual notification/cache status, source preservation and callback cleanup on Close.
 - [ ] Verify both inspector menus from ordinary installed artifacts and genuine containing-commit documentation links.
 
 - [ ] Independently review and deliver the verified batch recipe filename-literal correction, qualify genuine-commit docs and exact CI/generated parity, then recheck the public literal; retain ordinary/native gates.
@@ -79,7 +78,7 @@ remaining acceptance, source-link and native obligations stay open.
 - [ ] Qualify installed Smallcap Consistency: export-policy/case disclosures, complete modern and legacy findings, both kerning-group sides, deadline/stale refusal, repeat refresh and destruction, complete-font preservation.
 
 - [ ] Qualify Italic Angle from the final installed files and independently downloaded release before increasing historical sample acceptance beyond 68 of 130.
-- [ ] Qualify Metrics writers on owned fonts: proven so far, capHeight master write through `vertical_metrics.table.write_changes` with one row, Undo x2/Redo x2 and save/reopen (A2 report 14 section 4); selected bases plus composites are covered for the nine App Metrics planners (A2 reports 34-36); still open: current/all masters beyond capHeight, automatic dependants, successive edits, full-font Undo/Redo and save/reopen.
+- [ ] Qualify Metrics writers on owned fonts: proven so far, capHeight master write through `vertical_metrics.table.write_changes` with one row, Undo x2/Redo x2 and save/reopen (A2 report 14 section 4); selected bases plus composites are proven live for Centre In Advance only (A2 reports 34-36); the other eight Metrics planners are not yet measured with composites; still open: current/all masters beyond capHeight, automatic dependants, successive edits, full-font Undo/Redo and save/reopen.
 - [ ] Qualify Names editors, including Duplicate Unicodes, with Font-window guards, Unicode order, notes, marks, tags, stale previews and complete saved history.
 - [ ] Qualify Anchors writers, duplicate removal and two-font copying: exact collision rules, raw survivor state, origin refusals, dependencies and both fonts' history/reopen.
 - [ ] Qualify Components writers and glyph builders: retained removed objects, lock fields, decomposition, reference placement, per-layer builder history and full saved state.
@@ -176,10 +175,11 @@ remaining acceptance, source-link and native obligations stay open.
 
 - [ ] Add a public App Font Info ttfautohint writer; then restore the stem tool.
 
-- [ ] Re-check Zero-Width Marks "Only marks" on an owned font with combining marks: a Mn/Me glyph whose name lacks "comb" must be kept through `fgPackage[name].unicodes`, with one Undo row and save/reopen (the offline fix is tested only against fakes).
+- [ ] Re-check live that Zero-Width Marks shows "Cannot read Unicode values for <glyph>: it has no FontGate glyph. Clear Only combining marks, or save and reopen the font." for a glyph FontGate lacks (native `fgPackage[missing]` returns `None`; proven on a simulated `None` in A2 report 43, offline test only here).
+- [ ] Low: after Apply, Zero-Width Marks advances read back as `-0.0` (`0.0` after Redo; A2 report 43). The planner returns plain `0` (pinned by a test), so the sign comes from the native write; save a font after Apply, reopen it, and check the three marks read 0 in FontLab and the VFJ does not hold `-0`. Save/reopen for "Only marks" with one Undo row is also still unproven (report 43 closed the font unsaved).
 
 - [ ] Resolve App anchor read-back tolerance and sub-unit moves swallowed by native rounding.
 
 
 - [ ] Fix catalogue immutable-link validation by checking committed menu paths and bytes, with dirty/untracked-menu regressions; refuse or defer false links without adding a new generator framework.
-- [ ] Re-review the Zero-Width Marks consolidation proposal in `menu-consolidations.json` against the D36-1 bytes (`revised_sha256` 14e4194b…), then drop `revised_sha256`/`revised_reason` and re-pin `source` when the ledger is next regenerated.
+- [ ] Re-review the Zero-Width Marks consolidation proposal in `menu-consolidations.json` against the D36-1 bytes (`revised_sha256` 91427e4c…), then drop `revised_sha256`/`revised_reason` and re-pin `source` when the ledger is next regenerated.

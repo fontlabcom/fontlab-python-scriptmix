@@ -4707,7 +4707,7 @@
     {
       "destination": "Scripts/Metrics/Zero-Width Marks.py",
       "historical_sha256": "19ee7c5bf4b92af394f3af39b74c25d7e73fc9da48049075a5beae0ca5ada11c",
-      "current_sha256": "14e4194bc93ec46a70b0f9f878c32776d310d1349f4b2aed5465c059525a6d15",
+      "current_sha256": "91427e4c40ca6dac96b0c13b2771417910929edcb580e588198a1baff6d1700d",
       "source_sha256": "73e90660e6aa5c038f05d7d9fc98730943c940697f10a94a976ba3acbb29233a",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -4739,7 +4739,12 @@
         {
           "kind": "issue-250-zero-width-marks-fgpackage-unicodes",
           "historical": "            glyphs = [g for g in glyphs if is_mark(g)]\n",
-          "current": "            glyphs = [\n                g for g in glyphs if is_mark(g, package.fgPackage[str(g.name)].unicodes)\n            ]\n"
+          "current": "            glyphs = [g for g in glyphs if is_mark(g, glyph_unicodes(package, g))]\n"
+        },
+        {
+          "kind": "issue-250-zero-width-marks-fgpackage-unicodes",
+          "historical": "def zero_planner(placement: str) -> metrics_panel.Planner:\n",
+          "current": "def glyph_unicodes(package: Any, glyph: Any) -> Any:\n    \"\"\"Return the glyph's code points from FontGate. Refuse a glyph FontGate lacks.\"\"\"\n    entry = package.fgPackage[str(glyph.name)]\n    if entry is None:\n        raise ValueError(\n            f\"Cannot read Unicode values for {glyph.name}: it has no FontGate glyph.\"\n            \" Clear Only combining marks, or save and reopen the font.\"\n        )\n    return entry.unicodes\n\n\ndef zero_planner(placement: str) -> metrics_panel.Planner:\n"
         }
       ]
     },
