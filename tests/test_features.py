@@ -439,3 +439,75 @@ def test_viewer_uses_exact_ordered_feature_snapshot(load):
     ], (
         "Viewer must not interpret native iterator positions as feature tags or synthesize raw prefix classes"
     )
+
+
+SUFFIX_PAIRS = [("a", "a.sc")]
+EXISTING_NO_NEWLINE = "feature smcp {\n    sub b by b.sc;\n} smcp;"
+
+
+@pytest.mark.parametrize("old", ["", EXISTING_NO_NEWLINE], ids=["empty", "existing"])
+def test_build_suffix_when_written_then_stored_feature_ends_with_newline(load, old):
+    """Row 225: ``feature_text`` has no final newline; the shared writer adds it."""
+    module, state, blocks = load
+    build = module(TITLES[1])
+    state.package = NS(id=11, fgId=101, master="Regular")
+    state.names = ["a", "a.sc", "b", "b.sc"]
+    expected = {
+        "prefix": state.blocks["prefix"],
+        "features": [("smcp", old)] if old else [],
+    }
+    state.blocks = expected
+    new = build.append_code(old, "smcp", SUFFIX_PAIRS)
+    if not old:
+        assert not new.endswith("\n"), "feature_text is documented as newline-free"
+    updated = {"prefix": expected["prefix"], "features": [("smcp", new)]}
+    build.write_feature_blocks(
+        state.package, expected, updated, references=["a", "a.sc"], undo_name="Build"
+    )
+    stored = dict(state.writes[-1][0]["features"])["smcp"]
+    assert stored.endswith("\n") and not stored.endswith("\n\n"), (
+        "Stored Build Suffix Substitution code must end with exactly one newline"
+    )
+    assert "sub a by a.sc;" in stored
+
+
+def test_build_suffix_when_normalisation_removed_then_stored_code_lacks_newline(
+    load, monkeypatch
+):
+    """Mutant guard: with App's ``_terminated`` neutralised the pin must break."""
+    module, state, blocks = load
+    build = module(TITLES[1])
+    app_blocks = sys.modules["fontlabapp.fontui.feature_blocks"]
+    monkeypatch.setattr(app_blocks, "_terminated", lambda value: value)
+    state.package = NS(id=11, fgId=101, master="Regular")
+    state.names = ["a", "a.sc"]
+    expected = state.blocks
+    code = build.append_code("", "smcp", SUFFIX_PAIRS)
+    build.write_feature_blocks(
+        state.package,
+        expected,
+        {"prefix": expected["prefix"], "features": [("smcp", code)]},
+        references=["a", "a.sc"],
+        undo_name="Build",
+    )
+    stored = dict(state.writes[-1][0]["features"])["smcp"]
+    assert not stored.endswith("\n"), (
+        "The newline in test_build_suffix_when_written must come from the App writer"
+    )
+
+
+def test_random_alternates_and_nastaliq_defaults_end_with_newline(load):
+    module, _, _ = load
+    sys.modules["fly"].ap.features = NS(code=sys.modules["fly.ap.features.code"])
+    names = ["a", "a.ss01", "b", "b.ss01", "period"]
+    generated = module("Generate Random Alternates Feature").generate(
+        "a a.ss01\nb b.ss01", names, names, "calt", 20, 3, 4, 5, 19
+    )
+    assert generated.endswith("\n"), "Generate Random Alternates must end with a newline"
+    nastaliq = module("Nastaliq Connection Editor")
+    merged = nastaliq.merge_feature(
+        {"prefix": "", "features": []}, nastaliq.connection_block({}, {"BEf1"})
+    )
+    assert merged["features"][0][1].endswith("\n"), (
+        "Nastaliq default rlig block must end with a newline"
+    )
