@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+
+## 2026-11-12 — Zero-Width Marks proven live on the F43-1 build (A2 report 45)
+
+- F43-1 passes live on lane mainref16 (App e8a1209, Zero-Width Marks sha 91427e4c…, owned Kinney copy, three marks at 300): with a simulated missing FontGate glyph the subtitle reads exactly "Cannot read Unicode values for uni0302: it has no FontGate glyph. Clear Only combining marks, or save and reopen the font.", Apply is disabled and no row is made. Closes the live re-check row.
+- "Only marks" Apply makes 6 layers and one history row, Undo/Redo are exact, and a font saved straight after Apply holds 0 for all six layers (no "-0" in the VFJ); reopened it reads 0.0 in both masters and the document is clean. The `-0.0` read back after Apply (`+0.0` after Redo) is session-only and never written to the file, so the low `-0.0` row and the "Only marks" save/reopen row are closed.
+- Still open as UX (App side, same class as F34-2): after Undo the Only-marks panel keeps Apply disabled until Use selection is pressed.
+
 ## 2026-11-12 — Installer: unreachable blocked skip removed (Issue 250, review M-10)
 
 - `install.vfpy` synced byte-identically from App (sha256 `2eb71691…` → `bbe8104e…`):
