@@ -8,6 +8,9 @@ this_file: CHANGELOG.md
 - Zero-Width Marks stays proposed with its launcher (revised_sha256 `91427e4c...`, D36-1/F43-1). The ledger cannot record a post-source revision on an implemented row, and `menu_layout.py` is unchanged. The App Marks tab carries both fixes: Unicode values are read from `package.fgPackage` and a glyph FontGate lacks gives the named refusal.
 - Lost-fix audit: only Zero-Width Marks had changed on main since the lane base (see the audit file in the evidence directory).
 - Tests: `tests/test_issue122_G13.py` loads the consolidated App modules; historical bytes come from the ledger commit. The inspector and metrics fixtures give fake packages a realistic `fgPackage`. Contour Order View and Node Statistics resolve to their App routes. The archived rescue menu name `Vertical Metrics` is allowed to coincide with its new consolidated launcher. Full run: 4953 passed, 6 skipped (arm64 Python 3.11.18).
+## 2026-11-12 — Font Info and Vertical Metrics native-qualified (A2 report 48, Issue 250)
+
+- `Scripts/Font UI Lab/Font Info and Vertical Metrics.py` (Scriptmix 411b293 with App 405ba2c, FontLab 9.0.9809, owned plum-var1 copy): captured font, explicit Apply with readback (one history row, native and Fontport 780 plus note), report refresh, Undo/Redo with fields and report following at once, saved reopen (ascender 780, Light/Bold 765, note kept) and owned teardown all pass. Closes the Native-qualify row.
 
 ## 2026-11-12 — Nodes Near Zones duplicate results fixed in the App (F41-1, live report R41, Issue 250)
 

@@ -32,7 +32,6 @@ remaining acceptance, source-link and native obligations stay open.
 
 - [ ] Native-qualify workflow #6 Interpolation Preview: installed origins, designspace location changes, endpoint/mixed outlines, unsupported-location diagnostics, captured-font identity, complete font/history/selection/cache/dirty preservation and repeated Close; qualify ordinary artifacts separately.
 
-- [ ] Native-qualify Font Info and Vertical Metrics with matched artifacts: captured font, explicit Apply/readback, report refresh, Undo/Redo, saved reopen and owned teardown.
 - [ ] Native-qualify Designspace Source Comparison with matched artifacts: explicit source/layer selection, metrics and compatibility summaries, complete font preservation and owned teardown.
 
 - [ ] Qualify Issue 234 Open Fonts and Master Overview, Master Compatibility Browser and Node Counts Across Masters with matching installed artifacts and native PythonQt, including empty/stale fonts, preview, chooser changes, Close and complete font/history preservation.
