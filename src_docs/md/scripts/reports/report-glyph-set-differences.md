@@ -24,4 +24,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `6e3ca96f20b12320ec9e5ae720ad51260edbd20a324523125f2e253d9a1232cd`
 
-This source is not committed at `b52710a04ed5`; no immutable link is offered.
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Reports/Report%20Glyph%20Set%20Differences.py)

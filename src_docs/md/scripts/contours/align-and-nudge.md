@@ -39,4 +39,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `34ef373ba3bc1410c9bd982e470fef480d85b2fe9b8077bc80969b4bb2700e18`
 
-This source is not committed at `b52710a04ed5`; no immutable link is offered.
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Contours/Align%20and%20Nudge.py)

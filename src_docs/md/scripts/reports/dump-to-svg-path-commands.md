@@ -23,4 +23,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `ced329c0ed464ac53f5d9bd3282c6f01b4b7cf18ce6e4fd3593d8aad31de4c06`
 
-This source is not committed at `b52710a04ed5`; no immutable link is offered.
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Reports/Dump%20to%20Svg%20Path%20Commands.py)

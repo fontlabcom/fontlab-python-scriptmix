@@ -31,4 +31,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `2d046bb661fd4b4a5651c614ee71ee5968ec7e6de2273ab86cf4e1749b1f32c0`
 
-This source is not committed at `b52710a04ed5`; no immutable link is offered.
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Contours/Shape%20Generators.py)

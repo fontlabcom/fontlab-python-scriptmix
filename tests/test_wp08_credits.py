@@ -32,3 +32,9 @@ def test_font_audit_when_docstring_read_then_credits_line_names_original_authors
     credits = " ".join(text[start:text.index("See NOTICE", start)].split())
     for needle in ("FontLab App contributors (Apache-2.0)", "mekkablue", "(Apache-2.0)", "Simon Cozens", "(MIT)"):
         assert needle in credits, needle
+
+
+def test_notice_when_kutilek_adaptations_ship_then_upstream_mit_notice_is_retained():
+    notice = (ROOT.parent / "NOTICE").read_text(encoding="utf-8")
+    assert "Copyright (c) 2017 Jens Kutilek" in notice
+    assert "Permission is hereby granted, free of charge" in notice[notice.index("Jens Kutilek (Glyphs-Scripts)"):]

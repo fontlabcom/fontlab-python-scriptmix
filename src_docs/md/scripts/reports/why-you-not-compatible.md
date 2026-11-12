@@ -37,4 +37,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `cad13ca55e2a63896e5c3c0500d407d733af91c413efe8b038032b72efea0f1b`
 
-This source is not committed at `b52710a04ed5`; no immutable link is offered.
+[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Reports/Why%20You%20Not%20Compatible.py)
