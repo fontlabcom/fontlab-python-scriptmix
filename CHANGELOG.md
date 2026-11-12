@@ -10,6 +10,20 @@ this_file: CHANGELOG.md
 - `NOTICE` now retains Jens Kutilek's verbatim upstream MIT notice (Glyphs-Scripts commit 4439928a, LICENSE SHA-256 above in NOTICE), guarded by a test in `tests/test_wp08_credits.py`. Align and Nudge and Transform Studio have no third-party history or docstring source, so they are FontLab work.
 - Oracle updated: `tests/test_issue122_G13.py` expects the Apache-2.0 SPDX line.
 
+
+## 2026-11-12 - WP07 docs pipeline pins re-pinned after the CI Documentation failure
+
+The Documentation workflow on 9d1b8f34 failed `tests_docs/test_pipeline_*` (4 failures, 1 error)
+because `quality.sh coverage` does not run those tests and they still pinned the pre-WP07 site.
+Re-pinned from the built site in the locked docs environment (`sh src_docs/build.sh`): script page
+count 249 -> 227 in `test_pipeline_history.py` (`COUNT`) and `test_pipeline_site.py` (menus and
+pages), generated file count 391 -> 369 in `test_pipeline_build.py`, and the page lists in
+`test_pipeline_site.py` (`PAGES` and the search-index location set): the 31 pages of the retired
+launchers are removed and the 9 pages of the added App launchers are added (features:
+feature-authoring, feature-explorer, nastaliq-connections; font-info: encoding-and-order,
+font-identity; names: character-consistency, glyph-browser, glyph-identity, glyph-labels).
+31 removed, 9 added: net -22, consistent with the file count. 43 tests OK.
+
 ## 2026-11-12 — Issue 250 WP07: 31 launchers retired into App identity studios (re-derived onto current main)
 
 - Retires 31 Scriptmix launchers whose behaviour now lives in the App identity studios and adds 9 App studio launchers (lists in the review packet: 31 retired paths equal the WP07 routing ledger; 9 added). Active scripts: 249 -> 227 (`find Scripts -mindepth 2 -maxdepth 2 -name '*.py' | wc -l` on the merged tree; 249 + 9 - 31). `tests/test_wp05_consolidation.py` re-pinned to 227 for that reason; it still asserts the set equals `active_menu_paths`. Menu counts stay main's 219/288/279.

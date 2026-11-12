@@ -401,42 +401,17 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/alternate-preview.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/feature-authoring.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/build-suffix-substitution.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/feature-explorer.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/classes-browser.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/feature-code-viewer.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/generate-random-alternates-feature.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/ligature-finder.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/nastaliq-connection-editor.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/suffix-report.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/features/nastaliq-connections.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -446,42 +421,22 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/bump-font-version.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/calculate-vertical-metrics.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/glyph-order-preview-and-export.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/encoding-and-order.html</loc>
+        <lastmod>2026-11-12</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/font-identity.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/master-metrics-table.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/names-and-credits.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/paste-glyph-order-encoding.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/trial-font-maker.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/unicode-ranges-and-codepages.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -966,87 +921,22 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/batch-glyph-notes.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/character-consistency.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/batch-rename.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/glyph-browser.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/case-pairs.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/glyph-identity.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/character-info.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/character-set-compare.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/duplicate-unicodes.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/glyph-finder.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/glyph-metadata-tree.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/glyph-name-completion.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/glyph-notes.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/glyph-tags.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/mark-color-palette.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/select-by-mark.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/select-different-mark-colours.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/style-linker.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/suffix-tool.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/unicode-from-names.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/names/glyph-labels.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
