@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Zero-Width Marks reads Unicode values from the package; Metrics composite planning closed (Issue 250)
+
+- D36-1 (A2 report 36): `Scripts/Metrics/Zero-Width Marks.py` read `glyph.unicodes`, which `flGlyph` does not have, so "Only marks" failed live. `is_mark(glyph, unicodes=())` now takes the values and `target_glyphs` passes `package.fgPackage[str(g.name)].unicodes`, as App `glyphs.identity.read` does. A glyph with no package entry raises; there is no silent fallback.
+- Tests first: the `tests/_fgpackage_support.py` fake gained `__getitem__`; the `Glyph` fake in `tests/test_issue122_S1.py` lost `.unicodes`. New tests cover a Mn glyph with no "comb" in its name and the missing-entry error. Restoring `g.unicodes` makes four tests fail (mutant check).
+- Closed TODO "Resolve App Metrics planning when a selected composite and its base both move": A2 reports 34-36 cover all nine planners with no double shift. The Metrics writers row now lists only automatic dependants and the other remaining checks; a new row keeps the live Mn/Me re-check open.
+
 ## 2026-11-11 — Ruff baseline 26 to 0 for pinned Scripts by exact-path ignores (Issue 250)
 
 - `pyproject.toml` gains `[tool.ruff.lint.per-file-ignores]` for exactly eight Scripts, each only the codes it raises (E402 and/or E741). No Script byte changes: sha256 of all eight identical before and after.
