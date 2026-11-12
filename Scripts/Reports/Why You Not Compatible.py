@@ -1,5 +1,5 @@
 # this_file: Scripts/Reports/Why You Not Compatible.py
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: Apache-2.0
 """Report original structural differences across selected glyph layers.
 
 Select glyphs in a Font window or occurrences in a Glyph window. Run this

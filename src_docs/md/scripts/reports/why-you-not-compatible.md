@@ -35,6 +35,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `42ce9e74232f0fa59b733f12e1af658fcc9754177af004777c0a8dc4d11a3ef2`
+SHA256: `cad13ca55e2a63896e5c3c0500d407d733af91c413efe8b038032b72efea0f1b`
 
-[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Reports/Why%20You%20Not%20Compatible.py)
+This source is not committed at `b52710a04ed5`; no immutable link is offered.

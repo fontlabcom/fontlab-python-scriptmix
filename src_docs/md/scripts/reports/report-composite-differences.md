@@ -22,6 +22,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `7a7709373a95a0e54bac32d880aa62234ceade238e1062bb2961b0157d17d428`
+SHA256: `b0adc37383493640eeffa2a3efd0985dea1053bc1d86a48d50ca7b34d1ac1fce`
 
-[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Reports/Report%20Composite%20Differences.py)
+This source is not committed at `b52710a04ed5`; no immutable link is offered.

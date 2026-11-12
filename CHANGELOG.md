@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Everything Apache-2.0 (Issue 250, owner Q4/Q5)
+
+- Fourteen `Scripts/` headers that read MIT, `MIT AND Apache-2.0` or `Apache-2.0 AND MIT` now read `Apache-2.0`; their SHA-256 pins were refreshed in `additional-tools.json`, `menu-consolidations.json`, `menu-revisions.json` and the `src_docs`/`docs` pages. Third-party MIT notices stay in `NOTICE`.
+- `additional-tools.json`: 40 rows with a MIT-family `license` now say `Apache-2.0` and record the former value in `upstream_license`.
+- `varia/HT-Letterspacer-FL` (owner-written gateway) is relicensed from GPL-3.0 to Apache-2.0: `LICENSE`, `NOTICES.txt`, README/INSTALL text, the package docstring and the installer header. Upstream HT Letterspacer stays GPL-3.0 and is still downloaded at install time, not redistributed. `Install HT Letterspacer.vfpy` was rebuilt with `tools/build_release.py`; the committed installer did not byte-reproduce from the tree before this change (pre-existing drift), so its embedded payload changed.
+- Oracle updated: `tests/test_issue122_G13.py` expects the Apache-2.0 SPDX line.
+
 ## 2026-11-12 — Issue 250 WP07: 31 launchers retired into App identity studios (re-derived onto current main)
 
 - Retires 31 Scriptmix launchers whose behaviour now lives in the App identity studios and adds 9 App studio launchers (lists in the review packet: 31 retired paths equal the WP07 routing ledger; 9 added). Active scripts: 249 -> 227 (`find Scripts -mindepth 2 -maxdepth 2 -name '*.py' | wc -l` on the merged tree; 249 + 9 - 31). `tests/test_wp05_consolidation.py` re-pinned to 227 for that reason; it still asserts the set equals `active_menu_paths`. Menu counts stay main's 219/288/279.

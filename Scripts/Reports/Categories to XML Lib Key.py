@@ -1,5 +1,5 @@
 # this_file: Scripts/Reports/Categories to XML Lib Key.py
-# SPDX-License-Identifier: Apache-2.0 AND MIT
+# SPDX-License-Identifier: Apache-2.0
 """Export a complete ordered public.openTypeCategories UFO lib fragment.
 
 Open a font and run this command. The read-only modeless panel includes every

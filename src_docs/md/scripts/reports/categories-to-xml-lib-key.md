@@ -30,6 +30,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `ec200352ebc1139ebdd8b5ea21c25ad073994412e62b2a83f9f9a8b463de9177`
+SHA256: `ef2a8477b38bfab31df83a69f0be7940677d18cf13548380e2bcbf78984c6eac`
 
-[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Reports/Categories%20to%20XML%20Lib%20Key.py)
+This source is not committed at `b52710a04ed5`; no immutable link is offered.

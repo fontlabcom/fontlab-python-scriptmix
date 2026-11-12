@@ -1,5 +1,5 @@
 # this_file: Scripts/Kerning/Kerning Energy Report.py
-# SPDX-License-Identifier: MIT
+# SPDX-License-Identifier: Apache-2.0
 """Show a read-only kerning energy and spacing-bias report for selected glyphs.
 
 What: Report the sum of squared effective pair values and independent row/column

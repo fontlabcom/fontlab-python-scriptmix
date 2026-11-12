@@ -37,6 +37,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `e7b0b1f49a4ea5a65363a06d530fc2f9edba624ff39c57ba9604e20052a1a8bb`
+SHA256: `a6350b4da5fcaa774ae4fd35801591bf48437dff18cb165670971af0edaa0a1a`
 
-[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Contours/Transform%20Studio.py)
+This source is not committed at `b52710a04ed5`; no immutable link is offered.

@@ -98,7 +98,7 @@ def bootstrap(payload):
     )
     return (
         """#FLM: Install HT Letterspacer
-# HT Letterspacer for FontLab 9 — GPL-3.0. Full source is included in the release.
+# HT Letterspacer for FontLab 9 — Apache-2.0. Full source is included in the release.
 # Double-click this file to run it in FontLab 9. No Git or external Python required.
 import sys
 if sys.version_info < (3, 9):

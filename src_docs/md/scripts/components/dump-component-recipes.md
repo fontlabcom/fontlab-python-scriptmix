@@ -29,6 +29,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `8e46590e3f3d2400156c54be82f4ef9b5855c1d2a3c92c4fb832bf5ce69d6bc5`
+SHA256: `76b638aa5ec2c4067250ebeb1f9076e1e729b50fa4764cfdbbf8588c4ecacf7b`
 
-[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Components/Dump%20Component%20Recipes.py)
+This source is not committed at `b52710a04ed5`; no immutable link is offered.

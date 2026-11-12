@@ -29,6 +29,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `f0fdfde46c8868670b5f84430cf2105e9f6fb7ab0ff868685cd57efb40a16498`
+SHA256: `2b3e218162600ba1cd9c0cb701088b5df28f8902fc76afd3c481b6e3d4830289`
 
-[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Proof/Tallest%20and%20Shortest.py)
+This source is not committed at `b52710a04ed5`; no immutable link is offered.

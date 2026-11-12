@@ -1,4 +1,4 @@
-"""HT Letterspacer adapter for FontLab 9 (GPL-3.0)."""
+"""HT Letterspacer adapter for FontLab 9 (Apache-2.0)."""
 
 __version__ = "1.0.0"
 

@@ -1,5 +1,15 @@
 this_file: NOTICE
 
+Licence
+
+All FontLab-authored code and the adaptation of third-party MIT code in this repository is
+distributed under Apache-2.0 (owner decision, 2026-11-12). Adapted third-party MIT code keeps its
+original copyright notice and licence text in this NOTICE, as the MIT licence requires; the
+retained terms apply to the upstream portions only. Ledger rows record the former expression in
+`upstream_license`. varia/HT-Letterspacer-FL is an Apache-2.0 FontLab gateway: the installer
+downloads Huerta Tipografica's HT Letterspacer (GPL-3.0, its own terms) at install time and the
+upstream is not redistributed in this repository.
+
 Historical source locations
 ===========================
 Paths beginning rescued/ or containing /_old/ name historical sources archived

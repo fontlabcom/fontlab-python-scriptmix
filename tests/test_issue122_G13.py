@@ -108,7 +108,7 @@ def test_public_structure(key: str) -> None:
                         if isinstance(n, ast.Name)
                     )
     assert not forbidden.intersection(defined)
-    assert "# SPDX-License-Identifier: MIT" in _menu_bytes(ROOT, str(FILES[key].relative_to(ROOT))).decode().splitlines()[:3]
+    assert "# SPDX-License-Identifier: Apache-2.0" in _menu_bytes(ROOT, str(FILES[key].relative_to(ROOT))).decode().splitlines()[:3]
     assert not any(
         isinstance(n, ast.ImportFrom) and n.module == "fly.ap" for n in ast.walk(tree)
     )

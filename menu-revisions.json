@@ -2299,7 +2299,7 @@
     {
       "destination": "Scripts/Components/Dump Component Recipes.py",
       "historical_sha256": "a223762f17339790f23c368b43b98d78f8d04069aa2a5df00ea50bd6728be9c5",
-      "current_sha256": "8e46590e3f3d2400156c54be82f4ef9b5855c1d2a3c92c4fb832bf5ce69d6bc5",
+      "current_sha256": "76b638aa5ec2c4067250ebeb1f9076e1e729b50fa4764cfdbbf8588c4ecacf7b",
       "source_sha256": "500126d3fcc965c0a93991be4253fce7ed33f56eb3513b202ba8a1049e2e7edd",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3599,7 +3599,7 @@
     {
       "destination": "Scripts/Kerning/Kerning Energy Report.py",
       "historical_sha256": "79f1e604077519057e92bb36df12ef8dbf56c2df1f6081c3d46a224dd19c468a",
-      "current_sha256": "6555393db13425025dee6fcba78101661a6a19c9e08c6319319c2c0edb29a688",
+      "current_sha256": "d6a93d6d2f637befa3220164d723b30419a464bb8ba9722d2db5f2cce9648d54",
       "source_sha256": "0bbb8f5c299f09030d36c24fc678d6f28a44f9b6693bf7b5d77cd56d69be0849",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3704,7 +3704,7 @@
     {
       "destination": "Scripts/Kerning/Unbundle Punctuation Kerning.py",
       "historical_sha256": "d80bd67bb6b56336e48fe7507a6449f75a51148676576431ced0478f7955e9e8",
-      "current_sha256": "97894e162ebee70d9fbdbb5843d323f7af99e806b4fcfcad9a775c72a3d7ec93",
+      "current_sha256": "69ccc12504aff4445a6da3266bd2264375fc62231146e62b35a83fe5201eed8e",
       "source_sha256": "1c12b26e4e936b5e02b74057bd38542785ce3da2061fd6531c2ebaa608ca0f62",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5562,7 +5562,7 @@
     {
       "destination": "Scripts/Proof/Tallest and Shortest.py",
       "historical_sha256": "0991d387da230fe6ee87a8c98dbabc90b37c5156d988b2d5e885d8b0027f49cb",
-      "current_sha256": "f0fdfde46c8868670b5f84430cf2105e9f6fb7ab0ff868685cd57efb40a16498",
+      "current_sha256": "2b3e218162600ba1cd9c0cb701088b5df28f8902fc76afd3c481b6e3d4830289",
       "source_sha256": "00719459ee2c987046ae14cf04aafce2e18bfdffee0689e7bc2e250bf1e2f26b",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5633,7 +5633,7 @@
     {
       "destination": "Scripts/Reports/Categories to XML Lib Key.py",
       "historical_sha256": "ded9427081ebc8919ad7aa4dc315a118b6cc0c8d701cbcd34d44e689cee086f3",
-      "current_sha256": "ec200352ebc1139ebdd8b5ea21c25ad073994412e62b2a83f9f9a8b463de9177",
+      "current_sha256": "ef2a8477b38bfab31df83a69f0be7940677d18cf13548380e2bcbf78984c6eac",
       "source_sha256": "9b66520bbf9f4356d4af0d2434a54701128f5f6b5ff293e502c172c80eb389aa",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5647,7 +5647,7 @@
     {
       "destination": "Scripts/Reports/Close But No Cigar.py",
       "historical_sha256": "29ff35e0f154f429cdac652bae909f858224f854a909953ba635da4a8ac391c9",
-      "current_sha256": "4b8fbbaba0f400880ca38201782b107e1af4654cbef4f59686ab66cdbd233d00",
+      "current_sha256": "e644f7e0738a4d253dd7c38f2edbffd3368da7c9e1112a44ccd122b5b1072224",
       "source_sha256": "bcf9ec870ac1a36ed5fb65f0f863c826ea80e6049f072d4891f0d2daa52084ed",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5699,7 +5699,7 @@
     {
       "destination": "Scripts/Reports/Dump to Svg Path Commands.py",
       "historical_sha256": "e93030cb93c103beefb66e96ac910e8455d1575fae19513ff356fe961c8540b5",
-      "current_sha256": "a94c19667467f20cb0f996e77315b563d8604948c3ebcf66b68ff5f5476c64f9",
+      "current_sha256": "ced329c0ed464ac53f5d9bd3282c6f01b4b7cf18ce6e4fd3593d8aad31de4c06",
       "source_sha256": "c94229a19becf671b56295cc61bb2154a43d5bb77455cc76aacecde4a0746975",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5799,7 +5799,7 @@
     {
       "destination": "Scripts/Reports/Report Composite Differences.py",
       "historical_sha256": "ee4c1fc68c6ebb54ca4856945dad7be7e9808eea6605f2f558163f3823f4ce8e",
-      "current_sha256": "7a7709373a95a0e54bac32d880aa62234ceade238e1062bb2961b0157d17d428",
+      "current_sha256": "b0adc37383493640eeffa2a3efd0985dea1053bc1d86a48d50ca7b34d1ac1fce",
       "source_sha256": "91b90cf5c6f9827dcdd2712c952a335e396be1fc7d3e74cd7212b6b2e7647100",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5818,7 +5818,7 @@
     {
       "destination": "Scripts/Reports/Report Glyph Set Differences.py",
       "historical_sha256": "5f48da740badc886f1f5060aab4df0a2597ff03b9fff2224888ea3f04098ecbf",
-      "current_sha256": "ce7cab5519bae22fb98ad8c155b8ca7ff3c2020b13f5a69d158982f78028fb2b",
+      "current_sha256": "6e3ca96f20b12320ec9e5ae720ad51260edbd20a324523125f2e253d9a1232cd",
       "source_sha256": "5d6df2609ebfa5df887833567151bb4f5bfc5290e3d494640ed11bdfe2795a87",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -5884,7 +5884,7 @@
     {
       "destination": "Scripts/Reports/Why You Not Compatible.py",
       "historical_sha256": "cc1bf2861af45e722cc855088569921e890c7067cc1158b1f240c0e5c4a5cd04",
-      "current_sha256": "42ce9e74232f0fa59b733f12e1af658fcc9754177af004777c0a8dc4d11a3ef2",
+      "current_sha256": "cad13ca55e2a63896e5c3c0500d407d733af91c413efe8b038032b72efea0f1b",
       "source_sha256": "1234a335d2284ad38773e7b9bb4cb3310f90f50e618ac2b8ef4fa96656757a5c",
       "kind": "issue-205-import-path-update",
       "edits": [

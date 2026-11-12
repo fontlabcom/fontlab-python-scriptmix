@@ -1,5 +1,5 @@
 # this_file: Scripts/Reports/Font Audit.py
-# SPDX-License-Identifier: Apache-2.0 AND MIT
+# SPDX-License-Identifier: Apache-2.0
 # FLM: Reports · Font Audit
 """Inspect whole-font inventory, encoding, categories and case consistency.
 

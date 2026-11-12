@@ -1,5 +1,5 @@
 # this_file: Scripts/Components/Dump Component Recipes.py
-# SPDX-License-Identifier: Apache-2.0 AND MIT
+# SPDX-License-Identifier: Apache-2.0
 """Dump ordered recipes for selected component glyphs in Font/Glyph windows.
 
 Select glyphs or editor layer occurrences, then run this command. The modeless

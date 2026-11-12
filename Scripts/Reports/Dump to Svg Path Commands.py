@@ -1,5 +1,5 @@
 # this_file: Scripts/Reports/Dump to Svg Path Commands.py
-# SPDX-License-Identifier: Apache-2.0 AND MIT
+# SPDX-License-Identifier: Apache-2.0
 """First selected layer own paths only; ordered M/L/C operands, unconditional Z and blank line after every open/closed/empty contour. Unsupported/quadratic segments refuse the whole report; not a complete SVG/component export. Own affine shape transforms are applied; projective transforms refuse the whole report.
 
 Open a font and select glyph layers before running. The owned modeless read-only
