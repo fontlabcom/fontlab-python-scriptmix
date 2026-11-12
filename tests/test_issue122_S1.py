@@ -916,7 +916,7 @@ def test_round_advances_when_applied_then_rsb_absorbs_and_one_undo(world):
         "auto_skipped": 2,
         "mismatches": [],
     "pending_updates": ()}
-    assert "Changed 2 layers in 1 glyphs" in panel.status.text
+    assert "Changed 2 layers in 1 glyph" in panel.status.text
     assert "2 layers skipped (auto)" in panel.status.text, panel.status.text
 
 
@@ -1128,7 +1128,7 @@ def test_panel_when_override_ticked_then_applies_and_keeps_warning(world):
     panel.apply_button.press()
     assert base.findLayer("Light").advanceWidth == 100
     assert len(world.history) == 1
-    assert panel.status.text.startswith("Changed 1 layers in 1 glyphs")
+    assert panel.status.text.startswith("Changed 1 layer in 1 glyph")
     assert "FontLab rebuilds auto glyphs ntilde" in panel.status.text, panel.status.text
 
 
