@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Font Info and Vertical Metrics native-qualified (A2 report 48, Issue 250)
+
+- `Scripts/Font UI Lab/Font Info and Vertical Metrics.py` (Scriptmix 411b293 with App 405ba2c, FontLab 9.0.9809, owned plum-var1 copy): captured font, explicit Apply with readback (one history row, native and Fontport 780 plus note), report refresh, Undo/Redo with fields and report following at once, saved reopen (ascender 780, Light/Bold 765, note kept) and owned teardown all pass. Closes the Native-qualify row.
+
 ## 2026-11-12 — Nodes Near Zones duplicate results fixed in the App (F41-1, live report R41, Issue 250)
 
 - Documentation only. Live report R41 found Nodes Near Zones App listing its results in both a text pane and a table. The fix is in the App (`GlyphTableTab` hides the text pane, so the table is the one visible list); the Scriptmix launchers only call `show` and are unchanged. The TODO row now asks for a repeat live smoke on the fix SHA, including Open Contours and Font Audit.
