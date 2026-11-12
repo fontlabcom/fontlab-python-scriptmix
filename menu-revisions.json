@@ -2307,6 +2307,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.scripting import component_recipes_dialog_type, show_script_dialog\n",
           "current": "    from fly.ap.core.scripting import component_recipes_dialog_type, show_script_dialog\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: Apache-2.0 AND MIT",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -3607,6 +3612,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    import fly.ap.kerning_batch as batch\n    import fly.ap.reports as reports  # noqa: PLR0402 - qualified Fly submodule\n    import fly.ap.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule\n",
           "current": "    import fly.ap.kerning.batch as batch\n    import fly.ap.proof.reports.model as reports  # noqa: PLR0402 - qualified Fly submodule\n    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: MIT",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -3737,6 +3747,11 @@
           "kind": "issue-205-native-flglyph-unicodes",
           "historical": "                        codes = list(base.unicodes)\n",
           "current": "                        codes = list(base.fgGlyph.unicodes)\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: MIT",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -5575,6 +5590,11 @@
           "kind": "issue-205-app-floor-1.2.0",
           "historical": "Requires App>=0.2.26.dev159 and Fly in FontLab9/Python3.11.\n",
           "current": "Requires App>=1.2.0 and Fly in FontLab9/Python3.11.\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: MIT",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -5641,6 +5661,11 @@
           "kind": "issue-205-import-path-update",
           "historical": "    from fly.ap.category_xml import show\n",
           "current": "    from fly.ap.features.categories.model import show\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: Apache-2.0 AND MIT",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -5660,6 +5685,11 @@
           "kind": "issue-205-app-floor-1.2.0",
           "historical": "Requires FontLab 9 Python 3.11, Fly and App 0.2.26.dev159 or later.\n",
           "current": "Requires FontLab 9 Python 3.11, Fly and App 1.2.0 or later.\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: MIT AND Apache-2.0",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -5712,6 +5742,11 @@
           "kind": "issue-205-app-floor-1.2.0",
           "historical": "and App0.2.26.dev159 or later. Adapted from simoncozens--GlyphsScripts/Dump to SVG.py; see NOTICE.\n",
           "current": "and App1.2.0 or later. Adapted from simoncozens--GlyphsScripts/Dump to SVG.py; see NOTICE.\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: Apache-2.0 AND MIT",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -5812,6 +5847,11 @@
           "kind": "issue-205-app-floor-1.2.0",
           "historical": "Requires App>=0.2.26.dev325 through Fly in FontLab Python3.11.\n",
           "current": "Requires App>=1.2.0 through Fly in FontLab Python3.11.\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: MIT AND Apache-2.0",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -5831,6 +5871,11 @@
           "kind": "issue-205-app-floor-1.2.0",
           "historical": "Requires App>=0.2.26.dev325 through Fly in FontLab Python3.11.\n",
           "current": "Requires App>=1.2.0 through Fly in FontLab Python3.11.\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: MIT AND Apache-2.0",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -5897,6 +5942,11 @@
           "kind": "issue-205-app-floor-1.2.0",
           "historical": "Requires App>=0.2.26.dev159 and FontLab9 Python3.11 with fontlab-fly.\n",
           "current": "Requires App>=1.2.0 and FontLab9 Python3.11 with fontlab-fly.\n"
+        },
+        {
+          "kind": "issue-250-licence-header",
+          "historical": "# SPDX-License-Identifier: MIT",
+          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
