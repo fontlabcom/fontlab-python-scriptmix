@@ -2,6 +2,7 @@
 this_file: TODO.md
 ---
 
+- [ ] Running the full suite rewrites 227 tracked `src_docs/md/**` "Python source at <sha>" links to the checkout HEAD (reviewer2 M-1, Issue 254). Make the test write generated links to a temp copy, or stop rewriting tracked files, so a clean tree stays clean after `pytest`.
 - [ ] Font Audit carries mekkablue Apache-2.0 attribution but ledger `upstream_repository` is None. Identify the exact source script in mekkablue/Glyphs-Scripts, then set `upstream_repository` and `upstream_license=Apache-2.0` with evidence.
 - [ ] Repeat the live smoke on the F41-1 fix SHA (App `GlyphTableTab` now hides the duplicate text pane; the table is the only visible result list), including Nodes Near Zones, Open Contours and Font Audit.
 - [ ] WP05: run canonical App/Scriptmix wrappers with authorized evidence directories and resolved dependencies; the reviewed 49-to-ten migration, full prepared suites and per-module coverage pass.
