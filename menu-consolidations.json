@@ -866,7 +866,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "76b638aa5ec2c4067250ebeb1f9076e1e729b50fa4764cfdbbf8588c4ecacf7b"
     },
     {
       "source": {
@@ -5974,7 +5975,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "2b3e218162600ba1cd9c0cb701088b5df28f8902fc76afd3c481b6e3d4830289"
     },
     {
       "source": {
@@ -6137,7 +6139,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "ef2a8477b38bfab31df83a69f0be7940677d18cf13548380e2bcbf78984c6eac"
     },
     {
       "source": {
@@ -6160,7 +6163,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "e644f7e0738a4d253dd7c38f2edbffd3368da7c9e1112a44ccd122b5b1072224"
     },
     {
       "source": {
@@ -6231,7 +6235,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "ced329c0ed464ac53f5d9bd3282c6f01b4b7cf18ce6e4fd3593d8aad31de4c06"
     },
     {
       "source": {
@@ -6512,7 +6517,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "b0adc37383493640eeffa2a3efd0985dea1053bc1d86a48d50ca7b34d1ac1fce"
     },
     {
       "source": {
@@ -6535,7 +6541,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "6e3ca96f20b12320ec9e5ae720ad51260edbd20a324523125f2e253d9a1232cd"
     },
     {
       "source": {
@@ -6654,7 +6661,8 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "cad13ca55e2a63896e5c3c0500d407d733af91c413efe8b038032b72efea0f1b"
     },
     {
       "source": {

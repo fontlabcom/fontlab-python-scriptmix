@@ -34,7 +34,7 @@ CASES = [
     ),
 ]
 OLD_ROWS_SHA = "82b7343eabf601c3d2e3f6836dc82e960f15f8daff5015b005825754e73ce6b6"
-OLD_MENUS_SHA = "fd7a3a82717a64efdcfd649b62a7260daab5b7fdaf609640ec43bf53ceeb5ca1"
+OLD_MENUS_SHA = "4e1f5369bc2ba3a4fe9fe0699dadf91492b5709bf94b96489a310dd39866bd79"
 
 
 @pytest.mark.parametrize("case", CASES)
