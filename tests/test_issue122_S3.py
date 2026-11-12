@@ -21,7 +21,7 @@ from types import SimpleNamespace as NS
 from unittest.mock import MagicMock
 
 import pytest
-from _wp07_routes import behavior_path
+from _wp07_routes import behavior_path, expected_this_file
 from conftest import (
     app_module_name,
     app_names_used,
@@ -393,10 +393,9 @@ def test_script_when_parsed_then_follows_house_rules(name):
     attrs = {n.attr for n in ast.walk(tree) if isinstance(n, ast.Attribute)}
     assert "fgGlyph" not in attrs, "S3 must never read flGlyph.fgGlyph"
     assert "UpdateAll" not in attrs, "S3 must never call UpdateAll (fl#8537)"
-    assert text.splitlines()[0].startswith("# this_file: ")
-    routed = path != NAMES / f"{name}.py"  # consolidated: the App oracle keeps source provenance
-    assert "SPDX-License-Identifier: Apache-2.0" in "\n".join(text.splitlines()[:3]) or routed
-    assert routed or "Apache-2.0" in ast.get_docstring(tree), "docstring must credit the licence"
+    assert text.splitlines()[0] == f"# this_file: {expected_this_file(NAMES / f'{name}.py')}"
+    assert "SPDX-License-Identifier: Apache-2.0" in "\n".join(text.splitlines()[:4])
+    assert "Apache-2.0" in ast.get_docstring(tree), "docstring must credit the licence"
     for node in ast.walk(tree):
         if isinstance(node, ast.FunctionDef):
             assert node.returns is not None, f"{node.name} needs a return annotation"

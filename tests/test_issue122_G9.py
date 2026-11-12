@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Behaviour checks for three Resistenza rewrites; no native acceptance claim."""
 
-from _wp07_routes import behavior_path
+from _wp07_routes import behavior_path, expected_this_file
 from conftest import app_module_name, app_names_used, app_namespace, check_real_app_names
 import ast
 import copy
@@ -40,7 +40,7 @@ def load(title: str) -> Any:
 def test_public_contract(title: str) -> None:
     source = PATHS[title].read_text()
     tree = ast.parse(source, feature_version=(3, 11))
-    assert source.startswith("# this_file: ")
+    assert source.startswith(f"# this_file: {expected_this_file(PATHS[title])}\n")
     doc = ast.get_docstring(tree)
     for text in (
         "What:",

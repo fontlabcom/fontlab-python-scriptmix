@@ -16,3 +16,14 @@ def behavior_path(path):
         return path
     target = ROUTES.get(relative)
     return resolve_app_sources() / target if target else path
+
+
+def expected_this_file(path):
+    """Return the exact ``# this_file`` value a source must carry: App-relative when routed."""
+    path = Path(path).resolve()
+    app = resolve_app_sources().resolve()
+    if path.is_relative_to(app):
+        return "src/fontlabapp/" + str(path.relative_to(app))
+    relative = str(path.relative_to(Path(__file__).resolve().parents[1]))
+    target = ROUTES.get(relative)
+    return "src/fontlabapp/" + target if target else relative
