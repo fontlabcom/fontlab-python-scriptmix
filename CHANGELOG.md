@@ -8,6 +8,7 @@ this_file: CHANGELOG.md
 - `additional-tools.json`: 38 rows with a MIT-family `license` now say `Apache-2.0` and record the former value in `upstream_license`.
 - `varia/HT-Letterspacer-FL` (owner-written gateway) is relicensed from GPL-3.0 to Apache-2.0: `LICENSE`, `NOTICES.txt`, README/INSTALL text, the package docstring and the installer header. Upstream HT Letterspacer stays GPL-3.0 and is still downloaded at install time, not redistributed. `Install HT Letterspacer.vfpy` was rebuilt with `tools/build_release.py`; the committed installer did not byte-reproduce from the tree before this change (pre-existing drift), so its embedded payload changed.
 - `NOTICE` now retains Jens Kutilek's verbatim upstream MIT notice (Glyphs-Scripts commit 4439928a, LICENSE SHA-256 above in NOTICE), guarded by a test in `tests/test_wp08_credits.py`. Align and Nudge and Transform Studio have no third-party history or docstring source, so they are FontLab work.
+- Oracles updated to the relicensed rows (`tests/test_font_ui_lab_menus.py` OLD_ROWS_SHA, `tests/test_layer_compatibility.py`, `tests/test_layer_extrema.py`); `menu-consolidations.json` keeps each historical `source.sha256` unchanged and only the destination pins move.
 - `Scripts/Kerning/Kerning Energy Report.py` and `Scripts/Kerning/Unbundle Punctuation Kerning.py` are retired by WP03; not relicensed in place. The Sansomatic copies stay MIT until the App relicence lands, so `tests/test_issue122_G13.py` is unchanged.
 
 

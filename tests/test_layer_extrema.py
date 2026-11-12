@@ -59,7 +59,7 @@ def test_new_extrema_provenance_preserves_the_original_sample_denominator():
         for row in rows
         if row["kind"] == "practical-layer-extrema-workflow-candidate"
     ]
-    assert len(new) == 2 and {row["license"] for row in new} == {"MIT", "Apache-2.0"}
+    assert len(new) == 2 and {row["license"] for row in new} == {"Apache-2.0"}
     for row in new:
         assert (
             row["destination_sha256"]
