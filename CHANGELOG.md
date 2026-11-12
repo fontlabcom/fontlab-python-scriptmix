@@ -4,11 +4,11 @@ this_file: CHANGELOG.md
 
 ## 2026-11-12 — Everything Apache-2.0 (Issue 250, owner Q4/Q5)
 
-- Fourteen `Scripts/` headers that read MIT, `MIT AND Apache-2.0` or `Apache-2.0 AND MIT` now read `Apache-2.0`; their SHA-256 pins were refreshed in `additional-tools.json`, `menu-consolidations.json`, `menu-revisions.json` and the `src_docs`/`docs` pages. Third-party MIT notices stay in `NOTICE`.
-- `additional-tools.json`: 40 rows with a MIT-family `license` now say `Apache-2.0` and record the former value in `upstream_license`.
+- Twelve `Scripts/` headers that read MIT, `MIT AND Apache-2.0` or `Apache-2.0 AND MIT` now read `Apache-2.0`; their SHA-256 pins were refreshed in `additional-tools.json`, `menu-consolidations.json`, `menu-revisions.json` and the `src_docs`/`docs` pages. Third-party MIT notices stay in `NOTICE`.
+- `additional-tools.json`: 38 rows with a MIT-family `license` now say `Apache-2.0` and record the former value in `upstream_license`.
 - `varia/HT-Letterspacer-FL` (owner-written gateway) is relicensed from GPL-3.0 to Apache-2.0: `LICENSE`, `NOTICES.txt`, README/INSTALL text, the package docstring and the installer header. Upstream HT Letterspacer stays GPL-3.0 and is still downloaded at install time, not redistributed. `Install HT Letterspacer.vfpy` was rebuilt with `tools/build_release.py`; the committed installer did not byte-reproduce from the tree before this change (pre-existing drift), so its embedded payload changed.
 - `NOTICE` now retains Jens Kutilek's verbatim upstream MIT notice (Glyphs-Scripts commit 4439928a, LICENSE SHA-256 above in NOTICE), guarded by a test in `tests/test_wp08_credits.py`. Align and Nudge and Transform Studio have no third-party history or docstring source, so they are FontLab work.
-- Oracle updated: `tests/test_issue122_G13.py` expects the Apache-2.0 SPDX line.
+- `Scripts/Kerning/Kerning Energy Report.py` and `Scripts/Kerning/Unbundle Punctuation Kerning.py` are retired by WP03; not relicensed in place. The Sansomatic copies stay MIT until the App relicence lands, so `tests/test_issue122_G13.py` is unchanged.
 
 
 ## 2026-11-12 - Docs site test covers every authored page (Issue 250)

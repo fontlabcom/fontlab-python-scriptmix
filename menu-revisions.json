@@ -3604,7 +3604,7 @@
     {
       "destination": "Scripts/Kerning/Kerning Energy Report.py",
       "historical_sha256": "79f1e604077519057e92bb36df12ef8dbf56c2df1f6081c3d46a224dd19c468a",
-      "current_sha256": "d6a93d6d2f637befa3220164d723b30419a464bb8ba9722d2db5f2cce9648d54",
+      "current_sha256": "6555393db13425025dee6fcba78101661a6a19c9e08c6319319c2c0edb29a688",
       "source_sha256": "0bbb8f5c299f09030d36c24fc678d6f28a44f9b6693bf7b5d77cd56d69be0849",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3612,11 +3612,6 @@
           "kind": "issue-205-import-path-update",
           "historical": "    import fly.ap.kerning_batch as batch\n    import fly.ap.reports as reports  # noqa: PLR0402 - qualified Fly submodule\n    import fly.ap.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule\n",
           "current": "    import fly.ap.kerning.batch as batch\n    import fly.ap.proof.reports.model as reports  # noqa: PLR0402 - qualified Fly submodule\n    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - qualified Fly submodule\n"
-        },
-        {
-          "kind": "issue-250-licence-header",
-          "historical": "# SPDX-License-Identifier: MIT",
-          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },
@@ -3714,7 +3709,7 @@
     {
       "destination": "Scripts/Kerning/Unbundle Punctuation Kerning.py",
       "historical_sha256": "d80bd67bb6b56336e48fe7507a6449f75a51148676576431ced0478f7955e9e8",
-      "current_sha256": "69ccc12504aff4445a6da3266bd2264375fc62231146e62b35a83fe5201eed8e",
+      "current_sha256": "97894e162ebee70d9fbdbb5843d323f7af99e806b4fcfcad9a775c72a3d7ec93",
       "source_sha256": "1c12b26e4e936b5e02b74057bd38542785ce3da2061fd6531c2ebaa608ca0f62",
       "kind": "issue-205-import-path-update",
       "edits": [
@@ -3747,11 +3742,6 @@
           "kind": "issue-205-native-flglyph-unicodes",
           "historical": "                        codes = list(base.unicodes)\n",
           "current": "                        codes = list(base.fgGlyph.unicodes)\n"
-        },
-        {
-          "kind": "issue-250-licence-header",
-          "historical": "# SPDX-License-Identifier: MIT",
-          "current": "# SPDX-License-Identifier: Apache-2.0"
         }
       ]
     },

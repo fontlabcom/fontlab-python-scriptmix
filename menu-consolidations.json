@@ -3579,7 +3579,7 @@
       "source": {
         "path": "Scripts/Kerning/Kerning Energy Report.py",
         "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
-        "sha256": "d6a93d6d2f637befa3220164d723b30419a464bb8ba9722d2db5f2cce9648d54"
+        "sha256": "6555393db13425025dee6fcba78101661a6a19c9e08c6319319c2c0edb29a688"
       },
       "disposition": "absorbed",
       "destination": {
@@ -3890,7 +3890,7 @@
       "source": {
         "path": "Scripts/Kerning/Unbundle Punctuation Kerning.py",
         "commit": "8022be9c4fc59e87bfcb8ca21724be55ea79ebb5",
-        "sha256": "69ccc12504aff4445a6da3266bd2264375fc62231146e62b35a83fe5201eed8e"
+        "sha256": "97894e162ebee70d9fbdbb5843d323f7af99e806b4fcfcad9a775c72a3d7ec93"
       },
       "disposition": "absorbed",
       "destination": {

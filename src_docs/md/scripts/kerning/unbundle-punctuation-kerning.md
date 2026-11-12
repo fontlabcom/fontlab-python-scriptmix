@@ -37,6 +37,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `69ccc12504aff4445a6da3266bd2264375fc62231146e62b35a83fe5201eed8e`
+SHA256: `97894e162ebee70d9fbdbb5843d323f7af99e806b4fcfcad9a775c72a3d7ec93`
 
-[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Kerning/Unbundle%20Punctuation%20Kerning.py)
+[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Kerning/Unbundle%20Punctuation%20Kerning.py)

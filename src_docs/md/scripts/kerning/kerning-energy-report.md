@@ -30,6 +30,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `d6a93d6d2f637befa3220164d723b30419a464bb8ba9722d2db5f2cce9648d54`
+SHA256: `6555393db13425025dee6fcba78101661a6a19c9e08c6319319c2c0edb29a688`
 
-[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Kerning/Kerning%20Energy%20Report.py)
+[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Kerning/Kerning%20Energy%20Report.py)

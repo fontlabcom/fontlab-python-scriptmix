@@ -1,5 +1,5 @@
 # this_file: Scripts/Kerning/Unbundle Punctuation Kerning.py
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MIT
 """Materialize glyph-pair exceptions for selected punctuation across masters.
 
 What: Turn inherited values involving the selection into explicit glyph pairs.
