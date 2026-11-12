@@ -38,4 +38,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `097a7cafa058e574cbeb6a0f48164fcef3bcb43add88f437a0bbe6ac128d4b06`
 
-This source is not committed at `38d3549fc6f0`; no immutable link is offered.
+[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Font%20Info/Font%20Metrics.py)

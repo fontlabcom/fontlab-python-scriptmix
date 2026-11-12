@@ -934,7 +934,7 @@ def test_delete_real_kerning_writer_preserves_exception(
         scripting={"current_package": lambda *a: package},
         modules=("kerning_batch",),
     )
-    stub(monkeypatch, "fly.ap.core.scripting", current_package=lambda *args: package,
+    stub(monkeypatch, "fly.ap.core.scripting", current_package=lambda *args: package, names_selected_names=lambda: [], select_glyphs=lambda *a: None,
          layer_selection_api=lambda: sys.modules["fly.ap.masters.layers.selection"],
          kerning_tool_backends=lambda: NS(batch=sys.modules["fly.ap.kerning.batch"]),
          masters_api=lambda: sys.modules["fly.ap.masters.inspect.model"])

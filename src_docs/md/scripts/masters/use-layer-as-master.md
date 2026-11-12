@@ -57,4 +57,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `cb9a5ffffd1d501a50ea565dc66b2f1718d6f721e7369f101471a381dd4afdb9`
 
-[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Masters/Use%20Layer%20As%20Master.py)
+[Python source at `e537cab9364b`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/e537cab9364bf34af3d36190d5c471795140f722/Scripts/Masters/Use%20Layer%20As%20Master.py)
