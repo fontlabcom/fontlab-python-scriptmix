@@ -1768,6 +1768,12 @@ the130sample denominator. Downloaded-tag verification follows this release.
 
 # Changelog
 
+## 2026-11-12 — install.vfpy matches the App's installer, with Extensions bundle support (Issue 254)
+
+- `install.vfpy` is now byte-identical to `fontlab-fontlabapp/install.vfpy` (pushed in App `5cac0d6`).
+  The new code places `[tool.fontlab-install] extensions` bundles; this repository declares none, so
+  installs behave as before. `tools/check_install_copies.py` in the App compares the copies by sha256.
+
 ## 2026-11-11 — install.vfpy synced to the App WP11A installer (Issue 250)
 
 - `install.vfpy` is now byte-identical to fontlab-fontlabapp 79f7485 (WP11A): it records file hashes in `install.log`, removes only superseded files whose current hash matches the logged hash, keeps edited ones and reports them, refuses entries with `..` or outside the data folder and any unowned entry in the old RECORD, and supports `FONTLAB_INSTALL_DRY_RUN`. Verify with `tools/check_install_copies.py` in the App repository. The native reinstall check is owner-run and stays open in the App TODO.

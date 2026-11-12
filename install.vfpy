@@ -29,8 +29,13 @@ reverse-domain form (e.g. com.fontlab.fly). FontLab reports its user data folder
 - Scripts/Extensions/: "List Extensions" and "Uninstall <id>" launchers. They
   import this same file, installed as site-packages/fontlab_install.py.
 
+- Extensions bundles: with [tool.fontlab-install] extensions = "Extensions", each
+  <folder>/<reporters|filters|tools|palettes|general>/<name>.fontlab<Kind> bundle is
+  linked into Extensions/<kind>/ (a copy under Extensions/<id>/bundles when not a
+  Git checkout). A path that is not our link is kept and reported, never replaced.
+
 Optional [tool.fontlab-install] keys override pyproject values that do not fit
-FontLab: name (the distribution record), packages (folders with __init__.py;
+FontLab: name (the distribution record), extensions (folder of plugin bundles), packages (folders with __init__.py;
 [] installs scripts only) and dependencies (what the scripts need in FontLab).
 
 Restart FontLab afterwards.
@@ -60,6 +65,7 @@ ACTIVE = "FONTLAB_INSTALL_ACTIVE"  # checkouts already installed in this run, sh
 VENV = ".venv"
 VENV_DIRS = ("bin", "share", "include")  # where wheels put scripts, data and headers
 MARKER = ".fontlab-install.json"  # marks copied folders this installer owns
+BUNDLE_KINDS = {"reporters": "Reporter", "filters": "Filter", "tools": "Tool", "palettes": "Palette", "general": "General"}
 MENU = "Extensions"  # Scripts submenu with the generated launchers
 ID_PATTERN = re.compile(r"^[a-z][a-z0-9-]*(\.[a-z0-9][a-z0-9-]*)+$")
 IGNORE = shutil.ignore_patterns("__pycache__", "*.pyc", ".DS_Store", "tests", "stubs")
@@ -623,6 +629,66 @@ def place_scripts(scripts, pairs, skip=frozenset()):
     return placed
 
 
+def bundle_sources(config):
+    """[(bundle folder, kind folder)] listed by [tool.fontlab-install] extensions; [] without the key.
+
+    Only <extensions>/<kind>/<name>.fontlab<Kind> folders holding a plugin.json count; strays are ignored.
+    """
+    if "extensions" not in config:
+        return []
+    value = str(config["extensions"])
+    rel = Path(value)
+    if not value or rel.is_absolute() or ".." in rel.parts or rel.parts in ((), (".",)) or value == ".":
+        raise RuntimeError("[tool.fontlab-install] extensions must be a folder inside the project, got %r." % value)
+    found = []
+    for kind, title in BUNDLE_KINDS.items():
+        folder = SOURCE / rel / kind
+        if not folder.is_dir() or folder.is_symlink():
+            continue
+        for bundle in sorted(folder.iterdir()):
+            if (bundle.name.endswith(".fontlab" + title) and bundle.is_dir() and not bundle.is_symlink()
+                    and (bundle / "plugin.json").is_file()):
+                found.append((bundle, kind))
+    return found
+
+
+def place_bundles(data, home, ext_id, bundles, editable, owned, old_links):
+    """Link each bundle into <data>/Extensions/<kind>/; return (placed links, [(path, why)] left alone)."""
+    placed, held = [], []
+    if not bundles:
+        return placed, held
+    if editable:
+        sources = {src: Path(os.path.abspath(str(src))) for src, _ in bundles}
+    else:
+        # Keep <kind>/<Name>: the plugin core resolves the link and requires the kind folder name.
+        for kind in sorted({kind for _, kind in bundles}):
+            copy_tree([src for src, k in bundles if k == kind], home / "bundles" / kind, ext_id)
+        (home / "bundles" / MARKER).write_text(json.dumps({"id": ext_id}) + "\n", encoding="utf-8")  # uninstall may remove it
+        placed.append(home / "bundles")
+        sources = {src: home / "bundles" / kind / src.name for src, kind in bundles}
+    for src, kind in bundles:
+        link = data / "Extensions" / kind / src.name
+        goal = str(sources[src])
+        if os.path.lexists(str(link)):
+            ours = link.is_symlink() and str(link) in owned and os.readlink(str(link)) == old_links.get(str(link))
+            if not ours:
+                print("Kept (foreign bundle, not overwritten): %s" % link)
+                held.append((link, "foreign bundle"))
+                continue
+            if os.readlink(str(link)) != goal:
+                link.unlink()
+        if not link.is_symlink():
+            link.parent.mkdir(parents=True, exist_ok=True)
+            os.symlink(goal, str(link), target_is_directory=True)
+        placed.append(link)
+    return placed, held
+
+
+def is_bundle_path(path, data):
+    parent = Path(os.path.abspath(path)).parent
+    return parent.name in BUNDLE_KINDS and parent.parent == data / "Extensions"
+
+
 def record_rows(info):
     """(relative path, sha256 text) for each safe RECORD row of a dist-info."""
     record = info / "RECORD"
@@ -854,6 +920,8 @@ def install_dependencies(site, requires, uv, python):
     if not uv:
         needed = missing(remote)
         if needed:
+            for req in needed:
+                print("Dependency %s is not installed and no checkout of it sits beside %s." % (req, SOURCE))
             print("Missing dependencies (install uv, then run this again):\n  " + "\n  ".join(needed))
         return
     if not remote:
@@ -944,6 +1012,9 @@ def install(project, config, data, home, ext_id, scripts, name, ver):
         packages = [home / "lib" / d.name for d in dirs]
         files.append(home / "lib")
     files += place_scripts(script_dir, pairs, {path for path, _ in held})
+    placed, held_bundles = place_bundles(data, home, ext_id, bundle_sources(config), editable, owned, old_links)
+    files += placed
+    held = held + held_bundles
     if packages:  # scripts-only extensions need no distribution record
         files += write_record(site, name, ver, packages, requires)
     files += write_tools(data, site, ext_id)
@@ -953,6 +1024,9 @@ def install(project, config, data, home, ext_id, scripts, name, ver):
     kept = [Path(path) for path, _ in plan["kept"]
             if os.path.lexists(path) and str(path) not in fresh] + [path for path, _ in held]
     for stale in owned - {str(f) for f in files}:  # e.g. copied -> linked leaves lib/ behind
+        if is_bundle_path(stale, data):  # only a link that is still exactly ours; never the user's replacement
+            if not (os.path.islink(stale) and os.readlink(stale) == old_links.get(stale)):
+                continue
         remove_path(stale, data)
     append_log(home, {
         "action": "install", "id": ext_id, "name": name, "version": ver, "time": now(),
