@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Installer: unreachable blocked skip removed (Issue 250, review M-10)
+
+- `install.vfpy` synced byte-identically from App (sha256 `2eb71691…` → `bbe8104e…`):
+  `remove_old_dist` drops the `path.name in blocked` skip. Every blocked top-level
+  name is also held, and a non-empty held refuses before anything is deleted, so the
+  skip never ran. App's `tests/test_install_superseded.py` pins that invariant.
+
 ## 2026-11-11 — Ruff baseline 26 to 0 for pinned Scripts by exact-path ignores (Issue 250)
 
 - `pyproject.toml` gains `[tool.ruff.lint.per-file-ignores]` for exactly eight Scripts, each only the codes it raises (E402 and/or E741). No Script byte changes: sha256 of all eight identical before and after.
