@@ -52,6 +52,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `14e4194bc93ec46a70b0f9f878c32776d310d1349f4b2aed5465c059525a6d15`
+SHA256: `91427e4c40ca6dac96b0c13b2771417910929edcb580e588198a1baff6d1700d`
 
 [Python source at `3dc87d8a0e3d`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3dc87d8a0e3dec803dc9255436da39eb19abefb2/Scripts/Metrics/Zero-Width%20Marks.py)

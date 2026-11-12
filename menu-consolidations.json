@@ -4900,7 +4900,7 @@
         "sha256": null
       },
       "retirement_reason": null,
-      "revised_sha256": "14e4194bc93ec46a70b0f9f878c32776d310d1349f4b2aed5465c059525a6d15",
+      "revised_sha256": "91427e4c40ca6dac96b0c13b2771417910929edcb580e588198a1baff6d1700d",
       "revised_reason": "D36-1/R36: is_mark reads fgPackage unicodes (Scriptmix 16dbc12e); proposal not re-reviewed against the new bytes.",
       "test_routes": [
         "tests/test_curated_delivery.py"

@@ -9,6 +9,7 @@ arithmetic, the refusal paths and the Undo shape (one notified list, no auto
 layers). They do not prove native FontLab behaviour.
 """
 
+import math
 import ast
 import importlib
 import importlib.util
@@ -776,12 +777,18 @@ def test_zero_width_marks_when_unicode_only_mark_then_kept_via_fgpackage(world):
     assert [e.glyph.name for e in panel.entries] == ["acute"], "Mn without comb in name"
 
 
-def test_zero_width_marks_when_no_fgpackage_entry_then_error_surfaces(world):
-    module = load("Zero-Width Marks")
+def test_zero_width_marks_when_no_fgpackage_entry_then_error_names_glyph(world):
     _, panel = open_panel(world, "Zero-Width Marks", [two_master_glyph("n")])
-    world.package.fgPackage = type("Empty", (), {"__getitem__": lambda s, k: {}[k]})()
-    with pytest.raises(KeyError):
+    world.package.fgPackage = type("Native", (), {"__getitem__": lambda s, k: None})()
+    with pytest.raises(ValueError, match="Cannot read Unicode values for n: it has no FontGate glyph"):
         panel.target_glyphs(world.package)
+
+
+def test_zero_planner_when_applied_then_width_is_positive_zero(world):
+    module = load("Zero-Width Marks")
+    for placement in ("keep", "hang", "centre"):
+        plan = module.zero_planner(placement)(Layer(300, rect(100, 200)), "Light")
+        assert math.copysign(1, plan.width) > 0, placement
 
 
 @pytest.mark.parametrize(
