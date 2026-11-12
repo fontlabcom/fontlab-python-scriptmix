@@ -690,12 +690,10 @@ def remove_old_dist(site, name):
     """Remove an earlier install of this distribution that plan_old_dist proves ours; keeps anything else
     (a user's replacement folder, edited files) in place. It refuses, before changing anything, when any such
     entry exists, so the dist-info is never dropped while files it listed stay behind unowned."""
-    delete, blocked, held = plan_old_dist(site, name)
+    delete, _, held = plan_old_dist(site, name)
     if held:
         raise RuntimeError(refusal(name, held))
     for path in delete:
-        if path.name in blocked and path.parent == site:
-            continue
         if path.is_symlink() or path.is_file():
             path.unlink()
         elif path.is_dir():

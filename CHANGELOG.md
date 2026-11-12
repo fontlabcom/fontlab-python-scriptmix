@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Installer: unreachable blocked skip removed (Issue 250, review M-10)
+
+- `install.vfpy` synced byte-identically from App (sha256 `2eb71691…` → `bbe8104e…`):
+  `remove_old_dist` drops the `path.name in blocked` skip. Every blocked top-level
+  name is also held, and a non-empty held refuses before anything is deleted, so the
+  skip never ran. App's `tests/test_install_superseded.py` pins that invariant.
+
 ## 2026-11-12 — Zero-Width Marks reads Unicode values from the package; Metrics composite planning closed (Issue 250)
 
 - Row 225 (App TODO, S67-F defence in depth) closed by audit plus tests, no script bytes or pins changed. Audit: every path that writes feature code to the font goes through App `write_feature_blocks` (Build Suffix Substitution line 114, Generate Random Alternates line 182, Nastaliq Connection Editor line 238); Suffix Report, Alternate Preview, Ligature Finder and Suffix Tool emit no feature text that is written. Only `feature_text` (App `src/fontlabapp/features/code.py:46`) returns code without a final newline, and `write_feature_blocks` normalises it. The Build Suffix Substitution preview pane is cosmetic and is never written. New tests in `tests/test_features.py` pass the real `append_code` output (empty and existing feature) through the real App writer and assert one final newline; dropping App's `_terminated` makes them fail (3 failures checked). Generate Random Alternates `generate()` and the Nastaliq default `rlig` block are pinned to end with a newline.
