@@ -27,3 +27,10 @@ def expected_this_file(path):
     relative = str(path.relative_to(Path(__file__).resolve().parents[1]))
     target = ROUTES.get(relative)
     return "src/fontlabapp/" + target if target else relative
+
+
+def assert_house_header(text, expected_path):
+    """Raise AssertionError unless the exact ``this_file`` line and an SPDX line lead the source."""
+    lines = text.splitlines()
+    assert lines and lines[0] == f"# this_file: {expected_path}", f"this_file must be {expected_path}"
+    assert "SPDX-License-Identifier: Apache-2.0" in "\n".join(lines[:4]), "missing SPDX line"

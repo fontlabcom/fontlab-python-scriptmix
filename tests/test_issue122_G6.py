@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Font-bound export workflows with real binary and installed-App checks."""
 
-from _wp07_routes import behavior_path, expected_this_file
+from _wp07_routes import assert_house_header, behavior_path, expected_this_file
 import ast
 import builtins
 import importlib.util
@@ -36,7 +36,7 @@ def test_headers_and_public_text() -> None:
     for path in FILES:
         text = path.read_text()
         tree = ast.parse(text, feature_version=(3, 11))
-        assert text.startswith(f"# this_file: {expected_this_file(path)}\n")
+        assert_house_header(text, expected_this_file(path))
         doc = ast.get_docstring(tree)
         assert "Fernando Díaz" in doc and "Apache-2.0" in doc
         assert "https://github.com/Reset-Type-Studio/Glyphs-Scripts" in doc
