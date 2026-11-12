@@ -52,7 +52,7 @@ def test_requirements_when_published_then_name_the_required_app_module(script):
     ):
         if relative == script:
             text = historical_bytes(script).decode()
-        elif "TMetrics Window" in script and relative.endswith(".md"):
+        elif "TMetrics Window" in script and relative.endswith((".md", ".html")):
             # The active catalogue removes absorbed menus. Preserve the exact
             # original documentation oracle at its recorded source commit.
             transitions = json.loads((ROOT / "menu-consolidations.json").read_text())["transitions"]

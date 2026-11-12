@@ -184,5 +184,5 @@ remaining acceptance, source-link and native obligations stay open.
 
 - [ ] Fix catalogue immutable-link validation by checking committed menu paths and bytes, with dirty/untracked-menu regressions; refuse or defer false links without adding a new generator framework.
 - [ ] Re-review the Zero-Width Marks consolidation proposal in `menu-consolidations.json` against the D36-1 bytes (`revised_sha256` 91427e4c…), then drop `revised_sha256`/`revised_reason` and re-pin `source` when the ledger is next regenerated.
-- [ ] WP04 (64cfc57), WP04b (d13c984, 5 commits) and WP07 (5b7447a, retire 31 compat launchers) deltas sit on the not-for-delivery stack 0828f74 (WP07 280 conflicts); re-derive onto main or retire.
+- [ ] WP04 (64cfc57) and WP04b (d13c984, 5 commits) deltas sit on the not-for-delivery stack 0828f74; re-derive onto main or retire. WP07 landed as 9d1b8f34; branch issue-250-wp07 (5b7447a) is superseded.
 - [ ] Repoint the sentences that say native receipts are "recorded in WORK.md" (`src_docs/md/assets/NOTICE` lines 98, 113, 126, 138, 150 and `src_docs/md/guides/pre-integration.md` lines 45, 171) to the archived WORK content (SHA-256 prefix 184a1969) or to CHANGELOG/evidence, then rebuild the generated docs.
