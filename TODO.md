@@ -176,7 +176,7 @@ remaining acceptance, source-link and native obligations stay open.
 - [ ] Add a public App Font Info ttfautohint writer; then restore the stem tool.
 
 - [ ] Re-check live that Zero-Width Marks shows "Cannot read Unicode values for <glyph>: it has no FontGate glyph. Clear Only combining marks, or save and reopen the font." for a glyph FontGate lacks (native `fgPackage[missing]` returns `None`; proven on a simulated `None` in A2 report 43, offline test only here).
-- [ ] Low: after Apply, Zero-Width Marks advances read back as `-0.0` (`0.0` after Redo; A2 report 43). The planner returns plain `0` (pinned by a test), so the sign comes from the native write; save a font after Apply and check the VFJ does not hold `-0`.
+- [ ] Low: after Apply, Zero-Width Marks advances read back as `-0.0` (`0.0` after Redo; A2 report 43). The planner returns plain `0` (pinned by a test), so the sign comes from the native write; save a font after Apply, reopen it, and check the three marks read 0 in FontLab and the VFJ does not hold `-0`. Save/reopen for "Only marks" with one Undo row is also still unproven (report 43 closed the font unsaved).
 
 - [ ] Resolve App anchor read-back tolerance and sub-unit moves swallowed by native rounding.
 
