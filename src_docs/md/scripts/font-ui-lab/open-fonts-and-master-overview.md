@@ -29,4 +29,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `888ebbf8f485d7c807fa776ac430d6905d69f39c75cde5be30904e7c9ab79dd9`
 
-[Python source at `3dc87d8a0e3d`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3dc87d8a0e3dec803dc9255436da39eb19abefb2/Scripts/Font%20UI%20Lab/Open%20Fonts%20and%20Master%20Overview.py)
+[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Font%20UI%20Lab/Open%20Fonts%20and%20Master%20Overview.py)

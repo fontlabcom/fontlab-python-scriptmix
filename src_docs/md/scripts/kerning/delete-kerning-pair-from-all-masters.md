@@ -34,4 +34,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `0f252998a0e1e32786fd173e80a9807cf1e33f2d15915942004f7fdc6627f75a`
 
-[Python source at `3dc87d8a0e3d`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3dc87d8a0e3dec803dc9255436da39eb19abefb2/Scripts/Kerning/Delete%20Kerning%20Pair%20From%20All%20Masters.py)
+[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Kerning/Delete%20Kerning%20Pair%20From%20All%20Masters.py)

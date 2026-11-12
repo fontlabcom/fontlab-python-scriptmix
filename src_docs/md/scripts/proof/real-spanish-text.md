@@ -45,4 +45,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `6cb895cbdc85bf1c5c83e0a8c86f10d341a6101d8acea2a9849de89fbb3a619b`
 
-[Python source at `3dc87d8a0e3d`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3dc87d8a0e3dec803dc9255436da39eb19abefb2/Scripts/Proof/Real%20Spanish%20Text.py)
+[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Proof/Real%20Spanish%20Text.py)

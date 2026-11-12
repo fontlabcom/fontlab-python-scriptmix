@@ -32,4 +32,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `ae73b8906df153638fc397aefe02d8e3c3016b32abf6e4e0a421a7ccfa930a6f`
 
-[Python source at `b795215422f3`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b795215422f36543a9c23f006a4f2f594c8586f5/Scripts/Font%20Info/Encoding%20and%20Order.py)
+[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Font%20Info/Encoding%20and%20Order.py)

@@ -59,4 +59,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `4c819ae022ba2e037b445a9a07dd29a579789a2d183624ed3e5f90ec4f22d6f4`
 
-[Python source at `3dc87d8a0e3d`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3dc87d8a0e3dec803dc9255436da39eb19abefb2/Scripts/Masters/Sync%20Sidebearings.py)
+[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Masters/Sync%20Sidebearings.py)
