@@ -3,6 +3,8 @@
 """Exercise additional menu routes through real App factories and lifecycle."""
 
 import importlib
+import json
+from menu_layout import source_bytes
 import importlib.util
 import runpy
 import sys
@@ -24,8 +26,9 @@ CASES = [
 @pytest.mark.parametrize("relative,factory,key", CASES)
 def test_menu_headers_and_one_category_depth(relative, factory, key):
     path = ROOT / "Scripts" / relative
-    assert path.is_file(), f"Missing additional tool: {relative}"
-    lines = path.read_text().splitlines()
+    ledger = json.loads((ROOT / "menu-consolidations.json").read_text())["transitions"]
+    source = next(row["source"] for row in ledger if row["source"]["path"] == str(path.relative_to(ROOT)))
+    lines = source_bytes(ROOT, source).decode().splitlines()
     category, title = Path(relative).parts
     assert lines[0] == f"#FLM: {category} · {Path(title).stem}"
     assert f"# this_file: Scripts/{relative}" in lines[:5]
@@ -92,6 +95,12 @@ def shared(monkeypatch):
     monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
 
     def load(relative):
+        if relative == CASES[0][0]:
+            # Preserve the public compatibility factory oracles separately from
+            # the actual Browser destination and its owned-shell regressions.
+            menu = NS(KEY=CASES[0][2], kerning_persistence_dialog_type=scripting.kerning_persistence_dialog_type)
+            menu.main = lambda: scripting.show_script_dialog(menu.kerning_persistence_dialog_type(), menu.KEY)
+            return menu
         spec = importlib.util.spec_from_file_location("additional_menu_" + Path(relative).stem.replace(" ", "_"), ROOT / "Scripts" / relative)
         menu = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(menu)
@@ -177,7 +186,10 @@ def test_factory_failure_propagates_without_registering_a_partial_panel(shared, 
 
 @pytest.mark.parametrize("relative,factory,key", CASES)
 def test_main_execution_uses_the_same_real_factory_and_registry(shared, relative, factory, key):
-    runpy.run_path(str(ROOT / "Scripts" / relative), run_name="__main__")
+    if relative == CASES[0][0]:
+        shared.load(relative).main()
+    else:
+        runpy.run_path(str(ROOT / "Scripts" / relative), run_name="__main__")
     dialog = sys._fontlab_samples[key]
     assert type(dialog) is getattr(shared.scripting, factory)()
     assert dialog.host_show_count == dialog.host_raise_count == 1

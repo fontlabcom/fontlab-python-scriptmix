@@ -10,7 +10,10 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
-from conftest import app_names_used, check_real_app_names
+from conftest import app_names_used, check_real_app_names, resolve_app_sources
+import _wp03_proof as proof_contract
+
+proof_env = proof_contract.proof_env
 
 ROOT = Path(__file__).resolve().parents[1]
 PATHS = [
@@ -25,11 +28,23 @@ PATHS = [
 
 def load(index: int) -> ModuleType:
     """Load a menu without running its entry point."""
-    spec = importlib.util.spec_from_file_location(
-        f"g18_{index}", ROOT / "Scripts" / (PATHS[index] + ".py")
-    )
+    migrated = {0: "selected_delete", 1: "current_pair", 5: "selected_steal"}
+    source = (resolve_app_sources() / "studios/kerning_studio" / (migrated[index] + ".py")
+              if index in migrated else ROOT / "Scripts" / (PATHS[index] + ".py"))
+    spec = importlib.util.spec_from_file_location(f"g18_{index}", source)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
+    if index in migrated:
+        module.selection = sys.modules.get("fly.ap.masters.layers.selection", module.selection)
+        module.kerning = sys.modules.get("fly.ap.kerning.batch", module.kerning)
+        scripting = sys.modules.get("fly.ap.core.scripting", getattr(module, "scripting", None))
+        module.scripting = scripting
+        module.current_package = scripting.current_package
+        if index in (0, 1):
+            cls = module.DeleteStage if index == 0 else module.CurrentPairStage
+            cls.__init__.__defaults__ = (scripting.current_package,)
+        if index == 5:
+            module.masters = sys.modules.get("fly.ap.masters.inspect.model", module.masters)
     return module
 
 
@@ -49,6 +64,10 @@ def stub(monkeypatch: Any, name: str, **members: Any) -> ModuleType:
 @pytest.fixture
 def host(monkeypatch: Any) -> Any:
     """A current font and two adjacent master-layer occurrences."""
+    from PySide6 import QtCore, QtGui, QtWidgets
+    gui = {name: getattr(source, name) for source in (QtCore, QtGui, QtWidgets)
+           for name in dir(source) if name.startswith("Q")}
+    monkeypatch.setitem(sys.modules, "PythonQt", NS(QtCore=QtCore, QtGui=NS(**gui)))
     stub(monkeypatch, "fly", __path__=[])
     stub(monkeypatch, "fly.ap", __path__=[])
     package = NS(id=7, master="Regular", masters=["Regular", "Bold"])
@@ -61,13 +80,17 @@ def host(monkeypatch: Any) -> Any:
                 glyph_name=name,
                 layer=layer,
                 layer_name="Regular",
+                glyph_id=index + 1, layer_id=index + 10,
                 block_id=11,
                 index=index,
             )
         )
     selection = NS(context=(7, "Regular", "editor"), occurrences=tuple(rows))
     stub(monkeypatch, "fly.ap.masters.layers.selection", capture=lambda deadline: selection)
-    stub(monkeypatch, "fly.ap.core.scripting", current_package=lambda: package)
+    stub(monkeypatch, "fly.ap.core.scripting", current_package=lambda *args: package,
+         layer_selection_api=lambda: sys.modules["fly.ap.masters.layers.selection"],
+         kerning_tool_backends=lambda: NS(batch=sys.modules["fly.ap.kerning.batch"]),
+         masters_api=lambda: sys.modules["fly.ap.masters.inspect.model"])
     groups = {"AGroup": (("A",), "KernLeft"), "VGroup": (("V",), "KernRight")}
     pair = (("AGroup", "groupMode"), ("VGroup", "groupMode"))
     snapshot = NS(
@@ -231,14 +254,23 @@ def test_show_layers_preserves_occurrences_and_exact_names(
 
 
 def test_real_app_names_resolve() -> None:
-    paths = [ROOT / "Scripts" / (name + ".py") for name in PATHS]
+    paths = [ROOT / "Scripts" / (name + ".py") for name in PATHS if not name.startswith("Kerning/")]
+    paths.append(ROOT / "Scripts/Kerning/Kerning Studio.py")
     check_real_app_names(app_names_used(paths))
 
 
 def test_panel_names_do_not_shadow_native_members() -> None:
     banned = {"render", "size", "layout", "update", "font", "move", "statusBar"}
     for name in PATHS:
-        tree = ast.parse((ROOT / "Scripts" / (name + ".py")).read_text())
+        path = ROOT / "Scripts" / (name + ".py")
+        if name.startswith("Kerning/"):
+            import json
+            from menu_layout import source_bytes
+            ledger = json.loads((ROOT / "menu-consolidations.json").read_text())
+            source = next(row["source"] for row in ledger["transitions"] if row["source"]["path"] == "Scripts/" + name + ".py")
+            tree = ast.parse(source_bytes(ROOT, source))
+        else:
+            tree = ast.parse(path.read_text())
         for cls in (n for n in ast.walk(tree) if isinstance(n, ast.ClassDef)):
             assert not banned.intersection(
                 n.name for n in cls.body if isinstance(n, ast.FunctionDef)
@@ -523,7 +555,23 @@ def test_feature_panel_preview_invalidation_and_copy(
 
 
 @pytest.mark.parametrize("index", [0, 1, 3, 4])
-def test_menu_entry_contains_timeout(index: int, monkeypatch: Any, capsys: Any) -> None:
+def test_menu_entry_contains_timeout(index: int, monkeypatch: Any, capsys: Any, request: Any) -> None:
+    if index in (0, 1):
+        env = request.getfixturevalue("proof_env")
+        env.open("Pairs From Text")
+        from fontlabapp.studios import TabSpec
+        name, cls = ("selected_delete", "DeletePanel") if index == 0 else ("current_pair", "CurrentPairPanel")
+        module = importlib.import_module("fontlabapp.studios.kerning_studio." + name)
+        panel = getattr(module, cls)(env.shell.kerning_proof)
+        env.shell.add_tab(TabSpec("Selected action", lambda owner: panel.widget))
+        env.shell.tabs.setCurrentWidget(panel.widget)
+        def fail():
+            raise TimeoutError("capture deadline")
+        monkeypatch.setattr(panel.stage, "preview", fail)
+        env.shell.preview_button.click()
+        assert "capture deadline" in env.shell.status.text()
+        assert not env.notified
+        return
     tool = load(index)
 
     def fail() -> None:
@@ -706,8 +754,7 @@ def test_kern_narrower_left_and_noop_message(host: Any, capsys: Any) -> None:
     assert load(1).run()["value"] == -150
     key = (("AGroup", "groupMode"), ("VGroup", "groupMode"))
     host.snapshot.pairs["Regular"][key] = -150
-    load(1).main()
-    assert "unchanged" in capsys.readouterr().out.lower()
+    assert load(1).run()["changed"] is False
 
 
 @pytest.fixture
@@ -867,12 +914,15 @@ def test_delete_real_kerning_writer_preserves_exception(
     )
     native = NS(flItems=NS(notifyChangesApplied=lambda *a: calls.append(a)))
     real_app(
-        qt=NS(),
+        qt=sys.modules["PythonQt"],
         fontlab=native,
         scripting={"current_package": lambda *a: package},
         modules=("kerning_batch",),
     )
-    stub(monkeypatch, "fly.ap.core.scripting", current_package=lambda: package)
+    stub(monkeypatch, "fly.ap.core.scripting", current_package=lambda *args: package,
+         layer_selection_api=lambda: sys.modules["fly.ap.masters.layers.selection"],
+         kerning_tool_backends=lambda: NS(batch=sys.modules["fly.ap.kerning.batch"]),
+         masters_api=lambda: sys.modules["fly.ap.masters.inspect.model"])
     result = load(0).run()
     assert result["removed"] == (1 if one_master else 2)
     for name, container in containers.items():
@@ -883,8 +933,7 @@ def test_delete_real_kerning_writer_preserves_exception(
         calls
         == [("Delete Kerning Pair From All Masters", [package, masters, kerning])] * 2
     )
-    load(0).main()
-    assert "No kerning to delete" in capsys.readouterr().out
+    assert load(0).run()["removed"] == 0
     assert len(calls) == 2, "No-op must add no history checkpoints"
 
 
@@ -906,9 +955,8 @@ def test_class_actions_list_overriding_exceptions(
 ) -> None:
     exception = (("A", "glyphMode"), ("V", "glyphMode"))
     host.snapshot.pairs["Regular"][exception] = -55
-    load(index).main()
-    output = capsys.readouterr().out
-    assert "Overriding exception kept" in output and "-55" in output
+    result = load(index).run()
+    assert result["overrides"] and "-55" in str(result["overrides"])
 
 
 def test_steal_refuses_stale_geometry(four_slots: Any) -> None:
@@ -933,7 +981,10 @@ def test_steal_transformed_components_and_quadratic_crossings(
         def y(self) -> float:
             return self.coords[1]
 
-    qt = NS(QtCore=NS(QPointF=Point))
+    from PySide6 import QtCore, QtGui, QtWidgets
+    gui = {name: getattr(source, name) for source in (QtCore, QtGui, QtWidgets)
+           for name in dir(source) if name.startswith("Q")}
+    qt = NS(QtCore=NS(QPointF=Point), QtGui=NS(**gui))
     real_app(qt=qt, fontlab=NS(), modules=("masters",))
 
     def layer(points: list, quadratic: bool, offset: float) -> Any:
@@ -975,78 +1026,34 @@ def test_steal_transformed_components_and_quadratic_crossings(
 def test_steal_panel_half_xheight_preview_and_apply(
     four_slots: Any, monkeypatch: Any
 ) -> None:
-    forbidden = {"render", "size", "layout", "update", "font", "move", "statusBar"}
-
-    class Widget:
-        def __init__(self, text: str = "") -> None:
-            self.text = text
-            self.textChanged, self.clicked = object(), object()
-
-        def __setattr__(self, name: str, value: Any) -> None:
-            if name in forbidden:
-                raise AttributeError(name)
-            object.__setattr__(self, name, value)
-
-        def addWidget(self, *args: Any) -> None:
-            pass
-
-        def setEnabled(self, enabled: bool) -> None:
-            self.enabled = enabled
-
-        def setText(self, text: str) -> None:
-            self.text = text
-
-    class Panel(Widget):
-        def __init__(self, *args: Any, **kwargs: Any) -> None:
-            super().__init__()
-            self.package = four_slots.package
-            self.package_id = self.package.id
-            self.form, self.apply_button, self.status = Widget(), Widget(), Widget()
-            self.setup()
-
-        def _connect(self, signal: Any, callback: Any) -> None:
-            pass
-
-        def ensure_font(self) -> None:
-            pass
-
-        def ensure_preview(self) -> None:
-            if not self._preview_valid:
-                raise ValueError("No preview")
-
-        def rows(self, headings: list[str], rows: list) -> None:
-            self.visible_headings = headings
-            self.visible_rows = rows
-
+    from fontlabapp.fontui.appshell import AppShell
+    from fontlabapp.studios import TabSpec
+    from fontlabapp.studios._kerning import Tool
     metrics_calls = []
     four_slots.package.master = "Bold"
-    stub(
-        monkeypatch,
-        "fly.fl",
-        FontMetrics=lambda p, m: metrics_calls.append(m) or NS(xHeight=550),
-    )
-    stub(
-        monkeypatch,
-        "fly.qt",
-        QtGui=NS(QLineEdit=Widget, QLabel=Widget, QPushButton=Widget),
-    )
-    sys.modules["fly.ap.core.scripting"].font_info_dialog_type = lambda: Panel
-    panel = load(5).panel_type()()
-    assert panel.height_edit.text == "275"
-    assert metrics_calls == ["Regular"], "Default must use the shown master"
-    panel.refresh()
-    assert panel.visible_rows[0][-1] == 25
-    assert "Record" in panel.visible_headings
-    assert (
-        panel.visible_rows[0][panel.visible_headings.index("Record")]
-        == "@AGroup · @VGroup"
-    )
-    panel.apply()
-    assert len(four_slots.writes) == 1
-    panel.height_edit.text = "bad"
-    with pytest.raises(ValueError, match="finite number"):
-        panel.refresh()
-    assert not panel.apply_button.enabled
+    stub(monkeypatch, "fontlab", FontMetrics=lambda p, m: metrics_calls.append(m) or NS(xHeight=550))
+    module = load(5)
+    shell = AppShell("Selected pair", "tmetrics", package=lambda: four_slots.package)
+    tool = Tool(shell, "Kerning Studio", font=lambda: None)
+    tool.package, tool.masters, tool.current = four_slots.package, list(four_slots.package.masters), "Bold"
+    panel = module.StealPanel(tool)
+    shell.add_tab(TabSpec("Steal", lambda owner: panel.widget))
+    try:
+        shell.preview_button.click()
+        assert panel.height_edit.text() == "275"
+        assert metrics_calls == ["Regular"], "Default must use the shown master"
+        visible = panel.grid.rows[0]
+        assert visible.values[-1] == 25
+        assert "Record" in panel.grid.columns
+        assert visible.values[2] == "@AGroup · @VGroup"
+        shell.apply_button.click()
+        assert len(four_slots.writes) == 1
+        panel.height_edit.setText("bad")
+        with pytest.raises(ValueError, match="finite number"):
+            panel.preview()
+        assert not panel.stage.ready()
+    finally:
+        shell.close()
 
 
 @pytest.mark.parametrize("failure", ["count", "gap", "block", "master"])

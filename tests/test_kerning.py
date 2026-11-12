@@ -6,8 +6,17 @@ import importlib.util
 import sys
 from types import SimpleNamespace as NS
 from pathlib import Path
+import importlib.util
+import sys
+from types import SimpleNamespace as NS
 
 import pytest
+import _wp03_proof as proof_contract
+import _wp03_browser as browser_contract
+
+browser_env = browser_contract.browser_env
+
+proof_env = proof_contract.proof_env
 
 ROOT = Path(__file__).parents[1]
 TITLES = [
@@ -21,9 +30,7 @@ TITLES = [
 
 @pytest.mark.parametrize("title", TITLES)
 def test_requested_kerning_tool_exists(title):
-    assert (ROOT / "Scripts/Kerning" / (title + ".py")).is_file(), (
-        "Requested complete kerning tool missing"
-    )
+    proof_contract.identity(title)
 
 
 @pytest.fixture
@@ -143,8 +150,8 @@ def test_explicit_class_sides_zero_presence_and_effective_native_fallback(load):
     assert font.master == "Bold", "Reads must not change the active master"
 
 
-def test_class_filter_and_all_master_table_distinguish_zero_from_absent(load):
-    module, _, _, _, _ = load
+def test_class_filter_and_all_master_table_distinguish_zero_from_absent(browser_env):
+    module = browser_env.load
     browser = module("Classes Browser")
     assert browser.matches("L_ALPHA", ["Aacute"], "alpha")
     assert browser.matches("L_A", ["Aacute"], "Aacute")
@@ -161,8 +168,9 @@ def test_class_filter_and_all_master_table_distinguish_zero_from_absent(load):
     }
 
 
-def test_missing_pair_tokens_and_zero_cover_class_fallback(load):
-    module, _, _, _, _ = load
+def test_missing_pair_tokens_and_zero_cover_class_fallback(browser_env, request):
+    module = browser_env.load
+    from fontlabapp.core import scripting as api
     missing = module("Missing Pairs")
     font, _, _ = fixture_font()
     assert missing.parse_glyphs(
@@ -174,7 +182,7 @@ def test_missing_pair_tokens_and_zero_cover_class_fallback(load):
         ("V", "V"),
         ("V", "A"),
     ]
-    preview = module("Text Preview")
+    preview = request.getfixturevalue("proof_env").text
     assert preview.parse_text("AV/Aacute/V /missing /A", font) == [
         "A",
         "V",
@@ -182,13 +190,13 @@ def test_missing_pair_tokens_and_zero_cover_class_fallback(load):
         "V",
         "A",
     ]
-    assert preview.layout(font, ["Aacute", "V", "A", "V"], "Regular") == [
+    assert api.kerning_layout(font, ["Aacute", "V", "A", "V"], "Regular") == [
         ("Aacute", 0, 600, 0),
         ("V", 560, 650, -40),
         ("A", 1210, 600, 0),
         ("V", 1810, 650, 0),
     ]
-    assert preview.layout(font, ["Aacute", "V"], "Regular", False)[1] == (
+    assert api.kerning_layout(font, ["Aacute", "V"], "Regular", False)[1] == (
         "V",
         600,
         650,
@@ -196,8 +204,8 @@ def test_missing_pair_tokens_and_zero_cover_class_fallback(load):
     )
 
 
-def test_numeric_table_order_exports_exact_utf8_csv_bytes(load, tmp_path):
-    module, _, _, _, _ = load
+def test_numeric_table_order_exports_exact_utf8_csv_bytes(browser_env, tmp_path):
+    module = browser_env.load
     browser = module("Pair List Browser")
     assert browser.matches(("T", "V"), "=T")
     assert not browser.matches(("T.alt", "V"), "=T")
@@ -207,14 +215,13 @@ def test_numeric_table_order_exports_exact_utf8_csv_bytes(load, tmp_path):
     ]
     rows = [("A", "V", -100), ("T", "V", -9), ("é,alt", "V", 0.5)]
 
-    def item(value):
-        return NS(text=lambda: value, data=lambda role: value)
-
-    table = NS(rowCount=3, item=lambda r, c: item(rows[r][c]))
-    dialog = NS(table=table)
-    shown = browser.PairList.shown_rows(dialog)
+    panel = browser_env.open("Pair List Browser")
+    panel.rows = rows
+    panel.grid.set_rows([(left, "Bold", (right, value)) for left, right, value in rows])
+    from PythonQt import QtCore
+    panel.grid.view.sortByColumn(2, QtCore.Qt.AscendingOrder)
     path = tmp_path / "pairs.csv"
-    assert browser.export_csv(shown, "Bold", path) == 3
+    assert panel.write(str(path)) == 3
     assert (
         path.read_bytes()
         == b'left,right,value,master\r\nA,V,-100,Bold\r\nT,V,-9,Bold\r\n"\xc3\xa9,alt",V,0.5,Bold\r\n'
@@ -283,13 +290,11 @@ def test_proof_geometry_fits_tall_overhanging_wrapped_ink_and_all_rows(load):
         assert baseline - top * scale >= 0 and baseline - bottom * scale <= 130
 
 
-def test_canvas_contains_draw_and_error_hook_and_painter_end_exceptions(load):
-    module, _, _, _, qt = load
-    preview = module("Text Preview")
+def test_canvas_contains_draw_and_error_hook_and_painter_end_exceptions(proof_env, monkeypatch):
     calls = []
     painter = NS(end=lambda: calls.append("ended"))
-    qt.QtGui.QPainter = lambda owner: painter
-    canvas = preview.Canvas.__new__(preview.Canvas)
+    monkeypatch.setattr(proof_env.text.QtGui, "QPainter", lambda owner: painter)
+    canvas = proof_env.open("Text Preview").canvas
     canvas.owner = NS(invalidate=lambda: (_ for _ in ()).throw(RuntimeError("hook")))
     canvas.draw = lambda painter: (_ for _ in ()).throw(RuntimeError("draw"))
     canvas.paintEvent(None)
@@ -299,43 +304,36 @@ def test_canvas_contains_draw_and_error_hook_and_painter_end_exceptions(load):
     assert canvas.paint_error == "RuntimeError('end')"
 
 
-def test_all_classes_reuse_exact_shared_callbacks_and_lifecycle(load):
-    module, _, _, shared, _ = load
-    for title, name in zip(
-        TITLES,
-        ["ClassesBrowser", "CompareMasters", "PairList", "MissingPairs", "TextPreview"],
-    ):
-        cls = getattr(module(title), name)
-        assert cls._connect is shared.KerningDialog._connect
-        assert cls.closeEvent is shared.KerningDialog.closeEvent
+def test_all_classes_reuse_exact_shared_callbacks_and_lifecycle(browser_env, request):
+    for title in TITLES:
+        if title == "Text Preview":
+            proof_contract.close_owner(request.getfixturevalue("proof_env"), title)
+        else:
+            browser_contract.close_owner(browser_env, title)
 
 
-def test_stale_export_and_copy_refuse_before_writing_or_clipboard(load, tmp_path):
-    module, _, _, _, _ = load
-
-    def stale():
-        raise ValueError("stale")
-
+def test_stale_export_and_copy_refuse_before_writing_or_clipboard(browser_env, tmp_path):
+    pairs = browser_env.open("Pair List Browser")
+    missing = browser_env.open("Missing Pairs")
+    browser_contract.replace(browser_env)
     target = tmp_path / "must-not-exist.csv"
-    dialog = NS(ensure_snapshot=stale)
-    with pytest.raises(ValueError, match="stale"):
-        module("Pair List Browser").PairList.export(dialog, str(target))
-    with pytest.raises(ValueError, match="stale"):
-        module("Missing Pairs").MissingPairs.copy(dialog)
+    with pytest.raises(ValueError, match="stale|current"):
+        pairs.write(str(target))
+    with pytest.raises(ValueError, match="stale|current"):
+        missing.copy()
     assert not target.exists(), "A stale export must never create its destination"
+    assert browser_env.clipboard.text() == ""
 
 
-def test_copy_keeps_actual_pair_order_and_reports_count(load):
-    module, _, _, _, qt = load
-    copied = []
-    qt.QtGui.QApplication = NS(clipboard=lambda: NS(setText=copied.append))
-    dialog = NS(
-        ensure_snapshot=lambda: None,
-        missing=[("Aacute", "V"), ("T", "o")],
-        status=NS(setText=copied.append),
-    )
-    assert module("Missing Pairs").MissingPairs.copy(dialog) == "Aacute V\nT o"
-    assert copied == ["Aacute V\nT o", "Copied 2 pairs to the clipboard"]
+def test_copy_keeps_actual_pair_order_and_reports_count(browser_env):
+    panel = browser_env.open("Missing Pairs")
+    panel.missing = [("Aacute", "V"), ("T", "o")]
+    panel.grid.set_rows([(left, "Bold", (right,)) for left, right in panel.missing])
+    from PythonQt import QtCore
+    panel.grid.view.sortByColumn(0, QtCore.Qt.AscendingOrder)
+    assert panel.copy() == "Aacute V\nT o"
+    assert browser_env.clipboard.text() == "Aacute V\nT o"
+    assert panel.tool.status == "Copied 2 pairs to the clipboard"
 
 
 def test_owned_chooser_disconnects_before_child_deletion_and_dialog_deletion(

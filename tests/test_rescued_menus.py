@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 import pytest
+from menu_layout import consolidation_rows
 
 ROOT = Path(__file__).parents[1]
 INDEX = json.loads((ROOT / "rescue-index.json").read_text())
@@ -25,6 +26,16 @@ def test_historical_source_is_recorded_without_an_active_dispatcher(entry):
         assert candidate["native_acceptance"] == "pending"
         assert candidate["counted_in_130_sample_migration"] is False
         assert candidate["kind"] == "complete-original-writer-candidate"
+    elif entry["menu"] == "Scripts/Metrics/Vertical Metrics.py":
+        transitions = [row for row in consolidation_rows(ROOT)
+                       if row["destination"] and row["destination"]["path"] == entry["menu"]]
+        assert {row["source"]["path"] for row in transitions} == {
+            "Scripts/Metrics/Alignment Zones.py", "Scripts/Metrics/Vertical Metrics Diagram.py",
+        }, "The new studio reuses a menu title, not the archived body"
+        digest = hashlib.sha256((ROOT / entry["menu"]).read_bytes()).hexdigest()
+        assert all(row["destination"]["sha256"] == digest for row in transitions)
+        assert digest != entry["target_sha256"]
+        assert all(row["acceptance"]["native"] is False for row in transitions)
     else:
         assert not (ROOT / entry["menu"]).exists(), "An archived launcher is not a practical port"
 

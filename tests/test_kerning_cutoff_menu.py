@@ -9,8 +9,11 @@ import sys
 from pathlib import Path
 from types import SimpleNamespace as NS
 
+from menu_layout import source_bytes
+
 ROOT = Path(__file__).resolve().parents[1]
-MENU = ROOT / "Scripts/Kerning/Kerning Cutoff.py"
+MENU = ROOT / "Scripts/Kerning/Kerning Batch.py"
+SOURCE_PATH = "Scripts/Kerning/Kerning Cutoff.py"
 
 
 def test_lazy_public_route_preserves_complete_action_result(monkeypatch):
@@ -18,16 +21,16 @@ def test_lazy_public_route_preserves_complete_action_result(monkeypatch):
     result = {"Light": 1, "Bold": 0}
     monkeypatch.setitem(
         sys.modules,
-        "fly.ap.kerning.cutoff",
-        NS(run=lambda: calls.append(True) or result),
+        "fly.ap.studios.kerning_batch",
+        NS(show=lambda **kwargs: calls.append(kwargs) or result),
     )
     spec = importlib.util.spec_from_file_location("owned_kerning_cutoff", MENU)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     assert calls == []
-    assert module.main() is result and calls == [True]
+    assert module.main() is result and calls == [{"consolidated": True}]
     runpy.run_path(str(MENU), run_name="__main__")
-    assert calls == [True, True]
+    assert calls == [{"consolidated": True}, {"consolidated": True}]
 
 
 def test_exact_source_pin_without_original_licence_or_acceptance_claim():
@@ -37,7 +40,10 @@ def test_exact_source_pin_without_original_licence_or_acceptance_claim():
         row["source_sha256"]
         == "b77e6799e748121e751f63ad01e8c0d5da881a71c4378684c92d45626636f8d5"
     )
-    assert row["destination_sha256"] == hashlib.sha256(MENU.read_bytes()).hexdigest()
+    transition = next(item for item in json.loads((ROOT / "menu-consolidations.json").read_text())["transitions"]
+                      if item["source"]["path"] == SOURCE_PATH)
+    assert row["destination_sha256"] == hashlib.sha256(source_bytes(ROOT, transition["source"])).hexdigest()
+    assert transition["destination"]["sha256"] == hashlib.sha256(MENU.read_bytes()).hexdigest()
     assert row["source_license"] == "not declared in inspected source tree"
     assert row["source_body_redistributed"] is False
     assert row["native_acceptance"] == "pending"

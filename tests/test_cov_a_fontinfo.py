@@ -330,14 +330,48 @@ def metrics_tool(host: Host, writes: list, pending_note: str = "") -> Any:
         if error is not None:
             raise error
 
-    return host.load(
-        FONT_INFO + "Master Metrics Table.py",
-        modules=("font_history", "master_metrics"),
-        patches={
-            "master_metrics": {"write_master_metrics": write},
-            "font_history": {"require_font_window": guard},
-        },
+    from PySide6 import QtCore, QtGui, QtWidgets
+    qtgui = NS(**{name: getattr(QtGui, name) for name in dir(QtGui) if name.startswith("Q")})
+    vars(qtgui).update({name: getattr(QtWidgets, name) for name in dir(QtWidgets) if name.startswith("Q")})
+    host.qapp = QtWidgets.QApplication.instance() or QtWidgets.QApplication([])
+    host.loaded = host.real_app(
+        qt=NS(QtCore=QtCore, QtGui=qtgui), fontlab=host.native,
+        scripting={"current_package": lambda expected_id=None: host._current(expected_id)},
+        modules=("font_history", "master_metrics", "studios.vertical_metrics.table", "studios.vertical_metrics.calculate"),
     )
+    host.mp.setattr(host.loaded["master_metrics"], "write_master_metrics", write)
+    host.mp.setattr(host.loaded["font_history"], "require_font_window", guard)
+    module = host.loaded["studios.vertical_metrics.table"]
+    host.mp.setattr(module._shared, "backends", lambda: NS(**host.loaded))
+    return module
+
+
+def metrics_panel(host: Host, module: Any, kind: str = "MetricsTablePanel") -> Any:
+    """Construct the actual destination panel with the captured host and owned preview."""
+    from unittest.mock import Mock
+    from fontlabapp.studios._kerning import Tool
+    from fontlabapp.studios._kerning_app import capture_source
+    source = capture_source(lambda: host.package)
+    messages = []
+    shell = NS(package=source, set_status=messages.append)
+    tool = Tool(shell, "Font Metrics")
+    tool.package = source()
+    tool.masters = list(tool.package.masters) if tool.package is not None else []
+    tool.current = tool.package.master if tool.package is not None else ""
+    tool.preview = NS(set_layer=Mock())
+    panel = getattr(module, kind)(tool)
+    def reload():
+        source()
+        panel.refresh()
+    tool.reload = reload
+    panel.refresh()
+    host.panel = panel
+    return panel
+
+
+def row_texts(grid: Any, index: int) -> list[str]:
+    return [grid.cell(index, column) for column in range(grid.view.columnCount())]
+
 
 
 def metrics_package(host: Host) -> MasterPackage:
@@ -385,7 +419,7 @@ def test_metrics_run_when_rows_given_then_single_plan_written(host):
     writes: list = []
     tool = metrics_tool(host, writes)
     package = metrics_package(host)
-    result = tool.run(package, [("Regular", [810, -210, 510, 710])])
+    result = tool.write_changes(package, tool.plan(tool.master_values(package), [("Regular", [810, -210, 510, 710])]), "Master Metrics Table")
     assert result == {"changed": 4, "pending_updates": (), "pending_note": ""}, f"metrics run: four changed fields, got {result}"
     assert writes == [
         ({"Regular": {"ascender": 810, "descender": -210, "xHeight": 510, "capHeight": 710}}, "Master Metrics Table"),
@@ -398,7 +432,7 @@ def test_write_changes_when_only_some_values_change_then_only_those_are_requeste
     tool = metrics_tool(host, writes)
     package = metrics_package(host)
     plan = [("Regular", "ascender", 800.0, 800.0), ("Bold", "ascender", 820.0, 830.0)]
-    assert tool.write_changes(package, plan)["changed"] == 1, "write changes: one value changes"
+    assert tool.write_changes(package, plan, "Master Metrics Table")["changed"] == 1, "write changes: one value changes"
     assert writes == [({"Bold": {"ascender": 830.0}}, "Master Metrics Table")], f"write changes: unchanged masters are left out, got {writes}"
 
 
@@ -406,7 +440,7 @@ def test_write_changes_when_nothing_changes_then_writer_not_called(host):
     writes: list = []
     tool = metrics_tool(host, writes)
     package = metrics_package(host)
-    assert tool.write_changes(package, [("Regular", "ascender", 800.0, 800.0)]) == {"changed": 0}, "write changes: a no-op plan reports 0"
+    assert tool.write_changes(package, [("Regular", "ascender", 800.0, 800.0)], "Master Metrics Table") == {"changed": 0}, "write changes: a no-op plan reports 0"
     assert writes == [], "write changes: a no-op plan makes no Undo step"
 
 
@@ -419,7 +453,7 @@ def test_write_changes_when_font_differs_from_preview_then_refused_before_write(
     tool = metrics_tool(host, writes)
     package = metrics_package(host)
     with pytest.raises(ValueError, match="changed since preview"):
-        tool.write_changes(package, plan)
+        tool.write_changes(package, plan, "Master Metrics Table")
     assert writes == [], "write changes: a stale or foreign plan writes nothing"
 
 
@@ -428,37 +462,36 @@ def test_metrics_run_when_row_invalid_then_nothing_written(host):
     tool = metrics_tool(host, writes)
     package = metrics_package(host)
     with pytest.raises(ValueError, match="Expected descender"):
-        tool.run(package, [("Regular", [700, 10, 500, 700])])
+        tool.write_changes(package, tool.plan(tool.master_values(package), [("Regular", [700, 10, 500, 700])]), "Master Metrics Table")
     assert writes == [], 'metrics run when row invalid then nothing written: expected writes == []'
 
 
 def edit_cell(dialog: Any, row: int, column: int, text: str) -> None:
     """Edit a table cell the way a user would, then notify the view."""
-    dialog.table.item(row, column).setText(text)
-    dialog.table.itemChanged.emit(dialog.table.item(row, column))
+    dialog.grid.set_cell(row, column, text)
 
 
 def test_metrics_dialog_when_opened_then_one_row_per_master_and_apply_disabled(host):
     tool = metrics_tool(host, [])
     metrics_package(host)
-    dialog = tool.Dialog(None)
-    assert dialog.table.rowCount == 2 and dialog.table.row_texts(1)[:2] == ["Bold", "820.0"], "metrics dialog when opened then one row per master and apply disabled: unexpected result"
-    assert dialog.table.current == 0, "The first master row is current"
+    dialog = metrics_panel(host, tool)
+    assert dialog.grid.view.rowCount() == 2 and row_texts(dialog.grid, 1)[:2] == ["Bold", "820"], "metrics dialog when opened then one row per master and apply disabled: unexpected result"
+    assert dialog.grid.selected() == [], "Before selection the diagram defaults to the first master"
     assert not dialog.apply_button.isEnabled(), "Unedited metrics have nothing to apply"
-    assert dialog.status.text == "Double-click a number to edit. All rows are validated before Apply.", "metrics dialog when opened then one row per master and apply disabled: unexpected result"
+    assert dialog.status.text() == "Edit a value to change it", "metrics dialog when opened then one row per master and apply disabled: unexpected result"
 
 
 def test_metrics_dialog_when_value_edited_then_plan_ready_and_apply_writes(host):
     writes: list = []
     tool = metrics_tool(host, writes)
     package = metrics_package(host)
-    dialog = tool.Dialog(None)
+    dialog = metrics_panel(host, tool)
     edit_cell(dialog, 0, 1, "810")
     assert dialog.apply_button.isEnabled(), "A changed number enables Apply"
-    assert dialog._plan[0] == ("Regular", "ascender", 800.0, 810.0), "metrics dialog when value edited then plan ready and apply writes: expected dialog._plan[0] == ('Regular', 'ascender', 800.0, 810.0)"
+    assert dialog.changes[0] == ("Regular", "ascender", 800.0, 810.0), "metrics dialog when value edited then plan ready and apply writes: expected dialog.changes[0] == ('Regular', 'ascender', 800.0, 810.0)"
     dialog.apply()
     assert package.infos["Regular"].ascender == 810.0 and dialog.last_result["changed"] == 1, f"metrics dialog apply: one changed field written, got {dialog.last_result}"
-    assert dialog.status.text == "Applied 1 metric field", f"metrics dialog apply: singular status, got {dialog.status.text!r}"
+    assert dialog.tool.status == "Vertical Metrics: set metrics of Regular. Changed 1 metric field", f"metrics dialog apply: singular status, got {dialog.status.text()!r}"
     assert not dialog.apply_button.isEnabled(), "After apply the table equals the font"
 
 
@@ -474,23 +507,23 @@ def test_metrics_dialog_when_refresh_fails_after_write_then_success_still_shown(
         return result
 
     host.mp.setattr(host.loaded["master_metrics"], "write_master_metrics", write_then_switch_font)
-    dialog = tool.Dialog(None)
+    dialog = metrics_panel(host, tool)
     edit_cell(dialog, 0, 1, "810")
     dialog.apply_button.clicked.emit()
     assert package.infos["Regular"].ascender == 810.0 and dialog.last_result["changed"] == 1, f"metrics dialog: the write is recorded, got {dialog.last_result}"
-    assert dialog.status.text == (
-        "Applied 1 metric field; the new preview failed: Activate the original font and reopen this tool."
-    ), f"metrics dialog: both the write and the failed preview are shown, got {dialog.status.text!r}"
+    assert dialog.tool.status == (
+        "Vertical Metrics: set metrics of Regular. Changed 1 metric field · Refresh failed: The original font is no longer current; reopen this tool."
+    ), f"metrics dialog: both the write and the failed preview are shown, got {dialog.status.text()!r}"
 
 
 def test_metrics_dialog_when_glyph_ids_queued_then_status_discloses_note(host):
     tool = metrics_tool(host, [], pending_note="Dates may change (8537).")
     metrics_package(host)
-    dialog = tool.Dialog(None)
+    dialog = metrics_panel(host, tool)
     edit_cell(dialog, 1, 3, "520")
     dialog.apply()
     assert dialog.last_result["pending_updates"] == (7,), f"metrics dialog: queued ids are kept, got {dialog.last_result}"
-    assert dialog.status.text == "Applied 1 metric field · Dates may change (8537).", f"metrics dialog: the date note reaches the status, got {dialog.status.text!r}"
+    assert dialog.tool.status == "Vertical Metrics: set metrics of Bold. Changed 1 metric field · Dates may change (8537).", f"metrics dialog: the date note reaches the status, got {dialog.status.text()!r}"
 
 
 def test_metrics_dialog_when_writer_refuses_then_message_shown_and_font_unchanged(host):
@@ -503,10 +536,10 @@ def test_metrics_dialog_when_writer_refuses_then_message_shown_and_font_unchange
         raise ValueError(message)  # as commit_masters' own Font-window guard raises
 
     host.mp.setattr(host.loaded["master_metrics"], "write_master_metrics", refuse)
-    dialog = tool.Dialog(None)
+    dialog = metrics_panel(host, tool)
     edit_cell(dialog, 0, 1, "810")
     dialog.apply_button.clicked.emit()
-    assert dialog.status.text == message, f"metrics dialog: the refusal text reaches the user, got {dialog.status.text!r}"
+    assert message in dialog.tool.status, f"metrics dialog: the refusal text reaches the user, got {dialog.status.text()!r}"
     assert package.infos["Regular"].ascender == 800.0 and not dialog.apply_button.isEnabled(), "metrics dialog: nothing written; Apply off until a new preview"
 
 
@@ -517,10 +550,10 @@ def test_write_changes_when_font_window_guard_refuses_then_no_master_switch(host
     host.guard_error = ValueError(host.loaded["font_history"].WINDOW_TEXT)
     package.switches.clear()
     with pytest.raises(ValueError, match="Activate the Font window"):
-        tool.write_changes(package, [("Regular", "ascender", 800.0, 810.0)])
+        tool.write_changes(package, [("Regular", "ascender", 800.0, 810.0)], "Master Metrics Table")
     assert package.switches == [] and writes == [], "write changes: the guard refuses before any master switch or write"
     host.guard_error = None
-    tool.write_changes(package, [("Regular", "ascender", 800.0, 810.0)])
+    tool.write_changes(package, [("Regular", "ascender", 800.0, 810.0)], "Master Metrics Table")
     assert host.guard_calls[-1] == [], "write changes: the guard runs before master_values switches masters"
 
 
@@ -528,25 +561,25 @@ def test_write_changes_when_font_window_guard_refuses_then_no_master_switch(host
 def test_metrics_dialog_when_bad_number_then_error_and_apply_disabled(host, text):
     tool = metrics_tool(host, [])
     metrics_package(host)
-    dialog = tool.Dialog(None)
+    dialog = metrics_panel(host, tool)
     edit_cell(dialog, 0, 2, text)
-    assert not dialog.apply_button.isEnabled() and not dialog._preview_valid, 'metrics dialog when bad number then error and apply disabled: expected not dialog.apply_button.isEnabled() and (not dialog._preview_valid)'
-    assert dialog.status.text, f"Bad value {text!r} is explained in the status"
-    assert dialog.status.text != "Double-click a number to edit. All rows are validated before Apply.", "metrics dialog when bad number then error and apply disabled: unexpected result"
+    assert not dialog.apply_button.isEnabled() and not bool(dialog.changes), 'metrics dialog when bad number then error and apply disabled: expected not dialog.apply_button.isEnabled() and (not bool(dialog.changes))'
+    assert dialog.status.text(), f"Bad value {text!r} is explained in the status"
+    assert dialog.status.text() != "Double-click a number to edit. All rows are validated before Apply.", "metrics dialog when bad number then error and apply disabled: unexpected result"
 
 
 def test_metrics_dialog_when_no_font_then_empty_table(host):
     tool = metrics_tool(host, [])
-    dialog = tool.Dialog(None)
-    assert dialog.initial == [] and dialog.table.rowCount == 0, 'metrics dialog when no font then empty table: expected dialog.initial == [] and dialog.table.rowCount == 0'
+    dialog = metrics_panel(host, tool)
+    assert dialog.values == [] and dialog.grid.view.rowCount() == 0, 'metrics dialog when no font then empty table: expected dialog.values == [] and dialog.grid.view.rowCount() == 0'
 
 
 def test_metrics_dialog_when_row_selected_then_diagram_repainted(host):
     tool = metrics_tool(host, [])
     metrics_package(host)
-    dialog = tool.Dialog(None)
-    dialog.diagram.update.reset_mock()
-    dialog.table.setCurrentCell(1, 1)
+    dialog = metrics_panel(host, tool)
+    host.mp.setattr(dialog.diagram, "update", __import__("unittest.mock", fromlist=["Mock"]).Mock())
+    dialog.grid.select(1)
     assert dialog.diagram.update.called, "Changing the current cell repaints the diagram"
 
 
@@ -585,7 +618,7 @@ class InkPainter:
 def paint(dialog: Any, tool: Any) -> InkPainter:
     InkPainter.instances = []
     tool.QtGui.QPainter = InkPainter
-    dialog.diagram.width, dialog.diagram.height = 400, 200
+    dialog.diagram.resize(400, 200)
     dialog.diagram.paintEvent(None)
     return InkPainter.instances[0]
 
@@ -593,18 +626,18 @@ def paint(dialog: Any, tool: Any) -> InkPainter:
 def test_metrics_diagram_when_painted_then_five_guides_labelled_for_current_row(host):
     tool = metrics_tool(host, [])
     metrics_package(host)
-    dialog = tool.Dialog(None)
-    dialog.table.selectRow(1)
+    dialog = metrics_panel(host, tool)
+    dialog.grid.select(1)
     painter = paint(dialog, tool)
     assert painter.lines == 5 and painter.rects == 1, 'metrics diagram when painted then five guides labelled for current row: expected painter.lines == 5 and painter.rects == 1'
     assert "Ascender 820" in painter.texts and "Baseline 0" in painter.texts, "metrics diagram when painted then five guides labelled for current row: expected 'Ascender 820' in painter.texts and 'Baseline 0' in painter.texts"
     assert "Bold master" in painter.texts, "The diagram names the selected master"
-    assert painter.ended and dialog.diagram._paint_error == "", "metrics diagram when painted then five guides labelled for current row: expected painter.ended and dialog.diagram._paint_error == ''"
+    assert painter.ended and dialog.diagram.paint_error == "", "metrics diagram when painted then five guides labelled for current row: expected painter.ended and dialog.diagram.paint_error == ''"
 
 
 def test_metrics_diagram_when_no_rows_then_nothing_drawn_but_painter_ended(host):
     tool = metrics_tool(host, [])
-    dialog = tool.Dialog(None)
+    dialog = metrics_panel(host, tool)
     painter = paint(dialog, tool)
     assert painter.texts == [] and painter.ended, 'metrics diagram when no rows then nothing drawn but painter ended: expected painter.texts == [] and painter.ended'
 
@@ -612,18 +645,21 @@ def test_metrics_diagram_when_no_rows_then_nothing_drawn_but_painter_ended(host)
 def test_metrics_diagram_when_table_invalid_then_error_contained_in_status(host):
     tool = metrics_tool(host, [])
     metrics_package(host)
-    dialog = tool.Dialog(None)
-    dialog.table.item(0, 1).setText("bad")
+    dialog = metrics_panel(host, tool)
+    dialog.grid.set_cell(0, 1, "bad")
     painter = paint(dialog, tool)
     assert painter.ended, "The painter is ended even when the diagram fails"
-    assert "ValueError" in dialog.diagram._paint_error and dialog.status.text == dialog.diagram._paint_error, "metrics diagram when table invalid then error contained in status: unexpected result"
+    assert "ValueError" in dialog.diagram.paint_error and dialog.status.text() == dialog.diagram.paint_error, "metrics diagram when table invalid then error contained in status: unexpected result"
 
 
 def test_metrics_main_when_run_as_script_then_window_opens(host):
     metrics_tool(host, [])
     metrics_package(host)
-    runpy.run_path(str(ROOT / "Scripts/Font Info/Master Metrics Table.py"), run_name="__main__")
-    assert "fontinfo_master_metrics_table" in host.windows(), "metrics main when run as script then window opens: expected 'fontinfo_master_metrics_table' in host.windows()"
+    from fontlabapp.studios.vertical_metrics import app
+    calls = []
+    host.mp.setattr(app, "show_font_metrics", lambda: calls.append("Font Metrics"))
+    runpy.run_path(str(ROOT / "Scripts/Font Info/Font Metrics.py"), run_name="__main__")
+    assert calls == ["Font Metrics"]
 
 
 # ---- Glyph Order Preview and Export ----------------------------------------------
@@ -790,8 +826,10 @@ def test_order_main_when_run_as_script_then_window_opens(host):
 
 def test_calculator_when_controls_change_then_preview_and_selected_groups_apply(host):
     writes: list = []
-    host.qt.QtGui.QSpinBox = SpinBox
-    tool = host.load(FONT_INFO + "Calculate Vertical Metrics.py", scripting=recorder(host, writes))
+    metrics_tool(host, [])
+    tool = host.loaded["studios.vertical_metrics.calculate"]
+    host.mp.setattr(tool, "write_font_info", recorder(host, writes)["write_font_info"])
+    host.mp.setitem(__import__("sys").modules, "FL", host.FL)
     package = open_package(host, **dict.fromkeys(tool.METRIC_FIELDS, 0))
     boxes = {"Regular": (-210.5, 710.2), "Bold": (-240.8, 780.1)}
     layers = {name: NS(isNull=False, boundingBox=NS(
@@ -801,33 +839,33 @@ def test_calculator_when_controls_change_then_preview_and_selected_groups_apply(
     glyph = NS(name="A", fgGlyph=NS(unicodes=[65]), findLayer=layers.get)
     host.FL.fl.font = [glyph]
     package.findName = lambda name: glyph
-    dialog = tool.Dialog(None)
+    dialog = metrics_panel(host, tool, "CalculatePanel")
     assert set(dialog.bounds) == set(boxes)
     for master, (low, high) in boxes.items():
         assert dialog.bounds[master] == pytest.approx((low, high, 1))
     assert [check.isChecked() for check in dialog.group_checks] == [False, True, True]
-    assert dialog.table.rowCount == 5 and dialog.apply_button.isEnabled(), dialog.status.text
+    assert dialog.grid.view.rowCount() == 5 and dialog.apply_button.isEnabled(), dialog.status.text
     dialog.scope.setCurrentIndex(1)
     dialog.padding.setValue(10)
     dialog.gap.setValue(20)
-    assert dialog.table.rowCount == 10 and package.master == "Regular"
-    assert set(dialog._plan) == {
+    assert dialog.grid.view.rowCount() == 10 and package.master == "Regular"
+    assert set(dialog.plan) == {
         (master, field, 0, value)
         for master, values in {"Regular": (721, -221, 20, 721, 221),
                                "Bold": (791, -251, 20, 791, 251)}.items()
         for field, value in zip(tool.METRIC_FIELDS[3:], values, strict=True)
     }
     dialog.apply()
-    assert len(writes) == 1 and writes[0][1] == tool.TITLE
+    assert len(writes) == 1 and writes[0][1] == "Vertical Metrics: calculate metrics of Regular, Bold"
     assert package.infos["Bold"].openTypeOS2WinDescent == 251
     assert all(getattr(info, key) == 0 for info in package.infos.values() for key in tool.METRIC_FIELDS[:3])
     assert package.master == "Regular" and not dialog.apply_button.isEnabled()
-    assert dialog.status.text == "Applied 10 metric fields"
+    assert dialog.tool.status == "Vertical Metrics: calculate metrics of Regular, Bold. Applied 10 metric fields"
 
 
 def test_calculator_when_no_font_then_apply_disabled_and_no_bounds(host):
-    host.qt.QtGui.QSpinBox = SpinBox
-    tool = host.load(FONT_INFO + "Calculate Vertical Metrics.py")
-    dialog = tool.Dialog(None)
+    metrics_tool(host, [])
+    tool = host.loaded["studios.vertical_metrics.calculate"]
+    dialog = metrics_panel(host, tool, "CalculatePanel")
     assert dialog.bounds == {} and not dialog.apply_button.isEnabled()
-    assert not dialog._preview_valid
+    assert not dialog.plan

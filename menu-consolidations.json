@@ -2615,19 +2615,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Font Info/Font Metrics.py",
-        "tab": "Calculate Vertical Metrics",
-        "sha256": null
+        "tab": "Calculate",
+        "sha256": "097a7cafa058e574cbeb6a0f48164fcef3bcb43add88f437a0bbe6ac128d4b06"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_fontinfo.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -2665,20 +2666,21 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Font Info/Font Metrics.py",
-        "tab": "Master Metrics Table",
-        "sha256": null
+        "tab": "Metrics table",
+        "sha256": "097a7cafa058e574cbeb6a0f48164fcef3bcb43add88f437a0bbe6ac128d4b06"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_fontinfo.py",
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_Z1.py"
+        "tests/test_issue122_Z1.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3403,19 +3405,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Browser.py",
-        "tab": "Classes Browser",
-        "sha256": null
+        "tab": "Classes",
+        "sha256": "1e02e60b9ba7058275f09cb29fc04018d14a1fdc684604ae58c6fb6e6c68442c"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_features.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3428,18 +3431,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Browser.py",
-        "tab": "Compare Masters",
-        "sha256": null
+        "tab": "Masters",
+        "sha256": "1e02e60b9ba7058275f09cb29fc04018d14a1fdc684604ae58c6fb6e6c68442c"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3452,18 +3456,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Batch.py",
-        "tab": "Copy Between Masters",
-        "sha256": null
+        "tab": "Copy masters",
+        "sha256": "74aba1c4220ab6bbd1abe644c482af91e2c177362a9ba24cfa596c4f52adafa6"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3476,17 +3481,18 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Studio.py",
-        "tab": "Delete Kerning Pair From All Masters",
-        "sha256": null
+        "tab": "Delete selected pairs",
+        "sha256": "7a6d95748cfcc594aa6867bbd588a1781b34001ae06c5563cfb75254e329b947"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3499,18 +3505,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Browser.py",
-        "tab": "Exceptions Finder",
-        "sha256": null
+        "tab": "Exceptions",
+        "sha256": "1e02e60b9ba7058275f09cb29fc04018d14a1fdc684604ae58c6fb6e6c68442c"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3524,16 +3531,17 @@
       "destination": {
         "path": "Scripts/Kerning/Kerning Studio.py",
         "tab": "Kern To Max",
-        "sha256": null
+        "sha256": "7a6d95748cfcc594aa6867bbd588a1781b34001ae06c5563cfb75254e329b947"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3546,18 +3554,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Batch.py",
-        "tab": "Kerning Cutoff",
-        "sha256": null
+        "tab": "Clamp",
+        "sha256": "74aba1c4220ab6bbd1abe644c482af91e2c177362a9ba24cfa596c4f52adafa6"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_kerning_cutoff_menu.py"
+        "tests/test_kerning_cutoff_menu.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3570,18 +3579,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Browser.py",
-        "tab": "Kerning Energy Report",
-        "sha256": null
+        "tab": "Energy",
+        "sha256": "1e02e60b9ba7058275f09cb29fc04018d14a1fdc684604ae58c6fb6e6c68442c"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G13.py"
+        "tests/test_issue122_G13.py",
+        "tests/test_wp03_launchers.py",
+        "tests/test_wp03_kerning_routes.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3594,18 +3605,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Browser.py",
-        "tab": "Missing Pairs",
-        "sha256": null
+        "tab": "Missing",
+        "sha256": "1e02e60b9ba7058275f09cb29fc04018d14a1fdc684604ae58c6fb6e6c68442c"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3619,17 +3631,18 @@
       "destination": {
         "path": "Scripts/Kerning/Kerning Studio.py",
         "tab": "Pair Editor",
-        "sha256": null
+        "sha256": "7a6d95748cfcc594aa6867bbd588a1781b34001ae06c5563cfb75254e329b947"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3642,18 +3655,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Browser.py",
-        "tab": "Pair List Browser",
-        "sha256": null
+        "tab": "Pairs",
+        "sha256": "1e02e60b9ba7058275f09cb29fc04018d14a1fdc684604ae58c6fb6e6c68442c"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3667,17 +3681,18 @@
       "destination": {
         "path": "Scripts/Kerning/Kerning Proof.py",
         "tab": "Pairs From Text",
-        "sha256": null
+        "sha256": "c061f4864ea4dcc3cc30d0ebfb5b1901370fe90a73b65f8ee650659b27670d31"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3690,18 +3705,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Browser.py",
-        "tab": "Persistence Audit",
-        "sha256": null
+        "tab": "Persistence",
+        "sha256": "1e02e60b9ba7058275f09cb29fc04018d14a1fdc684604ae58c6fb6e6c68442c"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_additional_audit_menus.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3714,18 +3730,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Batch.py",
-        "tab": "Remove Small Pairs",
-        "sha256": null
+        "tab": "Remove small",
+        "sha256": "74aba1c4220ab6bbd1abe644c482af91e2c177362a9ba24cfa596c4f52adafa6"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py",
+        "tests/test_cov_b_kerning_values.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3738,18 +3756,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Batch.py",
-        "tab": "Round Values",
-        "sha256": null
+        "tab": "Round",
+        "sha256": "74aba1c4220ab6bbd1abe644c482af91e2c177362a9ba24cfa596c4f52adafa6"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py",
+        "tests/test_cov_b_kerning_values.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3762,18 +3782,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Browser.py",
-        "tab": "Same Kerning Groups",
-        "sha256": null
+        "tab": "Same groups",
+        "sha256": "1e02e60b9ba7058275f09cb29fc04018d14a1fdc684604ae58c6fb6e6c68442c"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_kerning_group_proof_menu.py"
+        "tests/test_kerning_group_proof_menu.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3786,18 +3807,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Batch.py",
-        "tab": "Scale Values",
-        "sha256": null
+        "tab": "Scale",
+        "sha256": "74aba1c4220ab6bbd1abe644c482af91e2c177362a9ba24cfa596c4f52adafa6"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py",
+        "tests/test_cov_b_kerning_values.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3810,17 +3833,18 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Studio.py",
-        "tab": "Steal Kerning From Next Pair",
-        "sha256": null
+        "tab": "Steal next pair",
+        "sha256": "7a6d95748cfcc594aa6867bbd588a1781b34001ae06c5563cfb75254e329b947"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3834,17 +3858,18 @@
       "destination": {
         "path": "Scripts/Kerning/Kerning Proof.py",
         "tab": "Symmetry",
-        "sha256": null
+        "sha256": "c061f4864ea4dcc3cc30d0ebfb5b1901370fe90a73b65f8ee650659b27670d31"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_kerning_symmetry_menu.py"
+        "tests/test_kerning_symmetry_menu.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3858,17 +3883,18 @@
       "destination": {
         "path": "Scripts/Kerning/Kerning Proof.py",
         "tab": "Text Preview",
-        "sha256": null
+        "sha256": "c061f4864ea4dcc3cc30d0ebfb5b1901370fe90a73b65f8ee650659b27670d31"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -3881,18 +3907,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Kerning/Kerning Studio.py",
-        "tab": "Unbundle Punctuation Kerning",
-        "sha256": null
+        "tab": "Punctuation",
+        "sha256": "7a6d95748cfcc594aa6867bbd588a1781b34001ae06c5563cfb75254e329b947"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G13.py"
+        "tests/test_issue122_G13.py",
+        "tests/test_wp03_launchers.py",
+        "tests/test_wp03_kerning_routes.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4544,18 +4572,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Vertical Metrics.py",
-        "tab": "Alignment Zones",
-        "sha256": null
+        "tab": "Zones",
+        "sha256": "717c818e588049d714b618181832cc874dd16d1cf24dade5aa67a6d7a538dd72"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_Z1.py"
+        "tests/test_issue122_Z1.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4568,17 +4597,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Spacing Studio.py",
-        "tab": "Centre In Advance",
-        "sha256": null
+        "tab": "Sidebearings",
+        "sha256": "1d8b9388f53989538018a0cbb0480354d3d8dfc46c1150da141642328e9221f3",
+        "action": "Preview centred advance"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4591,18 +4622,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Advance Widths.py",
-        "tab": "Check Tabular Widths",
-        "sha256": null
+        "tab": "Tabular",
+        "sha256": "ca0b1017e850fd54fe7303c5c68091fd142b0de36002a1a44322dc8d91dbc143",
+        "action": "Check"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_tabular_width.py"
+        "tests/test_tabular_width.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4615,17 +4648,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Spacing Studio.py",
-        "tab": "Copy Metrics From Reference",
-        "sha256": null
+        "tab": "Reference",
+        "sha256": "1d8b9388f53989538018a0cbb0480354d3d8dfc46c1150da141642328e9221f3",
+        "action": "Preview reference metrics"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4638,17 +4673,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Spacing Studio.py",
-        "tab": "Equalize Sidebearings",
-        "sha256": null
+        "tab": "Sidebearings",
+        "sha256": "1d8b9388f53989538018a0cbb0480354d3d8dfc46c1150da141642328e9221f3",
+        "action": "Preview equalized sidebearings"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4661,17 +4698,18 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Spacing Studio.py",
-        "tab": "Italic Sidebearings",
-        "sha256": null
+        "tab": "Italic",
+        "sha256": "1d8b9388f53989538018a0cbb0480354d3d8dfc46c1150da141642328e9221f3"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4684,17 +4722,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Advance Widths.py",
-        "tab": "Round Advances",
-        "sha256": null
+        "tab": "Round & scale",
+        "sha256": "ca0b1017e850fd54fe7303c5c68091fd142b0de36002a1a44322dc8d91dbc143",
+        "action": "Round advances"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4707,17 +4747,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Advance Widths.py",
-        "tab": "Scale Advances",
-        "sha256": null
+        "tab": "Round & scale",
+        "sha256": "ca0b1017e850fd54fe7303c5c68091fd142b0de36002a1a44322dc8d91dbc143",
+        "action": "Scale advances"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4730,18 +4772,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Spacing Studio.py",
-        "tab": "Sidebearing Offset Preview",
-        "sha256": null
+        "tab": "Strings",
+        "sha256": "1d8b9388f53989538018a0cbb0480354d3d8dfc46c1150da141642328e9221f3",
+        "action": "Preview selected layers"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue208_app_reach_tools.py"
+        "tests/test_issue208_app_reach_tools.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4754,17 +4798,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Spacing Studio.py",
-        "tab": "Sidebearings Tuner",
-        "sha256": null
+        "tab": "Sidebearings",
+        "sha256": "1d8b9388f53989538018a0cbb0480354d3d8dfc46c1150da141642328e9221f3",
+        "action": "Preview sidebearings"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4777,18 +4823,20 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Spacing Studio.py",
-        "tab": "Spacing String Preview",
-        "sha256": null
+        "tab": "Strings",
+        "sha256": "1d8b9388f53989538018a0cbb0480354d3d8dfc46c1150da141642328e9221f3",
+        "action": "Open raw spacing preview"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4801,19 +4849,21 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Spacing Studio.py",
-        "tab": "TMetrics Window",
-        "sha256": null
+        "tab": "Strings",
+        "sha256": "1d8b9388f53989538018a0cbb0480354d3d8dfc46c1150da141642328e9221f3",
+        "action": "Open TMetrics window"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
         "tests/test_font_ui_lab_menus.py",
-        "tests/test_issue241_fontui_windows.py"
+        "tests/test_issue241_fontui_windows.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4826,17 +4876,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Advance Widths.py",
-        "tab": "Tabular Width",
-        "sha256": null
+        "tab": "Tabular",
+        "sha256": "ca0b1017e850fd54fe7303c5c68091fd142b0de36002a1a44322dc8d91dbc143",
+        "action": "Apply Changes"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4849,17 +4901,18 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Vertical Metrics.py",
-        "tab": "Vertical Metrics Diagram",
-        "sha256": null
+        "tab": "Diagram",
+        "sha256": "717c818e588049d714b618181832cc874dd16d1cf24dade5aa67a6d7a538dd72"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },
@@ -4872,18 +4925,19 @@
       "disposition": "absorbed",
       "destination": {
         "path": "Scripts/Metrics/Advance Widths.py",
-        "tab": "Width Table",
-        "sha256": null
+        "tab": "Table",
+        "sha256": "ca0b1017e850fd54fe7303c5c68091fd142b0de36002a1a44322dc8d91dbc143"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp03_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
-        "behavior_parity": false,
+        "behavior_parity": true,
         "native": false
       }
     },

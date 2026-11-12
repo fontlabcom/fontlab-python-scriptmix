@@ -2,6 +2,7 @@
 """Reject archive dispatchers and retain the complete source backlog."""
 
 import ast
+import hashlib
 import json
 from pathlib import Path
 
@@ -50,6 +51,13 @@ def test_unported_sources_remain_a_complete_hashed_backlog():
             assert candidate["source_sha256"] == row["target_sha256"]
             assert candidate["native_acceptance"] == "pending"
             assert candidate["counted_in_130_sample_migration"] is False
+        elif row["menu"] == "Scripts/Metrics/Vertical Metrics.py":
+            transitions = [item for item in consolidation_rows(ROOT)
+                           if item["destination"] and item["destination"]["path"] == row["menu"]]
+            assert len(transitions) == 2
+            digest = hashlib.sha256((ROOT / row["menu"]).read_bytes()).hexdigest()
+            assert digest != row["target_sha256"], "A studio title collision must not revive an archived body"
+            assert all(item["destination"]["sha256"] == digest for item in transitions)
         else:
             assert not (ROOT / row["menu"]).exists(), row["menu"]
         assert row["target"].startswith("rescued/samples/")

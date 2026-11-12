@@ -12,12 +12,20 @@ FontLab writes, Undo or reopen.
 from __future__ import annotations
 
 import runpy
+import sys
 from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
 from _cov_a_support import ROOT, Host, host as host_fixture  # noqa: F401
+from _cov_a_support import ROOT, Host
+from _wp03_studio_support import studio_host  # noqa: F401
 from conftest import app_names_used, check_real_app_names
+
+@pytest.fixture
+def host(monkeypatch, real_app):
+    return Host(monkeypatch, real_app)
+
 
 ZONES = "Metrics/Alignment Zones.py"
 SUGGEST = "Guides/Suggest Zones From Overshoots.py"
@@ -29,30 +37,87 @@ OUTLINES = {
 }
 
 
-def test_scripts_when_real_app_imported_then_every_used_name_exists():
-    paths = [ROOT / "Scripts" / ZONES, ROOT / "Scripts" / SUGGEST, ROOT / "Scripts/Font Info/Master Metrics Table.py"]
+def test_scripts_when_real_app_imported_then_every_used_name_exists(tmp_path):
+    from _wp03_metrics_tabs import historical_text
+
+    paths = [ROOT / "Scripts" / SUGGEST]
+    for index, original in enumerate((ZONES, "Font Info/Master Metrics Table.py")):
+        target = tmp_path / f"historical-{index}.py"
+        target.write_text(historical_text(ROOT / "Scripts" / original))
+        paths.append(target)
     used = app_names_used(paths)
     assert {"fly.ap.metrics.zones.editor", "fly.ap.metrics.zones.native", "fly.ap.metrics.master_writer"} <= set(used), f"scripts: expected App names, got {sorted(used)}"
     check_real_app_names(used)
 
 
 # ---------------------------------------------------------------- Alignment Zones
-def test_alignment_zones_main_when_run_then_shared_panel_gets_native_backend(host):
-    shown: list = []
-    marker = object()
-    module = host.load(ZONES, modules=MODULES)
-    host.mp.setattr(host.loaded["zone_native"], "backend", lambda package_id=None: (marker, package_id))
-    host.mp.setattr(host.loaded["zone_editor"], "show", lambda backend: shown.append(backend) or "panel")
-    assert module.main() == "panel", "alignment zones: main returns the shared panel"
-    assert shown == [(marker, None)], f"alignment zones: one backend for the current font, got {shown}"
+@pytest.fixture
+def alignment_studio(studio_host, monkeypatch):  # noqa: F811
+    """Build the actual Zones tab; only native capture/write are recording doubles."""
+    from fontlabapp import fontui
+    from fontlabapp.metrics.zones import data, native
+    from fontlabapp.studios._kerning import Tool
+    from fontlabapp.studios.vertical_metrics import app, zones
+
+    studio_host.package = Package(OUTLINES, {"Regular": (((500, 12, "x-height"),), ((0, 15, "baseline"),))})
+    backend = Backend(studio_host, data)
+    captures, requested, opened = [], [], []
+
+    def capture(package_id):
+        captures.append(package_id)
+        return backend.capture()
+
+    def writer(package_id, *, title):
+        requested.append((package_id, title))
+        return backend
+
+    monkeypatch.setattr(native, "capture", capture)
+    monkeypatch.setattr(native, "backend", writer)
+
+    def open_panel():
+        shell = fontui.app_shell("Vertical Metrics", "tmetrics", package=lambda: studio_host.package)
+        studio_host.qt.owned.append(shell)
+        tool = Tool(shell, "Vertical Metrics", font=lambda: None)
+        shell.kerning_tool = tool
+        panel = zones.ZonesPanel(tool)
+        shell.add_tab(NS(title="Zones", build=lambda owner: panel.widget))
+        tool.reload()
+        app.configure(shell)
+        shell.show()
+        opened.append(NS(shell=shell, panel=panel, tool=tool))
+        return shell
+
+    monkeypatch.setitem(sys.modules, "fly.ap.studios.vertical_metrics.app", NS(show_vertical_metrics=open_panel))
+    return NS(backend=backend, captures=captures, requested=requested, opened=opened, package=studio_host.package)
 
 
-def test_alignment_zones_when_run_as_script_then_panel_opens(host):
-    shown: list = []
-    host.load(ZONES, modules=MODULES)
-    host.mp.setattr(host.loaded["zone_editor"], "show", shown.append)
-    runpy.run_path(str(ROOT / "Scripts" / ZONES), run_name="__main__")
-    assert len(shown) == 1 and hasattr(shown[0], "apply"), f"alignment zones: __main__ opens the panel with a Backend, got {shown}"
+def test_alignment_zones_main_when_run_then_shared_panel_gets_native_backend(alignment_studio):
+    env = alignment_studio
+    module = runpy.run_path(str(ROOT / "Scripts/Metrics/Vertical Metrics.py"), run_name="inspection")
+    assert env.opened == [] and env.captures == [], "Menu discovery must not read a font"
+    shell = module["main"]()
+    opened = env.opened[0]
+    assert shell is opened.shell and env.captures == [env.package.id]
+    assert opened.panel.editor.snapshot.package_id == env.package.id
+    assert env.requested == [], "Opening the Zones tab must not prepare a writer"
+    from PythonQt import QtGui
+
+    add = next(button for button in opened.panel.widget.findChildren(QtGui.QPushButton)
+               if button.text() == "Add top zone")
+    add.click()
+    assert shell.apply_button.isEnabled(), "Staging a zone enables the shared bottom action"
+    shell.apply_button.click()
+    assert env.requested == [(env.package.id, "Vertical Metrics: set zones of Regular")]
+    assert len(env.backend.applied) == 1, "The shared Zones tab owns one native write batch"
+
+
+def test_alignment_zones_when_run_as_script_then_panel_opens(alignment_studio):
+    runpy.run_path(str(ROOT / "Scripts/Metrics/Vertical Metrics.py"), run_name="__main__")
+    assert len(alignment_studio.opened) == 1
+    opened = alignment_studio.opened[0]
+    assert opened.shell.widget.isVisible() and opened.panel.editor is not None
+    assert not opened.shell.apply_button.isEnabled(), "An unchanged zone snapshot cannot apply"
+    assert alignment_studio.backend.applied == []
 
 
 # ---------------------------------------------------------------- doubles

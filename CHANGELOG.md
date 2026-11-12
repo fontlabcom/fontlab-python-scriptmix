@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 - WP03 spacing and kerning consolidation re-derived onto main (Issue 250)
+
+- 38 of 39 launchers retire into eight new App-backed launchers: Font Info/Font Metrics, Kerning/Kerning Batch, Kerning Browser, Kerning Proof, Kerning Studio, Metrics/Advance Widths, Spacing Studio, Vertical Metrics. The ledger now has 87 implemented rows (49 WP05 + 38 WP03); 219 Scripts menus remain.
+- Zero-Width Marks stays proposed with its launcher (revised_sha256 `91427e4c...`, D36-1/F43-1). The ledger cannot record a post-source revision on an implemented row, and `menu_layout.py` is unchanged. The App Marks tab carries both fixes: Unicode values are read from `package.fgPackage` and a glyph FontGate lacks gives the named refusal.
+- Lost-fix audit: only Zero-Width Marks had changed on main since the lane base (see the audit file in the evidence directory).
+- Tests: `tests/test_issue122_G13.py` loads the consolidated App modules; historical bytes come from the ledger commit. The inspector and metrics fixtures give fake packages a realistic `fgPackage`. Contour Order View and Node Statistics resolve to their App routes. The archived rescue menu name `Vertical Metrics` is allowed to coincide with its new consolidated launcher. Full run: 4953 passed, 6 skipped (arm64 Python 3.11.18).
+
 ## 2026-11-12 — Nodes Near Zones duplicate results fixed in the App (F41-1, live report R41, Issue 250)
 
 - Documentation only. Live report R41 found Nodes Near Zones App listing its results in both a text pane and a table. The fix is in the App (`GlyphTableTab` hides the text pane, so the table is the one visible list); the Scriptmix launchers only call `show` and are unchanged. The TODO row now asks for a repeat live smoke on the fix SHA, including Open Contours and Font Audit.

@@ -9,13 +9,16 @@ import sys
 from pathlib import Path
 from types import ModuleType
 
+from menu_layout import source_bytes
+
 ROOT = Path(__file__).resolve().parents[1]
-MENU = ROOT / "Scripts/Kerning/Symmetry.py"
+MENU = ROOT / "Scripts/Kerning/Kerning Proof.py"
+SOURCE_PATH = "Scripts/Kerning/Symmetry.py"
 
 
 def test_menu_import_has_no_action_and_both_entry_routes_forward_once(monkeypatch):
     calls = []
-    alias = ModuleType("fly.ap.kerning.symmetry.model")
+    alias = ModuleType("fly.ap.studios.kerning_proof")
     alias.show = lambda: calls.append(True) or "owned-result"
     monkeypatch.setitem(sys.modules, alias.__name__, alias)
     spec = importlib.util.spec_from_file_location("symmetry_menu", MENU)
@@ -33,7 +36,11 @@ def test_exact_unlicensed_original_attribution_and_new_menu_hash():
         for row in json.loads((ROOT / "additional-tools.json").read_text())
         if row["key"] == "kerning-symmetry"
     )
-    assert row["destination_sha256"] == hashlib.sha256(MENU.read_bytes()).hexdigest()
+    transition = next(item for item in json.loads((ROOT / "menu-consolidations.json").read_text())["transitions"]
+                      if item["source"]["path"] == SOURCE_PATH)
+    original = source_bytes(ROOT, transition["source"])
+    assert row["destination_sha256"] == hashlib.sha256(original).hexdigest()
+    assert transition["destination"]["sha256"] == hashlib.sha256(MENU.read_bytes()).hexdigest()
     assert (
         row["source_sha256"]
         == "6716be62ec46b469cab8959816a3a18def5addb26a9d3162e7b6a47ce217e36c"
@@ -42,5 +49,5 @@ def test_exact_unlicensed_original_attribution_and_new_menu_hash():
     assert row["source_body_redistributed"] is False
     assert row["native_acceptance"] == "pending"
     assert (
-        MENU.read_text().splitlines()[0] == "# this_file: Scripts/Kerning/Symmetry.py"
+        original.decode().splitlines()[0] == "# this_file: Scripts/Kerning/Symmetry.py"
     )

@@ -5,12 +5,13 @@
 import ast
 import importlib.util
 import inspect
+import json
 import math
 import sys
 from pathlib import Path
 from types import SimpleNamespace as NS
 from typing import Any
-from unittest.mock import create_autospec
+from unittest.mock import create_autospec, patch
 
 import pytest
 from conftest import app_module_name, app_names_used, check_real_app_names
@@ -41,8 +42,16 @@ def patch_app(monkeypatch: Any, module: Any, name: str, action: Any) -> Any:
 
 
 def load(key: str) -> Any:
-    """Load only the new independent script, without native imports."""
-    source = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/shape_generators/sansomatic.py" if key == "sans" else FILES[key]
+    """Run the retained Sansomatic menu or the production consolidated kerning module."""
+    if key != "sans":
+        from PySide6 import QtCore, QtGui, QtWidgets
+
+        gui = NS(**{name: getattr(QtGui, name) for name in dir(QtGui) if name.startswith("Q")})
+        vars(gui).update({name: getattr(QtWidgets, name) for name in dir(QtWidgets) if name.startswith("Q")})
+        with patch.dict(sys.modules, {"PythonQt": NS(QtCore=QtCore, QtGui=gui)}):
+            path = "kerning_browser.energy" if key == "report" else "kerning_batch.punctuation"
+            return importlib.import_module("fontlabapp.studios." + path)
+    source = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/shape_generators/sansomatic.py"
     spec = importlib.util.spec_from_file_location("g13_" + key, source)
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
@@ -50,13 +59,30 @@ def load(key: str) -> Any:
     return module
 
 
-def test_installed_app_names() -> None:
-    check_real_app_names(app_names_used(FILES.values()))
+def historical_source(key: str) -> str:
+    """Read exact source data for licence/metadata assertions; never execute archives."""
+    from menu_layout import source_bytes
+
+    if key == "sans":
+        return _menu_bytes(ROOT, str(FILES[key].relative_to(ROOT))).decode()
+    rows = json.loads((ROOT / "menu-consolidations.json").read_text())["transitions"]
+    source = next(row["source"] for row in rows if row["source"]["path"] == str(FILES[key].relative_to(ROOT)))
+    return source_bytes(ROOT, source).decode()
+
+
+def test_installed_app_names(tmp_path: Path) -> None:
+    sources = []
+    for key in FILES:
+        target = tmp_path / (key + ".txt")
+        target.write_text(historical_source(key))
+        sources.append(target)
+    check_real_app_names(app_names_used(sources))
+    assert load("report").EnergyPanel and load("punctuation").PunctuationPanel
 
 
 @pytest.mark.parametrize("key", FILES)
 def test_public_structure(key: str) -> None:
-    tree = ast.parse(_menu_bytes(ROOT, str(FILES[key].relative_to(ROOT))).decode())
+    tree = ast.parse(historical_source(key))
     doc = ast.get_docstring(tree)
     assert "Simon Cozens" in doc and "MIT" in doc
     assert "https://github.com/simoncozens/GlyphsScripts" in doc
@@ -108,7 +134,7 @@ def test_public_structure(key: str) -> None:
                         if isinstance(n, ast.Name)
                     )
     assert not forbidden.intersection(defined)
-    assert "# SPDX-License-Identifier: MIT" in _menu_bytes(ROOT, str(FILES[key].relative_to(ROOT))).decode().splitlines()[:3]
+    assert "# SPDX-License-Identifier: MIT" in historical_source(key).splitlines()[:3]
     assert not any(
         isinstance(n, ast.ImportFrom) and n.module == "fly.ap" for n in ast.walk(tree)
     )
@@ -215,7 +241,7 @@ def test_sans_keeps_existing_and_unsafe_layers() -> None:
 
 
 def test_main_contains_host_failures(monkeypatch: Any, capsys: Any) -> None:
-    for key in FILES:
+    for key in ("sans",):
         tool = load(key)
         monkeypatch.setattr(
             tool, "run", lambda: (_ for _ in ()).throw(TimeoutError("capture expired"))
@@ -448,20 +474,49 @@ def test_sans_controls_planner_and_kept_rows(host: Any, monkeypatch: Any) -> Non
     )
 
 
+def punctuation_panel(module: Any) -> Any:
+    panel = object.__new__(module.PunctuationPanel)
+    panel.names, panel.found = [], []
+    panel.punctuation_only = NS(isChecked=lambda: True)
+    panel.scope = NS(currentIndex=lambda: 1)
+    panel.subtitle = NS(setText=lambda text: None)
+    panel.edits = {}
+    panel.grid = NS(set_rows=lambda rows: setattr(panel, "visible_rows", rows))
+    panel.count = NS(setText=lambda text: setattr(panel, "count_text", text))
+    panel.apply_button = NS(setEnabled=lambda enabled: setattr(panel, "apply_enabled", enabled))
+    return panel
+
+
+def planned(panel: Any, package: Any, masters: list[str], host: Any) -> list:
+    from fontlabapp.studios._kerning import Tool
+
+    names = list(dict.fromkeys([*panel.names, *(name.split(".", 1)[0] for name in panel.names)]))
+    font = {name: NS(unicodes=package.findName(name).fgGlyph.unicodes)
+            for name in names if package.findName(name) is not None}
+    panel.tool = Tool(NS(package=lambda: package, set_status=lambda text: None), "Kerning Studio", font=lambda: font)
+    panel.tool.package = package
+    panel.tool.masters, panel.tool.current = masters, masters[0]
+    panel.snapshot = panel.source_snapshot = host.modules["kerning_batch"].snapshot_kerning(package, typed=True)
+    panel.edits, panel.rows, _ = panel.plan(panel.source_snapshot)
+    return panel.found
+
+
+def write_rows(panel: Any, package: Any, rows: list) -> bool:
+    from fontlabapp.studios._kerning import Tool
+    from fontlabapp.studios.kerning_batch.punctuation import row_edits
+
+    if not hasattr(panel, "tool"):
+        panel.tool = Tool(NS(package=lambda: package, set_status=lambda text: None), "Kerning Studio")
+        panel.tool.package = package
+    panel.edits = row_edits(rows)
+    return panel.tool.write(panel.UNDO, panel.subject(), panel.edits, panel.source_snapshot)
+
+
 def test_punctuation_panel_stages_one_complete_multimaster_batch(
     host: Any, monkeypatch: Any
 ) -> None:
     tool = load("punctuation")
-    patch_app(
-        monkeypatch,
-        host.modules["selection_panel"],
-        "panel_type",
-        lambda: SelectionBase,
-    )
-    host.qt.QtGui.QCheckBox = Box
-    panel = tool.panel_type()()
-    panel.control_rows, panel.watched = [], []
-    panel.build_controls()
+    panel = punctuation_panel(tool)
     panel.names = ["period", "A", "missing"]
     glyphs = {
         "period": NS(isNull=False, fgGlyph=NS(unicodes=[46])),
@@ -486,16 +541,16 @@ def test_punctuation_panel_stages_one_complete_multimaster_batch(
             or True
         ),
     )
-    rows = panel.plan_rows(package, ["Regular", "Bold"])
+    rows = planned(panel, package, ["Regular", "Bold"], host)
     assert len(rows) == 4
     assert len([row for row in rows if row.note]) == 2
-    assert panel.cells(rows[-1]) == ["Bold", "period", "A", "-50"]
-    result = panel.write(package, rows)
-    assert result == {"pairs": 2}
+    assert [panel.rows[-1][0], *panel.rows[-1][2]] == ["Bold", "period", "A", "-50"]
+    result = write_rows(panel, package, rows)
+    assert result and panel.changed() == 2
     assert len(captured) == 1
     assert set(captured[0][0][1]) == {"Regular", "Bold"}
     assert captured[0][1] == {"expected": source}
-    assert "2" in panel.result_text(result)
+    assert "2" in panel.result(panel.edits)
 
 
 def test_report_main_report_no_font_refusal_and_exact_report(
@@ -505,14 +560,24 @@ def test_report_main_report_no_font_refusal_and_exact_report(
     scripting, batch, reports = (
         host.modules[name] for name in ("scripting", "kerning_batch", "reports")
     )
-    patch_app(monkeypatch, scripting, "current_package", lambda expected_id=None: None)
-    with pytest.raises(ValueError, match="Open a font"):
-        tool.run()
+    from fontlabapp.studios._kerning import Tool
+    from fontlabapp.studios import _kerning
+
     package = NS(master="Regular")
-    patch_app(
-        monkeypatch, scripting, "current_package", lambda expected_id=None: package
-    )
-    patch_app(monkeypatch, scripting, "names_selected_names", lambda: ["A", "V", "A"])
+    state = Tool(NS(package=lambda: package, set_status=lambda text: None), "Kerning Browser")
+    state.package, state.current = None, "Regular"
+    panel = object.__new__(tool.EnergyPanel)
+    panel.tool = state
+    captions = []
+    panel.subtitle = NS(setText=captions.append)
+    panel.grid = NS(set_rows=lambda rows: None)
+    panel.open_button = NS(setEnabled=lambda value: None)
+    panel.refresh()
+    assert panel.result is None and captions[-1] == "Open a font first."
+    with pytest.raises(ValueError, match="Select glyphs"):
+        panel.open_report()
+    state.package = package
+    monkeypatch.setattr(_kerning, "names_selected_names", lambda: ["A", "V", "A"])
     source = NS(
         pairs={"Regular": {(("A", "glyphMode"), ("V", "glyphMode")): -80}},
         groups={"Regular": {}},
@@ -528,7 +593,8 @@ def test_report_main_report_no_font_refusal_and_exact_report(
     monkeypatch.setattr(reports, "show_report", shown)
     with pytest.raises(TypeError):
         shown({}, unsupported_option=True)
-    report = tool.run()
+    panel.refresh()
+    report = panel.open_report()
     assert report["energy"] == 6400
     assert report["read_only"] is True and "effective_values" not in report
     assert shown.call_args.kwargs == {
@@ -542,7 +608,7 @@ def test_report_main_report_no_font_refusal_and_exact_report(
     assert not host.notifications
 
 
-@pytest.mark.parametrize("key", ["sans", "punctuation"])
+@pytest.mark.parametrize("key", ["sans"])
 def test_panel_launch_uses_owned_key(host: Any, monkeypatch: Any, key: str) -> None:
     tool = load(key)
     sentinel = object()
@@ -606,16 +672,7 @@ def test_punctuation_ambiguous_glyph_kept_while_other_selection_plans(
     host: Any, monkeypatch: Any
 ) -> None:
     tool = load("punctuation")
-    patch_app(
-        monkeypatch,
-        host.modules["selection_panel"],
-        "panel_type",
-        lambda: SelectionBase,
-    )
-    host.qt.QtGui.QCheckBox = Box
-    panel = tool.panel_type()()
-    panel.control_rows, panel.watched = [], []
-    panel.build_controls()
+    panel = punctuation_panel(tool)
     panel.names = ["period", "comma"]
     package = NS(
         findName=lambda name: NS(isNull=False, fgGlyph=NS(unicodes=[46])),
@@ -637,7 +694,7 @@ def test_punctuation_ambiguous_glyph_kept_while_other_selection_plans(
         "snapshot_kerning",
         lambda package, *, typed=False: source,
     )
-    rows = panel.plan_rows(package, ["Regular"])
+    rows = planned(panel, package, ["Regular"], host)
     assert any(row.note and row.pair[0][0] == "period" for row in rows)
     assert any(not row.note and row.pair[0][0] == "comma" for row in rows)
 
@@ -646,13 +703,7 @@ def test_punctuation_writer_failure_has_native_undo_hint(
     host: Any, monkeypatch: Any
 ) -> None:
     tool = load("punctuation")
-    patch_app(
-        monkeypatch,
-        host.modules["selection_panel"],
-        "panel_type",
-        lambda: SelectionBase,
-    )
-    panel = tool.panel_type()()
+    panel = punctuation_panel(tool)
     panel.source_snapshot = object()
     patch_app(
         monkeypatch,
@@ -665,8 +716,8 @@ def test_punctuation_writer_failure_has_native_undo_hint(
     with pytest.raises(
         RuntimeError, match="Native changes may remain; use Edit > Undo"
     ):
-        panel.write(
-            object(),
+        write_rows(
+            panel, object(),
             [tool.Row("Regular", (("period", "glyphMode"), ("A", "glyphMode")), -50)],
         )
 
@@ -719,19 +770,10 @@ def test_punctuation_real_batch_writer_preserves_classes_and_explicit_zero(
         "current_package",
         lambda expected_id=None: package if expected_id in (None, package.id) else None,
     )
-    patch_app(
-        monkeypatch,
-        host.modules["selection_panel"],
-        "panel_type",
-        lambda: SelectionBase,
-    )
-    host.qt.QtGui.QCheckBox = Box
-    panel = tool.panel_type()()
-    panel.control_rows, panel.watched = [], []
-    panel.build_controls()
+    panel = punctuation_panel(tool)
     panel.names = ["period"]
-    rows = panel.plan_rows(package, list(containers))
-    assert panel.write(package, rows) == {"pairs": 2}
+    rows = planned(panel, package, list(containers), host)
+    assert write_rows(panel, package, rows) and panel.changed() == 2
     for native in containers.values():
         assert native.values[(("period", "glyphMode"), ("A", "glyphMode"))] == 0
         assert native.values[(("A", "glyphMode"), ("V", "glyphMode"))] == -70
@@ -739,11 +781,13 @@ def test_punctuation_real_batch_writer_preserves_classes_and_explicit_zero(
     # The public kerning writer uses matching before/after package checkpoints.
     assert (
         host.notifications
-        == [(tool.TITLE, [package, master_container, kerning_container])] * 2
+        == [("Kerning Studio: Add exceptions for 1 glyph on Regular, Bold", [package, master_container, kerning_container])] * 2
     )
     assert package.history == [0]
     panel.source_snapshot = batch.snapshot_kerning(package, typed=True)
-    panel.write(package, [])
+    panel.edits = tool.row_edits([])
+    panel.snapshot = panel.source_snapshot
+    assert panel.edits == {} and not panel.apply()
     assert len(host.notifications) == 2, "A no-op must add no checkpoint"
 
 
@@ -871,16 +915,7 @@ def test_numeric_problem_blocks_package_write_even_on_unchosen_master(
     host: Any, monkeypatch: Any, chosen: tuple, value: float
 ) -> None:
     tool = load("punctuation")
-    patch_app(
-        monkeypatch,
-        host.modules["selection_panel"],
-        "panel_type",
-        lambda: SelectionBase,
-    )
-    host.qt.QtGui.QCheckBox = Box
-    panel = tool.panel_type()()
-    panel.control_rows, panel.watched = [], []
-    panel.build_controls()
+    panel = punctuation_panel(tool)
     panel.names = ["period"]
     pair = (("L", "groupMode"), ("A", "glyphMode"))
     source = NS(
@@ -904,7 +939,7 @@ def test_numeric_problem_blocks_package_write_even_on_unchosen_master(
         "write_kerning",
         lambda package, edits, undo_name, *, expected=None: True,
     )
-    rows = panel.plan_rows(package, list(chosen))
+    rows = planned(panel, package, list(chosen), host)
     assert any(
         row.master == "Bold" and "@L" in row.note and "master kept" in row.note
         for row in rows
@@ -913,8 +948,9 @@ def test_numeric_problem_blocks_package_write_even_on_unchosen_master(
     assert rows and all(row.note for row in rows), (
         "No row may promise a write the App will refuse"
     )
-    assert panel.write(package, rows) == {"pairs": 0}
+    assert tool.row_edits(rows) == {} and not panel.apply()
     assert writes.call_count == 0 and not host.notifications
+    assert panel.apply_enabled is False
 
 
 def test_stale_class_master_is_named_and_other_master_writes(
@@ -939,25 +975,16 @@ def test_stale_class_master_is_named_and_other_master_writes(
         "current_package",
         lambda expected_id=None: package if expected_id in (None, package.id) else None,
     )
-    patch_app(
-        monkeypatch,
-        host.modules["selection_panel"],
-        "panel_type",
-        lambda: SelectionBase,
-    )
-    host.qt.QtGui.QCheckBox = Box
-    panel = tool.panel_type()()
-    panel.control_rows, panel.watched = [], []
-    panel.build_controls()
+    panel = punctuation_panel(tool)
     panel.names = ["period"]
     original_write = batch.write_kerning
     calls = patch_app(monkeypatch, batch, "write_kerning", original_write)
     before_bold = dict(containers["Bold"].values)
-    rows = panel.plan_rows(package, list(containers))
+    rows = planned(panel, package, list(containers), host)
     kept = [row for row in rows if row.master == "Bold"]
     assert len(kept) == 1 and "@L" in kept[0].note and "missing_member" in kept[0].note
     assert "master kept" in kept[0].note
-    assert panel.write(package, rows) == {"pairs": 1}
+    assert write_rows(panel, package, rows) and panel.changed() == 1
     assert calls.call_count == 1 and set(calls.call_args.args[1]) == {"Regular"}
     assert containers["Bold"].values == before_bold
     assert (("period", "glyphMode"), ("A", "glyphMode")) in containers["Regular"].values
@@ -995,16 +1022,7 @@ def test_unencoded_punctuation_alternate_uses_base_unicode(
     host: Any, monkeypatch: Any
 ) -> None:
     tool = load("punctuation")
-    patch_app(
-        monkeypatch,
-        host.modules["selection_panel"],
-        "panel_type",
-        lambda: SelectionBase,
-    )
-    host.qt.QtGui.QCheckBox = Box
-    panel = tool.panel_type()()
-    panel.control_rows, panel.watched = [], []
-    panel.build_controls()
+    panel = punctuation_panel(tool)
     panel.names = ["period.case"]
     glyphs = {
         name: NS(isNull=False, fgGlyph=NS(unicodes=codes))
@@ -1021,7 +1039,7 @@ def test_unencoded_punctuation_alternate_uses_base_unicode(
         "snapshot_kerning",
         lambda package, *, typed=False: source,
     )
-    rows = panel.plan_rows(package, ["Regular"])
+    rows = planned(panel, package, ["Regular"], host)
     assert len(rows) == 1 and not rows[0].note and rows[0].pair[0][0] == "period.case"
 
 
@@ -1037,7 +1055,28 @@ def test_sans_unsupported_glyph_is_named(host: Any, monkeypatch: Any) -> None:
     assert row.edit is None and "Aacute" in row.new and "kept" in row.new
 
 
-def test_current_sansomatic_keeps_public_safety_contract(monkeypatch):
-    current = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/shape_generators/sansomatic.py"
-    monkeypatch.setitem(globals(), "_menu_bytes", lambda root, path: current.read_bytes())
-    test_public_structure("sans")
+@pytest.mark.parametrize("key", ["report", "punctuation"])
+def test_consolidated_actions_contain_original_host_failures(key: str) -> None:
+    module = load(key)
+    panel_type = module.EnergyPanel if key == "report" else module.PunctuationPanel
+    panel = object.__new__(panel_type)
+    messages = []
+    panel.tool = NS(app="Kerning Studio", shell=NS(package=lambda: object()), say=messages.append)
+    assert panel.run(lambda: (_ for _ in ()).throw(TimeoutError("capture expired"))) is None
+    assert "capture expired" in messages[-1]
+
+
+def test_punctuation_launch_uses_consolidated_owned_studio(monkeypatch: Any) -> None:
+    import importlib
+    import fly
+
+    owner = object()
+    studio = importlib.import_module("fontlabapp.studios.kerning_studio")
+    calls = []
+    monkeypatch.setattr(studio, "show", lambda **kwargs: calls.append(kwargs) or owner)
+    monkeypatch.setitem(vars(fly), "ap", importlib.import_module("fontlabapp"))
+    monkeypatch.setitem(sys.modules, "fly.ap.studios.kerning_studio", studio)
+    spec = importlib.util.spec_from_file_location("g13_consolidated", ROOT / "Scripts/Kerning/Kerning Studio.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    assert module.main() is owner and calls == [{"consolidated": True}]

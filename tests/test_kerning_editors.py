@@ -8,8 +8,26 @@ from types import SimpleNamespace as NS
 from test_kerning import fixture_font
 from test_kerning import load as native_load
 from pathlib import Path
+import json
 
+import test_cov_b_kerning_values as migrated_values
+import test_cov_b_kerning_editors as migrated_editors
+import _wp03_pair_editor as pair_support
+
+import importlib.util
+import sys
+from types import SimpleNamespace as NS
+from test_kerning import fixture_font
+from test_kerning import load as native_load
 import pytest
+from menu_layout import source_bytes
+
+pair_env = pair_support.pair_env
+
+value_env = migrated_values.env
+studio_host = migrated_values.studio_host
+VALUE_PANELS = {"Round Values": "RoundPanel", "Scale Values": "ScalePanel", "Remove Small Pairs": "RemoveSmallPanel"}
+
 
 ROOT = Path(__file__).parents[1]
 TITLES = [
@@ -23,9 +41,12 @@ TITLES = [
 
 @pytest.mark.parametrize("title", TITLES)
 def test_requested_complete_editor_exists(title):
-    assert (ROOT / "Scripts/Kerning" / (title + ".py")).is_file(), (
-        "Requested kerning editor is missing"
-    )
+    path = "Scripts/Kerning/" + title + ".py"
+    row = next(row for row in json.loads((ROOT / "menu-consolidations.json").read_text())["transitions"]
+               if row["source"]["path"] == path)
+    assert source_bytes(ROOT, row["source"])
+    target = row["destination"]["path"] if row["acceptance"]["behavior_parity"] else path
+    assert (ROOT / target).is_file(), "Requested kerning editor is missing"
 
 
 load = native_load
@@ -77,7 +98,23 @@ def panel(editors, title):
 
 
 @pytest.mark.parametrize("title", TITLES)
-def test_editors_share_guarded_callbacks_close_and_original_keys(editors, title):
+def test_editors_share_guarded_callbacks_close_and_original_keys(request, title):
+    if title in VALUE_PANELS:
+        env = request.getfixturevalue("value_env")
+        migrated_values.test_editors_when_close_clicked_then_owned_callbacks_are_released(env, VALUE_PANELS[title])
+        return
+    if title == "Pair Editor":
+        pair_support.close_owner(request.getfixturevalue("pair_env"))
+        return
+    if title == "Copy Between Masters":
+        state = request.getfixturevalue("studio_host")
+        state.package = migrated_editors.make_package()
+        shell = state.open().shell
+        shell.close_button.click()
+        assert shell.closed and shell._close_complete and shell._delete_scheduled
+        assert not shell.widget.isVisible() and not shell.connections
+        return
+    editors = request.getfixturevalue("editors")
     module, _, _, shared, _ = editors
     _dialog, cls = panel(editors, title)
     assert cls._connect is shared.KerningEditDialog._connect
@@ -88,8 +125,19 @@ def test_editors_share_guarded_callbacks_close_and_original_keys(editors, title)
 @pytest.mark.parametrize("title", TITLES)
 @pytest.mark.parametrize("change", ["font", "closed", "pairs", "classes", "masters"])
 def test_each_real_apply_refuses_stale_before_body_and_clears_staged(
-    editors, title, change
+    request, title, change
 ):
+    if title in VALUE_PANELS:
+        env = request.getfixturevalue("value_env")
+        migrated_values.test_each_real_apply_refuses_stale_before_body_and_clears_staged(env, VALUE_PANELS[title], change)
+        return
+    if title == "Pair Editor":
+        pair_support.snapshot_refusal(request.getfixturevalue("pair_env"), change)
+        return
+    if title == "Copy Between Masters":
+        migrated_editors.test_copy_apply_refuses_complete_stale_snapshot(request.getfixturevalue("studio_host"), change)
+        return
+    editors = request.getfixturevalue("editors")
     dialog, cls = panel(editors, title)
     _, state, _, _, _ = editors
     dialog.staged[(("A", "V"), "Bold")] = -120
@@ -113,20 +161,16 @@ def test_each_real_apply_refuses_stale_before_body_and_clears_staged(
     assert dialog.enabled[-1] is False and dialog.table_sizes[-1] == 0
 
 
-def test_failed_preview_disables_apply_and_leaves_explicit_refresh(editors):
-    dialog, _ = panel(editors, "Pair Editor")
-    shared = editors[3]
-
-    @shared.editor_refresh
-    def fail(self):
-        self.staged["partial"] = 1
+def test_failed_preview_disables_apply_and_leaves_explicit_refresh(pair_env, monkeypatch):
+    from fontlabapp.studios.kerning_studio import pairs
+    dialog = pair_env.open()
+    def fail(*args):
+        dialog.staged["partial"] = 1
         raise RuntimeError("native read failed")
-
-    fail(dialog)
-    assert dialog.staged == {} and dialog.enabled[-1] is False
-    assert (
-        "native read failed" in dialog.messages[-1] and "Refresh" in dialog.messages[-1]
-    )
+    monkeypatch.setattr(pairs.model, "involving", fail)
+    pair_env.shell.refresh_button.click()
+    assert dialog.staged == {} and not dialog.ready()
+    assert "native read failed" in pair_env.shell.status.text() and "Refresh" in pair_env.shell.status.text()
 
 
 def test_refresh_control_calls_the_owned_reload_callback(editors):
@@ -146,76 +190,52 @@ def test_refresh_control_calls_the_owned_reload_callback(editors):
     assert calls[-1] == "reload"
 
 
-def test_pair_invalid_cell_keeps_three_other_valid_edits_and_feedback(editors):
-    dialog, cls = panel(editors, "Pair Editor")
-    dialog.filling = False
-    dialog.order = [("A", "V"), ("T", "V")]
-    dialog.rows = {
-        ("A", "V"): {"Regular": 0, "Bold": 0},
-        ("T", "V"): {"Regular": 12.5, "Bold": 12.5},
-    }
-    dialog.refresh = lambda: None
-
-    def item(row, column, text):
-        return NS(row=lambda: row, column=lambda: column, text=lambda: text)
-
-    cls.cell_edited(dialog, item(0, 2, "-120"))
-    cls.cell_edited(dialog, item(0, 1, ""))
-    cls.cell_edited(dialog, item(1, 1, "-5"))
-    cls.cell_edited(dialog, item(1, 2, "abc"))
+def test_pair_invalid_cell_keeps_three_other_valid_edits_and_feedback(pair_env):
+    pair_env.selection[:] = ["V"]
+    for master in pair_env.state.package.masters:
+        kern = pair_env.state.package.kerning(master)
+        kern.stored[(("A", "glyphMode"), ("V", "glyphMode"))] = 0
+        kern.stored[(("T", "glyphMode"), ("V", "glyphMode"))] = 12.5
+    dialog = pair_env.open()
+    dialog.set_cell("A", "V", "Bold", "-120")
+    dialog.set_cell("A", "V", "Regular", "")
+    dialog.set_cell("T", "V", "Regular", "-5")
+    dialog.set_cell("T", "V", "Bold", "abc")
     assert len(dialog.staged) == 3 and dialog.staged[(("A", "V"), "Regular")] is None
-    assert (("T", "V"), "Bold") not in dialog.staged and "abc" in dialog.messages[-1]
-    assert (
-        dialog.messages[-1]
-        == "“abc” is not a valid kerning value; other valid edits remain staged"
-    ), "Invalid input must use plain-language feedback"
-    cls.cell_edited(dialog, item(0, 2, "inf"))
-    assert len(dialog.staged) == 2, (
-        "Invalid replacement removes only its own prior staged value"
-    )
+    assert (("T", "V"), "Bold") not in dialog.staged
+    assert pair_env.shell.status.text() == "“abc” is not a valid kerning value; other valid edits remain staged"
+    dialog.set_cell("A", "V", "Bold", "inf")
+    assert len(dialog.staged) == 2, "Invalid replacement removes only its own prior staged value"
 
 
-def test_pair_wrong_side_class_cell_never_enters_staged_map(editors):
-    dialog, cls = panel(editors, "Pair Editor")
-    dialog.filling = False
-    dialog.order = [("@R_V", "V")]
-    dialog.rows = {}
-    dialog.refresh = lambda: None
-    cls.cell_edited(dialog, NS(row=lambda: 0, column=lambda: 1, text=lambda: "-50"))
-    assert not dialog.staged and "wrong-side" in dialog.messages[-1]
+def test_pair_wrong_side_class_cell_never_enters_staged_map(pair_env):
+    dialog = pair_env.open()
+    dialog.rows[("@R_V", "V")] = {}
+    dialog.fill()
+    dialog.set_cell("@R_V", "V", "Regular", "-50")
+    assert not dialog.staged and "wrong-side" in pair_env.shell.status.text()
 
 
-def test_pair_rebuild_retains_staged_and_invalid_text(editors):
-    dialog, cls = panel(editors, "Pair Editor")
-    qt = editors[4]
-    qt.QtCore.Qt.AlignRight, qt.QtCore.Qt.AlignVCenter = 1, 2
-    qt.QtGui.QTableWidgetItem = lambda value: NS(
-        text=lambda: value, setTextAlignment=lambda value: None
-    )
-    values = {}
-    dialog.table = NS(
-        setRowCount=lambda n: None,
-        setItem=lambda row, column, item: values.__setitem__(
-            (row, column), item.text()
-        ),
-    )
-    dialog.rows = {("A", "V"): {"Regular": -10, "Bold": -20}}
-    dialog.order = [("A", "V")]
-    dialog.staged = {(("A", "V"), "Bold"): -120}
-    dialog.errors = {(("A", "V"), "Regular"): "abc"}
-    dialog.refresh = lambda: None
-    cls.fill(dialog)
-    assert values[0, 1] == "abc" and values[0, 2] == "-120"
+def test_pair_rebuild_retains_staged_and_invalid_text(pair_env):
+    dialog = pair_env.open()
+    dialog.set_cell("A", "V", "Bold", "-120")
+    dialog.set_cell("A", "V", "Regular", "abc")
+    dialog.partner.setText("T")
+    dialog.add_button.click()
+    values = {dialog.table.item(row, 0).text(): [dialog.table.item(row, col).text() for col in (1, 2)]
+              for row in range(dialog.table.rowCount())}
+    assert values["A  V"] == ["abc", "-120"]
 
 
 def test_copy_remove_and_scale_round_expose_real_shared_plans(editors):
     module, state, _, _, _ = editors
-    assert module("Copy Between Masters").plan({("A", "V"): 0}, {}, "missing", 100) == {
+    assert editors[2].kerning_editor_api().copy_plan({("A", "V"): 0}, {}, "missing", 100) == {
         ("A", "V"): 0
     }
-    assert module("Scale Values").scaled(-3, 150) == -5
-    assert module("Round Values").round_to(7.5, 5) == 10
-    assert module("Remove Small Pairs").small_pairs(state.package, ["Regular"], 1) == {
+    api = editors[2].kerning_editor_api()
+    assert api.scaled(-3, 150) == -5
+    assert api.round_to(7.5, 5) == 10
+    assert api.small_pairs(state.package, ["Regular"], 1) == {
         "Regular": [("A", "V", 0)]
     }
 
@@ -233,43 +253,23 @@ def test_applied_but_failed_refresh_never_reports_success_counts(editors):
         shared.KerningEditDialog.refresh_after_apply(dialog, fail_refresh)
 
 
-def test_captured_snapshot_survives_unchanged_successful_refresh(editors):
-    dialog, _ = panel(editors, "Pair Editor")
-    shared = editors[3]
-
-    @shared.editor_refresh
-    def refresh(self):
-        self.staged = {}
-
-    refresh(dialog)
-    assert dialog._snapshot_valid and dialog._kerning_snapshot.package_id == 7
+def test_captured_snapshot_survives_unchanged_successful_refresh(pair_env):
+    dialog = pair_env.open()
+    before = dialog.snapshot
+    pair_env.shell.refresh_button.click()
+    assert dialog.snapshot is not None and dialog.snapshot == before
+    assert dialog.snapshot.package_id == pair_env.state.package.id
 
 
-def test_pair_apply_refuses_lossy_reopen_range_and_clears_staging(editors):
-    _module, state, scripting, _, _ = editors
-    font = state.package
-    kern = font.kerning("Bold")
-    original_items = kern.items()
-    kern.items = lambda: [(pair, int(value)) for pair, value in original_items]
+def test_pair_apply_refuses_lossy_reopen_range_and_clears_staging(pair_env):
+    font = pair_env.state.package
     font.upm = 1000
-    font.mastersContainer = lambda: "masters"
-    font.kerningContainer = lambda: "kerning"
-    font.checkInitHistoryState = lambda _: pytest.fail(
-        "Invalid final range initialized history"
-    )
-    scripting._native("fontlab").flItems = NS(
-        notifyChangesApplied=lambda *args: pytest.fail(
-            "Invalid final range created native history"
-        )
-    )
-    dialog, cls = panel(editors, "Pair Editor")
-    dialog.staged[(("A", "V"), "Bold")] = 2001
-    before = {master: scripting.kerning_pairs(font, master) for master in font.masters}
-    with pytest.raises(ValueError, match="save/reopen range"):
-        cls.apply(dialog)
-    assert (
-        not dialog.staged and not dialog._snapshot_valid and dialog.enabled[-1] is False
-    )
-    assert {
-        master: scripting.kerning_pairs(font, master) for master in font.masters
-    } == before
+    font.checkInitHistoryState = lambda _: pytest.fail("Invalid final range initialized history")
+    dialog = pair_env.open()
+    dialog.set_cell("A", "V", "Bold", "2001")
+    before = {master: font.pairs(master) for master in font.masters}
+    pair_env.shell.apply_button.click()
+    assert "save/reopen range" in pair_env.shell.status.text()
+    assert not dialog.staged and dialog.snapshot is None and not dialog.ready()
+    assert not pair_env.state.notified, "Invalid final range created native history"
+    assert {master: font.pairs(master) for master in font.masters} == before

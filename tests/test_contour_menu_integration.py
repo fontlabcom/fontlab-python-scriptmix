@@ -26,7 +26,10 @@ def test_three_contour_candidates_extend_curated_menu_without_archive_dispatcher
     implemented = {row["source"]["path"] for row in consolidation_rows(ROOT)
                    if row["acceptance"]["state"] == "implemented"}
     assert historical.intersection(row["menu"] for row in archive["menus"]) == candidates
-    assert menus.intersection(row["menu"] for row in archive["menus"]) == candidates - implemented
+    # A consolidated launcher may reuse the name of an archived rescue menu (Vertical Metrics).
+    consolidated = {row["destination"]["path"] for row in consolidation_rows(ROOT)
+                    if row["acceptance"]["state"] == "implemented" and row["destination"]}
+    assert menus.intersection(row["menu"] for row in archive["menus"]) - consolidated == candidates - implemented
     selected = [row for row in additional if row["title"] in TITLES]
     assert {row["title"] for row in selected} == set(TITLES)
     for row in selected:

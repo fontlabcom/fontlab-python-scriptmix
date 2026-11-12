@@ -8,7 +8,7 @@ from pathlib import Path
 from types import ModuleType
 
 ROOT = Path(__file__).parents[1]
-MENU = ROOT / "Scripts/Metrics/Check Tabular Widths.py"
+MENU = ROOT / "Scripts/Metrics/Advance Widths.py"
 
 
 def test_menu_is_lazy_typed_and_dispatches_once(monkeypatch):
@@ -17,19 +17,17 @@ def test_menu_is_lazy_typed_and_dispatches_once(monkeypatch):
         module = ModuleType(name)
         module.__path__ = []
         monkeypatch.setitem(sys.modules, name, module)
-    api = ModuleType("fly.ap.core.scripting")
-    api.tabular_width_dialog_type = lambda: type(
-        "Panel", (), {"KEY": "check_tabular_widths"}
-    )
-    api.show_script_dialog = lambda kind, key: calls.append(key)
-    monkeypatch.setitem(sys.modules, "fly.ap.core.scripting", api)
+    api = ModuleType("fly.ap.studios.advance_widths")
+    api.show = lambda: calls.append("Advance Widths")
+    monkeypatch.setitem(sys.modules, "fly.ap.studios.advance_widths", api)
     namespace = runpy.run_path(str(MENU), run_name="inspection")
     assert calls == []
     namespace["main"]()
-    assert calls == ["check_tabular_widths"]
+    assert calls == ["Advance Widths"]
     calls.clear()
     runpy.run_path(str(MENU), run_name="__main__")
-    assert calls == ["check_tabular_widths"]
-    tree = ast.parse(MENU.read_text(), feature_version=(3, 11))
+    assert calls == ["Advance Widths"]
+    from _wp03_metrics_tabs import historical_text
+    tree = ast.parse(historical_text(ROOT / "Scripts/Metrics/Check Tabular Widths.py"), feature_version=(3, 11))
     main = next(node for node in tree.body if isinstance(node, ast.FunctionDef))
     assert isinstance(main.returns, ast.Constant) and main.returns.value is None

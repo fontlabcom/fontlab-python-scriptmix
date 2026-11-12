@@ -32,6 +32,8 @@ NAMES = [
     "Tabular Width",
     "Scale Advances",
 ]
+ADVANCE_NAMES = {"Round Advances", "Scale Advances", "Zero-Width Marks", "Tabular Width"}
+
 CLASS = {
     "Italic Sidebearings": "ItalicSidebearings",
     "Round Advances": "RoundAdvances",
@@ -268,6 +270,7 @@ def fake_qt():
     qt = ModuleType("fly.qt")
     gui, core = ModuleType("QtGui"), ModuleType("QtCore")
     gui.QDialog = Dialog
+    gui.QWidget = Widget
     gui.QLabel = Label
     gui.QSpinBox = Spin
     gui.QDoubleSpinBox = Spin
@@ -497,6 +500,7 @@ class World:
 @pytest.fixture
 def world(monkeypatch, real_app):
     state = World()
+    state.mp = monkeypatch
     LOG.clear()
     fly = ModuleType("fly")
     ap = app_namespace()
@@ -605,11 +609,10 @@ def load(name: str, prefix: str = "s1"):
 
 
 def open_panel(world, name, glyphs, selection=None, masters=("Light", "Bold")):
-    module = load(name)
-    world.package = Package(glyphs, masters)
-    world.selection = [g.name for g in glyphs] if selection is None else selection
-    panel = getattr(module, CLASS[name])(None)
-    return module, panel
+    from _wp03_metrics_tabs import advance_panel
+
+    assert name in ADVANCE_NAMES
+    return advance_panel(world, name, glyphs, selection)
 
 
 def two_master_glyph(name="n", light=(100, 10, 90), bold=(120, 12, 108)):
@@ -622,10 +625,17 @@ def two_master_glyph(name="n", light=(100, 10, 90), bold=(120, 12, 108)):
 
 # ---------------------------------------------------------------- files
 @pytest.mark.parametrize("name", NAMES)
-def test_script_file_when_listed_then_has_house_header_and_py311_syntax(name):
+def test_script_file_when_listed_then_has_house_header_and_py311_syntax(name, monkeypatch):
     path = METRICS / f"{name}.py"
-    text = path.read_text()
-    assert path.is_file(), f"missing {path}"
+    monkeypatch.syspath_prepend(str(METRICS.parents[1]))
+    import json
+    from menu_layout import source_bytes
+
+    ledger = json.loads((METRICS.parents[1] / "menu-consolidations.json").read_text())
+    source = next(row["source"] for row in ledger["transitions"]
+                  if row["source"]["path"] == path.relative_to(METRICS.parents[1]).as_posix())
+    text = source_bytes(METRICS.parents[1], source).decode()
+    assert text, f"missing historical source {path}"
     assert text.startswith(f"# this_file: Scripts/Metrics/{name}.py\n"), (
         "this_file header"
     )
@@ -696,8 +706,9 @@ def test_real_app_helpers_when_scripts_import_them_then_signatures_exist():
 def test_rounded_when_direction_given_then_exact_multiple(
     world, width, step, direction, expected
 ):
-    module = load("Round Advances")
-    assert module.rounded(width, step, direction) == expected, (width, step, direction)
+    from fontlabapp.studios.advance_widths import widths
+
+    assert widths.rounded(width, step, direction) == expected, (width, step, direction)
 
 
 @pytest.mark.parametrize(
@@ -714,8 +725,9 @@ def test_rounded_when_direction_given_then_exact_multiple(
 def test_scaled_when_percent_given_then_width_and_half_shift(
     world, width, percent, expected
 ):
-    module = load("Scale Advances")
-    assert module.scaled(width, percent) == expected, (width, percent)
+    from fontlabapp.studios.advance_widths import widths
+
+    assert widths.scaled(width, percent) == expected, (width, percent)
 
 
 @pytest.mark.parametrize(
@@ -728,12 +740,17 @@ def test_scaled_when_percent_given_then_width_and_half_shift(
     ],
 )
 def test_centred_when_mode_given_then_odd_unit_goes_right(world, args, expected):
-    module = load("Centre In Advance")
-    assert module.centred(*args) == expected, args
+    from fontlabapp.studios.spacing_studio import model
+
+    left, right, width, mode, value = args
+    before = model.measure((left, right), width)
+    plan = model.centred(before, mode, value)
+    assert (before.lsb, before.rsb, plan.width, plan.lsb, plan.rsb) == expected, args
 
 
 def test_italic_edges_when_outline_is_slanted_then_deslanted_box(world):
-    module = load("Italic Sidebearings")
+    from fontlabapp.studios.spacing_studio import session as module
+
     layer = Layer(150, [(0, 0), (100, 0), (200, 100), (100, 100)])
     left, right = module.italic_edges(layer, -45.0, 0)
     assert left == pytest.approx(0) and right == pytest.approx(100), (left, right)
@@ -741,54 +758,28 @@ def test_italic_edges_when_outline_is_slanted_then_deslanted_box(world):
 
 
 def test_italic_planner_when_set_then_dx_and_width_follow_italic_values(world):
-    module = load("Italic Sidebearings")
+    from fontlabapp.studios.spacing_studio import model, session
+
     layer = Layer(150, [(0, 0), (100, 0), (200, 100), (100, 100)])
-    plan = module.italic_planner(-45.0, 0, "set", 20, 30)(layer, "Light")
+    before = model.measure(session.edges(layer), layer.advanceWidth)
+    planner = session.Studio.italic_planner
+    plan = planner(-45.0, 0, "set", 20, 30)("n", before, layer, "Light")
     assert (plan.dx, plan.width, plan.changed) == (20, 150, True)
-    assert plan.cells == ("0", "-50", "0", "50", "20", "30"), plan.cells
-    plan = module.italic_planner(-45.0, 0, "add", 10, None)(layer, "Light")
+    italic_left, italic_right = session.italic_edges(layer, -45.0, 0)
+    cells = tuple(f"{value:g}" for value in (before.lsb, before.rsb, italic_left,
+                  before.width - italic_right, italic_left + plan.dx,
+                  plan.width - italic_right - plan.dx))
+    assert cells == ("0", "-50", "0", "50", "20", "30"), cells
+    plan = planner(-45.0, 0, "add", 10, None)("n", before, layer, "Light")
     assert (plan.dx, plan.width) == (10, 160), "add to LSB only widens by the shift"
-    same = module.italic_planner(-45.0, 0, "add", None, None)(layer, "Light")
+    same = planner(-45.0, 0, "add", None, None)("n", before, layer, "Light")
     assert not same.changed, "no side ticked is a no-op"
-    assert module.italic_planner(-45.0, 0, "set", 0, 0)(Layer(150), "Light") == (
+    assert planner(-45.0, 0, "set", 0, 0)("n", None, Layer(150), "Light") == (
         "empty (no outline)"
     )
-    assert module.italic_planner(-45.0, 0, "set", None, -500)(layer, "L") == (
+    assert planner(-45.0, 0, "set", None, -500)("n", before, layer, "L") == (
         "negative width (skipped)"
     ), "negative advance is refused"
-
-
-def test_is_mark_when_category_or_name_then_true(world):
-    module = load("Zero-Width Marks")
-    assert module.is_mark(Glyph("anything", {}), [0x0301]), "Mn"
-    assert module.is_mark(Glyph("enclose", {}), [0x20DD]), "Me"
-    assert module.is_mark(Glyph("multi", {}), [0x41, 0x0301]), "any code point counts"
-    assert module.is_mark(Glyph("acutecomb", {})), "name"
-    assert module.is_mark(Glyph("gravecomb.case", {})), "suffix on name"
-    assert not module.is_mark(Glyph("A", {}), [65]), "letter"
-    assert not module.is_mark(Glyph("A", {})), "no code point"
-    assert not module.is_mark(Glyph("big", {}), [0x110000]), "out of Unicode range"
-    assert not module.is_mark(Glyph("neg", {}), [-1]), "negative value"
-
-
-def test_zero_width_marks_when_unicode_only_mark_then_kept_via_fgpackage(world):
-    glyphs = [Glyph("acute", {"Light": Layer(300, rect(1, 2))}, [0x0301]), two_master_glyph("n")]
-    _, panel = open_panel(world, "Zero-Width Marks", glyphs)
-    assert [e.glyph.name for e in panel.entries] == ["acute"], "Mn without comb in name"
-
-
-def test_zero_width_marks_when_no_fgpackage_entry_then_error_names_glyph(world):
-    _, panel = open_panel(world, "Zero-Width Marks", [two_master_glyph("n")])
-    world.package.fgPackage = type("Native", (), {"__getitem__": lambda s, k: None})()
-    with pytest.raises(ValueError, match="Cannot read Unicode values for n: it has no FontGate glyph"):
-        panel.target_glyphs(world.package)
-
-
-def test_zero_planner_when_applied_then_width_is_positive_zero(world):
-    module = load("Zero-Width Marks")
-    for placement in ("keep", "hang", "centre"):
-        plan = module.zero_planner(placement)(Layer(300, rect(100, 200)), "Light")
-        assert math.copysign(1, plan.width) > 0, placement
 
 
 @pytest.mark.parametrize(
@@ -802,7 +793,7 @@ def test_zero_planner_when_applied_then_width_is_positive_zero(world):
 def test_zero_planner_when_placement_then_exact_shift(
     world, placement, width, points, dx
 ):
-    module = load("Zero-Width Marks")
+    from fontlabapp.studios.advance_widths import widths as module
     plan = module.zero_planner(placement)(Layer(width, points), "Light")
     assert (plan.dx, plan.width, plan.changed) == (dx, 0, True), placement
     flat = module.zero_planner("keep")(Layer(0, points), "Light")
@@ -810,7 +801,7 @@ def test_zero_planner_when_placement_then_exact_shift(
 
 
 def test_tabular_widths_when_widest_then_per_master_maximum(world):
-    module = load("Tabular Width")
+    from fontlabapp.studios.advance_widths import widths as module
     one = two_master_glyph("one", (80, 10, 70), (130, 10, 120))
     two = two_master_glyph("two", (95, 10, 85), (110, 10, 100))
     assert module.target_widths([one, two], ["Light", "Bold"], "widest", 0) == {
@@ -829,8 +820,21 @@ def test_tabular_widths_when_widest_then_per_master_maximum(world):
 # ---------------------------------------------------------------- panels
 @pytest.mark.parametrize("name", NAMES)
 def test_panel_when_opened_without_font_then_refuses_and_apply_is_off(world, name):
-    module = load(name)
-    panel = getattr(module, CLASS[name])(None)
+    if name not in ADVANCE_NAMES:
+        from _wp03_metrics_tabs import spacing_panel, stage_panel
+
+        studio, panel = spacing_panel(world, name, None)
+        staged, shell = stage_panel(studio, panel)
+        assert studio.status.startswith("Open a font"), studio.status
+        assert not shell.apply_button._enabled
+        shell.run("apply")
+        assert world.history == [] and studio.rows == []
+        assert not staged.ready()
+        return
+    if name in ADVANCE_NAMES:
+        from _wp03_metrics_tabs import advance_panel
+
+        _, panel = advance_panel(world, name, None)
     assert panel.subtitle.text.startswith("Open a font"), panel.subtitle.text
     assert panel.apply_button._enabled is False
     panel.apply()
@@ -840,6 +844,16 @@ def test_panel_when_opened_without_font_then_refuses_and_apply_is_off(world, nam
 
 @pytest.mark.parametrize("name", NAMES)
 def test_panel_when_selection_empty_then_refuses(world, name):
+    if name not in ADVANCE_NAMES:
+        from _wp03_metrics_tabs import spacing_panel, stage_panel
+
+        studio, panel = spacing_panel(world, name, [two_master_glyph()], selection=[])
+        staged, shell = stage_panel(studio, panel)
+        assert "Select" in studio.status, studio.status
+        assert not shell.apply_button._enabled
+        shell.run("apply")
+        assert world.history == [] and not staged.ready()
+        return
     _, panel = open_panel(world, name, [two_master_glyph()], selection=[])
     assert "Select" in panel.subtitle.text or "no" in panel.subtitle.text.lower()
     assert panel.apply_button._enabled is False
@@ -849,13 +863,30 @@ def test_panel_when_selection_empty_then_refuses(world, name):
 
 @pytest.mark.parametrize("name", NAMES)
 def test_panel_when_font_switches_then_apply_refuses(world, name):
+    if name not in ADVANCE_NAMES:
+        from _wp03_metrics_tabs import spacing_panel, stage_panel
+
+        studio, panel = spacing_panel(world, name, [two_master_glyph("n", (101, 10, 90), (121, 12, 108))])
+        if name == "Italic Sidebearings":
+            panel.lsb_field.setText("20")
+        else:
+            panel.width_mode.pick(2)
+            panel.width_field.setText("20")
+        _, shell = stage_panel(studio, panel)
+        shell.run("preview")
+        world.package = Package([], ident=99)
+        shell.run("apply")
+        assert world.history == [], "switched font must not be edited"
+        assert "original font" in shell.status.text, shell.status.text
+        return
     _, panel = open_panel(
         world, name, [two_master_glyph("n", (101, 10, 90), (121, 12, 108))]
     )
     world.package = Package([], ident=99)
     panel.apply()
     assert world.history == [], "switched font must not be edited"
-    assert "font changed" in panel.status.text, panel.status.text
+    status = panel.tool.status if name in ADVANCE_NAMES else panel.status.text
+    assert ("original font" if name in ADVANCE_NAMES else "font changed") in status, status
 
 
 def edited(world, name, glyphs, configure=None, **kwargs):
@@ -904,20 +935,18 @@ def test_round_advances_when_applied_then_rsb_absorbs_and_one_undo(world):
     assert o.findLayer("Bold").advanceWidth == 130, "already rounded: untouched"
     assert auto.advanceWidth == 101, "auto layer is never edited"
     changed = [n.findLayer("Light"), n.findLayer("Bold")]
-    check_one_undo(world, "Round Advances", changed, [n])
+    check_one_undo(world, "Advance Widths: round advances n", changed, [n])
     assert auto not in world.history[0][1], "auto layers never enter the Undo list"
     assert [e.note for e in panel.entries if e.glyph is o] == [
         "auto layer (skipped)",
         "glyph has auto layers (skipped)",
     ], "a glyph that owns an auto layer is skipped as a whole"
-    assert panel.last_result == {"pending_note": "", 
-        "layers": 2,
-        "glyphs": 1,
-        "auto_skipped": 2,
-        "mismatches": [],
-    "pending_updates": ()}
-    assert "Changed 2 layers in 1 glyphs" in panel.status.text
-    assert "2 layers skipped (auto)" in panel.status.text, panel.status.text
+    assert world.commit_result.pending_note == ""
+    assert world.commit_result.pending_updates == ()
+    assert world.commit_result.mismatches == ()
+    assert len(changed) == 2 and len(world.history[0][1]) == 3
+    assert "Changed 2 layers in 1 glyph" in panel.tool.status
+    assert "2 layers skipped (auto)" in panel.tool.status, panel.tool.status
 
 
 def test_round_advances_when_glyph_owns_auto_layer_then_its_manual_layers_stay(world):
@@ -957,21 +986,25 @@ def test_round_advances_when_step_is_one_then_whole_unit_advances(world):
 
 def test_scale_advances_when_applied_then_centred_change(world):
     n = two_master_glyph("n", (100, 10, 90), (200, 20, 180))
-    edited(
-        world,
-        "Scale Advances",
-        [n],
-        lambda m, p: (p.scope.pick(1), p.percent.setValue(110.0)),
-    )
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Scale Advances", [n])
+    panel.scope.pick(1)
+    panel.percent.setValue(110.0)
+    panel.apply_button.press()
     light, bold = n.findLayer("Light"), n.findLayer("Bold")
     assert (light.advanceWidth, light.points[0][0]) == (110, 15), "shift by half of +10"
     assert (bold.advanceWidth, bold.points[0][0]) == (220, 30)
-    check_one_undo(world, "Scale Advances", [light, bold], [n])
+    check_one_undo(world, "Advance Widths: scale advances n", [light, bold], [n])
 
 
 def test_centre_in_advance_when_applied_then_equal_sidebearings(world):
     n = two_master_glyph("n", (100, 0, 81), (100, 30, 60))
-    edited(world, "Centre In Advance", [n], lambda m, p: p.scope.pick(1))
+    from _wp03_metrics_tabs import spacing_panel
+
+    _, panel = spacing_panel(world, "Centre In Advance", [n])
+    panel.all_masters.setChecked(True)
+    assert panel.centre()
     light = n.findLayer("Light")
     assert light.points[0][0] == 9 and light.advanceWidth == 100, "lsb 9, rsb 10"
     bold = n.findLayer("Bold")
@@ -980,22 +1013,34 @@ def test_centre_in_advance_when_applied_then_equal_sidebearings(world):
 
 def test_centre_in_advance_when_set_mode_then_default_width_offered(world):
     n = two_master_glyph("n", (100, 0, 80), (100, 0, 80))
-    module, panel = open_panel(world, "Centre In Advance", [n])
-    panel.mode.pick(1)
-    assert panel.value.value == module.WIDTH_DEFAULT
-    assert panel.entries[0].plan.width == module.WIDTH_DEFAULT
-    panel.mode.pick(0)
-    assert panel.value._enabled is False, "value unused when the width is kept"
+    from _wp03_metrics_tabs import spacing_panel
+    from fontlabapp.studios.spacing_studio import model
+    from fontlabapp.studios.spacing_studio.staged import Staged
+
+    studio, panel = spacing_panel(world, "Centre In Advance", [n])
+    panel.width_mode.pick(1)
+    staged = Staged(panel)
+    staged.preview(panel.centre)
+    assert studio.rows[0].plan.width == model.WIDTH_DEFAULT
+    assert panel.width_field._enabled is True
+    panel.width_mode.pick(0)
+    assert panel.width_field._enabled is False, "value unused when the width is kept"
 
 
 def test_centre_in_advance_when_new_width_negative_then_layer_skipped(world):
     n = two_master_glyph("n", (100, 0, 80), (100, 0, 80))
-    _, panel = open_panel(world, "Centre In Advance", [n])
-    panel.mode.pick(2)
-    panel.value.setValue(-200)
-    assert panel.entries[0].note == "negative width (skipped)"
-    assert panel.apply_button._enabled is False
-    assert [panel.table.texts(0)] == [["n · Light", "negative width (skipped)"]]
+    from _wp03_metrics_tabs import spacing_panel
+    from fontlabapp.studios.spacing_studio.staged import Staged
+
+    studio, panel = spacing_panel(world, "Centre In Advance", [n])
+    panel.width_mode.pick(2)
+    panel.width_field.setText("-200")
+    staged = Staged(panel)
+    staged.preview(panel.centre)
+    assert studio.rows[0].note == "negative width (skipped)"
+    assert not staged.ready(), "No changed layer: Apply Changes remains disabled"
+    assert panel.records == [("n", "Light", ("0", "20", "100", "negative width (skipped)"))]
+    assert world.history == []
 
 
 def test_zero_width_marks_when_applied_then_hang_left_and_zero_width(world):
@@ -1004,19 +1049,23 @@ def test_zero_width_marks_when_applied_then_hang_left_and_zero_width(world):
         {"Light": Layer(300, rect(100, 200)), "Bold": Layer(320, rect(110, 210))},
     )
     letter = two_master_glyph("n")
-    _, panel = open_panel(world, "Zero-Width Marks", [mark, letter])
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Zero-Width Marks", [mark, letter])
     assert [e.glyph.name for e in panel.entries] == ["acutecomb"], "filter keeps marks"
     panel.placement.pick(1)
     panel.apply_button.press()
     light = mark.findLayer("Light")
     assert (light.advanceWidth, light.points[0][0]) == (0, -200)
-    check_one_undo(world, "Zero-Width Marks", [light], [mark])
+    check_one_undo(world, "Advance Widths: zero mark widths acutecomb", [light], [mark])
     assert letter.findLayer("Light").advanceWidth == 100, "base letters stay"
 
 
 def test_zero_width_marks_when_filter_off_then_all_selected_glyphs(world):
     letter = two_master_glyph("n")
-    _, panel = open_panel(world, "Zero-Width Marks", [letter])
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Zero-Width Marks", [letter])
     assert "no combining marks" in panel.subtitle.text.lower()
     assert panel.apply_button._enabled is False
     panel.only_marks.tick(False)
@@ -1028,10 +1077,9 @@ def test_tabular_width_when_preset_then_only_existing_figures_share_widest(world
     one = two_master_glyph("one", (80, 10, 70), (130, 10, 120))
     two = two_master_glyph("two", (95, 10, 85), (110, 10, 100))
     other = two_master_glyph("n")
-    world.package = Package([one, two, other])
-    world.selection = ["n"]
-    module = load("Tabular Width")
-    panel = module.TabularWidth(None)
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Tabular Width", [one, two, other], selection=["n"])
     assert sorted(e.glyph.name for e in panel.entries) == ["one", "two"], (
         "preset, not selection"
     )
@@ -1047,13 +1095,12 @@ def test_tabular_width_when_preset_then_only_existing_figures_share_widest(world
 
 
 def test_tabular_width_when_fixed_then_value_used_and_no_figures_diagnosed(world):
-    world.package = Package([two_master_glyph("n")])
-    world.selection = ["n"]
-    module = load("Tabular Width")
-    panel = module.TabularWidth(None)
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Tabular Width", [two_master_glyph("n")], selection=["n"])
     assert "none of these glyphs" in panel.subtitle.text.lower()
     panel.group.pick(2)
-    panel.mode.pick(1)
+    panel.width_mode.pick(1)
     panel.fixed.setValue(600)
     assert panel.fixed._enabled is True
     assert panel.entries[0].plan.width == 600
@@ -1068,26 +1115,27 @@ def test_italic_sidebearings_when_applied_then_outline_and_advance_follow(world)
             "Bold": Layer(150, [(0, 0), (100, 0), (200, 100), (100, 100)]),
         },
     )
-    world.package = Package([glyph])
+    from _wp03_metrics_tabs import spacing_panel
+
+    studio, panel = spacing_panel(world, "Italic Sidebearings", [glyph])
     world.package.italicAngle_value = -45.0
     world.package.xHeight_value = 0
-    world.selection = ["n"]
-    module = load("Italic Sidebearings")
-    panel = module.ItalicSidebearings(None)
-    assert panel.angle.value == -45.0 and panel.pivot.value == 250, (
+    panel.angle_field.setText("")
+    panel.refresh()
+    assert float(panel.angle_field.text) == -45.0 and float(panel.pivot_field.text) == 250, (
         "font angle, fallback x-height"
     )
-    panel.pivot.setValue(0)
+    panel.pivot_field.setText("0")
     panel.mode.pick(1)
-    panel.lsb.setValue(20)
-    panel.rsb.setValue(30)
-    panel.apply_button.press()
+    panel.lsb_field.setText("20")
+    panel.rsb_field.setText("30")
+    assert panel.apply(), studio.status
     assert layer.advanceWidth == 150 and layer.points[0][0] == 20
     assert layer.clones == 0 and layer.swaps == 0, "outline moves in place"
     assert layer.transforms == [(1, 0, 0, 1, 20, 0)], "one shift on the original shapes"
-    check_one_undo(world, "Italic Sidebearings", [layer], [glyph])
-    panel.rsb_check.tick(False)
-    assert panel.rsb._enabled is False and panel.lsb._enabled is True
+    check_one_undo(world, "Spacing Studio: italic spacing n", [layer], [glyph])
+    panel.rsb_field.setText("")
+    assert panel.rsb_field.text == "" and panel.lsb_field.text == "20", "blank keeps RSB"
 
 
 def auto_composite_world(world):
@@ -1108,60 +1156,76 @@ def auto_composite_world(world):
 
 def test_panel_when_glyph_is_base_of_auto_composite_then_refused_until_ticked(world):
     base, _ = auto_composite_world(world)
-    panel = load("Round Advances").RoundAdvances(None)
-    assert panel.status.text.startswith("Refused."), panel.status.text
-    assert "FontLab rebuilds auto glyphs ntilde" in panel.status.text, panel.status.text
-    assert panel.apply_button._enabled is False and panel.allow_auto._visible is True
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Round Advances", list(world.package.glyphs.values()), world.selection)
+    assert panel.count.text.startswith("Refused."), panel.count.text
+    assert "FontLab rebuilds auto glyphs ntilde" in panel.count.text, panel.count.text
+    assert panel.apply_button._enabled is False and panel.allow._visible is True
     panel.apply()
     assert world.history == [] and base.findLayer("Light").advanceWidth == 101, (
         "refused"
     )
-    assert panel.status.text.startswith("Refused.")
-    panel.allow_auto.tick(True)
+    assert panel.count.text.startswith("Refused.")
+    panel.allow.tick(True)
     assert panel.apply_button._enabled is True, "the override enables Apply"
 
 
 def test_panel_when_override_ticked_then_applies_and_keeps_warning(world):
     base, _ = auto_composite_world(world)
-    panel = load("Round Advances").RoundAdvances(None)
-    panel.allow_auto.tick(True)
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Round Advances", list(world.package.glyphs.values()), world.selection)
+    panel.allow.tick(True)
     panel.apply_button.press()
     assert base.findLayer("Light").advanceWidth == 100
     assert len(world.history) == 1
-    assert panel.status.text.startswith("Changed 1 layers in 1 glyphs")
-    assert "FontLab rebuilds auto glyphs ntilde" in panel.status.text, panel.status.text
+    assert "Changed 1 layer in 1 glyph" in panel.tool.status
+    assert "FontLab rebuilds auto glyphs ntilde" in panel.tool.status, panel.tool.status
 
 
 def test_panel_when_selection_changes_to_safe_glyph_then_override_is_forgotten(world):
     auto_composite_world(world)
-    panel = load("Round Advances").RoundAdvances(None)
-    panel.allow_auto.tick(True)
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Round Advances", list(world.package.glyphs.values()), world.selection)
+    panel.allow.tick(True)
     world.selection = ["o"]
-    panel.selection_button.press()
-    assert panel.allow_auto.isChecked() is False and panel.allow_auto._visible is False
+    panel.tool.reload()
+    assert panel.allow.isChecked() is False and panel.allow._visible is False
     assert panel.apply_button._enabled is True, (
         "no auto dependants: nothing to override"
     )
 
 
 def test_panel_when_closed_then_shared_close_helper_runs_with_key(world):
-    _, panel = open_panel(world, "Scale Advances", [two_master_glyph()])
-    assert panel.close() is True
-    assert world.closed == ["metrics_scale_advances"]
+    from _wp03_metrics_tabs import historical_text
+
+    tree = ast.parse(historical_text(METRICS / "Scale Advances.py"))
+    panel = next(node for node in tree.body if isinstance(node, ast.ClassDef) and node.name == "ScaleAdvances")
+    key = next(node.value for node in panel.body if isinstance(node, ast.Assign)
+               and any(isinstance(target, ast.Name) and target.id == "KEY" for target in node.targets))
+    assert ast.literal_eval(key) == "metrics_scale_advances"
+    assert [ast.unparse(base) for base in panel.bases] == ["MetricsPanel"]
+    source = inspect.getsource(world.app["metrics_panel"].panel_type().closeEvent)
+    assert "close_script_dialog" in source and "self.KEY" in source
 
 
 @pytest.mark.parametrize("name", NAMES)
 def test_main_when_called_then_opens_one_keyed_panel(world, name):
-    module = load(name)
-    world.package = Package([two_master_glyph()])
-    world.selection = ["n"]
-    dialog = module.main()
-    assert world.shown == [(getattr(module, CLASS[name]).KEY, dialog)]
-    assert isinstance(dialog, getattr(module, CLASS[name]))
+    from _wp03_metrics_tabs import historical_text
+
+    tree = ast.parse(historical_text(METRICS / f"{name}.py"))
+    main = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "main")
+    call = next(node.value for node in main.body if isinstance(node, ast.Return))
+    assert ast.unparse(call) == f"show_script_dialog({CLASS[name]}, {CLASS[name]}.KEY)"
+    # Current launcher execution and real shell lifetime are covered separately;
+    # this immutable source assertion retains the original keyed dispatch contract.
 
 
 def test_commit_when_edit_raises_then_after_notification_still_sent(world):
-    module = load("Scale Advances")
+    from fontlabapp.studios.advance_widths import widths as module
+
     shared, history = world.app["metrics_panel"], world.app["history"]
     layer = Layer(100, rect(10, 90))
 
@@ -1182,8 +1246,7 @@ def test_commit_when_edit_raises_then_after_notification_still_sent(world):
 
 
 def test_unit_when_half_then_rounds_up_unlike_python_round(world):
-    module = load("Scale Advances")
-    unit = module.metrics_panel.unit
+    from fontlabapp.studios.spacing_studio.model import unit
     assert [unit(v) for v in (0.5, 1.5, 2.5, -0.5, -1.5)] == [1, 2, 3, 0, -1]
 
 
@@ -1194,21 +1257,29 @@ def test_panel_when_native_read_fails_then_error_shown_and_apply_off(world):
             raise RuntimeError("native read failed")
 
     glyph = Glyph("n", {"Light": Broken(100, rect(10, 90)), "Bold": Layer(100)})
-    world.package = Package([glyph])
-    world.selection = ["n"]
-    module = load("Centre In Advance")
-    panel = module.CentreInAdvance(None)
-    assert panel.status.text.startswith("Error: RuntimeError"), panel.status.text
-    assert panel.apply_button._enabled is False
-    panel.apply()
+    from _wp03_metrics_tabs import spacing_panel, stage_panel
+
+    studio, panel = spacing_panel(world, "Centre In Advance", [glyph])
+    _, shell = stage_panel(studio, panel)
+    shell.run("preview")
+    assert shell.status.text == "Error: native read failed", shell.status.text
+    assert shell.apply_button._enabled is False
+    shell.run("apply")
     assert world.history == [], "a failed plan never edits the font"
-    assert panel.status.text.startswith("Error: RuntimeError")
+    assert "accepted plan" in shell.status.text
 
 
 # ---------------------------------------------------------------- real App names
-def test_real_app_names_when_imported_from_installed_app_then_all_exist():
+def test_real_app_names_when_imported_from_installed_app_then_all_exist(tmp_path):
     """No fakes: the real Fly aliases give every App name that the scripts use."""
-    used = app_names_used([METRICS / f"{name}.py" for name in NAMES])
+    from _wp03_metrics_tabs import historical_text
+
+    paths = []
+    for name in NAMES:
+        path = tmp_path / f"{name}.py"
+        path.write_text(historical_text(METRICS / f"{name}.py"))
+        paths.append(path)
+    used = app_names_used(paths)
     assert {"fly.ap.core.scripting", "fly.ap.metrics.panel.model"} <= set(used), used
     assert {"panel_type", "make_plan", "Planner", "LayerPlan"} <= used[
         "fly.ap.metrics.panel.model"
@@ -1217,13 +1288,20 @@ def test_real_app_names_when_imported_from_installed_app_then_all_exist():
 
 
 def test_scripts_when_loaded_then_panel_base_is_the_shared_app_class(world):
+    from _wp03_metrics_tabs import historical_text
+
     for name in NAMES:
-        module = load(name)
-        assert module.metrics_panel is world.app["metrics_panel"], name
-        assert module.MetricsPanel is module.metrics_panel.panel_type(), name
-        assert getattr(module, CLASS[name]).__mro__[1] is module.MetricsPanel, name
+        tree = ast.parse(historical_text(METRICS / f"{name}.py"))
+        assert any(isinstance(node, ast.Import) and any(alias.name == "fly.ap.metrics.panel.model"
+                   and alias.asname == "metrics_panel" for alias in node.names) for node in tree.body)
+        base = next(node for node in tree.body if isinstance(node, ast.Assign)
+                    and any(isinstance(target, ast.Name) and target.id == "MetricsPanel" for target in node.targets))
+        assert ast.unparse(base.value) == "metrics_panel.panel_type()"
+        panel = next(node for node in tree.body if isinstance(node, ast.ClassDef) and node.name == CLASS[name])
+        assert [ast.unparse(item) for item in panel.bases] == ["MetricsPanel"]
+        defined = {node.name for node in tree.body if isinstance(node, (ast.FunctionDef, ast.ClassDef))}
         for moved in ("survey", "commit", "auto_dependants", "make_table"):
-            assert moved not in vars(module), f"{name} still defines {moved}"
+            assert moved not in defined, f"{name} still defines {moved}"
 
 
 def auto_pair(base_name, auto_name):
@@ -1245,13 +1323,15 @@ def test_override_when_selection_moves_to_other_auto_base_then_cleared_and_refus
     world.package = Package([n, ntilde, m, mtilde])
     world.selection = ["n"]
     world.font_names = ["n", "ntilde", "m", "mtilde"]
-    panel = load("Round Advances").RoundAdvances(None)
-    panel.allow_auto.tick(True)
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Round Advances", list(world.package.glyphs.values()), world.selection)
+    panel.allow.tick(True)
     assert panel.apply_button._enabled is True
     world.selection = ["m"]
-    panel.selection_button.press()
-    assert panel.allow_auto.isChecked() is False, "override belonged to the first set"
-    assert panel.status.text.startswith("Refused."), panel.status.text
+    panel.tool.reload()
+    assert panel.allow.isChecked() is False, "override belonged to the first set"
+    assert panel.count.text.startswith("Refused."), panel.count.text
     assert panel.apply_button._enabled is False
     panel.apply()
     assert world.history == [], "second set is refused without a new tick"
@@ -1263,10 +1343,12 @@ def test_override_when_glyph_source_changes_to_other_set_then_cleared(world):
     world.package = Package([n, ntilde, m, mtilde])
     world.selection = ["n"]
     world.font_names = ["n", "ntilde", "m", "mtilde"]
-    panel = load("Round Advances").RoundAdvances(None)
-    panel.allow_auto.tick(True)
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Round Advances", list(world.package.glyphs.values()), world.selection)
+    panel.allow.tick(True)
     panel.source.pick(1)  # all glyphs: a different set of changed names
-    assert panel.allow_auto.isChecked() is False
+    assert panel.allow.isChecked() is False
     assert panel.apply_button._enabled is False
 
 
@@ -1275,9 +1357,9 @@ def test_apply_when_width_does_not_stick_then_mismatch_reported(world):
     n.findLayer("Light").stubborn_width = True
     _, panel = open_panel(world, "Round Advances", [n])
     panel.apply_button.press()
-    assert panel.last_result["mismatches"] == ["n · Light: advance 101, planned 100"]
-    assert "did not read back as planned" in panel.status.text, panel.status.text
-    assert "n · Light: advance 101, planned 100" in panel.status.text
+    assert world.commit_result.mismatches == ("n · Light: advance 101, planned 100",)
+    assert "Partly applied" in panel.tool.status, panel.tool.status
+    assert "n · Light: advance 101, planned 100" in panel.tool.status
 
 
 def test_apply_when_outline_does_not_move_then_ink_edge_mismatch_reported(world):
@@ -1289,9 +1371,8 @@ def test_apply_when_outline_does_not_move_then_ink_edge_mismatch_reported(world)
     _, panel = open_panel(world, "Scale Advances", [n])
     panel.percent.setValue(110.0)
     panel.apply_button.press()
-    assert any("ink edge" in text for text in panel.last_result["mismatches"]), (
-        panel.last_result
-    )
+    assert any("ink edge" in text for text in world.commit_result.mismatches), world.commit_result
+    assert "ink edge" in panel.tool.status
 
 
 def test_apply_when_cache_update_fails_then_error_shown_and_history_still_notified(
@@ -1303,8 +1384,8 @@ def test_apply_when_cache_update_fails_then_error_shown_and_history_still_notifi
     panel.percent.setValue(110.0)
     panel.apply_button.press()
     assert len(world.history) == 1, "the notification still runs"
-    assert "Error: PartialWriteError" in panel.status.text, panel.status.text
-    assert "use Edit > Undo" in panel.status.text, panel.status.text
+    assert "Partly applied" in panel.tool.status, panel.tool.status
+    assert "use Edit > Undo" in panel.tool.status, panel.tool.status
 
 
 def test_apply_when_native_updates_pending_then_writes_and_discloses(world):
@@ -1313,7 +1394,8 @@ def test_apply_when_native_updates_pending_then_writes_and_discloses(world):
     world.updates = [17]
     panel.apply_button.press()
     assert world.history and world.updates == [17]
-    assert panel.last_result["pending_updates"] == (17,) and "8537" in panel.status.text and panel.last_result["pending_note"] in panel.status.text
+    assert world.commit_result.pending_updates == (17,)
+    assert "8537" in panel.tool.status and world.commit_result.pending_note in panel.tool.status
 
 
 def test_panel_when_base_reaches_auto_glyph_through_composite_then_refused(world):
@@ -1336,9 +1418,11 @@ def test_panel_when_base_reaches_auto_glyph_through_composite_then_refused(world
     )
     world.selection = ["n"]
     world.font_names = ["n", "nbar", "nbaracute"]
-    panel = load("Round Advances").RoundAdvances(None)
-    assert panel.status.text.startswith("Refused."), panel.status.text
-    assert "FontLab rebuilds auto glyphs nbaracute" in panel.status.text
+    from _wp03_metrics_tabs import advance_panel
+
+    _, panel = advance_panel(world, "Round Advances", list(world.package.glyphs.values()), world.selection)
+    assert panel.count.text.startswith("Refused."), panel.count.text
+    assert "FontLab rebuilds auto glyphs nbaracute" in panel.count.text
     panel.apply()
     assert world.history == [] and n.findLayer("Light").advanceWidth == 101
 
@@ -1352,7 +1436,9 @@ def test_survey_when_metrics_link_then_layer_listed_and_skipped(world, field):
     assert panel.entries[0].note == "metrics link or expression (skipped)", (
         panel.entries[0]
     )
-    assert panel.table.texts(0) == ["n · Light", "metrics link or expression (skipped)"]
+    assert panel.grids["round"].rows[0] == (
+        "n", "Light", ("Light", "metrics link or expression (skipped)", "", "")
+    )
     panel.apply_button.press()
     assert n.findLayer("Light").advanceWidth == 101, "linked layer untouched"
     assert n.findLayer("Bold").advanceWidth == 100
@@ -1363,15 +1449,50 @@ def test_panel_when_glyph_lacks_master_then_row_says_so(world):
     _, panel = open_panel(world, "Round Advances", [glyph])
     panel.scope.pick(1)
     assert [e.note for e in panel.entries] == ["", "no layer in this master"]
-    assert panel.table.texts(1) == ["n · Bold", "no layer in this master"]
+    assert panel.grids["round"].rows[1] == (
+        "n", "Bold", ("Bold", "no layer in this master", "", "")
+    )
     panel.apply_button.press()
     assert glyph.findLayer("Light").advanceWidth == 100, "other masters still edited"
 
 
 def test_centred_when_edges_fractional_then_ink_uses_rounded_edges(world):
-    module = load("Centre In Advance")
-    assert module.centred(0.4, 80.6, 100, "keep", 0) == (0, 19, 100, 9, 10)
-    plan = module.centre_planner("keep", 0)(
-        Layer(100, [(0.4, 0), (80.6, 0), (80.6, 5)]), "L"
-    )
+    from fontlabapp.studios.spacing_studio import model
+
+    before = model.measure((0.4, 80.6), 100)
+    plan = model.centred(before, "keep", 0)
+    assert (before.lsb, before.rsb, plan.width, plan.lsb, plan.rsb) == (0, 19, 100, 9, 10)
     assert (plan.dx, plan.width) == (9, 100), plan
+
+
+def test_is_mark_when_category_or_name_then_true(world):
+    module = load("Zero-Width Marks")
+    assert module.is_mark(Glyph("anything", {}), [0x0301]), "Mn"
+    assert module.is_mark(Glyph("enclose", {}), [0x20DD]), "Me"
+    assert module.is_mark(Glyph("multi", {}), [0x41, 0x0301]), "any code point counts"
+    assert module.is_mark(Glyph("acutecomb", {})), "name"
+    assert module.is_mark(Glyph("gravecomb.case", {})), "suffix on name"
+    assert not module.is_mark(Glyph("A", {}), [65]), "letter"
+    assert not module.is_mark(Glyph("A", {})), "no code point"
+    assert not module.is_mark(Glyph("big", {}), [0x110000]), "out of Unicode range"
+    assert not module.is_mark(Glyph("neg", {}), [-1]), "negative value"
+
+
+def test_zero_width_marks_when_unicode_only_mark_then_kept_via_fgpackage(world):
+    glyphs = [Glyph("acute", {"Light": Layer(300, rect(1, 2))}, [0x0301]), two_master_glyph("n")]
+    _, panel = open_panel(world, "Zero-Width Marks", glyphs)
+    assert [e.glyph.name for e in panel.entries] == ["acute"], "Mn without comb in name"
+
+
+def test_zero_width_marks_when_no_fgpackage_entry_then_error_names_glyph(world):
+    _, panel = open_panel(world, "Zero-Width Marks", [two_master_glyph("n")])
+    world.package.fgPackage = type("Native", (), {"__getitem__": lambda s, k: None})()
+    with pytest.raises(ValueError, match="Cannot read Unicode values for n: it has no FontGate glyph"):
+        panel.target_glyphs()
+
+
+def test_zero_planner_when_applied_then_width_is_positive_zero(world):
+    module = load("Zero-Width Marks")
+    for placement in ("keep", "hang", "centre"):
+        plan = module.zero_planner(placement)(Layer(300, rect(100, 200)), "Light")
+        assert math.copysign(1, plan.width) > 0, placement

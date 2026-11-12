@@ -2,7 +2,6 @@
 """Owned tests for complete Font Info migrations and safe edit plans."""
 
 from conftest import app_namespace
-import importlib.util
 import sys
 from pathlib import Path
 from types import SimpleNamespace as NS
@@ -22,13 +21,19 @@ TITLES = [
 
 @pytest.mark.parametrize("title", TITLES)
 def test_requested_tool_exists(title):
-    assert (ROOT / "Scripts/Font Info" / (title + ".py")).is_file(), (
+    target = "Font Metrics" if title in (TITLES[1], TITLES[5]) else title
+    assert (ROOT / "Scripts/Font Info" / (target + ".py")).is_file(), (
         "Complete requested Font Info tool missing"
     )
 
 
 @pytest.fixture
-def load(monkeypatch, app_sources):
+def load(monkeypatch, app_sources, real_app):
+    import importlib
+    from _cov_a_support import Host
+    from test_cov_a_fontinfo import metrics_tool
+    actual_app = importlib.import_module("fontlabapp")
+    route_host = Host(monkeypatch, real_app)
     state = NS(package=None)
     native = NS()
     helpers = NS(
@@ -71,6 +76,10 @@ def load(monkeypatch, app_sources):
     helpers.font_info_dialog_type = lambda: shared.FontInfoDialog
 
     def module(title):
+        if title in (TITLES[1], TITLES[5]):
+            monkeypatch.setitem(sys.modules, "fontlabapp", actual_app)
+            metrics_tool(route_host, [])
+            return route_host.loaded["studios.vertical_metrics." + ("table" if title == TITLES[1] else "calculate")]
         spec = importlib.util.spec_from_file_location(
             title, ROOT / "Scripts/Font Info" / (title + ".py")
         )
@@ -78,6 +87,7 @@ def load(monkeypatch, app_sources):
         spec.loader.exec_module(result)
         return result
 
+    module.route_host = route_host
     return module, state, native
 
 
@@ -181,6 +191,21 @@ def test_export_chooser_when_reopened_then_reuses_owned_dialog_and_checks_font(
 def test_failed_preview_and_stale_font_refuse_apply(load, title):
     module, state, _ = load
     tool = module(title)
+    if title in (TITLES[1], TITLES[5]):
+        from test_cov_a_fontinfo import metrics_panel
+        target = module.route_host
+        target.package, _ = metric_package()
+        if title == TITLES[5]:
+            tool.glyph_records = lambda package: []
+        dialog = metrics_panel(target, tool, "MetricsTablePanel" if title == TITLES[1] else "CalculatePanel")
+        original = target.package
+        for package in (None, NS(id=2, master="Regular"), original):
+            target.package = package
+            assert dialog.run(dialog.apply) is None
+            assert "original font" in dialog.tool.status or "Nothing to change" in dialog.tool.status
+        dialog.run(lambda: (_ for _ in ()).throw(ValueError("failed preview")))
+        assert "failed preview" in dialog.tool.status and not dialog.apply_button.isEnabled()
+        return
     dialog = object.__new__(tool.Dialog)
     dialog.package_id = 1
     dialog.package = NS(id=1, master="Regular")
@@ -327,30 +352,21 @@ def test_master_reads_plans_and_failures_restore_current_master(load):
 
 
 def test_master_ui_preview_validation_and_noop(load):
+    from test_cov_a_fontinfo import metrics_panel
     module, state, _ = load
     tool = module(TITLES[1])
-    dialog, _values = bare_dialog(tool, state)
-    dialog.edited_rows = lambda: [
-        ("Regular", [800, -200, 500, 700]),
-        ("Bold", [900, -250, 550, 750]),
-    ]
-    dialog.diagram = NS(update=lambda: None)
-    dialog.refresh()
-    assert dialog._preview_valid and not dialog.enabled
-    dialog.edited_rows = lambda: [
-        ("Regular", [810, -200, 500, 700]),
-        ("Bold", [900, -250, 550, 750]),
-    ]
-    dialog.refresh()
-    assert dialog.enabled and dialog._plan[0] == ("Regular", "ascender", 800, 810)
-
+    host = module.route_host
+    host.package, _ = metric_package()
+    dialog = metrics_panel(host, tool)
+    assert dialog.changes == [] and not dialog.apply_button.isEnabled()
+    dialog.grid.set_cell(0, 1, "810")
+    assert dialog.apply_button.isEnabled() and dialog.changes[0] == ("Regular", "ascender", 800, 810)
     def failed_display(*args):
         raise RuntimeError("owned diagram failed")
-
     dialog.diagram.update = failed_display
     with pytest.raises(RuntimeError):
         dialog.refresh()
-    assert not dialog._preview_valid
+    assert not dialog.changes
     with pytest.raises(ValueError):
         dialog.apply()
 
@@ -373,6 +389,18 @@ def test_version_apply_consumes_preview_instead_of_recomputing(load):
 def test_current_master_switch_refuses_preview_apply(load, title):
     module, state, _ = load
     tool = module(title)
+    if title == TITLES[5]:
+        from test_cov_a_fontinfo import metrics_panel
+        host = module.route_host
+        host.package, _ = metric_package()
+        tool.glyph_records = lambda package: []
+        dialog = metrics_panel(host, tool, "CalculatePanel")
+        dialog.plan = [("Bold", tool.METRIC_FIELDS[3], 0, 900)]
+        host.package.master = "Regular"
+        with pytest.raises(ValueError, match="Master changed"):
+            dialog.apply()
+        assert not dialog.plan
+        return
     dialog, _ = bare_dialog(tool, state)
     dialog._preview_valid = True
     state.package.master = "Regular"
@@ -414,20 +442,27 @@ def test_bounds_empty_and_deadline_and_painter_containment(load):
     painter_tool = module(TITLES[1])
     ended = []
     painter_tool.QtGui.QPainter = lambda widget: NS(end=lambda: ended.append(True))
-    diagram = object.__new__(painter_tool.Diagram)
-    diagram.owner = NS(
-        edited_rows=lambda: (_ for _ in ()).throw(ValueError("invalid cells")),
+    diagram = painter_tool.SelectedDiagram(NS(
+        rows=lambda: (_ for _ in ()).throw(ValueError("invalid cells")),
         status=NS(setText=lambda value: None),
-    )
+    ))
     diagram.paintEvent(None)
-    assert ended == [True] and "invalid cells" in diagram._paint_error
+    assert ended == [True] and "invalid cells" in diagram.paint_error
 
 
 @pytest.mark.parametrize("title", TITLES)
 def test_panel_uses_shared_shell_instead_of_repeating_safety_methods(title):
     import ast
 
-    source = (ROOT / "Scripts/Font Info" / (title + ".py")).read_text()
+    if title in (TITLES[1], TITLES[5]):
+        from menu_layout import source_bytes
+        import json
+        ledger = json.loads((ROOT / "menu-consolidations.json").read_text())
+        path = "Scripts/Font Info/" + title + ".py"
+        row = next(row for row in ledger["transitions"] if row["source"]["path"] == path)
+        source = source_bytes(ROOT, row["source"]).decode()
+    else:
+        source = (ROOT / "Scripts/Font Info" / (title + ".py")).read_text()
     tree = ast.parse(source)
     dialog = next(
         node

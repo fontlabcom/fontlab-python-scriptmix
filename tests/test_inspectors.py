@@ -8,6 +8,26 @@ from _migration_history import preserved_source
 from menu_layout import _menu_bytes, current_rows, released_bytes
 
 import pytest
+import _wp03_inspectors as width_contract
+import _wp03_proof as proof_contract
+
+import ast
+import hashlib
+import importlib.util
+import json
+import sys
+from types import SimpleNamespace as NS
+
+from test_masters import (
+    Item,
+    MasterWidget,
+    masters,  # noqa: F401
+)
+from test_proof import Box, Signal, Widget
+
+
+width_env = width_contract.width_env
+proof_env = proof_contract.proof_env
 
 import ast
 import hashlib
@@ -59,6 +79,8 @@ def test_contour_inspector_runs_from_its_renamed_menu_entry(inspectors, monkeypa
 
 @pytest.mark.parametrize("category,title,klass", TOOLS)
 def test_complete_original_inspector_menu_exists(category, title, klass):
+    if klass in {"WidthTable", "SpacingPreview"}:
+        return width_contract.identity(title)
     assert inspector_path(category, title).is_file(), (
         "Complete inspector missing"
     )
@@ -116,6 +138,14 @@ def inspectors(masters, monkeypatch, app_sources):  # noqa: F811 - imported pyte
         masters.modules[name] = module
 
     def module(title):
+        if title == "Spacing String Preview":
+            monkeypatch.setitem(sys.modules, "PythonQt", masters.qt)
+            handle = "studios.spacing_studio.raw"
+            spec = importlib.util.spec_from_file_location(app_module_name(handle), app_source_path(app_sources, handle))
+            mod = importlib.util.module_from_spec(spec)
+            register_app_module(monkeypatch, handle, mod)
+            spec.loader.exec_module(mod)
+            return mod
         category = next(cat for cat, t, _ in TOOLS if t == title)
         spec = importlib.util.spec_from_file_location(
             title, inspector_path(category, title)
@@ -151,11 +181,22 @@ def inspectors(masters, monkeypatch, app_sources):  # noqa: F811 - imported pyte
 
 @pytest.mark.parametrize("category,title,klass", TOOLS)
 def test_original_constructor_no_font_and_owned_close(
-    inspectors, monkeypatch, category, title, klass
+    monkeypatch, category, title, klass, request
 ):
+    if klass == "WidthTable":
+        env = request.getfixturevalue("width_env")
+        env.package = None
+        panel = env.open()
+        assert "Open a font" in panel.subtitle.text()
+        assert hasattr(env.shell, "status") and hasattr(env.shell, "close_button")
+        assert panel.select_button.text() == "Select flagged"
+        assert panel.source is None and not panel.rows
+        width_contract.close(env)
+        return
+    inspectors = request.getfixturevalue("inspectors")
     monkeypatch.setattr(sys, "_fontlab_samples", {}, raising=False)
     module = inspectors.module(title)
-    dialog = module.main()
+    dialog = module.SpacingPreview() if klass == "SpacingPreview" else module.main()
     assert isinstance(dialog, getattr(module, klass))
     assert "Open a font" in dialog.subtitle.text
     assert hasattr(dialog, "status") and hasattr(dialog, "close_button")
@@ -178,8 +219,19 @@ def test_original_constructor_no_font_and_owned_close(
 
 @pytest.mark.parametrize("category,title,klass", TOOLS)
 def test_complete_data_uses_font_order_and_current_master(
-    inspectors, category, title, klass
+    category, title, klass, request
 ):
+    if klass == "WidthTable":
+        env = request.getfixturevalue("width_env")
+        panel = env.open()
+        assert panel.source is not None and panel.masters == ["Bold", "Light"]
+        assert env.package.master == "Bold"
+        assert panel.rows == [(name, [200, 100], "falling") for name in ["H", "O", "n"]]
+        assert width_contract.values(panel) == {name: [200, 100] for name in ["H", "O", "n"]}
+        assert list(panel.grid.columns) == ["Glyph", "Bold", "Light", "Progression"]
+        assert not panel.select_button.isEnabled()
+        return
+    inspectors = request.getfixturevalue("inspectors")
     package, _layers = inspectors.font()
     dialog = getattr(inspectors.module(title), klass)()
     assert not dialog.last_error, dialog.last_error
@@ -221,8 +273,11 @@ def test_complete_data_uses_font_order_and_current_master(
     "stage", ["binding", "identity", "selection", "masters", "master", "scan"]
 )
 def test_initial_failures_leave_complete_closable_panel_then_recover(
-    inspectors, monkeypatch, category, title, klass, stage
+    monkeypatch, category, title, klass, stage, request
 ):
+    if klass == "WidthTable":
+        return width_contract.initial_failure(request.getfixturevalue("width_env"), stage)
+    inspectors = request.getfixturevalue("inspectors")
     package, _ = inspectors.font()
     module = inspectors.module(title)
     if klass == "SpacingPreview" and stage == "selection":
@@ -280,8 +335,11 @@ def test_initial_failures_leave_complete_closable_panel_then_recover(
 @pytest.mark.parametrize("category,title,klass", TOOLS)
 @pytest.mark.parametrize("closed", [True, False])
 def test_refresh_refuses_switched_or_closed_font_before_stale_reads(
-    inspectors, category, title, klass, closed
+    category, title, klass, closed, request
 ):
+    if klass == "WidthTable":
+        return width_contract.stale_refresh(request.getfixturevalue("width_env"), closed)
+    inspectors = request.getfixturevalue("inspectors")
     package, _ = inspectors.font()
     dialog = getattr(inspectors.module(title), klass)()
     inspectors.state.package = None if closed else NS(id=9, isNull=False)
@@ -343,28 +401,26 @@ def test_node_action_refuses_stale_source_and_domain(inspectors, change):
     )
 
 
-def test_width_mixed_zero_missing_numeric_display_and_select_exactly_flagged(
-    inspectors,
-):
-    package, layers = inspectors.font()
-    package.masters = ["Bold", "Light", "Other"]
-    for name, rows in layers.items():
+def test_width_mixed_zero_missing_numeric_display_and_select_exactly_flagged(width_env):
+    env = width_env
+    env.package.masters = ["Bold", "Light", "Other"]
+    for name, rows in env.layers.items():
         rows["Other"] = NS(isNull=False, advanceWidth=300 if name == "H" else 0)
-    layers["n"].pop("Light")
-    dialog = inspectors.module("Width Table").WidthTable()
-    assert dialog.flagged() == ["H"]
-    assert dialog.table.item(0, 1).data(0) == 200 and isinstance(
-        dialog.table.item(0, 1).data(0), int
-    )
-    assert dialog.table_values()["n"] == [200, "–", 0]
-    dialog.only_flagged.setChecked(True)
-    assert dialog.table.rowCount == 1
-    dialog.select_flagged()
-    assert inspectors.state.selected == {0}
-    layers["H"]["Bold"].advanceWidth = 90
+    env.layers["n"].pop("Light")
+    panel = env.open()
+    assert panel.flagged() == ["H"]
+    from PythonQt import QtCore
+    value = panel.grid.model.item(0, 1).data(QtCore.Qt.DisplayRole)
+    assert value == 200 and isinstance(value, int)
+    assert width_contract.values(panel)["n"] == [200, "–", 0]
+    panel.only_flagged.setChecked(True)
+    assert panel.grid.model.rowCount() == 1
+    panel.select_flagged()
+    assert env.selected == {0}
+    env.layers["H"]["Bold"].advanceWidth = 90
     with pytest.raises(ValueError, match="Source changed"):
-        dialog.select_flagged()
-    assert not dialog.rows and dialog.package is None
+        panel.select_flagged()
+    assert not panel.rows and panel.source is None
 
 
 # Immutable Scriptmix v1.0.6: all 45 rows serialized with sorted keys and
@@ -475,8 +531,11 @@ def test_persistent_paint_failure_contains_error_drains_queue_recovers_and_close
 
 @pytest.mark.parametrize("category,title,klass", TOOLS)
 def test_master_domain_changes_during_scan_refuse_partial_results(
-    inspectors, monkeypatch, category, title, klass
+    monkeypatch, category, title, klass, request
 ):
+    if klass == "WidthTable":
+        return width_contract.domain_during_scan(request.getfixturevalue("width_env"))
+    inspectors = request.getfixturevalue("inspectors")
     package, _ = inspectors.font()
     mod = inspectors.module(title)
     helper = {
@@ -697,7 +756,13 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
             r for r in rows if r["destination"] == f"Scripts/{category}/{title}.py"
         )
         before = ast.parse(preserved_source(root, row["source"]).read_text())
-        after = ast.parse(inspector_path(category, title).read_text())
+        if klass in ("WidthTable", "SpacingPreview"):
+            from menu_layout import source_bytes
+            transition = next(record for record in json.loads((ROOT / "menu-consolidations.json").read_text())["transitions"]
+                              if record["source"]["path"] == row["destination"])
+            after = ast.parse(source_bytes(ROOT, transition["source"]))
+        else:
+            after = ast.parse((ROOT / row["destination"]).read_text())
         def constants(tree):
             return {
                 n.targets[0].id: ast.literal_eval(n.value)
@@ -733,16 +798,14 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
         assert before_names <= after_names, before_names - after_names
 
 
-def test_width_fractional_source_change_refuses_even_when_rounded_cell_stays_equal(
-    inspectors,
-):
-    _package, layers = inspectors.font()
-    layers["H"]["Bold"].advanceWidth = 200.1
-    dialog = inspectors.module("Width Table").WidthTable()
-    layers["H"]["Bold"].advanceWidth = 200.2
+def test_width_fractional_source_change_refuses_even_when_rounded_cell_stays_equal(width_env):
+    env = width_env
+    env.layers["H"]["Bold"].advanceWidth = 200.1
+    panel = env.open()
+    env.layers["H"]["Bold"].advanceWidth = 200.2
     with pytest.raises(ValueError, match="Source changed"):
-        dialog.select_flagged()
-    assert not dialog._snapshot_valid and dialog.package is None
+        panel.select_flagged()
+    assert panel.source is None and not panel.rows
 
 
 @pytest.mark.parametrize("change", ["coordinates", "closure"])
@@ -764,8 +827,11 @@ def test_spacing_refuses_geometry_source_change_with_unchanged_advances(
 
 @pytest.mark.parametrize("category,title,klass", TOOLS)
 def test_final_master_domain_check_follows_all_snapshot_reads(
-    inspectors, monkeypatch, category, title, klass
+    monkeypatch, category, title, klass, request
 ):
+    if klass == "WidthTable":
+        return width_contract.domain_during_scan(request.getfixturevalue("width_env"), final=True)
+    inspectors = request.getfixturevalue("inspectors")
     package, _ = inspectors.font()
     base = inspectors.modules["_inspectors_dialog"].InspectorsDialog
     original = base.source_values
@@ -801,3 +867,21 @@ def test_released45_fixed_manifest_rejects_changed_menu_bytes(tmp_path):
     (tmp_path / rows[0]["destination"]).write_bytes(b"# changed menu\n")
     with pytest.raises(AssertionError, match="released menu bytes"):
         _assert_released45_invariant(rows, tmp_path)
+
+
+def test_spacing_empty_string_paints_prompt_without_glyph_geometry(inspectors):
+    package, _ = inspectors.font()
+    dialog = inspectors.module("Spacing String Preview").SpacingPreview()
+    dialog.text.setText("")
+    assert dialog._snapshot_valid and dialog.package is package
+    assert dialog.rows == [] and dialog.paths == {}
+    inspectors.painter.calls = []
+    dialog.canvas.paintEvent(None)
+    assert dialog.canvas.paint_error is None
+    calls = inspectors.painter.calls
+    assert calls[-1][0] == "end", "Empty text still ends the painter"
+    messages = [args[-1] for name, args in calls if name == "drawText"]
+    assert messages == ["Type characters or /glyphname tokens above."]
+    assert not {"drawPath", "drawRect"} & {name for name, _ in calls}
+    dialog.close_button.clicked.emit()
+    assert dialog.deleted and not dialog._connections

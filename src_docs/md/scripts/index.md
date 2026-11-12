@@ -85,9 +85,8 @@ Choose a category, then a script. Each page retains its usage and exact source i
 ## Font Info
 
 - [Bump Font Version](font-info/bump-font-version.md)
-- [Calculate Vertical Metrics](font-info/calculate-vertical-metrics.md)
+- [Font Metrics](font-info/font-metrics.md)
 - [Glyph Order Preview and Export](font-info/glyph-order-preview-and-export.md)
-- [Master Metrics Table](font-info/master-metrics-table.md)
 - [Names and Credits](font-info/names-and-credits.md)
 - [Paste Glyph Order Encoding](font-info/paste-glyph-order-encoding.md)
 - [Trial Font Maker](font-info/trial-font-maker.md)
@@ -127,27 +126,10 @@ Choose a category, then a script. Each page retains its usage and exact source i
 
 ## Kerning
 
-- [Classes Browser](kerning/classes-browser.md)
-- [Compare Masters](kerning/compare-masters.md)
-- [Copy Between Masters](kerning/copy-between-masters.md)
-- [Delete Kerning Pair From All Masters](kerning/delete-kerning-pair-from-all-masters.md)
-- [Exceptions Finder](kerning/exceptions-finder.md)
-- [Kern To Max](kerning/kern-to-max.md)
-- [Kerning Cutoff](kerning/kerning-cutoff.md)
-- [Kerning Energy Report](kerning/kerning-energy-report.md)
-- [Missing Pairs](kerning/missing-pairs.md)
-- [Pair Editor](kerning/pair-editor.md)
-- [Pair List Browser](kerning/pair-list-browser.md)
-- [Pairs From Text](kerning/pairs-from-text.md)
-- [Persistence Audit](kerning/persistence-audit.md)
-- [Remove Small Pairs](kerning/remove-small-pairs.md)
-- [Round Values](kerning/round-values.md)
-- [Same Kerning Groups](kerning/same-kerning-groups.md)
-- [Scale Values](kerning/scale-values.md)
-- [Steal Kerning From Next Pair](kerning/steal-kerning-from-next-pair.md)
-- [Symmetry](kerning/symmetry.md)
-- [Text Preview](kerning/text-preview.md)
-- [Unbundle Punctuation Kerning](kerning/unbundle-punctuation-kerning.md)
+- [Kerning Batch](kerning/kerning-batch.md)
+- [Kerning Browser](kerning/kerning-browser.md)
+- [Kerning Proof](kerning/kerning-proof.md)
+- [Kerning Studio](kerning/kerning-studio.md)
 
 ## Masters
 
@@ -181,21 +163,9 @@ Choose a category, then a script. Each page retains its usage and exact source i
 
 ## Metrics
 
-- [Alignment Zones](metrics/alignment-zones.md)
-- [Centre In Advance](metrics/centre-in-advance.md)
-- [Check Tabular Widths](metrics/check-tabular-widths.md)
-- [Copy Metrics From Reference](metrics/copy-metrics-from-reference.md)
-- [Equalize Sidebearings](metrics/equalize-sidebearings.md)
-- [Italic Sidebearings](metrics/italic-sidebearings.md)
-- [Round Advances](metrics/round-advances.md)
-- [Scale Advances](metrics/scale-advances.md)
-- [Sidebearing Offset Preview](metrics/sidebearing-offset-preview.md)
-- [Sidebearings Tuner](metrics/sidebearings-tuner.md)
-- [Spacing String Preview](metrics/spacing-string-preview.md)
-- [TMetrics Window](metrics/tmetrics-window.md)
-- [Tabular Width](metrics/tabular-width.md)
-- [Vertical Metrics Diagram](metrics/vertical-metrics-diagram.md)
-- [Width Table](metrics/width-table.md)
+- [Advance Widths](metrics/advance-widths.md)
+- [Spacing Studio](metrics/spacing-studio.md)
+- [Vertical Metrics](metrics/vertical-metrics.md)
 - [Zero-Width Marks](metrics/zero-width-marks.md)
 
 ## Names

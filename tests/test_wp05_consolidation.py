@@ -29,4 +29,4 @@ def test_wp05_all_49_routes_have_ten_implemented_destinations():
         assert not (ROOT / row["source"]["path"]).exists(), row["source"]["path"]
     actual = {str(path.relative_to(ROOT)) for path in (ROOT / "Scripts").glob("*/*.py")}
     assert actual == active_menu_paths(ROOT)
-    assert len(actual) == 249, "288 historical menus minus 49 sources plus ten WP05 tools"
+    assert len(actual) == 219, "249 WP05 menus, 38 WP03 sources retired (Zero-Width Marks kept), eight WP03 launchers added = 219"
