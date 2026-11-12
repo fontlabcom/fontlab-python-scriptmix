@@ -1,0 +1,36 @@
+# this_file: tests/_wp07_routes.py
+"""Keep original behavior oracles on their relocated, live App implementations."""
+
+from pathlib import Path
+from conftest import resolve_app_sources
+
+ROUTES = {'Scripts/Features/Alternate Preview.py': 'features/identity_tools/feature_explorer/alternate_preview.py', 'Scripts/Features/Build Suffix Substitution.py': 'features/identity_tools/feature_authoring/suffix_substitution.py', 'Scripts/Features/Classes Browser.py': 'features/identity_tools/feature_authoring/classes_browser.py', 'Scripts/Features/Feature Code Viewer.py': 'features/identity_tools/feature_authoring/feature_code_viewer.py', 'Scripts/Features/Generate Random Alternates Feature.py': 'features/identity_tools/feature_authoring/random_alternates.py', 'Scripts/Features/Ligature Finder.py': 'features/identity_tools/feature_explorer/ligature_finder.py', 'Scripts/Features/Nastaliq Connection Editor.py': 'features/identity_tools/nastaliq_connections/editor.py', 'Scripts/Features/Suffix Report.py': 'features/identity_tools/feature_explorer/suffix_report.py', 'Scripts/Font Info/Bump Font Version.py': 'fonts/identity_tools/font_identity/version.py', 'Scripts/Font Info/Glyph Order Preview and Export.py': 'fonts/identity_tools/encoding_order/order.py', 'Scripts/Font Info/Names and Credits.py': 'fonts/identity_tools/font_identity/names.py', 'Scripts/Font Info/Paste Glyph Order Encoding.py': 'fonts/identity_tools/encoding_order/paste.py', 'Scripts/Font Info/Trial Font Maker.py': 'fonts/identity_tools/font_identity/trial.py', 'Scripts/Font Info/Unicode Ranges and Codepages.py': 'fonts/identity_tools/encoding_order/ranges.py', 'Scripts/Names/Batch Glyph Notes.py': 'glyphs/identity_tools/glyph_labels/batch_glyph_notes.py', 'Scripts/Names/Batch Rename.py': 'glyphs/identity_tools/glyph_identity/batch_rename.py', 'Scripts/Names/Case Pairs.py': 'glyphs/identity_tools/character_consistency/case_pairs.py', 'Scripts/Names/Character Info.py': 'glyphs/identity_tools/glyph_browser/character_info.py', 'Scripts/Names/Character Set Compare.py': 'glyphs/identity_tools/character_consistency/character_set_compare.py', 'Scripts/Names/Duplicate Unicodes.py': 'glyphs/identity_tools/glyph_identity/duplicate_unicodes.py', 'Scripts/Names/Glyph Finder.py': 'glyphs/identity_tools/glyph_browser/glyph_finder.py', 'Scripts/Names/Glyph Metadata Tree.py': 'glyphs/identity_tools/glyph_browser/glyph_metadata_tree.py', 'Scripts/Names/Glyph Name Completion.py': 'glyphs/identity_tools/glyph_browser/glyph_name_completion.py', 'Scripts/Names/Glyph Notes.py': 'glyphs/identity_tools/glyph_labels/glyph_notes.py', 'Scripts/Names/Glyph Tags.py': 'glyphs/identity_tools/glyph_labels/glyph_tags.py', 'Scripts/Names/Mark Color Palette.py': 'glyphs/identity_tools/glyph_labels/mark_color_palette.py', 'Scripts/Names/Select Different Mark Colours.py': 'glyphs/identity_tools/glyph_labels/select_different_mark_colours.py', 'Scripts/Names/Select by Mark.py': 'glyphs/identity_tools/glyph_labels/select_by_mark.py', 'Scripts/Names/Style Linker.py': 'glyphs/identity_tools/character_consistency/style_linker.py', 'Scripts/Names/Suffix Tool.py': 'glyphs/identity_tools/glyph_identity/suffix_tool.py', 'Scripts/Names/Unicode From Names.py': 'glyphs/identity_tools/glyph_identity/unicode_from_names.py'}
+
+def behavior_path(path):
+    """Resolve only mapped WP07 menus; every unrelated source stays unchanged."""
+    path = Path(path)
+    root = Path(__file__).resolve().parents[1]
+    try:
+        relative = str(path.relative_to(root))
+    except ValueError:
+        return path
+    target = ROUTES.get(relative)
+    return resolve_app_sources() / target if target else path
+
+
+def expected_this_file(path):
+    """Return the exact ``# this_file`` value a source must carry: App-relative when routed."""
+    path = Path(path).resolve()
+    app = resolve_app_sources().resolve()
+    if path.is_relative_to(app):
+        return "src/fontlabapp/" + str(path.relative_to(app))
+    relative = str(path.relative_to(Path(__file__).resolve().parents[1]))
+    target = ROUTES.get(relative)
+    return "src/fontlabapp/" + target if target else relative
+
+
+def assert_house_header(text, expected_path):
+    """Raise AssertionError unless the exact ``this_file`` line and an SPDX line lead the source."""
+    lines = text.splitlines()
+    assert lines and lines[0] == f"# this_file: {expected_path}", f"this_file must be {expected_path}"
+    assert "SPDX-License-Identifier: Apache-2.0" in "\n".join(lines[:4]), "missing SPDX line"

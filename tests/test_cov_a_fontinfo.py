@@ -1,16 +1,20 @@
 # this_file: tests/test_cov_a_fontinfo.py
 # SPDX-License-Identifier: Apache-2.0
+# ruff: noqa: F811
+# The imported host fixture is resolved by pytest, not by these parameter names.
+
 """Coverage round A: the four Font Info dialogs on the real App panel shell."""
 
 from __future__ import annotations
 
 import runpy
 from types import SimpleNamespace as NS
-from typing import Any
+from typing import Any, ClassVar
 
 import pytest
 from _cov_a_support import ROOT, Host, host as host_fixture  # noqa: F401
 from _cov_b_support import SpinBox
+from _wp07_routes import behavior_path
 
 FONT_INFO = "Font Info/"
 
@@ -31,14 +35,14 @@ class MasterPackage:
         return self.infos[self.master]
 
     @property
-    def versionMajor(self) -> int:  # noqa: N802 - FontLab property name
+    def versionMajor(self) -> int:
         return self.info.versionMajor
 
     @property
-    def versionMinor(self) -> int:  # noqa: N802 - FontLab property name
+    def versionMinor(self) -> int:
         return self.info.versionMinor
 
-    def setMaster(self, name: str) -> None:  # noqa: N802 - FontLab method name
+    def setMaster(self, name: str) -> None:
         self.switches.append(name)
         self.master = name
 
@@ -64,7 +68,7 @@ def open_package(host: Host, **fields: Any) -> MasterPackage:
 
 # ---- Bump Font Version -----------------------------------------------------------
 
-BUMP = dict(versionMajor=1, versionMinor=5, openTypeNameVersion="Version 1.005", note="")
+BUMP = {"versionMajor": 1, "versionMinor": 5, "openTypeNameVersion": "Version 1.005", "note": ""}
 
 
 def bump_tool(host: Host, writes: list) -> Any:
@@ -193,19 +197,19 @@ def test_bump_version_plan_when_dated_then_note_line_uses_day_and_name(host):
 def test_bump_main_when_run_as_script_then_window_opens(host):
     bump_tool(host, [])
     open_package(host, **BUMP)
-    runpy.run_path(str(ROOT / "Scripts/Font Info/Bump Font Version.py"), run_name="__main__")
+    runpy.run_path(str(behavior_path(ROOT / "Scripts/Font Info/Bump Font Version.py")), run_name="__main__")
     assert "fontinfo_version_bumper" in host.windows(), "bump main when run as script then window opens: expected 'fontinfo_version_bumper' in host.windows()"
 
 
 # ---- Names and Credits -----------------------------------------------------------
 
-NAMES = dict(
-    familyName="Acme",
-    styleName="Regular",
-    openTypeNameDesigner="Ann",
-    copyright="(c) Acme",
-    openTypeNameVersion="Version 1.005",
-)
+NAMES = {
+    "familyName": "Acme",
+    "styleName": "Regular",
+    "openTypeNameDesigner": "Ann",
+    "copyright": "(c) Acme",
+    "openTypeNameVersion": "Version 1.005",
+}
 
 
 def names_tool(host: Host, writes: list) -> Any:
@@ -290,19 +294,19 @@ def test_names_dialog_when_no_font_then_empty_form(host):
 def test_names_main_when_run_as_script_then_window_opens(host):
     names_tool(host, [])
     open_package(host, **NAMES)
-    runpy.run_path(str(ROOT / "Scripts/Font Info/Names and Credits.py"), run_name="__main__")
+    runpy.run_path(str(behavior_path(ROOT / "Scripts/Font Info/Names and Credits.py")), run_name="__main__")
     assert "fontinfo_names_editor" in host.windows(), "names main when run as script then window opens: expected 'fontinfo_names_editor' in host.windows()"
 
 
 # ---- Master Metrics Table --------------------------------------------------------
 
-METRICS = dict(ascender=800.0, descender=-200.0, xHeight=500.0, capsHeight=700.0)
+METRICS = {"ascender": 800.0, "descender": -200.0, "xHeight": 500.0, "capsHeight": 700.0}
 
 
 class MetricsPackage(MasterPackage):
     """Package double for the master metric properties that the App writer uses."""
 
-    def setMaster(self, name: str, notify: bool = True) -> None:  # noqa: N802 - FontLab method name
+    def setMaster(self, name: str, notify: bool = True) -> None:
         self.switches.append((name, notify))
         self.master = name
 
@@ -587,7 +591,7 @@ class InkPainter:
     """QPainter double that records the diagram's drawing operations."""
 
     Antialiasing = 1
-    instances: list[InkPainter] = []
+    instances: ClassVar[list[InkPainter]] = []
 
     def __init__(self, *_: Any) -> None:
         InkPainter.instances.append(self)
@@ -820,7 +824,7 @@ def test_order_dialog_when_closed_without_chooser_then_no_children(host):
 def test_order_main_when_run_as_script_then_window_opens(host):
     order_tool(host)
     order_font(host)
-    runpy.run_path(str(ROOT / "Scripts" / ORDER_PATH), run_name="__main__")
+    runpy.run_path(str(behavior_path(ROOT / "Scripts" / ORDER_PATH)), run_name="__main__")
     assert "fontinfo_glyph_order_tool" in host.windows(), "order main when run as script then window opens: expected 'fontinfo_glyph_order_tool' in host.windows()"
 
 

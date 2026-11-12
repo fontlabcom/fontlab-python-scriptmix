@@ -197,7 +197,7 @@ def app_sources():
 def app_names_used(paths) -> dict[str, set[str]]:
     """Return ``{"fly.ap.<module>": {names}}`` for every App name the scripts use.
 
-    Count both import forms: ``from fly.ap.x import name`` and
+    Count canonical App imports and both Fly import forms: ``from fly.ap.x import name`` and
     ``import fly.ap.x as alias`` followed by ``alias.name``.
     """
     import ast
@@ -293,6 +293,8 @@ def real_app(monkeypatch):
     package = importlib.import_module("fontlabapp")
     saved = {k: v for k, v in sys.modules.items() if k.startswith("fontlabapp.")}
     attributes = dict(vars(package))
+    package_attributes = [(module, dict(vars(module))) for module in saved.values()
+                          if hasattr(module, "__path__")]
 
     def load(*, qt, fontlab, scripting=None, completion=None, modules=()):
         for key in [k for k in sys.modules if k.startswith("fontlabapp.")]:
@@ -320,7 +322,27 @@ def real_app(monkeypatch):
     for key in [k for k in sys.modules if k.startswith("fontlabapp.")]:
         del sys.modules[key]
     sys.modules.update(saved)
+    # Canonical imports bind children on parent packages as well as sys.modules.
+    for parent, original in package_attributes:
+        for key in list(vars(parent)):
+            if key not in original:
+                delattr(parent, key)
+        for key, value in original.items():
+            setattr(parent, key, value)
     for key in [k for k in vars(package) if k not in attributes]:
         delattr(package, key)
     for key, value in attributes.items():
         setattr(package, key, value)
+
+
+@pytest.fixture(autouse=True)
+def canonical_app_bindings():
+    """Repair package child bindings left by isolated Fly/module test doubles."""
+    import sys
+
+    for name, module in sorted(sys.modules.copy().items()):
+        if name.startswith("fontlabapp."):
+            parent, _, child = name.rpartition(".")
+            owner = sys.modules.get(parent)
+            if owner is not None:
+                vars(owner)[child] = module

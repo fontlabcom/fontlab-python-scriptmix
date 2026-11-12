@@ -39,4 +39,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `bc6ba292bb59f8d57760d3b155e6d1c33e8c6cd6d05cb1b5ddd7522c97db7706`
 
-[Python source at `3dc87d8a0e3d`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3dc87d8a0e3dec803dc9255436da39eb19abefb2/Scripts/Guides/Clear%20Glyph%20Guides.py)
+[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Guides/Clear%20Glyph%20Guides.py)

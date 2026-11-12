@@ -39,4 +39,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `4b8fbbaba0f400880ca38201782b107e1af4654cbef4f59686ab66cdbd233d00`
 
-[Python source at `3dc87d8a0e3d`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3dc87d8a0e3dec803dc9255436da39eb19abefb2/Scripts/Reports/Close%20But%20No%20Cigar.py)
+[Python source at `b52710a04ed5`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b52710a04ed5e9e3759b7086daeb0b09ec65b6f3/Scripts/Reports/Close%20But%20No%20Cigar.py)

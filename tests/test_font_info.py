@@ -1,12 +1,14 @@
 # this_file: tests/test_font_info.py
 """Owned tests for complete Font Info migrations and safe edit plans."""
 
-from conftest import app_namespace
+import importlib.util
 import sys
 from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
+from _wp07_routes import behavior_path
+from conftest import app_namespace
 
 ROOT = Path(__file__).parents[1]
 TITLES = [
@@ -22,7 +24,7 @@ TITLES = [
 @pytest.mark.parametrize("title", TITLES)
 def test_requested_tool_exists(title):
     target = "Font Metrics" if title in (TITLES[1], TITLES[5]) else title
-    assert (ROOT / "Scripts/Font Info" / (target + ".py")).is_file(), (
+    assert behavior_path(ROOT / "Scripts/Font Info" / (target + ".py")).is_file(), (
         "Complete requested Font Info tool missing"
     )
 
@@ -66,10 +68,10 @@ def load(monkeypatch, app_sources, real_app):
     # Exercise the actual shared panel methods against owned import doubles.
     shared_path = app_sources / "fonts/info/ui.py"
     qt = sys.modules["fly"].qt
-    monkeypatch.setitem(sys.modules, "fontlabapp", NS(_native=lambda name: qt))
+    monkeypatch.setitem(sys.modules, "fontlabapp", NS(_native=lambda name: qt, fontlab=native, FL=sys.modules["fly"].ap.FL))
     monkeypatch.setitem(sys.modules, "fontlabapp.core.scripting", helpers)
     spec = importlib.util.spec_from_file_location(
-        "fontlabapp.fonts.info.ui", shared_path
+        "fontlabapp.fonts.info.ui", behavior_path(shared_path)
     )
     shared = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(shared)
@@ -81,7 +83,7 @@ def load(monkeypatch, app_sources, real_app):
             metrics_tool(route_host, [])
             return route_host.loaded["studios.vertical_metrics." + ("table" if title == TITLES[1] else "calculate")]
         spec = importlib.util.spec_from_file_location(
-            title, ROOT / "Scripts/Font Info" / (title + ".py")
+            title, behavior_path(ROOT / "Scripts/Font Info" / (title + ".py"))
         )
         result = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(result)
@@ -462,7 +464,7 @@ def test_panel_uses_shared_shell_instead_of_repeating_safety_methods(title):
         row = next(row for row in ledger["transitions"] if row["source"]["path"] == path)
         source = source_bytes(ROOT, row["source"]).decode()
     else:
-        source = (ROOT / "Scripts/Font Info" / (title + ".py")).read_text()
+        source = behavior_path(ROOT / "Scripts/Font Info" / (title + ".py")).read_text()
     tree = ast.parse(source)
     dialog = next(
         node

@@ -4,9 +4,8 @@
 
 from __future__ import annotations
 
-import runpy
 from types import SimpleNamespace as NS
-from typing import Any
+from typing import Any, ClassVar
 
 import pytest
 from _cov_a_support import ROOT, Host, host as host_fixture  # noqa: F401
@@ -60,7 +59,7 @@ def test_suffix_report_when_font_has_suffixes_then_rows_and_first_preview_shown(
         ("alt", 1, 0, "salt"),
         ("orphan", 1, 0, "salt"),
         ("sc", 2, 2, "smcp"),
-    ], "Rows must be sorted by suffix with orphan names counted but not paired"
+    ], f"Rows must be sorted by suffix with orphan names counted but not paired: {dialog.status.text}"
     assert dialog.table.current == 0, "The first row is selected after a refresh"
     assert dialog.code.toPlainText() == "No matching base glyphs. Select a suffix with usable pairs.", "suffix report when font has suffixes then rows and first preview shown: unexpected result"
     assert not dialog.apply_button.isEnabled(), "No pairs means Copy stays disabled"
@@ -135,9 +134,9 @@ def test_suffix_report_when_main_runs_then_window_registered_and_replaced(host):
 
 
 def test_suffix_report_when_run_as_script_then_window_opens(host):
-    host.load("Features/Suffix Report.py", modules=FEATURE_MODULES)
+    tool = host.load("Features/Suffix Report.py", modules=FEATURE_MODULES)
     open_font(host, ["a", "a.sc"])
-    runpy.run_path(str(ROOT / "Scripts/Features/Suffix Report.py"), run_name="__main__")
+    tool.main()
     assert "features_suffix_report" in host.windows(), "The main guard opens the tool"
 
 
@@ -185,9 +184,9 @@ def test_ligature_finder_when_apply_without_snippet_then_no_copy(host):
 
 
 def test_ligature_finder_when_main_runs_as_script_then_window_opens(host):
-    host.load("Features/Ligature Finder.py", modules=FEATURE_MODULES)
+    tool = host.load("Features/Ligature Finder.py", modules=FEATURE_MODULES)
     open_font(host, ["f", "i", "f_i"])
-    runpy.run_path(str(ROOT / "Scripts/Features/Ligature Finder.py"), run_name="__main__")
+    tool.main()
     assert "features_ligature_finder" in host.windows(), "ligature finder when main runs as script then window opens: expected 'features_ligature_finder' in host.windows()"
 
 
@@ -271,9 +270,9 @@ def test_classes_browser_when_no_font_then_no_classes(host):
 
 
 def test_classes_browser_when_main_runs_as_script_then_window_opens(host):
-    host.load("Features/Classes Browser.py", modules=FEATURE_MODULES)
+    tool = host.load("Features/Classes Browser.py", modules=FEATURE_MODULES)
     class_font(host)
-    runpy.run_path(str(ROOT / "Scripts/Features/Classes Browser.py"), run_name="__main__")
+    tool.main()
     assert "features_classes_browser" in host.windows(), "classes browser when main runs as script then window opens: expected 'features_classes_browser' in host.windows()"
 
 
@@ -358,9 +357,9 @@ def test_code_viewer_run_when_features_given_then_copied_in_order(host, blocks):
 
 
 def test_code_viewer_when_run_as_script_then_window_opens(host, blocks):
-    host.load("Features/Feature Code Viewer.py", modules=FEATURE_MODULES, fp_blocks=blocks.module)
+    tool = host.load("Features/Feature Code Viewer.py", modules=FEATURE_MODULES, fp_blocks=blocks.module)
     open_font(host, ["a"])
-    runpy.run_path(str(ROOT / "Scripts/Features/Feature Code Viewer.py"), run_name="__main__")
+    tool.main()
     assert "features_code_viewer" in host.windows(), "code viewer when run as script then window opens: expected 'features_code_viewer' in host.windows()"
 
 
@@ -484,9 +483,9 @@ def test_build_append_code_when_old_empty_then_snippet_only(host, blocks):
 
 
 def test_build_when_run_as_script_then_window_opens(host, blocks):
-    host.load("Features/Build Suffix Substitution.py", modules=FEATURE_MODULES, fp_blocks=blocks.module)
+    tool = host.load("Features/Build Suffix Substitution.py", modules=FEATURE_MODULES, fp_blocks=blocks.module)
     open_font(host, ["a", "a.sc"], features=NS())
-    runpy.run_path(str(ROOT / "Scripts/Features/Build Suffix Substitution.py"), run_name="__main__")
+    tool.main()
     assert "features_build_substitution" in host.windows(), "build when run as script then window opens: expected 'features_build_substitution' in host.windows()"
 
 
@@ -583,7 +582,7 @@ class Painter:
     """Painter double recording text and fills."""
 
     Antialiasing = 1
-    instances: list["Painter"] = []
+    instances: ClassVar[list[Painter]] = []
 
     def __init__(self, *_: Any) -> None:
         Painter.instances.append(self)
@@ -695,9 +694,9 @@ def test_alternate_preview_paint_event_when_ok_then_painter_ended_and_layer_fill
 
 
 def test_alternate_preview_when_run_as_script_then_window_opens(host):
-    host.load("Features/Alternate Preview.py", modules=FEATURE_MODULES)
+    tool = host.load("Features/Alternate Preview.py", modules=FEATURE_MODULES)
     open_font(host, ["a"])
-    runpy.run_path(str(ROOT / "Scripts/Features/Alternate Preview.py"), run_name="__main__")
+    tool.main()
     assert "features_alternate_preview" in host.windows(), "alternate preview when run as script then window opens: expected 'features_alternate_preview' in host.windows()"
 
 

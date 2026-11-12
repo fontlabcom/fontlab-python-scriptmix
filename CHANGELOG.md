@@ -9,6 +9,25 @@ this_file: CHANGELOG.md
 - Lost-fix audit: only Zero-Width Marks had changed on main since the lane base (see the audit file in the evidence directory).
 - Tests: `tests/test_issue122_G13.py` loads the consolidated App modules; historical bytes come from the ledger commit. The inspector and metrics fixtures give fake packages a realistic `fgPackage`. Contour Order View and Node Statistics resolve to their App routes. The archived rescue menu name `Vertical Metrics` is allowed to coincide with its new consolidated launcher. Full run: 4953 passed, 6 skipped (arm64 Python 3.11.18).
 
+## 2026-11-12 - WP07 docs pipeline pins re-pinned after the CI Documentation failure
+
+The Documentation workflow on 9d1b8f34 failed `tests_docs/test_pipeline_*` (4 failures, 1 error)
+because `quality.sh coverage` does not run those tests and they still pinned the pre-WP07 site.
+Re-pinned from the built site in the locked docs environment (`sh src_docs/build.sh`): script page
+count 249 -> 227 in `test_pipeline_history.py` (`COUNT`) and `test_pipeline_site.py` (menus and
+pages), generated file count 391 -> 369 in `test_pipeline_build.py`, and the page lists in
+`test_pipeline_site.py` (`PAGES` and the search-index location set): the 31 pages of the retired
+launchers are removed and the 9 pages of the added App launchers are added (features:
+feature-authoring, feature-explorer, nastaliq-connections; font-info: encoding-and-order,
+font-identity; names: character-consistency, glyph-browser, glyph-identity, glyph-labels).
+31 removed, 9 added: net -22, consistent with the file count. 43 tests OK.
+
+## 2026-11-12 — Issue 250 WP07: 31 launchers retired into App identity studios (re-derived onto current main)
+
+- Retires 31 Scriptmix launchers whose behaviour now lives in the App identity studios and adds 9 App studio launchers (lists in the review packet: 31 retired paths equal the WP07 routing ledger; 9 added). Active scripts: 249 -> 227 (`find Scripts -mindepth 2 -maxdepth 2 -name '*.py' | wc -l` on the merged tree; 249 + 9 - 31). `tests/test_wp05_consolidation.py` re-pinned to 227 for that reason; it still asserts the set equals `active_menu_paths`. Menu counts stay main's 219/288/279.
+- Oracles: G6/G9/S3 assert the exact App-relative `# this_file` and SPDX line for routed files through `assert_house_header()` (fail-case tests in `tests/test_wp07_house_rules.py`); G14 reads `fontlabapp.fontui.feature_blocks`. Six tools' tests were not ported to the App. Four are still Scriptmix scripts that WP07 does not migrate: Master Twins, Deliver Glyphs, Calculate Vertical Metrics, Master Metrics Table. Two, Rename To Glyphs Default Names and TTFAutohint Options From Stems, no longer exist in Scriptmix (absent at the base and asserted absent by the tests), so there was nothing to port.
+- Generated pages: 227 `src_docs/md/scripts` source links re-pointed at b52710a0 (last commit touching Scripts/). Gate (arm64 3.11.14, pre-v1.2.12 tree): 5004 passed, 2 skipped; re-run on the final merge below.
+
 ## 2026-11-12 — Font Info and Vertical Metrics native-qualified (A2 report 48, Issue 250)
 
 - `Scripts/Font UI Lab/Font Info and Vertical Metrics.py` (Scriptmix 411b293 with App 405ba2c, FontLab 9.0.9809, owned plum-var1 copy): captured font, explicit Apply with readback (one history row, native and Fontport 780 plus note), report refresh, Undo/Redo with fields and report following at once, saved reopen (ascender 780, Light/Bold 765, note kept) and owned teardown all pass. Closes the Native-qualify row.

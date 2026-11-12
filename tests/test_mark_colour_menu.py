@@ -10,6 +10,8 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 
 import pytest
+from _wp07_routes import behavior_path
+from menu_layout import released_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 MENU = ROOT / "Scripts/Names/Select Different Mark Colours.py"
@@ -25,21 +27,21 @@ def test_menu_delegates_exact_original_action(monkeypatch, result):
 
     monkeypatch.setitem(
         sys.modules,
-        "fly.ap.glyphs.selection.mark_colors",
+        "fontlabapp.glyphs.selection.mark_colors",
         NS(select_different_mark_colours=select),
     )
-    spec = importlib.util.spec_from_file_location("owned_mark_colour_menu", MENU)
+    spec = importlib.util.spec_from_file_location("owned_mark_colour_menu", behavior_path(MENU))
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     assert module.main() == result and calls == [True]
-    runpy.run_path(str(MENU), run_name="__main__")
+    runpy.run_path(str(behavior_path(MENU)), run_name="__main__")
     assert calls == [True, True]
 
 
 def test_menu_provenance_keeps_source_and_denominator():
     records = json.loads((ROOT / "additional-tools.json").read_text())
     row = next(r for r in records if r["key"] == "select_different_mark_colours")
-    assert row["destination_sha256"] == hashlib.sha256(MENU.read_bytes()).hexdigest()
+    assert row["destination_sha256"] == hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
     assert (
         row["source_sha256"]
         == "cd7e0618b70cc82ef6b0e8b67f575fd12a4f4660070bab49bd01f3cbccad852c"

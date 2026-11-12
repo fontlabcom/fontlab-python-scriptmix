@@ -4,6 +4,7 @@
 
 from __future__ import annotations
 
+from _wp07_routes import behavior_path
 import runpy
 from types import SimpleNamespace as NS
 from typing import Any
@@ -181,7 +182,7 @@ def test_case_pairs_close_button_when_clicked_then_dialog_closes(host):
 def test_case_pairs_main_when_run_as_script_then_window_opens(host):
     state = state_for(host, CASE_GLYPHS, ["a"])
     load(host, "Case Pairs.py", state)
-    runpy.run_path(str(ROOT / "Scripts/Names/Case Pairs.py"), run_name="__main__")
+    runpy.run_path(str(behavior_path(ROOT / "Scripts/Names/Case Pairs.py")), run_name="__main__")
     assert "names_case_pairs" in host.windows(), "case pairs main when run as script then window opens: expected 'names_case_pairs' in host.windows()"
 
 
@@ -319,7 +320,7 @@ def test_glyph_finder_close_button_when_clicked_then_closes(host):
 def test_glyph_finder_main_when_run_as_script_then_window_opens(host):
     state = state_for(host, FIND_GLYPHS)
     load(host, "Glyph Finder.py", state)
-    runpy.run_path(str(ROOT / "Scripts/Names/Glyph Finder.py"), run_name="__main__")
+    runpy.run_path(str(behavior_path(ROOT / "Scripts/Names/Glyph Finder.py")), run_name="__main__")
     assert "names_glyph_finder" in host.windows(), "glyph finder main when run as script then window opens: expected 'names_glyph_finder' in host.windows()"
 
 
@@ -475,7 +476,7 @@ def test_select_by_mark_close_button_when_clicked_then_closes(host):
 def test_select_by_mark_main_when_run_as_script_then_window_opens(host):
     state = marked_font(host, MARKS)
     load(host, "Select by Mark.py", state)
-    runpy.run_path(str(ROOT / "Scripts/Names/Select by Mark.py"), run_name="__main__")
+    runpy.run_path(str(behavior_path(ROOT / "Scripts/Names/Select by Mark.py")), run_name="__main__")
     assert "names_select_by_mark" in host.windows(), "select by mark main when run as script then window opens: expected 'names_select_by_mark' in host.windows()"
 
 
@@ -603,7 +604,7 @@ def test_charset_close_button_when_clicked_then_closes(host):
 def test_charset_main_when_run_as_script_then_window_opens(host):
     state = charset_font(host, CHARSET)
     load(host, "Character Set Compare.py", state)
-    runpy.run_path(str(ROOT / "Scripts/Names/Character Set Compare.py"), run_name="__main__")
+    runpy.run_path(str(behavior_path(ROOT / "Scripts/Names/Character Set Compare.py")), run_name="__main__")
     assert "names_charset_compare" in host.windows(), "charset main when run as script then window opens: expected 'names_charset_compare' in host.windows()"
 
 
@@ -887,5 +888,5 @@ def test_character_info_close_button_when_clicked_then_closes(host):
 def test_character_info_main_when_run_as_script_then_window_opens(host):
     state = info_state(host, ("a", [97]), ["a"])
     load(host, "Character Info.py", state)
-    runpy.run_path(str(ROOT / "Scripts/Names/Character Info.py"), run_name="__main__")
+    runpy.run_path(str(behavior_path(ROOT / "Scripts/Names/Character Info.py")), run_name="__main__")
     assert "names_character_info" in host.windows(), "character info main when run as script then window opens: expected 'names_character_info' in host.windows()"

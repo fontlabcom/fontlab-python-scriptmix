@@ -82,6 +82,11 @@ def test_manifest_when_distributed_then_hashes_and_menu_paths_match():
     assert active_menu_paths(ROOT) == {
         str(p.relative_to(ROOT)) for p in (ROOT / "Scripts").rglob("*.py")
     }
+    transitions = json.loads((ROOT / "menu-consolidations.json").read_text())["transitions"]
+    for row in transitions:
+        if row["acceptance"]["state"] == "implemented" and row["destination"]:
+            target = row["destination"]
+            assert hashlib.sha256((ROOT / target["path"]).read_bytes()).hexdigest() == target["sha256"]
     for entry in entries:
         payload = released_bytes(ROOT, entry)
         path = Path(entry["destination"])

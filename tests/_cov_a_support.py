@@ -11,6 +11,7 @@ doubles, so each script is exercised through its true panel lifecycle.
 """
 
 from __future__ import annotations
+from _wp07_routes import behavior_path
 from conftest import app_module_name, app_namespace
 
 import importlib.util
@@ -89,7 +90,7 @@ QT_METHODS = frozenset(
     {
         "addWidget", "addLayout", "addStretch", "insertLayout", "insertWidget", "hide", "count",
         "verticalHeader", "horizontalHeader", "viewport", "resize", "update", "raise_", "open",
-        "start", "textCursor", "end", "drawRoundedRect", "font", "fill", "stop", "deleteLater", "addPath",
+        "blockSignals", "start", "textCursor", "end", "drawRoundedRect", "font", "fill", "stop", "deleteLater", "addPath",
     }
 )
 
@@ -322,6 +323,10 @@ class TableItem(Widget):
     def setText(self, text: str) -> None:
         self._text = text
 
+    def setData(self, role: int, value: Any) -> None:
+        if role == enum_value("DisplayRole"):
+            self._text = str(value)
+
 
 class Count(int):
     """Qt count that PythonQt exposes as a property but older code also calls."""
@@ -499,9 +504,15 @@ class Host:
         if fp_blocks is not None:
             self.mp.setitem(sys.modules, "fly.fp", NS(feature_blocks=fp_blocks))
             self.mp.setitem(sys.modules, "fly.fp.feature_blocks", fp_blocks)
+        # Relocated App panels use the same native objects through canonical imports.
+        self.mp.setitem(sys.modules, "FL", self.FL)
+        self.mp.setattr(sys.modules["fontlabapp"], "fontlab", self.native, raising=False)
+        self.mp.setattr(sys.modules["fontlabapp"], "FL", self.FL, raising=False)
+        if fp_blocks is not None:
+            self.mp.setitem(sys.modules, "fontlabapp.fontui.feature_blocks", fp_blocks)
         self.loaded = loaded
         self.fly = fly
-        source = route_path(Path(relative).stem) if relative.startswith("Contours/") else ROOT / "Scripts" / relative
+        source = route_path(Path(relative).stem) if relative.startswith("Contours/") else behavior_path(ROOT / "Scripts" / relative)
         spec = importlib.util.spec_from_file_location(name, source)
         assert spec is not None and spec.loader is not None, f"No loader for {relative}"
         module = importlib.util.module_from_spec(spec)
