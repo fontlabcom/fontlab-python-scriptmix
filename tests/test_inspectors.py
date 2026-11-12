@@ -762,7 +762,7 @@ def test_original_constants_helpers_classes_and_signal_interfaces(request):
                               if record["source"]["path"] == row["destination"])
             after = ast.parse(source_bytes(ROOT, transition["source"]))
         else:
-            after = ast.parse((ROOT / row["destination"]).read_text())
+            after = ast.parse(inspector_path(category, title).read_text())
         def constants(tree):
             return {
                 n.targets[0].id: ast.literal_eval(n.value)
