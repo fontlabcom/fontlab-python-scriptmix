@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 - D46 documentation pass (Issue 250)
+
+- Landed on `main` this session, verified by exact-SHA pushes with Documentation CI: WP08b windows S59-S66 (`c4b0bfb4`), WP03 spacing and kerning consolidation (`1e620fbd`), WP07 identity studio retirement (`b52710a0`), Apache-2.0 relicence (`cca80db1`, `c661a3c0`), Jens Kutilek's MIT notice retained in NOTICE (`3887f8f0`), Zero-Width Marks fixes (`38d3549f`, `16dbc12e`), Nodes Near Zones docstring (`f1b413bd`), Ruff E402/E741 suppressions on eight frozen Scripts (`1db7016f`), `install.vfpy` sync (`2a6171a7`, Issue 254) and a TODO row for the suite rewriting 227 tracked generated-doc links (`d4dafa9c`). No source changed in this pass.
+- Open native checks stay in TODO (F41-1 smoke of Nodes Near Zones, Open Contours and Font Audit on the landed SHA; the Zero-Width Marks proposal row).
+- `WORK.md` now holds a short current status. Its previous 12,223-byte content (SHA-256 `a503a08204b03049749ff0f977f19491c01ee3e6641e77cc58aaa4d4c56a8cb2`: C7 inspector menus, WP08 lane, WP05 outline editing round notes) is archived on the workspace data volume; the results are in earlier CHANGELOG entries.
+
 ## 2026-11-12 - WP03 spacing and kerning consolidation re-derived onto main (Issue 250)
 
 - 38 of 39 launchers retire into eight new App-backed launchers: Font Info/Font Metrics, Kerning/Kerning Batch, Kerning Browser, Kerning Proof, Kerning Studio, Metrics/Advance Widths, Spacing Studio, Vertical Metrics. The ledger now has 87 implemented rows (49 WP05 + 38 WP03); 219 Scripts menus remain.
