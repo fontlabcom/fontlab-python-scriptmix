@@ -2,6 +2,10 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-12 — Nodes Near Zones duplicate results fixed in the App (F41-1, live report R41, Issue 250)
+
+- Documentation only. Live report R41 found Nodes Near Zones App listing its results in both a text pane and a table. The fix is in the App (`GlyphTableTab` hides the text pane, so the table is the one visible list); the Scriptmix launchers only call `show` and are unchanged. The TODO row now asks for a repeat live smoke on the fix SHA, including Open Contours and Font Audit.
+
 
 ## 2026-11-12 — Zero-Width Marks proven live on the F43-1 build (A2 report 45)
 
