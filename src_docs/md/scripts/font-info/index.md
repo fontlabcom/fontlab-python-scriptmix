@@ -1,10 +1,6 @@
 # Font Info
 
-- [Bump Font Version](bump-font-version.md)
 - [Calculate Vertical Metrics](calculate-vertical-metrics.md)
-- [Glyph Order Preview and Export](glyph-order-preview-and-export.md)
+- [Encoding and Order](encoding-and-order.md)
+- [Font Identity](font-identity.md)
 - [Master Metrics Table](master-metrics-table.md)
-- [Names and Credits](names-and-credits.md)
-- [Paste Glyph Order Encoding](paste-glyph-order-encoding.md)
-- [Trial Font Maker](trial-font-maker.md)
-- [Unicode Ranges and Codepages](unicode-ranges-and-codepages.md)

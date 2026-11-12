@@ -1,10 +1,19 @@
 # this_file: tests/test_names.py
 """Verify complete Names tools, calculations and selection safety without FontLab."""
 
-from conftest import app_module_name, app_namespace, app_source_path, register_app_module
 from pathlib import Path
-
 import pytest
+from _wp07_routes import behavior_path
+from conftest import (
+    app_module_name,
+    app_namespace,
+    app_source_path,
+    register_app_module,
+)
+import importlib.util
+import sys
+from types import SimpleNamespace as NS
+
 
 import importlib.util
 import sys
@@ -22,7 +31,7 @@ TITLES = [
 
 @pytest.mark.parametrize("title", TITLES)
 def test_requested_names_tool_exists(title):
-    assert (ROOT / "Scripts/Names" / (title + ".py")).is_file(), (
+    assert behavior_path(ROOT / "Scripts/Names" / (title + ".py")).is_file(), (
         "Requested Names tool missing"
     )
 
@@ -66,12 +75,18 @@ def load(monkeypatch, app_sources):
         Select=lambda i: state.selected.add(i),
         Selected=lambda i: i in state.selected,
     )
-    qt = NS(QtCore=NS(), QtGui=NS(QDialog=object, QWidget=object))
+    qt = NS(QtCore=NS(), QtGui=NS(QDialog=object, QWidget=object, QHeaderView=NS(Interactive=1)))
     modules = {"fontlab": native, "PythonQt": qt, "FL": NS(fl=fl)}
     monkeypatch.setitem(sys.modules, "fontlabapp", NS(_native=modules.__getitem__))
+    property_spec = importlib.util.spec_from_file_location(
+        "fontlabapp.qt.properties", app_sources / "qt/properties.py"
+    )
+    properties = importlib.util.module_from_spec(property_spec)
+    monkeypatch.setitem(sys.modules, "fontlabapp.qt.properties", properties)
+    property_spec.loader.exec_module(properties)
     for name in ("scripting", "_names_dialog"):
         spec = importlib.util.spec_from_file_location(
-            app_module_name(name), app_source_path(app_sources, name)
+            app_module_name(name), behavior_path(app_source_path(app_sources, name))
         )
         module = importlib.util.module_from_spec(spec)
         register_app_module(monkeypatch, name, module)
@@ -85,7 +100,7 @@ def load(monkeypatch, app_sources):
 
     def module(title):
         spec = importlib.util.spec_from_file_location(
-            title, ROOT / "Scripts/Names" / (title + ".py")
+            title, behavior_path(ROOT / "Scripts/Names" / (title + ".py"))
         )
         result = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(result)
@@ -220,7 +235,9 @@ def panel(shared, dialog=None):
     dialog.select_button = NS(
         setEnabled=lambda value: setattr(dialog, "enabled", value)
     )
-    dialog.table = NS(setRowCount=lambda value: setattr(dialog, "row_count", value))
+    dialog.table = NS(setRowCount=lambda value: setattr(dialog, "row_count", value),
+                      setSortingEnabled=lambda value: None,
+                      horizontalHeader=lambda: NS(setSectionResizeMode=lambda value: None))
     return dialog
 
 
@@ -294,6 +311,7 @@ def test_original_actions_pass_exact_names_keep_and_add(load):
     mark = object.__new__(module("Select by Mark").SelectByMark)
     mark.ensure_snapshot = lambda: None
     mark.groups = [(113, ["b", "c"]), (0, ["a"])]
+    mark.table = NS(item=lambda row, column: NS(text=lambda: module("Select by Mark").mark_label(mark.groups[row][0])))
     mark.add = NS(isChecked=lambda: True)
     mark.status = case.status
     mark.select_names = lambda names, **kw: calls.append((names, kw)) or names
@@ -413,6 +431,7 @@ def test_finder_rows_and_charset_extra_use_actual_names(load):
     finder.ensure_snapshot = lambda: None
     finder.matches = [("A", [65]), ("eacute", [233]), ("a.alt", [])]
     finder.table = NS(
+        item=lambda row, column: NS(text=lambda: finder.matches[row][0]),
         selectionModel=lambda: NS(selectedRows=lambda: [NS(row=lambda: 2)])
     )
     calls = []
@@ -541,3 +560,31 @@ def test_mark_selection_reader_has_no_current_glyph_fallback(load):
     assert module("Select by Mark").font_window_selection() == []
     state.selected = {0}
     assert module("Select by Mark").font_window_selection() == ["A"]
+
+
+@pytest.mark.parametrize("native_property", [False, True])
+def test_wp07_sorted_finder_and_mark_rows_keep_displayed_identity(load, native_property):
+    module, _, _, _ = load
+    finder = object.__new__(module("Glyph Finder").Finder)
+    finder.ensure_snapshot = lambda: None
+    finder.matches = [("A", [65]), ("B", [66])]
+    def item_text(text):
+        return NS(text=text if native_property else lambda: text)
+    finder.table = NS(item=lambda row, column: item_text(["B", "A"][row]),
+                      selectionModel=lambda: NS(selectedRows=lambda: [NS(row=lambda: 0)]))
+    selected = []
+    finder.select_names = lambda names: selected.append(names) or names
+    finder.status = NS(setText=lambda value: None)
+    finder.select_matches()
+    finder.select_row(1)
+    assert selected == [["B"], ["A"]]
+    marks = module("Select by Mark")
+    panel = object.__new__(marks.SelectByMark)
+    panel.ensure_snapshot = lambda: None
+    panel.groups = [(113, ["green"]), (0, ["plain"])]
+    panel.table = NS(item=lambda row, column: item_text([marks.mark_label(0), marks.mark_label(113)][row]))
+    panel.add = NS(isChecked=lambda: True)
+    panel.status = finder.status
+    panel.select_names = lambda names, **kwargs: selected.append(names) or names
+    panel.select_rows([0])
+    assert selected[-1] == ["plain"]

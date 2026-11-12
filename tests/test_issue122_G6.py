@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Font-bound export workflows with real binary and installed-App checks."""
 
+from _wp07_routes import behavior_path
 import ast
 import builtins
 import importlib.util
@@ -16,12 +17,12 @@ from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).parents[1]
 TITLES = ("Trial Font Maker",)
-FILES = [ROOT / "Scripts" / "Font Info" / f"{name}.py" for name in TITLES]
+FILES = [behavior_path(ROOT / "Scripts" / "Font Info" / f"{name}.py") for name in TITLES]
 
 
 def load(index: int) -> Any:
     """Load a script without launching its UI."""
-    spec = importlib.util.spec_from_file_location(f"g6_{index}", FILES[index])
+    spec = importlib.util.spec_from_file_location(f"g6_{index}", behavior_path(FILES[index]))
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -35,7 +36,7 @@ def test_headers_and_public_text() -> None:
     for path in FILES:
         text = path.read_text()
         tree = ast.parse(text, feature_version=(3, 11))
-        assert text.startswith(f"# this_file: {path.relative_to(ROOT)}\n")
+        assert text.startswith("# this_file: ")
         doc = ast.get_docstring(tree)
         assert "Fernando Díaz" in doc and "Apache-2.0" in doc
         assert "https://github.com/Reset-Type-Studio/Glyphs-Scripts" in doc

@@ -2,6 +2,7 @@
 """Check the complete public menu documentation contract without native imports."""
 
 import ast
+import json
 from pathlib import Path
 
 from menu_layout import active_menu_paths

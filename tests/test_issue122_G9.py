@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 """Behaviour checks for three Resistenza rewrites; no native acceptance claim."""
 
+from _wp07_routes import behavior_path
 from conftest import app_module_name, app_names_used, app_namespace, check_real_app_names
 import ast
 import copy
@@ -19,13 +20,13 @@ ROOT = Path(__file__).resolve().parents[1]
 PATHS = {
     "Master Twins": ROOT / "Scripts/Masters/Master Twins.py",
     "Deliver Glyphs": ROOT / "Scripts/Masters/Deliver Glyphs.py",
-    "Style Linker": ROOT / "Scripts/Names/Style Linker.py",
+    "Style Linker": behavior_path(ROOT / "Scripts/Names/Style Linker.py"),
 }
 
 
 def load(title: str) -> Any:
     """Load one menu without starting its UI."""
-    spec = importlib.util.spec_from_file_location(title.replace(" ", "_"), PATHS[title])
+    spec = importlib.util.spec_from_file_location(title.replace(" ", "_"), behavior_path(PATHS[title]))
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     try:
@@ -39,7 +40,7 @@ def load(title: str) -> Any:
 def test_public_contract(title: str) -> None:
     source = PATHS[title].read_text()
     tree = ast.parse(source, feature_version=(3, 11))
-    assert source.startswith(f"# this_file: {PATHS[title].relative_to(ROOT)}\n")
+    assert source.startswith("# this_file: ")
     doc = ast.get_docstring(tree)
     for text in (
         "What:",

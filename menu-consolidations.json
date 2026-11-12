@@ -2394,16 +2394,17 @@
       "destination": {
         "path": "Scripts/Features/Feature Explorer.py",
         "tab": "Alternate Preview",
-        "sha256": null
+        "sha256": "9ee4b890d9855fd360e237e16d21d014858915e0b40966333400a5ab467bb8fa"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_features.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2419,16 +2420,17 @@
       "destination": {
         "path": "Scripts/Features/Feature Authoring.py",
         "tab": "Build Suffix Substitution",
-        "sha256": null
+        "sha256": "951304e748631075274c9cb7e7d9748a8e285196c9a51a61652aefec7b8d9315"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_features.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2444,16 +2446,17 @@
       "destination": {
         "path": "Scripts/Features/Feature Authoring.py",
         "tab": "Classes Browser",
-        "sha256": null
+        "sha256": "951304e748631075274c9cb7e7d9748a8e285196c9a51a61652aefec7b8d9315"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_features.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2469,16 +2472,17 @@
       "destination": {
         "path": "Scripts/Features/Feature Authoring.py",
         "tab": "Feature Code Viewer",
-        "sha256": null
+        "sha256": "951304e748631075274c9cb7e7d9748a8e285196c9a51a61652aefec7b8d9315"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_features.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2494,14 +2498,15 @@
       "destination": {
         "path": "Scripts/Features/Feature Authoring.py",
         "tab": "Generate Random Alternates Feature",
-        "sha256": null
+        "sha256": "951304e748631075274c9cb7e7d9748a8e285196c9a51a61652aefec7b8d9315"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2517,16 +2522,17 @@
       "destination": {
         "path": "Scripts/Features/Feature Explorer.py",
         "tab": "Ligature Finder",
-        "sha256": null
+        "sha256": "9ee4b890d9855fd360e237e16d21d014858915e0b40966333400a5ab467bb8fa"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_features.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2542,15 +2548,16 @@
       "destination": {
         "path": "Scripts/Features/Nastaliq Connections.py",
         "tab": "Nastaliq Connection Editor",
-        "sha256": null
+        "sha256": "a5eb09a2aa5e3e26ad71200c0292b7303811e13c4df7d12343f65f1c0e067db7"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G14.py"
+        "tests/test_issue122_G14.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2566,16 +2573,17 @@
       "destination": {
         "path": "Scripts/Features/Feature Explorer.py",
         "tab": "Suffix Report",
-        "sha256": null
+        "sha256": "9ee4b890d9855fd360e237e16d21d014858915e0b40966333400a5ab467bb8fa"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_features.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2591,16 +2599,17 @@
       "destination": {
         "path": "Scripts/Font Info/Font Identity.py",
         "tab": "Bump Font Version",
-        "sha256": null
+        "sha256": "69e44cd93064aedf7c375412f118ea02c7e434531df379412fcd79d076534285"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_fontinfo.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2641,16 +2650,17 @@
       "destination": {
         "path": "Scripts/Font Info/Encoding and Order.py",
         "tab": "Glyph Order Preview and Export",
-        "sha256": null
+        "sha256": "ae73b8906df153638fc397aefe02d8e3c3016b32abf6e4e0a421a7ccfa930a6f"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_fontinfo.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2692,16 +2702,17 @@
       "destination": {
         "path": "Scripts/Font Info/Font Identity.py",
         "tab": "Names and Credits",
-        "sha256": null
+        "sha256": "69e44cd93064aedf7c375412f118ea02c7e434531df379412fcd79d076534285"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_fontinfo.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2717,15 +2728,16 @@
       "destination": {
         "path": "Scripts/Font Info/Encoding and Order.py",
         "tab": "Paste Glyph Order Encoding",
-        "sha256": null
+        "sha256": "ae73b8906df153638fc397aefe02d8e3c3016b32abf6e4e0a421a7ccfa930a6f"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G8.py"
+        "tests/test_issue122_G8.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2741,14 +2753,15 @@
       "destination": {
         "path": "Scripts/Font Info/Font Identity.py",
         "tab": "Trial Font Maker",
-        "sha256": null
+        "sha256": "69e44cd93064aedf7c375412f118ea02c7e434531df379412fcd79d076534285"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -2764,15 +2777,16 @@
       "destination": {
         "path": "Scripts/Font Info/Encoding and Order.py",
         "tab": "Unicode Ranges and Codepages",
-        "sha256": null
+        "sha256": "ae73b8906df153638fc397aefe02d8e3c3016b32abf6e4e0a421a7ccfa930a6f"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -4922,14 +4936,15 @@
       "destination": {
         "path": "Scripts/Names/Glyph Labels.py",
         "tab": "Batch Glyph Notes",
-        "sha256": null
+        "sha256": "e626b25322ba78792b8df5822a3b5bca4eca13ac32a5ca40527364de9054409f"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -4945,14 +4960,15 @@
       "destination": {
         "path": "Scripts/Names/Glyph Identity.py",
         "tab": "Batch Rename",
-        "sha256": null
+        "sha256": "65f31d0cd8d443ce7245dc586adf9578be1f6bcf3eee22dd068b3f1c9042d896"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -4968,16 +4984,17 @@
       "destination": {
         "path": "Scripts/Names/Character Consistency.py",
         "tab": "Case Pairs",
-        "sha256": null
+        "sha256": "975ec5ce540bc6c4cd15745ae514011c560c72a3476e4b42f9f3f06c8b5801ff"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_names.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -4993,16 +5010,17 @@
       "destination": {
         "path": "Scripts/Names/Glyph Browser.py",
         "tab": "Character Info",
-        "sha256": null
+        "sha256": "18577a4e525e5d6fc6beaf86aa86f7adf444b79f26fa6a6e4dd8f449f913d3b6"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_names.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5018,16 +5036,17 @@
       "destination": {
         "path": "Scripts/Names/Character Consistency.py",
         "tab": "Character Set Compare",
-        "sha256": null
+        "sha256": "975ec5ce540bc6c4cd15745ae514011c560c72a3476e4b42f9f3f06c8b5801ff"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_names.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5043,15 +5062,16 @@
       "destination": {
         "path": "Scripts/Names/Glyph Identity.py",
         "tab": "Duplicate Unicodes",
-        "sha256": null
+        "sha256": "65f31d0cd8d443ce7245dc586adf9578be1f6bcf3eee22dd068b3f1c9042d896"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_duplicate_unicodes_menu.py"
+        "tests/test_duplicate_unicodes_menu.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5067,16 +5087,17 @@
       "destination": {
         "path": "Scripts/Names/Glyph Browser.py",
         "tab": "Glyph Finder",
-        "sha256": null
+        "sha256": "18577a4e525e5d6fc6beaf86aa86f7adf444b79f26fa6a6e4dd8f449f913d3b6"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_names.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5092,15 +5113,16 @@
       "destination": {
         "path": "Scripts/Names/Glyph Browser.py",
         "tab": "Glyph Metadata Tree",
-        "sha256": null
+        "sha256": "18577a4e525e5d6fc6beaf86aa86f7adf444b79f26fa6a6e4dd8f449f913d3b6"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue208_app_reach_tools.py"
+        "tests/test_issue208_app_reach_tools.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5116,15 +5138,16 @@
       "destination": {
         "path": "Scripts/Names/Glyph Browser.py",
         "tab": "Glyph Name Completion",
-        "sha256": null
+        "sha256": "18577a4e525e5d6fc6beaf86aa86f7adf444b79f26fa6a6e4dd8f449f913d3b6"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue208_app_reach_tools.py"
+        "tests/test_issue208_app_reach_tools.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5140,14 +5163,15 @@
       "destination": {
         "path": "Scripts/Names/Glyph Labels.py",
         "tab": "Glyph Notes",
-        "sha256": null
+        "sha256": "e626b25322ba78792b8df5822a3b5bca4eca13ac32a5ca40527364de9054409f"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5163,14 +5187,15 @@
       "destination": {
         "path": "Scripts/Names/Glyph Labels.py",
         "tab": "Glyph Tags",
-        "sha256": null
+        "sha256": "e626b25322ba78792b8df5822a3b5bca4eca13ac32a5ca40527364de9054409f"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5186,14 +5211,15 @@
       "destination": {
         "path": "Scripts/Names/Glyph Labels.py",
         "tab": "Mark Color Palette",
-        "sha256": null
+        "sha256": "e626b25322ba78792b8df5822a3b5bca4eca13ac32a5ca40527364de9054409f"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5209,15 +5235,16 @@
       "destination": {
         "path": "Scripts/Names/Glyph Labels.py",
         "tab": "Select Different Mark Colours",
-        "sha256": null
+        "sha256": "e626b25322ba78792b8df5822a3b5bca4eca13ac32a5ca40527364de9054409f"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_mark_colour_menu.py"
+        "tests/test_mark_colour_menu.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5233,16 +5260,17 @@
       "destination": {
         "path": "Scripts/Names/Glyph Labels.py",
         "tab": "Select by Mark",
-        "sha256": null
+        "sha256": "e626b25322ba78792b8df5822a3b5bca4eca13ac32a5ca40527364de9054409f"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_components.py",
         "tests/test_cov_a_names.py",
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5258,15 +5286,16 @@
       "destination": {
         "path": "Scripts/Names/Character Consistency.py",
         "tab": "Style Linker",
-        "sha256": null
+        "sha256": "975ec5ce540bc6c4cd15745ae514011c560c72a3476e4b42f9f3f06c8b5801ff"
       },
       "retirement_reason": null,
       "test_routes": [
         "tests/test_curated_delivery.py",
-        "tests/test_issue122_G9.py"
+        "tests/test_issue122_G9.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5282,14 +5311,15 @@
       "destination": {
         "path": "Scripts/Names/Glyph Identity.py",
         "tab": "Suffix Tool",
-        "sha256": null
+        "sha256": "65f31d0cd8d443ce7245dc586adf9578be1f6bcf3eee22dd068b3f1c9042d896"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
@@ -5305,14 +5335,15 @@
       "destination": {
         "path": "Scripts/Names/Glyph Identity.py",
         "tab": "Unicode From Names",
-        "sha256": null
+        "sha256": "65f31d0cd8d443ce7245dc586adf9578be1f6bcf3eee22dd068b3f1c9042d896"
       },
       "retirement_reason": null,
       "test_routes": [
-        "tests/test_curated_delivery.py"
+        "tests/test_curated_delivery.py",
+        "tests/test_wp07_launchers.py"
       ],
       "acceptance": {
-        "state": "proposed",
+        "state": "implemented",
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false

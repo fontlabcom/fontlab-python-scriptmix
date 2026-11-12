@@ -13,6 +13,7 @@ from typing import Any
 from unittest.mock import create_autospec
 
 import pytest
+from _wp07_routes import behavior_path
 from conftest import app_names_used, check_real_app_names
 from menu_layout import _menu_bytes
 
@@ -47,7 +48,7 @@ def patch_api(monkeypatch: Any, module: Any, name: str, implementation: Any) -> 
 
 
 def load(index: int) -> Any:
-    source = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/shape_generators/myanmar.py" if index == 0 else PATHS[index]
+    source = ROOT.parent / "fontlab-fontlabapp/src/fontlabapp/studios/shape_generators/myanmar.py" if index == 0 else behavior_path(PATHS[index])
     spec = importlib.util.spec_from_file_location(f"g14_{index}", source)
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
@@ -56,11 +57,11 @@ def load(index: int) -> Any:
 
 
 def test_real_app_names() -> None:
-    check_real_app_names(app_names_used(PATHS))
+    check_real_app_names(app_names_used([behavior_path(p) for p in PATHS]))
 
 
 def test_scripts_use_only_public_app_names() -> None:
-    used = app_names_used(PATHS)
+    used = app_names_used([behavior_path(p) for p in PATHS])
     assert all(
         not part.startswith("_") for module in used for part in module.split(".")
     ), used
@@ -518,7 +519,7 @@ def test_ra_real_creation_and_geometry_history(
 def test_save_connection_uses_source_snapshot_and_exact_references(
     monkeypatch: Any,
 ) -> None:
-    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402 - avoid native parent fallback
+    import fontlabapp.fontui.feature_blocks as feature_blocks  # noqa: PLR0402
 
     m = load(1)
     package = object()
@@ -541,7 +542,7 @@ def test_save_connection_uses_source_snapshot_and_exact_references(
 
 
 def test_save_failure_names_undo_recovery(monkeypatch: Any) -> None:
-    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402 - avoid native parent fallback
+    import fontlabapp.fontui.feature_blocks as feature_blocks  # noqa: PLR0402
 
     def broken(*args: Any, **kwargs: Any) -> Any:
         raise RuntimeError("write failed")
@@ -693,7 +694,7 @@ def connection_panel(monkeypatch: Any) -> Any:
     import fly
     import fly.ap.anchors.writer as anchor_writer
     import fly.ap.core.scripting as scripting  # noqa: PLR0402 - avoid native parent fallback
-    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402 - avoid native parent fallback
+    import fontlabapp.fontui.feature_blocks as feature_blocks  # noqa: PLR0402
 
     layer = Layer()
     layer.preview_anchors = {"entry": (100, 200), "exit": (40, 70)}
@@ -744,6 +745,7 @@ def connection_panel(monkeypatch: Any) -> Any:
     )
     gui.QTransform = Matrix
     monkeypatch.setitem(fly.__dict__, "qt", NS(QtGui=gui))
+    monkeypatch.setitem(sys.modules, "PythonQt", NS(QtGui=gui))
     patch_api(monkeypatch, scripting, "features_dialog_type", lambda: Base)
     patch_api(
         monkeypatch, scripting, "anchors_view_types", lambda: NS(AttachmentView=Widget)
@@ -776,6 +778,7 @@ def test_panel_connection_preview_save_reopen_and_step(connection_panel: Any) ->
     assert panel.variant_pick.currentText == "BEm1"
     panel.step_variant(1)
     assert panel.variant_pick.currentText == "BEm2"
+    assert panel.proof_target() == ("BEm2", "Regular")
     assert "rsub" in panel.source_view.text
     drawing = panel.pair_view.panels[0]
     assert drawing[2] == ("outline", (1, 0, 0, 1, 60, 130))
@@ -1252,14 +1255,14 @@ def test_all_faked_app_functions_have_installed_signatures() -> None:
         ("fontlabapp.core.scripting", "show_script_dialog"),
         ("fontlabapp.core.scripting", "features_dialog_type"),
         ("fontlabapp.core.scripting", "anchors_view_types"),
-        ("fontlab_fontport.feature_blocks", "read_feature_blocks"),
-        ("fontlab_fontport.feature_blocks", "write_feature_blocks"),
+        ("fontlabapp.fontui.feature_blocks", "read_feature_blocks"),
+        ("fontlabapp.fontui.feature_blocks", "write_feature_blocks"),
         ("fontlabapp.core.edit_guards", "pending_updates"),
         ("fontlabapp.glyphs.copies", "panel_type"),
         ("fontlabapp.anchors.writer", "anchor_points"),
     }.issubset(names)
     # The wrapper enforces the real keyword-only reference and Undo arguments.
-    import fly.fp.feature_blocks as feature_blocks  # noqa: PLR0402 - avoid native parent fallback
+    import fontlabapp.fontui.feature_blocks as feature_blocks  # noqa: PLR0402
 
     fake = create_autospec(feature_blocks.write_feature_blocks, spec_set=True)
     assert inspect.signature(fake) == inspect.signature(

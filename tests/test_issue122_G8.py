@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: Apache-2.0
 """Check insertion, FontLab encoding output and installed App names without a host."""
 
-from conftest import app_module_name, app_names_used, check_real_app_names
 import ast
 import importlib.util
 import inspect
@@ -12,9 +11,11 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
+from _wp07_routes import behavior_path
+from conftest import app_module_name, app_names_used, check_real_app_names
 from fontlabapp.masters.layers.selection import LayerSelection
 
-SCRIPT = Path(__file__).parents[1] / "Scripts/Font Info/Paste Glyph Order Encoding.py"
+SCRIPT = behavior_path(Path(__file__).parents[1] / "Scripts/Font Info/Paste Glyph Order Encoding.py")
 
 
 def fake_catalog(*, deadline: float | None = None) -> Any:
@@ -68,7 +69,7 @@ def install_captures(
     monkeypatch: pytest.MonkeyPatch, rows: tuple, occurrences: tuple
 ) -> None:
     import fly.ap.glyphs.catalog.model as catalog
-    import fly.ap.masters.layers.selection as selection
+    import fly.ap.masters.layers.selection as selection  # noqa: PLR0402 - native facade
 
     fake_catalog.result, fake_catalog.calls = NS(rows=rows), []
     fake_selection.result, fake_selection.calls = NS(occurrences=occurrences), []
@@ -81,7 +82,7 @@ def install_captures(
 
 def load() -> Any:
     """Load the lazy script without importing FontLab or Qt."""
-    spec = importlib.util.spec_from_file_location("g8_order", SCRIPT)
+    spec = importlib.util.spec_from_file_location("g8_order", behavior_path(SCRIPT))
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -162,7 +163,7 @@ def test_encoding_names_use_each_file_stem(tmp_path: Path) -> None:
 
 def test_capture_current_font_and_selection(monkeypatch: pytest.MonkeyPatch) -> None:
     import fontlabapp.glyphs.catalog.model as catalog
-    import fontlabapp.masters.layers.selection as selection
+    import fontlabapp.masters.layers.selection as selection  # noqa: PLR0402 - native facade
 
     originals = (catalog.capture, selection.capture)
     install_captures(monkeypatch, (("A", "", ""), ("B", "", "")), (NS(glyph_name="B"),))
@@ -213,8 +214,10 @@ def test_panel_preview_save_error_and_close(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path, clear_selection: bool, flag_failure: bool
 ) -> None:
     """Exercise panel actions against strict native-member and signal fakes."""
+    import sys
+
     import fly
-    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - Fly module alias
+    import fly.ap.core.scripting as scripting  # noqa: PLR0402 - native facade
 
     reserved = {"render", "size", "layout", "update", "font", "move", "statusBar"}
 
@@ -294,7 +297,11 @@ def test_panel_preview_save_error_and_close(
             Widget,
         )
     )
-    monkeypatch.setitem(fly.__dict__, "qt", NS(QtGui=gui, QtCore=NS(Qt=NS(WindowStaysOnTopHint=0x40000))))
+    qt = NS(QtGui=gui, QtCore=NS(Qt=NS(WindowStaysOnTopHint=0x40000)))
+    monkeypatch.setitem(fly.__dict__, "qt", qt)
+    monkeypatch.setitem(sys.modules, "PythonQt", qt)
+    active = NS(package=NS(id=7))
+    monkeypatch.setattr(scripting, "current_package", lambda expected_id=None: active.package)
     monkeypatch.setattr(scripting, "show_script_dialog", fake_show)
     monkeypatch.setattr(scripting, "close_script_dialog", fake_close)
     module = load()
@@ -346,6 +353,12 @@ def test_panel_preview_save_error_and_close(
     panel.safe_action(lambda: panel.write_file(str(tmp_path / "stale.enc")))
     assert "reopen" in panel.status.text_value, "Refuse stale font output"
     assert not (tmp_path / "stale.enc").exists(), "Refuse before creating output"
+    original = active.package
+    active.package = NS(id=8)
+    panel.safe_action(lambda: panel.write_file(str(tmp_path / "foreign.enc")))
+    assert "original font" in panel.status.text_value
+    assert not (tmp_path / "foreign.enc").exists()
+    active.package = original
     fake_catalog.result = NS(rows=tuple((n, "", "") for n in names))
     panel.pasted_names.setPlainText("é g2")
     panel.source_names = (*names, "é")

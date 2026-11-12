@@ -73,25 +73,16 @@ Choose a category, then a script. Each page retains its usage and exact source i
 
 ## Features
 
-- [Alternate Preview](features/alternate-preview.md)
-- [Build Suffix Substitution](features/build-suffix-substitution.md)
-- [Classes Browser](features/classes-browser.md)
-- [Feature Code Viewer](features/feature-code-viewer.md)
-- [Generate Random Alternates Feature](features/generate-random-alternates-feature.md)
-- [Ligature Finder](features/ligature-finder.md)
-- [Nastaliq Connection Editor](features/nastaliq-connection-editor.md)
-- [Suffix Report](features/suffix-report.md)
+- [Feature Authoring](features/feature-authoring.md)
+- [Feature Explorer](features/feature-explorer.md)
+- [Nastaliq Connections](features/nastaliq-connections.md)
 
 ## Font Info
 
-- [Bump Font Version](font-info/bump-font-version.md)
 - [Calculate Vertical Metrics](font-info/calculate-vertical-metrics.md)
-- [Glyph Order Preview and Export](font-info/glyph-order-preview-and-export.md)
+- [Encoding and Order](font-info/encoding-and-order.md)
+- [Font Identity](font-info/font-identity.md)
 - [Master Metrics Table](font-info/master-metrics-table.md)
-- [Names and Credits](font-info/names-and-credits.md)
-- [Paste Glyph Order Encoding](font-info/paste-glyph-order-encoding.md)
-- [Trial Font Maker](font-info/trial-font-maker.md)
-- [Unicode Ranges and Codepages](font-info/unicode-ranges-and-codepages.md)
 
 ## Font UI Lab
 
@@ -200,23 +191,10 @@ Choose a category, then a script. Each page retains its usage and exact source i
 
 ## Names
 
-- [Batch Glyph Notes](names/batch-glyph-notes.md)
-- [Batch Rename](names/batch-rename.md)
-- [Case Pairs](names/case-pairs.md)
-- [Character Info](names/character-info.md)
-- [Character Set Compare](names/character-set-compare.md)
-- [Duplicate Unicodes](names/duplicate-unicodes.md)
-- [Glyph Finder](names/glyph-finder.md)
-- [Glyph Metadata Tree](names/glyph-metadata-tree.md)
-- [Glyph Name Completion](names/glyph-name-completion.md)
-- [Glyph Notes](names/glyph-notes.md)
-- [Glyph Tags](names/glyph-tags.md)
-- [Mark Color Palette](names/mark-color-palette.md)
-- [Select Different Mark Colours](names/select-different-mark-colours.md)
-- [Select by Mark](names/select-by-mark.md)
-- [Style Linker](names/style-linker.md)
-- [Suffix Tool](names/suffix-tool.md)
-- [Unicode From Names](names/unicode-from-names.md)
+- [Character Consistency](names/character-consistency.md)
+- [Glyph Browser](names/glyph-browser.md)
+- [Glyph Identity](names/glyph-identity.md)
+- [Glyph Labels](names/glyph-labels.md)
 
 ## Proof
 

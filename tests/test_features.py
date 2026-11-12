@@ -1,15 +1,21 @@
 # this_file: tests/test_features.py
 """Independent checks for the six complete feature tools and safe writes."""
 
-from conftest import app_module_name, app_namespace, app_source_path, register_app_module
+from pathlib import Path
+import pytest
+from _wp07_routes import behavior_path
+from conftest import (
+    app_module_name,
+    app_namespace,
+    app_source_path,
+    register_app_module,
+)
 import importlib.util
 import os
 import sys
 from importlib.metadata import PackageNotFoundError, distribution
 from types import SimpleNamespace as NS
-from pathlib import Path
 
-import pytest
 
 ROOT = Path(__file__).parents[1]
 TITLES = [
@@ -24,7 +30,7 @@ TITLES = [
 
 @pytest.mark.parametrize("title", TITLES)
 def test_requested_tool_exists(title):
-    assert (ROOT / "Scripts/Features" / (title + ".py")).is_file(), (
+    assert behavior_path(ROOT / "Scripts/Features" / (title + ".py")).is_file(), (
         "Requested complete feature tool missing"
     )
 
@@ -68,7 +74,7 @@ def load(monkeypatch, app_sources):
     monkeypatch.setitem(sys.modules, "fontlab", native)
     spec = importlib.util.spec_from_file_location(
         "fontlabapp.core.scripting",
-        app_sources / "core/scripting.py",
+        behavior_path(app_sources / "core/scripting.py"),
     )
     scripting = importlib.util.module_from_spec(spec)
     register_app_module(monkeypatch, "core.scripting", scripting)
@@ -106,7 +112,7 @@ def load(monkeypatch, app_sources):
         sys.modules, "fontlab_fontport.host", NS(NativeFontBackend=Backend)
     )
     spec = importlib.util.spec_from_file_location(
-        "fontlabapp.fontui.feature_blocks", app_sources / "fontui/feature_blocks.py"
+        "fontlabapp.fontui.feature_blocks", behavior_path(app_sources / "fontui/feature_blocks.py")
     )
     feature_source = importlib.util.module_from_spec(spec)
     register_app_module(monkeypatch, "fontui.feature_blocks", feature_source)
@@ -114,7 +120,7 @@ def load(monkeypatch, app_sources):
     for leaf in ("_font_info_dialog", "_features_dialog"):
         spec = importlib.util.spec_from_file_location(
             app_module_name(leaf),
-            app_source_path(app_sources, leaf),
+            behavior_path(app_source_path(app_sources, leaf)),
         )
         shared = importlib.util.module_from_spec(spec)
         register_app_module(monkeypatch, leaf, shared)
@@ -123,7 +129,7 @@ def load(monkeypatch, app_sources):
     # relative ``from .host import NativeFontBackend`` finds the Backend double.
     spec = importlib.util.spec_from_file_location(
         "fontlab_fontport.feature_blocks",
-        fontport_sources() / "feature_blocks.py",
+        behavior_path(fontport_sources() / "feature_blocks.py"),
     )
     blocks = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, "fontlab_fontport.feature_blocks", blocks)
@@ -134,15 +140,16 @@ def load(monkeypatch, app_sources):
     monkeypatch.setitem(sys.modules, "fly.fp.feature_blocks", blocks)
     spec = importlib.util.spec_from_file_location(
         "fly.ap.features.code",
-        app_sources / "features/code.py",
+        behavior_path(app_sources / "features/code.py"),
     )
     calculations = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, "fly.ap.features.code", calculations)
+    register_app_module(monkeypatch, "features.code", calculations)
     spec.loader.exec_module(calculations)
 
     def module(title):
         spec = importlib.util.spec_from_file_location(
-            title, ROOT / "Scripts/Features" / (title + ".py")
+            title, behavior_path(ROOT / "Scripts/Features" / (title + ".py"))
         )
         result = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(result)
@@ -511,3 +518,19 @@ def test_random_alternates_and_nastaliq_defaults_end_with_newline(load):
     assert merged["features"][0][1].endswith("\n"), (
         "Nastaliq default rlig block must end with a newline"
     )
+def test_feature_studio_proofs_use_exact_captured_names(load):
+    module, _, _ = load
+    assert module(TITLES[1]).Dialog.proof_text(NS(pairs=[('a', 'a.sc'), ('b', 'b.sc')])) == '/a/a.sc/b/b.sc'
+    assert module(TITLES[0]).Dialog.proof_text(NS(preview_names=['a', 'a.alt'])) == '/a/a.alt'
+    assert module(TITLES[4]).Dialog.proof_text(NS(rows=[('f_i', 'f i', 'Ready'), ('x_y', 'x y', 'Missing')])) == '/f/i/f_i'
+    source = NS(feature=NS(currentIndex=0), sources=[('liga', 'feature liga { sub f i by f_i; } liga;')], names=['f', 'i', 'f_i', 'other'])
+    assert module(TITLES[3]).Dialog.proof_text(source) == '/f/i/f_i'
+    table = NS(currentRow=lambda: 0, item=lambda *a: NS(text=lambda: 'selected'))
+    classes = NS(table=table, rows=[('other', 1, 'z'), ('selected', 2, 'a b')])
+    assert module(TITLES[2]).Dialog.proof_text(classes) == '/a/b'
+    classes.table.item = lambda *a: None
+    assert module(TITLES[2]).Dialog.proof_text(classes) == ''
+    suffixes = NS(table=NS(currentRow=lambda: 0, item=lambda *a: NS(text=lambda: 'sc')), names=['a', 'a.sc'], rows=[('sc', 1, 1, 'smcp')])
+    assert module(TITLES[5]).Dialog.proof_text(suffixes) == '/a/a.sc'
+    suffixes.table.item = lambda *a: None
+    assert module(TITLES[5]).Dialog.proof_text(suffixes) == ''

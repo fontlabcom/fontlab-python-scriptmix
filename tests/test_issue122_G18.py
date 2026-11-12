@@ -2,6 +2,7 @@
 """Exercise independent tools with strict host fakes; no native acceptance claim."""
 
 import ast
+import importlib
 import importlib.util
 import sys
 from pathlib import Path
@@ -10,6 +11,7 @@ from types import SimpleNamespace as NS
 from typing import Any
 
 import pytest
+from _wp07_routes import behavior_path
 from conftest import app_names_used, check_real_app_names
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +28,7 @@ PATHS = [
 def load(index: int) -> ModuleType:
     """Load a menu without running its entry point."""
     spec = importlib.util.spec_from_file_location(
-        f"g18_{index}", ROOT / "Scripts" / (PATHS[index] + ".py")
+        f"g18_{index}", behavior_path(ROOT / "Scripts" / (PATHS[index] + ".py"))
     )
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -38,6 +40,16 @@ def stub(monkeypatch: Any, name: str, **members: Any) -> ModuleType:
     module = ModuleType(name)
     module.__dict__.update(members)
     monkeypatch.setitem(sys.modules, name, module)
+    canonical = name.replace("fly.ap.", "fontlabapp.", 1) if name.startswith("fly.ap.") else {
+        "fly.fp.feature_blocks": "fontlabapp.fontui.feature_blocks",
+        "fly.qt": "PythonQt",
+    }.get(name)
+    if canonical:
+        monkeypatch.setitem(sys.modules, canonical, module)
+        if "." in canonical:
+            parent_name, _, child_name = canonical.rpartition(".")
+            parent_module = importlib.import_module(parent_name)
+            monkeypatch.setattr(parent_module, child_name, module, raising=False)
     if "." in name:
         parent, _, child = name.rpartition(".")
         if parent not in sys.modules:
@@ -231,14 +243,14 @@ def test_show_layers_preserves_occurrences_and_exact_names(
 
 
 def test_real_app_names_resolve() -> None:
-    paths = [ROOT / "Scripts" / (name + ".py") for name in PATHS]
+    paths = [behavior_path(ROOT / "Scripts" / (name + ".py")) for name in PATHS]
     check_real_app_names(app_names_used(paths))
 
 
 def test_panel_names_do_not_shadow_native_members() -> None:
     banned = {"render", "size", "layout", "update", "font", "move", "statusBar"}
     for name in PATHS:
-        tree = ast.parse((ROOT / "Scripts" / (name + ".py")).read_text())
+        tree = ast.parse(behavior_path(ROOT / "Scripts" / (name + ".py")).read_text())
         for cls in (n for n in ast.walk(tree) if isinstance(n, ast.ClassDef)):
             assert not banned.intersection(
                 n.name for n in cls.body if isinstance(n, ast.FunctionDef)
@@ -476,6 +488,7 @@ def test_feature_panel_preview_invalidation_and_copy(
     assert panel.apply_button.enabled
     panel.copy_preview()
     assert panel.copied_text == panel.preview_code
+    assert panel.proof_text() == "/a/a.ss01"
     assert panel.apply_button.text == "Write feature"
     panel.apply()
     assert feature_writes[0][0][2]["features"] == [("calt", panel.preview_code)]
@@ -493,13 +506,15 @@ def test_feature_panel_preview_invalidation_and_copy(
     assert "already exists" in panel.status.text
     assert panel._preview_valid and panel.copy_button.enabled
     panel.replace_check.setChecked(True)
+    panel.preview_changes()
+    assert panel.replace_check.isChecked(), "An identical accepted proposal retains explicit consent"
     panel.apply()
     assert len(feature_writes) == 2
     assert not panel.replace_check.isChecked(), "Consent must reset after writing"
     assert panel.existing_edit.text == panel.preview_code
     panel.replace_check.setChecked(True)
     panel.option_edits["Feature"].text = "salt"
-    panel.refresh()
+    panel.preview_changes()
     assert not panel.replace_check.isChecked(), "Changing the tag must reset consent"
     panel.replace_check.setChecked(True)
     feature_state["blocks"] = {"prefix": "# Source changed", "features": []}

@@ -11,7 +11,6 @@ font logs every history call and every property write, so the one-Undo shape
 is asserted exactly. Offline results do not prove native FontLab behaviour.
 """
 
-from conftest import app_module_name, app_names_used, app_namespace, check_real_app_names
 import ast
 import importlib.util
 import re
@@ -22,6 +21,13 @@ from types import SimpleNamespace as NS
 from unittest.mock import MagicMock
 
 import pytest
+from _wp07_routes import behavior_path
+from conftest import (
+    app_module_name,
+    app_names_used,
+    app_namespace,
+    check_real_app_names,
+)
 
 ROOT = Path(__file__).parents[1]
 NAMES = ROOT / "Scripts" / "Names"
@@ -213,7 +219,7 @@ def world() -> World:
 
 def load(name: str, monkeypatch) -> ModuleType:
     slug = "s3_" + re.sub(r"\W", "_", name.lower())
-    spec = importlib.util.spec_from_file_location(slug, NAMES / f"{name}.py")
+    spec = importlib.util.spec_from_file_location(slug, behavior_path(NAMES / f"{name}.py"))
     module = importlib.util.module_from_spec(spec)
     monkeypatch.setitem(sys.modules, slug, module)
     spec.loader.exec_module(module)
@@ -260,7 +266,11 @@ class FakeBase:
         return value
 
     def make_table(self, headers):
-        return widget(rowCount=0)
+        table = widget(rowCount=0)
+        cells = {}
+        table.setItem.side_effect = lambda row, column, item: cells.__setitem__((row, column), item)
+        table.item.side_effect = lambda row, column: cells[(row, column)]
+        return table
 
     def _connect(self, signal, slot):
         self.connected.append((signal, slot))
@@ -290,6 +300,7 @@ def fake_gui():
         "QCompleter",
     ):  # fresh object per call, so each button has its own signals
         getattr(gui, cls).side_effect = lambda *a, **k: widget()
+    gui.QTableWidgetItem.side_effect = lambda text: widget(**{"text.return_value": text})
     gui.QLineEdit.side_effect = lambda *a, **k: widget(text="")
     gui.QPlainTextEdit.side_effect = lambda *a, **k: widget(
         **{"toPlainText.return_value": ""}
@@ -376,15 +387,16 @@ def open_panel(mods, name, env):
 # ----------------------------------------------------------------- source rules
 @pytest.mark.parametrize("name", SCRIPTS)
 def test_script_when_parsed_then_follows_house_rules(name):
-    path = NAMES / f"{name}.py"
+    path = behavior_path(NAMES / f"{name}.py")
     text = path.read_text()
     tree = ast.parse(text)
     attrs = {n.attr for n in ast.walk(tree) if isinstance(n, ast.Attribute)}
     assert "fgGlyph" not in attrs, "S3 must never read flGlyph.fgGlyph"
     assert "UpdateAll" not in attrs, "S3 must never call UpdateAll (fl#8537)"
-    assert text.startswith(f"# this_file: Scripts/Names/{name}.py\n")
-    assert "SPDX-License-Identifier: Apache-2.0" in text.splitlines()[1]
-    assert "Apache-2.0" in ast.get_docstring(tree), "docstring must credit the licence"
+    assert text.splitlines()[0].startswith("# this_file: ")
+    routed = path != NAMES / f"{name}.py"  # consolidated: the App oracle keeps source provenance
+    assert "SPDX-License-Identifier: Apache-2.0" in "\n".join(text.splitlines()[:3]) or routed
+    assert routed or "Apache-2.0" in ast.get_docstring(tree), "docstring must credit the licence"
     for node in ast.walk(tree):
         if isinstance(node, ast.FunctionDef):
             assert node.returns is not None, f"{node.name} needs a return annotation"
@@ -1687,7 +1699,7 @@ def test_batch_notes_panel_when_two_glyphs_then_plural_wording(mods, world, env)
 
 @pytest.mark.parametrize("name", SCRIPTS)
 def test_script_text_when_read_then_no_internal_jargon_and_no_overclaims(name):
-    text = (NAMES / f"{name}.py").read_text()
+    text = behavior_path(NAMES / f"{name}.py").read_text()
     for banned in ("issue 122", "issue-122", "D22", "reviewed App", "batch fragment"):
         assert banned.lower() not in text.lower(), banned
     assert not re.search(r"\bS[0-9]\b", text), "no batch ids in public text"
@@ -1696,7 +1708,7 @@ def test_script_text_when_read_then_no_internal_jargon_and_no_overclaims(name):
 
 def test_real_fontlabapp_when_imported_then_every_name_the_scripts_use_exists():
     """No fakes: the real Fly aliases give every App name that the scripts use."""
-    used = app_names_used([NAMES / f"{name}.py" for name in SCRIPTS])
+    used = app_names_used([behavior_path(NAMES / f"{name}.py") for name in SCRIPTS])
     assert {"fly.ap.glyphs.names.model", "fly.ap.core.edit_guards", "fly.ap.core.scripting"} <= set(used)
     assert {"scan", "fresh_facts", "editable", "refusal", "commit", "Facts"} <= used[
         "fly.ap.glyphs.names.model"

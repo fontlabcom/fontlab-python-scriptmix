@@ -10,14 +10,14 @@ from pathlib import Path
 from types import ModuleType
 
 import pytest
+from _wp07_routes import behavior_path
+from menu_layout import released_bytes
 from conftest import app_names_used, app_source_path, resolve_app_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 
 # script -> (App module path under fly.ap, entry point it must call)
 SHOW_TOOLS = {
-    "Scripts/Names/Glyph Metadata Tree.py": ("glyphs.tree.model", "show_tree"),
-    "Scripts/Names/Glyph Name Completion.py": ("glyphs.completion.model", "show"),
     "Scripts/Components/Component Graph.py": ("components.graph.model", "show"),
     "Scripts/Metrics/Sidebearing Offset Preview.py": ("metrics.offset.model", "show"),
     "Scripts/Proof/Character Map.py": ("glyphs.character_map.model", "show"),
@@ -34,6 +34,7 @@ def stub_show(monkeypatch, module: str, entry: str) -> tuple[list, object]:
     fake = ModuleType("fly.ap." + module)
     setattr(fake, entry, lambda *args: calls.append(args) or sentinel)
     monkeypatch.setitem(sys.modules, "fly.ap." + module, fake)
+    monkeypatch.setitem(sys.modules, "fontlabapp." + module, fake)
     return calls, sentinel
 
 
@@ -41,7 +42,7 @@ def stub_show(monkeypatch, module: str, entry: str) -> tuple[list, object]:
 def test_main_when_called_then_opens_the_one_app_entry_point(monkeypatch, script):
     module, entry = SHOW_TOOLS[script]
     calls, sentinel = stub_show(monkeypatch, module, entry)
-    namespace = runpy.run_path(str(ROOT / script), run_name="inspection")
+    namespace = runpy.run_path(str(behavior_path(ROOT / script)), run_name="inspection")
     assert calls == [], "importing the script must not open a panel"
     assert namespace["main"]() is sentinel, "main returns the panel the App opened"
     assert calls == [()], "the entry point takes no arguments"
@@ -51,7 +52,7 @@ def test_main_when_called_then_opens_the_one_app_entry_point(monkeypatch, script
 def test_script_when_run_as_main_then_opens_once(monkeypatch, script):
     module, entry = SHOW_TOOLS[script]
     calls, _ = stub_show(monkeypatch, module, entry)
-    runpy.run_path(str(ROOT / script), run_name="__main__")
+    runpy.run_path(str(behavior_path(ROOT / script)), run_name="__main__")
     assert calls == [()]
 
 
@@ -97,7 +98,7 @@ def test_row_when_indexed_then_matches_the_final_script_bytes(script):
             if r["destination"] == script]
     assert len(rows) == 1, f"{script}: exactly one additional-tools row"
     row = rows[0]
-    assert row["destination_sha256"] == hashlib.sha256((ROOT / script).read_bytes()).hexdigest()
+    assert row["destination_sha256"] == hashlib.sha256(released_bytes(ROOT, row)).hexdigest()
     assert row["kind"] == "independent-original-workflow-implementation"
     assert row["native_acceptance"] == "pending" and row["app_minimum"] == "1.2.0"
     assert row["counted_in_130_sample_migration"] is False
@@ -121,7 +122,7 @@ def top_level_names(path: Path) -> set[str]:
 @pytest.mark.parametrize("script", ALL_TOOLS)
 def test_entry_points_when_app_scanned_then_every_name_the_tool_calls_is_defined(script):
     """Names come from the script's own imports, so an edited tool is rechecked."""
-    used = app_names_used([ROOT / script])
+    used = app_names_used([behavior_path(ROOT / script)])
     assert used and all(used.values()), f"{script}: no fly.ap names found to check"
     root = resolve_app_sources()  # SCRIPTMIX_APP_SOURCE, else the installed App
     for module, wanted in used.items():

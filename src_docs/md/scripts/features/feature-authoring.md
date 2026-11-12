@@ -1,0 +1,35 @@
+---
+this_file: src_docs/md/scripts/features/feature-authoring.md
+tags: ["Features"]
+categories: ["Features"]
+---
+
+# Feature Authoring
+
+Feature Authoring: Build suffix substitutions, browse classes, inspect feature code and generate random alternates. The original generators retain their exact naming and replacement checks. Feature source is stored text: this tool does not claim to compile it or apply OpenType shaping to the proof.
+
+Tabs: Build Suffix Substitution; Classes Browser; Feature Code Viewer; Generate Random Alternates Feature.
+
+How to use: Open the font and choose this tool from Features. Choose the
+named tab for the task, enter its inputs and inspect its result before using
+an action. Refresh reads the tool's source context. Preview Changes prepares
+the selected task for review; Apply Changes is available for supported edits.
+Read-only tasks keep their inspection, copy or export actions separate from
+font changes. A refusal explains which input or context must be corrected.
+
+The window groups the original task controls with a shared preview and resizeable
+layout. Switching fonts elsewhere is not a request to transfer an existing
+plan to that font. Recheck the selected glyphs, source, target and layer before
+applying work, and refresh when the source changes. Close ends the tool session;
+it does not save the borrowed font. Source credits and help appear in About.
+Requires FontLab 9 and matching Fly/App packages containing this studio.
+
+Run **Features > Feature Authoring** from FontLab's Scripts menu.
+
+Read [installation](../../install.md) and [working with scripts](../../use.md) before use.
+
+## Source identity
+
+SHA256: `951304e748631075274c9cb7e7d9748a8e285196c9a51a61652aefec7b8d9315`
+
+[Python source at `b795215422f3`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/b795215422f36543a9c23f006a4f2f594c8586f5/Scripts/Features/Feature%20Authoring.py)
