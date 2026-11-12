@@ -421,11 +421,6 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/calculate-vertical-metrics.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
         <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/encoding-and-order.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
@@ -436,7 +431,7 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/master-metrics-table.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/font-info/font-metrics.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -586,107 +581,22 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/classes-browser.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/kerning-batch.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/compare-masters.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/kerning-browser.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/copy-between-masters.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/kerning-proof.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/delete-kerning-pair-from-all-masters.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/exceptions-finder.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/kern-to-max.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/kerning-cutoff.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/kerning-energy-report.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/missing-pairs.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/pair-editor.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/pair-list-browser.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/pairs-from-text.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/persistence-audit.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/remove-small-pairs.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/round-values.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/same-kerning-groups.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/scale-values.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/steal-kerning-from-next-pair.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/symmetry.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/text-preview.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/unbundle-punctuation-kerning.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/kerning/kerning-studio.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
@@ -836,77 +746,17 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/alignment-zones.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/advance-widths.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/centre-in-advance.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/spacing-studio.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/check-tabular-widths.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/copy-metrics-from-reference.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/equalize-sidebearings.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/italic-sidebearings.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/round-advances.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/scale-advances.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/sidebearing-offset-preview.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/sidebearings-tuner.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/spacing-string-preview.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/tabular-width.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/tmetrics-window.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/vertical-metrics-diagram.html</loc>
-        <lastmod>2026-11-12</lastmod>
-        <changefreq>daily</changefreq>
-    </url>
-    <url>
-        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/width-table.html</loc>
+        <loc>https://code.fontlab.com/fontlab-python-scriptmix/scripts/metrics/vertical-metrics.html</loc>
         <lastmod>2026-11-12</lastmod>
         <changefreq>daily</changefreq>
     </url>
