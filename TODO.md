@@ -182,3 +182,4 @@ remaining acceptance, source-link and native obligations stay open.
 
 
 - [ ] Fix catalogue immutable-link validation by checking committed menu paths and bytes, with dirty/untracked-menu regressions; refuse or defer false links without adding a new generator framework.
+- [ ] Re-review the Zero-Width Marks consolidation proposal in `menu-consolidations.json` against the D36-1 bytes (`revised_sha256` 14e4194b…), then drop `revised_sha256`/`revised_reason` and re-pin `source` when the ledger is next regenerated.

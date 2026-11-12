@@ -212,6 +212,16 @@ def source_bytes(root: Path, source: dict, *, committed: bool = False) -> bytes:
     return raw
 
 
+def _revised_matches(root: Path, row: dict, digest: str | None) -> bool:
+    """True when a proposed row records a revised hash that the revision ledger confirms."""
+    revised = row.get("revised_sha256")
+    if revised is None or digest != revised:
+        return False
+    _hex(revised, 64)
+    current = _revisions(root).get(row["source"]["path"], {}).get("current_sha256")
+    return current == revised
+
+
 def consolidation_rows(root: Path) -> list[dict]:
     """Validate proposed/implemented transitions without promoting behavior or native parity."""
     ledger = json.loads((root / "menu-consolidations.json").read_text())
@@ -236,8 +246,11 @@ def consolidation_rows(root: Path) -> list[dict]:
                 or (acceptance["state"] == "proposed"
                     and (acceptance["behavior_parity"] or acceptance["native"]))):
             raise ValueError("Invalid consolidation acceptance state.")
+        if "revised_sha256" in row and acceptance["state"] != "proposed":
+            raise ValueError("Only proposed rows may carry a revised source hash.")
         if acceptance["state"] == "proposed":
-            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != source["sha256"]:
+            digest = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+            if digest != source["sha256"] and not _revised_matches(root, row, digest):
                 raise ValueError("Proposed source is missing or changed.")
         else:
             source_bytes(root, source)

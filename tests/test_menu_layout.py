@@ -541,3 +541,65 @@ def test_consolidation_when_blank_retirement_reason_then_refused(consolidation):
     save_consolidation(root, ledger)
     with pytest.raises(ValueError, match="Retirement"):
         consolidation_rows(root)
+
+
+def _revise(root, path, row, new=b"# this_file: Scripts/Old/One.py\nvalue=2\n", record=True):
+    digest = hashlib.sha256(new).hexdigest()
+    path.write_bytes(new)
+    row["revised_sha256"] = digest
+    revisions = [{"destination": row["source"]["path"], "current_sha256": digest}] if record else []
+    (root / "menu-revisions.json").write_text(json.dumps({"revisions": revisions}))
+    return digest
+
+
+def test_consolidation_when_revised_hash_is_recorded_then_new_bytes_pass_and_source_stays_frozen(consolidation):
+    from menu_layout import consolidation_rows
+
+    root, path, payload, ledger, row = consolidation
+    _revise(root, path, row)
+    save_consolidation(root, ledger)
+    assert consolidation_rows(root) == [row]
+    assert row["source"]["sha256"] == hashlib.sha256(payload).hexdigest()
+
+
+def test_consolidation_when_edited_again_after_revision_then_refused(consolidation):
+    from menu_layout import consolidation_rows
+
+    root, path, payload, ledger, row = consolidation
+    _revise(root, path, row)
+    save_consolidation(root, ledger)
+    path.write_bytes(b"# this_file: Scripts/Old/One.py\nvalue=3\n")
+    with pytest.raises(ValueError, match="Proposed source is missing or changed"):
+        consolidation_rows(root)
+
+
+def test_consolidation_when_unrecorded_hash_change_then_refused(consolidation):
+    from menu_layout import consolidation_rows
+
+    root, path, payload, ledger, row = consolidation
+    path.write_bytes(b"changed\n")
+    save_consolidation(root, ledger)
+    with pytest.raises(ValueError, match="Proposed source is missing or changed"):
+        consolidation_rows(root)
+
+
+def test_consolidation_when_revised_hash_lacks_revision_ledger_entry_then_refused(consolidation):
+    from menu_layout import consolidation_rows
+
+    root, path, payload, ledger, row = consolidation
+    _revise(root, path, row, record=False)
+    save_consolidation(root, ledger)
+    with pytest.raises(ValueError, match="Proposed source is missing or changed"):
+        consolidation_rows(root)
+
+
+def test_consolidation_when_implemented_row_has_revised_hash_then_refused(consolidation):
+    from menu_layout import consolidation_rows
+
+    root, path, payload, ledger, row = consolidation
+    row["revised_sha256"] = "b" * 64
+    row["acceptance"]["state"] = "implemented"
+    row["destination"]["sha256"] = "c" * 64
+    save_consolidation(root, ledger)
+    with pytest.raises(ValueError, match="Only proposed rows"):
+        consolidation_rows(root)
