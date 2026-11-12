@@ -9,6 +9,16 @@ this_file: CHANGELOG.md
 - Lost-fix audit: only Zero-Width Marks had changed on main since the lane base (see the audit file in the evidence directory).
 - Tests: `tests/test_issue122_G13.py` loads the consolidated App modules; historical bytes come from the ledger commit. The inspector and metrics fixtures give fake packages a realistic `fgPackage`. Contour Order View and Node Statistics resolve to their App routes. The archived rescue menu name `Vertical Metrics` is allowed to coincide with its new consolidated launcher. Full run: 4953 passed, 6 skipped (arm64 Python 3.11.18).
 
+## 2026-11-12 - Docs site test covers every authored page (Issue 250)
+
+`tests_docs/test_pipeline_site.py` used a hand-written `PAGES` list that left 29 built pages out of the
+light-menu, footer, search and canonical checks (the Font UI Lab pages, `retirement-decisions.html`,
+`scripts/proof/context-proof.html` and the report/utility `-app`, audit and comparison pages). `PAGES` is now derived
+from `src_docs/md` minus the `exclude_docs` patterns in `src_docs/mkdocs.yml`, and the new
+`test_built_pages_are_exactly_the_authored_pages` compares it with the HTML files under `docs/` (404.html aside).
+Before: the new comparison against the old list fails with 29 extra built pages. Mutants killed: deleting a built page,
+deleting a source page, and ignoring `exclude_docs` each fail the suite. Test-only; no production code or page changes.
+
 ## 2026-11-12 - WP07 docs pipeline pins re-pinned after the CI Documentation failure
 
 The Documentation workflow on 9d1b8f34 failed `tests_docs/test_pipeline_*` (4 failures, 1 error)
