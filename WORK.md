@@ -2,31 +2,16 @@
 this_file: WORK.md
 ---
 
-# Issue 255 — Fly consumer migration
+# Current round — Issue 255 post-release reconciliation
 
-Nine Font UI Lab launchers now use lazy Fly routes. Their current hashes and
-explicit revision overlays retain the frozen historical sources and proposed
-acceptance states. Current teaching calls use Fly; canonical capability-module
-requirements stay explicit. The HT Letterspacer user-run smoke has import-only
-changes and source/compile checks; it was not executed.
+[fontlab-python-scriptmix v1.2.9](https://github.com/fontlabcom/fontlab-python-scriptmix/releases/tag/v1.2.9) is qualified at `2a122b22bd1f608099e1bfa1d57434068c5e7536`.
 
-The complete prepared arm64 Python 3.11 source suite passes: 5,282 tests, six
-existing skips. Each of the nine complete changed production modules has 100%
-statement and branch coverage, with zero exclusions. Focused dispatch/source
-checks pass 239 tests; provenance checks pass 88. Real installed Fly/provider
-child-module identities pass separately without loading native modules. The
-current App-path audit reports zero pending files.
+The nine Font UI Lab launchers and current teaching use Fly; reviewed revision overlays preserve frozen historical sources and HT payloads.
 
-Changed scripts/tests are Ruff-clean. The full pinned Ruff scope retains its
-36 pre-existing findings in unchanged tests; no broad cleanup or new suppression
-was applied. Immutable source/installer/provenance hashes and generated docs are
-unchanged. Earlier WORK content is archived on the workspace data volume.
+5,286 source tests pass with two optional skips; all nine complete changed-module gates are 100% statements/branches with zero exclusions. Documentation checks pass 44 pipeline and 18 legacy tests with exact 552-file parity. Main/tag hooks, CI, the existing public site and actual downloaded curated source ZIP are qualified; all 1,131 curated files match reviewed source. Ordinary provider identity and temporary source-installer placement/preservation probes pass.
 
-The retained refreshed graph result is CRITICAL: 27 files, 11 symbols and 197
-affected processes. Dynamic `main` resolution and capped process tracing make
-that graph incomplete; passing tests do not reduce or waive its severity.
+The source, artifact, ordinary external-install, release and download gates above are verified. This round reconciles their progress records after release; it changes no runtime source, installer, dependency declaration, generated documentation or immutable release asset. Only the curated uploaded ZIP is privacy-qualified; automatic GitHub source archives remain unqualified. Existing gitless-version and conservative installer-ledger limitations remain.
 
-Independent review, genuine containing-commit catalogue generation, locked docs
-build/parity, integration/delivery and matching ordinary/native workflows remain
-separate. Native smoke, FontLab operations, shared installers and private Pages
-were not run or changed.
+Remaining: After explicit D43 recovery and admission, qualify released source-installed menus and original native/history/save-reopen workflows. Adapt the legacy HT Letterspacer smoke, which closes fonts, to an admitted safe runner before executing it.
+
+D43 native acceptance remains held and unproved. Issue 123 remains paused; existing private Pages holds and every unrelated acceptance task remain in PLAN/TODO. Prior WORK bytes are retained exactly in the private external delivery ledger, SHA256 `c637f6f1d3ace9db3d1139f662cd220f7be8cf34791e24573100452c71fbf71a`.

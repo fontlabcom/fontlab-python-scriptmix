@@ -2,15 +2,9 @@
 this_file: PLAN.md
 ---
 
-## Issue 255 remaining qualification
+## Issue 255 remaining native acceptance
 
-Qualify the nine Fly-routed Font UI Lab menus with matching ordinary artifacts
-and native workflows. Generate and verify catalogue/source links from a genuine
-reviewed containing commit, then complete independent review, locked docs/parity
-and delivery gates. The HT Letterspacer smoke currently closes fonts; its Fly
-import/source/compile checks do not admit that lifecycle for native execution.
-Preserve the separate installed/native, history/reopen and private Pages holds.
-
+After explicit D43 recovery and admission, qualify released source-installed menus and original native/history/save-reopen workflows. Adapt the legacy HT Letterspacer smoke, which closes fonts, to an admitted safe runner before executing it. Source, genuine artifact, ordinary external-install and release/download qualification for v1.2.9 is recorded in CHANGELOG. Existing private Pages and Issue 123 holds remain. Only the curated uploaded ZIP is privacy-qualified; automatic GitHub source archives remain unqualified. Existing gitless-version and conservative installer-ledger limitations remain.
 
 ## WP05 outline editing
 

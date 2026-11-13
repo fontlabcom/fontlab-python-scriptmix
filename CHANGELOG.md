@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-13 — Issue 255 verified release qualification
+
+- [fontlab-python-scriptmix v1.2.9](https://github.com/fontlabcom/fontlab-python-scriptmix/releases/tag/v1.2.9) is released at `2a122b22bd1f608099e1bfa1d57434068c5e7536`. Reviewed main/tag delivery, applicable CI and actual downloads match the qualified artifacts.
+- The nine Font UI Lab launchers and current teaching use Fly; reviewed revision overlays preserve frozen historical sources and HT payloads.
+- 5,286 source tests pass with two optional skips; all nine complete changed-module gates are 100% statements/branches with zero exclusions. Documentation checks pass 44 pipeline and 18 legacy tests with exact 552-file parity. Main/tag hooks, CI, the existing public site and actual downloaded curated source ZIP are qualified; all 1,131 curated files match reviewed source. Ordinary provider identity and temporary source-installer placement/preservation probes pass.
+- Ordinary external installation is qualified; installed FontLab/native acceptance remains unproved under D43. Only the curated uploaded ZIP is privacy-qualified; automatic GitHub source archives remain unqualified. Existing gitless-version and conservative installer-ledger limitations remain.
+
 ## 2026-11-13 — Issue 255: authored consumers use Fly
 
 - Nine Font UI Lab launchers route 17 App/Fontport imports through lazy `fly.ap`

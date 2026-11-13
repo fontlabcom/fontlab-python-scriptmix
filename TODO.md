@@ -2,7 +2,6 @@
 this_file: TODO.md
 ---
 
-- [ ] Qualify Issue 255 Fly-routed menus in matching ordinary/native consumers and generate catalogue links from the reviewed containing commit; adapt the legacy HT Letterspacer smoke to an admitted safe runner before any native execution.
 
 - [ ] Retire Zero-Width Marks after the ledger supports post-source revisions (or re-baseline source_commit); the App port carries D36-1/F43-1.
 - [ ] WP03 native: qualify the eight consolidated spacing, kerning and metrics launchers in installed FontLab (complete font and history preservation, Undo/Redo, saved/reopened).
@@ -57,6 +56,8 @@ remaining acceptance, source-link and native obligations stay open.
 
 
 # Open tasks
+
+- [ ] Issue 255: After explicit D43 recovery and admission, qualify released source-installed menus and original native/history/save-reopen workflows. Adapt the legacy HT Letterspacer smoke, which closes fonts, to an admitted safe runner before executing it.
 
 - [ ] Retain current Issue 208/M12 user tools and frozen provenance while reconciling Issue 207 cleanup and current App APIs.
 - [ ] Qualify the complete original tool denominator and owned native/history/lifetime checks; distinguish the 350-script classified offline smoke from actual native acceptance.
