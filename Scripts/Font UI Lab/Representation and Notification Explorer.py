@@ -20,8 +20,8 @@ Selecting a different glyph changes only the inspector target."""
 
 def main():
     """Capture the current borrowed font once and return its owned inspector."""
-    from fontlabapp.fontui.representation_notifications import show
-    from fontlab_fontport.world import FontWorld
+    from fly.ap.fontui.representation_notifications import show
+    from fly.fp.world import FontWorld
 
     return show(FontWorld().CurrentFont())
 

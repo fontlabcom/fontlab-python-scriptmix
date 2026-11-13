@@ -50,8 +50,8 @@ def boundary(monkeypatch):
     spec = importlib.util.spec_from_file_location("owned_node_fixtures", path)
     fixtures = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(fixtures)
-    api = importlib.import_module("fontlabapp.node_duplicator_native")
-    capture = importlib.import_module("fontlabapp._node_duplicator_capture")
+    api = importlib.import_module("fontlabapp.contours.nodes.duplicator.native")
+    capture = importlib.import_module("fontlabapp.contours.nodes.duplicator._capture")
 
     def prepare(mode):
         owned, native, qt, notifications, contour, provider, selected = fixtures.host(
@@ -129,7 +129,7 @@ def test_original_action_provenance_when_indexed_then_keeps_each_source_and_defa
 def test_action_when_old_rescued_adapter_lacks_guarded_entrypoint_then_never_calls_it(
     monkeypatch, title, mode, source, digest, count
 ):
-    api = importlib.import_module("fontlabapp.node_duplicator_native")
+    api = importlib.import_module("fontlabapp.contours.nodes.duplicator.native")
     monkeypatch.delattr(api, "duplicate_selected_nodes")
     monkeypatch.setattr(
         api, "execute", lambda *args: pytest.fail("Do not call stale guards")

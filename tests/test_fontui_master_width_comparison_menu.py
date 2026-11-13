@@ -24,6 +24,8 @@ ENTRY = ROOT / "Scripts/Font UI Lab/Master Width Comparison.py"
 
 @pytest.mark.parametrize("dispatch", ["main", "script", "none"])
 def test_menu_when_invoked_then_actual_capture_once_comparison(actual_qt, native_model, monkeypatch, dispatch):
+    module = importlib.import_module("fontlabapp.fontui.master_width_comparison")
+    monkeypatch.setitem(sys.modules, "fly.ap.fontui.master_width_comparison", module)
     dispatch_entry(ENTRY, actual_qt, native_model, monkeypatch, dispatch)
 
 

@@ -27,6 +27,8 @@ def test_menu_when_invoked_then_captures_font_once(monkeypatch, script):
     composition.show = show
     monkeypatch.setitem(sys.modules, world.__name__, world)
     monkeypatch.setitem(sys.modules, composition.__name__, composition)
+    monkeypatch.setitem(sys.modules, 'fly.fp.world', world)
+    monkeypatch.setitem(sys.modules, 'fly.ap.fontui.source_comparison', composition)
     namespace = runpy.run_path(str(ENTRY), run_name='__main__' if script else 'menu_test')
     if not script:
         assert namespace['main']() is owner

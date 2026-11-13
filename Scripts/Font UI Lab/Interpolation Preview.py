@@ -20,8 +20,8 @@ preservation remain separate qualification checks.
 
 def main():
     """Capture the current font once and retain the shared preview owner."""
-    from fontlab_fontport.world import FontWorld
-    from fontlabapp.fontui.interpolation_preview import show
+    from fly.fp.world import FontWorld
+    from fly.ap.fontui.interpolation_preview import show
 
     return show(FontWorld().CurrentFont())
 

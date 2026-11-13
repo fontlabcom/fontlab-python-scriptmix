@@ -19,8 +19,8 @@ fonts. Native history and saved/reopened behavior need separate qualification.
 
 def main():
     """Capture the current font once and retain its shared owned editor."""
-    from fontlab_fontport.world import FontWorld
-    from fontlabapp.fontui.font_info_metrics import show
+    from fly.fp.world import FontWorld
+    from fly.ap.fontui.font_info_metrics import show
     return show(FontWorld().CurrentFont())
 
 

@@ -28,7 +28,7 @@ def main():
     """Capture once at invocation and open the actual shared comparison."""
     from importlib import import_module
     from fly import fp
-    from fontlabapp.fontui.master_width_comparison import show
+    from fly.ap.fontui.master_width_comparison import show
 
     world = import_module(f"{fp.__name__}.world")
     return show(world.FontWorld().CurrentFont())

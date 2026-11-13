@@ -2,6 +2,8 @@
 this_file: TODO.md
 ---
 
+- [ ] Qualify Issue 255 Fly-routed menus in matching ordinary/native consumers and generate catalogue links from the reviewed containing commit; adapt the legacy HT Letterspacer smoke to an admitted safe runner before any native execution.
+
 - [ ] Retire Zero-Width Marks after the ledger supports post-source revisions (or re-baseline source_commit); the App port carries D36-1/F43-1.
 - [ ] WP03 native: qualify the eight consolidated spacing, kerning and metrics launchers in installed FontLab (complete font and history preservation, Undo/Redo, saved/reopened).
 - [ ] Running the full suite rewrites 227 tracked `src_docs/md/**` "Python source at <sha>" links to the checkout HEAD (reviewer2 M-1, Issue 254). Make the test write generated links to a temp copy, or stop rewriting tracked files, so a clean tree stays clean after `pytest`.

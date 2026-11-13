@@ -10,12 +10,12 @@ explorer displays selected glyph representations and observed notification/cache
 status. Native FontLab preservation, cleanup and installed-artifact checks remain
 pending; source tests do not establish native acceptance.
 
-Batch UFO Recipe Workbench is available through `fontlabapp.fontui.batch_recipes.show(parent=None, python=None)`. Use the real affine recipe controls without opening a font or geometry preview, then explicitly select UFO sources, an output directory and Python 3.11+ with Fontport. Start writes new outputs; existing files and destinations inside any input UFO are refused. The actual panel shows per-file results, progress and failures. Cancel stops between files and retains completed outputs. Closing transfers an active run to supervision; terminal cleanup and independently reopened outputs are separate observations. Source review, ordinary artifacts and native qualification remain distinct.
+Batch UFO Recipe Workbench is available through `fly.ap.fontui.batch_recipes.show(parent=None, python=None)`. Use the real affine recipe controls without opening a font or geometry preview, then explicitly select UFO sources, an output directory and Python 3.11+ with Fontport. Start writes new outputs; existing files and destinations inside any input UFO are refused. The actual panel shows per-file results, progress and failures. Cancel stops between files and retains completed outputs. Closing transfers an active run to supervision; terminal cleanup and independently reopened outputs are separate observations. Source review, ordinary artifacts and native qualification remain distinct.
 
-Detached Transform Preview is available through `fontlabapp.fontui.detached_transform.show(font, parent=None)`. Run **Font UI Lab > Detached Transform Preview**. Choose an explicit layer and glyph, then Capture to compare the backend-stored snapshot with an affine result. Refresh reads the same captured font; borrowed caches and pending edits remain untouched. Settings Save creates only a chosen new JSON file, and Show script displays text without executing it. No font Apply/save/export is provided. This workflow is independently source-qualified. Combined-main review, matching ordinary installation and native behavior remain pending.
+Detached Transform Preview is available through `fly.ap.fontui.detached_transform.show(font, parent=None)`. Run **Font UI Lab > Detached Transform Preview**. Choose an explicit layer and glyph, then Capture to compare the backend-stored snapshot with an affine result. Refresh reads the same captured font; borrowed caches and pending edits remain untouched. Settings Save creates only a chosen new JSON file, and Show script displays text without executing it. No font Apply/save/export is provided. This workflow is independently source-qualified. Combined-main review, matching ordinary installation and native behavior remain pending.
 
 
-Feature Source and Proof is available through `fontlabapp.fontui.feature_proof.show(font, parent=None)`. It keeps the ordinary code view, refuses unsupported input before selection loss, and quarantines opaque document changes until explicit Revert. Accepted source Apply refreshes the independent Unicode/kerning sequence once; it does not compile or shape OpenType features. The window captures one borrowed font. External changes retain dirty drafts with a warning; explicit Apply can overwrite newer source. Refresh proof retries only the view. Original paragraph separators are inspect-only. Focused checks confirm exact UFO source preservation through the backend and editor for CR, CRLF, mixed endings and absent final newlines, including untouched siblings; duplicate feature tags are inspect-only. This workflow is source-qualified by complete App, Fontport and Scriptmix suites; ordinary artifacts, native history/reopen and full literal-U+2029 editing remain separate pending gates. Native PythonQt/FontLab, full literal paragraph-separator editing and broader clipboard routes remain unqualified.
+Feature Source and Proof is available through `fly.ap.fontui.feature_proof.show(font, parent=None)`. It keeps the ordinary code view, refuses unsupported input before selection loss, and quarantines opaque document changes until explicit Revert. Accepted source Apply refreshes the independent Unicode/kerning sequence once; it does not compile or shape OpenType features. The window captures one borrowed font. External changes retain dirty drafts with a warning; explicit Apply can overwrite newer source. Refresh proof retries only the view. Original paragraph separators are inspect-only. Focused checks confirm exact UFO source preservation through the backend and editor for CR, CRLF, mixed endings and absent final newlines, including untouched siblings; duplicate feature tags are inspect-only. This workflow is source-qualified by complete App, Fontport and Scriptmix suites; ordinary artifacts, native history/reopen and full literal-U+2029 editing remain separate pending gates. Native PythonQt/FontLab, full literal paragraph-separator editing and broader clipboard routes remain unqualified.
 
 
 
@@ -82,8 +82,8 @@ normal work and original fonts outside that session.
 ## TMetrics and TGlyph demos
 
 Run **Metrics > TMetrics Window** or **Contours > TGlyph Window** with a
-matching App build providing `fontlabapp.fontui.tmetrics.show_tmetrics` and
-`fontlabapp.fontui.tglyph.show_tglyph`. The two existing menu scripts remain
+matching App build providing `fly.ap.fontui.tmetrics.show_tmetrics` and
+`fly.ap.fontui.tglyph.show_tglyph`. The two existing menu scripts remain
 the demonstrations; their catalogue identities are unchanged.
 
 TMetrics has a **Master / layer** selector for the outlines and spacing being
@@ -169,6 +169,11 @@ matching App and Fontport packages installed, plus App test dependencies.
 Use the sibling Fly checkout on PYTHONPATH. Set
 `SCRIPTMIX_TEST_VENV` to that prepared environment's absolute path. It must be
 separate from the documentation `.venv`, which uses Python 3.12 or later.
+The full source suite also reads matching App test fixtures and sibling source
+paths. Install that reviewed App source as editable in the test environment and
+make the same source available at `../fontlab-fontlabapp`; its distribution
+locator and imported module paths must agree. A wheel alone lacks these paired
+fixtures. Check ordinary wheel imports separately from this source-cohort gate.
 Run from this repository root:
 
 ```sh
@@ -197,8 +202,11 @@ package versions. Use a freshly built matching wheel or an approved prepared env
 validating changed dependencies. Cached builds with the same development
 version can be stale. These tests do not modify the live FontLab installation.
 
-Lint checks existing source without rewriting it. Ruff 0.14.10 reports
-0 existing findings across the paths below. Eight frozen provenance-pinned Scripts (26 E402/E741 findings) are suppressed by exact-path `per-file-ignores` in `pyproject.toml`; their bytes stay unchanged:
+Lint checks existing source without rewriting it. Ruff 0.14.10 reports 36
+inherited findings in unchanged tests across the paths below (measured
+2026-11-13); the Issue 255 changed scripts/tests are clean. Eight frozen
+provenance-pinned Scripts retain their separate 26 E402/E741 suppressions through
+exact-path `per-file-ignores` in `pyproject.toml`; their bytes stay unchanged:
 
 ```sh
 uv run --no-project --python cpython-3.11-macos-aarch64-none \
@@ -263,7 +271,7 @@ pending. All259 older payloads and190 original additional-tool rows stay exact.
 ## Tabular Width Audit
 
 The source candidate adds a borrowed-font chooser and exact selected-advance
-report through `fontlabapp.fontui.tabular_audit.show(world, parent=None)`.
+report through `fly.ap.fontui.tabular_audit.show(world, parent=None)`.
 The first selected browser row supplies the reference; every selected advance
 remains unrounded. Refresh discovers open fonts through the supplied FontWorld.
 Source tests, matching ordinary distributions and native qualification are
@@ -278,14 +286,14 @@ fallback. Zero is distinct from absence. Reload rereads the same font, and
 closing the window leaves that font open. Switching active fonts does not
 retarget it; native edits use the captured font's current master.
 
-Use a matching App build providing `fontlabapp.fontui.kerning_proof.show`. The
+Use a matching App build providing `fly.ap.fontui.kerning_proof.show`. The
 older global dependency floor does not attest this API. Source and ordinary
 checks do not establish native history, Undo/Redo or saved-font behavior.
 
 
 ## Kerning Group Explorer
 
-`fontlabapp.fontui.kerning_groups.show(font, parent=None)` retains the existing
+`fly.ap.fontui.kerning_groups.show(font, parent=None)` retains the existing
 groups and kerning editors over the exact borrowed font. Select a group and use
 it as the left or right key; the opposite key and value draft stay unchanged.
 Accepted group actions refresh the pair through the existing editor. Renaming

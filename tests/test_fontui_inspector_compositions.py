@@ -33,6 +33,7 @@ def dispatch(monkeypatch, title, font, route):
             return font
 
     monkeypatch.setitem(sys.modules, "fontlab_fontport.world", SimpleNamespace(FontWorld=World))
+    monkeypatch.setitem(sys.modules, "fly.fp.world", sys.modules["fontlab_fontport.world"])
     namespace = runpy.run_path(str(ROOT / "Scripts/Font UI Lab" / (title + ".py")), run_name=route)
     result = namespace["main"]() if route == "inspection" else None
     assert calls == [font]

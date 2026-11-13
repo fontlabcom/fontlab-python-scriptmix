@@ -1,4 +1,5 @@
 # FLM: HTLS FontLab Smoke Test (disposable font)
+# this_file: varia/HT-Letterspacer-FL/src/tests/fontlab_smoke.py
 """Run inside FontLab 9. Creates/closes only its own test fonts."""
 import json
 import math
@@ -7,10 +8,8 @@ import sys
 import tempfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import fontlab as fl
-import fontgate as fg
-import fontpr
-from PythonQt import QtCore, QtGui
+from fly import fl, fg, pr as fontpr
+from fly.qt import QtCore, QtGui
 from htls_fontlab.service import Session
 from htls_fontlab.model import qpath, from_qpath, STORAGE_KEY
 

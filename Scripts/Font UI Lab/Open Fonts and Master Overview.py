@@ -19,8 +19,8 @@ lifetime and complete font/history preservation require separate host checks.
 
 def main():
     """Capture the explicit target once and return the shared window owner."""
-    from fontlab_fontport.world import FontWorld
-    from fontlabapp.fontui.open_fonts_overview import show
+    from fly.fp.world import FontWorld
+    from fly.ap.fontui.open_fonts_overview import show
 
     return show(FontWorld())
 

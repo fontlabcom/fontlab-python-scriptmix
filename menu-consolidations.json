@@ -2864,7 +2864,9 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "e7e5ec18c414634e0dc352c0faa5ca1d40fa129a6b4fd2668f3858bb94fd6a7c",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
     },
     {
       "source": {
@@ -2936,7 +2938,9 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "73ba925c0d7db6a569bfad7c65efa707d939a1b7c2a94574bcad43557df555b3",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
     },
     {
       "source": {
@@ -2983,7 +2987,9 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "17dedc8a30321b8b2097f880ce149a0107e50261837885810491d547c7926f9e",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
     },
     {
       "source": {
@@ -3055,7 +3061,9 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "04c0cd48962f35283d66aa6c978bae5bc75e1efc6ff91229fd5bbe9f54ff7435",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
     },
     {
       "source": {
@@ -3080,7 +3088,9 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "1b0635539174f2ffb420d1e1be429bddc0360bbe0e62785c06071b1e1113d96a",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
     },
     {
       "source": {
@@ -3104,7 +3114,9 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "6d7667a6957ab5691043c80509bc72f0400772ccd8921220d71ae886a4ad752e",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
     },
     {
       "source": {
@@ -3128,7 +3140,9 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "5aaa6d61cee8042bdaea69552610a30c08c7a04fed1f42085a3d3506b4014f02",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
     },
     {
       "source": {
@@ -3152,7 +3166,9 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "22b175c416fce4f8b704c65056dc8d592cb7ff585a922a87675726fcfc4ba650",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
     },
     {
       "source": {
@@ -3200,7 +3216,9 @@
         "date": "2026-11-11",
         "behavior_parity": false,
         "native": false
-      }
+      },
+      "revised_sha256": "7bb5fcaf1c7b499443c2b9ca610e3e32be4716a73f08990c53aeeed25e5472c6",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
     },
     {
       "source": {

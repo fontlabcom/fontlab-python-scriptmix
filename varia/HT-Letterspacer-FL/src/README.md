@@ -1,3 +1,7 @@
+---
+this_file: varia/HT-Letterspacer-FL/src/README.md
+---
+
 # HT Letterspacer for FontLab 9
 
 A self-contained gateway to the unchanged HTLetterspacer engine, with a compact FontLab interface and optional rules manager.
@@ -36,6 +40,15 @@ FontLab 9/
 Launchers resolve this layout relative to their own file. No installed file depends on a developer checkout or the downloaded ZIP's location. Original Glyphs bundle symlinks are not activated; their exact content remains in the retained source ZIP. The plugin is not registered with Glyphs itself.
 
 Rerun the installer to update or repair. Verification and staging happen before any active files are changed. Unrelated scripts are not overwritten; failed activation restores the prior launchers and receipt. Earlier runtimes remain available under releases. Uninstall moves the owned runtime to an `Extensions/.HTLS-uninstalled-*` backup and preserves fonts and other scripts.
+
+## User-run FontLab smoke script
+
+`tests/fontlab_smoke.py` accesses the FontLab, FontGate, FontPR and native Qt
+APIs through `fontlab-fly`; install Fly in the test runtime first. The gateway
+library and standalone installer retain their own native bootstrap imports.
+This legacy smoke script closes its created fonts. Current host-testing policy
+does not admit that lifecycle, so this import migration checks its source and
+compilation only; it does not establish new native acceptance.
 
 ## Build and managed deployment
 

@@ -54,6 +54,7 @@ def test_menu_when_invoked_then_one_real_world_capture(monkeypatch, active, rout
 
     app.show = show
     monkeypatch.setitem(sys.modules, app.__name__, app)
+    monkeypatch.setitem(sys.modules, "fly.ap.fontui.interpolation_preview", app)
     monkeypatch.setattr(application, "NativeApplication", Host)
     namespace = runpy.run_path(str(ENTRY), run_name=route)
     if route == "inspection":
@@ -84,6 +85,8 @@ def test_menu_when_boundary_fails_then_exception_is_not_hidden(monkeypatch, fail
     app.show = show
     monkeypatch.setitem(sys.modules, world.__name__, world)
     monkeypatch.setitem(sys.modules, app.__name__, app)
+    monkeypatch.setitem(sys.modules, "fly.fp.world", world)
+    monkeypatch.setitem(sys.modules, "fly.ap.fontui.interpolation_preview", app)
     namespace = runpy.run_path(str(ENTRY), run_name="inspection")
     assert not calls
     with pytest.raises(RuntimeError, match=f"{failure} failed"):
@@ -106,4 +109,6 @@ def test_menu_when_catalogued_then_exact_source_and_pending_native():
     tree = ast.parse(ENTRY.read_text(), feature_version=(3, 11))
     assert not any(isinstance(node, (ast.Import, ast.ImportFrom)) for node in tree.body)
     imports = [node for node in ast.walk(tree) if isinstance(node, ast.ImportFrom)]
-    assert all(not node.module.startswith("fly") for node in imports)
+    assert {node.module for node in imports} == {
+        "fly.fp.world", "fly.ap.fontui.interpolation_preview",
+    }

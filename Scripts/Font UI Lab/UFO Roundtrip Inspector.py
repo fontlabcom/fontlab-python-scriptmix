@@ -18,8 +18,8 @@ releases its callbacks and owned UI without closing the borrowed font."""
 
 def main():
     """Capture the current borrowed font once and return its owned inspector."""
-    from fontlabapp.fontui.ufo_roundtrip import show
-    from fontlab_fontport.world import FontWorld
+    from fly.ap.fontui.ufo_roundtrip import show
+    from fly.fp.world import FontWorld
 
     return show(FontWorld().CurrentFont())
 

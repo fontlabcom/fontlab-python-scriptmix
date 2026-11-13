@@ -2,6 +2,16 @@
 this_file: PLAN.md
 ---
 
+## Issue 255 remaining qualification
+
+Qualify the nine Fly-routed Font UI Lab menus with matching ordinary artifacts
+and native workflows. Generate and verify catalogue/source links from a genuine
+reviewed containing commit, then complete independent review, locked docs/parity
+and delivery gates. The HT Letterspacer smoke currently closes fonts; its Fly
+import/source/compile checks do not admit that lifecycle for native execution.
+Preserve the separate installed/native, history/reopen and private Pages holds.
+
+
 ## WP05 outline editing
 
 The 49 source routes now map to ten independently reviewed tools; 235 menus

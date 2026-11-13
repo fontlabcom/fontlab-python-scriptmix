@@ -40,6 +40,8 @@ def test_menu_when_dispatched_then_captures_once_and_returns_owner(monkeypatch, 
     world.FontWorld = FontWorld
     monkeypatch.setitem(sys.modules, app.__name__, app)
     monkeypatch.setitem(sys.modules, world.__name__, world)
+    monkeypatch.setitem(sys.modules, "fly.ap.fontui." + module, app)
+    monkeypatch.setitem(sys.modules, "fly.fp.world", world)
     path = ROOT / "Scripts/Font UI Lab" / f"{title}.py"
     namespace = runpy.run_path(str(path), run_name=route)
     if route == "inspection":
@@ -51,15 +53,13 @@ def test_menu_when_dispatched_then_captures_once_and_returns_owner(monkeypatch, 
 
 
 @pytest.mark.parametrize("title,module", CASES)
-def test_menu_when_catalogued_then_exact_source_and_no_eager_or_fly_import(title, module):
+def test_menu_when_catalogued_then_exact_source_and_lazy_fly_imports(title, module):
     path = ROOT / "Scripts/Font UI Lab" / f"{title}.py"
     tree = ast.parse(path.read_text(), feature_version=(3, 11))
     assert not any(isinstance(node, (ast.Import, ast.ImportFrom)) for node in tree.body)
-    for node in ast.walk(tree):
-        if isinstance(node, ast.ImportFrom):
-            assert not (node.module or "").startswith("fly")
-        if isinstance(node, ast.Import):
-            assert not any(alias.name.startswith("fly") for alias in node.names)
+    assert {node.module for node in ast.walk(tree) if isinstance(node, ast.ImportFrom)} == {
+        "fly.fp.world", "fly.ap.fontui." + module,
+    }
     rows = json.loads((ROOT / "additional-tools.json").read_text())
     row, = [row for row in rows if row["key"] == "font_ui_lab_" + module]
     assert row["destination"] == str(path.relative_to(ROOT))

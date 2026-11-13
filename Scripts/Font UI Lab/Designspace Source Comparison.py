@@ -25,8 +25,8 @@ Native painting, lifecycle and whole-font preservation remain unqualified.
 
 def main():
     """Capture the current font once and retain its owned comparison widget."""
-    from fontlab_fontport.world import FontWorld
-    from fontlabapp.fontui.source_comparison import show
+    from fly.fp.world import FontWorld
+    from fly.ap.fontui.source_comparison import show
 
     return show(FontWorld().CurrentFont())
 

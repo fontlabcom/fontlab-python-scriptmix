@@ -19,6 +19,8 @@ def test_menu_when_invoked_then_captures_once(monkeypatch, script):
     factory, show = Mock(return_value=world), Mock(return_value=handle)
     monkeypatch.setitem(sys.modules, 'fontlab_fontport.world', SimpleNamespace(FontWorld=factory))
     monkeypatch.setitem(sys.modules, 'fontlabapp.fontui.font_info_metrics', SimpleNamespace(show=show))
+    monkeypatch.setitem(sys.modules, 'fly.fp.world', sys.modules['fontlab_fontport.world'])
+    monkeypatch.setitem(sys.modules, 'fly.ap.fontui.font_info_metrics', sys.modules['fontlabapp.fontui.font_info_metrics'])
     namespace = runpy.run_path(str(ENTRY), run_name='__main__' if script else 'menu')
     if not script:
         factory.assert_not_called()

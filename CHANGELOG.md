@@ -2,6 +2,35 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-13 — Issue 255: authored consumers use Fly
+
+- Nine Font UI Lab launchers route 17 App/Fontport imports through lazy `fly.ap`
+  and `fly.fp` paths. Current teaching calls use Fly; installation guidance
+  retains canonical provider capability names and explains the paired editable
+  source test cohort.
+- Nine current destination hashes and additive exact-edit revision records match
+  the changed bytes. Proposed consolidation rows use the existing verified
+  `revised_sha256` overlay. Original source hashes/commit, 248 existing revision
+  rows, proposal/native states and null proposed destination hashes stay exact.
+- The maintained HT Letterspacer user-run smoke binds native APIs through Fly;
+  its remaining parsed body is unchanged. AST/compile checks cover it without
+  running its legacy font-closing lifecycle. Gateway libraries, upstream bytes,
+  the Glyphs CLI reference and shared/compiled installers are unchanged.
+- Tests mirror current canonical modules into their Fly aliases when replacing
+  providers. A new AST guard covers all 197 current menu scripts. Three stale
+  dynamic App paths in the node-action tests use their supported canonical
+  domains; the path audit reports zero pending files.
+- Complete prepared arm64 Python 3.11 source suite: **5,282 passed, six existing
+  skips**. All nine complete changed production modules: **100% statement and
+  branch coverage, zero exclusions**. Focused dispatch/source checks: 239 passed;
+  provenance checks: 88 passed. Ten genuine installed child-module identities
+  pass separately, with no native modules loaded. Changed scripts/tests are
+  Ruff-clean; the full pinned scope retains 36 pre-existing findings.
+- Frozen provenance and generated docs are unchanged; none of these nine menus
+  occurs in current Examples adaptation pins. Source qualification does not
+  establish new ordinary/native workflow acceptance, publication or delivery.
+
+
 ## 2026-11-12 - D46 documentation pass (Issue 250)
 
 - Landed on `main` this session, verified by exact-SHA pushes with Documentation CI: WP08b windows S59-S66 (`c4b0bfb4`), WP03 spacing and kerning consolidation (`1e620fbd`), WP07 identity studio retirement (`b52710a0`), Apache-2.0 relicence (`cca80db1`, `c661a3c0`), Jens Kutilek's MIT notice retained in NOTICE (`3887f8f0`), Zero-Width Marks fixes (`38d3549f`, `16dbc12e`), Nodes Near Zones docstring (`f1b413bd`), Ruff E402/E741 suppressions on eight frozen Scripts (`1db7016f`), `install.vfpy` sync (`2a6171a7`, Issue 254) and a TODO row for the suite rewriting 227 tracked generated-doc links (`d4dafa9c`). No source changed in this pass.
