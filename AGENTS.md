@@ -61,8 +61,9 @@ uv run --no-project --python cpython-3.11-macos-aarch64-none \
   Scripts tests tests_docs menu_layout.py src_docs/build.py
 ```
 
-Ruff 0.14.10 reports 36 inherited findings in unchanged tests in this scope
-(measured 2026-11-13); the Issue 255 changed scripts/tests are clean. The separate
+Ruff 0.14.10 reports 36 existing findings in unchanged tests in this scope
+(measured 2026-11-13). These findings are inherited; the Issue 255 changed
+scripts/tests are clean. The separate
 26 findings (E402 17, E741 9) in eight frozen provenance-pinned Scripts remain
 suppressed by exact-path `[tool.ruff.lint.per-file-ignores]` in `pyproject.toml`,
 not fixed. Do not apply automatic fixes to historical scripts. Export an external

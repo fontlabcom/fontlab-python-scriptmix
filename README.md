@@ -202,9 +202,10 @@ package versions. Use a freshly built matching wheel or an approved prepared env
 validating changed dependencies. Cached builds with the same development
 version can be stale. These tests do not modify the live FontLab installation.
 
-Lint checks existing source without rewriting it. Ruff 0.14.10 reports 36
-inherited findings in unchanged tests across the paths below (measured
-2026-11-13); the Issue 255 changed scripts/tests are clean. Eight frozen
+Lint checks existing source without rewriting it.
+Ruff 0.14.10 reports 36 existing findings in unchanged tests across this scope
+(measured 2026-11-13). These findings are inherited; the Issue 255 changed
+scripts/tests are clean. Eight frozen
 provenance-pinned Scripts retain their separate 26 E402/E741 suppressions through
 exact-path `per-file-ignores` in `pyproject.toml`; their bytes stay unchanged:
 
