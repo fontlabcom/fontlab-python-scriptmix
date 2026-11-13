@@ -72,4 +72,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `6d164d434489d714926a18c59fa8144e16e7dbd8623746102f025513474f0713`
 
-[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Masters/Restore%20Backup%20Layer.py)
+[Python source at `3bf7b47dd22f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3bf7b47dd22f44334af5f83d5c2becb59ce3874f/Scripts/Masters/Restore%20Backup%20Layer.py)

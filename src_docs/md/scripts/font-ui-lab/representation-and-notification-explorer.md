@@ -29,6 +29,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `5d3c5aea2891ca3c803e9b7e52fd9e7ac89cafc13c35cf3028853eb5f8efe06e`
+SHA256: `22b175c416fce4f8b704c65056dc8d592cb7ff585a922a87675726fcfc4ba650`
 
-[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Font%20UI%20Lab/Representation%20and%20Notification%20Explorer.py)
+[Python source at `3bf7b47dd22f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3bf7b47dd22f44334af5f83d5c2becb59ce3874f/Scripts/Font%20UI%20Lab/Representation%20and%20Notification%20Explorer.py)

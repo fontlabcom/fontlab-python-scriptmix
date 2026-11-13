@@ -28,6 +28,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `9e761eae1faaee19eddaeb896f7b0c13a55aa596d3752d19069643686cec09fa`
+SHA256: `17dedc8a30321b8b2097f880ce149a0107e50261837885810491d547c7926f9e`
 
-[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Font%20UI%20Lab/Interpolation%20Preview.py)
+[Python source at `3bf7b47dd22f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3bf7b47dd22f44334af5f83d5c2becb59ce3874f/Scripts/Font%20UI%20Lab/Interpolation%20Preview.py)

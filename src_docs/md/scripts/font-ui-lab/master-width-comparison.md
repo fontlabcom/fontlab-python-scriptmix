@@ -34,6 +34,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `120567cd7662c6be1c6802510e70bd3b8c40508826c2f20c0d3e2f636f7a6929`
+SHA256: `1b0635539174f2ffb420d1e1be429bddc0360bbe0e62785c06071b1e1113d96a`
 
-[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Font%20UI%20Lab/Master%20Width%20Comparison.py)
+[Python source at `3bf7b47dd22f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3bf7b47dd22f44334af5f83d5c2becb59ce3874f/Scripts/Font%20UI%20Lab/Master%20Width%20Comparison.py)

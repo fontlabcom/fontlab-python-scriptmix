@@ -27,6 +27,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `5e4e39d4eadb8fed8ba12308ced2525024a03fa1357bc864a04bc21fddd30beb`
+SHA256: `7bb5fcaf1c7b499443c2b9ca610e3e32be4716a73f08990c53aeeed25e5472c6`
 
-[Python source at `cca80db1b47f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/cca80db1b47f998bbbf4a26427a1e5949ccf7230/Scripts/Font%20UI%20Lab/UFO%20Roundtrip%20Inspector.py)
+[Python source at `3bf7b47dd22f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3bf7b47dd22f44334af5f83d5c2becb59ce3874f/Scripts/Font%20UI%20Lab/UFO%20Roundtrip%20Inspector.py)
