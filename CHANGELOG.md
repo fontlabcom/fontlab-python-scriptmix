@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-15 — Source Comparison external-source wording
+
+Corrected the launcher docstring and authored guide for the optional installed-App Open designspace action: read-only UFO source comparisons, owned-handle release and unchanged borrowed FontLab font. Retained captured-font behavior, detached-read pending-edit limits and the lack of outline interpolation. Cancel/read failure/Close preserves the prior report; cancellation checks cannot interrupt blocking file I/O. Executable AST, imports, labels, dependency metadata and dependencies are unchanged. The existing reversible revision ledger and current catalogue hashes/scope now track the docstring; frozen source identities and proposed/native flags remain unchanged. No new App release floor is asserted.
+
+Launcher AST equality, scoped Ruff and whitespace checks qualify this prose-only source correction. Matching release/artifacts, regenerated containing-commit docs and native FontLab acceptance remain pending. After the controller found stale provenance metadata, 158 focused registry/caller tests and all five other previously failing nodes passed. No native checks ran.
+
 ## 2026-11-15 — Shared installer source alignment
 
 Copied the reviewed shared installer exactly: dependency constraints and managed origins remain protected; inactive conditional dependencies are filtered before sibling execution in the resolver target Python. FontLab imports remain standard-library-only. Package identity, runtime APIs, dependency declarations, scripts, bundles and legal files are unchanged. The docs root remains non-package; its existing scripts/curated and nested-package distribution contracts are unchanged.

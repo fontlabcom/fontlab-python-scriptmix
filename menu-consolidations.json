@@ -2865,8 +2865,8 @@
         "behavior_parity": false,
         "native": false
       },
-      "revised_sha256": "e7e5ec18c414634e0dc352c0faa5ca1d40fa129a6b4fd2668f3858bb94fd6a7c",
-      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged."
+      "revised_sha256": "f11d9b93031d4ed92a9caa6a1e7002fdaa5b28e0ea4ea23fb0ffd44d4f7dbace",
+      "revised_reason": "Issue 255 routes the authored lazy menu imports through Fly; historical source and proposed acceptance stay unchanged. Optional external-source action wording is a reversible module-docstring correction; runtime and proposed/native acceptance remain unchanged."
     },
     {
       "source": {

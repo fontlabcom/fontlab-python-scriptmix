@@ -5,9 +5,14 @@
 
 Choose reference/comparison layers and a glyph to inspect advance widths and
 structural compatibility. Refresh repeats the read of the captured font, without
-switching masters. Missing glyphs and closed fonts are shown as errors. External
-designspace sources and interpolation are not loaded. No edits, save or font
-closure occur.
+switching masters. Missing glyphs and closed fonts are shown as errors.
+
+When supplied by the installed App, Open designspace reads an external
+.designspace and its UFO sources read-only. It compares source metrics, widths,
+glyph sets and structural compatibility; it does not interpolate outlines.
+Cancel, read failure or window closure preserves the prior report. Cancellation
+checks are cooperative and cannot interrupt blocking file reads. Owned UFO
+handles are released; the borrowed FontLab font is never edited, saved or closed.
 
 The table uses detached backend reads, so unfinished edits held in another
 scripting wrapper are excluded. A missing glyph is reported as missing rather

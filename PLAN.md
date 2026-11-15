@@ -59,7 +59,7 @@ Qualify workflow #6 with matching ordinary installed App/Scriptmix artifacts and
 
 ## C5 remaining qualification
 
-Qualify workflows 11 and 14 with matching installed App/Scriptmix artifacts in native FontLab. Verify captured source identity, report refresh, selection, painting and owned teardown; for Font Info also verify explicit Apply, Undo/Redo and saved reopen. Source/layer comparison does not load external designspace sources or interpolate outlines.
+Qualify workflows 11 and 14 with matching installed App/Scriptmix artifacts in native FontLab. Verify captured source identity, report refresh, selection, painting and owned teardown; for Font Info also verify explicit Apply, Undo/Redo and saved reopen. When the installed App supplies Open designspace, also qualify read-only external UFO metrics, widths, glyph sets and structural compatibility, prior-report preservation on cancellation/read failure/Close, and owned UFO-handle release. The borrowed FontLab font must remain unedited, unsaved and open. Cooperative cancellation does not interrupt blocking I/O; outline interpolation is not provided. Qualify the matching App release and containing-commit documentation at delivery.
 
 ## Issue 234 workflows 1, 4 and 5 remaining qualification
 

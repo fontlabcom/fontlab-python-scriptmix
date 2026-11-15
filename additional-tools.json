@@ -3649,7 +3649,7 @@
     "title": "Designspace Source Comparison",
     "key": "font_ui_lab_source_comparison",
     "destination": "Scripts/Font UI Lab/Designspace Source Comparison.py",
-    "destination_sha256": "e7e5ec18c414634e0dc352c0faa5ca1d40fa129a6b4fd2668f3858bb94fd6a7c",
+    "destination_sha256": "f11d9b93031d4ed92a9caa6a1e7002fdaa5b28e0ea4ea23fb0ffd44d4f7dbace",
     "kind": "independent-original-workflow-implementation",
     "counted_in_130_sample_migration": false,
     "license": "Apache-2.0",
@@ -3657,7 +3657,7 @@
     "native_acceptance": "pending",
     "app_api": "fontlabapp.fontui.source_comparison.show",
     "provenance_pending": "Immutable App source link requires a reviewed commit containing fontui/source_comparison.py; no release floor is asserted.",
-    "scope": "Explicit captured-font layer/source and glyph selection with widths and structural compatibility summary; no interpolation or external source loading."
+    "scope": "Explicit captured-font layer/source and glyph selection with widths and structural compatibility summary; optional installed-App Open designspace reads UFO source metrics, widths, glyph sets and structural compatibility read-only; no interpolation. Owned UFO handles are released; the borrowed FontLab font is not edited, saved or closed."
   },
   {
     "title": "Context Proof",

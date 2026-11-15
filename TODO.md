@@ -42,7 +42,7 @@ remaining acceptance, source-link and native obligations stay open.
 
 - [ ] Native-qualify workflow #6 Interpolation Preview: installed origins, designspace location changes, endpoint/mixed outlines, unsupported-location diagnostics, captured-font identity, complete font/history/selection/cache/dirty preservation and repeated Close; qualify ordinary artifacts separately.
 
-- [ ] Native-qualify Designspace Source Comparison with matched artifacts: explicit source/layer selection, metrics and compatibility summaries, complete font preservation and owned teardown.
+- [ ] Native-qualify Designspace Source Comparison with matched artifacts: explicit source/layer selection, metrics and compatibility summaries, complete font preservation and owned teardown. Include the optional installed-App Open designspace action: read-only UFO reports, prior-report preservation on cancel/read failure/Close, owned handle release and borrowed-font preservation; qualify its matching App release and documentation identity at delivery.
 
 - [ ] Qualify Issue 234 Open Fonts and Master Overview, Master Compatibility Browser and Node Counts Across Masters with matching installed artifacts and native PythonQt, including empty/stale fonts, preview, chooser changes, Close and complete font/history preservation.
 - [ ] Re-run the exact Issue 234 Scriptmix runtime recipe after build dependency resolution is available; rebuild the three new menu source links at their reviewed containing commit.

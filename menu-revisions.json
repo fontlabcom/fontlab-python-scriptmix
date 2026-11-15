@@ -5981,7 +5981,7 @@
     {
       "destination": "Scripts/Font UI Lab/Designspace Source Comparison.py",
       "historical_sha256": "01c2a0f5e87f70ecd7e1fffd9da707fb4afb48b0e7bb2a3f15e911408f6b67b7",
-      "current_sha256": "e7e5ec18c414634e0dc352c0faa5ca1d40fa129a6b4fd2668f3858bb94fd6a7c",
+      "current_sha256": "f11d9b93031d4ed92a9caa6a1e7002fdaa5b28e0ea4ea23fb0ffd44d4f7dbace",
       "source_sha256": null,
       "kind": "issue-255-fly-import-routing",
       "edits": [
@@ -5994,6 +5994,11 @@
           "kind": "issue-255-fly-import-routing",
           "historical": "    from fontlabapp.fontui.source_comparison import show\n",
           "current": "    from fly.ap.fontui.source_comparison import show\n"
+        },
+        {
+          "kind": "source-comparison-docstring-only",
+          "historical": "Compare two stored source layers of the current font.\n\nChoose reference/comparison layers and a glyph to inspect advance widths and\nstructural compatibility. Refresh repeats the read of the captured font, without\nswitching masters. Missing glyphs and closed fonts are shown as errors. External\ndesignspace sources and interpolation are not loaded. No edits, save or font\nclosure occur.\n\nThe table uses detached backend reads, so unfinished edits held in another\nscripting wrapper are excluded. A missing glyph is reported as missing rather\nthan assigned a zero advance. Zero and fractional widths remain meaningful.\nCompatibility checks ordered contour/node types and anchor/component name sets;\nit does not compare coordinates, component transforms, hints or interpolation\nresults. Matching reports therefore do not certify variable-font export.\n\nThe window keeps the font captured when the script starts. Changing the host's\ncurrent font does not retarget it. Closing the window disconnects its owned\ncallbacks and releases its widgets without closing the borrowed document.\nNative painting, lifecycle and whole-font preservation remain unqualified.\n",
+          "current": "Compare two stored source layers of the current font.\n\nChoose reference/comparison layers and a glyph to inspect advance widths and\nstructural compatibility. Refresh repeats the read of the captured font, without\nswitching masters. Missing glyphs and closed fonts are shown as errors.\n\nWhen supplied by the installed App, Open designspace reads an external\n.designspace and its UFO sources read-only. It compares source metrics, widths,\nglyph sets and structural compatibility; it does not interpolate outlines.\nCancel, read failure or window closure preserves the prior report. Cancellation\nchecks are cooperative and cannot interrupt blocking file reads. Owned UFO\nhandles are released; the borrowed FontLab font is never edited, saved or closed.\n\nThe table uses detached backend reads, so unfinished edits held in another\nscripting wrapper are excluded. A missing glyph is reported as missing rather\nthan assigned a zero advance. Zero and fractional widths remain meaningful.\nCompatibility checks ordered contour/node types and anchor/component name sets;\nit does not compare coordinates, component transforms, hints or interpolation\nresults. Matching reports therefore do not certify variable-font export.\n\nThe window keeps the font captured when the script starts. Changing the host's\ncurrent font does not retarget it. Closing the window disconnects its owned\ncallbacks and releases its widgets without closing the borrowed document.\nNative painting, lifecycle and whole-font preservation remain unqualified.\n"
         }
       ]
     },

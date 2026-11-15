@@ -10,9 +10,14 @@ Compare two stored source layers of the current font.
 
 Choose reference/comparison layers and a glyph to inspect advance widths and
 structural compatibility. Refresh repeats the read of the captured font, without
-switching masters. Missing glyphs and closed fonts are shown as errors. External
-designspace sources and interpolation are not loaded. No edits, save or font
-closure occur.
+switching masters. Missing glyphs and closed fonts are shown as errors.
+
+When supplied by the installed App, Open designspace reads an external
+.designspace and its UFO sources read-only. It compares source metrics, widths,
+glyph sets and structural compatibility; it does not interpolate outlines.
+Cancel, read failure or window closure preserves the prior report. Cancellation
+checks are cooperative and cannot interrupt blocking file reads. Owned UFO
+handles are released; the borrowed FontLab font is never edited, saved or closed.
 
 The table uses detached backend reads, so unfinished edits held in another
 scripting wrapper are excluded. A missing glyph is reported as missing rather
@@ -32,6 +37,6 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 ## Source identity
 
-SHA256: `e7e5ec18c414634e0dc352c0faa5ca1d40fa129a6b4fd2668f3858bb94fd6a7c`
+SHA256: `f11d9b93031d4ed92a9caa6a1e7002fdaa5b28e0ea4ea23fb0ffd44d4f7dbace`
 
-[Python source at `3bf7b47dd22f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3bf7b47dd22f44334af5f83d5c2becb59ce3874f/Scripts/Font%20UI%20Lab/Designspace%20Source%20Comparison.py)
+This source is not committed at `3bf7b47dd22f`; no immutable link is offered.
