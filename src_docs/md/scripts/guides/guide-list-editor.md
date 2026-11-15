@@ -41,4 +41,4 @@ Read [installation](../../install.md) and [working with scripts](../../use.md) b
 
 SHA256: `7d706fa180e98dfbf5b64177f501fb0cbe121b722ca1039f489f384d4c893a89`
 
-[Python source at `3bf7b47dd22f`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/3bf7b47dd22f44334af5f83d5c2becb59ce3874f/Scripts/Guides/Guide%20List%20Editor.py)
+[Python source at `f4c16f20ef10`](https://github.com/fontlabcom/fontlab-python-scriptmix/blob/f4c16f20ef10163f48d550f3e8d74ab71620f1ec/Scripts/Guides/Guide%20List%20Editor.py)
