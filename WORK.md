@@ -2,6 +2,12 @@
 this_file: WORK.md
 ---
 
+## 2026-11-15 — Kerning Studio consumers retain refused drafts
+
+Update only existing Pair Editor expectations for the shared App's draft-preserving refusals: exact staged/error maps, table identities/counts and pending cell text remain, Apply is disabled, and native pairs/history/notifications stay unchanged. Initial fallback status now names Refresh or Preview Changes for staged pairs; original order/table assertions retain the five-pair check. Explicit Revert and all original successful writer/history/persistence checks remain. Scripts, provenance and dependency metadata are unchanged.
+
+Against matching isolated App source, the four existing modules run in separate processes: launchers 17 passed, routes 27 passed, editors 44 passed and editor coverage 46 passed (134 total). Scoped Ruff F821 and whitespace pass. The grouped Qt-fixture pollution also fails on the preceding released App; its original baseline receipts are retained, with no global fixture repair. Independent review, complete controller gates, delivery/install and FontLab/native behavior remain open.
+
 ## 2026-11-15 — Source Comparison external-source wording
 
 Corrected the launcher docstring and authored guide for the optional installed-App Open designspace action: read-only UFO source comparisons, owned-handle release and unchanged borrowed FontLab font. Retained captured-font behavior, detached-read pending-edit limits and the lack of outline interpolation. Cancel/read failure/Close preserves the prior report; cancellation checks cannot interrupt blocking file I/O. Executable AST, imports, labels, dependency metadata and dependencies are unchanged. The existing reversible revision ledger and current catalogue hashes/scope now track the docstring; frozen source identities and proposed/native flags remain unchanged. No new App release floor is asserted.

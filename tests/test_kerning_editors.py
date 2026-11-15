@@ -169,7 +169,8 @@ def test_failed_preview_disables_apply_and_leaves_explicit_refresh(pair_env, mon
         raise RuntimeError("native read failed")
     monkeypatch.setattr(pairs.model, "involving", fail)
     pair_env.shell.refresh_button.click()
-    assert dialog.staged == {} and not dialog.ready()
+    assert dialog.staged == {"partial": 1} and dialog.errors == {} and not dialog.ready()
+    assert not pair_env.shell.apply_button.isEnabled() and not pair_env.state.notified
     assert "native read failed" in pair_env.shell.status.text() and "Refresh" in pair_env.shell.status.text()
 
 
@@ -268,8 +269,12 @@ def test_pair_apply_refuses_lossy_reopen_range_and_clears_staging(pair_env):
     dialog = pair_env.open()
     dialog.set_cell("A", "V", "Bold", "2001")
     before = {master: font.pairs(master) for master in font.masters}
+    staged, errors, table = dict(dialog.staged), dict(dialog.errors), pair_support.texts(dialog)
+    history = list(font.history)
     pair_env.shell.apply_button.click()
     assert "save/reopen range" in pair_env.shell.status.text()
-    assert not dialog.staged and dialog.snapshot is None and not dialog.ready()
+    assert dialog.staged == staged and dialog.errors == errors and not dialog.ready()
+    assert pair_support.texts(dialog) == table and not pair_env.shell.apply_button.isEnabled()
+    assert font.history == history
     assert not pair_env.state.notified, "Invalid final range created native history"
     assert {master: font.pairs(master) for master in font.masters} == before

@@ -54,6 +54,8 @@ def close_owner(env):
 def snapshot_refusal(env, change):
     panel = env.open()
     panel.set_cell("A", "V", "Bold", "-120")
+    source = env.state.package
+    drafts, errors, table = dict(panel.staged), dict(panel.errors), texts(panel)
     if change == "font":
         replace(env)
     elif change == "closed":
@@ -64,8 +66,13 @@ def snapshot_refusal(env, change):
         env.state.package.kerning("Bold").items = list
     else:
         env.state.package.kerning("Bold").groups["L_A"] = (["T"], "KernLeft")
+    pairs = {master: source.pairs(master) for master in source.masters}
+    history, updates = list(source.history), env.state.updates
     env.shell.apply_button.click()
-    assert not panel.staged and panel.snapshot is None and not panel.ready()
-    assert panel.table.rowCount() == 0
+    assert panel.staged == drafts and panel.errors == errors and not panel.ready()
+    assert texts(panel) == table and panel.table.rowCount() == len(table)
+    assert not env.shell.apply_button.isEnabled()
+    assert {master: source.pairs(master) for master in source.masters} == pairs
+    assert source.history == history and env.state.updates == updates
     assert any(word in env.shell.status.text() for word in ("stale", "current"))
     assert not env.state.notified

@@ -2,6 +2,8 @@
 this_file: TODO.md
 ---
 
+- [ ] Independently review and integrate the Kerning Studio consumer contract updates with matching App, then qualify complete controller gates, artifacts/installations and native draft preservation, Preview recovery, refused Apply, Revert and close/reopen.
+
 ## Shared installer qualification — 2026-11-15
 
 - [ ] Review and deliver the shared-installer candidate through fresh-main reconciliation, required gates, exact-SHA CI and genuine release/download qualification.

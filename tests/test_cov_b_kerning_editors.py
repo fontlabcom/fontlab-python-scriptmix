@@ -302,7 +302,9 @@ def test_pair_editor_when_opened_then_pairs_with_selected_glyph_are_listed(pair_
     assert pair_texts(dialog)[1] == ["@L_A  V", "-40", ""], "absent pairs show blank"
     assert [dialog.side.itemText(i) for i in range(dialog.side.count())] == ["A  +  partner", "partner  +  A"]
     assert "Pairs with A (@L_A) on either side" in dialog.subtitle.text()
-    assert pair_env.shell.status.text() == "5 pairs" and not dialog.ready()
+    assert dialog.table.rowCount() == 5 and not dialog.ready()
+    assert pair_env.shell.status.text() == "Automatic Undo/Redo refresh incomplete; use Refresh, or Preview Changes for staged pairs."
+    assert pair_env.shell._history_connections == 0 and not pair_env.shell.apply_button.isEnabled()
     assert pair_env.state.notified == []
 
 
@@ -402,13 +404,19 @@ def test_pair_editor_when_no_font_then_open_font_first(pair_env):
 def test_pair_editor_when_font_replaced_then_apply_and_edit_are_refused(pair_env):
     dialog = pair_env.open()
     edit_cell(dialog, "A", "V", "Bold", "-75")
+    source = pair_env.state.package
+    native = {master: source.pairs(master) for master in source.masters}
+    history = list(source.history)
     replace_pair(pair_env)
     edit_cell(dialog, "A", "V", "Bold", "-60")
     assert "no longer current" in dialog.slot_error
     assert pair_env.shell.status.text().startswith("Error:")
     pair_env.shell.apply_button.click()
-    assert not dialog.ready() and not dialog.staged
-    assert pair_env.state.notified == []
+    assert not dialog.ready() and dialog.staged == {(("A", "V"), "Bold"): -75}
+    assert dialog.errors == {} and not pair_env.shell.apply_button.isEnabled()
+    assert dialog.table.rowCount() == 5 and pair_texts(dialog)[3][2] == "-60"
+    assert {master: source.pairs(master) for master in source.masters} == native
+    assert source.history == history and pair_env.state.notified == []
 
 
 def test_pair_editor_module_when_helpers_called_then_glyph_and_writer_work(pair_env):

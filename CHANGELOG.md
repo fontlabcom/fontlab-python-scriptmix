@@ -2,6 +2,12 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-15 — Kerning Studio retained-draft consumer checks
+
+- Update exact Pair Editor refusal assertions to retain drafts/errors, pending text and table identities while disabling Apply, preserving original native/history/notification and explicit Revert/success checks.
+- Verify truthful missing-history fallback text and the original five pair rows. No launcher, provenance, dependency or runtime Scriptmix source changes.
+- Matching source checks pass 134 tests across four separate existing modules; scoped F821 and whitespace pass. Independent review, complete controller gates, matching artifacts/install and native acceptance remain separate.
+
 ## 2026-11-15 — Source Comparison external-source wording
 
 Corrected the launcher docstring and authored guide for the optional installed-App Open designspace action: read-only UFO source comparisons, owned-handle release and unchanged borrowed FontLab font. Retained captured-font behavior, detached-read pending-edit limits and the lack of outline interpolation. Cancel/read failure/Close preserves the prior report; cancellation checks cannot interrupt blocking file I/O. Executable AST, imports, labels, dependency metadata and dependencies are unchanged. The existing reversible revision ledger and current catalogue hashes/scope now track the docstring; frozen source identities and proposed/native flags remain unchanged. No new App release floor is asserted.
