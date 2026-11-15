@@ -1,5 +1,6 @@
 #FLM: Install this package into FontLab
 # this_file: install.vfpy
+# SPDX-License-Identifier: Apache-2.0
 """Install the Python package in this folder into FontLab 9. Standard library only.
 
 Open this file in FontLab 9 (double-click it, or drop it onto FontLab). It reads
@@ -23,7 +24,8 @@ reverse-domain form (e.g. com.fontlab.fly). FontLab reports its user data folder
   extensions merge.
 - Dependencies are installed on every run: a required package whose checkout
   sits beside this folder (with its own install.vfpy) is installed from there
-  first, since these are not on PyPI; uv installs the rest.
+  first, since these are not on PyPI; uv installs the rest. Conditional requirements
+  are evaluated first with transient packaging in uv's external target Python.
 - App only: one marked initScript.py block boots the plugin core at launch;
   uninstall removes only that block, preserving the rest of the startup file.
 - Scripts/Extensions/: "List Extensions" and "Uninstall <id>" launchers. They
@@ -51,6 +53,7 @@ import runpy
 import shutil
 import subprocess
 import sys
+import tempfile
 import tomllib
 import traceback
 import uuid
@@ -802,7 +805,7 @@ def check_site_free(site, name, dirs):
                 % (link, files, name))
 
 
-def write_record(site, name, ver, packages, requires):
+def write_record(site, name, ver, packages, requires, optional=None):
     """Place each package in site-packages (symlink, else copy) and write a .dist-info."""
     remove_old_dist(site, name)
     placed = []
@@ -822,6 +825,16 @@ def write_record(site, name, ver, packages, requires):
     info.mkdir()
     lines = ["Metadata-Version: 2.1", "Name: " + name, "Version: " + ver]
     lines += ["Requires-Dist: " + r for r in requires]
+    for extra, dependencies in (optional or {}).items():
+        extra = re.sub(r"[-_.]+", "-", extra).lower()
+        lines.append("Provides-Extra: " + extra)
+        for requirement in dependencies:
+            # URL semicolons are URL characters; only a whitespace-prefixed one starts its marker.
+            parts = re.split(r"\s+;\s*" if re.match(r"^[A-Za-z0-9._-]+\s*(?:\[[^]]*\]\s*)?@", requirement.lstrip()) else r"\s*;\s*", requirement, maxsplit=1)
+            marker = 'extra == "%s"' % extra
+            if len(parts) == 2:
+                marker = "(%s) and %s" % (parts[1], marker)
+            lines.append("Requires-Dist: %s ; %s" % (parts[0].rstrip(), marker))
     (info / "METADATA").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (info / "INSTALLER").write_text("install.vfpy\n", encoding="utf-8")
     # uv pip check treats a .dist-info without WHEEL as broken.
@@ -858,11 +871,13 @@ def write_tools(data, site, ext_id):
 
 
 def missing(requires):
-    # No-uv fallback: checks presence only, not versions, markers or extras.
+    # Without uv only a bare distribution name can be proved by presence.
     result = []
     for req in requires:
+        if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", req.strip()):
+            raise RuntimeError("Install uv to verify dependency versions, extras and markers: %s" % req)
         try:
-            metadata.distribution(re.match(r"[A-Za-z0-9._-]+", req).group())
+            metadata.distribution(req.strip())
         except metadata.PackageNotFoundError:
             result.append(req)
     return result
@@ -902,34 +917,72 @@ def active():
 
 
 def install_siblings(requires):
-    """Install required checkouts found beside this one (once per run); return the other requirements."""
-    local, rest = siblings(), []
+    """Install required checkouts found beside this one, without dropping their requirements."""
+    local = siblings()
     for req in requires:
         folder = local.get(req_name(req))
-        if folder is None:
-            rest.append(req)
-        elif str(folder.resolve()) not in active():  # already done, or in progress (a cycle)
+        if folder is not None and str(folder.resolve()) not in active():  # already done, or in progress (a cycle)
             print("Installing dependency %s from %s" % (req, folder))
             runpy.run_path(str(folder / "install.vfpy"), run_name="fontlab_install_dependency")
-    return rest
+
+
+def applicable_dependencies(requires, uv, python):
+    """Evaluate conditional requirements outside FontLab, in the resolver's Python."""
+    if not any(";" in req for req in requires):
+        return requires, python
+    code = (
+        "import json, sys; from packaging.requirements import Requirement; "
+        "requirements = [(raw, Requirement(raw)) for raw in json.loads(sys.argv[1])]; "
+        "print(json.dumps({'requires': [raw for raw, req in requirements "
+        "if req.marker is None or req.marker.evaluate()], 'python': sys._base_executable}))"
+    )
+    result = run([uv, "run", "--no-project", "--quiet", "--python", str(python or python_requests()[1]),
+                  "--with", "packaging==26.3", "python", "-I", "-c", code, json.dumps(requires)])
+    if result.returncode:
+        raise RuntimeError("uv could not evaluate dependency markers:\n%s" % result.stdout)
+    try:
+        selected = json.loads(result.stdout)
+        executable = selected["python"]
+        applicable = selected["requires"]
+        if not isinstance(applicable, list) or applicable != [req for req in requires if req in applicable]:
+            raise ValueError("marker helper changed the original requirements")
+        if not isinstance(executable, str) or not Path(executable).is_file():
+            raise ValueError("marker helper did not identify its Python")
+        return applicable, python or executable
+    except (KeyError, TypeError, ValueError) as error:
+        raise RuntimeError("uv returned an invalid dependency marker result: %s" % error) from error
 
 
 def install_dependencies(site, requires, uv, python):
-    """Install every requirement on each run: sibling checkouts first, then all the rest with uv (it enforces versions)."""
-    remote = install_siblings(requires)
+    """Resolve original requirements while keeping installer-managed local versions fixed."""
     if not uv:
-        needed = missing(remote)
+        missing(requires)  # Refuse unprovable conditions before a sibling can change anything.
+    selected, resolver_python = applicable_dependencies(requires, uv, python) if uv else (requires, python)
+    install_siblings(selected)
+    if not uv:
+        needed = missing(requires)
         if needed:
-            for req in needed:
-                print("Dependency %s is not installed and no checkout of it sits beside %s." % (req, SOURCE))
-            print("Missing dependencies (install uv, then run this again):\n  " + "\n  ".join(needed))
+            raise RuntimeError("Missing dependencies (no installed distribution or usable checkout; install uv, then run this again):\n  " + "\n  ".join(needed))
         return
-    if not remote:
+    if not requires:
         return
-    where = ["--python", str(python)] if python else ["--python", python_requests()[1], "--target", str(site)]
-    command = [uv, "pip", "install", "--link-mode=copy"] + where + remote
-    print("Installing dependencies: " + " ".join(command))
-    result = run(command)
+    where = ["--python", str(resolver_python or python_requests()[1])]
+    if not python:
+        where += ["--target", str(site)]
+    pins, protected = [], []
+    for dist in metadata.distributions(path=[str(site)]):
+        if dist.read_text("INSTALLER") != "install.vfpy\n":
+            continue
+        name = dist.metadata["Name"]
+        pins.append("%s==%s" % (name, dist.version))
+        # Installed locals may satisfy resolution; forbid both replacement wheels and source builds.
+        protected += ["--no-binary", name, "--only-binary", name]
+    with tempfile.TemporaryDirectory(prefix="fontlab-install-") as temporary:
+        constraints = Path(temporary) / "constraints.txt"
+        constraints.write_text("\n".join(pins) + "\n", encoding="utf-8")
+        command = [uv, "pip", "install", "--link-mode=copy"] + where + protected + ["--constraints", str(constraints)] + requires
+        print("Installing dependencies: " + " ".join(command))
+        result = run(command)
     print(result.stdout)
     if result.returncode:
         raise RuntimeError("uv could not install the dependencies (exit %d):\n%s" % (result.returncode, result.stdout))
@@ -995,8 +1048,14 @@ def install(project, config, data, home, ext_id, scripts, name, ver):
     requires = config.get("dependencies", project["project"].get("dependencies", []))
     dirs = package_dirs(project, config)
     check_site_free(site_dir(data), name, dirs)  # before prepare_site can migrate anything
-    site = prepare_site(data)
     uv = find_uv()
+    if not uv:
+        needed = missing(requires)
+        local = siblings() if needed else {}
+        absent = [req for req in needed if req_name(req) not in local]
+        if absent:
+            raise RuntimeError("Missing dependencies (no installed distribution or usable checkout; install uv, then run this again):\n  " + "\n  ".join(absent))
+    site = prepare_site(data)
     python = ensure_venv(data, site, uv) if uv else None
     if not uv:
         print("uv not found: no venv was set up. Install uv from https://docs.astral.sh/uv/ for dependencies.")
@@ -1016,7 +1075,7 @@ def install(project, config, data, home, ext_id, scripts, name, ver):
     files += placed
     held = held + held_bundles
     if packages:  # scripts-only extensions need no distribution record
-        files += write_record(site, name, ver, packages, requires)
+        files += write_record(site, name, ver, packages, requires, project["project"].get("optional-dependencies", {}))
     files += write_tools(data, site, ext_id)
     # Superseded but kept (files, folders, links): logged under "kept" (with their old hash/link records) so they
     # are reported again, but never in "files": uninstall removes only what this install created.

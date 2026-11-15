@@ -2,6 +2,13 @@
 this_file: TODO.md
 ---
 
+## Shared installer qualification — 2026-11-15
+
+- [ ] Review and deliver the shared-installer candidate through fresh-main reconciliation, required gates, exact-SHA CI and genuine release/download qualification.
+- [ ] After admission, verify installed provider/consumer identity and the applicable Script/Extension/native workflows without clearing existing holds by inference.
+
+
+
 
 - [ ] Retire Zero-Width Marks after the ledger supports post-source revisions (or re-baseline source_commit); the App port carries D36-1/F43-1.
 - [ ] WP03 native: qualify the eight consolidated spacing, kerning and metrics launchers in installed FontLab (complete font and history preservation, Undo/Redo, saved/reopened).

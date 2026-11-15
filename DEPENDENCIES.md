@@ -2,6 +2,12 @@
 this_file: DEPENDENCIES.md
 ---
 
+## Conditional installer requirements
+
+Only conditional installer requirements use `packaging==26.3` in an external uv-managed Python environment. FontLab itself imports only the standard library; no permanent project dependency was added. An unavailable helper fails before sibling execution.
+
+
+
 ## Current source requirements
 
 Current scripts require `fontlab-fontlabapp>=1.2.0` because they import the

@@ -2,6 +2,12 @@
 this_file: PLAN.md
 ---
 
+## Shared installer: remaining delivery qualification — 2026-11-15
+
+Review the exact shared-installer candidate against fresh main, run the required combined package gates, and qualify genuine release/archive/download inputs. Preserve the existing package-specific dependency and distribution contracts. Then qualify the coherent provider/consumer and Script/Extension cohort through the admitted root installer and native lane; source checks do not establish those outcomes. Keep every existing ownership, native, publication and paused-work limit.
+
+
+
 ## Issue 255 remaining native acceptance
 
 After explicit D43 recovery and admission, qualify released source-installed menus and original native/history/save-reopen workflows. Adapt the legacy HT Letterspacer smoke, which closes fonts, to an admitted safe runner before executing it. Source, genuine artifact, ordinary external-install and release/download qualification for v1.2.9 is recorded in CHANGELOG. Existing private Pages and Issue 123 holds remain. Only the curated uploaded ZIP is privacy-qualified; automatic GitHub source archives remain unqualified. Existing gitless-version and conservative installer-ledger limitations remain.

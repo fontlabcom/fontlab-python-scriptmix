@@ -2,6 +2,14 @@
 this_file: WORK.md
 ---
 
+## 2026-11-15 — Shared installer source alignment
+
+Copied the reviewed shared installer exactly: dependency constraints and managed origins remain protected; inactive conditional dependencies are filtered before sibling execution in the resolver target Python. FontLab imports remain standard-library-only. Package identity, runtime APIs, dependency declarations, scripts, bundles and legal files are unchanged. The docs root remains non-package; its existing scripts/curated and nested-package distribution contracts are unchanged.
+
+Focused checks: 9 passed in 22.47s. This qualifies the local source candidate only. Independent review, combined-main/full delivery gates, genuine release/downloads, installed provider closure and admitted FontLab/native workflows remain separate. No owner-folder installation or native operation ran.
+
+
+
 # Current round — Issue 255 post-release reconciliation
 
 [fontlab-python-scriptmix v1.2.9](https://github.com/fontlabcom/fontlab-python-scriptmix/releases/tag/v1.2.9) is qualified at `2a122b22bd1f608099e1bfa1d57434068c5e7536`.
