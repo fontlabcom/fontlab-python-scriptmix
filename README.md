@@ -45,6 +45,14 @@ Writers disclose queued native glyph ids and the possible modification-date chan
 
 ## Requirements and installation
 
+To install into FontLab 9, open `install.vfpy` from a checkout in FontLab
+(double-click it or drop it onto FontLab), then restart FontLab. The file is a
+short stub that hands the work to
+[fontlab-instamix](https://github.com/fontlabcom/fontlab-python-instamix); if
+instamix is not installed yet, the stub installs it from PyPI first. Instamix
+installs the tools into FontLab's Scripts menu and records the install under the
+extension id `com.fontlab.python-scriptmix`.
+
 Use FontLab 9 with embedded Python 3.11 arm64 on Apple Silicon. Keep matching
 versions of `fontlab-fly`, `fontlab-fontlabapp` and `fontlab-fontport` available
 to FontLab. Some tools use the App `fontui` extra. Trial Font Maker needs the

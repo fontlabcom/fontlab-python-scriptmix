@@ -2,6 +2,13 @@
 this_file: CHANGELOG.md
 ---
 
+## Unreleased
+
+- `install.vfpy` is now the short fontlab-instamix stub. It installs
+  fontlab-instamix from PyPI when it is missing, then installs this checkout from
+  its `[tool.fontlab-install]` table. The large legacy installer is gone.
+- README describes the stub install.
+
 ## 2026-11-15 — Kerning Studio retained-draft consumer checks
 
 - Update exact Pair Editor refusal assertions to retain drafts/errors, pending text and table identities while disabling Apply, preserving original native/history/notification and explicit Revert/success checks.
