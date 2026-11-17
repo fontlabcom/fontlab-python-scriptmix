@@ -4,6 +4,9 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
+- Task-list cleanup (Issue 258). Closed in TODO: the shared-installer rows (`install.vfpy` is the fontlab-instamix stub, entry below; Issue 255 Fly migration shipped in v1.2.9 at `2a122b22`, latest tag v1.2.12), duplicate wrapper-run rows, the sandbox/x86_64 and staging notes, the not-for-delivery stack `0828f74` row and generic review/integration/provenance boilerplate. The "link a required fix PR" row now says issues only (fl#NNNN). Test-infrastructure rows moved to the end of TODO.md.
+- Carried the owner's uncommitted 2026-11-14 "Functional work order" additions (PLAN, TODO next step, WORK note, this entry) from the owner checkout; AGENTS.md already had the owner-priority section on origin. Guidance only; no runtime or native result.
+
 - `install.vfpy` is now the short fontlab-instamix stub. It installs
   fontlab-instamix from PyPI when it is missing, then installs this checkout from
   its `[tool.fontlab-install]` table. The large legacy installer is gone.

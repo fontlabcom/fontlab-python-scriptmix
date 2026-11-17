@@ -2,15 +2,15 @@
 this_file: PLAN.md
 ---
 
+## Functional work order — 2026-11-14
+
+Prioritize practical consolidated menu tools and Font UI Lab workflows, including their shared compact controls, Filters and metrics behavior. Reconcile App, Fontport, Pens and Fly calls together while preserving compatibility launchers, historical sources and installer ownership.
+
+Use small smoke checks and focused regressions for changed behavior and package boundaries. Keep the existing detailed acceptance tasks for a later testing pass; mandatory delivery hooks and current holds remain in force.
+
 ## Kerning Studio draft-preserving App contract: remaining qualification
 
 Independently review the focused consumer assertions against the matching App source, then qualify combined controller gates and fresh-main integration without changing launchers, dependencies or frozen provenance. Match released/installed providers and test native Undo/Redo ordering, captured targets/master columns, pending editor drafts, explicit Preview without hooks, refusal/disabled Apply, Revert and close/reopen. Source Qt checks do not establish native or installed acceptance.
-
-## Shared installer: remaining delivery qualification — 2026-11-15
-
-Review the exact shared-installer candidate against fresh main, run the required combined package gates, and qualify genuine release/archive/download inputs. Preserve the existing package-specific dependency and distribution contracts. Then qualify the coherent provider/consumer and Script/Extension cohort through the admitted root installer and native lane; source checks do not establish those outcomes. Keep every existing ownership, native, publication and paused-work limit.
-
-
 
 ## Issue 255 remaining native acceptance
 

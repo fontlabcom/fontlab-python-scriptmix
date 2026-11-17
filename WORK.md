@@ -2,6 +2,12 @@
 this_file: WORK.md
 ---
 
+## 2026-11-14 — Functional work order documented
+
+Owner-checkout note carried in the Issue 258 cleanup: AGENTS, PLAN and TODO prioritise useful functional changes and compatible package boundaries, with detailed testing deferred. Documentation-only; no runtime, installed or native checks ran.
+
+Next: advance practical consolidated launchers and Font UI Lab consumers together with shared App/Fontport/Pens/Fly behavior, using focused checks before the full native menu and history pass.
+
 ## 2026-11-15 — Kerning Studio consumers retain refused drafts
 
 Update only existing Pair Editor expectations for the shared App's draft-preserving refusals: exact staged/error maps, table identities/counts and pending cell text remain, Apply is disabled, and native pairs/history/notifications stay unchanged. Initial fallback status now names Refresh or Preview Changes for staged pairs; original order/table assertions retain the five-pair check. Explicit Revert and all original successful writer/history/persistence checks remain. Scripts, provenance and dependency metadata are unchanged.
