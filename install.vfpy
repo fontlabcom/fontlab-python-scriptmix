@@ -1,39 +1,233 @@
-#FLM: Install this package into FontLab (fontlab-instamix)
-import hashlib, importlib, io, json, os, shutil, sys, urllib.request, zipfile
-from pathlib import Path
-HERE, PKG, PYPI = Path(__file__).resolve().parent, "fontlab_instamix", "https://pypi.org/pypi/fontlab-python-instamix/json"
+#FLM: Install into FontLab with fontlab-instamix
+# this_file: stub/install.vfpy
+"""Stdlib bootstrap. The root installer is generated from this template."""
+import hashlib
+import importlib
+import io
+import json
+import os
+import re
+import shutil
+import ssl
+import subprocess
+import sys
+import tempfile
+import urllib.error
+import urllib.request
+import zipfile
+from email.parser import BytesParser
+from pathlib import Path, PurePosixPath
+
+HERE = Path(__file__).resolve().parent
+PKG = "fontlab_instamix"
+PYPI = "https://pypi.org/pypi/fontlab-python-instamix/json"
+SELF_INSTALL = False
+# Oldest instamix that sets up uv and reinstalls correctly on Windows.
+MINIMUM = (1, 0, 13)
+
+
 def site():
-    data = os.environ.get("FONTLAB_DATA_DIR") or __import__("fontlab").flPreferences().dataPathDefault
-    data = data() if callable(data) else data
-    return Path(data).expanduser() / "python" / "3.11" / "site-packages"
-def download(target, url=PYPI):
-    info = json.load(urllib.request.urlopen(url, timeout=60))
-    wheel = next((u for u in info["urls"] if u["packagetype"] == "bdist_wheel"), None)
-    if wheel is None:
-        raise RuntimeError("no fontlab-instamix wheel on PyPI")
-    blob = urllib.request.urlopen(wheel["url"], timeout=120).read()
-    if hashlib.sha256(blob).hexdigest() != wheel["digests"]["sha256"]:
-        raise RuntimeError("fontlab-instamix wheel failed its sha256 check")
-    with zipfile.ZipFile(io.BytesIO(blob)) as wheel_zip:
-        for name in wheel_zip.namelist():
-            parts = name.split("/")
-            if parts[0] == PKG and ".." not in parts and "" not in parts and "\\" not in name:
-                (target / name).parent.mkdir(parents=True, exist_ok=True); (target / name).write_bytes(wheel_zip.read(name))
-def ensure():
-    try:  # an older instamix without the parity modules does not count
-        return importlib.import_module(PKG + ".legacy") and importlib.import_module(PKG)
+    data = os.environ.get("FONTLAB_DATA_DIR")
+    try:
+        fontlab = importlib.import_module("fontlab")
     except ImportError:
-        target, local = site(), HERE.parent / "fontlab-python-instamix" / "src" / PKG
-        target.mkdir(parents=True, exist_ok=True)
-        shutil.rmtree(target / PKG, ignore_errors=True)
-        if local.is_dir():
-            shutil.copytree(local, target / PKG, ignore=shutil.ignore_patterns("__pycache__"))
-        else:
-            download(target)
-        [sys.modules.pop(n) for n in list(sys.modules) if n == PKG or n.startswith(PKG + ".")]
-        sys.path.insert(0, str(target)) if str(target) not in sys.path else None
+        fontlab = None
+    version = f"{sys.version_info.major}.{sys.version_info.minor}" if fontlab else "3.11"
+    if not data:
+        if fontlab is None:
+            raise RuntimeError("run inside FontLab or set FONTLAB_DATA_DIR")
+        data = fontlab.flPreferences().dataPathDefault
+        data = data() if callable(data) else data
+    root = Path(str(data)).expanduser()
+    target = root / "python" / version / "site-packages"
+    if not target.resolve().is_relative_to(root.resolve()):
+        raise RuntimeError("site-packages escapes the FontLab data folder")
+    return target
+
+
+def fetch(url, timeout):
+    try:
+        with urllib.request.urlopen(url, timeout=timeout) as response:
+            return response.read()
+    except urllib.error.URLError as error:
+        # FontLab's Python can lack root certificates; the system curl has them.
+        curl = {"win32": Path(os.environ.get("SystemRoot", r"C:\Windows"), "System32", "curl.exe"),
+                "darwin": Path("/usr/bin/curl")}.get(sys.platform)
+        if curl is None or not isinstance(error.reason, ssl.SSLCertVerificationError) or not curl.is_file():
+            raise
+        flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+        # Without these, curl would be pointed back at the store that just failed.
+        clean = {k: v for k, v in os.environ.items() if k not in ("SSL_CERT_FILE", "SSL_CERT_DIR", "CURL_CA_BUNDLE")}
+        command = [str(curl), "-fsSL", "--proto", "=https", "--proto-redir", "=https", "--max-time", str(timeout), "--", url]
+        try:
+            done = subprocess.run(command, capture_output=True, stdin=subprocess.DEVNULL, creationflags=flags,
+                                  timeout=timeout + 30, env=clean)
+        except (OSError, subprocess.TimeoutExpired) as failure:
+            raise RuntimeError("curl could not download %s: %s" % (url, failure)) from failure
+        if done.returncode != 0:
+            raise RuntimeError("curl could not download %s: %s" % (url, done.stderr.decode("utf-8", "replace").strip())) from error
+        return done.stdout
+
+
+def download(target, url=PYPI):
+    local = sorted([*HERE.glob("dist/fontlab_python_instamix-*-py3-none-any.whl"),
+                    *(HERE.parent / "fontlab-python-instamix" / "dist").glob("fontlab_python_instamix-*-py3-none-any.whl")])
+    if len(local) > 1:
+        raise RuntimeError("multiple local instamix wheels; keep only the intended version")
+    if local:
+        blob = local[0].read_bytes()
+    else:
+        info = json.loads(fetch(url, 60))
+        wheel = next((u for u in info["urls"] if u["packagetype"] == "bdist_wheel"
+                      and u["filename"].endswith("-py3-none-any.whl")), None)
+        if wheel is None:
+            raise RuntimeError("no compatible fontlab-instamix wheel on PyPI")
+        blob = fetch(wheel["url"], 120)
+        if hashlib.sha256(blob).hexdigest() != wheel["digests"]["sha256"]:
+            raise RuntimeError("fontlab-instamix wheel failed its sha256 check")
+    with zipfile.ZipFile(io.BytesIO(blob)) as archive:
+        names = archive.namelist()
+        roots = {n.split("/")[0] for n in names}
+        infos = [r for r in roots if r.startswith("fontlab_python_instamix-") and r.endswith(".dist-info")]
+        if len(infos) != 1 or roots != {PKG, infos[0]}:
+            raise RuntimeError("unexpected wheel contents")
+        metadata = BytesParser().parsebytes(archive.read(infos[0] + "/METADATA"))
+        if metadata["Name"] != "fontlab-python-instamix" or not metadata["Version"]:
+            raise RuntimeError("incorrect wheel metadata")
+        required = {PKG + "/__init__.py", PKG + "/legacy.py", infos[0] + "/RECORD",
+                    infos[0] + "/WHEEL", infos[0] + "/licenses/LICENSE"}
+        if not required.issubset(names):
+            raise RuntimeError("incomplete wheel")
+        if len(names) != len(set(names)):
+            raise RuntimeError("duplicate wheel members")
+        for member in archive.infolist():
+            path = PurePosixPath(member.filename)
+            if path.is_absolute() or ".." in path.parts or "\\" in member.filename or ":" in member.filename:
+                raise RuntimeError("unsafe wheel member")
+            if (member.external_attr >> 16) & 0o170000 == 0o120000:
+                raise RuntimeError("wheel symlinks are unsupported")
+        archive.extractall(target)
+
+
+def checkout(target):
+    """Copy instamix from the checkout this installer sits in; False when there is none."""
+    source = HERE / "src" / PKG
+    if not SELF_INSTALL or not (source / "__init__.py").is_file():
+        return False
+    # No build-time version file: the copy reports itself as a checkout ("0.0.0+checkout").
+    shutil.copytree(source, target / PKG, ignore=shutil.ignore_patterns("__pycache__", "__version__.py"))
+    return True
+
+
+def installed_version():
+    """Version from the installed metadata folder, for a package that states none."""
+    found = [info.name[len("fontlab_python_instamix-"):-len(".dist-info")]
+             for info in site().glob("fontlab_python_instamix-*.dist-info")]
+    return max(found, key=release, default="")
+
+
+def release(version):
+    """(major, minor, patch, final): a pre-release sorts before its final release."""
+    public = version.split("+")[0]
+    numbers = [int(n) for n in re.findall(r"\d+", public)[:3]]
+    final = not re.search(r"\d(a|b|rc|\.?dev)\d*", public)
+    return (*numbers, *[0] * (3 - len(numbers)), int(final))
+
+
+def remove(path):
+    if path.is_symlink() or path.is_file():
+        path.unlink()
+    elif path.is_dir():
+        shutil.rmtree(path)
+
+
+def required_api():
+    importlib.import_module(PKG + ".legacy")
+    extension = importlib.import_module(PKG + ".extension")
+    if not callable(getattr(extension, "preflight_plugin_migration", None)):
+        raise ImportError("fontlab_instamix.extension.preflight_plugin_migration must be callable")
+    gui = importlib.import_module(PKG + ".gui")
+    if not callable(getattr(gui, "message", None)):
+        raise ImportError("fontlab_instamix.gui.message must be callable")
+    bootstrap = importlib.import_module(PKG + ".bootstrap")
+    if not callable(getattr(bootstrap, "_legacy_rollback", None)):
+        raise ImportError("fontlab_instamix.bootstrap._legacy_rollback must be callable")
+    if not SELF_INSTALL:
+        if not callable(getattr(bootstrap, "install_project", None)):
+            raise ImportError("fontlab_instamix.bootstrap.install_project must be callable")
+    package = importlib.import_module(PKG)
+    version = str(getattr(package, "__version__", "")) or installed_version()
+    # A local version ("+...") or a linked folder is a checkout its developer chose.
+    if "+" not in version and release(version) < (*MINIMUM, 1) and not (site() / PKG).is_symlink():
+        raise ImportError(f"fontlab_instamix {version or 'of unknown version'} is older than "
+                          + ".".join(map(str, MINIMUM)))
+    return package
+
+
+def ensure(force=False):
+    if not force:
+        try:
+            return required_api()
+        except ImportError:
+            pass
+    target = site()
+    target.mkdir(parents=True, exist_ok=True)
+    temporary = Path(tempfile.mkdtemp(prefix=".instamix-", dir=target))
+    stage, backup = temporary / "new", temporary / "old"
+    saved, placed = [], []
+    modules = {k: v for k, v in sys.modules.items() if k == PKG or k.startswith(PKG + ".")}
+    path_added = str(target) not in sys.path
+    recovered = True
+    try:
+        stage.mkdir()
+        # A built wheel beside the installer wins over the checkout's source.
+        if list(HERE.glob("dist/fontlab_python_instamix-*-py3-none-any.whl")) or not checkout(stage):
+            download(stage)
+        backup.mkdir()
+        previous = [target / PKG, *target.glob("fontlab_python_instamix-*.dist-info")]
+        for old in previous:
+            if old.exists() or old.is_symlink():
+                old.rename(backup / old.name)
+                saved.append(old)
+        for item in stage.iterdir():
+            destination = target / item.name
+            item.rename(destination)
+            placed.append(destination)
+        for name in list(sys.modules):
+            if name == PKG or name.startswith(PKG + "."):
+                del sys.modules[name]
+        if path_added:
+            sys.path.insert(0, str(target))
         importlib.invalidate_caches()
-        return importlib.import_module(PKG)
-if __name__ != "install_vfpy_import":  # FontLab may not run this as __main__
-    ensure(); from fontlab_instamix import bootstrap, gui  # noqa: E402,E702
-    gui.message("\n".join(f"Installed {r['id']} {r['version']}" for r in bootstrap.install_project(__file__)))
+        return required_api()
+    except BaseException:
+        recovered = False
+        for item in reversed(placed):
+            remove(item)
+        for old in reversed(saved):
+            (backup / old.name).rename(old)
+        for name in list(sys.modules):
+            if name == PKG or name.startswith(PKG + "."):
+                del sys.modules[name]
+        sys.modules.update(modules)
+        if path_added and str(target) in sys.path:
+            sys.path.remove(str(target))
+        importlib.invalidate_caches()
+        recovered = True
+        raise
+    finally:
+        # Keep recovery bytes if restoring the old installation itself fails.
+        if recovered:
+            shutil.rmtree(temporary)
+
+
+if __name__ != "install_vfpy_import":
+    # Validate context even when reusing an already installed provider.
+    site()
+    ensure(force=SELF_INSTALL)
+    from fontlab_instamix import gui
+    if SELF_INSTALL:
+        gui.message(f"Installed fontlab-instamix into {site()}")
+    else:
+        from fontlab_instamix import bootstrap
+        gui.message("\n".join(f"Installed {r['id']} {r['version']}" for r in bootstrap.install_project(__file__)))
