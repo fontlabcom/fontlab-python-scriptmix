@@ -18,12 +18,12 @@ def preserved_source(original_root, source):
     original = original_root / source
     row = json.loads((ROOT / "rescue-index.json").read_text())["preserved_sources"][source]
     archive = os.environ.get("FONTLAB_PRESERVED_ROOT")
-    target = Path(archive) / row["path"] if archive else None
-    if target is None or not target.is_file():
-        # The external archive may be absent (it was cleaned up); fall back to repo bytes.
+    if archive and not Path(archive).is_dir():
+        pytest.skip(f"External historical archive not restored: {archive}")
+    if archive:
+        target = Path(archive) / row["path"]
+    else:
         target = original if original.is_file() else ROOT / row["path"]
-    if not target.is_file():
-        pytest.skip(f"Historical source absent (external archive not restored): {source}")
     assert hashlib.sha256(target.read_bytes()).hexdigest() == row["sha256"], source
     return target
 
