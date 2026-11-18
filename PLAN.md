@@ -2,6 +2,13 @@
 this_file: PLAN.md
 ---
 
+## Issue 271 installer qualification
+
+Integrate the independently reviewed generated installer through existing full
+repository/hook gates; verify exact-SHA CI and archives, then qualify native
+macOS/Windows use when the serialized guard is available. Preserve owner files.
+
+
 ## Functional work order — 2026-11-14
 
 Prioritize practical consolidated menu tools and Font UI Lab workflows, including their shared compact controls, Filters and metrics behavior. Reconcile App, Fontport, Pens and Fly calls together while preserving compatibility launchers, historical sources and installer ownership.

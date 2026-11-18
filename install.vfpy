@@ -70,12 +70,21 @@ def fetch(url, timeout):
 
 
 def download(target, url=PYPI):
-    local = sorted([*HERE.glob("dist/fontlab_python_instamix-*-py3-none-any.whl"),
-                    *(HERE.parent / "fontlab-python-instamix" / "dist").glob("fontlab_python_instamix-*-py3-none-any.whl")])
-    if len(local) > 1:
-        raise RuntimeError("multiple local instamix wheels; keep only the intended version")
+    local = sorted({path.resolve() for path in [*HERE.glob("dist/fontlab_python_instamix-*-py3-none-any.whl"),
+                    *(HERE.parent / "fontlab-python-instamix" / "dist").glob("fontlab_python_instamix-*-py3-none-any.whl")]})
+    selected_version = None
     if local:
-        blob = local[0].read_bytes()
+        versions = {path: path.name[len("fontlab_python_instamix-"):-len("-py3-none-any.whl")] for path in local}
+        compatible = [path for path in local if release(versions[path]) >= (*MINIMUM, 1)]
+        if not compatible:
+            raise RuntimeError("local instamix wheels are below the minimum " + ".".join(map(str, MINIMUM))
+                               + "; build a current wheel or move the old wheels out of dist")
+        chosen = max(compatible, key=lambda path: wheel_version(versions[path]))
+        selected_version = versions[chosen]
+        blob = chosen.read_bytes()
+        for path in compatible:
+            if path != chosen and wheel_version(versions[path]) == wheel_version(selected_version) and path.read_bytes() != blob:
+                raise RuntimeError(f"conflicting local instamix wheels for {selected_version}: {chosen} and {path}; keep the intended build")
     else:
         info = json.loads(fetch(url, 60))
         wheel = next((u for u in info["urls"] if u["packagetype"] == "bdist_wheel"
@@ -94,6 +103,8 @@ def download(target, url=PYPI):
         metadata = BytesParser().parsebytes(archive.read(infos[0] + "/METADATA"))
         if metadata["Name"] != "fontlab-python-instamix" or not metadata["Version"]:
             raise RuntimeError("incorrect wheel metadata")
+        if selected_version is not None and metadata["Version"] != selected_version:
+            raise RuntimeError("local wheel version disagrees with metadata")
         required = {PKG + "/__init__.py", PKG + "/legacy.py", infos[0] + "/RECORD",
                     infos[0] + "/WHEEL", infos[0] + "/licenses/LICENSE"}
         if not required.issubset(names):
@@ -134,6 +145,18 @@ def release(version):
     return (*numbers, *[0] * (3 - len(numbers)), int(final))
 
 
+def wheel_version(version):
+    """Order the release and hatch-vcs wheel versions this project builds."""
+    # shortcut: project three-part versions only; extend when its build scheme changes.
+    match = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)(?:(a|b|rc|\.dev|\.post)(\d+))?(?:\+([a-zA-Z0-9.]+))?", version)
+    if match is None:
+        raise RuntimeError(f"unsupported local instamix wheel version {version!r}; keep a current project wheel")
+    major, minor, patch, phase, number, local = match.groups()
+    stage = {".dev": -4, "a": -3, "b": -2, "rc": -1, None: 0, ".post": 1}[phase]
+    local_parts = tuple((1, int(part)) if part.isdigit() else (0, part.lower()) for part in (local or "").split("."))
+    return int(major), int(minor), int(patch), stage, int(number or 0), local_parts
+
+
 def remove(path):
     if path.is_symlink() or path.is_file():
         path.unlink()
@@ -146,6 +169,8 @@ def required_api():
     extension = importlib.import_module(PKG + ".extension")
     if not callable(getattr(extension, "preflight_plugin_migration", None)):
         raise ImportError("fontlab_instamix.extension.preflight_plugin_migration must be callable")
+    if not callable(getattr(extension, "preflight_destinations", None)):
+        raise ImportError("fontlab_instamix.extension.preflight_destinations must be callable")
     gui = importlib.import_module(PKG + ".gui")
     if not callable(getattr(gui, "message", None)):
         raise ImportError("fontlab_instamix.gui.message must be callable")
@@ -230,4 +255,12 @@ if __name__ != "install_vfpy_import":
         gui.message(f"Installed fontlab-instamix into {site()}")
     else:
         from fontlab_instamix import bootstrap
-        gui.message("\n".join(f"Installed {r['id']} {r['version']}" for r in bootstrap.install_project(__file__)))
+        try:
+            records = bootstrap.install_project(__file__)
+        except (OSError, ValueError, RuntimeError) as error:
+            for record in getattr(error, "installed_records", []):
+                status = "Incomplete requirements for" if record.get("requires_failed") else "Installed"
+                gui.message(f"{status} {record['id']} {record['version']} (before failure)")
+            gui.message(str(error), error=True)
+        else:
+            gui.message("\n".join(f"Installed {r['id']} {r['version']}" for r in records))
