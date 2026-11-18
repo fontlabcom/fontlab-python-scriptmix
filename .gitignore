@@ -238,3 +238,10 @@ __marimo__/
 
 # Isolated documentation runtime
 .docs-venv/
+
+# Python and macOS (pypitrust)
+.DS_Store
+*.py[cod]
+.venv/
+__version__.py
+_version.py

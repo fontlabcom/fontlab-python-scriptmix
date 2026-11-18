@@ -1,7 +1,11 @@
 # this_file: pyproject.toml
+[build-system]
+requires = ["hatchling>=1.27", "hatch-vcs>=0.4"]
+build-backend = "hatchling.build"
+
 [project]
 name = "fontlab-python-scriptmix-docs"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Local documentation build for fontlab-python-scriptmix"
 requires-python = ">=3.12"
 dependencies = [
@@ -19,6 +23,12 @@ dependencies = [
 dev = ["pytest>=8", "playwright>=1.55"]
 [tool.uv]
 package = false
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.version.raw-options]
+fallback_version = "0.1.0"
 
 [tool.ruff.lint.per-file-ignores]
 # Frozen provenance pins: these eight proposed sources must stay byte-identical to
