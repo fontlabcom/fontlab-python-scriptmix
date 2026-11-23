@@ -8,15 +8,15 @@ docs_dir: md
 site_dir: ../docs
 use_directory_urls: false
 theme:
-  name: materialx
+  name: fly-january
   language: en
-  custom_dir: overrides
   palette:
     scheme: default
   features:
     - search.highlight
     - content.code.copy
 plugins:
+  - fly
   - search:
       lang: [en]
 markdown_extensions:
@@ -24,13 +24,13 @@ markdown_extensions:
   - tables
   - pymdownx.highlight
   - pymdownx.superfences
-extra_css:
-  - stylesheets/local.css
-  - https://i.fontlab.com/fltheme26/1.0.0/components.css
-  - https://i.fontlab.com/fltheme26/1.0.0/theme.css
-extra_javascript:
-  - https://i.fontlab.com/fltheme26/1.0.0/basecoat.js
-  - https://i.fontlab.com/fltheme26/1.0.0/theme.js
+extra:
+  fly:
+    chrome: fontlab
+    chrome_options:
+      site-label: Scriptmix
+      mobile-menu: materialx
+      mobile-search: materialx
 validation:
   links:
     not_found: warn

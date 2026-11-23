@@ -5,11 +5,14 @@ import io
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import tarfile
 import tempfile
 import unittest
+
+from packaging.utils import canonicalize_name
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,15 +27,20 @@ class LegalDistributionTests(unittest.TestCase):
             subprocess.run(command + ['init', '--quiet'], env=env, check=True)
             shutil.copyfile(ROOT / '.gitattributes', root / '.gitattributes')
             inventory = json.loads((ROOT / 'src_docs/md/assets/current-docs-inventory.json').read_text())
-            self.assertEqual(len(inventory['distributions']), 31)
-            self.assertEqual(len(inventory['generated_vendor_assets']), 44)
+            requirements = (ROOT / 'src_docs/requirements.txt').read_text()
+            locked = re.findall(r'^([\w.-]+)==(\S+)', requirements, re.MULTILINE)
+            self.assertEqual(
+                {(canonicalize_name(row['name']), row['version']) for row in inventory['distributions']},
+                {(canonicalize_name(name), version) for name, version in locked},
+            )
+            self.assertEqual(len(inventory['generated_vendor_assets']), 49)
             self.assertFalse(inventory['complete_transitive_inventory'])
             paths = {Path('src_docs/md') / item['path']: item['sha256'] for row in inventory['distributions'] for item in row['notices']}
             for relative in list(paths):
                 paths[Path('docs') / relative.relative_to('src_docs/md')] = paths[relative]
             policy = json.loads((ROOT / 'src_docs/md/assets/english-search-omissions.json').read_text())
             self.assertEqual(len(policy['omitted']), 35)
-            self.assertEqual(len(policy['retained']), 9)
+            self.assertEqual(len(policy['retained']), 14)
             self.assertEqual(sorted(policy['omitted'] + policy['retained'], key=lambda r: r['path']), inventory['generated_vendor_assets'])
             for row in policy['omitted']:
                 self.assertFalse((ROOT / 'docs' / row['path']).exists(), row['path'])

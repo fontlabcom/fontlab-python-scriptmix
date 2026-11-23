@@ -2,6 +2,12 @@
 this_file: WORK.md
 ---
 
+## 2026-11-24 — Scriptmix documentation theme
+
+Adopted fly-january 0.1.1 with FontLab chrome labeled “Scriptmix”. The root and CI strict builds produced 345 byte-identical files with zero warnings. All 230 content pages and the 404 page load the theme assets, menu and footer. English search retains all 481 indexed locations. Browser interaction remains with the rollout orchestrator.
+
+All 62 documentation tests passed, including the 44 pipeline tests. The arm64 Python 3.11 runtime suite passed 5,282 tests. It skipped five opt-in source audits and one inapplicable selection check. That run used an isolated copy of the migrated tree and set `QT_QPA_PLATFORM=offscreen` before Python started.
+
 ## 2026-11-14 — Functional work order documented
 
 Owner-checkout note carried in the Issue 258 cleanup: AGENTS, PLAN and TODO prioritise useful functional changes and compatible package boundaries, with detailed testing deferred. Documentation-only; no runtime, installed or native checks ran.

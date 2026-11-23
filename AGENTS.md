@@ -144,7 +144,7 @@ installing into its user folder or publishing a site.
 
 ## Public site qualification
 
-Retain all 259 practical tools, the 350 classified source rows and the historical 68-of-130 native boundary. Source identity links and hashes must remain exact. Keep authored retained guides outside generated `docs/`. Follow README for the current exact-lock build. Independent source/privacy/legal review, actual main CI, immutable generated-output verification, settings readback and live browser checks remain required. The current 31-package/44-asset inventory is scoped evidence; the complete transitive browser licence review remains open.
+Retain all 259 practical tools, the 350 classified source rows and the historical 68-of-130 native boundary. Source identity links and hashes must remain exact. Keep authored retained guides outside generated `docs/`. Follow README for the current exact-lock build. Independent source/privacy/legal review, actual main CI, immutable generated-output verification, settings readback and live browser checks remain required. The fly-january 0.1.1 build uses FontLab chrome and records 33 packages and 49 vendor assets before English-only omission; the complete transitive browser licence review remains open.
 
 ## Integration rounds
 

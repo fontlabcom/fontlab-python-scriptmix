@@ -100,7 +100,7 @@ class FrontendPayloadTests(unittest.TestCase):
         observed = set()
         for path in (ROOT / 'docs').rglob('*.html'):
             observed.update(icon_paths(path.read_text()))
-        css = '\n'.join(path.read_text() for path in (ROOT / 'docs/assets/stylesheets').glob('*.css'))
+        css = '\n'.join(path.read_text() for path in (ROOT / 'docs/assets').rglob('*.css'))
         for svg in re.findall(r'<svg\b.*?</svg>', unquote(css), re.S):
             observed.update(icon_paths(svg))
         self.assertTrue(observed)
@@ -118,6 +118,7 @@ class FrontendPayloadTests(unittest.TestCase):
             optimized.update(icon_paths(unquote(values[0])))
         self.assertEqual(observed - installed, optimized)
         caret = scope['css_header_attributions']['--md-version-icon']
+        self.assertEqual(hashlib.sha256((ROOT / 'docs' / caret['asset']).read_bytes()).hexdigest(), caret['asset_sha256'])
         values = re.findall(r"--md-version-icon:url\('data:image/svg\+xml;charset=utf-8,(.*?)'\)", css)
         self.assertEqual(len(values), 1)
         svg = unquote(values[0])

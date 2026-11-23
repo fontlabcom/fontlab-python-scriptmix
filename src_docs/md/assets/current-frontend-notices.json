@@ -2040,7 +2040,7 @@
       "css_header_attributions": {
         "--md-version-icon": {
           "asset": "assets/stylesheets/main.314bbef5.min.css",
-          "asset_sha256": "314bbef5bf9ab3a776c5b1bb3ae42f0db5de636bfe2b1ddd6e67de3d35384d8b",
+          "asset_sha256": "a9d6426d6198be70d52a93a4591704bf9a353b01c5a06a1ff85415b7eeb30d61",
           "installed_icon": "fontawesome/solid/caret-down.svg",
           "exact_path_tuple_match": true,
           "component": "@fortawesome/fontawesome-free",
@@ -2059,8 +2059,10 @@
     "limit": "Ordered path d tuples are not all SVG geometry. Forty-three tuples match installed icons, including the header-attributed Font Awesome version caret. The two remaining optimized Lucide tuples are bound by exact SCSS source references; no whole-geometry equivalence is claimed."
   },
   "external_services": {
-    "fltheme26": "HTTPS includes use the external FontLab service; its implementation bytes are not copied into this payload. Retained notices do not freeze later service responses.",
-    "Google_Fonts": "Roboto/Roboto Mono are requested from the external service; no font binary is redistributed by this site. Existing OFL notices are retained without claiming immutable response bytes."
+    "FontLab_menu": "fly-january loads https://i.fontlab.com/menu/fontlab.js for the FontLab menu and footer.",
+    "Google_Fonts": "MaterialX requests Roboto and Roboto Mono. Fly requests Material Symbols Outlined. No font binaries are bundled.",
+    "Adobe_Fonts": "Fly loads its default Adobe Fonts kits for News Serif, Sole Serif and Grtsk.",
+    "PhotoSwipe": "Fly loads the integrity-pinned PhotoSwipe 5.4.4 stylesheet from jsDelivr and requests its scripts for lightbox images."
   },
   "language_helpers": "The exact35 lunr-languages1.20.0 assets, including Wordcut/TinySegmenter, are omitted under the guarded English-only manifest, not relicensed or represented as shipped."
 }

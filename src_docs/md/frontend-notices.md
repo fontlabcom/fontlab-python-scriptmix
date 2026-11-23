@@ -9,16 +9,15 @@ These notices cover the named browser components below. The complete transitive
 inventory is **still being reviewed**. This page does not qualify the site for
 publication or change the licence of example code, API documentation or packages.
 
-MaterialX supplies browser code, styles, search helpers and icons. The separate
-FontLab shared theme includes Basecoat, daisyUI and Tailwind CSS. The Google Fonts
-links request Roboto and Roboto Mono from an external service; those response
-bytes can vary. The font notices below correspond to the reviewed response.
+The earlier MaterialX build used the FontLab shared theme with Basecoat, daisyUI
+and Tailwind CSS. Its Google Fonts links requested Roboto and Roboto Mono.
+The font notices below correspond to the reviewed response.
 
 The [machine-readable notice list](frontend-notices.json) records source URLs,
 full-text SHA-256 digests and remaining review items. MaterialX's dependency
 versions are bound to publisher commit
 [`c088af2`](https://github.com/jaywhj/mkdocs-materialx/tree/c088af2faa3a75dd4b9cded468eca285b6775d71).
-Browser asset licence texts and attribution are recorded below.
+Retained archive assets keep their existing bytes and attribution.
 
 | Component | Version / source | Terms and full notices |
 | --- | --- | --- |
@@ -64,19 +63,19 @@ retains a 2013 licence notice. Both are preserved above.
 
 ## Current documentation build inventory
 
-The [current installed-distribution inventory](assets/current-docs-inventory.json) records all 31 packages in the exact build lock, their installed licence texts, and the 44 generated browser assets matched byte for byte to their installed distributions. The current builder uses ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and Pymdown Extensions 11.0.1. This scoped inventory does not close the embedded-component or external-response review.
+The [current installed-distribution inventory](assets/current-docs-inventory.json) records the 33 locked distributions and their 38 licence and notice files. The site uses fly-january 0.1.1 with ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and PyMdown Extensions 11.0.1.
 
 ## Current English browser payload
 
 The [current browser-component record](assets/current-frontend-notices.json) binds the actual retained MaterialX10.1.8 browser payload to exact package archives, full notices and source maps. The historical partial inventory above remains unchanged; its old pending language-helper/source review is not asserted to qualify these current bytes.
 
-The [English-only omission manifest](assets/english-search-omissions.json) records all35 exact unused lunr-languages1.20.0 helpers removed from the generated site, including Wordcut and TinySegmenter. The build fails on theme/search-language, search-index, vendor-set/hash or local HTML-reference drift. Nine original core vendor assets remain byte-exact; all36 notice files from31 locked Python distributions remain. No language-helper implementation is distributed by the current output, and the historical44-asset packet is preserved as evidence.
+The [English-only omission manifest](assets/english-search-omissions.json) records the 35 unused lunr-languages 1.20.0 helpers removed from the generated site, including Wordcut and TinySegmenter. The build fails on theme/search-language, search-index, vendor-set/hash or local HTML-reference drift. The build retains 14 theme assets. Five come directly from fly-january and seven directly from MaterialX. For the other two MaterialX stylesheets, the manifest records both the installed SHA-256 and the output SHA-256 after Fly rescales rem lengths.
 
 The main JavaScript source map retains211 preferred sources;128 external component sources match the exact NPM archives byte for byte. The worker map retains13 sources, including exact Lunr2.3.9. Clipboard's exact upstream distribution embeds its nested dependencies; the publisher lock and the exact select/good-listener/delegate README License sections retain the MIT link and Zeno Rocha attribution. No missing standalone LICENSE or copyright year is invented. CSS source maps list source names rather than embedded preferred-source bytes.
 
 Material Design icons retain the Pictogrammers notice and Apache2.0 icon terms (or any specifically stated underlying terms), while code is MIT. Font Awesome Free icons carry Fonticons attribution and CC-BY4.0 terms; Octicons retain GitHub's MIT notice; Lucide retains its ISC and inherited icon notices. Forty-five distinct SVG path tuples are observed in the current HTML and CSS; forty-three match installed icon path tuples. The version caret-down in `--md-version-icon` matches `fontawesome/solid/caret-down.svg` at that scope. Its unchanged CSS header identifies Font Awesome Free 7.1.0, Copyright 2025 Fonticons, Inc., and CC-BY-4.0 icon terms; the existing full Font Awesome notice remains available below. The corresponding official Font Awesome 7.1.0 NPM SVG has different path bytes from the installed MaterialX icon and CSS; no unchanged-primary SVG or optimizer-recipe equivalence is claimed. The two remaining optimized CSS path tuples are attributed by the pinned SCSS references to `lucide/focus.svg` and `lucide/download.svg`. Path-tuple matching and source attribution do not establish equality of all SVG geometry.
 
-FontLab's shared theme scripts/styles and Google Fonts remain external HTTPS services; their implementation/font bytes are not copied into this site's payload. Corresponding retained notices remain available. A local build does not freeze future external responses or establish live publication.
+Fly loads the FontLab menu script, Google Fonts and Adobe Fonts stylesheets, and the PhotoSwipe 5.4.4 stylesheet from external services. Lightbox images can also request PhotoSwipe scripts. The local build contains no font binaries. External responses and the complete transitive licence review remain open.
 
 | Component / retained terms | Version | Exact full notice or upstream README licence section |
 | --- | --- | --- |

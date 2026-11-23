@@ -70,12 +70,25 @@ class SiteTests(unittest.TestCase):
         built = sorted(str(path.relative_to(SITE)) for path in SITE.rglob('*.html') if path.name != '404.html')
         self.assertEqual(built, PAGES)
 
-    def test_pages_have_light_menu_footer_local_search_and_correct_canonical(self):
+    def test_pages_have_fly_chrome_local_search_and_correct_canonical(self):
         for route in PAGES:
             page = Page((SITE / route).read_text())
             with self.subTest(route=route):
-                self.assertEqual([attrs.get('mode') for tag, attrs in page.tags if tag == 'fontlab-menu'], ['light'])
-                self.assertEqual([attrs.get('mode') for tag, attrs in page.tags if tag == 'fontlab-footer'], ['light'])
+                menus = [attrs for tag, attrs in page.tags if tag == 'fontlab-menu']
+                self.assertEqual(len(menus), 1)
+                self.assertEqual(menus[0]['site-label'], 'Scriptmix')
+                self.assertEqual(menus[0]['site-url'], 'https://code.fontlab.com/fontlab-python-scriptmix/')
+                self.assertEqual(menus[0]['mobile-menu'], 'materialx')
+                self.assertEqual(menus[0]['mobile-search'], 'materialx')
+                self.assertTrue({'__drawer', '__search'} <= page.ids)
+                self.assertEqual(sum(tag == 'fontlab-footer' for tag, _ in page.tags), 1)
+                assets = [attrs['src'] for tag, attrs in page.tags if tag == 'script' and 'src' in attrs]
+                assets += [attrs['href'] for tag, attrs in page.tags if tag == 'link' and attrs.get('rel') == 'stylesheet']
+                self.assertEqual(assets.count('https://i.fontlab.com/menu/fontlab.js'), 1)
+                self.assertFalse(any('/fltheme26/' in asset for asset in assets))
+                local = [url for url in map(urlsplit, assets) if not url.netloc]
+                for asset in ('fly.css', 'fly-bridge.js', 'fly.js'):
+                    self.assertEqual(sum(url.path.endswith('/fly/' + asset) for url in local), 1, asset)
                 self.assertEqual([attrs.get('data-md-color-scheme') for tag, attrs in page.tags if tag == 'body'], ['default'])
                 search = [attrs for tag, attrs in page.tags if attrs.get('data-md-component') == 'search-query']
                 self.assertEqual(len(search), 1)

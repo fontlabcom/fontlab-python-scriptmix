@@ -12,8 +12,8 @@ Original repository code uses Apache-2.0. Retained third-party material keeps
 its recorded licence and attribution. A documentation build does not change
 the licence of an included source file.
 
-The theme uses [MaterialX](https://jaywhj.github.io/mkdocs-materialx/) and the
-[FontLab shared theme](https://i.fontlab.com/fltheme26/).
+The [fly-january 0.1.1 theme](https://pypi.org/project/fly-january/0.1.1/)
+extends [MaterialX](https://jaywhj.github.io/mkdocs-materialx/) and supplies the FontLab menu and footer.
 The [build dependency notes](plugins.md) record plugin use and compatibility.
 
 [Apache License 2.0: full text](licenses/apache-2.0.txt).

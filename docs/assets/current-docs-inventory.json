@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "scope": "Installed exact-lock documentation distributions and byte-matched generated assets. Not a complete transitive browser-licence review.",
+  "scope": "Installed exact-lock documentation distributions and generated vendor assets, including the two MaterialX stylesheets rescaled by fly-january. Transitive browser-licence review remains open.",
   "complete_transitive_inventory": false,
   "publication_qualified": false,
-  "lock_sha256": "961b3ec6b8ffde319473d3c17325d1699915c236a657a91baef77b5527215070",
+  "lock_sha256": "20486cf71fcc88309024bbb51e82560b71accc89b03a8a6289fc0dd00a189544",
   "distributions": [
     {
       "name": "babel",
@@ -111,6 +111,25 @@
           "path": "assets/current-docs-licences/colorama/LICENSE.txt.txt",
           "sha256": "cac35c02686e5d04a5a7140bfb3b36e73aed496656e891102e428886d7930318",
           "distribution_notice_basename": "LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "name": "fly-january",
+      "version": "0.1.1",
+      "source_url": "https://pypi.org/project/fly-january/0.1.1/",
+      "licence_expression": "Apache-2.0",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://fontlab.dev/fontlab-www-docstheme/",
+        "Source, https://github.com/Fontlab/fontlab-www-docstheme",
+        "Changelog, https://github.com/Fontlab/fontlab-www-docstheme/blob/main/CHANGELOG.md"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/fly-january/LICENSE.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "distribution_notice_basename": "LICENSE"
         }
       ]
     },
@@ -591,6 +610,24 @@
       ]
     },
     {
+      "name": "vexy-python-markdown-figure-groups",
+      "version": "0.1.0",
+      "source_url": "https://pypi.org/project/vexy-python-markdown-figure-groups/0.1.0/",
+      "licence_expression": "Apache-2.0",
+      "licence_metadata": null,
+      "project_urls": [
+        "Homepage, https://github.com/vexyart/vexy-python-markdown-figure-groups",
+        "Repository, https://github.com/vexyart/vexy-python-markdown-figure-groups"
+      ],
+      "notices": [
+        {
+          "path": "assets/current-docs-licences/vexy-python-markdown-figure-groups/LICENSE.txt",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "distribution_notice_basename": "LICENSE"
+        }
+      ]
+    },
+    {
       "name": "watchdog",
       "version": "7.1.0",
       "source_url": "https://pypi.org/project/watchdog/7.1.0/",
@@ -617,6 +654,61 @@
     }
   ],
   "generated_vendor_assets": [
+    {
+      "path": "assets/fly/fly-bridge.js",
+      "sha256": "86c9984233daffdc756f6abd1f08f34adf072934d02f5a1299491991ff95b108",
+      "installed_distribution_sources": [
+        {
+          "distribution": "fly-january",
+          "version": "0.1.1",
+          "path": "fly_january/assets/fly/fly-bridge.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/fly/fly-debug.js",
+      "sha256": "d0238887f0703ec875b61bab4777774a157eacf851e19b96607b01335c6812f1",
+      "installed_distribution_sources": [
+        {
+          "distribution": "fly-january",
+          "version": "0.1.1",
+          "path": "fly_january/assets/fly/fly-debug.js"
+        }
+      ]
+    },
+    {
+      "path": "assets/fly/fly-tokens.css",
+      "sha256": "ba1aaf2de7ca7d95f0b53fceb42390d0228b14edfa89a6e57f40fdf66d8bad39",
+      "installed_distribution_sources": [
+        {
+          "distribution": "fly-january",
+          "version": "0.1.1",
+          "path": "fly_january/assets/fly/fly-tokens.css"
+        }
+      ]
+    },
+    {
+      "path": "assets/fly/fly.css",
+      "sha256": "24c03d88bb3c3a3d4347a344f7be06b7561544075a3919af69991d3dd69a7f8d",
+      "installed_distribution_sources": [
+        {
+          "distribution": "fly-january",
+          "version": "0.1.1",
+          "path": "fly_january/assets/fly/fly.css"
+        }
+      ]
+    },
+    {
+      "path": "assets/fly/fly.js",
+      "sha256": "f51ac225265c69c21d841259742588e1909fac4e761fb07bb36bb9f17b6a889c",
+      "installed_distribution_sources": [
+        {
+          "distribution": "fly-january",
+          "version": "0.1.1",
+          "path": "fly_january/assets/fly/fly.js"
+        }
+      ]
+    },
     {
       "path": "assets/images/favicon.png",
       "sha256": "023854c43fc4b25b795ee4951c8019e3de0593ffeb6f918b5d1f2a9b47a57cfe",
@@ -1059,14 +1151,16 @@
     },
     {
       "path": "assets/stylesheets/main.314bbef5.min.css",
-      "sha256": "314bbef5bf9ab3a776c5b1bb3ae42f0db5de636bfe2b1ddd6e67de3d35384d8b",
+      "sha256": "a9d6426d6198be70d52a93a4591704bf9a353b01c5a06a1ff85415b7eeb30d61",
       "installed_distribution_sources": [
         {
           "distribution": "mkdocs-materialx",
           "version": "10.1.8",
           "path": "material/templates/assets/stylesheets/main.314bbef5.min.css"
         }
-      ]
+      ],
+      "source_sha256": "314bbef5bf9ab3a776c5b1bb3ae42f0db5de636bfe2b1ddd6e67de3d35384d8b",
+      "transformation": "fly-january 0.1.1 MaterialX rem rescale (20/14.4)"
     },
     {
       "path": "assets/stylesheets/main.314bbef5.min.css.map",
@@ -1081,14 +1175,16 @@
     },
     {
       "path": "assets/stylesheets/palette.a45159b5.min.css",
-      "sha256": "a45159b56103e8b1ad8240a01ec0235924a2bd19e00572efaf4243e82128792d",
+      "sha256": "0c0adc8593b01c280e96f27923a8ed0ccecb88aca1b93ffac98c0c27b44b19d6",
       "installed_distribution_sources": [
         {
           "distribution": "mkdocs-materialx",
           "version": "10.1.8",
           "path": "material/templates/assets/stylesheets/palette.a45159b5.min.css"
         }
-      ]
+      ],
+      "source_sha256": "a45159b56103e8b1ad8240a01ec0235924a2bd19e00572efaf4243e82128792d",
+      "transformation": "fly-january 0.1.1 MaterialX rem rescale (20/14.4)"
     },
     {
       "path": "assets/stylesheets/palette.a45159b5.min.css.map",
@@ -1104,7 +1200,7 @@
   ],
   "remaining_review": [
     "Embedded browser dependencies and source-availability obligations",
-    "External fltheme26 and font response provenance",
+    "External FontLab chrome and font response provenance",
     "Historical pending groups remain in frontend-notices.json; this inventory does not supersede them"
   ]
 }

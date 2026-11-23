@@ -243,7 +243,7 @@ remain mandatory. Audits read archived bytes; they do not execute originals.
 
 ## Documentation tests and build
 
-The site uses Python 3.13 and the 31-package hash lock in `src_docs/requirements.txt`:
+The site uses fly-january 0.1.1 with FontLab chrome. Both the local build and CI use `src_docs/mkdocs.yml` and the Python 3.13 hash lock in `src_docs/requirements.txt`.
 
 ```sh
 uv venv --python 3.13 .docs-venv

@@ -159,7 +159,7 @@ Use the detailed open tasks in [TODO.md](TODO.md) as the acceptance checklist. C
 
 ## Public site qualification
 
-Retain all 269 practical tools, the 350 classified source rows and the historical 68-of-130 native boundary. Source identity links and hashes must remain exact. Keep authored retained guides outside generated `docs/`. Follow README for the current exact-lock build. Independent source/privacy/legal review, actual main CI, immutable generated-output verification, settings readback and live browser checks remain required. Review the current nine-asset English payload and its primary-source notices separately from the retained historical 44-asset inventory. The build rejects language, reference or asset drift before omitting the 35 unused language helpers; 36 licence files from the 31 locked Python distributions remain distributed.
+Retain all 269 practical tools, the 350 classified source rows and the historical 68-of-130 native boundary. Source identity links and hashes must remain exact. Keep authored retained guides outside generated `docs/`. Follow README for the current exact-lock build. Independent source/privacy/legal review, actual main CI, immutable generated-output verification, settings readback and live browser checks remain required. Review the current 14-asset fly-january English payload and its primary-source notices separately from the retained historical 44-asset inventory. The build rejects language, reference or asset drift before omitting the 35 unused language helpers; 38 licence files from the 33 locked Python distributions remain distributed.
 
 ## Issue 241 window qualification
 

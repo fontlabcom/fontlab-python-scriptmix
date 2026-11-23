@@ -1,5 +1,4 @@
 
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -39,12 +38,17 @@
       
     
     
+  
       <link rel="stylesheet" href="../../assets/stylesheets/main.314bbef5.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a45159b5.min.css">
       
     
+  <link rel="stylesheet" data-fly-photoswipe href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css"
+      integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../assets/fly/fly.css?v=24c03d88bb">
+
     
 
     
@@ -62,12 +66,6 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/local.css">
-    
-      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/components.css">
-    
-      <link rel="stylesheet" href="https://i.fontlab.com/fltheme26/1.0.0/theme.css">
-    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -75,6 +73,17 @@
     
     
   
+  <script>try{if(sessionStorage.getItem("fly-l2")==="in"){document.documentElement.dataset.flyL2="in";sessionStorage.removeItem("fly-l2")}}catch(e){}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0&icon_names=arrow_back,arrow_forward,dark_mode,light_mode&display=block">
+  <script>try{document.fonts.load('20px "Material Symbols Outlined"',"arrow_backarrow_forwarddark_modelight_mode").then(function(f){if(f.length)document.documentElement.classList.add("fly-msym")})}catch(e){}</script>
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/cmv5add.css" data-fly-font>
+  <link rel="stylesheet" href="https://use.typekit.net/cna4jfp.css" data-fly-font>
+  <link rel="stylesheet" href="https://use.typekit.net/wck5koo.css" data-fly-font>
   <script src="https://i.fontlab.com/menu/fontlab.js" defer></script>
 
   </head>
@@ -87,7 +96,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="glass">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" data-mx-topbar="glass" class="fly-margin-left fly-chrome-fontlab">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -108,9 +117,7 @@
     </div>
     
     
-  <fontlab-menu mode="light" site-label="FontLab Scriptmix"
-                site-url="https://code.fontlab.com/fontlab-python-scriptmix/"
-                mobile-menu="materialx" mobile-search="materialx"></fontlab-menu>
+  <fontlab-menu mode="dark" site-label="Scriptmix" site-url="https://code.fontlab.com/fontlab-python-scriptmix/" mobile-menu="materialx" mobile-search="materialx"></fontlab-menu>
   
       
 
@@ -258,12 +265,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../index.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="FontLab Scriptmix">
     
   
     FontLab Scriptmix
@@ -285,12 +293,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../background-cleaning.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Clear Backgrounds Across a Font">
     
   
     Clear Backgrounds Across a Font
@@ -312,12 +321,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../backlog.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Porting backlog">
     
   
     Porting backlog
@@ -339,12 +349,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../contribute.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Build and edit the documentation">
     
   
     Build and edit the documentation
@@ -366,12 +377,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../cross-font-reports.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Complete cross-font reports">
     
   
     Complete cross-font reports
@@ -393,12 +405,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../frontend-notices.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Browser asset notices">
     
   
     Browser asset notices
@@ -420,12 +433,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../install.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Install the scripts">
     
   
     Install the scripts
@@ -447,12 +461,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../licenses.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Licences">
     
   
     Licences
@@ -474,12 +489,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../near-miss-report.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Close But No Cigar">
     
   
     Close But No Cigar
@@ -501,12 +517,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../plugins.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Documentation build">
     
   
     Documentation build
@@ -528,12 +545,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../raise-ascender.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Raise Ascender">
     
   
     Raise Ascender
@@ -555,12 +573,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../retirement-decisions.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Practical menu retirement decisions">
     
   
     Practical menu retirement decisions
@@ -582,12 +601,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../tags.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Browse by category">
     
   
     Browse by category
@@ -605,6 +625,7 @@
     
       
       
+  
   
   
   
@@ -614,7 +635,7 @@
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Browse by category">
     
   
     Browse by category
@@ -636,12 +657,13 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../use.html" class="md-nav__link">
         
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Work with an open font">
     
   
     Work with an open font
@@ -663,6 +685,7 @@
   
   
   
+  
     
     
     
@@ -679,7 +702,7 @@
             
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Guides">
     
   
     Guides
@@ -710,6 +733,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../../guides/pre-integration.html" class="md-nav__link">
         
@@ -734,6 +758,7 @@
             
               
                 
+  
   
   
   
@@ -771,6 +796,7 @@
       
   
   
+  
     
   
   
@@ -791,7 +817,7 @@
             
   
   
-  <span class="md-ellipsis">
+  <span class="md-ellipsis" title="Scripts">
     
   
     Scripts
@@ -822,6 +848,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../index.html" class="md-nav__link">
         
@@ -846,6 +873,7 @@
             
               
                 
+  
   
   
   
@@ -897,6 +925,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/index.html" class="md-nav__link">
         
@@ -921,6 +950,7 @@
             
               
                 
+  
   
   
   
@@ -953,6 +983,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/auto-cursive-attachment-add-anchors.html" class="md-nav__link">
         
@@ -977,6 +1008,7 @@
             
               
                 
+  
   
   
   
@@ -1009,6 +1041,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/center-horizontally.html" class="md-nav__link">
         
@@ -1033,6 +1066,7 @@
             
               
                 
+  
   
   
   
@@ -1065,6 +1099,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/compatibility-report.html" class="md-nav__link">
         
@@ -1089,6 +1124,7 @@
             
               
                 
+  
   
   
   
@@ -1121,6 +1157,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/copy-anchors-from-glyph.html" class="md-nav__link">
         
@@ -1145,6 +1182,7 @@
             
               
                 
+  
   
   
   
@@ -1177,6 +1215,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/delete-by-name.html" class="md-nav__link">
         
@@ -1201,6 +1240,7 @@
             
               
                 
+  
   
   
   
@@ -1233,6 +1273,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/duplicate-anchor-rings.html" class="md-nav__link">
         
@@ -1257,6 +1298,7 @@
             
               
                 
+  
   
   
   
@@ -1289,6 +1331,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/mark-attachment-preview.html" class="md-nav__link">
         
@@ -1313,6 +1356,7 @@
             
               
                 
+  
   
   
   
@@ -1345,6 +1389,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/optical-center.html" class="md-nav__link">
         
@@ -1369,6 +1414,7 @@
             
               
                 
+  
   
   
   
@@ -1401,6 +1447,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/remove-extraneous-mark-anchors.html" class="md-nav__link">
         
@@ -1425,6 +1472,7 @@
             
               
                 
+  
   
   
   
@@ -1457,6 +1505,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../anchors/round-to-grid.html" class="md-nav__link">
         
@@ -1481,6 +1530,7 @@
             
               
                 
+  
   
   
   
@@ -1517,6 +1567,7 @@
             
               
                 
+  
   
   
   
@@ -1568,6 +1619,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../cleanup/index.html" class="md-nav__link">
         
@@ -1592,6 +1644,7 @@
             
               
                 
+  
   
   
   
@@ -1624,6 +1677,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../cleanup/clear-master-backgrounds.html" class="md-nav__link">
         
@@ -1648,6 +1702,7 @@
             
               
                 
+  
   
   
   
@@ -1680,6 +1735,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../cleanup/empty-layers.html" class="md-nav__link">
         
@@ -1708,6 +1764,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../cleanup/select-unreferenced-glyphs.html" class="md-nav__link">
         
@@ -1732,6 +1789,7 @@
             
               
                 
+  
   
   
   
@@ -1768,6 +1826,7 @@
             
               
                 
+  
   
   
   
@@ -1819,6 +1878,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/index.html" class="md-nav__link">
         
@@ -1843,6 +1903,7 @@
             
               
                 
+  
   
   
   
@@ -1875,6 +1936,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/build-from-recipes.html" class="md-nav__link">
         
@@ -1899,6 +1961,7 @@
             
               
                 
+  
   
   
   
@@ -1931,6 +1994,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/component-graph.html" class="md-nav__link">
         
@@ -1955,6 +2019,7 @@
             
               
                 
+  
   
   
   
@@ -1987,6 +2052,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/count-badges.html" class="md-nav__link">
         
@@ -2011,6 +2077,7 @@
             
               
                 
+  
   
   
   
@@ -2043,6 +2110,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/decompose-serif-components.html" class="md-nav__link">
         
@@ -2067,6 +2135,7 @@
             
               
                 
+  
   
   
   
@@ -2099,6 +2168,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/dump-component-recipes.html" class="md-nav__link">
         
@@ -2123,6 +2193,7 @@
             
               
                 
+  
   
   
   
@@ -2155,6 +2226,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/missing-bases.html" class="md-nav__link">
         
@@ -2179,6 +2251,7 @@
             
               
                 
+  
   
   
   
@@ -2211,6 +2284,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/replace-reference.html" class="md-nav__link">
         
@@ -2235,6 +2309,7 @@
             
               
                 
+  
   
   
   
@@ -2267,6 +2342,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/set-component-locations.html" class="md-nav__link">
         
@@ -2291,6 +2367,7 @@
             
               
                 
+  
   
   
   
@@ -2323,6 +2400,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../components/unlock-lock.html" class="md-nav__link">
         
@@ -2347,6 +2425,7 @@
             
               
                 
+  
   
   
   
@@ -2383,6 +2462,7 @@
             
               
                 
+  
   
   
   
@@ -2434,6 +2514,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../contours/index.html" class="md-nav__link">
         
@@ -2458,6 +2539,7 @@
             
               
                 
+  
   
   
   
@@ -2490,6 +2572,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../contours/contour-selection.html" class="md-nav__link">
         
@@ -2514,6 +2597,7 @@
             
               
                 
+  
   
   
   
@@ -2546,6 +2630,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../contours/derived-glyphs.html" class="md-nav__link">
         
@@ -2570,6 +2655,7 @@
             
               
                 
+  
   
   
   
@@ -2602,6 +2688,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../contours/node-editor.html" class="md-nav__link">
         
@@ -2626,6 +2713,7 @@
             
               
                 
+  
   
   
   
@@ -2658,6 +2746,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../contours/outline-doctor.html" class="md-nav__link">
         
@@ -2682,6 +2771,7 @@
             
               
                 
+  
   
   
   
@@ -2714,6 +2804,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../contours/tglyph-window.html" class="md-nav__link">
         
@@ -2738,6 +2829,7 @@
             
               
                 
+  
   
   
   
@@ -2774,6 +2866,7 @@
             
               
                 
+  
   
   
   
@@ -2825,6 +2918,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../features/index.html" class="md-nav__link">
         
@@ -2849,6 +2943,7 @@
             
               
                 
+  
   
   
   
@@ -2881,6 +2976,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../features/feature-explorer.html" class="md-nav__link">
         
@@ -2905,6 +3001,7 @@
             
               
                 
+  
   
   
   
@@ -2941,6 +3038,7 @@
             
               
                 
+  
   
   
   
@@ -2992,6 +3090,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-info/index.html" class="md-nav__link">
         
@@ -3016,6 +3115,7 @@
             
               
                 
+  
   
   
   
@@ -3048,6 +3148,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-info/font-identity.html" class="md-nav__link">
         
@@ -3072,6 +3173,7 @@
             
               
                 
+  
   
   
   
@@ -3108,6 +3210,7 @@
             
               
                 
+  
   
   
   
@@ -3159,6 +3262,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/index.html" class="md-nav__link">
         
@@ -3183,6 +3287,7 @@
             
               
                 
+  
   
   
   
@@ -3215,6 +3320,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/batch-ufo-recipe-workbench.html" class="md-nav__link">
         
@@ -3239,6 +3345,7 @@
             
               
                 
+  
   
   
   
@@ -3271,6 +3378,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/detached-transform-preview.html" class="md-nav__link">
         
@@ -3295,6 +3403,7 @@
             
               
                 
+  
   
   
   
@@ -3327,6 +3436,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/font-info-and-vertical-metrics.html" class="md-nav__link">
         
@@ -3351,6 +3461,7 @@
             
               
                 
+  
   
   
   
@@ -3383,6 +3494,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/interpolation-preview.html" class="md-nav__link">
         
@@ -3407,6 +3519,7 @@
             
               
                 
+  
   
   
   
@@ -3439,6 +3552,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/kerning-proof-workbench.html" class="md-nav__link">
         
@@ -3463,6 +3577,7 @@
             
               
                 
+  
   
   
   
@@ -3495,6 +3610,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/master-width-comparison.html" class="md-nav__link">
         
@@ -3519,6 +3635,7 @@
             
               
                 
+  
   
   
   
@@ -3551,6 +3668,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/open-fonts-and-master-overview.html" class="md-nav__link">
         
@@ -3575,6 +3693,7 @@
             
               
                 
+  
   
   
   
@@ -3607,6 +3726,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/tabular-width-audit.html" class="md-nav__link">
         
@@ -3635,6 +3755,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../font-ui-lab/ufo-roundtrip-inspector.html" class="md-nav__link">
         
@@ -3659,6 +3780,7 @@
             
               
                 
+  
   
   
   
@@ -3695,6 +3817,7 @@
             
               
                 
+  
   
   
   
@@ -3746,6 +3869,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../guides/index.html" class="md-nav__link">
         
@@ -3770,6 +3894,7 @@
             
               
                 
+  
   
   
   
@@ -3802,6 +3927,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../guides/copy-guides-between-masters.html" class="md-nav__link">
         
@@ -3826,6 +3952,7 @@
             
               
                 
+  
   
   
   
@@ -3858,6 +3985,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../guides/grid-generator.html" class="md-nav__link">
         
@@ -3882,6 +4010,7 @@
             
               
                 
+  
   
   
   
@@ -3914,6 +4043,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../guides/metric-reference-lines.html" class="md-nav__link">
         
@@ -3942,6 +4072,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../guides/perpendicular-guides.html" class="md-nav__link">
         
@@ -3966,6 +4097,7 @@
             
               
                 
+  
   
   
   
@@ -4002,6 +4134,7 @@
             
               
                 
+  
   
   
   
@@ -4053,6 +4186,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../kerning/index.html" class="md-nav__link">
         
@@ -4077,6 +4211,7 @@
             
               
                 
+  
   
   
   
@@ -4109,6 +4244,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../kerning/kerning-browser.html" class="md-nav__link">
         
@@ -4137,6 +4273,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../kerning/kerning-proof.html" class="md-nav__link">
         
@@ -4161,6 +4298,7 @@
             
               
                 
+  
   
   
   
@@ -4197,6 +4335,7 @@
             
               
                 
+  
   
   
   
@@ -4248,6 +4387,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/index.html" class="md-nav__link">
         
@@ -4272,6 +4412,7 @@
             
               
                 
+  
   
   
   
@@ -4304,6 +4445,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/compatibility-check.html" class="md-nav__link">
         
@@ -4328,6 +4470,7 @@
             
               
                 
+  
   
   
   
@@ -4360,6 +4503,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/copy-outline-to-mask.html" class="md-nav__link">
         
@@ -4384,6 +4528,7 @@
             
               
                 
+  
   
   
   
@@ -4416,6 +4561,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/display-next-layer.html" class="md-nav__link">
         
@@ -4440,6 +4586,7 @@
             
               
                 
+  
   
   
   
@@ -4472,6 +4619,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/duplicate-current-layer.html" class="md-nav__link">
         
@@ -4496,6 +4644,7 @@
             
               
                 
+  
   
   
   
@@ -4528,6 +4677,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/interpolation-preview.html" class="md-nav__link">
         
@@ -4552,6 +4702,7 @@
             
               
                 
+  
   
   
   
@@ -4584,6 +4735,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/layer-cleanup.html" class="md-nav__link">
         
@@ -4608,6 +4760,7 @@
             
               
                 
+  
   
   
   
@@ -4640,6 +4793,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/master-text-comparison.html" class="md-nav__link">
         
@@ -4664,6 +4818,7 @@
             
               
                 
+  
   
   
   
@@ -4696,6 +4851,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/overview.html" class="md-nav__link">
         
@@ -4720,6 +4876,7 @@
             
               
                 
+  
   
   
   
@@ -4752,6 +4909,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/restore-backup-layer.html" class="md-nav__link">
         
@@ -4776,6 +4934,7 @@
             
               
                 
+  
   
   
   
@@ -4808,6 +4967,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/selection-layer-navigator.html" class="md-nav__link">
         
@@ -4832,6 +4992,7 @@
             
               
                 
+  
   
   
   
@@ -4864,6 +5025,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/set-intermediate-layer.html" class="md-nav__link">
         
@@ -4888,6 +5050,7 @@
             
               
                 
+  
   
   
   
@@ -4920,6 +5083,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/sync-sidebearings.html" class="md-nav__link">
         
@@ -4944,6 +5108,7 @@
             
               
                 
+  
   
   
   
@@ -4976,6 +5141,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../masters/use-layer-as-master.html" class="md-nav__link">
         
@@ -5000,6 +5166,7 @@
             
               
                 
+  
   
   
   
@@ -5036,6 +5203,7 @@
             
               
                 
+  
   
   
   
@@ -5087,6 +5255,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../metrics/index.html" class="md-nav__link">
         
@@ -5111,6 +5280,7 @@
             
               
                 
+  
   
   
   
@@ -5143,6 +5313,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../metrics/spacing-studio.html" class="md-nav__link">
         
@@ -5171,6 +5342,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../metrics/vertical-metrics.html" class="md-nav__link">
         
@@ -5195,6 +5367,7 @@
             
               
                 
+  
   
   
   
@@ -5231,6 +5404,7 @@
             
               
                 
+  
   
   
     
@@ -5284,6 +5458,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="index.html" class="md-nav__link">
         
@@ -5308,6 +5483,7 @@
             
               
                 
+  
   
   
   
@@ -5340,6 +5516,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="glyph-browser.html" class="md-nav__link">
         
@@ -5366,13 +5543,13 @@
                 
   
   
+  
     
   
   
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -5419,12 +5596,14 @@
   
   
   
+  
+    
     
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Glyph Identity
     </label>
     <ul class="md-nav__list" data-md-component="toc">
       
@@ -5450,6 +5629,7 @@
             
               
                 
+  
   
   
   
@@ -5486,6 +5666,7 @@
             
               
                 
+  
   
   
   
@@ -5537,6 +5718,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/index.html" class="md-nav__link">
         
@@ -5561,6 +5743,7 @@
             
               
                 
+  
   
   
   
@@ -5593,6 +5776,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/character-map.html" class="md-nav__link">
         
@@ -5617,6 +5801,7 @@
             
               
                 
+  
   
   
   
@@ -5649,6 +5834,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/glyph-grid.html" class="md-nav__link">
         
@@ -5673,6 +5859,7 @@
             
               
                 
+  
   
   
   
@@ -5705,6 +5892,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/glyphs-between-lowercase.html" class="md-nav__link">
         
@@ -5729,6 +5917,7 @@
             
               
                 
+  
   
   
   
@@ -5761,6 +5950,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/glyphs-between-uppercase.html" class="md-nav__link">
         
@@ -5785,6 +5975,7 @@
             
               
                 
+  
   
   
   
@@ -5817,6 +6008,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/glyphs-surrounded-by-hhohh.html" class="md-nav__link">
         
@@ -5841,6 +6033,7 @@
             
               
                 
+  
   
   
   
@@ -5873,6 +6066,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/glyphs-surrounded-by-nnonn.html" class="md-nav__link">
         
@@ -5897,6 +6091,7 @@
             
               
                 
+  
   
   
   
@@ -5929,6 +6124,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/hoefler-lowercase.html" class="md-nav__link">
         
@@ -5953,6 +6149,7 @@
             
               
                 
+  
   
   
   
@@ -5985,6 +6182,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/kernking.html" class="md-nav__link">
         
@@ -6009,6 +6207,7 @@
             
               
                 
+  
   
   
   
@@ -6041,6 +6240,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/random-lowercase-nontext.html" class="md-nav__link">
         
@@ -6065,6 +6265,7 @@
             
               
                 
+  
   
   
   
@@ -6097,6 +6298,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/random-numbers.html" class="md-nav__link">
         
@@ -6121,6 +6323,7 @@
             
               
                 
+  
   
   
   
@@ -6153,6 +6356,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/random-title-words.html" class="md-nav__link">
         
@@ -6177,6 +6381,7 @@
             
               
                 
+  
   
   
   
@@ -6209,6 +6414,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/random-uppercase-words.html" class="md-nav__link">
         
@@ -6233,6 +6439,7 @@
             
               
                 
+  
   
   
   
@@ -6265,6 +6472,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/real-spanish-text.html" class="md-nav__link">
         
@@ -6289,6 +6497,7 @@
             
               
                 
+  
   
   
   
@@ -6321,6 +6530,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/tallest-and-shortest.html" class="md-nav__link">
         
@@ -6345,6 +6555,7 @@
             
               
                 
+  
   
   
   
@@ -6377,6 +6588,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/text-filter.html" class="md-nav__link">
         
@@ -6405,6 +6617,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../proof/waterfall.html" class="md-nav__link">
         
@@ -6429,6 +6642,7 @@
             
               
                 
+  
   
   
   
@@ -6465,6 +6679,7 @@
             
               
                 
+  
   
   
   
@@ -6516,6 +6731,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/index.html" class="md-nav__link">
         
@@ -6540,6 +6756,7 @@
             
               
                 
+  
   
   
   
@@ -6572,6 +6789,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/case-coverage.html" class="md-nav__link">
         
@@ -6596,6 +6814,7 @@
             
               
                 
+  
   
   
   
@@ -6628,6 +6847,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/close-but-no-cigar.html" class="md-nav__link">
         
@@ -6652,6 +6872,7 @@
             
               
                 
+  
   
   
   
@@ -6684,6 +6905,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/dangerous-offcurves.html" class="md-nav__link">
         
@@ -6708,6 +6930,7 @@
             
               
                 
+  
   
   
   
@@ -6740,6 +6963,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/empty-glyphs.html" class="md-nav__link">
         
@@ -6764,6 +6988,7 @@
             
               
                 
+  
   
   
   
@@ -6796,6 +7021,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/font-audit.html" class="md-nav__link">
         
@@ -6820,6 +7046,7 @@
             
               
                 
+  
   
   
   
@@ -6852,6 +7079,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/font-revision-comparison.html" class="md-nav__link">
         
@@ -6876,6 +7104,7 @@
             
               
                 
+  
   
   
   
@@ -6908,6 +7137,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/glyph-table-csv.html" class="md-nav__link">
         
@@ -6932,6 +7162,7 @@
             
               
                 
+  
   
   
   
@@ -6964,6 +7195,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/live-glyph-info.html" class="md-nav__link">
         
@@ -6988,6 +7220,7 @@
             
               
                 
+  
   
   
   
@@ -7020,6 +7253,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/master-structure-audit.html" class="md-nav__link">
         
@@ -7044,6 +7278,7 @@
             
               
                 
+  
   
   
   
@@ -7076,6 +7311,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/nodes-near-zones-app.html" class="md-nav__link">
         
@@ -7100,6 +7336,7 @@
             
               
                 
+  
   
   
   
@@ -7132,6 +7369,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/open-contours-app.html" class="md-nav__link">
         
@@ -7156,6 +7394,7 @@
             
               
                 
+  
   
   
   
@@ -7188,6 +7427,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/point-counter-master-layers.html" class="md-nav__link">
         
@@ -7212,6 +7452,7 @@
             
               
                 
+  
   
   
   
@@ -7244,6 +7485,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/report-composite-differences.html" class="md-nav__link">
         
@@ -7268,6 +7510,7 @@
             
               
                 
+  
   
   
   
@@ -7300,6 +7543,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/sidebearing-direction-marker.html" class="md-nav__link">
         
@@ -7324,6 +7568,7 @@
             
               
                 
+  
   
   
   
@@ -7356,6 +7601,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/unicode-coverage.html" class="md-nav__link">
         
@@ -7384,6 +7630,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../reports/vertical-metrics-reporter.html" class="md-nav__link">
         
@@ -7408,6 +7655,7 @@
             
               
                 
+  
   
   
   
@@ -7444,6 +7692,7 @@
             
               
                 
+  
   
   
   
@@ -7495,6 +7744,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../utilities/index.html" class="md-nav__link">
         
@@ -7519,6 +7769,7 @@
             
               
                 
+  
   
   
   
@@ -7551,6 +7802,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../utilities/magic-remover.html" class="md-nav__link">
         
@@ -7575,6 +7827,7 @@
             
               
                 
+  
   
   
   
@@ -7607,6 +7860,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../utilities/reference-image-viewer.html" class="md-nav__link">
         
@@ -7631,6 +7885,7 @@
             
               
                 
+  
   
   
   
@@ -7689,12 +7944,14 @@
   
   
   
+  
+    
     
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Glyph Identity
     </label>
     <ul class="md-nav__list" data-md-component="toc">
       
@@ -7794,23 +8051,10 @@ Requires FontLab 9 and matching Fly/App packages containing this studio.</p>
   
         <footer class="md-footer">
   
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
   
-  
-    Made with
-    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
-      MaterialX
-    </a>
-  
-</div>
-      
-    </div>
-  </div>
 </footer>
       
-  <fontlab-footer mode="light"></fontlab-footer>
+  <fontlab-footer mode="dark"></fontlab-footer>
 
     </div>
     <div class="md-dialog" data-md-component="dialog">
@@ -7824,12 +8068,12 @@ Requires FontLab 9 and matching Fly/App packages containing this studio.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
+  
       <script src="../../assets/javascripts/bundle.fc193f93.min.js"></script>
       
-        <script src="https://i.fontlab.com/fltheme26/1.0.0/basecoat.js"></script>
-      
-        <script src="https://i.fontlab.com/fltheme26/1.0.0/theme.js"></script>
-      
     
+  <script src="../../assets/fly/fly-bridge.js?v=86c9984233"></script>
+  <script type="module" src="../../assets/fly/fly.js?v=f51ac22526"></script>
+
   </body>
 </html>
