@@ -2,6 +2,10 @@
 this_file: WORK.md
 ---
 
+## Scriptmix documentation theme update
+
+The documentation build pins fly-january 0.2.1.
+
 ## 2026-11-24 — Scriptmix documentation theme
 
 Adopted fly-january 0.1.1 with FontLab chrome labeled “Scriptmix”. The root and CI strict builds produced 345 byte-identical files with zero warnings. All 230 content pages and the 404 page load the theme assets, menu and footer. English search retains all 481 indexed locations. Browser interaction remains with the rollout orchestrator.

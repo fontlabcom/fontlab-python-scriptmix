@@ -4,7 +4,7 @@ this_file: CHANGELOG.md
 
 ## Unreleased
 
-- Site now uses the fly-january 0.1.1 theme (chrome: fontlab).
+- Site now uses the fly-january 0.2.1 theme (chrome: fontlab).
 
 - `install.vfpy` is now the stub from fontlab-python-instamix 1.0.15. It replaces an
   installed instamix older than 1.0.13 and puts the old copy back if the upgrade
