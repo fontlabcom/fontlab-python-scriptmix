@@ -12,6 +12,7 @@ Consumer integration, released archives and native execution remain separate che
 
 ## Unreleased
 
+- Documentation now uses fly-january 0.4.0 or later (remote theme assets).
 - Documentation builds require fly-january 0.3.0 or later. The hash lock selects 0.3.0.
 
 - Verified immutable catalogue links and rendered SHA-256 values for all 197 current menu scripts, including all 18 Font UI Lab launchers. The catalogue rejects mismatched source bytes (`0bfbb668`, regression `d72bfbaa`).

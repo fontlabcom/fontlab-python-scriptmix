@@ -9,15 +9,15 @@ from urllib.parse import unquote, urlsplit
 
 def on_config(config):
     """Fail before building if either search or presentation stops being English."""
-    if config['theme']['language'] != 'en' or config['plugins']['fly-january/search'].config['lang'] != ['en']:
+    if config['theme']['language'] != 'en' or config['plugins']['fly-january-remote/search'].config['lang'] != ['en']:
         raise ValueError('English-only asset policy requires English theme and search')
     return config
 
 
 def verify_assets(site: Path, policy: dict) -> None:
     """Bind both the omitted and retained payload before removing any files."""
-    if len(policy['omitted']) != 35 or len(policy['retained']) != 14:
-        raise ValueError('English omission manifest must bind 35 helpers and 14 theme assets')
+    if len(policy['omitted']) != 35 or len(policy['retained']) != 9:
+        raise ValueError('English omission manifest must bind 35 helpers and 9 theme assets')
     if any('/lunr/' not in row['path'] for row in policy['omitted']) or any('/lunr/' in row['path'] for row in policy['retained']):
         raise ValueError('English omission manifest changed its helper boundary')
     rows = policy['omitted'] + policy['retained']

@@ -2059,6 +2059,7 @@
     "limit": "Ordered path d tuples are not all SVG geometry. Forty-three tuples match installed icons, including the header-attributed Font Awesome version caret. The two remaining optimized Lucide tuples are bound by exact SCSS source references; no whole-geometry equivalence is claimed."
   },
   "external_services": {
+    "FontLab_theme": "The site loads Fly theme assets from https://fontlab.dev/fontlab-www-docstheme/fly/latest/.",
     "FontLab_menu": "fly-january loads https://i.fontlab.com/menu/fontlab.js for the FontLab menu and footer.",
     "Google_Fonts": "MaterialX requests Roboto and Roboto Mono. Fly requests Material Symbols Outlined. No font binaries are bundled.",
     "Adobe_Fonts": "Fly loads its default Adobe Fonts kits for News Serif, Sole Serif and Grtsk.",

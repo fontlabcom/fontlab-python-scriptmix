@@ -86,9 +86,9 @@ class SiteTests(unittest.TestCase):
                 assets += [attrs['href'] for tag, attrs in page.tags if tag == 'link' and attrs.get('rel') == 'stylesheet']
                 self.assertEqual(assets.count('https://i.fontlab.com/menu/fontlab.js'), 1)
                 self.assertFalse(any('/fltheme26/' in asset for asset in assets))
-                local = [url for url in map(urlsplit, assets) if not url.netloc]
+                self.assertFalse(any('assets/fly/' in asset for asset in assets))
                 for asset in ('fly.css', 'fly-bridge.js', 'fly.js'):
-                    self.assertEqual(sum(url.path.endswith('/fly/' + asset) for url in local), 1, asset)
+                    self.assertEqual(assets.count('https://fontlab.dev/fontlab-www-docstheme/fly/latest/' + asset), 1, asset)
                 self.assertEqual([attrs.get('data-md-color-scheme') for tag, attrs in page.tags if tag == 'body'], ['default'])
                 search = [attrs for tag, attrs in page.tags if attrs.get('data-md-component') == 'search-query']
                 self.assertEqual(len(search), 1)

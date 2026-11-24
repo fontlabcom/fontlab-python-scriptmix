@@ -141,4 +141,4 @@ instead of relying on it being installed transitively by another optional peer.
 
 ## Current documentation dependencies
 
-The Python 3.13 documentation build uses the 33-package hash lock in `src_docs/requirements.txt`. fly-january 0.3.0 or later supplies FontLab chrome and maps search to MaterialX. The lock pins ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and PyMdown Extensions 11.0.1. The documentation inventory records installed licence texts and 49 vendor assets before 35 unused language helpers are omitted. Transitive licence review remains open.
+The Python 3.13 documentation build uses the 33-package hash lock in `src_docs/requirements.txt`. fly-january 0.4.0 or later (remote theme assets) supplies FontLab chrome and maps search to MaterialX. The lock pins ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and PyMdown Extensions 11.0.1. The documentation inventory records installed licence texts and 44 vendor assets before 35 unused language helpers are omitted. Transitive licence review remains open.
