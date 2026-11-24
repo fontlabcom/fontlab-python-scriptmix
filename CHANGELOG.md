@@ -12,6 +12,14 @@ Consumer integration, released archives and native execution remain separate che
 
 ## Unreleased
 
+- Verified immutable catalogue links and rendered SHA-256 values for all 197 current menu scripts, including all 18 Font UI Lab launchers. The catalogue rejects mismatched source bytes (`0bfbb668`, regression `d72bfbaa`).
+- Confirmed the WP03 source consolidation of 38 of 39 legacy launchers (`1e620fbd`) and the WP05 consolidation of 49 launchers into ten tools (`cb3a9505`).
+- Confirmed the WP08 S59–S66 menu sources and catalogue entries at `c4b0bfb4` (43 site tests). Candidate adoption and legacy menu retirement remain open.
+- Verified the Issue 234 three-module source cohort with 4,637 passing tests, two skips and all three module coverage gates. Installed and native workflow checks remain open.
+- Verified the Batch Operations P2 source on main at `98def0d5` and the filename template in locally rendered HTML at `8e06999e`. Public-page verification remains open.
+- Confirmed changed-master kerning numeric validation (`399d45a2`), Round Advances step 1 (four regression tests, `66a2fdad`) and composite base-advance handling (`16dbc12e`).
+- Confirmed the revised-source hash validator at `9f8d4edd` (five menu-layout tests). The owner decision on revising frozen sources remains open.
+
 - Site now uses the fly-january 0.2.1 theme (chrome: fontlab).
 
 - `install.vfpy` is now the stub from fontlab-python-instamix 1.0.15. It replaces an

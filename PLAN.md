@@ -2,295 +2,39 @@
 this_file: PLAN.md
 ---
 
-## Issue 271 installer qualification
+## Practical tools and consolidation
 
-Integrate the independently reviewed generated installer through existing full
-repository/hook gates; verify exact-SHA CI and archives, then qualify native
-macOS/Windows use when the serialized guard is available. Preserve owner files.
+Prioritize visible menu tools and Font UI Lab workflows. Keep user actions in Scriptmix, reusable helpers and demonstrations in App, and concrete plugins in Plugmix. Reconcile App, Fontport, Pens and Fly consumers together. Use focused regressions during implementation and retain the full gates for delivery. Issue 123 remains paused. Preserve Issue 208/M12 tools and frozen provenance while reconciling the isolated Issue 207 candidate. Issue 210 describes the future plugin architecture and Issue 211 tracks follow-up checks.
 
+- Review Kerning Studio against matching App artifacts. Exercise captured targets and master columns, pending drafts, Preview recovery, refused Apply, Revert and close/reopen.
+- Qualify the eight WP03 spacing, kerning and metrics tools and ten WP05 outline tools in installed FontLab. Repeat F41-1 on Nodes Near Zones, Open Contours and Font Audit. Verify Zero-Width Marks' revised bytes against the ledger before retiring its menu.
+- Advance WP08 destinations S27–S36, S56–S58 and S60–S64 from their recorded state. Review destination hashes and original callable contracts. Preserve Event Log and Find Font Files behavior and both Bracket Layers and Components reports before retirement. The indexed candidates still need matched-cohort, installed and native checks.
+- Review later destinations and tabs before removing old menus. WP11 needs a hash-verified recoverable archive for Git-less installs. Keep the frozen mappings, licences and original behavioural tests. Isolate catalogue generation during full pytest and check that tracked pages stay clean. Preserve immutable source links and resolve Font Audit's exact mekkablue source and attribution.
+- Consolidate repeated selected-layer capture, scope, contour/coordinate/transform planning and component construction in App. Cover the four NodeEditor and three SelectionEditor scaffolds, five contour-span helpers and three glyph catalogues. Keep each tool's controls and transforms. Review backup-job duplication against the original AST parity pins before changing them. Qualify backup and restore, component masks, seven fact-reusing panels and outstanding App lifecycle failures.
 
-## Functional work order — 2026-11-14
+## Font UI Lab
 
-Prioritize practical consolidated menu tools and Font UI Lab workflows, including their shared compact controls, Filters and metrics behavior. Reconcile App, Fontport, Pens and Fly calls together while preserving compatibility launchers, historical sources and installer ownership.
+Qualify the minimum eighteen workflows against all 8,723 compatibility obligations. The eight-workflow source qualification for #2, #7, #12, #13, #8, #9, #10 and #15 covers a specific revision. Check the other ten against their remaining A1–A4 requirements, including #17 P2. Preserve original test identities, Tasks 6–11/13/14, lifecycle-origin record path and SHA, and all 21 whole-module coverage gates at 80% with zero exclusions.
 
-Use small smoke checks and focused regressions for changed behavior and package boundaries. Keep the existing detailed acceptance tasks for a later testing pass; mandatory delivery hooks and current holds remain in force.
+- Bind the accepted A0/I1 archives and two ordinary installs to their containing commits. Requalify changed bytes. Verify Tabular Width Audit painting, whole-font preservation and actual Task 12 teardown.
+- For #1, #4 and #5, check open fonts, master metrics, glyph previews/counts, empty or stale documents and chooser changes. For #6, check supported and refused locations, mixed and endpoint outlines, captured font and repeated Close. Check the inspectors' ordinary installs, pending edits, staging cleanup on failure/Close, representation results and delivered notifications/cache refresh.
+- Qualify #11 and #14 with the installed providers. Check captured source, selection, report refresh, painting and teardown. Exercise Font Info Apply, Undo/Redo and saved reopen. For Designspace Source Comparison, check borrowed-font preservation and exact source/layer reports. On cancel, read failure or Close, retain the prior report and release owned UFO handles.
+- Carry #8, #9, #10 and #15 through one matched A1 batch of complete archives, genuine wheel/sdist/rebuilt wheel and two fresh ordinary prefixes. Verify RECORD, loaded origins and shipped callbacks. Check both kerning previews, captured masters, two-font group writes, overrides, no-op/refusal, unrelated fonts and four-owner cleanup. For Feature Source and Proof, preserve exact source and CR handling, explicit overwrite disclosure and supported-source readback. Full literal U+2029 editing still needs independent qualification. For Detached Transform Preview, verify pending edits, borrowed caches, resources, explicit target, recipe generation, three-owner cleanup and the final before-model digest.
+- For #17 P2, complete graph/ledger review and qualify the combined source. Preserve recipe-only No Font, explicit Python selection, no-overwrite and reopened geometry/resource checks. Verify the READ_BYTES limit, first-EAGAIN stop and next-poll delivery. Check editor and panel close acknowledgements separately and verify terminal child, stdout and scratch cleanup. Qualify matched archives, two ordinary prefixes and native consumers. Verify the filename template on the public page after exact-commit CI and generated-output checks.
+- Qualify live TMetrics and TGlyph with App's corresponding modules, the fontport extra and matching Fly/Fontport. Exercise outlines, advances, sidebearings, kerning and accessible text in both directions, master/layer changes, O-key toggles, history, saved reopen and signal/timer teardown.
 
-## Kerning Studio draft-preserving App contract: remaining qualification
+## Original workflows and native acceptance
 
-Independently review the focused consumer assertions against the matching App source, then qualify combined controller gates and fresh-main integration without changing launchers, dependencies or frozen provenance. Match released/installed providers and test native Undo/Redo ordering, captured targets/master columns, pending editor drafts, explicit Preview without hooks, refusal/disabled Apply, Revert and close/reopen. Source Qt checks do not establish native or installed acceptance.
+Retain the 130 original sample workflows, other source collections and the 350 classified scripts. The historical native boundary is 68 of 130. Regress the accepted workflows against the final installed cohort, preserving original controls, source/destination hashes and licences. For the isolated pair of read-only tools preserve the prior 68, D12/D17 and independent downloaded-tag R053 checks. Keep D31 reserved scripts and recovery material.
 
-## Issue 255 remaining native acceptance
+- After explicit D43 recovery and admission, qualify the Issue 255 installed menus and original workflows. Adapt the legacy HT Letterspacer smoke before running it. Qualify all three original Node Duplicator actions on four fonts with actual TypeRig priority and lifetime. Complete Reset, Set Default Figures, Issue 111 tools, reporter/archive reconciliation and retained provenance checks.
+- Follow the per-tool checks in TODO and PORTING-BACKLOG. For Metrics, qualify remaining masters/fields, composite selections beyond Centre In Advance, automatic dependants and successive writes. For Names, cover all seven editors' controls/defaults/KEY, constructors, whole-batch preflight, automatic-layer refusals, stale/no-op/partial failures, recovery and Close. Qualify Anchors, Components, Masters/backgrounds, Contours, feature and typed Kerning writers against original state, dependency, ownership and history requirements.
+- Qualify Common Glyphs' charcoal action when fontlab/fl#8564 supplies glyph-only mark/history support, including both literal clipboard routes. Verify Master Text Comparison model binding (fontlab/fl#8576), all-slot output, NUL/UTF16/IME and saved geometry. Qualify Case Coverage chooser/lifetime, Smallcap Consistency's modern and legacy findings, Select Different Colour's chart mapping and Cursive Sample priority. Exercise sheets, eleven warnings and three confirmations, other proof/report/text panels, canvas painting, guides and both background panels against their original controls.
+- Qualify Alignment Zones, Suggest Zones From Overshoots and Master Metrics Table for one-step writes, refusals, tags/locks and saved reopen, including fontlab/fl#8574. The ttfautohint writer needs a supported per-font route before restoring the stem tool. Pin integer-only Metrics shifts against measured native anchor rounding. Verify remaining mark propagation, component ownership, clone transforms, automatic-base metadata and smart selection persistence.
+- For read-only actions compare font, selection, cache and history before and after. For writers check whole-font Apply, Undo/Redo and saved/reopened state. Verify stale refusals, lifecycle failures and actual Close with released, matching providers. File evidence-backed upstream FontLab issues with privacy-safe reproducers.
 
-After explicit D43 recovery and admission, qualify released source-installed menus and original native/history/save-reopen workflows. Adapt the legacy HT Letterspacer smoke, which closes fonts, to an admitted safe runner before executing it. Source, genuine artifact, ordinary external-install and release/download qualification for v1.2.9 is recorded in CHANGELOG. Existing private Pages and Issue 123 holds remain. Only the curated uploaded ZIP is privacy-qualified; automatic GitHub source archives remain unqualified. Existing gitless-version and conservative installer-ledger limitations remain.
+## Documentation and delivery
 
-## WP05 outline editing
-
-The 49 source routes now map to ten independently reviewed tools; 235 menus
-remain. Full prepared suites and per-module line/branch coverage pass. Run the
-canonical wrappers with authorized evidence locations and available dependencies.
-WP11 must supply truthful containing-commit catalogue links, Git-less historical
-archives and installed-menu cleanup; qualify installed/native behavior separately.
-Preserve the frozen identities and the three later master-browser menus.
-## WP08 remaining practical-menu work
-
-Context Proof and Font Audit are indexed candidate launchers, not accepted
-menu transitions. The WPF inventory repair retains all 277 committed sources;
-two candidate records add no fabricated containing commit or acceptance. After
-canonical matched-cohort gates, review old/new full hashes, migrate active topology separately
-from frozen identity oracles and move original behavioral cases to callable
-owners. Remove old launchers only after that review; do not execute archived
-bodies or delete assertions to obtain passing tests.
-
-Adopt S27 only after its launcher/pin review. Complete S28–S36, S56–S58 and
-S60–S64, including the three explicit retirements. Event Log and Find Font
-Files keep active behavioral tests until their retirement contract is resolved;
-Bracket Layers and Components needs both report contracts retained in S58.
-Preserve exact containing-commit documentation and installation/native holds,
-the ten missing composition implementations and all 8,723 obligations.
-
-## WP01 follow-up and later consolidation packages
-
-The proposed transition ledger now accounts for all 279 current-main sources
-without removing menus or replacing immutable provenance. The original 271
-mappings remain, plus six explicitly retained routes. The complete prepared
-Scriptmix suite passed (4,703 tests, two existing skips); current-main source
-identities were verified against their containing commit.
-The controller must qualify the canonical G-Examples/G-Scriptmix wrappers in an
-authorized environment before adopting this prerequisite; their hardcoded
-outside-lane writes remain unavailable in WP01.
-Later WP03–WP08 owners must implement each named destination/tab, record reviewed
-full destination hashes and evidence, preserve historical compatibility oracles,
-and qualify native behavior separately. Proposed retirement is not accepted parity.
-WP11 must package a reviewed archive before any Git-less distribution removes
-menus; WP12 retains installed/native/history/reopen qualification.
-
-## Interpolation Preview remaining qualification
-
-Qualify workflow #6 with matching ordinary installed App/Scriptmix artifacts and native FontLab PythonQt: location controls, interpolation rendering, refusal diagnostics, captured-font identity and repeated Close. Compare complete font/history/selection/cache/dirty state before and after. Keep source/fake-font evidence separate from native acceptance; no font writes are part of this workflow.
-
-## C5 remaining qualification
-
-Qualify workflows 11 and 14 with matching installed App/Scriptmix artifacts in native FontLab. Verify captured source identity, report refresh, selection, painting and owned teardown; for Font Info also verify explicit Apply, Undo/Redo and saved reopen. When the installed App supplies Open designspace, also qualify read-only external UFO metrics, widths, glyph sets and structural compatibility, prior-report preservation on cancellation/read failure/Close, and owned UFO-handle release. The borrowed FontLab font must remain unedited, unsaved and open. Cooperative cancellation does not interrupt blocking I/O; outline interpolation is not provided. Qualify the matching App release and containing-commit documentation at delivery.
-
-## Issue 234 workflows 1, 4 and 5 remaining qualification
-
-Qualify the three Font UI Lab menus with matching ordinary installed App and
-Fontport artifacts and native PythonQt: open-font enumeration/current-master
-metrics, selected-glyph compatibility/preview, reference-master point counts,
-empty/stale documents, callbacks and repeated Close. Preserve complete font,
-selection, cache and history state. Re-run the exact runtime recipe when its
-build dependencies can be resolved; the prepared-environment fallback is source
-evidence only. Publish source links only from a reviewed containing commit.
-
-## Issue 234 inspector compositions remaining qualification
-
-Qualify UFO Roundtrip Inspector and Representation and Notification Explorer
-against matching ordinary App/Fontport installations and native FontLab. Verify
-private staging cleanup and complete semantic diagnostics, selected-glyph
-representation results, notification delivery/cache refresh status, source
-preservation and Close lifetime. Retain every other workflow obligation.
-
-
-## Batch recipe filename documentation delivery
-
-Independently review the verified filename-literal correction, then deliver
-additive commits through normal hooks. Rebuild/test documentation at each genuine
-containing commit, verify exact-commit CI/generated parity and recheck the full
-filename template on the public page. Candidate source/build checks are complete;
-live correction, ordinary artifacts and native history/reopen remain separate.
-
-
-
-## Detached Transform Preview remaining qualification
-
-Carry the independently source-qualified explicit-target composition through genuine archives/distributions/two ordinary prefixes and native owned-font/history/lifetime checks. Preserve the qualified editor/two-proof composition, demo/menu dispatch, refusal/reentrancy/cleanup and common final before-model preservation (M1). Generate immutable menu links only from a genuine reviewed containing commit. The source floor is eight; retain all 8,723 obligations and the minimum eighteen workflows, with full workflow parity at zero and native acceptance still open.
-
-
-## Exact feature source continuation
-
-Carry the independently source-qualified exact UFO feature-source integration and linked source/proof workflow through ordinary artifacts and owned native/history/reopen checks; full literal paragraph-separator editing remains separate.
-
-## Feature Source and Proof qualification
-
-Carry the independently qualified combined source through A1 archives, genuine artifacts/two ordinary installs, native history/reopen and canonical/publication gates. Retain all 8,723 obligations and the minimum eighteen workflows; the source floor of eight does not establish complete workflow acceptance. Full literal paragraph-separator editing remains a separate gate.
-
-
-
-# Forward plan
-
-Issue 230 reconciliation is current. Issue 123 implementation remains paused; its acceptance backlog below is preserved, not resumed. Keep qualified Issue 207 candidates distinct from canonical source, ordinary installed artifacts, native acceptance and publication. Issue 210 defines the future plugin split; Issue 211 retains follow-up checks. The owner corrected the preparation catalogue reference to Issue 214.
-
-## Current tools and provider integration
-
-Keep Scriptmix user actions separate from App's reusable helpers/demonstrations and Plugmix's concrete plugins. Preserve current Issue208/M12 tools and original provenance while reconciling Issue207. The classified 350-script offline smoke is not native acceptance. Issue210 replaces reporter-per-script activation only after the new App/Extensions architecture passes; genuine action scripts remain.
-
-Preserve the full130 original sample denominator, other collections, original controls/interfaces and source/destination hashes. Dated releases at49/54/57/59/60/61/64/67/68 are distinct historical receipts, not competing current plans. Do not recreate old release worktrees or count the whole migration complete from a released subset. Keep every original until complete mapping, practical-port coverage, licences and recovery-first cleanup pass.
-
-## Original node and native scope
-
-Qualify all three original Node Duplicator actions on all four fonts after native access/safety restoration: complete payload/cache/lifetime/date preservation, Apply/Undo/Redo/save-reopen and actual TypeRig-like ownership/priority/Close. Keep the separate own-sample panel and original Transform/full useful-script requirements.
-
-Qualify the current matching installed App/Fly/Fontport cohort through every detailed category task in TODO: Metrics, Names, Anchors, Components, Masters/backgrounds, Contours, feature/Kerning writers, reports/proofs, text panels, clipboard/choosers, printing and failure cleanup. Preserve explicit zero/absence, typed master/group rules, full-font history, stale refusal and removed-object ownership. Earlier native/source receipts apply only to their exact bytes.
-
-The seven Names editors remain source-only acceptance work: complete displayed snapshots, whole-batch preflight/history, every original control/default/KEY/class, automatic-layer rename refusal, actual constructors/actions, late-invalid/no-op/stale/partial/postwrite/recovery outcomes, independent review, installed original scenarios, exact whole-font predictions/firstUndo/Redo/reopen and actual Close. Remove the obsolete forthcoming-App0.2.11 instruction; qualify against the current matching provider instead.
-
-## Specific incomplete workflows
-
-Complete Common Glyphs all-font charcoal only with FontLab#8564's supported glyph-only mark/history path. Preserve raw inheritance and auto/locked/unencoded/nonexport scope, literal Copy Characters/Original Report/OS handoff, bounded lifecycle and whole-context retention. Master Text Comparison needs FontLab#8576 active-model identity, all-slot layer/master/delimiters, NUL/UTF16/IME, settings/geometry, cache/history and Close.
-
-Case Coverage requires persistence, model binding, inactive chooser, current/all-font proof, repeated content, no-op refusal, cleanup fence and owned report lifetime. Smallcap Consistency needs export-policy disclosures, modern/legacy findings, both kerning-group sides, deadline/stale refusal, repeated refresh/destruction and full-font preservation. Select Different Colour still needs a package-qualified displayed-cell/chart snapshot, mark mapping and full native preservation; additive source/empty-selection repairs are insufficient.
-
-Keep all original Reset gaps, Set Default Figures automatic alignment/window/prototype/history gaps, three priority-through-sheet tools, eleven warnings/three confirmations, Cursive Sample provenance/priority and both background panels explicitly open. The exact per-tool requirements remain in TODO and PORTING-BACKLOG; do not substitute a historical count or a newer source pin for native acceptance.
-
-## Shared source and zone work
-
-Qualify the existing production App route-A zone/master writer: all-master staging, one step, Undo/Redo, Font/Glyph-window and row refusals, tags/lock retention and save/reopen including fl#8574. Serializer ABI/capture remains separate. Keep ttfautohint writer/stem restoration, base-plus-composite Metrics ordering, capHeight measurement, Round Advances step1 extension, anchor read-back tolerance and changed-master-only kerning numeric validation as distinct source work.
-
-Consolidate only the named repeated App responsibilities after caller inspection: selected-layer capture/validation/scope, contour/coordinate/transform planning, component construction, backup naming/jobs, four NodeEditor and three SelectionEditor scaffolds, five contour-span helpers and metadata-safe glyph catalogues. Preserve exact original controls/transforms and no sibling-script loading. Qualify backup/restore, component masks, seven fact-reusing panels and every native milestone listed in TODO; do not generalize source consolidation to history support.
-
-## Held lineage, artifacts and final delivery
-
-Reconcile the isolated two-read-only-tool lineage with actual reviewed main rather than blindly restarting historical1d0086d or04eb3bc branches. Retain all68 original rows/menu bytes and released reporter entries, canonical Contours rename and rescue state. Require complete consumers, every changed whole-module80% gate, genuine installed artifacts, native two-tool/prior68 preservation, review, D12/D17 and independent downloaded R053. Do not promote adjacent held editor/archive candidates.
-
-Finish current source copy/dependencies, full offline and docs suites, unchanged frozen-pair/provenance checks, genuine distribution/privacy/licence audit and Examples destination pins. Retain optional archive/source-audit gaps until exact recoverable originals exist. Browser assets/transitive notices/source availability, live installation, native checks and site publication remain separate delivery claims. Current Issue230 authorizes reviewed scoped commits/pushes/integration; preserve owner installation/publication and destructive recovery gates.
-
-## Development checks
-
-The remaining Ruff 0.14.10 baseline is 45 findings: E402 33, E741 10, E701 1, F401 1; Scripts 26, tests 18, tests_docs 1, menu_layout.py and src_docs/build.py 0 (2026-11-11). Continue TODO row 106 with the remaining findings, preserving script hashes and manifests; script changes require separate provenance review. The C12 tests-only mechanical subset is complete.
-
-Use README prepared arm64 Python 3.11 runtime-cohort recipe, or set `SCRIPTMIX_APP_REQUIREMENT` to a reviewed App wheel/checkout before `sh test.sh`. Add matching peers with `SCRIPTMIX_EXTRA_REQUIREMENTS`. Run docs pipeline tests with the separate Python 3.13 hash lock; legacy docs checks additionally use pytest.
-
-## Review, integration and cleanup
-
-Use the detailed open tasks in [TODO.md](TODO.md) as the acceptance checklist. Complete one scoped MVP, then run the exact repository checks and unchanged 80% gate for each complete changed production module. Keep source, genuine artifacts, ordinary origins and native behavior separate. Obtain independent review before a milestone commit/push and verify the actual remote head. Reconcile concurrent source and all callers before main integration. Preserve recovery/unique work and fresh owner/worktree attachments before obsolete branch/file cleanup. Update TODO/PLAN and record only scoped verified results in CHANGELOG. Do not drive the owner's FontLab, install into its user folder or publish a site from this proposal.
-
-## Public site qualification
-
-Retain all 269 practical tools, the 350 classified source rows and the historical 68-of-130 native boundary. Source identity links and hashes must remain exact. Keep authored retained guides outside generated `docs/`. Follow README for the current exact-lock build. Independent source/privacy/legal review, actual main CI, immutable generated-output verification, settings readback and live browser checks remain required. Review the current 14-asset fly-january English payload and its primary-source notices separately from the retained historical 44-asset inventory. The build rejects language, reference or asset drift before omitting the 35 unused language helpers; 38 licence files from the 33 locked Python distributions remain distributed.
-
-## Issue 241 window qualification
-
-Reuse the existing Metrics > TMetrics Window and Contours > TGlyph Window demos; their lazy no-argument App entry points and provenance remain unchanged. Qualify the matching App implementation with live outline/spacing/kerning/text round trips, explicit master/layer targeting, point toggles and native lifetime/history/reopen checks. Standalone Qt and fake-host coverage do not close these gates.
-
-Qualify TMetrics Window with a FontLabApp build providing `fontlabapp.fontui.tmetrics` and TGlyph Window with `fontlabapp.fontui.tglyph`, both with the `fontport` extra and matching Fly/Fontport. The unsupported1.2.0 claims are removed; no numeric replacement floor is inferred. Keep installed-module checks, actual native window/history/save-reopen and current source/output/Pages/artifact/live acceptance separate.
-
-## Issue234 Font UI inspection acceptance
-
-Qualify truthful containing commits and immutable catalogue links for all eight
-source-qualified implementations (#2, #7, #13, #12, #8, #9, #10 and #15). Complete
-workflow acceptance remains pending. Preserve the accepted finite A0/I1 source
-and paired ordinary evidence for its exact older payload. Carry the reviewed A1
-source through one matched archive/artifact/two-prefix ordinary batch; a dirty
-genuine-version artifact does not establish a containing commit or release floor.
-Keep native painting, lifetime, complete font/history preservation, Undo/Redo and
-saved/reopened evidence separate. Retain all 8,723 obligations, Tasks 6–11/13/14,
-full parity at zero and the 18-or-more workflow floor. Close the remaining source-qualification gates for the
-ten not-yet-qualified compositions in the minimum set, starting with A1 #17
-Batch UFO Recipe Workbench's integration gates before later A2 work.
-
-Retain both the controller-approved lifecycle-origin record path and SHA at
-installed consumer boundaries, original behavior assertions/test identities and
-all twenty-one complete-production-module coverage gates at 80%
-or above, with zero exclusions; retain historical eleven/fourteen inventories
-as evidence for their original epochs.
-Keep shared provider repairs in App or Fontport under finite review; record
-verified menu changes cumulatively and preserve full repository test recipes.
-
-For a reproduced FontLab upstream gap, file or extend an evidence-backed [fl issue](https://github.com/fontlab/fl/issues/) and link any required fix PR in [Proteus](https://github.com/Fontlab/Proteus) (application), [FontGate](https://github.com/Fontlab/FontGate) (core), or [pyfontgate](https://github.com/Fontlab/pyfontgate) (Python bindings), according to the proven cause. Keep private data out of the reproducer; a pending capability or an offline refusal alone does not establish an upstream defect.
-
-## Tabular Width Audit remaining qualification
-
-Bind the accepted A0/I1 payload to reviewed containing commits and truthful
-source links. Preserve its accepted complete private archives and two fresh
-ordinary prefixes; requalify changed payloads when later integration changes
-bytes. Qualify native painting, history, cleanup and complete owned-font
-preservation only in an admitted lane. Canonical promotion, owner installation,
-publication and whole-task acceptance remain separate.
-
-## Kerning Proof Workbench remaining qualification
-
-Carry the accepted kerning source into one reviewed matched A1 batch after the
-remaining A1 source increments. Create complete private source archives, build
-a genuine wheel and sdist plus a wheel from that sdist, then verify two fresh
-ordinary prefixes. Check complete source/RECORD hashes, actual App/Fontport/Fly
-origins and real shipped workflow callbacks, Apply/readback, no-op/refusal,
-selection and cleanup behavior. Retain all previous regression obligations,
-the original identity loop, frozen helpers and complete-module coverage gates.
-Keep the #8 archive/ordinary gate pending until that exact batch qualifies;
-build earlier only if a dependent installed/native/canonical surface needs it.
-
-Bind containing commits and truthful source links without inventing a release
-floor. Qualify native target/current-master behavior, painting, whole-font and
-unrelated-font preservation, history, Undo/Redo and save/reopen separately.
-Preserve the bounded passing R1 observations without claiming an inspect repair
-or an upstream native defect. Canonical adoption, owner installation, delivery
-and publication remain separate gates. Preserve the 196 additional records and
-265 tools, frozen 190/259 identities and original 350 classifications. Keep all
-8,723 compatibility obligations, the 18-or-more workflow floor and full workflow
-acceptance open.
-
-## Catalogue source-link verification
-
-Fix the measured catalogue provenance defect separately: the generator selects
-the last Scripts commit and emits immutable links even when a new menu is absent
-from that commit or working bytes differ. Four current Font UI Lab menus are
-absent from both the selected Scripts commit and current HEAD. Require the actual
-committed path and bytes to match before emitting a link; otherwise refuse or
-defer that link. Cover dirty and untracked menus with regressions. Keep current
-generator outputs as test evidence until truthful containing commits qualify.
-
-
-## Kerning Group Explorer remaining qualification
-
-Preserve all 21 unique whole-module gates and actual two-font group/kerning writes, representative-member overrides, one-inspect Use
-actions and four-owner fencing/ACK retry, including partial construction. Keep
-all earlier source and ordinary evidence bound to its original bytes.
-
-Carry #9 with #8 and remaining A1 increments into the matched complete-source
-archive, genuine direct-wheel/sdist/rebuilt-wheel and two ordinary-prefix batch.
-Qualify actual shipped callbacks, origins/RECORD and source preservation. Then
-qualify native captured-font/current-master painting, group-policy refusals,
-whole-font/history preservation, Undo/Redo and save/reopen in the admitted lane.
-Containing commits, canonical adoption, owner installation, remote delivery and
-publication remain separate. Eight source implementations do not establish eight
-fully accepted workflows. Preserve all 8,723 obligations and the minimum eighteen-workflow scope.
-
-## Remaining A1 source work
-
-Carry the source-qualified #10 Feature Source and Proof and #15 Detached
-Transform Preview through combined-main regression and complete-module coverage,
-independent integration review, genuine containing commits and matching ordinary
-artifacts. Retain the ordinary feature-code view and qualified safe refusals;
-full literal-U+2029 editing remains pending and a refusal is not a successful edit.
-Qualify native PythonQt5 ingress, target/master behavior, painting, lifetime,
-whole-font/history preservation, Undo/Redo and saved/reopened results separately.
-Keep explicit Apply overwrite disclosure and exact supported-source readback.
-
-For #15, qualify the shipped backend-visible snapshot and current-recipe proof
-through matched installed and native consumers. Preserve pending wrapper edits,
-cold/populated borrowed caches, explicit layer and captured target, complete
-resources, generation/refusal fencing and the three-owner cleanup ACK contract.
-The common final before-model digest is already source-qualified; retain it in
-combined-source regressions, including failures and parent destruction. A new
-target still requires an explicit new snapshot. No full native workflow is claimed.
-
-For #17 P2, complete the post-change graph, ledger review and separate source
-qualification gates before recording the workflow. Refresh actual upstream main,
-reconcile any intervening changes without losing teammate work, and review the
-exact staged delta. Create genuine source commits, qualify commit-bound strict
-documentation builds and required tests, then use the normal qualified pre-push
-gate and verify each exact main commit's CI and generated-output lineage.
-Retain the recipe-only No Font behavior, explicit external Python selection,
-independent reopened whole-font geometry/resource oracles, complete unchanged
-inputs, and delivered P1 case/Unicode containment and no-overwrite regressions.
-Retain distinct editor _close_complete and panel _batch_close["complete"] ACKs;
-require actual terminal child/stdout/scratch cleanup beyond supervision transfer.
-Keep the unchanged READ_BYTES budget, first-EAGAIN stop and next-poll no-loss
-controls, active-window isolation and dispatch/scheduling retry regressions.
-Qualify #17's matching ordinary artifacts, two fresh prefixes and complete
-archives, then its actual consumer/native/history/Undo/Redo/reopen checks.
-Separately retain the wider literal-U+2029 feature-editing qualification,
-canonical adoption, publication and private Pages holds; these are not added
-recipe-workbench features. Until the separate controller qualification, retain
-source floor eight, full parity zero, all 8,723 obligations and the minimum
-eighteen workflows.
+- Reconcile the fly-january 0.2.1 pin with the committed browser inventories and generated site. Run the Python 3.13 hash-locked pipeline and strict build. Check the shipped English assets, transitive licences, full notices and source availability. Repoint stale WORK receipt references, audit historical comments and keep authored guides outside generated docs. Independently review privacy/legal/source claims, exact-main CI and generated lineage, then Pages settings and live routes when authorized. Private Pages remains held.
+- Qualify Issue 271's merged installer through independent review, normal repository hooks, exact-SHA CI and release archives, then serialized macOS/Windows native checks. Keep the shared installer byte-identical. Historical release privacy checks cover the curated ZIP.
+- Run README's prepared arm64 Python 3.11 runtime checks, canonical matched-cohort wrappers and the separate Python 3.13 docs checks. Verify Examples destination pins, complete changed-module coverage and current integration inputs. Resolve frozen-source Ruff findings only after an owner decision about revised-source ledger and parity checks. Review against current main and qualify ordinary installs, archives, release/download and native history on the exact delivered bytes. Keep owner installation, archive deletion and publication gates separate.
