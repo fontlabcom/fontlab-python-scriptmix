@@ -12,6 +12,8 @@ Consumer integration, released archives and native execution remain separate che
 
 ## Unreleased
 
+- Documentation builds require fly-january 0.3.0 or later. The hash lock selects 0.3.0.
+
 - Verified immutable catalogue links and rendered SHA-256 values for all 197 current menu scripts, including all 18 Font UI Lab launchers. The catalogue rejects mismatched source bytes (`0bfbb668`, regression `d72bfbaa`).
 - Confirmed the WP03 source consolidation of 38 of 39 legacy launchers (`1e620fbd`) and the WP05 consolidation of 49 launchers into ten tools (`cb3a9505`).
 - Confirmed the WP08 S59–S66 menu sources and catalogue entries at `c4b0bfb4` (43 site tests). Candidate adoption and legacy menu retirement remain open.

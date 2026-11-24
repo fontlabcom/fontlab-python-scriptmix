@@ -406,7 +406,7 @@
       "installed_distribution_sources": [
         {
           "distribution": "fly-january",
-          "version": "0.1.1",
+          "version": "0.3.0",
           "path": "fly_january/assets/fly/fly-bridge.js"
         }
       ]
@@ -417,29 +417,29 @@
       "installed_distribution_sources": [
         {
           "distribution": "fly-january",
-          "version": "0.1.1",
+          "version": "0.3.0",
           "path": "fly_january/assets/fly/fly-debug.js"
         }
       ]
     },
     {
       "path": "assets/fly/fly-tokens.css",
-      "sha256": "ba1aaf2de7ca7d95f0b53fceb42390d0228b14edfa89a6e57f40fdf66d8bad39",
+      "sha256": "dc2aa7bdae916177c3e2def79b639f24b9a3ffdd14f8dd4d169e2ceb3f559d5b",
       "installed_distribution_sources": [
         {
           "distribution": "fly-january",
-          "version": "0.1.1",
+          "version": "0.3.0",
           "path": "fly_january/assets/fly/fly-tokens.css"
         }
       ]
     },
     {
       "path": "assets/fly/fly.css",
-      "sha256": "24c03d88bb3c3a3d4347a344f7be06b7561544075a3919af69991d3dd69a7f8d",
+      "sha256": "c8fad7393497abadb452738b68da4b8dabead54530085cf9ff9166640c65a28b",
       "installed_distribution_sources": [
         {
           "distribution": "fly-january",
-          "version": "0.1.1",
+          "version": "0.3.0",
           "path": "fly_january/assets/fly/fly.css"
         }
       ]
@@ -450,7 +450,7 @@
       "installed_distribution_sources": [
         {
           "distribution": "fly-january",
-          "version": "0.1.1",
+          "version": "0.3.0",
           "path": "fly_january/assets/fly/fly.js"
         }
       ]
@@ -521,7 +521,7 @@
         }
       ],
       "source_sha256": "314bbef5bf9ab3a776c5b1bb3ae42f0db5de636bfe2b1ddd6e67de3d35384d8b",
-      "transformation": "fly-january 0.1.1 MaterialX rem rescale (20/14.4)"
+      "transformation": "fly-january 0.3.0 MaterialX rem rescale (20/14.4)"
     },
     {
       "path": "assets/stylesheets/main.314bbef5.min.css.map",
@@ -545,7 +545,7 @@
         }
       ],
       "source_sha256": "a45159b56103e8b1ad8240a01ec0235924a2bd19e00572efaf4243e82128792d",
-      "transformation": "fly-january 0.1.1 MaterialX rem rescale (20/14.4)"
+      "transformation": "fly-january 0.3.0 MaterialX rem rescale (20/14.4)"
     },
     {
       "path": "assets/stylesheets/palette.a45159b5.min.css.map",

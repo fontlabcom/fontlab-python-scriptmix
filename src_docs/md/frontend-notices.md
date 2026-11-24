@@ -63,7 +63,7 @@ retains a 2013 licence notice. Both are preserved above.
 
 ## Current documentation build inventory
 
-The [current installed-distribution inventory](assets/current-docs-inventory.json) records the 33 locked distributions and their 38 licence and notice files. The site uses fly-january 0.2.1 with ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and PyMdown Extensions 11.0.1.
+The [current installed-distribution inventory](assets/current-docs-inventory.json) records the 33 locked distributions and their 38 licence and notice files. The site uses fly-january 0.3.0 or later with ProperDocs 1.6.7, MkDocs 1.6.1, MaterialX 10.1.8 and PyMdown Extensions 11.0.1.
 
 ## Current English browser payload
 
