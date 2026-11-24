@@ -12,6 +12,15 @@ Adopted fly-january 0.1.1 with FontLab chrome labeled “Scriptmix”. The root 
 
 All 62 documentation tests passed, including the 44 pipeline tests. The arm64 Python 3.11 runtime suite passed 5,282 tests. It skipped five opt-in source audits and one inapplicable selection check. That run used an isolated copy of the migrated tree and set `QT_QPA_PLATFORM=offscreen` before Python started.
 
+## 2026-11-18 — Issue 271 generated installer candidate
+
+Regenerated `install.vfpy` with Instamix 1.0.18, preserving project declarations and
+runtime source. Exact reviewed-template byte parity and import-sentinel/wheel-order smoke checks pass. No repository-specific installer test was selected.
+Task-owned graph impact/change analysis cannot resolve an index; structural caller
+checks supplement this unavailable evidence. Full repository delivery gates,
+independent cohort review and native qualification remain pending. No owner install ran.
+
+
 ## 2026-11-14 — Functional work order documented
 
 Owner-checkout note carried in the Issue 258 cleanup: AGENTS, PLAN and TODO prioritise useful functional changes and compatible package boundaries, with detailed testing deferred. Documentation-only; no runtime, installed or native checks ran.

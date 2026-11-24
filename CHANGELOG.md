@@ -2,6 +2,14 @@
 this_file: CHANGELOG.md
 ---
 
+## 2026-11-18 — Issue 271 installer source alignment
+
+The generated installer matches the reviewed Instamix 1.0.18 template: it requires
+conflict preflight support, selects compatible local wheels and reports completed
+work before an installation failure. Exact reviewed-template byte parity and import-sentinel/wheel-order smoke checks pass. No repository-specific installer test was selected.
+Consumer integration, released archives and native execution remain separate checks.
+
+
 ## Unreleased
 
 - Site now uses the fly-january 0.2.1 theme (chrome: fontlab).

@@ -1,6 +1,9 @@
 ---
 this_file: TODO.md
 ---
+
+- [ ] Issue 271: independently review and integrate the generated installer through repository gates, verify exact-SHA CI/archives, and qualify macOS/Windows native execution after serialized admission.
+
 ## Next steps (prioritised, 2026-11-17)
 
 1. P0 advance practical consolidated launchers and Font UI Lab consumers together with shared App/Fontport/Pens/Fly behavior, using focused checks before the full native menu and history pass (owner work order 2026-11-14).
